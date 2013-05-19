@@ -20,7 +20,7 @@
   <!-- *   http://www.jenitennison.com/xslt/utilities/markup.html -->
   <!-- * -->
   <xsl:import href="./modified-markup.xsl" />
-  <xsl:include href="../xsl/lib/lib.xsl" />
+  <xsl:include href="../stylesheets-ns/lib/lib.xsl" />
 
   <!-- * RepositoryRoot is the same as what "svn info" shows -->
   <xsl:param name="repositoryRoot"/>
