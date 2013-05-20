@@ -24,11 +24,11 @@
 # Paths which you may wish to customize:
 XSLTPROC = xsltproc
 XMLLINT = xmllint
-INSTALL_DIR = $(DESTDIR)/usr/share/doc/OVERRIDE_ME_WITH_SOMETHING_SUITABLE
-INSTALL_DATA = cp -r
 MKDIR = mkdir -p
 SVNVERSION = svnversion
-SRC_DIR = This path should be changed to match the check out directory
+DIR_BASE = /Users/pbrady/ncwe/arr_docs
+DIR_SRC = $(DIR_BASE)/pb_initial_working
+DIR_BUILD = $(DIR_BASE)/build
 
 # You should not normally need to edit anything below here.
 SHELL = /bin/sh
@@ -37,39 +37,26 @@ NAME = OVERRIDE_ME_WITH_THE_SHORT_FILESYSTEM_NAME_OF_YOUR_BOOK
 DIR = .
 IMAGES =
 TOOLS_DIR = ../tools
-XSL_DIR = `[ -d stylesheets ] && echo stylesheets || echo $(TOOLS_DIR)`
+XSL_DIR = $(DIR_SRC)/stylesheets-ns
 OUTNAME = $(NAME)
 
-HTML_CHUNK_DIR = $(DIR)/html-chunk
-HTML_TARGET = $(DIR)/$(OUTNAME).html
+HTML_CHUNK_DIR = $(DIR_BUILD)/html-chunk
+HTML_TARGET = $(DIR_BUILD)/$(OUTNAME).html
 # In the HTML chunk build, index.html is created last, so serves as an 
 # acceptable timestamp file for the entire multi-file output.
 HTML_CHUNK_TARGET = $(HTML_CHUNK_DIR)/index.html
-ARCH_CMD = tar -jcvf
-ARCH_EXT = .tar.bz2
-HTML_ARCH_BASENAME = $(OUTNAME)-html
-HTML_CHUNK_ARCH_BASENAME = $(OUTNAME)-html-chunk
-HTML_ARCH_TARGET = $(DIR)/$(HTML_ARCH_BASENAME)$(ARCH_EXT)
-HTML_CHUNK_ARCH_TARGET = $(DIR)/$(HTML_CHUNK_ARCH_BASENAME)$(ARCH_EXT)
-PDF_TARGET = $(DIR)/$(OUTNAME).pdf
-PS_TARGET = $(DIR)/$(OUTNAME).ps
-FO_TARGET = $(DIR)/$(OUTNAME).fo
-EPUB_TARGET = $(DIR)/$(OUTNAME).epub
-MOBI_TARGET = $(DIR)/$(OUTNAME).mobi
-UNIFIED_XML_TARGET = $(DIR)/$(OUTNAME).xml
-XML_SOURCE = $(DIR)/$(NAME).xml
-VERSION_SOURCE = $(DIR)/version.xml
-ALL_SOURCE = $(filter-out $(DIR)/version.xml $(UNIFIED_XML_TARGET), $(wildcard $(DIR)/*.xml))
+PDF_TARGET = $(DIR_BUILD)/$(OUTNAME).pdf
+PS_TARGET = $(DIR_BUILD)/$(OUTNAME).ps
+FO_TARGET = $(DIR_BUILD)/$(OUTNAME).fo
+EPUB_TARGET = $(DIR_BUILD)/$(OUTNAME).epub
+MOBI_TARGET = $(DIR_BUILD)/$(OUTNAME).mobi
+XML_SOURCE = $(NAME).xml
+VERSION_SOURCE = version.xml
 STYLESHEET = $(DIR)/styles.css
-INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
-ENSURE_XSL = if ! test -e "$(TOOLS_DIR)/xsl"; \
-	     then $(TOOLS_DIR)/bin/find-xsl.py; fi
-IFIMAGES = if test -n "$(IMAGES)"; then
-ENDIF = ; fi
 
 # Customization hooks for xsltproc options
-HTML_XSLTPROC_OPTS = 
+HTML_XSLTPROC_OPTS = --xinclude
 FO_XSLTPROC_OPTS =
 # FO example: --stringparam page.height 9in --stringparam page.width 6.4in
 

@@ -24,11 +24,12 @@ version:
 	  mv $(VERSION_SOURCE).tmp $(VERSION_SOURCE); \
 	fi
 
+
+# Note to PB: this works but needs to be refined to copy the images over
 html: valid $(HTML_TARGET)
-$(HTML_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
-	$(ENSURE_XSL)
+$(HTML_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) --output $(HTML_TARGET) \
-	  $(XSL_DIR)/html-stylesheet.xsl $(XML_SOURCE)
+	  $(XSL_DIR)/html/docbook.xsl $(XML_SOURCE)
 
 # The trailing slash on the xsltproc --output option is essential to
 # output pages into the directory
@@ -92,44 +93,12 @@ $(MOBI_TARGET): $(EPUB_TARGET)
             --dont-justify --cover book/images/ebook-cover.jpg -v ; \
 	fi
 
-$(UNIFIED_XML_TARGET): version
-	$(XMLLINT) --noent --xinclude --postvalid --output $(UNIFIED_XML_TARGET) book/book.xml
-
-# Install targets
-$(INSTALL_SUBDIR):
-	$(MKDIR) $(INSTALL_SUBDIR)
-
-install-html: $(HTML_TARGET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
-	$(INSTALL_DATA) $(HTML_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
-
-install-html-chunk: $(HTML_CHUNK_TARGET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
-	$(INSTALL_DATA) $(HTML_CHUNK_DIR)/*.html $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
-
-install-html-arch: $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
-
-install-html-chunk-arch: $(HTML_CHUNK_ARCH_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(HTML_CHUNK_ARCH_TARGET) $(INSTALL_SUBDIR)
-
-install-pdf: $(PDF_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(PDF_TARGET) $(INSTALL_SUBDIR)
-
-install-ps: $(PS_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(PS_TARGET) $(INSTALL_SUBDIR)
-
 # Clean targets
 clean:
-	rm -f $(VERSION_SOURCE) $(HTML_TARGET) $(UNIFIED_XML_TARGET)
-	rm -f $(HTML_ARCH_TARGET) $(HTML_CHUNK_ARCH_TARGET)
+	rm -f $(VERSION_SOURCE) $(HTML_TARGET)
 	rm -f $(FO_TARGET) $(PDF_TARGET) $(PS_TARGET) $(EPUB_TARGET) $(MOBI_TARGET)
 	rm -rf $(HTML_CHUNK_DIR)
 
 # Utility targets
 valid: $(VERSION_SOURCE)
-	$(XMLLINT) --relaxng $(SRC_DIR)/docbook/rng/docbookxi.rng --noout $(XML_SOURCE)
+	$(XMLLINT) --relaxng $(DIR_SRC)/docbook/rng/docbookxi.rng --noout --xinclude $(XML_SOURCE)
