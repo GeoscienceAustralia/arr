@@ -34,15 +34,15 @@ $(HTML_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 # The trailing slash on the xsltproc --output option is essential to
 # output pages into the directory
 html-chunk: valid $(HTML_CHUNK_TARGET)
-$(HTML_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
+$(HTML_CHUNK_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 	mkdir -p $(HTML_CHUNK_DIR)
-	$(IFIMAGES) mkdir -p $(HTML_CHUNK_DIR)/images $(ENDIF)
-	$(ENSURE_XSL)
 	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) \
            --output $(HTML_CHUNK_DIR)/ \
-	   $(XSL_DIR)/chunk-stylesheet.xsl $(XML_SOURCE)
-	cp $(STYLESHEET) $(HTML_CHUNK_DIR)
-	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
+	   $(XSL_DIR)/html/chunk.xsl $(XML_SOURCE)
+# The following or somthing similar will need to be added as we start to add
+# images to the HTML output.  Same for the single page html above
+#	cp $(STYLESHEET) $(HTML_CHUNK_DIR)
+#	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
 
 fo: $(FO_TARGET)
 $(FO_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(IMAGES)
