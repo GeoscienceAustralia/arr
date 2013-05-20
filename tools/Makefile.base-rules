@@ -1,7 +1,7 @@
 # See comment in ./Makefile.base-vars
 
 # Grouping targets
-all: html html-chunk pdf ps
+all: html html-chunk pdf ps epub
 all-html: html html-chunk
 install: install-html install-html-chunk install-pdf install-ps
 
@@ -59,12 +59,11 @@ $(PS_TARGET): $(FO_TARGET) $(IMAGES)
 
 # Requires at least docbook-xsl-1.74
 epub: $(EPUB_TARGET)
-$(EPUB_TARGET): $(UNIFIED_XML_TARGET) $(ALL_SOURCE) 
-	$(ENSURE_XSL)
+$(EPUB_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 	if [ -x /usr/bin/dbtoepub ] ; then \
-	  /usr/bin/dbtoepub -v -o $(EPUB_TARGET) $(UNIFIED_XML_TARGET) ; \
+	  /usr/bin/dbtoepub -v -o $(EPUB_TARGET) $(XML_SOURCE) ; \
 	else \
-	  $(TOOLS_DIR)/xsl/epub/bin/dbtoepub -v -o $(EPUB_TARGET) $(UNIFIED_XML_TARGET) ; \
+	  $(XSL_DIR)/epub/bin/dbtoepub -v -o $(EPUB_TARGET) $(XML_SOURCE) ; \
 	fi
 
 mobi: $(MOBI_TARGET)
