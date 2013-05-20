@@ -24,6 +24,7 @@
 # Paths which you may wish to customize:
 XSLTPROC = xsltproc
 XMLLINT = xmllint
+FOP = /Users/pbrady/Downloads/fop-1.1/fop
 MKDIR = mkdir -p
 SVNVERSION = svnversion
 DIR_BASE = /Users/pbrady/ncwe/arr_docs
@@ -57,11 +58,7 @@ STYLESHEET = $(DIR)/styles.css
 
 # Customization hooks for xsltproc options
 HTML_XSLTPROC_OPTS = --xinclude
-FO_XSLTPROC_OPTS =
-# FO example: --stringparam page.height 9in --stringparam page.width 6.4in
-
-# Uncomment the following line if you'd like to print on A4 paper
-# FO_XSLTPROC_OPTS = --stringparam paper.type A4
+FO_XSLTPROC_OPTS = --param fop1.extensions 1 --xinclude --stringparam paper.type A4
 
 # Override in locale-specific Makefile to localize the word in the 
 # auto-generated version file.

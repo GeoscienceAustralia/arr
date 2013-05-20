@@ -45,18 +45,17 @@ $(HTML_CHUNK_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 #	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
 
 fo: $(FO_TARGET)
-$(FO_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(IMAGES)
-	$(ENSURE_XSL)
+$(FO_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
 	$(XSLTPROC) $(FO_XSLTPROC_OPTS) --output $(FO_TARGET) \
-	  $(XSL_DIR)/fo-stylesheet.xsl $(XML_SOURCE)
+	  $(XSL_DIR)/fo/docbook.xsl $(XML_SOURCE)
 
 pdf: $(PDF_TARGET)
-$(PDF_TARGET): $(FO_TARGET) $(IMAGES)
-	$(TOOLS_DIR)/bin/run-fop.sh -fo $(FO_TARGET) -pdf $(PDF_TARGET)
+$(PDF_TARGET): $(FO_TARGET)
+	$(FOP) -fo $(FO_TARGET) -pdf $(PDF_TARGET)
 
 ps: $(PS_TARGET)
 $(PS_TARGET): $(FO_TARGET) $(IMAGES)
-	$(TOOLS_DIR)/bin/run-fop.sh -fo $(FO_TARGET) -ps $(PS_TARGET)
+	$(FOP) -fo $(FO_TARGET) -ps $(PS_TARGET)
 
 # Requires at least docbook-xsl-1.74
 epub: $(EPUB_TARGET)
