@@ -1,9 +1,15 @@
 # See comment in ./Makefile.base-vars
 
+# I want to force the default to be valid only:
+valid: $(VERSION_SOURCE)
+	$(XMLLINT) --relaxng $(DIR_SRC)/docbook/rng/docbookxi.rng --noout --xinclude $(XML_SOURCE)
+
 # Grouping targets
 all: html html-chunk pdf ps epub
 all-html: html html-chunk
 install: install-html install-html-chunk install-pdf install-ps
+
+.PHONY: clean valid all html html-chunk pdf ps epub
 
 # Build targets
 $(VERSION_SOURCE): version
@@ -82,6 +88,3 @@ clean:
 	rm -f $(FO_TARGET) $(PDF_TARGET) $(PS_TARGET) $(EPUB_TARGET) $(MOBI_TARGET)
 	rm -rf $(HTML_CHUNK_DIR)
 
-# Utility targets
-valid: $(VERSION_SOURCE)
-	$(XMLLINT) --relaxng $(DIR_SRC)/docbook/rng/docbookxi.rng --noout --xinclude $(XML_SOURCE)
