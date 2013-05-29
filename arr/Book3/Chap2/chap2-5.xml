@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section version="5.0" xml:id="b3_ch2-5" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <title>Choice of Flood Estimator</title>
+    
+    <section>
+        <title>Introduction</title>
+        
+        <para>If the true value of θ were known, then the pdf p(q | θ, M) could
+            be used to compute the flood quantile q<subscript>Y</subscript>(θ, M).
+            For annual maximum series the quantile for a 1 in Y AEP is defined
+            as</para>
+        
+        <equation>
+            <m:math display="block">
+                <m:mi>P</m:mi>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:mo>(</m:mo>
+                        
+                        <m:mrow>
+                            <m:mi>q</m:mi>
+                            
+                            <m:mrow>
+                                <m:mi>&gt;</m:mi>
+                                
+                                <m:mrow>
+                                    <m:msub>
+                                        <m:mi>q</m:mi>
+                                        
+                                        <m:mi>Y</m:mi>
+                                    </m:msub>
+                                    
+                                    <m:mo>|</m:mo>
+                                    
+                                    <m:mrow>
+                                        <m:mi>θ, M</m:mi>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                        
+                        <m:mo>)</m:mo>
+                    </m:mrow>
+                    
+                    <m:mrow>
+                        <m:mo>=</m:mo>
+                        
+                        <m:mrow>
+                            <m:mfrac>
+                                <m:mi>1</m:mi>
+                                
+                                <m:mi>Y</m:mi>
+                            </m:mfrac>
+                            
+                            <m:mo>=</m:mo>
+                            
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mrow>
+                                            <m:munderover>
+                                                <m:mo>∫</m:mo>
+                                                
+                                                <m:msub>
+                                                    <m:mi>q</m:mi>
+                                                    
+                                                    <m:mi>Y</m:mi>
+                                                </m:msub>
+                                                
+                                                <m:mi mathvariant="normal">∞</m:mi>
+                                            </m:munderover>
+                                            
+                                            <m:mi>p</m:mi>
+                                        </m:mrow>
+                                        
+                                        <m:mo>(q |</m:mo>
+                                        
+                                        <m:mrow>
+                                            <m:mi>θ,</m:mi>
+                                            
+                                            <m:mrow>
+                                                <m:mi>M)</m:mi>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                    
+                                    <m:mo>dq</m:mo>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+                
+                <m:mi/>
+            </m:math>
+        </equation>
+        
+        <para>However, in practice the true value of θ (as well as the
+            distribution family M) is unknown. All that is known about θ, given the
+            data D, is summarized by a probability distribution with pdf p(θ | D,
+            M). This distribution may be the sampling distribution from a bootstrap
+            analysis or the posterior distribution from a Bayesian analysis. Note
+            that if an informative prior distribution is employed, the Bayesian
+            analysis will produce, in practice, different results to a bootstrap
+            analysis.</para>
+        
+        <para>This uncertainty in the flood quantile should be considered when
+            making predictions, particularly when extrapolating to floods beyond the
+            observed record. There are a number of ways the uncertainty in θ can be
+            treated leading to different flood quantile estimators. The following
+            sections consider two estimators, expected parameter quantiles and
+            expected probability quantiles.</para>
+    </section>
+
+    <section>
+        <title>Expected Parameter Quantiles</title>
+        
+        <para>In general the estimation of a design flood should be guided by
+            the consequences of over- and under-design (Slack <emphasis
+                role="italic">et al</emphasis>., 1975). In the presence of parameter
+            uncertainty, an expected loss approach can be employed.</para>
+        
+        <para>Define the loss function</para>
+
+        <equation>
+            <m:math display="block">
+                <m:mi/>
+                
+                <m:mrow>
+                    <m:mover>
+                        <m:mi>L[q (D),</m:mi>
+                        
+                        <m:mi>^</m:mi>
+                    </m:mover>
+                </m:mrow>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:mi>q(θ)]</m:mi>
+                    </m:mrow>
+                </m:mrow>
+            </m:math>
+        </equation>
+        
+        <para>as the loss incurred when the true quantile q(θ), which depends on
+            θ is replaced by the quantile estimate</para>
+
+        <equation>
+            <m:math display="block">
+                <m:mrow>
+                    <m:mover>
+                        <m:mi>q (D)</m:mi>
+                        
+                        <m:mi>^</m:mi>
+                    </m:mover>
+                </m:mrow>
+            </m:math>
+        </equation>
+        
+        <para>, which depends on the data D. Since the data do not exactly
+            specify θ, the loss itself is not exactly known.</para>
+        
+        <para>One approach to find the best estimate is to seek the
+            estimate</para>
+        
+        <equation>
+            <m:math display="block">
+                <m:mrow>
+                    <m:mover>
+                        <m:mi>q</m:mi>
+                        
+                        <m:mi>^</m:mi>
+                    </m:mover>
+                    
+                    <m:mrow>
+                        <m:msub>
+                            <m:mi>(D)</m:mi>
+                            
+                            <m:mi>opt</m:mi>
+                        </m:msub>
+                    </m:mrow>
+                </m:mrow>
+            </m:math>
+        </equation>
+        
+        <para>which minimizes the expected loss defined by</para>
+        
+        <equation>
+            <title/>
+            
+            <m:math display="block">
+                <m:mi/>
+                
+                <m:mover>
+                    <m:mi>q</m:mi>
+                    
+                    <m:mi>^</m:mi>
+                </m:mover>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:mrow>
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:msup>
+                                        <m:mrow>
+                                            <m:msub>
+                                                <m:mi>(D)</m:mi>
+                                                
+                                                <m:mi>opt</m:mi>
+                                            </m:msub>
+                                            
+                                            <m:mrow>
+                                                <m:mo>←</m:mo>
+                                                
+                                                <m:mo>min</m:mo>
+                                                
+                                                <m:mrow>
+                                                    <m:mrow>
+                                                        <m:munderover>
+                                                            <m:mo>∫</m:mo>
+                                                            
+                                                            <m:mi>θ</m:mi>
+                                                            
+                                                            <m:mi/>
+                                                        </m:munderover>
+                                                        
+                                                        <m:mi>L</m:mi>
+                                                    </m:mrow>
+                                                    
+                                                    <m:mo>=</m:mo>
+                                                    
+                                                    <m:mrow>
+                                                        <m:mover>
+                                                            <m:mi>[ q</m:mi>
+                                                            
+                                                            <m:mi>^</m:mi>
+                                                        </m:mover>
+                                                        
+                                                        <m:mo>(D),</m:mo>
+                                                        
+                                                        <m:mrow>
+                                                            <m:mi>q(θ)</m:mi>
+                                                            
+                                                            <m:mo>]</m:mo>
+                                                            
+                                                            <m:mrow>
+                                                                <m:mi>p(θ | D, M)</m:mi>
+                                                                
+                                                                <m:mrow>
+                                                                    <m:mi>dθ</m:mi>
+                                                                </m:mrow>
+                                                            </m:mrow>
+                                                        </m:mrow>
+                                                    </m:mrow>
+                                                </m:mrow>
+                                            </m:mrow>
+                                        </m:mrow>
+                                        
+                                        <m:mi/>
+                                    </m:msup>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+            </m:math>
+        </equation>
+        
+        <para>If the loss function is quadratic</para>
+        
+        <equation>
+            <title/>
+            
+            <m:math display="block">
+                <m:mover>
+                    <m:mi>L[q (D)</m:mi>
+                    
+                    <m:mi>^</m:mi>
+                </m:mover>
+                
+                <m:mrow>
+                    <m:mi>q(θ)]</m:mi>
+                    
+                    <m:mo>=</m:mo>
+                    
+                    <m:mrow>
+                        <m:mi>α[</m:mi>
+                        
+                        <m:mrow>
+                            <m:mover>
+                                <m:mi>q(D)</m:mi>
+                                
+                                <m:mi>^</m:mi>
+                            </m:mover>
+                            
+                            <m:mrow>
+                                <m:msup>
+                                    <m:mi>-q(θ)]</m:mi>
+                                    
+                                    <m:mi>2</m:mi>
+                                </m:msup>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+                
+                <m:mi/>
+            </m:math>
+        </equation>
+        
+        <para>where α is a constant, the consequences of under- and over-design
+            are assumed equal. DeGroot (1970) shows that for this loss function,
+            termed a mean-squared-error (MSE) loss function, the optimal estimate is
+            the expected value of q(D).</para>
+        
+        <para>It follows that the optimal MSE quantile estimate is the expected
+            value of the quantile defined as</para>
+        
+        <equation>
+            <title/>
+            
+            <m:math display="block">
+                <m:mi>E</m:mi>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:mo>[</m:mo>
+                        
+                        <m:mrow>
+                            <m:msub>
+                                <m:mi>q</m:mi>
+                                
+                                <m:mi>Y</m:mi>
+                            </m:msub>
+                            
+                            <m:mrow>
+                                <m:mi>| D, M</m:mi>
+                            </m:mrow>
+                        </m:mrow>
+                        
+                        <m:mo>]</m:mo>
+                    </m:mrow>
+                    
+                    <m:mrow>
+                        <m:mrow>
+                            <m:mo>=</m:mo>
+                            
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:munderover>
+                                        <m:mo>∫</m:mo>
+                                        
+                                        <m:mi>θ</m:mi>
+                                        
+                                        <m:mi/>
+                                    </m:munderover>
+                                </m:mrow>
+                                
+                                <m:mrow>
+                                    <m:msub>
+                                        <m:mi>q</m:mi>
+                                        
+                                        <m:mi>Y</m:mi>
+                                    </m:msub>
+                                </m:mrow>
+                                
+                                <m:mi>(θ, M)</m:mi>
+                                
+                                <m:mo>]</m:mo>
+                                
+                                <m:mrow>
+                                    <m:mi>p(θ | D, M)</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:mi>dθ</m:mi>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+                
+                <m:mi/>
+            </m:math>
+        </equation>
+        
+        <para>Using a first-order Taylor series approximation yields</para>
+        
+        <equation>
+            <title/>
+            
+            <m:math display="block">
+                <m:mi>E</m:mi>
+                
+                <m:mrow>
+                    <m:msub>
+                        <m:mi>[q</m:mi>
+                        
+                        <m:mi>Y</m:mi>
+                    </m:msub>
+                    
+                    <m:mrow>
+                        <m:mi>| D, M]</m:mi>
+                        
+                        <m:mo>=</m:mo>
+                        
+                        <m:mrow>
+                            <m:msub>
+                                <m:mi>q</m:mi>
+                                
+                                <m:mi>Y</m:mi>
+                            </m:msub>
+                            
+                            <m:mrow>
+                                <m:mi>[E</m:mi>
+                                
+                                <m:mrow>
+                                    <m:mi>(θ</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:mi>| D, M]</m:mi>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+                
+                <m:mi/>
+            </m:math>
+        </equation>
+        
+        <para>where E( θ ∣ D, M) is the expected parameter given the data D and
+            model family M.</para>
+        
+        <para>The term q<subscript>Y</subscript> [ E( θ ∣ D, M) ] is referred to
+            as the 1 in Y AEP quantile. When this term is used it is understood that
+            the expected parameter vector conditioned on the data D, E( θ ∣ D, M) ],
+            is being treated as if it were the true value of θ.</para>
+        
+        <para>A closely related estimate to E( θ ∣ D, M) is
+            θ<subscript>MP</subscript> defined as the value of θ that maximizes the
+            posterior pdf p(θ ∣ D, M). Asymptotically θ<subscript>MP</subscript> and
+            E( θ ∣ D, M) should converge to the same value. Martins and Stedinger
+            (2000, 2001) show that when a prior distribution is used to restrict
+            parameters to a statistically/physically reasonable range
+            θ<subscript>MP</subscript> (or generalized maximum likelihood estimate)
+            yields MSE quantile estimates for GEV distributions with negative shape
+            factors which are substantially better than method of moment and L
+            moment estimates.</para>
+    </section>
+
+    <section>
+        <title>Expected Probability Quantiles</title>
+        
+        <para>Stedinger (1983) showed that the dependence of the flood quantile
+            on uncertain parameters can be removed using total probability to yield
+            the design flood distribution</para>
+        
+        <equation>
+            <m:math display="block">
+                <m:mi>p(q | D, M)</m:mi>
+                
+                <m:mo>=</m:mo>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:munderover>
+                            <m:mo>∫</m:mo>
+                            
+                            <m:mi>θ</m:mi>
+                            
+                            <m:mi/>
+                        </m:munderover>
+                        
+                        <m:mi>p</m:mi>
+                    </m:mrow>
+                    
+                    <m:mrow>
+                        <m:mi>(q |</m:mi>
+                        
+                        <m:mrow>
+                            <m:mi>θ,</m:mi>
+                            
+                            <m:mrow>
+                                <m:mi>M)</m:mi>
+                                
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mrow>
+                                            <m:mi>p(θ</m:mi>
+                                            
+                                            <m:mrow>
+                                                <m:mi>| D,</m:mi>
+                                                
+                                                <m:mrow>
+                                                    <m:mi>M)</m:mi>
+                                                    
+                                                    <m:mrow>
+                                                        <m:mi>dθ</m:mi>
+                                                    </m:mrow>
+                                                </m:mrow>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+                
+                <m:mi/>
+            </m:math>
+        </equation>
+        
+        <para>This distribution only depends on the data D and the assumed
+            probability family M.</para>
+        
+        <para>Suppose the 1 in Y AEP quantile q<subscript>Y</subscript> is
+            evaluated. Using the design flood distribution given by equation
+            1.1.<emphasis role="bold"> linkend="WPGeneratedID_TOC_1_24">20</emphasis> and changing the
+            order of integration yields the AEP for q<subscript>Y</subscript>
+            as</para>
+
+        <equation>
+            <m:math display="block">
+                <m:mi/>
+                
+                <m:mi>P ( q</m:mi>
+                
+                <m:msub>
+                    <m:mi>&gt; q</m:mi>
+                    
+                    <m:mi>Y</m:mi>
+                </m:msub>
+                
+                <m:mrow>
+                    <m:mi>| D, M)</m:mi>
+                    
+                    <m:mo>=</m:mo>
+                    
+                    <m:mrow>
+                        <m:mrow>
+                            <m:munderover>
+                                <m:mo>∫</m:mo>
+                                
+                                <m:mi>θ</m:mi>
+                                
+                                <m:mi/>
+                            </m:munderover>
+                            
+                            <m:mi/>
+                        </m:mrow>
+                        
+                        <m:mrow>
+                            <m:mrow>
+                                <m:mo>(</m:mo>
+                                
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:munderover>
+                                            <m:mo>∫</m:mo>
+                                            
+                                            <m:msub>
+                                                <m:mi>q</m:mi>
+                                                
+                                                <m:mi>Y</m:mi>
+                                            </m:msub>
+                                            
+                                            <m:mi mathvariant="normal">∞</m:mi>
+                                        </m:munderover>
+                                        
+                                        <m:mi>p(q |</m:mi>
+                                    </m:mrow>
+                                    
+                                    <m:mrow>
+                                        <m:mi>θ, M)</m:mi>
+                                        
+                                        <m:mo>dq</m:mo>
+                                    </m:mrow>
+                                </m:mrow>
+                                
+                                <m:mo>)</m:mo>
+                            </m:mrow>
+                            
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:mi>p(</m:mi>
+                                    
+                                    <m:mi>θ</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:mi>| D, M)</m:mi>
+                                        
+                                        <m:mrow>
+                                            <m:mi>dθ</m:mi>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+            </m:math>
+        </equation>
+ 
+        <equation>
+            <m:math display="block">
+                <m:mrow>
+                    <m:mi/>
+                    
+                    <m:mo>=</m:mo>
+                    
+                    <m:mrow>
+                        <m:mrow>
+                            <m:munderover>
+                                <m:mo>∫</m:mo>
+                                
+                                <m:mi>θ</m:mi>
+                                
+                                <m:mi/>
+                            </m:munderover>
+                        </m:mrow>
+                        
+                        <m:mrow>
+                            <m:mi>p (q</m:mi>
+                            
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>&gt; q</m:mi>
+                                    
+                                    <m:mi>Y</m:mi>
+                                </m:msub>
+                                
+                                <m:mrow>
+                                    <m:mi>|</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:mi>θ, M)</m:mi>
+                                        
+                                        <m:mrow>
+                                            <m:mi>p(θ | D, M )</m:mi>
+                                            
+                                            <m:mrow>
+                                                <m:mi>dθ</m:mi>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+            </m:math>
+        </equation>
+        
+        <para>Demonstrated in Equation 1.1.<emphasis role="bold">
+            linkend="WPGeneratedID_TOC_1_25">21</emphasis> is that the term P (q &gt;
+            q<subscript>Y</subscript> | D, M) is an expected probability. For this
+            reason, the design flood distribution also is called the expected
+            probability flood distribution.</para>
+        
+        <para>In general the presence of parameter uncertainty results in P (q
+            &gt; q<subscript>Y</subscript> | D, M) exceeding 1/Y;that is, the
+            magnitude of the 1 in Y AEP quantile is expected to be exceeded more
+            often than 1 in Y years.</para>
+        
+        <para>The term P (q &gt; q<subscript>Y</subscript> | D, M) is called the
+            expected probability for quantile q<subscript>Y</subscript>.</para>
+    </section>
+    
+    <section>
+        <title>Selection of Flood Quantile Estimator</title>
+        
+        <para>Ideally the flood estimator should be derived by minimizing a loss
+            criterion such as the expected loss given by equation 1.1.<emphasis role="bold">
+                linkend="WPGeneratedID_TOC_1_22">16</emphasis>. This is particularly
+            important as the loss function is not necessarily quadratic (see
+            Stedinger, 1997 and Al-Futaisi and Stedinger, 1999) thereby undermining
+            the justification for use of equation 1.1.<emphasis role="bold">
+                linkend="WPGeneratedID_TOC_1_23">19</emphasis>.</para>
+        
+        <para>In most situations, however, it is neither practical nor warranted
+            to perform a formal loss analysis. In such cases the decision reduces to
+            choosing between the 1 in Y AEP quantile or the expected probability to
+            the quantile defined by equation 1.1.<emphasis role="bold">
+                linkend="WPGeneratedID_TOC_1_23">19</emphasis>.</para>
+        
+        <para>This decision is somewhat subjective and a matter of policy. The
+            decision depends on whether design is being undertaken for many sites or
+            a single site, and whether the risk, the actual discharge or the average
+            annual damage is the primary interest. As a general guide, some,
+            although not exhaustive, recommendations are:</para>
+        
+        <para>Situations where expected probability should be considered</para>
+        
+        <orderedlist>
+            <listitem>
+                <para>Where design is required for many sites in a region, and the
+                    objective is to attain a desired average exceedance frequency over
+                    all sites.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Where flood estimates are made at multiple sites with
+                    different record lengths, and a comparable basis is required for
+                    flood estimates of a given AEP.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Design for a single site, where risk or frequency of
+                    exceedance is of primary importance, and it is desired that the
+                    actual frequency of exceedance will equal the design
+                    frequency.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Flood estimation for flood plain management where the actual
+                    frequency of flooding is required to equal the design frequency, as
+                    in point 3.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Design for sites where underestimated frequency of surcharging
+                    carries large penalties, such as would occur with too-frequent
+                    closure of a railway or major road, or overtopping of a
+                    levee.</para>
+            </listitem>
+            
+            <listitem>
+                <para>The investigation of appropriate levels of design frequency
+                    for particular sites or structures, and the development of
+                    generalized data-based design standards.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Split sample testing of flood estimation procedures (Beard,
+                    1960).</para>
+            </listitem>
+        </orderedlist>
+        
+        <para>Situations where neglect of expected probability should be
+            considered</para>
+        
+        <orderedlist>
+            <listitem>
+                <para>Where sizing of a structure is of primary interest rather than
+                    actual frequency of flooding, such as some bridges, culverts or
+                    drainage pipes where overdesign may have large cost penalties
+                    relative to the benefits.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Where design is carried out to an arbitrary standard which has
+                    been judged to be satisfactory on the basis of experience from
+                    previous practice. Many of the design standards in Book III fall
+                    into this category.</para>
+            </listitem>
+            
+            <listitem>
+                <para>Where unbiased estimates of annual flood damages are required
+                    (Doran and Irish, 1980).</para>
+            </listitem>
+        </orderedlist>
+    </section>
+</section>
+

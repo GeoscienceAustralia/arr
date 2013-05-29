@@ -1,0 +1,2321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section version="5.0" xml:id="b3_ch2-7" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <title>WORKED EXAMPLES</title>
+    
+    <variablelist>
+        <varlistentry>
+            <term>EXAMPLE 1: EXTRAPOLATION AND PROCESS UNDERSTANDING</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>The importance of process understanding when extrapolating beyond
+        the observed record is illustrated by a simple Monte Carlo experiment. A
+        Poisson rectangular pulse rainfall model is used to generate a long record
+        of high resolution rainfall. This rainfall record is routed through a
+        rainfall-runoff model to generate runoff into the stream system. The
+        storage-discharge relationship for the stream is depicted by the bilinear
+        relationship shown in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_36">8</link>. A feature of this relationship
+        is the activation of significant flood terrace storage once a threshold
+        discharge is exceeded.</para>
+    
+    <figure>
+        <title>Bilinear Channel Storage-Discharge Relationship</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_8.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>The routing model parameters were selected so that major flood
+        terrace storage is activated by floods with an ARI in excess of 100 years.
+        This situation was chosen to represent a river with multiple flood
+        terraces with the lowest terraces accommodating the majority of floods and
+        the highest terrace only inundated by extreme floods.</para>
+    
+    <para>Presented in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_37">9</link> is the flood frequency curve
+        based on 30,000 simulated years. As shown in this figure, there is a clear
+        break in slope around the 100 year ARI corresponding to the activation of
+        major flood terrace storage. Indeed the flood frequency curve displays
+        downward curvature despite that the fact the rainfall frequency curve
+        displays upward curvature in the 100 to 1000 year ARI range. In contrast
+        the flood frequency curve based on 100 years of “data” has no evidence of
+        downward curvature. This result is because in a 100-year record there is
+        little chance of the major flood terrace storage being activated. Indeed
+        without knowledge of the underlying hydraulics, an analyst would be
+        tempted to extrapolate the 100-year flood record using a straight line
+        extrapolation. Such an extrapolation would rapidly diverge from the “true”
+        frequency curve.</para>
+    
+    <figure>
+        <title>Simulated Rainfall and Flood Frequency Curves with Major
+            Floodplain Storage Activated at a Threshold Discharge of
+            3500m3/s</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_9.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>Although the dominant rainfall-runoff dynamics are idealised in this
+        example, a very strong message is obtained from interpretation of the
+        results. Extrapolation of flood frequency curves fitted to gauged flow
+        records requires the exercise of hydrologic judgment backed up by
+        appropriate modelling. Furthermore, the problem of extrapolation is more
+        general. For example, in this example, if a rainfall-runoff catchment
+        modelling approach were used with the catchment model calibrated only to
+        small events (ie events less than 100 year ARI), the simulated data used
+        for development of the flood frequency curve are likely to be compromised
+        in a similar way.</para>
+    
+    <variablelist>
+        <varlistentry>
+            <term>EXAMPLE <anchor id="WPGeneratedID_Xref_FFAEx2_1"/>2: FITTING A
+                PROBABILITY MODEL TO GAUGED DATA</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>Illustrated in this example is the fitting of a probability model to
+        gauged annual maximum flood data. Listed in Table 1.1.<link
+            linkend="WPGeneratedID_TOC_1_39">6</link> are 31 years of gauged annual
+        maximum discharges (m<superscript>3</superscript>/s) for the Hunter river
+        at Singleton.</para>
+    
+    <table>
+        <title>Annual Series for the Hunter River at Singleton</title>
+        
+        <tgroup cols="8">
+            <tbody>
+                <row>
+                    <entry>76.19</entry>
+                    
+                    <entry>171.7</entry>
+                    
+                    <entry>218.0</entry>
+                    
+                    <entry>668.2</entry>
+                    
+                    <entry>1373.</entry>
+                    
+                    <entry>124.0</entry>
+                    
+                    <entry>276.0</entry>
+                    
+                    <entry>894.8</entry>
+                </row>
+                
+                <row>
+                    <entry>1373.</entry>
+                    
+                    <entry>279.9</entry>
+                    
+                    <entry>202.4</entry>
+                    
+                    <entry>4049.</entry>
+                    
+                    <entry>2321.</entry>
+                    
+                    <entry>2534.</entry>
+                    
+                    <entry>3313.</entry>
+                    
+                    <entry>1231.</entry>
+                </row>
+                
+                <row>
+                    <entry>1390.</entry>
+                    
+                    <entry>12515</entry>
+                    
+                    <entry>1098.</entry>
+                    
+                    <entry>447.4</entry>
+                    
+                    <entry>478.5</entry>
+                    
+                    <entry>180.3</entry>
+                    
+                    <entry>164.2</entry>
+                    
+                    <entry>229.3</entry>
+                </row>
+                
+                <row>
+                    <entry>2123.</entry>
+                    
+                    <entry>965.5</entry>
+                    
+                    <entry>2749.</entry>
+                    
+                    <entry>48.98</entry>
+                    
+                    <entry>76.45</entry>
+                    
+                    <entry>911.7</entry>
+                    
+                    <entry>925.9</entry>
+                    
+                    <entry/>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>An LP3 probability distribution was fitted to these data using a
+        Bayesian approach. Presented in Table 1.1.<link
+            linkend="WPGeneratedID_TOC_1_40">7</link> are the posterior mean, standard
+        deviation and correlation for the LP3 parameters m, s and g which are
+        respectively the mean, standard deviation and skewness of
+        log<subscript>e</subscript> q.</para>
+    
+    <table>
+        <title>LP3 Parameters Determined by Bayesian Approach</title>
+        
+        <tgroup cols="6">
+            <thead>
+                <row>
+                    <entry align="center">LP3 Parameter</entry>
+                    
+                    <entry align="center">Mean</entry>
+                    
+                    <entry align="center">Std Deviation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>m</entry>
+                    
+                    <entry>6.426</entry>
+                    
+                    <entry>0.236</entry>
+                    
+                    <entry>1.000</entry>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry>loge s</entry>
+                    
+                    <entry>0.350</entry>
+                    
+                    <entry>0.127</entry>
+                    
+                    <entry>0.046</entry>
+                    
+                    <entry>1.000</entry>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry>g</entry>
+                    
+                    <entry>0.146</entry>
+                    
+                    <entry>0.643</entry>
+                    
+                    <entry>0.000</entry>
+                    
+                    <entry>0.068</entry>
+                    
+                    <entry>1</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Plotted in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_41">10</link> on a log normal probability
+        plot are</para>
+    
+    <itemizedlist>
+        <listitem>
+            <para>the gauged flows;</para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <listitem>
+            <para>the 1 in Y AEP quantile curve (derived using the posterior mean
+                parameters);</para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <listitem>
+            <para>the 90% quantile confidence limits; and</para>
+        </listitem>
+    </itemizedlist>
+    
+    <itemizedlist>
+        <listitem>
+            <para>the expected probability curve.</para>
+        </listitem>
+    </itemizedlist>
+    
+    <figure>
+        <title>Bayesian LP3 Fit to 31 Years of Gauged Annual Maximum Flow in the
+            Hunter River at Singleton</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_10.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>The good fit to the gauged data and the tight confidence limits
+        needs to be tempered by the fact that the logarithm of the flood peaks are
+        plotted in Figure 1.1.<link linkend="WPGeneratedID_TOC_1_41">10</link>.
+        The table of selected 1 in Y AEP quantiles q<subscript>Y</subscript> and
+        their 90% confidence limits presents a more sobering perspective. For
+        example, for the 1 in 100 AEP flood the 5% and 95% confidence limits are
+        respectively 38% and 553% of the quantile q<subscript>Y</subscript>! The 1
+        in 500 AEP confidence limits are so wide as to render estimation
+        meaningless. Note the expected AEP for the quantile
+        q<subscript>Y</subscript> consistently exceeds the nominal 1 in Y AEP. For
+        example, the 1 in 100 AEP quantile of 19548
+        m<superscript>3</superscript>/s has an expected AEP of 1 in 74.</para>
+    
+    <table>
+        <title/>
+        
+        <tgroup cols="5">
+            <thead>
+                <row>
+                    <entry align="center">1 in Y AEP</entry>
+                    
+                    <entry align="center">Quantile qY</entry>
+                    
+                    <entry align="center">Quantile Confidence Limits</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">Expected AEP for qY</entry>
+                </row>
+                
+                <row>
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">5% limit</entry>
+                    
+                    <entry align="center">95% limit</entry>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>10</entry>
+                    
+                    <entry>3888</entry>
+                    
+                    <entry>2222</entry>
+                    
+                    <entry>8287</entry>
+                    
+                    <entry>1/9.9</entry>
+                </row>
+                
+                <row>
+                    <entry>50</entry>
+                    
+                    <entry>12729</entry>
+                    
+                    <entry>5537</entry>
+                    
+                    <entry>52157</entry>
+                    
+                    <entry>1/43</entry>
+                </row>
+                
+                <row>
+                    <entry>100</entry>
+                    
+                    <entry>19548</entry>
+                    
+                    <entry>7372</entry>
+                    
+                    <entry>108144</entry>
+                    
+                    <entry>1/74</entry>
+                </row>
+                
+                <row>
+                    <entry>500</entry>
+                    
+                    <entry>47366</entry>
+                    
+                    <entry>11799</entry>
+                    
+                    <entry>549773</entry>
+                    
+                    <entry>1/210</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <variablelist>
+        <varlistentry>
+            <term><emphasis role="bold">EXAMPLE</emphasis><anchor
+                id="WPGeneratedID_Xref_FFAEx3_1"/>3: USE OF CENSORED HISTORICAL
+                DATA</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>This example is a continuation of Example <link
+        linkend="WPGeneratedID_TOC_1_38">2</link>. The benefit of using historical
+        flood information Is illustrated. The gauged record spanned the period
+        1938 to 1969. The biggest flood in that record occurred in 1955. An
+        examination of historic records indicates that during the ungauged period
+        1820 to 1937 there was only one flood that exceeded the 1955 flood and
+        that this flood occurred in 1820. This information is valuable even though
+        the magnitude of the 1820 flood is not reliably known. This is an example
+        of censored data. Over the ungauged period 1820 to 1937 there was one
+        flood above and 117 floods below the threshold discharge corresponding to
+        the 1955 flood.</para>
+    
+    <para>An LP3 distribution was fitted to gauged and censored data using the
+        Bayesian approach. Presented in the table below are the posterior mean,
+        standard deviation and correlation for the LP3 parameters: m, s and g
+        which are respectively the mean, standard deviation and skewness of
+        log<subscript>e</subscript>q. Comparison with Example <link
+            linkend="WPGeneratedID_TOC_1_38">2</link> reveals that inclusion of the
+        censored data has reduced by almost 30% the uncertainty in the skewness g,
+        which is the parameter that controls the shape of the distribution,
+        particularly in the tail region.</para>
+    
+    <table>
+        <tgroup cols="6">
+            <thead>
+                <row>
+                    <entry align="center">LP3 Parameter</entry>
+                    
+                    <entry align="center">Mean</entry>
+                    
+                    <entry align="center">Std Deviation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>m</entry>
+                    
+                    <entry>6.359</entry>
+                    
+                    <entry>0.226</entry>
+                    
+                    <entry>1.000</entry>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry>loge s</entry>
+                    
+                    <entry>0.304</entry>
+                    
+                    <entry>0.116</entry>
+                    
+                    <entry>-0.139</entry>
+                    
+                    <entry>1.000</entry>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry>g</entry>
+                    
+                    <entry>0.001</entry>
+                    
+                    <entry>0.458</entry>
+                    
+                    <entry>-0.261</entry>
+                    
+                    <entry>-0.487</entry>
+                    
+                    <entry>1.000</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Plotted in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_43">11</link> on a log normal probability
+        plot are the gauged flows, the 1 in Y AEP quantile curve (derived using
+        the posterior mean parameters), the 90% quantile confidence limits and the
+        expected probability curve. Compared with Example <link
+            linkend="WPGeneratedID_TOC_1_38">2</link> the tightening of the confidence
+        limits is most noticeable.</para>
+    
+    <figure>
+        <title>Bayesian LP3 fit to 31 Years of Gauged Annual Maximum
+            Floods</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_11.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>The table of selected 1 in Y AEP quantiles q<subscript>Y</subscript>
+        and their 90% confidence limits illustrates the benefit of the information
+        contained in the censored data. For example, for the 1 in 100 AEP flood
+        the 5% and 95% confidence limits are respectively 57% and 200% of the
+        quantile q<subscript>Y</subscript>! This represents a major reduction in
+        quantile uncertainty compared with Example <link
+            linkend="WPGeneratedID_TOC_1_38">2</link> which yielded limits of 38% and
+        553%.</para>
+    
+    <table>
+        <tgroup cols="5">
+            <thead>
+                <row>
+                    <entry align="center">1 in Y AEP</entry>
+                    
+                    <entry align="center">Quantile q<subscript>Y</subscript></entry>
+                    
+                    <entry align="center">Quantile Confidence Limits</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">Expected AEP for qY</entry>
+                </row>
+                
+                <row>
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">5% limit</entry>
+                    
+                    <entry align="center">95% limit</entry>
+                    
+                    <entry align="center"/>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>10</entry>
+                    
+                    <entry>3281</entry>
+                    
+                    <entry>2188</entry>
+                    
+                    <entry>5006</entry>
+                    
+                    <entry>1/9.6</entry>
+                </row>
+                
+                <row>
+                    <entry>50</entry>
+                    
+                    <entry>9351</entry>
+                    
+                    <entry>5786</entry>
+                    
+                    <entry>16416</entry>
+                    
+                    <entry>1/48</entry>
+                </row>
+                
+                <row>
+                    <entry>100</entry>
+                    
+                    <entry>13535</entry>
+                    
+                    <entry>7751</entry>
+                    
+                    <entry>27100</entry>
+                    
+                    <entry>1/93</entry>
+                </row>
+                
+                <row>
+                    <entry>500</entry>
+                    
+                    <entry>28615</entry>
+                    
+                    <entry>12790</entry>
+                    
+                    <entry>87327</entry>
+                    
+                    <entry>1/363</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Highlighted in this example are the significant reductions in
+        uncertainty that inclusion of historical data can offer. However, care
+        must be exercised ensuring the integrity of the historic information – see
+        Section <xref linkend="WPGeneratedID_Xref_HistoriticalDataSect_1"/> of
+        this Chapter in Book 1 of Australian Rainfall and Runoff for more
+        details.</para>
+    
+    <variablelist>
+        <varlistentry>
+            <term><emphasis role="bold">EXAMPLE</emphasis><anchor
+                id="WPGeneratedID_Xref_FFAEx4_1"/>4: USE OF REGIONAL
+                INFORMATION</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>As with the previous example, this example is a continuation of
+        Example <link linkend="WPGeneratedID_TOC_1_38">2</link>. In Example <link
+            linkend="WPGeneratedID_TOC_1_38">2</link>, the posterior mean of the
+        skewness was estimated to be 0.146 with a posterior standard of 0.643. The
+        uncertainty in the 1 in 100 AEP quantile was large.</para>
+    
+    <para>Suppose hypothetically that a regional analysis of skewness was
+        conducted. Furthermore, suppose the expected regional skew is 0.00 with a
+        standard deviation of 0.35. Following Section <xref
+        linkend="WPGeneratedID_Xref_PriorDistSect_1"/> of this Chapter in Book 1
+        of Australian Rainfall and Runoff, this information can be approximated as
+        a normally distributed prior distribution for the skewness. A probability
+        plot for the LP3 model fitted to the gauged data with prior information on
+        the skewness is shown in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_45">12</link>. Comparison with Figure
+        1.1.<link linkend="WPGeneratedID_TOC_1_41">10</link> reveals substantially
+        improved accuracy in the right hand tail.</para>
+    
+    <figure>
+        <title>Bayesian LP3 Fit to 31 Years of Gauged Annual Maximum Floods with
+            Prior Information on Skewness</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_12.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>A comparison of the LP3 distribution fitted with and without prior
+        information on skewness is shown in the table below. The posterior
+        uncertainty on the skewness is about 88% of the prior standard deviation
+        indicating the gauged data are not very informative about the shape
+        parameter of the flood distribution.</para>
+    
+    <table>
+        <tgroup cols="5">
+            <thead>
+                <row>
+                    <entry align="center">LP3</entry>
+                    
+                    <entry align="center">No Prior Information</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">With Prior Information</entry>
+                    
+                    <entry align="center"/>
+                </row>
+                
+                <row>
+                    <entry align="center">Parameter</entry>
+                    
+                    <entry align="center">Mean</entry>
+                    
+                    <entry align="center">Std Deviation</entry>
+                    
+                    <entry align="center">Mean</entry>
+                    
+                    <entry align="center">Std Deviation</entry>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>m</entry>
+                    
+                    <entry>6.426</entry>
+                    
+                    <entry>0.236</entry>
+                    
+                    <entry>6.423</entry>
+                    
+                    <entry>0.236</entry>
+                </row>
+                
+                <row>
+                    <entry>loge s</entry>
+                    
+                    <entry>0.350</entry>
+                    
+                    <entry>0.127</entry>
+                    
+                    <entry>0.322</entry>
+                    
+                    <entry>0.127</entry>
+                </row>
+                
+                <row>
+                    <entry>g</entry>
+                    
+                    <entry>0.146</entry>
+                    
+                    <entry>0.643</entry>
+                    
+                    <entry>0.028</entry>
+                    
+                    <entry>0.305</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Consideration of the table below where selected 1 in Y AEP quantiles
+        q<subscript>Y</subscript> and their 90% confidence limits are shown
+        further illustrates the benefit of incorporating regional information. For
+        example, the 1 in 100 AEP flood 5% and 95% confidence limits are
+        respectively 38% and 553% of the quantile q<subscript>100</subscript> when
+        no prior information is used. These confidence limits are reduced to 45%
+        and 321% of the quantile q<subscript>100</subscript> using prior regional
+        information.</para>
+    
+    <para/>
+    
+    <para>&lt;Table&gt;</para>
+    
+    <para/>
+    
+    <table>
+        <title/>
+        
+        <tgroup cols="7">
+            <thead>
+                <row>
+                    <entry align="center">1 in Y AEP</entry>
+                    
+                    <entry align="center">No Prior Information</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">With Prior Information</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                </row>
+                
+                <row>
+                    <entry align="center"/>
+                    
+                    <entry align="center">Quantile qY</entry>
+                    
+                    <entry align="center">Quantile Confidence Limits</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">Quantile qY</entry>
+                    
+                    <entry align="center">Quantile Confidence Limits</entry>
+                    
+                    <entry align="center"/>
+                </row>
+                
+                <row>
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">5% Limit</entry>
+                    
+                    <entry align="center">95% Limit</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">5% Limit</entry>
+                    
+                    <entry align="center">95% Limit</entry>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry>10</entry>
+                    
+                    <entry>3888</entry>
+                    
+                    <entry>2222</entry>
+                    
+                    <entry>8287</entry>
+                    
+                    <entry>3619</entry>
+                    
+                    <entry>2184</entry>
+                    
+                    <entry>6933</entry>
+                </row>
+                
+                <row>
+                    <entry>50</entry>
+                    
+                    <entry>12729</entry>
+                    
+                    <entry>5537</entry>
+                    
+                    <entry>52157</entry>
+                    
+                    <entry>10677</entry>
+                    
+                    <entry>5294</entry>
+                    
+                    <entry>29104</entry>
+                </row>
+                
+                <row>
+                    <entry>100</entry>
+                    
+                    <entry>19548</entry>
+                    
+                    <entry>7372</entry>
+                    
+                    <entry>108144</entry>
+                    
+                    <entry>15670</entry>
+                    
+                    <entry>7050</entry>
+                    
+                    <entry>50274</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <variablelist>
+        <varlistentry>
+            <term>EXAMPLE <anchor id="WPGeneratedID_Xref_FFAEx5_1"/>5: IMPROVING
+                POOR FITS USING CENSORING OF LOW FLOW DATA</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>The standard probability models such as GEV and LP3 may not
+        adequately fit flood data for a variety of reasons. Often the poor fit is
+        associated with a sigmoidal probability plot as illustrated in Figure
+        1.1.<link linkend="WPGeneratedID_TOC_1_47">13</link>. In such cases it is
+        possible to employ four or five-parameter distributions which have
+        sufficient degrees of freedom to track the data in both the upper and
+        lower tails of the sigmoidal curve or adopt a calibration approach that
+        gives less weight to the smaller floods. The latter approach is
+        illustrated in this example which considers 50 annual maximum floods for
+        the Albert River at Broomfleet.</para>
+    
+    <figure>
+        <title>Bayesian Fit to All Gauged Data</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_13.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>These 50 annual maximum floods comprising the data series for the
+        Albert River at Broomfleet are</para>
+    
+    <table>
+        <tgroup cols="10">
+            <tbody>
+                <row>
+                    <entry>13.02</entry>
+                    
+                    <entry>15.57</entry>
+                    
+                    <entry>15.85</entry>
+                    
+                    <entry>16.7</entry>
+                    
+                    <entry>22.36</entry>
+                    
+                    <entry>36.51</entry>
+                    
+                    <entry>72.73</entry>
+                    
+                    <entry>78.11</entry>
+                    
+                    <entry>87.73</entry>
+                    
+                    <entry>88.30</entry>
+                </row>
+                
+                <row>
+                    <entry>95.65</entry>
+                    
+                    <entry>99.90</entry>
+                    
+                    <entry>113.77</entry>
+                    
+                    <entry>116.88</entry>
+                    
+                    <entry>124.52</entry>
+                    
+                    <entry>131.03</entry>
+                    
+                    <entry>156.22</entry>
+                    
+                    <entry>156.50</entry>
+                    
+                    <entry>190.74</entry>
+                    
+                    <entry>210.55</entry>
+                </row>
+                
+                <row>
+                    <entry>95.65</entry>
+                    
+                    <entry>249.61</entry>
+                    
+                    <entry>249.61</entry>
+                    
+                    <entry>271.68</entry>
+                    
+                    <entry>285.83</entry>
+                    
+                    <entry>302.81</entry>
+                    
+                    <entry>305.64</entry>
+                    
+                    <entry>362.24</entry>
+                    
+                    <entry>384.88</entry>
+                    
+                    <entry>461.29</entry>
+                </row>
+                
+                <row>
+                    <entry>466.95</entry>
+                    
+                    <entry>676.37</entry>
+                    
+                    <entry>752.78</entry>
+                    
+                    <entry>761.27</entry>
+                    
+                    <entry>761.27</entry>
+                    
+                    <entry>860.32</entry>
+                    
+                    <entry>863.15</entry>
+                    
+                    <entry>865.98</entry>
+                    
+                    <entry>1086.72</entry>
+                    
+                    <entry>1177.28</entry>
+                </row>
+                
+                <row>
+                    <entry>1185.77</entry>
+                    
+                    <entry>1214.07</entry>
+                    
+                    <entry>1273.5</entry>
+                    
+                    <entry>1327.27</entry>
+                    
+                    <entry>1341.42</entry>
+                    
+                    <entry>1364.06</entry>
+                    
+                    <entry>1468.77</entry>
+                    
+                    <entry>1652.72</entry>
+                    
+                    <entry>1689.51</entry>
+                    
+                    <entry>1765.92</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Displayed in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_47">13</link> is the GEV distribution on a
+        Gumbel probability plot fitted using the Bayesian approach. Although the
+        observed floods are largely contained within the 90% confidence limits,
+        the fit, nonetheless, should be considered poor. The data has a sigmoidal
+        trend with reverse curvature occurring for floods less than 1 in 2 AEP. It
+        appears that the confidence limits have increased because the GEV fit
+        provides a poor representation of the data.</para>
+    
+    <para>To deal with this problem, low flows can be censored to obtain a fit
+        that favours the right hand tail (the high flows) of the distribution. The
+        main idea is to force the assumed distribution to fit only the probability
+        of low flows falling below a threshold rather than the low flow part of
+        the distribution. As a result, the fitting of the assumed distribution is
+        focussed on the right hand tail where the high flows occur. The censoring
+        threshold can be obtained by trial-and-error but is better obtained by
+        fitting LH moments as in Example <link
+            linkend="WPGeneratedID_TOC_1_57">8</link>.</para>
+    
+    <para>Illustrated in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_48">14</link> is one such fit. To
+        de-emphasize the left hand tail the floods below the threshold of
+        250m<superscript>3</superscript>/s were censored. This means the GEV
+        distribution was fitted to a data record consisting of:</para>
+    
+    <orderedlist>
+        <listitem>
+            <para>a gauged record comprising the 27 floods above
+                250m<superscript>3</superscript>/s; and</para>
+        </listitem>
+        
+        <listitem>
+            <para>a censored record comprising the 23 floods below the threshold
+                of 250m<superscript>3</superscript>/s and 0 floods above this
+                threshold.</para>
+        </listitem>
+    </orderedlist>
+    
+    <figure>
+        <title>Bayesian Fit with Floods Below 250m3/s Threshold Treated as
+            Censored Observations</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_14.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>The censored record provides an anchor point for the GEV
+        distribution. It ensures that the chance of an annual maximum flood being
+        less than 250m<superscript>3</superscript>/s is about 0.46 without forcing
+        the GEV to fit the annual peak flows below the
+        250m<superscript>3</superscript>/s threshold. The fit effectively
+        disregards floods lower than 1 in 2 AEP and provides a good fit to the
+        high flow tail. As shown in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_48">14</link>, another benefit is the
+        substantially reduced 90% confidence range.</para>
+    
+    <variablelist>
+        <varlistentry>
+            <term><emphasis role="bold">EXAMPLE</emphasis><anchor
+                id="WPGeneratedID_Xref_FFAEx6_1"/>6: EXAMPLE OF A NON-HOMOGENEOUS
+                FLOOD PROBABILITY MODEL</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>The work of Micevski <emphasis role="italic">et al</emphasis>.
+        (2003) can be used to illustrate an example of a non-homogeneous model. An
+        indicator time series based on the IPO time series (Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_16">6</link>) was used to create the
+        exogenous vector x which is given by</para>
+    
+    <equation>
+        <title/>
+        
+        <m:math display="block">
+            <m:msub>
+                <m:mi>x = {I</m:mi>
+                
+                <m:mi>t</m:mi>
+            </m:msub>
+            
+            <m:mo>, t = 1, ... n}</m:mo>
+            
+            <m:mi/>
+        </m:math>
+    </equation>
+    
+    <para>where the indicator I<subscript>t</subscript> is given by</para>
+    
+    <equation>
+        <title/>
+        
+        <m:math display="block">
+            <m:msub>
+                <m:mi>I</m:mi>
+                
+                <m:mi>t</m:mi>
+            </m:msub>
+            
+            <m:mo>=</m:mo>
+            
+            <m:mrow>
+                <m:mrow>
+                    <m:mo>{</m:mo>
+                    
+                    <m:mtable>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi>1,</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:msub>
+                                            <m:mi>if IPO</m:mi>
+                                            
+                                            <m:mi>t</m:mi>
+                                        </m:msub>
+                                        
+                                        <m:mrow>
+                                            <m:mo>≥</m:mo>
+                                            
+                                            <m:mrow>
+                                                <m:msub>
+                                                    <m:mi>IPO</m:mi>
+                                                    
+                                                    <m:mi>thresh</m:mi>
+                                                </m:msub>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:msub>
+                                        <m:mi>0, if IPO</m:mi>
+                                        
+                                        <m:mi>t</m:mi>
+                                    </m:msub>
+                                    
+                                    <m:mo>&gt;</m:mo>
+                                    
+                                    <m:mrow>
+                                        <m:msub>
+                                            <m:mi>IPO</m:mi>
+                                            
+                                            <m:mi>thresh</m:mi>
+                                        </m:msub>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                    </m:mtable>
+                </m:mrow>
+            </m:mrow>
+            
+            <m:mi/>
+        </m:math>
+    </equation>
+    
+    <para>IPO<subscript>t</subscript> is the IPO index for year t and
+        IPO<subscript>thresh</subscript> is a threshold value equal to
+        –0.125.</para>
+    
+    <para>At each of the 33 NSW sites considered by Micevski <emphasis
+        role="italic">et al</emphasis>. (2003) the annual maximum peak flows were
+        stratified according to the indicator I<subscript>t</subscript>. A
+        2-parameter log-normal distribution was fitted to the gauged flows with
+        indicator equal to 1; this is the IPO+ distribution. Likewise, a
+        2-parameter log-normal distribution was fitted to the gauged flows with
+        indicator equal to 0; this is the IPO- distribution. Presented in Figure
+        1.1.<link linkend="WPGeneratedID_TOC_1_50">15</link> is the histogram for
+        the ratio of the IPO- and IPO+ floods for selected 1 in Y AEPs. If the the
+        IPO+ and IPO- distributions were homogeneous then about half of the sites
+        should have a flood ratio &lt; 1; consideration of the data shown in
+        Figure 1.1.<link linkend="WPGeneratedID_TOC_1_50">15</link> suggests
+        otherwise.</para>
+    
+    <para>Presented in Figures 1.1.<link
+        linkend="WPGeneratedID_TOC_1_51">16</link> and 1.1.<link
+            linkend="WPGeneratedID_TOC_1_52">17</link> are the fitted log-normal
+        distributions for the IPO+ and IPO- annual maximum flood data for the
+        Clarence river at Lilydale respectively. Though the adequacy of the
+        log-normal model for high floods may be questioned, in the range of 1 in 2
+        AEP to 1 in 10 AEP, the IPO- floods are about 2.6 times the IPO+ floods
+        with the same AEP.</para>
+    
+    <para>To avoid bias in estimating long-term flood risk it is essential
+        that the gauged record adequately span both IPO+ and IPO- years. In this
+        example, the IPO+ record is 43 years and the IPO- record is 33 years in
+        length. With reference to Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_16">6</link>, it would appear that this
+        length of record has an adequate sample from both IPO epochs. As a result,
+        fitting a distribution to all the data will yield an unbiased estimate of
+        the long-term flood risk. Shown in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_53">18</link> is a log normal distribution
+        fitted to all the data.</para>
+    
+    <figure>
+        <title>Histogram of IPO- and IPO+ Flood Ratios</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_15.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <figure>
+        <title>Log-Normal Fit to 43 Years of IPO+ Data for the Clarence River at
+            Lilydale</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_16.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <figure>
+        <title>Log-Normal Fit to 33 Years of IPO- Data for the Clarence River at
+            Lilydale</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_17.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <figure>
+        <title>Log-Normal Fit to 76 Years of Data for the Clarence River at
+            Lilydale</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_18.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>Better appreciation of the differences in flood risk can be gleaned
+        by considering Figure 1.1.<link linkend="WPGeneratedID_TOC_1_54">19</link>
+        which where the fitted log-normal distributions to the IPO+, IPO- and all
+        the data are presented. During an IPO+ period a flood with peak discharge
+        of 100m<superscript>3</superscript>/s has a 1 in 20 AEP while during an
+        IPO- period it has a 1 in 4 AEP. Likewise a flood with peak discharge of
+        200m<superscript>3</superscript> /s has AEPs of 1 in 100 and 1 in 10 for
+        IPO+ and IPO- periods respectively. The differences in flood risk are
+        considerable. If a short gauged record falling largely in the IPO+ period
+        was used, a standard flood frequency analysis could seriously
+        underestimate the long-term or marginal flood risk.</para>
+    
+    <para>The marginal flood risk can be derived by combining the IPO+ and
+        IPO- distribution using equation 1.1.<link
+            linkend="WPGeneratedID_TOC_1_20">14</link> to give</para>
+    
+    <para/>
+    
+    <equation>
+        <title/>
+        
+        <m:math display="block">
+            <m:mo>P(Q≤q</m:mo>
+            
+            <m:mrow>
+                <m:mi>| θ ) = P(x = 0)</m:mi>
+                
+                <m:mrow>
+                    <m:mrow>
+                        <m:munderover>
+                            <m:mo>∫</m:mo>
+                            
+                            <m:mi>0</m:mi>
+                            
+                            <m:mi>q</m:mi>
+                        </m:munderover>
+                        
+                        <m:mi>p(z |</m:mi>
+                    </m:mrow>
+                    
+                    <m:mrow>
+                        <m:mi>θ, x</m:mi>
+                        
+                        <m:mrow>
+                            <m:mi>= 0)dz + P(x = 1)</m:mi>
+                            
+                            <m:mo>=</m:mo>
+                        </m:mrow>
+                        
+                        <m:mrow>
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:munderover>
+                                        <m:mo>∫</m:mo>
+                                        
+                                        <m:mi>0</m:mi>
+                                        
+                                        <m:mi>q</m:mi>
+                                    </m:munderover>
+                                    
+                                    <m:mi>P(z |</m:mi>
+                                </m:mrow>
+                                
+                                <m:mi>θ, x = 1) dz</m:mi>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+            </m:mrow>
+            
+            <m:mi/>
+        </m:math>
+    </equation>
+    
+    <para>The exogenous variable x can take two values, 0 or 1, depending on
+        the IPO epoch. P(x = 0), the probability of being in an IPO- epoch, is
+        assigned the value 33/76 based on the observation that 33 of the 76 years
+        of record were in the IPO- epoch. Likewise P(x = 1), the probability of
+        being in an IPO+ epoch, is assigned the value 43/76.</para>
+    
+    <para/>
+    
+    <para>The derived marginal distribution is plotted in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_54">19</link>. It almost exactly matches the
+        log normal distribution fitted to all the data.</para>
+    
+    <figure>
+        <title>Marginal, IPO+ and IPO+ Log-Normal Distributions for the Clarence
+            River at Lilydale</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_19.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para/>
+    
+    <variablelist>
+        <varlistentry>
+            <term><emphasis role="bold">EXAMPLE</emphasis><anchor
+                id="WPGeneratedID_Xref_FFAEx7_1"/>7: L MOMENTS FIT TO GAUGED
+                DATA</term>
+            
+            <listitem>
+                <para/>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>Illustrated in this example is the fitting of a GEV distribution to
+        gauged data using L moments. The 47 ranked annual maximum flood series for
+        the Styx River at Jeogla are:</para>
+    
+    <table>
+        <tgroup cols="8">
+            <tbody>
+                <row>
+                    <entry>878</entry>
+                    
+                    <entry>541</entry>
+                    
+                    <entry>521</entry>
+                    
+                    <entry>513</entry>
+                    
+                    <entry>436</entry>
+                    
+                    <entry>411</entry>
+                    
+                    <entry>405</entry>
+                    
+                    <entry>8.18</entry>
+                </row>
+                
+                <row>
+                    <entry>309</entry>
+                    
+                    <entry>300</entry>
+                    
+                    <entry>294</entry>
+                    
+                    <entry>258</entry>
+                    
+                    <entry>255</entry>
+                    
+                    <entry>235</entry>
+                    
+                    <entry>221</entry>
+                    
+                    <entry>220</entry>
+                </row>
+                
+                <row>
+                    <entry>206</entry>
+                    
+                    <entry>196</entry>
+                    
+                    <entry>194</entry>
+                    
+                    <entry>190</entry>
+                    
+                    <entry>186</entry>
+                    
+                    <entry>177</entry>
+                    
+                    <entry>164</entry>
+                    
+                    <entry>220</entry>
+                </row>
+                
+                <row>
+                    <entry>117</entry>
+                    
+                    <entry>111</entry>
+                    
+                    <entry>108</entry>
+                    
+                    <entry>105</entry>
+                    
+                    <entry>92.2</entry>
+                    
+                    <entry>88.6</entry>
+                    
+                    <entry>79.9</entry>
+                    
+                    <entry>74</entry>
+                </row>
+                
+                <row>
+                    <entry>71.9</entry>
+                    
+                    <entry>62.6</entry>
+                    
+                    <entry>61.2</entry>
+                    
+                    <entry>60.3</entry>
+                    
+                    <entry>58</entry>
+                    
+                    <entry>88.6</entry>
+                    
+                    <entry>39.1</entry>
+                    
+                    <entry>26.7</entry>
+                </row>
+                
+                <row>
+                    <entry>26.1</entry>
+                    
+                    <entry>23.8</entry>
+                    
+                    <entry>22.4</entry>
+                    
+                    <entry>22.1</entry>
+                    
+                    <entry>18.6</entry>
+                    
+                    <entry>13</entry>
+                    
+                    <entry>8.18</entry>
+                    
+                    <entry/>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Reported in the following table are the results obtained. The GEV
+        parameters are estimated by substituting the L moment estimates in
+        equation 1.1.<link linkend="WPGeneratedID_TOC_1_31">45</link> to obtain κ
+        and then using the equations in Table 1.1.<link
+            linkend="WPGeneratedID_TOC_1_29">3</link> to estimate τ and α. The
+        standard deviation and correlation were derived from 5000 bootstrapped
+        samples following the procedure described in Section 6.4.6 of this Chapter
+        in Book 1 of Australian Rainfall and Runoff.</para>
+    
+    <table>
+        <tgroup cols="8">
+            <thead>
+                <row>
+                    <entry align="center">L Moment Estimates</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">GEV Parameter Estimates</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center">Std Deviation</entry>
+                    
+                    <entry align="center">Correlation</entry>
+                    
+                    <entry align="center"/>
+                    
+                    <entry align="center"/>
+                </row>
+            </thead>
+            
+            <tbody>
+                <row>
+                    <entry/>
+                    
+                    <entry>189.238</entry>
+                    
+                    <entry/>
+                    
+                    <entry>100.66</entry>
+                    
+                    <entry>17.657</entry>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry/>
+                    
+                    <entry>92.476</entry>
+                    
+                    <entry/>
+                    
+                    <entry>104.157</entry>
+                    
+                    <entry>15.554</entry>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                </row>
+                
+                <row>
+                    <entry/>
+                    
+                    <entry>29.264</entry>
+                    
+                    <entry/>
+                    
+                    <entry>-0.219</entry>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                    
+                    <entry/>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>Presented in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_56">20</link> is a probability plot of the
+        gauged data along with GEV 1 in Y AEP quantiles and their 90% confidence
+        limits. The confidence limits widen appreciably for the bigger floods;
+        this is due largely to there being insufficient information to accurately
+        infer the shape parameter κ.</para>
+    
+    <figure>
+        <title>Probability Plot for Styx River at Jeogla</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_20.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <variablelist>
+        <varlistentry>
+            <term>EXAMPLE <anchor id="WPGeneratedID_Xref_FFAEx8_1"/>8: IMPROVING
+                POOR FITS USING LH MOMENTS</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>This example is a continuation of Example 5. The GEV distribution
+        was fitted to the gauged data for the Albert River at Broomfleet using LH
+        moments.</para>
+    
+    <para>Displayed in Figure 1.1.<link
+        linkend="WPGeneratedID_TOC_1_58">21</link> the GEV L moment fit on a
+        Gumbel probability plot. Although the observed floods are largely
+        contained within the 90% confidence limits, the fit, nonetheless, is poor
+        with systematic departures from the data which exhibit reverse
+        curvature.</para>
+    
+    <figure>
+        <title>L Moment Fit</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_21.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>To deal with this poor fit, an LH moment search was conducted to
+        find the optimal value of the shift parameter η using the procedure
+        described in Section 6.4.5. The optimal value of the shift parameter was
+        found to be 4. Presented in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_59">22</link> are the LH moment fit with
+        shift η equal to 4. The fit effectively disregards floods with an AEP in
+        excess of 1 in 2 and provides a very good fit to upper tail.</para>
+    
+    <figure>
+        <title>LH Moment Fit with Shift η = 4</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_22.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    
+    <para>The very significant reduction in the width of the quantile
+        confidence intervals is largely due to the shape parameter κ changing from
+        –0.17 to 0.50. The L moment fit in Figure 1.1.<link
+            linkend="WPGeneratedID_TOC_1_58">21</link> was a compromise with the bulk
+        of the small and medium-sized floods suggesting an upward curvature in the
+        probability plot. As a result, the GEV shape parameter κ had to be
+        negative to enable upward curvature. In contrast, the LH moment fit
+        favoured the large-sized floods which exhibit a downward curvature
+        resulting in a positive shape parameter. For positive κ the GEV has an
+        upper bound. In this case the upper bound is about
+        2070m<superscript>3</superscript>/s which is only 17% greater than the
+        largest observed flood.</para>
+    
+    <variablelist>
+        <varlistentry>
+            <term>EXAMPLE 9: FITTING A PROBABILITY MODEL TO POT DATA</term>
+        </varlistentry>
+    </variablelist>
+    
+    <para>An exponential distribution is fitted to a POT series based on
+        gauged data for the Styx River at Jeogla. Listed in the table below are
+        all the independent peak flows recorded over a 47 year period that
+        exceeded a threshold of 74 m<superscript>3</superscript>/s; the total
+        number of independent peaks obtained was 47. Comparison with the annual
+        maximum flood peaks in Example 7 reveals that in 15 of the 47 years of
+        record the annual maximum peak was below the threshold of 74
+        m<superscript>3</superscript>/s.</para>
+    
+    <table>
+        <tgroup cols="8">
+            <tbody>
+                <row>
+                    <entry>878</entry>
+                    
+                    <entry>541</entry>
+                    
+                    <entry>521</entry>
+                    
+                    <entry>91.7</entry>
+                    
+                    <entry>436</entry>
+                    
+                    <entry>411</entry>
+                    
+                    <entry>405</entry>
+                    
+                    <entry>315</entry>
+                </row>
+                
+                <row>
+                    <entry>309</entry>
+                    
+                    <entry>301</entry>
+                    
+                    <entry>300</entry>
+                    
+                    <entry>294</entry>
+                    
+                    <entry>283</entry>
+                    
+                    <entry>258</entry>
+                    
+                    <entry>255</entry>
+                    
+                    <entry>255</entry>
+                </row>
+                
+                <row>
+                    <entry>238</entry>
+                    
+                    <entry>235</entry>
+                    
+                    <entry>221</entry>
+                    
+                    <entry>294</entry>
+                    
+                    <entry>206</entry>
+                    
+                    <entry>196</entry>
+                    
+                    <entry>194</entry>
+                    
+                    <entry>190</entry>
+                </row>
+                
+                <row>
+                    <entry>186</entry>
+                    
+                    <entry>164</entry>
+                    
+                    <entry>150</entry>
+                    
+                    <entry>294</entry>
+                    
+                    <entry>134</entry>
+                    
+                    <entry>129</entry>
+                    
+                    <entry>129</entry>
+                    
+                    <entry>126</entry>
+                </row>
+                
+                <row>
+                    <entry>119</entry>
+                    
+                    <entry>118</entry>
+                    
+                    <entry>117</entry>
+                    
+                    <entry>117</entry>
+                    
+                    <entry>111</entry>
+                    
+                    <entry>108</entry>
+                    
+                    <entry>105</entry>
+                    
+                    <entry>98</entry>
+                </row>
+                
+                <row>
+                    <entry>92.2</entry>
+                    
+                    <entry>92.2</entry>
+                    
+                    <entry>91.7</entry>
+                    
+                    <entry>117</entry>
+                    
+                    <entry>85.2</entry>
+                    
+                    <entry>79.9</entry>
+                    
+                    <entry>74</entry>
+                    
+                    <entry/>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+    <para>A GP distribution with distribution function</para>
+    
+    <equation>
+        <title/>
+        
+        <m:math display="block">
+            <m:mrow>
+                <m:mo>P(Q ≤</m:mo>
+            </m:mrow>
+            
+            <m:mrow>
+                <m:mi>q | θ)</m:mi>
+                
+                <m:mo>=</m:mo>
+                
+                <m:mrow>
+                    <m:mo>1 -</m:mo>
+                    
+                    <m:mrow>
+                        <m:mrow>
+                            <m:mo>(</m:mo>
+                            
+                            <m:mrow>
+                                <m:mo>1 -</m:mo>
+                                
+                                <m:mrow>
+                                    <m:mfrac>
+                                        <m:mrow>
+                                            <m:mi>κ(</m:mi>
+                                            
+                                            <m:mrow>
+                                                <m:msub>
+                                                    <m:mi>q - q</m:mi>
+                                                    
+                                                    <m:mi>*</m:mi>
+                                                </m:msub>
+                                                
+                                                <m:mo>)</m:mo>
+                                            </m:mrow>
+                                        </m:mrow>
+                                        
+                                        <m:mi>β</m:mi>
+                                    </m:mfrac>
+                                    
+                                    <m:mrow>
+                                        <m:msup>
+                                            <m:mi/>
+                                        </m:msup>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                            
+                            <m:mo>)</m:mo>
+                        </m:mrow>
+                        
+                        <m:mrow>
+                            <m:msup>
+                                <m:mi/>
+                                
+                                <m:mfrac>
+                                    <m:mi>1</m:mi>
+                                    
+                                    <m:mi>κ</m:mi>
+                                </m:mfrac>
+                            </m:msup>
+                        </m:mrow>
+                    </m:mrow>
+                </m:mrow>
+            </m:mrow>
+            
+            <m:mi/>
+        </m:math>
+    </equation>
+    
+    <para>was fitted to the POT data yielding the following estimates of the
+        parameter values:</para>
+    
+    <para>β = 148.7,</para>
+    
+    <para>κ = -0.024, and</para>
+    
+    <para>q<subscript>*</subscript> = 73.999.</para>
+    
+    <para>Using equation 1.1.<link linkend="WPGeneratedID_TOC_1_7">7</link>,
+        the average recurrence interval between two peaks exceeding a magnitude of
+        w is</para>
+    
+    <para/>
+    
+    <equation>
+        <title/>
+        
+        <m:math display="block">
+            <m:mrow>
+                <m:msub>
+                    <m:mi>T</m:mi>
+                    
+                    <m:mi>p</m:mi>
+                </m:msub>
+            </m:mrow>
+            
+            <m:mo>(w) =</m:mo>
+            
+            <m:mrow>
+                <m:mfrac>
+                    <m:mi>1</m:mi>
+                    
+                    <m:mi>vP(Q &gt; w)</m:mi>
+                </m:mfrac>
+                
+                <m:mo>=</m:mo>
+                
+                <m:mrow>
+                    <m:mfrac>
+                        <m:mi>1</m:mi>
+                        
+                        <m:mrow>
+                            <m:mo>v</m:mo>
+                            
+                            <m:mrow>
+                                <m:mo>[</m:mo>
+                                
+                                <m:mrow>
+                                    <m:mi>1 -</m:mi>
+                                    
+                                    <m:mrow>
+                                        <m:mrow>
+                                            <m:mfrac>
+                                                <m:mrow>
+                                                    <m:mrow>
+                                                        <m:mi>κ (</m:mi>
+                                                        
+                                                        <m:mrow>
+                                                            <m:msub>
+                                                                <m:mi>w- q</m:mi>
+                                                                
+                                                                <m:mi>*</m:mi>
+                                                            </m:msub>
+                                                            
+                                                            <m:mo>)</m:mo>
+                                                        </m:mrow>
+                                                    </m:mrow>
+                                                </m:mrow>
+                                                
+                                                <m:mi>β</m:mi>
+                                            </m:mfrac>
+                                            
+                                            <m:mo>]</m:mo>
+                                        </m:mrow>
+                                        
+                                        <m:mrow>
+                                            <m:msup>
+                                                <m:mi/>
+                                                
+                                                <m:mfrac>
+                                                    <m:mi>1</m:mi>
+                                                    
+                                                    <m:mi>κ</m:mi>
+                                                </m:mfrac>
+                                            </m:msup>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mfrac>
+                </m:mrow>
+            </m:mrow>
+            
+            <m:mi/>
+        </m:math>
+    </equation>
+    
+    <para>where ν is the average number of flood peaks above the threshold
+        q<subscript>*</subscript> per year. Given that 47 peaks above the
+        threshold occurred in 47 years, the best estimate of ν equals 1.0. Shown
+        in Figure 1.1.<link linkend="WPGeneratedID_TOC_1_60">23</link> is a plot
+        of the fitted POT exponential model against the observed POT series
+        obtained using equation 1.1.?.</para>
+    
+    <figure>
+        <title>POT Probability Plot for Styx River at Jeogla</title>
+        
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="Figures/Figure1_1_23.gif"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</section>
+
+<section>
+    <title>REFERENCES</title>
+    
+    <para>Adams, CA, (1987), Design flood estimation for ungauged rural
+        catchments in Victoria Road Construction Authority, Victoria, Draft
+        Technical Bulletin.</para>
+    
+    <para>Adams, CA and McMahon, TA, (1985), Estimation of flood discharge for
+        ungauged rural catchments in Victoria, <emphasis role="italic">Proceedings
+            1985 Hydrology and Water Resources Symposium</emphasis>, IEAust Natl Conf.
+        Publ. No. 85/2, pp 86-90.</para>
+    
+    <para>Alexander, GN, (1957), Flood flow estimation, probability and the
+        return period. Journal of Institution of Engineers Australia,
+        29:263-278.</para>
+    
+    <para>Al-Futaisi, A, and Stedinger, JR, (1999), Hydrologic and Economic
+        Uncertainties in Flood Risk Project Design, ASCE, Journal of Water
+        Resources Planning and Management, 125(6):314-324.</para>
+    
+    <para>Allan, RJ, (2000), ENSO and Climatic Variability in the last 150
+        years, in <emphasis role="italic">El Nino and the Southern Oscillation,
+            Multi-Scale Variability, Global and Regional Impacts</emphasis>, edited by
+        HF Diaz and V Markgraf, Cambridge University Press, Cambridge, UK,
+        p3-56.</para>
+    
+    <para>American Society of Civil Engineers, (1949), Hydrology Handbook,
+        <emphasis role="bold">publisher ?</emphasis></para>
+    
+    <para>Ashkanasy, NM and Weeks, WD, (1975), Flood Frequency Distribution in
+        A Catchment Subject to Two Storm Rainfall Producing Mechanisms,
+        Proceedings 1975 Hydrology Symposium, IEAust Natl Conf. Publ. No. 75/3, pp
+        153-157.</para>
+    
+    <para>Ashkar, F and Rousselle, J, (1983), Some remarks on the truncation
+        used in partial flood series models. Water Resources Research,
+        19:477-480.</para>
+    
+    <para><emphasis role="italic">Australian Rainfall and Runoff: A Guide to
+        Flood Estimation, (1987), Pilgrim, D.H. (ed), The Institution of
+        Engineers, Australia, Canberra.</emphasis></para>
+    
+    <para>Baker, V, (1984), Recent paleoflood hydrology studies in arid and
+        semi-arid environments (abstract). EOS Trans. Amer. Geophys. Union, 65:893
+        - <emphasis role="bold">should we be referencing an abstract when people
+            are unlikely to be able to obtain the full paper</emphasis>.</para>
+    
+    <para>Baker, V, Pickup, G and Polach, HA, (1983), Desert Paleofloods in
+        Central Australia, <emphasis role="italic">Nature</emphasis>,
+        301:502-504.</para>
+    
+    <para>Beard, LR, (1960), Probability Estimates Based in Small
+        Normal-distribution Samples, <emphasis role="italic">Journal of
+            Geophysical Research</emphasis>, 65:2143-2148.</para>
+    
+    <para>Beard, LR, (1974), Flood Flow Frequency Techniques, <emphasis
+        role="italic">Tech. Report CRWR119</emphasis>, Center for Research in
+        Water Resources, University of Texas at Austin, Austin, TX, USA.</para>
+    
+    <para>Beran, M, Hosking, JRM and Arnell, N, (1986), Comment on
+        "Two-component extreme value distribution for flood frequency analysis",
+        <emphasis role="italic">Water Resources Research</emphasis>,
+        22:263-266.</para>
+    
+    <para>Blom, G, (1958), <emphasis role="italic">Statistical Estimates and
+        Transformed Beta-Variables</emphasis>, Wiley, New York, NY, USA.</para>
+    
+    <para>Brown, JAH, (1983), <emphasis role="italic">Australia's Surface
+        Water Resources - Water 2000: Consultants Report 1</emphasis>, Australian
+        Government Publishing Service, Canberra.</para>
+    
+    <para>Clarke-Hafstad, K, (1942), Reliability of station-year
+        rainfall-frequency determinations.,. Trans. ASCE, 107:633-652.</para>
+    
+    <para>Conway, KM, (1970), Flood Frequency Analysis of Some NSW Coastal
+        Rivers, Unpublished M.Eng.Sc. Report, School of Civil Engineering, UNSW,
+        Kensington, NSW, Australia.</para>
+    
+    <para>Costa, JE, (1978), Holocene stratigraphy in flood frequency
+        analysis, <emphasis role="italic">Water Resources Research</emphasis>,
+        14:626-632.</para>
+    
+    <para>Costa, JE, (1983), Palaeohydraulic reconstruction or flashflood
+        peaks from boulder deposits in the Colorado Front Range, Geol. Soc.
+        America Bulletin, 94:AP986-1004.</para>
+    
+    <para>Costa, JE, (1986), A History of Paleoflood Hydrology in the United
+        States, 1800-1970. EOS Trans. AGU, 67(17):425-430.</para>
+    
+    <para>Cunnane, C, (1973), A Particular Comparison of Annual Maxima and
+        Partial Duration Series Methods for Flood Frequency Prediction, Journal of
+        Hydrology, 18:257-271.</para>
+    
+    <para>Cunnane, C, (1978), Unbiased Plotting Positions - A Review,
+        <emphasis role="italic">Journal of Hydrology</emphasis>,
+        37:205-222.</para>
+    
+    <para>Cunnane, C, (1985), Factors Affecting Choice of Distribution for
+        Flood Series, <emphasis role="italic">Hydrological Sciences
+            Journal</emphasis>, 30:25-36.</para>
+    
+    <para>Dalrymple, T, (1960), Flood-Frequency Analyses, Manual of Hydrology:
+        Section 3 - Flood-Flow Techniques, <emphasis role="italic">U.S. Geological
+            Survey Water Supply Paper 1543-A</emphasis>, <emphasis
+                role="bold">?????</emphasis>, 79 p.</para>
+    
+    <para>DeGroot, MH, (1970), <emphasis role="italic">Optimal Statistcal
+        Decisions</emphasis>, McGraw-Hill, <emphasis
+            role="bold">?????</emphasis></para>
+    
+    <para>Doran, DG and Irish, JL, (1980), on the Nature and Extent of Bias in
+        Flood Damage Estimation, <emphasis role="italic">Proc. 1980 Hydrology and
+            Water Resources Symposium</emphasis>, IEAust Natl Conf. Publ. No. 80/9, pp
+        135-139.</para>
+    
+    <para>Duan, Q, Sorooshian, S and Gupta, V, (1992), Effective and Efficient
+        Global Optimization for Conceptual Rainfall-runoff Models, <emphasis
+            role="italic">Water Resources Research</emphasis>, 28(4):1015-1032.</para>
+    
+    <para>Erskine, WD, and Warner, RF, (1988), Geomorphic Effects of
+        Alternating Flood and Drought Dominated Regimes on a NSW Coastal River,
+        <emphasis role="italic">in Fluvial Geomorphology of Australia</emphasis>,
+        edited by R.F. Warner, Academic Press, Sydney, NSW, Australia, pp.
+        223-244.</para>
+    
+    <para>Fiorentino, M, Versace, P and Rossi, F, (1985), Regional Flood
+        Frequency Estimation Using the Two-component Extreme Value Distribution,
+        Hydrological Sciences Journal, 30:51-64.</para>
+    
+    <para>Flavell, DJ, (1983), the Rational Method Applied to Small Rural
+        Catchments in the South West of Western Australia, IEAust Civil
+        Engineering Transactions, CE25:121-127.</para>
+    
+    <para>Franks, SW and Kuczera, G, (2002), Flood Frequency Analysis:
+        Evidence and Implications of Secular Climate Variability, New South Wales,
+        <emphasis role="italic">Water Resources Research</emphasis>,
+        38(5):<emphasis role="bold">10.1029/2001WR000232</emphasis>.</para>
+    
+    <para>Gelman, A, Carlin, JB, Stern, HS and Rubin, DB, (1995), <emphasis
+        role="italic">Bayesian Data Analysis</emphasis>, Chapman and Hall,
+        p.526.</para>
+    
+    <para>Grayson, RB, Argent, RM, Nathan, RJ, McMahon, TA and Mein, RG,
+        (1996), <emphasis role="italic">Hydrologic Recipes: Estimation Techniques
+            in Australian Hydrology</emphasis>, <emphasis role="bold">CRC for
+                Catchment Hydrology, ????.</emphasis></para>
+    
+    <para>Grygier, J C, Stedinger, JR and Yin, H-B, (1989), A Generalized
+        Maintenance of Variance Extension Procedure for Extending Correlated
+        Series, <emphasis role="italic">Water Resources Research</emphasis>,
+        25(3):345-349.</para>
+    
+    <para>Harvey, F, Doran, DG, Cordery, I, and Pilgrim, DH, (1991), Regional
+        Flood Frequency Characteristics in Rural New South Wales, <emphasis
+            role="italic">Proc. 1991 International Hydrology and Water Resources
+            Symposium</emphasis>, Perth, Australia, IEAust NCP 91/19, pp
+        775-780.</para>
+    
+    <para>Hatfield, ER and Muir, GL, (1984), Surface Water Resources
+        Assessment in New South Wales, <emphasis role="italic">Proc. Workshop on
+            Surface Water Resources Data</emphasis>, AWRC Conference Series No. 10, pp
+        263-292.</para>
+    
+    <para>Hirsch, RM, (1982), A Comparison of Four Record Extension
+        Techniques, <emphasis role="italic">Water Resources Research</emphasis>,
+        18(4):1081-1088.</para>
+    
+    <para>Hosking, JRM, (1990), L-Moments: Analysis and Estimation of
+        Distributions Using Linear Combinations of Order Statistics, <emphasis
+            role="italic">Journal of Royal Statistical Society, Series B</emphasis>,
+        52(2):105-124.</para>
+    
+    <para>Hosking, JRM and Wallis, JR, (1986), Paleoflood Hydrology and Flood
+        Frequency Analysis, <emphasis role="italic">Water Resources
+            Research</emphasis>, 22:543-550.</para>
+    
+    <para>Houghton, JC, (1978), Birth of a Parent: the Wakeby Distribution for
+        Modeling Flood Flows, <emphasis role="italic">Water Resources
+            Research</emphasis>, 14:1105-1109.</para>
+    
+    <para>Interagency Advisory Committee on Water Data, (1982), Guidelines for
+        Determining Flood Flow Frequency, <emphasis role="italic">Bulletin 17B of
+            the Hydrology Sub-Committee</emphasis>, Office of Water Data Coordination,
+        Geological Survey, US Dept of the Interior, ????</para>
+    
+    <para>Jayasuriya, MDA and Mein, RG, (1985), Frequency Analysis Using the
+        Partial Series, <emphasis role="italic">Proc. 1985 Hydrology and Water
+            Resources Symposium</emphasis>, IEAust. Natl. Conf. Publ. No. 85/2, pp.
+        81-85.</para>
+    
+    <para>Jin, M and Stedinger, JR, (1989), Flood Frequency Analysis with
+        Regional and Historical Information, <emphasis role="italic">Water
+            Resources Research</emphasis>, 25(5):925-936.</para>
+    
+    <para>Kiem, A S, and Franks, SW, (2004), Multi-decadal Variability of
+        Drought Risk - Eastern Australia, <emphasis role="italic">Hydrological
+            Processes</emphasis>, 18:<emphasis
+                role="bold">doi:10.1002/hyp.1460.</emphasis></para>
+    
+    <para>Kiem, AS, Franks, SW and Kuczera, G, (2003), Multi-decadal
+        Variability of Flood Risk, <emphasis role="italic">Geophysical Research
+            Letters</emphasis>, 30(2):<emphasis role="bold">1035,
+                DOI:10.1029/2002GL015992.</emphasis></para>
+    
+    <para>Kochel. RC, Baker, VR and Patton, PC, (1982), Paleohydrology of
+        Southwestern Texas, <emphasis role="italic">Water Resources
+            Research</emphasis>, 18:1165-1183.</para>
+    
+    <para>Kopittke, RA., Stewart, BJ and Tickle, KS, (1976), Frequency
+        Analysis of Flood Data in Queensland. <emphasis role="italic">Proc. 1976
+            Hydrology Symposium</emphasis>, IEAust. Natl Conf. Publ. No. 76/2, pp.
+        20-24.</para>
+    
+    <para>Kuczera, G, (1999), Comprehensive At-site Flood Frequency Analysis
+        Using Monte Carlo Bayesian Inference, <emphasis role="italic">Water
+            Resources Research</emphasis>, 35(5):1551-1558.</para>
+    
+    <para>Kuczera, G, Lambert, M, Heneker, T, Jennings, S, Frost, A and
+        Coombes, P, (2003), Joint Probability and Design Storms at the Crossroads,
+        <emphasis role="italic">Proc 2003 Hydrology and Water Resources
+            Symposium</emphasis>, IEAust, Wollongong, pp <emphasis
+                role="bold">????</emphasis></para>
+    
+    <para>Lee, PM, (1989), <emphasis role="italic">Bayesian Statistics: An
+        Introduction</emphasis>, Oxford University Press, New York, NY,
+        USA.</para>
+    
+    <para>Laurenson, EM, (1987), Back to Basics on Flood Frequency Analysis,
+        IEAust Civil Engineering Transactions, CE29:47-53.</para>
+    
+    <para>Madsen, H, Pearson, CP, Rasmussen, PF and Rosbjerg, D, (1997),
+        Comparison of Annual Maximum Series and Partial Duration Series Methods
+        for Modeling Extreme Hydrologic Events 1 - At-Site Modeling, <emphasis
+            role="italic">Water Resources Research</emphasis>, 33(4):747-758.</para>
+    
+    <para>Mantua, NJ, Hare, SR, Zhang, Y, Wallace, JM and Francis, RC, (1997),
+        A Pacific Interdecadal Climate Oscillation with Impacts on Salmon
+        Production, Bulletin American Meteorological Society,
+        78(6):1069-1079.</para>
+    
+    <para>Martins, E S and Stedinger, JR, (2000), Generalized Maximum
+        Likelihood GEV Quantile Estimators for Hydrologic Data, <emphasis
+            role="italic">Water Resources Research</emphasis>, 36(3):737-744.</para>
+    
+    <para>Martins, E S and Stedinger, JR, (2001), Generalized Maximum
+        Likelihood Pareto-Poisson Flood Risk Analysis for Partial Duration Series,
+        Water Resources Research, 37(10):2559-2567.</para>
+    
+    <para>Matalas, NC and Jacobs, B, (1964), A Correlation Procedure for
+        Augmenting Hydrologic Data, <emphasis role="italic">US Geological Survey
+            Professional Paper 434-E</emphasis>, <emphasis
+                role="bold">????</emphasis></para>
+    
+    <para>McDermott, GE and Pilgrim, DH, (1982), Design Flood Estimation for
+        Small Catchments in New South Wales, <emphasis role="italic">Australian
+            Water Resources Council Technical Paper No. 73</emphasis>, Dept of
+        National Development and Energy, <emphasis role="bold">???</emphasis>, 233
+        p.</para>
+    
+    <para>McDermott, GE and Pilgrim, DH, (1983), A Design Flood Method for
+        Arid Western New South Wales Based on Bankfull Estimates, <emphasis
+            role="italic">IEAust, Civil Engineering Transaction</emphasis>,
+        CE25:114-120.</para>
+    
+    <para>McIllwraith, JF, (1953), Rainfall Intensity-Frequency Data for New
+        South Wales Stations. Journal Institution of Engineers Australia,
+        25:133-139.</para>
+    
+    <para>McMahon, TA, (1979), Hydrologic Characteristics of Australian
+        Streams, <emphasis role="italic">Report No. 3/1979</emphasis>, Civil
+        Engineering Research Reports, Monash University, Clayton, Vic,
+        Australia.</para>
+    
+    <para>McMahon, TA and Srikanthan, R, (1981), Log Pearson III Distribution
+        - is it Applicable to Flood Frequency Analysis of Australian Streams?,
+        <emphasis role="italic">Journal of Hydrology</emphasis>,
+        52:139-147.</para>
+    
+    <para>Micevski, T, Kiem, AS, Franks, SW and Kuczera, G, (2003),
+        Multidecadal Variability in New South Wales Flood Data, <emphasis
+            role="italic">Proc. 2003 Hydrology and Water Resources
+            Symposium</emphasis>, Institution of Engineers, Australia, Wollongong, pp
+        ?.</para>
+    
+    <para>Micevski T, Kuczera, G, Franks, SW, (2005), Flood Frequency
+        Censoring Errors Associated with Daily-read Flood Observations, <emphasis
+            role="italic">Water Resources Research</emphasis>, 41:?</para>
+    
+    <para>Natural Environment Research Council (1975), Flood Studies Report,
+        1, Hydrological Studies. London.</para>
+    
+    <para>O'Connell, DR, Ostemaa, DA, Levish, DR and Klinger, RE, (2002),
+        Bayesian Flood Frequency Analysis with Paleohydrologic Bound Data,
+        <emphasis role="italic">Water Resources Research</emphasis>,
+        38(5):1058-?</para>
+    
+    <para>Pilgrim, DH and Doran, DG, (1987), Flood Frequency
+        Analysis,<emphasis role="italic"> in Australian Rainfall and Runoff: A
+            Guide to Flood Estimation</emphasis>, Pilgrim, DH (ed), The Institution of
+        Engineers, Australia, Canberra.</para>
+    
+    <para>Pilgrim, DH and McDermott, GE, (1982), Design Floods for Small Rural
+        Catchments in Eastern New South Wales, <emphasis role="italic">IEAust
+            Civil Engineering Transactions</emphasis>, CE24:226-234.</para>
+    
+    <para>Potter, DJ and Pilgrim, DH, (1971), Flood Estimation Using A
+        Regional Flood Frequency Approach, Final Report, Vol 2: Report on Analysis
+        Components, Australian Water Resources Council, Research Project 68/1,
+        Hydrology of Small Rural Catchments, Snowy Mountains Engineering
+        Corporation.</para>
+    
+    <para>Potter, KW and Walker, JF, (1981), A Model of Discontinuous
+        Measurement Error and its Effects on the Probability Distribution of Flood
+        Discharge Measurements, <emphasis role="italic">Water Resources
+            Research</emphasis>, 17(5):1505-1509.</para>
+    
+    <para>Potter, KW and Walker, JF, (1985), An Empirical Study of Flood
+        Measurement Error, <emphasis role="italic">Water Resources.
+            Research</emphasis>, 21(3):403-406.</para>
+    
+    <para>Power, S, Tseitkin, F, Torok, S, Lavery, B, Dahni, R, and McAvaney,
+        B, (1998), Australian Temperature, Australian Rainfall and the Southern
+        Oscillation, 1910-1992: Coherent Variability and Recent Changes, <emphasis
+            role="italic">Australian Meteorology Magazine</emphasis>,
+        47(2):85-101.</para>
+    
+    <para>Power, S, Casey, T, Folland, C, Colman, A and Mehta, V, (1999),
+        Inter-Decadal Modulation of the Impact of ENSO on Australia, <emphasis
+            role="italic">Climate Dynamics</emphasis>, 15(5):319-324.</para>
+    
+    <para>Rosbjerg, D, Madsen, H and Rasmussen, PF, (1992), Prediction in
+        Partial Duration Series with Generalized Pareto-Distributed Exceedances,
+        <emphasis role="italic">Water Resources Research</emphasis>,
+        28(11):3001-3010.</para>
+    
+    <para>Rossi, F, Fiorentino, M and Versace, P, (1984), Two-Component
+        Extreme Value Distribution for Flood Frequency Analysis, <emphasis
+            role="italic">Water Resources Research</emphasis>, 20:847-856.</para>
+    
+    <para>Slack, JR, Wallis, JR and Matalas, NC, (1975), on the Value of
+        Information in Flood Frequency Analysis, <emphasis role="italic">Water
+            Resources. Research</emphasis>, 11(5):629-648.</para>
+    
+    <para>Stedinger, JR, (1983), Design Events with Specified Flood Risk,
+        <emphasis role="italic">Water Resources Research</emphasis>,
+        19(2):511-522.</para>
+    
+    <para>Stedinger, JR, Vogel, RM and Foufoula-Georgiou, E, (1993), Frequency
+        Analysis of Extreme Events in <emphasis role="italic">Handbook of
+            Hydrology</emphasis>, Maidment, DR (ed.), McGraw-Hill, New York, NY,
+        USA.</para>
+    
+    <para>Stedinger, JR and Cohn, TA, (1986), Flood Frequency Analysis with
+        Historical and Paleoflood Information, <emphasis role="italic">Water
+            Resources Research</emphasis>, 22:785-793.</para>
+    
+    <para>Stedinger, JR, (1998), Expected Probability and Annual Damage
+        Estimators, <emphasis role="italic">ASCE, Journal of Water Resources
+            Planning and Management</emphasis>, 123(2):125-35 (with discussion, LR
+        Beard (1998), <emphasis role="italic">ASCE, Journal of Water Resources
+            Planning and Management</emphasis>, 124(6):365-366).</para>
+    
+    <para>Tavares, LV, and da Silva, JE, (1983), Partial Series Method
+        Revisited, <emphasis role="italic">Journal of Hydrology</emphasis>,
+        64:1-14.</para>
+    
+    <para>Wallis, JR and Wood, EF, (1985), Relative Accuracy Log Pearson III
+        Procedures. <emphasis role="italic">ASCE, Journal of Hydraulic
+            Engineering</emphasis>, lll(7):1043-10<emphasis
+                role="bold">??</emphasis></para>
+    
+    <para>Wang, QJ, (1996), Direct Sample Estimators of L-Moments, <emphasis
+        role="italic">Water Resources Research</emphasis>,
+        32(12):3617-3619.</para>
+    
+    <para>Wang, QJ, (1997), LH Moments for Statistical Analysis of Extreme
+        Events, <emphasis role="italic">Water Resources Research</emphasis>,
+        33(12):2841-2848.</para>
+    
+    <para>Wang, QJ, (1998), Approximate Goodness-of-Fit Tests of Fitted
+        Generalized Extreme Value Distributions Using LH Moments, <emphasis
+            role="italic">Water Resources Research</emphasis>,
+        34(12):3497-3502.</para>
+    
+    <para>Wang, QJ, (1999), <emphasis role="bold">????</emphasis></para>
+    
+    <para>Wang, QJ, (2001), A Bayesian Joint Probability Approach for Flood
+        Record Augmentation, <emphasis role="italic">Water Resources
+            Research</emphasis>, 37(6):1707-1712.</para>
+    
+    <para>Waylen, P and Woo, M-K, (1982), Prediction of Annual Floods
+        Generated by Mixed Processes, <emphasis role="italic">Water Resources
+            Research</emphasis>, 18(4):1283-1286.</para>
+    
+    <para/>
+</section>
+
