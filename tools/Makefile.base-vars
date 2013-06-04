@@ -59,7 +59,10 @@ STYLESHEET = $(DIR)/styles.css
 # Customization hooks for xsltproc options
 XSLTPROC_OPTS = --xinclude --stringparam draft.mode "yes"
 HTML_XSLTPROC_OPTS = $(XSLTPROC_OPTS)
-FO_XSLTPROC_OPTS = $(XSLTPROC_OPTS) --param fop1.extensions 1 --stringparam paper.type A4
+FO_XSLTPROC_OPTS = $(XSLTPROC_OPTS) --param fop1.extensions 1 --stringparam paper.type A4 \
+    --stringparam draft.watermark.image $(XSL_DIR)/images/draft.png \
+    --stringparam bibliography.style "iso690" \
+    --stringparam bibliography.collection "$(DIR_SRC)/arr/common/bibliography_database.xml"
 
 # Override in locale-specific Makefile to localize the word in the 
 # auto-generated version file.
