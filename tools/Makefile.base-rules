@@ -1,0 +1,90 @@
+# See comment in ./Makefile.base-vars
+
+# I want to force the default to be valid only:
+valid: $(VERSION_SOURCE)
+	$(XMLLINT) --relaxng $(DIR_SRC)/docbook/rng/docbookxi.rng --noout --xinclude $(XML_SOURCE)
+
+# Grouping targets
+all: html html-chunk pdf ps epub
+all-html: html html-chunk
+install: install-html install-html-chunk install-pdf install-ps
+
+.PHONY: clean valid all html html-chunk pdf ps epub
+
+# Build targets
+$(VERSION_SOURCE): version
+version:
+	@if $(SVNVERSION) . > /dev/null; then \
+	  echo '<!ENTITY svn.version "'`$(SVNVERSION) .`'">' \
+	    > $(VERSION_SOURCE).tmp; \
+	  echo '<!ENTITY svn.l10n_revision "$(L10N_REVISION)">' \
+	    >> $(VERSION_SOURCE).tmp; \
+	else \
+	  echo '<!ENTITY svn.version "">' > $(VERSION_SOURCE).tmp; \
+	  echo '<!ENTITY svn.l10n_revision "">' > $(VERSION_SOURCE).tmp; \
+	fi
+	@echo '<!ENTITY svn.date "'`date`'">' >> $(VERSION_SOURCE).tmp
+	@if cmp -s $(VERSION_SOURCE) $(VERSION_SOURCE).tmp; then \
+	  rm $(VERSION_SOURCE).tmp; \
+	else \
+	  mv $(VERSION_SOURCE).tmp $(VERSION_SOURCE); \
+	fi
+
+
+# Note to PB: this works but needs to be refined to copy the images over
+html: valid $(HTML_TARGET)
+$(HTML_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
+	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) --output $(HTML_TARGET) \
+	  $(XSL_DIR)/html/docbook.xsl $(XML_SOURCE)
+
+# The trailing slash on the xsltproc --output option is essential to
+# output pages into the directory
+html-chunk: valid $(HTML_CHUNK_TARGET)
+$(HTML_CHUNK_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
+	mkdir -p $(HTML_CHUNK_DIR)
+	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) \
+           --output $(HTML_CHUNK_DIR)/ \
+	   $(XSL_DIR)/html/chunk.xsl $(XML_SOURCE)
+# The following or somthing similar will need to be added as we start to add
+# images to the HTML output.  Same for the single page html above
+#	cp $(STYLESHEET) $(HTML_CHUNK_DIR)
+#	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
+
+fo: $(FO_TARGET)
+$(FO_TARGET): valid $(XML_SOURCE) $(VERSION_SOURCE)
+	$(XSLTPROC) $(FO_XSLTPROC_OPTS) --output $(FO_TARGET) \
+	  $(XSL_DIR)/fo/docbook.xsl $(XML_SOURCE)
+
+pdf: $(PDF_TARGET)
+$(PDF_TARGET): $(FO_TARGET)
+	$(FOP) -fo $(FO_TARGET) -pdf $(PDF_TARGET)
+
+ps: $(PS_TARGET)
+$(PS_TARGET): $(FO_TARGET) $(IMAGES)
+	$(FOP) -fo $(FO_TARGET) -ps $(PS_TARGET)
+
+# Requires at least docbook-xsl-1.74
+epub: $(EPUB_TARGET)
+$(EPUB_TARGET): $(XML_SOURCE) $(VERSION_SOURCE)
+	if [ -x /usr/bin/dbtoepub ] ; then \
+	  /usr/bin/dbtoepub -v -o $(EPUB_TARGET) $(XML_SOURCE) ; \
+	else \
+	  $(XSL_DIR)/epub/bin/dbtoepub -v -o $(EPUB_TARGET) $(XML_SOURCE) ; \
+	fi
+
+mobi: $(MOBI_TARGET)
+$(MOBI_TARGET): $(EPUB_TARGET)
+	if [ -x /usr/bin/ebook-convert ] ; then \
+	  /usr/bin/ebook-convert $(EPUB_TARGET) $(MOBI_TARGET) \
+            --dont-justify --cover book/images/ebook-cover.jpg -v ; \
+	else \
+	  $(TOOLS_DIR)/xsl/epub/bin/ebook-convert $(EPUB_TARGET) $(MOBI_TARGET) \
+            --dont-justify --cover book/images/ebook-cover.jpg -v ; \
+	fi
+
+# Clean targets
+clean:
+	rm -f $(VERSION_SOURCE) $(HTML_TARGET)
+	rm -f $(FO_TARGET) $(PDF_TARGET) $(PS_TARGET) $(EPUB_TARGET) $(MOBI_TARGET)
+	rm -rf $(HTML_CHUNK_DIR)
+

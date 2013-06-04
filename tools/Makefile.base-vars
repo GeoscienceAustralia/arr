@@ -1,0 +1,69 @@
+# This file -  Makefile.base-vars - together with the file Makefile.base-rules,
+# make up a reusable buildsystem for DocBook XML books.
+# The split into two files is required because of the nature of Make variables:
+# In the case of variables used in commands, expansion occurs when the commands
+# are executed, so values can be overridden by defining a new value after the
+# rule definition - BUT in the case of variables used to specify targets and
+# sources, expansion occurs when Make parses the rule.  Therefore, any override
+# must take place BEFORE the rule definition.  Since this Makefile fragment
+# wishes to both provide defaults and allow overriding of target and source
+# file names, it is necessary to place the default variable definitions in
+# one file, and the rules in another, so that overrides may be specified
+# after the defaults, but before the rules - like this:
+#
+#   include ../tools/Makefile.base-vars
+#   NAME = my-book
+#   DIR = my-book-dir
+#   include ../tools/Makefile.base-rules
+#
+# Note that this is a Makefile fragment intended for inclusion.  As a result,
+# all relative paths contained within are relative to including Makefile's
+# directory, not to this fragment's directory.  The TOOLS_DIR and DIR variables
+# should be overridden if necessary to ensure proper paths are used.
+
+# Paths which you may wish to customize:
+XSLTPROC = xsltproc
+XMLLINT = xmllint
+FOP = /Users/pbrady/Downloads/fop-1.1/fop
+MKDIR = mkdir -p
+SVNVERSION = svnversion
+DIR_BASE = /Users/pbrady/ncwe/arr_docs
+DIR_SRC = $(DIR_BASE)/pb_initial_working
+DIR_BUILD = $(DIR_BASE)/build
+
+# You should not normally need to edit anything below here.
+SHELL = /bin/sh
+
+NAME = OVERRIDE_ME_WITH_THE_SHORT_FILESYSTEM_NAME_OF_YOUR_BOOK
+DIR = .
+IMAGES =
+TOOLS_DIR = ../tools
+XSL_DIR = $(DIR_SRC)/stylesheets-ns
+OUTNAME = $(NAME)
+
+HTML_CHUNK_DIR = $(DIR_BUILD)/html-chunk
+HTML_TARGET = $(DIR_BUILD)/$(OUTNAME).html
+# In the HTML chunk build, index.html is created last, so serves as an 
+# acceptable timestamp file for the entire multi-file output.
+HTML_CHUNK_TARGET = $(HTML_CHUNK_DIR)/index.html
+PDF_TARGET = $(DIR_BUILD)/$(OUTNAME).pdf
+PS_TARGET = $(DIR_BUILD)/$(OUTNAME).ps
+FO_TARGET = $(DIR_BUILD)/$(OUTNAME).fo
+EPUB_TARGET = $(DIR_BUILD)/$(OUTNAME).epub
+MOBI_TARGET = $(DIR_BUILD)/$(OUTNAME).mobi
+XML_SOURCE = $(NAME).xml
+VERSION_SOURCE = version.xml
+STYLESHEET = $(DIR)/styles.css
+
+
+# Customization hooks for xsltproc options
+XSLTPROC_OPTS = --xinclude --stringparam draft.mode "yes"
+HTML_XSLTPROC_OPTS = $(XSLTPROC_OPTS)
+FO_XSLTPROC_OPTS = $(XSLTPROC_OPTS) --param fop1.extensions 1 --stringparam paper.type A4 \
+    --stringparam draft.watermark.image $(XSL_DIR)/images/draft.png \
+    --stringparam bibliography.style "iso690" \
+    --stringparam bibliography.collection "$(DIR_SRC)/arr/common/bibliography_database.xml"
+
+# Override in locale-specific Makefile to localize the word in the 
+# auto-generated version file.
+L10N_REVISION = Revision
