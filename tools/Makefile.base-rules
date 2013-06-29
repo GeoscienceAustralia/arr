@@ -2,7 +2,7 @@
 
 # I want to force the default to be valid only:
 valid: $(VERSION_SOURCE)
-	$(XMLLINT) --relaxng $(DIR_SRC)/docbook/rng/docbookxi.rng --noout --xinclude $(XML_SOURCE)
+	$(XMLLINT) --relaxng $(PATH_RNG)/docbookxi.rng --noout --xinclude $(XML_SOURCE)
 
 # Grouping targets
 all: html html-chunk pdf ps epub
