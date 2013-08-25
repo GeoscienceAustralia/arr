@@ -10,14 +10,14 @@ L10N_REVISION = r
 #####################################################
 # Default and utility targets
 ####################
-# Default target: validate the XML
+# Default target: phony target to make all
+all: draft final
+
+####################
+# Validate the XML
 valid: arr_style_guide.xml
 	/usr/bin/xmllint --relaxng ../../docbook/rng/docbookxi.rng --noout \
     --xinclude arr_style_guide.xml
-    
-####################
-# Phony target to make all
-all: draft final
 
 ####################
 # Clean up
