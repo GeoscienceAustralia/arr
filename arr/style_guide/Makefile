@@ -22,7 +22,7 @@ all: draft final
 ####################
 # Clean up
 clean:
-	rm arr.titlepage.templates.xsl \
+	rm arr_title_fo.xsl \
     arr_style_guide_draft.fo arr_style_guide_draft.pdf \
     arr_style_guide_final.fo arr_style_guide_final.pdf
 
@@ -42,7 +42,7 @@ version:
 # Draft and Final PDF Outputs
 ####################
 # Draft PDF Output:
-draft: valid arr_style_guide_draft.fo
+draft: valid arr_title_fo.xsl arr_style_guide_draft.fo
 	/Users/pbrady/Downloads/fop-1.1/fop \
     -fo arr_style_guide_draft.fo -pdf arr_style_guide_draft.pdf
 
@@ -53,7 +53,7 @@ arr_style_guide_draft.fo: arr_style_fo_draft.xsl
     
 ####################
 # Final PDF Output:
-final: valid arr_style_guide_final.fo
+final: valid arr_title_fo.xsl arr_style_guide_final.fo
 	/Users/pbrady/Downloads/fop-1.1/fop \
     -fo arr_style_guide_final.fo -pdf arr_style_guide_final.pdf
 
@@ -64,7 +64,7 @@ arr_style_guide_final.fo: arr_style_fo.xsl
 
 ####################
 # Common PDF Elements
-arr.titlepage.templates.xsl: arr.titlepage.templates.xml
-	xsltproc --output arr.titlepage.templates.xsl \
+arr_title_fo.xsl: arr_title_fo.xml
+	xsltproc --output arr_title_fo.xsl \
     ../../stylesheets-ns/template/titlepage.xsl \
-    ./arr.titlepage.templates.xml
+    ./arr_title_fo.xml

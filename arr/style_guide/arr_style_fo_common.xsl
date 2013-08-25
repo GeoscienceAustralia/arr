@@ -8,7 +8,7 @@
     <xsl:import href="../../stylesheets-ns/fo/docbook.xsl" />
     
     <!-- Import the Custom Title Declarations -->
-    <!-- <xsl:import href="./arr.titlepage.templates.xsl" />  -->
+    <xsl:import href="./arr_title_fo.xsl" />
     
     <!-- Import the custom equation -->
     <!-- <xsl:import href="./arr_style_equations.xsl" />  -->
