@@ -1,17 +1,15 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format">
     <!-- This style sheet contains the common elements for ARR -->
     
     <!-- Global Imports -->
-    <!-- Import the normal FO stylesheet 
+    <!-- Import the normal FO stylesheet
      This path interacts with a catalog so may need to change -->
     <xsl:import href="../../stylesheets-ns/fo/docbook.xsl" />
     
     <!-- Import the Custom Title Declarations -->
     <xsl:import href="./arr_title_fo.xsl" />
-    
-    <!-- Import the custom equation -->
-    <!-- <xsl:import href="./arr_style_equations.xsl" />  -->
     
     
     
@@ -76,6 +74,9 @@
     <!-- Point to the common XML bibliogrpahy database -->
     <xsl:param name="bibliography.collection" select="'../common/bibliography_database.xml'"/>
     
+    
+    
+    <!-- titles of figures and tables -->
     <xsl:param name="formal.title.placement">
         figure after
         example before
@@ -92,5 +93,33 @@
         <xsl:attribute name="space-after.maximum">0.8em</xsl:attribute>
         <xsl:attribute name="text-align">center</xsl:attribute>
     </xsl:attribute-set>
+    
+    
+    
+    <!-- Equations centred with number on the right -->
+    <xsl:template name="equation.without.title">
+        <!-- Lay out equation and number next to equation using a table -->
+        <fo:table table-layout="fixed" width="100%">
+            <fo:table-column column-width="proportional-column-width(15)"/>
+            <fo:table-column column-width="proportional-column-width(1)"/>
+            <fo:table-body start-indent="0pt" end-indent="0pt">
+                <fo:table-row>
+                    <fo:table-cell padding-end="6pt" text-align="center">
+                        <fo:block>
+                            <xsl:apply-templates/>
+                        </fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell xsl:use-attribute-sets="equation.number.properties">
+                        <fo:block>
+                            <xsl:text>(</xsl:text>
+                            <xsl:apply-templates select="." mode="label.markup"/>
+                            <xsl:text>)</xsl:text>
+                        </fo:block>
+                    </fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+        </fo:table>
+     </xsl:template>
+
     
 </xsl:stylesheet>
