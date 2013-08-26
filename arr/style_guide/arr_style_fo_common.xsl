@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    xmlns:d="http://docbook.org/ns/docbook">
     <!-- This style sheet contains the common elements for ARR -->
     
     <!-- Global Imports -->
@@ -120,6 +121,169 @@
             </fo:table-body>
         </fo:table>
      </xsl:template>
+    
+    
+    <!-- Default Table Formatting -->
+    <xsl:template name="table.row.properties">
+        <xsl:variable name="rownum">
+            <xsl:number from="d:tbody" count="d:tr"/>
+        </xsl:variable>
+        
+        
+        <xsl:choose>
+            <xsl:when test="name(..) = 'tbody'">
+                <xsl:choose>
+                    <xsl:when test="$rownum mod 2">
+                        <xsl:attribute name="background-color">#d9d9d9</xsl:attribute>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:attribute name="background-color">#eeeeee</xsl:attribute>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Header and Footer Changes:
+       - Move the "Draft" marks to the footer"
+     -->
+    <xsl:template name="header.content">
+        <xsl:param name="pageclass" select="''"/>
+        <xsl:param name="sequence" select="''"/>
+        <xsl:param name="position" select="''"/>
+        <xsl:param name="gentext-key" select="''"/>
+        
+        <!--
+         <fo:block>
+         <xsl:value-of select="$pageclass"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$sequence"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$position"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$gentext-key"/>
+         </fo:block>
+         -->
+        
+        <fo:block>
+            
+            <!-- sequence can be odd, even, first, blank -->
+            <!-- position can be left, center, right -->
+            <xsl:choose>
+                <xsl:when test="$sequence = 'blank'">
+                    <!-- nothing -->
+                </xsl:when>
+                
+                <xsl:when test="$position='left'">
+                    <!-- Same for odd, even, empty, and blank sequences -->
+                    <!--<xsl:call-template name="draft.text"/>-->
+                </xsl:when>
+                
+                <xsl:when test="($sequence='odd' or $sequence='even') and $position='center'">
+                    <xsl:if test="$pageclass != 'titlepage'">
+                        <xsl:choose>
+                            <xsl:when test="ancestor::d:book and ($double.sided != 0)">
+                                <fo:retrieve-marker retrieve-class-name="section.head.marker"
+                                retrieve-position="first-including-carryover"
+                                retrieve-boundary="page-sequence"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="." mode="titleabbrev.markup"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                </xsl:when>
+                
+                <xsl:when test="$position='center'">
+                    <!-- nothing for empty and blank sequences -->
+                </xsl:when>
+                
+                <xsl:when test="$position='right'">
+                    <!-- Same for odd, even, empty, and blank sequences -->
+                    <!--<xsl:call-template name="draft.text"/>-->
+                </xsl:when>
+                
+                <xsl:when test="$sequence = 'first'">
+                    <!-- nothing for first pages -->
+                </xsl:when>
+                
+                <xsl:when test="$sequence = 'blank'">
+                    <!-- nothing for blank pages -->
+                </xsl:when>
+            </xsl:choose>
+        </fo:block>
+    </xsl:template>
+    <xsl:template name="footer.content">
+        <xsl:param name="pageclass" select="''"/>
+        <xsl:param name="sequence" select="''"/>
+        <xsl:param name="position" select="''"/>
+        <xsl:param name="gentext-key" select="''"/>
+        
+        <!--
+         <fo:block>
+         <xsl:value-of select="$pageclass"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$sequence"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$position"/>
+         <xsl:text>, </xsl:text>
+         <xsl:value-of select="$gentext-key"/>
+         </fo:block>
+         -->
+        
+        <fo:block>
+            <!-- pageclass can be front, body, back -->
+            <!-- sequence can be odd, even, first, blank -->
+            <!-- position can be left, center, right -->
+            <xsl:choose>
+                <xsl:when test="$pageclass = 'titlepage'">
+                    <!-- nop; no footer on title pages -->
+                </xsl:when>
+                
+                <xsl:when test="$double.sided != 0 and $sequence = 'even'
+                    and $position='left'">
+                    <fo:page-number/>
+                </xsl:when>
+                
+                <xsl:when test="$double.sided != 0 and ($sequence = 'odd' or $sequence = 'first')
+                    and $position='right'">
+                    <fo:page-number/>
+                </xsl:when>
+                
+                <xsl:when test="$double.sided = 0 and $position='center'">
+                    <fo:page-number/>
+                </xsl:when>
+                
+                <xsl:when test="$double.sided = 0 and $position='left'">
+                    <!-- Same for odd, even, empty, and blank sequences -->
+                    <xsl:call-template name="draft.text"/>
+                </xsl:when>
+                
+                <xsl:when test="$sequence='blank'">
+                    <xsl:choose>
+                        <xsl:when test="$double.sided != 0 and $position = 'left'">
+                            <fo:page-number/>
+                        </xsl:when>
+                        <xsl:when test="$double.sided = 0 and $position = 'center'">
+                            <fo:page-number/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- nop -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                
+                <xsl:when test="$double.sided = 0 and $position='right'">
+                    <!-- Same for odd, even, empty, and blank sequences -->
+                    <xsl:call-template name="draft.text"/>
+                </xsl:when>
+                
+                <xsl:otherwise>
+                    <!-- nop -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </fo:block>
+    </xsl:template>
 
     
 </xsl:stylesheet>
