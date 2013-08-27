@@ -123,4 +123,55 @@
         </t:titlepage-before>
     </t:titlepage>
     
+    <!-- ==================================================================== -->
+    
+    <t:titlepage t:element="chapter" t:wrapper="fo:block"
+        font-family="{$title.fontset}">
+        <t:titlepage-content t:side="recto" margin-left="{$title.margin.left}">
+            <title t:named-template="component.title"
+            param:node="ancestor-or-self::chapter[1]"
+            font-size="&hsize5;"
+            font-weight="bold"/>
+            
+            <subtitle space-before="0.5em"
+            font-style="italic"
+            font-size="&hsize2;"
+            font-weight="bold"/>
+            
+            <corpauthor  space-before="0.5em"
+            space-after="0.5em"
+            font-size="&hsize2;"/>
+            
+            <authorgroup space-before="0.5em"
+            space-after="0.5em"
+            font-size="&hsize2;"/>
+            
+            <author      space-before="0.5em"
+            space-after="0.5em"
+            font-size="&hsize4;"/>
+            
+            <othercredit/>
+            <releaseinfo/>
+            <copyright/>
+            <legalnotice/>
+            <pubdate/>
+            <revision/>
+            <revhistory/>
+            <abstract/>
+            <itermset/>
+        </t:titlepage-content>
+        
+        <t:titlepage-content t:side="verso">
+        </t:titlepage-content>
+        
+        <t:titlepage-separator>
+        </t:titlepage-separator>
+        
+        <t:titlepage-before t:side="recto">
+        </t:titlepage-before>
+        
+        <t:titlepage-before t:side="verso">
+        </t:titlepage-before>
+    </t:titlepage>
+    
 </t:templates>

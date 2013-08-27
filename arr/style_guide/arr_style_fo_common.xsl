@@ -314,4 +314,28 @@
         </fo:block>
     </xsl:template>
     
+    <!-- Author Template -->
+    <xsl:template match="d:author" mode="titlepage.mode">
+        <fo:block text-align="center">
+            <xsl:call-template name="anchor"/>
+            <xsl:choose>
+                <xsl:when test="d:orgname">
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="person.name"/>
+                    <xsl:if test="d:affiliation/d:orgname">
+                        <fo:block font-size="12pt" font-weight="normal">
+                            <xsl:apply-templates select="d:affiliation/d:orgname" mode="titlepage.mode"/>
+                        </fo:block>
+                    </xsl:if>
+                    <xsl:if test="d:email|d:affiliation/d:address/d:email">
+                        <xsl:text> </xsl:text>
+                        <xsl:apply-templates select="(d:email|d:affiliation/d:address/d:email)[1]"/>
+                    </xsl:if>
+                </xsl:otherwise>
+            </xsl:choose>
+        </fo:block>
+    </xsl:template>
+    
 </xsl:stylesheet>
