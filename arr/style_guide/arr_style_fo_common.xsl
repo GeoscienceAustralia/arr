@@ -12,6 +12,9 @@
     <!-- Import the Custom Title Declarations -->
     <xsl:import href="./arr_title_fo.xsl" />
     
+    <!-- Import the Common ARR Style Elements -->
+    <xsl:import href="arr_style_common.xsl" />
+    
     
     
     <!-- Define some parameters first -->
