@@ -8,5 +8,8 @@
      This path interacts with a catalog so may need to change -->
     <xsl:import href="arr_style_fo_common.xsl" />
     
+    <!-- Import the Common ARR Style Elements -->
+    <xsl:import href="arr_style_common.xsl" />
+    
     
 </xsl:stylesheet>

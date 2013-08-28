@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:d="http://docbook.org/ns/docbook">
-    <!-- This style sheet contains the common elements for ARR -->
+    <!-- This style sheet contains the common elements for ARR FO Processing -->
     
     <!-- Global Imports -->
     <!-- Import the normal FO stylesheet
