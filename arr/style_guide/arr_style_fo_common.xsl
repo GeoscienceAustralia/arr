@@ -180,6 +180,9 @@
                 <xsl:when test="$position='left'">
                     <!-- Same for odd, even, empty, and blank sequences -->
                     <!--<xsl:call-template name="draft.text"/>-->
+                    <xsl:call-template name="arr.draft.status">
+                    	<xsl:with-param name="position" select="$position"/>
+                    </xsl:call-template>
                 </xsl:when>
                 
                 <xsl:when test="($sequence='odd' or $sequence='even') and $position='center'">
@@ -204,6 +207,9 @@
                 <xsl:when test="$position='right'">
                     <!-- Same for odd, even, empty, and blank sequences -->
                     <!--<xsl:call-template name="draft.text"/>-->
+                    <xsl:call-template name="arr.draft.status">
+                    	<xsl:with-param name="position" select="$position"/>
+                    </xsl:call-template>
                 </xsl:when>
                 
                 <xsl:when test="$sequence = 'first'">
@@ -370,6 +376,25 @@
                 </xsl:otherwise>
             </xsl:choose>
         </fo:block>
+    </xsl:template>
+    
+    
+    <!-- Template to insert the status of the document -->
+    <xsl:template name="arr.draft.status">
+        <xsl:param name="position" select="''"/>
+        <xsl:choose>
+            <xsl:when test="$draft.mode = 'yes'">
+                <xsl:choose>
+                    <xsl:when test="$position='left' and ancestor::d:book/@status">
+                        <xsl:text>Book Status: </xsl:text><xsl:value-of select="ancestor::d:book/@status"/>
+                    </xsl:when>
+
+                    <xsl:when test="$position='right' and ancestor-or-self::d:chapter/@status">
+                        <xsl:text>Chapter Status: </xsl:text><xsl:value-of select="ancestor-or-self::d:chapter/@status"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
