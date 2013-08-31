@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:d="http://docbook.org/ns/docbook">
+    xmlns:d="http://docbook.org/ns/docbook"
+    xmlns:date="http://exslt.org/dates-and-times">
     <!-- This style sheet contains the common elements for ARR FO Processing -->
     
     <!-- Global Imports -->
@@ -266,6 +267,15 @@
                 <xsl:when test="$double.sided = 0 and $position='left'">
                     <!-- Same for odd, even, empty, and blank sequences -->
                     <xsl:call-template name="draft.text"/>
+                    <xsl:choose>
+                        <xsl:when test="$draft.mode = 'yes'">
+                            <xsl:text> Printed: </xsl:text>
+                            <xsl:call-template name="datetime.format">
+                                <xsl:with-param name="date" select="date:date-time()"/>
+                                <xsl:with-param name="format" select="'Y-m-d'"/>
+                            </xsl:call-template>
+                        </xsl:when>
+                    </xsl:choose>
                 </xsl:when>
                 
                 <xsl:when test="$sequence='blank'">
