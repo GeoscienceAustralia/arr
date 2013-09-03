@@ -20,7 +20,7 @@ ARR_STYLESHEET_PATH=./style_guide
 XMLLINT_OPTS=--xinclude --relaxng
 XSLTPROC_OPTS=--xinclude --output
 
-.PHONY: valid
+.PHONY: valid all
 .PHONY: draft draft_pdf
 .PHONY: clean
 
@@ -28,11 +28,15 @@ XSLTPROC_OPTS=--xinclude --output
 # Default and utility targets
 ####################
 # Default target: phony target to make draft PDFs
-draft: valid
+draft: valid draft_pdf books_draft chapters_draft
 
 # Clean up:
-clean:
-	rm arr_draft.fo arr_draft.pdf arr_draft_book?.fo arr_draft_book?.pdf
+clean: books_draft_clean
+	rm arr_draft.fo arr_draft.pdf
+books_draft_clean: books_makefile
+	make -f Makefile.book clean_all_draft
+books_final_clean: books_makefile
+	make -f Makefile.book clean_all_final
 
 ####################
 # Validate the XML
@@ -45,9 +49,6 @@ valid: ARR.xml
 # Draft Versions
 # As a first approximation this assumes that the custom stylesheet is already
 # compiled in the stylesheet directory.  This should be fixed.
-draft: valid draft_pdf draft_pdf_book1 draft_pdf_book2 draft_pdf_book3 \
-	draft_pdf_book4 draft_pdf_book5 draft_pdf_book6 draft_pdf_book7 \
-    draft_pdf_book8 draft_pdf_book9
 
 # The entire book:
 draft_pdf: arr_draft.fo
@@ -56,74 +57,14 @@ arr_draft.fo:
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft.fo \
 	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
     
-# Book 1
-draft_pdf_book1: arr_draft_book1.fo
-	$(FOP) -fo arr_draft_book1.fo -pdf arr_draft_book1.pdf
-arr_draft_book1.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book1.fo \
-    --stringparam rootid book1 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 2
-draft_pdf_book2: arr_draft_book2.fo
-	$(FOP) -fo arr_draft_book2.fo -pdf arr_draft_book2.pdf
-arr_draft_book2.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book2.fo \
-    --stringparam rootid book2 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
+# Individual Books
+books_makefile:
+		xsltproc --xinclude -o Makefile.book build_books.xsl ARR.xml
+books_draft: books_makefile valid
+	make -f Makefile.book all
     
-# Book 3
-draft_pdf_book3: arr_draft_book3.fo
-	$(FOP) -fo arr_draft_book3.fo -pdf arr_draft_book3.pdf
-arr_draft_book3.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book3.fo \
-    --stringparam rootid book3 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-    
-# Book 4
-draft_pdf_book4: arr_draft_book4.fo
-	$(FOP) -fo arr_draft_book4.fo -pdf arr_draft_book4.pdf
-arr_draft_book4.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book4.fo \
-    --stringparam rootid book4 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 5
-draft_pdf_book5: arr_draft_book5.fo
-	$(FOP) -fo arr_draft_book5.fo -pdf arr_draft_book5.pdf
-arr_draft_book5.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book5.fo \
-    --stringparam rootid book5 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 6
-draft_pdf_book6: arr_draft_book6.fo
-	$(FOP) -fo arr_draft_book6.fo -pdf arr_draft_book6.pdf
-arr_draft_book6.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book6.fo \
-    --stringparam rootid book6 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 7
-draft_pdf_book7: arr_draft_book7.fo
-	$(FOP) -fo arr_draft_book7.fo -pdf arr_draft_book7.pdf
-arr_draft_book7.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book7.fo \
-    --stringparam rootid book7 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 8
-draft_pdf_book8: arr_draft_book8.fo
-	$(FOP) -fo arr_draft_book8.fo -pdf arr_draft_book8.pdf
-arr_draft_book8.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book8.fo \
-    --stringparam rootid book8 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
-
-# Book 9
-draft_pdf_book9: arr_draft_book9.fo
-	$(FOP) -fo arr_draft_book9.fo -pdf arr_draft_book9.pdf
-arr_draft_book9.fo:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft_book9.fo \
-    --stringparam rootid book9 \
-	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
+# Individual Chapters
+chapters_makefile:
+		xsltproc --xinclude -o Makefile.chapter build_chapters.xsl ARR.xml
+chapters_draft: chapters_makefile valid
+	make -f Makefile.chapter all
