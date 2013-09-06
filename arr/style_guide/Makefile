@@ -11,11 +11,11 @@ L10N_REVISION = r
 # Default and utility targets
 ####################
 # Default target: phony target to make all
-all: draft final
+all: draft
 
 ####################
 # Validate the XML
-valid: arr_style_guide.xml
+valid:
 	/usr/bin/xmllint --relaxng ../../docbook/rng/docbookxi.rng --noout \
     --xinclude arr_style_guide.xml
 
@@ -23,26 +23,23 @@ valid: arr_style_guide.xml
 # Clean up
 clean:
 	rm arr_title_fo.xsl \
-    arr_style_guide_draft.fo arr_style_guide_draft.pdf \
-    arr_style_guide_final.fo arr_style_guide_final.pdf
+	arr_style_guide_draft.fo arr_style_guide_draft.pdf \
+	arr_style_guide_final.fo arr_style_guide_final.pdf \
+	version.xml
 
 ####################
 # Create the version control template
-version:
-	@echo '<!DOCTYPE t:templates [' > version.tmp
-	@echo '<!ENTITY svn.version "'`svnversion .`'">' >> version.tmp
-	@echo '<!ENTITY svn.l10n_revision "r">' >> version.tmp
-	@echo '<!ENTITY svn.date "'`date`'">' >> version.tmp
-	@echo ']>' >> version.tmp
-	@svn log --xml --verbose arr_style_guide.xml >> version.tmp
-	@xsltproc --output version.xml svnlog2docbook.xsl version.tmp
+version.xml:
+	svn log --xml > tmp.xml
+	xsltproc --output version.xml svnlog2db.xsl tmp.xml
+	rm tmp.xml
 
 
 #####################################################
 # Draft and Final PDF Outputs
 ####################
 # Draft PDF Output:
-draft: valid arr_title_fo.xsl arr_style_guide_draft.fo
+draft: version.xml valid arr_title_fo.xsl arr_style_guide_draft.fo
 	/Users/pbrady/Downloads/fop-1.1/fop \
     -fo arr_style_guide_draft.fo -pdf arr_style_guide_draft.pdf
 
