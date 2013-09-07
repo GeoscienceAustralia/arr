@@ -11,7 +11,7 @@ L10N_REVISION = r
 # Default and utility targets
 ####################
 # Default target: phony target to make all
-all: draft
+all: draft final
 
 ####################
 # Validate the XML
@@ -50,9 +50,12 @@ arr_style_guide_draft.fo: arr_style_fo_draft.xsl
     
 ####################
 # Final PDF Output:
-final: valid arr_title_fo.xsl arr_style_guide_final.fo
+final: clean_version valid arr_title_fo.xsl arr_style_guide_final.fo
 	/Users/pbrady/Downloads/fop-1.1/fop \
     -fo arr_style_guide_final.fo -pdf arr_style_guide_final.pdf
+
+clean_version:
+	rm -f version.xml
 
 arr_style_guide_final.fo: arr_style_fo.xsl
 	xsltproc --xinclude \
