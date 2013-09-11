@@ -1,0 +1,16 @@
+#!/bin/bash
+set -o nounset
+# set -o xtrace
+# set -o verbose
+# set -o noexec
+# Simple script to build the additional make files for the books and chapters
+# This is a bit clunky but was the simplest that I could figure to easily
+# change when the book and chapter layout changed.
+#
+# Peter Brady, peter.brady@uts.edu.au, 2013-09-12
+
+# Book:
+xsltproc --xinclude -o Makefile.book build_books.xsl ARR.xml
+
+# Chapters:
+xsltproc --xinclude -o Makefile.chapter build_chapters.xsl ARR.xml

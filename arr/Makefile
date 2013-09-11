@@ -4,6 +4,11 @@
 #L10N_REVISION = r
 
 #####################################################
+# Inlude the book and chapter makefiles
+include Makefile.book
+include Makefile.chapter
+
+#####################################################
 # Set some variables:
 # A localisation parameter of the revision number from SVN:
 L10N_REVISION = r
@@ -20,23 +25,29 @@ ARR_STYLESHEET_PATH=./style_guide
 XMLLINT_OPTS=--xinclude --relaxng
 XSLTPROC_OPTS=--xinclude --output
 
-.PHONY: valid all
-.PHONY: draft draft_pdf
-.PHONY: clean
+.PHONY: valid
+.PHONY: draft pdf_draft
+.PHONY: clean clean_draft
 
 #####################################################
 # Default and utility targets
 ####################
 # Default target: phony target to make draft PDFs
-draft: valid draft_pdf books_draft chapters_draft
+draft: valid arr_draft.pdf all_book_pdf_draft all_chapter_pdf_draft
 
+final: valid arr.pdf all_book_pdf_final all_chapter_pdf_final
+
+all: valid draft final
+
+####################
 # Clean up:
-clean: books_draft_clean
-	rm arr_draft.fo arr_draft.pdf
-books_draft_clean: books_makefile
-	make -f Makefile.book clean_all_draft
-books_final_clean: books_makefile
-	make -f Makefile.book clean_all_final
+clean: clean_draft clean_final
+
+clean_draft: clean_chapter_pdf_final clean_book_pdf_draft
+	rm -f arr_draft.fo arr_draft.pdf
+    
+clean_final:
+	rm -f arr.pdf arr.fo
 
 ####################
 # Validate the XML
@@ -51,20 +62,16 @@ valid: ARR.xml
 # compiled in the stylesheet directory.  This should be fixed.
 
 # The entire book:
-draft_pdf: arr_draft.fo
+arr_draft.pdf: arr_draft.fo
 	$(FOP) -fo arr_draft.fo -pdf arr_draft.pdf
 arr_draft.fo:
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft.fo \
 	$(ARR_STYLESHEET_PATH)/arr_style_fo_draft.xsl ARR.xml
     
 # Individual Books
-books_makefile:
-		xsltproc --xinclude -o Makefile.book build_books.xsl ARR.xml
 books_draft: books_makefile valid
 	make -f Makefile.book all
     
 # Individual Chapters
-chapters_makefile:
-		xsltproc --xinclude -o Makefile.chapter build_chapters.xsl ARR.xml
 chapters_draft: chapters_makefile valid
 	make -f Makefile.chapter all
