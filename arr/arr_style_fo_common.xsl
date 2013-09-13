@@ -8,7 +8,7 @@
     <!-- Global Imports -->
     <!-- Import the normal FO stylesheet
      This path interacts with a catalog so may need to change -->
-    <xsl:import href="../../stylesheets-ns/fo/docbook.xsl" />
+    <xsl:import href="../stylesheets-ns/fo/docbook.xsl" />
     
     <!-- Import the Custom Title Declarations -->
     <xsl:import href="./arr_title_fo.xsl" />
@@ -71,15 +71,6 @@
     <xsl:param name="section.autolabel" select="1"/>
     <xsl:param name="section.label.includes.component.label" select="1"/>
     
-    
-    
-    <!-- BIBLIOGRAPHY DETAILS -->
-    <!-- Force the bibliography to ISO690 style -->
-    <xsl:param name="bibliography.style" select="'iso690'"/>
-    <!-- Point to the common XML bibliogrpahy database -->
-    <xsl:param name="bibliography.collection" select="'../common/bibliography_database.xml'"/>
-    <xsl:param name="bibliography.numbered" select="1"/>
-    <xsl:param name="bibliography.style" select="'iso690'"/>
     
     
     

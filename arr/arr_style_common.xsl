@@ -4,6 +4,14 @@
     xmlns:d="http://docbook.org/ns/docbook">
     
     
+    <!-- BIBLIOGRAPHY DETAILS -->
+    <!-- Force the bibliography to ISO690 style -->
+    <xsl:param name="bibliography.style" select="'iso690'"/>
+    <!-- Point to the common XML bibliogrpahy database -->
+    <xsl:param name="bibliography.collection" select="'common/bibliography_database.xml'"/>
+    <xsl:param name="bibliography.numbered" select="1"/>
+    <xsl:param name="bibliography.style" select="'iso690'"/>
+    
     <!-- Local customisation to include the book number in the
      equation number -->
     <xsl:template match="d:equation" mode="label.markup">
