@@ -400,4 +400,11 @@
         </xsl:choose>
     </xsl:template>
     
+    
+    <!-- Landscape Figures -->
+    <xsl:template match="d:figure[processing-instruction('landscapeFigure')]">
+        <fo:block-container reference-orientation="90">
+            <xsl:apply-imports/>
+        </fo:block-container>
+    </xsl:template>
 </xsl:stylesheet>
