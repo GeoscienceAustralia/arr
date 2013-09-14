@@ -9,10 +9,10 @@
     xmlns:db="http://docbook.org/ns/docbook"
     status ="Draft for Review">
     <info> <title>Baseflow Models</title>
+        
+        <xi:include href="../../common/authors/hill_peter.xml" />
+        <xi:include href="../../common/authors/brown_rachel.xml" /></info>
     
-    <xi:include href="../../common/authors/hill_peter.xml" />
-    <xi:include href="../../common/authors/brown_rachel.xml" /></info>
-
     <section>
         <title>INTRODUCTION</title>
         
@@ -64,8 +64,8 @@
             </listitem>
         </itemizedlist>
         
-        <para>As discussed earlier in Book 1 of Australian Rainfall and Runoff and
-            by Ball <emphasis>et al.</emphasis> (2011), a common approach to
+        <para>As discussed earlier in <xref linkend="book1"/><!--Book 1 of Australian Rainfall and Runoff and
+                                                              by Ball <emphasis>et al.</emphasis> (2011)-->, a common approach to
             generation of the data necessary for prediction of design flood
             characteristics is the use of catchment modelling systems. These catchment
             modelling systems focus on the simulation of those processes influencing
@@ -90,12 +90,12 @@
             hydrograph will typically be generated that excludes baseflow. It is
             necessary to estimate the baseflow contribution in order to completely
             represent the total event peak and volume, and to generate a total
-            streamflow hydrograph. This concept is represented in Figure 1. This
+            streamflow hydrograph. This concept is represented in <xref linkend="figure_28340800"/>. This
             document provides a technique for quantifying baseflow contribution to
             design flood estimates.</para>
         
         <para>To support this, it is relevant to identify a number of features of
-            an event hydrograph, shown in Figure 1:</para>
+            an event hydrograph, shown in <xref linkend="figure_28340800"/>:</para>
         
         <itemizedlist>
             <listitem>
@@ -119,7 +119,7 @@
             practitioners for the design flood event.</para>
         
         <para>Key baseflow features are also presented for the same event in
-            Figure 1:</para>
+            <xref linkend="figure_28340800"/>:</para>
         
         <itemizedlist>
             <listitem>
@@ -140,9 +140,9 @@
         
         <para>The total streamflow hydrograph can be estimated by combining the
             surface runoff and baseflow components. This concept is also depicted in
-            Figure 1.</para>
+            <xref linkend="figure_28340800"/>.</para>
         
-        <figure>
+        <figure xml:id="figure_28340800">
             <title>Key characteristics for calculation in a flood hydrograph</title>
             
             <mediaobject>
@@ -160,12 +160,12 @@
         
         <para>The approach to quantifying baseflow is dependent upon the catchment
             characteristics, data availability and baseflow characteristics of the
-            catchment. Figure 2 provides a decision pathway to determine the most
+            catchment. <xref linkend="figure_97744967"/> provides a decision pathway to determine the most
             suitable approach to estimate baseflow contribution to design flood
             events, based on site specific criteria. Further details of the decision
             pathway and most appropriate approach are outlined below.</para>
         
-        <figure>
+        <figure xml:id="figure_97744967">
             <title>Decision tree for method to estimate baseflow contribution to
                 design flood</title>
             
@@ -189,12 +189,12 @@
             
             <itemizedlist>
                 <listitem>
-                    <para>Figure 3 is provided to readily identify the relative
+                    <para><xref linkend="figure_15142923"/> is provided to readily identify the relative
                         magnitude of baseflow compared to surface runoff for catchments
                         across Australia. Practitioners can identify their catchment of
                         interest within this data set and note the value of the Baseflow
                         Peak Factor. This map shows catchments to match with the screening
-                        criteria identified below, while Figure 5 and Figure 6 (and
+                        criteria identified below, while <xref linkend="figure_85594555"/> and <xref linkend="figure_05634839"/> (and
                         associated spatial data) provide a more detailed estimate of
                         baseflow.</para>
                 </listitem>
@@ -214,7 +214,7 @@
                 approximately 5% of the surface runoff for a flood event. Catchments
                 with a Baseflow Peak Factor less than 0.05 are considered suitable for
                 this approach. This reflects approximately 30% of the catchments mapped
-                in Figure 3.</para>
+                in <xref linkend="figure_15142923"/>.</para>
             
             <para>It is suggested that catchments that have a baseflow contribution
                 greater than approximately 5% of the surface runoff should explicitly
@@ -234,10 +234,10 @@
             <para>Where baseflow is between approximately 5% and 30% of the surface
                 runoff (Baseflow Peak Factor between 0.05 and 0.3), the approach
                 outlined below is recommended. This relates to approximately 75% of the
-                catchments mapped in Figure 3.</para>
+                catchments mapped in <xref linkend="figure_15142923"/>.</para>
         </section>
         
-        <section>
+        <section xml:id="section_87631628">
             <title>Suitability of stream flow data</title>
             
             <para>Where possible, recorded streamflow data should be used directly
@@ -294,7 +294,7 @@
                 regional approach, the baseflow estimate will reflect the unregulated
                 baseflow conditions.</para>
             
-            <figure><?landscapeFigure?>
+            <figure xml:id="figure_15142923"><?landscapeFigure?>
                 <title>Preliminary Assessment of Baseflow Peak Factor for ARI of 10
                     years</title>
                 
@@ -313,11 +313,11 @@
         <section>
             <title>Estimating baseflow using streamflow data</title>
             
-            <para>As outlined in Section 3.2, available streamflow criteria should
+            <para>As outlined in <xref linkend="section_87631628"/>, available streamflow criteria should
                 meet a number of conditions to be considered suitable for application to
                 assess baseflow. If streamflow data does not meet these criteria, this
                 approach is not relevant and practitioners are directed to the regional
-                approach outlined in Section 4.2.</para>
+                approach outlined in <xref linkend="section_75228116"/>.</para>
             
             <para>To estimate baseflow directly from available streamflow data, the
                 following steps should be followed:</para>
@@ -335,7 +335,7 @@
                     
                     <para>Determine the resulting period of record available for
                         analysis. If less than 10 years of data is available, the regional
-                        approach in Section 4.2 is more appropriate for application. If more
+                        approach in <xref linkend="section_75228116"/> is more appropriate for application. If more
                         than 10 years of data is available, the following steps can be
                         applied.</para>
                     
@@ -403,7 +403,7 @@
             </orderedlist>
         </section>
         
-        <section>
+        <section xml:id="section_75228116">
             <title>Estimating baseflow in the absence of streamflow data</title>
             
             <para>A regional method to estimate baseflow contribution to design
@@ -441,116 +441,116 @@
             </orderedlist>
             
             <para>The Baseflow Peak Factor and Baseflow Volume Factor are presented
-                in Figure 5 and Figure 6, which cover the whole of Australia. It should
+                in <xref linkend="figure_85594555"/> and <xref linkend="figure_85594555"/>, which cover the whole of Australia. It should
                 be noted that the maps represent the values for the total area upstream
                 of the main stem of the river rather than any smaller
                 sub-catchments.</para>
             
             <para>ARR Project 7 developed a series of regression relationships to
                 estimate the Baseflow Peak Factor and Baseflow Peak Volume based on
-                catchment characteristics (SKM 2010). These are presented in Figure 5
-                and Figure 6 (and supporting spatial data for use with ArcGIS), and can
+                catchment characteristics (SKM 2010). These are presented in <xref linkend="figure_85594555"/>
+                and <xref linkend="figure_05634839"/> (and supporting spatial data for use with ArcGIS), and can
                 be used to determine the Baseflow Peak Factor and the Baseflow Volume
                 Factor for the 10 year ARI event for the catchment of interest.</para>
             
             <para>These factors provide information on the baseflow contribution to
-                design flood events for 10 year ARI event magnitudes. Table 1 shows the
+                design flood events for 10 year ARI event magnitudes. <xref linkend="table_35408146"/> shows the
                 ARI scaling factors that should be applied to the 10 year ARI Baseflow
                 Peak Factor and Baseflow Volume Factor to scale the relevant factor to
                 reflect events of other ARIs.</para>
             
-            <table>
-                <title>ARI Scaling Factors, FARI, to be applied to the 10 year
+            <table xml:id="table_35408146">
+                <caption>ARI Scaling Factors, FARI, to be applied to the 10 year
                     Baseflow Peak Factor and the Baseflow Volume Factor to determine the
-                    Baseflow Peak Factor for events of various ARIs</title>
+                    Baseflow Peak Factor for events of various ARIs</caption>
                 
-                <tgroup cols="3">
-                    <tbody>
-                        <row>
-                            <entry>ARI (years)</entry>
-                            
-                            <entry>ARI Factor for Baseflow Peak</entry>
-                            
-                            <entry>ARI Factor for Baseflow Volume</entry>
-                        </row>
+                <thead>
+                    <tr>
+                        <td>ARI (years)</td>
                         
-                        <row>
-                            <entry>0.5</entry>
-                            
-                            <entry>3.0</entry>
-                            
-                            <entry>2.6</entry>
-                        </row>
+                        <td>ARI Factor for Baseflow Peak</td>
                         
-                        <row>
-                            <entry>1</entry>
-                            
-                            <entry>2.2</entry>
-                            
-                            <entry>2.0</entry>
-                        </row>
+                        <td>ARI Factor for Baseflow Volume</td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>0.5</td>
                         
-                        <row>
-                            <entry>2</entry>
-                            
-                            <entry>1.7</entry>
-                            
-                            <entry>1.6</entry>
-                        </row>
+                        <td>3.0</td>
                         
-                        <row>
-                            <entry>5</entry>
-                            
-                            <entry>1.2</entry>
-                            
-                            <entry>1.2</entry>
-                        </row>
+                        <td>2.6</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
                         
-                        <row>
-                            <entry>10</entry>
-                            
-                            <entry>1.0</entry>
-                            
-                            <entry>1</entry>
-                        </row>
+                        <td>2.2</td>
                         
-                        <row>
-                            <entry>20</entry>
-                            
-                            <entry>0.8</entry>
-                            
-                            <entry>0.8</entry>
-                        </row>
+                        <td>2.0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2</td>
                         
-                        <row>
-                            <entry>50</entry>
-                            
-                            <entry>0.7</entry>
-                            
-                            <entry>0.7</entry>
-                        </row>
+                        <td>1.7</td>
                         
-                        <row>
-                            <entry>100</entry>
-                            
-                            <entry>0.6</entry>
-                            
-                            <entry>0.6</entry>
-                        </row>
-                    </tbody>
-                </tgroup>
+                        <td>1.6</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5</td>
+                        
+                        <td>1.2</td>
+                        
+                        <td>1.2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>10</td>
+                        
+                        <td>1.0</td>
+                        
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>20</td>
+                        
+                        <td>0.8</td>
+                        
+                        <td>0.8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>50</td>
+                        
+                        <td>0.7</td>
+                        
+                        <td>0.7</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>100</td>
+                        
+                        <td>0.6</td>
+                        
+                        <td>0.6</td>
+                    </tr>
+                </tbody>
             </table>
             
-            <para>For events of ARIs not shown in Table 1, Figure 4 can be used to
+            <para>For events of ARIs not shown in <xref linkend="table_35408146"/>, <xref linkend="figure_19570097"/> can be used to
                 determine an appropriate ARI factor. This is to be multiplied by the 10
                 year ARI Baseflow Peak Factor or the Baseflow Volume Factor as relevant
                 to determine the factor for other event magnitudes.</para>
             
             <para>This information is then applied to the design flood event using
                 the procedure outlined in the relationships below which relate to the
-                typical flood hydrograph in Figure 1.</para>
+                typical flood hydrograph in <xref linkend="figure_28340800"/>.</para>
             
-            <figure>
+            <figure xml:id="figure_19570097">
                 <title>ARI Factors, FARI, to be applied to the 10 year Baseflow Volume
                     Factor to determined the Baseflow Volume Factor for events of various
                     ARIs</title>
@@ -563,26 +563,26 @@
             </figure>
             
             <para><emphasis role="bold">To calculate the peak baseflow (point C in
-                Figure 1):</emphasis></para>
+                <xref linkend="figure_28340800"/>):</emphasis></para>
             
             <orderedlist>
                 <listitem>
                     <para>Determine the Baseflow Peak Factor for a 10 year ARI (RBPF,
-                        10yrARI) from Figure 5.</para>
+                        10yrARI) from <xref linkend="figure_85594555"/>.</para>
                 </listitem>
                 
                 <listitem>
                     <para>Determine the ARI factor corresponding to the event ARI using
-                        Table 1 or Figure 4. Scale the 10 year Baseflow Peak Factor
+                        <xref linkend="table_35408146"/> or <xref linkend="figure_19570097"/>. Scale the 10 year Baseflow Peak Factor
                         appropriately to determine the Baseflow Peak Factor for the event
                         magnitude of interest.]</para>
                 </listitem>
                 
                 <listitem>
                     <para>Apply the Baseflow Peak Factor to the calculated peak surface
-                        runoff as in Equation 1.</para>
+                        runoff as in <xref linkend="equation_23454030"/>.</para>
                     
-                    <equation>
+                    <equation xml:id="equation_23454030">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -615,11 +615,11 @@
                 
                 <listitem>
                     <para>Calculate the timing of the baseflow peak (in hours from the
-                        start of the event) using Equation 2. This step is further described
+                        start of the event) using <xref linkend="equation_56532397"/>. This step is further described
                         in Appendix A. The time to the peak surface runoff should be applied
                         in units of hours from the start of the event.</para>
                     
-                    <equation>
+                    <equation xml:id="equation_56532397">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -647,7 +647,7 @@
                 </listitem>
             </orderedlist>
             
-            <figure><?landscapeFigure?>
+            <figure xml:id="figure_85594555"><?landscapeFigure?>
                 <title>Map of Baseflow Peak Factor for ARI of 10 years</title>
                 
                 <mediaobject>
@@ -657,7 +657,7 @@
                 </mediaobject>
             </figure>
             
-            <figure><?landscapeFigure?>
+            <figure xml:id="figure_05634839"><?landscapeFigure?>
                 <title>Map of Baseflow Volume Factor for ARI of 10 years</title>
                 
                 <mediaobject>
@@ -668,16 +668,16 @@
             </figure>
             
             <para><emphasis role="bold">To calculate the baseflow under the peak
-                streamflow (point B in Figure 1):</emphasis></para>
+                streamflow (point B in <xref linkend="figure_28340800"/>):</emphasis></para>
             
             <orderedlist>
                 <listitem>
                     <para>The Baseflow Peak Factor (R<subscript>BPF</subscript>)
                         calculated for the appropriate event ARI as above should be used in
-                        Equation 3 to calculate the Baseflow Under Peak Factor
+                        <xref linkend="equation_99686820"/> to calculate the Baseflow Under Peak Factor
                         (R<subscript>BUPF</subscript>).</para>
                     
-                    <equation>
+                    <equation xml:id="equation_99686820">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -705,10 +705,10 @@
                 </listitem>
                 
                 <listitem>
-                    <para>R<subscript>BUPF</subscript> should be used as in Equation 4
+                    <para>R<subscript>BUPF</subscript> should be used as in <xref linkend="equation_47798745"/>
                         to calculate the baseflow under the peak streamflow.</para>
                     
-                    <equation>
+                    <equation xml:id="equation_47798745">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -740,7 +740,7 @@
             
             <para>
                 <emphasis role="bold">To calculate the total streamflow peak (point
-                    A in Figure 1):</emphasis>
+                    A in <xref linkend="figure_28340800"/>):</emphasis>
             </para>
             
             <orderedlist>
@@ -751,12 +751,12 @@
                 
                 <listitem>
                     <para>Add the baseflow under the streamflow peak calculated using
-                        Equation 4 to the calculated peak surface runoff as in Equation
+                        <xref linkend="equation_47798745"/> to the calculated peak surface runoff as in Equation
                         5.</para>
                 </listitem>
             </orderedlist>
             
-            <equation>
+            <equation xml:id="equation_31567661">
                 <m:math display="block">
                     <m:mrow>
                         <m:msub>
@@ -792,21 +792,21 @@
             <orderedlist>
                 <listitem>
                     <para>Determine the Baseflow Volume Factor for a 10 year ARI
-                        (R<subscript>BVF,10yrARI</subscript>) from Figure 6</para>
+                        (R<subscript>BVF,10yrARI</subscript>) from <xref linkend="figure_05634839"/></para>
                 </listitem>
                 
                 <listitem>
                     <para>Determine the ARI factor corresponding to the event ARI using
-                        Table 1 or Figure 4. Scale the 10 year Baseflow Volume Factor
+                        <xref linkend="table_35408146"/> or <xref linkend="figure_19570097"/>. Scale the 10 year Baseflow Volume Factor
                         appropriately to determine the Baseflow Volume Factor
                         (R<subscript>BVF</subscript>) for the event.</para>
                 </listitem>
                 
                 <listitem>
                     <para>Apply the Baseflow Volume Factor to the calculated surface
-                        runoff volume as in Equation 6.</para>
+                        runoff volume as in <xref linkend="equation_59216713"/>.</para>
                     
-                    <equation>
+                    <equation xml:id="equation_59216713">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -846,10 +846,10 @@
                 </listitem>
                 
                 <listitem>
-                    <para>The baseflow volume calculated using Equation 6 should be
-                        added to the calculated surface runoff as in Equation 7.</para>
+                    <para>The baseflow volume calculated using <xref linkend="equation_59216713"/> should be
+                        added to the calculated surface runoff as in <xref linkend="equation_67337800"/>.</para>
                     
-                    <equation>
+                    <equation xml:id="equation_67337800">
                         <m:math display="block">
                             <m:mrow>
                                 <m:msub>
@@ -886,7 +886,7 @@
                 events.</para>
         </section>
         
-        <section>
+        <section xml:id="section_70922883">
             <title>Generating the total streamflow hydrograph</title>
             
             <para>The characteristics of the surface runoff, baseflow and total
@@ -898,9 +898,9 @@
                 data to generate a time series for the total streamflow. The time series
                 generated through this process should be reviewed, and may require
                 smoothing to produce a more realistic temporal distribution of baseflow.
-                This process is presented in Figure 7.</para>
+                This process is presented in <xref linkend="figure_93046598"/>.</para>
             
-            <figure>
+            <figure xml:id="figure_93046598">
                 <title>Total streamflow hydrograph generation approach, where (a) the
                     data values calculated through the baseflow estimation process are
                     plotted; (b) linear interpolation between the baseflow data points and
@@ -938,13 +938,13 @@
                 reviewed flow data was used to identify flood peaks, in particular the
                 10 year event. A comparable event was identified in the record in
                 February 1999. The event hydrograph was plotted and key characteristics
-                of the baseflow were identified manually (Figure 8; manually identified
+                of the baseflow were identified manually (<xref linkend="figure_20223222"/>; manually identified
                 basaeflow features shown by black points). Straight lines were used to
                 join the key baseflow features, to estimate the baseflow time series. In
                 this instance, the baseflow peak occurs 18 hours after the peak of the
                 streamflow</para>
             
-            <figure>
+            <figure xml:id="figure_20223222">
                 <title>Streamflow hydrograph approximating the 10 year event for the
                     North Maroochy River at Eumundi</title>
                 
@@ -957,9 +957,9 @@
             
             <para>The surface runoff hydrograph for the design flood event was
                 generated using a flood event model with a critical duration of 18 hours
-                (Figure 11, and details in Table 3).</para>
+                (<xref linkend="figure_75706184"/>, and details in <xref linkend="table_87725131"/>).</para>
             
-            <figure>
+            <figure xml:id="figure_21301951">
                 <title>Surface runoff hydrograph for the 10 year ARI design flood
                     event at Eumundi</title>
                 
@@ -970,50 +970,49 @@
                 </mediaobject>
             </figure>
             
-            <table>
-                <title>Key surface runoff characteristics for the 10 year ARI design
-                    flood event at Eumundi</title>
+            <table xml:id="table_01057465">
+                <caption>Key surface runoff characteristics for the 10 year ARI design
+                    flood event at Eumundi</caption>
                 
-                <tgroup cols="2">
-                    <tbody>
-                        <row>
-                            <entry>Characteristic</entry>
-                            
-                            <entry>Data from design flood</entry>
-                        </row>
+                <thead>
+                    <tr>
+                        <td>Characteristic</td>
                         
-                        <row>
-                            <entry>Surface runoff peak flow
-                                (m<superscript>3</superscript>/s)</entry>
-                            
-                            <entry>160.6</entry>
-                        </row>
+                        <td>Data from design flood</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Surface runoff peak flow
+                            (m<superscript>3</superscript>/s)</td>
                         
-                        <row>
-                            <entry>Time to the surface runoff peak (hours, from the start of
-                                the event)</entry>
-                            
-                            <entry>16</entry>
-                        </row>
+                        <td>160.6</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Time to the surface runoff peak (hours, from the start of
+                            the event)</td>
                         
-                        <row>
-                            <entry>Volume of surface runoff for the event
-                                (m<superscript>3</superscript>)s</entry>
-                            
-                            <entry>9.9 x 10<superscript>6</superscript></entry>
-                        </row>
-                    </tbody>
-                </tgroup>
+                        <td>16</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Volume of surface runoff for the event
+                            (m<superscript>3</superscript>)s</td>
+                        
+                        <td>9.9 x 10<superscript>6</superscript></td>
+                    </tr>
+                </tbody>
             </table>
             
             <para>The baseflow series estimated above was used directly to
                 approximate the baseflow for the 10 year ARI design flood event. The
-                baseflow at the time of the streamflow peak (from Figure 8) was aligned
-                with the surface runoff peak in the design hydrograph (Figure 11), with
+                baseflow at the time of the streamflow peak (from <xref linkend="figure_20223222"/>) was aligned
+                with the surface runoff peak in the design hydrograph (<xref linkend="figure_75706184"/>), with
                 the rest of the baseflow time series used to guide the behaviour through
                 the duration of the design event.</para>
             
-            <figure>
+            <figure xml:id="figure_57998828">
                 <title>Surface runoff, baseflow and total streamflow hydrographs for
                     the 10 year ARI event at Eumundi</title>
                 
@@ -1031,11 +1030,11 @@
             <para>The Dirk Brook catchment is located in Western Australia. The 100
                 year ARI event is of interest. The surface runoff hydrograph for this
                 event was generated using a flood event model with a critical duration
-                of 18 hours (Figure 11, and details in Table 3). This case study assumes
+                of 18 hours (<xref linkend="figure_75706184"/>, and details in <xref linkend="table_87725131"/>). This case study assumes
                 that no streamflow data is available for use. The process described in
                 Section 4.2 has been used to estimate baseflow.</para>
             
-            <figure>
+            <figure xml:id="figure_75706184">
                 <title>Surface runoff hydrograph for the 100 year ARI design flood
                     event at Dirk Brook</title>
                 
@@ -1046,44 +1045,44 @@
                 </mediaobject>
             </figure>
             
-            <table>
-                <title>Key surface runoff characteristics for the 100 year ARI design
-                    flood event at Dirk Brook</title>
+            <table xml:id="table_87725131">
+                <caption>Key surface runoff characteristics for the 100 year ARI design
+                    flood event at Dirk Brook</caption>
                 
-                <tgroup cols="2">
-                    <tbody>
-                        <row>
-                            <entry>Characteristic</entry>
-                            
-                            <entry>Data from design flood event</entry>
-                        </row>
+                <thead>
+                    <tr>
+                        <td>Characteristic</td>
                         
-                        <row>
-                            <entry>Surface runoff peak flow
-                                (m<superscript>3</superscript>/s)</entry>
-                            
-                            <entry>23.91</entry>
-                        </row>
+                        <td>Data from design flood event</td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Surface runoff peak flow
+                            (m<superscript>3</superscript>/s)</td>
                         
-                        <row>
-                            <entry>Time to the surface runoff peak (hours, from the start of
-                                the event)</entry>
-                            
-                            <entry>8</entry>
-                        </row>
+                        <td>23.91</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Time to the surface runoff peak (hours, from the start of
+                            the event)</td>
                         
-                        <row>
-                            <entry>Volume of surface runoff for the event
-                                (m<superscript>3</superscript>)</entry>
-                            
-                            <entry>1.25 x 10<superscript>6</superscript></entry>
-                        </row>
-                    </tbody>
-                </tgroup>
+                        <td>8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Volume of surface runoff for the event
+                            (m<superscript>3</superscript>)</td>
+                        
+                        <td>1.25 x 10<superscript>6</superscript></td>
+                    </tr>
+                </tbody>
             </table>
             
             <para>Aligning the catchment boundary shapefile with the spatial data
-                from Figure 5 and Figure 6 allows the Baseflow Peak Factor and Baseflow
+                from <xref linkend="figure_85594555"/> and <xref linkend="figure_05634839"/> allows the Baseflow Peak Factor and Baseflow
                 Volume Factor for the 10 year event to be extracted for the catchment
                 area directly:</para>
             
@@ -1092,157 +1091,157 @@
             <para>R<subscript>BVF 10 yr ARI</subscript> =1.099</para>
             
             <para>The scaling factor for the 100 year ARI event is sourced from
-                Table 1, with a value of 0.6 for both the peak and volume calculations.
+                <xref linkend="table_35408146"/>, with a value of 0.6 for both the peak and volume calculations.
                 Using the relationships described earlier, the final Baseflow Peak
                 Factor, Baseflow Volume Factor and Baseflow Under Peak Factor for
-                application are outlined in Table 4. These values are applied to
-                calculate the baseflow and total streamflow characteristics in Table 5,
-                and plotted in Figure 12.</para>
+                application are outlined in <xref linkend="table_00839046"/>. These values are applied to
+                calculate the baseflow and total streamflow characteristics in <xref linkend="table_74453170"/>,
+                and plotted in <xref linkend="figure_86477209"/>.</para>
             
-            <table>
-                <title>Calculation of Baseflow Factors for the 100 year ARI event for
-                    the Dirk Brook</title>
+            <table xml:id="table_00839046">
+                <caption>Calculation of Baseflow Factors for the 100 year ARI event for
+                    the Dirk Brook</caption>
                 
-                <tgroup cols="2">
-                    <tbody>
-                        <row>
-                            <entry>Factors for application</entry>
-                            
-                            <entry>Factor values for 100 year ARI</entry>
-                        </row>
+                <thead>
+                    <tr>
+                        <td>Factors for application</td>
                         
-                        <row>
-                            <entry>Final Baseflow Peak Factor R<subscript>BPF</subscript> =
-                                F<subscript>ARI</subscript>R<subscript>BPF, 10 yr
-                                    ARI</subscript></entry>
-                            
-                            <entry>= 0.6 x 0.186 = 0.11</entry>
-                        </row>
+                        <td>Factor values for 100 year ARI</td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Final Baseflow Peak Factor R<subscript>BPF</subscript> =
+                            F<subscript>ARI</subscript>R<subscript>BPF, 10 yr
+                                ARI</subscript></td>
                         
-                        <row>
-                            <entry>Final Baseflow Volume Factor R<subscript>BVF</subscript>
-                                = F<subscript>ARI</subscript>R<subscript>BVF, 10 yr
-                                    ARI</subscript></entry>
-                            
-                            <entry>= 0.6 x 1.099 = 0.66</entry>
-                        </row>
+                        <td>= 0.6 x 0.186 = 0.11</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Final Baseflow Volume Factor R<subscript>BVF</subscript>
+                            = F<subscript>ARI</subscript>R<subscript>BVF, 10 yr
+                                ARI</subscript></td>
                         
-                        <row>
-                            <entry>Final Baseflow Under Peak Factor
-                                R<subscript>BUBF</subscript> = 0.7 ×
-                                R<subscript>BPF</subscript></entry>
-                            
-                            <entry>= 0.7 x 0.112 = 0.08</entry>
-                        </row>
-                    </tbody>
-                </tgroup>
+                        <td>= 0.6 x 1.099 = 0.66</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Final Baseflow Under Peak Factor
+                            R<subscript>BUBF</subscript> = 0.7 ×
+                            R<subscript>BPF</subscript></td>
+                        
+                        <td>= 0.7 x 0.112 = 0.08</td>
+                    </tr>
+                </tbody>
             </table>
             
-            <table>
-                <title>Calculation of baseflow and total streamflow characteristics
-                    for the 100 year ARI event for the Dirk Brook catchment</title>
+            <table xml:id="table_74453170">
+                <caption>Calculation of baseflow and total streamflow characteristics
+                    for the 100 year ARI event for the Dirk Brook catchment</caption>
                 
-                <tgroup cols="2">
-                    <tbody>
-                        <row>
-                            <entry>Baseflow and total streamflow characteristics</entry>
-                            
-                            <entry>Factor values for 100 year ARI</entry>
-                        </row>
+                <thead>
+                    <tr>
+                        <td>Baseflow and total streamflow characteristics</td>
                         
-                        <row>
-                            <entry><emphasis role="bold">Peak Baseflow</emphasis></entry>
-                            
-                            <entry/>
-                        </row>
+                        <td>Factor values for 100 year ARI</td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td><emphasis role="bold">Peak Baseflow</emphasis></td>
                         
-                        <row>
-                            <entry>Peak baseflow (refer to Equation 1) Q<subscript>Peak
-                                baseflow</subscript>= R<subscript>BPF</subscript>
-                                Q<subscript>Peak surface runoff</subscript></entry>
-                            
-                            <entry>= 0.11 x 23.9 = 2.6
-                                m<superscript>3</superscript>/s</entry>
-                        </row>
+                        <entry/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Peak baseflow (refer to <xref linkend="equation_23454030"/>) Q<subscript>Peak
+                            baseflow</subscript>= R<subscript>BPF</subscript>
+                            Q<subscript>Peak surface runoff</subscript></td>
                         
-                        <row>
-                            <entry>Time to peak baseflow (Equation 2) T<subscript>Peak
-                                baseflow</subscript> = 0.92T<subscript>Peak surface
-                                    runoff</subscript> + 33.4</entry>
-                            
-                            <entry>= (0.92 x 8) +33.4 = 41 hours</entry>
-                        </row>
+                        <td>= 0.11 x 23.9 = 2.6
+                            m<superscript>3</superscript>/s</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Time to peak baseflow (<xref linkend="equation_56532397"/>) T<subscript>Peak
+                            baseflow</subscript> = 0.92T<subscript>Peak surface
+                                runoff</subscript> + 33.4</td>
                         
-                        <row>
-                            <entry><emphasis role="bold">Baseflow Under the
-                                Peak</emphasis></entry>
-                            
-                            <entry/>
-                        </row>
+                        <td>= (0.92 x 8) +33.4 = 41 hours</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><emphasis role="bold">Baseflow Under the
+                            Peak</emphasis></td>
                         
-                        <row>
-                            <entry>Baseflow under the streamflow peak (Equation 4)
-                                Q<subscript>Baseflow under peak streamflow</subscript> =
-                                R<subscript>BUPF</subscript> Q<subscript>Peak surface
-                                    runoff</subscript></entry>
-                            
-                            <entry>= 0.08 x 23.9 = 1.9
-                                m<superscript>3</superscript>/s</entry>
-                        </row>
+                        <entry/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Baseflow under the streamflow peak (<xref linkend="equation_47798745"/>)
+                            Q<subscript>Baseflow under peak streamflow</subscript> =
+                            R<subscript>BUPF</subscript> Q<subscript>Peak surface
+                                runoff</subscript></td>
                         
-                        <row>
-                            <entry><emphasis role="bold">Total Streamflow Peak
-                            </emphasis></entry>
-                            
-                            <entry/>
-                        </row>
+                        <td>= 0.08 x 23.9 = 1.9
+                            m<superscript>3</superscript>/s</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><emphasis role="bold">Total Streamflow Peak
+                        </emphasis></td>
                         
-                        <row>
-                            <entry>Total streamflow peak flow (Equation 5) Q<subscript>Peak
-                                streamflow</subscript> = Q<subscript>Peak surface
-                                    runoff</subscript> + Q<subscript>Baseflow under peak
-                                        streamflow</subscript></entry>
-                            
-                            <entry>= 23.9 + 1.9 = 25.8
-                                m<superscript>3</superscript>/s</entry>
-                        </row>
+                        <entry/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Total streamflow peak flow (<xref linkend="equation_31567661"/>) Q<subscript>Peak
+                            streamflow</subscript> = Q<subscript>Peak surface
+                                runoff</subscript> + Q<subscript>Baseflow under peak
+                                    streamflow</subscript></td>
                         
-                        <row>
-                            <entry><emphasis role="bold">Baseflow Volume </emphasis></entry>
-                            
-                            <entry/>
-                        </row>
+                        <td>= 23.9 + 1.9 = 25.8
+                            m<superscript>3</superscript>/s</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><emphasis role="bold">Baseflow Volume </emphasis></td>
                         
-                        <row>
-                            <entry>Baseflow volume (Equation 6) V<subscript>Baseflow
-                            </subscript> = R<subscript>BVF</subscript> V<subscript>Surface
-                                runoff</subscript></entry>
-                            
-                            <entry>= 0.66 x 1.25 x 10<superscript>6</superscript> = 0.83 x
-                                10<superscript>6</superscript></entry>
-                        </row>
+                        <entry/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Baseflow volume (<xref linkend="equation_59216713"/>) V<subscript>Baseflow
+                        </subscript> = R<subscript>BVF</subscript> V<subscript>Surface
+                            runoff</subscript></td>
                         
-                        <row>
-                            <entry><emphasis role="bold">Total Streamflow Volume
-                            </emphasis></entry>
-                            
-                            <entry/>
-                        </row>
+                        <td>= 0.66 x 1.25 x 10<superscript>6</superscript> = 0.83 x
+                            10<superscript>6</superscript></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><emphasis role="bold">Total Streamflow Volume
+                        </emphasis></td>
                         
-                        <row>
-                            <entry>Total streamflow volume (Equation 7) V<subscript>Total
-                                streamflow</subscript> = V<subscript>Surface runoff</subscript>
-                                + V<subscript>Baseflow</subscript></entry>
-                            
-                            <entry>= 1.25 x 10<superscript>6</superscript> + 0.83 x
-                                10<superscript>6</superscript> = 2.08 x
-                                10<superscript>6</superscript></entry>
-                        </row>
-                    </tbody>
-                </tgroup>
+                        <entry/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Total streamflow volume (<xref linkend="equation_67337800"/>) V<subscript>Total
+                            streamflow</subscript> = V<subscript>Surface runoff</subscript>
+                            + V<subscript>Baseflow</subscript></td>
+                        
+                        <td>= 1.25 x 10<superscript>6</superscript> + 0.83 x
+                            10<superscript>6</superscript> = 2.08 x
+                            10<superscript>6</superscript></td>
+                    </tr>
+                </tbody>
             </table>
             
-            <figure>
+            <figure xml:id="figure_86477209">
                 <title>Surface runoff, baseflow and total streamflow hydrographs for
                     the 100 year ARI event at Dirk Brook</title>
                 
@@ -1290,7 +1289,7 @@
             available online at the ARR update website (SKM, 2010, available online
             http://www.arr.org.au/p7.html). However, the background behind the
             calculation of the timing of the baseflow peak is not captured in those
-            documents. A full description of the development of Equation 2 is provided
+            documents. A full description of the development of <xref linkend="equation_56532397"/> is provided
             below. The description below assumes that the reader has an understanding
             of the work presented in the separate technical documents, and a full
             background of the broader study concepts is not provided here.</para>
@@ -1314,13 +1313,13 @@
         
         <para>Analysis of the average time to peak data identified a strong
             relationship between the time to the surface runoff (and streamflow) and
-            baseflow peaks, as presented in Figure 13. This relationship provides a
+            baseflow peaks, as presented in <xref linkend="figure_74876507"/>. This relationship provides a
             direct calculation from which to estimate the timing of the baseflow peak,
             based upon knowledge of the surface runoff event generated using a flood
             event model. That is, the time to the baseflow peak (in hours from the
             start of the event) can be calculated as:</para>
         
-        <equation>
+        <equation xml:id="equation_08366567">
             <m:math display="block">
                 <m:mrow>
                     <m:msub>
@@ -1344,7 +1343,7 @@
             </m:math>
         </equation>
         
-        <figure>
+        <figure xml:id="figure_74876507">
             <title>Comparison of average time to surface runoff peak and time to
                 baseflow peak, based on analysis of more than 30,000 flood events from
                 catchments across Australia.</title>
