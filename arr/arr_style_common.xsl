@@ -4,6 +4,9 @@
     xmlns:d="http://docbook.org/ns/docbook">
     
     
+    <!-- Param to force number only in XREFs-->
+    <xsl:param name="xref.with.number.and.title" select="0"></xsl:param>
+    
     <!-- BIBLIOGRAPHY DETAILS -->
     <!-- Force the bibliography to ISO690 style -->
     <xsl:param name="bibliography.style" select="'iso690'"/>
