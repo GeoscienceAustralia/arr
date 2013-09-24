@@ -15,6 +15,10 @@
     <xsl:param name="bibliography.numbered" select="1"/>
     <xsl:param name="bibliography.style" select="'iso690'"/>
     
+    
+    <!-- turn hyphenation on or off -->
+    <xsl:param name="hyphenate">false</xsl:param>
+    
     <!-- Local customisation to include the book number in the
      equation number -->
     <xsl:template match="d:equation" mode="label.markup">
