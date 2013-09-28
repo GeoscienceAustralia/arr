@@ -67,6 +67,33 @@
     
     
     
+    <!-- Set Up the Chapter Titles -->
+    <xsl:attribute-set name="component.title.properties">
+        <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+        <xsl:attribute name="space-before.optimum"><xsl:value-of select="concat($body.font.master, 'pt')"></xsl:value-of></xsl:attribute>
+        <xsl:attribute name="space-before.minimum"><xsl:value-of select="concat($body.font.master, 'pt * 0.8')"></xsl:value-of></xsl:attribute>
+        <xsl:attribute name="space-before.maximum"><xsl:value-of select="concat($body.font.master, 'pt * 1.2')"></xsl:value-of></xsl:attribute>
+        <xsl:attribute name="hyphenate">false</xsl:attribute>
+        <xsl:attribute name="text-align">center</xsl:attribute>
+        <xsl:attribute name="start-indent"><xsl:value-of select="$title.margin.left"></xsl:value-of></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:template name="arr.label.properties">
+        <xsl:param name="node" select="."/>
+        <fo:block xsl:use-attribute-sets="component.title.properties">
+            <xsl:call-template name="gentext">
+                <xsl:with-param name="key">chapter</xsl:with-param>
+            </xsl:call-template>
+            <xsl:text> </xsl:text>
+            <xsl:apply-templates select="$node" mode="label.markup"/>
+        </fo:block>
+        <fo:block xsl:use-attribute-sets="component.title.properties">
+            <xsl:apply-templates select="$node" mode="title.markup"/>
+        </fo:block>
+    </xsl:template>
+    
+    
+    
+    
     <!-- Section and Chapter numbering -->
     <xsl:param name="section.autolabel" select="1"/>
     <xsl:param name="section.label.includes.component.label" select="1"/>
