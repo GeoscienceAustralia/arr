@@ -174,10 +174,10 @@
                 <xsl:when test="$position='left'">
                     <!-- Same for odd, even, empty, and blank sequences -->
                     <!--<xsl:call-template name="draft.text"/>-->
-                    <!--
+                    
                     <xsl:call-template name="arr.draft.status">
                     	<xsl:with-param name="position" select="$position"/>
-                    </xsl:call-template>-->
+                    </xsl:call-template>
                 </xsl:when>
                 
                 <xsl:when test="($sequence='odd' or $sequence='even') and $position='center'">
@@ -389,8 +389,8 @@
         <xsl:choose>
             <xsl:when test="$draft.mode = 'yes'">
                 <xsl:choose>
-                    <xsl:when test="$position='left' and ancestor::d:book/@status">
-                        <xsl:text>Book Status: </xsl:text><xsl:value-of select="ancestor::d:book/@status"/>
+                    <xsl:when test="$position='left'">
+                        <xsl:text>Book </xsl:text><xsl:number format="1" count="d:book" from="d:set" level="any"/>
                     </xsl:when>
 
                     <xsl:when test="$position='right' and ancestor-or-self::d:chapter/@status">
