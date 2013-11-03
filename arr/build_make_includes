@@ -14,3 +14,23 @@ xsltproc --xinclude -o Makefile.book build_books.xsl ARR.xml
 
 # Chapters:
 xsltproc --xinclude -o Makefile.chapter build_chapters.xsl ARR.xml
+
+# Directories and images for the single page html builds
+echo "html_single_dir:" > Makefile.html_single
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p html_single\//' >> Makefile.html_single
+echo "" >> Makefile.html_single
+echo "html_single_images: html_single_dir" >> Makefile.html_single
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	awk -F " " '{print $1, "html_single/" $1}' | \
+	sed -e 's/^/	cp -f /' >> Makefile.html_single
+
+# Directories and images for the chunked page html builds
+echo "html_chunked_dir:" > Makefile.html_chunked
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p html_chunked\//' >> Makefile.html_chunked
+echo "" >> Makefile.html_chunked
+echo "html_chunked_images: html_chunked_dir" >> Makefile.html_chunked
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	awk -F " " '{print $1, "html_chunked/" $1}' | \
+	sed -e 's/^/	cp -f /' >> Makefile.html_chunked
