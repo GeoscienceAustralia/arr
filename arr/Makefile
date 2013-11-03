@@ -10,7 +10,7 @@ L10N_REVISION = r
 # Paths which you may wish to customize:
 XSLTPROC = xsltproc
 XMLLINT = xmllint
-FOP = /Users/pbrady/Downloads/fop-1.1/fop
+FOP = fop
 MKDIR = mkdir -p
 SVNVERSION = svnversion
 DIR_BASE = /Users/pbrady/ncwe/arr_docs/trunk
@@ -102,8 +102,7 @@ arr_style_guide_draft.fo: arr_title_fo.xsl
 
 # Final Builds:
 arr_style_guide_final.pdf: arr_style_guide_valid arr_style_guide_final.fo
-	/Users/pbrady/Downloads/fop-1.1/fop \
-    -fo arr_style_guide_final.fo -pdf arr_style_guide_final.pdf
+	$(FOP) -fo arr_style_guide_final.fo -pdf arr_style_guide_final.pdf
 
 arr_style_guide_final.fo: arr_style_fo.xsl
 	rm -f style_version.xml
