@@ -1,36 +1,5536 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b6_ch2" xmlns="http://docbook.org/ns/docbook"
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:xi="http://www.w3.org/2001/XInclude"
          xmlns:svg="http://www.w3.org/2000/svg"
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook"
-         status = "In Preparation">
-         
-         <info><title>Basics of Open Channel Hydraulics</title>
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Basics of Open Channel Hydraulics</title>
 
-             <xi:include href="../../common/authors/cathers_bruce.xml" /></info>
+    <xi:include href="../../common/authors/cathers_bruce.xml"/>
+  </info>
 
-  <xi:include href="chap2_1.xml"/>
+  <section>
+    <title>Introduction</title>
 
-  <xi:include href="chap2_2.xml"/>
+    <para>Hydraulic computations are usually carried out to determine:</para>
 
-  <xi:include href="chap2_3.xml"/>
+    <itemizedlist>
+      <listitem>
+        <para>flow depths or water levels (e.g. for recorded floods or
+        synthesised floods of a particular magnitude),</para>
+      </listitem>
 
-  <xi:include href="chap2_4.xml"/>
+      <listitem>
+        <para>flow velocities (including flow direction),</para>
+      </listitem>
 
-  <xi:include href="chap2_5.xml"/>
+      <listitem>
+        <para>the magnitude of the flows, and sometimes also,</para>
+      </listitem>
 
-  <xi:include href="chap2_6.xml"/>
+      <listitem>
+        <para>energy losses, be they (i) friction losses which are cumulative
+        and can be significant over long distances or (ii) local losses such
+        as those which occur due flow constrictions and expansions imposed by
+        hydraulic structures or flow around bends).</para>
+      </listitem>
+    </itemizedlist>
 
-  <xi:include href="chap2_7.xml"/>
+    <para>Hydraulic computations can be undertaken using ‘pencil and paper’,
+    spreadsheets or computer programs (freeware or proprietary software). The
+    level of detail in which the calculations are completed will depend upon
+    the nature of the hydraulic investigation (including the risks to life and
+    property and the complexity of the flows), the size of the budget and the
+    availability of time and data to undertake the investigation. In some
+    circumstances, it is desirable to make recourse to physical models rather
+    than computational models, but considerations of this nature will be
+    detailed in Section 13</para>
+  </section>
 
-  <xi:include href="chap2_8.xml"/>
+  <section>
+    <title>Objectives and Scope</title>
 
-  <xi:include href="chap2_9.xml"/>
+    <para>The primary objective of this book is to provide a document which
+    provides background information to assist practising engineers to carry
+    out calculations or hydraulic investigations related to free surface
+    flows. The needs for such calculations or investigations may be related to
+    floods (inundation levels, concentration of flows to endanger life, the
+    power of flood flows to threaten or impair structural integrity or even
+    wash away structures, and bed level scour), stormwater disposal, water
+    supply distribution systems and sewerage collection systems (the
+    installation of new systems or augmentation of existing systems).</para>
 
-  <xi:include href="chap2_99.xml"/>
+    <para>The present document concentrates on free surface flows but brief
+    consideration is given to pressurised or closed conduit flows. There are
+    also several closely related topics which are the subject of separate
+    books viz numerical models and hydraulic structures.</para>
+  </section>
 
-  <xi:include href="chap2_11.xml"/>
+  <section>
+    <title>General Characteristics of Open Channels</title>
+
+    <para>Open channels can be natural or man-made. The cross-sections of
+    natural channels are irregular, usually broader than deep and they may
+    consist of a deeper in-bank channel as well as an overbank area. During
+    floods, the flow frequently leaves the in-bank channel and enters the
+    over-bank area. See Figure 1.</para>
+
+    <figure>
+      <title>Figure 1: Schematic of a natural channel showing in-bank and
+      over-bank areas. (Adapted from Figure 3.10 in [12].)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="???"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>At bends in the water course, natural cross-sections are
+    asymmetrical; they tend to be deeper on the outside of the bend due to the
+    effect of helicoidal secondary currents which tend to scour the outside of
+    the bend and deposit sediment at the inside of the bend. See Figure
+    2.</para>
+
+    <para>The cross-sections of man-made channels are usually rectangular,
+    trapezoidal, triangular or circular. Stormwater channels often have a
+    small deeper indentation along the centreline of the channel for easy
+    cleaning and containing trickles. Some man-made channel cross-sections are
+    depicted in Figure 3.</para>
+
+    <para>Since the channel roughness affects the flow, it is important to be
+    able to quantify the roughness. The roughness in channels is determined by
+    the materials from which the channel is cut or made, including anything
+    any vegetation which is growing (or lodged) in the channel. In man-made
+    channels, the roughness must also include the effects of any jointing
+    between panels, slabs or pipes.</para>
+
+    <para>Apart from channel roughness, the main parameters associated with
+    the channels are: (i) the cross-sectional area (measured in a
+    cross-section at right angles to the flow direction A), (ii) the depth y
+    (especially for man-made channels, (iii) the top width b (sometimes also
+    called the storage width), (iv) the wetted perimeter P, (v) the hydraulic
+    radius R<subscript>h</subscript> and (vi) the stage h.</para>
+
+    <para>Depth is usually measured vertically up from the bottom point in the
+    cross-section (rather than at right angles to the bed), while stage is
+    measured vertically from a datum to the top of the water surface. See
+    Figure 4.</para>
+
+    <para>The total head (H) associated with a free surface flow has
+    dimensions of energy per unit weight of fluid (i.e. length) and units of
+    Joules per Newton (i.e. metres) and is given by:</para>
+
+    <figure>
+      <title>Figure 2: Schematics of cross-sections at four locations along a
+      river. (Adapted from Figure 2-23 in [22].)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="???"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <equation>
+      <m:math display="block">
+        <m:mrow>
+          <m:mi>H</m:mi>
+
+          <m:mo>=</m:mo>
+
+          <m:mrow>
+            <m:mi>z</m:mi>
+
+            <m:mo>+</m:mo>
+
+            <m:mrow>
+              <m:mi>y</m:mi>
+
+              <m:mo>+α</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>u</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation>
+
+    <para>where... <emphasis>z</emphasis> = vertical distance from the datum
+    to the channel invert or PE per unit weight of fluid (m)
+    <emphasis>y</emphasis> = depth of flow (m) <emphasis>u</emphasis> =
+    cross-sectionally averaged flow velocity (m/s)</para>
+
+    <para><emphasis>g</emphasis> = acceleration due to gravity
+    =9.81m<superscript>2</superscript>/<emphasis>s α =</emphasis>
+    dimensionless kinetic energy coefficient PE = potential energy
+    (<emphasis>J</emphasis> ) KE = kinetic energy
+    (<emphasis>J</emphasis>)</para>
+
+    <equation>
+      <m:math display="block">
+        <m:mrow>
+          <m:mtext>α</m:mtext>
+
+          <m:mfrac>
+            <m:msup>
+              <m:mi>u</m:mi>
+
+              <m:mi>2</m:mi>
+            </m:msup>
+
+            <m:mi>2g</m:mi>
+          </m:mfrac>
+
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mi>velocity head or KE per unit weight of fluid (m)</m:mi>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation>
+
+    <para>The value of <emphasis>g</emphasis> =
+    9.81<emphasis>m</emphasis><superscript>2</superscript>/<emphasis>s</emphasis>
+    for the acceleration due to gravity is based on Newton’s law of
+    gravitational attraction and is an average value for planet
+    earth.<superscript>1</superscript> Local values for <emphasis>g</emphasis>
+    depend</para>
+
+    <figure>
+      <title>Figure 3: Sample cross-sections in man-made channels showing
+      relative velocity contours. (Adapted from Figure 2-4 in [8].)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="???"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>on both latitude (<emphasis>Φ</emphasis>) and altitude
+      (h<subscript>alt</subscript>).<superscript>2</superscript> However, it
+      is common practice to adopt the value of 9.81m2/s or sometimes
+      9.8<emphasis>m</emphasis><superscript>2</superscript>/<emphasis>s</emphasis>
+      in hydraulic calculations, irrespective of latitude.</para>
+
+      <para>The specific head or specific energy (<emphasis>E</emphasis>) is
+      the total head with respect to the channel invert and is given
+      by:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>E</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>y</m:mi>
+
+              <m:mo>+α</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>u</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Specific energy is a concept which is useful for determining the
+      water surface profile through smooth transitions such as a channel
+      narrowing, a smooth hump or smooth step in the channel or a combination
+      of these channel transitions.</para>
+
+      <para>The equations defining total head (1) and specific energy (2) have
+      two assumptions built into them, viz: (i) the pressure distribution is
+      hydrostatic since the streamlines are straight and parallel, and (ii)
+      that depth measured vertically (<emphasis>y</emphasis>) is a good
+      approximation to the actual pressure head (<emphasis>y</emphasis>.
+      cos<superscript>2</superscript><emphasis>θ</emphasis> ) in an open
+      channel flow with a bed inclined at<emphasis> θ</emphasis> to the
+      horizontal. For example, a bedslope (S = tan<emphasis>θ</emphasis> )
+      which is as steep as 1V:10H (or <emphasis>θ</emphasis> = 5.7° ) only
+      gives rise to an error which is close to 1% in the pressure head i.e. y.
+      cos<superscript>2</superscript>(5.7° ) =
+      0.99<emphasis>y</emphasis>.</para>
+
+      <para>The need for the kinetic energy coefficient () in equations (1)
+      and (2) arises whenever the velocity is non-uniform over the flow
+      cross-section. In the case of a uniform velocity over a cross-section,
+      α= 1. Departures from a uniform velocity over a cross-section, result in
+      the cube of the mean velocity over the cross-section having a different
+      value from the cube of the velocity (at each point in the cross-section)
+      when averaged over the cross-section.</para>
+
+      <figure>
+        <title>Figure 4: Parameters characterising flows in open
+        channels.</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="???"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>In a steady flow, the application of the continuity equation to
+      fluid flow through a streamtube involves equating the mass flux
+      (<emphasis>ρ</emphasis><emphasis>Q</emphasis>) at an upstream section to
+      the mass flux at another section further downstream. Similarly, in
+      applying the energy equation (at the fundamental level for a fluid i.e.
+      energy flux rather than energy) to the same streamtube, the energy flux
+      (<emphasis>ρgQH</emphasis>) at the upstream section is equated to the
+      energy flux at the downstream section provided there are no energy
+      losses (or gains).</para>
+
+      <para>In those idealised situations where the velocity at each
+      cross-section of the streamtube is uniform, equating the two energy
+      fluxes degenerates into equating the total head at the two sections.
+      Whenever the velocity over the flow cross-section is non-uniform, use of
+      the kinetic energy coefficient (and this is its utility) enables us to
+      write down expressions for the velocity head in terms of the
+      cross-sectionally averaged velocity (<emphasis>u</emphasis>); the
+      cross-sectionally averaged velocity is the most convenient velocity upon
+      which to base any computations.</para>
+
+      <para>In the idealised situation where the velocity is uniform across
+      the cross-section, the flux of KE per unit weight and time is.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>ρQ(</m:mo>
+
+            <m:mrow>
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>u</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+
+              <m:msup>
+                <m:mi>) ∝ u</m:mi>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>In reality however, different parcels of fluid are moving at
+      different rates and the flux of velocity head (i.e. KE per unit weight
+      of fluid) per unit time and area is.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>ρu(</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>u</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+
+              <m:msup>
+                <m:mi>) ∝ u</m:mi>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Because the cube of the cross-sectionally averaged velocity will
+      be less that the average of the local velocity cubed, the parameter α is
+      introduced as:</para>
+    </figure>
+
+    <equation>
+      <m:math display="block">
+        <m:mrow>
+          <m:mi>α</m:mi>
+
+          <m:mo>=</m:mo>
+
+          <m:mrow>
+            <m:mfrac>
+              <m:msub>
+                <m:mi>ΣQ</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+
+              <m:mi>Q</m:mi>
+            </m:mfrac>
+
+            <m:mfrac>
+              <m:msubsup>
+                <m:mi>u</m:mi>
+
+                <m:mi>i</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msubsup>
+
+              <m:msup>
+                <m:mi>u</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+            </m:mfrac>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation>
+
+    <equation>
+      <m:math display="block">
+        <m:mrow>
+          <m:mo>=</m:mo>
+
+          <m:mfrac>
+            <m:mrow>
+              <m:msub>
+                <m:mi>∑A</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+
+              <m:msubsup>
+                <m:mi>u</m:mi>
+
+                <m:mi>i</m:mi>
+
+                <m:mi>3</m:mi>
+              </m:msubsup>
+            </m:mrow>
+
+            <m:msup>
+              <m:mi>Au</m:mi>
+
+              <m:mi>3</m:mi>
+            </m:msup>
+          </m:mfrac>
+        </m:mrow>
+      </m:math>
+    </equation>
+
+    <para>where. . . ui = velocity through cross-sectional area Ai u =
+    cross-sectionally averaged velocity Qi = Aiui Q = Au Ai = flow sub-area
+    with velocity ui A = total flow area</para>
+
+    <para>In reality, the flow velocity varies over the cross-section and
+    where measurements are available it is possible to evaluate the parameter
+    α . In practice, for turbulent flow in pipes, α= 1.03−1.06 and is normally
+    set to unity, but for open channels the value of α can depart
+    significantly further from unity. However, it is not uncommon practice to
+    also adopt α= 1 in computations for open channel flows.</para>
+  </section>
+
+  <section>
+    <title>Classifications of Free Surface Flows</title>
+
+    <para>Free surface flows are flows in which the top water surface is both
+    subject to atmospheric pressure but is free from shear stresses exerted by
+    any containing flow boundaries from the channel or
+    pipe<superscript>3</superscript>.</para>
+
+    <para>Free surface flows occur:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>as overland flows (across grasslands, bitumin surfaces or paved
+        areas),</para>
+      </listitem>
+
+      <listitem>
+        <para>in natural channels (as inbank and overbank flows of rivers,
+        streams and creeks),</para>
+      </listitem>
+
+      <listitem>
+        <para>in manmade channels (in water and wastewater treatment plants,
+        in urban drainage systems),</para>
+      </listitem>
+
+      <listitem>
+        <para>other waterways (such as in estuaries or wetlands), and</para>
+      </listitem>
+
+      <listitem>
+        <para>pipes and closed conduits (as in sewerage channels, pipelines
+        and culverts).</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Free surface flows can be classified:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>according to their time variation (as steady or
+        unsteady),</para>
+      </listitem>
+
+      <listitem>
+        <para>according to their spatial variation (as 1D, 2D or 3D - even
+        though the small scale turbulent motions are always in 3D),</para>
+      </listitem>
+
+      <listitem>
+        <para>as laminar or turbulent flows (depending upon the Reynolds
+        number, <emphasis>IR</emphasis>),</para>
+      </listitem>
+
+      <listitem>
+        <para>as subcritical or supercritical flows (depending upon the Froude
+        number,<emphasis> IF</emphasis>), or</para>
+      </listitem>
+
+      <listitem>
+        <para>as gradually varying flow (as in backwater and drawdown
+        longitudinal water surface profiles) or rapidly varying flows (as in
+        hydraulic jumps). There is no sharp line of demarcation separating
+        gradually varied flow and rapidly varied flow but the distinction
+        between them can be put in terms of (i) a comparison between the
+        radius of curvature of the streamlines and the depth of flow or (ii)
+        whether the pressure distribution through the vertical can be
+        approximated as being hydrostatic or not.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Uniform Flow and Critical Flow</title>
+
+    <para>There are two useful flow conditions in steady state open channel
+    flow calculations:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>uniform flow, and</para>
+      </listitem>
+
+      <listitem>
+        <para>critical flow.</para>
+      </listitem>
+    </itemizedlist>
+
+    <section>
+      <title>Uniform Flow</title>
+
+      <para>Uniform flow is a useful reference condition in which the depth of
+      flow (as well as the flow velocity) down a prismatic channel remains
+      constant. The water is neither accelerating nor decelerating. Such a
+      condition is brought about by the equilibration of two opposing forces,
+      viz:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>the<emphasis> weight</emphasis> or <emphasis>gravity force
+          </emphasis>resolved down the channel (<emphasis>W</emphasis>
+          sin<emphasis>θ</emphasis> ) which tends to accelerate the flow,
+          and</para>
+        </listitem>
+
+        <listitem>
+          <para>the frictional shear force (F<subscript>T</subscript>) which
+          opposes the motion of the water and acts in the longitudinal
+          direction, tangential to the flow boundary of the channel in contact
+          with the water (see Figure 5). The shear force acts around the
+          wetted perimeter of the channel cross-section.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The schematic in Figure 5 depicts the dominant forces acting on an
+      elemental volume of water. For the flow condition of uniform flow, all
+      the forces cancel out and there is no nett force acting on the fluid
+      element since <emphasis>W</emphasis>. sin <emphasis>θ</emphasis>=
+      F<subscript>T</subscript>.</para>
+
+      <para>Because the hydrostatic pressure forces on the two ends of the
+      control volume cancel each other out, they do not enter the picture
+      here. In uniform flow, the bedslope S<subscript>o</subscript>, the slope
+      of the water surface S<subscript>ws</subscript> and the slope of the
+      total head line S<subscript>f</subscript> are all equal, to S
+      (say).</para>
+
+      <para>While uniform flow rarely (if ever) occurs in nature, it may be a
+      reasonable approximation for the flow down a long, prismatic, man-made
+      channel or as a first pass for a natural channel.</para>
+
+      <figure>
+        <title>Figure 5: Opposing forces acting on a fluid element down the
+        channel cancel thereby producing uniform flow.</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="???"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Critical Flow</title>
+
+      <para>Critical flow occurs when the specific energy
+      (<emphasis>E</emphasis>) at a cross-section is a minimum for a fixed
+      flow, and this corresponds to the Froude number
+      (<emphasis>IF</emphasis>) having the value of unity at that
+      cross-section. Here, we consider two cases (i) channels with a general
+      cross-section, and (ii) channels with a rectangular cross-section which
+      is a particular but useful case.</para>
+
+      <para><emphasis role="bold">Channel with a General Cross-Section
+      </emphasis></para>
+
+      <para>For a channel with a general cross-section, critical flow is
+      defined by setting the Froude number to unity.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>IF</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msqrt>
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>Q</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>g</m:mi>
+                </m:mfrac>
+              </m:msqrt>
+
+              <m:mfrac>
+                <m:mi>b</m:mi>
+
+                <m:msup>
+                  <m:mi>A</m:mi>
+
+                  <m:mi>3</m:mi>
+                </m:msup>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>=</m:mo>
+
+                <m:mi>1</m:mi>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . <emphasis>b</emphasis> = top width of the cross-section
+      (<emphasis>m</emphasis>)</para>
+
+      <para><emphasis role="bold">Channel with a Rectangular
+      Cross-Section</emphasis></para>
+
+      <para>Only for channels with a rectangular cross-section, is it
+      convenient to work in terms of the flow per unit width of channel i.e. q
+      = Q/b in units of (m<superscript>2</superscript>/s).</para>
+
+      <para>At critical flow, the Froude number is again set to unity and the
+      resulting expressions are:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>IF</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>q</m:mi>
+
+                <m:msqrt>
+                  <m:msubsup>
+                    <m:mi>gy</m:mi>
+
+                    <m:mi>c</m:mi>
+
+                    <m:mi>3</m:mi>
+                  </m:msubsup>
+                </m:msqrt>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>=</m:mo>
+
+                  <m:mfrac>
+                    <m:mi>v</m:mi>
+
+                    <m:msqrt>
+                      <m:msub>
+                        <m:mi>gy</m:mi>
+
+                        <m:mi>c</m:mi>
+                      </m:msub>
+                    </m:msqrt>
+                  </m:mfrac>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mo>=</m:mo>
+
+                  <m:mi>1</m:mi>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>y</m:mi>
+
+              <m:mi>c</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mo>(</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>q</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>g</m:mi>
+              </m:mfrac>
+
+              <m:msup>
+                <m:mi>)</m:mi>
+
+                <m:mi>1/3</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . q = flow per unit width in channel with rectangular
+      cross-section (m<superscript>2</superscript>/s)
+      y<subscript>c</subscript> = critical flow depth in channel with
+      rectangular cross-section (m) v = flow velocity (m/s) when the depth is
+      y<subscript>c</subscript>.</para>
+
+      <para>Sections at which the flow is critical are special in that there
+      is a unique relation between velocity (or rate of flow) and depth,
+      irrespective of the channel roughness or bedslope. Such sections are
+      technically known as controls4 and examples of locations where they
+      occur might are: (i) a sudden steepening of the channel bedslope, (ii) a
+      brink (or overflow), (iii) a hump of sufficient height, (iv) an upwards
+      step of sufficient height, or (v) a narrowing of the channel which is
+      sufficiently constricting, (vi) flow from a reservoir or lake into a
+      channel, (vii) a hydraulic structure such as a weir or sluice
+      gate.</para>
+
+      <para>In an open channel with various features such those listed above,
+      it is possible that if the flow changes, so too can the control(s). For
+      a given flow, a channel can have more than one control. The actual
+      controls can only be identified through a trial and error process in
+      which channel feature(s) is/are assumed to be control(s), and the
+      computations on the backwater and drawdown curves completed. If the
+      resulting water surface profile is compatible with the known boundary
+      conditions at both ends of the channel, then the assumed control(s) are
+      valid. If, on the other hand, an incompatibility is reached, it means
+      that one of more of the assumptions regarding the controls needs to be
+      changed and the solution process of calculating the water surface
+      profiles is repeated until compatibility with all imposed boundary
+      conditions is achieved.</para>
+
+      <para>In a channel with a number of potential controls, the above
+      solution process can be lengthy and require a number of trials.</para>
+
+      <para>???should all this go into another backwater section????</para>
+    </section>
+
+    <section>
+      <title>Bed Shear Stress</title>
+
+      <para>As soon as there is movement of water through a channel or pipe, a
+      resistive shear force is mobilised which opposes the motion of the water
+      down the channel with slope S = tanθ . This shear force (or friction
+      force) is developed around the wetted perimeter or periphery (P) of the
+      channel or conduit and has its origins in the (albeit small) viscosity
+      of the water. The shear force arises from a combination of (i) the
+      viscous skin drag between the moving fluid and the flow boundary and
+      (ii) the form drag on the roughness projections of the flow
+      boundary.</para>
+
+      <para>While a shear force is also developed at the air-water interface,
+      it is negligible in comparison to the shear force around the interface
+      of the water and channel (or water and pipe wall).</para>
+
+      <para>An expression for the bed shear stress for uniform flow (o) can be
+      determined by equating the two forces acting on the fluid element of
+      length L in Figure 5.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>W sin θ</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:msub>
+              <m:mi>F</m:mi>
+
+              <m:mi>T</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>pgLAsin</m:mi>
+
+            <m:mi>θ</m:mi>
+
+            <m:msub>
+              <m:mi>= LPτ</m:mi>
+
+              <m:mi>ο</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>τ</m:mi>
+
+              <m:mi>ο</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mtext>pg (</m:mtext>
+
+              <m:mfrac>
+                <m:mi>A</m:mi>
+
+                <m:mi>P</m:mi>
+              </m:mfrac>
+
+              <m:mi>) sin θ</m:mi>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>≈</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>pgR</m:mi>
+
+                <m:mi>h</m:mi>
+              </m:msub>
+
+              <m:mo>tan θ</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:msub>
+            <m:mrow>
+              <m:mo>=</m:mo>
+
+              <m:mi>pgSR</m:mi>
+            </m:mrow>
+
+            <m:mi>h</m:mi>
+          </m:msub>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>where... R</m:mi>
+
+              <m:mi>h</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mi>A</m:mi>
+
+              <m:mi>P</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>= hydraulic radius (m)</para>
+
+      <para>The approximation sinϴ ≈ tanϴ is only in error by 1% when the
+      channel slope is as steep as about 8<superscript>∘</superscript> or
+      7H:1V since (sin 8<superscript>∘</superscript> /tan
+      8<superscript>∘</superscript> )= 0.99.</para>
+
+      <para>Equation (3) applies to uniform flow, but it can be generalised to
+      include gradually varied flow by replacing the slope S by the friction
+      slope S<subscript>f</subscript> . (The derivation can be found on page
+      286 of [13]). For gradually varied flow, the bed shear stress is given
+      by:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>τ</m:mi>
+
+              <m:mi>ο</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:msub>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>pgR</m:mi>
+
+                  <m:mi>h</m:mi>
+                </m:msub>
+
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>f</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>The bed shear stress is significant when considering the flow
+      velocities for (i) the initiation of sediment motion, (ii) sediment
+      motion in alluvial channels, (iii) avoiding deposition of sediment
+      through suspension by fluid turbulence and (iv) scouring conduits free
+      of sediment.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Uniform Flow Resistance Formulas</title>
+
+    <para>In turbulent flow, there are three equations which are commonly used
+    to quantify the effects of boundary resistance when a flow is passing down
+    the channel: .</para>
+
+    <orderedlist>
+      <listitem>
+        <para>Chezy equation</para>
+      </listitem>
+
+      <listitem>
+        <para>Manning equation, and</para>
+      </listitem>
+
+      <listitem>
+        <para>Darcy-Weisbach equation (h<subscript>f </subscript>= f LD
+        u<superscript>2</superscript> /2g ) in conjunction with the
+        Colebrook-White equation (f<superscript>−0.5</superscript> = −2
+        log<subscript>10</subscript>( k<subscript>s</subscript> /3.7D +
+        2.51/IR )) to determine the Darcy friction factor, f.</para>
+      </listitem>
+    </orderedlist>
+
+    <para>While the Chezy and Manning formulas are more commonly applied to
+    open channel flows, the Darcy-Weisbach and Colebrook-White equations are
+    more commonly applied to pipe flows.</para>
+
+    <para>Both formulas were empirically based on measurements in canals and
+    rivers...........turbulent flow......degenerate mom/energy
+    eqns?????????????up to here??????????????????/</para>
+
+    <para>Both the Chezy and Manning formulas relate the cross-sectionally
+    averaged velocity to the channel slope, the hydraulic radius and an
+    empirical parameter which is used to encapsulate the effects of the
+    resistance to flow. The two formulas have a different form to each
+    other.</para>
+
+    <section>
+      <title>Chezy Formula</title>
+
+      <para>The Chezy formula was proposed by Chezy in 1769 and is:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>v</m:mi>
+
+            <m:mo>=C</m:mo>
+
+            <m:msqrt>
+              <m:msub>
+                <m:mi>SR</m:mi>
+
+                <m:mi>h</m:mi>
+              </m:msub>
+            </m:msqrt>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . v = cross-sectionally averaged flow velocity
+      (m.s<superscript>−1</superscript>) = Q/A Q = flow
+      (m<superscript>3</superscript>.s<superscript>−1</superscript>) Rh =
+      hydraulic radius of the cross-section (m) = A/P S = longitudinal slope
+      of the channel (m.m<superscript>−1</superscript>) A = flow area
+      (m<superscript>2</superscript>) P = wetted perimeter (m) C = Chezy
+      coefficient
+      (m<superscript>1/2</superscript>.s<superscript>−1</superscript>)</para>
+
+      <para>The Chezy coefficient is a measure of the smoothness of the
+      channel since the smoother the channel, the greater is the value of the
+      Chezy coefficient.</para>
+
+      <para>However, in general the resistance to flow depends on the
+      viscosity of the water, as well as the roughness of the surface of the
+      channel. The general semi-empirical expression for the Chezy coefficient
+      is:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>C</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msqrt>
+                <m:mrow>
+                  <m:mi>32g</m:mi>
+
+                  <m:mrow>
+                    <m:mi>log</m:mi>
+
+                    <m:mi>(</m:mi>
+                  </m:mrow>
+                </m:mrow>
+              </m:msqrt>
+
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>12</m:mi>
+
+                  <m:msub>
+                    <m:mi>R</m:mi>
+
+                    <m:mi>h</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>2δ</m:mi>
+
+                    <m:mi>s</m:mi>
+                  </m:msub>
+
+                  <m:mo>/7 +</m:mo>
+
+                  <m:msub>
+                    <m:mi>k</m:mi>
+
+                    <m:mi>s</m:mi>
+                  </m:msub>
+                </m:mrow>
+              </m:mfrac>
+
+              <m:mo>)</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>18log</m:mi>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mfrac>
+                  <m:msub>
+                    <m:mi>12R</m:mi>
+
+                    <m:mi>h</m:mi>
+                  </m:msub>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>2δ</m:mi>
+
+                      <m:mi>s</m:mi>
+                    </m:msub>
+
+                    <m:mo>/7+</m:mo>
+
+                    <m:msub>
+                      <m:mi>k</m:mi>
+
+                      <m:mi>s</m:mi>
+                    </m:msub>
+                  </m:mrow>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . δ<subscript>s</subscript> = viscous sublayer thickness
+      (m) = 11.6 v/ v<subscript>*</subscript> v<subscript>*</subscript> =
+      shear velocity (m.s<superscript>−1</superscript>) =
+      √gR<subscript>h</subscript>S = kinematic viscosity of water
+      (m<superscript>2</superscript>.s<superscript>−1</superscript>) =
+      10<superscript>−6</superscript>
+      (m<superscript>2</superscript>.s<superscript>−1</superscript>) for water
+      at 20<superscript>∘</superscript> k<subscript>s</subscript> = boundary
+      roughness projection height (m)</para>
+
+      <para>A few more words on k<subscript>s</subscript> as it relates to
+      pipe wall roughness and to bedforms are in order.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>When k<subscript>s</subscript> refers to the roughness of a
+          pipe or a man-made surface such as concrete,
+          k<subscript>s</subscript> is also known as the equivalent sand grain
+          roughness, after the definitive experimental work of Nikuradse in
+          1933<superscript>5</superscript>. Nikuradse conducted experiments
+          aimed at measuring the head losses in pipes of varying roughness. In
+          each experiment Nikuradse conducted, he coated the inside wall of
+          the pipe with sand grains of approximately the same size. Nikuradse
+          tested pipes with internal coatings of various discrete grain sizes,
+          lengths and diameters and at various Reynolds numbers for the flow.
+          In each case he measured the resulting headloss along the
+          pipe.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>For commercial pipes (with their various pipe-to-pipe joints), the
+      wall roughness will have a different geometry and distribution of
+      roughness projection heights compared to Nikuradse’s sand coated
+      pipes.</para>
+
+      <para>The commercial pipe with an equivalent sand grain roughness is the
+      pipe with the same size and length which yields the same head loss as a
+      pipe coated with sand of a particular size. Data on commercial pipes (or
+      other man-made surfaces) will include the equivalent sand grain
+      roughness.</para>
+
+      <para>As pipes in service age, their walls become rougher through
+      deterioration of the pipe wall and/or build-up of algal slimes. The
+      equivalent sand grain roughness of pipes tends to increase with time and
+      only through cleaning the pipes can the roughness
+      (k<subscript>s</subscript>) be reduced.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>In the case of bedforms on a mobile bed of sediment, it is
+          recommended that k<subscript>s</subscript> be taken as half the
+          height of the bedform. For example, for a river bed with dunes of
+          height 10 cm engineering practice would be to set
+          k<subscript>s</subscript> = 5 cm.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Equation (7) is plotted in Figure 6.</para>
+
+      <figure>
+        <title>Figure 6: Chezy coefficient C = 18 log 12Rh 2s/7+ks (after
+        Figure 2/2.7 in [21]).</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="???"/>
+          </imageobject>
+        </mediaobject>
+
+        <para>Retardation of the flow in an open channel is due to two forces
+        which both oppose the flow:</para>
+
+        <itemizedlist>
+          <listitem>
+            <para>the viscous force between the fluid and the boundary,
+            and</para>
+          </listitem>
+
+          <listitem>
+            <para>the drag force due to the protuberances of the channel (or
+            wall) roughness projections.</para>
+          </listitem>
+        </itemizedlist>
+
+        <para>The effect of the roughness of the boundary surface on the value
+        of the Chezy coefficient is quantified by the (wall) roughness
+        (projection height) parameter (k<subscript>s</subscript>) while the
+        effect of the viscosity of the water is incorporated in the thickness
+        of the viscous sublayer (δ<subscript>s</subscript>). The viscous
+        sublayer is the very thin region of chaotic flow dominated by the
+        viscous force and which separates the stationary fluid immediately in
+        contact with the stationary flow boundary and the overlying turbulent
+        boundary layer.</para>
+
+        <para>It is evident from the denominator in equation (6) that there
+        are two extremes of turbulent flow:</para>
+
+        <itemizedlist>
+          <listitem>
+            <para>the viscous force dominates i.e. δ<subscript>s</subscript>
+            &gt;&gt; k<subscript>s</subscript>; the roughness projection
+            elements are fully immersed in the viscous sublayer (see Figure 7)
+            and the value of the Chezy coefficient is independent of the wall
+            roughness projection height k<subscript>s</subscript>. This
+            extreme flow condition is known as hydraulically smooth turbulent
+            flow and is unlikely in most practical situations.</para>
+          </listitem>
+
+          <listitem>
+            <para>the drag forces on the roughness projection protuberances
+            dominate i.e. k<subscript>s</subscript> &gt;&gt;
+            δ<subscript>s</subscript>; the roughness projection elements are
+            sufficiently long to break down or protrude through and rupture
+            the viscous sublayer and the value of the Chezy coefficient (and
+            the uniform flow velocity) is independent of the fluid viscosity.
+            This extreme flow condition is known as hydraulically rough
+            turbulent flow and is normally the case when the Reynolds number
+            R<subscript>e</subscript> &gt; 10<superscript>6</superscript>
+            (approximately) and would commonly occur in earthen or natural
+            channels. For hydraulically rough flow, equation (6) can be
+            simplified and the value of the Chezy coefficient can then be
+            determined from</para>
+
+            <equation>
+              <m:math display="block">
+                <m:mrow>
+                  <m:mi>C</m:mi>
+
+                  <m:mo>=</m:mo>
+
+                  <m:mrow>
+                    <m:mi>18log</m:mi>
+
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+
+                      <m:mfrac>
+                        <m:msub>
+                          <m:mi>12R</m:mi>
+
+                          <m:mi>h</m:mi>
+                        </m:msub>
+
+                        <m:msub>
+                          <m:mi>k</m:mi>
+
+                          <m:mi>s</m:mi>
+                        </m:msub>
+                      </m:mfrac>
+
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:math>
+            </equation>
+          </listitem>
+        </itemizedlist>
+
+        <para>Values of the boundary roughness (k<subscript>s</subscript>)
+        vary according to the nature of the surface of the channel boundary.
+        Three examples are earthen channels, brickwork and concrete. Amongst
+        other references, useful tabulations of the values for
+        k<subscript>s</subscript> for various channel surfaces may be found in
+        Table 5-6 of [8] or Table 4-1 in [13]. The values in Table 1 were
+        extracted from [14] (Table 3 in Charts for the Hydraulic Design of
+        Channels and Pipes).</para>
+
+        <para>table in here - revamp this table - include v and
+        T=20<superscript>∘</superscript></para>
+      </figure>
+    </section>
+
+    <section>
+      <title>Application of the Chezy Equation</title>
+
+      <para>In hydraulic investigations, the Chezy equation (6) can be applied
+      in two modes:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>with the Chezy coefficient being held constant for a
+          particular channel, irrespective of the flows down the channel. This
+          case corresponds to a direct relationship between the square of the
+          flow velocity and the slope (i.e. S ~ v<superscript>2</superscript>)
+          and is a characteristic of a fully rough turbulent flow.</para>
+        </listitem>
+      </itemizedlist>
+
+      <figure>
+        <title>Figure 7: Relative height of the roughness projection elements
+        and the thickness of the viscous sublayer.</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="???"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para>with the Chezy coefficient varying according to equation (7).
+          In this case, the Chezy coefficient depends on the flow down the
+          channel. Consequently, the flows capable of being simulated can
+          range from hydraulically smooth turbulent flow to hydraulically
+          rough turbulent flow. In effect, equation (7) is closely related to
+          the Colebrook-White equation of pipe
+          flow.<superscript>6</superscript></para>
+
+          <para>How to establish values of C???</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Manning Formula</title>
+
+      <para>TThe formula known as the Manning formula is the result of several
+      modifications of a formula originally published by Manning in 1889 - it
+      is:he formula known as the Manning formula is the result of several
+      modifications of a formula originally published by Manning in 1889 - it
+      is:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:msubsup>
+                <m:mrow>
+                  <m:mi>v</m:mi>
+
+                  <m:mo>=</m:mo>
+
+                  <m:msubsup>
+                    <m:mi>R</m:mi>
+
+                    <m:mi>h</m:mi>
+
+                    <m:mi>2/3</m:mi>
+                  </m:msubsup>
+                </m:mrow>
+              </m:msubsup>
+
+              <m:msup>
+                <m:mrow>
+                  <m:msup>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>1/2</m:mi>
+                  </m:msup>
+
+                  <m:mi>/n</m:mi>
+                </m:mrow>
+              </m:msup>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . v = cross-sectionally averaged flow velocity
+      (m.s<superscript>−1</superscript>) = Q/A Q = flow
+      (m<superscript>3</superscript>.s<superscript>−1</superscript>)
+      R<subscript>h</subscript> = hydraulic radius of the cross-section (m) =
+      A/P S = longitudinal slope of the channel
+      (m.m<superscript>−1</superscript>)</para>
+
+      <para>Table 1: Common fluid properties for freshwater and seawater where
+      ρ= density, v= kinematic viscosity and μ = dynamic viscosity. Seawater
+      has a salinity of 35 practical salinity units (psu) which is almost the
+      same as 35ppt or 35 grams of total salts per kilogram of
+      solution.</para>
+
+      <para>A = flow area (m<superscript>2</superscript>)</para>
+
+      <para>P = wetted perimeter (m)</para>
+
+      <para>n= Manning roughness parameter - in practice, simply referred to
+      as Manning’s n (m1)</para>
+
+      <para>The Manning equation (10) is not dimensionally homogeneous and
+      this has lead to confusion about the dimensions of the Manning roughness
+      parameter n. There are three versions of the dimensions of Manning’s n
+      (Section 5-6 in [8]):</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>L<superscript>−1/3</superscript>.T<superscript>
+          1</superscript>. These dimensions result directly from the Manning
+          equation (10).</para>
+        </listitem>
+
+        <listitem>
+          <para>L<superscript>0</superscript>.T <superscript>0</superscript>
+          i.e. dimensionless. Consequently, the unstated coefficient of unity
+          at the front of the right hand side of equation (10) must have the
+          dimensions of L<superscript>-1/3.T 1</superscript> .</para>
+        </listitem>
+
+        <listitem>
+          <para>L<superscript>1/6</superscript>. In this case, the dimensions
+          of n are independent of time, as would be expected of a roughness
+          parameter and only involve length. n is a measure of the absolute
+          roughness of the channel surface. In this case, it is assumed that
+          there is a coefficient of unity equal to √g/ 9.81 attached to the
+          right hand side of the Manning equation (10). In engineering
+          practice, this is perhaps the most commonly adopted version for the
+          units of Manning’s n.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Application of the Manning Equation</title>
+
+      <para>As for the Chezy equation, the Manning equation (10) can be
+      applied in two modes:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>with Manning’s n being held constant for a particular channel,
+          irrespective of the flows down the channel. This case corresponds to
+          a direct relationship between the square of the flow velocity and
+          the slope (i.e. S~ v<superscript>2</superscript>) and is a
+          characteristic of a fully rough turbulent flow.</para>
+        </listitem>
+
+        <listitem>
+          <para>with Manning’s n varying in some prescribed fashion according
+          to the depth of flow (or stage or hydraulic radius). The actual
+          variation of Manning’s n will normally have been determined from
+          measurements and back-calculated through Manning’s equation. When
+          used in numerical modelling of flood studies (say), the variation
+          may be stored as a table of values for varying depth or
+          stage.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Estimates for the values of Manning’s n can be found from various
+      sources which may vary:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>tables of Manning’s n can be found in numerous references for
+          different surfaces such as asbestos cement, concrete (centrifugally
+          spun), ductile iron and steel (e.g. Table 2 in [2] and Table 5-6 in
+          [8]). References often give a range of values for minimum and
+          maximum values corresponding to pipes in good to poor
+          condition.</para>
+        </listitem>
+
+        <listitem>
+          <para>Twenty four black and white photographs of manmade and natural
+          river channels can be found in Figure 5-5 of reference [8] with
+          corresponding values of Manning’s roughness parameter ranging from n
+          = 0.012 to n = 0.150. No information on the stream or river geometry
+          (i.e. plan view or cross-sections) is given in this reference. The
+          main difficulty with acquiring estimates of n from these photos is
+          that one is relying on the brief caption for each photo and the view
+          of the exposed part of the bank or channel to gauge the roughness
+          (and hence the Manning’s n) of the submerged part of the channel or
+          of the channel under flood conditions.</para>
+        </listitem>
+
+        <listitem>
+          <para>Colour photos of fifty natural rivers, two to seven (but
+          typically three or four) cross-sections of each river channel and a
+          plan view can be found in [3]. This information was assembled by the
+          U.S. Geological Survey over a 15 year period. Although this
+          reference is old with its quantitative information in imperial
+          units, it is perhaps the best known and complete compendium on
+          Manning’s n for natural streams and rivers. The Manning’s n values
+          range from n = 0.024 through to n = 0.075 and all measurements in
+          this reference were made during the peaks of documented floods. The
+          locations of the cross-sections are indicated on an accompanying
+          plan view of the stream or river. It is clear from the plan views of
+          all the channel reaches that where the Manning’s n values refer to
+          are straight or gently curving. Other information which can be found
+          in this reference includes the river name, geographical location,
+          date of the flood, the flow, a description of the bed material and
+          condition of both river banks, and a table of cross-sectional flow
+          area, top width, mean depth, hydraulic radius, mean flow velocity,
+          length between cross-section sections, and the fall between
+          sections.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>An example of the information contained in this reference is
+      reproduced in Figures 8 to 10 which refers to Esopus Creek. (Esopus
+      Creek is one of three waterways with Manning’s n = 0.030 included in
+      this reference.)</para>
+
+      <para>Interestingly, rivers and streams with sandy beds were not
+      included in this reference because Manning’s n values for streams and
+      rivers of this type, which depend upon the size of the bed material and
+      bedforms, can be found elsewhere. The beds of the streams and rivers
+      included in this reference ranged from boulder strewn mountain streams
+      to heavily vegetated streams and rivers.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Other references with pictures of channels with varying
+          channel roughness can be found from various web sites on the
+          internet ([23]) or other references from the U.S. Geological
+          Survey.</para>
+
+          <figure>
+            <title>Figure 8: Roughness coefficient data for Esopus Creek with
+            n = 0.030 (Page 34 in [3]).</title>
+
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="???"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+
+  <section>
+    <title>Factors Affecting the Manning Roughness Parameter</title>
+
+    <para>In practice, the Manning roughness coefficient ‘n’ is used to
+    encapsulate energy losses which may arise from several sources apart from
+    boundary roughness. Other possible causes of energy losses are:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>flow expansions and contractions which may cause the flow to
+        separate from the flow boundary and form a recirculation bubble in
+        which energy is continuously dissipated in the eddy,</para>
+      </listitem>
+
+      <listitem>
+        <para>vegetation (be it grasses, macrophytes or algae), and</para>
+      </listitem>
+
+      <listitem>
+        <para>channel sinuosity which give rise to secondary currents. (No
+        river runs straight for more than ten times its width.)</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>If the flow expansion or contraction is sudden, it is more
+    appropriate to formulate the resulting energy losses in any calculations
+    or numerical model as a local loss which is expressed as:</para>
+
+    <figure>
+      <title>Figure 9: Geometry of Esopus Creek. (Page 35 in [3])</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="???"/>
+        </imageobject>
+      </mediaobject>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>H</m:mi>
+
+              <m:mi>L</m:mi>
+            </m:msub>
+
+            <m:mo>=K</m:mo>
+
+            <m:mrow>
+              <m:mo>(</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>u</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+
+              <m:mo>)</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>The dimensionless coefficient K needs to be evaluated through
+      measurements or estimated from hydraulic handbooks. As to when a flow
+      expansion is treated as a local loss or not is a matter for judgement.
+      In channels with, for example, a significant and sudden contraction due
+      to the presence of bridge piers in the water course, the energy losses
+      due to the flow contraction would appropriately be treated as a local
+      loss rather than be incorporated into a Manning ‘n’ for a reach of water
+      course.</para>
+    </figure>
+  </section>
+
+  <section>
+    <title>Estimation of the Manning Roughness Parameter</title>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>Classification of the 1D Backwater and Drawdown Water Surface
+    Profiles</title>
+
+    <para>When the gradually varied flow equation is applied to a steady flow
+    down a prismatic channel, it can be shown that there are 12 generic,
+    gradually varied flow, water surface profiles (apart from uniform flow).
+    These profiles can be classified according to (p 34-35 [10]):</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>5 conditions which compare the normal depth
+        (y<subscript>o</subscript>) with the critical depth
+        (y<subscript>c</subscript>). This results in the classification of 5
+        bedslopes.</para>
+      </listitem>
+
+      <listitem>
+        <para>3 conditions which compare the actual depth (y) with the normal
+        depth (y<subscript>o</subscript>) and the critical depth
+        (y<subscript>c</subscript>). This results in 3 zones for the
+        depth.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Table 4 contains the bedslope and depth classifications.</para>
+
+    <para>The 12 gradually varied flow profiles are illustrated in Figure
+    11.</para>
+
+    <para>The 12 generic profiles are curves of increasing or decreasing
+    curvature in either the downstream or upstream direction. When some
+    simplifying assumptions are made (IF<superscript>2</superscript> &lt;&lt;1
+    and a linearisation about normal flow depth using a Taylor series has been
+    employed), it has been shown that the departure of the actual depth (y)
+    from the normal flow depth (y<subscript>o</subscript>) follows an
+    exponential variation in space ([24], [10]); this is of the form y
+    −y<subscript>o</subscript>~e- dS<subscript>f</subscript>
+    /d<subscript>x</subscript> x provided IF &lt;&lt; 1 and where
+    S<subscript>f</subscript> can be found from the Manning or Chezy
+    equation.</para>
+
+    <para>A consequence of the nature of the se profiles is that any errors
+    introduced during a backwater computation tend to be systematic. As the
+    computations proceed in one direction (be it downstream or upstream), the
+    flow curvature continuously increases or decreases.</para>
+
+    <para>All the water surface profiles schematised in Figure 11 can be
+    classified as a backwater curve or a drawdown curve:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>backwater curve - the flow depths continuously increase in the
+        downstream direction; the flow is one of deceleration.</para>
+      </listitem>
+
+      <listitem>
+        <para>drawdown curve - the flow depths continuously decrease in the
+        downstream direction; the flow is one of acceleration.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Flow in Channels of Compound Cross-Section</title>
+
+    <para>See Chapter 2 of [9].</para>
+  </section>
+
+  <section>
+    <title>Fundamental Relations</title>
+
+    <section>
+      <title>Unsteady Flow Equations</title>
+
+      <para>The governing equations for free surface flow are based on
+      considerations of mass, momentum and energy. There are various
+      combinations of dependent variables which are used, e.g. stage and flow;
+      depth and flow; flow area and flow; depth and (cross-sectionally
+      averaged) velocity; and stage and velocity. Moreover, the equations can
+      be expressed in conservation form or nonconservation form. The
+      aforementioned factors give rise to different forms of the governing
+      equations. Several of these forms are listed below.</para>
+
+      <para>It should be noted that the various forms of the equations below
+      are not equivalent and some forms may be preferred over others due
+      to:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>conservation vs non-conservation (i.e. divergent) form</para>
+        </listitem>
+
+        <listitem>
+          <para>choice of variables may be more accurate than others (p17
+          [9])</para>
+        </listitem>
+
+        <listitem>
+          <para>if there are discontinuous solutions (p18 [9].</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Assumptions - see p8 of [9].</para>
+
+      <para>The variables are contained in Figure 12.</para>
+
+      <para>The 1D equations for continuity, momentum and energy with a
+      lateral inflow follow:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂A</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>βQ</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>A</m:mi>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mo>+gA</m:mo>
+
+                <m:mfrac>
+                  <m:mi>∂y</m:mi>
+
+                  <m:mi>∂x</m:mi>
+                </m:mfrac>
+              </m:mrow>
+
+              <m:mo>+</m:mo>
+
+              <m:mrow>
+                <m:mo>gA(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL.ucosΦ</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>βQ</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>A</m:mi>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mo>+gA</m:mo>
+
+                <m:mfrac>
+                  <m:mi>∂y</m:mi>
+
+                  <m:mi>∂x</m:mi>
+                </m:mfrac>
+              </m:mrow>
+
+              <m:mo>+gA</m:mo>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>e</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL.ucosΦ</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>where... S</m:mi>
+
+              <m:mi>f</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msub>
+                <m:mi>dx.Pτ</m:mi>
+
+                <m:mi>ο</m:mi>
+              </m:msub>
+
+              <m:mi>pgA.dx</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>= friction force per unit weight of fluid</para>
+
+      <para>S<subscript>e</subscript> =</para>
+
+      <para>The label of ‘Saint Venant equations’ is commonly encountered in
+      the literature; it refers to the 1D continuity and momentum
+      equations.</para>
+
+      <para>In practice, the equations of momentum and energy are sometimes
+      erroneously mixed. While the momentum and energy equations (viz
+      equations (12) and (13) respectively) are similar, they are
+      fundamentally different. The differences between the 1D equations arise
+      from three sources: (i) the velocity distribution over the cross-section
+      (as captured in the momentum and kinetic energy coefficients α and β
+      respectively), (ii) the lateral inflow terms and (iii) the friction
+      slope (S<subscript>f</subscript> ) and the energy slope
+      (S<subscript>e</subscript>).</para>
+
+      <para>If the velocity is uniform over the cross-section ( α=β= 1), there
+      is no lateral inflow (or outflow), and the energy slope is taken to be
+      the same as the friction slope (as is usually done in practice), the 1D
+      momentum and energy equations become the same equation:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂u</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+u</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂u</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mo>+g</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂y</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mrow>
+                <m:mo>g(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>0</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+    </section>
+
+    <section>
+      <title>Other Forms of the 1D Unsteady Flow Equations</title>
+
+      <para>The equations below are in conservation form i.e. they are
+      generally of the form ∂( )/ ∂t + ∂( )/ ∂x + other terms = 0. There is a
+      lateral inflow of qL (m<superscript>2</superscript>/s) entering the
+      channelised flow. The angle of approach to the centreline of the channel
+      is Φ in the horizontal plane. See Figure 13.</para>
+
+      <para>Dependent Variables: depth (y) and discharge (Q)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂A</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>βQ</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>A</m:mi>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>+gA</m:mo>
+
+                  <m:mfrac>
+                    <m:mi>∂y</m:mi>
+
+                    <m:mi>∂x</m:mi>
+                  </m:mfrac>
+                </m:mrow>
+
+                <m:mo>+</m:mo>
+
+                <m:mrow>
+                  <m:mo>gA(</m:mo>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>S</m:mi>
+
+                      <m:mi>f</m:mi>
+                    </m:msub>
+
+                    <m:mo>-</m:mo>
+
+                    <m:msub>
+                      <m:mi>S</m:mi>
+
+                      <m:mi>o</m:mi>
+                    </m:msub>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qLuLcosΦ</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Dependent Variables: depth (y) and discharge (Q)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>b∂y</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>βQ</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>A</m:mi>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mo>+g</m:mo>
+
+                <m:mfrac>
+                  <m:mi>∂Ay</m:mi>
+
+                  <m:mi>∂x</m:mi>
+                </m:mfrac>
+              </m:mrow>
+
+              <m:mo>+gA</m:mo>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qLu</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Dependent Variables: stage (h) and velocity (u)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>b∂h</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂uA</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:msup>
+                <m:mi>(βu</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+
+              <m:mi>A)</m:mi>
+
+              <m:mo>+gA</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂h</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>+</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>gAS</m:mi>
+
+                <m:mi>f</m:mi>
+              </m:msub>
+
+              <m:mo>=</m:mo>
+
+              <m:mi>qLu</m:mi>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Dependent Variables: stage (h) and discharge (Q)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>b∂h</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mo>(βQu)+gA</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂y</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mrow>
+                <m:mo>gA(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qLu</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Dependent Variables: depth (y) and discharge (Q)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>b∂y</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qL</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>∂Q</m:mi>
+
+                <m:mi>∂t</m:mi>
+              </m:mfrac>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>∂</m:mi>
+
+                <m:mi>∂x</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(β</m:mo>
+
+                <m:mfrac>
+                  <m:msup>
+                    <m:mi>Q</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mi>A</m:mi>
+                </m:mfrac>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mo>+g</m:mo>
+
+                <m:mfrac>
+                  <m:mi>∂Ah</m:mi>
+
+                  <m:mi>∂x</m:mi>
+                </m:mfrac>
+              </m:mrow>
+
+              <m:mo>+</m:mo>
+
+              <m:mrow>
+                <m:mo>gA(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>o</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>qLu</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Other variations of the above equations can be found by expanding
+      the derivatives-of-the product- terms as well as re-expressing the time
+      derivative of the flow area:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mi>∂A</m:mi>
+
+              <m:mi>∂t</m:mi>
+            </m:mfrac>
+
+            <m:mo>=B</m:mo>
+
+            <m:mfrac>
+              <m:mi>∂y</m:mi>
+
+              <m:mi>∂t</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=B</m:mo>
+
+            <m:mfrac>
+              <m:mi>∂h</m:mi>
+
+              <m:mi>∂t</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+    </section>
+
+    <section>
+      <title>Steady Flow Equations</title>
+
+      <equation>
+        <title>Momentum Equation</title>
+
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mi>∂y</m:mi>
+
+              <m:mi>∂x</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>o</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:mi>(qL/gA)(2u-uLcosϕ)</m:mi>
+                </m:mrow>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mi>1</m:mi>
+
+                <m:mo>-</m:mo>
+
+                <m:msup>
+                  <m:mi>F</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <title>Energy equation</title>
+
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mi>∂y</m:mi>
+
+              <m:mi>∂x</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>o</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>e</m:mi>
+                  </m:msub>
+
+                  <m:mo>-</m:mo>
+
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mo>(qL/Au)((</m:mo>
+
+                      <m:msup>
+                        <m:mi>u</m:mi>
+
+                        <m:mi>2</m:mi>
+                      </m:msup>
+
+                      <m:mo>L/2g)</m:mo>
+                    </m:mrow>
+
+                    <m:mo>-</m:mo>
+
+                    <m:mrow>
+                      <m:msup>
+                        <m:mi>(3u</m:mi>
+
+                        <m:mi>2</m:mi>
+                      </m:msup>
+
+                      <m:mo>/2g)+</m:mo>
+
+                      <m:msub>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>h</m:mi>
+
+                                <m:mi>LAT</m:mi>
+                              </m:msub>
+
+                              <m:mo>-</m:mo>
+
+                              <m:mi>h</m:mi>
+                            </m:mrow>
+
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:msub>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mi>1</m:mi>
+
+                <m:mo>-</m:mo>
+
+                <m:msup>
+                  <m:mi>F</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+    </section>
+
+    <section>
+      <title>Momentum and Energy Coefficients</title>
+
+      <para>The energy and momentum coefficients α and β are generally close
+      to unity. Ranges for these coefficients are displayed in Table 5.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Physical Modelling</title>
+
+    <para>All the sections and subsections on physical modelling have borrowed
+    heavily from the previous version of Australian Rainfall and Runoff i.e.
+    Chapter 4 by B. S. Jenkins ([15]). The treatment of physical modelling
+    presented here is an overview. For more details on physical modelling, the
+    interested reader is referred to [28], [27], [20], [26] or [30].</para>
+
+    <section>
+      <title>Introduction</title>
+
+      <para>The first designed physical model pre-dates the routine use of
+      numerical models in hydraulic engineering practice by approximately a
+      century. Prior to the advent of digital computers, physical models
+      offered the most practical means for the investigation of problems
+      involving complex bathymetry, sediment transport, unsteady flow and 2D
+      or 3D flow.</para>
+
+      <para>Since the advent of numerical models, the domain of application of
+      physical models has been shrinking. However, certain problems remain
+      which are still more appropriately investigated through the use of
+      physical models, and this is likely to remain the case for some time
+      yet. Further consideration between the choice of physical model versus
+      numerical model will be given in Section 13.</para>
+
+      <para>Physical models have been around for hundreds of years, however,
+      it was only in 1885 when the first physical model study based on
+      scientific principles, was undertaken. This model study was conducted by
+      Osborne Reynolds for investigating the tidal currents in the Mersey
+      Estuary near Liverpool, England. Reynolds is reputedly the first person
+      to introduce the time scale into physical modelling (p2 [17], p69 [1]).
+      His first model was distorted with the vertical and horizontal length
+      scales differing by a factor of 33.1. The model sides were vertical and
+      initially, the bed of sand was flat. After a period of model operation
+      however, Reynolds observed that the bed was reshaped with the principal
+      features of the natural estuary. This early success provided the impetus
+      for Reynolds to follow up on this work with another bigger model, again
+      of the Mersey Estuary.</para>
+
+      <para>The sorts of problems for which physical and numerical models are
+      suited, are somewhat complementary, but this aspect will be considered
+      in Section 13.</para>
+    </section>
+
+    <section>
+      <title>The Basis for Physical Model Design</title>
+
+      <para>Physical models are scaled (usually reduced) representations of
+      the real life or prototype flows and their boundaries. The flow
+      boundaries may be:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>fixed bed - often made out of cement mortar. Such models yield
+          information about the flow patterns and velocity field in, for
+          example, estuaries, river channels or tidal inlets.</para>
+        </listitem>
+
+        <listitem>
+          <para>mobile bed - with the model bed typically consisting of one of
+          the following: sand, particles of coal or a granulated plastic.
+          Mobile bed models yield (qualitative) information about the sediment
+          movement as well as the water motion; they are of interest for
+          investigating scour holes, or regions of sediment accretion or
+          erosion.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The flow boundaries of a modelled region of interest can
+      be:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>natural where the flood plains and river channels of fixed bed
+          models are constructed by first locating a series of templates made
+          out of metal or plywood into position. Vertically, these sections
+          are positioned using a theodolite. The channel bed and land form
+          between the templates is interpolated. Sand is used as a fill
+          material between the templates, and then a cement mortar capping is
+          applied and frequently painted. See Figure 14.</para>
+        </listitem>
+
+        <listitem>
+          <para>manmade in which case, physical models often incorporate a
+          hydraulic structures such as a culvert, pipe, drainage channel,
+          basin, levee, spillway or outlet works. In the model, hydraulic
+          structures could be made out of (painted) timber, marine plywood,
+          PVC pipes and also perspex when visibility is a consideration e.g.
+          for tracing the flow patterns through a structure with the use of a
+          dye. See Figure ??.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Accurate simulation of the flows in a physical model requires
+      three kinds of similitude (or similarity) and it will be noticed that
+      the word geometry enters the description of each kind of
+      similitude:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Geometric similitude requires the geometry or shapes of the
+          flow boundaries to be similar in model and prototype. Lengths in the
+          model are scaled versions of the corresponding prototype lengths.
+          Geometric similitude is secured by ensuring that the model is a
+          scaled reproduction of the prototype.</para>
+        </listitem>
+
+        <listitem>
+          <para>dynamic similitude requires that all forces (be they pressure
+          forces, weight, boundary friction forces, drag forces, surface
+          tension forces, centripetal forces) at each point in the flow domain
+          are each scaled by the same factor between model and prototype. If
+          this were to be achieved, the force polygon acting on each elemental
+          fluid parcel in the flow field, would have the same geometry in
+          model and prototype; this is referred to as complete similitude.
+          Complete similitude is the ideal situation, but in practice, is
+          impossible to achieve. The reasons for this are twofold.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Firstly, the scaling requirements of the various forces are
+      incompatible because some forces act through volumes (e.g. gravity and
+      centripetal forces), other forces act over areas (e.g. pressure, drag
+      and viscous forces) and another force acts over lengths (the surface
+      tension force). The scales associated with volumes, areas and lengths
+      are different. Consequently, the forces associated with volumes, areas
+      and lengths will, in general, scale differently. If a model was built
+      full scale, all forces would scale correctly. However, the smaller the
+      model compared to the prototype, the larger the length scale and the
+      greater the discrepancy between the scalings of the various forces which
+      act through volumes or over areas or lengths.</para>
+
+      <para>Secondly, the limited fluids available for use in models (in terms
+      of their fluid properties of density and viscosity, and cost and safety)
+      restrict the range of length scales which can be used in physical
+      models. In nearly all cases in engineering practice, the fluids used in
+      hydraulic models are water (and occasionally air). Consequently, a
+      compromise has to be reached in which only the dominant forces are
+      correctly scaled by the same factor, and the incorrect scalings of the
+      smaller forces are of negligible consequence in a well designed model.
+      This is termed incomplete similitude.</para>
+
+      <para>The task of the modeller is to identify the dominant forces,
+      ensure that these forces are scaled correctly, and disregard any
+      insignificant forces. The effects (i.e. errors) due to those incorrectly
+      scaled, insignificant forces are known as scale effects. In current
+      engineering practice, most hydraulic investigations involve free surface
+      flows and to a much lesser extent, pressurised or closed conduit flows.
+      These two types of problems require different scaling criteria:</para>
+
+      <para>In free surface flows, the dominant forces are usually gravity,
+      the associated pressure force, and boundary friction. By asserting
+      equality of the Froude number between model and prototype at all points
+      in the flow field, the gravity and pressure forces are scaled by the
+      same (desired) factor. By adjusting the model boundary roughness,
+      consistent scaling of the boundary friction force is then achieved.
+      Dynamic similitude is achieved provided the scale effects are
+      negligible. A model which is based on pointto- point equality of the
+      Froude number between model and prototype is known as a Froude model.
+      Effectively, what the modeller is doing here is to ensure that gravity,
+      pressure and boundary friction forces are scaled consistently. All other
+      forces are insignificant and so the momentum equation (or equations if
+      in 2D or 3D) for any elemental parcel of fluid in the model mimics (i.e.
+      is a scaled version of) the momentum equation(s) for the corresponding
+      elemental parcel of fluid in the prototype. Dynamic similitude means
+      that the corresponding terms in the model and prototype momentum
+      equations for each of the dominant forces are all related by a constant
+      factor. In models of closed conduit or pressurised flows, such as flows
+      through pipes, the dynamic scaling requirement is that there is
+      point-to-point equality of the Reynolds number in model and prototype.
+      The dominant forces are the viscous and pressure forces which are
+      correctly scaled in a Reynolds model.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>kinematic similitude requires the flow patterns in the model
+          and prototype to be geometrically similar. In other words, the
+          velocities at all points in the model, bear the same ratio between
+          model and prototype. If this is achieved, then the model is in
+          similitude with the prototype.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>If any two of the above three kinds of similitude are satisfied,
+      then the remaining similitude is inferred. In normal modelling practice,
+      models are designed to satisfy both geometric and dynamic similitude. It
+      then follows that kinematic similitude is also satisfied. The usual
+      approach to model design is to satisfy geometric similitude through
+      careful model construction and dynamic similitude by adopting the
+      appropriate modelling criterion. In general, there are various modelling
+      criteria involving various dimensionless numbers, but in practice, the
+      most common criterion which has been mentioned above, is based on the
+      Froude number (for free surface flows). The next most common criterion
+      is based on the Reynolds number (for closed conduit or pressurised
+      flows).</para>
+
+      <para>The Froude number may be regarded as the ratio of the inertial (or
+      resultant) force to the gravity force, and the Reynolds number as the
+      ratio of the inertial force to the viscous force. In models based on the
+      Froude criterion or the Reynolds criterion, the correct scaling of the
+      ubiquitous pressure forces is also achieved and the question arises as
+      to how this comes about. The reason is that if the dominant forces
+      (including the resultant force) are all correctly scaled, then the force
+      polygon in model and prototype will also be correctly scaled.
+      Consequently, one of these forces is a dependent force and this is taken
+      to be the pressure force in Froude and Reynolds type models (p139
+      [28]).</para>
+
+      <para>If once again, we consider any small parcel of fluid in the
+      prototype, what is required of the model is that the corresponding
+      parcel of fluid in the model moves along the corresponding path at a
+      scaled velocity of the prototype velocity. For this to happen, all
+      forces (weight, pressure, drag, viscous, surface tension, elastic)
+      acting on that parcel of fluid in the prototype must be in the same
+      proportions to each other in the model. If this is the case, then there
+      would be complete similitude between model and prototype. However, the
+      various forces scale in different ways: some forces scale as the length
+      cubed (e.g. weight, centripetal forces), other forces scale as length
+      squared (e.g. pressure) and one other scales as length (i.e. surface
+      tension). Therefore, as soon as the length scale departs from unity
+      (i.e. full scale model), it is impossible or very difficult for all
+      these forces to scale together in the same proportion.</para>
+
+      <para>Fortunately, however, it is frequently the case, that there are
+      one or two dominant forces present in the flow field and it is therefore
+      of no consequence if the minor forces are not scaled correctly, so long
+      as the dominant forces are. This is termed incomplete similitude.</para>
+    </section>
+
+    <section>
+      <title>Model Scales</title>
+
+      <para>The design of a physical model requires the selection of a
+      modelling criterion and following on from this, the scales to be used in
+      the model.</para>
+
+      <para>In general, it is desirable that the model be as large as possible
+      because:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>scale effects will be reduced.</para>
+        </listitem>
+
+        <listitem>
+          <para>the accuracy of model construction will be less critical,
+          and</para>
+        </listitem>
+
+        <listitem>
+          <para>the results derived from the model will be less sensitive to
+          errors in measurements.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>On the other hand, there are a number of factors which tend to
+      limit the size of the physical mode:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>model construction costs. Construction costs depend on the
+          complexity of the bathymetry and topography, and the detail in any
+          hydraulic structures.</para>
+        </listitem>
+
+        <listitem>
+          <para>the extent of the available floor area to accommodate the
+          model. Models are preferably housed under cover so that the model
+          testing is weather independent i.e. free of wind and rain and the
+          model itself is sheltered. Moreover, to fit a model into a given
+          area, a river channel can be ’folded’ into a more compact form. If
+          additional bends are introduced into the model which do not exist in
+          the prototype, it may be necessary to take the additional head
+          losses into consideration. Also, channel areas which in the
+          prototype provide storage, can have their effects simulated by
+          having areas of different shape but equivalent plan area.</para>
+        </listitem>
+
+        <listitem>
+          <para>flows available from the water supply. The bigger the model,
+          the larger the flow needed. In Australia, available flows for
+          testing physical models in excess of ???m3s−1 are unusual. For
+          greater flows, special laboratory constructions may be needed
+          involving large header tanks.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The length scales for most (undistorted) physical models are
+      generally in the range of 1 : 5 to 1 : 2000.</para>
+    </section>
+
+    <section>
+      <title>Distorted Models</title>
+
+      <para>It is often useful to be able to distort a physical model by
+      asserting different length scales in the horizontal and vertical
+      directions. While undistorted models should be used whenever there is
+      significant vertical and horizontal fluid motion, distorted models can
+      be used whenever the fluid motion is mainly in the horizontal plain. As
+      a rule of thumb, care should be taken whenever the horizontal to
+      vertical length scales differ by more than a factor of about 5. (Recall
+      that the first model of Reynolds had a distortion of 33.1.)</para>
+
+      <para>The advantage of distorting a free surface flow model is that for
+      the same plan area of model, the depths of flow will be deeper in the
+      distorted model. In nearly all prototype free surface flows7, the flow
+      is turbulent; and prototype turbulent flows can only be simulated in a
+      model with turbulent flows. For example, if a model is distorted by a
+      factor of 5, for the same (available) plan area, the model depths would
+      be deeper by a factor of √5 and the model velocities would be greater by
+      a factor of p 5 when compared to an undistorted model. Consequently, the
+      Reynolds numbers in the distorted model will be greater by a factor of
+      5<superscript>3/2</superscript> = 11.2 compared to the corresponding
+      undistorted model (with the same plan area) and turbulent flow is more
+      likely to be guaranteed.</para>
+    </section>
+
+    <section>
+      <title>Model Scales in Froude Models</title>
+
+      <para>In a Froude model, the Froude number in model and prototype at
+      corresponding locations is unity i.e IF<subscript>r</subscript> =
+      IF<subscript>p</subscript>/IF<subscript>m</subscript> = 1 where (
+      )<subscript>r</subscript> stands for the ratio of prototype value
+      divided by the corresponding model value.</para>
+
+      <para>There are various scales of interest in a physical model and the
+      main ones in a distorted Froude model are:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>length scales in the horizontal (x<subscript>r</subscript>)
+          and vertical directions (z<subscript>r</subscript>),</para>
+        </listitem>
+
+        <listitem>
+          <para>velocity scale (IF<subscript>r</subscript> =
+          v<subscript>r</subscript>
+          /g<subscript>r</subscript>y<subscript>r</subscript> = 1 )⇒
+          v<subscript>r </subscript>=
+          y<subscript>r</subscript><superscript>1/2</superscript> =
+          z<subscript>r</subscript><superscript>1/2</superscript> since
+          g<subscript>r</subscript> = 1),</para>
+        </listitem>
+
+        <listitem>
+          <para>time scale for essentially horizontal motion
+          (t<subscript>r</subscript> =
+          x<subscript>r</subscript>/v<subscript>r</subscript> =
+          x<subscript>r</subscript>/z<subscript>r</subscript><superscript>1/2</superscript>
+          ),</para>
+        </listitem>
+
+        <listitem>
+          <para>discharge scale for flow through a vertical plane
+          (Q<subscript>r</subscript> =
+          A<subscript>r</subscript>v<subscript>r</subscript> =
+          (x<subscript>r</subscript>y<subscript>r</subscript>)z<subscript>r</subscript><superscript>1/2</superscript>),</para>
+        </listitem>
+
+        <listitem>
+          <para>pressure scale (p<subscript>r</subscript> =
+          ρ<subscript>r</subscript>v<subscript>r</subscript><superscript>2</superscript>
+          = z<subscript>r</subscript> if ρ<subscript>r</subscript> = 1
+          implying that the fluid in the model is the same as the fluid in the
+          prototype), and</para>
+        </listitem>
+
+        <listitem>
+          <para>dynamic pressure force scale
+          ((F<subscript>press</subscript>)<subscript>r</subscript> =
+          p<subscript>r</subscript>A<subscript>r</subscript> =
+          (ρ<subscript>r</subscript>z<subscript>r</subscript>)(x<subscript>r</subscript>z<subscript>r</subscript>)
+          =
+          x<subscript>r</subscript>z<subscript>r</subscript><superscript>2</superscript>),
+          and</para>
+        </listitem>
+
+        <listitem>
+          <para>hydrostatic pressure force scale
+          ((F<subscript>press</subscript>)<subscript>r </subscript>=
+          ρ<subscript>r</subscript>g<subscript>r</subscript>y<subscript>r</subscript>A<subscript>r</subscript>
+          =
+          x<subscript>r</subscript>z<subscript>r</subscript><superscript>2</superscript>
+          )</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>If the model is undistorted, the various scales above can be
+      determined by setting the length scale L<subscript>r</subscript> =
+      x<subscript>r</subscript> = z<subscript>r</subscript> in the expressions
+      above. For example, the flow scale would be Q<subscript>r</subscript> =
+      L<subscript>R</subscript><superscript>5/2</superscript> and the velocity
+      and time scales both become v<subscript>r</subscript> =
+      t<subscript>r</subscript> =
+      L<subscript>R</subscript><superscript>1/2</superscript> .</para>
+    </section>
+
+    <section>
+      <title>Model Roughness in Froude Models</title>
+
+      <para>One scale which has not been mentioned above is the roughness
+      scale, and to determine this, recourse is made to the Manning equation
+      to determine the scale for Manning’s n
+      (n<subscript>r</subscript>).</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>v</m:mi>
+
+              <m:mi>r</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(R</m:mi>
+
+                  <m:mi>h</m:mi>
+                </m:msub>
+
+                <m:mrow>
+                  <m:msup>
+                    <m:mi>)r</m:mi>
+
+                    <m:mi>2/3</m:mi>
+                  </m:msup>
+
+                  <m:msubsup>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>r</m:mi>
+
+                    <m:mi>1/2</m:mi>
+                  </m:msubsup>
+                </m:mrow>
+              </m:mrow>
+
+              <m:msub>
+                <m:mi>n</m:mi>
+
+                <m:mi>r</m:mi>
+              </m:msub>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msubsup>
+              <m:mi>z</m:mi>
+
+              <m:mi>r</m:mi>
+
+              <m:mi>1/2</m:mi>
+            </m:msubsup>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(R</m:mi>
+
+                  <m:mi>h</m:mi>
+                </m:msub>
+
+                <m:mrow>
+                  <m:mi>)</m:mi>
+
+                  <m:mrow>
+                    <m:msup>
+                      <m:mi>r</m:mi>
+
+                      <m:mi>2/3</m:mi>
+                    </m:msup>
+
+                    <m:mrow>
+                      <m:mi>(</m:mi>
+
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>z</m:mi>
+
+                          <m:mi>r</m:mi>
+                        </m:msub>
+
+                        <m:mrow>
+                          <m:mi>/</m:mi>
+
+                          <m:mrow>
+                            <m:msub>
+                              <m:mi>x</m:mi>
+
+                              <m:mi>r</m:mi>
+                            </m:msub>
+
+                            <m:mrow>
+                              <m:msup>
+                                <m:mi>)</m:mi>
+
+                                <m:mi>1/2</m:mi>
+                              </m:msup>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mrow>
+
+              <m:msub>
+                <m:mi>n</m:mi>
+
+                <m:mi>r</m:mi>
+              </m:msub>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>n</m:mi>
+
+              <m:mi>r</m:mi>
+            </m:msub>
+
+            <m:mo>=(</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>R</m:mi>
+
+                <m:mi>h</m:mi>
+              </m:msub>
+
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>)</m:mi>
+
+                  <m:mi>r</m:mi>
+
+                  <m:mi>2/3</m:mi>
+                </m:msubsup>
+
+                <m:mrow>
+                  <m:mi>/</m:mi>
+
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+
+                      <m:mi>r</m:mi>
+
+                      <m:mi>1/2</m:mi>
+                    </m:msubsup>
+                  </m:mrow>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>It is evident from equation (26) that n<subscript>r</subscript>
+      depends upon the hydraulic radius scale
+      ((R<subscript>h</subscript>)<subscript>r</subscript>) and for a
+      distorted model, this in turn depends upon both
+      x<subscript>r</subscript> and z<subscript>r</subscript>. One consequence
+      of distortion is that the friction forces at the model bed are
+      under-represented. Equation (26) indicates that usually, the Manning’s n
+      in the model should be greater than the Manning’s n in the prototype.
+      For a model made out of cement mortar, the model roughness will be too
+      smooth and additional artificial roughness has to be applied to the
+      surface of the model. This can take the form of coarse sand, pebbles or
+      other roughness elements glued to the model surface; sometimes a light
+      gauge wire mesh is attached to the model. Model roughness is adjusted
+      empirically during the calibration phase of the model
+      investigation.</para>
+
+      <para>Figure 16 is of a distorted flood model in which the model
+      roughness was increased in two ways:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>the overbank areas were artificially roughened with
+          appropriately spaced and patterned, vertical dowels or roughness
+          elements. The dowels exert a drag force on the water moving over the
+          model floodplain; this additional force is designed to make up for
+          the deficit of boundary friction at the overly smooth model
+          bed.</para>
+        </listitem>
+
+        <listitem>
+          <para>the inbank areas were roughened with small pads of synthetic
+          fibrous material. The spacing of these pads was adjusted by trial
+          and error until the slope of the water surface matched the required
+          slope.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>If the roughness in the model is too smooth, not only will the
+      magnitude of the velocities be too large, but also, the flow pathlines
+      will tend to be too straight. The opposite trends tend to occur in a
+      model which is too rough.</para>
+
+      <para>In the design of the distorted model depicted in Figure 16, it was
+      known that found while the model simulation of floods with a 50 year and
+      100 year return period satisfied the requirement for turbulent flow in
+      the model, the model flow corresponding to a smaller flood with a return
+      period of 25 years was transitional between laminar and turbulent and
+      therefore could not be tested in the model.</para>
+
+      <para>In an undistorted model with n<subscript>r</subscript> =
+      L<subscript>r</subscript><superscript>1/6</superscript> , the Manning’s
+      n for the model surface is too high. Model spillways are usually
+      constructed of timber and marine plywood and the usual approach is to
+      try and achieve as smooth a surface as possible through sanding and
+      painting, and to tolerate the mismatch. Because the boundary friction
+      forces in this flow scenario are not as important as the dominant
+      gravity force, any scale effect in the model roughness is not usually
+      significant.</para>
+    </section>
+
+    <section>
+      <title>Mobile Bed Models</title>
+
+      <para>Physical models can be classified as (i) fixed bed or (ii) mobile
+      bed. Most studies by physical models are of the fixed bad variety. In
+      fixed bed models, the bottom flow boundaries remain the same throughout
+      model testing. ????????????????</para>
+
+      <para>In mobile bed models, the water movement and the sediment movement
+      have to be reproduced at the same time. The model bed consists of a
+      sediment which may be natural or artificial. A diverse range of
+      materials have been used in mobile bed models to simulate non-cohesive8
+      prototype sediments; amongst other materials, they include sand, grains
+      of coal, crushed walnut shells, granulated plastics. Mobile bed models
+      are used to investigate erosion, accretion and localised scour
+      holes.</para>
+
+      <para>Mobile bed models are considerably more complex than fixed bed
+      models, and only some general considerations will be included here. With
+      the introduction of a sediment, the specifications for the sediment
+      particles in the model need to be decided. If the model sediment grain
+      size was simply scaled down according to the length scale, the resulting
+      model sediment particles would be so fine that they may well exhibit
+      cohesive behaviour, and such a sediment could not be used to simulate
+      the behaviour of a non-cohesive, prototype sediment. This problem is
+      circumvented by using sediment grains in the model (which are oversized
+      compared to the grain size which would be obtained from the length
+      scale), but made out of a material which is less dense than sand, for
+      example coal or a granulated plastic. By balancing sediment density and
+      particle size for the model sediment particles, their fall velocity can
+      be scaled according to the velocity scale according to the Froude
+      criterion.</para>
+
+      <para>Mobile bed modelling of non-cohesive sediments is far from
+      routine. The bed roughness of a mobile bed is a combination of grain
+      roughness and bedforms. The size and type of the bedforms (ripples or
+      dunes) cannot be specified a priori, but rather are determined by
+      interactions between the near-bed fluid dynamics and morphodynamics;
+      this includes the turbulence intensity and its distribution, the
+      permeability of the bed and the shape of the deformable bed.</para>
+
+      <para>With the introduction of sediment into a model, there is the need
+      to establish a morphological time scale which is best based on
+      comparisons between the model and prototype bed evolution. This may
+      require distortion of the flow scale in the model to achieve</para>
+
+      <para>????????????????? Physical modelling is a specialised area of
+      hydraulics investigation. Most physical model studies require judgement,
+      experience and compromise; few physical model studies could be regarded
+      as routine.</para>
+
+      <para>The motion of the sediment in the prototype is a mixture of
+      suspended sediment and bed load. While the suspended sediment moves at
+      approximately the flow velocity, the bed load travels much slower. The
+      simulation of sediment movement which consists of nearly all suspended
+      load or nearly all bed load is easier than the much more difficult
+      problem of modelling the total sediment load which consists of
+      comparable proportions of both suspended and bed load. It is possible
+      also, that the proportions of bed load and suspended load vary with
+      time, such as during a flood hydrograph. When this happens, the
+      sedimentation time ?? scale will also vary with time.</para>
+
+      <para>In connection to physical modelling, the comment or question is
+      often raised in which physical modelling is referred to as an art or a
+      science?</para>
+
+      <para>Some flow scenarios may involve a combination of free surface flow
+      (which required a Froude model) and pressurised flow (which requires a
+      Reynolds model). The resulting scales from applying the Froude and
+      Reynolds criteria are in conflict. Therefore, some other solution,
+      probably involving some compromises, must be sought in such a
+      situation.</para>
+
+      <para>Two instances of when flow scale is distorted - p14 of de
+      Vries</para>
+
+      <para>sea level rise - refer to Institution of Engineers paper</para>
+    </section>
+
+    <section>
+      <title>Stages of an Investigation by Physical Models</title>
+
+      <para>A summary of the main stages in a hydraulic investigation by
+      physical modelling follow:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Model design - the modeling criterion is selected
+          (IF<subscript>r</subscript> = 1), a decision on the model type is
+          made (distorted or undistorted model, fixed bed or mobile bed), the
+          length scale/s is/are selected taking cognisance of available space,
+          flows and funding, drainage system and model boundaries, which
+          should be well removed from the study area.</para>
+        </listitem>
+
+        <listitem>
+          <para>Model calibration - the model is adjusted so as to reproduce a
+          known event, such as a flood, to within an accepted tolerance. If
+          the model fails to achieve this, the validity of the model geometry
+          should be checked as a first response. Next, consideration should be
+          given to the possibility of changes having taken place between the
+          time of the recorded event and the time of the bathymetric survey.
+          Following on from this, the the roughness of the flow boundaries
+          should be adjusted until the event has been successfully simulated
+          in the model (p82 [15]).</para>
+        </listitem>
+
+        <listitem>
+          <para>Models verification - the performance of the model is further
+          checked on another event, which is independent of the data used for
+          calibration. While verification is a desirable stage of model
+          testing to perform, it is not often carried out due to a lack of
+          appropriate data or inadequate funding. In selecting the data for
+          both the calibration and verification phases, it good practice to
+          use the data from events which are of comparable magnitude to the
+          scenarios to be tested. For example, it is not sound modelling
+          practice to calibrate a model on a small and frequent event when the
+          purpose of building the model is to undertake tests corresponding to
+          rare, major events. The reason for this is that the reliability of
+          extrapolating the model performance cannot be taken for granted and
+          should be questioned.</para>
+        </listitem>
+
+        <listitem>
+          <para>Model testing - the model is tested under one or more
+          scenarios which may correspond to real or synthesised events.</para>
+        </listitem>
+
+        <listitem>
+          <para>Reporting of model results - a technical report is prepared
+          which includes the investigation methodology and the findings of the
+          investigation. All results should be in terms of prototype values
+          rather than model values.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+
+  <section>
+    <title>Comparison of Physical and Numerical Modelling</title>
+
+    <para>While the domains of relevance of numerical models and physical
+    models have some overlap, there are regions in which either model type is
+    more appropriate. Each model type has its own advantages and disadvantages
+    and the main ones are summarised in Table 6.</para>
+
+    <para>Apart from numerical and physical models, there is a third category
+    of model which is known as a hybrid model which consists of a numerical
+    model linked in some way to a physical model ([4]). In hybrid models, the
+    focus is on trying to optimise the overall performance of the model by
+    using a physical model to simulate those regions or processes in which it
+    is more capable and to use a linked numerical model to capture those
+    regions or processes best suited to the numerical model. The interaction
+    between the numerical and physical components can be one-way or two-way.
+    Hybrid models are not common; they require considerable electronic support
+    and would only be considered for a major hydraulic investigation and
+    carried out by a well-equipped hydraulics laboratory.</para>
+
+    <para>It is noteworthy that some prototype situations are not suitably or
+    easily modelled using either model type. Three examples, not included in
+    Table 6 are:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>air entrainment which can be significant where the flows are
+        violent or very fast (such as down a spillway),</para>
+      </listitem>
+
+      <listitem>
+        <para>the flow field contains significant regions of laminar flow and
+        significant regions of turbulent flow, or</para>
+      </listitem>
+
+      <listitem>
+        <para>the flows of two phases e.g. clays mixed in water are to be
+        simulated and the laws governing the floc aggregation and breakup are
+        not easily included in a physical model. Moreover, the siltation and
+        erosion behaviour of clays of differing mineralogical composition are
+        not well defined and easy to incorporate into a numerical model. The
+        results from such models are highly qualitative.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Numerical Modelling</title>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>Governing Equations - Saint Venant Equations</title>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>Methods for Calculating Steady State Backwater and Drawdown
+    Curves</title>
+
+    <para>Irrespective of whether steady-state flows are subcritical or
+    supercritical, there are two well known methods for calculating the water
+    surface profiles, be they (i) backwater curves or (ii) drawdown curves. In
+    backwater profiles, the water surface deepens in the downstream direction
+    and such flows are decelerating flows.In drawdown profiles, the water
+    depths become more shallow in the downstream direction and the flows are
+    accelerating flows.</para>
+
+    <para>The three main numerical techniques for calculating steady water
+    surface profiles are:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>the direct step method,</para>
+      </listitem>
+
+      <listitem>
+        <para>the direct integration method, and</para>
+      </listitem>
+
+      <listitem>
+        <para>the standard step method.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>A brief comparison of the two methods can be seen in Table 7.</para>
+
+    <para>Since the direct step and direct integration methods are based on a
+    first order differential equation, a single boundary condition is required
+    to initiate the computations. Suitable boundary conditions could be near
+    (but not at) a control where the water level is known or can be
+    approximated, or any location, reasonably well removed from any regions of
+    rapidly varied flow, where the water level is known.</para>
+
+    <para>If the flow is subcritical, the flow is controlled from the
+    downstream end and computations should advance in the upstream direction.
+    On the other hand, for supercritical flows, the flow is controlled from
+    the upstream end and computations should proceed in the downstream
+    direction ([18] and [19]). If these guidelines regarding the direction of
+    the solution procedure are not observed, it has been stated ([18] and
+    [19]) that the calculations will eventually depart from the true solution.
+    This rule-of-thumb is not without contention. There is some evidence which
+    suggests that if an implicit finite difference method is employed to solve
+    the governing equations, then the direction of computation is immaterial
+    ([25]).</para>
+
+    <section>
+      <title>Direct Step Method for Calculating Backwater and Drawdown
+      Curves</title>
+
+      <para>In the direct step method for calculating steady state, gradually
+      varied flow profiles, the distance between two sections with specified
+      depths is calculated.</para>
+
+      <para>The direct step method of calculating gradually varied flow
+      profiles is only applicable to prismatic channels (which are more
+      commonly manmade than natural). In this method, the flow depths at those
+      sections where computations are to be carried out along the waterway are
+      known (or specified) in advance. The (specified) depth increments or
+      decrements between these sections need not be constant. With the depths
+      (y) along the waterway known, the direct step method enables the
+      distances between these sections (Δx) to be calculated directly without
+      the need for iteration or trial and error. The governing equation is the
+      first order ordinary differential equation:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mi>dE</m:mi>
+
+              <m:mi>dx</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>S</m:mi>
+
+                <m:mi>o</m:mi>
+              </m:msub>
+
+              <m:mo>-</m:mo>
+
+              <m:msub>
+                <m:mi>S</m:mi>
+
+                <m:mi>f</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>where... E</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>y</m:mi>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>v</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>= specific head or specific energy (m) x = co-ordinate in
+      downstream direction (m)</para>
+
+      <para>It is conventional to choose the x−coordinate such that it
+      increases in the downstream direction, irrespective of whether the flow
+      is subcritical or supercritical. When equation (27) is recast in a
+      finite difference form, equation (27) becomes:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>E</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>E</m:mi>
+
+                  <m:mi>1</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mi>Δx</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>S</m:mi>
+
+                <m:mi>o</m:mi>
+              </m:msub>
+
+              <m:mo>-</m:mo>
+
+              <m:msub>
+                <m:mi>S</m:mi>
+
+                <m:mi>f</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>⇒ Δx</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>E</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>E</m:mi>
+
+                  <m:mi>1</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>o</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>f</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . 1, 2 = spatial indices which increase in the downstream
+      direction</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>Δx</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>x</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msub>
+
+              <m:mo>-</m:mo>
+
+              <m:msub>
+                <m:mi>x</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>(bedslope) S</m:mi>
+
+              <m:mi>o</m:mi>
+            </m:msub>
+
+            <m:mo>= -</m:mo>
+
+            <m:mfrac>
+              <m:mi>dz</m:mi>
+
+              <m:mi>dx</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>(friction slope) S</m:mi>
+
+              <m:mi>f</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>(nv)</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+
+              <m:msubsup>
+                <m:mi>R</m:mi>
+
+                <m:mi>h</m:mi>
+
+                <m:mi>4/3</m:mi>
+              </m:msubsup>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>n = Manning roughness parameter</para>
+
+      <para>S<subscript>f </subscript>= average friction slope over the
+      elemental reach Δx</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f 1</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f 2</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+
+              <m:mi>2</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>S<subscript>f 1</subscript> = friction slope at Section 1</para>
+
+      <para>S<subscript>f 2</subscript> = friction slope at Section 2</para>
+
+      <para>The reason that the direct step method is only applicable to
+      prismatic channels is that the unknown in equation (29) is Δx. In the
+      case of a subcritical flow, the computations proceed in the upstream
+      direction; while x<subscript>2</subscript> will be known (or specified),
+      x<subscript>1</subscript> will be unknown<superscript>9</superscript>.
+      Unless the section properties at x1 are known, the computation of the
+      specific energy and friction slope at this location cannot (in
+      principle) proceed. The requirement imposed by the direct step method is
+      therefore that the channel be prismatic.</para>
+
+      <para>Since the direct step method is explicit, no iteration is needed.
+      The solution of equation (29) is straightforward and easily executed in
+      tabular form on a spreadsheet.</para>
+    </section>
+
+    <section>
+      <title>Standard Step Method for Calculating Backwater and Drawdown
+      Curves</title>
+
+      <para>The standard step method is more versatile than the direct step
+      method in that it can be applied to irregular (usually natural) channels
+      i.e. channels with cross-sections which are changing along the length of
+      the waterway. The relevant equations for the standard step method are
+      based on the definition for total head, the difference in head between
+      two sections separated by a horizontal distance Δx, and an expression
+      for the friction slope based on the Manning (or Chezy or
+      Colebrook-White) equation.</para>
+
+      <para>Figure 17 contains a definition diagram for calculating the
+      gradually varied flow water surface profile for a subcritical
+      flow.</para>
+
+      <para>In the standard step method, the aim is to satisfy the two
+      expressions below [equations (30) and (31)] and this will only happen
+      when the correct unknown depth y<subscript>1</subscript> has been
+      determined. Because the unknown depth y<subscript>1</subscript> is
+      needed for the flow area A<subscript>1</subscript> and the friction
+      slope S<subscript>f 1</subscript>, a trial and error process or some
+      other iterative technique is needed to arrive at a solution.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>H</m:mi>
+
+              <m:mi>1</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>y</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>z</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>Q</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:msubsup>
+                  <m:mi>2gA</m:mi>
+
+                  <m:mi>1</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msubsup>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>H</m:mi>
+
+              <m:mi>1</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>H</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msub>
+
+              <m:mo>+Δx</m:mo>
+
+              <m:mfrac>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>S</m:mi>
+
+                      <m:mi>f 1</m:mi>
+                    </m:msub>
+
+                    <m:mo>+</m:mo>
+
+                    <m:msub>
+                      <m:mi>S</m:mi>
+
+                      <m:mi>f 2</m:mi>
+                    </m:msub>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+
+                <m:mi>2</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>where... S</m:mi>
+
+              <m:mi>f</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>(nQ)</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+
+              <m:mrow>
+                <m:msup>
+                  <m:mi>A</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:msubsup>
+                  <m:mi>R</m:mi>
+
+                  <m:mi>h</m:mi>
+
+                  <m:mi>4/3</m:mi>
+                </m:msubsup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>If the Newton-Raphson technique is applied to
+      H<subscript>E</subscript> = the difference in H<subscript>1</subscript>
+      as given by equation (30) less that from (31), the solution process can
+      be speeded up:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:msub>
+                <m:mi>(y</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+
+              <m:msup>
+                <m:mi>)</m:mi>
+
+                <m:mi>now</m:mi>
+              </m:msup>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(y</m:mi>
+
+                  <m:mi>1</m:mi>
+                </m:msub>
+
+                <m:msup>
+                  <m:mi>)</m:mi>
+
+                  <m:mi>old</m:mi>
+                </m:msup>
+              </m:mrow>
+
+              <m:mo>-</m:mo>
+
+              <m:mfrac>
+                <m:msub>
+                  <m:mi>H</m:mi>
+
+                  <m:mi>E</m:mi>
+                </m:msub>
+
+                <m:mrow>
+                  <m:mi>1</m:mi>
+
+                  <m:mo>-</m:mo>
+
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>IF</m:mi>
+
+                      <m:mi>1</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+
+                    <m:mo>+</m:mo>
+
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>Δx</m:mi>
+
+                        <m:msub>
+                          <m:mi>y</m:mi>
+
+                          <m:mi>1</m:mi>
+                        </m:msub>
+                      </m:mfrac>
+
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+
+                          <m:mrow>
+                            <m:mi>1</m:mi>
+
+                            <m:mo>+</m:mo>
+
+                            <m:mfrac>
+                              <m:msub>
+                                <m:mi>2Rh</m:mi>
+
+                                <m:mi>1</m:mi>
+                              </m:msub>
+
+                              <m:msub>
+                                <m:mi>3y</m:mi>
+
+                                <m:mi>1</m:mi>
+                              </m:msub>
+                            </m:mfrac>
+                          </m:mrow>
+
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+
+                        <m:msub>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>f 1</m:mi>
+                        </m:msub>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>(for a wide channel with Rh1≈y1) ≈</m:mo>
+
+            <m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(y</m:mi>
+
+                  <m:mi>1</m:mi>
+                </m:msub>
+
+                <m:msup>
+                  <m:mi>)</m:mi>
+
+                  <m:mi>old</m:mi>
+                </m:msup>
+              </m:mrow>
+
+              <m:mo>-</m:mo>
+
+              <m:mfrac>
+                <m:msub>
+                  <m:mi>H</m:mi>
+
+                  <m:mi>E</m:mi>
+                </m:msub>
+
+                <m:mrow>
+                  <m:mi>1</m:mi>
+
+                  <m:mo>-</m:mo>
+
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>IF</m:mi>
+
+                      <m:mi>1</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+
+                    <m:mo>+</m:mo>
+
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>5</m:mi>
+
+                        <m:mi>3</m:mi>
+                      </m:mfrac>
+
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+
+                          <m:mfrac>
+                            <m:mi>Δx</m:mi>
+
+                            <m:msub>
+                              <m:mi>y</m:mi>
+
+                              <m:mi>1</m:mi>
+                            </m:msub>
+                          </m:mfrac>
+
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>S</m:mi>
+
+                            <m:mi>f 1</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . H<subscript>E</subscript> = error or difference between
+      the two values of H<subscript>1</subscript> in equations (30) and
+      (31)</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mrow>
+                <m:mo>[</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+
+                    <m:mi>1</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:msub>
+                    <m:mi>z</m:mi>
+
+                    <m:mi>1</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:mfrac>
+                    <m:msup>
+                      <m:mi>Q</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msup>
+
+                    <m:msubsup>
+                      <m:mi>2gA</m:mi>
+
+                      <m:mi>1</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+                  </m:mfrac>
+                </m:mrow>
+
+                <m:mo>]</m:mo>
+              </m:mrow>
+
+              <m:mo>-</m:mo>
+
+              <m:mrow>
+                <m:mo>[</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msub>
+
+                  <m:mo>+Δx</m:mo>
+
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>f 1</m:mi>
+                        </m:msub>
+
+                        <m:mo>+</m:mo>
+
+                        <m:msub>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>f 2</m:mi>
+                        </m:msub>
+                      </m:mrow>
+
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+
+                    <m:mi>2</m:mi>
+                  </m:mfrac>
+                </m:mrow>
+
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>(y<subscript>1</subscript>)<superscript>old </superscript>=
+      previous value of y<subscript>1</subscript></para>
+
+      <para>(y<subscript>1</subscript>)<superscript>new</superscript> = new
+      value of y<subscript>1</subscript> after iteration</para>
+
+      <para>In the case of a supercritical flow, the equations above would
+      need to be modified with the unknown being
+      y<subscript>2</subscript>.</para>
+    </section>
+
+    <section>
+      <title>Direct Integration Method for Calculating Backwater and Drawdown
+      Curves</title>
+
+      <para>In the direct integration method for calculating steady state
+      water surface profiles, the depths are calculated at specified locations
+      along the channel.</para>
+
+      <para>The direct integration method can also be applied to irregular
+      channels with changing crosssections along the length of the waterway.
+      The governing equation for direct integration method is equation
+      (35).</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mi>dy</m:mi>
+
+              <m:mi>dx</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>o</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>f</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mi>1</m:mi>
+
+                <m:mo>-</m:mo>
+
+                <m:msup>
+                  <m:mi>IF</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where. . . x = co-ordinate in downstream direction (m)</para>
+
+      <para>A finite difference form of equation (35) is equation (36)
+      below:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>y</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>y</m:mi>
+
+                  <m:mi>1</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mi>Δx</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>o</m:mi>
+                </m:msub>
+
+                <m:mo>-</m:mo>
+
+                <m:msub>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>f</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mi>1</m:mi>
+
+                <m:mo>-</m:mo>
+
+                <m:msup>
+                  <m:mi>IF</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where 1, 2 = spatial indices which increase in the downstream
+      direction</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>Δx</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>x</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msub>
+
+              <m:mo>-</m:mo>
+
+              <m:msub>
+                <m:mi>x</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>(bedslope) S</m:mi>
+
+              <m:mi>o</m:mi>
+            </m:msub>
+
+            <m:mo>= -</m:mo>
+
+            <m:mfrac>
+              <m:mi>dz</m:mi>
+
+              <m:mi>dx</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>(friction slope) S</m:mi>
+
+              <m:mi>f</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>(nv)</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+
+              <m:msubsup>
+                <m:mi>R</m:mi>
+
+                <m:mi>h</m:mi>
+
+                <m:mi>4/3</m:mi>
+              </m:msubsup>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>n = Manning roughness parameter</para>
+
+      <para>S<subscript>f</subscript> = average friction slope over the
+      elemental reach Δx</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>1</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>[</m:mo>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f 1</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:msub>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f 2</m:mi>
+                  </m:msub>
+                </m:mrow>
+
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>(S<subscript>f </subscript>)<subscript>1</subscript> = friction
+      slope at x<subscript>1</subscript></para>
+
+      <para>(S<subscript>f</subscript> )<subscript>2 </subscript>= friction
+      slope at x<subscript>2</subscript></para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>(Froude number) IF</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msqrt>
+                <m:mfrac>
+                  <m:mrow>
+                    <m:msup>
+                      <m:mi>Q</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msup>
+
+                    <m:mo>b</m:mo>
+                  </m:mrow>
+
+                  <m:mrow>
+                    <m:mi>g</m:mi>
+
+                    <m:msup>
+                      <m:mi>A</m:mi>
+
+                      <m:mi>3</m:mi>
+                    </m:msup>
+                  </m:mrow>
+                </m:mfrac>
+              </m:msqrt>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>b = top width of water surface in channel cross-section (m)</para>
+
+      <para>IF<superscript>2</superscript> = average of Froude number squared
+      over the elemental reach Δx</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mfrac>
+                <m:mi>1</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:mfrac>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mrow>
+                  <m:msubsup>
+                    <m:mi>IF</m:mi>
+
+                    <m:mi>1</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msubsup>
+
+                  <m:mo>+</m:mo>
+
+                  <m:msubsup>
+                    <m:mi>IF</m:mi>
+
+                    <m:mi>2</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msubsup>
+                </m:mrow>
+
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>In the case of a subcritical flow, the unknown in equation (36) is
+      y<subscript>j</subscript> , while for a supercritical flow, the unknown
+      would be y<subscript>j+1</subscript>. Solution of equation (36) requires
+      iteration because the Froude number and friction slope on the right hand
+      side, require the depth before being able to be evaluated at both
+      locations x<subscript>1</subscript> and x<subscript>2</subscript> . The
+      direct integration method therefore requires iteration to solve an
+      implicit equation.</para>
+    </section>
+
+    <section>
+      <title>Variations in the Application of the Direct Integration
+      Method</title>
+
+      <para>The standard step method can be applied in a number of ways which
+      differ according to:</para>
+
+      <para>1. solution technique, and</para>
+
+      <para>2. averaging method for the non-linear terms.</para>
+
+      <section>
+        <title>Solution Method for Applying the Direct Integration Method or
+        Standard Step Method</title>
+
+        <para/>
+      </section>
+
+      <section>
+        <title>Averaging Required in Water Surface Profile
+        Calculations</title>
+
+        <para>Because both equations (27) and (35) are ordinary differential
+        equations, they are a point relation which hold at all points in the
+        1D continuum. When these equations are discretised using (say) a
+        finite difference method, the resulting equations span a small
+        elemental reach of length Δx and are equations (36) and (36)
+        respectively.</para>
+
+        <para>contain one or two non-linear terms which are</para>
+
+        <para>are discretised using a finite difference method, that in both
+        cases, there are some non-linear terms which require representation
+        over the length of the elemental reach Δx. Various methods have been
+        adopted to provide these approximations and four versions are
+        identified below with respect to the friction slope S<subscript>f
+        </subscript>at sections j and (j + 1).</para>
+
+        <equation>
+          <m:math display="block"/>
+        </equation>
+
+        <equation>
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mrow>
+                  <m:mo>(average conveyance) (</m:mo>
+
+                  <m:msubsup>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+
+                    <m:mi>-</m:mi>
+                  </m:msubsup>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+
+                <m:mi>K</m:mi>
+              </m:msub>
+
+              <m:mo>=</m:mo>
+
+              <m:msup>
+                <m:mrow>
+                  <m:mo>[</m:mo>
+
+                  <m:mfrac>
+                    <m:mi>Q</m:mi>
+
+                    <m:mi>K</m:mi>
+                  </m:mfrac>
+
+                  <m:mo>]</m:mo>
+                </m:mrow>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:math>
+        </equation>
+
+        <equation>
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mrow>
+                  <m:mo>(arithmetic mean) (</m:mo>
+
+                  <m:msubsup>
+                    <m:mi>S</m:mi>
+
+                    <m:mi>f</m:mi>
+
+                    <m:mi>-</m:mi>
+                  </m:msubsup>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+
+                <m:mi>a</m:mi>
+              </m:msub>
+
+              <m:mo>=</m:mo>
+
+              <m:mrow>
+                <m:mfrac>
+                  <m:mi>1</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:mfrac>
+
+                <m:mrow>
+                  <m:mo>[</m:mo>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:msub>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>f</m:mi>
+                        </m:msub>
+
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+
+                      <m:mi>1</m:mi>
+                    </m:msub>
+
+                    <m:mo>+</m:mo>
+
+                    <m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:msub>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>f</m:mi>
+                        </m:msub>
+
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+
+                      <m:mi>2</m:mi>
+                    </m:msub>
+                  </m:mrow>
+
+                  <m:mo>]</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:math>
+        </equation>
+
+        <equation>
+          <m:math display="block">
+            <m:mrow>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>(geometric mean) (S</m:mi>
+
+                  <m:mi>f</m:mi>
+
+                  <m:mi>-</m:mi>
+                </m:msubsup>
+
+                <m:msub>
+                  <m:mi>)</m:mi>
+
+                  <m:mi>g</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mo>=</m:mo>
+
+              <m:msqrt>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>(S</m:mi>
+
+                    <m:mi>f</m:mi>
+                  </m:msub>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>)</m:mi>
+
+                      <m:mi>1</m:mi>
+                    </m:msub>
+
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>(S</m:mi>
+
+                        <m:mi>f</m:mi>
+                      </m:msub>
+
+                      <m:msub>
+                        <m:mi>)</m:mi>
+
+                        <m:mi>2</m:mi>
+                      </m:msub>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:msqrt>
+            </m:mrow>
+          </m:math>
+        </equation>
+
+        <equation>
+          <m:math display="block">
+            <m:mrow>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>(harmonic mean) (S</m:mi>
+
+                  <m:mi>f</m:mi>
+
+                  <m:mi>-</m:mi>
+                </m:msubsup>
+
+                <m:msub>
+                  <m:mi>)</m:mi>
+
+                  <m:mi>h</m:mi>
+                </m:msub>
+              </m:mrow>
+
+              <m:mo>=</m:mo>
+
+              <m:mfrac>
+                <m:mi>1</m:mi>
+
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mi>1</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:mfrac>
+
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>1</m:mi>
+
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>(S</m:mi>
+
+                            <m:mi>f</m:mi>
+                          </m:msub>
+
+                          <m:msub>
+                            <m:mi>)</m:mi>
+
+                            <m:mi>1</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                      </m:mfrac>
+
+                      <m:mo>+</m:mo>
+
+                      <m:mfrac>
+                        <m:mi>1</m:mi>
+
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>(S</m:mi>
+
+                            <m:mi>f</m:mi>
+                          </m:msub>
+
+                          <m:msub>
+                            <m:mi>)</m:mi>
+
+                            <m:mi>2</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                      </m:mfrac>
+                    </m:mrow>
+
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:math>
+        </equation>
+
+        <equation>
+          <m:math display="block">
+            <m:mrow>
+              <m:mi>where... ⊽</m:mi>
+
+              <m:mo>=</m:mo>
+
+              <m:mrow>
+                <m:mfrac>
+                  <m:mi>1</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:mfrac>
+
+                <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>v</m:mi>
+
+                      <m:mi>1</m:mi>
+                    </m:msub>
+
+                    <m:mo>+</m:mo>
+
+                    <m:msub>
+                      <m:mi>v</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msub>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:math>
+        </equation>
+
+        <para>Q = K.S<superscript>1/2</superscript></para>
+
+        <para>K = conveyance</para>
+
+        <para>K = 1 /2 (K<subscript>1</subscript> +
+        K<subscript>2</subscript>)</para>
+
+        <para>The four averages listed above vary systematically ([16]) so
+        that:</para>
+
+        <para>(S¯<subscript>f</subscript> )<subscript>a</subscript> &gt;
+        (S¯<subscript>f </subscript>)<subscript>g</subscript> &gt;
+        (S¯<subscript>f</subscript> )<subscript>K</subscript> &gt;
+        (S¯<subscript>f</subscript> )<subscript>h</subscript></para>
+
+        <para>In addition to the above averages, there are many other
+        equations which average reach-end parameters A, P,
+        R<subscript>h</subscript> by arithmetic, geometric or harmonic
+        methods, but the averaged friction slope values have all been found to
+        lie between the two extremes given by (S¯<subscript>f
+        </subscript>)<subscript>a</subscript> and (S¯<subscript>f</subscript>
+        )<subscript>h</subscript> ([6].</para>
+
+        <para>The effect of using the various estimates for the average
+        friction slope have been explored by various investigators.
+        Laurenson’s conclusion ([16]) was that the best single method of
+        averaging appears to be the arithmetic average of reach-end friction
+        slopes, especially if this method is used in concert with the
+        selection of representative cross-sections of the channel.</para>
+      </section>
+    </section>
+  </section>
+
+  <section>
+    <title>Physical Modelling</title>
+
+    <para>Physical models are used in a somewhat complementary sense to
+    numerical models.</para>
+
+    <para>The basis of requirement of any physical model is that it is able to
+    reproduce the flow patterns of real life flows, often before they are
+    built???</para>
+
+    <para>processes in a model investigation</para>
+
+    <para>calibration</para>
+
+    <para>verification</para>
+
+    <para>types of models - distorted and undistorted, Froudian and Reynolds
+    (only occasionally used), fixed bed and mobile bed</para>
+  </section>
+
+  <section>
+    <title>Flow in Estuaries</title>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>Worked Examples</title>
+
+    <para/>
+
+    <section>
+      <title>Channel with Trapezoidal Cross-Section</title>
+
+      <para>A smooth concrete trapezoidal channel with a base width of 3.0m
+      has side slopes 1H : 2V and bed slope of S<subscript>o</subscript> =
+      0.001. For a flow of 20m<superscript>3</superscript>/s determine the
+      normal flow depth (y<subscript>o</subscript>) and critical flow depth
+      (y<subscript>c</subscript>). Also find the corresponding total heads and
+      specific energy if the datum is 1m below the channel invert. See Figure
+      18.</para>
+
+      <para><emphasis role="bold">Solution:</emphasis></para>
+
+      <para>From the geometry of the channel cross-section, the section
+      properties of flow area (A), wetted perimeter (P) and top width (b) are
+      given by:</para>
+
+      <para>A = 3y + y<superscript>2</superscript></para>
+
+      <para>P = 3 + y √5</para>
+
+      <para>b = 3 + y</para>
+
+      <para>From Table 2, for a smooth concrete surface, Manning’s n =
+      0.012.</para>
+
+      <para>It is convenient to rearrange the Manning equation [i.e. equation
+      (37)] so that the known variables and parameters are moved to the left
+      hand side of the equation (say) and the unknowns moved to the right hand
+      side.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>Q</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>AR</m:mi>
+
+                  <m:mi>h</m:mi>
+
+                  <m:mi>2/3</m:mi>
+                </m:msubsup>
+
+                <m:msup>
+                  <m:mi>S</m:mi>
+
+                  <m:mi>1/2</m:mi>
+                </m:msup>
+              </m:mrow>
+
+              <m:mi>n</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mi>⇒</m:mi>
+
+              <m:mrow>
+                <m:mrow>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+
+                      <m:mfrac>
+                        <m:msub>
+                          <m:mi>Q</m:mi>
+
+                          <m:mi>n</m:mi>
+                        </m:msub>
+
+                        <m:msup>
+                          <m:mi>S</m:mi>
+
+                          <m:mi>1/2</m:mi>
+                        </m:msup>
+                      </m:mfrac>
+
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+
+                    <m:mi>3</m:mi>
+                  </m:msup>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>A</m:mi>
+
+                <m:mi>5</m:mi>
+              </m:msup>
+
+              <m:msup>
+                <m:mi>P</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>20</m:mi>
+
+                      <m:mo>×</m:mo>
+
+                      <m:mi>0.012</m:mi>
+                    </m:mrow>
+
+                    <m:msup>
+                      <m:mi>0.001</m:mi>
+
+                      <m:mi>1/2</m:mi>
+                    </m:msup>
+                  </m:mfrac>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>A</m:mi>
+
+                <m:mi>5</m:mi>
+              </m:msup>
+
+              <m:msup>
+                <m:mi>P</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mi>437.15</m:mi>
+
+              <m:mo>=</m:mo>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+
+                    <m:mrow>
+                      <m:mi>3y</m:mi>
+
+                      <m:mo>+</m:mo>
+
+                      <m:msup>
+                        <m:mi>y</m:mi>
+
+                        <m:mi>2</m:mi>
+                      </m:msup>
+                    </m:mrow>
+
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+
+                  <m:mi>5</m:mi>
+                </m:msup>
+
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+
+                    <m:mrow>
+                      <m:mi>3</m:mi>
+
+                      <m:mo>+</m:mo>
+
+                      <m:mi>y√</m:mi>
+                    </m:mrow>
+
+                    <m:mo>5)</m:mo>
+                  </m:mrow>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Equation (38) can be solved by trial and error or other method for
+      the normal depth y = y<subscript>o</subscript> with the following
+      results:</para>
+
+      <para>y<subscript>o</subscript> = 1.89m</para>
+
+      <para>A = 7.439m<superscript>2</superscript></para>
+
+      <para>u = 2.689 m/s</para>
+
+      <para>H = z + y + u<superscript>2</superscript> /2g</para>
+
+      <para>= 1 + 1.886 + 0.368</para>
+
+      <para>= 3.25m</para>
+
+      <para>E = y + u<superscript>2</superscript>/ 2g</para>
+
+      <para>= 1.886 + 0.368</para>
+
+      <para>= 2.25m</para>
+
+      <para>To find the critical depth y<subscript>c</subscript> corresponding
+      to the same flow of 20m<superscript>3</superscript>/s it is known that
+      the Froude number (IF) is unity.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>IF</m:mi>
+
+            <m:mrow>
+              <m:mi>=1</m:mi>
+
+              <m:mo>=</m:mo>
+            </m:mrow>
+
+            <m:msqrt>
+              <m:mfrac>
+                <m:mrow>
+                  <m:msup>
+                    <m:mi>Q</m:mi>
+
+                    <m:mi>2</m:mi>
+                  </m:msup>
+
+                  <m:mo>b</m:mo>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mi>g</m:mi>
+
+                  <m:msup>
+                    <m:mi>A</m:mi>
+
+                    <m:mi>3</m:mi>
+                  </m:msup>
+                </m:mrow>
+              </m:mfrac>
+            </m:msqrt>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mi>⇒</m:mi>
+
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>Q</m:mi>
+
+                  <m:mi>2</m:mi>
+                </m:msup>
+
+                <m:mi>g</m:mi>
+              </m:mfrac>
+            </m:mrow>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>A</m:mi>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+
+              <m:mi>b</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:msup>
+                <m:mi>20</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msup>
+
+              <m:mi>9.81</m:mi>
+            </m:mfrac>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mi>A</m:mi>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+
+              <m:mi>b</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>40.775</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mfrac>
+              <m:msup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mrow>
+                    <m:mi>3y</m:mi>
+
+                    <m:mo>+</m:mo>
+
+                    <m:msup>
+                      <m:mi>y</m:mi>
+
+                      <m:mi>2</m:mi>
+                    </m:msup>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
+
+                <m:mi>3</m:mi>
+              </m:msup>
+
+              <m:mi>y+3</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Solving by trial and error or other numerical method yields the
+      following results to the nearest centimeter:</para>
+
+      <para>y<subscript>c</subscript> = 1.51m</para>
+
+      <para>H<subscript>c</subscript> = 3.14m</para>
+
+      <para>E<subscript>c</subscript> = 2.14m</para>
+    </section>
+  </section>
 </chapter>
