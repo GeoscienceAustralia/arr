@@ -700,13 +700,17 @@
         </m:math>
       </equation>
 
-      <para>where Σ(ŷ) is the covariance matrix of the sampling error in the
-      estimate of the flood quantile or the parameter of the LP3 distribution
-      and I is a (n x n) identity matrix. The covariance matrix for ηi depends
-      on the record length available at each site and the cross correlation
-      among annual maximum floods at different sites. Therefore, the observed
-      regression model error is a combination of time-sampling error
-      η<subscript>i</subscript> and an underlying model error
+      <para>where<inlineequation>
+          <m:math display="inline">
+            <m:mi>Σ(ŷ</m:mi>
+          </m:math>
+        </inlineequation>) is the covariance matrix of the sampling error in
+      the estimate of the flood quantile or the parameter of the LP3
+      distribution and I is a (n x n) identity matrix. The covariance matrix
+      for ηi depends on the record length available at each site and the cross
+      correlation among annual maximum floods at different sites. Therefore,
+      the observed regression model error is a combination of time-sampling
+      error η<subscript>i</subscript> and an underlying model error
       δ<subscript>i</subscript>.</para>
 
       <para>The GLS estimator of β and its covariance matrix for a known
@@ -887,7 +891,7 @@
       <para>In some situations, the sampling covariance matrix explains all
       the variability observed in the data, which means the left-hand side of
       equation (7) will be less than n – (k + 1) even if
-      ΅σ<subscript>δ</subscript>² is zero. In these circumstances, the MOM
+      σ<subscript>δ</subscript>² is zero. In these circumstances, the MOM
       estimator of the model error variance is generally taken to be
       zero.</para>
 
@@ -944,8 +948,16 @@
         the consideration that a higher cut-off would reduce that
         number.</para>
 
-        <para>Figure 1- Geographical distributions of the adopted 798
-        catchments from data-rich areas of Australia</para>
+        <figure>
+          <title>Geographical distributions of the adopted 798 catchments from
+          data-rich areas of Australia</title>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="Figures/Figure1.PNG"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
 
         <para>The selected streams are essentially unregulated since major
         regulation affects the rainfall-runoff relationship significantly
@@ -959,9 +971,9 @@
         known to have undergone major land use changes, such as the clearing
         of forests or changing of agricultural practices over the period of
         streamflow records are excluded from the data set. Stations graded as
-        „poor quality‟ or with specific comments by the gauging authority
+        „poor quality or with specific comments by the gauging authority
         regarding quality of the data are assessed in greater detail; if
-        stations are deemed „low quality‟ they are excluded.</para>
+        stations are deemed „low quality they are excluded.</para>
 
         <para>The annual maximum flood series data may be affected by
         multi-decadal climate variability and climate change, which are not
@@ -994,8 +1006,8 @@
         summary of the selected catchments</para>
 
         <table>
-          <title>Table 1 - Summary of adopted catchments from data-rich areas
-          of Australia</title>
+          <title>Summary of adopted catchments from data-rich areas of
+          Australia</title>
 
           <tgroup cols="4">
             <colspec/>
@@ -1154,11 +1166,18 @@
       mm mean annual rainfall contour line. There are six fringe zones, as
       discussed in Section 6.</para>
 
-      <para>Figure 2 - Adopted regions for RFFE technique in Australia</para>
+      <figure>
+        <title>Adopted regions for RFFE technique in Australia</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure2.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
       <para><table>
-          <title>Table 2 – Details of RFFE technique for data rich
-          regions</title>
+          <title>Details of RFFE technique for data rich regions</title>
 
           <tgroup cols="4">
             <colspec/>
@@ -1315,22 +1334,37 @@
 
       <para>where, <emphasis>area</emphasis> = catchment area (km²);</para>
 
-      <para>I₆,₅₀ = design rainfall intensity (mm/h) at catchment centroid for
-      6-hour duration and AEP of 50%;</para>
+      <para>I<subscript>6,50</subscript> = design rainfall intensity (mm/h) at
+      catchment centroid for 6-hour duration and AEP of 50%;</para>
 
       <para><emphasis>shape factor</emphasis> = shortest distance between
       catchment outlet and
       centroid/<emphasis>area</emphasis><superscript>0.5</superscript>;
       and</para>
 
-      <para>I₆₂ = design rainfall intensity (mm/h) at catchment centroid for
-      6-hour duration and AEP of 2%.</para>
+      <para>I<subscript>62</subscript> = design rainfall intensity (mm/h) at
+      catchment centroid for 6-hour duration and AEP of 2%.</para>
 
       <para>For Region 1 and Region 2, equations 9 and 10 have only the model
       intercepts, i.e. for these two regions, the weighted average values of S
       and SK are adopted, which are determined on the basis of record lengths
       at the stations within the ROI sub-region.</para>
 
+<<<<<<< .mine
+      <para>The values of b<subscript>0</subscript>,
+      b<subscript>1</subscript>, b<subscript>2</subscript>,
+      b<subscript>3</subscript>, c<subscript>0</subscript>,
+      c<subscript>1</subscript>, d<subscript>0</subscript>,
+      d<subscript>1</subscript>, d<subscript>2</subscript> and
+      d<subscript>3</subscript> at all the 798 individual gauged catchment
+      locations (in the data rich regions) are estimated and embedded in the
+      REEF Model 2015. To derive flood quantile estimate at an ungauged
+      catchment of interest, RFFE Model 2015 takes the inverse distance
+      weighted average value of flood quantile estimates based on up to 15
+      nearest gauged catchment locations within 300 km radius from the
+      catchment of interest. This ensures a smooth variation of flood quantile
+      estimates over the space.</para>
+=======
       <para>The values of b<subscript>0</subscript>, b<subscript>1</subscript>, b₂, b₃, c₀, c₁, d₀, d₁, d₂ and d₃ at all the
       798 individual gauged catchment locations (in the data rich regions) are
       estimated and embedded in the REEF Model 2015. To derive flood quantile
@@ -1339,6 +1373,7 @@
       based on up to 15 nearest gauged catchment locations within 300 km
       radius from the catchment of interest. This ensures a smooth variation
       of flood quantile estimates over the space.</para>
+>>>>>>> .r228
     </section>
   </section>
 
@@ -1380,12 +1415,20 @@
       to 5,975 km² (median: 259 km²) and streamflow record lengths range from
       10 to 46 years (median: 27 years).</para>
 
-      <para>Figure 3 - Locations of the selected catchments from the arid
-      areas of Australia (see Figure 2 for the boundary of the two arid
-      regions)</para>
+      <figure>
+        <title>Locations of the selected catchments from the arid areas of
+        Australia (see Figure 2 for the boundary of the two arid
+        regions)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure3.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
       <table>
-        <title>Table 3 - Summary of adopted stations from arid areas of
+        <title>Summary of adopted stations from arid areas of
         Australia</title>
 
         <tgroup cols="4">
@@ -1550,12 +1593,15 @@
         </m:math>
       </equation>
 
-      <para>where b₀, b₁ and b₂ are regression coefficients, estimated using
+      <para>where b<subscript>0</subscript>, b<subscript>1</subscript> and
+      b<subscript>2</subscript> are regression coefficients, estimated using
       ordinary least squares regression; area represents catchment area in
-      km², and I₆,₅₀ is the design rainfall intensity (mm/h) at catchment
-      centroid for 6-hour duration and 50% AEP. The values of b₀, b₁ and b₂
-      and the regional growth factors (GF<subscript>x</subscript>) are
-      embedded into the REEF Model 2015.</para>
+      km², and I<subscript>6,50</subscript> is the design rainfall intensity
+      (mm/h) at catchment centroid for 6-hour duration and 50% AEP. The values
+      of b<subscript>0</subscript>, b<subscript>1</subscript> and
+      b<subscript>2</subscript> and the regional growth factors
+      (GF<subscript>x</subscript>) are embedded into the REEF Model
+      2015.</para>
     </section>
   </section>
 
@@ -1620,11 +1666,19 @@
     reliable; an example of such catchment is provided in Section 12.3. Same
     conclusion applies to the other data-rich regions.</para>
 
-    <para>Figure 4 - Standardised residuals vs. normal scores for Region 1
-    based on leave-one-out validation for AEPs of 10% and 5%</para>
+    <figure>
+      <title>Standardised residuals vs. normal scores for Region 1 based on
+      leave-one-out validation for AEPs of 10% and 5%</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="Figures/Figure4.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
 
     <table>
-      <title>Table 4 – Details of RFFE technique for arid regions</title>
+      <title>Details of RFFE technique for arid regions</title>
 
       <tgroup cols="4">
         <colspec/>
@@ -1742,11 +1796,19 @@
     relative error (59 to 69%) and Region 3 (SA) has the smallest relative
     error (33 to 41%).</para>
 
-    <para>Figure 5 – Screen shot of RFFE Model 2015 (landing page)</para>
+    <figure>
+      <title>Screen shot of RFFE Model 2015 (landing page)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="Figures/Figure5.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
 
     <para><table>
-        <title>Table 5 – Upper bound on (absolute) median relative error (RE)
-        from leave-one-out validation of the REEF technique</title>
+        <title>Upper bound on (absolute) median relative error (RE) from
+        leave-one-out validation of the REEF technique</title>
 
         <tgroup cols="7">
           <colspec align="center"/>
@@ -1959,8 +2021,8 @@
       characteristics and for which the RFFE Model 2015 is not applicable and
       should thus not be used, (ii) catchments for which flood estimates must
       be expected to have lower accuracy than indicated in Section 7; and
-      (iii) „atypical catchments‟ where additional catchment attributes need
-      to be considered and adjusted for.</para>
+      (iii) „atypical catchments where additional catchment attributes need to
+      be considered and adjusted for.</para>
     </section>
 
     <section>
@@ -2084,8 +2146,16 @@
       catchment with similar catchment attributes as a basis for adjustments
       to the flood estimates produced by the RFFE Model 2015.</para>
 
-      <para>Figure 6 - RFFE Model 2015 screen shot for data input for the
-      Wollomombi River at Coinside, NSW</para>
+      <figure>
+        <title>RFFE Model 2015 screen shot for data input for the Wollomombi
+        River at Coinside, NSW</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure6.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
     </section>
   </section>
 
@@ -2116,8 +2186,8 @@
 
     <para>(i) Region name (can be selected from the dropdown list (see Table
     6));<table>
-        <title>Table 6 - Region names for application of the RFFE Model 2015
-        (see Figure 2 for the extent of the regions)</title>
+        <title>Region names for application of the RFFE Model 2015 (see Figure
+        2 for the extent of the regions)</title>
 
         <tgroup cols="2">
           <thead>
@@ -2183,8 +2253,16 @@
     <para>RFFE Model 2015 output contains the following principal information
     (see Figure 7):</para>
 
-    <para>Figure 7 - RFFE Model 2015 screen shot for model output for the
-    Wollomombi River at Coinside, NSW</para>
+    <figure>
+      <title>RFFE Model 2015 screen shot for model output for the Wollomombi
+      River at Coinside, NSW</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="Figures/Figure7.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
 
     <para>(i) A table that shows AEP in the first column, estimated flood
     quantiles labelled as “Flow (m3/s)” in the second column, lower confidence
@@ -2243,12 +2321,20 @@
       much wider compared with at-site FFA confidence band, which is as
       expected.</para>
 
-      <para>Figure 8 - RFFE Model 2015 vs. at-site FFA flood estimates for the
-      Wollomombi River at Coinside, NSW</para>
+      <figure>
+        <title>RFFE Model 2015 vs. at-site FFA flood estimates for the
+        Wollomombi River at Coinside, NSW</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure8.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
       <table>
-        <title>Table 7 - Application data for the Wollomombi River at
-        Coinside, NSW (Region 1) (Basic Input Data)</title>
+        <title>Application data for the Wollomombi River at Coinside, NSW
+        (Region 1) (Basic Input Data)</title>
 
         <tgroup cols="2">
           <thead>
@@ -2306,8 +2392,828 @@
       catchments to ensure that the ungauged catchment is not atypical of the
       nearest gauged catchments used in developing the RFFE Model 2015.</para>
 
-      <para>Table 8 – 30 gauged catchments (used in the development of RFFE
-      Model 2015) located closest to Wollomombi River at Coinside, NSW</para>
+      <table>
+        <title>30 gauged catchments (used in the development of RFFE Model
+        2015) located closest to Wollomombi River at Coinside, NSW</title>
+
+        <tgroup cols="12">
+          <tbody>
+            <row>
+              <entry>Distance (km)</entry>
+
+              <entry>Site ID</entry>
+
+              <entry>Latitude (outlet)</entry>
+
+              <entry>Longitude (outlet)</entry>
+
+              <entry>Catchment Area km<superscript>2</superscript></entry>
+
+              <entry>Flow Record Length (years)</entry>
+
+              <entry>6 hour 50% AEP Intensity (mm/h)</entry>
+
+              <entry>6 hour 2% AEP Intensity (mm/h)</entry>
+
+              <entry>Mean Annual Rainfall (mm)</entry>
+
+              <entry>12 hour 50% AEP Intensity (mm/h)</entry>
+
+              <entry>Shape Factor</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mfrac>
+                      <m:mi>6 hour 50% AEP Intensity (mm/h)</m:mi>
+
+                      <m:mi>6 hour 2% AEP Intensity (mm/h)</m:mi>
+                    </m:mfrac>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>0</entry>
+
+              <entry>206014</entry>
+
+              <entry>30.478</entry>
+
+              <entry>152.027</entry>
+
+              <entry>376</entry>
+
+              <entry>57</entry>
+
+              <entry>6.917</entry>
+
+              <entry>15.917</entry>
+
+              <entry>871</entry>
+
+              <entry>4.24</entry>
+
+              <entry>0.88</entry>
+
+              <entry>2.3</entry>
+            </row>
+
+            <row>
+              <entry>18</entry>
+
+              <entry>206001</entry>
+
+              <entry>30.59</entry>
+
+              <entry>152.162</entry>
+
+              <entry>163</entry>
+
+              <entry>33</entry>
+
+              <entry>9.083</entry>
+
+              <entry>22.55</entry>
+
+              <entry>1167</entry>
+
+              <entry>6.26</entry>
+
+              <entry>1.08</entry>
+
+              <entry>2.48</entry>
+            </row>
+
+            <row>
+              <entry>24.3</entry>
+
+              <entry>204030</entry>
+
+              <entry>30.26</entry>
+
+              <entry>152.01</entry>
+
+              <entry>200</entry>
+
+              <entry>34</entry>
+
+              <entry>7.133</entry>
+
+              <entry>15.05</entry>
+
+              <entry>939.64</entry>
+
+              <entry>4.44</entry>
+
+              <entry>1.39</entry>
+
+              <entry>2.11</entry>
+            </row>
+
+            <row>
+              <entry>28</entry>
+
+              <entry>206017</entry>
+
+              <entry>30.478</entry>
+
+              <entry>152.318</entry>
+
+              <entry>22</entry>
+
+              <entry>24</entry>
+
+              <entry>10.217</entry>
+
+              <entry>25.6</entry>
+
+              <entry>1167</entry>
+
+              <entry>7.21</entry>
+
+              <entry>0.8</entry>
+
+              <entry>2.51</entry>
+            </row>
+
+            <row>
+              <entry>31.6</entry>
+
+              <entry>204008</entry>
+
+              <entry>30.405</entry>
+
+              <entry>152.345</entry>
+
+              <entry>31</entry>
+
+              <entry>29</entry>
+
+              <entry>10.15</entry>
+
+              <entry>25.5</entry>
+
+              <entry>1249</entry>
+
+              <entry>7</entry>
+
+              <entry>0.68</entry>
+
+              <entry>2.51</entry>
+            </row>
+
+            <row>
+              <entry>35.7</entry>
+
+              <entry>206026</entry>
+
+              <entry>30.42</entry>
+
+              <entry>151.66</entry>
+
+              <entry>8</entry>
+
+              <entry>37</entry>
+
+              <entry>6.917</entry>
+
+              <entry>14.6</entry>
+
+              <entry>789.35</entry>
+
+              <entry>4.23</entry>
+
+              <entry>0.73</entry>
+
+              <entry>2.11</entry>
+            </row>
+
+            <row>
+              <entry>37.7</entry>
+
+              <entry>206025</entry>
+
+              <entry>30.68</entry>
+
+              <entry>151.71</entry>
+
+              <entry>594</entry>
+
+              <entry>39</entry>
+
+              <entry>6.667</entry>
+
+              <entry>14.183</entry>
+
+              <entry>944.63</entry>
+
+              <entry>4.12</entry>
+
+              <entry>0.62</entry>
+
+              <entry>2.13</entry>
+            </row>
+
+            <row>
+              <entry>39.3</entry>
+
+              <entry>206034</entry>
+
+              <entry>30.7</entry>
+
+              <entry>151.707</entry>
+
+              <entry>117</entry>
+
+              <entry>26</entry>
+
+              <entry>6.617</entry>
+
+              <entry>14.05</entry>
+
+              <entry>758</entry>
+
+              <entry>4.11</entry>
+
+              <entry>0.89</entry>
+
+              <entry>2.12</entry>
+            </row>
+
+            <row>
+              <entry>42</entry>
+
+              <entry>418034</entry>
+
+              <entry>30.3</entry>
+
+              <entry>151.64</entry>
+
+              <entry>14</entry>
+
+              <entry>29</entry>
+
+              <entry>6.933</entry>
+
+              <entry>14.317</entry>
+
+              <entry>818.48</entry>
+
+              <entry>4.29</entry>
+
+              <entry>0.79</entry>
+
+              <entry>2.07</entry>
+            </row>
+
+            <row>
+              <entry>63.8</entry>
+
+              <entry>418014</entry>
+
+              <entry>30.47</entry>
+
+              <entry>151.36</entry>
+
+              <entry>855</entry>
+
+              <entry>37</entry>
+
+              <entry>6.6</entry>
+
+              <entry>13.867</entry>
+
+              <entry>725.43</entry>
+
+              <entry>4.01</entry>
+
+              <entry>0.42</entry>
+
+              <entry>2.1</entry>
+            </row>
+
+            <row>
+              <entry>68.4</entry>
+
+              <entry>206018</entry>
+
+              <entry>31.052</entry>
+
+              <entry>151.768</entry>
+
+              <entry>894</entry>
+
+              <entry>51</entry>
+
+              <entry>6.683</entry>
+
+              <entry>13.633</entry>
+
+              <entry>711</entry>
+
+              <entry>4.12</entry>
+
+              <entry>0.48</entry>
+
+              <entry>2.04</entry>
+            </row>
+
+            <row>
+              <entry>68.6</entry>
+
+              <entry>204017</entry>
+
+              <entry>30.307</entry>
+
+              <entry>152.713</entry>
+
+              <entry>82</entry>
+
+              <entry>40</entry>
+
+              <entry>13.633</entry>
+
+              <entry>34.15</entry>
+
+              <entry>1995</entry>
+
+              <entry>10.07</entry>
+
+              <entry>0.61</entry>
+
+              <entry>2.51</entry>
+            </row>
+
+            <row>
+              <entry>72.3</entry>
+
+              <entry>204037</entry>
+
+              <entry>30.09</entry>
+
+              <entry>152.63</entry>
+
+              <entry>62</entry>
+
+              <entry>40</entry>
+
+              <entry>10</entry>
+
+              <entry>24.75</entry>
+
+              <entry>1586.24</entry>
+
+              <entry>6.93</entry>
+
+              <entry>0.73</entry>
+
+              <entry>2.47</entry>
+            </row>
+
+            <row>
+              <entry>72.5</entry>
+
+              <entry>205002</entry>
+
+              <entry>30.427</entry>
+
+              <entry>152.78</entry>
+
+              <entry>433</entry>
+
+              <entry>29</entry>
+
+              <entry>11.333</entry>
+
+              <entry>28.35</entry>
+
+              <entry>1570</entry>
+
+              <entry>8.16</entry>
+
+              <entry>1.03</entry>
+
+              <entry>2.5</entry>
+            </row>
+
+            <row>
+              <entry>81.4</entry>
+
+              <entry>206009</entry>
+
+              <entry>31.19</entry>
+
+              <entry>151.83</entry>
+
+              <entry>261</entry>
+
+              <entry>57</entry>
+
+              <entry>6.7</entry>
+
+              <entry>13.433</entry>
+
+              <entry>910.37</entry>
+
+              <entry>4.26</entry>
+
+              <entry>0.66</entry>
+
+              <entry>2.01</entry>
+            </row>
+
+            <row>
+              <entry>81.4</entry>
+
+              <entry>205006</entry>
+
+              <entry>30.642</entry>
+
+              <entry>152.855</entry>
+
+              <entry>539</entry>
+
+              <entry>35</entry>
+
+              <entry>11.5</entry>
+
+              <entry>28.733</entry>
+
+              <entry>1353</entry>
+
+              <entry>8.03</entry>
+
+              <entry>0.56</entry>
+
+              <entry>2.5</entry>
+            </row>
+
+            <row>
+              <entry>81.5</entry>
+
+              <entry>204034</entry>
+
+              <entry>29.763</entry>
+
+              <entry>152.212</entry>
+
+              <entry>389</entry>
+
+              <entry>40</entry>
+
+              <entry>7.383</entry>
+
+              <entry>15.95</entry>
+
+              <entry>914</entry>
+
+              <entry>4.57</entry>
+
+              <entry>1.03</entry>
+
+              <entry>2.16</entry>
+            </row>
+
+            <row>
+              <entry>82.5</entry>
+
+              <entry>205014</entry>
+
+              <entry>30.388</entry>
+
+              <entry>152.88</entry>
+
+              <entry>51</entry>
+
+              <entry>24</entry>
+
+              <entry>13.55</entry>
+
+              <entry>34.5</entry>
+
+              <entry>2151</entry>
+
+              <entry>10</entry>
+
+              <entry>0.68</entry>
+
+              <entry>2.55</entry>
+            </row>
+
+            <row>
+              <entry>83</entry>
+
+              <entry>204026</entry>
+
+              <entry>30.25</entry>
+
+              <entry>152.85</entry>
+
+              <entry>80</entry>
+
+              <entry>29</entry>
+
+              <entry>12.783</entry>
+
+              <entry>31.633</entry>
+
+              <entry>1894.35</entry>
+
+              <entry>9.39</entry>
+
+              <entry>0.45</entry>
+
+              <entry>2.47</entry>
+            </row>
+
+            <row>
+              <entry>84.7</entry>
+
+              <entry>419010</entry>
+
+              <entry>30.97</entry>
+
+              <entry>151.35</entry>
+
+              <entry>829</entry>
+
+              <entry>32</entry>
+
+              <entry>6.95</entry>
+
+              <entry>13.933</entry>
+
+              <entry>773.13</entry>
+
+              <entry>4.33</entry>
+
+              <entry>0.98</entry>
+
+              <entry>2.01</entry>
+            </row>
+
+            <row>
+              <entry>84.8</entry>
+
+              <entry>418021</entry>
+
+              <entry>30.23</entry>
+
+              <entry>151.19</entry>
+
+              <entry>311</entry>
+
+              <entry>34</entry>
+
+              <entry>6.75</entry>
+
+              <entry>13.533</entry>
+
+              <entry>785.73</entry>
+
+              <entry>4.09</entry>
+
+              <entry>1.63</entry>
+
+              <entry>2.01</entry>
+            </row>
+
+            <row>
+              <entry>85.8</entry>
+
+              <entry>204031</entry>
+
+              <entry>29.722</entry>
+
+              <entry>151.845</entry>
+
+              <entry>348</entry>
+
+              <entry>20</entry>
+
+              <entry>7.25</entry>
+
+              <entry>14.683</entry>
+
+              <entry>990</entry>
+
+              <entry>4.49</entry>
+
+              <entry>1.27</entry>
+
+              <entry>2.03</entry>
+            </row>
+
+            <row>
+              <entry>99.3</entry>
+
+              <entry>204025</entry>
+
+              <entry>30.26</entry>
+
+              <entry>153.03</entry>
+
+              <entry>135</entry>
+
+              <entry>42</entry>
+
+              <entry>14.35</entry>
+
+              <entry>38.267</entry>
+
+              <entry>1711.05</entry>
+
+              <entry>10.41</entry>
+
+              <entry>0.59</entry>
+
+              <entry>2.67</entry>
+            </row>
+
+            <row>
+              <entry>101.6</entry>
+
+              <entry>207015</entry>
+
+              <entry>31.372</entry>
+
+              <entry>152.245</entry>
+
+              <entry>342</entry>
+
+              <entry>27</entry>
+
+              <entry>7.933</entry>
+
+              <entry>16.533</entry>
+
+              <entry>1678</entry>
+
+              <entry>5.49</entry>
+
+              <entry>0.76</entry>
+
+              <entry>2.08</entry>
+            </row>
+
+            <row>
+              <entry>102.9</entry>
+
+              <entry>419054</entry>
+
+              <entry>31.04</entry>
+
+              <entry>151.17</entry>
+
+              <entry>391</entry>
+
+              <entry>37</entry>
+
+              <entry>6.833</entry>
+
+              <entry>13.517</entry>
+
+              <entry>780.1</entry>
+
+              <entry>4.24</entry>
+
+              <entry>0.96</entry>
+
+              <entry>1.98</entry>
+            </row>
+
+            <row>
+              <entry>105.5</entry>
+
+              <entry>207006</entry>
+
+              <entry>31.39</entry>
+
+              <entry>152.33</entry>
+
+              <entry>363</entry>
+
+              <entry>36</entry>
+
+              <entry>10.367</entry>
+
+              <entry>23.05</entry>
+
+              <entry>1558.49</entry>
+
+              <entry>7.09</entry>
+
+              <entry>0.8</entry>
+
+              <entry>2.22</entry>
+            </row>
+
+            <row>
+              <entry>107.3</entry>
+
+              <entry>419016</entry>
+
+              <entry>31.06</entry>
+
+              <entry>151.13</entry>
+
+              <entry>907</entry>
+
+              <entry>34</entry>
+
+              <entry>6.633</entry>
+
+              <entry>13.15</entry>
+
+              <entry>794.19</entry>
+
+              <entry>4.08</entry>
+
+              <entry>0.56</entry>
+
+              <entry>1.98</entry>
+            </row>
+
+            <row>
+              <entry>107.7</entry>
+
+              <entry>418005</entry>
+
+              <entry>29.92</entry>
+
+              <entry>151.11</entry>
+
+              <entry>259</entry>
+
+              <entry>40</entry>
+
+              <entry>7.9</entry>
+
+              <entry>15.983</entry>
+
+              <entry>876.43</entry>
+
+              <entry>4.87</entry>
+
+              <entry>0.93</entry>
+
+              <entry>2.02</entry>
+            </row>
+
+            <row>
+              <entry>115.2</entry>
+
+              <entry>416016</entry>
+
+              <entry>29.79</entry>
+
+              <entry>151.13</entry>
+
+              <entry>726</entry>
+
+              <entry>40</entry>
+
+              <entry>8.183</entry>
+
+              <entry>16.6</entry>
+
+              <entry>788.21</entry>
+
+              <entry>4.93</entry>
+
+              <entry>0.9</entry>
+
+              <entry>2.03</entry>
+            </row>
+
+            <row>
+              <entry>116.3</entry>
+
+              <entry>205007</entry>
+
+              <entry>30.118</entry>
+
+              <entry>153.163</entry>
+
+              <entry>11</entry>
+
+              <entry>22</entry>
+
+              <entry>12.533</entry>
+
+              <entry>33.967</entry>
+
+              <entry>1577</entry>
+
+              <entry>8.07</entry>
+
+              <entry>0.79</entry>
+
+              <entry>2.71</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
     </section>
 
     <section>
@@ -2325,12 +3231,20 @@
       2015 is much wider compared with at-site FFA confidence band, which is
       as expected.</para>
 
-      <para>Figure 9 - RFFE Model 2015 screen shot for data input for Four
-      Mile Brook at Netic Rd, SW Western Australia</para>
+      <figure>
+        <title>RFFE Model 2015 screen shot for data input for Four Mile Brook
+        at Netic Rd, SW Western Australia</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure9.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
       <para><table>
-          <title>Table 9 - Application data for Four Mile Brook at Netic Rd,
-          SW Western Australia (Region 5) (Basic Input Data)</title>
+          <title>Application data for Four Mile Brook at Netic Rd, SW Western
+          Australia (Region 5) (Basic Input Data)</title>
 
           <tgroup cols="2">
             <thead>
@@ -2383,11 +3297,27 @@
           </tgroup>
         </table></para>
 
-      <para>Figure 10 - RFFE Model 2015 screen shot for model output for Four
-      Mile Brook at Netic Rd, SW Western Australia</para>
+      <figure>
+        <title>RFFE Model 2015 screen shot for model output for Four Mile
+        Brook at Netic Rd, SW Western Australia</title>
 
-      <para>Figure 11 - RFFE Model 2015 vs. at-site FFA flood estimates for
-      Four Mile Brook at Netic Rd, SW Western Australia</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure10.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>RFFE Model 2015 vs. at-site FFA flood estimates for Four Mile
+        Brook at Netic Rd, SW Western Australia</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure11.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
     </section>
 
     <section>
@@ -2408,18 +3338,42 @@
       downwards to account for the floodplain storage effect by applying an
       appropriate technique.</para>
 
-      <para>Figure 12 - RFFE Model 2015 screen shot for data input for the
-      Morass Creek at Uplands, VIC</para>
+      <figure>
+        <title>RFFE Model 2015 screen shot for data input for the Morass Creek
+        at Uplands, VIC</title>
 
-      <para>Figure 13 - RFFE Model 2015 screen shot for model output for the
-      Morass Creek at Uplands, VIC</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure12.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
-      <para>Figure 14 - RFFE Model 2015 vs. at-site FFA flood estimates (for
-      the Morass Creek at Uplands, VIC)</para>
+      <figure>
+        <title>RFFE Model 2015 screen shot for model output for the Morass
+        Creek at Uplands, VIC</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure13.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>RFFE Model 2015 vs. at-site FFA flood estimates (for the Morass
+        Creek at Uplands, VIC)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure14.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
       <table>
-        <title>Table 10 - Application data for the Morass Creek at Uplands,
-        VIC (Region 1) (Basic Input Data)</title>
+        <title>Application data for the Morass Creek at Uplands, VIC (Region
+        1) (Basic Input Data)</title>
 
         <tgroup cols="2">
           <thead>
@@ -2713,8 +3667,8 @@
     <title>Appendix A</title>
 
     <para><table>
-        <title>Appendix A - Further Information on the Development and Testing
-        of RFFE Technique 2015</title>
+        <title>Further Information on the Development and Testing of RFFE
+        Technique 2015</title>
 
         <tgroup cols="2">
           <thead>
@@ -2778,16 +3732,18 @@
           </tbody>
         </tgroup>
       </table></para>
-  </section>
-
-  <section>
-    <title>Appendix B Standardised residuals vs. normal scores for Region 1
-    based on leave-one-out validation for AEPs of 50%, 20%, 2% and 1%</title>
 
     <para>Figure B1 - Standardised residuals vs. normal scores for Region 1
     based on leave-one-out validation for AEPs of 50% and 20%</para>
 
     <para>Figure B2 - Standardised residuals vs. normal scores for Region 1
     based on leave-one-out validation for AEPs of 2% and 1%</para>
+  </section>
+
+  <section>
+    <title>Appendix B Standardised residuals vs. normal scores for Region 1
+    based on leave-one-out validation for AEPs of 50%, 20%, 2% and 1%</title>
+
+    <para/>
   </section>
 </chapter>
