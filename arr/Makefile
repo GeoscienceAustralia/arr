@@ -129,16 +129,16 @@ HTML_OPTS=--param keep.relative.image.uris 0
 
 # HTML Single Page Build
 html_single: valid html_single_images
-	$(XSLTPROC) $(XSLTPROC_OPTS) html_single/index.html \
+	$(XSLTPROC) $(XSLTPROC_OPTS) html_single/index.xhtml \
     $(HTML_OPTS) \
-    ../stylesheets-ns/html/docbook.xsl ARR.xml
+    ../stylesheets-ns/xhtml5/docbook.xsl ARR.xml
 
 # HTML Chunked Build
 html_chunked: valid html_chunked_images
 	test -d html_chunked || mkdir html_chunked
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.html \
     $(HTML_OPTS) \
-    ../stylesheets-ns/html/chunk.xsl ARR.xml
+    ../stylesheets-ns/xhtml5/chunk.xsl ARR.xml
     
     
 #####################################################
