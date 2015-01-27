@@ -19,23 +19,23 @@ DIR_BASE = /Users/pbrady/ncwe/arr_docs/trunk
 XMLLINT_OPTS=--xinclude --relaxng
 XSLTPROC_OPTS=--xinclude --output
 
-.PHONY: valid html
+.PHONY: valid html epub
 .PHONY: draft pdf_draft
-.PHONY: clean clean_draft clean_html
+.PHONY: clean clean_draft clean_html clean_epub
 
 #####################################################
 # Default and utility targets
 ####################
 # Default target: phony target to make draft PDFs
-draft: valid arr_draft.pdf all_book_pdf_draft all_chapter_pdf_draft html
+draft: valid arr_draft.pdf all_book_pdf_draft all_chapter_pdf_draft html epub
 
-final: valid arr.pdf all_book_pdf_final all_chapter_pdf_final html
+final: valid arr.pdf all_book_pdf_final all_chapter_pdf_final html epub
 
 all: valid draft final
 
 ####################
 # Clean up:
-clean: clean_draft clean_final clean_style clean_html
+clean: clean_draft clean_final clean_style clean_html clean_epub
 
 clean_draft: clean_chapter_pdf_draft clean_book_pdf_draft
 	rm -f arr_draft.fo arr_draft.pdf
@@ -140,6 +140,20 @@ html_chunked: valid html_chunked_images
     $(HTML_OPTS) \
     arr_style_xhtml5_chunked.xsl ARR.xml
     
+#####################################################
+#####################################################
+#####################################################
+# EPUB3
+EPUB_OPTS=--param keep.relative.image.uris 0
+epub: valid epub3_images
+	$(XSLTPROC) --xinclude --stringparam base.dir epub3/OEBPS \
+		--param keep.relative.image.uris 0 \
+		../stylesheets-ns/epub3/chunk.xsl ARR.xml
+	cd epub3 && zip -rX arr.epub mimetype META-INF OEBPS
+
+clean_epub:
+	rm -rf epub3
+    
     
 #####################################################
 #####################################################
@@ -150,3 +164,4 @@ include Makefile.book
 include Makefile.chapter
 include Makefile.html_single
 include Makefile.html_chunked
+include Makefile.epub3

@@ -34,3 +34,13 @@ echo "html_chunked_images: html_chunked_dir" >> Makefile.html_chunked
 xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
 	awk -F " " '{print $1, "html_chunked/" $1}' | \
 	sed -e 's/^/	cp -f /' >> Makefile.html_chunked
+
+# Directories and images for the EPUB3 builds
+echo "epub3_dir:" > Makefile.epub3
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p epub3\/OEBPS\//' >> Makefile.epub3
+echo "" >> Makefile.epub3
+echo "epub3_images: epub3_dir" >> Makefile.epub3
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+	awk -F " " '{print $1, "epub3/OEBPS/" $1}' | \
+	sed -e 's/^/	cp -f /' >> Makefile.epub3
