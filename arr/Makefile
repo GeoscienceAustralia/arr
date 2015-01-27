@@ -138,7 +138,7 @@ html_chunked: valid html_chunked_images
 	test -d html_chunked || mkdir html_chunked
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.html \
     $(HTML_OPTS) \
-    ../stylesheets-ns/xhtml5/chunk.xsl ARR.xml
+    arr_style_xhtml5_chunked.xsl ARR.xml
     
     
 #####################################################
