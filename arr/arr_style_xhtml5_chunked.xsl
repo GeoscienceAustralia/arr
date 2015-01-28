@@ -13,42 +13,5 @@
 
    <!-- We are overriding this template to insert div elements necessary -->
    <!-- for Bootstrap integration -->
-   <xsl:template match="*" mode="process.root">
-      <xsl:variable name="doc" select="self::*"/>
-
-      <xsl:call-template name="user.preroot"/>
-      <xsl:call-template name="root.messages"/>
-
-      <html>
-         <xsl:call-template name="root.attributes"/>
-         <div class="container-fluid">
-         <head>
-            <xsl:call-template name="system.head.content">
-               <xsl:with-param name="node" select="$doc"/>
-            </xsl:call-template>
-            <xsl:call-template name="head.content">
-               <xsl:with-param name="node" select="$doc"/>
-            </xsl:call-template>
-            <xsl:call-template name="user.head.content">
-               <xsl:with-param name="node" select="$doc"/>
-            </xsl:call-template>
-         </head>
-         <body>
-            <xsl:call-template name="body.attributes"/>
-            <xsl:call-template name="user.header.content">
-               <xsl:with-param name="node" select="$doc"/>
-            </xsl:call-template>
-            <xsl:apply-templates select="."/>
-            <xsl:call-template name="user.footer.content">
-               <xsl:with-param name="node" select="$doc"/>
-            </xsl:call-template>
-         </body>
-         </div>
-      </html>
-      <xsl:value-of select="$html.append"/>
-
-      <!-- Generate any css files only once, not once per chunk -->
-      <xsl:call-template name="generate.css.files"/>
-   </xsl:template>
 
 </xsl:stylesheet>
