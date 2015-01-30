@@ -250,7 +250,7 @@ main(int argc, char **argv) {
         fprintf(stdout, "Processing figures with the prefix: %s\n", prefix);
         
         
-        result = getnodeset (doc, xpathEquation);
+        result = getnodeset (doc, xpathFigure);
         if (result) {
             nodeset = result->nodesetval;
             for (i=0; i < nodeset->nodeNr; i++) {
@@ -286,7 +286,7 @@ main(int argc, char **argv) {
         fprintf(stdout, "Processing tables with the prefix: %s\n", prefix);
         
         
-        result = getnodeset (doc, xpathEquation);
+        result = getnodeset (doc, xpathTable);
         if (result) {
             nodeset = result->nodesetval;
             for (i=0; i < nodeset->nodeNr; i++) {
@@ -322,7 +322,7 @@ main(int argc, char **argv) {
         fprintf(stdout, "Processing sections with the prefix: %s\n", prefix);
         
         
-        result = getnodeset (doc, xpathEquation);
+        result = getnodeset (doc, xpathSection);
         if (result) {
             nodeset = result->nodesetval;
             for (i=0; i < nodeset->nodeNr; i++) {
