@@ -1,0 +1,5136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section status="In Preparation" xml:id="b3_ch2_s9"
+   xmlns="http://docbook.org/ns/docbook"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xi="http://www.w3.org/2001/XInclude"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:m="http://www.w3.org/1998/Math/MathML"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:db="http://docbook.org/ns/docbook"
+   version="5.0">
+   <title>SUPPLEMENTARY INFORMATION Box 1: Theory of Peak-Over-Threshold and
+      Annual Maximum Series</title>
+
+   <section>
+      <title>Annual exceedance probability AEP</title>
+
+      <para>The objective is to derive the distribution of the maximum flood
+         peak within a specified interval of time. Referring to the continuous
+         streamflow times series Figure B1-1, let the random variable q be a
+         local peak discharge defined as a discharge which has lower discharge on
+         either side of the peak. This presents an immediate problem as any bump
+         on the hydrograph would produce a local peak. To circumvent this problem
+         we focus on peaks greater than some threshold defined as
+         q<subscript>o</subscript>. The threshold is selected so that the peaks
+         above the threshold are sufficiently separated in time to be
+         statistically independent of each other.</para>
+
+      <figure>
+         <title>Peak-over-threshold series</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureB1_1.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>It is assumed that all peaks above the threshold
+         q<subscript>o</subscript> are sampled from the same distribution denoted
+         by the pdf p(q|q&gt;q<subscript>o</subscript>).</para>
+
+      <para>Suppose over a time interval of length t years, there are n peaks
+         over the threshold q<subscript>o</subscript>. This defines the POT time
+         series {q<subscript>1</subscript>,…,q<subscript>n</subscript>} which
+         consists of n independent realizations sampled from the pdf
+         p(q|q&gt;q<subscript>o</subscript>).</para>
+
+      <para>Let w be the maximum value in the POT time series; that is,</para>
+
+      <para>w = max
+         {q<subscript>1</subscript>,…,q<subscript>n</subscript>}</para>
+
+      <para>For w to be the maximum value, each peak within the POT series
+         must be less than or equal to w. In probability theory this condition is
+         expressed by the compound event consisting of the intersection of the
+         following n events</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mo>{</m:mo>
+
+                  <m:mrow>
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>q</m:mi>
+
+                              <m:mi>1</m:mi>
+                           </m:msub>
+
+                           <m:mo>≤ w</m:mo>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+
+                     <m:mo>⋂</m:mo>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>q</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msub>
+
+                           <m:mo>≤ w</m:mo>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+
+                     <m:mo>⋂</m:mo>
+
+                     <m:mi>....</m:mi>
+
+                     <m:mo>⋂</m:mo>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>q</m:mi>
+
+                              <m:mi>n</m:mi>
+                           </m:msub>
+
+                           <m:mo>≤ w</m:mo>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:mo>}</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>Because the peaks are assumed to be statistically independent, the
+         probability of the compound event is the product of the probabilities of
+         the individual events. Therefore the probability that the random
+         variable W ≤ w in a POT series with n events occurring over the interval
+         t simplifies to</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>P(W≤w∣n,T)</m:mi>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mi>P[(</m:mi>
+
+                  <m:msub>
+                     <m:mi>x</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:mo>≤</m:mo>
+
+                  <m:mo>w)</m:mo>
+
+                  <m:mrow>
+                     <m:mo>⋂</m:mo>
+
+                     <m:mo>.... ⋂</m:mo>
+
+                     <m:mo>(</m:mo>
+
+                     <m:msub>
+                        <m:mi>q</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msub>
+                  </m:mrow>
+
+                  <m:mo>≤</m:mo>
+
+                  <m:mi>w)]</m:mi>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mi>P(</m:mi>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>1</m:mi>
+                  </m:msub>
+
+                  <m:mi>≤w)P(</m:mi>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>2</m:mi>
+                  </m:msub>
+
+                  <m:mi>≤</m:mi>
+
+                  <m:mo>w)....P(</m:mo>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>q</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msub>
+
+                     <m:mo>≤ w )</m:mo>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>=</m:mi>
+
+               <m:mo>P</m:mo>
+
+               <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mi>q≤w</m:mi>
+
+                  <m:mo>)</m:mo>
+               </m:mrow>
+
+               <m:mo>ⁿ</m:mo>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>The number of POT events n occurring over an interval t is random.
+         Suppose that the random variable n follows a Poisson distribution with ν
+         being the average number of POT events per year; that is,</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>P(n|v,t)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mrow>
+                        <m:msup>
+                           <m:mi>(vt)</m:mi>
+
+                           <m:mi>n</m:mi>
+                        </m:msup>
+
+                        <m:mrow>
+                           <m:mi>exp</m:mi>
+
+                           <m:mo>(-vt)</m:mo>
+                        </m:mrow>
+                     </m:mrow>
+
+                     <m:mi>n!</m:mi>
+                  </m:mfrac>
+
+                  <m:mo>, n =</m:mo>
+
+                  <m:mi>0,1,2....</m:mi>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>Application of the total probability theorem yields the
+         distribution of the largest peak magnitude over the time interval with
+         length t</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>P(W≤w|t)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mrow>
+                     <m:mrow>
+                        <m:munderover>
+                           <m:mo>∑</m:mo>
+
+                           <m:mi>n=0</m:mi>
+
+                           <m:mi>∞</m:mi>
+                        </m:munderover>
+
+                        <m:mi>P(W≤w|n,t)P(n|v,t)</m:mi>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:mo>=</m:mo>
+
+                  <m:mi>exp[-(vt)P(q&gt;w)</m:mi>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where P(W≤w|t) is the probability that the largest peak over time
+         interval t is less than or equal to w. When the time interval t is set
+         to one year, eqn (B1-4) defines the distribution of the AM
+         series.</para>
+
+      <para>ARR defines annual exceedance probability as</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>AEP(w)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mi>1-P(W≤w| t=1</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where AEP(w) is the probability of the largest peak in a year
+         exceeding magnitude w.</para>
+   </section>
+
+   <section>
+      <title>Exceedances per year EY</title>
+
+      <para>We now derive the probability distribution of the time to the next
+         flood peak which has a magnitude in excess of w. With regard to eqn
+         (B1-4), if the largest peak during the interval t is less than or equal
+         to w, then the time to the next peak with magnitude in excess of w must
+         be greater than t. It therefore follows that the distribution of the
+         time to the next peak with magnitude exceeding w is</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>P(Time to next peak exceeding w≤t)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mi>1- exp[-vP(q&gt;w)t]</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mo>=</m:mo>
+
+               <m:mi>1-exp[-EY(w)t]</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>This is recognized as an exponential distribution with parameter
+         vP(q&gt;w) which is the expected number of peaks exceeding w per
+         year.</para>
+
+      <para>ARR defines this parameter as EY(w) which stands for exceedances
+         per year, but more strictly, is the expected number of peaks that exceed
+         w in a year.</para>
+   </section>
+
+   <section>
+      <title>Linking AEP and EY</title>
+
+      <para>If we select a particular peak magnitude w, combining eqns (4),
+         (5) and (6) yields the following relationship between EY(w) and
+         AEP(w)</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>AEP(w)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mi>1 - P (W≤w | t=1 )</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mo>=</m:mo>
+
+               <m:mi>1- exp[-vP(q&gt;w)]</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mi>= 1 - exp[-EY(w)]</m:mi>
+         </m:math>
+      </equation>
+
+      <para>If we express AEP(w) as 1/Y(w) then eqn (B1-7) can be rewritten
+         as</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>EY(w)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>-log</m:mi>
+
+                     <m:mi>e</m:mi>
+                  </m:msub>
+
+                  <m:mo>[1-AEP(w)]</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>-log</m:mi>
+
+                     <m:mi>e</m:mi>
+                  </m:msub>
+
+                  <m:mrow>
+                     <m:mo>[</m:mo>
+
+                     <m:mrow>
+                        <m:mi>1</m:mi>
+
+                        <m:mo>-</m:mo>
+
+                        <m:mfrac>
+                           <m:mi>1</m:mi>
+
+                           <m:mi>Y(w)</m:mi>
+                        </m:mfrac>
+                     </m:mrow>
+
+                     <m:mo>]</m:mo>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>This relationship assumes peaks in the POT series are
+         statistically independent and that there is no seasonality in the sense
+         that the probability density of the POT peak above a threshold
+         p(q|q&gt;q<subscript>o</subscript>) does not change over the year. While
+         the no-seasonality assumption appears questionable on first inspection,
+         in practice the threshold q<subscript>0</subscript> is selected so that
+         the expected number of peaks exceeding the threshold
+         q<subscript>0</subscript> in any year is of the order of 1. This is done
+         to ensure the POT peaks are genuine floods and statistically
+         independent. As a consequence of the high threshold selected in
+         practice, the impact of seasonality is diminished.</para>
+   </section>
+
+   <section>
+      <title>Box 2: Formal Definition of Zero-Threshold Mixture
+         Distribution</title>
+
+      <para>The zero-threshold mixture model has a distribution
+         function</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>P(Q≤q|θ)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mo>{</m:mo>
+
+                  <m:mtable>
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:msub>
+                                 <m:mi>P</m:mi>
+
+                                 <m:mi>0</m:mi>
+                              </m:msub>
+
+                              <m:mo>if q =</m:mo>
+
+                              <m:msub>
+                                 <m:mi>q</m:mi>
+
+                                 <m:mi>0</m:mi>
+                              </m:msub>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:msub>
+                                 <m:mi>P</m:mi>
+
+                                 <m:mi>0</m:mi>
+                              </m:msub>
+
+                              <m:mrow>
+                                 <m:mi>+(1-</m:mi>
+
+                                 <m:msub>
+                                    <m:mi>P</m:mi>
+
+                                    <m:mi>0</m:mi>
+                                 </m:msub>
+
+                                 <m:mi>)</m:mi>
+
+                                 <m:mfrac>
+                                    <m:mrow>
+                                       <m:mi>P(Q≤q∣</m:mi>
+
+                                       <m:mo>θ) -</m:mo>
+
+                                       <m:mi>P(Q≤</m:mi>
+
+                                       <m:msub>
+                                          <m:mi>q</m:mi>
+
+                                          <m:mi>0</m:mi>
+                                       </m:msub>
+
+                                       <m:mi>∣θ)</m:mi>
+                                    </m:mrow>
+
+                                    <m:mrow>
+                                       <m:mi>P(Q&gt;</m:mi>
+
+                                       <m:msub>
+                                          <m:mi>q</m:mi>
+
+                                          <m:mi>0</m:mi>
+                                       </m:msub>
+
+                                       <m:mo>|</m:mo>
+
+                                       <m:mi>θ)</m:mi>
+                                    </m:mrow>
+                                 </m:mfrac>
+
+                                 <m:mrow>
+                                    <m:mi>if q&gt;</m:mi>
+
+                                    <m:msub>
+                                       <m:mi>q</m:mi>
+
+                                       <m:mi>0</m:mi>
+                                    </m:msub>
+                                 </m:mrow>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+                  </m:mtable>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where q<subscript>0</subscript> is the zero-threshold flow,
+         P<subscript>0</subscript> is the probability of the AM peak equaling
+         q<subscript>0</subscript> and P(Q≤q|θ) is a probability model such as
+         described in Table 1.</para>
+
+      <para>The pdf of the mixture model can be expressed using the
+         generalized probability density which allows the random variable to take
+         discrete values as well as continuous values</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mi>P(q|θ)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+               <m:mo>{</m:mo>
+
+               <m:mtable>
+                  <m:mtr>
+                     <m:mtd>
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>P</m:mi>
+
+                              <m:mi>0</m:mi>
+                           </m:msub>
+
+                           <m:mo>if q =</m:mo>
+
+                           <m:msub>
+                              <m:mi>q</m:mi>
+
+                              <m:mi>0</m:mi>
+                           </m:msub>
+                        </m:mrow>
+                     </m:mtd>
+                  </m:mtr>
+
+                  <m:mtr>
+                     <m:mtd>
+                        <m:mrow>
+                           <m:mrow>
+                              <m:mfrac>
+                                 <m:mrow>
+                                    <m:mi>1</m:mi>
+
+                                    <m:mo>-</m:mo>
+
+                                    <m:msub>
+                                       <m:mi>P</m:mi>
+
+                                       <m:mi>0</m:mi>
+                                    </m:msub>
+                                 </m:mrow>
+
+                                 <m:mrow>
+                                    <m:mi>P(q&gt;</m:mi>
+
+                                    <m:msub>
+                                       <m:mi>q</m:mi>
+
+                                       <m:mi>0</m:mi>
+                                    </m:msub>
+
+                                    <m:mo>|</m:mo>
+
+                                    <m:mi>θ)</m:mi>
+                                 </m:mrow>
+                              </m:mfrac>
+
+                              <m:mrow>
+                                 <m:mrow>
+                                    <m:mrow>
+                                       <m:mi>p(q|θ)/(q,</m:mi>
+
+                                       <m:msub>
+                                          <m:mi>q</m:mi>
+
+                                          <m:mi>0</m:mi>
+                                       </m:msub>
+                                    </m:mrow>
+
+                                    <m:mo>) if q&gt;</m:mo>
+                                 </m:mrow>
+
+                                 <m:msub>
+                                    <m:mi>q</m:mi>
+
+                                    <m:mi>0</m:mi>
+                                 </m:msub>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mrow>
+                     </m:mtd>
+                  </m:mtr>
+               </m:mtable>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where I() is an indicator function defined as</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>I(q,</m:mi>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>q</m:mi>
+
+                        <m:mi>0</m:mi>
+                     </m:msub>
+                  </m:mrow>
+               </m:mrow>
+
+               <m:mo>) =</m:mo>
+
+               <m:mrow>
+                  <m:mo>{</m:mo>
+
+                  <m:mtable>
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mi>1</m:mi>
+
+                              <m:mo>if q&gt;</m:mo>
+
+                              <m:msub>
+                                 <m:mi>q</m:mi>
+
+                                 <m:mi>0</m:mi>
+                              </m:msub>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mi>0</m:mi>
+
+                              <m:mo>if</m:mo>
+
+                              <m:msub>
+                                 <m:mi>q≤q</m:mi>
+
+                                 <m:mi>0</m:mi>
+                              </m:msub>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+                  </m:mtable>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+   </section>
+
+   <section>
+      <title>Box 3: Likelihood function: No-error-discharge case</title>
+
+      <para>The likelihood function is, by definition, the joint pdf of D
+         given the parameter vector θ.</para>
+
+      <para>The likelihood function for the gauged data is the joint pdf of
+         the n gauged floods. Given the AM flood peaks are statistically
+         independent, the likelihood can be simplified to (Stedinger and Cohn,
+         1986)</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>p(</m:mi>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>1</m:mi>
+                  </m:msub>
+
+                  <m:mi>,...,</m:mi>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>n</m:mi>
+                  </m:msub>
+
+                  <m:mi>|θ)</m:mi>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∏</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:munderover>
+
+                     <m:mi>p</m:mi>
+                  </m:mrow>
+
+                  <m:msub>
+                     <m:mi>(q</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:mi>|</m:mi>
+
+                  <m:mo>θ)</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>The likelihood of the binomial censored data relies on the fact
+         that the probability of observing exactly x exceedances in n years is
+         given by the binomial distribution</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>P(X|n,∏)=</m:mi>
+
+               <m:msubsup>
+                  <m:mi>C</m:mi>
+
+                  <m:mi>x</m:mi>
+
+                  <m:mi>n</m:mi>
+               </m:msubsup>
+
+               <m:mi>(1-</m:mi>
+
+               <m:msup>
+                  <m:mi>∏)</m:mi>
+
+                  <m:mi>n-x</m:mi>
+               </m:msup>
+
+               <m:msup>
+                  <m:mi>∏</m:mi>
+
+                  <m:mi>x</m:mi>
+               </m:msup>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where ∏ is the probability of an exceedance.</para>
+
+      <para>Provided each censoring threshold does not overlap over time with
+         any other censoring threshold, the likelihood of the censored data
+         becomes</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>p(censored data∣</m:mi>
+
+               <m:mrow>
+                  <m:mi>θ)</m:mi>
+
+                  <m:mo>=</m:mo>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∏</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>m</m:mi>
+                     </m:munderover>
+
+                     <m:mi>[1-P(Q≤</m:mi>
+                  </m:mrow>
+               </m:mrow>
+
+               <m:msub>
+                  <m:mi>s</m:mi>
+
+                  <m:mi>i</m:mi>
+               </m:msub>
+
+               <m:mo>∣θ</m:mo>
+
+               <m:msup>
+                  <m:mi>)]</m:mi>
+
+                  <m:msub>
+                     <m:mi>a</m:mi>
+
+                     <m:mi>0</m:mi>
+                  </m:msub>
+               </m:msup>
+
+               <m:mrow>
+                  <m:mi>P(Q≤</m:mi>
+
+                  <m:msub>
+                     <m:mi>s</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:msup>
+                     <m:mi>∣θ)</m:mi>
+
+                     <m:msub>
+                        <m:mi>b</m:mi>
+
+                        <m:mi>0</m:mi>
+                     </m:msub>
+                  </m:msup>
+
+                  <m:mrow>
+                     <m:mo>=</m:mo>
+
+                     <m:mrow>
+                        <m:munderover>
+                           <m:mo>∏</m:mo>
+
+                           <m:mi>i=1</m:mi>
+
+                           <m:mi>m</m:mi>
+                        </m:munderover>
+
+                        <m:mi>P(</m:mi>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>a</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+
+                     <m:msub>
+                        <m:mi>,b</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+
+                     <m:mi>|</m:mi>
+
+                     <m:msub>
+                        <m:mi>s</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+
+                     <m:mi>,</m:mi>
+                  </m:mrow>
+               </m:mrow>
+
+               <m:mi>θ)</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where
+         P(a<subscript>i</subscript>,b<subscript>i</subscript>|s<subscript>i</subscript>,θ)
+         is the binomial probability of observing exactly
+         a<subscript>i</subscript> exceedances above the threshold discharge
+         s<subscript>i</subscript> in
+         (a<subscript>i</subscript>+b<subscript>i</subscript>).</para>
+   </section>
+
+   <section>
+      <title>Box 4: Likelihood function: Error-in-discharge case</title>
+
+      <para>Figure B4-1 presents a rating error space diagram. In zone 1, the
+         interpolation zone it is assumed the rating error multiplier
+         e<subscript>1</subscript> equals 1 – that is, errors within the rated
+         part of the rating curve are deemed negligible. As a result the
+         estimated flow w equals the true flow q. However, in zone 2, the
+         extension zone, the rating error multiplier e<subscript>2</subscript> is
+         assumed to be a random variable with mean of 1. The anchor point
+         (q<subscript>1</subscript>,w<subscript>1</subscript>) separates the
+         interpolation and extension zones. The rating error model can
+         represented mathematically as</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>w</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mo>{</m:mo>
+
+                  <m:mtable>
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mi>q</m:mi>
+
+                              <m:mrow>
+                                 <m:msub>
+                                    <m:mi>if q ≤x</m:mi>
+
+                                    <m:mi>i</m:mi>
+                                 </m:msub>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mrow>
+                                 <m:msub>
+                                    <m:mi>w</m:mi>
+
+                                    <m:mi>1</m:mi>
+                                 </m:msub>
+
+                                 <m:mo>+</m:mo>
+
+                                 <m:msub>
+                                    <m:mi>θ</m:mi>
+
+                                    <m:mi>2</m:mi>
+                                 </m:msub>
+
+                                 <m:mo>(q-</m:mo>
+
+                                 <m:msub>
+                                    <m:mi>q</m:mi>
+
+                                    <m:mi>1</m:mi>
+                                 </m:msub>
+                              </m:mrow>
+
+                              <m:mrow>
+                                 <m:mi>)</m:mi>
+
+                                 <m:mo>if q&gt;</m:mo>
+
+                                 <m:msub>
+                                    <m:mi>q</m:mi>
+
+                                    <m:mi>1</m:mi>
+                                 </m:msub>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+                  </m:mtable>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>The rating error multiplier e<subscript>2</subscript> is sampled
+         only once at the time of extending the rating curve. Therefore, all
+         flood discharge estimates exceeding the anchor value of
+         q<subscript>1</subscript> (which equals w<subscript>1</subscript>) are
+         corrupted by the same rating error multiplier. It must be stressed that
+         the error e<subscript>2</subscript> is not known – at best, only its
+         probability distribution can be estimated. For practical applications
+         one can assume e<subscript>2</subscript> is distributed as either a
+         log-normal or normal distribution with mean 1 and standard deviation
+         σ<subscript>2</subscript>.</para>
+
+      <figure>
+         <title>Rating error multiplier space diagram for rating curve shown in
+            Figure 5</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureB4_1.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Data are assigned to each of the two zones, i=1,2, in the rating
+         error space diagram. The rating error multiplier standard deviation for
+         the extension zone σ<subscript>2</subscript> is assigned a value with
+         σ<subscript>1</subscript> = 0. There are n<subscript>i</subscript>
+         annual flood peak estimates wji satisfying the zone constraint
+         w<subscript>i-1</subscript> ≤ w<subscript>ji</subscript> &lt;
+         w<subscript>i</subscript>, j=1,..,n<subscript>i</subscript> where
+         w<subscript>0</subscript>=0 and w<subscript>2</subscript>=∞. In
+         addition, there are mi threshold discharge estimates
+         W<subscript>ji</subscript> for which there are
+         a<subscript>ji</subscript> exceedances in
+         (a<subscript>ji</subscript>+b<subscript>ji</subscript>) years,
+         j=1,..,m<subscript>i</subscript>. Collectively this data is represented
+         as</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>D</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>{D</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:mo>, i=1,2}</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>{[w</m:mi>
+
+                     <m:mi>ji</m:mi>
+                  </m:msub>
+
+                  <m:mo>,j=1,...</m:mo>
+
+                  <m:msub>
+                     <m:mi>n</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                     <m:mi>;W</m:mi>
+
+                     <m:mi>ji</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                     <m:mi>,a</m:mi>
+
+                     <m:mi>ji</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                     <m:mi>,b</m:mi>
+
+                     <m:mi>ji</m:mi>
+                  </m:msub>
+
+                  <m:mrow>
+                     <m:mi>,j=1,...,</m:mi>
+
+                     <m:msub>
+                        <m:mi>m</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+
+                     <m:mi>],i=1,2}</m:mi>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>Following Kuczera (1999) it can be shown for the two-zone rating
+         error model of Figure B4-1 the likelihood reduces to</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>p(</m:mi>
+
+                  <m:msub>
+                     <m:mi>D</m:mi>
+
+                     <m:mi>1</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                     <m:mi>,D</m:mi>
+
+                     <m:mi>2</m:mi>
+                  </m:msub>
+
+                  <m:mrow>
+                     <m:mi>∣</m:mi>
+
+                     <m:msub>
+                        <m:mi>θ</m:mi>
+
+                        <m:mi>1</m:mi>
+                     </m:msub>
+                  </m:mrow>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>,σ</m:mi>
+
+                        <m:mi>2</m:mi>
+                     </m:msub>
+
+                     <m:mo>)</m:mo>
+                  </m:mrow>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mrow>
+                     <m:mi>p(</m:mi>
+
+                     <m:msub>
+                        <m:mi>D</m:mi>
+
+                        <m:mi>1</m:mi>
+                     </m:msub>
+
+                     <m:msub>
+                        <m:mi>,e</m:mi>
+
+                        <m:mi>1</m:mi>
+                     </m:msub>
+
+                     <m:mo>=1|θ</m:mo>
+
+                     <m:mi>)</m:mi>
+                  </m:mrow>
+
+                  <m:mrow>
+                     <m:mrow>
+                        <m:mo>[</m:mo>
+
+                        <m:mrow>
+                           <m:mrow>
+                              <m:munderover>
+                                 <m:mo>∫p(</m:mo>
+
+                                 <m:mi>0</m:mi>
+
+                                 <m:mi mathvariant="normal">∞</m:mi>
+                              </m:munderover>
+                           </m:mrow>
+
+                           <m:msub>
+                              <m:mi>D</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msub>
+
+                           <m:msub>
+                              <m:mi>,e</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msub>
+
+                           <m:mo>| θ)g(</m:mo>
+
+                           <m:mrow>
+                              <m:msub>
+                                 <m:mi>e</m:mi>
+
+                                 <m:mi>2</m:mi>
+                              </m:msub>
+
+                              <m:msub>
+                                 <m:mi>|σ</m:mi>
+
+                                 <m:mi>2</m:mi>
+                              </m:msub>
+                           </m:mrow>
+
+                           <m:msub>
+                              <m:mi>)de</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msub>
+                        </m:mrow>
+
+                        <m:mo>]</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>p(</m:mi>
+
+                  <m:msub>
+                     <m:mi>D</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                     <m:mi>,e</m:mi>
+
+                     <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:mo>|</m:mo>
+
+                  <m:mi>θ)</m:mi>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∏</m:mo>
+
+                        <m:mi>j=1</m:mi>
+
+                        <m:msub>
+                           <m:mi>n</m:mi>
+
+                           <m:mi>i</m:mi>
+                        </m:msub>
+                     </m:munderover>
+
+                     <m:mfrac>
+                        <m:mi>1</m:mi>
+
+                        <m:msub>
+                           <m:mi>e</m:mi>
+
+                           <m:mi>i</m:mi>
+                        </m:msub>
+                     </m:mfrac>
+                  </m:mrow>
+
+                  <m:mo>p(</m:mo>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>i-1</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:mrow>
+                     <m:mfrac>
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>w</m:mi>
+
+                              <m:mi>ji</m:mi>
+                           </m:msub>
+
+                           <m:mo>-</m:mo>
+
+                           <m:msub>
+                              <m:mi>w</m:mi>
+
+                              <m:mi>i-1</m:mi>
+                           </m:msub>
+                        </m:mrow>
+
+                        <m:msub>
+                           <m:mi>e</m:mi>
+
+                           <m:mi>i</m:mi>
+                        </m:msub>
+                     </m:mfrac>
+
+                     <m:mo>| θ)</m:mo>
+
+                     <m:mrow>
+                        <m:munderover>
+                           <m:mo>∏</m:mo>
+
+                           <m:mi>j=1</m:mi>
+
+                           <m:msub>
+                              <m:mi>m</m:mi>
+
+                              <m:mi>i</m:mi>
+                           </m:msub>
+                        </m:munderover>
+
+                        <m:mi>P[</m:mi>
+                     </m:mrow>
+
+                     <m:msub>
+                        <m:mi>a</m:mi>
+
+                        <m:mi>ji</m:mi>
+                     </m:msub>
+
+                     <m:msub>
+                        <m:mi>,b</m:mi>
+
+                        <m:mi>ji</m:mi>
+                     </m:msub>
+
+                     <m:msub>
+                        <m:mi>|q</m:mi>
+
+                        <m:mi>i-1</m:mi>
+                     </m:msub>
+
+                     <m:mi>+</m:mi>
+                  </m:mrow>
+
+                  <m:mfrac>
+                     <m:mrow>
+                        <m:msub>
+                           <m:mi>w</m:mi>
+
+                           <m:mi>ji</m:mi>
+                        </m:msub>
+
+                        <m:mo>-</m:mo>
+
+                        <m:msub>
+                           <m:mi>w</m:mi>
+
+                           <m:mi>i-1</m:mi>
+                        </m:msub>
+                     </m:mrow>
+
+                     <m:msub>
+                        <m:mi>e</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+                  </m:mfrac>
+
+                  <m:mi>,θ]</m:mi>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>g(e<subscript>i</subscript>|σ<subscript>i</subscript>) is the
+         rating error multiplier pdf with mean 1 and standard deviation
+         σ<subscript>i</subscript> and P(a,b|s,θ) is the binomial probability of
+         observing exactly a exceedances above the threshold discharge s in
+         (a+b). This is a complex expression which can only be evaluated
+         numerically. However, it makes the fullest use of information on annual
+         flood peaks and binomial-censored data in the presence of rating curve
+         error. Section 3.7 offers limited guidance on the choice of
+         σ<subscript>2</subscript>.</para>
+   </section>
+
+   <section>
+      <title>Box 5: Importance sampling from the posterior
+         distribution</title>
+
+      <para>Importance sampling is a widely used method [Gelman et al., 1995]
+         for sampling parameters from a target probability model for which there
+         is no algorithm to draw random samples.. The basic idea is to sample
+         from a probability model for which a sampling algorithm exists – the
+         probability model is called the importance distribution and the samples
+         are called particles. The particles are then weighted so that they
+         represent samples from the target distribution. The closer the
+         importance distribution approximates the target, the more efficient the
+         sampling.</para>
+
+      <para>Three steps are involved:</para>
+
+      <para>Step 1: Find most probable parameters of the target
+         distribution</para>
+
+      <para>Any robust search method can be used to locate the value of θ
+         which maximizes the logarithm of the posterior probability density; that
+         is,</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>θ</m:mi>
+
+               <m:mo>←</m:mo>
+
+               <m:mi>max</m:mi>
+
+               <m:mo>log</m:mo>
+
+               <m:mi>p</m:mi>
+
+               <m:mo>(θ|D)</m:mo>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where θ is the most probable value of θ. The shuffled complex
+         evolution algorithm of Duan et al. (1992) is a recommended search
+         method.</para>
+
+      <para>Step 2: Obtain the importance distribution using a multinormal
+         approximation to the target distribution</para>
+
+      <para>Almost always, the log of posterior pdf p(θ|D) can be approximated
+         by a second-order Taylor series expansion about the most probable
+         parameter to yield the multivariate normal approximation</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>θ|</m:mi>
+
+               <m:mo>D~N(θ</m:mo>
+
+               <m:mi>,</m:mi>
+
+               <m:mo>Σ</m:mo>
+
+               <m:mi>)</m:mi>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where θ is interpreted as the mean and the posterior covariance Σ
+         is defined as the inverse of the Hessian</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>Σ</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mrow>
+                     <m:mi>-</m:mi>
+
+                     <m:mfrac>
+                        <m:mrow>
+                           <m:msup>
+                              <m:mi>δ</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msup>
+
+                           <m:msub>
+                              <m:mi>log</m:mi>
+
+                              <m:mi>e</m:mi>
+                           </m:msub>
+
+                           <m:mi>p(θ</m:mi>
+
+                           <m:mo>| D)</m:mo>
+                        </m:mrow>
+
+                        <m:mrow>
+                           <m:msup>
+                              <m:mi>δ</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msup>
+
+                           <m:mi>θ</m:mi>
+                        </m:mrow>
+                     </m:mfrac>
+                  </m:mrow>
+
+                  <m:msup>
+                     <m:mi>)</m:mi>
+
+                     <m:mi>-1</m:mi>
+                  </m:msup>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>An adaptive difference scheme should be used to evaluate the
+         Hessian. Particular care needs to be exercised when selecting finite
+         difference perturbations for the GEV and LP3 distributions when upper or
+         lower bounds are close to the observed data.</para>
+
+      <para>Step 3: Importance sampling of target distribution</para>
+
+      <para>The importance sampling algorithm proceeds as follows:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>Sample N particles according to <inlineequation>
+                  <m:math display="inline">
+                     <m:msub>
+                        <m:mi>θ</m:mi>
+
+                        <m:mi>i</m:mi>
+                     </m:msub>
+
+                     <m:mo>←</m:mo>
+
+                     <m:msub>
+                        <m:mi>p</m:mi>
+
+                        <m:mi>N</m:mi>
+                     </m:msub>
+
+                     <m:mo>(θ)</m:mo>
+
+                     <m:mi>,i=1,...,N</m:mi>
+
+                     <m:mi> </m:mi>
+                  </m:math>
+               </inlineequation>where pN(θ) is the pdf of the multinormal
+               approximation obtained in Step 2.</para>
+         </listitem>
+
+         <listitem>
+            <para>Calculate particle probability weights according to
+               <inlineequation>
+                  <m:math display="inline">
+                     <m:mrow>
+                        <m:mi>P(</m:mi>
+
+                        <m:msub>
+                           <m:mi>θ)</m:mi>
+
+                           <m:mi>i</m:mi>
+                        </m:msub>
+                     </m:mrow>
+
+                     <m:mo>=</m:mo>
+
+                     <m:mfrac>
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>p(θ</m:mi>
+
+                              <m:mi>i</m:mi>
+                           </m:msub>
+
+                           <m:mrow>
+                              <m:mi>|</m:mi>
+
+                              <m:mo>D)</m:mo>
+                           </m:mrow>
+                        </m:mrow>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>p</m:mi>
+
+                              <m:mi>N</m:mi>
+                           </m:msub>
+
+                           <m:mrow>
+                              <m:msub>
+                                 <m:mi>(θ</m:mi>
+
+                                 <m:mi>i</m:mi>
+                              </m:msub>
+
+                              <m:mo>)</m:mo>
+                           </m:mrow>
+                        </m:mrow>
+                     </m:mfrac>
+                  </m:math>
+            </inlineequation>,i=1,...,N </para>
+         </listitem>
+
+         <listitem>
+            <para>Scale the particle weights so they sum to 1.</para>
+         </listitem>
+      </orderedlist>
+   </section>
+
+   <section>
+      <title>Box 6: LH moments for fitting the GEV distribution</title>
+
+      <para>LH moments are based on linear combinations of higher
+         order-statistics. A shift parameter η=0,1,2,3… is introduced to give
+         more emphasis on higher ranked flows. LH moments are defined as:</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>1</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mi>E[</m:mi>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>X</m:mi>
+
+                        <m:mi>(η+1):(η+1)</m:mi>
+                     </m:msub>
+
+                     <m:mo>]</m:mo>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>2</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mfrac>
+                  <m:mi>1</m:mi>
+
+                  <m:mi>2</m:mi>
+               </m:mfrac>
+
+               <m:mo>E</m:mo>
+
+               <m:mrow>
+                  <m:mo>[</m:mo>
+
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>X</m:mi>
+
+                        <m:mi>(η+2):(η+2)</m:mi>
+                     </m:msub>
+
+                     <m:mo>-</m:mo>
+
+                     <m:msub>
+                        <m:mi>X</m:mi>
+
+                        <m:mi>(η+1):(η+3)</m:mi>
+                     </m:msub>
+                  </m:mrow>
+
+                  <m:mo>]</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>3</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:mi>3</m:mi>
+                  </m:mfrac>
+
+                  <m:mo>E</m:mo>
+
+                  <m:mrow>
+                     <m:mo>[</m:mo>
+
+                     <m:mrow>
+                        <m:msub>
+                           <m:mi>X</m:mi>
+
+                           <m:mi>(η+3):(η+3)</m:mi>
+                        </m:msub>
+
+                        <m:mo>-</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>2X</m:mi>
+
+                              <m:mi>(η+2):(η+3)</m:mi>
+                           </m:msub>
+
+                           <m:mo>+</m:mo>
+
+                           <m:msub>
+                              <m:mi>X</m:mi>
+
+                              <m:mi>(η+1):(η+3)</m:mi>
+                           </m:msub>
+                        </m:mrow>
+                     </m:mrow>
+
+                     <m:mo>]</m:mo>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>4</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:mi>4</m:mi>
+                  </m:mfrac>
+
+                  <m:mo>E</m:mo>
+
+                  <m:mrow>
+                     <m:mo>[</m:mo>
+
+                     <m:mrow>
+                        <m:msub>
+                           <m:mi>X</m:mi>
+
+                           <m:mi>(η+4):(η+4)</m:mi>
+                        </m:msub>
+
+                        <m:mo>-</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>3X</m:mi>
+
+                              <m:mi>(η+3):(η+4)</m:mi>
+                           </m:msub>
+
+                           <m:mo>+</m:mo>
+
+                           <m:mrow>
+                              <m:msub>
+                                 <m:mi>3X</m:mi>
+
+                                 <m:mi>(η+2):(η+4)</m:mi>
+                              </m:msub>
+
+                              <m:mo>-</m:mo>
+
+                              <m:msub>
+                                 <m:mi>X</m:mi>
+
+                                 <m:mi>(η+1):(η+4)</m:mi>
+                              </m:msub>
+                           </m:mrow>
+                        </m:mrow>
+                     </m:mrow>
+
+                     <m:mo>]</m:mo>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>Table B6-1 presents the relationship between the first four LH
+         moments and the parameters of the GEV and Gumbel distributions.</para>
+
+      <para>Table B6-1. LH moments for GEV and Gumbel distributions (from
+         Wang, 1997)</para>
+
+      <informaltable>
+         <tgroup cols="2">
+            <tbody>
+               <row>
+                  <entry>Family</entry>
+
+                  <entry>LH Moments</entry>
+               </row>
+
+               <row>
+                  <entry>Generalized extreme value (GEV)</entry>
+
+                  <entry><inlineequation>
+                        <m:math display="inline">
+                           <m:mtable>
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:msubsup>
+                                          <m:mi>λ</m:mi>
+
+                                          <m:mi>1</m:mi>
+
+                                          <m:mi>η</m:mi>
+                                       </m:msubsup>
+
+                                       <m:mo>=</m:mo>
+
+                                       <m:mrow>
+                                          <m:mi>τ +</m:mi>
+
+                                          <m:mfrac>
+                                             <m:mi>α</m:mi>
+
+                                             <m:mi>κ</m:mi>
+                                          </m:mfrac>
+
+                                          <m:mi>[1-Γ(1+κ)(η+1</m:mi>
+
+                                          <m:msup>
+                                             <m:mi>)</m:mi>
+
+                                             <m:mi>-κ</m:mi>
+                                          </m:msup>
+
+                                          <m:mi>]</m:mi>
+
+                                          <m:mrow>
+                                             <m:mrow>
+                                                <m:msubsup>
+                                                   <m:mi>λ</m:mi>
+
+                                                   <m:mi>2</m:mi>
+
+                                                   <m:mi>η</m:mi>
+                                                </m:msubsup>
+
+                                                <m:mo>=</m:mo>
+
+                                                <m:mfrac>
+                                                   <m:mi>(η+2)αΓ(1+κ)</m:mi>
+
+                                                   <m:mi>2!κ</m:mi>
+                                                </m:mfrac>
+                                             </m:mrow>
+
+                                             <m:mo>[- (η+2</m:mo>
+
+                                             <m:msup>
+                                                <m:mi>)</m:mi>
+
+                                                <m:mi>-κ</m:mi>
+                                             </m:msup>
+
+                                             <m:mo>+(η +</m:mo>
+
+                                             <m:msup>
+                                                <m:mi>1 )</m:mi>
+
+                                                <m:mi>-κ</m:mi>
+                                             </m:msup>
+                                          </m:mrow>
+                                       </m:mrow>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:msubsup>
+                                          <m:mi>λ</m:mi>
+
+                                          <m:mi>3</m:mi>
+
+                                          <m:mi>η</m:mi>
+                                       </m:msubsup>
+
+                                       <m:mo>=</m:mo>
+
+                                       <m:mrow>
+                                          <m:mfrac>
+                                             <m:mi>(η+3)αΓ(1+κ)</m:mi>
+
+                                             <m:mi>3!κ</m:mi>
+                                          </m:mfrac>
+
+                                          <m:mo>[ - (η+4)(η+</m:mo>
+
+                                          <m:msup>
+                                             <m:mi>3)</m:mi>
+
+                                             <m:mi>-κ</m:mi>
+                                          </m:msup>
+
+                                          <m:mo>+2(η+3)(η+2</m:mo>
+
+                                          <m:msup>
+                                             <m:mi>)</m:mi>
+
+                                             <m:mi>-κ</m:mi>
+                                          </m:msup>
+
+                                          <m:mo>- (</m:mo>
+
+                                          <m:mrow>
+                                             <m:mi>η+2)(η+1</m:mi>
+
+                                             <m:msup>
+                                                <m:mi>)</m:mi>
+
+                                                <m:mi>-κ</m:mi>
+                                             </m:msup>
+
+                                             <m:mi>]</m:mi>
+                                          </m:mrow>
+                                       </m:mrow>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:mtable>
+                                          <m:mtr>
+                                             <m:mtd>
+                                                <m:mrow>
+                                                   <m:msubsup>
+                                                      <m:mi>λ</m:mi>
+
+                                                      <m:mi>4</m:mi>
+
+                                                      <m:mi>η</m:mi>
+                                                   </m:msubsup>
+
+                                                   <m:mo>=</m:mo>
+
+                                                   <m:mrow>
+                                                      <m:mfrac>
+                                                         <m:mi>(η+4)αΓ(1+κ)</m:mi>
+
+                                                         <m:mi>4!κ</m:mi>
+                                                      </m:mfrac>
+
+                                                      <m:mo>[ -(η+6)(η+5)(η+4</m:mo>
+
+                                                      <m:msup>
+                                                         <m:mi>)</m:mi>
+
+                                                         <m:mi>-κ</m:mi>
+                                                      </m:msup>
+
+                                                      <m:mo>+3(η+5)(η+4)(η+3</m:mo>
+
+                                                      <m:msup>
+                                                         <m:mi>)</m:mi>
+
+                                                         <m:mi>-κ</m:mi>
+                                                      </m:msup>
+
+                                                      <m:mo>]</m:mo>
+                                                   </m:mrow>
+                                                </m:mrow>
+                                             </m:mtd>
+                                          </m:mtr>
+
+                                          <m:mtr>
+                                             <m:mtd>
+                                                <m:mrow>
+                                                   <m:mtable>
+                                                      <m:mtr>
+                                                         <m:mtd>
+                                                            <m:mrow>
+                                                               <m:mi>-3(η+4)(η+3)(η+2</m:mi>
+
+                                                               <m:mrow>
+                                                                  <m:msup>
+                                                                     <m:mi>)</m:mi>
+
+                                                                     <m:mi>-κ</m:mi>
+                                                                  </m:msup>
+
+                                                                  <m:mo>+ (η+3)(η+2)(η+1</m:mo>
+
+                                                                  <m:msup>
+                                                                     <m:mi>)</m:mi>
+
+                                                                     <m:mi>-κ</m:mi>
+                                                                  </m:msup>
+                                                               </m:mrow>
+                                                            </m:mrow>
+                                                         </m:mtd>
+                                                      </m:mtr>
+
+                                                      <m:mtr>
+                                                         <m:mtd>
+                                                            <m:mrow>
+                                                               <m:mi>where κ≠</m:mi>
+
+                                                               <m:mo>0</m:mo>
+                                                            </m:mrow>
+                                                         </m:mtd>
+                                                      </m:mtr>
+                                                   </m:mtable>
+                                                </m:mrow>
+                                             </m:mtd>
+                                          </m:mtr>
+                                       </m:mtable>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+                           </m:mtable>
+                        </m:math>
+                  </inlineequation></entry>
+               </row>
+
+               <row>
+                  <entry>Gumbel</entry>
+
+                  <entry><inlineequation>
+                        <m:math display="inline">
+                           <m:mtable>
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:msubsup>
+                                          <m:mi>λ</m:mi>
+
+                                          <m:mi>1</m:mi>
+
+                                          <m:mi>η</m:mi>
+                                       </m:msubsup>
+
+                                       <m:mo>=</m:mo>
+
+                                       <m:mrow>
+                                          <m:mi>τ+α[0.5772+ln(η+1]</m:mi>
+
+                                          <m:msubsup>
+                                             <m:mi>λ</m:mi>
+
+                                             <m:mi>2</m:mi>
+
+                                             <m:mi>η</m:mi>
+                                          </m:msubsup>
+
+                                          <m:mi>=</m:mi>
+
+                                          <m:mfrac>
+                                             <m:mi>(η+2)α</m:mi>
+
+                                             <m:mi>2!</m:mi>
+                                          </m:mfrac>
+
+                                          <m:mi>[ln(η+2) - ln (η+1)</m:mi>
+                                       </m:mrow>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:msubsup>
+                                          <m:mi>λ</m:mi>
+
+                                          <m:mi>3</m:mi>
+
+                                          <m:mi>η</m:mi>
+                                       </m:msubsup>
+
+                                       <m:mo>=</m:mo>
+
+                                       <m:mrow>
+                                          <m:mfrac>
+                                             <m:mi>(η+3)α</m:mi>
+
+                                             <m:mi>3!</m:mi>
+                                          </m:mfrac>
+
+                                          <m:mo>[
+                                             (η+4)ln(η+3)-2(η+3)ln(η+2)+(η+2)ln(η+1)]</m:mo>
+                                       </m:mrow>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                 <m:mtd>
+                                    <m:mrow>
+                                       <m:mtable>
+                                          <m:mtr>
+                                             <m:mtd>
+                                                <m:mrow>
+                                                   <m:msubsup>
+                                                      <m:mi>λ</m:mi>
+
+                                                      <m:mi>4</m:mi>
+
+                                                      <m:mi>η</m:mi>
+                                                   </m:msubsup>
+
+                                                   <m:mo>=</m:mo>
+
+                                                   <m:mrow>
+                                                      <m:mfrac>
+                                                         <m:mi>(η+4)α</m:mi>
+
+                                                         <m:mi>4!</m:mi>
+                                                      </m:mfrac>
+
+                                                      <m:mo>[(η+6)(η+5)ln(η+4)-3(η+5)(η+4)ln(η+3)</m:mo>
+                                                   </m:mrow>
+                                                </m:mrow>
+                                             </m:mtd>
+                                          </m:mtr>
+
+                                          <m:mtr>
+                                             <m:mtd>
+                                                <m:mrow>
+                                                   <m:mi>+3(η+4)(η+3)ln(η+2)-(η+3)(η+2)ln(η+1)]</m:mi>
+                                                </m:mrow>
+                                             </m:mtd>
+                                          </m:mtr>
+                                       </m:mtable>
+                                    </m:mrow>
+                                 </m:mtd>
+                              </m:mtr>
+                           </m:mtable>
+                        </m:math>
+                  </inlineequation></entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>For ease of computation Wang (1997) derived the following
+         approximation for the shape parameter κ:</para>
+
+      <para><inlineequation>
+            <m:math display="inline">
+               <m:mi>κ</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>a</m:mi>
+
+                     <m:mi>0</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:mrow>
+                     <m:mrow>
+                        <m:msub>
+                           <m:mi>a</m:mi>
+
+                           <m:mi>1</m:mi>
+                        </m:msub>
+
+                        <m:msubsup>
+                           <m:mi>[τ</m:mi>
+
+                           <m:mi>3</m:mi>
+
+                           <m:mi>η</m:mi>
+                        </m:msubsup>
+                     </m:mrow>
+
+                     <m:mo>]+</m:mo>
+
+                     <m:mrow>
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>a</m:mi>
+
+                              <m:mi>2</m:mi>
+                           </m:msub>
+
+                           <m:msubsup>
+                              <m:mi>[τ</m:mi>
+
+                              <m:mi>3</m:mi>
+
+                              <m:mi>η-2</m:mi>
+                           </m:msubsup>
+                        </m:mrow>
+
+                        <m:mo>]+</m:mo>
+
+                        <m:mrow>
+                           <m:msub>
+                              <m:mi>a</m:mi>
+
+                              <m:mi>3</m:mi>
+                           </m:msub>
+
+                           <m:mrow>
+                              <m:msubsup>
+                                 <m:mi>[τ</m:mi>
+
+                                 <m:mi>3</m:mi>
+
+                                 <m:mi>η-3</m:mi>
+                              </m:msubsup>
+
+                              <m:msup>
+                                 <m:mi>]</m:mi>
+
+                                 <m:mi/>
+                              </m:msup>
+                           </m:mrow>
+                        </m:mrow>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mrow>
+            </m:math>
+      </inlineequation></para>
+
+      <para>where the polynomial coefficients vary with η according to Table
+         B6-2.</para>
+
+      <para>Table B6-2. Polynomial coefficients for use with eqn (B6-2)</para>
+
+      <informaltable>
+         <tgroup cols="5">
+            <tbody>
+               <row>
+                  <entry>η</entry>
+
+                  <entry>a<subscript>0</subscript></entry>
+
+                  <entry>a<subscript>1</subscript></entry>
+
+                  <entry>a<subscript>2</subscript></entry>
+
+                  <entry>a<subscript>3</subscript></entry>
+               </row>
+
+               <row>
+                  <entry>0</entry>
+
+                  <entry>0.2849</entry>
+
+                  <entry>-1.8213</entry>
+
+                  <entry>0.8140</entry>
+
+                  <entry>-0.2835</entry>
+               </row>
+
+               <row>
+                  <entry>1</entry>
+
+                  <entry>0.4823</entry>
+
+                  <entry>-2.1494</entry>
+
+                  <entry>0.7269</entry>
+
+                  <entry>-0.2103</entry>
+               </row>
+
+               <row>
+                  <entry>2</entry>
+
+                  <entry>0.5914</entry>
+
+                  <entry>-2.3351</entry>
+
+                  <entry>0.6442</entry>
+
+                  <entry>-0.1616</entry>
+               </row>
+
+               <row>
+                  <entry>3</entry>
+
+                  <entry>0.6618</entry>
+
+                  <entry>-2.4548</entry>
+
+                  <entry>0.5733</entry>
+
+                  <entry>-0.1273</entry>
+               </row>
+
+               <row>
+                  <entry>4</entry>
+
+                  <entry>0.7113</entry>
+
+                  <entry>-2.5383</entry>
+
+                  <entry>0.5142</entry>
+
+                  <entry>-0.1027</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>Wang (1997) derived the following estimators for LH moments with
+         shift parameter η:</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>1</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:msubsup>
+                        <m:mi>C</m:mi>
+
+                        <m:mi>η+1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msubsup>
+                  </m:mfrac>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∑</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:munderover>
+
+                     <m:msubsup>
+                        <m:mi>C</m:mi>
+
+                        <m:mi>η</m:mi>
+
+                        <m:mi>j-1</m:mi>
+                     </m:msubsup>
+                  </m:mrow>
+
+                  <m:msub>
+                     <m:mi>x</m:mi>
+
+                     <m:mi>(i)</m:mi>
+                  </m:msub>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>2</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:mi>2</m:mi>
+                  </m:mfrac>
+
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:msubsup>
+                        <m:mi>C</m:mi>
+
+                        <m:mi>η+2</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msubsup>
+                  </m:mfrac>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∑</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:munderover>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msubsup>
+                              <m:mi>C</m:mi>
+
+                              <m:mi>η+1</m:mi>
+
+                              <m:mi>i-1</m:mi>
+                           </m:msubsup>
+
+                           <m:mo>-</m:mo>
+
+                           <m:mrow>
+                              <m:msubsup>
+                                 <m:mi>C</m:mi>
+
+                                 <m:mi>η</m:mi>
+
+                                 <m:mi>i-1</m:mi>
+                              </m:msubsup>
+
+                              <m:msubsup>
+                                 <m:mi>C</m:mi>
+
+                                 <m:mi>1</m:mi>
+
+                                 <m:mi>n-i</m:mi>
+                              </m:msubsup>
+                           </m:mrow>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>(i)</m:mi>
+                  </m:msub>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>3</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:mi>3</m:mi>
+                  </m:mfrac>
+
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:msubsup>
+                        <m:mi>C</m:mi>
+
+                        <m:mi>η+3</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msubsup>
+                  </m:mfrac>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∑</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:munderover>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msubsup>
+                              <m:mi>C</m:mi>
+
+                              <m:mi>η+2</m:mi>
+
+                              <m:mi>i-1</m:mi>
+                           </m:msubsup>
+
+                           <m:mo>-2</m:mo>
+
+                           <m:mrow>
+                              <m:mrow>
+                                 <m:msubsup>
+                                    <m:mi>C</m:mi>
+
+                                    <m:mi>η+1</m:mi>
+
+                                    <m:mi>i-1</m:mi>
+                                 </m:msubsup>
+
+                                 <m:msubsup>
+                                    <m:mi>C</m:mi>
+
+                                    <m:mi>1</m:mi>
+
+                                    <m:mi>n-i</m:mi>
+                                 </m:msubsup>
+                              </m:mrow>
+
+                              <m:mo>+</m:mo>
+
+                              <m:mrow>
+                                 <m:msubsup>
+                                    <m:mi>C</m:mi>
+
+                                    <m:mi>η</m:mi>
+
+                                    <m:mi>i-1</m:mi>
+                                 </m:msubsup>
+
+                                 <m:msubsup>
+                                    <m:mi>C</m:mi>
+
+                                    <m:mi>2</m:mi>
+
+                                    <m:mi>n-i</m:mi>
+                                 </m:msubsup>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>(i)</m:mi>
+                  </m:msub>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msubsup>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>4</m:mi>
+
+                  <m:mi>η</m:mi>
+               </m:msubsup>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:mi>4</m:mi>
+                  </m:mfrac>
+
+                  <m:mfrac>
+                     <m:mi>1</m:mi>
+
+                     <m:msubsup>
+                        <m:mi>C</m:mi>
+
+                        <m:mi>η+4</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:msubsup>
+                  </m:mfrac>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∑</m:mo>
+
+                        <m:mi>i=1</m:mi>
+
+                        <m:mi>n</m:mi>
+                     </m:munderover>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:msubsup>
+                              <m:mi>C</m:mi>
+
+                              <m:mi>η+3</m:mi>
+
+                              <m:mi>i-1</m:mi>
+                           </m:msubsup>
+
+                           <m:mo>-</m:mo>
+
+                           <m:mrow>
+                              <m:mrow>
+                                 <m:msubsup>
+                                    <m:mi>3C</m:mi>
+
+                                    <m:mi>η+2</m:mi>
+
+                                    <m:mi>i-1</m:mi>
+                                 </m:msubsup>
+
+                                 <m:msubsup>
+                                    <m:mi>C</m:mi>
+
+                                    <m:mi>1</m:mi>
+
+                                    <m:mi>n-i</m:mi>
+                                 </m:msubsup>
+                              </m:mrow>
+
+                              <m:mo>+</m:mo>
+
+                              <m:mrow>
+                                 <m:mrow>
+                                    <m:msubsup>
+                                       <m:mi>3C</m:mi>
+
+                                       <m:mi>η+1</m:mi>
+
+                                       <m:mi>i-1</m:mi>
+                                    </m:msubsup>
+
+                                    <m:msubsup>
+                                       <m:mi>C</m:mi>
+
+                                       <m:mi>2</m:mi>
+
+                                       <m:mi>n-i</m:mi>
+                                    </m:msubsup>
+                                 </m:mrow>
+
+                                 <m:mo>-</m:mo>
+
+                                 <m:mrow>
+                                    <m:msubsup>
+                                       <m:mi>C</m:mi>
+
+                                       <m:mi>η</m:mi>
+
+                                       <m:mi>i-1</m:mi>
+                                    </m:msubsup>
+
+                                    <m:msubsup>
+                                       <m:mi>C</m:mi>
+
+                                       <m:mi>3</m:mi>
+
+                                       <m:mi>n-i</m:mi>
+                                    </m:msubsup>
+                                 </m:mrow>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>(i)</m:mi>
+                  </m:msub>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>The selection of the best shift parameter requires some form of
+         goodness-of-fit test. Wang (1998) argued that the first three LH moments
+         are used to fit the GEV model leaving the fourth LH moment available for
+         testing the adequacy of the fit. He proposed the following approximate
+         test statistic:</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>z</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mfrac>
+                  <m:mrow>
+                     <m:msubsup>
+                        <m:mi>τ</m:mi>
+
+                        <m:mi>4</m:mi>
+
+                        <m:mi>η</m:mi>
+                     </m:msubsup>
+
+                     <m:mo>-</m:mo>
+
+                     <m:msubsup>
+                        <m:mi>τ</m:mi>
+
+                        <m:mi>4</m:mi>
+
+                        <m:mi>η</m:mi>
+                     </m:msubsup>
+                  </m:mrow>
+
+                  <m:mrow>
+                     <m:mi>σ</m:mi>
+
+                     <m:mrow>
+                        <m:mo>(</m:mo>
+
+                        <m:mrow>
+                           <m:mrow>
+                              <m:msubsup>
+                                 <m:mi>τ</m:mi>
+
+                                 <m:mi>4</m:mi>
+
+                                 <m:mi>η</m:mi>
+                              </m:msubsup>
+
+                              <m:msubsup>
+                                 <m:mi>|τ</m:mi>
+
+                                 <m:mi>3</m:mi>
+
+                                 <m:mi>η</m:mi>
+                              </m:msubsup>
+                           </m:mrow>
+
+                           <m:mo>=</m:mo>
+
+                           <m:msubsup>
+                              <m:mi>τ</m:mi>
+
+                              <m:mi>3</m:mi>
+
+                              <m:mi>η</m:mi>
+                           </m:msubsup>
+                        </m:mrow>
+
+                        <m:mo>)</m:mo>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mfrac>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where τ<subscript>4</subscript><superscript>η</superscript> is the
+         sample estimate of the LH-kurtosis,
+         τ<subscript>4</subscript><superscript>η</superscript> is the LH-kurtosis
+         derived from the GEV parameters fitted to the first three LH moments,
+         and σ(τ<subscript>4</subscript><superscript>η</superscript>
+         |τ<subscript>3</subscript><superscript>η</superscript>=τ<subscript>3</subscript><superscript>η</superscript>
+         ) is the standard deviation of
+         τ<subscript>4</subscript><superscript>η</superscript> assuming the
+         sample LH-skewness equals the LH-skewness derived from the GEV
+         parameters fitted to the first three LH moments. Under the hypothesis
+         that the underlying distribution is GEV, the test statistic z is
+         approximately normal distributed with mean 0 and variance 1. Wang (1998)
+         describes a simple relationship to estimate
+         σ(τ<subscript>4</subscript><superscript>η</superscript>
+         |τ<subscript>3</subscript><superscript>η</superscript>=τ<subscript>3</subscript><superscript>η</superscript>)
+         .</para>
+   </section>
+
+   <section>
+      <title>Box 7: Parametric bootstrap</title>
+
+      <para>The sampling distribution of an estimator can be approximated
+         using the Monte Carlo method known as the parametric bootstrap:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>Fit the probability model to n years of gauged flows using L
+               or LH moments to yield the parameter estimate θ.</para>
+         </listitem>
+
+         <listitem>
+            <para>Set i=1</para>
+         </listitem>
+
+         <listitem>
+            <para>Randomly sample n flows from the fitted distribution; that is,
+               q<subscript>ji</subscript> ← p(q|θ),j=1,...,n</para>
+         </listitem>
+
+         <listitem>
+            <para>Fit the model to the sampled flows
+               {q<subscript>ji</subscript>,j=1,..,n}using L or LH moments to yield
+               the parameter estimate θ<subscript>i</subscript></para>
+         </listitem>
+
+         <listitem>
+            <para>Increment i. Go to step 3 if i does not exceed N.</para>
+         </listitem>
+      </orderedlist>
+
+      <para>This procedure yields N equi-weighted samples that approximate the
+         sampling distribution p(θ|D). As a result, they can be used to quantify
+         parameter uncertainty and estimate quantile confidence limits. However,
+         because the parametric bootstrap assumes θ is the true parameter, it
+         underestimates the uncertainty and therefore should not be used to
+         estimate expected probabilities.</para>
+   </section>
+
+   <section>
+      <title>Example 1: Extrapolation and Process Understanding</title>
+
+      <para>The importance of process understanding when extrapolating beyond
+         the observed record is illustrated by a simple Monte Carlo experiment. A
+         Poisson rectangular pulse rainfall model is used to generate a long
+         record of high resolution rainfall. This is routed through a
+         rainfall-runoff model to generate runoff into the stream system. The
+         storage-discharge relationship for the stream is depicted by the
+         bilinear relationship shown in Figure E1-1. A feature of this
+         relationship is the activation of significant flood terrace storage once
+         a threshold discharge is exceeded.</para>
+
+      <figure>
+         <title>Bilinear channel storage-discharge relationship</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE1_1.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The routing model parameters were selected so that major flood
+         terrace storage is activated by floods with an AEP less than 1 in 100.
+         This situation was chosen to represent a river with multiple flood
+         terraces with the lowest terraces accommodating the majority of floods
+         and the highest terrace only inundated by extreme floods.</para>
+
+      <para>Figure E1-2 presents the flood frequency curve based on 30000
+         simulated years – it shows a clear break in slope around the 1 in 100
+         AEP corresponding to the activation of major flood terrace storage.
+         Indeed the flood frequency curve displays downward curvature despite
+         that the fact the rainfall frequency curve displays upward curvature in
+         the 1 in 100 to 1000 AEP range. In contrast the flood frequency curve
+         based on 100 years of “data” shows no evidence of downward curvature.
+         This is because in a 100-year record there is little chance of the major
+         flood terrace storage being activated. Indeed without knowledge of the
+         underlying hydraulics one would be tempted to extrapolate the 100-year
+         flood record using a straight line extrapolation. Such an extrapolation
+         would rapidly diverge from the “true” frequency curve.</para>
+
+      <figure>
+         <title>Simulated rainfall and flood frequency curves with major
+            floodplain storage activated at a threshold discharge of 3500
+            m3/s.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE1_2.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Although the example idealizes the dominant rainfall-runoff
+         dynamics it delivers a very strong message. Extrapolation of flood
+         frequency curves fitted to gauged flow records requires the exercise of
+         hydrologic judgment backed up by appropriate modelling. The problem of
+         extrapolation is much more general. For example, in this example, if a
+         rainfall-runoff approach were used with the rainfall-runoff model
+         calibrated to small events the simulated flood frequency curve is likely
+         to be compromised in a similar way.</para>
+   </section>
+
+   <section>
+      <title>Example 2: Accuracy of Daily Gauged Flows</title>
+
+      <para>The use of daily discharge readings in flood frequency analysis is
+         most problematic for smaller catchments, which can be “flashy” in the
+         sense that the hydrograph can rise and subside within a twenty four hour
+         period. This effect can be quite significant, even for reasonably large
+         catchments.</para>
+
+      <para>Figures E2-1 and E2-2, taken from Micevski et al. (2003), compare
+         instantaneous annual maximum discharge against the discharge recorded at
+         9am on the same day for two gauging stations in the Hunter Valley:
+         Goulburn River at Coggan with area 3340 km<superscript>2</superscript>
+         and Hunter River at Singleton with area 16400
+         km<superscript>2</superscript>. The dashed line represents equality.
+         Figure E2-1 demonstrates that the true peak flow can be up to 10 times
+         the 9am flow. In contrast the estimation error is much smaller for the
+         larger catchment shown in Figure E2-2.</para>
+
+      <figure>
+         <title>Comparison between true peak flow and 9 am flow for Goulburn
+            River at Coggan.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE2_1.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <figure>
+         <title>Comparison between true peak flow and 9 am flow for Hunter
+            River at Singleton.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE2_2.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The example demonstrates the need to check the representativeness
+         of daily readings by comparing instantaneous peak flows against daily
+         readings.</para>
+   </section>
+
+   <section>
+      <title>Example 3: Fitting a probability model to gauged data</title>
+
+      <para>This example illustrates fitting a probability model to gauged
+         annual maximum flood data. The following table lists 31 years of gauged
+         annual maximum flows (m3/s) for the Hunter River at Singleton:</para>
+
+      <para/>
+
+      <informaltable>
+         <tgroup cols="4">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>Year</entry>
+
+                  <entry>AM discharge (m³/s)</entry>
+
+                  <entry>Year</entry>
+
+                  <entry>AM discharge (m³/s)</entry>
+               </row>
+
+               <row>
+                  <entry>1938</entry>
+
+                  <entry>76.26</entry>
+
+                  <entry>1954</entry>
+
+                  <entry>1391.43</entry>
+               </row>
+
+               <row>
+                  <entry>1939</entry>
+
+                  <entry>171.87</entry>
+
+                  <entry>1955</entry>
+
+                  <entry>12525.66</entry>
+               </row>
+
+               <row>
+                  <entry>1940</entry>
+
+                  <entry>218.21</entry>
+
+                  <entry>1956</entry>
+
+                  <entry>1099.54</entry>
+               </row>
+
+               <row>
+                  <entry>1941</entry>
+
+                  <entry>668.79</entry>
+
+                  <entry>1957</entry>
+
+                  <entry>447.75</entry>
+               </row>
+
+               <row>
+                  <entry>1942</entry>
+
+                  <entry>1374.42</entry>
+
+                  <entry>1958</entry>
+
+                  <entry>478.92</entry>
+               </row>
+
+               <row>
+                  <entry>1943</entry>
+
+                  <entry>124.12</entry>
+
+                  <entry>1959</entry>
+
+                  <entry>180.52</entry>
+               </row>
+
+               <row>
+                  <entry>1944</entry>
+
+                  <entry>276.3</entry>
+
+                  <entry>1960</entry>
+
+                  <entry>164.36</entry>
+               </row>
+
+               <row>
+                  <entry>1945</entry>
+
+                  <entry>895.5</entry>
+
+                  <entry>1961</entry>
+
+                  <entry>229.54</entry>
+               </row>
+
+               <row>
+                  <entry>1946</entry>
+
+                  <entry>1374.42</entry>
+
+                  <entry>1962</entry>
+
+                  <entry>2125.4</entry>
+               </row>
+
+               <row>
+                  <entry>1947</entry>
+
+                  <entry>280.18</entry>
+
+                  <entry>1963</entry>
+
+                  <entry>966.35</entry>
+               </row>
+
+               <row>
+                  <entry>1948</entry>
+
+                  <entry>202.62</entry>
+
+                  <entry>1964</entry>
+
+                  <entry>2751.68</entry>
+               </row>
+
+               <row>
+                  <entry>1949</entry>
+
+                  <entry>4052.42</entry>
+
+                  <entry>1965</entry>
+
+                  <entry>49.03</entry>
+               </row>
+
+               <row>
+                  <entry>1950</entry>
+
+                  <entry>2323.77</entry>
+
+                  <entry>1966</entry>
+
+                  <entry>79.51</entry>
+               </row>
+
+               <row>
+                  <entry>1951</entry>
+
+                  <entry>2536.31</entry>
+
+                  <entry>1967</entry>
+
+                  <entry>912.5</entry>
+               </row>
+
+               <row>
+                  <entry>1952</entry>
+
+                  <entry>3315.62</entry>
+
+                  <entry>1968</entry>
+
+                  <entry>926.67</entry>
+               </row>
+
+               <row>
+                  <entry>1953</entry>
+
+                  <entry>1232.73</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The data was imported into FLIKE using the “import” control in the
+         following dialog:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Example3.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The log Pearson 3 distribution was selected to be fitted using the
+         Bayesian inference method in the following dialog:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE2_2.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The following table presents the posterior mean, standard
+         deviation and correlation for the LP3 parameters: m, s and g which are
+         respectively the mean, standard deviation and skewness of
+         log<subscript>e</subscript> q:</para>
+
+      <informaltable>
+         <tgroup cols="6">
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>LP3 parameter</entry>
+
+                  <entry>Mean</entry>
+
+                  <entry>Std deviation</entry>
+
+                  <entry>Correlation</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>m</entry>
+
+                  <entry>6.433</entry>
+
+                  <entry>0.262</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>log<subscript>e</subscript> s</entry>
+
+                  <entry>0.353</entry>
+
+                  <entry>0.144</entry>
+
+                  <entry>0.111</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>g</entry>
+
+                  <entry>0.131</entry>
+
+                  <entry>0.479</entry>
+
+                  <entry>0.033</entry>
+
+                  <entry>0.123</entry>
+
+                  <entry>1.000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>Figure E5-1 displays the log normal probability plot of the gauged
+         flows, the 1 in Y AEP quantile curve (derived using the posterior mean
+         parameters), the 90% quantile confidence limits and the expected
+         probability curve.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_1.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Figure E5-1. Bayesian LP3 fit to 31 years of gauged annual maximum
+         floods with prior information on skewness.</para>
+
+      <para>The good fit to the gauged data and the tight confidence limits
+         needs to be tempered by the fact that the figure plots the logarithm of
+         the flood peaks. The following table of selected 1 in Y AEP quantiles
+         q<subscript>Y</subscript> and their 90% confidence limits presents a
+         more sobering perspective. For example, for the 1 in 100 AEP flood, the
+         5% and 95% confidence limits are respectively 37% and 546% of the
+         quantile q<subscript>Y</subscript>! The 1 in 500 AEP confidence limits
+         are so wide as to render estimation meaningless. Note the expected AEP
+         for the quantile q¬Y consistently exceeds the nominal 1 in Y AEP. For
+         example, the 1 in 100 AEP quantile of 19572
+         m<superscript>3</superscript>/s has an expected AEP of 1 in 74.</para>
+
+      <informaltable>
+         <tgroup cols="5">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>1 in Y AEP</entry>
+
+                  <entry>Quantile estimate q<subscript>Y</subscript></entry>
+
+                  <entry>Quantile confidence limits 5% limit</entry>
+
+                  <entry>Quantile confidence limits 95% limit</entry>
+
+                  <entry>Expected 1 in Y AEP for q<subscript>Y</subscript></entry>
+               </row>
+
+               <row>
+                  <entry>10</entry>
+
+                  <entry>3928</entry>
+
+                  <entry>2228</entry>
+
+                  <entry>8408</entry>
+
+                  <entry>9.9</entry>
+               </row>
+
+               <row>
+                  <entry>50</entry>
+
+                  <entry>12786</entry>
+
+                  <entry>5502</entry>
+
+                  <entry>51009</entry>
+
+                  <entry>43</entry>
+               </row>
+
+               <row>
+                  <entry>100</entry>
+
+                  <entry>19572</entry>
+
+                  <entry>7188</entry>
+
+                  <entry>106933</entry>
+
+                  <entry>74</entry>
+               </row>
+
+               <row>
+                  <entry>500</entry>
+
+                  <entry>47033</entry>
+
+                  <entry>11507</entry>
+
+                  <entry>570619</entry>
+
+                  <entry>208</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </section>
+
+   <section>
+      <title>Example 4: Use of binomial censored historical data</title>
+
+      <para>This example is a continuation of Example 3. It illustrates the
+         benefit of using historical flood information. The gauged record spanned
+         1938 to 1969. The biggest flood in that record occurred in 1955. An
+         examination of historic records indicates that during the ungauged
+         period 1820 to 1937 there was only one flood that exceeded the 1955
+         flood – this flood occurred in 1820. This represents valuable
+         information even though the magnitude of the 1820 flood is not reliably
+         known. This is an example of censored data. Over the ungauged period
+         1820 to 1937 there was one flood above and 117 floods below the
+         threshold discharge corresponding to the 1955 flood. This information is
+         entered into FLIKE as follows:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_2.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The log Pearson 3 distribution was fitted to gauged and censored
+         data using the Bayesian approach.</para>
+
+      <para>The following table presents the posterior mean, standard
+         deviation and correlation for the LP3 parameters: m, s and g which are
+         respectively the mean, standard deviation and skewness of
+         log<subscript>e</subscript> q. Comparison with Example 3 reveals the
+         censored data have reduced by almost 17% the uncertainty in the skewness
+         g, the parameter that controls the shape of the distribution,
+         particularly in the tail region.</para>
+
+      <informaltable>
+         <tgroup cols="6">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>LP3 parameter</entry>
+
+                  <entry>Mean</entry>
+
+                  <entry>Std deviation</entry>
+
+                  <entry>Correlation</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>m</entry>
+
+                  <entry>6.365</entry>
+
+                  <entry>0.237</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>log<subscript>e</subscript> s</entry>
+
+                  <entry>0.303</entry>
+
+                  <entry>0.120</entry>
+
+                  <entry>-0.236</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>g</entry>
+
+                  <entry>-0.004</entry>
+
+                  <entry>0.405</entry>
+
+                  <entry>-0.227</entry>
+
+                  <entry>-0.409</entry>
+
+                  <entry>1.000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The following figure displays on a log normal probability plot the
+         gauged flows, the 1 in Y AEP quantile curve (derived using the posterior
+         mean parameters), the 90% quantile confidence limits and the expected
+         probability curve. Compared with Example 3 the tightening of the
+         confidence limits is most noticeable.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_3.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The following table of selected 1 in Y AEP quantiles
+         q<subscript>Y</subscript> and their 90% confidence limits illustrates
+         the benefit of the information contained in the historic data. For
+         example, for the 1 in 100 AEP flood the 5% and 95% confidence limits are
+         respectively 58% and 205% of the quantile qY! This represents a major
+         reduction in quantile uncertainty compared with Example 3 which yielded
+         limits of 38% and 553%.</para>
+
+      <para/>
+
+      <informaltable>
+         <tgroup cols="5">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>1 in Y AEP</entry>
+
+                  <entry>Quantile estimate q<subscript>Y</subscript></entry>
+
+                  <entry>Quantile confidence limits 5% limit</entry>
+
+                  <entry>Quantile confidence limits 95% limit</entry>
+
+                  <entry>Expected 1 in Y AEP for q<subscript>Y</subscript></entry>
+               </row>
+
+               <row>
+                  <entry>10</entry>
+
+                  <entry>3293</entry>
+
+                  <entry>2181</entry>
+
+                  <entry>4946</entry>
+
+                  <entry>9.6</entry>
+               </row>
+
+               <row>
+                  <entry>50</entry>
+
+                  <entry>9350</entry>
+
+                  <entry>5777</entry>
+
+                  <entry>16511</entry>
+
+                  <entry>48</entry>
+               </row>
+
+               <row>
+                  <entry>100</entry>
+
+                  <entry>13510</entry>
+
+                  <entry>7784</entry>
+
+                  <entry>27685</entry>
+
+                  <entry>92</entry>
+               </row>
+
+               <row>
+                  <entry>500</entry>
+
+                  <entry>28451</entry>
+
+                  <entry>12966</entry>
+
+                  <entry>85586</entry>
+
+                  <entry>362</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>This example highlights the significant reductions in uncertainty
+         that historical data can offer. However, care must be exercised ensuring
+         the integrity of the historic information – see Section 3.8 for more
+         details.</para>
+   </section>
+
+   <section>
+      <title>Example 5: Use of regional information</title>
+
+      <para>This is a continuation of Example 3. In Example 3 the posterior
+         mean of the skewness was estimated to be 0.131 with a posterior standard
+         of 0.479. The uncertainty in the 1 in 100 AEP quantile was large.
+         Suppose hypothetically that a regional analysis of skewness was
+         conducted. Furthermore suppose the expected regional skew is 0.00 with a
+         standard deviation of 0.30. This information is entered into FLIKE by
+         selecting the Gaussian prior distributions button and clicking on “edit”
+         control:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_4.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The prior information was directly entered into the following
+         dialog. Note that very large prior standard deviations are assigned to
+         the mean and standard deviation parameters to ensure there is no prior
+         information about theses parameters. If the log Pearson III distribution
+         has been selected, the option to import the prior information from the
+         ARR regional frequency method is available.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_5.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Figure E5-1 presents the probability plot for the LP3 model fitted
+         to the gauged data with prior information on the skewness. Comparison
+         with Figure E3-1 reveals substantially improved accuracy in the right
+         hand tail.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_6.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Figure E5-1. Bayesian LP3 fit to 31 years of gauged annual maximum
+         floods with prior information on skewness.</para>
+
+      <para>The table compares the LP3 fitted with and without prior
+         information on skewness. The posterior uncertainty on the skewness is
+         about 87% of the prior standard deviation indicating the gauged data are
+         not very informative about the shape parameter of the flood
+         distribution.</para>
+
+      <informaltable>
+         <tgroup cols="5">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>LP3 parameter</entry>
+
+                  <entry>No prior information Mean</entry>
+
+                  <entry>No prior information Std deviation</entry>
+
+                  <entry>With prior information Mean</entry>
+
+                  <entry>With prior information Std deviation</entry>
+               </row>
+
+               <row>
+                  <entry>m</entry>
+
+                  <entry>6.433</entry>
+
+                  <entry>0.262</entry>
+
+                  <entry>6.421</entry>
+
+                  <entry>0.251</entry>
+               </row>
+
+               <row>
+                  <entry>log<subscript>e</subscript> s</entry>
+
+                  <entry>0.353</entry>
+
+                  <entry>0.144</entry>
+
+                  <entry>0.320</entry>
+
+                  <entry>0.131</entry>
+               </row>
+
+               <row>
+                  <entry>g</entry>
+
+                  <entry>0.131</entry>
+
+                  <entry>0.479</entry>
+
+                  <entry>0.019</entry>
+
+                  <entry>0.260</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The table of selected 1 in Y AEP quantiles
+         q<subscript>Y</subscript> and their 90% confidence limits further
+         illustrates the benefit of incorporating regional information. For
+         example, for the 1 in 100 AEP flood the 5% and 95% confidence limits are
+         respectively 37% and 546% of the quantile q100 when no prior information
+         is used. These limits are reduced to 46% and 292% using prior regional
+         information.</para>
+
+      <informaltable>
+         <tgroup cols="7">
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec/>
+
+            <colspec align="center"/>
+
+            <tbody>
+               <row>
+                  <entry>1 in Y AEP</entry>
+
+                  <entry>No prior information Quantile
+                     q<subscript>Y</subscript></entry>
+
+                  <entry>No prior information Quantile confidence limits 5%
+                     limit</entry>
+
+                  <entry>No prior information Quantile confidence limits 95%
+                     limit</entry>
+
+                  <entry>With prior information Quantile
+                     q<subscript>Y</subscript></entry>
+
+                  <entry>With prior information Quantile confidence limits 5%
+                     limit</entry>
+
+                  <entry>With prior information Quantile confidence limits 95%
+                     limit</entry>
+               </row>
+
+               <row>
+                  <entry>10</entry>
+
+                  <entry>3928</entry>
+
+                  <entry>2228</entry>
+
+                  <entry>8408</entry>
+
+                  <entry>3597</entry>
+
+                  <entry>2171</entry>
+
+                  <entry>6702</entry>
+               </row>
+
+               <row>
+                  <entry>50</entry>
+
+                  <entry>12786</entry>
+
+                  <entry>5502</entry>
+
+                  <entry>51009</entry>
+
+                  <entry>10534</entry>
+
+                  <entry>5310</entry>
+
+                  <entry>26633</entry>
+               </row>
+
+               <row>
+                  <entry>100</entry>
+
+                  <entry>19572</entry>
+
+                  <entry>7188</entry>
+
+                  <entry>106933</entry>
+
+                  <entry>15412</entry>
+
+                  <entry>7092</entry>
+
+                  <entry>45086</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </section>
+
+   <section>
+      <title>Example 6: Censoring PILFs using multiple Grubbs-Beck
+         test</title>
+
+      <para>The multiple Grubbs-Beck test is recommended in all flood
+         frequency analyses to identify potentially influential low flows
+         (PILFs). This example is taken from Pedruco et al. (2013). The following
+         table lists 56 years of annual maximum discharges for the Wimmera
+         river:</para>
+
+      <informaltable>
+         <tgroup cols="7">
+            <tbody>
+               <row>
+                  <entry>464.35</entry>
+
+                  <entry>167.72</entry>
+
+                  <entry>119.63</entry>
+
+                  <entry>71.4</entry>
+
+                  <entry>32.18</entry>
+
+                  <entry>14.16</entry>
+
+                  <entry>8.52</entry>
+               </row>
+
+               <row>
+                  <entry>395.65</entry>
+
+                  <entry>155.22</entry>
+
+                  <entry>110.56</entry>
+
+                  <entry>69.67</entry>
+
+                  <entry>25.91</entry>
+
+                  <entry>12.64</entry>
+
+                  <entry>3.22</entry>
+               </row>
+
+               <row>
+                  <entry>285.92</entry>
+
+                  <entry>147</entry>
+
+                  <entry>102.62</entry>
+
+                  <entry>67.49</entry>
+
+                  <entry>24.83</entry>
+
+                  <entry>11.9</entry>
+
+                  <entry>2.28</entry>
+               </row>
+
+               <row>
+                  <entry>278.01</entry>
+
+                  <entry>143.99</entry>
+
+                  <entry>97.32</entry>
+
+                  <entry>61.64</entry>
+
+                  <entry>23.95</entry>
+
+                  <entry>11.79</entry>
+
+                  <entry>2.13</entry>
+               </row>
+
+               <row>
+                  <entry>235.22</entry>
+
+                  <entry>143.62</entry>
+
+                  <entry>96.78</entry>
+
+                  <entry>54.4</entry>
+
+                  <entry>22.76</entry>
+
+                  <entry>11.41</entry>
+
+                  <entry>1.9</entry>
+               </row>
+
+               <row>
+                  <entry>211.91</entry>
+
+                  <entry>142.66</entry>
+
+                  <entry>87.98</entry>
+
+                  <entry>38.62</entry>
+
+                  <entry>19.04</entry>
+
+                  <entry>10.8</entry>
+
+                  <entry>1.43</entry>
+               </row>
+
+               <row>
+                  <entry>173.79</entry>
+
+                  <entry>134.36</entry>
+
+                  <entry>79.15</entry>
+
+                  <entry>36.62</entry>
+
+                  <entry>17.37</entry>
+
+                  <entry>10.31</entry>
+
+                  <entry>1.16</entry>
+               </row>
+
+               <row>
+                  <entry>170.13</entry>
+
+                  <entry>123.8</entry>
+
+                  <entry>77.03</entry>
+
+                  <entry>34.07</entry>
+
+                  <entry>14.87</entry>
+
+                  <entry>10.08</entry>
+
+                  <entry>0.01</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The following figure presents the probability plot for GEV
+         distribution. The fit to the right-hand tail is problematic.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_7.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>In FLIKE the multiple Grubbs-Beck test is implemented by clicking
+         on the “censor” control as shown below. The dialog advises the multiple
+         Grubbs-Beck test has identified 27 PILFs.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_8.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>On agreeing to censor these flows, FLIKE automatically performs
+         two changes to the inference setup:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>The 27 lowest flows are excluded from the calibration.</para>
+         </listitem>
+
+         <listitem>
+            <para>The “censored data” dialog is populated with the information
+               that there are 27 annual maximum flows that lie below the threshold
+               of 54.399 which corresponds the rank-28 flow.</para>
+         </listitem>
+      </orderedlist>
+
+      <para>The following two dialogs illustrate these changes:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_9.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_10.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The following probability plot demonstrates the substantially
+         improved fit to the right-hand tail along with significantly tighter
+         confidence limits:</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_11.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+   </section>
+
+   <section>
+      <title>Example 7: Improving poor fits using censoring of low flow
+         data</title>
+
+      <para>The standard probability models such as GEV and LP3 may not
+         adequately fit flood data for a variety of reasons. Often the poor fit
+         is associated with a sigmoidal probability plot as illustrated in Figure
+         E6-1. In such cases one can employ four or five-parameter distributions
+         which have sufficient degrees of freedom to track the data in both upper
+         and lower tails of the sigmoidal curve. Alternatively one can adopt a
+         calibration approach that gives less weight to smaller floods. The
+         latter approach is illustrated in this example which considers 50 annual
+         maximum floods (m<superscript>3</superscript>/s) for the Albert River at
+         Broomfleet presented in the following table:</para>
+
+      <informaltable>
+         <tgroup cols="10">
+            <tbody>
+               <row>
+                  <entry>13.02</entry>
+
+                  <entry>15.57</entry>
+
+                  <entry>15.85</entry>
+
+                  <entry>16.70</entry>
+
+                  <entry>22.36</entry>
+
+                  <entry>36.51</entry>
+
+                  <entry>72.73</entry>
+
+                  <entry>78.11</entry>
+
+                  <entry>87.73</entry>
+
+                  <entry>88.30</entry>
+               </row>
+
+               <row>
+                  <entry>95.65</entry>
+
+                  <entry>99.90</entry>
+
+                  <entry>113.77</entry>
+
+                  <entry>116.88</entry>
+
+                  <entry>124.52</entry>
+
+                  <entry>131.03</entry>
+
+                  <entry>156.22</entry>
+
+                  <entry>156.50</entry>
+
+                  <entry>190.74</entry>
+
+                  <entry>210.55</entry>
+               </row>
+
+               <row>
+                  <entry>220.74</entry>
+
+                  <entry>249.61</entry>
+
+                  <entry>249.61</entry>
+
+                  <entry>271.68</entry>
+
+                  <entry>285.83</entry>
+
+                  <entry>302.81</entry>
+
+                  <entry>305.64</entry>
+
+                  <entry>362.24</entry>
+
+                  <entry>384.88</entry>
+
+                  <entry>461.29</entry>
+               </row>
+
+               <row>
+                  <entry>466.95</entry>
+
+                  <entry>676.37</entry>
+
+                  <entry>752.78</entry>
+
+                  <entry>761.27</entry>
+
+                  <entry>761.27</entry>
+
+                  <entry>860.32</entry>
+
+                  <entry>863.15</entry>
+
+                  <entry>865.98</entry>
+
+                  <entry>1086.72</entry>
+
+                  <entry>1177.28</entry>
+               </row>
+
+               <row>
+                  <entry>1185.77</entry>
+
+                  <entry>1214.07</entry>
+
+                  <entry>1273.50</entry>
+
+                  <entry>1327.27</entry>
+
+                  <entry>1341.42</entry>
+
+                  <entry>1364.06</entry>
+
+                  <entry>1468.77</entry>
+
+                  <entry>1652.72</entry>
+
+                  <entry>1689.51</entry>
+
+                  <entry>1765.92</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>Figure E7-1 displays the GEV Bayesian fit on a Gumbel probability
+         plot. Although the observed floods are largely contained within the 90%
+         confidence limits, the fit, nonetheless, is poor – the data exhibit a
+         sigmoidal trend with reverse curvature developing for floods with an AEP
+         less than 1 in 2. It appears that the confidence limits have been
+         inflated because the GEV fit represents a poor compromise. Figure E7-2
+         displays the fit after censoring the 5 low outliers identified by the
+         multiple Grubbs-Beck test. The improvement in fit is marginal at
+         best.</para>
+
+      <figure>
+         <title>Bayesian fit to all gauged data</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE5_12.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+
+      <figure>
+         <title>Bayesian fit with 5 low outliers censored after application of
+            multiple Grubbs-Beck test.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_13.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>To deal with this poor fit, a trial-and-error approach based on
+         censoring low flows can be used to obtain a fit that favours the right
+         hand tail of the distribution. Figure E7-3 illustrates one such fit. To
+         de-emphasize the left hand tail the floods below the threshold of 250
+         m<superscript>3</superscript>/s were censored. This means the GEV
+         distribution was fitted to:</para>
+
+      <itemizedlist>
+         <listitem>
+            <para>A gauged record consisting of the 27 floods above 250
+               m<superscript>3</superscript>/s; and</para>
+         </listitem>
+
+         <listitem>
+            <para>A censored record consisting of 23 floods below the threshold
+               of 250 m<superscript>3</superscript>/s and 0 floods above this
+               threshold.</para>
+         </listitem>
+      </itemizedlist>
+
+      <para>The censored record provides an anchor point for the GEV
+         distribution – it ensures that the chance of an annual maximum flood
+         being less than 250 m<superscript>3</superscript>/s is about 23/50
+         without forcing the GEV to fit the peaks below the 250
+         m<superscript>3</superscript>/s threshold. The fit effectively
+         disregards floods with an AEP greater than 1 in 2 and provides a good
+         fit to the upper tail. Another benefit is the substantially reduced 90%
+         confidence range</para>
+
+      <figure>
+         <title>Bayesian fit with floods below 250 m3/s threshold treated as
+            censored observations.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_14.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>An alternative to this manual method for censoring is illustrated
+         in Example 10 which presents the LH moments procedure for de-emphasizing
+         low flows.</para>
+   </section>
+
+   <section>
+      <title>Example 8: A Non-Homogeneous Flood Probability Model</title>
+
+      <para>The work of Micevski et al. (2003) illustrates an example of a
+         non-homogeneous model. An indicator time series based on the IPO time
+         series (Figure 7) was used to create the exogeneous vector x</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>x</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>{I</m:mi>
+
+                     <m:mi>t</m:mi>
+                  </m:msub>
+
+                  <m:mo>, t = 1,...,n}</m:mo>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where the indicator</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msub>
+                  <m:mi>I</m:mi>
+
+                  <m:mi>t</m:mi>
+               </m:msub>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mo>{</m:mo>
+
+                  <m:mtable>
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mi>1 if</m:mi>
+
+                              <m:msub>
+                                 <m:mi>IPO</m:mi>
+
+                                 <m:mi>t</m:mi>
+                              </m:msub>
+
+                              <m:mrow>
+                                 <m:mi>≥</m:mi>
+
+                                 <m:msub>
+                                    <m:mi>IPO</m:mi>
+
+                                    <m:mi>thresh</m:mi>
+                                 </m:msub>
+                              </m:mrow>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+
+                     <m:mtr>
+                        <m:mtd>
+                           <m:mrow>
+                              <m:mi>0 if</m:mi>
+
+                              <m:msub>
+                                 <m:mi>IPO</m:mi>
+
+                                 <m:mi>t</m:mi>
+                              </m:msub>
+
+                              <m:msub>
+                                 <m:mi>&lt; IPO</m:mi>
+
+                                 <m:mi>thresh</m:mi>
+                              </m:msub>
+                           </m:mrow>
+                        </m:mtd>
+                     </m:mtr>
+                  </m:mtable>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>IPO<subscript>t</subscript> is the IPO index for year t and
+         IPO<subscript>thresh</subscript> is a threshold value equal to
+         -0.125.</para>
+
+      <para>At each of the 33 NSW sites considered by Micevski et al. the AM
+         peak flows were stratified according to the indicator It. A 2-parameter
+         log-normal distribution was fitted to the gauged flows with indicator
+         equal to 1 – this is the IPO+ distribution. Likewise, a 2-parameter
+         log-normal distribution was fitted to the gauged flows with indicator
+         equal to 0 – this is the IPO- distribution. Figure E3-1 presents the
+         histogram for the ratio of the IPO- and IPO+ floods for selected 1 in Y
+         AEPs. If the the IPO+ and IPO- distributions were homogeneous then about
+         half of the sites should have a flood ratio &lt; 1 – Figure E8-1 shows
+         otherwise.</para>
+
+      <para>Figures E8-2 and E8-3 present log normal fits to the IPO+ and IPO-
+         annual maximum flood data for the Clarence river at Lilydale
+         respectively. Though the adequacy of the log normal model to fit high
+         floods may be questioned, in the AEP range 1 in 2 to 1 in 10 years, the
+         IPO- floods are about 2.6 times the IPO+ floods with the same
+         AEP.</para>
+
+      <figure>
+         <title>Histogram of IPO- and IPO+ flood ratios.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_15.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+
+      <figure>
+         <title>Log-normal fit to 43 years of IPO+ data for the Clarence river
+            at Lilydale (units ML/day).</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_16.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+
+      <figure>
+         <title>Log-normal fit to 33 years of IPO- data for the Clarence river
+            at Lilydale (units ML/day).</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_17.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <figure>
+         <title>Log-normal fit to 76 years of data for the Clarence river at
+            Lilydale (units ML/day).</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_18.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>To avoid bias in estimating long-term flood risk it is essential
+         that the gauged record adequately span both IPO+ and IPO- years. In this
+         example, the IPO+ record is 43 years and the IPO- record is 33 years in
+         length. With reference to Figure 7 this length of record appears to
+         adequately sample both IPO epochs. This suggests that fitting to all the
+         data will yield a largely unbiased estimate of the long-term flood risk.
+         Figure E8-4 illustrates a log normal fit to all the data.</para>
+
+      <para>A better appreciation of the differences in flood risk can be
+         gleaned by considering Figure E8-5 which presents the fitted log normal
+         distributions to the IPO+, IPO- and total data. During an IPO+ period a
+         flood peak of 100 m<superscript>3</superscript>/s has a 1 in 20 AEP
+         while during an IPO- period it has a 1 in 4 AEP. Likewise a flood peak
+         of 200 m<superscript>3</superscript> /s has 1 in 100 and 1 in 10 AEPs
+         for IPO+ and IPO- periods respectively. The differences in flood risk
+         are considerable. If a short gauged record falling largely in the IPO+
+         period was used, a standard flood frequency analysis could seriously
+         underestimate the long-term or marginal flood risk.</para>
+
+      <para>The marginal flood risk can be derived by combining the IPO+ and
+         IPO- distribution using eqn (8) to give</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:mi>P(Q≤</m:mi>
+
+                  <m:mo>q)</m:mo>
+
+                  <m:mi>=</m:mi>
+
+                  <m:mo>P(x</m:mo>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mi>0)</m:mi>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∫</m:mo>
+
+                        <m:mi>0</m:mi>
+
+                        <m:mi>q</m:mi>
+                     </m:munderover>
+
+                     <m:mi>p(z|</m:mi>
+                  </m:mrow>
+
+                  <m:mi>θ(x=0))dz + P (x=1)</m:mi>
+
+                  <m:mrow>
+                     <m:munderover>
+                        <m:mo>∫</m:mo>
+
+                        <m:mi>0</m:mi>
+
+                        <m:mi>q</m:mi>
+                     </m:munderover>
+
+                     <m:mi>p(z|</m:mi>
+                  </m:mrow>
+
+                  <m:mi>θ(x=1))dz</m:mi>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>The exogenous variable x can take two values, 0 or 1, depending on
+         the IPO epoch. P(x=0), the probability of being in an IPO- epoch, is
+         assigned the value 33/76 based on the observation that 33 of the 76
+         years of record were in the IPO- epoch. Likewise P(x=1), the probability
+         of being in an IPO+ epoch, is assigned the value 43/76. It follows that
+         p(z|θ,x=0) and p(z|θ,x=1) are the log normal pdfs fitted to IOP- and
+         IPO+ data respectively</para>
+
+      <para>The derived marginal distribution is plotted in Figure E8-5. It
+         almost exactly matches the log normal distribution fitted to all the
+         data.</para>
+
+      <figure>
+         <title>Marginal, IPO+ and IPO+ log-normal distributions for the
+            Clarence river at Lilydale</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_19.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+   </section>
+
+   <section>
+      <title>Example 9: L moments fit to gauged data</title>
+
+      <para>This example illustrates fitting a GEV distribution to gauged data
+         using L moments. The following table lists 47 ranked annual maximum
+         flood for the Styx River at Jeogla:</para>
+
+      <informaltable>
+         <tgroup cols="8">
+            <tbody>
+               <row>
+                  <entry>878</entry>
+
+                  <entry>541</entry>
+
+                  <entry>521</entry>
+
+                  <entry>513</entry>
+
+                  <entry>436</entry>
+
+                  <entry>411</entry>
+
+                  <entry>405</entry>
+
+                  <entry>315</entry>
+               </row>
+
+               <row>
+                  <entry>309</entry>
+
+                  <entry>300</entry>
+
+                  <entry>294</entry>
+
+                  <entry>258</entry>
+
+                  <entry>255</entry>
+
+                  <entry>235</entry>
+
+                  <entry>221</entry>
+
+                  <entry>220</entry>
+               </row>
+
+               <row>
+                  <entry>206</entry>
+
+                  <entry>196</entry>
+
+                  <entry>194</entry>
+
+                  <entry>190</entry>
+
+                  <entry>186</entry>
+
+                  <entry>177</entry>
+
+                  <entry>164</entry>
+
+                  <entry>126</entry>
+               </row>
+
+               <row>
+                  <entry>117</entry>
+
+                  <entry>111</entry>
+
+                  <entry>108</entry>
+
+                  <entry>105</entry>
+
+                  <entry>92.2</entry>
+
+                  <entry>88.6</entry>
+
+                  <entry>79.9</entry>
+
+                  <entry>74</entry>
+               </row>
+
+               <row>
+                  <entry>71.9</entry>
+
+                  <entry>62.6</entry>
+
+                  <entry>61.2</entry>
+
+                  <entry>60.3</entry>
+
+                  <entry>58</entry>
+
+                  <entry>53.5</entry>
+
+                  <entry>39.1</entry>
+
+                  <entry>26.7</entry>
+               </row>
+
+               <row>
+                  <entry>26.1</entry>
+
+                  <entry>23.8</entry>
+
+                  <entry>22.4</entry>
+
+                  <entry>22.1</entry>
+
+                  <entry>18.6</entry>
+
+                  <entry>13</entry>
+
+                  <entry>8.18</entry>
+
+                  <entry/>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The following table reports the results of estimating GEV
+         parameters by substituting the L moment estimates in eqn (31) to obtain
+         κ and then using the equations in Table 3 to estimate τ and α. The
+         standard deviation and correlation were derived from 5000 bootstrapped
+         samples following the procedure described in Section 6.4.6.</para>
+
+      <informaltable>
+         <tgroup cols="8">
+            <tbody>
+               <row>
+                  <entry>L moment estimates</entry>
+
+                  <entry>L moment estimates</entry>
+
+                  <entry>GEV parameter</entry>
+
+                  <entry>Parameter estimate</entry>
+
+                  <entry>Standard deviation</entry>
+
+                  <entry>Correlation</entry>
+
+                  <entry>Correlation</entry>
+
+                  <entry>Correlation</entry>
+               </row>
+
+               <row>
+                  <entry>λ<subscript>1</subscript></entry>
+
+                  <entry>189.238</entry>
+
+                  <entry>τ</entry>
+
+                  <entry>100.660</entry>
+
+                  <entry>17.657</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>λ<subscript>2</subscript></entry>
+
+                  <entry>92.476</entry>
+
+                  <entry>α</entry>
+
+                  <entry>104.157</entry>
+
+                  <entry>15.554</entry>
+
+                  <entry>0.597</entry>
+
+                  <entry>1.000</entry>
+
+                  <entry/>
+               </row>
+
+               <row>
+                  <entry>λ<subscript>3</subscript></entry>
+
+                  <entry>29.264</entry>
+
+                  <entry>κ</entry>
+
+                  <entry>-0.219</entry>
+
+                  <entry>0.130</entry>
+
+                  <entry>0.358</entry>
+
+                  <entry>0.268</entry>
+
+                  <entry>1.000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The following figure presents a probability plot of the gauged
+         data along with GEV 1 in Y AEP quantiles and their 90% confidence
+         limits. The confidence limits widen appreciably for the bigger floods –
+         this is largely due to there being insufficient information to
+         accurately infer the shape parameter κ.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_20.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+   </section>
+
+   <section>
+      <title>Example 10: Improving poor fits using LH moments</title>
+
+      <para>This example is a continuation of Example 7. The GEV distribution
+         was fitted to the gauged data for the Albert River at Broomfleet using
+         LH moments.</para>
+
+      <para>Figure E10-1 displays the GEV L moment fit on a Gumbel probability
+         plot. Although the observed floods are largely contained within the 90%
+         confidence limits, the fit, nonetheless, is poor with systematic
+         departures from the data which exhibit reverse curvature.</para>
+
+      <para>To deal with this poor fit, a LH moment search was conducted to
+         find the optimal shift parameter η using the procedure described in
+         Section 6.4.5. The optimal shift was found to be 4. Figure E10-2
+         presents the LH moment fit with shift η equal to 4. The fit effectively
+         disregards floods with an AEP in excess of 1 in 2 and provides a very
+         good fit to upper tail.</para>
+
+      <figure>
+         <title>L moment fit</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_21.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+
+      <figure>
+         <title>LH moment fit with shift η=4</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_22.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>The very significant reduction in the width of the quantile
+         confidence intervals is largely due to the shape parameter κ changing
+         from –0.17 to 0.50. The L moment fit in Figure E10-1 was a compromise
+         with the bulk of the small and medium-sized floods suggesting an upward
+         curvature in the probability plot – as a result the GEV shape parameter
+         κ had to be negative to enable upward curvature. In contrast, the LH
+         moment fit favoured the large-sized floods which exhibit a downward
+         curvature resulting in a positive shape parameter. For positive κ the
+         GEV has an upper bound. In this case the upper bound is about 2070
+         m<superscript>3</superscript>/s which is only 17% greater than the
+         largest observed flood.</para>
+   </section>
+
+   <section>
+      <title>Example 11: Fitting a probability model to POT data</title>
+
+      <para>This example is a continuation of Example 9 which considers the
+         Styx River at Jeogla. It illustrates fitting an exponential distribution
+         to POT data. The table lists all the independent peak flows recorded
+         over a 47 year period that exceeded a threshold of 74
+         m<superscript>3</superscript>/s – the total number of peaks was 47.
+         Comparison with the annual maximum flood peaks in Example 9 reveals that
+         in 15 of the 47 years of record the annual maximum peak were below the
+         threshold of 74 m<superscript>3</superscript>/s.</para>
+
+      <informaltable>
+         <tgroup cols="8">
+            <tbody>
+               <row>
+                  <entry>878</entry>
+
+                  <entry>541</entry>
+
+                  <entry>521</entry>
+
+                  <entry>513</entry>
+
+                  <entry>436</entry>
+
+                  <entry>411</entry>
+
+                  <entry>405</entry>
+
+                  <entry>315</entry>
+               </row>
+
+               <row>
+                  <entry>309</entry>
+
+                  <entry>301</entry>
+
+                  <entry>300</entry>
+
+                  <entry>294</entry>
+
+                  <entry>283</entry>
+
+                  <entry>258</entry>
+
+                  <entry>255</entry>
+
+                  <entry>255</entry>
+               </row>
+
+               <row>
+                  <entry>238</entry>
+
+                  <entry>235</entry>
+
+                  <entry>221</entry>
+
+                  <entry>220</entry>
+
+                  <entry>206</entry>
+
+                  <entry>196</entry>
+
+                  <entry>194</entry>
+
+                  <entry>190</entry>
+               </row>
+
+               <row>
+                  <entry>186</entry>
+
+                  <entry>164</entry>
+
+                  <entry>150</entry>
+
+                  <entry>149</entry>
+
+                  <entry>134</entry>
+
+                  <entry>129</entry>
+
+                  <entry>129</entry>
+
+                  <entry>126</entry>
+               </row>
+
+               <row>
+                  <entry>119</entry>
+
+                  <entry>118</entry>
+
+                  <entry>117</entry>
+
+                  <entry>117</entry>
+
+                  <entry>111</entry>
+
+                  <entry>108</entry>
+
+                  <entry>105</entry>
+
+                  <entry>98</entry>
+               </row>
+
+               <row>
+                  <entry>92.2</entry>
+
+                  <entry>92.2</entry>
+
+                  <entry>91.7</entry>
+
+                  <entry>88.6</entry>
+
+                  <entry>85.2</entry>
+
+                  <entry>79.9</entry>
+
+                  <entry>74</entry>
+
+                  <entry/>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+
+      <para>The first two L moments were estimated as 226.36 and 79.2. Noting
+         that the exponential distribution is a special case of the generalised
+         Pareto when κ = 0, it follows from Table 3 that the exponential
+         parameters are related to the L moments by</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:msub>
+                  <m:mi>λ</m:mi>
+
+                  <m:mi>1</m:mi>
+               </m:msub>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>q</m:mi>
+
+                     <m:mi>*</m:mi>
+                  </m:msub>
+
+                  <m:mo>+</m:mo>
+
+                  <m:mrow>
+                     <m:mi>β</m:mi>
+
+                     <m:mrow>
+                        <m:msub>
+                           <m:mi>λ</m:mi>
+
+                           <m:mi>2</m:mi>
+                        </m:msub>
+
+                        <m:mo>=</m:mo>
+
+                        <m:mfrac>
+                           <m:mi>β</m:mi>
+
+                           <m:mi>2</m:mi>
+                        </m:mfrac>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>which yields values for q* and β of 68.11 and 158.24 respectively.
+         Using eqn (B1-7), the expected number of peaks that exceed w in a
+         yea</para>
+
+      <para>r is</para>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mi>EY (w)</m:mi>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mi>vP(q&gt;w)</m:mi>
+
+                  <m:mrow>
+                     <m:mo>=</m:mo>
+
+                     <m:mrow>
+                        <m:mi>v exp</m:mi>
+
+                        <m:mrow>
+                           <m:mo>(</m:mo>
+
+                           <m:mrow>
+                              <m:mi>-</m:mi>
+
+                              <m:mfrac>
+                                 <m:mi>w-q</m:mi>
+
+                                 <m:mi>β</m:mi>
+                              </m:mfrac>
+                           </m:mrow>
+
+                           <m:mo>)</m:mo>
+                        </m:mrow>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <equation>
+         <m:math display="block">
+            <m:mrow>
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>log</m:mi>
+
+                     <m:mi>e</m:mi>
+                  </m:msub>
+
+                  <m:mo>EY(w)</m:mo>
+               </m:mrow>
+
+               <m:mo>=</m:mo>
+
+               <m:mrow>
+                  <m:mrow>
+                     <m:msub>
+                        <m:mi>log</m:mi>
+
+                        <m:mi>e</m:mi>
+                     </m:msub>
+
+                     <m:mo>v</m:mo>
+                  </m:mrow>
+
+                  <m:mo>+</m:mo>
+
+                  <m:mrow>
+                     <m:mfrac>
+                        <m:mi>q</m:mi>
+
+                        <m:mi>β</m:mi>
+                     </m:mfrac>
+
+                     <m:mo>-</m:mo>
+
+                     <m:mfrac>
+                        <m:mi>w</m:mi>
+
+                        <m:mi>β</m:mi>
+                     </m:mfrac>
+                  </m:mrow>
+               </m:mrow>
+            </m:mrow>
+         </m:math>
+      </equation>
+
+      <para>where v is the average number of flood peaks above the threshold
+         q* per year.</para>
+
+      <para>Given that 47 peaks above the threshold occurred in 47 years, v
+         equals 1.0. The following figure presents a plot of the fitted POT
+         exponential model against the observed POT series.</para>
+
+      <figure>
+         <title/>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/FigureE6_23.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para/>
+   </section>
+</section>
+

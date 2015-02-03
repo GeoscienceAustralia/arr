@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section  status="In Preparation" xml:id="b3_ch2_s3"
+   xmlns="http://docbook.org/ns/docbook"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xi="http://www.w3.org/2001/XInclude"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:m="http://www.w3.org/1998/Math/MathML"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:db="http://docbook.org/ns/docbook"
+   version="5.0">
+   <title>SELECTION AND PREPARATION OF DATA</title>
+
+   <section>
+      <title>Requirements of Data for Valid Analysis</title>
+
+      <para>For valid frequency analysis, the data used should constitute a
+         random sample of independent values, ideally from a homogeneous
+         population. Streamflow data are collected as a continuous record, and
+         discrete values must be extracted from this record as the events to be
+         analyzed. The problem of assessing independence of events, and of
+         selecting all independent events, is illustrated by the streamflow
+         record for a 1000 km<superscript>2</superscript> catchment in Figure 3.
+         There is little doubt that peaks A and B are not independent or that
+         they are serially correlated, while peak D is independent of A and B.
+         However, the independence of peak C from A and B is open to question,
+         and there is doubt as to whether the independent peaks in the record are
+         B and D, or B, C and D. Methods for selecting the peaks to be included
+         in the analysis are described in the following subsections.</para>
+
+      <figure>
+         <title>Hydrograph for a 1000 km2 catchment illustrating difficulty of
+            assessing independence of floods.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Figure3.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <para>Lack of homogeneity of the population of floods is also a
+         practical problem, particularly as the data sample from the past is used
+         to derive flood estimates applicable to the design life of the structure
+         or works in the future. Examples of changes in the collection of the
+         data or in the nature of the catchment that lead to lack of homogeneity
+         are:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>inability to allow for change of station rating curve, for
+               example resulting from insufficient high-stage gauging;</para>
+         </listitem>
+
+         <listitem>
+            <para>change of gauging station site;</para>
+         </listitem>
+
+         <listitem>
+            <para>construction of large storages, levees and channel
+               improvements;</para>
+         </listitem>
+
+         <listitem>
+            <para>growth in the number of farm dams on the catchment; and</para>
+         </listitem>
+
+         <listitem>
+            <para>changes in land use such as clearing, different farming
+               practices, soil conservation works, reafforestation, and
+               urbanization.</para>
+         </listitem>
+      </orderedlist>
+
+      <para>The record should be carefully examined for these and other causes
+         of lack of homogeneity. In some cases recorded values can be adjusted by
+         means such as routing pre-dam floods through the storage to adjust them
+         to equivalent present values, correcting rating errors where this is
+         possible, or making some adjustment for urbanization. Such decisions
+         must be made largely by judgment. As with all methods of flood
+         estimation, it is important that likely conditions during the design
+         life be considered rather than those existing at the time of design.
+         Some arbitrary adjustment of derived values for likely changes in the
+         catchment may be possible, but the recorded data must generally be
+         accepted for analysis and design. Fortunately, the available evidence
+         indicates that unless changes to the catchment involve large proportions
+         of the total area or large changes in the storage on the catchment, the
+         effects on flood magnitudes are likely to be low. Also, the effects are
+         likely to be larger for small floods than for the large floods that are
+         of primary interest in design.</para>
+   </section>
+
+   <section>
+      <title>Types of Flood Data</title>
+
+      <para>In the most general sense, flood peak data can be classified as
+         either being gauged or censored.</para>
+
+      <section>
+         <title>Gauged data</title>
+
+         <para>Gauged data consist of a time series of flood discharge
+            estimates. Such estimates are based on observed peak (or
+            instantaneous) stages (or water levels). A rating curve is used to
+            transform stage observations to discharge estimates. When
+            extrapolated, the rating curve can introduce large systematic error
+            into discharge estimates.</para>
+
+         <para>It is important to check how the peak discharges were obtained
+            from the gauged record. Peak discharges may be derived from daily
+            readings, possibly with some intermediate readings during some floods
+            for part of the record, and continuous readings from the remainder of
+            the record. If part of the record consists of daily readings it is
+            necessary to assess whether daily readings adequately approximate the
+            instantaneous peak discharge – see Example 2 for instances of adequate
+            and inadequate approximations. If the daily reading is deemed an
+            unreliable estimate of the peak discharge during that day, the reading
+            need not be discarded but treated as a censored flow.</para>
+      </section>
+
+      <section>
+         <title>Censored data</title>
+
+         <para>Censored data consist of a time series of indicator values
+            defined as</para>
+
+         <equation>
+            <m:math display="block">
+               <m:mrow>
+                  <m:msub>
+                     <m:mi>I</m:mi>
+
+                     <m:mi>t</m:mi>
+                  </m:msub>
+
+                  <m:mo>(q)=</m:mo>
+
+                  <m:mrow>
+                     <m:mrow>
+                        <m:mo>{</m:mo>
+
+                        <m:mtable>
+                           <m:mtr>
+                              <m:mtd>
+                                 <m:mrow>
+                                    <m:mi>1 if the</m:mi>
+
+                                    <m:mrow>
+                                       <m:msup>
+                                          <m:mi>t</m:mi>
+
+                                          <m:mi>th</m:mi>
+                                       </m:msup>
+
+                                       <m:mo>flood peak &gt; threshold discharge q</m:mo>
+                                    </m:mrow>
+                                 </m:mrow>
+                              </m:mtd>
+                           </m:mtr>
+
+                           <m:mtr>
+                              <m:mtd>
+                                 <m:mrow>
+                                    <m:mi>-1 if the</m:mi>
+
+                                    <m:mrow>
+                                       <m:msup>
+                                          <m:mi>t</m:mi>
+
+                                          <m:mi>th</m:mi>
+                                       </m:msup>
+
+                                       <m:mo>flood peak ≤ threshold discharge q</m:mo>
+                                    </m:mrow>
+                                 </m:mrow>
+                              </m:mtd>
+                           </m:mtr>
+                        </m:mtable>
+                     </m:mrow>
+                  </m:mrow>
+               </m:mrow>
+            </m:math>
+         </equation>
+
+         <para>They arise in a number of ways. For example, prior to gauging,
+            water level records may have been kept only for large floods above
+            some perception threshold. Therefore, all we may know is that there
+            were n<subscript>a</subscript> flood peaks above the threshold and
+            n<subscript>b</subscript> peaks below the threshold. Sometimes, we may
+            deliberately exclude small floods below some threshold because the
+            overall fit is being unduly influenced by the small floods.</para>
+
+         <para>Figure 4 presents a graphical depiction of gauged and censored
+            time series data. In the first part of the record all the peaks are
+            below a threshold. In the second part, daily readings define a lower
+            threshold for the peak. Finally in the third part, continuous gauging
+            yields instantaneous peaks.</para>
+
+         <figure>
+            <title>Depiction of censored and gauged flow time series
+               data.</title>
+
+            <mediaobject>
+               <imageobject>
+                  <imagedata fileref="figures/Figure4.JPG"/>
+               </imageobject>
+            </mediaobject>
+         </figure>
+      </section>
+   </section>
+
+   <section>
+      <title>Annual Maximum Flood Gauged Series</title>
+
+      <para>This is the most common method of selecting the floods to be
+         analyzed. The series is comprised of the highest instantaneous rate of
+         discharge in each year of record. The year may be a calendar year or a
+         water year, the latter usually commencing at the end of the period of
+         lowest average flow during the year. Where flows are highly seasonal,
+         especially with a wet summer, use of the water year is preferable. The
+         highest flow in each year is selected whether it is a major flood or
+         not, and all other floods are neglected, even though some will be much
+         larger than the maximum discharges selected from some other years. For N
+         years of data, the annual flood series will consist of N values.</para>
+
+      <para>The AM series has at least two advantages:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>As the individual annual maximum flows are likely to be
+               separated by considerable intervals of time, it is probable that the
+               values will be independent. Checking of dates of the annual maxima
+               to ensure that they are likely to be independent is a simple
+               procedure that should always be carried out. If the highest annual
+               value occurred at the start of a year and was judged to be dependent
+               on the annual maximum at the end of the previous year, the lower of
+               these two values should be discarded, and the second highest flow in
+               that year substituted.</para>
+         </listitem>
+
+         <listitem>
+            <para>The series is easily and unambiguously extracted. Most data
+               collection agencies have annual maxima on computer file and/or hard
+               copy.</para>
+         </listitem>
+      </orderedlist>
+   </section>
+
+   <section>
+      <title>Peak-Over-Threshold Gauged Series</title>
+
+      <para>A POT flood series consists of all floods with peak discharges
+         above a selected base value, regardless of the number of such floods
+         occurring each year. The POT series is also referred to as the partial
+         duration series or basic stage series. The number of floods K generally
+         will be different to the number of years of record N, and will depend on
+         the selected base discharge. The American Society of Civil Engineers
+         (1949) recommended that the base discharge should be selected so that K
+         is greater than N, but that there should not be more than 3 or 4 floods
+         above the base in any one year. These two requirements can be
+         incompatible. The U.S. Geological Survey (Dalrymple, 1960) recommended
+         that K should equal 3N. If a probability distribution is to be fitted to
+         the POT series the desirable base discharge and average number of floods
+         per year selected depend on the type of distribution. These
+         distributions are discussed further in Section 4.3. For the compound
+         model using a Poisson distribution of occurrences and an exponential
+         distribution of magnitudes, Tavares and da Silva (1983) and Jayasuriya
+         and Mein (1985) found that K should equal 2N or greater, and the U.K
+         Flood Studies Report (Natural Environment Research Council, 1975)
+         recommended that K should equal 3N to 5N. For fitting the log Pearson
+         III distribution, the values of the moments depend on the number of
+         floods selected and the base discharge. McDermott and Pilgrim (1982) and
+         Jayasuriya and Mein (1985) found that best results were obtained in this
+         case when K equalled N.</para>
+
+      <para>An important advantage of the POT series is that when the selected
+         base value is sufficiently high, small events that are not really floods
+         are excluded. With the AM series, non-floods in dry years may have an
+         undue influence on shape of the distribution. This is particularly
+         important for Australia, where both the range of flows and the
+         non-occurrence of floods are greater than in many other countries such
+         as the United States and the United Kingdom. For this reason it would
+         also be expected that the desirable ratio of K to N would be lower in
+         Australia than in these countries.</para>
+
+      <para>A criterion for independence of successive peaks must also be
+         applied in selecting events. As discussed by Laurenson (1987),
+         statistical independence requires physical independence of the causative
+         factors of the flood, mainly rainfall and antecedent wetness. This type
+         of independence is necessary if the POT series is used to estimate the
+         distribution of annual floods. On the other hand, selection of POT
+         series floods for design flood studies should consider the consequences
+         of the flood peaks in assessing independence of events where damages or
+         financial penalties are the most important design variables. Factors to
+         be considered might include duration of inundation, and time required to
+         repair flood damage. In both cases, the size or response time of the
+         catchment will have some effect.</para>
+
+      <para>The decision regarding a criterion for independence therefore
+         requires subjective judgment by the designer or analyst in each case.
+         There is often some conflict in that some flood effects are short-lived,
+         perhaps only as long as inundation, while others such as the destruction
+         of an annual crop may last as long as a year. It is thus not possible to
+         recommend a simple and clear-cut criterion for independence. The
+         circumstances and objectives of each study, and the characteristics of
+         the catchment and flood data, should be considered in each case before a
+         criterion is adopted. It is inevitable that the adopted criterion will
+         be arbitrary to some extent.</para>
+
+      <para>While no specific criterion can be recommended, it may be helpful
+         to consider some criteria that have been used in past studies:</para>
+
+      <itemizedlist>
+         <listitem>
+            <para>Bulletin 17B of the Interagency Advisory Committee on Water
+               Data (1982) states that no general criterion can be recommended and
+               the decision should be based on the intended use in each case, as
+               discussed above. However in Appendix 14 of that document, a study by
+               Beard (1974) is summarised where the criterion used is that
+               independent flood peaks should be separated by five days plus the
+               natural logarithm of the square miles of drainage area, with the
+               additional requirement that intermediate flows must drop to below
+               75% of the lower of the two separate flood peaks. This may only be
+               suitable for catchments larger than 1000
+               km<superscript>2</superscript>. Jayasuriya and Mein (1985) used this
+               criterion.</para>
+         </listitem>
+
+         <listitem>
+            <para>The UK Flood Studies Report (Natural Environment Research
+               Council, 1975) used a criterion that flood peaks should be separated
+               by three times the time to peak and that the flow should decrease
+               between peaks to two thirds of the first peak.</para>
+         </listitem>
+
+         <listitem>
+            <para>McIllwraith (1953), in developing design rainfall data for
+               flood estimation, used the following criteria based on the rainfall
+               causing the floods:</para>
+
+            <itemizedlist>
+               <listitem>
+                  <para>for rainfalls of short duration up to two hours, only the
+                     one highest flood within a period of 24 hours.</para>
+               </listitem>
+
+               <listitem>
+                  <para>for longer rainfalls, a period of 24 hours in which no
+                     more than 5 mm of rain could occur between rain causing separate
+                     flood events.</para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+         <listitem>
+            <para>In a study of small catchments, Potter and Pilgrim (1971) used
+               a criterion of three calendar days between separate flood events but
+               lesser events could occur in the intervening period. This was the
+               most satisfactory of five criteria tested on data from seven small
+               catchments located throughout eastern New South Wales. It also gave
+               the closest approximation to the above criteria used by McIllwraith
+               (1953).</para>
+         </listitem>
+
+         <listitem>
+            <para>Pilgrim and McDermott (1982) and McDermott and Pilgrim (1983)
+               adopted monthly maximum peak flows to give an effective criterion of
+               independence in developing a design procedure for small to medium
+               sized catchments. This was based primarily on the assumption that
+               little additional damage would be caused by floods occurring within
+               a month, and thus closer floods would not be independent in terms of
+               their effects. This criterion was also used by Adams and McMahon
+               (1985) and Adams (1987).</para>
+         </listitem>
+      </itemizedlist>
+
+      <para>The criteria cited above represent a wide range, and illustrate
+         the difficult and subjective nature of the choice. It is stressed that
+         these criteria have been described for illustrative purposes only. In
+         each particular application the designer or analyst should choose a
+         criterion suitable to the analysis and relevant to all of the
+         circumstances and objectives.</para>
+   </section>
+
+   <section>
+      <title>Monthly and Seasonal Gauged Series</title>
+
+      <para>In some circumstances, series other than the AM or POT series may
+         be used. The monthly and seasonal series are the most useful.</para>
+
+      <para>Maximum monthly flows are an approximation to the POT series in
+         most parts of Australia, as the probability of two large independent
+         floods occurring in the same month is low. Tropical northern Australia,
+         the west coast Tasmania and the south west of Western Australia may be
+         exceptions. It should be noted that not every monthly maximum flood will
+         be selected, but only those large enough to exceed a selected base
+         discharge, as is the case for the POT series. The monthly series has two
+         important advantages over the POT series which it approximates:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>It is much more easily extracted, as most gauging authorities
+               have monthly maximum flows on file.</para>
+         </listitem>
+
+         <listitem>
+            <para>It can be argued that a flood occurring within a month of a
+               previous large flood is of little concern in design, as repairs will
+               not have been undertaken and little additional damage will
+               result.</para>
+         </listitem>
+      </orderedlist>
+
+      <para>With the monthly series, care is required to check any floods
+         selected in successive months for independence. Where the dates are
+         close, the lower value should be discarded. The second highest flood in
+         that month could then be checked from the records, but this would
+         generally not be worthwhile. An example of use of the monthly series is
+         described by Pilgrim and McDermott (1982).</para>
+
+      <para>Seasonal flood frequencies are sometimes required. For these
+         cases, the data are selected for the particular month or season as for
+         the annual series, and the flood frequency analysis is carried out in a
+         similar fashion to that for the annual series.</para>
+   </section>
+
+   <section>
+      <title>Extension of Gauged Records</title>
+
+      <para>It may sometimes be possible to extend the recorded data by values
+         estimated from longer records on adjacent catchments, by use of a
+         catchment rainfall-runoff model, or by historical data from before the
+         commencement of records. If this can be done validly, the effective
+         sample size of the data will be increased and the reliability of the
+         analysis will be greater. However, care is necessary to ensure that the
+         extended data are valid, and that real information has been added.
+         Several procedures can be used:</para>
+
+      <section>
+         <title>Regression relationship with data from an adjacent
+            catchment</title>
+
+         <para>If a regression of flood peaks for the study catchment on peaks
+            for an adjacent catchment can be established for the period of
+            concurrent record, the relation can be used to estimate values for the
+            study catchment for the longer period when records are only available
+            on the adjacent catchment. The data should first be plotted on linear
+            and log-log scales. A regression equation can then be fitted to the
+            values or alternatively, the graphical relation can be used directly
+            with a smooth curve fitted by eye.</para>
+
+         <para>The principal shortcoming of the regression approach is that
+            uncertainty in the transfer process is ignored resulting in an
+            overstatement of information content. To guard against this, an
+            approximate criterion for deciding whether the regression should be
+            used is that the correlation coefficient of the relation should exceed
+            0.85 (Fiering, 1963; Matalas and Jacobs, 1964). More rigorous criteria
+            are discussed in Book III Section 2.6.5.</para>
+
+         <para>Care is needed when annual floods are used. The dates of the
+            corresponding annual floods on the adjacent catchments should be
+            compared. Not infrequently, the dates are different, resulting in a
+            lack of physical basis for the relation. Although relationships of
+            this type seem to have been used in some regional flood frequency
+            procedures, it is recommended that regressions should only be used
+            when the corresponding floods result from the same storm. This problem
+            is discussed further by Potter and Pilgrim (1971).</para>
+
+         <para>When floods resulting from the same storm on adjacent catchments
+            are plotted against each other, there is often a large scatter.
+            Frequently, a major flood occurs on one catchment but only a moderate
+            to minor flood occurs on the other. The scatter is generally greater
+            than for the physically unrealistic relation using floods which are
+            the maximum annual values on the two catchments but which may have
+            occurred on different dates. The resulting relation using floods that
+            occurred in the same storm is often so weak that it should not be used
+            to extend records.</para>
+
+         <para>Wang (2001) describes a Bayesian approach that rigorously makes
+            allowance for the noise in the transfer process. This approach is
+            considered superior to the traditional regression transfer.</para>
+      </section>
+
+      <section>
+         <title>Use of a catchment rainfall-runoff model</title>
+
+         <para>A catchment rainfall-runoff model can range from a simple
+            rainfall-runoff regression to a catchment model that simulates
+            continuous runoff hydrographs from rainfall data. This discussion
+            relates primarily to the latter type of model. The calibration of such
+            a model for a period with concurrent rainfall and runoff records and
+            its subsequent use to extend streamflow records for the period when
+            rainfall data are available, while an attractive approach, should only
+            be used with great caution. Appreciable differences often occur
+            between observed and modelled runoff, especially in periods not used
+            in calibration and in periods with runoff not represented in the
+            calibration. Estimation of model parameters involves considerable
+            uncertainty. Greatest accuracy in modelling can be expected in
+            calculating flows around the mean value, and larger errors are likely
+            in extreme values such as the major flood peaks required for frequency
+            analysis. Overall, the use of catchment models to extend flood records
+            should be adopted with caution.</para>
+      </section>
+
+      <section>
+         <title>Station-year method</title>
+
+         <para>This is included only to warn against its shortcomings. In this
+            procedure, records from several adjacent catchments are joined
+            "end-to-end" to give a single record equal in length to the sum of the
+            lengths of the constituent records. As discussed by Clarke-Hafstad
+            (1942) for rainfall data, spatial correlation between the records of
+            the adjacent stations invalidates the procedure.</para>
+      </section>
+   </section>
+
+   <section>
+      <title>Rating Error in Gauged Flows</title>
+
+      <para>Though it is widely accepted that discharge estimates for large
+         floods can be in considerable error, there is limited published
+         information on these errors and how they can be allowed for in a flood
+         frequency analysis. Rating error can arise from a number of
+         mechanisms:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>For large floods the rating curve typically is extrapolated or
+               fitted to indirect discharge estimates. This can introduce a
+               systematic but unknown bias.</para>
+         </listitem>
+
+         <listitem>
+            <para>If the gauging station is located at a site with an unstable
+               cross section the rating curve may shift causing a systematic but
+               unknown bias.</para>
+         </listitem>
+      </orderedlist>
+
+      <para>The conceptual model of rating error presented in this section is
+         based on Kuczera (1999) and is considered to be rudimentary and subject
+         to refinement. It is assumed the cross section is stable with the
+         primary source of rating error arising from extension of the rating
+         curve to large floods.</para>
+
+      <para>Potter and Walker (1981, 1985) observe that flood discharge is
+         inferred from a rating curve which is subject to discontinuous
+         measurement error. Consider Figure 5 which depicts a rating curve with
+         two regions having different error characteristics. The interpolation
+         zone consists of that part of the rating curve well defined by
+         discharge-stage measurements; typically the error coefficient of
+         variation (CV) would be small, say 1 to 5%. In the extension zone the
+         rating curve is extended by methods such as slope-conveyance, log-log
+         extrapolation or fitting to indirect discharge estimates. Typically such
+         extensions are smooth and, therefore, can induce systematic under- or
+         over-estimation of the true discharge over a range of stage. The
+         extension error CV is not well known but Potter and Walker (1981, 1985)
+         suggest it may be as high as 30%.</para>
+
+      <para>Figures 5 and 6 illustrate two cases of smooth rating curve
+         extension wherein systematic error is introduced. In Figure 5, an
+         indirect discharge estimate is made for a large flood well beyond the
+         largest gauged flow. Such estimates are subject to considerable
+         uncertainty. In this example the estimate was below the true discharge.
+         In the absence of any other information the rating curve is extended to
+         pass smoothly through this point thereby introducing a systematic
+         underestimate of large flood discharges. Even if more than one indirect
+         discharge estimate were available, it is likely the errors will be
+         correlated because the same biases in estimating Manning's n, conveyance
+         and friction slope would be present.</para>
+
+      <para>In Figure 6 the rating curve is extended using the
+         slope-conveyance method. The method relies on extrapolating gauged
+         estimates of the friction slope so that the friction slope asymptotes to
+         a constant value. Depending on how well the approach to asymptotic
+         conditions is defined by the data considerable systematic error in
+         extrapolation may occur. Perhaps of greater concern is the assumption
+         that Manning's n and conveyance can be reliably estimated in the
+         overbank flow regime particularly when there are strong contrasts in
+         roughness along the wetted perimeter.</para>
+
+      <para>Though Figure 5 represents an idealization of actual rating curve
+         extension two points of practical significance are noted:</para>
+
+      <orderedlist>
+         <listitem>
+            <para>The error is systematic in the sense that the extended rating
+               is likely to diverge from the true rating as discharge increases.
+               The error, therefore, is likely to be highly correlated - in fact,
+               it is perfectly correlated in the idealization of Figure 5.</para>
+         </listitem>
+
+         <listitem>
+            <para>The interpolation zone anchors the error in the extension
+               zone. Therefore, the error in the extension zone depends on the
+               distance from the anchor point and not from the origin. This error
+               is termed incremental because it originates from the anchor point
+               rather than the origin of the rating curve.</para>
+         </listitem>
+      </orderedlist>
+
+      <figure>
+         <title>Rating curve extension by fitting to an indirect discharge
+            estimate.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Figure5.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <figure>
+         <title>Rating curve extension by slope-conveyance method.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Figure6.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+   </section>
+
+   <section>
+      <title>Historical and Paleo Flood Information</title>
+
+      <para>A flood may have occurred before the period of gauged record and
+         known to be the largest flood, or flood of other known rank, over a
+         period longer than that of the gauged record. Such floods can provide
+         valuable information and should be included in the analysis if
+         possible.</para>
+
+      <para>Care is needed in assessing historical floods. Only stages are
+         usually available, and these may be determined by flood marks recorded
+         on buildings or structures, by old newspaper reports, or from verbal
+         evidence. Newspaper or other photographs can provide valuable
+         information. Verbal evidence is often untrustworthy, and structures may
+         have been moved. A further problem is that the channel morphology, and
+         hence the stage-discharge relation of the stream, may have changed from
+         those applying during the period of gauged record.</para>
+
+      <para>It is desirable to carry out frequency analyses both by including
+         and excluding the historical data. The analysis including the historical
+         data should be used unless in the comparison of the two analyses, the
+         magnitudes of the observed peaks, uncertainty regarding the accuracy of
+         the historical peaks, or other factors, suggest that the historical
+         peaks are not indicative of the extended period or are not accurate. All
+         decisions made should be thoroughly documented.</para>
+
+      <para>Considerable work has been carried out in the United States on the
+         assessment of paleofloods. These are major floods that have occurred
+         outside the historical record, but which are evidenced by geological,
+         geomorphological or botanical information. Techniques of paleohydrology
+         have been described by Costa (1978, 1983, 1986) and Kochel et al. (1982)
+         and more recently by O’Connell et al. (2002), and a succinct summary is
+         given by Stedinger and Cohn (1986). Although high accuracy is not
+         possible with these estimates, they may only be marginally less accurate
+         than other estimates requiring extrapolation of rating curves, and they
+         have the potential for greatly extending the data base and providing
+         valuable information on the tail of the underlying flood distribution. A
+         procedure for assessing the value of paleoflood estimates of flood
+         frequency analysis is given by Hosking and Wallis (1986). Only a little
+         work on this topic has been carried out in Australia, but its potential
+         has been indicated by its use to identify the five largest floods in the
+         last 700 years in the Finke River Gorge in central Australia (Baker et
+         al., 1983; Baker, 1984), and for more frequent floods, by identification
+         of the six largest floods that occurred since a major flood in 1897 on
+         the Katherine River in the Northern Territory (Baker, 1984). While the
+         use of paleoflood data should be considered, it needs to be recognized
+         that there are not many sites where paleofloods can be estimated and
+         that climate changes may have affected the homogeneity of long-term
+         flood data.</para>
+   </section>
+
+   <section>
+      <title>Data Characterizing Climate Long-Term Persistence</title>
+
+      <para>There is growing evidence that flood peaks are not identically
+         distributed from year to year in some parts of Australia and that flood
+         risk is dependent on long-term climate variability. The idea of
+         alternating flood and drought dominated regimes that exist on decadal
+         and longer timescales was first proposed by Warner and Erskine (1988).
+         More recently, analyses of changes in climate state affecting flood risk
+         have been published (see for example, Franks and Kuczera, 2002; Franks
+         2002a,b). The climate-dependence of flood risk is an important
+         consideration when assessing flood risk. Most flood frequency
+         applications will require assessment of long-term flood risk; that is,
+         flood risk that is independent of a particular current climate state. If
+         a flood record is sufficiently long to sample all climate states
+         affecting flood risk, a traditional analysis assuming homogeneity will
+         yield the long-term flood risk. Unfortunately many flood records are
+         relatively short and may be dominated by one climate state. Blind use of
+         such data can result in substantial bias in long-term flood risk
+         estimates. For this reason it may be necessary to obtain climate index
+         data which characterizes long-term persistence in climate and to
+         investigate the homogeneity of the flood distribution.</para>
+
+      <para>A number of known climate phenomena impact on Australia climate
+         variability. Most well known is the inter-annual El Nino/Southern
+         Oscillation (ENSO). The cold ENSO phase, La Nina, results in a marked
+         increase in flood risk across Eastern Australia, whereas El Nino years
+         are typically without major floods (Kiem et al., 2003).</para>
+
+      <para>There is also mounting evidence that longer-term climate processes
+         also have a major impact on flood risk. The Interdecadal Pacific
+         Oscillation (IPO) is a low frequency climate process related to the
+         variable epochs of warming and cooling in the Pacific Ocean and is
+         described by an index derived from low pass filtering of sea surface
+         temperature (SST) anomalies in the Pacific Ocean [Power et al., 1998,
+         1999; Allan, 2000]. The IPO is similar to the Pacific Decadal
+         Oscillation (PDO) of Mantua et al. (1997), which is defined as the
+         leading principal component of North Pacific monthly sea surface
+         temperature variability.</para>
+
+      <para>The IPO time series from 1880 is displayed in Figure 7. It reveals
+         extended periods where the index either lies below or above zero. Power
+         et al. (1999) have shown that the association between ENSO and
+         Australian climate is modulated by the IPO - a strong association was
+         found between the magnitude of ENSO impacts during negative IPO phases,
+         whilst positive IPO phases showed a weaker, less predictable
+         relationship. Additionally, Kiem et al. (2003) and Kiem and Franks
+         (2004) analysed NSW flood and drought data and demonstrated that the IPO
+         negative state magnified the impact of La Nina events. Moreover, they
+         demonstrated that the IPO negative phase, related to mid-latitude
+         Pacific Ocean cooling, appears to result in an increased frequency of
+         cold La Nina events. The net effect of the dual modulation of ENSO by
+         IPO is the occurrence of multi-decadal periods of elevated and reduced
+         flood risk. To place this in context, Figure 8 shows regional flood
+         index curves based on about 40 NSW sites for the different IPO states
+         (Kiem et al., 2003) – the 1 in 100 AEP flood during years with a
+         positive IPO index corresponds to the 1 in 6 AEP flood during years with
+         a negative IPO index. Micevski et al. (2003) investigating a range of
+         sites in NSW found that that floods occurring during IPO "negative"
+         periods were, on average, about 1.8 times bigger than floods with the
+         same frequency during IPO "positive" periods.</para>
+
+      <para>A key area of current research is the spatial variability of ENSO
+         and IPO impacts. The associations between ENSO, IPO and eastern
+         Australian climate have been investigated from a mechanistic approach.
+         Folland et al. (2002) showed that ENSO and IPO both affect the location
+         of the South Pacific Convergence Zone (SPCZ) providing a mechanistic
+         justification for the role of La Nina and IPO negative periods in
+         enhancing flood risk in eastern Australia.</para>
+
+      <para>Whilst the work to date has primarily focused on eastern
+         Australia, a substantial step change in climate also occurred in Western
+         Australia around the mid-1970’s, in line with the IPO and PDO indices
+         (Franks, 2002b), however the role of ENSO is less clear and is likely to
+         be additionally complicated by the role of the Indian Ocean.</para>
+
+      <para>The finding that flood risk in parts of Australia is modulated by
+         low frequency climate variability is recent. Users are reminded that
+         this is an area of active research and therefore should keep abreast of
+         future developments.</para>
+
+      <figure>
+         <title>Annual average IPO time series.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Figure7.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+
+      <figure>
+         <title>NSW regional flood index frequency curves for positive and
+            negative IPO epochs [Kiem et al., 2003.</title>
+
+         <mediaobject>
+            <imageobject>
+               <imagedata fileref="figures/Figure8.JPG"/>
+            </imageobject>
+         </mediaobject>
+      </figure>
+   </section>
+
+   <section>
+      <title>Regional Flood Information</title>
+
+      <para>Whereas the primary focus of this chapter is flood frequency
+         analysis using at-site information, the accuracy of the frequency
+         analysis can be improved, substantially in some cases, by augmenting
+         at-site information with regional information. Subsequent chapters in
+         this Book describe methods for estimating flood frequency at ungauged
+         sites. Provided such methods also provide estimates of uncertainty, the
+         regional information can be pooled with the at-site information to yield
+         more accurate results. Section 6.3.5 shows how regional information on
+         flood probability model parameters can pooled with at-site information.
+         When pooling at-site and regional information it is important to
+         establish that both sources of information are consistent – that is,
+         they yield statistically consistent results.</para>
+   </section>
+
+   <section>
+      <title>Missing Records</title>
+
+      <para>Streamflow data frequently contain gaps for a variety of reasons
+         including the malfunction of recording equipment. Rainfall records on
+         the catchment and streamflow data from nearby catchments may indicate
+         the likelihood of a large flood having occurred during the gap. A
+         regression may be able to be derived to enable a missing flood to be
+         estimated, but as discussed in Section 3.6.1, the degree correlation is
+         often insufficient for a quantitative estimate.</para>
+
+      <para>For AM series the missing record period is of no consequence and
+         can be included in the period of record, if it can be determined that
+         the largest flow for the year occurred outside the gap, or that no large
+         rains occurred during the gap. However the rainfall records and
+         streamflow on nearby catchments might indicate that a large flood could
+         have occurred during the period of missing record. If a regression with
+         good correlation can be derived from concurrent records, the missing
+         flood can be estimated and used as the annual flood for the year. If the
+         flood cannot be estimated with reasonable certainty, the whole year
+         should be excluded from the analysis.</para>
+
+      <para>For POT series data, treatment of missing records is less clear.
+         McDermott and Pilgrim (1982) tested seven methods, leading to the
+         following recommendations based on the assumption that the periods of
+         missing data are random occurrences and are independent of the
+         occurrence of flood peaks.</para>
+
+      <orderedlist>
+         <listitem>
+            <para>Where a nearby station record exists covering the missing
+               record period, and a good relation between the flood peaks on the
+               two catchments can be obtained, then use this relation and the
+               nearby station record to fill in the missing events of
+               interest.</para>
+         </listitem>
+
+         <listitem>
+            <para>Where a nearby station record exists covering the missing
+               record period, and the relation between the flood peaks on the two
+               catchments is such that only the occurrence of an event can be
+               predicted but not its magnitude, then:</para>
+
+            <itemizedlist>
+               <listitem>
+                  <para>for record lengths less than 20 years, ignore the missing
+                     data and include the missing period in the overall period of
+                     record;</para>
+               </listitem>
+
+               <listitem>
+                  <para>for record lengths greater than 20 years, subtract an
+                     amount from each year with missing data proportional to the
+                     ratio of the number of peaks missed to the total number of
+                     ranked peaks in the year.</para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+
+         <listitem>
+            <para>Where no nearby station record exists covering the missing
+               record period, or where no relation between flood peaks on the
+               catchment exists, then ignore the missing data and include the
+               missing record period in the overall period of record.</para>
+         </listitem>
+      </orderedlist>
+   </section>
+</section>
