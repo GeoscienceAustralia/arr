@@ -1,1941 +1,1937 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section status="In Preparation" xml:id="b3_ch2_s4"
-   xmlns="http://docbook.org/ns/docbook"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:xi="http://www.w3.org/2001/XInclude"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:m="http://www.w3.org/1998/Math/MathML"
-   xmlns:html="http://www.w3.org/1999/xhtml"
-   xmlns:db="http://docbook.org/ns/docbook">
-   <title>CHOICE OF FLOOD PROBABILITY MODEL</title>
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>CHOICE OF FLOOD PROBABILITY MODEL</title>
 
-   <section>
-      <title>General</title>
+  <section>
+    <title>General</title>
 
-      <para>As noted in Section 2, it is assumed that each flood peak in an AM
-         or POT series is statistically independent of other flood peaks in the
-         series. In addition the flood probability model, described by its
-         probability density function (pdf) p(q|θ(x)), must be specified.</para>
+    <para>As noted in Section 2, it is assumed that each flood peak in an AM
+    or POT series is statistically independent of other flood peaks in the
+    series. In addition the flood probability model, described by its
+    probability density function (pdf) p(q|θ(x)), must be specified.</para>
 
-      <para>There is no universally accepted flood probability model. Many
-         types of probability distributions have been applied to flood frequency
-         analysis. Unfortunately, it is not possible to determine the true or
-         correct form of distribution (see, for example, Cunnane, 1985), and
-         there is no rigorous analytical proof that any particular probability
-         distribution for floods is the correct theoretical distribution. The
-         appropriateness of these distributions can be tested by examining the
-         fit of each distribution to observed flood data. Various empirical tests
-         of different distributions have been carried out with recorded data from
-         many catchments but conclusive evidence is not possible largely because
-         gauged records are of insufficient length to eliminate the confounding
-         effect of sampling variability. Examples of sampling experiments
-         illustrating this problem are given by Alexander (1957) and Benson in
-         Dalrymple (1960). The choice of flood probability model is further
-         exacerbated by recent evidence that in certain parts of Australia the
-         flood record is not homogeneous due to variations in long-term climate
-         controls.</para>
+    <para>There is no universally accepted flood probability model. Many types
+    of probability distributions have been applied to flood frequency
+    analysis. Unfortunately, it is not possible to determine the true or
+    correct form of distribution (see, for example, Cunnane, 1985), and there
+    is no rigorous analytical proof that any particular probability
+    distribution for floods is the correct theoretical distribution. The
+    appropriateness of these distributions can be tested by examining the fit
+    of each distribution to observed flood data. Various empirical tests of
+    different distributions have been carried out with recorded data from many
+    catchments but conclusive evidence is not possible largely because gauged
+    records are of insufficient length to eliminate the confounding effect of
+    sampling variability. Examples of sampling experiments illustrating this
+    problem are given by Alexander (1957) and Benson in Dalrymple (1960). The
+    choice of flood probability model is further exacerbated by recent
+    evidence that in certain parts of Australia the flood record is not
+    homogeneous due to variations in long-term climate controls.</para>
 
-      <para>Given these considerations it is considered inappropriate to be
-         prescriptive with regard to choice of flood probability model. As a
-         general rule the selected probability distribution family M should be
-         consistent with available data. It is recognized that more than one
-         probability distribution family may be consistent with the data. One
-         approach to deal with this problem is to select the distribution family
-         on the basis of best overall fit to a range of catchments within a
-         region or landscape space – L moment diagrams offer a useful tool for
-         judging overall goodness of fit [see Stedinger et al., 1993, Section
-         18.3.3 for more details].</para>
-   </section>
+    <para>Given these considerations it is considered inappropriate to be
+    prescriptive with regard to choice of flood probability model. As a
+    general rule the selected probability distribution family M should be
+    consistent with available data. It is recognized that more than one
+    probability distribution family may be consistent with the data. One
+    approach to deal with this problem is to select the distribution family on
+    the basis of best overall fit to a range of catchments within a region or
+    landscape space – L moment diagrams offer a useful tool for judging
+    overall goodness of fit [see Stedinger et al., 1993, Section 18.3.3 for
+    more details].</para>
+  </section>
 
-   <section>
-      <title>Choice of Distribution Family for Annual Maximum Series</title>
+  <section>
+    <title>Choice of Distribution Family for Annual Maximum Series</title>
 
-      <para>Two distribution families are suggested as reasonable initial
-         choices for AM series, namely the generalized extreme value (GEV) and
-         log Pearson III (LP3) families. These families have been shown to fit
-         most AM flood data adequately. Nonetheless the user is reminded that
-         there is no rigorous justification for these families, which is
-         particularly important when extrapolating – Example 1 demonstrates the
-         importance of understanding the mechanisms controlling flood response.
-         The following sections describe the GEV and LP3 distributions and also
-         some other distributions which may be more appropriate in certain
-         circumstances.</para>
+    <para>Two distribution families are suggested as reasonable initial
+    choices for AM series, namely the generalized extreme value (GEV) and log
+    Pearson III (LP3) families. These families have been shown to fit most AM
+    flood data adequately. Nonetheless the user is reminded that there is no
+    rigorous justification for these families, which is particularly important
+    when extrapolating – Example 1 demonstrates the importance of
+    understanding the mechanisms controlling flood response. The following
+    sections describe the GEV and LP3 distributions and also some other
+    distributions which may be more appropriate in certain
+    circumstances.</para>
 
-      <section>
-         <title>Generalized Extreme Value (GEV) distribution</title>
+    <section>
+      <title>Generalized Extreme Value (GEV) distribution</title>
 
-         <para>Table 1 lists the pdf p(q|θ), distribution function P(Q≤q|θ) and
-            product moments for the generalized extreme value (GEV) distribution.
-            It has three parameters: τ, the location parameter, α, the scale
-            parameter and κ, the shape parameter. When the shape parameter κ
-            equals 0, the GEV simplifies to the Gumbel distribution whose details
-            are also presented in Table 1. For positive values of κ there exists
-            an upper bound, while for negative κ there exists a lower
-            bound.</para>
+      <para>Table 1 lists the pdf p(q|θ), distribution function P(Q≤q|θ) and
+      product moments for the generalized extreme value (GEV) distribution. It
+      has three parameters: τ, the location parameter, α, the scale parameter
+      and κ, the shape parameter. When the shape parameter κ equals 0, the GEV
+      simplifies to the Gumbel distribution whose details are also presented
+      in Table 1. For positive values of κ there exists an upper bound, while
+      for negative κ there exists a lower bound.</para>
 
-         <table>
-            <title>Table 1. Selected homogeneous probability models families for
-               use in flood frequency analysis</title>
+      <table>
+        <title>Selected homogeneous probability models families for use in
+        flood frequency analysis</title>
 
-            <tgroup cols="3">
-               <colspec colwidth="27*"/>
+        <tgroup cols="3">
+          <colspec colwidth="6*"/>
 
-               <colspec align="center" colwidth="41*"/>
+          <colspec align="center" colwidth="59*"/>
 
-               <colspec colwidth="32*"/>
+          <colspec colwidth="35*"/>
 
-               <thead>
-                  <row>
-                     <entry align="center">Family</entry>
+          <thead>
+            <row>
+              <entry align="center">Family</entry>
 
-                     <entry align="center">Distribution</entry>
+              <entry align="center">Distribution</entry>
 
-                     <entry align="center">Moments</entry>
-                  </row>
-               </thead>
+              <entry align="center">Moments</entry>
+            </row>
+          </thead>
 
-               <tbody>
-                  <row>
-                     <entry>Generalized extreme value (GEV)</entry>
+          <tbody>
+            <row>
+              <entry>Generalized extreme value (GEV)</entry>
 
-                     <entry><inlineequation>
-                           <m:math display="inline">
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mrow>
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>p(q || θ)</m:mi>
+
+                              <m:mo>=</m:mo>
+
                               <m:mrow>
-                                 <m:mtable>
-                                    <m:mtr>
-                                       <m:mtd>
+                                <m:mfrac>
+                                  <m:mi>1</m:mi>
+
+                                  <m:mi>α</m:mi>
+                                </m:mfrac>
+
+                                <m:mo>exp</m:mo>
+
+                                <m:mrow>
+                                  <m:mo>{</m:mo>
+
+                                  <m:mrow>
+                                    <m:mi>-</m:mi>
+
+                                    <m:mrow>
+                                      <m:mo>[</m:mo>
+
+                                      <m:mrow>
+                                        <m:mi>1</m:mi>
+
+                                        <m:mo>-</m:mo>
+
+                                        <m:mfrac>
                                           <m:mrow>
-                                             <m:mi>p(q || θ)</m:mi>
+                                            <m:mi>κ</m:mi>
 
-                                             <m:mo>=</m:mo>
+                                            <m:mrow>
+                                              <m:mo>(</m:mo>
 
-                                             <m:mrow>
-                                                <m:mfrac>
-                                                   <m:mi>1</m:mi>
+                                              <m:mrow>
+                                                <m:mi>q</m:mi>
 
-                                                   <m:mi>α</m:mi>
-                                                </m:mfrac>
+                                                <m:mo>-</m:mo>
 
-                                                <m:mo>exp</m:mo>
+                                                <m:mi>τ</m:mi>
+                                              </m:mrow>
 
-                                                <m:mrow>
-                                                   <m:mo>{</m:mo>
-
-                                                   <m:mrow>
-                                                      <m:mi>-</m:mi>
-
-                                                      <m:mrow>
-                                                         <m:mo>[</m:mo>
-
-                                                         <m:mrow>
-                                                            <m:mi>1</m:mi>
-
-                                                            <m:mo>-</m:mo>
-
-                                                            <m:mfrac>
-                                                               <m:mrow>
-                                                                  <m:mi>κ</m:mi>
-
-                                                                  <m:mrow>
-                                                                     <m:mo>(</m:mo>
-
-                                                                     <m:mrow>
-                                                                        <m:mi>q</m:mi>
-
-                                                                        <m:mo>-</m:mo>
-
-                                                                        <m:mi>τ</m:mi>
-                                                                     </m:mrow>
-
-                                                                     <m:mo>)</m:mo>
-                                                                  </m:mrow>
-                                                               </m:mrow>
-
-                                                               <m:mi>α</m:mi>
-                                                            </m:mfrac>
-                                                         </m:mrow>
-
-                                                         <m:mo>]</m:mo>
-                                                      </m:mrow>
-                                                   </m:mrow>
-
-                                                   <m:msup>
-                                                      <m:mi>}</m:mi>
-
-                                                      <m:mfrac>
-                                                         <m:mi>1</m:mi>
-
-                                                         <m:mi>κ</m:mi>
-                                                      </m:mfrac>
-                                                   </m:msup>
-                                                </m:mrow>
-
-                                                <m:mrow>
-                                                   <m:mo>[</m:mo>
-
-                                                   <m:mrow>
-                                                      <m:mi>1</m:mi>
-
-                                                      <m:mo>-</m:mo>
-
-                                                      <m:mfrac>
-                                                         <m:mrow>
-                                                            <m:mi>κ</m:mi>
-
-                                                            <m:mrow>
-                                                               <m:mo>(</m:mo>
-
-                                                               <m:mrow>
-                                                                  <m:mi>q</m:mi>
-
-                                                                  <m:mo>-</m:mo>
-
-                                                                  <m:mi>τ</m:mi>
-                                                               </m:mrow>
-
-                                                               <m:mo>)</m:mo>
-                                                            </m:mrow>
-                                                         </m:mrow>
-
-                                                         <m:mi>α</m:mi>
-                                                      </m:mfrac>
-                                                   </m:mrow>
-                                                </m:mrow>
-
-                                                <m:msup>
-                                                   <m:mi>]</m:mi>
-
-                                                   <m:mrow>
-                                                      <m:mfrac>
-                                                         <m:mi>1</m:mi>
-
-                                                         <m:mi>κ</m:mi>
-                                                      </m:mfrac>
-
-                                                      <m:mo>-1</m:mo>
-                                                   </m:mrow>
-                                                </m:msup>
-                                             </m:mrow>
+                                              <m:mo>)</m:mo>
+                                            </m:mrow>
                                           </m:mrow>
-                                       </m:mtd>
-                                    </m:mtr>
 
-                                    <m:mtr>
-                                       <m:mtd>
+                                          <m:mi>α</m:mi>
+                                        </m:mfrac>
+                                      </m:mrow>
+
+                                      <m:mo>]</m:mo>
+                                    </m:mrow>
+                                  </m:mrow>
+
+                                  <m:msup>
+                                    <m:mi>}</m:mi>
+
+                                    <m:mfrac>
+                                      <m:mi>1</m:mi>
+
+                                      <m:mi>κ</m:mi>
+                                    </m:mfrac>
+                                  </m:msup>
+                                </m:mrow>
+
+                                <m:mrow>
+                                  <m:mo>[</m:mo>
+
+                                  <m:mrow>
+                                    <m:mi>1</m:mi>
+
+                                    <m:mo>-</m:mo>
+
+                                    <m:mfrac>
+                                      <m:mrow>
+                                        <m:mi>κ</m:mi>
+
+                                        <m:mrow>
+                                          <m:mo>(</m:mo>
+
                                           <m:mrow>
-                                             <m:mi>P(Q≤q|θ)</m:mi>
+                                            <m:mi>q</m:mi>
 
-                                             <m:mo>=</m:mo>
+                                            <m:mo>-</m:mo>
 
-                                             <m:mrow>
-                                                <m:mi>exp</m:mi>
-
-                                                <m:mrow>
-                                                   <m:mo>{</m:mo>
-
-                                                   <m:mrow>
-                                                      <m:mi>-</m:mi>
-
-                                                      <m:mrow>
-                                                         <m:mo>[</m:mo>
-
-                                                         <m:mi>1-</m:mi>
-                                                      </m:mrow>
-                                                   </m:mrow>
-
-                                                   <m:mrow>
-                                                      <m:mfrac>
-                                                         <m:mrow>
-                                                            <m:mi>κ</m:mi>
-
-                                                            <m:mrow>
-                                                               <m:mi>(q</m:mi>
-
-                                                               <m:mo>-</m:mo>
-
-                                                               <m:mi>τ)</m:mi>
-                                                            </m:mrow>
-                                                         </m:mrow>
-
-                                                         <m:mi>α</m:mi>
-                                                      </m:mfrac>
-
-                                                      <m:mrow>
-                                                         <m:msup>
-                                                            <m:mi>]</m:mi>
-
-                                                            <m:mfrac>
-                                                               <m:mi>1</m:mi>
-
-                                                               <m:mi>κ</m:mi>
-                                                            </m:mfrac>
-                                                         </m:msup>
-
-                                                         <m:mo>}</m:mo>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mrow>
-                                             </m:mrow>
+                                            <m:mi>τ</m:mi>
                                           </m:mrow>
-                                       </m:mtd>
-                                    </m:mtr>
 
-                                    <m:mtr>
-                                       <m:mtd>
-                                          <m:mrow>
-                                             <m:mi>when κ&gt;0, q&lt;τ+</m:mi>
+                                          <m:mo>)</m:mo>
+                                        </m:mrow>
+                                      </m:mrow>
 
-                                             <m:mrow>
-                                                <m:mfrac>
-                                                   <m:mi>α</m:mi>
+                                      <m:mi>α</m:mi>
+                                    </m:mfrac>
+                                  </m:mrow>
+                                </m:mrow>
 
-                                                   <m:mi>κ</m:mi>
-                                                </m:mfrac>
+                                <m:msup>
+                                  <m:mi>]</m:mi>
 
-                                                <m:mo>; when κ&lt;0, q&gt;τ+</m:mo>
+                                  <m:mrow>
+                                    <m:mfrac>
+                                      <m:mi>1</m:mi>
 
-                                                <m:mfrac>
-                                                   <m:mi>α</m:mi>
+                                      <m:mi>κ</m:mi>
+                                    </m:mfrac>
 
-                                                   <m:mi>κ</m:mi>
-                                                </m:mfrac>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mtd>
-                                    </m:mtr>
-                                 </m:mtable>
+                                    <m:mo>-1</m:mo>
+                                  </m:mrow>
+                                </m:msup>
                               </m:mrow>
-                           </m:math>
-                     </inlineequation></entry>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
 
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>P(Q≤q|θ)</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mrow>
+                                <m:mi>exp</m:mi>
+
+                                <m:mrow>
+                                  <m:mo>{</m:mo>
+
+                                  <m:mrow>
+                                    <m:mi>-</m:mi>
+
+                                    <m:mrow>
+                                      <m:mo>[</m:mo>
+
+                                      <m:mi>1-</m:mi>
+                                    </m:mrow>
+                                  </m:mrow>
+
+                                  <m:mrow>
+                                    <m:mfrac>
+                                      <m:mrow>
+                                        <m:mi>κ</m:mi>
+
+                                        <m:mrow>
+                                          <m:mi>(q</m:mi>
+
+                                          <m:mo>-</m:mo>
+
+                                          <m:mi>τ)</m:mi>
+                                        </m:mrow>
+                                      </m:mrow>
+
+                                      <m:mi>α</m:mi>
+                                    </m:mfrac>
+
+                                    <m:mrow>
+                                      <m:msup>
+                                        <m:mi>]</m:mi>
+
+                                        <m:mfrac>
+                                          <m:mi>1</m:mi>
+
+                                          <m:mi>κ</m:mi>
+                                        </m:mfrac>
+                                      </m:msup>
+
+                                      <m:mo>}</m:mo>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>when κ&gt;0, q&lt;τ+</m:mi>
+
+                              <m:mrow>
+                                <m:mfrac>
+                                  <m:mi>α</m:mi>
+
+                                  <m:mi>κ</m:mi>
+                                </m:mfrac>
+
+                                <m:mo>; when κ&lt;0, q&gt;τ+</m:mo>
+
+                                <m:mfrac>
+                                  <m:mi>α</m:mi>
+
+                                  <m:mi>κ</m:mi>
+                                </m:mfrac>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mrow>
+                  </m:math>
+                </inlineequation></entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mi>Mean (q)=</m:mi>
+
+                                    <m:mo>τ+</m:mo>
+
+                                    <m:mrow>
+                                      <m:mfrac>
+                                        <m:mi>α</m:mi>
+
+                                        <m:mi>κ</m:mi>
+                                      </m:mfrac>
+
+                                      <m:mi>[ 1-Γ(1+κ)]</m:mi>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mi>for κ&gt;-1</m:mi>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Variance (q)=</m:mi>
+
+                              <m:mfrac>
+                                <m:msup>
+                                  <m:mi>α</m:mi>
+
+                                  <m:mi>2</m:mi>
+                                </m:msup>
+
+                                <m:msup>
+                                  <m:mi>κ</m:mi>
+
+                                  <m:mi>2</m:mi>
+                                </m:msup>
+                              </m:mfrac>
+
+                              <m:mi>[ Γ(1+2κ)-[Γ(1+κ)</m:mi>
+
+                              <m:msup>
+                                <m:mi>]</m:mi>
+
+                                <m:mi>2</m:mi>
+                              </m:msup>
+
+                              <m:mi>]</m:mi>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mi>for</m:mi>
+
+                                      <m:mo>κ &gt;-</m:mo>
+
+                                      <m:mfrac>
+                                        <m:mi>1</m:mi>
+
+                                        <m:mi>2</m:mi>
+                                      </m:mfrac>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mi>where Γ() is the gamma function</m:mi>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Gumbel</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>p(q∣θ)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:mfrac>
+                                <m:mi>1</m:mi>
+
+                                <m:mi>α</m:mi>
+                              </m:mfrac>
+
+                              <m:mo>exp[-</m:mo>
+
+                              <m:mfrac>
+                                <m:mrow>
+                                  <m:mi>(q</m:mi>
+
+                                  <m:mo>-</m:mo>
+
+                                  <m:mi>τ)</m:mi>
+                                </m:mrow>
+
+                                <m:mi>α</m:mi>
+                              </m:mfrac>
+
+                              <m:mo>]</m:mo>
+
+                              <m:mi>exp{-exp[-</m:mi>
+
+                              <m:mfrac>
+                                <m:mrow>
+                                  <m:mi>(q</m:mi>
+
+                                  <m:mo>-</m:mo>
+
+                                  <m:mi>τ)</m:mi>
+                                </m:mrow>
+
+                                <m:mi>α</m:mi>
+                              </m:mfrac>
+
+                              <m:mi>]}</m:mi>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>P(Q≤q∣θ)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:mi>exp{-exp[-</m:mi>
+
+                              <m:mfrac>
+                                <m:mrow>
+                                  <m:mi>(q</m:mi>
+
+                                  <m:mo>-</m:mo>
+
+                                  <m:mi>τ)</m:mi>
+                                </m:mrow>
+
+                                <m:mi>α</m:mi>
+                              </m:mfrac>
+
+                              <m:mi>]}</m:mi>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Mean (q)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mi>τ+0.5772α</m:mi>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Variance(q)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mfrac>
+                              <m:mrow>
+                                <m:msup>
+                                  <m:mi>Π</m:mi>
+
+                                  <m:mi>2</m:mi>
+                                </m:msup>
+
+                                <m:msup>
+                                  <m:mi>α</m:mi>
+
+                                  <m:mi>2</m:mi>
+                                </m:msup>
+                              </m:mrow>
+
+                              <m:mi>6</m:mi>
+                            </m:mfrac>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Skew(q)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mi>1.1396</m:mi>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Log-Pearson III (LP3)</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>p(q|θ)</m:mi>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:mfrac>
+                                <m:mi>|β|</m:mi>
+
+                                <m:mi>qΓ(α)</m:mi>
+                              </m:mfrac>
+
+                              <m:mo>[β(</m:mo>
+
+                              <m:msub>
+                                <m:mi>log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mrow>
+                                <m:mi>q-τ)</m:mi>
+
+                                <m:msup>
+                                  <m:mi>]</m:mi>
+
+                                  <m:mi>α-1</m:mi>
+                                </m:msup>
+
+                                <m:mi>exp</m:mi>
+
+                                <m:mo>[-β(</m:mo>
+
+                                <m:msub>
+                                  <m:mi>log</m:mi>
+
+                                  <m:mi>e</m:mi>
+                                </m:msub>
+
+                                <m:mi>q-τ)]</m:mi>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>α &gt;0</m:mi>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>when β&gt;0,</m:mi>
+
+                            <m:msub>
+                              <m:mi>log</m:mi>
+
+                              <m:mi>e</m:mi>
+                            </m:msub>
+
+                            <m:mrow>
+                              <m:mi>q&gt;τ; when β&lt;0,</m:mi>
+
+                              <m:msub>
+                                <m:mi>log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mi>q&lt;τ</m:mi>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Mean (</m:mi>
+
+                              <m:msub>
+                                <m:mi>log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mi>q)</m:mi>
+                            </m:mrow>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:mi>m</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mrow>
+                                <m:mi>τ</m:mi>
+
+                                <m:mo>+</m:mo>
+
+                                <m:mfrac>
+                                  <m:mi>α</m:mi>
+
+                                  <m:mi>β</m:mi>
+                                </m:mfrac>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Variance (</m:mi>
+
+                              <m:msub>
+                                <m:mi>log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mi>q)</m:mi>
+                            </m:mrow>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:msup>
+                                <m:mi>s</m:mi>
+
+                                <m:mi>2</m:mi>
+                              </m:msup>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mfrac>
+                                <m:mi>α</m:mi>
+
+                                <m:msup>
+                                  <m:mi>β</m:mi>
+
+                                  <m:mi>2</m:mi>
+                                </m:msup>
+                              </m:mfrac>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Skew(</m:mi>
+
+                              <m:msub>
+                                <m:mi>log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mi>q)</m:mi>
+                            </m:mrow>
+
+                            <m:mo>=</m:mo>
+
+                            <m:mrow>
+                              <m:mi>g</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mrow>
+                                <m:mo>(</m:mo>
+
+                                <m:mtable>
+                                  <m:mtr>
                                     <m:mtd>
-                                       <m:mrow>
-                                          <m:mtable>
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mi>Mean (q)=</m:mi>
+                                      <m:mrow>
+                                        <m:mfrac>
+                                          <m:mi>2</m:mi>
 
-                                                      <m:mo>τ+</m:mo>
+                                          <m:msqrt>
+                                            <m:mi>α</m:mi>
+                                          </m:msqrt>
+                                        </m:mfrac>
 
-                                                      <m:mrow>
-                                                         <m:mfrac>
-                                                            <m:mi>α</m:mi>
-
-                                                            <m:mi>κ</m:mi>
-                                                         </m:mfrac>
-
-                                                         <m:mi>[ 1-Γ(1+κ)]</m:mi>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mrow>
-                                                         <m:mi>for κ&gt;-1</m:mi>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-                                          </m:mtable>
-                                       </m:mrow>
+                                        <m:mo>if β&gt;0</m:mo>
+                                      </m:mrow>
                                     </m:mtd>
-                                 </m:mtr>
+                                  </m:mtr>
 
-                                 <m:mtr>
+                                  <m:mtr>
                                     <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Variance (q)=</m:mi>
-
-                                             <m:mfrac>
-                                                <m:msup>
-                                                   <m:mi>α</m:mi>
-
-                                                   <m:mi>2</m:mi>
-                                                </m:msup>
-
-                                                <m:msup>
-                                                   <m:mi>κ</m:mi>
-
-                                                   <m:mi>2</m:mi>
-                                                </m:msup>
-                                             </m:mfrac>
-
-                                             <m:mi>[ Γ(1+2κ)-[Γ(1+κ)</m:mi>
-
-                                             <m:msup>
-                                                <m:mi>]</m:mi>
-
-                                                <m:mi>2</m:mi>
-                                             </m:msup>
-
-                                             <m:mi>]</m:mi>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mtable>
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mrow>
-                                                         <m:mi>for</m:mi>
-
-                                                         <m:mo>κ &gt;-</m:mo>
-
-                                                         <m:mfrac>
-                                                            <m:mi>1</m:mi>
-
-                                                            <m:mi>2</m:mi>
-                                                         </m:mfrac>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mrow>
-                                                         <m:mi>where Γ() is the gamma function</m:mi>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-                                          </m:mtable>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-
-                  <row>
-                     <entry>Gumbel</entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>p(q∣θ)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:mfrac>
-                                                <m:mi>1</m:mi>
-
-                                                <m:mi>α</m:mi>
-                                             </m:mfrac>
-
-                                             <m:mo>exp[-</m:mo>
-
-                                             <m:mfrac>
-                                                <m:mrow>
-                                                   <m:mi>(q</m:mi>
-
-                                                   <m:mo>-</m:mo>
-
-                                                   <m:mi>τ)</m:mi>
-                                                </m:mrow>
-
-                                                <m:mi>α</m:mi>
-                                             </m:mfrac>
-
-                                             <m:mo>]</m:mo>
-
-                                             <m:mi>exp{-exp[-</m:mi>
-
-                                             <m:mfrac>
-                                                <m:mrow>
-                                                   <m:mi>(q</m:mi>
-
-                                                   <m:mo>-</m:mo>
-
-                                                   <m:mi>τ)</m:mi>
-                                                </m:mrow>
-
-                                                <m:mi>α</m:mi>
-                                             </m:mfrac>
-
-                                             <m:mi>]}</m:mi>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>P(Q≤q∣θ)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:mi>exp{-exp[-</m:mi>
-
-                                             <m:mfrac>
-                                                <m:mrow>
-                                                   <m:mi>(q</m:mi>
-
-                                                   <m:mo>-</m:mo>
-
-                                                   <m:mi>τ)</m:mi>
-                                                </m:mrow>
-
-                                                <m:mi>α</m:mi>
-                                             </m:mfrac>
-
-                                             <m:mi>]}</m:mi>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Mean (q)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mi>τ+0.5772α</m:mi>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Variance(q)</m:mi>
-
-                                          <m:mo>=</m:mo>
+                                      <m:mrow>
+                                        <m:mrow>
+                                          <m:mi>-</m:mi>
 
                                           <m:mfrac>
-                                             <m:mrow>
-                                                <m:msup>
-                                                   <m:mi>Π</m:mi>
+                                            <m:mi>2</m:mi>
 
-                                                   <m:mi>2</m:mi>
-                                                </m:msup>
-
-                                                <m:msup>
-                                                   <m:mi>α</m:mi>
-
-                                                   <m:mi>2</m:mi>
-                                                </m:msup>
-                                             </m:mrow>
-
-                                             <m:mi>6</m:mi>
+                                            <m:msqrt>
+                                              <m:mi>α</m:mi>
+                                            </m:msqrt>
                                           </m:mfrac>
-                                       </m:mrow>
+                                        </m:mrow>
+
+                                        <m:mo>if β&lt;0</m:mo>
+                                      </m:mrow>
                                     </m:mtd>
-                                 </m:mtr>
+                                  </m:mtr>
+                                </m:mtable>
 
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Skew(q)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mi>1.1396</m:mi>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-
-                  <row>
-                     <entry>Log-Pearson III (LP3)</entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>p(q|θ)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:mfrac>
-                                                <m:mi>|β|</m:mi>
-
-                                                <m:mi>qΓ(α)</m:mi>
-                                             </m:mfrac>
-
-                                             <m:mo>[β(</m:mo>
-
-                                             <m:msub>
-                                                <m:mi>log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mrow>
-                                                <m:mi>q-τ)</m:mi>
-
-                                                <m:msup>
-                                                   <m:mi>]</m:mi>
-
-                                                   <m:mi>α-1</m:mi>
-                                                </m:msup>
-
-                                                <m:mi>exp</m:mi>
-
-                                                <m:mo>[-β(</m:mo>
-
-                                                <m:msub>
-                                                   <m:mi>log</m:mi>
-
-                                                   <m:mi>e</m:mi>
-                                                </m:msub>
-
-                                                <m:mi>q-τ)]</m:mi>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>α &gt;0</m:mi>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>when β&gt;0,</m:mi>
-
-                                          <m:msub>
-                                             <m:mi>log</m:mi>
-
-                                             <m:mi>e</m:mi>
-                                          </m:msub>
-
-                                          <m:mrow>
-                                             <m:mi>q&gt;τ; when β&lt;0,</m:mi>
-
-                                             <m:msub>
-                                                <m:mi>log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mi>q&lt;τ</m:mi>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Mean (</m:mi>
-
-                                             <m:msub>
-                                                <m:mi>log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mi>q)</m:mi>
-                                          </m:mrow>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:mi>m</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mrow>
-                                                <m:mi>τ</m:mi>
-
-                                                <m:mo>+</m:mo>
-
-                                                <m:mfrac>
-                                                   <m:mi>α</m:mi>
-
-                                                   <m:mi>β</m:mi>
-                                                </m:mfrac>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Variance (</m:mi>
-
-                                             <m:msub>
-                                                <m:mi>log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mi>q)</m:mi>
-                                          </m:mrow>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:msup>
-                                                <m:mi>s</m:mi>
-
-                                                <m:mi>2</m:mi>
-                                             </m:msup>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mfrac>
-                                                <m:mi>α</m:mi>
-
-                                                <m:msup>
-                                                   <m:mi>β</m:mi>
-
-                                                   <m:mi>2</m:mi>
-                                                </m:msup>
-                                             </m:mfrac>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Skew(</m:mi>
-
-                                             <m:msub>
-                                                <m:mi>log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mi>q)</m:mi>
-                                          </m:mrow>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:mi>g</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mrow>
-                                                <m:mo>(</m:mo>
-
-                                                <m:mtable>
-                                                   <m:mtr>
-                                                      <m:mtd>
-                                                         <m:mrow>
-                                                            <m:mfrac>
-                                                               <m:mi>2</m:mi>
-
-                                                               <m:msqrt>
-                                                                  <m:mi>α</m:mi>
-                                                               </m:msqrt>
-                                                            </m:mfrac>
-
-                                                            <m:mo>if β&gt;0</m:mo>
-                                                         </m:mrow>
-                                                      </m:mtd>
-                                                   </m:mtr>
-
-                                                   <m:mtr>
-                                                      <m:mtd>
-                                                         <m:mrow>
-                                                            <m:mrow>
-                                                               <m:mi>-</m:mi>
-
-                                                               <m:mfrac>
-                                                                  <m:mi>2</m:mi>
-
-                                                                  <m:msqrt>
-                                                                     <m:mi>α</m:mi>
-                                                                  </m:msqrt>
-                                                               </m:mfrac>
-                                                            </m:mrow>
-
-                                                            <m:mo>if β&lt;0</m:mo>
-                                                         </m:mrow>
-                                                      </m:mtd>
-                                                   </m:mtr>
-                                                </m:mtable>
-
-                                                <m:mo>)</m:mo>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-
-                  <row>
-                     <entry>Log-normal</entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mrow>
-                                 <m:mtable>
-                                    <m:mtr>
-                                       <m:mtd>
-                                          <m:mrow>
-                                             <m:mi>p(q|θ)</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mrow>
-                                                <m:mfrac>
-                                                   <m:mi>1</m:mi>
-
-                                                   <m:mrow>
-                                                      <m:mi>q</m:mi>
-
-                                                      <m:msqrt>
-                                                         <m:mrow>
-                                                            <m:mi>2</m:mi>
-
-                                                            <m:mo>∏</m:mo>
-
-                                                            <m:msup>
-                                                               <m:mi>s</m:mi>
-
-                                                               <m:mi>2</m:mi>
-                                                            </m:msup>
-                                                         </m:mrow>
-                                                      </m:msqrt>
-                                                   </m:mrow>
-                                                </m:mfrac>
-
-                                                <m:mo>exp</m:mo>
-
-                                                <m:mrow>
-                                                   <m:mo>[</m:mo>
-
-                                                   <m:mrow>
-                                                      <m:mi>-</m:mi>
-
-                                                      <m:mfrac>
-                                                         <m:mi>1</m:mi>
-
-                                                         <m:msup>
-                                                            <m:mi>2s</m:mi>
-
-                                                            <m:mi>i</m:mi>
-                                                         </m:msup>
-                                                      </m:mfrac>
-
-                                                      <m:mrow>
-                                                         <m:mo>(</m:mo>
-
-                                                         <m:mrow>
-                                                            <m:msub>
-                                                               <m:mi>log</m:mi>
-
-                                                               <m:mi>e</m:mi>
-                                                            </m:msub>
-
-                                                            <m:mo>q -</m:mo>
-
-                                                            <m:mi>m</m:mi>
-                                                         </m:mrow>
-                                                      </m:mrow>
-
-                                                      <m:msup>
-                                                         <m:mi>)</m:mi>
-
-                                                         <m:mi>2</m:mi>
-                                                      </m:msup>
-                                                   </m:mrow>
-
-                                                   <m:mo>]</m:mo>
-                                                </m:mrow>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mtd>
-                                    </m:mtr>
-
-                                    <m:mtr>
-                                       <m:mtd>
-                                          <m:mrow>
-                                             <m:mi>q&gt;0, s&gt;0</m:mi>
-                                          </m:mrow>
-                                       </m:mtd>
-                                    </m:mtr>
-                                 </m:mtable>
+                                <m:mo>)</m:mo>
                               </m:mrow>
-                           </m:math>
-                     </inlineequation></entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mo>Mean</m:mo>
-
-                                             <m:msub>
-                                                <m:mi>(log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mo>q)</m:mo>
-                                          </m:mrow>
-
-                                          <m:mo>= m</m:mo>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Variance</m:mi>
-
-                                             <m:msub>
-                                                <m:mi>(log</m:mi>
-
-                                                <m:mi>e</m:mi>
-                                             </m:msub>
-
-                                             <m:mi>q )</m:mi>
-                                          </m:mrow>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:msup>
-                                             <m:mi>s</m:mi>
-
-                                             <m:mi>2</m:mi>
-                                          </m:msup>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-
-                  <row>
-                     <entry>Generalized Pareto</entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>p(q|</m:mi>
-
-                                             <m:mrow>
-                                                <m:mi>θ)</m:mi>
-
-                                                <m:mo>=</m:mo>
-
-                                                <m:mfrac>
-                                                   <m:mi>1</m:mi>
-
-                                                   <m:mi>β</m:mi>
-                                                </m:mfrac>
-                                             </m:mrow>
-
-                                             <m:mrow>
-                                                <m:mo>(</m:mo>
-
-                                                <m:mrow>
-                                                   <m:mi>1</m:mi>
-
-                                                   <m:mo>-</m:mo>
-
-                                                   <m:mfrac>
-                                                      <m:mrow>
-                                                         <m:mo>κ (</m:mo>
-
-                                                         <m:mrow>
-                                                            <m:mi>q</m:mi>
-
-                                                            <m:mo>-</m:mo>
-
-                                                            <m:msub>
-                                                               <m:mi>q</m:mi>
-
-                                                               <m:mi>*</m:mi>
-                                                            </m:msub>
-                                                         </m:mrow>
-
-                                                         <m:mo>)</m:mo>
-                                                      </m:mrow>
-
-                                                      <m:mi>β</m:mi>
-                                                   </m:mfrac>
-                                                </m:mrow>
-
-                                                <m:msup>
-                                                   <m:mi>)</m:mi>
-
-                                                   <m:mrow>
-                                                      <m:mfrac>
-                                                         <m:mi>1</m:mi>
-
-                                                         <m:mi>κ</m:mi>
-                                                      </m:mfrac>
-
-                                                      <m:mo>-1</m:mo>
-                                                   </m:mrow>
-                                                </m:msup>
-                                             </m:mrow>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mtable>
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mrow>
-                                                         <m:mi>P(Q≤</m:mi>
-
-                                                         <m:mrow>
-                                                            <m:mi>q|θ)</m:mi>
-
-                                                            <m:mo>=</m:mo>
-                                                         </m:mrow>
-
-                                                         <m:mi>1 -</m:mi>
-
-                                                         <m:mrow>
-                                                            <m:mo>(</m:mo>
-
-                                                            <m:mrow>
-                                                               <m:mi>1 -</m:mi>
-
-                                                               <m:mfrac>
-                                                                  <m:mrow>
-                                                                     <m:mo>κ (</m:mo>
-
-                                                                     <m:mrow>
-                                                                        <m:mi>q</m:mi>
-
-                                                                        <m:mo>-</m:mo>
-
-                                                                        <m:msub>
-                                                                           <m:mi>q</m:mi>
-
-                                                                           <m:mi>*</m:mi>
-                                                                        </m:msub>
-                                                                     </m:mrow>
-
-                                                                     <m:mo>)</m:mo>
-                                                                  </m:mrow>
-
-                                                                  <m:mi>β</m:mi>
-                                                               </m:mfrac>
-                                                            </m:mrow>
-                                                         </m:mrow>
-
-                                                         <m:msup>
-                                                            <m:mi>)</m:mi>
-
-                                                            <m:mfrac>
-                                                               <m:mi>1</m:mi>
-
-                                                               <m:mi>κ</m:mi>
-                                                            </m:mfrac>
-                                                         </m:msup>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mi>when κ&lt;0,</m:mi>
-
-                                                      <m:msub>
-                                                         <m:mi>q</m:mi>
-
-                                                         <m:mi>*</m:mi>
-                                                      </m:msub>
-
-                                                      <m:mi>≤q&lt;∞; when κ&gt;0,</m:mi>
-
-                                                      <m:mrow>
-                                                         <m:msub>
-                                                            <m:mi>q</m:mi>
-
-                                                            <m:mi>*</m:mi>
-                                                         </m:msub>
-
-                                                         <m:mo>≤q ≤</m:mo>
-                                                      </m:mrow>
-
-                                                      <m:mfrac>
-                                                         <m:mi>β</m:mi>
-
-                                                         <m:mi>κ</m:mi>
-                                                      </m:mfrac>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-                                          </m:mtable>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>Mean (q)</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:msub>
-                                                <m:mi>q</m:mi>
-
-                                                <m:mi>*</m:mi>
-                                             </m:msub>
-                                          </m:mrow>
-
-                                          <m:mrow>
-                                             <m:mo>+</m:mo>
-
-                                             <m:mfrac>
-                                                <m:mi>β</m:mi>
-
-                                                <m:mrow>
-                                                   <m:mi>1</m:mi>
-
-                                                   <m:mo>+</m:mo>
-
-                                                   <m:mi>κ</m:mi>
-                                                </m:mrow>
-                                             </m:mfrac>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mtable>
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mi>Variance (q)</m:mi>
-
-                                                      <m:mo>=</m:mo>
-
-                                                      <m:mfrac>
-                                                         <m:msup>
-                                                            <m:mi>β</m:mi>
-
-                                                            <m:mi>2</m:mi>
-                                                         </m:msup>
-
-                                                         <m:mrow>
-                                                            <m:mrow>
-                                                               <m:mrow>
-                                                                  <m:mo>(</m:mo>
-
-                                                                  <m:mrow>
-                                                                     <m:mi>1</m:mi>
-
-                                                                     <m:mo>+ κ</m:mo>
-                                                                  </m:mrow>
-                                                               </m:mrow>
-
-                                                               <m:msup>
-                                                                  <m:mi>)</m:mi>
-
-                                                                  <m:mi>2</m:mi>
-                                                               </m:msup>
-                                                            </m:mrow>
-
-                                                            <m:mrow>
-                                                               <m:mo>(</m:mo>
-
-                                                               <m:mrow>
-                                                                  <m:mo>1 + 2κ</m:mo>
-                                                               </m:mrow>
-
-                                                               <m:mo>)</m:mo>
-                                                            </m:mrow>
-                                                         </m:mrow>
-                                                      </m:mfrac>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-
-                                             <m:mtr>
-                                                <m:mtd>
-                                                   <m:mrow>
-                                                      <m:mi>Skew (q)</m:mi>
-
-                                                      <m:mo>=</m:mo>
-
-                                                      <m:mrow>
-                                                         <m:mfrac>
-                                                            <m:mrow>
-                                                               <m:mi>2</m:mi>
-
-                                                               <m:mrow>
-                                                                  <m:mo>(1</m:mo>
-
-                                                                  <m:mrow>
-                                                                     <m:mo>-</m:mo>
-
-                                                                     <m:mi>κ</m:mi>
-                                                                  </m:mrow>
-
-                                                                  <m:mo>)</m:mo>
-                                                               </m:mrow>
-
-                                                               <m:mrow>
-                                                                  <m:mo>(</m:mo>
-
-                                                                  <m:mrow>
-                                                                     <m:mi>1</m:mi>
-
-                                                                     <m:mo>+</m:mo>
-
-                                                                     <m:mi>2</m:mi>
-                                                                  </m:mrow>
-
-                                                                  <m:mo>κ</m:mo>
-                                                               </m:mrow>
-
-                                                               <m:msup>
-                                                                  <m:mi>)</m:mi>
-
-                                                                  <m:mfrac>
-                                                                     <m:mi>1</m:mi>
-
-                                                                     <m:mi>2</m:mi>
-                                                                  </m:mfrac>
-                                                               </m:msup>
-                                                            </m:mrow>
-
-                                                            <m:mrow>
-                                                               <m:mo>(</m:mo>
-
-                                                               <m:mrow>
-                                                                  <m:mi>1</m:mi>
-
-                                                                  <m:mo>+</m:mo>
-
-                                                                  <m:mi>3κ</m:mi>
-                                                               </m:mrow>
-
-                                                               <m:mo>)</m:mo>
-                                                            </m:mrow>
-                                                         </m:mfrac>
-
-                                                         <m:mo>κ &gt; - 1/3</m:mo>
-                                                      </m:mrow>
-                                                   </m:mrow>
-                                                </m:mtd>
-                                             </m:mtr>
-                                          </m:mtable>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-
-                  <row>
-                     <entry>Exponential</entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>p(q|θ)</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mfrac>
-                                                <m:mi>1</m:mi>
-
-                                                <m:mi>β</m:mi>
-                                             </m:mfrac>
-                                          </m:mrow>
-
-                                          <m:mo>exp</m:mo>
-
-                                          <m:mrow>
-                                             <m:mo>(</m:mo>
-
-                                             <m:mrow>
-                                                <m:mi>-</m:mi>
-
-                                                <m:mfrac>
-                                                   <m:mrow>
-                                                      <m:mi>q</m:mi>
-
-                                                      <m:mo>-</m:mo>
-
-                                                      <m:msub>
-                                                         <m:mi>q</m:mi>
-
-                                                         <m:mi>*</m:mi>
-                                                      </m:msub>
-                                                   </m:mrow>
-
-                                                   <m:mi>β</m:mi>
-                                                </m:mfrac>
-                                             </m:mrow>
-
-                                             <m:mo>)</m:mo>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mrow>
-                                             <m:mi>P(Q≤ q|θ)</m:mi>
-
-                                             <m:mo>=</m:mo>
-
-                                             <m:mi>1- exp</m:mi>
-                                          </m:mrow>
-
-                                          <m:mrow>
-                                             <m:mrow>
-                                                <m:mo>(</m:mo>
-
-                                                <m:mrow>
-                                                   <m:mi>-</m:mi>
-
-                                                   <m:mfrac>
-                                                      <m:mrow>
-                                                         <m:mi>q</m:mi>
-
-                                                         <m:mo>-</m:mo>
-
-                                                         <m:msub>
-                                                            <m:mi>q</m:mi>
-
-                                                            <m:mi>*</m:mi>
-                                                         </m:msub>
-                                                      </m:mrow>
-
-                                                      <m:mi>β</m:mi>
-                                                   </m:mfrac>
-                                                </m:mrow>
-
-                                                <m:mo>)</m:mo>
-                                             </m:mrow>
-
-                                             <m:mo>, q ≥</m:mo>
-                                          </m:mrow>
-
-                                          <m:msub>
-                                             <m:mi>q</m:mi>
-
-                                             <m:mi>*</m:mi>
-                                          </m:msub>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-
-                     <entry><inlineequation>
-                           <m:math display="inline">
-                              <m:mtable>
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Mean (q)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:mrow>
-                                             <m:msub>
-                                                <m:mi>q</m:mi>
-
-                                                <m:mi>*</m:mi>
-                                             </m:msub>
-
-                                             <m:mo>+</m:mo>
-
-                                             <m:mi>β</m:mi>
-                                          </m:mrow>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Variance (q)</m:mi>
-
-                                          <m:mo>=</m:mo>
-
-                                          <m:msup>
-                                             <m:mi>β</m:mi>
-
-                                             <m:mi>2</m:mi>
-                                          </m:msup>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-
-                                 <m:mtr>
-                                    <m:mtd>
-                                       <m:mrow>
-                                          <m:mi>Skew (q)</m:mi>
-
-                                          <m:mo>=</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Log-normal</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mrow>
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>p(q|θ)</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mrow>
+                                <m:mfrac>
+                                  <m:mi>1</m:mi>
+
+                                  <m:mrow>
+                                    <m:mi>q</m:mi>
+
+                                    <m:msqrt>
+                                      <m:mrow>
+                                        <m:mi>2</m:mi>
+
+                                        <m:mo>∏</m:mo>
+
+                                        <m:msup>
+                                          <m:mi>s</m:mi>
 
                                           <m:mi>2</m:mi>
-                                       </m:mrow>
-                                    </m:mtd>
-                                 </m:mtr>
-                              </m:mtable>
-                           </m:math>
-                     </inlineequation></entry>
-                  </row>
-               </tbody>
-            </tgroup>
-         </table>
+                                        </m:msup>
+                                      </m:mrow>
+                                    </m:msqrt>
+                                  </m:mrow>
+                                </m:mfrac>
 
-         <para>Of the widely used distribution families, the GEV distribution
-            has the strongest theoretical appeal because it is the asymptotic
-            distribution of extreme values for a wide range of underlying parent
-            distributions. In the flood frequency context, suppose there are N
-            flood peaks in a year. Provided N is large and the flood peaks are
-            identically and independently distributed, the distribution of the
-            largest peak flow in the year approaches the GEV under quite general
-            conditions. However, it is questionable whether these assumptions are
-            satisfied in practice.</para>
+                                <m:mo>exp</m:mo>
 
-         <para>The number of independent flood peaks in any year may not be
-            sufficient to ensure asymptotic behaviour particularly for catchments
-            that tend to aridity. Moreover, in strongly seasonal climates, it is
-            unlikely the within-year independent flood peaks are random
-            realizations from the same probability distribution.</para>
+                                <m:mrow>
+                                  <m:mo>[</m:mo>
 
-         <para>The GEV has gained widespread acceptance (for example, Natural
-            Environment Research Council, 1975; Wallis and Wood, 1985; Handbook of
-            Hydrology, Stedinger et al., 1993).</para>
-      </section>
+                                  <m:mrow>
+                                    <m:mi>-</m:mi>
 
-      <section>
-         <title>Log Pearson III (LP3) distribution</title>
+                                    <m:mfrac>
+                                      <m:mi>1</m:mi>
 
-         <para>Table 1 lists the pdf p(q|θ) and product moments for log Pearson
-            III (LP3) distribution. It has three parameters: τ, the location
-            parameter,α, the scale parameter and β, the shape parameter. When the
-            skew of log q is zero, the distribution simplifies to the log normal
-            whose details are provided in Table 1.</para>
+                                      <m:msup>
+                                        <m:mi>2s</m:mi>
 
-         <para>The LP3 distribution has been widely accepted in practice
-            because it consistently fits flood data as well if not better than
-            other probability families. It has performed best of those that have
-            been tested on data for Australian catchments (Conway 1970; Kopittke
-            et al., 1976; McMahon, 1979, McMahon and Srikanthan, 1981). It is the
-            recommended distribution for the United States in Bulletin 17B of the
-            Interagency Advisory Committee on Water Data (1982).</para>
+                                        <m:mi>i</m:mi>
+                                      </m:msup>
+                                    </m:mfrac>
 
-         <para>The distribution, however, is not well-behaved from an inference
-            perspective. Direct inference of the parameters α, β and τ can cause
-            numerical problems. For example, when the skew of log q is close to
-            zero, the shape parameter α tends to infinity. Experience indicates it
-            is preferable to fit the first three moments of log q rather than α, β
-            and τ. Note that τ is a lower bound for positive skew and an upper
-            bound for negative skew.</para>
-
-         <para>A problem arises when the absolute value of the skew of log q
-            exceeds 2; that is, when α ≥ 1. When α &lt; 1, the LP3 has a
-            gamma-shaped density. However, when α ≥ 1, the density changes to a
-            J-shaped function. Indeed when α = 1, the pdf degenerates to that of
-            an exponential distribution with scale parameter β and location
-            parameter τ. For α ≥ 1, the J-shaped density seems to be
-            over-parameterized with three parameters. In such circumstances, it is
-            pointless to use the LP3. It is suggested either the GEV or the
-            generalized Pareto distributions be used as a substitute.</para>
-
-         <para>An analytical form of the distribution function is not available
-            for the LP3 and log-normal distributions. To compute the quantile qY
-            (that is, the discharge with a 1 in Y AEP) the following equation may
-            be used:</para>
-
-         <equation>
-            <m:math display="block">
-               <m:mrow>
-                  <m:mrow>
-                     <m:mi>log</m:mi>
-
-                     <m:msub>
-                        <m:mi>q</m:mi>
-
-                        <m:mi>Y</m:mi>
-                     </m:msub>
-                  </m:mrow>
-
-                  <m:mo>=</m:mo>
-
-                  <m:mrow>
-                     <m:mi>m</m:mi>
-
-                     <m:mo>+</m:mo>
-
-                     <m:mrow>
-                        <m:msub>
-                           <m:mi>K</m:mi>
-
-                           <m:mi>Y</m:mi>
-                        </m:msub>
-
-                        <m:mo>(g)s</m:mo>
-                     </m:mrow>
-                  </m:mrow>
-               </m:mrow>
-            </m:math>
-         </equation>
-
-         <para>where m, s and g are the mean, standard deviation and skewness
-            of the log discharge and KY is a frequency factor well-approximated by
-            the Wilson-Hilferty transformation</para>
-
-         <equation>
-            <m:math display="block">
-               <m:mrow>
-                  <m:mrow>
-                     <m:msub>
-                        <m:mi>K</m:mi>
-
-                        <m:mi>Y</m:mi>
-                     </m:msub>
-
-                     <m:mo>(g)</m:mo>
-                  </m:mrow>
-
-                  <m:mo>=</m:mo>
-
-                  <m:mrow>
-                     <m:mo>{</m:mo>
-
-                     <m:mtable>
-                        <m:mtr>
-                           <m:mtd>
-                              <m:mrow>
-                                 <m:mfrac>
-                                    <m:mi>2</m:mi>
-
-                                    <m:mi>g</m:mi>
-                                 </m:mfrac>
-
-                                 <m:mrow>
                                     <m:mrow>
-                                       <m:mo>[ {</m:mo>
+                                      <m:mo>(</m:mo>
 
-                                       <m:mrow>
+                                      <m:mrow>
+                                        <m:msub>
+                                          <m:mi>log</m:mi>
+
+                                          <m:mi>e</m:mi>
+                                        </m:msub>
+
+                                        <m:mo>q -</m:mo>
+
+                                        <m:mi>m</m:mi>
+                                      </m:mrow>
+                                    </m:mrow>
+
+                                    <m:msup>
+                                      <m:mi>)</m:mi>
+
+                                      <m:mi>2</m:mi>
+                                    </m:msup>
+                                  </m:mrow>
+
+                                  <m:mo>]</m:mo>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>q&gt;0, s&gt;0</m:mi>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mrow>
+                  </m:math>
+                </inlineequation></entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mo>Mean</m:mo>
+
+                              <m:msub>
+                                <m:mi>(log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mo>q)</m:mo>
+                            </m:mrow>
+
+                            <m:mo>= m</m:mo>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Variance</m:mi>
+
+                              <m:msub>
+                                <m:mi>(log</m:mi>
+
+                                <m:mi>e</m:mi>
+                              </m:msub>
+
+                              <m:mi>q )</m:mi>
+                            </m:mrow>
+
+                            <m:mo>=</m:mo>
+
+                            <m:msup>
+                              <m:mi>s</m:mi>
+
+                              <m:mi>2</m:mi>
+                            </m:msup>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Generalized Pareto</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>p(q|</m:mi>
+
+                              <m:mrow>
+                                <m:mi>θ)</m:mi>
+
+                                <m:mo>=</m:mo>
+
+                                <m:mfrac>
+                                  <m:mi>1</m:mi>
+
+                                  <m:mi>β</m:mi>
+                                </m:mfrac>
+                              </m:mrow>
+
+                              <m:mrow>
+                                <m:mo>(</m:mo>
+
+                                <m:mrow>
+                                  <m:mi>1</m:mi>
+
+                                  <m:mo>-</m:mo>
+
+                                  <m:mfrac>
+                                    <m:mrow>
+                                      <m:mo>κ (</m:mo>
+
+                                      <m:mrow>
+                                        <m:mi>q</m:mi>
+
+                                        <m:mo>-</m:mo>
+
+                                        <m:msub>
+                                          <m:mi>q</m:mi>
+
+                                          <m:mi>*</m:mi>
+                                        </m:msub>
+                                      </m:mrow>
+
+                                      <m:mo>)</m:mo>
+                                    </m:mrow>
+
+                                    <m:mi>β</m:mi>
+                                  </m:mfrac>
+                                </m:mrow>
+
+                                <m:msup>
+                                  <m:mi>)</m:mi>
+
+                                  <m:mrow>
+                                    <m:mfrac>
+                                      <m:mi>1</m:mi>
+
+                                      <m:mi>κ</m:mi>
+                                    </m:mfrac>
+
+                                    <m:mo>-1</m:mo>
+                                  </m:mrow>
+                                </m:msup>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mi>P(Q≤</m:mi>
+
+                                      <m:mrow>
+                                        <m:mi>q|θ)</m:mi>
+
+                                        <m:mo>=</m:mo>
+                                      </m:mrow>
+
+                                      <m:mi>1 -</m:mi>
+
+                                      <m:mrow>
+                                        <m:mo>(</m:mo>
+
+                                        <m:mrow>
+                                          <m:mi>1 -</m:mi>
+
                                           <m:mfrac>
-                                             <m:mi>g</m:mi>
+                                            <m:mrow>
+                                              <m:mo>κ (</m:mo>
 
-                                             <m:mi>6</m:mi>
+                                              <m:mrow>
+                                                <m:mi>q</m:mi>
+
+                                                <m:mo>-</m:mo>
+
+                                                <m:msub>
+                                                  <m:mi>q</m:mi>
+
+                                                  <m:mi>*</m:mi>
+                                                </m:msub>
+                                              </m:mrow>
+
+                                              <m:mo>)</m:mo>
+                                            </m:mrow>
+
+                                            <m:mi>β</m:mi>
                                           </m:mfrac>
+                                        </m:mrow>
+                                      </m:mrow>
+
+                                      <m:msup>
+                                        <m:mi>)</m:mi>
+
+                                        <m:mfrac>
+                                          <m:mi>1</m:mi>
+
+                                          <m:mi>κ</m:mi>
+                                        </m:mfrac>
+                                      </m:msup>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mi>when κ&lt;0,</m:mi>
+
+                                    <m:msub>
+                                      <m:mi>q</m:mi>
+
+                                      <m:mi>*</m:mi>
+                                    </m:msub>
+
+                                    <m:mi>≤q&lt;∞; when κ&gt;0,</m:mi>
+
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>q</m:mi>
+
+                                        <m:mi>*</m:mi>
+                                      </m:msub>
+
+                                      <m:mo>≤q ≤</m:mo>
+                                    </m:mrow>
+
+                                    <m:mfrac>
+                                      <m:mi>β</m:mi>
+
+                                      <m:mi>κ</m:mi>
+                                    </m:mfrac>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>Mean (q)</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:msub>
+                                <m:mi>q</m:mi>
+
+                                <m:mi>*</m:mi>
+                              </m:msub>
+                            </m:mrow>
+
+                            <m:mrow>
+                              <m:mo>+</m:mo>
+
+                              <m:mfrac>
+                                <m:mi>β</m:mi>
+
+                                <m:mrow>
+                                  <m:mi>1</m:mi>
+
+                                  <m:mo>+</m:mo>
+
+                                  <m:mi>κ</m:mi>
+                                </m:mrow>
+                              </m:mfrac>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mi>Variance (q)</m:mi>
+
+                                    <m:mo>=</m:mo>
+
+                                    <m:mfrac>
+                                      <m:msup>
+                                        <m:mi>β</m:mi>
+
+                                        <m:mi>2</m:mi>
+                                      </m:msup>
+
+                                      <m:mrow>
+                                        <m:mrow>
+                                          <m:mrow>
+                                            <m:mo>(</m:mo>
+
+                                            <m:mrow>
+                                              <m:mi>1</m:mi>
+
+                                              <m:mo>+ κ</m:mo>
+                                            </m:mrow>
+                                          </m:mrow>
+
+                                          <m:msup>
+                                            <m:mi>)</m:mi>
+
+                                            <m:mi>2</m:mi>
+                                          </m:msup>
+                                        </m:mrow>
+
+                                        <m:mrow>
+                                          <m:mo>(</m:mo>
 
                                           <m:mrow>
-                                             <m:mrow>
-                                                <m:mo>(</m:mo>
-
-                                                <m:mrow>
-                                                   <m:mrow>
-                                                      <m:msub>
-                                                         <m:mi>Z</m:mi>
-
-                                                         <m:mi>Y</m:mi>
-                                                      </m:msub>
-
-                                                      <m:mo>-</m:mo>
-
-                                                      <m:mfrac>
-                                                         <m:mi>g</m:mi>
-
-                                                         <m:mi>6</m:mi>
-                                                      </m:mfrac>
-                                                   </m:mrow>
-                                                </m:mrow>
-
-                                                <m:mo>)</m:mo>
-                                             </m:mrow>
-
-                                             <m:mo>+1}³</m:mo>
+                                            <m:mo>1 + 2κ</m:mo>
                                           </m:mrow>
-                                       </m:mrow>
-                                    </m:mrow>
+
+                                          <m:mo>)</m:mo>
+                                        </m:mrow>
+                                      </m:mrow>
+                                    </m:mfrac>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mi>Skew (q)</m:mi>
+
+                                    <m:mo>=</m:mo>
 
                                     <m:mrow>
-                                       <m:mi>-1</m:mi>
+                                      <m:mfrac>
+                                        <m:mrow>
+                                          <m:mi>2</m:mi>
 
-                                       <m:mtext>] if ∣g∣&gt;0</m:mtext>
+                                          <m:mrow>
+                                            <m:mo>(1</m:mo>
+
+                                            <m:mrow>
+                                              <m:mo>-</m:mo>
+
+                                              <m:mi>κ</m:mi>
+                                            </m:mrow>
+
+                                            <m:mo>)</m:mo>
+                                          </m:mrow>
+
+                                          <m:mrow>
+                                            <m:mo>(</m:mo>
+
+                                            <m:mrow>
+                                              <m:mi>1</m:mi>
+
+                                              <m:mo>+</m:mo>
+
+                                              <m:mi>2</m:mi>
+                                            </m:mrow>
+
+                                            <m:mo>κ</m:mo>
+                                          </m:mrow>
+
+                                          <m:msup>
+                                            <m:mi>)</m:mi>
+
+                                            <m:mfrac>
+                                              <m:mi>1</m:mi>
+
+                                              <m:mi>2</m:mi>
+                                            </m:mfrac>
+                                          </m:msup>
+                                        </m:mrow>
+
+                                        <m:mrow>
+                                          <m:mo>(</m:mo>
+
+                                          <m:mrow>
+                                            <m:mi>1</m:mi>
+
+                                            <m:mo>+</m:mo>
+
+                                            <m:mi>3κ</m:mi>
+                                          </m:mrow>
+
+                                          <m:mo>)</m:mo>
+                                        </m:mrow>
+                                      </m:mfrac>
+
+                                      <m:mo>κ &gt; - 1/3</m:mo>
                                     </m:mrow>
-                                 </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Exponential</entry>
+
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>p(q|θ)</m:mi>
+
+                              <m:mo>=</m:mo>
+
+                              <m:mfrac>
+                                <m:mi>1</m:mi>
+
+                                <m:mi>β</m:mi>
+                              </m:mfrac>
+                            </m:mrow>
+
+                            <m:mo>exp</m:mo>
+
+                            <m:mrow>
+                              <m:mo>(</m:mo>
+
+                              <m:mrow>
+                                <m:mi>-</m:mi>
+
+                                <m:mfrac>
+                                  <m:mrow>
+                                    <m:mi>q</m:mi>
+
+                                    <m:mo>-</m:mo>
+
+                                    <m:msub>
+                                      <m:mi>q</m:mi>
+
+                                      <m:mi>*</m:mi>
+                                    </m:msub>
+                                  </m:mrow>
+
+                                  <m:mi>β</m:mi>
+                                </m:mfrac>
                               </m:mrow>
-                           </m:mtd>
-                        </m:mtr>
 
-                        <m:mtr>
-                           <m:mtd>
-                              <m:mi>0 if g=0</m:mi>
-                           </m:mtd>
-                        </m:mtr>
-                     </m:mtable>
-                  </m:mrow>
-               </m:mrow>
-            </m:math>
-         </equation>
+                              <m:mo>)</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
 
-         <para>for |g| &lt; 2 and AEPs ranging from 0.99 to 0.01. The term
-            z<subscript>Y</subscript> is the frequency factor for the standard
-            normal distribution which has a mean of zero and standard deviation of
-            1; z<subscript>Y</subscript> is the value of the standard normal
-            deviate with exceedance probability 1/Y. Table 2 lists
-            z<subscript>Y</subscript> for selected exceedance probabilities.
-            Comprehensive tables of K<subscript>Y</subscript> can be found in
-            Australian Rainfall and Runoff (1987, p.208).</para>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mi>P(Q≤ q|θ)</m:mi>
 
-         <table>
-            <title>Table 2. Frequency factors for standard normal
-               distribution.</title>
+                              <m:mo>=</m:mo>
 
-            <tgroup cols="2">
-               <colspec align="center"/>
+                              <m:mi>1- exp</m:mi>
+                            </m:mrow>
 
-               <thead>
-                  <row>
-                     <entry align="center">Y in AEP of 1 in Y</entry>
+                            <m:mrow>
+                              <m:mrow>
+                                <m:mo>(</m:mo>
 
-                     <entry align="center">zY</entry>
-                  </row>
-               </thead>
+                                <m:mrow>
+                                  <m:mi>-</m:mi>
 
-               <tbody>
-                  <row>
-                     <entry>2</entry>
+                                  <m:mfrac>
+                                    <m:mrow>
+                                      <m:mi>q</m:mi>
 
-                     <entry>0.0000</entry>
-                  </row>
+                                      <m:mo>-</m:mo>
 
-                  <row>
-                     <entry>5</entry>
+                                      <m:msub>
+                                        <m:mi>q</m:mi>
 
-                     <entry>0.8416</entry>
-                  </row>
+                                        <m:mi>*</m:mi>
+                                      </m:msub>
+                                    </m:mrow>
 
-                  <row>
-                     <entry>10</entry>
+                                    <m:mi>β</m:mi>
+                                  </m:mfrac>
+                                </m:mrow>
 
-                     <entry>1.2816</entry>
-                  </row>
+                                <m:mo>)</m:mo>
+                              </m:mrow>
 
-                  <row>
-                     <entry>20</entry>
+                              <m:mo>, q ≥</m:mo>
+                            </m:mrow>
 
-                     <entry>1.6449</entry>
-                  </row>
+                            <m:msub>
+                              <m:mi>q</m:mi>
 
-                  <row>
-                     <entry>50</entry>
+                              <m:mi>*</m:mi>
+                            </m:msub>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
 
-                     <entry>2.0537</entry>
-                  </row>
+              <entry><inlineequation>
+                  <m:math display="inline">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Mean (q)</m:mi>
 
-                  <row>
-                     <entry>100</entry>
+                            <m:mo>=</m:mo>
 
-                     <entry>2.3263</entry>
-                  </row>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>q</m:mi>
 
-                  <row>
-                     <entry>200</entry>
+                                <m:mi>*</m:mi>
+                              </m:msub>
 
-                     <entry>2.5758</entry>
-                  </row>
+                              <m:mo>+</m:mo>
 
-                  <row>
-                     <entry>500</entry>
+                              <m:mi>β</m:mi>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
 
-                     <entry>2.8782</entry>
-                  </row>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Variance (q)</m:mi>
 
-                  <row>
-                     <entry>1000</entry>
+                            <m:mo>=</m:mo>
 
-                     <entry>3.0902</entry>
-                  </row>
-               </tbody>
-            </tgroup>
-         </table>
-      </section>
+                            <m:msup>
+                              <m:mi>β</m:mi>
 
-      <section>
-         <title>Generalized Pareto distribution</title>
+                              <m:mi>2</m:mi>
+                            </m:msup>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
 
-         <para>In POT modelling the generalized Pareto (GP) distribution is
-            often found to satisfactorily fit the data. Table 1 lists the pdf
-            p(q|θ), distribution function P(Q≤q|θ) and product moments for the GP
-            distribution. It has three parameters: q<subscript>*</subscript>, the
-            location parameter, β, the scale parameter and κ, the shape parameter.
-            When κ equals zero, the distribution simplifies to the exponential
-            distribution also described in Table 1.</para>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mrow>
+                            <m:mi>Skew (q)</m:mi>
 
-         <para>The GP distribution has an intimate relationship with the GEV.
-            If the GP describes the distribution of peaks over a threshold, then
-            for Poisson arrivals of the POT peaks with ν being the average number
-            of arrivals per year, it can be shown that the distribution of annual
-            maximum peaks is GEV with shape parameter κ, scale parameter and
-            location parameter .</para>
+                            <m:mo>=</m:mo>
 
-         <equation>
-            <m:math display="block">
-               <m:mrow>
-                  <m:mi>α</m:mi>
+                            <m:mi>2</m:mi>
+                          </m:mrow>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:math>
+                </inlineequation></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
 
-                  <m:mo>=</m:mo>
+      <para>Of the widely used distribution families, the GEV distribution has
+      the strongest theoretical appeal because it is the asymptotic
+      distribution of extreme values for a wide range of underlying parent
+      distributions. In the flood frequency context, suppose there are N flood
+      peaks in a year. Provided N is large and the flood peaks are identically
+      and independently distributed, the distribution of the largest peak flow
+      in the year approaches the GEV under quite general conditions. However,
+      it is questionable whether these assumptions are satisfied in
+      practice.</para>
 
-                  <m:mrow>
-                     <m:mi>β</m:mi>
+      <para>The number of independent flood peaks in any year may not be
+      sufficient to ensure asymptotic behaviour particularly for catchments
+      that tend to aridity. Moreover, in strongly seasonal climates, it is
+      unlikely the within-year independent flood peaks are random realizations
+      from the same probability distribution.</para>
 
-                     <m:msup>
-                        <m:mi>ν</m:mi>
+      <para>The GEV has gained widespread acceptance (for example, Natural
+      Environment Research Council, 1975; Wallis and Wood, 1985; Handbook of
+      Hydrology, Stedinger et al., 1993).</para>
+    </section>
 
-                        <m:mi>-κ</m:mi>
-                     </m:msup>
-                  </m:mrow>
-               </m:mrow>
-            </m:math>
-         </equation>
+    <section>
+      <title>Log Pearson III (LP3) distribution</title>
 
-         <para>and location parameter</para>
+      <para>Table 1 lists the pdf p(q|θ) and product moments for log Pearson
+      III (LP3) distribution. It has three parameters: τ, the location
+      parameter,α, the scale parameter and β, the shape parameter. When the
+      skew of log q is zero, the distribution simplifies to the log normal
+      whose details are provided in Table 1.</para>
 
-         <equation>
-            <m:math display="block">
-               <m:mrow>
-                  <m:mi>τ</m:mi>
+      <para>The LP3 distribution has been widely accepted in practice because
+      it consistently fits flood data as well if not better than other
+      probability families. It has performed best of those that have been
+      tested on data for Australian catchments (Conway 1970; Kopittke et al.,
+      1976; McMahon, 1979, McMahon and Srikanthan, 1981). It is the
+      recommended distribution for the United States in Bulletin 17B of the
+      Interagency Advisory Committee on Water Data (1982).</para>
 
-                  <m:mo>=</m:mo>
+      <para>The distribution, however, is not well-behaved from an inference
+      perspective. Direct inference of the parameters α, β and τ can cause
+      numerical problems. For example, when the skew of log q is close to
+      zero, the shape parameter α tends to infinity. Experience indicates it
+      is preferable to fit the first three moments of log q rather than α, β
+      and τ. Note that τ is a lower bound for positive skew and an upper bound
+      for negative skew.</para>
 
-                  <m:mrow>
-                     <m:mi>q∗</m:mi>
+      <para>A problem arises when the absolute value of the skew of log q
+      exceeds 2; that is, when α ≥ 1. When α &lt; 1, the LP3 has a
+      gamma-shaped density. However, when α ≥ 1, the density changes to a
+      J-shaped function. Indeed when α = 1, the pdf degenerates to that of an
+      exponential distribution with scale parameter β and location parameter
+      τ. For α ≥ 1, the J-shaped density seems to be over-parameterized with
+      three parameters. In such circumstances, it is pointless to use the LP3.
+      It is suggested either the GEV or the generalized Pareto distributions
+      be used as a substitute.</para>
 
-                     <m:mo>+</m:mo>
+      <para>An analytical form of the distribution function is not available
+      for the LP3 and log-normal distributions. To compute the quantile qY
+      (that is, the discharge with a 1 in Y AEP) the following equation may be
+      used:</para>
 
-                     <m:mfrac>
-                        <m:mi>β</m:mi>
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:mi>log</m:mi>
 
-                        <m:mi>κ</m:mi>
-                     </m:mfrac>
-                  </m:mrow>
-               </m:mrow>
-            </m:math>
-         </equation>
-      </section>
+              <m:msub>
+                <m:mi>q</m:mi>
 
-      <section>
-         <title>Zero-threshold mixture model</title>
+                <m:mi>Y</m:mi>
+              </m:msub>
+            </m:mrow>
 
-         <para>In certain parts of Australia, the AM flood series may contain
-            one or more years of zero or virtually zero flow. In such cases the
-            flood probability model is best described by a two-component mixture
-            model. In any year, there are two possibilities:</para>
+            <m:mo>=</m:mo>
 
-         <para>1. There is a (fixed) probability P0 that the peak flow equals
-            the zero-threshold flow q0, which may be zero or a near-zero
-            flow.</para>
+            <m:mrow>
+              <m:mi>m</m:mi>
 
-         <para>2.There is a probability 1- P0 that the peak flow exceeds the
-            threshold. In that case the distribution of the peak flow follows a
-            standard probability model.</para>
+              <m:mo>+</m:mo>
 
-         <para>A formal definition of this model can be found in Box 2.</para>
-      </section>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>K</m:mi>
 
-      <section>
-         <title>Multi-component or mixture models</title>
+                  <m:mi>Y</m:mi>
+                </m:msub>
 
-         <para>In some areas, flooding may be affected by different types of
-            meteorological events (for example, intense tropical cyclones and
-            storms characterized by more usual synoptic conditions) or by changing
-            hydraulic controls (e.g., see Example 1), causing abnormal slope
-            changes in the frequency curve. In such cases the GEV or LP3 families
-            may not adequately fit the data. This type of problem may be of
-            particular importance in northern Australia, and an example is
-            described by Ashkanasy and Weeks (1975). It may be desirable to
-            separate the data by cause and analyze each set separately. The above
-            reference describes a procedure using a combination of two log Normal
-            distributions. A two-component extreme value distribution has been
-            described by Rossi et al. (1984) and Fiorentino et al. (1985), and
-            developed and applied to U.K. data by Beran et al. (1986).
-            Alternatively the four or five parameter Wakeby distribution may be
-            used to fit such data (Houghton, 1978).</para>
-      </section>
+                <m:mo>(g)s</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
 
-      <section>
-         <title>Non-homogeneous models</title>
+      <para>where m, s and g are the mean, standard deviation and skewness of
+      the log discharge and KY is a frequency factor well-approximated by the
+      Wilson-Hilferty transformation</para>
 
-         <para>If the evidence suggests that flood risk is affected by
-            multi-decadal climate persistence, the use of non-homogeneous
-            probability models may need to be investigated. The concern is that
-            ignoring the non-homogeneity of the flood record may lead to biased
-            estimates of long-term flood risk.</para>
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:msub>
+                <m:mi>K</m:mi>
 
-         <para>If a non-homogeneous probability model with pdf p(q|θ(x)) is
-            identified this cannot be used to estimate long-term or marginal flood
-            risk. This is because the flood risk is dependent on the exogeneous
-            variables x. To estimate long-term flood risk the dependence on x must
-            be removed using the total probability rule to give</para>
+                <m:mi>Y</m:mi>
+              </m:msub>
 
-         <equation>
-            <m:math display="block">
-               <m:mrow>
-                  <m:mi>P(Q≤q)</m:mi>
+              <m:mo>(g)</m:mo>
+            </m:mrow>
 
-                  <m:mo>=</m:mo>
+            <m:mo>=</m:mo>
 
-                  <m:mrow>
-                     <m:mrow>
-                        <m:munderover>
-                           <m:mo>∫</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
 
-                           <m:mi>x</m:mi>
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>2</m:mi>
 
-                           <m:mi/>
-                        </m:munderover>
-                     </m:mrow>
+                        <m:mi>g</m:mi>
+                      </m:mfrac>
 
-                     <m:mrow>
-                        <m:mo>(</m:mo>
-
+                      <m:mrow>
                         <m:mrow>
-                           <m:mrow>
-                              <m:munderover>
-                                 <m:mo>∫</m:mo>
+                          <m:mo>[ {</m:mo>
 
-                                 <m:mi>0</m:mi>
+                          <m:mrow>
+                            <m:mfrac>
+                              <m:mi>g</m:mi>
 
-                                 <m:mi>q</m:mi>
-                              </m:munderover>
+                              <m:mi>6</m:mi>
+                            </m:mfrac>
 
-                              <m:mi>p(z∣θ</m:mi>
-                           </m:mrow>
+                            <m:mrow>
+                              <m:mrow>
+                                <m:mo>(</m:mo>
 
-                           <m:mo>(x))dz</m:mo>
+                                <m:mrow>
+                                  <m:mrow>
+                                    <m:msub>
+                                      <m:mi>Z</m:mi>
+
+                                      <m:mi>Y</m:mi>
+                                    </m:msub>
+
+                                    <m:mo>-</m:mo>
+
+                                    <m:mfrac>
+                                      <m:mi>g</m:mi>
+
+                                      <m:mi>6</m:mi>
+                                    </m:mfrac>
+                                  </m:mrow>
+                                </m:mrow>
+
+                                <m:mo>)</m:mo>
+                              </m:mrow>
+
+                              <m:mo>+1}³</m:mo>
+                            </m:mrow>
+                          </m:mrow>
                         </m:mrow>
 
-                        <m:mo>)</m:mo>
-                     </m:mrow>
+                        <m:mrow>
+                          <m:mi>-1</m:mi>
 
-                     <m:mi>p(x)dx</m:mi>
+                          <m:mtext>] if ∣g∣&gt;0</m:mtext>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+
+                <m:mtr>
+                  <m:mtd>
+                    <m:mi>0 if g=0</m:mi>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>for |g| &lt; 2 and AEPs ranging from 0.99 to 0.01. The term
+      z<subscript>Y</subscript> is the frequency factor for the standard
+      normal distribution which has a mean of zero and standard deviation of
+      1; z<subscript>Y</subscript> is the value of the standard normal deviate
+      with exceedance probability 1/Y. Table 2 lists z<subscript>Y</subscript>
+      for selected exceedance probabilities. Comprehensive tables of
+      K<subscript>Y</subscript> can be found in Australian Rainfall and Runoff
+      (1987, p.208).</para>
+
+      <table>
+        <title>Frequency factors for standard normal distribution.</title>
+
+        <tgroup cols="2">
+          <colspec align="center"/>
+
+          <thead>
+            <row>
+              <entry align="center">Y in AEP of 1 in Y</entry>
+
+              <entry align="center">zY</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>2</entry>
+
+              <entry>0.0000</entry>
+            </row>
+
+            <row>
+              <entry>5</entry>
+
+              <entry>0.8416</entry>
+            </row>
+
+            <row>
+              <entry>10</entry>
+
+              <entry>1.2816</entry>
+            </row>
+
+            <row>
+              <entry>20</entry>
+
+              <entry>1.6449</entry>
+            </row>
+
+            <row>
+              <entry>50</entry>
+
+              <entry>2.0537</entry>
+            </row>
+
+            <row>
+              <entry>100</entry>
+
+              <entry>2.3263</entry>
+            </row>
+
+            <row>
+              <entry>200</entry>
+
+              <entry>2.5758</entry>
+            </row>
+
+            <row>
+              <entry>500</entry>
+
+              <entry>2.8782</entry>
+            </row>
+
+            <row>
+              <entry>1000</entry>
+
+              <entry>3.0902</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+    <section>
+      <title>Generalized Pareto distribution</title>
+
+      <para>In POT modelling the generalized Pareto (GP) distribution is often
+      found to satisfactorily fit the data. Table 1 lists the pdf p(q|θ),
+      distribution function P(Q≤q|θ) and product moments for the GP
+      distribution. It has three parameters: q<subscript>*</subscript>, the
+      location parameter, β, the scale parameter and κ, the shape parameter.
+      When κ equals zero, the distribution simplifies to the exponential
+      distribution also described in Table 1.</para>
+
+      <para>The GP distribution has an intimate relationship with the GEV. If
+      the GP describes the distribution of peaks over a threshold, then for
+      Poisson arrivals of the POT peaks with ν being the average number of
+      arrivals per year, it can be shown that the distribution of annual
+      maximum peaks is GEV with shape parameter κ, scale parameter and
+      location parameter .</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>α</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>β</m:mi>
+
+              <m:msup>
+                <m:mi>ν</m:mi>
+
+                <m:mi>-κ</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>and location parameter</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>τ</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>q∗</m:mi>
+
+              <m:mo>+</m:mo>
+
+              <m:mfrac>
+                <m:mi>β</m:mi>
+
+                <m:mi>κ</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+    </section>
+
+    <section>
+      <title>Zero-threshold mixture model</title>
+
+      <para>In certain parts of Australia, the AM flood series may contain one
+      or more years of zero or virtually zero flow. In such cases the flood
+      probability model is best described by a two-component mixture model. In
+      any year, there are two possibilities:</para>
+
+      <para>1. There is a (fixed) probability P0 that the peak flow equals the
+      zero-threshold flow q0, which may be zero or a near-zero flow.</para>
+
+      <para>2.There is a probability 1- P0 that the peak flow exceeds the
+      threshold. In that case the distribution of the peak flow follows a
+      standard probability model.</para>
+
+      <para>A formal definition of this model can be found in Box 2.</para>
+    </section>
+
+    <section>
+      <title>Multi-component or mixture models</title>
+
+      <para>In some areas, flooding may be affected by different types of
+      meteorological events (for example, intense tropical cyclones and storms
+      characterized by more usual synoptic conditions) or by changing
+      hydraulic controls (e.g., see Example 1), causing abnormal slope changes
+      in the frequency curve. In such cases the GEV or LP3 families may not
+      adequately fit the data. This type of problem may be of particular
+      importance in northern Australia, and an example is described by
+      Ashkanasy and Weeks (1975). It may be desirable to separate the data by
+      cause and analyze each set separately. The above reference describes a
+      procedure using a combination of two log Normal distributions. A
+      two-component extreme value distribution has been described by Rossi et
+      al. (1984) and Fiorentino et al. (1985), and developed and applied to
+      U.K. data by Beran et al. (1986). Alternatively the four or five
+      parameter Wakeby distribution may be used to fit such data (Houghton,
+      1978).</para>
+    </section>
+
+    <section>
+      <title>Non-homogeneous models</title>
+
+      <para>If the evidence suggests that flood risk is affected by
+      multi-decadal climate persistence, the use of non-homogeneous
+      probability models may need to be investigated. The concern is that
+      ignoring the non-homogeneity of the flood record may lead to biased
+      estimates of long-term flood risk.</para>
+
+      <para>If a non-homogeneous probability model with pdf p(q|θ(x)) is
+      identified this cannot be used to estimate long-term or marginal flood
+      risk. This is because the flood risk is dependent on the exogeneous
+      variables x. To estimate long-term flood risk the dependence on x must
+      be removed using the total probability rule to give</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>P(Q≤q)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mrow>
+                <m:munderover>
+                  <m:mo>∫</m:mo>
+
+                  <m:mi>x</m:mi>
+
+                  <m:mi/>
+                </m:munderover>
+              </m:mrow>
+
+              <m:mrow>
+                <m:mo>(</m:mo>
+
+                <m:mrow>
+                  <m:mrow>
+                    <m:munderover>
+                      <m:mo>∫</m:mo>
+
+                      <m:mi>0</m:mi>
+
+                      <m:mi>q</m:mi>
+                    </m:munderover>
+
+                    <m:mi>p(z∣θ</m:mi>
                   </m:mrow>
-               </m:mrow>
-            </m:math>
-         </equation>
 
-         <para>where p(x) is the pdf of the exogenous variables.</para>
+                  <m:mo>(x))dz</m:mo>
+                </m:mrow>
 
-         <para>If the gauged record adequately samples the distribution of x,
-            it is not necessary to identify a non-homogeneous model. It suffices
-            to fit a probability model to all the record to estimate the long-term
-            flood risk.</para>
+                <m:mo>)</m:mo>
+              </m:mrow>
 
-         <para>However, if the gauged record does not adequately sample x,
-            significant bias in flood risk may result if only at-site data are
-            used. In such instances, it will be necessary to employ regional
-            frequency methods that take the nonhomogeneity into account. This is
-            an area of current research. Users are advised to keep abreast of new
-            developments.</para>
+              <m:mi>p(x)dx</m:mi>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
 
-         <para>Example 3 illustrates the impact on flood risk arising from
-            multi-decadal persistence in climate state as represented by the IPO
-            index. It illustrates how the exogenous variable x can be constructed,
-            demonstrates the serious bias in flood risk that can arise if short
-            records do not adequately sample different climate states and
-            illustrates the use of eqn (8).</para>
-      </section>
-   </section>
+      <para>where p(x) is the pdf of the exogenous variables.</para>
 
-   <section>
-      <title>Choice of Distribution for POT Series</title>
+      <para>If the gauged record adequately samples the distribution of x, it
+      is not necessary to identify a non-homogeneous model. It suffices to fit
+      a probability model to all the record to estimate the long-term flood
+      risk.</para>
 
-      <para>In some cases, it may be desirable to analytically fit a
-         probability distribution to POT data. Distributions that have been used
-         to describe the flood peak above a threshold include the exponential, GP
-         and LP3.</para>
-   </section>
+      <para>However, if the gauged record does not adequately sample x,
+      significant bias in flood risk may result if only at-site data are used.
+      In such instances, it will be necessary to employ regional frequency
+      methods that take the nonhomogeneity into account. This is an area of
+      current research. Users are advised to keep abreast of new
+      developments.</para>
+
+      <para>Example 3 illustrates the impact on flood risk arising from
+      multi-decadal persistence in climate state as represented by the IPO
+      index. It illustrates how the exogenous variable x can be constructed,
+      demonstrates the serious bias in flood risk that can arise if short
+      records do not adequately sample different climate states and
+      illustrates the use of eqn (8).</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Choice of Distribution for POT Series</title>
+
+    <para>In some cases, it may be desirable to analytically fit a probability
+    distribution to POT data. Distributions that have been used to describe
+    the flood peak above a threshold include the exponential, GP and
+    LP3.</para>
+  </section>
 </section>
