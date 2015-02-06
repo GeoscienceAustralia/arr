@@ -281,17 +281,17 @@
       2014b), it may be stated that the relative accuracy of regional flood
       estimates using the RFFE model presented in this chapter is likely to be
       within ±50% of true value; however, in a limited number of cases the
-      estimation error may exceed ±100% (see Section 7). It is unlikely that
-      any RFFE technique would be able to provide flood quantile estimates
-      which are of much greater accuracy than this, given the current
-      availability of streamflow data (in terms of temporal and spatial
-      coverage) in Australia.</para>
+      estimation error may exceed ±100% (see <xref
+      linkend="b3_ch3_s_yj49v"/>). It is unlikely that any RFFE technique
+      would be able to provide flood quantile estimates which are of much
+      greater accuracy than this, given the current availability of streamflow
+      data (in terms of temporal and spatial coverage) in Australia.</para>
 
       <para>For catchments having limited recorded streamflow data, the
       combination of at-site data with a RFFE technique is likely to provide
       more accurate flood quantile estimates than either the at-site or
       regional method alone. Details of how limited streamflow data can be
-      combined with a RFFE technique is presented in Book 4, Chapter 2 of
+      combined with a RFFE technique is presented in Book 3, Chapter 2 of
       ARR.</para>
 
       <para>An important assumption in all RFFE techniques is that the small
@@ -300,10 +300,10 @@
       catchments in a region. Not all ungauged catchments located in the
       region satisfy this basic homogeneity assumption; some catchments may
       have characteristics that are substantially different from the gauged
-      catchments in the region. Section 10 contains further discussion on the
-      limits of applicability of the RFFE technique, on what constitutes an
-      ‘atypical catchment’ and recommendations on how to derive flood
-      estimates for such catchments.</para>
+      catchments in the region. <xref linkend="b3_ch3_s_8airu"/> contains
+      further discussion on the limits of applicability of the RFFE technique,
+      on what constitutes an ‘atypical catchment’ and recommendations on how
+      to derive flood estimates for such catchments.</para>
     </section>
   </section>
 
@@ -337,23 +337,24 @@
       prediction equation cannot be pre-specified. To overcome this problem,
       the parameters of the regional prediction equations for all the gauged
       catchment locations are pre-estimated and integrated with the RFFE Model
-      2015 (see Section 11 for more details). To derive flood quantile
-      estimate at an ungauged catchment of interest, RFFE Model 2015 takes the
-      inverse distance weighted average value of flood quantile estimates
-      based on up to 15 nearest gauged catchment locations within 300 km
-      radius from the catchment of interest. This ensures a smooth variation
-      of flood quantile estimates over the space.</para>
+      2015 (see <xref linkend="b3_ch3_s_8u3cs"/> for more details). To derive
+      flood quantile estimate at an ungauged catchment of interest, RFFE Model
+      2015 takes the inverse distance weighted average value of flood quantile
+      estimates based on up to 15 nearest gauged catchment locations within
+      300 km radius from the catchment of interest. This ensures a smooth
+      variation of flood quantile estimates over the space.</para>
     </section>
 
     <section xml:id="b3_ch3_s_epemh">
       <title>Parameter Regression Technique (PRT)</title>
 
       <para>In the adopted RFFE technique for the data-rich areas of Australia
-      (see Section 4.1 for further details), the first three moments of the
-      LP3 distribution (i.e. the mean, standard deviation and skewness of the
-      natural logarithms of the annual maximum flood series) are regionalised.
-      This method is referred to as the parameter regression technique (PRT).
-      The LP3 distribution is described by the following equation:</para>
+      (see <xref linkend="b3_ch3_s_2fdu4"/> for further details), the first
+      three moments of the LP3 distribution (i.e. the mean, standard deviation
+      and skewness of the natural logarithms of the annual maximum flood
+      series) are regionalised. This method is referred to as the parameter
+      regression technique (PRT). The LP3 distribution is described by the
+      following equation:</para>
 
       <equation xml:id="b3_ch3_e_swrce">
         <m:math display="block">
@@ -824,8 +825,8 @@
       <para>The model error variance σ<subscript>δ</subscript>² can be
       estimated by either generalised method of moments (MOM) or maximum
       likelihood estimators. The MOM estimator is determined by iteratively
-      solving equation 5 along with the generalised residual mean square error
-      equation:</para>
+      solving <xref linkend="b3_ch3_e_1jjd4"/> along with the generalised
+      residual mean square error equation:</para>
 
       <equation xml:id="b3_ch3_e_w6z3z">
         <m:math display="block">
@@ -897,7 +898,7 @@
 
       <para>In some situations, the sampling covariance matrix explains all
       the variability observed in the data, which means the left-hand side of
-      equation (7) will be less than n – (k + 1) even if
+      <xref linkend="b3_ch3_e_w6z3z"/> will be less than n – (k + 1) even if
       σ<subscript>δ</subscript>² is zero. In these circumstances, the MOM
       estimator of the model error variance is generally taken to be
       zero.</para>
@@ -947,13 +948,13 @@
 
         <para>Data-rich areas include most of the coastal belts of Australia
         where there are a good number of recorded streamflow stations as shown
-        in Figure 1. An upper limit of catchment size of 1,000 km² is adopted.
-        However, in some states (such as the Northern Territory), a few larger
-        catchments are included as the total number of catchments with areas
-        less than 1,000 km² is too small. The cut-off record length is
-        selected as 19 years to maximise the number of eligible stations on
-        the consideration that a higher cut-off would reduce that
-        number.</para>
+        in <xref linkend="b3_ch3_f_55d8a"/>. An upper limit of catchment size
+        of 1,000 km² is adopted. However, in some states (such as the Northern
+        Territory), a few larger catchments are included as the total number
+        of catchments with areas less than 1,000 km² is too small. The cut-off
+        record length is selected as 19 years to maximise the number of
+        eligible stations on the consideration that a higher cut-off would
+        reduce that number.</para>
 
         <figure xml:id="b3_ch3_f_55d8a">
           <title>Geographical distributions of the adopted 798 catchments from
@@ -979,9 +980,9 @@
         known to have undergone major land use changes, such as the clearing
         of forests or changing of agricultural practices over the period of
         streamflow records are excluded from the data set. Stations graded as
-        „poor quality or with specific comments by the gauging authority
+        'poor quality' or with specific comments by the gauging authority
         regarding quality of the data are assessed in greater detail; if
-        stations are deemed „low quality they are excluded.</para>
+        stations are deemed 'low quality' they are excluded.</para>
 
         <para>The annual maximum flood series data may be affected by
         multi-decadal climate variability and climate change, which are not
@@ -990,8 +991,8 @@
         individual station; however, the impacts of climate change present a
         serious problem in terms of the applicability of the past data in
         predicting future flood frequency, which needs further research (Ishak
-        <emphasis>et al</emphasis>., 2013). This is further discussed in
-        Section 9.</para>
+        <emphasis>et al</emphasis>., 2013). This is further discussed in <xref
+        linkend="b3_ch3_s_31eib"/>.</para>
 
         <para>The data sets for the initially selected potential catchments
         are further examined, as detailed in Haddad <emphasis>et
@@ -1010,8 +1011,9 @@
         798 stations range from 19 to 102 years (median: 37 years). The
         catchment areas of the selected 798 catchments range from 0.5 km² to
         4,325 km² (median: 178 km²). The geographical distribution of the
-        selected 798 catchments is shown in Figure 1 and Table 1 presents a
-        summary of the selected catchments</para>
+        selected 798 catchments is shown in <xref linkend="b3_ch3_f_55d8a"/>
+        and <xref linkend="b3_ch3_t_opf7j"/> presents a summary of the
+        selected catchments</para>
 
         <table xml:id="b3_ch3_t_opf7j">
           <title>Summary of adopted catchments from data-rich areas of
@@ -1167,12 +1169,13 @@
       <title>Adopted RFFE Regions</title>
 
       <para>Australia is divided into seven regions. There are five data rich
-      areas, as shown in Table 2 and Figure 2. The remaining two regions are
-      data poor and are located in the semi-arid and arid areas (referred to
-      as arid areas) of Australia. The boundaries between the arid and
-      data-rich regions in Figure 2 are drawn approximately based on the 500
-      mm mean annual rainfall contour line. There are six fringe zones, as
-      discussed in Section 6.</para>
+      areas, as shown in <xref linkend="b3_ch3_t_2kbsr"/> and <xref
+      linkend="b3_ch3_f_49qvf"/>. The remaining two regions are data poor and
+      are located in the semi-arid and arid areas (referred to as arid areas)
+      of Australia. The boundaries between the arid and data-rich regions in
+      <xref linkend="b3_ch3_f_49qvf"/> are drawn approximately based on the
+      500 mm mean annual rainfall contour line. There are six fringe zones, as
+      discussed in <xref linkend="b3_ch3_s_m01jo"/>.</para>
 
       <figure xml:id="b3_ch3_f_49qvf">
         <title>Adopted regions for RFFE technique in Australia</title>
@@ -1185,8 +1188,7 @@
         </mediaobject>
       </figure>
 
-      <para>
-        <table xml:id="b3_ch3_t_k3lzr">
+      <para><table xml:id="b3_ch3_t_k3lzr">
           <title>Details of RFFE technique for data rich regions</title>
 
           <tgroup cols="4">
@@ -1253,17 +1255,17 @@
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </para>
+        </table></para>
     </section>
 
     <section xml:id="b3_ch3_s_o7h7w">
       <title>Adopted Estimation Equations</title>
 
-      <para>For the five data-rich regions described in Table 2, the adopted
-      estimation equations for <emphasis>M</emphasis>, <emphasis>S</emphasis>
-      and <emphasis>SK</emphasis> for the regional LP3 model (equation 1) have
-      the following general form:</para>
+      <para>For the five data-rich regions described in <xref
+      linkend="b3_ch3_t_k3lzr"/>, the adopted estimation equations for
+      <emphasis>M</emphasis>, <emphasis>S</emphasis> and
+      <emphasis>SK</emphasis> for the regional LP3 model (<xref
+      linkend="b3_ch3_e_swrce"/>) have the following general form:</para>
 
       <equation xml:id="b3_ch3_e_yitfd">
         <m:math display="block">
@@ -1356,10 +1358,11 @@
       <para>I<subscript>62</subscript> = design rainfall intensity (mm/h) at
       catchment centroid for 6-hour duration and AEP of 2%.</para>
 
-      <para>For Region 1 and Region 2, equations 9 and 10 have only the model
-      intercepts, i.e. for these two regions, the weighted average values of S
-      and SK are adopted, which are determined on the basis of record lengths
-      at the stations within the ROI sub-region.</para>
+      <para>For Region 1 and Region 2, <xref linkend="b3_ch3_e_n8zye"/> and
+      <xref linkend="b3_ch3_e_3r3ol"/> have only the model intercepts, i.e.
+      for these two regions, the weighted average values of S and SK are
+      adopted, which are determined on the basis of record lengths at the
+      stations within the ROI sub-region.</para>
 
       <para>The values of b<subscript>0</subscript>,
       b<subscript>1</subscript>, b<subscript>2</subscript>,
@@ -1405,20 +1408,21 @@
       availability in most of the arid areas of Australia. In the preparation
       of the regional flood estimation database, only a handful of catchments
       from the arid areas satisfy the selection criteria. To increase the
-      number of stations from the arid areas to develop a „reasonably
-      meaningful. RFFE method, the selection criteria are relaxed i.e. the
+      number of stations from the arid areas to develop a 'reasonably
+      meaningful' RFFE method, the selection criteria are relaxed i.e. the
       threshold streamflow record length is reduced to 10 years and the limit
       of catchment size is increased from 1,000 km² to 6,000 km². These
       criteria result in the selection of 55 catchments from the arid areas of
-      Australia (Figure 3 and Table 3). The selected catchments have average
-      annual rainfall smaller than 500 mm. The catchment areas range from 0.1
-      to 5,975 km² (median: 259 km²) and streamflow record lengths range from
-      10 to 46 years (median: 27 years).</para>
+      Australia (<xref linkend="b3_ch3_f_r2u60"/> and <xref
+      linkend="b3_ch3_t_0x8hz"/>). The selected catchments have average annual
+      rainfall smaller than 500 mm. The catchment areas range from 0.1 to
+      5,975 km² (median: 259 km²) and streamflow record lengths range from 10
+      to 46 years (median: 27 years).</para>
 
       <figure xml:id="b3_ch3_f_r2u60">
         <title>Locations of the selected catchments from the arid areas of
-        Australia (see Figure 2 for the boundary of the two arid
-        regions)</title>
+        Australia (see <xref linkend="b3_ch3_f_49qvf"/> for the boundary of
+        the two arid regions)</title>
 
         <mediaobject>
           <imageobject>
@@ -1498,8 +1502,9 @@
       significance. Examination of a number of alternative sub-regions led to
       the formation of two regions from the 55 arid catchments: Region 6 (11
       catchments from the Pilbara area of WA) and Region 7 (44 catchments from
-      all other arid areas except Pilbara) (see Figure 2 for the extent of
-      these two arid regions).</para>
+      all other arid areas except Pilbara) (see <xref
+      linkend="b3_ch3_f_49qvf"/> for the extent of these two arid
+      regions).</para>
     </section>
 
     <section xml:id="b3_ch3_s_ri9vz">
@@ -1609,15 +1614,15 @@
   <section xml:id="b3_ch3_s_m01jo">
     <title>FRINGE ZONES</title>
 
-    <para>The boundaries between the arid and data-rich regions in Figure 2
-    are drawn approximately based on the 500 mm mean annual rainfall contour
-    line. To reduce the effects of sharp variation in flood estimates for the
-    ungauged catchments located close to these regional boundaries, six fringe
-    zones are delineated, as shown Figure 2. For these fringe zones, the flood
-    estimate at an ungauged catchment location is taken as the inverse
-    distance weighted average value of the flood estimates based on the two
-    nearest regions. The method is embedded into the ARR RFFE Model
-    2015.</para>
+    <para>The boundaries between the arid and data-rich regions in <xref
+    linkend="b3_ch3_f_49qvf"/> are drawn approximately based on the 500 mm
+    mean annual rainfall contour line. To reduce the effects of sharp
+    variation in flood estimates for the ungauged catchments located close to
+    these regional boundaries, six fringe zones are delineated, as shown <xref
+    linkend="b3_ch3_f_49qvf"/>. For these fringe zones, the flood estimate at
+    an ungauged catchment location is taken as the inverse distance weighted
+    average value of the flood estimates based on the two nearest regions. The
+    method is embedded into the ARR RFFE Model 2015.</para>
   </section>
 
   <section xml:id="b3_ch3_s_yj49v">
@@ -1629,43 +1634,45 @@
     technique is applied to the catchment that was left out. The flood
     quantiles estimated using the RFFE technique are then compared with the
     at-site flood frequency estimates obtained by FLIKE (Kuczera, 1999) as
-    mentioned in Section 4.1. The procedure is repeated for each catchment in
-    the regional data set to provide an overall assessment of the performance
-    of the RFFE technique.</para>
+    mentioned in <xref linkend="b3_ch3_s_4foca"/>. The procedure is repeated
+    for each catchment in the regional data set to provide an overall
+    assessment of the performance of the RFFE technique.</para>
 
     <para>The reliability of the RFFE flood quantile confidence limits
-    described in Section 3.4 is assessed empirically using standardised
-    quantile residuals. The quantile residual is the difference between the
-    logarithm of flood quantile estimates obtained using at-site flood
-    frequency analysis and the RFFE technique. The standardised quantile
-    residual is the quantile residual divided by its standard deviation which
-    is the square root of the sum of the RFFE predictive variance of the flood
-    quantile and at-site quantile variance (Haddad and Rahman, 2012; Micevski
-    <emphasis>et al</emphasis>., 2014). This accounts for both the model error
-    (e.g. inadequacy of the RFFE model) and the sampling error (e.g. due to
-    limited streamflow record length). If the uncertainty in the log quantile
-    estimates has been adequately described, the standardized quantile
-    residuals should be consistent with a standard normal distribution.</para>
+    described in <xref linkend="b3_ch3_s_7r0rn"/> is assessed empirically
+    using standardised quantile residuals. The quantile residual is the
+    difference between the logarithm of flood quantile estimates obtained
+    using at-site flood frequency analysis and the RFFE technique. The
+    standardised quantile residual is the quantile residual divided by its
+    standard deviation which is the square root of the sum of the RFFE
+    predictive variance of the flood quantile and at-site quantile variance
+    (Haddad and Rahman, 2012; Micevski <emphasis>et al</emphasis>., 2014).
+    This accounts for both the model error (e.g. inadequacy of the RFFE model)
+    and the sampling error (e.g. due to limited streamflow record length). If
+    the uncertainty in the log quantile estimates has been adequately
+    described, the standardized quantile residuals should be consistent with a
+    standard normal distribution.</para>
 
-    <para>Figure 4 shows the plots of standardised residuals vs. normal scores
-    for Region 1 for AEPs of 10% and 5% (the plots for other AEPs for Region 1
-    are provided in Appendix B). Plots for other regions can be seen also in
-    Rahman <emphasis>et al</emphasis>. (2014b). These plots include 558
-    catchments from Region 1 used in the RFFE model and some 28 catchments
-    which were excluded from the RFFE model based on the results of
-    preliminary analysis and unusual characteristics such as significant
-    natural floodplain storage. Figure 4 reveals that most of the 558
-    catchments closely follow a 1:1 straight line indicating that the
-    assumption of normality of the residuals is not inconsistent with the
-    evidence; this is supported by the application of the Anderson-Darling and
-    Kolmogorov-Smirnov tests which show that the assumption of the normality
-    of the residuals cannot be rejected at the 10% level of significance.
-    Under the assumptions of normality, approximately 90% of the standardised
-    quantile residuals should lie between ± 2, which is largely satisfied.
-    There are a few catchments with standardised residual values close to ± 3.
-    These correspond to instances where the RFFE confidence limits may not be
-    reliable; an example of such catchment is provided in Section 12.3. Same
-    conclusion applies to the other data-rich regions.</para>
+    <para><xref linkend="b3_ch3_f_6ppin"/> shows the plots of standardised
+    residuals vs. normal scores for Region 1 for AEPs of 10% and 5% (the plots
+    for other AEPs for Region 1 are provided in Appendix B). Plots for other
+    regions can be seen also in Rahman <emphasis>et al</emphasis>. (2014b).
+    These plots include 558 catchments from Region 1 used in the RFFE model
+    and some 28 catchments which were excluded from the RFFE model based on
+    the results of preliminary analysis and unusual characteristics such as
+    significant natural floodplain storage. <xref linkend="b3_ch3_f_6ppin"/>
+    reveals that most of the 558 catchments closely follow a 1:1 straight line
+    indicating that the assumption of normality of the residuals is not
+    inconsistent with the evidence; this is supported by the application of
+    the Anderson-Darling and Kolmogorov-Smirnov tests which show that the
+    assumption of the normality of the residuals cannot be rejected at the 10%
+    level of significance. Under the assumptions of normality, approximately
+    90% of the standardised quantile residuals should lie between ± 2, which
+    is largely satisfied. There are a few catchments with standardised
+    residual values close to ± 3. These correspond to instances where the RFFE
+    confidence limits may not be reliable; an example of such catchment is
+    provided in <xref linkend="b3_ch3_s_p4hvx"/>. Same conclusion applies to
+    the other data-rich regions.</para>
 
     <figure xml:id="b3_ch3_f_6ppin">
       <title>Standardised residuals vs. normal scores for Region 1 based on
@@ -1809,8 +1816,7 @@
       </mediaobject>
     </figure>
 
-    <para>
-      <table xml:id="b3_ch3_t_zm9sj">
+    <para><table xml:id="b3_ch3_t_zm9sj">
         <title>Upper bound on (absolute) median relative error (RE) from
         leave-one-out validation of the REEF technique</title>
 
@@ -1979,8 +1985,7 @@
             </row>
           </tbody>
         </tgroup>
-      </table>
-    </para>
+      </table></para>
   </section>
 
   <section xml:id="b3_ch3_s_5x575">
@@ -2429,8 +2434,7 @@
 
               <entry>Shape Factor</entry>
 
-              <entry>
-                <inlineequation>
+              <entry><inlineequation>
                   <m:math display="inline">
                     <m:mfrac>
                       <m:mi>6 hour 50% AEP Intensity (mm/h)</m:mi>
@@ -2438,8 +2442,7 @@
                       <m:mi>6 hour 2% AEP Intensity (mm/h)</m:mi>
                     </m:mfrac>
                   </m:math>
-                </inlineequation>
-              </entry>
+                </inlineequation></entry>
             </row>
 
             <row>
@@ -3253,8 +3256,7 @@
         </mediaobject>
       </figure>
 
-      <para>
-        <table xml:id="b3_ch3_t_5qduj">
+      <para><table xml:id="b3_ch3_t_5qduj">
           <title>Application data for Four Mile Brook at Netic Rd, SW Western
           Australia (Region 5) (Basic Input Data)</title>
 
@@ -3307,8 +3309,7 @@
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </para>
+        </table></para>
 
       <figure xml:id="b3_ch3_f_9yh35">
         <title>RFFE Model 2015 screen shot for model output for Four Mile
@@ -3681,4 +3682,3 @@
     Hydrology</emphasis>, 153, 1–21.</para>
   </section>
 </chapter>
-
