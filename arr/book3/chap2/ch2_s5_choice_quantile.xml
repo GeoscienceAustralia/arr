@@ -18,9 +18,25 @@
       <m:math display="inline">
         <m:mi>θ</m:mi>
       </m:math>
-    </inlineequation> were known, then the pdf p(q|θ) can be used to compute
-  the flood quantile q<subscript>Y</subscript>(θ). For AM series the quantile
-  with an AEP of 1 in Y is defined as</para>
+    </inlineequation> were known, then the pdf <inlineequation>
+      <m:math display="inline">
+        <m:mi>p(q|θ)</m:mi>
+      </m:math>
+    </inlineequation> can be used to compute the flood quantile
+  <inlineequation>
+      <m:math display="inline">
+        <m:mrow>
+          <m:msub>
+            <m:mi>q</m:mi>
+
+            <m:mi>Y</m:mi>
+          </m:msub>
+
+          <m:mo>(θ)</m:mo>
+        </m:mrow>
+      </m:math>
+    </inlineequation>. For AM series the quantile with an AEP of 1 in Y is
+  defined as</para>
 
   <equation>
     <m:math display="block">
@@ -59,7 +75,7 @@
                   <m:mi>Y</m:mi>
                 </m:msub>
 
-                <m:mi>ͯ∞</m:mi>
+                <m:mi>∞</m:mi>
               </m:munderover>
 
               <m:mi>p(q∣θ</m:mi>
@@ -72,22 +88,95 @@
     </m:math>
   </equation>
 
-  <para>However, in practice the true value of θ (as well as the distribution
-  family) is unknown. All that is known about θ, given the data D, is
-  summarized by a probability distribution with pdf p(θ|D). Section 6
-  describes how this distribution may be obtained – this distribution is the
-  posterior distribution if performing a Bayesian analysis or the sampling
-  distribution if performing a bootstrap analysis.</para>
+  <para>However, in practice the true value of <inlineequation>
+      <m:math display="inline">
+        <m:mi>θ</m:mi>
+      </m:math>
+    </inlineequation> (as well as the distribution family) is unknown. All
+  that is known about <inlineequation>
+      <m:math display="inline">
+        <m:mi>θ</m:mi>
+      </m:math>
+    </inlineequation>, given the data D, is summarized by a probability
+  distribution with pdf <inlineequation>
+      <m:math display="inline">
+        <m:mi>p(θ|D)</m:mi>
+      </m:math>
+    </inlineequation>. Section 6 describes how this distribution may be
+  obtained – this distribution is the posterior distribution if performing a
+  Bayesian analysis or the sampling distribution if performing a bootstrap
+  analysis.</para>
 
-  <para>If the true value of θ is not known, it follows that the true value of
-  the quantile p(θ|D) is not known. The uncertainty about θ described by the
-  pdf p(θ|D) , translates into uncertainty about the quantile, described by
-  the quantile predictive pdf p(q<subscript>Y</subscript>|D). The question
-  then arises, which value from the quantile predictive pdf
-  p(q<subscript>Y</subscript>|D) should be adopted as the flood quantile
-  estimate? This section presents two approaches for determining the best
-  estimate of a flood discharge with a 1 in Y AEP knowing the pdf
-  p(θ|D).</para>
+  <para>If the true value of <inlineequation>
+      <m:math display="inline">
+        <m:mi>θ</m:mi>
+      </m:math>
+    </inlineequation> is not known, it follows that the true value of the
+  quantile <inlineequation>
+      <m:math display="inline">
+        <m:mi>p(θ|D)</m:mi>
+      </m:math>
+    </inlineequation> is not known. The uncertainty about <inlineequation>
+      <m:math display="inline">
+        <m:mi>θ</m:mi>
+      </m:math>
+    </inlineequation> described by the pdf <inlineequation>
+      <m:math display="inline">
+        <m:mi>p(θ|D)</m:mi>
+      </m:math>
+    </inlineequation> , translates into uncertainty about the quantile,
+  described by the quantile predictive pdf <inlineequation>
+      <m:math display="inline">
+        <m:mrow>
+          <m:mi>p(</m:mi>
+
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>|D)</m:mo>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </inlineequation>. The question then arises, which value from the quantile
+  predictive pdf <inlineequation>
+      <m:math display="inline">
+        <m:mrow>
+          <m:mi>p(</m:mi>
+
+          <m:msub>
+            <m:mi>q</m:mi>
+
+            <m:mi>Y</m:mi>
+          </m:msub>
+
+          <m:mi>|</m:mi>
+
+          <m:mo>D)</m:mo>
+        </m:mrow>
+      </m:math>
+    </inlineequation>should be adopted as the flood quantile estimate? This
+  section presents two approaches for determining the best estimate of a flood
+  discharge with a 1 in Y AEP knowing the pdf <inlineequation>
+      <m:math display="inline">
+        <m:mrow>
+          <m:mi>p(</m:mi>
+
+          <m:msub>
+            <m:mi>q</m:mi>
+
+            <m:mi>Y</m:mi>
+          </m:msub>
+
+          <m:mi>|</m:mi>
+
+          <m:mo>D)</m:mo>
+        </m:mrow>
+      </m:math>
+    </inlineequation>.</para>
 
   <section>
     <title>Expected Parameter Quantiles</title>
@@ -99,14 +188,83 @@
     estimated 1-in-Y AEP quantiles – this difference is called the quantile
     error.</para>
 
-    <para>The loss function L[
-    q<subscript>y</subscript>(D),q<subscript>y</subscript>(θ)] describes the
-    loss or consequence when the true quantile q<subscript>Y</subscript>(θ),
-    which depends on θ, is incorrectly estimated by
-    q<subscript>y</subscript>(D), which depends on the data D. Because the
-    true value of θ is uncertain, the best estimator q<subscript>y
-    </subscript>(D)<subscript>opt</subscript> is the one that minimizes the
-    expected loss</para>
+    <para>The loss function <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:mi>L(</m:mi>
+
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mrow>
+              <m:mi>(D),</m:mi>
+
+              <m:mrow>
+                <m:msub>
+                  <m:mi>q</m:mi>
+
+                  <m:mi>Y</m:mi>
+                </m:msub>
+
+                <m:mo>(θ)]</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </inlineequation> describes the loss or consequence when the true
+    quantile <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>(θ),</m:mo>
+          </m:mrow>
+        </m:math>
+      </inlineequation> which depends on <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>, is incorrectly estimated by <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>(D),</m:mo>
+          </m:mrow>
+        </m:math>
+      </inlineequation> which depends on the data D. Because the true value of
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> is uncertain, the best estimator <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:msub>
+              <m:mi>(D)</m:mi>
+
+              <m:mi>opt</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </inlineequation> is the one that minimizes the expected loss</para>
 
     <equation>
       <m:math display="block">
@@ -273,7 +431,7 @@
                 <m:mi>Y</m:mi>
               </m:msub>
 
-              <m:mi>| D]</m:mi>
+              <m:mi>| D]</m:mi>
 
               <m:msub>
                 <m:mi>q</m:mi>
@@ -286,7 +444,11 @@
           </m:math>
         </equation></para>
 
-      <para>where E(θ|D)] is the expected parameter given the data D</para>
+      <para>where <inlineequation>
+          <m:math display="inline">
+            <m:mi>E(θ|D)</m:mi>
+          </m:math>
+        </inlineequation> is the expected parameter given the data D</para>
 
       <equation>
         <m:math display="block">
@@ -306,9 +468,29 @@
         </m:math>
       </equation>
 
-      <para>The term q<subscript>Y</subscript>[E(θ|D)] is referred to as the
-      expected parameter 1-in-Y AEP quantile. When this term is used it is
-      understood that the quantile is computed with θ assigned E(θ|D)].</para>
+      <para>The term <inlineequation>
+          <m:math display="inline">
+            <m:mrow>
+              <m:msub>
+                <m:mi>q</m:mi>
+
+                <m:mi>Y</m:mi>
+              </m:msub>
+
+              <m:mo>[E(θ|D)]</m:mo>
+            </m:mrow>
+          </m:math>
+        </inlineequation> is referred to as the expected parameter 1-in-Y AEP
+      quantile. When this term is used it is understood that the quantile is
+      computed with <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> assigned <inlineequation>
+          <m:math display="inline">
+            <m:mi>[E(θ|D)]</m:mi>
+          </m:math>
+        </inlineequation>.</para>
     </section>
 
     <section>
@@ -440,7 +622,15 @@
         </m:math>
       </equation>
 
-      <para>where α and β are the loss coefficients for under- and overdesign
+      <para>where <inlineequation>
+          <m:math display="inline">
+            <m:mi>α</m:mi>
+          </m:math>
+        </inlineequation> and <inlineequation>
+          <m:math display="inline">
+            <m:mi>β</m:mi>
+          </m:math>
+        </inlineequation> are the loss coefficients for under- and overdesign
       respectively. It can be shown that the quantile estimator that minimizes
       the expected asymmetric linear loss must satisfy [DeGroot, 1970]</para>
 
@@ -492,12 +682,41 @@
         </m:math>
       </equation>
 
-      <para>When α equals
-      β,q<subscript>Y</subscript>(D)<subscript>opt</subscript>, is the median
-      of the quantile predictive distribution. However, when α equals 4β,
-      implying the consequences of underdesign are four times more severe than
-      overdesign, is the 80-percentile of the predictive distribution, a far
-      more conservative estimate than the median.</para>
+      <para>When <inlineequation>
+          <m:math display="inline">
+            <m:mi>α</m:mi>
+          </m:math>
+        </inlineequation> equals <inlineequation>
+          <m:math display="inline">
+            <m:mrow>
+              <m:mi>β,</m:mi>
+
+              <m:msub>
+                <m:mi>q</m:mi>
+
+                <m:mi>Y</m:mi>
+              </m:msub>
+
+              <m:msub>
+                <m:mi>(D)</m:mi>
+
+                <m:mi>opt</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:math>
+        </inlineequation>, is the median of the quantile predictive
+      distribution. However, when <inlineequation>
+          <m:math display="inline">
+            <m:mi>α</m:mi>
+          </m:math>
+        </inlineequation> equals <inlineequation>
+          <m:math display="inline">
+            <m:mi>4β</m:mi>
+          </m:math>
+        </inlineequation>, implying the consequences of underdesign are four
+      times more severe than overdesign, is the 80-percentile of the
+      predictive distribution, a far more conservative estimate than the
+      median.</para>
     </section>
   </section>
 
@@ -618,11 +837,36 @@
     </equation>
 
     <para>This quantile is greater than the expected parameter 1-in-Y AEP
-    quantile q<subscript>Y</subscript>[E(θ|D)] . To gain further insight
-    suppose we make qY equal to the expected parameter 1-in-Y AEP quantile and
-    compute its design flood AEP using eqn (18). Noting the inner integral is
-    the probability of the flood peak exceeding q<subscript>Y</subscript>
-    given a particular value of θ, eqn (18) can be rewritten as</para>
+    quantile <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>[E(θ|D)]</m:mo>
+          </m:mrow>
+        </m:math>
+      </inlineequation>. To gain further insight suppose we make qY equal to
+    the expected parameter 1-in-Y AEP quantile and compute its design flood
+    AEP using eqn (18). Noting the inner integral is the probability of the
+    flood peak exceeding <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </inlineequation> given a particular value of <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> , eqn (18) can be rewritten as</para>
 
     <equation>
       <m:math display="block">
@@ -717,8 +961,37 @@
     </equation>
 
     <para>It thus follows that the expected parameter 1-in-Y AEP quantile
-    q<subscript>Y</subscript>[E(θ|D)] has an expected AEP given by
-    P(q&gt;q<subscript>Y</subscript>|D) which exceeds 1/Y.</para>
+    <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>[Eθ |</m:mo>
+
+            <m:mi>D)]</m:mi>
+          </m:mrow>
+        </m:math>
+      </inlineequation> has an expected AEP given by <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:mi>P(q</m:mi>
+
+            <m:mo>&gt;</m:mo>
+
+            <m:msub>
+              <m:mi>q</m:mi>
+
+              <m:mi>Y</m:mi>
+            </m:msub>
+
+            <m:mo>| D)</m:mo>
+          </m:mrow>
+        </m:math>
+      </inlineequation> which exceeds 1/Y.</para>
   </section>
 
   <section>
@@ -775,9 +1048,8 @@
 
           <listitem>
             <para>Risk or frequency of exceedance is of primary importance for
-            design at a single site (such as in floodplain management). iv.
-            Split sample testing of flood estimation procedures (Beard,
-            1960).</para>
+            design at a single site (such as in floodplain management).
+            </para>
           </listitem>
 
           <listitem>
@@ -786,7 +1058,7 @@
           </listitem>
         </orderedlist>
 
-        <para>5<emphasis>.</emphasis> If there are significant differences
+        <para>2<emphasis>.</emphasis> If there are significant differences
         between the consequences of under- and overdesign, consideration
         should be given to using eqn (16) as the flood quantile
         estimator.</para>

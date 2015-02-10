@@ -15,7 +15,11 @@
     <para>As noted in Section 2, it is assumed that each flood peak in an AM
     or POT series is statistically independent of other flood peaks in the
     series. In addition the flood probability model, described by its
-    probability density function (pdf) p(q|θ(x)), must be specified.</para>
+    probability density function (pdf) <inlineequation>
+        <m:math display="inline">
+          <m:mi>p(q∣θ(x)),</m:mi>
+        </m:math>
+      </inlineequation> must be specified.</para>
 
     <para>There is no universally accepted flood probability model. Many types
     of probability distributions have been applied to flood frequency
@@ -63,13 +67,44 @@
     <section>
       <title>Generalized Extreme Value (GEV) distribution</title>
 
-      <para>Table 1 lists the pdf p(q|θ), distribution function P(Q≤q|θ) and
-      product moments for the generalized extreme value (GEV) distribution. It
-      has three parameters: τ, the location parameter, α, the scale parameter
-      and κ, the shape parameter. When the shape parameter κ equals 0, the GEV
-      simplifies to the Gumbel distribution whose details are also presented
-      in Table 1. For positive values of κ there exists an upper bound, while
-      for negative κ there exists a lower bound.</para>
+      <para>Table 1 lists the pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(q|θ),</m:mi>
+          </m:math>
+        </inlineequation> distribution function <inlineequation>
+          <m:math display="inline">
+            <m:mi>P(Q≤q∣θ)</m:mi>
+          </m:math>
+        </inlineequation> and product moments for the generalized extreme
+      value (GEV) distribution. It has three parameters:<inlineequation>
+          <m:math display="inline">
+            <m:mi> τ</m:mi>
+          </m:math>
+        </inlineequation>, the location parameter, <inlineequation>
+          <m:math display="inline">
+            <m:mi>α,</m:mi>
+          </m:math>
+        </inlineequation> the scale parameter and <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ,</m:mi>
+          </m:math>
+        </inlineequation> the shape parameter. When the shape
+      parameter<inlineequation>
+          <m:math display="inline">
+            <m:mi> κ</m:mi>
+          </m:math>
+        </inlineequation> equals 0, the GEV simplifies to the Gumbel
+      distribution whose details are also presented in Table 1. For positive
+      values of <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ </m:mi>
+          </m:math>
+        </inlineequation>there exists an upper bound, while for negative
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ </m:mi>
+          </m:math>
+        </inlineequation> there exists a lower bound.</para>
 
       <table>
         <title>Selected homogeneous probability models families for use in
@@ -1494,11 +1529,26 @@
     <section>
       <title>Log Pearson III (LP3) distribution</title>
 
-      <para>Table 1 lists the pdf p(q|θ) and product moments for log Pearson
-      III (LP3) distribution. It has three parameters: τ, the location
-      parameter,α, the scale parameter and β, the shape parameter. When the
-      skew of log q is zero, the distribution simplifies to the log normal
-      whose details are provided in Table 1.</para>
+      <para>Table 1 lists the pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(q|θ)</m:mi>
+          </m:math>
+        </inlineequation> and product moments for log Pearson III (LP3)
+      distribution. It has three parameters: <inlineequation>
+          <m:math display="inline">
+            <m:mi>τ,</m:mi>
+          </m:math>
+        </inlineequation> the location parameter,<inlineequation>
+          <m:math display="inline">
+            <m:mi>α,</m:mi>
+          </m:math>
+        </inlineequation> the scale parameter and <inlineequation>
+          <m:math display="inline">
+            <m:mi>β,</m:mi>
+          </m:math>
+        </inlineequation> the shape parameter. When the skew of log q is zero,
+      the distribution simplifies to the log normal whose details are provided
+      in Table 1.</para>
 
       <para>The LP3 distribution has been widely accepted in practice because
       it consistently fits flood data as well if not better than other
@@ -1509,22 +1559,72 @@
       Interagency Advisory Committee on Water Data (1982).</para>
 
       <para>The distribution, however, is not well-behaved from an inference
-      perspective. Direct inference of the parameters α, β and τ can cause
-      numerical problems. For example, when the skew of log q is close to
-      zero, the shape parameter α tends to infinity. Experience indicates it
-      is preferable to fit the first three moments of log q rather than α, β
-      and τ. Note that τ is a lower bound for positive skew and an upper bound
+      perspective. Direct inference of the parameters <inlineequation>
+          <m:math display="inline">
+            <m:mi>α ,β</m:mi>
+          </m:math>
+        </inlineequation> and <inlineequation>
+          <m:math display="inline">
+            <m:mi>τ </m:mi>
+          </m:math>
+        </inlineequation>can cause numerical problems. For example, when the
+      skew of log q is close to zero, the shape parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>α </m:mi>
+          </m:math>
+        </inlineequation>tends to infinity. Experience indicates it is
+      preferable to fit the first three moments of log q rather than
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>α ,β</m:mi>
+          </m:math>
+        </inlineequation> and <inlineequation>
+          <m:math display="inline">
+            <m:mi>τ </m:mi>
+          </m:math>
+        </inlineequation>. Note that <inlineequation>
+          <m:math display="inline">
+            <m:mi>τ </m:mi>
+          </m:math>
+        </inlineequation>is a lower bound for positive skew and an upper bound
       for negative skew.</para>
 
       <para>A problem arises when the absolute value of the skew of log q
-      exceeds 2; that is, when α ≥ 1. When α &lt; 1, the LP3 has a
-      gamma-shaped density. However, when α ≥ 1, the density changes to a
-      J-shaped function. Indeed when α = 1, the pdf degenerates to that of an
-      exponential distribution with scale parameter β and location parameter
-      τ. For α ≥ 1, the J-shaped density seems to be over-parameterized with
-      three parameters. In such circumstances, it is pointless to use the LP3.
-      It is suggested either the GEV or the generalized Pareto distributions
-      be used as a substitute.</para>
+      exceeds 2; that is, when <inlineequation>
+          <m:math display="inline">
+            <m:mi>α ≥1</m:mi>
+          </m:math>
+        </inlineequation>. When <inlineequation>
+          <m:math display="inline">
+            <m:mi>α &lt;1</m:mi>
+          </m:math>
+        </inlineequation>, the LP3 has a gamma-shaped density. However, when
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>α ≥1</m:mi>
+          </m:math>
+        </inlineequation>, the density changes to a J-shaped function. Indeed
+      when <inlineequation>
+          <m:math display="inline">
+            <m:mi>α =1</m:mi>
+          </m:math>
+        </inlineequation>, the pdf degenerates to that of an exponential
+      distribution with scale parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>β </m:mi>
+          </m:math>
+        </inlineequation>and location parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>τ </m:mi>
+          </m:math>
+        </inlineequation>. For <inlineequation>
+          <m:math display="inline">
+            <m:mi>α ≥ 1</m:mi>
+          </m:math>
+        </inlineequation>, the J-shaped density seems to be over-parameterized
+      with three parameters. In such circumstances, it is pointless to use the
+      LP3. It is suggested either the GEV or the generalized Pareto
+      distributions be used as a substitute.</para>
 
       <para>An analytical form of the distribution function is not available
       for the LP3 and log-normal distributions. To compute the quantile qY
@@ -1745,19 +1845,45 @@
       <title>Generalized Pareto distribution</title>
 
       <para>In POT modelling the generalized Pareto (GP) distribution is often
-      found to satisfactorily fit the data. Table 1 lists the pdf p(q|θ),
-      distribution function P(Q≤q|θ) and product moments for the GP
-      distribution. It has three parameters: q<subscript>*</subscript>, the
-      location parameter, β, the scale parameter and κ, the shape parameter.
-      When κ equals zero, the distribution simplifies to the exponential
-      distribution also described in Table 1.</para>
+      found to satisfactorily fit the data. Table 1 lists the pdf
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(q|θ) </m:mi>
+          </m:math>
+        </inlineequation>, distribution function <inlineequation>
+          <m:math display="inline">
+            <m:mi>P(Q≤q∣θ)</m:mi>
+          </m:math>
+        </inlineequation> and product moments for the GP distribution. It has
+      three parameters: q<subscript>*</subscript>, the location parameter,
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>β </m:mi>
+          </m:math>
+        </inlineequation>, the scale parameter and <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ </m:mi>
+          </m:math>
+        </inlineequation>, the shape parameter. When <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ </m:mi>
+          </m:math>
+        </inlineequation>equals zero, the distribution simplifies to the
+      exponential distribution also described in Table 1.</para>
 
       <para>The GP distribution has an intimate relationship with the GEV. If
       the GP describes the distribution of peaks over a threshold, then for
-      Poisson arrivals of the POT peaks with ν being the average number of
-      arrivals per year, it can be shown that the distribution of annual
-      maximum peaks is GEV with shape parameter κ, scale parameter and
-      location parameter .</para>
+      Poisson arrivals of the POT peaks with <inlineequation>
+          <m:math display="inline">
+            <m:mi>v</m:mi>
+          </m:math>
+        </inlineequation> being the average number of arrivals per year, it
+      can be shown that the distribution of annual maximum peaks is GEV with
+      shape parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>κ </m:mi>
+          </m:math>
+        </inlineequation>, scale parameter and location parameter .</para>
 
       <equation>
         <m:math display="block">
@@ -1851,11 +1977,15 @@
       ignoring the non-homogeneity of the flood record may lead to biased
       estimates of long-term flood risk.</para>
 
-      <para>If a non-homogeneous probability model with pdf p(q|θ(x)) is
-      identified this cannot be used to estimate long-term or marginal flood
-      risk. This is because the flood risk is dependent on the exogeneous
-      variables x. To estimate long-term flood risk the dependence on x must
-      be removed using the total probability rule to give</para>
+      <para>If a non-homogeneous probability model with pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(q|θ(x))</m:mi>
+          </m:math>
+        </inlineequation> is identified this cannot be used to estimate
+      long-term or marginal flood risk. This is because the flood risk is
+      dependent on the exogeneous variables x. To estimate long-term flood
+      risk the dependence on x must be removed using the total probability
+      rule to give</para>
 
       <equation>
         <m:math display="block">

@@ -109,26 +109,48 @@
     </equation>
 
     <para>where i is the rank of the gauged flood, n is the number of years of
-    gauged floods and α is a constant whose value is selected to preserve
+    gauged floods and <inlineequation>
+        <m:math display="inline">
+          <m:mi>α</m:mi>
+        </m:math>
+      </inlineequation> is a constant whose value is selected to preserve
     desirable statistical properties.</para>
 
-    <para>There are several choices for α:</para>
+    <para>There are several choices for <inlineequation>
+        <m:math display="inline">
+          <m:mi>α</m:mi>
+        </m:math>
+      </inlineequation>:</para>
 
     <itemizedlist>
       <listitem>
-        <para>α= 0 yields the Weibull plotting position which produces
-        unbiased estimates of the AEP of q<subscript>(i)</subscript>.</para>
+        <para><inlineequation>
+            <m:math display="inline">
+              <m:mi>α =</m:mi>
+            </m:math>
+          </inlineequation> 0 yields the Weibull plotting position which
+        produces unbiased estimates of the AEP of
+        q<subscript>(i)</subscript>.</para>
       </listitem>
 
       <listitem>
-        <para>α= 0.375 yields the Blom’s plotting position which produces
-        unbiased quantile estimates for the normal distribution.</para>
+        <para><inlineequation>
+            <m:math display="inline">
+              <m:mi>α =</m:mi>
+            </m:math>
+          </inlineequation> 0.375 yields the Blom’s plotting position which
+        produces unbiased quantile estimates for the normal
+        distribution.</para>
       </listitem>
 
       <listitem>
-        <para>α= 0.4 yields the Cunnane’s (1978) plotting position which
-        produces nearly unbiased quantile estimates for a range of probability
-        families.</para>
+        <para><inlineequation>
+            <m:math display="inline">
+              <m:mi>α =</m:mi>
+            </m:math>
+          </inlineequation> 0.4 yields the Cunnane’s (1978) plotting position
+        which produces nearly unbiased quantile estimates for a range of
+        probability families.</para>
       </listitem>
     </itemizedlist>
 
@@ -223,8 +245,12 @@
       </m:math>
     </equation>
 
-    <para>Replacing q by q<subscript>(i)</subscript> and 1-P(Q≤q) by the
-    plotting position of q<subscript>(i)</subscript> gives</para>
+    <para>Replacing q by q<subscript>(i)</subscript> and <inlineequation>
+        <m:math display="inline">
+          <m:mi>1-P(Q≤q) </m:mi>
+        </m:math>
+      </inlineequation> by the plotting position of
+    q<subscript>(i)</subscript> gives</para>
 
     <equation>
       <m:math display="block">
@@ -316,25 +342,81 @@
       <para>The core of the Bayesian approach is described below – see Lee
       (1989) and Gelman et al. (1995) for general expositions. The data D is
       hypothesized to be a random realization from a probability model with
-      pdf p(D|θ,M) where θ is a vector of unknown parameters. The pdf p(D|θ)
-      is given two labels depending on the context. When p(D|θ) is used to
-      describe the probability model generating the sample data D for a given
-      θ, it is called the sampling distribution. However, when inference about
-      the parameter θ is sought, p(D|θ) is called the likelihood function to
-      emphasize that the data D is known and the parameter θ is the object of
-      attention. The same notation for the sampling distribution and
-      likelihood function is used to emphasize its oneness.</para>
+      pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(D∣θ,M)</m:mi>
+          </m:math>
+        </inlineequation> where <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> is a vector of unknown parameters. The pdf
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(D|θ)</m:mi>
+          </m:math>
+        </inlineequation> is given two labels depending on the context. When
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(D|θ)</m:mi>
+          </m:math>
+        </inlineequation> is used to describe the probability model generating
+      the sample data D for a given <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation>, it is called the sampling distribution. However,
+      when inference about the parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> is sought, <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(D|θ)</m:mi>
+          </m:math>
+        </inlineequation> is called the likelihood function to emphasize that
+      the data D is known and the parameter <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> is the object of attention. The same notation for
+      the sampling distribution and likelihood function is used to emphasize
+      its oneness.</para>
 
-      <para>In Bayesian inference the parameter vector θ is considered to be a
-      random vector whose probability distribution describes what is known
-      about the true value of θ. Prior to analyzing the data D, knowledge
-      about θ given the probability model is summarized by the pdf p(θ). This
-      density, referred to as the prior density, can incorporate subjective
-      belief about θ.</para>
+      <para>In Bayesian inference the parameter vector <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> is considered to be a random vector whose
+      probability distribution describes what is known about the true value of
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation>. Prior to analyzing the data D, knowledge about
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> given the probability model is summarized by the pdf
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ)</m:mi>
+          </m:math>
+        </inlineequation>. This density, referred to as the prior density, can
+      incorporate subjective belief about <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation>.</para>
 
       <para>Bayes theorem is then used to process the information contained in
-      the data D by updating what is known about the true value of θ as
-      follows:</para>
+      the data D by updating what is known about the true value of
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> as follows:</para>
 
       <equation>
         <m:math display="block">
@@ -359,8 +441,13 @@
       </equation>
 
       <para>The posterior density p(θ|D) describes what is known about the
-      true value of θ given the data D, prior information and the probability
-      model. The denominator p(D) is the marginal likelihood defined as</para>
+      true value of <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> given the data D, prior information and the
+      probability model. The denominator p(D) is the marginal likelihood
+      defined as</para>
 
       <equation>
         <m:math display="block">
@@ -385,7 +472,11 @@
       </equation>
 
       <para>Usually the marginal likelihood is not computed as it does not
-      depend on θ and serves as a normalizing constant.</para>
+      depend on <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> and serves as a normalizing constant.</para>
     </section>
 
     <section>
@@ -524,10 +615,22 @@
     <section>
       <title>Prior Distributions</title>
 
-      <para>The prior pdf p(θ) reflects the worth of prior information on θ
-      obtained preferably from a regional analysis. A convenient distribution
-      is the multivariate normal with mean μp and covariance Σp; that
-      is,</para>
+      <para>The prior pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ)</m:mi>
+          </m:math>
+        </inlineequation> reflects the worth of prior information on
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> obtained preferably from a regional analysis. A
+      convenient distribution is the multivariate normal with mean μp and
+      covariance <inlineequation>
+          <m:math display="inline">
+            <m:mi>∑p</m:mi>
+          </m:math>
+        </inlineequation>; that is,</para>
 
       <equation>
         <m:math display="block">
@@ -648,36 +751,62 @@
     <section>
       <title>Monte Carlo Sampling from the Posterior Distribution</title>
 
-      <para>The posterior pdf p(θ|D) fully defines the parameter uncertainty.
-      However, interpreting this distribution is difficult using analytical
-      methods. Modern Monte Carlo methods for sampling from the posterior have
-      overcome this limitation – for example, see Gelman et al. (1995). Box 5
-      describes a particular sampling procedure called importance
-      sampling.</para>
+      <para>The posterior pdf <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ|D)</m:mi>
+          </m:math>
+        </inlineequation> fully defines the parameter uncertainty. However,
+      interpreting this distribution is difficult using analytical methods.
+      Modern Monte Carlo methods for sampling from the posterior have overcome
+      this limitation – for example, see Gelman et al. (1995). Box 5 describes
+      a particular sampling procedure called importance sampling.</para>
     </section>
 
     <section>
       <title>Quantile Confidence Limits and Expected Probability</title>
 
-      <para>The posterior distribution of any function dependent on θ can be
-      readily approximated using Monte Carlo samples. Confidence limits
-      describe the uncertainty about quantiles arising from uncertainty in the
-      fitted parameters. They are used in conjunction with the probability
-      plot to evaluate goodness-of-fit. 100(1-α)% quantile confidence limits,
-      or more correctly probability limits. Confidence limits can be derived
-      as follows:</para>
+      <para>The posterior distribution of any function dependent on
+      <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> can be readily approximated using Monte Carlo
+      samples. Confidence limits describe the uncertainty about quantiles
+      arising from uncertainty in the fitted parameters. They are used in
+      conjunction with the probability plot to evaluate goodness-of-fit.
+      100(1-<inlineequation>
+          <m:math display="inline">
+            <m:mi>α)%</m:mi>
+          </m:math>
+        </inlineequation> quantile confidence limits, or more correctly
+      probability limits. Confidence limits can be derived as follows:</para>
 
       <orderedlist>
         <listitem>
-          <para>Draw N samples from the posterior distribution {θ,w,i=1,...,N)
-          where w<subscript>i</subscript> is the normalized weight assigned to
-          the sample θ.</para>
+          <para>Draw N samples from the posterior distribution
+          {<inlineequation>
+              <m:math display="inline">
+                <m:mi>θ</m:mi>
+              </m:math>
+            </inlineequation>,w,i=1,...,N) where w<subscript>i</subscript> is
+          the normalized weight assigned to the sample <inlineequation>
+              <m:math display="inline">
+                <m:mi>θ</m:mi>
+              </m:math>
+            </inlineequation>.</para>
         </listitem>
 
         <listitem>
           <para>Rank in ascending order the N quantiles
-          {q<subscript>Y</subscript>(θ<subscript>(i)</subscript>),i=1,..,N}.
-          .</para>
+          {q<subscript>Y</subscript><inlineequation>
+              <m:math display="inline">
+                <m:msub>
+                  <m:mi> (θ</m:mi>
+
+                  <m:mi>(i)</m:mi>
+                </m:msub>
+              </m:math>
+            </inlineequation>),i=1,..,N}. .</para>
         </listitem>
 
         <listitem>
@@ -702,7 +831,15 @@
               </m:math>
             </inlineequation>where W<subscript>(j)</subscript> is the weight
           for the j<superscript>th</superscript> ranked quantile
-          q<subscript>Y</subscript>(θ<subscript>(j)</subscript>) .</para>
+          q<subscript>Y</subscript><inlineequation>
+              <m:math display="inline">
+                <m:msub>
+                  <m:mi>( θ</m:mi>
+
+                  <m:mi>(j)</m:mi>
+                </m:msub>
+              </m:math>
+            </inlineequation>) .</para>
         </listitem>
 
         <listitem>
@@ -1248,8 +1385,24 @@
       clue on how peaky, roughly speaking, the distribution is. “</para>
 
       <para>When many such samples are considered, the expectations
-      λ<subscript>1</subscript> and λ<subscript>2</subscript> give measures of
-      location and scale. Moreover, the L moment ratios</para>
+      <inlineequation>
+          <m:math display="inline">
+            <m:msub>
+              <m:mi>λ</m:mi>
+
+              <m:mi>1</m:mi>
+            </m:msub>
+          </m:math>
+        </inlineequation> and <inlineequation>
+          <m:math display="inline">
+            <m:msub>
+              <m:mi>λ</m:mi>
+
+              <m:mi>2</m:mi>
+            </m:msub>
+          </m:math>
+        </inlineequation> give measures of location and scale. Moreover, the L
+      moment ratios</para>
 
       <equation>
         <m:math display="block">
@@ -2170,14 +2323,26 @@
     <section>
       <title>Parameter Uncertainty and Quantile Confidence Limits</title>
 
-      <para>The sampling distribution p(θ|D) can be approximated using the
-      Monte Carlo method known as the parametric bootstrap described in Box 7.
-      This procedure yields N equi-weighted samples that approximate the
-      sampling distribution p(θ|D). As a result, they can be used to quantify
-      parameter uncertainty and estimate quantile confidence limits. However,
-      because the parametric bootstrap assumes θ is the true parameter, it
-      underestimates the uncertainty and therefore should not be used to
-      estimate expected probabilities.</para>
+      <para>The sampling distribution <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ|</m:mi>
+          </m:math>
+        </inlineequation>D) can be approximated using the Monte Carlo method
+      known as the parametric bootstrap described in Box 7. This procedure
+      yields N equi-weighted samples that approximate the sampling
+      distribution <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ|D)</m:mi>
+          </m:math>
+        </inlineequation>. As a result, they can be used to quantify parameter
+      uncertainty and estimate quantile confidence limits. However, because
+      the parametric bootstrap assumes <inlineequation>
+          <m:math display="inline">
+            <m:mi>θ</m:mi>
+          </m:math>
+        </inlineequation> is the true parameter, it underestimates the
+      uncertainty and therefore should not be used to estimate expected
+      probabilities.</para>
     </section>
 
     <section>

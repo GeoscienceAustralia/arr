@@ -127,8 +127,12 @@
     <para>Because the peaks are assumed to be statistically independent, the
     probability of the compound event is the product of the probabilities of
     the individual events. Therefore the probability that the random variable
-    W ≤ w in a POT series with n events occurring over the interval t
-    simplifies to</para>
+    W<inlineequation>
+        <m:math display="inline">
+          <m:mi>≤</m:mi>
+        </m:math>
+      </inlineequation> w in a POT series with n events occurring over the
+    interval t simplifies to</para>
 
     <equation>
       <m:math display="block">
@@ -235,7 +239,7 @@
     </equation>
 
     <para>The number of POT events n occurring over an interval t is random.
-    Suppose that the random variable n follows a Poisson distribution with ν
+    Suppose that the random variable n follows a Poisson distribution with v
     being the average number of POT events per year; that is,</para>
 
     <equation>
@@ -305,7 +309,11 @@
       </m:math>
     </equation>
 
-    <para>where P(W≤w|t) is the probability that the largest peak over time
+    <para>where P(W<inlineequation>
+        <m:math display="inline">
+          <m:mi>≤</m:mi>
+        </m:math>
+      </inlineequation>w|t) is the probability that the largest peak over time
     interval t is less than or equal to w. When the time interval t is set to
     one year, eqn (B1-4) defines the distribution of the AM series.</para>
 
@@ -340,7 +348,7 @@
     <equation>
       <m:math display="block">
         <m:mrow>
-          <m:mi>P(Time to next peak exceeding w≤t)</m:mi>
+          <m:mtext>P(Time to next peak exceeding w≤t)</m:mtext>
 
           <m:mo>=</m:mo>
 
@@ -582,8 +590,12 @@
 
     <para>where q<subscript>0</subscript> is the zero-threshold flow,
     P<subscript>0</subscript> is the probability of the AM peak equaling
-    q<subscript>0</subscript> and P(Q≤q|θ) is a probability model such as
-    described in Table 1.</para>
+    q<subscript>0</subscript> and P(Q<inlineequation>
+        <m:math display="inline">
+          <m:mi>≤</m:mi>
+        </m:math>
+      </inlineequation>q|θ) is a probability model such as described in Table
+    1.</para>
 
     <para>The pdf of the mixture model can be expressed using the generalized
     probability density which allows the random variable to take discrete
@@ -746,7 +758,11 @@
     <title>Box 3: Likelihood function: No-error-discharge case</title>
 
     <para>The likelihood function is, by definition, the joint pdf of D given
-    the parameter vector θ.</para>
+    the parameter vector <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>.</para>
 
     <para>The likelihood function for the gauged data is the joint pdf of the
     n gauged floods. Given the AM flood peaks are statistically independent,
@@ -838,7 +854,11 @@
       </m:math>
     </equation>
 
-    <para>where ∏ is the probability of an exceedance.</para>
+    <para>where <inlineequation>
+        <m:math display="inline">
+          <m:mi>Π</m:mi>
+        </m:math>
+      </inlineequation> is the probability of an exceedance.</para>
 
     <para>Provided each censoring threshold does not overlap over time with
     any other censoring threshold, the likelihood of the censored data
@@ -951,9 +971,13 @@
     </equation>
 
     <para>where
-    P(a<subscript>i</subscript>,b<subscript>i</subscript>|s<subscript>i</subscript>,θ)
-    is the binomial probability of observing exactly a<subscript>i</subscript>
-    exceedances above the threshold discharge s<subscript>i</subscript> in
+    P(a<subscript>i</subscript>,b<subscript>i</subscript>|s<subscript>i</subscript>,<inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>) is the binomial probability of observing exactly
+    a<subscript>i</subscript> exceedances above the threshold discharge
+    s<subscript>i</subscript> in
     (a<subscript>i</subscript>+b<subscript>i</subscript>).</para>
   </section>
 
@@ -1053,8 +1077,15 @@
     the error e<subscript>2</subscript> is not known – at best, only its
     probability distribution can be estimated. For practical applications one
     can assume e<subscript>2</subscript> is distributed as either a log-normal
-    or normal distribution with mean 1 and standard deviation
-    σ<subscript>2</subscript>.</para>
+    or normal distribution with mean 1 and standard deviation <inlineequation>
+        <m:math display="inline">
+          <m:msub>
+            <m:mi>σ</m:mi>
+
+            <m:mi>2</m:mi>
+          </m:msub>
+        </m:math>
+      </inlineequation>.</para>
 
     <figure>
       <title>Rating error multiplier space diagram for rating curve shown in
@@ -1069,14 +1100,37 @@
 
     <para>Data are assigned to each of the two zones, i=1,2, in the rating
     error space diagram. The rating error multiplier standard deviation for
-    the extension zone σ<subscript>2</subscript> is assigned a value with
-    σ<subscript>1</subscript> = 0. There are n<subscript>i</subscript> annual
-    flood peak estimates wji satisfying the zone constraint
-    w<subscript>i-1</subscript> ≤ w<subscript>ji</subscript> &lt;
-    w<subscript>i</subscript>, j=1,..,n<subscript>i</subscript> where
-    w<subscript>0</subscript>=0 and w<subscript>2</subscript>=∞. In addition,
-    there are mi threshold discharge estimates W<subscript>ji</subscript> for
-    which there are a<subscript>ji</subscript> exceedances in
+    the extension zone <inlineequation>
+        <m:math display="inline">
+          <m:msub>
+            <m:mi>σ</m:mi>
+
+            <m:mi>2</m:mi>
+          </m:msub>
+        </m:math>
+      </inlineequation> is assigned a value with <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:msub>
+              <m:mi>σ</m:mi>
+
+              <m:mi>1</m:mi>
+            </m:msub>
+
+            <m:mo>= 0</m:mo>
+          </m:mrow>
+        </m:math>
+      </inlineequation>. There are n<subscript>i</subscript> annual flood peak
+    estimates wji satisfying the zone constraint w<subscript>i-1</subscript> ≤
+    w<subscript>ji</subscript> &lt; w<subscript>i</subscript>,
+    j=1,..,n<subscript>i</subscript> where w<subscript>0</subscript>=0 and
+    w<subscript>2</subscript>= <inlineequation>
+        <m:math display="inline">
+          <m:mi>∞</m:mi>
+        </m:math>
+      </inlineequation>. In addition, there are mi threshold discharge
+    estimates W<subscript>ji</subscript> for which there are
+    a<subscript>ji</subscript> exceedances in
     (a<subscript>ji</subscript>+b<subscript>ji</subscript>) years,
     j=1,..,m<subscript>i</subscript>. Collectively this data is represented
     as</para>
@@ -1434,14 +1488,41 @@
       </m:math>
     </equation>
 
-    <para>g(e<subscript>i</subscript>|σ<subscript>i</subscript>) is the rating
-    error multiplier pdf with mean 1 and standard deviation
-    σ<subscript>i</subscript> and P(a,b|s,θ) is the binomial probability of
-    observing exactly a exceedances above the threshold discharge s in (a+b).
-    This is a complex expression which can only be evaluated numerically.
-    However, it makes the fullest use of information on annual flood peaks and
-    binomial-censored data in the presence of rating curve error. Section 3.7
-    offers limited guidance on the choice of σ<subscript>2</subscript>.</para>
+    <para>g(e<subscript>i</subscript>|<inlineequation>
+        <m:math display="inline">
+          <m:msub>
+            <m:mi>σ</m:mi>
+
+            <m:mi>i</m:mi>
+          </m:msub>
+        </m:math>
+      </inlineequation>) is the rating error multiplier pdf with mean 1 and
+    standard deviation <inlineequation>
+        <m:math display="inline">
+          <m:msub>
+            <m:mi>σ</m:mi>
+
+            <m:mi>i</m:mi>
+          </m:msub>
+        </m:math>
+      </inlineequation> and P(a,b|s,<inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>) is the binomial probability of observing exactly a
+    exceedances above the threshold discharge s in (a+b). This is a complex
+    expression which can only be evaluated numerically. However, it makes the
+    fullest use of information on annual flood peaks and binomial-censored
+    data in the presence of rating curve error. Section 3.7 offers limited
+    guidance on the choice of <inlineequation>
+        <m:math display="inline">
+          <m:msub>
+            <m:mi>σ</m:mi>
+
+            <m:mi>2</m:mi>
+          </m:msub>
+        </m:math>
+      </inlineequation>.</para>
   </section>
 
   <section>
@@ -1449,7 +1530,7 @@
 
     <para>Importance sampling is a widely used method [Gelman et al., 1995]
     for sampling parameters from a target probability model for which there is
-    no algorithm to draw random samples.. The basic idea is to sample from a
+    no algorithm to draw random samples. The basic idea is to sample from a
     probability model for which a sampling algorithm exists – the probability
     model is called the importance distribution and the samples are called
     particles. The particles are then weighted so that they represent samples
@@ -1461,9 +1542,13 @@
     <para>Step 1: Find most probable parameters of the target
     distribution</para>
 
-    <para>Any robust search method can be used to locate the value of θ which
-    maximizes the logarithm of the posterior probability density; that
-    is,</para>
+    <para>Any robust search method can be used to locate the value of
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> which maximizes the logarithm of the posterior
+    probability density; that is,</para>
 
     <equation>
       <m:math display="block">
@@ -1483,16 +1568,27 @@
       </m:math>
     </equation>
 
-    <para>where θ is the most probable value of θ. The shuffled complex
-    evolution algorithm of Duan et al. (1992) is a recommended search
-    method.</para>
+    <para>where <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> is the most probable value of <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>. The shuffled complex evolution algorithm of Duan et
+    al. (1992) is a recommended search method.</para>
 
     <para>Step 2: Obtain the importance distribution using a multinormal
     approximation to the target distribution</para>
 
-    <para>Almost always, the log of posterior pdf p(θ|D) can be approximated
-    by a second-order Taylor series expansion about the most probable
-    parameter to yield the multivariate normal approximation</para>
+    <para>Almost always, the log of posterior pdf <inlineequation>
+        <m:math display="inline">
+          <m:mi>p(θ|D)</m:mi>
+        </m:math>
+      </inlineequation> can be approximated by a second-order Taylor series
+    expansion about the most probable parameter to yield the multivariate
+    normal approximation</para>
 
     <equation>
       <m:math display="block">
@@ -1510,8 +1606,12 @@
       </m:math>
     </equation>
 
-    <para>where θ is interpreted as the mean and the posterior covariance Σ is
-    defined as the inverse of the Hessian</para>
+    <para>where θ is interpreted as the mean and the posterior covariance
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>Σ</m:mi>
+        </m:math>
+      </inlineequation> is defined as the inverse of the Hessian</para>
 
     <equation>
       <m:math display="block">
@@ -1600,8 +1700,12 @@
 
               <m:mi/>
             </m:math>
-          </inlineequation>where pN(θ) is the pdf of the multinormal
-        approximation obtained in Step 2.</para>
+          </inlineequation>where pN(<inlineequation>
+            <m:math display="inline">
+              <m:mi>θ</m:mi>
+            </m:math>
+          </inlineequation>) is the pdf of the multinormal approximation
+        obtained in Step 2.</para>
       </listitem>
 
       <listitem>
@@ -1667,8 +1771,12 @@
     <title>Box 6: LH moments for fitting the GEV distribution</title>
 
     <para>LH moments are based on linear combinations of higher
-    order-statistics. A shift parameter η=0,1,2,3… is introduced to give more
-    emphasis on higher ranked flows. LH moments are defined as:</para>
+    order-statistics. A shift parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>η = 0,1,2,3...</m:mi>
+        </m:math>
+      </inlineequation> is introduced to give more emphasis on higher ranked
+    flows. LH moments are defined as:</para>
 
     <equation>
       <m:math display="block">
@@ -2242,7 +2350,11 @@
     </table>
 
     <para>For ease of computation Wang (1997) derived the following
-    approximation for the shape parameter κ:</para>
+    approximation for the shape parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation>:</para>
 
     <para><inlineequation>
         <m:math display="inline">
@@ -2415,7 +2527,11 @@
     </table>
 
     <para>Wang (1997) derived the following estimators for LH moments with
-    shift parameter η:</para>
+    shift parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>η</m:mi>
+        </m:math>
+      </inlineequation>:</para>
 
     <equation>
       <m:math display="block">
@@ -2879,22 +2995,115 @@
       </m:math>
     </equation>
 
-    <para>where τ<subscript>4</subscript><superscript>η</superscript> is the
-    sample estimate of the LH-kurtosis,
-    τ<subscript>4</subscript><superscript>η</superscript> is the LH-kurtosis
-    derived from the GEV parameters fitted to the first three LH moments, and
-    σ(τ<subscript>4</subscript><superscript>η</superscript>
-    |τ<subscript>3</subscript><superscript>η</superscript>=τ<subscript>3</subscript><superscript>η</superscript>
-    ) is the standard deviation of
-    τ<subscript>4</subscript><superscript>η</superscript> assuming the sample
-    LH-skewness equals the LH-skewness derived from the GEV parameters fitted
-    to the first three LH moments. Under the hypothesis that the underlying
-    distribution is GEV, the test statistic z is approximately normal
-    distributed with mean 0 and variance 1. Wang (1998) describes a simple
-    relationship to estimate
-    σ(τ<subscript>4</subscript><superscript>η</superscript>
-    |τ<subscript>3</subscript><superscript>η</superscript>=τ<subscript>3</subscript><superscript>η</superscript>)
-    .</para>
+    <para>where <inlineequation>
+        <m:math display="inline">
+          <m:msubsup>
+            <m:mi>τ</m:mi>
+
+            <m:mi>4</m:mi>
+
+            <m:mi>η</m:mi>
+          </m:msubsup>
+        </m:math>
+      </inlineequation> is the sample estimate of the LH-kurtosis,
+    <inlineequation>
+        <m:math display="inline">
+          <m:msubsup>
+            <m:mi>τ</m:mi>
+
+            <m:mi>4</m:mi>
+
+            <m:mi>η</m:mi>
+          </m:msubsup>
+        </m:math>
+      </inlineequation> is the LH-kurtosis derived from the GEV parameters
+    fitted to the first three LH moments, and <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:mi>σ</m:mi>
+
+            <m:mo>(</m:mo>
+
+            <m:msubsup>
+              <m:mi>τ</m:mi>
+
+              <m:mi>4</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:msubsup>
+              <m:mi>|τ</m:mi>
+
+              <m:mi>3</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:mi>=</m:mi>
+
+            <m:msubsup>
+              <m:mi>τ</m:mi>
+
+              <m:mi>3</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:mi>)</m:mi>
+          </m:mrow>
+        </m:math>
+      </inlineequation> is the standard deviation of <inlineequation>
+        <m:math display="inline">
+          <m:msubsup>
+            <m:mi>τ</m:mi>
+
+            <m:mi>4</m:mi>
+
+            <m:mi>η</m:mi>
+          </m:msubsup>
+        </m:math>
+      </inlineequation> assuming the sample LH-skewness equals the LH-skewness
+    derived from the GEV parameters fitted to the first three LH moments.
+    Under the hypothesis that the underlying distribution is GEV, the test
+    statistic z is approximately normal distributed with mean 0 and variance
+    1. Wang (1998) describes a simple relationship to estimate <inlineequation>
+        <m:math display="inline">
+          <m:mrow>
+            <m:mi>σ(</m:mi>
+
+            <m:msubsup>
+              <m:mi>τ</m:mi>
+
+              <m:mi>4</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:mi>|</m:mi>
+
+            <m:msubsup>
+              <m:mi>τ</m:mi>
+
+              <m:mi>3</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:mi>=</m:mi>
+
+            <m:msubsup>
+              <m:mi>τ</m:mi>
+
+              <m:mi>3</m:mi>
+
+              <m:mi>η</m:mi>
+            </m:msubsup>
+
+            <m:mi>) </m:mi>
+          </m:mrow>
+        </m:math>
+      </inlineequation> .</para>
   </section>
 
   <section>
@@ -2906,7 +3115,11 @@
     <orderedlist>
       <listitem>
         <para>Fit the probability model to n years of gauged flows using L or
-        LH moments to yield the parameter estimate θ.</para>
+        LH moments to yield the parameter estimate <inlineequation>
+            <m:math display="inline">
+              <m:mi>θ</m:mi>
+            </m:math>
+          </inlineequation>.</para>
       </listitem>
 
       <listitem>
@@ -2915,7 +3128,11 @@
 
       <listitem>
         <para>Randomly sample n flows from the fitted distribution; that is,
-        q<subscript>ji</subscript> ← p(q|θ),j=1,...,n</para>
+        q<subscript>ji</subscript> ← p(q|<inlineequation>
+            <m:math display="inline">
+              <m:mi>θ</m:mi>
+            </m:math>
+          </inlineequation>),j=1,...,n</para>
       </listitem>
 
       <listitem>
@@ -2930,11 +3147,19 @@
     </orderedlist>
 
     <para>This procedure yields N equi-weighted samples that approximate the
-    sampling distribution p(θ|D). As a result, they can be used to quantify
+    sampling distribution p(<inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>|D). As a result, they can be used to quantify
     parameter uncertainty and estimate quantile confidence limits. However,
-    because the parametric bootstrap assumes θ is the true parameter, it
-    underestimates the uncertainty and therefore should not be used to
-    estimate expected probabilities.</para>
+    because the parametric bootstrap assumes <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> is the true parameter, it underestimates the
+    uncertainty and therefore should not be used to estimate expected
+    probabilities.</para>
   </section>
 
   <section>
@@ -2982,7 +3207,7 @@
     <figure>
       <title>Simulated rainfall and flood frequency curves with major
       floodplain storage activated at a threshold discharge of 3500
-      m3/s.</title>
+      m<superscript>3</superscript>/s.</title>
 
       <mediaobject>
         <imageobject>
@@ -3052,7 +3277,8 @@
 
     <para>This example illustrates fitting a probability model to gauged
     annual maximum flood data. The following table lists 31 years of gauged
-    annual maximum flows (m3/s) for the Hunter River at Singleton:</para>
+    annual maximum flows (m<superscript>3</superscript>/s) for the Hunter
+    River at Singleton:</para>
 
     <para/>
 
@@ -4540,7 +4766,15 @@
     assigned the value 33/76 based on the observation that 33 of the 76 years
     of record were in the IPO- epoch. Likewise P(x=1), the probability of
     being in an IPO+ epoch, is assigned the value 43/76. It follows that
-    p(z|θ,x=0) and p(z|θ,x=1) are the log normal pdfs fitted to IOP- and IPO+
+    p(z|<inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>,x=0) and p(z|<inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation>,x=1) are the log normal pdfs fitted to IOP- and IPO+
     data respectively</para>
 
     <para>The derived marginal distribution is plotted in Figure E8-5. It
@@ -4681,10 +4915,23 @@
     </informaltable>
 
     <para>The following table reports the results of estimating GEV parameters
-    by substituting the L moment estimates in eqn (31) to obtain κ and then
-    using the equations in Table 3 to estimate τ and α. The standard deviation
-    and correlation were derived from 5000 bootstrapped samples following the
-    procedure described in Section 6.4.6.</para>
+    by substituting the L moment estimates in eqn (31) to obtain
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation> and then using the equations in Table 3 to estimate
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>τ</m:mi>
+        </m:math>
+      </inlineequation> and <inlineequation>
+        <m:math display="inline">
+          <m:mi>α</m:mi>
+        </m:math>
+      </inlineequation>. The standard deviation and correlation were derived
+    from 5000 bootstrapped samples following the procedure described in
+    Section 6.4.6.</para>
 
     <informaltable>
       <tgroup cols="8">
@@ -4768,7 +5015,11 @@
     along with GEV 1 in Y AEP quantiles and their 90% confidence limits. The
     confidence limits widen appreciably for the bigger floods – this is
     largely due to there being insufficient information to accurately infer
-    the shape parameter κ.</para>
+    the shape parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation>.</para>
 
     <figure>
       <title/>
@@ -4796,10 +5047,18 @@
     departures from the data which exhibit reverse curvature.</para>
 
     <para>To deal with this poor fit, a LH moment search was conducted to find
-    the optimal shift parameter η using the procedure described in Section
-    6.4.5. The optimal shift was found to be 4. Figure E10-2 presents the LH
-    moment fit with shift η equal to 4. The fit effectively disregards floods
-    with an AEP in excess of 1 in 2 and provides a very good fit to upper
+    the optimal shift parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>η</m:mi>
+        </m:math>
+      </inlineequation> using the procedure described in Section 6.4.5. The
+    optimal shift was found to be 4. Figure E10-2 presents the LH moment fit
+    with shift <inlineequation>
+        <m:math display="inline">
+          <m:mi>η</m:mi>
+        </m:math>
+      </inlineequation> equal to 4. The fit effectively disregards floods with
+    an AEP in excess of 1 in 2 and provides a very good fit to upper
     tail.</para>
 
     <figure>
@@ -4825,16 +5084,27 @@
     </figure>
 
     <para>The very significant reduction in the width of the quantile
-    confidence intervals is largely due to the shape parameter κ changing from
-    –0.17 to 0.50. The L moment fit in Figure E10-1 was a compromise with the
-    bulk of the small and medium-sized floods suggesting an upward curvature
-    in the probability plot – as a result the GEV shape parameter κ had to be
-    negative to enable upward curvature. In contrast, the LH moment fit
-    favoured the large-sized floods which exhibit a downward curvature
-    resulting in a positive shape parameter. For positive κ the GEV has an
-    upper bound. In this case the upper bound is about 2070
-    m<superscript>3</superscript>/s which is only 17% greater than the largest
-    observed flood.</para>
+    confidence intervals is largely due to the shape parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation> changing from –0.17 to 0.50. The L moment fit in
+    Figure E10-1 was a compromise with the bulk of the small and medium-sized
+    floods suggesting an upward curvature in the probability plot – as a
+    result the GEV shape parameter <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation> had to be negative to enable upward curvature. In
+    contrast, the LH moment fit favoured the large-sized floods which exhibit
+    a downward curvature resulting in a positive shape parameter. For positive
+    <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation> the GEV has an upper bound. In this case the upper
+    bound is about 2070 m<superscript>3</superscript>/s which is only 17%
+    greater than the largest observed flood.</para>
   </section>
 
   <section>
@@ -4965,8 +5235,12 @@
 
     <para>The first two L moments were estimated as 226.36 and 79.2. Noting
     that the exponential distribution is a special case of the generalised
-    Pareto when κ = 0, it follows from Table 3 that the exponential parameters
-    are related to the L moments by</para>
+    Pareto when <inlineequation>
+        <m:math display="inline">
+          <m:mi>κ</m:mi>
+        </m:math>
+      </inlineequation> = 0, it follows from Table 3 that the exponential
+    parameters are related to the L moments by</para>
 
     <equation>
       <m:math display="block">
@@ -5013,10 +5287,8 @@
     </equation>
 
     <para>which yields values for q* and β of 68.11 and 158.24 respectively.
-    Using eqn (B1-7), the expected number of peaks that exceed w in a
-    yea</para>
-
-    <para>r is</para>
+    Using eqn (B1-7), the expected number of peaks that exceed w in a year
+    is</para>
 
     <equation>
       <m:math display="block">
