@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" version="5.0" xml:id="b3_ch2_s3">
+<section status="In Preparation" version="5.0" xml:id="b3_ch2_s3"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
   <title>SELECTION AND PREPARATION OF DATA</title>
 
   <section xml:id="b3_ch2_s_tz98n">
@@ -11,13 +18,14 @@
     discrete values must be extracted from this record as the events to be
     analyzed. The problem of assessing independence of events, and of
     selecting all independent events, is illustrated by the streamflow record
-    for a 1000 km<superscript>2</superscript> catchment in Figure 3. There is
-    little doubt that peaks A and B are not independent or that they are
-    serially correlated, while peak D is independent of A and B. However, the
-    independence of peak C from A and B is open to question, and there is
-    doubt as to whether the independent peaks in the record are B and D, or B,
-    C and D. Methods for selecting the peaks to be included in the analysis
-    are described in the following subsections.</para>
+    for a 1000 km<superscript>2</superscript> catchment in <xref
+    linkend="b3_ch2_f_m34sp"/>. There is little doubt that peaks A and B are
+    not independent or that they are serially correlated, while peak D is
+    independent of A and B. However, the independence of peak C from A and B
+    is open to question, and there is doubt as to whether the independent
+    peaks in the record are B and D, or B, C and D. Methods for selecting the
+    peaks to be included in the analysis are described in the following
+    subsections.</para>
 
     <figure xml:id="b3_ch2_f_m34sp">
       <title>Hydrograph for a 1000 km<superscript>2</superscript> catchment
@@ -132,17 +140,16 @@
                   <m:mtr>
                     <m:mtd>
                       <m:mrow>
-                        <m:mi>1 if the </m:mi>
+                        <m:mi>1 if the</m:mi>
 
                         <m:mrow>
                           <m:msup>
-                            <m:mi>t</m:mi>
+                            <m:mi> t</m:mi>
 
                             <m:mi>th</m:mi>
                           </m:msup>
 
-                          <m:mtext> flood peak ≥threshold discharge
-                          q</m:mtext>
+                          <m:mtext>flood peak ≥threshold discharge q</m:mtext>
                         </m:mrow>
                       </m:mrow>
                     </m:mtd>
@@ -160,7 +167,7 @@
                             <m:mi>th</m:mi>
                           </m:msup>
 
-                          <m:mtext> flood peak ≤ threshold discharge
+                          <m:mtext>flood peak ≤ threshold discharge
                           q</m:mtext>
                         </m:mrow>
                       </m:mrow>
@@ -181,11 +188,11 @@
       deliberately exclude small floods below some threshold because the
       overall fit is being unduly influenced by the small floods.</para>
 
-      <para>Figure 4 presents a graphical depiction of gauged and censored
-      time series data. In the first part of the record all the peaks are
-      below a threshold. In the second part, daily readings define a lower
-      threshold for the peak. Finally in the third part, continuous gauging
-      yields instantaneous peaks.</para>
+      <para><xref linkend="b3_ch2_f_ujoua"/> presents a graphical depiction of
+      gauged and censored time series data. In the first part of the record
+      all the peaks are below a threshold. In the second part, daily readings
+      define a lower threshold for the peak. Finally in the third part,
+      continuous gauging yields instantaneous peaks.</para>
 
       <figure xml:id="b3_ch2_f_ujoua">
         <title>Depiction of censored and gauged flow time series data.</title>
@@ -252,15 +259,16 @@
     3N. If a probability distribution is to be fitted to the POT series the
     desirable base discharge and average number of floods per year selected
     depend on the type of distribution. These distributions are discussed
-    further in Section 4.3. For the compound model using a Poisson
-    distribution of occurrences and an exponential distribution of magnitudes,
-    Tavares and da Silva (1983) and Jayasuriya and Mein (1985) found that K
-    should equal 2N or greater, and the U.K Flood Studies Report (Natural
-    Environment Research Council, 1975) recommended that K should equal 3N to
-    5N. For fitting the log Pearson III distribution, the values of the
-    moments depend on the number of floods selected and the base discharge.
-    McDermott and Pilgrim (1982) and Jayasuriya and Mein (1985) found that
-    best results were obtained in this case when K equalled N.</para>
+    further in <xref linkend="???"/> Section 4.3. For the compound model using
+    a Poisson distribution of occurrences and an exponential distribution of
+    magnitudes, Tavares and da Silva (1983) and Jayasuriya and Mein (1985)
+    found that K should equal 2N or greater, and the U.K Flood Studies Report
+    (Natural Environment Research Council, 1975) recommended that K should
+    equal 3N to 5N. For fitting the log Pearson III distribution, the values
+    of the moments depend on the number of floods selected and the base
+    discharge. McDermott and Pilgrim (1982) and Jayasuriya and Mein (1985)
+    found that best results were obtained in this case when K equalled
+    N.</para>
 
     <para>An important advantage of the POT series is that when the selected
     base value is sufficiently high, small events that are not really floods
@@ -535,48 +543,52 @@
 
     <para>Potter and Walker (1981, 1985) observe that flood discharge is
     inferred from a rating curve which is subject to discontinuous measurement
-    error. Consider Figure 5 which depicts a rating curve with two regions
-    having different error characteristics. The interpolation zone consists of
-    that part of the rating curve well defined by discharge-stage
-    measurements; typically the error coefficient of variation (CV) would be
-    small, say 1 to 5%. In the extension zone the rating curve is extended by
-    methods such as slope-conveyance, log-log extrapolation or fitting to
-    indirect discharge estimates. Typically such extensions are smooth and,
-    therefore, can induce systematic under- or over-estimation of the true
-    discharge over a range of stage. The extension error CV is not well known
-    but Potter and Walker (1981, 1985) suggest it may be as high as
-    30%.</para>
+    error. Consider <xref linkend="b3_ch2_f_fms8f"/> which depicts a rating
+    curve with two regions having different error characteristics. The
+    interpolation zone consists of that part of the rating curve well defined
+    by discharge-stage measurements; typically the error coefficient of
+    variation (CV) would be small, say 1 to 5%. In the extension zone the
+    rating curve is extended by methods such as slope-conveyance, log-log
+    extrapolation or fitting to indirect discharge estimates. Typically such
+    extensions are smooth and, therefore, can induce systematic under- or
+    over-estimation of the true discharge over a range of stage. The extension
+    error CV is not well known but Potter and Walker (1981, 1985) suggest it
+    may be as high as 30%.</para>
 
-    <para>Figures 5 and 6 illustrate two cases of smooth rating curve
-    extension wherein systematic error is introduced. In Figure 5, an indirect
-    discharge estimate is made for a large flood well beyond the largest
-    gauged flow. Such estimates are subject to considerable uncertainty. In
-    this example the estimate was below the true discharge. In the absence of
-    any other information the rating curve is extended to pass smoothly
-    through this point thereby introducing a systematic underestimate of large
-    flood discharges. Even if more than one indirect discharge estimate were
-    available, it is likely the errors will be correlated because the same
-    biases in estimating Manning's n, conveyance and friction slope would be
-    present.</para>
+    <para><xref linkend="b3_ch2_f_fms8f"/> and <xref
+    linkend="b3_ch2_f_j4g36"/> illustrate two cases of smooth rating curve
+    extension wherein systematic error is introduced. In <xref
+    linkend="b3_ch2_f_fms8f"/>, an indirect discharge estimate is made for a
+    large flood well beyond the largest gauged flow. Such estimates are
+    subject to considerable uncertainty. In this example the estimate was
+    below the true discharge. In the absence of any other information the
+    rating curve is extended to pass smoothly through this point thereby
+    introducing a systematic underestimate of large flood discharges. Even if
+    more than one indirect discharge estimate were available, it is likely the
+    errors will be correlated because the same biases in estimating Manning's
+    n, conveyance and friction slope would be present.</para>
 
-    <para>In Figure 6 the rating curve is extended using the slope-conveyance
-    method. The method relies on extrapolating gauged estimates of the
-    friction slope so that the friction slope asymptotes to a constant value.
-    Depending on how well the approach to asymptotic conditions is defined by
-    the data considerable systematic error in extrapolation may occur. Perhaps
-    of greater concern is the assumption that Manning's n and conveyance can
-    be reliably estimated in the overbank flow regime particularly when there
-    are strong contrasts in roughness along the wetted perimeter.</para>
+    <para>In <xref linkend="b3_ch2_f_j4g36"/> the rating curve is extended
+    using the slope-conveyance method. The method relies on extrapolating
+    gauged estimates of the friction slope so that the friction slope
+    asymptotes to a constant value. Depending on how well the approach to
+    asymptotic conditions is defined by the data considerable systematic error
+    in extrapolation may occur. Perhaps of greater concern is the assumption
+    that Manning's n and conveyance can be reliably estimated in the overbank
+    flow regime particularly when there are strong contrasts in roughness
+    along the wetted perimeter.</para>
 
-    <para>Though Figure 5 represents an idealization of actual rating curve
-    extension two points of practical significance are noted:</para>
+    <para>Though <xref linkend="b3_ch2_f_fms8f"/> represents an idealization
+    of actual rating curve extension two points of practical significance are
+    noted:</para>
 
     <orderedlist>
       <listitem>
         <para>The error is systematic in the sense that the extended rating is
         likely to diverge from the true rating as discharge increases. The
         error, therefore, is likely to be highly correlated - in fact, it is
-        perfectly correlated in the idealization of Figure 5.</para>
+        perfectly correlated in the idealization of <xref
+        linkend="b3_ch2_f_fms8f"/>.</para>
       </listitem>
 
       <listitem>
@@ -699,26 +711,28 @@
     component of North Pacific monthly sea surface temperature
     variability.</para>
 
-    <para>The IPO time series from 1880 is displayed in Figure 7. It reveals
-    extended periods where the index either lies below or above zero. Power et
-    al. (1999) have shown that the association between ENSO and Australian
-    climate is modulated by the IPO - a strong association was found between
-    the magnitude of ENSO impacts during negative IPO phases, whilst positive
-    IPO phases showed a weaker, less predictable relationship. Additionally,
-    Kiem et al. (2003) and Kiem and Franks (2004) analysed NSW flood and
-    drought data and demonstrated that the IPO negative state magnified the
-    impact of La Nina events. Moreover, they demonstrated that the IPO
-    negative phase, related to mid-latitude Pacific Ocean cooling, appears to
-    result in an increased frequency of cold La Nina events. The net effect of
-    the dual modulation of ENSO by IPO is the occurrence of multi-decadal
-    periods of elevated and reduced flood risk. To place this in context,
-    Figure 8 shows regional flood index curves based on about 40 NSW sites for
-    the different IPO states (Kiem et al., 2003) – the 1 in 100 AEP flood
-    during years with a positive IPO index corresponds to the 1 in 6 AEP flood
-    during years with a negative IPO index. Micevski et al. (2003)
-    investigating a range of sites in NSW found that that floods occurring
-    during IPO "negative" periods were, on average, about 1.8 times bigger
-    than floods with the same frequency during IPO "positive" periods.</para>
+    <para>The IPO time series from 1880 is displayed in <xref
+    linkend="b3_ch2_f_6x7dy"/>. It reveals extended periods where the index
+    either lies below or above zero. Power et al. (1999) have shown that the
+    association between ENSO and Australian climate is modulated by the IPO -
+    a strong association was found between the magnitude of ENSO impacts
+    during negative IPO phases, whilst positive IPO phases showed a weaker,
+    less predictable relationship. Additionally, Kiem et al. (2003) and Kiem
+    and Franks (2004) analysed NSW flood and drought data and demonstrated
+    that the IPO negative state magnified the impact of La Nina events.
+    Moreover, they demonstrated that the IPO negative phase, related to
+    mid-latitude Pacific Ocean cooling, appears to result in an increased
+    frequency of cold La Nina events. The net effect of the dual modulation of
+    ENSO by IPO is the occurrence of multi-decadal periods of elevated and
+    reduced flood risk. To place this in context, <xref
+    linkend="b3_ch2_f_fy36g"/> shows regional flood index curves based on
+    about 40 NSW sites for the different IPO states (Kiem et al., 2003) – the
+    1 in 100 AEP flood during years with a positive IPO index corresponds to
+    the 1 in 6 AEP flood during years with a negative IPO index. Micevski et
+    al. (2003) investigating a range of sites in NSW found that that floods
+    occurring during IPO "negative" periods were, on average, about 1.8 times
+    bigger than floods with the same frequency during IPO "positive"
+    periods.</para>
 
     <para>A key area of current research is the spatial variability of ENSO
     and IPO impacts. The associations between ENSO, IPO and eastern Australian
@@ -771,11 +785,11 @@
     describe methods for estimating flood frequency at ungauged sites.
     Provided such methods also provide estimates of uncertainty, the regional
     information can be pooled with the at-site information to yield more
-    accurate results. Section 6.3.5 shows how regional information on flood
-    probability model parameters can pooled with at-site information. When
-    pooling at-site and regional information it is important to establish that
-    both sources of information are consistent – that is, they yield
-    statistically consistent results.</para>
+    accurate results. <xref linkend="???"/>Section 6.3.5 shows how regional
+    information on flood probability model parameters can pooled with at-site
+    information. When pooling at-site and regional information it is important
+    to establish that both sources of information are consistent – that is,
+    they yield statistically consistent results.</para>
   </section>
 
   <section xml:id="b3_ch2_s_fvb1b">
@@ -786,8 +800,8 @@
     catchment and streamflow data from nearby catchments may indicate the
     likelihood of a large flood having occurred during the gap. A regression
     may be able to be derived to enable a missing flood to be estimated, but
-    as discussed in Section 3.6.1, the degree correlation is often
-    insufficient for a quantitative estimate.</para>
+    as discussed in <xref linkend="???"/> Section 3.6.1, the degree
+    correlation is often insufficient for a quantitative estimate.</para>
 
     <para>For AM series the missing record period is of no consequence and can
     be included in the period of record, if it can be determined that the
