@@ -29,7 +29,7 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureB1_1.JPG"/>
+          <imagedata fileref="figures/Figure1.png"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -988,13 +988,13 @@
   <section xml:id="b3_ch2_s_vyzbz">
     <title>Box 4: Likelihood function: Error-in-discharge case</title>
 
-    <para>Figure B4-1 presents a rating error space diagram. In zone 1, the
-    interpolation zone it is assumed the rating error multiplier
-    e<subscript>1</subscript> equals 1 – that is, errors within the rated part
-    of the rating curve are deemed negligible. As a result the estimated flow
-    w equals the true flow q. However, in zone 2, the extension zone, the
-    rating error multiplier e<subscript>2</subscript> is assumed to be a
-    random variable with mean of 1. The anchor point
+    <para><xref linkend="b3_ch2_f_6qnp5"/> presents a rating error space
+    diagram. In zone 1, the interpolation zone it is assumed the rating error
+    multiplier e<subscript>1</subscript> equals 1 – that is, errors within the
+    rated part of the rating curve are deemed negligible. As a result the
+    estimated flow w equals the true flow q. However, in zone 2, the extension
+    zone, the rating error multiplier e<subscript>2</subscript> is assumed to
+    be a random variable with mean of 1. The anchor point
     (q<subscript>1</subscript>,w<subscript>1</subscript>) separates the
     interpolation and extension zones. The rating error model can represented
     mathematically as</para>
@@ -1125,10 +1125,10 @@
           </m:mrow>
         </m:math>
       </inlineequation>. There are n<subscript>i</subscript> annual flood peak
-    estimates wji satisfying the zone constraint w<subscript>i-1</subscript> ≤
-    w<subscript>ji</subscript> &lt; w<subscript>i</subscript>,
-    j=1,..,n<subscript>i</subscript> where w<subscript>0</subscript>=0 and
-    w<subscript>2</subscript>= <inlineequation>
+    estimates w<subscript>ji</subscript> satisfying the zone constraint
+    w<subscript>i-1</subscript> ≤ w<subscript>ji</subscript> &lt;
+    w<subscript>i</subscript>, j=1,..,n<subscript>i</subscript> where
+    w<subscript>0</subscript>=0 and w<subscript>2</subscript>= <inlineequation>
         <m:math display="inline">
           <m:mi>∞</m:mi>
         </m:math>
@@ -1517,8 +1517,9 @@
     exceedances above the threshold discharge s in (a+b). This is a complex
     expression which can only be evaluated numerically. However, it makes the
     fullest use of information on annual flood peaks and binomial-censored
-    data in the presence of rating curve error. Section 3.7 offers limited
-    guidance on the choice of <inlineequation>
+    data in the presence of rating curve error. <xref
+    linkend="b3_ch2_s_zlx6z"/> offers limited guidance on the choice of
+    <inlineequation>
         <m:math display="inline">
           <m:msub>
             <m:mi>σ</m:mi>
@@ -1984,8 +1985,9 @@
       </m:math>
     </equation>
 
-    <para>Table 4 presents the relationship between the first four LH moments
-    and the parameters of the GEV and Gumbel distributions.</para>
+    <para><xref linkend="b3_ch2_t_g48se"/> presents the relationship between
+    the first four LH moments and the parameters of the GEV and Gumbel
+    distributions.</para>
 
     <table xml:id="b3_ch2_t_g48se">
       <title>LH moments for GEV and Gumbel distributions (from Wang,
@@ -2360,7 +2362,7 @@
         </m:math>
       </inlineequation>:</para>
 
-    <para><inlineequation>
+    <para><equation xml:id="b3_ch2_e_ieds7">
         <m:math display="inline">
           <m:mi>κ</m:mi>
 
@@ -2440,14 +2442,14 @@
             </m:mrow>
           </m:mrow>
         </m:math>
-      </inlineequation></para>
+      </equation></para>
 
-    <para>where the polynomial coefficients vary with η according to Table
-    B6-2.</para>
+    <para>where the polynomial coefficients vary with η according to <xref
+    linkend="b3_ch2_t_idxtt"/>.</para>
 
     <table xml:id="b3_ch2_t_idxtt">
-      <title>Table B6-2. Polynomial coefficients for use with eqn
-      (B6-2)</title>
+      <title>Polynomial coefficients for use with <xref
+      linkend="b3_ch2_e_ieds7"/></title>
 
       <tgroup cols="5">
         <colspec align="center"/>
@@ -3175,9 +3177,9 @@
     of high resolution rainfall. This is routed through a rainfall-runoff
     model to generate runoff into the stream system. The storage-discharge
     relationship for the stream is depicted by the bilinear relationship shown
-    in Figure E1-1. A feature of this relationship is the activation of
-    significant flood terrace storage once a threshold discharge is
-    exceeded.</para>
+    in <xref linkend="b3_ch2_f_hpsm2"/>. A feature of this relationship is the
+    activation of significant flood terrace storage once a threshold discharge
+    is exceeded.</para>
 
     <figure xml:id="b3_ch2_f_hpsm2">
       <title>Bilinear channel storage-discharge relationship</title>
@@ -3190,23 +3192,23 @@
     </figure>
 
     <para>The routing model parameters were selected so that major flood
-    terrace storage is activated by floods with an AEP less than 1 in 100.
-    This situation was chosen to represent a river with multiple flood
-    terraces with the lowest terraces accommodating the majority of floods and
-    the highest terrace only inundated by extreme floods.</para>
+    terrace storage is activated by floods with an AEP less than 1%. This
+    situation was chosen to represent a river with multiple flood terraces
+    with the lowest terraces accommodating the majority of floods and the
+    highest terrace only inundated by extreme floods.</para>
 
-    <para>Figure E1-2 presents the flood frequency curve based on 30000
-    simulated years – it shows a clear break in slope around the 1 in 100 AEP
-    corresponding to the activation of major flood terrace storage. Indeed the
-    flood frequency curve displays downward curvature despite that the fact
-    the rainfall frequency curve displays upward curvature in the 1 in 100 to
-    1000 AEP range. In contrast the flood frequency curve based on 100 years
-    of “data” shows no evidence of downward curvature. This is because in a
-    100-year record there is little chance of the major flood terrace storage
-    being activated. Indeed without knowledge of the underlying hydraulics one
-    would be tempted to extrapolate the 100-year flood record using a straight
-    line extrapolation. Such an extrapolation would rapidly diverge from the
-    “true” frequency curve.</para>
+    <para><xref linkend="b3_ch2_f_owuiv"/> presents the flood frequency curve
+    based on 30000 simulated years – it shows a clear break in slope around
+    the 1% AEP corresponding to the activation of major flood terrace storage.
+    Indeed the flood frequency curve displays downward curvature despite that
+    the fact the rainfall frequency curve displays upward curvature in the 1%
+    to 0.1% (1 in 1000) AEP range. In contrast the flood frequency curve based
+    on 100 years of “data” shows no evidence of downward curvature. This is
+    because in a 100-year record there is little chance of the major flood
+    terrace storage being activated. Indeed without knowledge of the
+    underlying hydraulics one would be tempted to extrapolate the 100-year
+    flood record using a straight line extrapolation. Such an extrapolation
+    would rapidly diverge from the “true” frequency curve.</para>
 
     <figure xml:id="b3_ch2_f_owuiv">
       <title>Simulated rainfall and flood frequency curves with major
@@ -3239,15 +3241,16 @@
     period. This effect can be quite significant, even for reasonably large
     catchments.</para>
 
-    <para>Figures E2-1 and E2-2, taken from Micevski et al. (2003), compare
+    <para><xref linkend="b3_ch2_f_097da"/> and <xref
+    linkend="b3_ch2_f_mvr25"/>, taken from Micevski et al. (2003), compare
     instantaneous annual maximum discharge against the discharge recorded at
     9am on the same day for two gauging stations in the Hunter Valley:
     Goulburn River at Coggan with area 3340 km<superscript>2</superscript> and
     Hunter River at Singleton with area 16400 km<superscript>2</superscript>.
-    The dashed line represents equality. Figure E2-1 demonstrates that the
-    true peak flow can be up to 10 times the 9am flow. In contrast the
-    estimation error is much smaller for the larger catchment shown in Figure
-    E2-2.</para>
+    The dashed line represents equality. <xref linkend="b3_ch2_f_097da"/>
+    demonstrates that the true peak flow can be up to 10 times the 9am flow.
+    In contrast the estimation error is much smaller for the larger catchment
+    shown in <xref linkend="b3_ch2_f_mvr25"/>.</para>
 
     <figure xml:id="b3_ch2_f_097da">
       <title>Comparison between true peak flow and 9 am flow for Goulburn
@@ -3283,8 +3286,6 @@
     annual maximum flood data. The following table lists 31 years of gauged
     annual maximum flows (m<superscript>3</superscript>/s) for the Hunter
     River at Singleton:</para>
-
-    <para/>
 
     <informaltable>
       <tgroup cols="4">
@@ -3563,10 +3564,10 @@
       </tgroup>
     </informaltable>
 
-    <para>Figure E5-1 displays the log normal probability plot of the gauged
-    flows, the 1 in Y AEP quantile curve (derived using the posterior mean
-    parameters), the 90% quantile confidence limits and the expected
-    probability curve.</para>
+    <para><xref linkend="b3_ch2_f_0us6g"/> displays the log normal probability
+    plot of the gauged flows, the 1 in Y AEP quantile curve (derived using the
+    posterior mean parameters), the 90% quantile confidence limits and the
+    expected probability curve.</para>
 
     <figure xml:id="b3_ch2_f_0us6g">
       <title>Bayesian LP3 fit to 31 years of gauged annual maximum floods with
@@ -3583,13 +3584,13 @@
     needs to be tempered by the fact that the figure plots the logarithm of
     the flood peaks. The following table of selected 1 in Y AEP quantiles
     q<subscript>Y</subscript> and their 90% confidence limits presents a more
-    sobering perspective. For example, for the 1 in 100 AEP flood, the 5% and
-    95% confidence limits are respectively 37% and 546% of the quantile
-    q<subscript>Y</subscript>! The 1 in 500 AEP confidence limits are so wide
-    as to render estimation meaningless. Note the expected AEP for the
-    quantile q¬Y consistently exceeds the nominal 1 in Y AEP. For example, the
-    1 in 100 AEP quantile of 19572 m<superscript>3</superscript>/s has an
-    expected AEP of 1 in 74.</para>
+    sobering perspective. For example, for the 1% AEP flood, the 5% and 95%
+    confidence limits are respectively 37% and 546% of the quantile
+    q<subscript>Y</subscript>! The 0.2% AEP confidence limits are so wide as
+    to render estimation meaningless. Note the expected AEP for the quantile
+    q¬Y consistently exceeds the nominal 1 in Y AEP. For example, the 1% (1 in
+    100) AEP quantile of 19572 m<superscript>3</superscript>/s has an expected
+    AEP of 1.35% (1 in 74).</para>
 
     <informaltable>
       <tgroup cols="5">
@@ -3603,7 +3604,7 @@
 
         <tbody>
           <row>
-            <entry>1 in Y AEP</entry>
+            <entry>AEP (%)</entry>
 
             <entry>Quantile estimate q<subscript>Y</subscript></entry>
 
@@ -3611,7 +3612,7 @@
 
             <entry>Quantile confidence limits 95% limit</entry>
 
-            <entry>Expected 1 in Y AEP for q<subscript>Y</subscript></entry>
+            <entry>Expected % AEP for q<subscript>Y</subscript></entry>
           </row>
 
           <row>
@@ -3623,11 +3624,11 @@
 
             <entry>8408</entry>
 
-            <entry>9.9</entry>
+            <entry>10.1</entry>
           </row>
 
           <row>
-            <entry>50</entry>
+            <entry>2</entry>
 
             <entry>12786</entry>
 
@@ -3635,11 +3636,11 @@
 
             <entry>51009</entry>
 
-            <entry>43</entry>
+            <entry>2.33</entry>
           </row>
 
           <row>
-            <entry>100</entry>
+            <entry>1</entry>
 
             <entry>19572</entry>
 
@@ -3647,11 +3648,11 @@
 
             <entry>106933</entry>
 
-            <entry>74</entry>
+            <entry>1.35</entry>
           </row>
 
           <row>
-            <entry>500</entry>
+            <entry>0.2</entry>
 
             <entry>47033</entry>
 
@@ -3659,7 +3660,7 @@
 
             <entry>570619</entry>
 
-            <entry>208</entry>
+            <entry>0.48</entry>
           </row>
         </tbody>
       </tgroup>
@@ -3810,7 +3811,7 @@
 
         <tbody>
           <row>
-            <entry>1 in Y AEP</entry>
+            <entry>% AEP</entry>
 
             <entry>Quantile estimate q<subscript>Y</subscript></entry>
 
@@ -3830,11 +3831,11 @@
 
             <entry>4946</entry>
 
-            <entry>9.6</entry>
+            <entry>10.4</entry>
           </row>
 
           <row>
-            <entry>50</entry>
+            <entry>2</entry>
 
             <entry>9350</entry>
 
@@ -3842,11 +3843,11 @@
 
             <entry>16511</entry>
 
-            <entry>48</entry>
+            <entry>2.08</entry>
           </row>
 
           <row>
-            <entry>100</entry>
+            <entry>1</entry>
 
             <entry>13510</entry>
 
@@ -3854,11 +3855,11 @@
 
             <entry>27685</entry>
 
-            <entry>92</entry>
+            <entry>1.09</entry>
           </row>
 
           <row>
-            <entry>500</entry>
+            <entry>0.2</entry>
 
             <entry>28451</entry>
 
@@ -3866,7 +3867,7 @@
 
             <entry>85586</entry>
 
-            <entry>362</entry>
+            <entry>0.28</entry>
           </row>
         </tbody>
       </tgroup>
@@ -3883,7 +3884,7 @@
 
     <para>This is a continuation of Example 3. In Example 3 the posterior mean
     of the skewness was estimated to be 0.131 with a posterior standard of
-    0.479. The uncertainty in the 1 in 100 AEP quantile was large. Suppose
+    0.479. The uncertainty in the 1% AEP quantile was large. Suppose
     hypothetically that a regional analysis of skewness was conducted.
     Furthermore suppose the expected regional skew is 0.00 with a standard
     deviation of 0.30. This information is entered into FLIKE by selecting the
@@ -3916,10 +3917,10 @@
       </mediaobject>
     </figure>
 
-    <para>Figure E5-1 presents the probability plot for the LP3 model fitted
-    to the gauged data with prior information on the skewness. Comparison with
-    Figure E3-1 reveals substantially improved accuracy in the right hand
-    tail.</para>
+    <para><xref linkend="b3_ch2_f_gc6ok"/> presents the probability plot for
+    the LP3 model fitted to the gauged data with prior information on the
+    skewness. Comparison with <xref linkend="b3_ch2_f_0us6g"/> reveals
+    substantially improved accuracy in the right hand tail.</para>
 
     <figure xml:id="b3_ch2_f_gc6ok">
       <title>Bayesian LP3 fit to 31 years of gauged annual maximum floods with
@@ -4001,12 +4002,12 @@
       </tgroup>
     </informaltable>
 
-    <para>The table of selected 1 in Y AEP quantiles q<subscript>Y</subscript>
-    and their 90% confidence limits further illustrates the benefit of
-    incorporating regional information. For example, for the 1 in 100 AEP
-    flood the 5% and 95% confidence limits are respectively 37% and 546% of
-    the quantile q100 when no prior information is used. These limits are
-    reduced to 46% and 292% using prior regional information.</para>
+    <para>The table of selected AEP quantiles q<subscript>Y</subscript> and
+    their 90% confidence limits further illustrates the benefit of
+    incorporating regional information. For example, for the 1% AEP flood the
+    5% and 95% confidence limits are respectively 37% and 546% of the quantile
+    q100 when no prior information is used. These limits are reduced to 46%
+    and 292% using prior regional information.</para>
 
     <informaltable>
       <tgroup cols="7">
@@ -4024,7 +4025,7 @@
 
         <tbody>
           <row>
-            <entry>1 in Y AEP</entry>
+            <entry>% AEP</entry>
 
             <entry>No prior information Quantile
             q<subscript>Y</subscript></entry>
@@ -4062,7 +4063,7 @@
           </row>
 
           <row>
-            <entry>50</entry>
+            <entry>2</entry>
 
             <entry>12786</entry>
 
@@ -4078,7 +4079,7 @@
           </row>
 
           <row>
-            <entry>100</entry>
+            <entry>1</entry>
 
             <entry>19572</entry>
 
@@ -4449,14 +4450,15 @@
       </tgroup>
     </informaltable>
 
-    <para>Figure E7-1 displays the GEV Bayesian fit on a Gumbel probability
-    plot. Although the observed floods are largely contained within the 90%
-    confidence limits, the fit, nonetheless, is poor – the data exhibit a
-    sigmoidal trend with reverse curvature developing for floods with an AEP
-    less than 1 in 2. It appears that the confidence limits have been inflated
-    because the GEV fit represents a poor compromise. Figure E7-2 displays the
-    fit after censoring the 5 low outliers identified by the multiple
-    Grubbs-Beck test. The improvement in fit is marginal at best.</para>
+    <para><xref linkend="b3_ch2_f_q9xq4"/> displays the GEV Bayesian fit on a
+    Gumbel probability plot. Although the observed floods are largely
+    contained within the 90% confidence limits, the fit, nonetheless, is poor
+    – the data exhibit a sigmoidal trend with reverse curvature developing for
+    floods with an AEP less than 1 in 2. It appears that the confidence limits
+    have been inflated because the GEV fit represents a poor compromise. <xref
+    linkend="b3_ch2_f_4llzf"/>displays the fit after censoring the 5 low
+    outliers identified by the multiple Grubbs-Beck test. The improvement in
+    fit is marginal at best.</para>
 
     <figure xml:id="b3_ch2_f_q9xq4">
       <title>Bayesian fit to all gauged data</title>
@@ -4483,10 +4485,10 @@
 
     <para>To deal with this poor fit, a trial-and-error approach based on
     censoring low flows can be used to obtain a fit that favours the right
-    hand tail of the distribution. Figure E7-3 illustrates one such fit. To
-    de-emphasize the left hand tail the floods below the threshold of 250
-    m<superscript>3</superscript>/s were censored. This means the GEV
-    distribution was fitted to:</para>
+    hand tail of the distribution. <xref linkend="b3_ch2_f_382cm"/>
+    illustrates one such fit. To de-emphasize the left hand tail the floods
+    below the threshold of 250 m<superscript>3</superscript>/s were censored.
+    This means the GEV distribution was fitted to:</para>
 
     <itemizedlist>
       <listitem>
@@ -4531,7 +4533,8 @@
 
     <para>The work of Micevski et al. (2003) illustrates an example of a
     non-homogeneous model. An indicator time series based on the IPO time
-    series (Figure 7) was used to create the exogeneous vector x</para>
+    series (<xref linkend="b3_ch2_f_6x7dy"/>) was used to create the
+    exogeneous vector x</para>
 
     <equation xml:id="b3_ch2_e_rdpiz">
       <m:math display="block">
@@ -4628,13 +4631,15 @@
     log-normal distribution was fitted to the gauged flows with indicator
     equal to 1 – this is the IPO+ distribution. Likewise, a 2-parameter
     log-normal distribution was fitted to the gauged flows with indicator
-    equal to 0 – this is the IPO- distribution. Figure E3-1 presents the
-    histogram for the ratio of the IPO- and IPO+ floods for selected 1 in Y
-    AEPs. If the the IPO+ and IPO- distributions were homogeneous then about
-    half of the sites should have a flood ratio &lt; 1 – Figure E8-1 shows
+    equal to 0 – this is the IPO- distribution. <xref
+    linkend="b3_ch2_f_0us6g"/> presents the histogram for the ratio of the
+    IPO- and IPO+ floods for selected 1 in Y AEPs. If the the IPO+ and IPO-
+    distributions were homogeneous then about half of the sites should have a
+    flood ratio &lt; 1 – <xref linkend="b3_ch2_f_qzdoi"/> shows
     otherwise.</para>
 
-    <para>Figures E8-2 and E8-3 present log normal fits to the IPO+ and IPO-
+    <para><xref linkend="b3_ch2_f_el7ls"/> and <xref
+    linkend="b3_ch2_f_0wj1a"/> present log normal fits to the IPO+ and IPO-
     annual maximum flood data for the Clarence river at Lilydale respectively.
     Though the adequacy of the log normal model to fit high floods may be
     questioned, in the AEP range 1 in 2 to 1 in 10 years, the IPO- floods are
@@ -4690,24 +4695,25 @@
     <para>To avoid bias in estimating long-term flood risk it is essential
     that the gauged record adequately span both IPO+ and IPO- years. In this
     example, the IPO+ record is 43 years and the IPO- record is 33 years in
-    length. With reference to Figure 7 this length of record appears to
-    adequately sample both IPO epochs. This suggests that fitting to all the
-    data will yield a largely unbiased estimate of the long-term flood risk.
-    Figure E8-4 illustrates a log normal fit to all the data.</para>
+    length. With reference to <xref linkend="b3_ch2_f_6x7dy"/> this length of
+    record appears to adequately sample both IPO epochs. This suggests that
+    fitting to all the data will yield a largely unbiased estimate of the
+    long-term flood risk. <xref linkend="b3_ch2_f_orrph"/> illustrates a log
+    normal fit to all the data.</para>
 
     <para>A better appreciation of the differences in flood risk can be
-    gleaned by considering Figure E8-5 which presents the fitted log normal
-    distributions to the IPO+, IPO- and total data. During an IPO+ period a
-    flood peak of 100 m<superscript>3</superscript>/s has a 1 in 20 AEP while
-    during an IPO- period it has a 1 in 4 AEP. Likewise a flood peak of 200
-    m<superscript>3</superscript> /s has 1 in 100 and 1 in 10 AEPs for IPO+
-    and IPO- periods respectively. The differences in flood risk are
-    considerable. If a short gauged record falling largely in the IPO+ period
-    was used, a standard flood frequency analysis could seriously
-    underestimate the long-term or marginal flood risk.</para>
+    gleaned by considering <xref linkend="b3_ch2_f_73gq1"/> which presents the
+    fitted log normal distributions to the IPO+, IPO- and total data. During
+    an IPO+ period a flood peak of 100 m<superscript>3</superscript>/s has a
+    5% AEP while during an IPO- period it has a 25% AEP. Likewise a flood peak
+    of 200 m<superscript>3</superscript> /s has 1% and 10% AEPs for IPO+ and
+    IPO- periods respectively. The differences in flood risk are considerable.
+    If a short gauged record falling largely in the IPO+ period was used, a
+    standard flood frequency analysis could seriously underestimate the
+    long-term or marginal flood risk.</para>
 
     <para>The marginal flood risk can be derived by combining the IPO+ and
-    IPO- distribution using eqn (8) to give</para>
+    IPO- distribution using <xref linkend="b3_ch2_e_p72ly"/> to give</para>
 
     <equation xml:id="b3_ch2_e_sy22b">
       <m:math display="block">
@@ -4773,11 +4779,11 @@
           <m:mi>θ</m:mi>
         </m:math>
       </inlineequation>,x=1) are the log normal pdfs fitted to IOP- and IPO+
-    data respectively</para>
+    data respectively.</para>
 
-    <para>The derived marginal distribution is plotted in Figure E8-5. It
-    almost exactly matches the log normal distribution fitted to all the
-    data.</para>
+    <para>The derived marginal distribution is plotted in <xref
+    linkend="b3_ch2_f_73gq1"/>. It almost exactly matches the log normal
+    distribution fitted to all the data.</para>
 
     <figure xml:id="b3_ch2_f_73gq1">
       <title>Marginal, IPO+ and IPO+ log-normal distributions for the Clarence
@@ -4913,13 +4919,13 @@
     </informaltable>
 
     <para>The following table reports the results of estimating GEV parameters
-    by substituting the L moment estimates in eqn (31) to obtain
-    <inlineequation>
+    by substituting the L moment estimates in <xref linkend="b3_ch2_e_gf6r2"/>
+    to obtain <inlineequation>
         <m:math display="inline">
           <m:mi>κ</m:mi>
         </m:math>
-      </inlineequation> and then using the equations in Table 3 to estimate
-    <inlineequation>
+      </inlineequation> and then using the equations in <xref
+    linkend="b3_ch2_t_achre"/> to estimate <inlineequation>
         <m:math display="inline">
           <m:mi>τ</m:mi>
         </m:math>
@@ -4928,8 +4934,8 @@
           <m:mi>α</m:mi>
         </m:math>
       </inlineequation>. The standard deviation and correlation were derived
-    from 5000 bootstrapped samples following the procedure described in
-    Section 6.4.6.</para>
+    from 5000 bootstrapped samples following the procedure described in <xref
+    linkend="b3_ch2_s_3sslo"/>.</para>
 
     <informaltable>
       <tgroup cols="8">
@@ -5028,8 +5034,6 @@
         </imageobject>
       </mediaobject>
     </figure>
-
-    <para/>
   </section>
 
   <section xml:id="b3_ch2_s_4o6lc">
@@ -5039,19 +5043,21 @@
     was fitted to the gauged data for the Albert River at Broomfleet using LH
     moments.</para>
 
-    <para>Figure E10-1 displays the GEV L moment fit on a Gumbel probability
-    plot. Although the observed floods are largely contained within the 90%
-    confidence limits, the fit, nonetheless, is poor with systematic
-    departures from the data which exhibit reverse curvature.</para>
+    <para><xref linkend="b3_ch2_f_nuhvd"/> displays the GEV L moment fit on a
+    Gumbel probability plot. Although the observed floods are largely
+    contained within the 90% confidence limits, the fit, nonetheless, is poor
+    with systematic departures from the data which exhibit reverse
+    curvature.</para>
 
     <para>To deal with this poor fit, a LH moment search was conducted to find
     the optimal shift parameter <inlineequation>
         <m:math display="inline">
           <m:mi>η</m:mi>
         </m:math>
-      </inlineequation> using the procedure described in Section 6.4.5. The
-    optimal shift was found to be 4. Figure E10-2 presents the LH moment fit
-    with shift <inlineequation>
+      </inlineequation> using the procedure described in <xref
+    linkend="b3_ch2_s_xodr0"/>. The optimal shift was found to be 4. <xref
+    linkend="b3_ch2_f_yx491"/> presents the LH moment fit with shift
+    <inlineequation>
         <m:math display="inline">
           <m:mi>η</m:mi>
         </m:math>
@@ -5084,10 +5090,10 @@
         <m:math display="inline">
           <m:mi>κ</m:mi>
         </m:math>
-      </inlineequation> changing from –0.17 to 0.50. The L moment fit in
-    Figure E10-1 was a compromise with the bulk of the small and medium-sized
-    floods suggesting an upward curvature in the probability plot – as a
-    result the GEV shape parameter <inlineequation>
+      </inlineequation> changing from –0.17 to 0.50. The L moment fit in <xref
+    linkend="b3_ch2_f_nuhvd"/> was a compromise with the bulk of the small and
+    medium-sized floods suggesting an upward curvature in the probability plot
+    – as a result the GEV shape parameter <inlineequation>
         <m:math display="inline">
           <m:mi>κ</m:mi>
         </m:math>
@@ -5235,8 +5241,8 @@
         <m:math display="inline">
           <m:mi>κ</m:mi>
         </m:math>
-      </inlineequation> = 0, it follows from Table 3 that the exponential
-    parameters are related to the L moments by</para>
+      </inlineequation> = 0, it follows from <xref linkend="b3_ch2_t_achre"/>
+    that the exponential parameters are related to the L moments by</para>
 
     <equation xml:id="b3_ch2_e_iokdx">
       <m:math display="block">
@@ -5283,8 +5289,8 @@
     </equation>
 
     <para>which yields values for q* and β of 68.11 and 158.24 respectively.
-    Using eqn (B1-7), the expected number of peaks that exceed w in a year
-    is</para>
+    Using <xref linkend="b3_ch2_e_w9t35"/>, the expected number of peaks that
+    exceed w in a year is</para>
 
     <equation xml:id="b3_ch2_e_jtnyh">
       <m:math display="block">
