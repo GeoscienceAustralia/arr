@@ -1,15 +1,3023 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b6_ch6" xmlns="http://docbook.org/ns/docbook"
+<chapter status="In Preparation" xml:id="b6_ch6"
+         xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:xi="http://www.w3.org/2001/XInclude"
          xmlns:svg="http://www.w3.org/2000/svg"
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook"
-         status = "In Preparation">
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Blockages</title>
 
-         <title>Blockages</title>
+  <para>Authors - Bill Weeks and Ted Rigby</para>
 
-<para> </para>
+  <section>
+    <title>Introduction</title>
 
+    <section>
+      <title>Background and Scope</title>
+
+      <para>Blockage can have a severe impact on the capacity of drainage
+      systems, even though there are situations where significant blockage may
+      not impact flood behaviour to any great extent. Determination of likely
+      blockage levels and mechanisms, when simulating design flows, is
+      therefore an important consideration in quantifying the potential impact
+      of blockage of a particular structure on design flood behaviour.</para>
+
+      <para>This chapter provides guidance on the assessment of blockage in
+      drainage systems to assist in drainage analysis and design for urban and
+      rural catchments. While there are a range of locations and conditions
+      where blockage of a drainage network may be a concern in hydraulic
+      design, this guidance note concentrates specifically on blockage of
+      cross drainage structures, in particular culverts and small
+      bridges.</para>
+
+      <para>Blockage of drainage structures is a subject where a range of
+      advice has been provided in different guidelines. Many drainage
+      guidelines do not mention blockage at all, therefore blockage is ignored
+      in many cases. In other situations, especially where there has been an
+      observed blockage problem in historical flood events, blockage may be
+      specified for extreme conditions. Other guidelines provide inconclusive
+      advice.</para>
+
+      <para>In fact, the actual evidence for the impact of blockage on design
+      flood events is very limited and the evidence for any clear quantitative
+      design advice is lacking. This is the case internationally as well as in
+      Australia.</para>
+
+      <para>This guideline is not a definitive approach, but is an attempt to
+      provide an approach that allows a consistent analysis methodology, while
+      not becoming too extreme in either direction since there are risks in
+      either under- or over-estimating the influence of blockage. It draws
+      heavily on the findings of an earlier report prepared by the ARR Project
+      11 team. Materials upon which this guideline has been based are
+      referenced in the Bibliography of this guideline and in the earlier
+      project reports and papers released on the ARR website (www.arr.org.au
+      ).</para>
+
+      <para>It is expected that this guideline will be updated and revised as
+      more information becomes available and designers gain experience in the
+      assessment of blockage and how it affects the drainage system and
+      calculated design flood behaviour.</para>
+    </section>
+
+    <section>
+      <title>Limitations of Procedure</title>
+
+      <para>This procedure has been developed to quantify the most likely
+      blockage level and mechanism for a small bridge or culvert when impacted
+      by sediment or debris laden floodwater. It has not been developed for
+      and is not appropriate when considering the impact of what are known as
+      hyperconcentrated flows, mudflows or debris flows, on blockage of a
+      structure. Hyperconcentrated flows are typically defined by a solids
+      content of 20% or more by volume (or about 40% by weight) of the water
+      column. Mud and debris flows include even higher levels of solids. At
+      these much higher levels of suspended or fully integrated solids,
+      blockage levels are likely to be much higher than those assessed in
+      accordance with this guideline. Care should be taken in the review of
+      catchment conditions where bed grades are relatively steep (say &gt;
+      3%), to confirm bed and banks would remain relatively stable, such that
+      flows would remain in the sediment or debris laden category and not
+      become hyperconcentrated during the event under consideration.</para>
+
+      <para>While this procedure includes consideration of the impact of
+      non-floating (sediment) on blockage of a structure, it is restricted to
+      the likely impact of such material arriving at the structure during a
+      design event. It cannot reflect the impact of any pre-existing build-up
+      of sediment on the subsequent blockage of a structure.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Types of structures and drainage systems</title>
+
+    <para>The types of structures or drainage elements affected by blockages
+    can generally be grouped as follows:</para>
+
+    <orderedlist numeration="loweralpha">
+      <listitem>
+        <para><emphasis>Bridges and Culverts: </emphasis>These cross drainage
+        structures carry roads, railways, pipelines or other infrastructure
+        across watercourses. These structures can be affected by a number of
+        different types of blockage mechanisms, resulting in consequences
+        including increased flood levels, changes to stream flow patterns,
+        changes to erosion and deposition patterns in channels, and physical
+        damage to the structure. Blockage of these structures is the subject
+        of this guideline.</para>
+      </listitem>
+
+      <listitem>
+        <para><emphasis>Drainage system inlets and pipes:</emphasis> This
+        includes components of urban drainage systems located within road
+        reserves and urban overland flow paths. Frequently blockage of this
+        type of system is generally less likely to cause the same extent of
+        damage associated with blockage of bridges and culverts, but the
+        consequences can still be serious from a traffic and safety
+        perspective, and can cause serious inconvenience and nuisance. However
+        in certain circumstances, in densely developed urban areas, pit
+        blockage can cause significant monetary damage due to flooding of
+        buildings upstream. While this type of blockage can be a significant
+        nuisance, it is not covered in this guideline.</para>
+      </listitem>
+
+      <listitem>
+        <para><emphasis>Open channels and waterways:</emphasis> Blockage of
+        natural and constructed waterways can occur at any location, typically
+        as a result of large debris snagged against bank vegetation, or debris
+        passing slowly down the channel. The consequences of such blockage are
+        increased flood levels, diversion of surface flows and the possible
+        relocation of the waterway channel as a result of severe bank erosion.
+        Blockage of these structures is not covered in this guideline.</para>
+      </listitem>
+
+      <listitem>
+        <para><emphasis>Overland flow paths: </emphasis> This category covers
+        various surface flow paths that are not normally recognised as
+        drainage channels but do act to convey surface flows in larger events.
+        Blockage of these flow paths can result from the deposition of
+        sediment or the material blockage of structures built across the flow,
+        such as property fences blocked by litter and grass clippings.
+        Blockage of these structures is not covered in this guideline.</para>
+      </listitem>
+
+      <listitem>
+        <para><emphasis>Weirs and dams:</emphasis> Debris can cause blockage
+        within the spillways of weirs and dams, especially where there is a
+        significant constriction to the flow area. This could increase the
+        water level in the storage, possibly threatening the security of the
+        structure. The sudden release of large debris rafts from dam spillways
+        can cause significant damage to downstream road crossings. Blockage of
+        these structures is not covered in this guideline.</para>
+      </listitem>
+    </orderedlist>
+  </section>
+
+  <section>
+    <title>Factors influencing blockage</title>
+
+    <section>
+      <title>Generally</title>
+
+      <para>The factors that most influence the likely blockage of a bridge or
+      culvert structure are;</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Debris Type and Dimensions</emphasis> -
+          <emphasis>Whether floating, non-floating or urban debris present in
+          the source area and its size</emphasis></para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Debris Availability </emphasis>–
+          <emphasis>The volume of debris available in the source area
+          </emphasis></para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Debris Mobility </emphasis>–
+          <emphasis>The ease with which available debris can be moved into the
+          stream </emphasis></para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Debris Transportability
+          </emphasis>–<emphasis> The ease with which the mobilised debris is
+          transported once it enters the stream </emphasis></para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Structure Interaction</emphasis> –
+          <emphasis>The resulting interaction between the transported debris
+          and the bridge or culvert structure </emphasis></para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Random Chance</emphasis> – <emphasis>An
+          unquantifiable but significant factor </emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>These various factors impacting debris movement and interaction
+      with the structure are discussed further in the following
+      sections.</para>
+    </section>
+
+    <section>
+      <title>Debris Type and Dimensions</title>
+
+      <section>
+        <title>Generally</title>
+
+        <para>All blockages that do occur arise from the arrival and build-up
+        of debris at a structure. There are three different types of debris
+        typically present in debris accumulated upstream of or within a
+        blocked structure. This debris may be classified as floating (e.g.
+        trees), non-floating or depositional (e.g. sediment) and urban (e.g.
+        cars and other urban debris). Debris comprising natural materials is
+        discussed in Sections 3.2.2 and 3,2.3 and urban debris in Section
+        3.2.4. A means of determining the relevant dimensions of the debris is
+        set out in Section 4.4.1.</para>
+      </section>
+
+      <section>
+        <title>Floating Debris</title>
+
+        <para>Floating debris in rural or forested streams is generally
+        vegetation of various types.</para>
+
+        <para>Small floating debris, less than 150 mm long, can include small
+        tree branches, sticks, leaves and refuse from yards such as litter and
+        lawn clippings and all types of rural vegetation. This type of debris
+        can also be introduced into a stream by earlier windstorms, bank
+        erosion and land mass failures or from seasonal leaf falls. It is
+        important to note that this material is available in both urban and
+        rural catchments, and is usually available for transportation at any
+        time.</para>
+
+        <para>Medium floating debris, typically between 150 mm and 3 m long,
+        mainly consists of tree branches of various sizes. This material is
+        usually introduced into the flow path by channel erosion undermining
+        riparian vegetation or through wind gusts during storms. It can also
+        be present as a result of the breakdown of larger floating
+        debris.</para>
+
+        <para>sources as for medium floating debris. Transport and storage of
+        this material depends on discharge, channel characteristics, the size
+        of the drift pieces relative to the channel dimensions, and the
+        hydraulic characteristics (depth and slope) of the system. In small
+        and intermediate size channels, this material is not easily
+        transported and can easily become snagged mid-stream acting as a
+        collection point for smaller material (i.e. a debris raft or log-jam).
+        Whole trees can be retained within streams by being temporarily
+        anchored either to the bed or banks of the stream. Large floating
+        debris is usually transported during larger floods or prolonged
+        periods of high river-stage where the floodplain is engaged and the
+        ability of the debris to become snagged is reduced. This type of
+        debris can cause significant problems for both culverts and bridge
+        structures.</para>
+
+        <para>Small items of vegetation will usually pass through drainage
+        structures during floods, while larger items may be caught in the
+        structure. Once larger items are caught, this then allows smaller
+        debris to collect on the structure.</para>
+      </section>
+
+      <section>
+        <title>Non-Floating Debris</title>
+
+        <para>Non-floating debris in rural or forested streams is usually
+        sediment of all types.</para>
+
+        <para>Fine sediments (silt and sand) typically consist of particles
+        ranging from 0.004 to 2 mm. The deposition of finer clay-sized
+        particles is normally a concern in tidal areas, with lower flood
+        surface gradients and velocities. This type of debris is either
+        transported along the streambed as bed load or within the water column
+        as suspended load. Such material is normally sourced from sheet and
+        rill erosion, landslip and landmass failures and channel erosion.
+        Yield rates for this material can be significantly influenced by the
+        conditions of, and changes to, a catchment due to urbanisation and/or
+        rural land use practices.</para>
+
+        <para>Gravels and cobbles consist of rock typically ranging in size
+        from 2 to 63 mm and 63 to 200 mm respectively. The source of this
+        material may be from gully formation, channel erosion, landslips or
+        land mass failure although landslips and/or land mass failures of any
+        size will likely create hyperconcentrated or even debris flows which
+        are not covered by this guideline. Once mobilised, gravels and cobbles
+        are primarily transported as bed load within high gradient streams.
+        The deposition of cobbles can readily block the entrance of culverts
+        or reduce the flow area under bridges.</para>
+
+        <para>Boulders comprise rocks greater than 200 mm. The source of
+        boulders is mostly from gully and channel erosion, landslips and the
+        displacement of rocks from channel stabilisation works. Like gravel
+        and cobbles, this material is typically transported as bed load in
+        high gradient streams. This material can readily block the entrance to
+        a structure and/or cause damage to the structure from the force of
+        impact/collision.</para>
+      </section>
+
+      <section>
+        <title>Urban Debris</title>
+
+        <para>Urbanisation of catchments introduces many different man-made
+        materials that are less common in rural or forested catchments and
+        which can cause structure blockage. These include fence palings,
+        building materials, mattresses, garbage bins, shopping trolleys,
+        fridges, large industrial containers and vehicles. Garbage bins can
+        for example be easily washed down a street and into a stream or
+        drainage structure, a situation made worse if a large rainfall event
+        occurs on the same day as rubbish collection within the catchment,
+        when bins are placed in streets for collection. Urban Debris can be
+        floating or non-floating.</para>
+      </section>
+    </section>
+
+    <section>
+      <title>Debris Availability</title>
+
+      <para>In discussing debris availability and mobility, defining the
+      source area is an important consideration. The source area is that area
+      from which debris could be sourced during an event. In a small event it
+      may be restricted to the immediate confines of the creek and its banks
+      but in larger events will likely extend to the full extent of the
+      floodplain and possibly the full extent of the upstream catchment area.
+      As this procedure is used to initially establish debris potential in a
+      1% AEP event , the relevant source area will typically be limited to the
+      1% AEP flood extents. Steep sided tributaries and larger rills may
+      however extend the source area beyond the limits of the 1% AEP
+      flood.</para>
+
+      <para>The following factors affect the availability of debris material
+      within a source area.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis>Potential for soil erosion:</emphasis> Soil erosion
+          exposes soil and rock particles, thus increasing their availability.
+          The potential for soil erosion is dependent on a number of factors
+          including soil erodibility, rainfall erosivity, surface slope length
+          and gradient, vegetation cover and changes in catchment hydrology,
+          this latter factor being often closely linked to the effects of
+          urbanisation.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Local geology</emphasis>: The geology of the debris
+          source area, particularly the exposed geology of the watercourse,
+          influences the availability of materials such as clay, silt, sand,
+          gravel, rocks and boulders.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Source area:</emphasis> Increasing the area
+          supplying debris typically increases the quantity of available
+          blockage material. It is noted however, that once blockage occurs at
+          a given structure, the debris source area for the next downstream
+          structure may be much less than that of the upstream structures
+          source area.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Amount and type of vegetative cover:</emphasis>
+          Cover can vary from grasses and shrubs to thick forests and
+          plantations as well as a variety of crops and agricultural uses.
+          Increasing the cover density in the source area will typically
+          increase the availability of debris. Some types of cover are also
+          more prone to produce debris than others (eg Cora trees). The type
+          of cover in the source area can also impact availability</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Land clearing:</emphasis> This is associated with
+          both rural and urban land use practices. Deforestation and
+          urbanisation can alter the long-term flow regime of streams and may
+          lead to gully erosion and channel expansion.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Preceding wind and rainfall: </emphasis>The
+          occurrence of frequent flood events typically reduces the
+          availability of debris in the source area, however, the occurrence
+          of frequent windstorms will typically increases the quantity of
+          debris available in the source area.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Urbanisation:</emphasis> Such areas make available a
+          wide range of debris typically influenced by the extent of flood
+          inundation and proximity of such debris to the stream. In most
+          circumstances this a manageable factor linked to town planning and
+          drainage design.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Debris Mobility</title>
+
+      <para>The following factors affect the mobilisation of debris material
+      within the catchment:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis>Rainfall erosivity:</emphasis> Different regions
+          experience a range of frequencies of rainfall intensity, and in
+          general, those areas that experience more intense rainfall have a
+          greater potential to mobilise debris than areas of lower rainfall
+          intensity.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Soil erodibility</emphasis>: This can vary from
+          weathered rocks to cohesive clays, all soils have different
+          abilities to become eroded, entrained and available for
+          mobilisation.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Slope: </emphasis>For sediment and boulder movement,
+          there is a relationship between the mobilisation of such debris and
+          the slope of the catchment, with respect to overbank areas where
+          debris may be sourced and the stream channel which conveys the
+          debris.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Storm duration:</emphasis> The mobilisation of
+          materials generally increases with increasing storm duration.</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis>Vegetation cover:</emphasis> Sparse vegetation cover
+          can increase sediment mobility.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Debris Transportability</title>
+
+      <para>Once debris has been mobilised, it then needs to be transported
+      down the stream if it is to present a hazard to downstream structures.
+      Stream power, velocity, depth, presence of snags and bends and the
+      overall dimensions of the water course play a large part in determining
+      whether the mobilised debris lodges where it first enters the stream or
+      is transported downstream to a receiving structure. There is a
+      reasonably strong correlation between the waterway width and the maximum
+      size of floating debris that a stream can transport. The event magnitude
+      is also a major factor in controlling the quantity of debris
+      transported. Rarer events produce deeper and faster floodwater able to
+      transport large quantities and larger sizes of debris, smaller events
+      may not be able to transport larger bridging material at all.</para>
+    </section>
+
+    <section>
+      <title>Structure Interaction</title>
+
+      <para>The likelihood of blockage at a particular structure depends on
+      whether or not debris is able to bridge across the structure’s inlet or
+      become trapped within the structure. As bridging occurs, the clear
+      expanse of each opening reduces, thus increasing the likelihood of
+      further bridging and further blockage by smaller or similar material.
+      Smaller blockage matter is unlikely to cause full blockage of a
+      structure without the presence of suitable larger bridging matter, the
+      material that initially bridges across the opening or inlet of a
+      structure. Bridging matter can be as small as leaves caught on a kerb
+      inlet grate, or as large as logs, cars and shipping containers caught at
+      a culvert inlet or on bridge piers.</para>
+
+      <para>Exposed services attached to the face of culverts or bridges or
+      obstructing the culvert waterway opening can significantly increase the
+      risk of blockage. Similarly, some through-culvert features introduced to
+      improve fish passage can also collect and hold debris increasing the
+      risk of internal blockage problems. Many other factors such as skew
+      alignments, opening aspect ratios, opening height to overtopping height
+      ratios, culvert hoods, sloping inlet walls and the smoothness of
+      transitions can also modify the likely interaction between the arriving
+      debris and the bridge or culvert structure</para>
+
+      <para>In urban drainage systems, any individual culvert in the system is
+      not an individual structure, it is part of a system, generally with
+      culverts and other structures in a series down the water course. As a
+      consequence, upstream culverts are likely to collect a portion of the
+      transported debris in the stream, reducing the quantity of debris that
+      would otherwise reach the downstream culverts so the risk of blockage in
+      these downstream structures is reduced.</para>
+
+      <para>Consideration of multiple structures is discussed further in
+      Section 4.4.10.</para>
+    </section>
+
+    <section>
+      <title>Random Chance</title>
+
+      <para>While an unquantifiable factor, random chance plays a significant
+      role in the blockage of structures. Antecedent conditions can in
+      particular substantially alter the likely level of blockage at a
+      structure. Recent floods can for example reduce the availability of
+      debris but increase the transportability of debris of a particular size
+      by cleaning out the waterway. Even the alignment of a limb approaching a
+      structure can substantially alter its likelihood of being caught on the
+      inlet and triggering a more substantial blockage. Blockage of a
+      structure in any event of a particular magnitude will therefore vary in
+      response to these random changes in behaviour, creating a distribution
+      of blockage levels associated with such an event. This guideline
+      attempts to quantify the average or most likely blockage level
+      associated with a design event of a particular magnitude, as this
+      presents an AEP neutral approach to simulation of the resulting flood
+      surface.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Assessment of Design Blockage Levels</title>
+
+    <section>
+      <title>Overview</title>
+
+      <para>Blockage of cross drainage structures such as culverts and bridges
+      could have an impact on the capacity of these structures and also on
+      flood levels. Hydraulic analysis of these structures should therefore
+      provide for some consideration of these impacts. This section describes
+      a procedure for the inclusion of the impacts of blockage in
+      analysis.</para>
+
+      <para>The design blockage is the blockage condition that is most likely
+      to occur during a given design storm and needs to be an “average” of all
+      potential blockage conditions to ensure that the calculated design flood
+      levels reflect the defined probability. For example, an assumption of a
+      higher than average level of blockage would lead to the calculated
+      design flood level upstream of the structure being higher than would be
+      appropriate for the defined probability. Downstream flood levels would
+      be lower because of the additional flood storage created upstream of the
+      structure. On the other hand, an assumed lower than average level of
+      blockage would result in lower flood levels upstream and higher flood
+      levels downstream. This is a similar concept to that of AEP neutrality
+      used in various aspects of design flood event analysis. It is also noted
+      that actual blockage levels vary greatly from event to event with a
+      potential spread from “all clear” to “fully blocked” even in floods of
+      comparable magnitude. Antecedent catchment conditions and pure chance
+      are major factors in determining blockage levels in an actual event. The
+      selected design blockage must aim for AEP neutrality (the concept of
+      ensuring that the average recurrence interval of the design flood
+      discharge is the same as the AEP of the design rainfall input) so design
+      floods are appropriate for the particular circumstances. As with other
+      similar aspects of design flood estimation, such as losses, each
+      individual historical flood may have quite different amounts of blockage
+      compared to the design event.</para>
+
+      <para>Flood mapping is an exercise in probabilities that involves the
+      estimation of ‘average’ catchment conditions for various storm and flood
+      frequencies to ensure that the rainfall of the defined probability
+      produces a flood event of the same probability. In such work, design
+      blockage conditions must be considered when predicting flood levels of a
+      given frequency. In situations where the consequences of flooding
+      (including the impact of blockage) are high, planning rules typically
+      require design for a lower probability (rarer) event. An increase in the
+      design event probability is typically adopted for planning purposes,
+      when the consequences of flooding are low.</para>
+
+      <para>This guideline is based on a design event type analysis, where a
+      flood of a defined flood probability is required. For Monte Carlo
+      analysis of flood risk, a probability distribution of blockage is
+      required, as an input. Considering the uncertainty in the assessment of
+      blockage, analysis of probability distributions is even more difficult.
+      This topic is discussed in a little more detail below in Section 5.3.The
+      procedure presented in this guideline is based on a qualitative
+      assessment of debris likely to reach a structure, and the likely
+      interaction between that debris and the structure regarding its
+      potential for blockage. It is based on the various papers prepared by
+      Barthelmess, Rigby, Silveri and others.</para>
+
+      <para>The procedure initially involves a series of decisions leading to
+      estimation of the likely magnitude of debris reaching a structure in a
+      1% AEP event and the most likely blockage level that would develop at
+      the structure under consideration. Subsequent adjustments are then made
+      to reflect the most likely design blockage levels in lesser or greater
+      AEP events and to establish the associated most likely blockage
+      mechanism. This procedure provides an AEP neutral approach to the
+      assessment of an appropriate level of blockage for the simulation of
+      design flood behaviour , but may not reflect specific conditions in an
+      equivalent historical event. Such is the random nature of the many
+      variables controlling blockage behaviour.</para>
+    </section>
+
+    <section>
+      <title>Appropriate Investigation</title>
+
+      <para>It is important to recognise the impact that different levels of
+      investigation can have on the confidence associated with any blockage
+      estimate. Estimates based on aerial imagery alone cannot for example
+      provide the level of confidence that would be obtained from a field
+      visit to the site, specifically aimed at assessing the various factors
+      influencing blockage levels at the site or likely blockage
+      mechanisms.</para>
+
+      <para>Where the target structure/site is located in a particularly flood
+      sensitive area and blockage of the structure could significantly impact
+      flood behaviour in that area, then a high level of investigation is
+      warranted. This should include a field inspection of the upstream
+      catchment/source area to confirm the types of debris likely to reach the
+      site, their availability, mobility and transportability together with
+      the average size of the largest 10% of each debris type likely to reach
+      the site. Any structures upstream of the target structure/site should be
+      inspected and consideration given to their ability to trap debris
+      reaching the target structure/site. Any photographs/records of past
+      blockage material and extents should be used to validate the choice of
+      L<subscript>10</subscript> and debris type. Although seldom available,
+      any photos/records of the blockage mechanism (Location – Type – Timing)
+      that have been observed in past events will help to validate the chosen
+      blockage mechanism to be used in the hydraulic model. However it must be
+      stressed that it is the most likely (AEP neutral) blockage mechanism
+      that is required, not the worst case scenario. Flood mapping, aerial
+      photography, annual rainfall and rainfall IFD data, rainfall and soil
+      erosivity maps, topographic maps, vegetation and soil maps should be
+      consulted when available to further consolidate conclusions as to the
+      types of debris likely to reach the site and the quantum of such
+      debris.</para>
+
+      <para>Conversely, when the structure under consideration is in an area
+      where changes in flood behaviour would have no significant consequences
+      on safety, property damage or amenity, then an extensive investigation
+      to support the blockage assessment process, as outlined above, may not
+      be warranted. This decision should be documented.</para>
+
+      <para>The final decision as to what is an appropriate level of
+      investigation must ultimately be the responsibility of the person making
+      the assessment. It will vary greatly between sites and will to some
+      extent be constrained by what information is available. Whatever the
+      approach adopted, it is important that the level of investigation
+      undertaken should be relevant to the importance of the assessment of
+      blockage at the site and is documented, so that others relying on the
+      assessment can be aware of the confidence limits attaching to that
+      particular assessment.</para>
+    </section>
+
+    <section>
+      <title>Blockage History</title>
+
+      <para>The history of blockages in the drainage system is an important
+      input to any risk based approach to blockage, and should always be
+      explored in so far as available data permits. While the procedure
+      outlined in this guideline provides a generic assessment of likely
+      design blockage levels and mechanisms, local observations and history
+      can be important in ensuring that this procedure results in reasonable
+      answers. All available history should be sought from relevant local
+      stakeholders, including residents, in assessing the reasonableness of
+      blockage levels and mechanisms produced by this guideline.</para>
+
+      <para>In particular, if there has been no long term history of blockage
+      at a particular structure and similar drainage structures in the
+      catchment have not demonstrated blockage problems, blockage may not need
+      to be considered, or a nominal allowance only may be appropriate in
+      design.</para>
+    </section>
+
+    <section>
+      <title>Assessment Procedure</title>
+
+      <section>
+        <title>Debris Types and Dimensions</title>
+
+        <para>In using this procedure it is necessary to first assess the type
+        of debris likely to arrive at the structure under review and the
+        likely dimensions of that debris. Where more than one type of debris
+        is present in quantity in the source area, the procedure will need to
+        be repeated for each debris type to establish the debris type with the
+        most impact on the performance of the blocked structure.</para>
+
+        <para>The types of debris available in their respective source areas
+        will normally be readily apparent during a field visit or from aerial
+        photographs, but relevant dimensions may be more difficult to
+        assess.</para>
+
+        <para>The ratio of the opening width of structures (e.g. diameter or
+        width of the culvert or bridge pier spacing) to the average length of
+        the longer debris that could arrive at the site (termed here as
+        L<subscript>10</subscript>) is a well correlated guide to the
+        likelihood that this material could bridge the openings of the
+        structure and trigger a blockage. This L<subscript>10</subscript>
+        value is defined as the average length of the longest 10% of the
+        debris reaching the site and should preferably be estimated from
+        sampling of typical debris loads, If however, such data is not
+        available, it should be determined from an inspection of debris on the
+        floor of the source area, with due allowance for snagging and
+        reduction in size during transportation to the structure.</para>
+
+        <para>For debris of any particular type and size to reach the
+        structure, the debris must;</para>
+
+        <itemizedlist>
+          <listitem>
+            <para>be available in the source area and,</para>
+          </listitem>
+
+          <listitem>
+            <para>be able to be mobilised into the stream and not snagged by
+            bank vegetation as it enters the stream, and,</para>
+          </listitem>
+
+          <listitem>
+            <para>be delivered into a stream able to transport the debris from
+            the source area down to the structure, without floating debris
+            being snagged by bank vegetation or stream bends or constrictions,
+            or without non-floating debris being deposited prior to reaching
+            the structure as the stream grade and velocities reduce. For
+            smaller more turbulent streams (less than say 6 m bank to bank)
+            the width between banks of the stream through the source area will
+            normally limit the size/length of larger floating debris to less
+            than the stream width. The bed grade immediately upstream of the
+            structure will normally limit the size of the larger non floating
+            debris reaching the structure to that capable of being moved by
+            the flow.</para>
+          </listitem>
+        </itemizedlist>
+
+        <para>Any loose material and pockets of debris lying within or in
+        close proximity to the channel are likely to be representative of the
+        debris that could cause downstream blockage. A detailed inspection of
+        the waterway upstream of the target structure, particularly after a
+        flood, will assist with assessing the above factors and deriving a
+        realistic value for L<subscript>10</subscript>.</para>
+
+        <para>In an urban area the variety of available debris can be
+        considerable with an equal variability in L<subscript>10</subscript>.
+        In the absence of a record of past debris accumulated at the
+        structure, an L<subscript>10</subscript> of at least 1.5m should be
+        considered as many urban debris sources produce material of at least
+        this length such as palings, stored timber, sulo bins and shopping
+        trolleys.</para>
+      </section>
+
+      <section>
+        <title>Debris Availability</title>
+
+        <para>The availability of a particular type of debris (floating,
+        non-floating or urban) in a source area limits the level of that
+        particular debris that can be ultimately mobilised and transported to
+        a structure. As noted in Section 4.4.1, there may be significant
+        quantities of more than one type of debris present in the source area,
+        requiring more than one type of debris to be assessed. The
+        characteristics of high, medium and low availability are hard to
+        quantify, so there is some judgment required in their evaluation.
+        Table 1 describes typical source area characteristics and a
+        corresponding ranking for the likely availability of a particular type
+        of debris in that source area. It should be noted that the
+        characteristics included are not exhaustive or presented in any
+        particular order. Some will only be applicable in respect to certain
+        debris types. They are provided to provoke thought about the factors
+        that could be relevant to the level of availability. As this procedure
+        is based on a 1% AEP flood (with later adjustment for other AEPs) the
+        effective source area is that associated with a 1% AEP event.</para>
+
+        <table>
+          <title><emphasis role="bold">Debris Availability </emphasis>- in
+          source area of a particular type/size of debris</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Classification</emphasis></entry>
+
+                <entry><emphasis role="bold">Typical Source Area
+                Characteristics (1% AEP Event)</emphasis></entry>
+              </row>
+
+              <row>
+                <entry>High</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Natural forested areas with thick vegetation and
+                      extensive canopy cover, difficult to walk through with
+                      considerable fallen limbs, leaves and high levels of
+                      floor litter.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Streams with boulder/cobble beds and steep bed
+                      slopes and steep banks showing signs of substantial past
+                      bed/bank movements.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Arid areas, where loose vegetation and exposed
+                      loose soils occur and vegetation is sparse.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Urban areas that are not well maintained and/or
+                      where old paling fences, sheds, cars and/or stored loose
+                      material etc., are present on the floodplain close to
+                      the water course.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry>Medium</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>State forest areas with clear understory, grazing
+                      land with stands of trees.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Source areas generally falling between the High
+                      and Low categories.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry>Low</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Well maintained rural lands and paddocks with
+                      minimal outbuildings or stored materials in the source
+                      area.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Streams with moderate to flat slopes and stable
+                      bed and banks.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Arid areas where vegetation is deep rooted and
+                      soils are resistant to scour.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Urban areas that are well maintained with limited
+                      debris present in the source area.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+
+      <section>
+        <title>Debris mobility</title>
+
+        <para>The ability for debris to become mobilised from the source area
+        into a stream has an effect on the amount of debris that can then be
+        ultimately transported to a structure. Table 2 describes typical
+        source area characteristics and a corresponding rank for the likely
+        mobility of debris from the sorce area into receiving streams.</para>
+
+        <table>
+          <title><emphasis role="bold">Debris Mobility </emphasis>- Ability of
+          a particular type/ size of debris to be moved into streams</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Classification</emphasis></entry>
+
+                <entry><emphasis role="bold">Typical Source Area
+                Characteristics (1% AEP Event)</emphasis></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Steep source areas with fast response times and
+                      high annual rainfall and/or storm intensities and/or
+                      source areas subject to high rainfall intensities with
+                      sparse vegetation cover.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Receiving streams that frequently overtop their
+                      banks.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Main debris source areas close to streams</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Source areas generally falling between the High
+                      and Low mobility categories.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Low rainfall intensities and large, flat source
+                      areas.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Receiving streams infrequently overtops their
+                      banks.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Main debris source areas well away from
+                      streams</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+        <itemizedlist>
+          <listitem>
+            <para/>
+          </listitem>
+        </itemizedlist>
+      </section>
+
+      <section>
+        <title>Debris Transportability</title>
+
+        <para>The ability for debris to be transported by a stream down to a
+        structure has an effect on the amount of debris arriving at the
+        structure. Table 3 describes typical stream characteristics and a
+        corresponding rank for the likely transportability of debris.</para>
+
+        <table>
+          <title><emphasis role="bold">Debris Transportability -</emphasis>
+          Ability of a stream to transport debris down to the
+          structure</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry><emphasis
+                role="bold">Transportability</emphasis></entry>
+
+                <entry><para><emphasis role="bold">Typical Transporting Stream
+                Characteristics (1%AEP Event)</emphasis></para></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Steep bed slopes (&gt; 3%) and/or high stream
+                      velocity (V&gt;2.5m/sec)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Deep stream relative to vertical debris dimension
+                      (D &gt; 0.5L10)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Wide stream relative to horizontal debris
+                      dimension.(W&gt;L10)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Stream relatively straight and free of major
+                      constrictions or snag points.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>High temporal variability in maximum stream
+                      flows.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Stream generally falling between High and Low
+                      categories.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+                <entry><itemizedlist>
+                    <listitem>
+                      <para>Flat bed slopes (&lt; 1%).and/or low stream
+                      velocity (V&lt;1m/sec)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Shallow depth relative to vertical debris
+                      dimension (D &lt; 0.5L10)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Narrow stream relative to horizontal debris
+                      dimension (W&lt;L10)</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Stream meanders with frequent constrictions/snag
+                      points.</para>
+                    </listitem>
+
+                    <listitem>
+                      <para>Low temporal variability in maximum stream
+                      flows.</para>
+                    </listitem>
+                  </itemizedlist></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+
+      <section>
+        <title>Debris Potential</title>
+
+        <para>Where reliable long term data is available on the quantity and
+        type of debris typically present at a structure, this should be used
+        to directly quantify the debris potential at the structure. Where such
+        data is not available, the potential quantity of debris reaching a
+        structure at a site from a contributing source area in a 1% AEP event
+        can be estimated from Table 4. If there is a significant quantity of
+        more than one type of debris in the source area that could induce
+        blockage, this will require more than one type of debris to be
+        assessed.</para>
+
+        <table>
+          <title><emphasis role="bold">1% AEP Debris Potential
+          </emphasis></title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Classification</emphasis></entry>
+
+                <entry><emphasis role="bold">Combinations of the Above (any
+                order)</emphasis></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+                <entry>HHH or HHM</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+                <entry>MMM or HML or HMM or HLL</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+                <entry>LLL or MML or MLL</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+
+      <section>
+        <title>Adjustment for AEP</title>
+
+        <para>Observation of debris conveyed in streams strongly suggests a
+        correlation between an event’s magnitude and debris potential at a
+        site. This is accommodated in Table 5 as follows.</para>
+
+        <table>
+          <title><emphasis role="bold">AEP Adjusted Debris
+          Potential</emphasis></title>
+
+          <tgroup cols="4">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Event AEP</emphasis></entry>
+
+                <entry><emphasis role="bold">(1% AEP) Debris Potential at
+                Structure</emphasis></entry>
+
+                <entry/>
+
+                <entry/>
+              </row>
+
+              <row>
+                <entry/>
+
+                <entry>High</entry>
+
+                <entry>Medium</entry>
+
+                <entry>Low</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">A</emphasis>E<emphasis
+                role="bold">P &gt; 5% (Frequent)</emphasis></entry>
+
+                <entry>Medium</entry>
+
+                <entry>Low</entry>
+
+                <entry>Low</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">AEP 5% - AEP
+                0.5%</emphasis></entry>
+
+                <entry>High</entry>
+
+                <entry>Medium</entry>
+
+                <entry>Low</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">AEP &lt; 0.5%
+                (Rare)</emphasis></entry>
+
+                <entry>High</entry>
+
+                <entry>High</entry>
+
+                <entry>Medium</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+
+      <section>
+        <title>Design Blockage Level</title>
+
+        <para><emphasis role="bold">Inlet Blockage (Floating or Non
+        Floating)</emphasis></para>
+
+        <para>In conjunction with the quantity of debris likely to arrive at
+        the site, Table 6 provides an estimate of the ‘most likely’ inlet
+        blockage level should a blockage form from floating or non-floating
+        debris bridging the inlet.</para>
+
+        <table>
+          <title><emphasis role="bold">Most Likely Inlet Blockage Levels -
+          B<subscript>DES</subscript>%</emphasis></title>
+
+          <tgroup cols="4">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Control Dimension Inlet Clear
+                Width W m</emphasis></entry>
+
+                <entry><emphasis role="bold">AEP Adjusted Debris Potential At
+                Structure</emphasis></entry>
+
+                <entry/>
+
+                <entry/>
+              </row>
+
+              <row>
+                <entry/>
+
+                <entry>High</entry>
+
+                <entry>Medium</entry>
+
+                <entry>Low</entry>
+              </row>
+
+              <row>
+                <entry>W &lt; L<subscript>10</subscript></entry>
+
+                <entry>100%</entry>
+
+                <entry>50%</entry>
+
+                <entry>25%</entry>
+              </row>
+
+              <row>
+                <entry>W ≥ L<subscript>10</subscript>≤
+                3*L<subscript>10</subscript></entry>
+
+                <entry>20%</entry>
+
+                <entry>10%</entry>
+
+                <entry>0%</entry>
+              </row>
+
+              <row>
+                <entry>W&gt; 3*L<subscript>10</subscript></entry>
+
+                <entry>10%</entry>
+
+                <entry>0%</entry>
+
+                <entry>0%</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+        <para><emphasis role="bold">Barrel Blockage (Non
+        Floating)</emphasis></para>
+
+        <para>An alternative blockage mechanism is however possible for
+        non-floating material (typically sediment) when this material
+        progressively arrives and is deposited at the inlet and in the barrel
+        or waterway of the structure. This typically leads to a bottom up
+        blockage of both the barrel and inlet to the structure. Blockage in
+        this form can arise because velocities through the structure fall
+        below the level required to maintain the material in motion or, in
+        extreme cases, because the depth of sediment in the bed load is
+        sufficient to overwhelm the inlet, leading to sediment with little
+        water completely blocking the inlet and filling a substantial
+        proportion of the barrel of the structure.</para>
+
+        <para>Table 7a classifies the likelihood of deposition in the barrel
+        or waterway based on sediment size and velocity through the structure.
+        Using this likelihood of deposition Table 7b then combines the
+        likelihood of deposition with the debris potential to provide a most
+        likely depositional barrel or waterway blockage level for the
+        structure.</para>
+
+        <table>
+          <title><emphasis role="bold">Likelihood of Sediment Being Deposited
+          in Barrel/Waterway (HML)</emphasis></title>
+
+          <tgroup cols="6">
+            <tbody>
+              <row>
+                <entry>Peak Velocity Through Structure (m/sec)</entry>
+
+                <entry>Mean Sediment Size Present</entry>
+
+                <entry/>
+
+                <entry/>
+
+                <entry/>
+
+                <entry/>
+              </row>
+
+              <row>
+                <entry/>
+
+                <entry>Clay/Silt 0.001 to 0.04 mm</entry>
+
+                <entry>Sand 0.04 to 2 mm</entry>
+
+                <entry>Gravel 2 to 63 mm</entry>
+
+                <entry>Cobbles 63 to 200 mm</entry>
+
+                <entry>Boulders &gt;200 mm</entry>
+              </row>
+
+              <row>
+                <entry>&gt;= 3</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>M</entry>
+              </row>
+
+              <row>
+                <entry>1.0 to &lt; 3.0</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>M</entry>
+
+                <entry>M</entry>
+              </row>
+
+              <row>
+                <entry>0.5 to &lt; 1.0</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>M</entry>
+
+                <entry>H</entry>
+              </row>
+
+              <row>
+                <entry>0.1 to &lt; 0.5</entry>
+
+                <entry>L</entry>
+
+                <entry>L</entry>
+
+                <entry>M</entry>
+
+                <entry>H</entry>
+
+                <entry>H</entry>
+              </row>
+
+              <row>
+                <entry>&lt; 0.1</entry>
+
+                <entry>L</entry>
+
+                <entry>M</entry>
+
+                <entry>H</entry>
+
+                <entry>H</entry>
+
+                <entry>H</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+        <para><emphasis>Based on Hjulstrom’s diagram as modified by
+        Sundborg</emphasis></para>
+
+        <table>
+          <title><emphasis role="bold">Most Likely Depositional Blockage
+          Levels – B<subscript>DES</subscript>%</emphasis></title>
+
+          <tgroup cols="4">
+            <colspec colwidth="25*"/>
+
+            <colspec colwidth="25*"/>
+
+            <colspec colwidth="25*"/>
+
+            <colspec colwidth="25*"/>
+
+            <tbody>
+              <row>
+                <entry/>
+
+                <entry><emphasis role="bold">AEP Adjusted Non Floating Debris
+                Potential (Sediment) at Structure</emphasis></entry>
+
+                <entry/>
+
+                <entry/>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Likelihood that Deposition will
+                Occur (Table 6a)</emphasis></entry>
+
+                <entry><emphasis role="bold">High</emphasis></entry>
+
+                <entry><emphasis role="bold">Medium</emphasis></entry>
+
+                <entry><emphasis role="bold">Low</emphasis></entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">High</emphasis></entry>
+
+                <entry>100%</entry>
+
+                <entry>60%</entry>
+
+                <entry>25%</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Medium</emphasis></entry>
+
+                <entry>60%</entry>
+
+                <entry>40%</entry>
+
+                <entry>15%</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Low</emphasis></entry>
+
+                <entry>25%</entry>
+
+                <entry>15%</entry>
+
+                <entry>0%</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+        <para>It is noted that Table 7b (blockage caused by non-floating
+        debris) is to be read in conjunction with Table 6 (blockage caused by
+        floating debris) and the blockage mechanism creating the worst impact
+        on flood behaviour should be used in design.</para>
+
+        <para>While the above tables provide a means of estimating a realistic
+        value for the magnitude of a likely (AEP neutral) blockage, they do
+        not address the other characteristics required to properly describe
+        the blockage mechanism (viz the blockage type, location and timing)
+        and its impact on the hydraulics of flow through the structure. These
+        issues are discussed further in Section</para>
+      </section>
+
+      <section>
+        <title>Minimum Opening Height Considerations</title>
+
+        <para>Consideration of likely inlet blockage levels as presented in
+        Table 6 assumes that the greatest dimension (length) of debris
+        relative to the structures opening width is the dominant factor
+        influencing inlet blockages. All debris however has three dimensions
+        and a lesser dimension, such as the debris height, could also trigger
+        vertical bridging across the opening height if the structure’s opening
+        height was substantially less than the structures opening width. In
+        the absence of detail data on likely debris geometry, it is
+        recommended that structures be designed with a clear opening height of
+        at least one third their width to reflect the assumptions inherent in
+        this procedure. In an existing structure where the opening height is
+        less than one third of the opening width, it is recommended that
+        analysis be based on the likely vertical dimension of the debris and
+        the vertical opening height of the structure in lieu of the likely
+        debris length and horizontal opening width. Unless data is available
+        to support the choice of L<subscript>10</subscript> (vertically), it
+        should be taken as not less than one half of the assessed debris
+        L<subscript>10</subscript> (length).</para>
+      </section>
+
+      <section>
+        <title>Blockage of Multi Cell/Span Structures</title>
+
+        <para>Limited observation of blockages at multi cell culverts or multi
+        span bridges suggests that all cells/spans often do not block to the
+        same extent. The main factors influencing this variability appear to
+        be the main stream approach alignment and location relative to the
+        multiple culverts or spans and the relative width of flow carrying
+        debris to the total opening width. These two factors are somewhat
+        related as they both influence the uniformity of presentation of
+        debris, carried by the flow, to the individual cells or spans.</para>
+
+        <para>Where the main stream width is considerably less than the total
+        structure width, it is likely that more debris will be delivered to
+        and accumulate at or in the cells/spans falling within the main stream
+        width, than at the cells/spans located on the adjacent floodplains.
+        This may however not be the case when the mainstream flow is only a
+        small proportion of the total flow reaching the structure. In such
+        cases the presentation of debris to the multiple cells/spans may
+        become more uniform resulting in more consistent levels of
+        blockage.</para>
+
+        <para>As an initial guide it is suggested that, where the width of
+        that part of the approach flow that is capable of transporting the
+        debris under consideration, is comparable with or greater than the
+        total width of the structure, then the assessed BDES be applied
+        uniformly to all cells/spans.</para>
+
+        <para>Where the width of that part of the approach flow that is
+        capable of transporting the debris under consideration is
+        significantly less than the total width of the structure, then the
+        culverts/spans within the effective transport width be assessed as
+        blocked to BDES and those outside of that zone be reduced to half
+        BDES. Measurements of observed distributions are however essentially
+        non-existent at this time. More information, to permit refinement of
+        guidelines for blockage of multiple spans/cells, is needed.</para>
+      </section>
+
+      <section>
+        <title>Assessment of Multiple Structures</title>
+
+        <para>It is fundamental to the consideration of the interaction
+        between multiple culverts that any individual culvert/bridge could be
+        ‘all clear’ or ‘guideline blocked’ in a design event.</para>
+
+        <para>The question then arises as to what are the ‘likely’ AEP neutral
+        combinations of blockage that could occur across a catchment. Clearly
+        an ‘all clear’ (Bdes=0) global solution is possible in any event and
+        even probable in lesser events. In these lesser events the single site
+        Bdes is probably also low so the change in catchment floods behaviour
+        between different mixes of sites with Bdes&gt;0 and Bdes=0 may not be
+        great. In larger events however substantial differences in flood
+        behaviour can be created from different mixes of ‘all clear’ and Bdes
+        structures across the catchment. Simple math shows that n independent
+        sites with two choices for blockage presents 2n combinations. A
+        catchment with 6 interacting culverts therefore could involve 64
+        possible blockage scenarios. In analysing these mixes it is therefore
+        critical both with respect to AEP neutrality and computation time that
+        only likely combinations are considered. Seldom will all structures be
+        responding in a truly independent manner. There is unfortunately no
+        pre-prepared solution for this problem – all catchments will be
+        different. While not a truly AEP neutral approach, modelling all
+        structures ‘all clear’ and ‘guideline blocked‘ ensures individual
+        structure impacts are properly simulated in the envelope solution
+        together with the all-clear impacts. If these scenarios are then
+        augmented with ‘likely’ mixtures of clear and guideline blocked
+        structures, the resulting flood surface envelope should reasonably
+        represent the likely envelope flood surface levels that could be
+        reached at any site in the catchment. It should be noted however that
+        in any single historic event of a given AEP, the recorded flood
+        surface will likely only reach the envelope levels at some locations
+        (due to the variability in actual historic blockages).</para>
+
+        <para>As previously noted, where there are multiple structures on a
+        contiguous water course, the debris availability will normally reduce
+        downstream since debris will be captured by the upstream structures.
+        Therefore for downstream structures, the debris availability, as
+        defined in Table 1 will normally be reduced.</para>
+      </section>
+
+      <section>
+        <title>Risk Based Assessment of Blockages</title>
+
+        <para>In general, the consequences of a flood event of given
+        probability will be used to establish risk in an area or at a site and
+        this level of risk will in turn be used to establish the appropriate
+        event AEP to be used as the planning event for that particular area or
+        site. What this approach does not reflect is the relative uncertainty
+        in all of the various parameters influencing design flood estimation.
+        With even the most careful approach to the selection of parameters
+        like design rainfall intensity, rainfall temporal patterns, stream
+        roughness or most likely blockage levels, there is a significant
+        likelihood that error in the assessment of these parameters may in
+        turn lead to errors in the predicted design flood behaviour.</para>
+
+        <para>In an event based approach to modelling it is therefore prudent
+        to undertake various sensitivity runs to quantify how reasonable
+        variation in the chosen parameters could affect the model’s results.
+        Where such an analysis generates significant changes in the flood
+        surface, it indicates that the parameter creating that change needs
+        very careful review to confirm that the value selected was as
+        appropriate as available data permits. A sensitivity analysis of
+        alternate reasonable blockage levels and mechanisms is therefore
+        strongly recommended for design or analysis involving blockages. It is
+        recommended that the sensitivity to such a variation in design
+        blockage levels be incorporated into analysis by considering both an
+        ‘all clear’ and blocked at twice the calculated guideline blocked
+        level (max 100% ) scenarios, to identify sites where flood behaviour
+        upstream or downstream of the structure is particularly sensitive to
+        the adopted design blockage level. Where such a site is identified,
+        all inputs into the assessment process should be carefully reviewed to
+        confirm the adopted design blockage level before proceeding with
+        design or analysis based on that level.</para>
+
+        <para>As blockage of a structure with significant upstream available
+        flood storage can lead to a reduction in flood flow and levels
+        downstream of the structure, effectively protecting downstream
+        properties, it is important to review the all clear analysis to see if
+        the all clear scenario results in significantly increased flows
+        downstream of the structure. If this is found to be the case then the
+        all clear and guideline blocked results should be enveloped for design
+        flood estimation purposes.</para>
+
+        <para>In reviewing risk, inclusion of blockage in a Monte Carlo
+        analysis is a valuable means of quantifying the impact of blockage on
+        uncertainly in the flood assessment process. A distribution of
+        blockage values is however needed for Monte Carlo analysis.
+        Considering the uncertainty inherent in the factors influencing
+        blockage levels and the lack of data in respect to the variation of
+        blockage levels over time, it is however difficult to determine a
+        suitable distribution. What little has been done on this distribution
+        suggests that the probability distribution is likely to be dual peaked
+        with the ‘all clear’ and ‘most likely’ values ranking higher than
+        adjacent values. Much more data is however needed before these
+        characteristics can be confirmed.</para>
+      </section>
+    </section>
+
+    <section>
+      <title>All Clear</title>
+
+      <para>This is the condition where there is no allowance for blockage,
+      and the hydraulic analysis assumes that the structure flows
+      freely.</para>
+
+      <para>This condition should be considered as referenced above as an
+      important sensitivity case, since the all clear condition will reduce
+      the upstream flood level and may increase flood levels downstream
+      depending on the storage and flood immunity of the structure being
+      considered.</para>
+
+      <para>Secondly, and perhaps more importantly, as referenced in Section
+      4.3, blockage may not need to be considered at all or may need
+      consideration as a nominal allowance, if there is no history of blockage
+      at this site or at similar neighbouring sites, especially if there is
+      low risk of damage or disruption caused when blockage is
+      neglected.</para>
+    </section>
+
+    <section>
+      <title>Implementation</title>
+
+      <para>A form has been prepared to assist in implementing this procedure
+      and this form is included in the Appendix.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Hydraulic Analysis of Blocked Structures</title>
+
+    <section>
+      <title>Generally</title>
+
+      <para>Where blockages have historically been included in analysis or
+      design, they have often been applied as a reduction factor to the
+      all-clear flow through the structure. This is a simple and rapid means
+      of making some allowance for blockage and in the absence of information
+      on likely blockage mechanisms and extents can provide an answer
+      commensurate with the associated uncertainty in such an approach.</para>
+
+      <para>This guideline enhances our understanding of likely design
+      blockage mechanisms at a structure by quantifying likely blockage levels
+      at a structure based on assessable catchment and structure parameters
+      and understanding the blockage mechanism that will likely develop at the
+      structure. Given this information, a more deliberate approach to
+      hydraulic analysis of design blockages is now available, although most
+      current hydraulic modelling software currently lacks the functionality
+      to simulate the blockage mechanisms described in this document. It is
+      hoped that this functionality will however be made available in the more
+      capable software packages, in use in Australia, in the not too distant
+      future.</para>
+    </section>
+
+    <section>
+      <title>Blockage Types</title>
+
+      <para>As previously noted, a blockage mechanism can be described by its
+      type, its location and its timing and extents. With respect to type,
+      there are three types of blockages that could occur.</para>
+
+      <para><emphasis role="bold">A top down blockage </emphasis>occurs, when
+      a floating debris raft builds up at the entrance to a structure,
+      obstructing the inlet. This is a very dynamic type of blockage with the
+      raft volume and elevation varying over time. These changes occur in
+      response to both the flow rate and the difference between debris being
+      added and lost from the raft as the blockage develops. On the flood
+      recession this material may settle to fully block the inlet even though
+      the inlet may have been only partly blocked by the raft at the flow
+      peak. While rarely available, the temporal history of such a blockage,
+      in an historic event, can be an important factor in realistically
+      reproducing the actual flood behaviour at the blocked structure. While
+      top down blockages are common in heavily vegetated areas, realistic
+      simulation of this form of blockage is very complex.</para>
+
+      <para><emphasis role="bold">A bottom up blockage</emphasis> occurs, when
+      non floating material is deposited at the inlet and/or in the barrel or
+      waterway of the structure. This also is a dynamic type of blockage with
+      sediment being both added and removed from the blockage as time passes.
+      Because of the dynamic nature of this process, the debris apparent at
+      the conclusion of the event may have little relationship to the debris
+      level at any point in time during the event. As with the top down
+      blockage, the temporal history of blockage in an historic event can be
+      important in realistically reproducing actual flood behaviour during the
+      event. Bottom up blockages are relatively common in steep lightly
+      vegetated catchments with unstable stream banks or easily eroded stream
+      beds. As the geometry of a bottom up blockage does not directly vary
+      with flood stage (as in a top down blockage), hydraulic analysis of a
+      bottom up blockage is more straightforward.</para>
+
+      <para><emphasis role="bold">A porous plug blockage</emphasis> typically
+      occurs when larger vegetative debris (often rapidly) bridges across the
+      inlet of the structure covering the entire inlet but with sufficient
+      porosity to allow some flow through the plug. It typically arises from a
+      rapid bank or slope collapse, releasing a substantial pulse of
+      vegetation and sediment into the stream. Unlike a top down or bottom up
+      blockage, the porosity of this plug will likely only diminish as the
+      event continues, with ever finer material being trapped on the bridging
+      material that triggered the initial blockage. As blockage geometry does
+      not vary with flood stage (as in a top down blockage), hydraulic
+      analysis of a porous plug blockage is also more straightforward.</para>
+    </section>
+
+    <section>
+      <title>Blockage Mechanisms</title>
+
+      <para>While the number of possible blockage mechanisms is considerable,
+      there appears to be a strong correlation between the dominant debris
+      type arriving at a structure and the blockage mechanism it triggers.
+      This correlation forms the basis of Table 8 where the blockages ‘most
+      likely’ location, timing and extents are described. It should be noted
+      that this table is based heavily on limited observations and should be
+      updated as further data becomes available.</para>
+
+      <para>Progressive floating raft inlet blockages are assumed in this
+      guideline to significantly impact flow through the structure only after
+      the flow peaks (being mostly clear at higher flows as the raft lifts
+      clear of the inlet and possibly overtops the structure. Pulse like
+      blockages of floating material at an inlet mostly arise from vegetation
+      injected into the stream from collapsing banks, as floodwater rise or
+      from litter swept off the floodplain as streams overtop their banks.
+      Neither of the above blockages is likely to create a significant
+      barrel/waterway or outlet blockage although non floating debris, if
+      present in any quantity can build up under the raft at the inlet and in
+      the barrel, particularly as the flood recedes. It should be noted that
+      factoring of all clear flow will not necessarily provide a good estimate
+      of the impact of either of these mechanism as both are inlet control
+      mechanisms and the all clear structure could be operating under strong
+      outlet control.</para>
+
+      <para>Non floating material reaching a culvert or bridge will mostly
+      build up progressively but can occur as a pulse of debris in streams
+      with unstable banks. Typically, non-floating material (sediment) will
+      build up throughout the structure (inlet, barrel and outlet) as
+      increasing flows mobilise ever increasing amounts of bed and bank
+      material. Material will be continuously lost from the accumulated debris
+      mass, but the rate of supply is likely to exceed the rate at which
+      material passes on downstream, at least while flows are increasing and
+      new material is being mobilised.</para>
+
+      <para>These observations and assumptions on the likely type, location
+      and timing of a blockage are summarised in Table 8 In this table, the
+      following designations are used to describe the timing of key trigger
+      points in the blockage process.</para>
+
+      <para>T<subscript>TOTB/SA</subscript> Is the time when flow that first
+      overtops the stream’s banks in the source area reaches the
+      structure.</para>
+
+      <para>T<subscript>OT/F</subscript> &amp; <subscript>OT/L</subscript> Are
+      the times when flow first and last overtops the structure.</para>
+
+      <para>T<subscript>P</subscript> Is the time at which the upstream water
+      level peaks at the structure.</para>
+
+      <para>T<subscript>OBV/FL</subscript> Is the time on the falling limb
+      when the upstream water level drops back to the obvert level of the
+      structure.</para>
+
+      <table>
+        <title><emphasis role="bold">Likely Blockage Timing and
+        Extents</emphasis></title>
+
+        <tgroup cols="6">
+          <tbody>
+            <row>
+              <entry>DOMINANT SOURCE MATERIAL</entry>
+
+              <entry>DELIVERY &amp; TYPE</entry>
+
+              <entry>LIKELY BLOCKAGE LOCATIONS &amp; TIMINGS</entry>
+
+              <entry/>
+
+              <entry/>
+
+              <entry/>
+            </row>
+
+            <row>
+              <entry/>
+
+              <entry/>
+
+              <entry>Inlet</entry>
+
+              <entry>Barrel</entry>
+
+              <entry>Outlet</entry>
+
+              <entry>Handrails</entry>
+            </row>
+
+            <row>
+              <entry>FLOATING</entry>
+
+              <entry>Progressive Top Down</entry>
+
+              <entry>0 @ T<subscript>P</subscript> to
+              B<subscript>DES</subscript>
+              @T<subscript>OBV/FL</subscript></entry>
+
+              <entry>Unlikely</entry>
+
+              <entry>Unlikely</entry>
+
+              <entry>B<subscript>DES</subscript>@ T<subscript>OT/F</subscript>
+              to B<subscript>DES</subscript>@ &amp;
+              <subscript>OT/L</subscript></entry>
+            </row>
+
+            <row>
+              <entry/>
+
+              <entry>Pulse Porous Plug</entry>
+
+              <entry>B<subscript>DES</subscript> @
+              T<subscript>OTB/SA</subscript></entry>
+
+              <entry>N.A</entry>
+
+              <entry>N.A</entry>
+
+              <entry>B<subscript>DES</subscript>@ T<subscript>OT/F</subscript>
+              to B<subscript>DES</subscript>@ &amp;
+              T<subscript>OT/L</subscript></entry>
+            </row>
+
+            <row>
+              <entry>NON FLOATING</entry>
+
+              <entry>Progressive Bottom Up</entry>
+
+              <entry>0 @ T<subscript>OTB/SA </subscript>to
+              B<subscript>DES</subscript> at T<subscript>P</subscript></entry>
+
+              <entry>T<subscript>OTB/SA</subscript>to
+              B<subscript>DES</subscript> at T<subscript>P</subscript></entry>
+
+              <entry>T<subscript>OTB/SA</subscript>to
+              B<subscript>DES</subscript> at T<subscript>P</subscript></entry>
+
+              <entry>Unlikely</entry>
+            </row>
+
+            <row>
+              <entry/>
+
+              <entry>Pulse 1<footnoteref linkend="b6_ch6_fn_kjns3"/>Porous Plug</entry>
+
+              <entry>Unlikely</entry>
+
+              <entry>N.A</entry>
+
+              <entry>N.A</entry>
+
+              <entry>Unlikely</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <para><footnote xml:id="b6_ch6_fn_kjns3">
+          <para>Pulse blockages are more likely in systems subject to
+          irregular flooding and/or streams with unstable banks</para>
+        </footnote></para>
+
+      <para>ADD FOOTPNOTE</para>
+
+      <para>As previously noted in Section 5.2, modelling the hydraulics of a
+      progressively accumulating floating raft is quite complex as the
+      blockage is not fixed in regard to its own geometry or in relation to
+      the structure’s opening geometry. While applying a blockage
+      progressively from T<subscript>P</subscript> to
+      T<subscript>OBV/FL</subscript> provides a reasonable approximation of
+      when a floating blockage most impacts flow through a culvert or bridge
+      that overtops, it does not sensibly reflect behaviour when floodwater
+      carrying floating debris does not reach the obvert of the structure. In
+      the absence of any better information it is recommended that a
+      progressive top down blockage by floating debris that does not reach the
+      structures obvert be initiated at T<subscript>OTB/SA</subscript> and
+      ramped up to B<subscript>DES</subscript> at T<subscript>P</subscript>.
+      It should also be noted that a floating raft creates a top down blockage
+      only as a consequence of the projection of floating debris below its
+      water surface Relative to the structures opening height this projection
+      will lift on the rising limb and fall on the falling limb creating a
+      quite variable level of blockage of the structure itself during the
+      event. Under such circumstances, blockage levels of the structure will
+      be controlled by both the water depth and projection of the raft below
+      the water level. Detailed simulation of such a process is however
+      considered beyond the scope of this document. This guideline assumes
+      that a top down blockage will be simplistically modelled by lowering the
+      obvert of the structure over the tabulated time to then reflect the
+      tabulated blockage level. Where the consequences of this form of
+      blockage are high, and more realistic simulation is deemed necessary, it
+      may be necessary to develop a site specific procedure. More information
+      on this process can be found in Parola (2000), US DOTFHA (2005) and USGS
+      (2013).</para>
+
+      <para>While the temporal pattern of a structure’s blockage when it
+      blocks prior to the flood peak in a system with little flood storage
+      will have minimal impact on downstream peak flows or upstream peak flood
+      levels, it can substantially alter the duration that upstream flood
+      levels are above a target (floor or structure overtopping) level. In a
+      system with significant flood storage, the timing of a structure’s
+      blockage can significantly alter upstream peak flood level, downstream
+      peak discharge and overtopping duration. Consideration of the temporal
+      pattern of a blockage can therefore be extremely important in
+      realistically simulating the hydraulic impact of a blockage.</para>
+
+      <para>In establishing the key timings referred to in Table 8, it will
+      normally be necessary to first run a simulation with estimated blockage
+      levels and timings in place.</para>
+
+      <para>In an historic event, hydraulic analysis will need to reflect (as
+      far as available data permits) the actual blockage mechanism that
+      developed at the structure during the event. It should be noted that
+      this may vary significantly from what this guideline provides as the
+      ‘most likely’ blockage scenario for the structure, such is the impact of
+      near random chance on the many parameters influencing actual blockages.
+      However, where data for multiple historic events is available and
+      blockages appear to consistently differ from these guidelines
+      recommendations, further investigation is warranted, with historic data,
+      if of reasonable quality, being given precedence.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Management of Blockage</title>
+
+    <section>
+      <title>Design Considerations</title>
+
+      <para>Even though floodway crossings can be subject to blockage issues,
+      by far the greatest attention is given to the management of blockages at
+      culvert and bridge crossings.</para>
+
+      <para>To minimise the adverse impacts of debris blockages on bridges the
+      following design considerations should be given appropriate
+      consideration:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Minimise the number of in-stream piers.</para>
+        </listitem>
+
+        <listitem>
+          <para>Minimise the exposure of services (i.e. water supply
+          pipelines) on the upstream side of the bridge, and/or minimise the
+          likelihood of debris being captured on exposed services.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>To minimise the effects of debris blockage on culverts the
+      following design consideration should be noted:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Take all reasonable and practicable measures to maximise the
+          clear height of the culvert, even if this results in the culvert
+          hydraulic capacity exceeding the design standard. This minimises the
+          likelihood of debris being caught between the water surface and
+          obvert, and also minimises the risk of a person drowning if swept
+          through the culvert (i.e. the culvert is more likely to be operating
+          in a partially full condition).</para>
+        </listitem>
+
+        <listitem>
+          <para>The risk of debris blockage can also be reduced by using
+          single-cell culverts, or in the case of floodplain culverts, spacing
+          individual culvert cells such that they effectively operate as
+          single-cell culverts without a common wall/leg (Photos 1 and
+          2).</para>
+
+          <figure>
+            <title><emphasis role="bold">Series of floodplain culverts
+            </emphasis></title>
+
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="Figures/Photo1_Series%20of%20floodplain%20culverts.jpg"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </itemizedlist>
+
+      <figure>
+        <title><emphasis role="bold">Floodplain culvert</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Photo2_Floodplain%20culvert.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para>One means of maintaining the hydraulic capacity of culverts in
+          high debris streams is to construct debris deflector walls (1V:2H)
+          as shown in Figure 3 and Photo 3. The purpose of these walls is to
+          allow the debris that normally collects around the central leg to
+          rise with the flood, thus maintaining a relatively clear flow path
+          under the debris. Following the flood peak, the bulk of the debris
+          rests at the top of the deflector wall allowing easier removal
+          (Photo 4).</para>
+        </listitem>
+      </itemizedlist>
+
+      <figure>
+        <title><emphasis role="bold">Debris deflector walls</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Photo%203%20%20Debris%20deflector%20walls.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title><emphasis role="bold">Post flood collection of debris on top of
+        deflector walls</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Photo%204%20%20Post%20flood%20collection%20of%20debris%20on%20top%20of%20deflector%20walls.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para>Sedimentation problems within culverts may be managed using
+          one or more of the following activities:</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Formation of an in-stream sedimentation pond or trap
+              upstream of the culvert.</para>
+            </listitem>
+
+            <listitem>
+              <para>Formation of a multi-cell culvert with variable invert
+              levels such that the profile of the base slab simulates the
+              <emphasis>natural</emphasis> cross section of the channel (Photo
+              5).</para>
+            </listitem>
+
+            <listitem>
+              <para>Installation of sediment training walls on the culvert
+              inlet (Figure 3 and Photo 6). <emphasis>Sediment training
+              walls</emphasis> reduce the risk of sedimentation of the outer
+              cells by restricting minor flows to just one or two
+              cells.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+
+      <figure>
+        <title><emphasis role="bold">Sediment training walls incorporated with
+        debris deflector walls (Catchments &amp; Creeks Pty
+        Ltd)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Figure%204%20%20Sediment%20training%20walls%20incorporated%20with%20debris%20deflector%20walls%20Catchments%20&amp;%20Creeks%20Pty%20Ltd.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title><emphasis role="bold">Multi-cell culvert with different invert
+        levels</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Photo%205%20%20Multicell%20culvert%20with%20different%20invert%20levels.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title><emphasis role="bold">Debris deflector walls and sediment
+        training wall added to existing culvert</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="Figures/Photo6_Debrisdeflectorwallsandsedimenttrainingwalladdedtoexistingculvert.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para>Where space allows, a viable alternative to increased culvert
+          capacity (in response to the effects of debris blockage) may be to
+          lengthen the roadway subject to overflow (i.e. the effective
+          causeway weir length).</para>
+        </listitem>
+
+        <listitem>
+          <para>Where high levels of floating debris are present and
+          frequently become trapped on hand rails, collapsible hand rails may
+          be considered. Such systems typically include pins or bolts designed
+          to fail when water becomes backed up by the handrails and therefore
+          require ongoing maintenance. If to be used as traffic barriers, the
+          downstream rail fixing can be problematic. They can however limit
+          rises in floodwater levels upstream of the structure.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Retro-fitting existing structures</title>
+
+      <para>Structures can be modified to allow debris to be directed through
+      the structure with a reduced risk of blockage. These modifications can
+      include improved inlet performance through the use of debris deflection
+      walls and/or sediment training walls (Photo 4) or an increase in the
+      size of the structure.</para>
+    </section>
+
+    <section>
+      <title>Debris control structures</title>
+
+      <para>Debris control structures or traps are structural measures
+      provided in a watercourse i upstream of critical structures to collect
+      debris before it reaches the structure and causes problems. These can be
+      (a) fences, posts or rails providing a much larger ‘interception area’
+      for debris than a pipe or culvert entrance, (b) storages or dry basins
+      in which boulders or other debris can collect, or (c) diversion
+      structures designed to provide safe bypass of debris or water. Such
+      structures can occasionally be incorporated into a water quality
+      management plan for a catchment.</para>
+
+      <para>Where debris control structures or at-source control measures have
+      been implemented, these should be incorporated into the assessment of
+      the drainage system, which could mean a reduction in the allowance that
+      needs to be made for blockage. Ongoing maintenance is however
+      fundamental to the successful operation of these measures, Unless a
+      deliberate maintenance program is in place and has been demonstrated to
+      work, it would not be prudent to lower design blockage levels.as a
+      consequence of such works.</para>
+
+      <para>Care should also be taken to ensure that the hydraulic impact of
+      the debris control structure does not itself aggravate flooding in the
+      system.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Conclusion</title>
+
+    <para>The inclusion of blockage in the analysis of hydraulic structures in
+    drainage systems is an important consideration in the realistic simulation
+    of flood behaviour. The impact of blockage is however a complex and
+    difficult problem to analyse.. It is important to ensure that the estimate
+    of blockage used in analysis is AEP neutral and not over or
+    under-estimated as this can influence the performance of the total system.
+    This guideline has presented an approach to the assessment of design
+    blockage that has been developed in consultation with Australian experts
+    and provides a consistent and logical approach to assist in the effective
+    planning and design of drainage systems. Future investigation will refine
+    this approach.</para>
+
+    <para>For further information on the background to this guideline, readers
+    are referred to the following bibliography.</para>
+  </section>
+
+  <section>
+    <title>Bibliography</title>
+
+    <para>Barthelmess, A. and E. Rigby (2009) Quantification of Debris
+    Potential and Evolution of a Regional Culvert Blockage Model, H2009 - 32nd
+    Hydrology and Water Resources Symposium, Newcastle NSW, November.</para>
+
+    <para>Boyd, M, E. Rigby, S. Roso, P. Silveri and A. Davis (2002) Causes
+    and Effects of Culvert Blockage During Large Storms, 9th International
+    Conference on Urban Drainage, Portland Oregon, September.</para>
+
+    <para>Braudrick, C. and Grant, G., 2001. Transport and deposition of large
+    woody debris in streams: A flume experiment: Geomorphology, 41:
+    263-284.</para>
+
+    <para>Braudrick, C. and Grant, G. E., 2000. When do logs move in rivers:
+    Water Resources Research, 36(2): 571-584.</para>
+
+    <para>CIRIA (2010) Culvert design and operation guide. CIRIA Report C689,
+    CIRIA, London.</para>
+
+    <para>Denver Urban Drainage and Flood Control District (2001, revised
+    2008) Urban Storm Drainage Criteria Manual, 3 Volumes, Denver, Colorado
+    (http://www.udfcd.org/downloads/down_critmanual.htm)</para>
+
+    <para>Diehl, T.H., (1997) Potential Drift Accumulation at Bridges,
+    FHWA-RD-97-28, U.S.</para>
+
+    <para>Department of Transportation, Federal Highway Administration,
+    Washington, D.C. Department of Natural Resources &amp; Water, (2007).
+    Queensland Urban Drainage Manual. 2nd edition, Department of Natural
+    Resources &amp; Water, Institute of Public Works Engineering Australia,
+    Queensland Division Ltd. and Brisbane City Council, Brisbane,
+    Australia.</para>
+
+    <para>New South Wales Government (2005). Floodplain Development Manual,
+    Sydney.</para>
+
+    <para>A.C Parola (2000) Debris Forces on Highway Bridge Issue 445,
+    Prepared by the U.S. Transport Research Board of the National Research
+    Council Queensland Department of Natural Resources and Water (2008)</para>
+
+    <para>Queensland Urban Drainage Manual, 2nd Edition, Brisbane.</para>
+
+    <para>Roso, S., M. Boyd, E. Rigby and R. VanDrie (2004) Prediction of
+    Increased Flooding in Urban Catchments due to Debris Blockage and Flow
+    Diversions, Proceedings Novatech 2004, Lyon France, July 2004.</para>
+
+    <para>Rigby E.H., Boyd M.J., Roso S., Silveri P. and Davis, A (2002).
+    Causes and Effects of Culvert Blockage during Large Storms. 9th
+    International Conference on Urban Drainage, Eric W. Strecker, Wayne C.
+    Huber, Editors, Portland, Oregon, USA, September 8–13, 2002.</para>
+
+    <para>Rigby, E.H. and Barthelmess, A.J. (2011), Culvert Blockage
+    Mechanisms and their Impact on Flood Behaviour 34th World Congress of the
+    International Association for Hydro-Environment Engineering and Research
+    (IAHR) 26 June – 1 July, 2011.</para>
+
+    <para>Rigby, E.H. and Silveri, P. (2001). The Impact of Blockages on Flood
+    Behavior in the Wollongong Storm of August 1998. Conference on Hydraulics
+    in Civil Engineering, Hobart 28-30 November 2001.</para>
+
+    <para>Rigby E.H., Boyd M.J., Roso S., Silveri P. and Davis, A., (2002)
+    Causes and Effects of Culvert Blockage during Large Storms. 9th
+    International Conference on Urban Drainage, Eric W. Strecker, Wayne C.
+    Huber, Editors Portland, Oregon, USA, September 8–13, 2002.</para>
+
+    <para>U.S. Department of Transportation Federal Highway Administration,
+    (2005). Debris Control Structures - Evaluation and Countermeasures.
+    (DOTFHA) Hydraulic Engineering Circular No. 9 Third Edition, 2005.
+    Publication No. FHWA-IF-04-016.</para>
+
+    <para>U.S. Federal Highway Administration (2009) Urban Drainage Design
+    Manual, Hydraulic Engineering Circular No. 22, 3rd Edition, (S. A. Brown,
+    J.D. Schall, J.L. Morris, C.L. Doherty, S. M Stein and J.C. Warner),
+    National Highway Institute, Arlington, VA and FHWA Office of Bridges,
+    Washington.</para>
+
+    <para>Sundborg, A., 1956, The River Klarålven: Chapter 2. The
+    morphological activity of flowing water—erosion of the stream bed:
+    Geografiska Annaler, v. 38, p. 165-221.</para>
+
+    <para>U.S. Geological Survey (2013) Potential Drift Accumulation at
+    Bridges. URL: http://tn.water.usgs.gov
+    /pubs/FHWA-RD-97-028/accumwid.htm</para>
+
+    <para>Van Dine, D. F., (1996). Debris flow control structures for forest
+    engineering. Res. Br., B.C. Min. For., Victoria, B.C., Work. Pap.
+    08/1996.</para>
+
+    <para>Wallerstein, N. and Thorne, C.R., (1996). Debris Control at
+    Hydraulic Structures – Management of Woody Debris in Natural Channels and
+    at Hydraulic Structures. U.S. Corps of Engineers, Waterways Experiment
+    Station.</para>
+
+    <para>Weeks, (2009). Project 11: Blockage of Hydraulic Structures.
+    Engineers Australia, Water Engineering, ACT.</para>
+
+    <para>Weeks, W, A. Barthelmess, T. Rigby, G. Witheridge and R. Adamson,
+    (2009), “Blockage in Drainage Structures”, Hydrology and Water Resources
+    Symposium, Engineers Australia, Newcastle.</para>
+
+    <para>Wollongong City Council (2009). Wollongong DCP 2009- Chapter E14,
+    Wollongong City Council.</para>
+  </section>
+
+  <section>
+    <title>Blockage Assessment Form</title>
+
+    <para>BLOCKAGE ASSESSMENT FORM</para>
+
+    <para>STRUCTURE: OPENING WIDTH:.............................M</para>
+
+    <para>DEBRIS TYPE/MATERIAL/L<subscript>10</subscript>/SOURCE AREA - There
+    may be more than one material type to consider!</para>
+
+    <informaltable>
+      <tgroup cols="4">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Debris
+            Type/Material</emphasis></entry>
+
+            <entry><emphasis role="bold">L</emphasis><emphasis
+            role="bold"><subscript>10</subscript></emphasis></entry>
+
+            <entry><emphasis role="bold">Source Area</emphasis></entry>
+
+            <entry><emphasis role="bold">How Assessed</emphasis></entry>
+          </row>
+
+          <row>
+            <entry/>
+
+            <entry/>
+
+            <entry/>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">DEBRIS AVAILABILITY (HML) – for the selected
+    debris type/size and its source area</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="3">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Availability</emphasis></entry>
+
+            <entry><emphasis role="bold">Typical Source Area
+            Characteristics</emphasis></entry>
+
+            <entry><emphasis role="bold">Notes</emphasis></entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Dense forest, thick vegetation, extensive
+                  canopy, difficult to walk through with considerable fallen
+                  limbs, leaves and high levels of floor litter.
+                  </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Streams with boulder/cobble beds and steep
+                  bed slopes and banks showing signs of substantial past
+                  bed/bank movements.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Arid areas, where loose vegetation and
+                  exposed loose soils occur and vegetation is sparse.
+                  </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Urban areas that are not well maintained
+                  and/or old paling fences, sheds, cars and/or stored loose
+                  material etc., are present on the floodplain close to the
+                  water course. </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>State forest areas with clear understory,
+                  grazing land with stands of trees </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Source areas generally falling between the
+                  High and Low categories. </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Well maintained rural lands and paddocks,
+                  with minimal outbuildings</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Streams with moderate to flat slopes and
+                  stable beds and banks.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Arid areas where vegetation is deep rooted
+                  and soils resistant to scour</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Urban areas that are well maintained with
+                  limited debris present in the source area.
+                  </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">DEBRIS MOBILITY (HML) - for the selected
+    debris type/size and its source area</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="3">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Mobility</emphasis></entry>
+
+            <entry><emphasis role="bold">Typical Source Area
+            Characteristics</emphasis></entry>
+
+            <entry><emphasis role="bold">Notes</emphasis></entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Steep source area with fast response times
+                  and high annual rainfall and/or storm intensities and/or
+                  source areas subject to high rainfall intensities with
+                  sparse vegetation cover.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Receiving streams that frequently overtop
+                  their banks.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Main debris source areas close to streams
+                  </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Source areas generally falling between the
+                  High and Low categories.</emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Low rainfall intensities and large, flat
+                  source areas. </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Receiving streams that Infrequently overtop
+                  their banks.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Main source areas well away from streams
+                  </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">DEBRIS TRANSPORTABILITY (HML) - for the
+    selected debris type/size and stream characteristics</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="3">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Transportability</emphasis></entry>
+
+            <entry><emphasis role="bold">Typical Source Stream
+            Characteristics</emphasis></entry>
+
+            <entry><emphasis role="bold">Notes</emphasis></entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Steep bed slopes (&gt; 3%).and/or high
+                  stream velocity (V&gt;2.5m/sec)</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Deep stream relative to vertical debris
+                  dimension (D&gt;0.5L<subscript>10</subscript>)
+                  </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Wide streams relative to horizontal debris
+                  dimension.
+                  (W&gt;L<subscript>10</subscript>)</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Streams relatively straight and free of
+                  constrictions/snag points.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>High temporal variability in maximum stream
+                  flows </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Streams generally falling between High and
+                  Low categories</emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry><itemizedlist>
+                <listitem>
+                  <para><emphasis>Flat bed slopes (&lt; 1%) and/or low stream
+                  velocity (V&lt;1m/sec) </emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Shallow stream relative to vertical debris
+                  dimension
+                  (D&lt;0.5L<subscript>10</subscript>)</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Narrow streams relative to horizontal debris
+                  dimension.(W&lt;L<subscript>10</subscript>)</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Streams meander with frequent
+                  constrictions/snag points.</emphasis></para>
+                </listitem>
+
+                <listitem>
+                  <para><emphasis>Low temporal variability in maximum stream
+                  flows </emphasis></para>
+                </listitem>
+              </itemizedlist></entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">SITE BASED DEBRIS POTENTIAL 1%AEP (HML) - for
+    the selected debris type/size arriving at the site</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="3">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Debris Potential</emphasis></entry>
+
+            <entry><emphasis role="bold">Combinations of the Above (any
+            order)</emphasis></entry>
+
+            <entry><emphasis role="bold">Notes</emphasis></entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry>HHH or HHM</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry>NMMM or HML or HMM or HLL</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry>LLL or MML or MLL</entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">AEP ADJUSTED SITE DEBRIS POTENTIAL (HML) - for
+    the selected debris type/size</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="5">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Event AEP</emphasis></entry>
+
+            <entry><emphasis role="bold">At Site 1% AEP Debris
+            Potential</emphasis></entry>
+
+            <entry/>
+
+            <entry/>
+
+            <entry><emphasis role="bold">AEP Adjusted At Site Debris
+            potential</emphasis></entry>
+          </row>
+
+          <row>
+            <entry/>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry>de</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">AEP &gt; 5%
+            </emphasis><emphasis>(frequent)</emphasis></entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry>de</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">AEP 5% - AEP 0.5%</emphasis></entry>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+
+            <entry>de</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">AEP &lt; 0.5%</emphasis>
+            <emphasis>(rare)</emphasis></entry>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry>de</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">MOST LIKELY DESIGN INLET BLOCKAGE LEVEL
+    (BDES%) for the selected debris type/size</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="4">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Control Dimension Inlet Width W
+            (m)</emphasis></entry>
+
+            <entry><emphasis role="bold">At-Site Debris Potential
+            (Generally)</emphasis></entry>
+
+            <entry/>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry/>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">W &lt;
+            L<subscript>10</subscript></emphasis></entry>
+
+            <entry>100%</entry>
+
+            <entry>50%</entry>
+
+            <entry>25%</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">W ≥L<subscript>10</subscript>≤
+            3*L<subscript>10</subscript></emphasis></entry>
+
+            <entry>20%</entry>
+
+            <entry>10%</entry>
+
+            <entry>0%</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">W&gt;
+            3*L<subscript>10</subscript></emphasis></entry>
+
+            <entry>10%</entry>
+
+            <entry>0%</entry>
+
+            <entry>0%</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <informaltable>
+      <tgroup cols="2">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Event AEP</emphasis></entry>
+
+            <entry><emphasis
+            role="bold">B<subscript>DES</subscript>%</emphasis></entry>
+          </row>
+
+          <row>
+            <entry>AEP &gt; 5% (frequent)</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry>AEP 5% - AEP 0.5%</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry>AEP &lt; 0.5% (rare)</entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>Refer Guideline if opening H&lt;0.33W</para>
+
+    <para><emphasis role="bold">The following tables are only relevant to
+    sites subject to a significant debris load of sediment! Where inlet
+    blockage and barrel blockage are both likely, the blockage producing the
+    greatest impact on flood behaviour should be used in
+    design.</emphasis></para>
+
+    <para><emphasis role="bold">LIKELIHOOD OF SEDIMENT BEING DEPOSITED IN THE
+    BARREL OR WATERWAY (HML)</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="6">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Peak Velocity Through Structure
+            (m/sec)</emphasis></entry>
+
+            <entry><emphasis role="bold">Mean Sediment Size
+            Present</emphasis></entry>
+
+            <entry/>
+
+            <entry/>
+
+            <entry><emphasis role="bold"/></entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry/>
+
+            <entry><emphasis role="bold">Clay/Silt 0.001 to 0.04
+            mm</emphasis></entry>
+
+            <entry><emphasis role="bold">Sand 0.04 to 2 mm</emphasis></entry>
+
+            <entry><emphasis role="bold">Gravel 2 to 63 mm</emphasis></entry>
+
+            <entry><emphasis role="bold">Cobbles 63 to 200
+            mm</emphasis></entry>
+
+            <entry><emphasis role="bold">Boulders &gt;200
+            mm</emphasis></entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">&gt;= 3 </emphasis></entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>M</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">1.0 to &lt; 3.0 </emphasis></entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>M</entry>
+
+            <entry>M</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">0.5 to &lt; 1.0 </emphasis></entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>M</entry>
+
+            <entry>H</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">0.1 to &lt; 0.5</emphasis></entry>
+
+            <entry>L</entry>
+
+            <entry>L</entry>
+
+            <entry>M</entry>
+
+            <entry>H</entry>
+
+            <entry>H</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold">&lt; 0.1 </emphasis></entry>
+
+            <entry>L</entry>
+
+            <entry>M</entry>
+
+            <entry>H</entry>
+
+            <entry>H</entry>
+
+            <entry>H</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para><emphasis role="bold">MOST LIKELY DESIGN BARREL BLOCKAGE
+    B<subscript>DES</subscript>% ) for sediment of a particular mean size is
+    then;</emphasis></para>
+
+    <informaltable>
+      <tgroup cols="4">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Likelihood That Deposition
+            Occurs</emphasis></entry>
+
+            <entry><emphasis role="bold">AEP Adjusted Sediment Potential
+            </emphasis></entry>
+
+            <entry/>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry/>
+
+            <entry><emphasis role="bold">H</emphasis>igh</entry>
+
+            <entry><emphasis role="bold">M</emphasis>edium</entry>
+
+            <entry><emphasis role="bold">L</emphasis>ow</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold"><emphasis
+            role="bold">H</emphasis></emphasis>igh</entry>
+
+            <entry>100%</entry>
+
+            <entry>60%</entry>
+
+            <entry>25%</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold"><emphasis
+            role="bold">M</emphasis></emphasis>edium</entry>
+
+            <entry>60%</entry>
+
+            <entry>40%</entry>
+
+            <entry>15%</entry>
+          </row>
+
+          <row>
+            <entry><emphasis role="bold"><emphasis
+            role="bold">L</emphasis></emphasis>ow</entry>
+
+            <entry>25%</entry>
+
+            <entry>15%</entry>
+
+            <entry>0%</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <informaltable>
+      <tgroup cols="2">
+        <tbody>
+          <row>
+            <entry><emphasis role="bold">Event AEP</emphasis></entry>
+
+            <entry><emphasis
+            role="bold">B<subscript>DES</subscript>%</emphasis></entry>
+          </row>
+
+          <row>
+            <entry>AEP &gt; 5% (frequent)</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry>AEP 5% - AEP 0.5%</entry>
+
+            <entry/>
+          </row>
+
+          <row>
+            <entry>AEP &lt; 0.5% (rare)</entry>
+
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>For modelling blockage mechanism (type, location and timing), refer
+    to Guideline Table 8</para>
+  </section>
 </chapter>
