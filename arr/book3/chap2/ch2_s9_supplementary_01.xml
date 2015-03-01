@@ -7,481 +7,486 @@
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
-  <title>SUPPLEMENTARY INFORMATION Box 1: Theory of Peak-Over-Threshold and
-  Annual Maximum Series</title>
+  <title>Supplementary Information</title>
 
-  <section xml:id="b3_ch2_s_k55h9">
-    <title>Annual exceedance probability AEP</title>
+  <section>
+    <title>Box 1: Theory of Peak-Over-Threshold and Annual Maximum
+    Series</title>
 
-    <para>The objective is to derive the distribution of the maximum flood
-    peak within a specified interval of time. Referring to the continuous
-    streamflow times series <xref linkend="b3_ch2_f_e1wwl"/>, let the random
-    variable q be a local peak discharge defined as a discharge which has
-    lower discharge on either side of the peak. This presents an immediate
-    problem as any bump on the hydrograph would produce a local peak. To
-    circumvent this problem we focus on peaks greater than some threshold
-    defined as q<subscript>o</subscript>. The threshold is selected so that
-    the peaks above the threshold are sufficiently separated in time to be
-    statistically independent of each other.</para>
+    <section xml:id="b3_ch2_s_k55h9">
+      <title>Annual exceedance probability AEP</title>
 
-    <figure xml:id="b3_ch2_f_e1wwl">
-      <title>Peak-over-threshold series</title>
+      <para>The objective is to derive the distribution of the maximum flood
+      peak within a specified interval of time. Referring to the continuous
+      streamflow times series <xref linkend="b3_ch2_f_e1wwl"/>, let the random
+      variable q be a local peak discharge defined as a discharge which has
+      lower discharge on either side of the peak. This presents an immediate
+      problem as any bump on the hydrograph would produce a local peak. To
+      circumvent this problem we focus on peaks greater than some threshold
+      defined as q<subscript>o</subscript>. The threshold is selected so that
+      the peaks above the threshold are sufficiently separated in time to be
+      statistically independent of each other.</para>
 
-      <mediaobject>
-        <imageobject>
-          <imagedata fileref="figures/Figure1.png"/>
-        </imageobject>
-      </mediaobject>
-    </figure>
+      <figure xml:id="b3_ch2_f_e1wwl">
+        <title>Peak-over-threshold series</title>
 
-    <para>It is assumed that all peaks above the threshold
-    q<subscript>o</subscript> are sampled from the same distribution denoted
-    by the pdf p(q|q&gt;q<subscript>o</subscript>).</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/Figure1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
 
-    <para>Suppose over a time interval of length t years, there are n peaks
-    over the threshold q<subscript>o</subscript>. This defines the POT time
-    series {q<subscript>1</subscript>,…,q<subscript>n</subscript>} which
-    consists of n independent realizations sampled from the pdf
-    p(q|q&gt;q<subscript>o</subscript>).</para>
+      <para>It is assumed that all peaks above the threshold
+      q<subscript>o</subscript> are sampled from the same distribution denoted
+      by the pdf p(q|q&gt;q<subscript>o</subscript>).</para>
 
-    <para>Let w be the maximum value in the POT time series; that is,</para>
+      <para>Suppose over a time interval of length t years, there are n peaks
+      over the threshold q<subscript>o</subscript>. This defines the POT time
+      series {q<subscript>1</subscript>,…,q<subscript>n</subscript>} which
+      consists of n independent realizations sampled from the pdf
+      p(q|q&gt;q<subscript>o</subscript>).</para>
 
-    <para>w = max
-    {q<subscript>1</subscript>,…,q<subscript>n</subscript>}</para>
+      <para>Let w be the maximum value in the POT time series; that is,</para>
 
-    <para>For w to be the maximum value, each peak within the POT series must
-    be less than or equal to w. In probability theory this condition is
-    expressed by the compound event consisting of the intersection of the
-    following n events</para>
+      <para>w = max
+      {q<subscript>1</subscript>,…,q<subscript>n</subscript>}</para>
 
-    <equation xml:id="b3_ch2_e_0h1bg">
-      <m:math display="block">
-        <m:mrow>
+      <para>For w to be the maximum value, each peak within the POT series
+      must be less than or equal to w. In probability theory this condition is
+      expressed by the compound event consisting of the intersection of the
+      following n events</para>
+
+      <equation xml:id="b3_ch2_e_0h1bg">
+        <m:math display="block">
           <m:mrow>
-            <m:mo>{</m:mo>
-
             <m:mrow>
-              <m:mrow>
-                <m:mo>(</m:mo>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>q</m:mi>
-
-                    <m:mi>1</m:mi>
-                  </m:msub>
-
-                  <m:mo>≤ w</m:mo>
-                </m:mrow>
-
-                <m:mo>)</m:mo>
-              </m:mrow>
-
-              <m:mo>⋂</m:mo>
+              <m:mo>{</m:mo>
 
               <m:mrow>
-                <m:mo>(</m:mo>
-
                 <m:mrow>
-                  <m:msub>
-                    <m:mi>q</m:mi>
+                  <m:mo>(</m:mo>
 
-                    <m:mi>2</m:mi>
-                  </m:msub>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>q</m:mi>
 
-                  <m:mo>≤ w</m:mo>
+                      <m:mi>1</m:mi>
+                    </m:msub>
+
+                    <m:mo>≤ w</m:mo>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
                 </m:mrow>
 
-                <m:mo>)</m:mo>
-              </m:mrow>
-
-              <m:mo>⋂</m:mo>
-
-              <m:mi>....</m:mi>
-
-              <m:mo>⋂</m:mo>
-
-              <m:mrow>
-                <m:mo>(</m:mo>
+                <m:mo>⋂</m:mo>
 
                 <m:mrow>
-                  <m:msub>
-                    <m:mi>q</m:mi>
+                  <m:mo>(</m:mo>
 
-                    <m:mi>n</m:mi>
-                  </m:msub>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>q</m:mi>
 
-                  <m:mo>≤ w</m:mo>
+                      <m:mi>2</m:mi>
+                    </m:msub>
+
+                    <m:mo>≤ w</m:mo>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
                 </m:mrow>
 
-                <m:mo>)</m:mo>
+                <m:mo>⋂</m:mo>
+
+                <m:mi>....</m:mi>
+
+                <m:mo>⋂</m:mo>
+
+                <m:mrow>
+                  <m:mo>(</m:mo>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>q</m:mi>
+
+                      <m:mi>n</m:mi>
+                    </m:msub>
+
+                    <m:mo>≤ w</m:mo>
+                  </m:mrow>
+
+                  <m:mo>)</m:mo>
+                </m:mrow>
               </m:mrow>
+
+              <m:mo>}</m:mo>
             </m:mrow>
-
-            <m:mo>}</m:mo>
           </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>Because the peaks are assumed to be statistically independent, the
-    probability of the compound event is the product of the probabilities of
-    the individual events. Therefore the probability that the random variable
-    W<inlineequation>
-        <m:math display="inline">
-          <m:mi>≤</m:mi>
         </m:math>
-      </inlineequation> w in a POT series with n events occurring over the
-    interval t simplifies to</para>
+      </equation>
 
-    <equation xml:id="b3_ch2_e_2uebb">
-      <m:math display="block">
-        <m:mrow>
-          <m:mrow>
-            <m:mi>P(W≤w∣n,T)</m:mi>
-          </m:mrow>
-
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:mi>P[(</m:mi>
-
-            <m:msub>
-              <m:mi>x</m:mi>
-
-              <m:mi>i</m:mi>
-            </m:msub>
-
-            <m:mo>≤</m:mo>
-
-            <m:mo>w)</m:mo>
-
-            <m:mrow>
-              <m:mo>⋂</m:mo>
-
-              <m:mo>.... ⋂</m:mo>
-
-              <m:mo>(</m:mo>
-
-              <m:msub>
-                <m:mi>q</m:mi>
-
-                <m:mi>n</m:mi>
-              </m:msub>
-            </m:mrow>
-
-            <m:mo>≤</m:mo>
-
-            <m:mi>w)]</m:mi>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_abslg">
-      <m:math display="block">
-        <m:mrow>
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:mi>P(</m:mi>
-
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>1</m:mi>
-            </m:msub>
-
-            <m:mi>≤w)P(</m:mi>
-
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>2</m:mi>
-            </m:msub>
-
+      <para>Because the peaks are assumed to be statistically independent, the
+      probability of the compound event is the product of the probabilities of
+      the individual events. Therefore the probability that the random
+      variable W<inlineequation>
+          <m:math display="inline">
             <m:mi>≤</m:mi>
+          </m:math>
+        </inlineequation> w in a POT series with n events occurring over the
+      interval t simplifies to</para>
 
-            <m:mo>w)....P(</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>q</m:mi>
-
-                <m:mi>n</m:mi>
-              </m:msub>
-
-              <m:mo>≤ w )</m:mo>
-            </m:mrow>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_uxlp2">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>=</m:mi>
-
-          <m:mo>P</m:mo>
-
-          <m:mrow>
-            <m:mo>(</m:mo>
-
-            <m:mi>q≤w</m:mi>
-
-            <m:mo>)</m:mo>
-          </m:mrow>
-
-          <m:mo>ⁿ</m:mo>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>The number of POT events n occurring over an interval t is random.
-    Suppose that the random variable n follows a Poisson distribution with v
-    being the average number of POT events per year; that is,</para>
-
-    <equation xml:id="b3_ch2_e_0lceb">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>P(n|v,t)</m:mi>
-
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:mfrac>
-              <m:mrow>
-                <m:msup>
-                  <m:mi>(vt)</m:mi>
-
-                  <m:mi>n</m:mi>
-                </m:msup>
-
-                <m:mrow>
-                  <m:mi>exp</m:mi>
-
-                  <m:mo>(-vt)</m:mo>
-                </m:mrow>
-              </m:mrow>
-
-              <m:mi>n!</m:mi>
-            </m:mfrac>
-
-            <m:mo>, n =</m:mo>
-
-            <m:mi>0,1,2....</m:mi>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>Application of the total probability theorem yields the distribution
-    of the largest peak magnitude over the time interval with length t</para>
-
-    <equation xml:id="b3_ch2_e_zdrjq">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>P(W≤w|t)</m:mi>
-
-          <m:mo>=</m:mo>
-
+      <equation xml:id="b3_ch2_e_2uebb">
+        <m:math display="block">
           <m:mrow>
             <m:mrow>
-              <m:mrow>
-                <m:munderover>
-                  <m:mo>∑</m:mo>
-
-                  <m:mi>n=0</m:mi>
-
-                  <m:mi>∞</m:mi>
-                </m:munderover>
-
-                <m:mi>P(W≤w|n,t)P(n|v,t)</m:mi>
-              </m:mrow>
+              <m:mi>P(W≤w∣n,T)</m:mi>
             </m:mrow>
 
             <m:mo>=</m:mo>
 
-            <m:mi>exp[-(vt)P(q&gt;w)</m:mi>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>where P(W<inlineequation>
-        <m:math display="inline">
-          <m:mi>≤</m:mi>
-        </m:math>
-      </inlineequation>w|t) is the probability that the largest peak over time
-    interval t is less than or equal to w. When the time interval t is set to
-    one year, <xref linkend="b3_ch2_e_zdrjq"/> defines the distribution of the
-    AM series.</para>
-
-    <para>ARR defines annual exceedance probability as</para>
-
-    <equation xml:id="b3_ch2_e_w9t35">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>AEP(w)</m:mi>
-
-          <m:mo>=</m:mo>
-
-          <m:mi>1-P(W≤w| t=1)</m:mi>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>where AEP(w) is the probability of the largest peak in a year
-    exceeding magnitude w.</para>
-  </section>
-
-  <section xml:id="b3_ch2_s_fzc71">
-    <title>Exceedances per year EY</title>
-
-    <para>We now derive the probability distribution of the time to the next
-    flood peak which has a magnitude in excess of w. With regard to <xref
-    linkend="b3_ch2_e_zdrjq"/>, if the largest peak during the interval t is
-    less than or equal to w, then the time to the next peak with magnitude in
-    excess of w must be greater than t. It therefore follows that the
-    distribution of the time to the next peak with magnitude exceeding w
-    is</para>
-
-    <equation xml:id="b3_ch2_e_30300">
-      <m:math display="block">
-        <m:mrow>
-          <m:mtext>P(Time to next peak exceeding w≤t)</m:mtext>
-
-          <m:mo>=</m:mo>
-
-          <m:mi>1- exp[-vP(q&gt;w)t]</m:mi>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_28swr">
-      <m:math display="block">
-        <m:mrow>
-          <m:mo>=</m:mo>
-
-          <m:mi>1-exp[-EY(w)t]</m:mi>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <para>This is recognized as an exponential distribution with parameter
-    vP(q&gt;w) which is the expected number of peaks exceeding w per
-    year.</para>
-
-    <para>ARR defines this parameter as EY(w) which stands for exceedances per
-    year, but more strictly, is the expected number of peaks that exceed w in
-    a year.</para>
-  </section>
-
-  <section xml:id="b3_ch2_s_syine">
-    <title>Linking AEP and EY</title>
-
-    <para>If we select a particular peak magnitude w, combining <xref
-    linkend="b3_ch2_e_zdrjq"/>, <xref linkend="b3_ch2_e_w9t35"/> and <xref
-    linkend="b3_ch2_e_30300"/> yields the following relationship between EY(w)
-    and AEP(w)</para>
-
-    <equation xml:id="b3_ch2_e_yf64d">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>AEP(w)</m:mi>
-
-          <m:mo>=</m:mo>
-
-          <m:mi>1 - P (W≤w | t=1 )</m:mi>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_gbvhs">
-      <m:math display="block">
-        <m:mrow>
-          <m:mo>=</m:mo>
-
-          <m:mi>1- exp[-vP(q&gt;w)]</m:mi>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_vjpol">
-      <m:math display="block">
-        <m:mi>= 1 - exp[-EY(w)]</m:mi>
-      </m:math>
-    </equation>
-
-    <para>If we express AEP(w) as 1/Y(w) then <xref linkend="b3_ch2_e_yf64d"/>
-    can be rewritten as</para>
-
-    <equation xml:id="b3_ch2_e_v4tbm">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>EY(w)</m:mi>
-
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:msub>
-              <m:mi>-log</m:mi>
-
-              <m:mi>e</m:mi>
-            </m:msub>
-
-            <m:mo>[1-AEP(w)]</m:mo>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
-
-    <equation xml:id="b3_ch2_e_tftt7">
-      <m:math display="block">
-        <m:mrow>
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:msub>
-              <m:mi>-log</m:mi>
-
-              <m:mi>e</m:mi>
-            </m:msub>
-
             <m:mrow>
-              <m:mo>[</m:mo>
+              <m:mi>P[(</m:mi>
+
+              <m:msub>
+                <m:mi>x</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+
+              <m:mo>≤</m:mo>
+
+              <m:mo>w)</m:mo>
 
               <m:mrow>
-                <m:mi>1</m:mi>
+                <m:mo>⋂</m:mo>
 
-                <m:mo>-</m:mo>
+                <m:mo>.... ⋂</m:mo>
 
-                <m:mfrac>
-                  <m:mi>1</m:mi>
+                <m:mo>(</m:mo>
 
-                  <m:mi>Y(w)</m:mi>
-                </m:mfrac>
+                <m:msub>
+                  <m:mi>q</m:mi>
+
+                  <m:mi>n</m:mi>
+                </m:msub>
               </m:mrow>
 
-              <m:mo>]</m:mo>
+              <m:mo>≤</m:mo>
+
+              <m:mi>w)]</m:mi>
             </m:mrow>
           </m:mrow>
-        </m:mrow>
-      </m:math>
-    </equation>
+        </m:math>
+      </equation>
 
-    <para>This relationship assumes peaks in the POT series are statistically
-    independent and that there is no seasonality in the sense that the
-    probability density of the POT peak above a threshold
-    p(q|q&gt;q<subscript>o</subscript>) does not change over the year. While
-    the no-seasonality assumption appears questionable on first inspection, in
-    practice the threshold q<subscript>0</subscript> is selected so that the
-    expected number of peaks exceeding the threshold q<subscript>0</subscript>
-    in any year is of the order of 1. This is done to ensure the POT peaks are
-    genuine floods and statistically independent. As a consequence of the high
-    threshold selected in practice, the impact of seasonality is
-    diminished.</para>
+      <equation xml:id="b3_ch2_e_abslg">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mi>P(</m:mi>
+
+              <m:msub>
+                <m:mi>q</m:mi>
+
+                <m:mi>1</m:mi>
+              </m:msub>
+
+              <m:mi>≤w)P(</m:mi>
+
+              <m:msub>
+                <m:mi>q</m:mi>
+
+                <m:mi>2</m:mi>
+              </m:msub>
+
+              <m:mi>≤</m:mi>
+
+              <m:mo>w)....P(</m:mo>
+
+              <m:mrow>
+                <m:msub>
+                  <m:mi>q</m:mi>
+
+                  <m:mi>n</m:mi>
+                </m:msub>
+
+                <m:mo>≤ w )</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_uxlp2">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>=</m:mi>
+
+            <m:mo>P</m:mo>
+
+            <m:mrow>
+              <m:mo>(</m:mo>
+
+              <m:mi>q≤w</m:mi>
+
+              <m:mo>)</m:mo>
+            </m:mrow>
+
+            <m:mo>ⁿ</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>The number of POT events n occurring over an interval t is random.
+      Suppose that the random variable n follows a Poisson distribution with v
+      being the average number of POT events per year; that is,</para>
+
+      <equation xml:id="b3_ch2_e_0lceb">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>P(n|v,t)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mfrac>
+                <m:mrow>
+                  <m:msup>
+                    <m:mi>(vt)</m:mi>
+
+                    <m:mi>n</m:mi>
+                  </m:msup>
+
+                  <m:mrow>
+                    <m:mi>exp</m:mi>
+
+                    <m:mo>(-vt)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+
+                <m:mi>n!</m:mi>
+              </m:mfrac>
+
+              <m:mo>, n =</m:mo>
+
+              <m:mi>0,1,2....</m:mi>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Application of the total probability theorem yields the
+      distribution of the largest peak magnitude over the time interval with
+      length t</para>
+
+      <equation xml:id="b3_ch2_e_zdrjq">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>P(W≤w|t)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:mrow>
+                <m:mrow>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+
+                    <m:mi>n=0</m:mi>
+
+                    <m:mi>∞</m:mi>
+                  </m:munderover>
+
+                  <m:mi>P(W≤w|n,t)P(n|v,t)</m:mi>
+                </m:mrow>
+              </m:mrow>
+
+              <m:mo>=</m:mo>
+
+              <m:mi>exp[-(vt)P(q&gt;w)</m:mi>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where P(W<inlineequation>
+          <m:math display="inline">
+            <m:mi>≤</m:mi>
+          </m:math>
+        </inlineequation>w|t) is the probability that the largest peak over
+      time interval t is less than or equal to w. When the time interval t is
+      set to one year, <xref linkend="b3_ch2_e_zdrjq"/> defines the
+      distribution of the AM series.</para>
+
+      <para>ARR defines annual exceedance probability as</para>
+
+      <equation xml:id="b3_ch2_e_w9t35">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>AEP(w)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>1-P(W≤w| t=1)</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>where AEP(w) is the probability of the largest peak in a year
+      exceeding magnitude w.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_fzc71">
+      <title>Exceedances per year EY</title>
+
+      <para>We now derive the probability distribution of the time to the next
+      flood peak which has a magnitude in excess of w. With regard to <xref
+      linkend="b3_ch2_e_zdrjq"/>, if the largest peak during the interval t is
+      less than or equal to w, then the time to the next peak with magnitude
+      in excess of w must be greater than t. It therefore follows that the
+      distribution of the time to the next peak with magnitude exceeding w
+      is</para>
+
+      <equation xml:id="b3_ch2_e_30300">
+        <m:math display="block">
+          <m:mrow>
+            <m:mtext>P(Time to next peak exceeding w≤t)</m:mtext>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>1- exp[-vP(q&gt;w)t]</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_28swr">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mi>1-exp[-EY(w)t]</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>This is recognized as an exponential distribution with parameter
+      vP(q&gt;w) which is the expected number of peaks exceeding w per
+      year.</para>
+
+      <para>ARR defines this parameter as EY(w) which stands for exceedances
+      per year, but more strictly, is the expected number of peaks that exceed
+      w in a year.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_syine">
+      <title>Linking AEP and EY</title>
+
+      <para>If we select a particular peak magnitude w, combining <xref
+      linkend="b3_ch2_e_zdrjq"/>, <xref linkend="b3_ch2_e_w9t35"/> and <xref
+      linkend="b3_ch2_e_30300"/> yields the following relationship between
+      EY(w) and AEP(w)</para>
+
+      <equation xml:id="b3_ch2_e_yf64d">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>AEP(w)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mi>1 - P (W≤w | t=1 )</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_gbvhs">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mi>1- exp[-vP(q&gt;w)]</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_vjpol">
+        <m:math display="block">
+          <m:mi>= 1 - exp[-EY(w)]</m:mi>
+        </m:math>
+      </equation>
+
+      <para>If we express AEP(w) as 1/Y(w) then <xref
+      linkend="b3_ch2_e_yf64d"/> can be rewritten as</para>
+
+      <equation xml:id="b3_ch2_e_v4tbm">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>EY(w)</m:mi>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>-log</m:mi>
+
+                <m:mi>e</m:mi>
+              </m:msub>
+
+              <m:mo>[1-AEP(w)]</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_tftt7">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>-log</m:mi>
+
+                <m:mi>e</m:mi>
+              </m:msub>
+
+              <m:mrow>
+                <m:mo>[</m:mo>
+
+                <m:mrow>
+                  <m:mi>1</m:mi>
+
+                  <m:mo>-</m:mo>
+
+                  <m:mfrac>
+                    <m:mi>1</m:mi>
+
+                    <m:mi>Y(w)</m:mi>
+                  </m:mfrac>
+                </m:mrow>
+
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>This relationship assumes peaks in the POT series are
+      statistically independent and that there is no seasonality in the sense
+      that the probability density of the POT peak above a threshold
+      p(q|q&gt;q<subscript>o</subscript>) does not change over the year. While
+      the no-seasonality assumption appears questionable on first inspection,
+      in practice the threshold q<subscript>0</subscript> is selected so that
+      the expected number of peaks exceeding the threshold
+      q<subscript>0</subscript> in any year is of the order of 1. This is done
+      to ensure the POT peaks are genuine floods and statistically
+      independent. As a consequence of the high threshold selected in
+      practice, the impact of seasonality is diminished.</para>
+    </section>
   </section>
 
   <section xml:id="b3_ch2_s_ktbsy">
@@ -1097,7 +1102,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureB4_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureB4_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -1214,7 +1220,8 @@
     </equation>
 
     <para>Following Kuczera (1999) it can be shown for the two-zone rating
-    error model of <xref linkend="b3_ch2_f_6qnp5"/> the likelihood reduces to</para>
+    error model of <xref linkend="b3_ch2_f_6qnp5"/> the likelihood reduces
+    to</para>
 
     <equation xml:id="b3_ch2_e_y1vv5">
       <m:math display="block">
@@ -3217,7 +3224,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE1_2_highres.PNG"  scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE1_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -3575,7 +3583,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE3_3.PNG"  scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE3_3.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -3686,7 +3695,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE4_1.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE4_1.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -3784,7 +3794,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE4_2.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE4_2.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -3912,7 +3923,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE5_2_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE5_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -3928,7 +3940,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE5_3_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE5_3_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4248,7 +4261,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE6_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE6_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4262,7 +4276,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE6_2_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE6_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4289,7 +4304,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE6_3_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE6_3_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4303,7 +4319,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE6_4_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE6_4_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4468,7 +4485,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE7_2_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE7_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4508,7 +4526,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE7_3_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE7_3_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4640,7 +4659,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE8_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE8_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4653,7 +4673,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE8_2_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE8_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4666,7 +4687,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE8_3_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE8_3_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4677,7 +4699,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE8_4_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE8_4_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -4781,7 +4804,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE8_5_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE8_5_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -5020,7 +5044,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE9_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE9_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -5060,7 +5085,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE10_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE10_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -5070,7 +5096,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE10_2_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE10_2_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -5380,7 +5407,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/FigureE11_1_highres.PNG" scalefit="1" width="100%"/>
+          <imagedata fileref="figures/FigureE11_1_highres.PNG" scalefit="1"
+                     width="100%"/>
         </imageobject>
       </mediaobject>
     </figure>
