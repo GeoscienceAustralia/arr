@@ -10,30 +10,30 @@
   <title>Conceptual Framework</title>
 
   <section xml:id="b3_ch2_s_8ez98">
-    <title>Definition of Regional Flood Frequency Estimation</title>
+    <title>Definition of Flood Probability Model</title>
 
     <para>In flood frequency analysis flood peaks are considered to be random
     variables. Following convention the random variable denoting the flood
-    peak is denoted by an upper-case symbol (e.g., Q) whereas a specific
-    realization (or sample) is denoted by the lower-case symbol (e.g., q) –
-    where there is no ambiguity lower-case symbols will be used.</para>
+    peak discharge is denoted by an upper-case symbol (e.g. Q) whereas a
+    specific realization (or sample) is denoted by the lower-case symbol (e.g.
+    q) – where there is no ambiguity lower-case symbols will be used.</para>
 
     <para>It is assumed that each realization q is statistically independent
     of other realizations. This is the standard assumption in flood frequency
-    analysis and is believed to be widely applicable [e.g., Stedinger et al.,
-    1993].</para>
+    analysis and is believed to be widely applicable (e.g. Stedinger et al.
+    1993).</para>
 
     <para>In its most general form, the flood probability model can be
-    described by its probability density function (pdf)<inlineequation>
+    described by its Probability Density Function (pdf)<inlineequation>
         <m:math display="inline">
-          <m:mi>p(q|θ(x))</m:mi>
+          <m:mi> p (q | θ(x))</m:mi>
         </m:math>
       </inlineequation> where <inlineequation>
         <m:math display="inline">
           <m:mi>θ(x)</m:mi>
         </m:math>
       </inlineequation> is the vector (or list) of parameters dependent on x,
-    a vector of exogenous or external variables such as climate indicies. The
+    a vector of exogenous or external variables such as climate indices. The
     symbol ‘|’ is interpreted as follows: the variable to the left of ‘|’ is a
     random variable, while the variables to the right of ‘|’ are known
     values.</para>
@@ -52,7 +52,7 @@
             <m:mi>P</m:mi>
 
             <m:mrow>
-              <m:mo>(</m:mo>
+              <m:mo> (</m:mo>
 
               <m:mrow>
                 <m:mi>Q</m:mi>
@@ -61,9 +61,9 @@
 
                 <m:mi>q</m:mi>
 
-                <m:mo>|</m:mo>
+                <m:mo> |</m:mo>
 
-                <m:mi>θ</m:mi>
+                <m:mi> θ</m:mi>
 
                 <m:mrow>
                   <m:mo>(</m:mo>
@@ -93,12 +93,12 @@
                   <m:mi>p</m:mi>
 
                   <m:mrow>
-                    <m:mo>(</m:mo>
+                    <m:mo> (</m:mo>
 
                     <m:mrow>
                       <m:mi>s</m:mi>
 
-                      <m:mo>|</m:mo>
+                      <m:mo> | </m:mo>
 
                       <m:mi>θ</m:mi>
 
@@ -130,16 +130,24 @@
 
     <para>Empirically the pdf of q is the limiting form of the histogram of q
     as the number of samples approaches infinity. Importantly, <xref
-    linkend="b3_ch2_e_lbfua"/>) shows that the area under the pdf is
+    linkend="b3_ch2_e_lbfua"/> shows that the area under the pdf is
     interpreted as probability.</para>
 
     <para>Homogeneous flood probability model</para>
 
     <para>The simplest form of the flood probability model arises when the
-    parameters θ does not depend on an exogenous vector x. In that case each
-    flood peak is considered to be a random realization from the same
-    probability model p(q|θ). Under this assumption flood peaks form a
-    homogeneous time series.</para>
+    parameters <inlineequation>
+        <m:math display="inline">
+          <m:mi>θ</m:mi>
+        </m:math>
+      </inlineequation> does not depend on an exogenous vector x. In that case
+    each flood peak is considered to be a random realization from the same
+    probability model <inlineequation>
+        <m:math display="inline">
+          <m:mi>p (q | θ)</m:mi>
+        </m:math>
+      </inlineequation>. Under this assumption flood peaks form a homogeneous
+    time series.</para>
 
     <para>Non-homogeneous flood probability model</para>
 
@@ -159,9 +167,9 @@
         <para>Climate may experience pseudo-periodic shifts that persist over
         periods lasting from several years to several decades. There is
         growing evidence that parts of Australia are subject to such forcing
-        and that this significantly affects flood risk [for example, Franks
+        and that this significantly affects flood risk (for example, Franks
         and Kuczera, 2002; Franks, 2002a,b; Kiem et al., 2003; Micevski et
-        al., 2003]</para>
+        al., 2003)</para>
       </listitem>
     </itemizedlist>
 
@@ -184,18 +192,18 @@
     estimated:</para>
 
     <section xml:id="b3_ch2_s_msqcx">
-      <title>Annual maximum (AM) series</title>
+      <title>Annual Maximum (AM) Series</title>
 
       <para>The AM series is formed by extracting the maximum discharge in
       each year. This yields the series
       {w<subscript>1</subscript>,..,w<subscript>n</subscript>} where
       w<subscript>i</subscript> is the maximum discharge in the
-      i<superscript>th</superscript> of the n-year record.</para>
+      i<superscript>th</superscript> year of the n-year record.</para>
 
       <para>The data in the AM series can be used to estimate the probability
       that the maximum flood discharge in a year exceeds a particular
-      magnitude w. In ARR this probability is called the annual exceedance
-      probability AEP(w) and is formally defined as</para>
+      magnitude w. In ARR this probability is called the Annual Exceedance
+      Probability AEP(w) and is formally defined as</para>
 
       <equation xml:id="b3_ch2_e_nfd16">
         <m:math display="block">
@@ -226,12 +234,13 @@
       </equation>
 
       <para>where w is the maximum flood discharge in a year. Often it is
-      convenient to express the AEP as the ratio 1 in Y. For example, the 1 in
-      100 AEP is equivalent to an AEP of 0.01 or 1%.</para>
+      convenient to express the AEP as a percentage X% or alternatively for
+      rare events as a ratio 1 in Y. For example, the 1 in 100 AEP is
+      equivalent to an AEP of 1% or 0.01.</para>
     </section>
 
     <section xml:id="b3_ch2_s_0sy4a">
-      <title>Peak-over-threshold (POT) series</title>
+      <title>Peak-Over-Threshold (POT) series</title>
 
       <para>The POT series is formed by extracting from the record every
       statistically independent peak discharge (that exceeds a threshold
@@ -244,7 +253,7 @@
 
       <para>The data in the POT series can be used to estimate the probability
       distribution of the time to the next peak discharge that exceeds a
-      particular magnitude</para>
+      particular magnitude:</para>
 
       <equation xml:id="b3_ch2_e_0qvta">
         <m:math display="block">
@@ -270,8 +279,8 @@
 
       <para>where t is time expressed in years and EY(q), the number of
       exceedances per year, is the expected number of times in a year that the
-      peak discharge exceeds q<figure xml:id="b3_ch2_f_fig1">
-          <title>Peak-over-threshold series</title>
+      peak discharge exceeds q.<figure xml:id="b3_ch2_f_fig1">
+          <title>Peak-Over-Threshold series</title>
 
           <mediaobject>
             <imageobject>
@@ -282,10 +291,10 @@
     </section>
 
     <section xml:id="b3_ch2_s_u56ub">
-      <title>When to use AM and POT series</title>
+      <title>When to use AM and POT Series</title>
 
-      <para>The risk measures AEP and EY are intimately connected. The
-      analysis presented in Box 1 shows that</para>
+      <para>The risk measures AEP and Exceedances per Year (EY) are intimately
+      connected. The analysis presented in Box 1 shows that</para>
 
       <para><inlineequation>
           <m:math display="inline">
@@ -351,11 +360,11 @@
 
       <para>where AEP(w) is expressed as the ratio 1 in Y(w). This
       relationship is plotted in <xref linkend="b3_ch2_f_qs0z6"/>. For AEPs
-      less than 0.1 (or 1 in 10), EY and AEP are numerically the same from a
-      practical perspective. However, as the AEP increases beyond 0.1, EY
-      increases more rapidly than AEP. This occurs because in years with a
-      large annual maximum peak, the smaller peaks of that year may exceed the
-      annual maximum peak in other years.</para>
+      less than 10% ( 0.1 or 1 in 10), EY and AEP are numerically the same
+      from a practical perspective. However, as the AEP increases beyond 10%
+      (0.1), EY increases more rapidly than AEP. This occurs because in years
+      with a large annual maximum peak, the smaller peaks of that year may
+      exceed the annual maximum peak in other years.</para>
 
       <figure xml:id="b3_ch2_f_qs0z6">
         <title>AEP-EY relationship</title>
@@ -367,10 +376,11 @@
         </mediaobject>
       </figure>
 
-      <para>The question arises when should one use AM or POT approaches. The
-      following guideline is offered:</para>
+      <para>The question arises when should one use AM or POT approaches.
+      Consistent with the guideance provided in Book 1 of ARR, the following
+      guideline is offered:</para>
 
-      <para>(i) AEP of interest &lt; 1 in 10</para>
+      <para>(i) AEP of interest ≤ 10%</para>
 
       <para>AEPs in this range are generally required for estimation of a
       design flood for a structure or works at a particular site. Use of AM
@@ -390,31 +400,31 @@
           floods with a relatively high EY in urban stormwater contexts and
           for diversion works, coffer dams and other temporary structures.
           However, in practice, flow records are not often available at sites
-          where minor works with a design EY greater than 1 in 10 years is
+          where minor works with a design EY greater than 0.2 EY is
           required.</para>
         </footnote> estimate of low AEP floods and is easier to extract and
       define.</para>
 
-      <para>(ii) EY of interest &gt; 1 in 10 years</para>
+      <para>(ii) EY of interest ≥ 0.2 Events per Year</para>
     </section>
   </section>
 
   <section xml:id="b3_ch2_s_dh3wa">
     <title>Advantages and Disadvantages of Flood Frequency Analysis</title>
 
-    <para>Users need to be aware of the advantages and disadvantages of flood
-    frequency analysis.</para>
+    <para>Users need to be aware of the advantages and disadvantages of Flood
+    Frequency Analysis.</para>
 
     <para>Flood peaks are the product of a complex joint probability process
     involving the interaction of many random variables associated with the
     rainfall event, antecedent conditions and rainfall-runoff transformation.
     Peak flood records represent the integrated response of the storm event
     with the catchment. They provide a direct measure of flood exceedance
-    probabilities. As a result flood frequency analysis is not subject to the
+    probabilities. As a result Flood Frequency Analysis is not subject to the
     potential for bias, possibly large, that can affect alternative methods
-    based on design rainfall [Kuczera et al., 2006].</para>
+    based on design rainfall (Kuczera et al., 2006).</para>
 
-    <para>Other advantages of flood frequency analysis include its comparative
+    <para>Other advantages of Flood Frequency Analysis include its comparative
     simplicity and capacity to quantify uncertainty arising from limited
     information.</para>
 
@@ -423,7 +433,7 @@
 
     <itemizedlist>
       <listitem>
-        <para>The true probability distribution family M is unknown.
+        <para>The true probability distribution family "M" is unknown.
         Unfortunately, different models can fit the flood data with similar
         capability, yet can diverge in the right hand tail when extrapolated
         beyond the data.</para>
@@ -446,30 +456,30 @@
 
     <para>Considerable extrapolation of rating curves is necessary to convert
     recorded stage to discharge for the largest flood peaks at most Australian
-    gauging stations. Also the probability of malfunction of recording
+    gauging stations. Also the probability of the malfunction of recording
     instruments is increased during major floods. Suspect floods and the years
-    in which they occurred may be omitted in analysis of annual maximum
+    in which they occurred may be omitted in analysis of Annual Maximum
     series, but this reduces the sample size and may introduce bias if the
     suspect floods are all major events. These problems are inherent to the
     calibration of all methods employing major flood peaks. At this stage it
-    is not clear whether flood frequency analysis is more sensitive to such
+    is not clear whether Flood Frequency Analysis is more sensitive to such
     problems than other methods.</para>
   </section>
 
   <section xml:id="b3_ch2_s_fw1lx">
     <title>Range of Application</title>
 
-    <para>As noted the true flood probability family M is unknown. In practice
-    the choice of model is guided by goodness of fit to data. Therefore, use
-    of the fitted frequency curve for AEPs reflected in the data is regarded
-    as an interpolation exercise deemed to be reliable in the sense that
-    confidence limits capture the uncertainty. However, when the frequency
-    curve is extrapolated well beyond the observed data, confidence limits
-    which quantify the effect of sampling variability on parameter uncertainty
-    may underestimate the true uncertainty - model bias may be significant and
-    even dominant. Example 1 demonstrates the need to understand the processes
-    affecting flood peaks beyond the observed record and illustrates the
-    pitfall of blind extrapolation.</para>
+    <para>As noted the true flood probability family "M" is unknown. In
+    practice the choice of model is guided by goodness of fit to the observed
+    data. Therefore, use of the fitted frequency curve for AEPs reflected in
+    the data is regarded as an interpolation exercise deemed to be reliable in
+    the sense that confidence limits capture the uncertainty. However, when
+    the frequency curve is extrapolated well beyond the observed data,
+    confidence limits which quantify the effect of sampling variability on
+    parameter uncertainty may underestimate the true uncertainty - model bias
+    may be significant and even dominant. Example 1 demonstrates the need to
+    understand the processes affecting flood peaks beyond the observed record
+    and illustrates the pitfall of blind extrapolation.</para>
 
     <para>Large extrapolation of a flood frequency curve is not recommended.
     It is acknowledged that prescribing strict limits on the minimum AEP does
@@ -485,17 +495,17 @@
 
     <para>In the absence of user analysis about the degree of model bias when
     extrapolating, the following guidelines are offered to promote consistency
-    with previous practice: As discussed further in Book VI Section 1.2, the
-    1% (1 in 100) AEP flood is the largest event that should be estimated by
-    direct frequency analysis for important work. The maximum flood that
-    should be estimated by this means under any circumstances is the 0.2% (1
-    in 500) AEP event. Where a regional flood frequency method is used, the
-    limiting AEP should be the 1% AEP. Book VI Section 1 describes procedures
-    for estimating floods beyond the probabilities noted above. These
-    procedures interpolate flood magnitudes between the 1% AEP event and the
-    probable maximum flood. While these procedures involve some arbitrary
-    assumptions, they provide a consistent approach and overcome many of the
-    problems involved in extrapolation of flood frequency analysis arising
-    from the choice of probability model and estimation method.</para>
+    with previous practice: As discussed further in ARR 1987 Book 8 Section
+    1.2, the 1% (1 in 100) AEP flood is the largest event that should be
+    estimated by direct frequency analysis for important work. The maximum
+    flood that should be estimated by this means under any circumstances is
+    the 0.2% (1 in 500) AEP event. Where a regional flood frequency method is
+    used, the limiting AEP should be the 1% AEP. ARR 1987 Book 8 Section 1
+    describes procedures for estimating floods beyond the probabilities noted
+    above. These procedures interpolate flood magnitudes between the 1% AEP
+    event and the Probable Maximum Flood. While these procedures involve some
+    arbitrary assumptions, they provide a consistent approach and overcome
+    many of the problems involved in extrapolation of Flood Frequency Analysis
+    arising from the choice of probability model and estimation method.</para>
   </section>
 </section>

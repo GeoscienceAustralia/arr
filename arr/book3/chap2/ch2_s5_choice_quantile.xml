@@ -10,9 +10,9 @@
   <title>Choice of Flood Quantile Estimator</title>
 
   <para>In general the estimation of a design quantile should be guided by the
-  consequences of over- and under-design [Slack et al., 1975].This section
+  consequences of over- and under-design (Slack et al., 1975).This section
   considers the following question: Given data D, what is the best estimate of
-  the flood discharge which has an AEP of 1 in Y?</para>
+  the flood discharge which has an AEP of X%.</para>
 
   <para>If the true value of <inlineequation>
       <m:math display="inline">
@@ -35,8 +35,8 @@
           <m:mo>(θ)</m:mo>
         </m:mrow>
       </m:math>
-    </inlineequation>. For AM series the quantile with an AEP of 1 in Y is
-  defined as</para>
+    </inlineequation>. For AM series the quantile with an AEP of X% is defined
+  as:</para>
 
   <equation xml:id="b3_ch2_e_aq26s">
     <m:math display="block">
@@ -102,7 +102,7 @@
       <m:math display="inline">
         <m:mi>p(θ|D)</m:mi>
       </m:math>
-    </inlineequation>. <xref linkend="b3_ch2_s6"/>Section 6 describes how this
+    </inlineequation>. <xref linkend="b3_ch2_s6"/> describes how this
   distribution may be obtained – this distribution is the posterior
   distribution if performing a Bayesian analysis or the sampling distribution
   if performing a bootstrap analysis.</para>
@@ -160,7 +160,7 @@
       </m:math>
     </inlineequation>should be adopted as the flood quantile estimate? This
   section presents two approaches for determining the best estimate of a flood
-  discharge with a 1 in Y AEP knowing the pdf <inlineequation>
+  discharge with a X% AEP knowing the pdf <inlineequation>
       <m:math display="inline">
         <m:mrow>
           <m:mi>p(</m:mi>
@@ -181,12 +181,10 @@
   <section xml:id="b3_ch2_s_sw7yg">
     <title>Expected Parameter Quantiles</title>
 
-    <para>In general the estimation of a design quantile should be guided by
-    the consequences of over- and under-design [Slack et al., 1975]. This
-    section considers the case where the consequence of over- and under-design
-    is expressed by some measure of the difference between the true and
-    estimated 1 in Y AEP quantiles – this difference is called the quantile
-    error.</para>
+    <para>This section considers the case where the consequence of over- and
+    under-design is expressed by some measure of the difference between the
+    true and estimated X% AEP quantiles – this difference is called the
+    quantile error.</para>
 
     <para>The loss function <inlineequation>
         <m:math display="inline">
@@ -264,7 +262,7 @@
             </m:msub>
           </m:mrow>
         </m:math>
-      </inlineequation> is the one that minimizes the expected loss</para>
+      </inlineequation> is the one that minimises the expected loss:</para>
 
     <equation xml:id="b3_ch2_e_uko3q">
       <m:math display="block">
@@ -327,7 +325,7 @@
       <para>The quadratic loss function may be appropriate when the
       consequences of under- or overdesign are judged to be the same and the
       loss is proportional to the square of the quantile error. The loss
-      function is expressed as<equation xml:id="b3_ch2_e_oxco0">
+      function is expressed as:<equation xml:id="b3_ch2_e_oxco0">
           <m:math display="block">
             <m:mrow>
               <m:mi>L[</m:mi>
@@ -372,8 +370,8 @@
         </equation></para>
 
       <para>The expected value of this loss function is commonly referred to
-      as the mean-squared-error (MSE). It can be shown the optimal quantile
-      estimator is the expected value of qY(D) [DeGroot, 1970]</para>
+      as the Mean Squared Error (MSE). It can be shown the optimal quantile
+      estimator is the expected value of qY(D) (DeGroot, 1970):</para>
 
       <para><equation xml:id="b3_ch2_e_s97qk">
           <m:math display="block">
@@ -416,9 +414,9 @@
         </equation></para>
 
       <para>Stedinger (1983) observes that this integral may not exist for
-      some of the probability distributions used in flood frequency analysis.
+      some of the probability distributions used in Flood Frequency Analysis.
       To avoid this problem the following first-order approximation may be
-      used</para>
+      used:</para>
 
       <para><equation xml:id="b3_ch2_e_m9gsz">
           <m:math display="block">
@@ -439,7 +437,7 @@
                 <m:mi>Y</m:mi>
               </m:msub>
 
-              <m:mi>[E(θ|D)].</m:mi>
+              <m:mi>[E(θ|D)]</m:mi>
             </m:mrow>
           </m:math>
         </equation></para>
@@ -448,7 +446,7 @@
           <m:math display="inline">
             <m:mi>E(θ|D)</m:mi>
           </m:math>
-        </inlineequation> is the expected parameter given the data D</para>
+        </inlineequation> is the expected parameter given the data D:</para>
 
       <equation xml:id="b3_ch2_e_p4y0l">
         <m:math display="block">
@@ -480,7 +478,7 @@
               <m:mo>[E(θ|D)]</m:mo>
             </m:mrow>
           </m:math>
-        </inlineequation> is referred to as the expected parameter 1 in Y AEP
+        </inlineequation> is referred to as the expected parameter X% AEP
       quantile. When this term is used it is understood that the quantile is
       computed with <inlineequation>
           <m:math display="inline">
@@ -498,7 +496,7 @@
 
       <para>The linear asymmetric loss function may be appropriate when the
       consequences of under- and overdesign are judged to be different. The
-      loss function is expressed as</para>
+      loss function is expressed as:</para>
 
       <equation xml:id="b3_ch2_e_ggb3h">
         <m:math display="block">
@@ -632,7 +630,7 @@
           </m:math>
         </inlineequation> are the loss coefficients for under- and overdesign
       respectively. It can be shown that the quantile estimator that minimizes
-      the expected asymmetric linear loss must satisfy [DeGroot, 1970]</para>
+      the expected asymmetric linear loss must satisfy (DeGroot, 1970):</para>
 
       <equation xml:id="b3_ch2_e_xmck8">
         <m:math display="block">
@@ -759,8 +757,8 @@
     <para>This distribution only depends on the data D (and the assumed
     probability family).</para>
 
-    <para>The design flood quantile qY with 1 in Y AEP can be derived by
-    solving</para>
+    <para>The design flood quantile q<subscript>Y</subscript> with X% AEP can
+    be derived by solving</para>
 
     <equation xml:id="b3_ch2_e_xze2m">
       <m:math display="block">
@@ -836,8 +834,8 @@
       </m:math>
     </equation>
 
-    <para>This quantile is greater than the expected parameter 1 in Y AEP
-    quantile <inlineequation>
+    <para>This quantile is greater than the expected parameter X% AEP quantile
+    <inlineequation>
         <m:math display="inline">
           <m:mrow>
             <m:msub>
@@ -849,10 +847,11 @@
             <m:mo>[E(θ|D)]</m:mo>
           </m:mrow>
         </m:math>
-      </inlineequation>. To gain further insight suppose we make qY equal to
-    the expected parameter 1 in Y AEP quantile and compute its design flood
-    AEP using <xref linkend="b3_ch2_e_xze2m"/>. Noting the inner integral is
-    the probability of the flood peak exceeding <inlineequation>
+      </inlineequation>. To gain further insight suppose we make
+    q<subscript>Y</subscript> equal to the expected parameter X% AEP quantile
+    and compute its design flood AEP using <xref linkend="b3_ch2_e_xze2m"/>.
+    Noting the inner integral is the probability of the flood peak exceeding
+    <inlineequation>
         <m:math display="inline">
           <m:mrow>
             <m:msub>
@@ -975,7 +974,7 @@
         </m:math>
       </inlineequation></para>
 
-    <para>It thus follows that the expected parameter 1-in-Y AEP quantile
+    <para>It thus follows that the expected parameter X% AEP quantile
     <inlineequation>
         <m:math display="inline">
           <m:mrow>
@@ -1006,18 +1005,27 @@
             <m:mo>| D)</m:mo>
           </m:mrow>
         </m:math>
-      </inlineequation> which exceeds 1/Y.</para>
+      </inlineequation> which exceeds <inlineequation>
+        <m:math display="inline">
+          <m:mfrac bevelled="true">
+            <m:mi>1</m:mi>
+
+            <m:mi>Y</m:mi>
+          </m:mfrac>
+        </m:math>
+      </inlineequation>.</para>
   </section>
 
   <section xml:id="b3_ch2_s_up1rb">
     <title>Selection of Flood Quantile Estimator</title>
 
-    <para>The choice of quantile estimator depends on whether design is being
-    carried out for many sites or a single site, on whether risk, actual
-    discharge or average annual damage is of primary interest in design and on
-    whether the consequences of under- and overdesign are different. The
-    choice is somewhat subjective and may be a matter of policy. As a general
-    guide, a non-exhaustive list of recommendations is given below:</para>
+    <para>The choice of flood quantile estimator depends on whether the design
+    is being carried out for many sites or a single site, on whether risk,
+    actual discharge or average annual damage is of primary interest in design
+    and on whether the consequences of under- and overdesign are different.
+    The choice is somewhat subjective and may be a matter of policy. As a
+    general guide, a non-exhaustive list of recommendations is given
+    below:</para>
 
     <orderedlist>
       <listitem>
@@ -1037,7 +1045,7 @@
           <listitem>
             <para>Design is carried out to an arbitrary standard which has
             been judged to be satisfactory on the basis of experience from
-            previous practice. Many of the design standards in Book III
+            previous practice. Many of the design standards in ARR 1987 Book 3
             Sections 1.8 and 1.9, fall into this category.</para>
           </listitem>
 

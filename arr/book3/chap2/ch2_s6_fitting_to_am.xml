@@ -7,14 +7,14 @@
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
-  <title>Fitting Flood Probability Models to AM Series</title>
+  <title>Fitting Flood Probability Models to Annual Maxima Series</title>
 
   <section xml:id="b3_ch2_s_cb3om">
     <title>Overview of Methods</title>
 
     <para>Fitting a flood probability model involves three steps:</para>
 
-    <para>1. Calibrating the model to available data D to determine the
+    <para>1. Calibrating the model to the available data D to determine the
     parameter values consistent with the data D.</para>
 
     <para>2. Estimation of flood quantiles and their confidence limits.</para>
@@ -26,7 +26,7 @@
     moment techniques. For each approach the algorithms are documented and
     illustrated with worked examples. Implementation of the algorithms in
     software requires specialist skill; therefore the typical user is advised
-    to make use of available software. The use of the method of
+    to make use of the available software. The use of the method of
     product-moments applied to log flows is not recommended. The choice of
     calibration methods depends on the type of data available (gauged and
     censored), the extent of measurement error associated with the rating
@@ -37,7 +37,7 @@
   <section xml:id="b3_ch2_s_zbwi1">
     <title>Probability Plots</title>
 
-    <para>An essential part of a flood frequency analysis is the construction
+    <para>An essential part of a Flood Frequency Analysis is the construction
     of an empirical distribution function, better known as a probability plot.
     In such a plot an estimate of AEP is plotted against the observed
     discharge. This enables one to draw a smooth curve as an empirical
@@ -45,12 +45,12 @@
     distribution.</para>
 
     <para>The following steps describe the production of a probability plot
-    for gauged annual maximum floods:</para>
+    for gauged Annual Maximum floods:</para>
 
     <itemizedlist>
       <listitem>
-        <para>Rank the gauged flows in descending order (that is, from largest
-        to smallest) yielding the series {q<subscript>(1)</subscript>,
+        <para>Rank the gauged discharges in descending order (that is, from
+        largest to smallest) yielding the series {q<subscript>(1)</subscript>,
         q<subscript>(2)</subscript>,…,q<subscript>(n)</subscript>} where
         q<subscript>(i)</subscript> is the rank i or the
         i<superscript>th</superscript> largest flood.</para>
@@ -68,7 +68,7 @@
     </itemizedlist>
 
     <para>For analysis of the AM series, a general formula (Blom, 1958) for
-    estimating the AEP of an observed flood is</para>
+    estimating the AEP of an observed flood is:</para>
 
     <equation xml:id="b3_ch2_e_m0z7y">
       <m:math display="block">
@@ -157,7 +157,7 @@
     <para>While there are arguments in favour of plotting positions that yield
     unbiased AEPs, usage has favoured plotting positions that yield unbiased
     quantiles. To maintain consistency it is recommended that the Cunnane
-    plotting position be used, namely</para>
+    plotting position be used, namely:</para>
 
     <equation xml:id="b3_ch2_e_g1lj9">
       <m:math display="block">
@@ -191,8 +191,8 @@
       </m:math>
     </equation>
 
-    <para>A fuller discussion on plotting positions can be found in Stedinger
-    et al. (1993).</para>
+    <para>A more complete discussion on plotting positions can be found in
+    Stedinger et al. (1993).</para>
 
     <para>It is stressed that plotting positions should not be used as an
     estimate of the actual AEP or EY of an observed flood discharge. Such
@@ -205,7 +205,7 @@
 
     <para>This is best illustrated by an example. Suppose it is assumed that
     floods follow an exponential distribution. From <xref
-    linkend="b3_ch2_t_s5j9j"/> the distribution function is</para>
+    linkend="b3_ch2_t_s5j9j"/> the distribution function is:</para>
 
     <equation xml:id="b3_ch2_e_kw2th">
       <m:math display="block">
@@ -250,7 +250,7 @@
           <m:mi>1-P(Q≤q)</m:mi>
         </m:math>
       </inlineequation> by the plotting position of
-    q<subscript>(i)</subscript> gives</para>
+    q<subscript>(i)</subscript> gives:</para>
 
     <equation xml:id="b3_ch2_e_aujfw">
       <m:math display="block">
@@ -296,7 +296,7 @@
     <itemizedlist>
       <listitem>
         <para>For the Gumbel distribution plot q<subscript>(i)</subscript>
-        against –log[-log(1-P<subscript>(i)</subscript>)]. Data following a
+        against -log[-log(1-P<subscript>(i)</subscript>)]. Data following a
         GEV distribution will plot as a curved line.</para>
       </listitem>
 
@@ -304,7 +304,7 @@
         <para>For the log normal distribution plot log
         q<subscript>(i)</subscript> against the standard normal deviate with
         exceedance probability P<subscript>(i)</subscript>. Data following a
-        LP3 distribution will plot as a curved line.</para>
+        LPIII distribution will plot as a curved line.</para>
       </listitem>
     </itemizedlist>
 
@@ -320,8 +320,8 @@
     tests.</para>
 
     <para>The estimation of plotting positions for censored and historic data
-    is more involved and in some cases can be inaccurate - see Stedinger et
-    al. (1993, p 18.41) for more details.</para>
+    is more involved and in some cases can be inaccurate see Stedinger et al.
+    (1993, p 18.41) for more details.</para>
   </section>
 
   <section xml:id="b3_ch2_s_mkmnz">
@@ -331,8 +331,8 @@
       <title>Overview</title>
 
       <para>The Bayesian approach is a very general approach for calibrating
-      and identifying models. The Handbook of Hydrology [Stedinger et al.,
-      1993, p18.8] observes that “the Bayesian approach .. allows the explicit
+      and identifying models. The Handbook of Hydrology (Stedinger et al.,
+      1993, p18.8) observes that “the Bayesian approach .. allows the explicit
       modeling of uncertainty in parameters and provides a theoretically
       consistent framework for integrating systematic flow records with
       regional and other hydrologic information”. However, it is only with the
@@ -341,7 +341,7 @@
 
       <para>The core of the Bayesian approach is described below – see Lee
       (1989) and Gelman et al. (1995) for general expositions. The data D is
-      hypothesized to be a random realization from a probability model with
+      hypothesized to be a random realisation from a probability model with
       pdf <inlineequation>
           <m:math display="inline">
             <m:mi>p(D∣θ,M)</m:mi>
@@ -440,14 +440,18 @@
         </m:math>
       </equation>
 
-      <para>The posterior density p(θ|D) describes what is known about the
-      true value of <inlineequation>
+      <para>The posterior density <inlineequation>
+          <m:math display="inline">
+            <m:mi>p(θ|D)</m:mi>
+          </m:math>
+        </inlineequation> describes what is known about the true value of
+      <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
         </inlineequation> given the data D, prior information and the
       probability model. The denominator p(D) is the marginal likelihood
-      defined as</para>
+      defined as:</para>
 
       <equation xml:id="b3_ch2_e_jlq16">
         <m:math display="block">
@@ -486,7 +490,7 @@
       likelihood function. In the context of flood frequency analysis two
       formulations are considered. The first assumes there is no error in the
       flood data. The focus is on the contribution to the likelihood function
-      made by gauged and censored data. The second case generalizes the
+      made by gauged and censored data. The second case generalises the
       likelihood function to allow for error-in-discharge estimates.</para>
     </section>
 
@@ -503,7 +507,7 @@
         </listitem>
 
         <listitem>
-          <para>m censored records in which a<subscript>i</subscript> annual
+          <para>M censored records in which a<subscript>i</subscript> annual
           flood peaks in (a<subscript>i</subscript> +
           b<subscript>i</subscript>) ungauged years exceeded a threshold with
           true discharge s<subscript>i</subscript>, i=1,..,m.</para>
@@ -578,7 +582,7 @@
                   <m:mi>i</m:mi>
                 </m:msub>
 
-                <m:mo>|</m:mo>
+                <m:mo> | </m:mo>
 
                 <m:mi>θ</m:mi>
 
@@ -602,13 +606,13 @@
       <para>The incorporation of rating errors into the likelihood function
       complicates matters. Box 4 outlines the derivation of the likelihood
       function using the simple rating error model presented in <xref
-      linkend="b3_ch2_s_zlx6z"/> Section 3.7. There has been limited research
-      into the use of this likelihood and on the characterization of rating
-      errors. Kuczera (1996) shows that, as rating error grows for floods well
-      in excess of the largest gauged flow, less weight is given to high
-      floods in the calibration. This loss of information about the right tail
-      of the flood distribution is sensitive to the magnitude of rating errors
-      when extrapolating beyond gauged flows. Unfortunately little is known
+      linkend="b3_ch2_s_zlx6z"/>. There has been limited research into the use
+      of this likelihood and on the characterization of rating errors. Kuczera
+      (1996) shows that, as rating error grows for floods well in excess of
+      the largest gauged discharge, less weight is given to high floods in the
+      calibration. This loss of information about the right tail of the flood
+      distribution is sensitive to the magnitude of rating errors when
+      extrapolating beyond gauged discharges. Unfortunately little is known
       about these errors. Therefore caution is recommended if using this
       advanced likelihood.</para>
     </section>
@@ -626,10 +630,14 @@
             <m:mi>θ</m:mi>
           </m:math>
         </inlineequation> obtained preferably from a regional analysis. A
-      convenient distribution is the multivariate normal with mean μp and
-      covariance <inlineequation>
+      convenient distribution is the multivariate normal with mean
+      μ<subscript>p</subscript> and covariance <inlineequation>
           <m:math display="inline">
-            <m:mi>∑p</m:mi>
+            <m:msub>
+              <m:mi>Σ</m:mi>
+
+              <m:mi>p</m:mi>
+            </m:msub>
           </m:math>
         </inlineequation>; that is,</para>
 
@@ -735,18 +743,18 @@
       analysis of flood data.</para>
 
       <para>The use of an informative prior based on regional analysis is
-      strongly recommended in all flood frequency analyses involving at-site
-      data. Even with long at-site records, the shape parameter in the LP3 and
-      GEV distribution is subject to considerable uncertainty. Regional priors
-      can substantially reduce the uncertainty in the shape (and even scale)
-      parameter.</para>
+      strongly recommended in all Flood Frequency Analyses involving at-site
+      data. Even with long at-site records, the shape parameter in the LPIII
+      and GEV distribution is subject to considerable uncertainty. Regional
+      priors can substantially reduce the uncertainty in the shape (and even
+      scale) parameter.</para>
 
       <para>The regional procedures in Book 3, Chapter 3 are designed to
       express the prior information in the form of <xref
-      linkend="b3_ch2_e_tqx84"/> for the log Pearson 3 probability model. They
-      should be used in any flood frequency analysis involving the log Pearson
-      3 distribution unless there is evidence that the regional prior is not
-      applicable to the catchment of interest.</para>
+      linkend="b3_ch2_e_tqx84"/> for the Log Pearson III probability model.
+      They should be used in any Flood Frequency Analysis involving the Log
+      Pearson III distribution unless there is evidence that the regional
+      prior is not applicable to the catchment of interest.</para>
     </section>
 
     <section xml:id="b3_ch2_s_r5k35">
@@ -845,7 +853,7 @@
 
         <listitem>
           <para>The lower and upper confidence limits are approximated by the
-          quantiles whose non-exceedance probabilities are nearest.</para>
+          quantiles whose non-exceedance probabilities are nearest:</para>
         </listitem>
       </orderedlist>
 
@@ -873,7 +881,7 @@
         </m:math>
       </equation>
 
-      <para>The expected posterior parameters can be estimated</para>
+      <para>The expected posterior parameters can be estimated:</para>
 
       <equation xml:id="b3_ch2_e_q80yb">
         <m:math display="block">
@@ -914,11 +922,11 @@
       </equation>
 
       <para>These parameters can then be used to compute the expected
-      parameter 1 in Y AEP quantiles described in <xref
-      linkend="b3_ch2_s_sw7yg"/> Section 5.1.</para>
+      parameter X% AEP quantiles described in <xref
+      linkend="b3_ch2_s_sw7yg"/>.</para>
 
       <para>Finally, the expected AEP probability for a flood of magnitude
-      q<subscript>Y</subscript> can be estimated</para>
+      q<subscript>Y</subscript> can be estimated:</para>
 
       <equation xml:id="b3_ch2_e_eq259">
         <m:math display="block">
@@ -987,7 +995,7 @@
       <itemizedlist>
         <listitem>
           <para>Presence of outliers in the upper or lower tail of the
-          distribution. Outliers in flood frequency analysis represent
+          distribution. Outliers in Flood Frequency Analysis represent
           observations that are inconsistent with the trend of the remaining
           data and typically would lie well outside confidence limits.</para>
         </listitem>
@@ -1069,39 +1077,41 @@
     </section>
 
     <section xml:id="b3_ch2_s_1f6ft">
-      <title>Censoring of Potentially Influential Low Flows</title>
+      <title>Censoring of Potentially Influential Low Discharges</title>
 
-      <para>AM series contain many annual maximum flows which are less than
-      bankfull discharge. In arid zones these low peaks may be zero or very
-      low values not associated with any significant storm event. These low
-      peaks may not be representative of the physical processes driving large
-      floods (Cohn et al., 2013; Pedruco et al., 2013). The inclusion of such
-      data in a flood frequency analysis runs the risk of low peaks
+      <para>AM series contain many Annual Maximum discharges which are less
+      than bankfull discharge. In arid zones these low peaks may be zero or
+      very low values not associated with any significant storm event. These
+      low peaks may not be representative of the physical processes driving
+      large floods (Cohn et al., 2013; Pedruco et al., 2013). The inclusion of
+      such data in a Flood Frequency Analysis runs the risk of low peaks
       unrepresentative of large floods influencing the fit to the right-hand
       tail of the frequency distribution, which is of most interest to the
-      hydrologist. Therefore the identification and removal of potentially
-      influential low flows (PILFs) is considered an important step in a flood
-      frequency analysis.</para>
+      hydrologist. Therefore the identification and removal of Potentially
+      Influential Low Flows (PILFs) is considered an important step in a Flood
+      Frequency Analysis.</para>
 
-      <para>Cohn et al. (2013) developed a generalization of the Grubbs-Beck
+      <para>Cohn et al. (2013) developed a generalisation of the Grubbs-Beck
       test that was recommended in Bulletin 17B (IACWD, 1982) to identify
-      PILFS. The multiple Grubbs-Beck test, checks if the kth smallest flow is
-      unusually low and, if it is, uses this flow to define a threshold for
-      censoring flows below the threshold. The test involves two steps:</para>
+      PILFs. The multiple Grubbs-Beck test, checks if the
+      k<superscript>th</superscript> smallest discharge is unusually low and,
+      if it is, uses this discharge to define a threshold for censoring
+      discharges below the threshold. The test involves two steps:</para>
 
       <orderedlist>
         <listitem>
-          <para>The outward sweep starts at the median flow and moves towards
-          the smallest flow. Each flow is tested at the 0.5% significance
-          level. If the k<superscript>th</superscript> smallest flow is
-          identified as a low outlier, the outward sweep stops.</para>
+          <para>The outward sweep starts at the median discharge and moves
+          towards the smallest discharge. Each flow is tested at the 0.5%
+          significance level. If the k<superscript>th</superscript> smallest
+          discharge is identified as a low outlier, the outward sweep
+          stops.</para>
         </listitem>
 
         <listitem>
-          <para>The inward sweep starts at the smallest flow and moves towards
-          the median. Each flow is tested at the 10% significance level. If
-          the m<superscript>th</superscript> flow is identified as a low
-          outlier, the inward sweep stops.</para>
+          <para>The inward sweep starts at the smallest discharge and moves
+          towards the median. Each discharge is tested at the 10% significance
+          level. If the m<superscript>th</superscript> discharge is identified
+          as a low outlier, the inward sweep stops.</para>
         </listitem>
       </orderedlist>
 
@@ -1120,15 +1130,15 @@
       <para>The Bayesian approach to calibrating flood probability models is
       numerically complex and is best implemented in a high level programming
       language. The web-based software called TUFLOW FLIKE supporting the
-      Bayesian methods described in this chapter is available at
-      www.xxx.com.au. The reader is advised that this does not preclude use of
-      other software if it is fit for purpose.</para>
+      Bayesian methods described in this chapter is available at TBA. The
+      reader is advised that this does not preclude use of other software if
+      it is fit for purpose.</para>
     </section>
 
     <section xml:id="b3_ch2_s_xqazq">
       <title>Worked Examples</title>
 
-      <para>Example 3 illustrates fitting a LP3 distribution to a 31-year
+      <para>Example 3 illustrates fitting a LPIII distribution to a 31-year
       gauged record. Although the fit is judged satisfactory, considerable
       uncertainty in the 1% AEP quantile is noted.</para>
 
@@ -1141,19 +1151,20 @@
       <para>Example 5 is a continuation of Example 3. It illustrates the value
       of regional information in reducing uncertainty in parameters and
       quantiles. It is recommended that regional information be always used
-      unless there is contray evidence.</para>
+      unless there is contrary evidence.</para>
 
       <para>Examples 6 illustrates the identification of PILFs using the
-      multiple Grubbs-Beck test and fitting a LP3 distribution with PILFs
-      treated as censored flows. It is recommended that multiple Grubbs-Beck
-      test be performed in all flood frequency analyses.</para>
+      multiple Grubbs-Beck test and fitting a LPIII distribution with PILFs
+      treated as censored discharges. It is recommended that multiple
+      Grubbs-Beck test be performed in all Flood Frequency Analyses.</para>
 
       <para>Example 7 illustrates how three–parameter distributions such as
-      the GEV and LP3 can be made to fit data exhibiting sigmoidal behaviour.
-      Because interest is in fitting the higher flows the low flows are
-      de-emphasized by treating them as censored observations. In this example
-      the multiple Grubbs-Beck test improved the fit but a more severe manual
-      censoring produced an even better fit to the right-hand tail.</para>
+      the GEV and LPIII can be made to fit data exhibiting sigmoidal
+      behaviour. Because interest is in fitting the higher discharges the low
+      discharges are de-emphasized by treating them as censored observations.
+      In this example the multiple Grubbs-Beck test improved the fit but a
+      more severe manual censoring produced an even better fit to the
+      right-hand tail.</para>
 
       <para>Finally Example 8 illustrates application of a non-homogeneous
       flood probability model conditioned on the IPO index. It shows how the
@@ -1172,20 +1183,20 @@
       distributions. L moment estimators are unbiased and are less sensitive
       to outliers than product-moment estimators. They have been used
       extensively by researchers to analyze extremes and are recommended for
-      use in flood frequency analysis in the Handbook of Hydrology [Stedinger
-      et al., 1993].</para>
+      use in Flood Frequency Analysis in the Handbook of Hydrology (Stedinger
+      et al. 1993).</para>
 
       <para>The L moment approach is simpler than the Bayesian approach but
       limited in capability. It is restricted to applications involving gauged
-      flow data where there is no useful regional information and rating curve
-      errors do not require special attention.</para>
+      discharge data where there is no useful regional information and rating
+      curve errors do not require special attention.</para>
     </section>
 
     <section xml:id="b3_ch2_s_95fxk">
-      <title>L-moments for summarizing distributions</title>
+      <title>L-moments for summarising distributions</title>
 
-      <para>Hosking (1990) developed the L-moment theory based on order
-      statistics. The first four L-moments are defined as</para>
+      <para>Hosking (1990) developed the L moment theory based on order
+      statistics. The first four L moments are defined as</para>
 
       <equation xml:id="b3_ch2_e_gf6r2">
         <m:math display="block">
@@ -1379,7 +1390,7 @@
       j<superscript>th</superscript> smallest variable in a sample of size m
       and E stands for expectation.</para>
 
-      <para>Wang (1996) justifies L-moments as follows: “When there is only
+      <para>Wang (1996) justifies L moments as follows: “When there is only
       one value in a sample, it gives a feel of the magnitude of the random
       variable. When there are two values in a sample, their difference gives
       a sense of how varied the random variable is. When there are three
@@ -1405,7 +1416,7 @@
             </m:msub>
           </m:math>
         </inlineequation> give measures of location and scale. Moreover, the L
-      moment ratios</para>
+      moment ratios:</para>
 
       <equation xml:id="b3_ch2_e_cxg32">
         <m:math display="block">
@@ -1466,7 +1477,7 @@
       <para>give measures of skewness and kurtosis respectively. Hosking
       termed τ<subscript>3</subscript> L-skewness and
       τ<subscript>4</subscript> L-kurtosis. Hosking also defined the
-      L-coefficient of variation as</para>
+      L-coefficient of variation as:</para>
 
       <equation xml:id="b3_ch2_e_tmetj">
         <m:math display="block">
@@ -1496,7 +1507,7 @@
         </m:math>
       </equation>
 
-      <para><xref linkend="b3_ch2_t_achre"/> summarizes L moments for a range
+      <para><xref linkend="b3_ch2_t_achre"/> Summarizes L moments for a range
       of distributions.</para>
 
       <table xml:id="b3_ch2_t_achre">
@@ -2100,8 +2111,8 @@
 
       <para>The traditional L moment estimator is based on probability
       weighted moments. However, Wang (1996) derived the following sample
-      estimators directly from the definition of the first four
-      L-moments:</para>
+      estimators directly from the definition of the first four L
+      moments:</para>
 
       <equation xml:id="b3_ch2_e_fqmt4">
         <m:math display="block">
@@ -2444,7 +2455,7 @@
       </equation>
 
       <para>where q<subscript>(i)</subscript>, i=1,2,..,n are gauged peak
-      flows ranked in ascending order and</para>
+      discharges ranked in ascending order and:</para>
 
       <equation xml:id="b3_ch2_e_glgly">
         <m:math display="block">
@@ -2501,18 +2512,18 @@
       linkend="b3_ch2_t_achre"/> are replaced by their sample estimates given
       by <xref linkend="b3_ch2_e_zk5ml"/>. The resulting equations are then
       solved to obtain estimates of the parameters. These parameters are used
-      to calculate the 1 in Y AEP quantiles.</para>
+      to calculate the X% AEP quantiles.</para>
     </section>
 
     <section xml:id="b3_ch2_s_xodr0">
-      <title>LH-moments for fitting the GEV distribution</title>
+      <title>LH moments for fitting the GEV distribution</title>
 
       <para>When the selected probability model does not adequately fit all
-      the gauged data the lower flows may exert undue influence on the fit and
-      give insufficient weight to the higher flows which are the principal
-      object of interest. To deal with this situation Wang (1997) introduced a
-      generalization of L moments called LH moments. A more detailed
-      exposition can be found in Box 6.</para>
+      the gauged data the lower discharges may exert undue influence on the
+      fit and give insufficient weight to the higher discharges which are the
+      principal object of interest. To deal with this situation Wang (1997)
+      introduced a generalisation of L moments called LH moments. A more
+      detailed exposition can be found in Box 6.</para>
     </section>
 
     <section xml:id="b3_ch2_s_3sslo">
@@ -2545,9 +2556,8 @@
 
       <para>Implementation of L and LH moments requires extensive computation.
       The web-based software called TUFLOW FLIKE supports L and LH moment
-      estimation is available at www.xxx.com.au. An extensive library of
-      FORTRAN L moment procedures can be found at
-      www.research.ibm.com/people/h/hosking.</para>
+      estimation is available at TBA. An extensive library of FORTRAN L moment
+      procedures can be found at www.research.ibm.com/people/h/hosking.</para>
     </section>
 
     <section xml:id="b3_ch2_s_dpive">
@@ -2563,10 +2573,11 @@
   <section xml:id="b3_ch2_s_nyxhe">
     <title>Method of Moments Approach</title>
 
-    <para>The method of moments used in conjunction with the LP3 distribution
-    was the recommended method in Australian Rainfall and Runoff (1987). The
-    method was simple to implement but, unlike US practice, did not use
-    regionalized skew. Its use is no longer recommended. Both the Bayesian and
-    L moment procedures make better use of the available information.</para>
+    <para>The method of moments used in conjunction with the LPIII
+    distribution was the recommended method in Australian Rainfall and Runoff
+    (Pilgrim, 1987). The method was simple to implement but, unlike US
+    practice, did not use regionalised skew. Its use is no longer recommended.
+    Both the Bayesian and L moment procedures make better use of the available
+    information.</para>
   </section>
 </section>
