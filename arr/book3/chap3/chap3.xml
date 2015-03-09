@@ -645,11 +645,11 @@
                       <m:mi>ε</m:mi>
 
                       <m:mrow>
-                        <m:mtext> where</m:mtext>
+                        <m:mtext>where</m:mtext>
 
                         <m:mrow>
                           <m:msub>
-                            <m:mi> ŷ</m:mi>
+                            <m:mi>ŷ</m:mi>
 
                             <m:mi>i</m:mi>
                           </m:msub>
@@ -1220,7 +1220,8 @@
         </mediaobject>
       </figure>
 
-      <para><table xml:id="b3_ch3_t_k3lzr">
+      <para>
+        <table xml:id="b3_ch3_t_k3lzr">
           <title>Details of RFFE technique for data rich regions</title>
 
           <tgroup cols="4">
@@ -1279,7 +1280,8 @@
               </row>
             </tbody>
           </tgroup>
-        </table></para>
+        </table>
+      </para>
     </section>
 
     <section xml:id="b3_ch3_s_o7h7w">
@@ -1287,9 +1289,9 @@
 
       <para>For the five data-rich regions described in <xref
       linkend="b3_ch3_t_k3lzr"/>, the adopted estimation equations for
-      M<emphasis>,</emphasis> S and SK<emphasis> </emphasis>for the regional
-      LPIII model (<xref linkend="b3_ch3_e_swrce"/>) have the following
-      general form:</para>
+      M<emphasis>,</emphasis> S and SK<emphasis/>for the regional LPIII model
+      (<xref linkend="b3_ch3_e_swrce"/>) have the following general
+      form:</para>
 
       <equation xml:id="b3_ch3_e_yitfd">
         <m:math display="block">
@@ -1426,8 +1428,8 @@
       it is more appropriate to use the partial duration series in Flood
       Frequency Analysis, which is adopted here.</para>
 
-      <para>In ARR1987 (Pilgrim, 1987), only a few catchments were used from
-      arid areas to develop RFFE methods. Since the publication of ARR1987,
+      <para>In ARR 1987 (Pilgrim, 1987), only a few catchments were used from
+      arid areas to develop RFFE methods. Since the publication of ARR 1987,
       there has been little improvement in terms of streamflow data
       availability in most of the arid areas of Australia. In the preparation
       of the Regional Flood Frequency Estimation database, only a handful of
@@ -1529,6 +1531,48 @@
       all other arid areas except Pilbara) (see <xref
       linkend="b3_ch3_f_49qvf"/> for the extent of these two arid
       regions).</para>
+
+      <table xml:id="b3_ch3_t_2kbsr">
+        <title>Details of RFFE technique for arid regions</title>
+
+        <tgroup cols="4">
+          <colspec/>
+
+          <colspec/>
+
+          <colspec align="center"/>
+
+          <tbody>
+            <row>
+              <entry>Region</entry>
+
+              <entry>Method to form region</entry>
+
+              <entry>Number of stations</entry>
+
+              <entry>Estimation model</entry>
+            </row>
+
+            <row>
+              <entry>Region 6: Pilbara arid area</entry>
+
+              <entry morerows="1">Fixed region</entry>
+
+              <entry>11</entry>
+
+              <entry morerows="1">Index flood method with Q10 as index
+              (partial duration series model with average number of events per
+              year = 0.5)</entry>
+            </row>
+
+            <row>
+              <entry>Region 7: All other arid areas</entry>
+
+              <entry>44</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
     </section>
 
     <section xml:id="b3_ch3_s_ri9vz">
@@ -1644,7 +1688,7 @@
     linkend="b3_ch3_f_49qvf"/>. For these fringe zones, the flood estimate at
     an ungauged catchment location is taken as the inverse distance weighted
     average value of the flood estimates based on the two nearest regions. The
-    method is embedded into the ARR RFFE Model 2015.</para>
+    method is embedded into the RFFE Model 2015.</para>
   </section>
 
   <section xml:id="b3_ch3_s_yj49v">
@@ -1698,60 +1742,15 @@
 
     <figure xml:id="b3_ch3_f_6ppin">
       <title>Standardised residuals vs. normal scores for Region 1 based on
-      leave-one-out validation for AEPs of 10% and 5%</title>
+      Leave One Out validation for AEPs of 10% and 5%</title>
 
       <mediaobject>
         <imageobject>
-          <imagedata contentdepth="100%" fileref="Figures/Figure4.PNG"
-                     scalefit="1" width="100%"/>
+          <imagedata contentdepth="75%" fileref="Figures/Figure4.PNG"
+                     scalefit="1" width="75%"/>
         </imageobject>
       </mediaobject>
     </figure>
-
-    <table xml:id="b3_ch3_t_2kbsr">
-      <title>Details of RFFE technique for arid regions</title>
-
-      <tgroup cols="4">
-        <colspec/>
-
-        <colspec/>
-
-        <colspec align="center"/>
-
-        <tbody>
-          <row>
-            <entry>Region</entry>
-
-            <entry>Method to form region</entry>
-
-            <entry>Number of stations</entry>
-
-            <entry>Estimation model</entry>
-          </row>
-
-          <row>
-            <entry>Region 6: Pilbara arid area</entry>
-
-            <entry>Fixed region</entry>
-
-            <entry>11</entry>
-
-            <entry>Index flood method with Q10 as index (partial duration
-            series model with average number of events per year = 0.5)</entry>
-          </row>
-
-          <row>
-            <entry>Region 7: All other arid areas</entry>
-
-            <entry/>
-
-            <entry>44</entry>
-
-            <entry/>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
 
     <para>The main conclusion from this analysis is that the quantification of
     uncertainty in the quantile estimates by the RFFE technique is reliable
@@ -1765,7 +1764,7 @@
     <xref linkend="b3_ch3_s_8airu"/> lists the RFFE Model gauged catchments
     located nearest to the ungauged catchment of interest. The accuracy of the
     flood quantile estimates provided by the RFFE technique is evaluated by
-    using the relative error (RE) defined as:</para>
+    using the Relative Error (RE) defined as:</para>
 
     <equation xml:id="b3_ch3_e_tq1ze">
       <m:math display="block">
@@ -1812,7 +1811,7 @@
     Q<subscript>FFA</subscript> is the flood quantile estimate from the
     at-site Flood Frequency Analysis.</para>
 
-    <para>It should be noted that the relative error given by <xref
+    <para>It should be noted that the Relative Error given by <xref
     linkend="b3_ch3_e_tq1ze"/> makes no allowance for the fact that the
     at-site flood frequency estimates are themselves subject to sampling
     error. Therefore, this error should be seen as an upper bound on the true
@@ -1826,63 +1825,41 @@
     medians of the absolute relative error values from the LOO validation for
     different regions are reported in <xref linkend="b3_ch3_t_zm9sj"/>. It can
     be seen that for the data rich regions, Region 5 (SW Western Australia)
-    has the highest relative error (59 to 69%) and Region 3 (SA) has the
-    smallest relative error (33 to 41%).</para>
+    has the highest relative error (59 to 69%) and Region 3 (South Australia)
+    has the smallest relative error (33 to 41%).</para>
 
-    <figure xml:id="b3_ch3_f_i5krg">
-      <title>Screen shot of RFFE Model 2015 (landing page)</title>
-
-      <mediaobject>
-        <imageobject>
-          <imagedata contentdepth="100%" fileref="Figures/Figure5.PNG"
-                     scalefit="1" width="100%"/>
-        </imageobject>
-      </mediaobject>
-    </figure>
-
-    <para><table xml:id="b3_ch3_t_zm9sj">
+    <para>
+      <table xml:id="b3_ch3_t_zm9sj">
         <title>Upper bound on (absolute) median relative error (RE) from
         leave-one-out validation of the REEF technique</title>
 
         <tgroup cols="7">
           <colspec align="center"/>
 
+          <colspec colname="_2"/>
+
+          <colspec colname="_3"/>
+
+          <colspec colname="_4"/>
+
+          <colspec colname="_5"/>
+
+          <colspec colname="_6"/>
+
+          <colspec colname="_7"/>
+
           <tbody>
             <row>
-              <entry>Region</entry>
+              <entry morerows="2">Region</entry>
 
-              <entry/>
-
-              <entry/>
-
-              <entry>Median RE (%)</entry>
-
-              <entry/>
-
-              <entry/>
-
-              <entry/>
+              <entry nameend="_7" namest="_2">Median RE (%)</entry>
             </row>
 
             <row>
-              <entry/>
-
-              <entry/>
-
-              <entry/>
-
-              <entry>AEP</entry>
-
-              <entry/>
-
-              <entry/>
-
-              <entry/>
+              <entry nameend="_7" namest="_2">AEP</entry>
             </row>
 
             <row>
-              <entry/>
-
               <entry>50%</entry>
 
               <entry>20%</entry>
@@ -2009,20 +1986,21 @@
             </row>
           </tbody>
         </tgroup>
-      </table></para>
+      </table>
+    </para>
   </section>
 
   <section xml:id="b3_ch3_s_5x575">
     <title>Combining Regional and At-Site Quantile Estimates</title>
 
-    <para>Unless a station has a very long annual maximum flood series data
+    <para>Unless a station has a very long Annual Maximum flood series data
     (e.g. greater than 100 years), it is desirable to combine at-site and
     regional flood frequency quantile estimates to achieve a more accurate
     estimate. The RFFE Model 2015 (see <xref linkend="b3_ch3_s_8u3cs"/> for
     the description of the model) provides the necessary parameter set and
     data in its output to combine the regional flood quantile estimates with
-    the at-site data. This is discussed in more detail in Book 3,Chapter 2 of
-    ARR.</para>
+    the at-site data. This is discussed in more detail in Book 3 Chapter
+    2.</para>
   </section>
 
   <section xml:id="b3_ch3_s_31eib">
@@ -2052,13 +2030,26 @@
       <para>The RFFE Model 2015 is applicable to any catchment that has
       similar attributes and flood producing characteristics as the catchments
       used in the derivation of the flood estimation equations. Catchments
-      which do not satisfy this requirement can be divided into three groups:
-      (i) catchments which have been substantially modified from their natural
-      characteristics and for which the RFFE Model 2015 is not applicable and
-      should thus not be used, (ii) catchments for which flood estimates must
-      be expected to have lower accuracy than indicated in Section 7; and
-      (iii) 'atypical catchments' where additional catchment attributes need
-      to be considered and adjusted for.</para>
+      which do not satisfy this requirement can be divided into three
+      groups:</para>
+
+      <orderedlist numeration="lowerroman">
+        <listitem>
+          <para>Catchments which have been substantially modified from their
+          natural characteristics and for which the RFFE Model 2015 is not
+          applicable and should thus not be used,</para>
+        </listitem>
+
+        <listitem>
+          <para>Catchments for which flood estimates must be expected to have
+          lower accuracy than indicated in Section 7; and</para>
+        </listitem>
+
+        <listitem>
+          <para>'Atypical catchments' where additional catchment attributes
+          need to be considered and adjusted for.</para>
+        </listitem>
+      </orderedlist>
     </section>
 
     <section xml:id="b3_ch3_s_bq1hm">
@@ -2071,24 +2062,24 @@
       technique. The following types of catchments fall into this
       group:</para>
 
-      <itemizedlist>
+      <itemizedlist numeration="lowerroman">
         <listitem>
-          <para>urban catchments (more than 10% of the catchment affected by
-          residential or urban development);</para>
+          <para>Urban catchments where more than 10% of the catchment affected
+          by residential or urban development.</para>
         </listitem>
 
         <listitem>
-          <para>catchments where the construction of a dam or weir has
-          significantly altered the natural rainfall-runoff behaviour;</para>
+          <para>Catchments where the construction of a dam or weir has
+          significantly altered the natural rainfall-runoff behaviour.</para>
         </listitem>
 
         <listitem>
-          <para>catchments where notable land clearing has taken place (e.g.
-          some catchments in south-west of Western Australia); and</para>
+          <para>Catchments where notable land clearing has taken place (e.g.
+          some catchments in south-west of Western Australia).</para>
         </listitem>
 
         <listitem>
-          <para>catchments which have been significantly affected by
+          <para>Catchments which have been significantly affected by
           agricultural activities, construction of drainage or irrigation
           infrastructure, soil conservation works or mining activities.</para>
         </listitem>
@@ -2096,7 +2087,7 @@
     </section>
 
     <section xml:id="b3_ch3_s_qepsb">
-      <title>Catchments where RFFE Model 2015 estimates have lower
+      <title>Catchments where the RFFE Model 2015 estimates have a lower
       accuracy</title>
 
       <para>The following types of catchments do not strictly satisfy the
@@ -2109,10 +2100,10 @@
         <listitem>
           <para>Catchments with an area less than 0.5 km² or greater than
           1,000 km², or catchments located further away than 300 km from the
-          nearest gauged catchment location used to develop the RFFE
-          technique. When the ungauged catchment of interest exceeds these
-          limits, the RFFE Model 2015 gives a warning message that the results
-          may not be directly applicable in practice.</para>
+          nearest gauged catchment used to develop the RFFE technique. When
+          the ungauged catchment of interest exceeds these limits, the RFFE
+          Model 2015 gives a warning message that the results may not be
+          directly applicable in practice.</para>
         </listitem>
 
         <listitem>
@@ -2134,7 +2125,7 @@
     </section>
 
     <section xml:id="b3_ch3_s_ft0us">
-      <title>Catchments with A typical Characteristics</title>
+      <title>Catchments with Atypical Characteristics</title>
 
       <para>The development of the RFFE technique is based on the assumption
       that the catchment characteristics represented in the regression
@@ -2142,25 +2133,25 @@
       factor) account for the important differences in flood characteristics
       between sites in a region. It should be recognised that flood estimates
       generated by the RFFE Model 2015 for a catchment with flood
-      characteristics that are distinctly different from typical gauged
+      characteristics that are distinctly different from the typical gauged
       catchments in the region may not only be associated with larger error
-      margins but also significant bias. In such situations hydrological
-      judgment must be used to assess if any adjustment of the regional flood
-      frequency estimate is required (based on comparison of other relevant
+      margins but also with significant bias. In such situations engineering
+      judgment must be used to assess if any adjustment of the Regional Flood
+      Frequency Estimate is required (based on comparison of other relevant
       catchment characteristics). To support such an assessment, the RFFE
       Model 2015 output describes the set of gauged catchments used in
-      developing the RFFE Model, which are located closest to the ungauged
-      catchment of interest.</para>
+      developing the RFFE Model, i.e. which are located closest to the
+      ungauged catchment of interest.</para>
 
       <para>The following additional catchment attributes may need to be
       considered as a basis for adjustments to the flood estimates obtained
-      directly from RFFE Model 2015:</para>
+      directly from the RFFE Model 2015:</para>
 
       <itemizedlist>
         <listitem>
           <para><emphasis>Natural flood storage</emphasis> – large flood
           storage areas in catchments with extensive floodplains or swamps
-          have the effect of attenuating flood peaks; flood estimates from
+          have the effect of attenuating flood peaks; flood estimates from the
           RFFE Model 2015 would thus tend to <emphasis>overestimate</emphasis>
           peak flows and they could be regarded as <emphasis>upper bound flood
           estimates</emphasis> for these catchments. (See example in <xref
@@ -2171,11 +2162,11 @@
           <para><emphasis>Drainage efficiency</emphasis> - steep catchments,
           streams with little vegetation along banks, catchments affected by
           large scale drainage or flood protection works can be expected to
-          produce faster flood flows, less attenuation and thus higher peak
-          flows; flood estimates from RFFE Model 2015 would thus tend to
-          <emphasis>underestimate</emphasis> peak flows and they could be
-          regarded as <emphasis>lower bound flood estimates</emphasis> for
-          these catchments.</para>
+          produce faster flood flows velocities, less attenuation and thus
+          higher peak flows; flood estimates from the RFFE Model 2015 would
+          thus tend to <emphasis>underestimate</emphasis> peak flows and they
+          could be regarded as <emphasis>lower bound flood
+          estimates</emphasis> for these catchments.</para>
         </listitem>
       </itemizedlist>
 
@@ -2183,18 +2174,6 @@
       characteristics it is desirable to examine the flood records of a gauged
       catchment with similar catchment attributes as a basis for adjustments
       to the flood estimates produced by the RFFE Model 2015.</para>
-
-      <figure xml:id="b3_ch3_f_8n08s">
-        <title>RFFE Model 2015 screen shot for data input for the Wollomombi
-        River at Coinside, NSW</title>
-
-        <mediaobject>
-          <imageobject>
-            <imagedata contentdepth="100%" fileref="Figures/Figure6.PNG"
-                       scalefit="1" width="100%"/>
-          </imageobject>
-        </mediaobject>
-      </figure>
     </section>
   </section>
 
@@ -2203,27 +2182,27 @@
 
     <para>The RFFE technique presented in this chapter has been incorporated
     into a software tool referred to as RFFE Model 2015. <xref
-    linkend="b3_ch3_f_i5krg"/> presents screen shot of the software landing
-    page. The model requires the following basic inputs (to be entered by the
-    user in the interface shown in <xref linkend="b3_ch3_f_yklir"/>) for the
-    catchment of interest to generate design flood estimates for six AEPs
-    (50%, 20%, 10%, 5%, 2% and 1%).</para>
+    linkend="b3_ch3_f_i5krg"/> presents a screen shot of the RFFE Model 2015
+    software landing page. The model requires the following basic inputs (to
+    be entered by the user in the interface shown in <xref
+    linkend="b3_ch3_f_8n08s"/>) for the catchment of interest to generate
+    design flood estimates for six AEPs (50%, 20%, 10%, 5%, 2% and 1%).</para>
 
     <orderedlist numeration="lowerroman">
       <listitem>
-        <para>Latitude at catchment centroid in decimal degrees;</para>
+        <para>Latitude of catchment centroid in decimal degrees;</para>
       </listitem>
 
       <listitem>
-        <para>Longitude at catchment centroid in decimal degrees;</para>
+        <para>Longitude of catchment centroid in decimal degrees;</para>
       </listitem>
 
       <listitem>
-        <para>Latitude at catchment outlet in decimal degrees;</para>
+        <para>Latitude of catchment outlet in decimal degrees;</para>
       </listitem>
 
       <listitem>
-        <para>Longitude at catchment outlet in decimal degrees;</para>
+        <para>Longitude of catchment outlet in decimal degrees;</para>
       </listitem>
 
       <listitem>
@@ -2235,7 +2214,7 @@
       </listitem>
     </orderedlist>
 
-    <para>In "Advanced" data input option, the user can also enter the
+    <para>In the "Advanced" data input option, the user can also enter the
     following inputs:</para>
 
     <orderedlist numeration="lowerroman">
@@ -2243,7 +2222,8 @@
         <para>Region name (can be selected from the dropdown list (see <xref
         linkend="b3_ch3_t_gpkr3"/>));<table xml:id="b3_ch3_t_gpkr3">
             <title>Region names for application of the RFFE Model 2015 (see
-            Figure 2 for the extent of the regions)</title>
+            <xref linkend="b3_ch3_f_49qvf"/> for the extent of the
+            regions)</title>
 
             <tgroup cols="2">
               <thead>
@@ -2302,18 +2282,41 @@
       </listitem>
 
       <listitem>
-        <para>Design rainfall intensity at catchment centroid for AEP of 50%
-        and duration of 6-hour in mm/h; and</para>
+        <para>Design rainfall intensity at catchment centroid for 50% AEP and
+        duration of 6-hour in mm/h; and</para>
       </listitem>
 
       <listitem>
-        <para>Design rainfall intensity at catchment centroid for AEP of 2%
-        and duration of 6-hour in mm/h.</para>
+        <para>Design rainfall intensity at catchment centroid for 50% AEP and
+        duration of 6-hour in mm/h.</para>
       </listitem>
     </orderedlist>
 
-    <para>RFFE Model 2015 output contains the following principal information
-    (see <xref linkend="b3_ch3_f_0hl0m"/>):</para>
+    <para>The RFFE Model 2015 output contains the following principal
+    information (see <xref linkend="b3_ch3_f_0hl0m"/>):</para>
+
+    <figure xml:id="b3_ch3_f_i5krg">
+      <title>Screen shot of RFFE Model 2015 (landing page)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentdepth="100%" fileref="Figures/Figure5.PNG"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure xml:id="b3_ch3_f_8n08s">
+      <title>RFFE Model 2015 screen shot for data input for the Wollomombi
+      River at Coinside, NSW</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentdepth="100%" fileref="Figures/Figure6.PNG"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
 
     <figure xml:id="b3_ch3_f_0hl0m">
       <title>RFFE Model 2015 screen shot for model output for the Wollomombi
@@ -2329,20 +2332,20 @@
 
     <orderedlist numeration="lowerroman">
       <listitem>
-        <para>A table that shows AEP in the first column, estimated flood
-        quantiles labelled as “Flow (m<superscript>3</superscript>/s)” in the
-        second column, lower confidence limit (5%) in the third column and
-        upper confidence limit (95%) in the fourth column. The confidence
-        limits represent the overall uncertainty with the estimated flood
-        quantiles by the RFFE Model 2015.</para>
+        <para>A table of AEP (in the first column), estimated flood quantiles
+        labelled as discharge (m<superscript>3</superscript>/s) in the second
+        column, lower confidence limit (5%) (third column) and upper
+        confidence limit (95%) (fourth column). The confidence limits
+        represent the overall uncertainty with the estimated flood quantiles
+        by the RFFE Model 2015.</para>
       </listitem>
 
       <listitem>
-        <para>A second table that shows the statistics for the regional LPIII
-        model at the catchment of interest, which are particularly useful to
-        combine at-site and regional information to enhance the accuracy of
-        flood quantile estimates (for details see Kuczera and Franks,
-        2015).</para>
+        <para>A second table labelled statistics that shows the statistics for
+        the regional LPIII model at the catchment of interest, which are
+        particularly useful to combine at-site and regional information to
+        enhance the accuracy of flood quantile estimates (for details see Book
+        3 Chapter 2).</para>
       </listitem>
 
       <listitem>
@@ -2351,7 +2354,7 @@
       </listitem>
 
       <listitem>
-        <para>A picture that shows the catchment of interest with outlet and
+        <para>A graph that shows the catchment of interest with outlet and
         centroid locations.</para>
       </listitem>
 
@@ -2361,20 +2364,20 @@
       </listitem>
 
       <listitem>
-        <para>A text output menu and a download menu that allow the user to
-        save the results generated by the model.</para>
+        <para>A download menu that allows the user to save the results
+        generated by the model.</para>
       </listitem>
     </orderedlist>
 
     <para>Three worked examples are provided in <xref
-    linkend="b3_ch3_s_ue0ar"/> to illustrate the use of RFFE Model 2015. First
-    two examples relate to catchments having no major regulation, no major
-    natural or artificial storage and no major land use change where the RFFE
-    Model 2015 is directly applicable.</para>
+    linkend="b3_ch3_s_ue0ar"/> to illustrate the use of RFFE Model 2015. The
+    first two examples relate to catchments with no major regulation, no major
+    natural or artificial storage and no major land use changes over time
+    where the RFFE Model 2015 is directly applicable.</para>
 
     <para>The third example relates to a catchment which has significant
     natural floodplain storage where RFFE Model 2015 is not directly
-    applicable. For this case, RFFE Model significantly overestimates the
+    applicable. For this case, the RFFE Model significantly overestimates the
     flood quantiles (as compared to at-site Flood Frequency Analysis). Here,
     the RFFE Model estimates need to be adjusted to account for the storage
     effect of the catchment by applying an appropriate technique (see <xref
@@ -2395,12 +2398,12 @@
       the data input is provided in <xref linkend="b3_ch3_f_8n08s"/>. The
       flood quantiles generated by the RFFE Model 2015 are provided in <xref
       linkend="b3_ch3_f_0hl0m"/>. <xref linkend="b3_ch3_f_mb7b8"/> compares
-      the RFFE Model and at-site FFA flood estimates, which shows that RFFE
-      Model estimates match the at-site FFA estimates quite well except for 2%
-      and 1% AEPs where the RFFE Model estimates are higher compared with the
+      the RFFE Model and at-site FFA estimates, which shows that the RFFE
+      Model estimates match the at-site FFA estimates well except for 2% and
+      1% AEPs where the RFFE Model estimates are higher compared with the
       at-site FFA estimates. <xref linkend="b3_ch3_f_mb7b8"/> also shows that
-      the confidence band by the RFFE Model 2015 is much wider compared with
-      at-site FFA confidence band, which is as expected.</para>
+      the confidence limits of the RFFE Model 2015 is much wider compared with
+      at-site FFA confidence band, which is expected.</para>
 
       <figure xml:id="b3_ch3_f_mb7b8">
         <title>RFFE Model 2015 vs. at-site FFA flood estimates for the
@@ -2429,6 +2432,12 @@
 
           <tbody>
             <row>
+              <entry>Catchment Name</entry>
+
+              <entry>Wollomombi River at Coinside</entry>
+            </row>
+
+            <row>
               <entry>Latitude (Catchment Centroid) in decimal degrees</entry>
 
               <entry>-30.352</entry>
@@ -2453,27 +2462,20 @@
             </row>
 
             <row>
-              <entry>Catchment Area in sq km</entry>
+              <entry>Catchment Area in km<superscript>2</superscript></entry>
 
               <entry>376</entry>
-            </row>
-
-            <row>
-              <entry>Catchment Name</entry>
-
-              <entry>Wollomombi River at Coinside</entry>
             </row>
           </tbody>
         </tgroup>
       </table>
 
-      <para><xref linkend="b3_ch3_t_rdr78"/> presents the list of 30 gauged
+      <para><xref linkend="b3_ch3_t_3dowt"/> presents the list of 30 gauged
       catchments (used in developing the RFFE Model) that are located closest
       to the Wollomombi River at Coinside, NSW. The user should compare the
       characteristics of the ungauged catchment of interest with those of the
       nearest gauged catchments to ensure that the ungauged catchment is not
-      atypical of the nearest gauged catchments used in developing the RFFE
-      Model 2015.</para>
+      atypical.</para>
 
       <table xml:id="b3_ch3_t_3dowt">
         <title>30 gauged catchments (used in the development of RFFE Model
@@ -2528,7 +2530,8 @@
 
               <entry>Shape Factor</entry>
 
-              <entry><inlineequation>
+              <entry>
+                <inlineequation>
                   <m:math display="inline">
                     <m:mfrac>
                       <m:mmultiscripts>
@@ -2560,7 +2563,8 @@
                       </m:mmultiscripts>
                     </m:mfrac>
                   </m:math>
-                </inlineequation></entry>
+                </inlineequation>
+              </entry>
             </row>
 
             <row>
@@ -2570,7 +2574,7 @@
 
               <entry>30.478</entry>
 
-              <entry>152.027</entry>
+              <entry>152.03</entry>
 
               <entry>376</entry>
 
@@ -2596,7 +2600,7 @@
 
               <entry>30.59</entry>
 
-              <entry>152.162</entry>
+              <entry>152.16</entry>
 
               <entry>163</entry>
 
@@ -2648,7 +2652,7 @@
 
               <entry>30.478</entry>
 
-              <entry>152.318</entry>
+              <entry>152.32</entry>
 
               <entry>22</entry>
 
@@ -2674,7 +2678,7 @@
 
               <entry>30.405</entry>
 
-              <entry>152.345</entry>
+              <entry>152.35</entry>
 
               <entry>31</entry>
 
@@ -2752,7 +2756,7 @@
 
               <entry>30.7</entry>
 
-              <entry>151.707</entry>
+              <entry>151.71</entry>
 
               <entry>117</entry>
 
@@ -2830,7 +2834,7 @@
 
               <entry>31.052</entry>
 
-              <entry>151.768</entry>
+              <entry>151.77</entry>
 
               <entry>894</entry>
 
@@ -2856,7 +2860,7 @@
 
               <entry>30.307</entry>
 
-              <entry>152.713</entry>
+              <entry>152.71</entry>
 
               <entry>82</entry>
 
@@ -2960,7 +2964,7 @@
 
               <entry>30.642</entry>
 
-              <entry>152.855</entry>
+              <entry>152.86</entry>
 
               <entry>539</entry>
 
@@ -2986,7 +2990,7 @@
 
               <entry>29.763</entry>
 
-              <entry>152.212</entry>
+              <entry>152.21</entry>
 
               <entry>389</entry>
 
@@ -3116,7 +3120,7 @@
 
               <entry>29.722</entry>
 
-              <entry>151.845</entry>
+              <entry>151.85</entry>
 
               <entry>348</entry>
 
@@ -3168,7 +3172,7 @@
 
               <entry>31.372</entry>
 
-              <entry>152.245</entry>
+              <entry>152.25</entry>
 
               <entry>342</entry>
 
@@ -3324,7 +3328,7 @@
 
               <entry>30.118</entry>
 
-              <entry>153.163</entry>
+              <entry>153.16</entry>
 
               <entry>11</entry>
 
@@ -3360,9 +3364,9 @@
       linkend="b3_ch3_f_afke3"/> compares the RFFE Model and at-site FFA flood
       estimates which shows that RFFE Model estimates match the at-site FFA
       estimates quite well for all the six AEPs. <xref
-      linkend="b3_ch3_f_afke3"/> also shows that the confidence band by the
-      RFFE Model 2015 is much wider compared with at-site FFA confidence band,
-      which is as expected.</para>
+      linkend="b3_ch3_f_afke3"/> also shows that the confidence limits by the
+      RFFE Model 2015 is much wider compared with at-site FFA confidence
+      limits, which is as expected.</para>
 
       <figure xml:id="b3_ch3_f_yklir">
         <title>RFFE Model 2015 screen shot for data input for Four Mile Brook
@@ -3376,7 +3380,8 @@
         </mediaobject>
       </figure>
 
-      <para><table xml:id="b3_ch3_t_5qduj">
+      <para>
+        <table xml:id="b3_ch3_t_5qduj">
           <title>Application data for Four Mile Brook at Netic Rd, SW Western
           Australia (Region 5) (Basic Input Data)</title>
 
@@ -3390,6 +3395,12 @@
             </thead>
 
             <tbody>
+              <row>
+                <entry>Catchment Name</entry>
+
+                <entry>Four Mile Brook at Netic Rd</entry>
+              </row>
+
               <row>
                 <entry>Latitude (Catchment Centroid) in decimal
                 degrees</entry>
@@ -3421,15 +3432,10 @@
 
                 <entry>13.1</entry>
               </row>
-
-              <row>
-                <entry>Catchment Name</entry>
-
-                <entry>Four Mile Brook at Netic Rd</entry>
-              </row>
             </tbody>
           </tgroup>
-        </table></para>
+        </table>
+      </para>
 
       <figure xml:id="b3_ch3_f_9yh35">
         <title>RFFE Model 2015 screen shot for model output for Four Mile
@@ -3475,6 +3481,59 @@
       need to be adjusted downwards to account for the floodplain storage
       effect by applying an appropriate technique.</para>
 
+      <table xml:id="b3_ch3_t_z9vfi">
+        <title>Application data for the Morass Creek at Uplands, VIC (Region
+        1) (Basic Input Data)</title>
+
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry align="center">Menu</entry>
+
+              <entry align="center">Input</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>Catchment Name</entry>
+
+              <entry>Morass Creek at Uplands</entry>
+            </row>
+
+            <row>
+              <entry>Latitude (Catchment Centroid) in decimal degrees</entry>
+
+              <entry>-36.88</entry>
+            </row>
+
+            <row>
+              <entry>Longitude (Catchment Centroid) in decimal degrees</entry>
+
+              <entry>147.84</entry>
+            </row>
+
+            <row>
+              <entry>Latitude (Catchment Outlet) in decimal degrees</entry>
+
+              <entry>-36.87</entry>
+            </row>
+
+            <row>
+              <entry>Longitude (Catchment Outlet) in decimal degrees</entry>
+
+              <entry>147.7</entry>
+            </row>
+
+            <row>
+              <entry>Catchment Area in km2</entry>
+
+              <entry>471</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
       <figure xml:id="b3_ch3_f_79qkw">
         <title>RFFE Model 2015 screen shot for data input for the Morass Creek
         at Uplands, VIC</title>
@@ -3510,59 +3569,6 @@
           </imageobject>
         </mediaobject>
       </figure>
-
-      <table xml:id="b3_ch3_t_z9vfi">
-        <title>Application data for the Morass Creek at Uplands, VIC (Region
-        1) (Basic Input Data)</title>
-
-        <tgroup cols="2">
-          <thead>
-            <row>
-              <entry align="center">Menu</entry>
-
-              <entry align="center">Input</entry>
-            </row>
-          </thead>
-
-          <tbody>
-            <row>
-              <entry>Latitude (Catchment Centroid) in decimal degrees</entry>
-
-              <entry>-36.876</entry>
-            </row>
-
-            <row>
-              <entry>Longitude (Catchment Centroid) in decimal degrees</entry>
-
-              <entry>147.840</entry>
-            </row>
-
-            <row>
-              <entry>Latitude (Catchment Outlet) in decimal degrees</entry>
-
-              <entry>-36.87</entry>
-            </row>
-
-            <row>
-              <entry>Longitude (Catchment Outlet) in decimal degrees</entry>
-
-              <entry>147.7</entry>
-            </row>
-
-            <row>
-              <entry>Catchment Area in sq km</entry>
-
-              <entry>471</entry>
-            </row>
-
-            <row>
-              <entry>Catchment Name</entry>
-
-              <entry>Morass Creek at Uplands</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
     </section>
   </section>
 
