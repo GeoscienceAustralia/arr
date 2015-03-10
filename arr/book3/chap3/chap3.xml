@@ -28,12 +28,12 @@
     purposes. Typically, many small to medium sized catchments are ungauged or
     have little recorded streamflow data. In these cases, peak flow estimates
     can be obtained using a Regional Flood Frequency Estimation (RFFE)
-    approach, which transfers flood frequency characteristics information from
-    a group of gauged catchments to the location of interest. Even in cases
-    where there is recorded streamflow data it is beneficial to pool the
-    information in the gauged record with the RFFE information. A RFFE
-    technique is expected to be simple, requiring only readily accessible
-    catchment data to obtain design flood estimates relatively quickly.</para>
+    approach, which transfers flood frequency characteristics from a group of
+    gauged catchments to the location of interest. Even in cases where there
+    is recorded streamflow data it is beneficial to pool the information in
+    the gauged record with the RFFE information. A RFFE technique is expected
+    to be simple, requiring only readily accessible catchment data to obtain
+    design flood estimates relatively quickly.</para>
 
     <para>In developing the RFFE technique, a number of criteria had to be
     satisfied. These criteria included:</para>
@@ -118,10 +118,10 @@
       regionalisation method. There have been many techniques developed which
       attempt to establish homogenous regions. For example, the recommended
       RFFE model for eastern New South Wales (NSW) and Victoria in Australian
-      Rainfall and Runoff 1987 (ARR 1987), namely the Probabilistic Rational
+      Rainfall and Runoff 1987 (ARR1987), namely the Probabilistic Rational
       Method, used geographical contiguity as an indication of homogeneity; in
       other words the catchments which are closer to each other should have
-      similar runoff coefficients (ARR 1987).</para>
+      similar runoff coefficients (ARR1987).</para>
 
       <para>There has been little success in the identification of ‘acceptably
       homogeneous regions’ in Australia using statistical measures such as
@@ -153,7 +153,7 @@
       develop Regional Flood Frequency Estimation techniques include various
       forms of the Rational Method, the Index Flood Method and regression
       based techniques. In ARR1987, the Probabilistic Rational Method was
-      recommended for general use in Victoria and eastern NSW (ARR 1987). The
+      recommended for general use in Victoria and eastern NSW (ARR1987). The
       foundations of the Probabilistic Rational Method are presented by
       Pilgrim (1982), Pilgrim and McDermott (1982), Mittelstadt, et al.
       (1987), and Adams (1984). The central component of the Probabilistic
@@ -247,13 +247,12 @@
         </listitem>
       </orderedlist>
 
-      <para>The flood observations at gauged sites constitute the foundation
-      of a RFFE technique, and the quality and representativeness of the flood
-      data determine to a large degree the accuracy and reliability of
-      regional flood estimates. The challenge in collating a database for RFFE
-      lies in maximising the amount of useful flood information, while
-      minimising the random and systematic error (or ‘noise’) that may be
-      present in some flood data.</para>
+      <para>The quality and representativeness of the flood data determine to
+      a large degree the accuracy and reliability of regional flood estimates.
+      The challenge in collating a database for RFFE lies in maximising the
+      amount of useful flood information, while minimising the random and
+      systematic error (or ‘noise’) that may be present in some flood
+      data.</para>
 
       <para>In RFFE, various sources of errors in data and their effects on
       final flood estimates need to be recognised. The accuracy of flood
@@ -262,16 +261,16 @@
       the selection of a minimum record length at an individual site in the
       region is a very important step in any RFFE technique; the record length
       should be as long as possible while retaining enough sites in the region
-      to make the results of RFFE statistically meaningful. Also, the flood
-      data at each site should satisfy a number of basic assumptions e.g.
-      homogeneity, independence and stationarity. In the case where these
-      assumptions are violated, appropriate measures should be taken; suitable
-      techniques include GLS regression to account for the inter-station
-      correlation (e.g. Stedinger and Tasker, 1985; Griffis and Stedinger,
-      2007), and non-stationary Flood Frequency Analysis to account for
-      climate change impact. The data preparation issues for a RFFE technique
-      are discussed in more detail by Haddad et al. (2010) and Rahman et al.
-      (2014a, 2014d).</para>
+      to make the results of RFFE useful. Also, the flood data at each site
+      should satisfy a number of basic assumptions e.g. homogeneity,
+      independence and stationarity. In the case where these assumptions are
+      violated, appropriate measures should be taken; suitable techniques
+      include GLS regression to account for the inter-station correlation
+      (e.g. Stedinger and Tasker, 1985; Griffis and Stedinger, 2007), and
+      non-stationary Flood Frequency Analysis to account for climate change
+      impact. The data preparation issues for a RFFE technique are discussed
+      in more detail by Haddad et al. (2010) and Rahman et al. (2014a,
+      2014d).</para>
 
       <para>The transfer of flood information from gauged to ungauged
       catchments relies on the ability to identify a number of key catchment
@@ -439,8 +438,8 @@
             </m:msub>
           </m:math>
         </inlineequation> is the frequency factor for the LPIII distribution
-      for AEP of X%, which is a function of the AEP and the skewness (SK) of
-      the natural logarithms of the Annual Maximum flood series.</para>
+      of X% AEP, which is a function of the AEP and the skewness (SK) of the
+      natural logarithms of the Annual Maximum flood series.</para>
 
       <para>The prediction equations for M, S and SK have been developed for
       all the gauged catchment locations in the data-rich areas using Bayesian
@@ -520,7 +519,7 @@
                   <m:mi>i</m:mi>
                 </m:msub>
 
-                <m:mo>,</m:mo>
+                <m:mo> ,</m:mo>
 
                 <m:mrow>
                   <m:mi>i</m:mi>
@@ -642,14 +641,14 @@
                     <m:mo>+</m:mo>
 
                     <m:mrow>
-                      <m:mi>ε</m:mi>
+                      <m:mi>ε </m:mi>
 
                       <m:mrow>
                         <m:mtext>where</m:mtext>
 
                         <m:mrow>
                           <m:msub>
-                            <m:mi>ŷ</m:mi>
+                            <m:mi> ŷ</m:mi>
 
                             <m:mi>i</m:mi>
                           </m:msub>
@@ -692,9 +691,20 @@
         </m:math>
       </equation>
 
-      <para>Thus the observed regression model error ε is the sum of the model
-      error δ and the sampling error η. The total error vector has a mean of
-      zero and a covariance matrix:</para>
+      <para>Thus the observed regression model error <inlineequation>
+          <m:math display="inline">
+            <m:mi>ε</m:mi>
+          </m:math>
+        </inlineequation> is the sum of the model error <inlineequation>
+          <m:math display="inline">
+            <m:mi>δ</m:mi>
+          </m:math>
+        </inlineequation> and the sampling error <inlineequation>
+          <m:math display="inline">
+            <m:mi>η</m:mi>
+          </m:math>
+        </inlineequation>. The total error vector has a mean of zero and a
+      covariance matrix:</para>
 
       <equation xml:id="b3_ch3_e_ujp3a">
         <m:math display="block">
@@ -750,7 +760,17 @@
       underlying model error δ<subscript>i</subscript>.</para>
 
       <para>The GLS estimator of β and its covariance matrix for a known
-      σ<subscript>δ</subscript>² is given by:</para>
+      <inlineequation>
+          <m:math display="inline">
+            <m:msubsup>
+              <m:mi>σ</m:mi>
+
+              <m:mi>δ</m:mi>
+
+              <m:mi>2</m:mi>
+            </m:msubsup>
+          </m:math>
+        </inlineequation> is given by:</para>
 
       <equation xml:id="b3_ch3_e_1jjd4">
         <m:math display="block">
@@ -1220,8 +1240,7 @@
         </mediaobject>
       </figure>
 
-      <para>
-        <table xml:id="b3_ch3_t_k3lzr">
+      <para><table xml:id="b3_ch3_t_k3lzr">
           <title>Details of RFFE technique for data rich regions</title>
 
           <tgroup cols="4">
@@ -1280,8 +1299,7 @@
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </para>
+        </table></para>
     </section>
 
     <section xml:id="b3_ch3_s_o7h7w">
@@ -1383,11 +1401,12 @@
       <para>I<subscript>6,2</subscript> is the design rainfall intensity
       (mm/h) at catchment centroid for 6 hour duration and 2% AEP.</para>
 
-      <para>For Region 1 and Region 2, <xref linkend="b3_ch3_e_n8zye"/> and
-      <xref linkend="b3_ch3_e_3r3ol"/> have only the model intercepts, i.e.
+      <para>For Region 1s and 2, only the model intercept are available <xref
+      linkend="b3_ch3_e_n8zye"/> and <xref linkend="b3_ch3_e_3r3ol"/>. Hence,
       for these two regions, the weighted average values of S and SK are
-      adopted, which are determined on the basis of record lengths at the
-      stations within the ROI sub-region.</para>
+      adopted. These values are determined using record lengths at the
+      stations within the ROI sub-region as a basis for determining the
+      weights.</para>
 
       <para>The values of b<subscript>0</subscript>,
       b<subscript>1</subscript>, b<subscript>2</subscript>,
@@ -1397,11 +1416,11 @@
       d<subscript>3</subscript> at all the 798 individual gauged catchment
       locations (in the data-rich regions) are estimated and embedded in the
       RFFE Model 2015. To derive flood quantile estimates at an ungauged
-      catchment of interest, the RFFE Model 2015 takes the inverse distance
-      weighted average value of flood quantile estimates based on up to 15
+      location of interest, the RFFE Model 2015 uses an inverse distance
+      weighted average value of flood quantile estimates based on up to the 15
       nearest gauged catchment locations within 300 km radius from the
-      catchment of interest. This ensures a smooth variation of flood quantile
-      estimates over the space.</para>
+      location of interest. This ensures a smooth variation of flood quantile
+      estimates over space.</para>
     </section>
   </section>
 
@@ -1428,8 +1447,8 @@
       it is more appropriate to use the partial duration series in Flood
       Frequency Analysis, which is adopted here.</para>
 
-      <para>In ARR 1987 (Pilgrim, 1987), only a few catchments were used from
-      arid areas to develop RFFE methods. Since the publication of ARR 1987,
+      <para>In ARR1987 (Pilgrim, 1987), only a few catchments were used from
+      arid areas to develop RFFE methods. Since the publication of ARR1987,
       there has been little improvement in terms of streamflow data
       availability in most of the arid areas of Australia. In the preparation
       of the Regional Flood Frequency Estimation database, only a handful of
@@ -1828,8 +1847,7 @@
     has the highest relative error (59 to 69%) and Region 3 (South Australia)
     has the smallest relative error (33 to 41%).</para>
 
-    <para>
-      <table xml:id="b3_ch3_t_zm9sj">
+    <para><table xml:id="b3_ch3_t_zm9sj">
         <title>Upper bound on (absolute) median relative error (RE) from
         leave-one-out validation of the REEF technique</title>
 
@@ -1986,8 +2004,7 @@
             </row>
           </tbody>
         </tgroup>
-      </table>
-    </para>
+      </table></para>
   </section>
 
   <section xml:id="b3_ch3_s_5x575">
@@ -2530,8 +2547,7 @@
 
               <entry>Shape Factor</entry>
 
-              <entry>
-                <inlineequation>
+              <entry><inlineequation>
                   <m:math display="inline">
                     <m:mfrac>
                       <m:mmultiscripts>
@@ -2563,8 +2579,7 @@
                       </m:mmultiscripts>
                     </m:mfrac>
                   </m:math>
-                </inlineequation>
-              </entry>
+                </inlineequation></entry>
             </row>
 
             <row>
@@ -3380,8 +3395,7 @@
         </mediaobject>
       </figure>
 
-      <para>
-        <table xml:id="b3_ch3_t_5qduj">
+      <para><table xml:id="b3_ch3_t_5qduj">
           <title>Application data for Four Mile Brook at Netic Rd, SW Western
           Australia (Region 5) (Basic Input Data)</title>
 
@@ -3434,8 +3448,7 @@
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </para>
+        </table></para>
 
       <figure xml:id="b3_ch3_f_9yh35">
         <title>RFFE Model 2015 screen shot for model output for Four Mile
@@ -3813,5 +3826,4 @@
     sites using a region of influence approach. <emphasis>Journal of
     Hydrology</emphasis>, 153, 1–21.</para>
   </section>
-
 </chapter>
