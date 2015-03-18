@@ -78,7 +78,7 @@
         
         <!-- Build the draft book PDFs: -->
         <xsl:value-of select="$book_name"/><xsl:text>.pdf: </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo</xsl:text><xsl:text>&#10;</xsl:text>
-        <xsl:text>&#9;$(FOP) -fo </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo -pdf </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.pdf&#10;</xsl:text>
+        <xsl:text>&#9;$(FOP) -d </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo -o </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.pdf&#10;</xsl:text>
         <xsl:value-of select="$book_name"/><xsl:text>.fo: arr_title_fo.xsl&#10;</xsl:text>
         <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo \&#10;</xsl:text>
         <xsl:text>&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
@@ -86,7 +86,7 @@
         
         <!--Build the final PDFs: -->
         <xsl:value-of select="$book_id"/><xsl:text>.pdf: </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo</xsl:text><xsl:text>&#10;</xsl:text>
-        <xsl:text>&#9;$(FOP) -fo </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo -pdf </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.pdf&#10;</xsl:text>
+        <xsl:text>&#9;$(FOP) -d </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo -o </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.pdf&#10;</xsl:text>
         <xsl:value-of select="$book_id"/><xsl:text>.fo: arr_title_fo.xsl&#10;</xsl:text>
         <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo \&#10;</xsl:text>
         <xsl:text>&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>

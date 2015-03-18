@@ -10,7 +10,7 @@ L10N_REVISION = r
 # Paths which you may wish to customize:
 XSLTPROC = xsltproc
 XMLLINT = xmllint
-FOP = fop
+FOP = AHFCmd
 MKDIR = mkdir -p
 SVNVERSION = svnversion
 DIR_BASE = /Users/pbrady/ncwe/arr_docs/trunk
@@ -65,7 +65,7 @@ valid: ARR.xml
 
 # The entire book:
 arr_draft.pdf: arr_draft.fo
-	$(FOP) -fo arr_draft.fo -pdf arr_draft.pdf
+	$(FOP) -d arr_draft.fo -o arr_draft.pdf
 arr_draft.fo: arr_title_fo.xsl
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft.fo \
 	arr_style_fo_draft.xsl ARR.xml
@@ -102,7 +102,7 @@ clean_style:
     
 # Draft Builds:
 arr_style_guide_draft.pdf: arr_style_guide_valid arr_style_guide_draft.fo
-	$(FOP) -fo arr_style_guide_draft.fo -pdf arr_style_guide_draft.pdf
+	$(FOP) -d arr_style_guide_draft.fo -o arr_style_guide_draft.pdf
     
 arr_style_guide_draft.fo: arr_title_fo.xsl
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_style_guide_draft.fo \
@@ -110,7 +110,7 @@ arr_style_guide_draft.fo: arr_title_fo.xsl
 
 # Final Builds:
 arr_style_guide_final.pdf: arr_style_guide_valid arr_style_guide_final.fo
-	$(FOP) -fo arr_style_guide_final.fo -pdf arr_style_guide_final.pdf
+	$(FOP) -d arr_style_guide_final.fo -o arr_style_guide_final.pdf
 
 arr_style_guide_final.fo: arr_style_fo.xsl
 	rm -f style_version.xml
