@@ -82,9 +82,7 @@ main(int argc, char **argv) {
     xmlXPathObjectPtr result;
     xmlNodePtr cur;
     int i;
-    xmlChar *keyword;
     xmlAttrPtr hasAttr;
-    xmlNodePtr newnode;
     xmlAttrPtr newattr;
     
     char *idToInsert;
@@ -93,28 +91,31 @@ main(int argc, char **argv) {
     char *outFile=NULL;
     
     // Default XPATH search strings:
-    xmlChar *xpathSection  = (xmlChar*) "//*[name() = 'section']";
-    xmlChar *xpathTable    = (xmlChar*) "//*[name() = 'table']";
-    xmlChar *xpathFigure   = (xmlChar*) "//*[name() = 'figure']";
-    xmlChar *xpathEquation = (xmlChar*) "//*[name() = 'equation']";
+    xmlChar *xpathSection    = (xmlChar*) "//*[name() = 'section']";
+    xmlChar *xpathTable      = (xmlChar*) "//*[name() = 'table']";
+    xmlChar *xpathFigure     = (xmlChar*) "//*[name() = 'figure']";
+    xmlChar *xpathEquation   = (xmlChar*) "//*[name() = 'equation']";
+    xmlChar *xpathGlossEntry = (xmlChar*) "//*[name() = 'glossentry']";
     
     // Command option flags:
     static int processTable = false;
     static int processFigure = false;
     static int processSection = false;
     static int processEquation = false;
+    static int processGlossEntry = false;
     
     // Define the command line options:
     static struct option long_options[] = {
         /* These options don’t set a flag.
          We distinguish them by their indices. */
-        {"table",   no_argument, &processTable,    't'},
-        {"figure",  no_argument, &processFigure,   'f'},
-        {"section", no_argument, &processSection,  's'},
-        {"equation",no_argument, &processEquation, 'e'},
-        {"prefix",  required_argument, 0,          'p'},
-        {"xml",     required_argument, 0,          'x'},
-        {"out-file",required_argument, 0,          'o'},
+        {"table",   no_argument, &processTable,      't'},
+        {"figure",  no_argument, &processFigure,     'f'},
+        {"section", no_argument, &processSection,    's'},
+        {"equation",no_argument, &processEquation,   'e'},
+        {"glossary",no_argument, &processGlossEntry, 'g'},
+        {"prefix",  required_argument, 0,            'p'},
+        {"xml",     required_argument, 0,            'x'},
+        {"out-file",required_argument, 0,            'o'},
         {0, 0, 0, 0}
     };
     /* getopt_long stores the option index here. */
@@ -128,7 +129,7 @@ main(int argc, char **argv) {
         // First, get the next option:
         intOption = getopt_long (argc,
                                  argv,
-                                 "tfsep:x:o:",
+                                 "tfgsep:x:o:",
                                  long_options,
                                  &option_index);
         
@@ -152,6 +153,9 @@ main(int argc, char **argv) {
                 break;
             case 'e':
                 processEquation = true;
+                break;
+            case 'g':
+                processGlossEntry = true;
                 break;
             case 'x':
                 docname = strdup(optarg);
@@ -347,6 +351,41 @@ main(int argc, char **argv) {
             } // End for
         } // End if(result)
     } // End if(process
+
+
+    if (processGlossEntry) {
+        /* The following is a messy hack as the only difference between each
+         * code loop is the "xpathEquation" section.  I'm just being lazy and
+         * have not yet figured out libxml2's memory structures to push the new
+         * nodes back to the doc element. */
+        
+        // First display some user help:
+        fprintf(stdout, "Processing glossentry items with the prefix: %s\n", prefix);
+        
+        
+        result = getnodeset (doc, xpathGlossEntry);
+        if (result) {
+            nodeset = result->nodesetval;
+            for (i=0; i < nodeset->nodeNr; i++) {
+                // This works for name at least:
+                cur = nodeset->nodeTab[i];
+                if ((hasAttr = xmlHasNsProp(cur,
+                                            (const xmlChar *)"id",
+                                            XML_XML_NAMESPACE)) == NULL) {
+                    genAlphaID(IDRand, 5);
+                    idToInsert = strdup("glossary_");
+                    strcat(idToInsert, IDRand);
+                    fprintf(stdout, "Adding ID: %s\n",idToInsert);
+                    newattr = xmlSetProp(cur,
+                                         XML_XML_ID,
+                                         (const xmlChar *)idToInsert);
+                    free(idToInsert);
+                    
+                } // End if((hasAttr
+            } // End for
+        } // End if(result)
+    } // End if(process
+
     
     // Finally, save the document and clean up:
     if (outFile == NULL) {
