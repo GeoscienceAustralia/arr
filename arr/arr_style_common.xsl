@@ -14,6 +14,30 @@
     <xsl:param name="bibliography.collection" select="'common/bibliography_database.xml'"/>
     <xsl:param name="bibliography.numbered" select="1"/>
     <xsl:param name="bibliography.style" select="'iso690'"/>
+
+    <!-- Glossary Information -->
+    <xsl:param name="glossary.as.blocks" select="1"/>
+    <xsl:param name="glossentry.show.acronym" select="'yes'"/>
+    <xsl:param name="glossary.sort" select="1"/>
+    <xsl:param name="generate.toc">
+       appendix  toc,title
+       article/appendix  nop
+       article   toc,title
+       book      toc,title,figure,table,example,equation
+       chapter   toc,title
+       part      toc,title
+       preface   toc,title
+       qandadiv  toc
+       qandaset  toc
+       reference toc,title
+       sect1     toc
+       sect2     toc
+       sect3     toc
+       sect4     toc
+       sect5     toc
+       section   toc
+       set       toc,title
+    </xsl:param>
     
     
     <!-- turn hyphenation on or off -->
