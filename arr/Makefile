@@ -132,6 +132,7 @@ html_single: valid html_single_images
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_single/index.xhtml \
     $(HTML_OPTS) \
     ../stylesheets-ns/xhtml5/docbook.xsl ARR.xml
+	cp arr.css html_chunked/arr.css
 
 # HTML Chunked Build
 html_chunked: valid html_chunked_images
@@ -139,6 +140,7 @@ html_chunked: valid html_chunked_images
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.html \
     $(HTML_OPTS) \
     arr_style_xhtml5_chunked.xsl ARR.xml
+	cp arr.css html_chunked/arr.css
     
 #####################################################
 #####################################################
