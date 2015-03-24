@@ -1,0 +1,45 @@
+#!/bin/sh
+# XSL Formatter for MacOSX command-line sample shell script
+# usage: run.sh [AHFCmd-parameters...]
+set +o nounset
+
+AHF62_HOME="/usr/local/AHFormatterV62"
+export AHF62_HOME
+
+AHF62_LIB_FOLDER=${AHF62_HOME}/lib
+AHF62_BIN_FOLDER=${AHF62_HOME}/bin
+AHF62_ETC_FOLDER=${AHF62_HOME}/etc
+AHF62_SDATA_FOLDER=${AHF62_HOME}/sdata
+
+# Add the bin folder to the path
+if [ -z "${PATH}" ]
+then
+   PATH=${AHF62_BIN_FOLDER}
+else
+   PATH=${PATH}:${AHF62_BIN_FOLDER}
+fi
+export PATH
+
+
+if [ -z "${DYLD_LIBRARY_PATH}" ]
+then
+   DYLD_LIBRARY_PATH=${AHF62_LIB_FOLDER}
+else
+   DYLD_LIBRARY_PATH=${AHF62_LIB_FOLDER}:${DYLD_LIBRARY_PATH}
+fi
+export DYLD_LIBRARY_PATH
+
+AHF62_LIC_PATH=${AHF62_ETC_FOLDER}
+export AHF62_LIC_PATH
+
+AHF62_HYPDIC_PATH=${AHF62_ETC_FOLDER}/hyphenation
+export AHF62_HYPDIC_PATH
+
+AHF62_DMC_TBLPATH=${AHF62_SDATA_FOLDER}/base2
+export AHF62_DMC_TBLPATH
+
+AHF62_DEFAULT_HTML_CSS=${AHF62_ETC_FOLDER}/html.css
+export AHF62_DEFAULT_HTML_CSS
+
+AHF62_FONT_CONFIGFILE=${AHF62_ETC_FOLDER}/font-config.xml
+export AHF62_FONT_CONFIGFILE
