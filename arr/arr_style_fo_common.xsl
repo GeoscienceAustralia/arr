@@ -17,6 +17,9 @@
    <!-- Import the Common ARR Style Elements -->
    <xsl:import href="arr_style_common.xsl" />
 
+   <!-- Import the local Set Cover Page Over Ride -->
+   <xsl:import href="arr_style_fo_set_cover.xsl" />
+
 
 
 
@@ -121,6 +124,56 @@
       <xsl:attribute name="text-align">center</xsl:attribute>
    </xsl:attribute-set>
 
+   <!-- Table of Contents Formatting
+        See also the import above which re-defines some front page
+        templates specifically for the set.cover.page -->
+   <!-- Set which elements get TOCs etc -->
+   <xsl:param name="generate.toc">
+      /appendix toc,title
+      article/appendix  nop
+      /article  toc,title
+      book      toc,title,figure,table,example,equation
+      /chapter  toc,title
+      part      toc,title
+      /preface  toc,title
+      reference toc,title
+      /sect1    toc
+      /sect2    toc
+      /sect3    toc
+      /sect4    toc
+      /sect5    toc
+      /section  toc
+      set       toc
+   </xsl:param>
+   <!-- Only Display Books at the Set Level TOC -->
+   <xsl:template match="d:book|d:setindex" mode="toc">
+      <xsl:param name="toc-context" select="."/>
+      <xsl:call-template name="toc.line.arr"/>
+   </xsl:template>
+   <!-- And then override so that we just have the book title
+        centred on the page -->
+   <xsl:template name="toc.line.arr">
+      <xsl:param name="toc-context" select="NOTANODE"/>  
+      <xsl:variable name="id">  
+         <xsl:call-template name="object.id"/>
+      </xsl:variable>
+
+      <xsl:variable name="label">  
+         <xsl:apply-templates select="." mode="label.markup"/>  
+      </xsl:variable>
+
+      <fo:block text-align="center">  
+         <fo:inline keep-with-next.within-line="always">
+            <fo:basic-link internal-destination="{$id}">  
+               <xsl:if test="$label != ''">
+                  <xsl:copy-of select="$label"/>
+                  <xsl:value-of select="$autotoc.label.separator"/>
+               </xsl:if>
+               <xsl:apply-templates select="." mode="title.markup"/>  
+            </fo:basic-link>
+         </fo:inline>
+      </fo:block>
+   </xsl:template>
 
 
    <!-- Equations centred with number on the right -->
@@ -322,34 +375,6 @@
       </fo:block>
    </xsl:template>
 
-
-   <!-- Set Title Page -->
-   <xsl:template name="set.titlepage.recto">
-      <fo:block>
-         <fo:table inline-progression-dimension="100%" table-layout="fixed">
-            <fo:table-column column-width="100%"/>
-            <fo:table-body>
-               <fo:table-row height="20cm">
-                  <fo:table-cell display-align="center">
-                     <fo:block text-align="center">
-                        <xsl:choose>
-                           <xsl:when test="d:setinfo/d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:setinfo/d:title"/>
-                           </xsl:when>
-                           <xsl:when test="d:info/d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:info/d:title"/>
-                           </xsl:when>
-                           <xsl:when test="d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:title"/>
-                           </xsl:when>
-                        </xsl:choose>
-                     </fo:block>
-                  </fo:table-cell>
-               </fo:table-row>
-            </fo:table-body>
-         </fo:table>
-      </fo:block>
-   </xsl:template>
 
    <!-- Book Title Page -->
    <xsl:template name="book.titlepage.recto">

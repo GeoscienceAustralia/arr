@@ -132,7 +132,7 @@ html_single: valid html_single_images
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_single/index.xhtml \
     $(HTML_OPTS) \
     ../stylesheets-ns/xhtml5/docbook.xsl ARR.xml
-	cp arr.css html_chunked/arr.css
+	cp arr.css html_single/arr.css
 
 # HTML Chunked Build
 html_chunked: valid html_chunked_images
