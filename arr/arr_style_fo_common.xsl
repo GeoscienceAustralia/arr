@@ -121,6 +121,30 @@
       <xsl:attribute name="text-align">center</xsl:attribute>
    </xsl:attribute-set>
 
+   <!-- Table of Contents Formatting -->
+   <!-- Only Disply Books at the Set Level TOC -->
+   <xsl:template match="d:book|d:setindex" mode="toc">
+      <xsl:param name="toc-context" select="."/>
+      <xsl:call-template name="toc.line"/>
+   </xsl:template>
+
+   <xsl:param name="generate.toc">
+      /appendix toc,title
+      article/appendix  nop
+      /article  toc,title
+      book      toc,title,figure,table,example,equation
+      /chapter  toc,title
+      part      toc,title
+      /preface  toc,title
+      reference toc,title
+      /sect1    toc
+      /sect2    toc
+      /sect3    toc
+      /sect4    toc
+      /sect5    toc
+      /section  toc
+      set       toc
+   </xsl:param>
 
 
    <!-- Equations centred with number on the right -->
