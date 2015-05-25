@@ -122,12 +122,7 @@
    </xsl:attribute-set>
 
    <!-- Table of Contents Formatting -->
-   <!-- Only Disply Books at the Set Level TOC -->
-   <xsl:template match="d:book|d:setindex" mode="toc">
-      <xsl:param name="toc-context" select="."/>
-      <xsl:call-template name="toc.line"/>
-   </xsl:template>
-
+   <!-- Set which elements get TOCs etc -->
    <xsl:param name="generate.toc">
       /appendix toc,title
       article/appendix  nop
@@ -145,6 +140,35 @@
       /section  toc
       set       toc
    </xsl:param>
+   <!-- Only Display Books at the Set Level TOC -->
+   <xsl:template match="d:book|d:setindex" mode="toc">
+      <xsl:param name="toc-context" select="."/>
+      <xsl:call-template name="toc.line.arr"/>
+   </xsl:template>
+   <!-- And then override so that we just have the book title
+        centred on the page -->
+   <xsl:template name="toc.line.arr">
+      <xsl:param name="toc-context" select="NOTANODE"/>  
+      <xsl:variable name="id">  
+         <xsl:call-template name="object.id"/>
+      </xsl:variable>
+
+      <xsl:variable name="label">  
+         <xsl:apply-templates select="." mode="label.markup"/>  
+      </xsl:variable>
+
+      <fo:block text-align="center">  
+         <fo:inline keep-with-next.within-line="always">
+            <fo:basic-link internal-destination="{$id}">  
+               <xsl:if test="$label != ''">
+                  <xsl:copy-of select="$label"/>
+                  <xsl:value-of select="$autotoc.label.separator"/>
+               </xsl:if>
+               <xsl:apply-templates select="." mode="title.markup"/>  
+            </fo:basic-link>
+         </fo:inline>
+      </fo:block>
+   </xsl:template>
 
 
    <!-- Equations centred with number on the right -->
