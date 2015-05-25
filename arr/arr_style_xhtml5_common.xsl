@@ -10,7 +10,8 @@
    <!-- Common javascript/s to add to all builds: -->
    <!--    -) MathJax                             -->
    <!--    -) Bootstrap                           -->
-   <xsl:param name="html.script">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js</xsl:param>
+   <!--    -) JQuery                              -->
+   <xsl:param name="html.script">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js</xsl:param>
    <xsl:param name="html.script.type">text/javascript</xsl:param>
 
 

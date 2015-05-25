@@ -17,6 +17,9 @@
    <!-- Import the Common ARR Style Elements -->
    <xsl:import href="arr_style_common.xsl" />
 
+   <!-- Import the local Set Cover Page Over Ride -->
+   <xsl:import href="arr_style_fo_set_cover.xsl" />
+
 
 
 
@@ -370,34 +373,6 @@
       </fo:block>
    </xsl:template>
 
-
-   <!-- Set Title Page -->
-   <xsl:template name="set.titlepage.recto">
-      <fo:block>
-         <fo:table inline-progression-dimension="100%" table-layout="fixed">
-            <fo:table-column column-width="100%"/>
-            <fo:table-body>
-               <fo:table-row height="20cm">
-                  <fo:table-cell display-align="center">
-                     <fo:block text-align="center">
-                        <xsl:choose>
-                           <xsl:when test="d:setinfo/d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:setinfo/d:title"/>
-                           </xsl:when>
-                           <xsl:when test="d:info/d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:info/d:title"/>
-                           </xsl:when>
-                           <xsl:when test="d:title">
-                              <xsl:apply-templates mode="set.titlepage.recto.auto.mode" select="d:title"/>
-                           </xsl:when>
-                        </xsl:choose>
-                     </fo:block>
-                  </fo:table-cell>
-               </fo:table-row>
-            </fo:table-body>
-         </fo:table>
-      </fo:block>
-   </xsl:template>
 
    <!-- Book Title Page -->
    <xsl:template name="book.titlepage.recto">
