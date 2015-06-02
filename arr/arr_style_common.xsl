@@ -39,6 +39,9 @@
        set       toc,title
     </xsl:param>
     
+    <!-- Globally disable comments so that they do not appear unless
+         specifically requested -->
+    <xsl:param name="show.comments" select="0"></xsl:param>
     
     <!-- turn hyphenation on or off -->
     <xsl:param name="hyphenate">false</xsl:param>
