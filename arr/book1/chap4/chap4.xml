@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" xml:id="b1_ch4">
+<chapter status="In Preparation" xml:id="b1_ch4"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Data</title>
 
@@ -15,7 +22,7 @@
   <section xml:id="b1_ch4_s_yb78j">
     <title>Introduction</title>
 
-    <para>In an earlier chapter (cross reference to Chapter 3), the concept of
+    <para>In an earlier chapter (<xref linkend="b1_ch3"/>), the concept of
     design flood estimation as a problem in prediction of a statistical
     parameter that could be obtained from analysis of data was presented. In
     essence, this description defines the design flood problem as a problem in
@@ -171,10 +178,10 @@
       <section xml:id="b1_ch4_s_mc30y">
         <title>Spatial</title>
 
-        <para>Data can be unique to a point or spatial extent. Additionally,
-        the data may vary in the spatial dimensions but invariant with time.
-        There are many examples of spatial data types in design flood
-        prediction; these examples include:</para>
+        <para>Data can be unique to a point or cover a spatial extent.
+        Additionally, the data may vary in the spatial dimensions but be
+        invariant with time. There are many examples of spatial data types in
+        design flood prediction; these examples include:</para>
 
         <itemizedlist>
           <listitem>
@@ -276,21 +283,22 @@
       quantiles.</para>
 
       <para>One conceptual view of the components forming the data cycle is
-      shown in Figure 1..1. The conceptual components shown in this figure are
-      Generation, Editing, Storage, Analysis and Presentation. Also, as
-      indicated in this figure, there is a circularity in the flow of
-      information. This circularity arises from the analysis of data resulting
-      in the generation of new data which will need to be edited and stored in
-      a manner similar to previous data. Considered in this manner, an
-      individual component within a hydroinformatic system is both a supplier
-      and user of data.</para>
+      shown in <xref linkend="b1_ch4_f_ec7nz"/>. The conceptual components
+      shown in this figure are Generation, Editing, Storage, Analysis and
+      Presentation. Also, as indicated in this figure, there is a circularity
+      in the flow of information. This circularity arises from the analysis of
+      data resulting in the generation of new data which will need to be
+      edited and stored in a manner similar to previous data. Considered in
+      this manner, an individual component within a hydroinformatic system is
+      both a supplier and user of data.</para>
 
       <figure xml:id="b1_ch4_f_ec7nz">
         <title>The Data Cycle</title>
 
         <mediaobject>
           <imageobject>
-            <imagedata fileref="../../figures/1001.PNG"/>
+            <imagedata contentdepth="60%" fileref="../../figures/1001.jpg"
+                       scalefit="1" width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
@@ -325,8 +333,8 @@
                 according to the needs of the stakeholders involved.</para>
               </listitem>
             </itemizedlist>Further details on data creation through monitoring
-          programs are presented later in this chapter; see <emphasis role="bold">cross reference to section 8 of this
-          chapter.</emphasis></para>
+          programs are presented later in this chapter; see <xref
+          linkend="b1_ch4_s_brxk2"/>.</para>
 
           <para>In addition to the data generation through technical
           approaches, there are other methods of data generation; for example,
@@ -344,8 +352,8 @@
           meta-data has to be attached to the data. The term meta-data is used
           here to describe the background material about the data which is
           referred to sometimes as the data about the data. Meta-data is
-          discussed further in later sections of this chapter (cross reference
-          to section 4.6).</para>
+          discussed further in later sections of this chapter (<xref
+          linkend="b1_ch4_s_v7t96"/>).</para>
 
           <para>For monitored data, items of primary relevance include issues
           of how the data were observed, the reliability of the monitoring
@@ -364,10 +372,11 @@
           parameter values. It is worthwhile noting that input data covers
           both the parameters necessary for operation of the software and the
           data necessary for implementation of the modelling system. This data
-          is discussed in more detail in Book 7. It is sufficient here to
-          state that the editing of data generated from catchment modelling
-          systems, i.e. the attachment of meta-data, should be sufficient to
-          define how the data was generated and to enable replication.</para>
+          is discussed in more detail in <xref linkend="book7"/>. It is
+          sufficient here to state that the editing of data generated from
+          catchment modelling systems, i.e. the attachment of meta-data,
+          should be sufficient to define how the data was generated and to
+          enable replication.</para>
 
           <para>The step involving editing of the data is a vital part of the
           data cycle and it should take place prior to the insertion of the
@@ -571,8 +580,7 @@
       specific projects.</para>
 
       <para>Most publicly available rainfall data should be available through
-      the Bureau of Meteorology’s AWRIS database; this database is discussed
-      later under climatic data.</para>
+      the Bureau of Meteorology’s AWRIS database.</para>
 
       <para>The types of rainfall data that may be useful include:</para>
 
@@ -587,10 +595,10 @@
       </itemizedlist>
 
       <para>Normally data endorsed by the Bureau of Meteorology can be
-      regarded as suitable for purpose. Users should still check the data for
-      consistency and reasonableness. In particular, tests for missing or
-      accumulated data need to be considered. Also, the potential for gauge
-      overflows should be assessed.</para>
+      regarded as suitable for purpose. However, users should still check the
+      data for consistency and reasonableness. In particular, tests for
+      missing or accumulated data need to be considered. Also, the potential
+      for gauge overflows should be assessed.</para>
 
       <para>There are alternative approaches to the measurement of rainfall
       using tipping bucket rain gauges. One approach is to measure the time of
@@ -628,11 +636,11 @@
             location using a stage-discharge (rating) curve. An understanding
             of the quality of streamflow data can be gained from the
             examination of rating tables and gaugings developed for a gauge
-            (refer to section on streamflow later in this chapter). The
-            reliability of the streamflow data for a large flood event is
-            limited by the amount of extrapolation required beyond the highest
-            gauging of the rating curve. Further details are provided in later
-            sections of this chapter.</para>
+            (<xref linkend="b1_ch4_s_brxk2"/>). The reliability of the
+            streamflow data for a large flood event is limited by the amount
+            of extrapolation required beyond the highest gauging of the rating
+            curve. Further details are provided in later sections of this
+            chapter.</para>
           </listitem>
         </itemizedlist>Both forms of historical data can be useful for
       estimation of design flood characteristics. However, neither form of
@@ -650,8 +658,6 @@
     <section xml:id="b1_ch4_s_lfdv5">
       <title>Historical Flood Level Data</title>
 
-      <para/>
-
       <section xml:id="b1_ch4_s_qhfqb">
         <title>Continuous Water Level Recorders</title>
 
@@ -660,17 +666,18 @@
         converted to discharge. Flow is derived from stage using a
         stage-discharge relationship and it is critical that the maximum
         gauged flow is known so that the extent of extrapolation underlying
-        the ‘recorded’ flow is clear (refer to section XX). These records are
-        very important as, if intact, they will show the complete hydrograph
-        (i.e. the rise, peak and fall of the flood). Historical records for
-        continuous water level recorders are typically stored by government
-        agencies. Care needs to be taken with the datum of these records as
-        they are typically not to AHD (Australian Height Datum) and some
-        conversion may be required. In large events, these recorders can fail
-        and the data needs to be inspected for “flat” areas, which may
-        indicate failure of the gauge or they may rise steeply if a landslip
-        occurs at the gauge site. Typically, each stage record has an accuracy
-        code assigned and these should be noted before use.</para>
+        the ‘recorded’ flow is clear (refer to <xref
+        linkend="b1_ch4_s_brxk2"/>). These records are very important as, if
+        intact, they will show the complete hydrograph (i.e. the rise, peak
+        and fall of the flood). Historical records for continuous water level
+        recorders are typically stored by government agencies. Care needs to
+        be taken with the datum of these records as they are typically not to
+        AHD (Australian Height Datum) and some conversion may be required. In
+        large events, these recorders can fail and the data needs to be
+        inspected for “flat” areas, which may indicate failure of the gauge or
+        they may rise steeply if a landslip occurs at the gauge site.
+        Typically, each stage record has an accuracy code assigned and these
+        should be noted before use.</para>
 
         <para>Early water level records are manually read. This may be once
         daily and supplemented with additional readings during event.</para>
@@ -814,13 +821,13 @@
       <title>Rainfall Observations</title>
 
       <para>The standard instrument for manual measurement of rainfall is the
-      203mm rain gauge (see Figure 1..2). In essence, this instrument is a
-      circular funnel with a diameter of 203mm which collects the rain into a
-      graduated and calibrated cylinder. The measuring cylinder can record up
-      to 20mm of precipitation. Any excess precipitation is captured in the
-      outer metal cylinder. The top of the rain gauge (i.e. the top of the
-      funnel) should be located 0.3m above the ground surface. Most manually
-      read gauges are used for daily observations.</para>
+      203mm rain gauge (see <xref linkend="b1_ch4_f_vx3ga"/>). In essence,
+      this instrument is a circular funnel with a diameter of 203mm which
+      collects the rain into a graduated and calibrated cylinder. Any excess
+      precipitation is captured in the outer metal cylinder. The top of the
+      rain gauge (i.e. the top of the funnel) should be located 0.3m above the
+      ground surface. Most manually read gauges are used for daily
+      observations.</para>
 
       <para>Daily rainfall is nominally measured each day at 9:00 am local
       time. At the majority of rainfall sites, observations are taken by
@@ -846,8 +853,9 @@
       continuous recording rain gauge resulting in either an analogue chart
       record or a digital record. While some chart recorders remain in
       operation, the more common form of continuous rain gauges is the Tipping
-      Bucket Rain Gauge (see Figure 1..3). Like the manual rain gauge, the
-      aperture of the funnel for a TBRG is 203 mm.</para>
+      Bucket Rain Gauge (see <xref linkend="b1_ch4_f_6l2nu"/>). Like the
+      manual rain gauge, the aperture of the funnel for a TBRG is 203
+      mm.</para>
 
       <figure xml:id="b1_ch4_f_6l2nu">
         <title>Tipping Bucket Rain Gauge</title>
@@ -873,7 +881,9 @@
       <para>Traditionally rainfall is measured to the nearest 0.2mm (prior to
       1974 records were in Imperial units and measurements were to the nearest
       1 point). However, in recent years some observations have been reported
-      to 0.1mm.</para>
+      to 0.1mm. Hence, users check the meta-data attached to the data records
+      to note the measurement accuracy rather than the inferred accuracy from
+      the database records.</para>
 
       <para>The Bureau of Meteorology undertake a number of quality control
       processes to detect errors in the rainfall data forwarded from the many
@@ -914,7 +924,7 @@
         </listitem>
 
         <listitem>
-          <para>SitesDB; and</para>
+          <para>Site Meta-data (SitesDB); and</para>
         </listitem>
 
         <listitem>
@@ -948,7 +958,7 @@
       </section>
 
       <section xml:id="b1_ch4_s_17hlt">
-        <title>Site Meta-data (SitesDB)</title>
+        <title>Site Meta-data</title>
 
         <para>Meta-data about the Bureau of Meteorology’s rainfall stations is
         is stored in 'SitesDB'. It contains meta-data for each of the Bureau
@@ -1039,7 +1049,7 @@
     <section xml:id="b1_ch4_s_fhvhc">
       <title>General</title>
 
-      <para>Catchment data is an essential component of the estimation of
+      <para>Catchment data is an essential component for the estimation of
       design flood characteristics. There are a number of different types of
       catchment data required. Furthermore, data is available from a number of
       different sources and with a range of accuracies. In general, it is
@@ -1206,7 +1216,7 @@
         <section xml:id="b1_ch4_s_1j7ly">
           <title>Cross-Sections</title>
 
-          <para>A survey of crossisections is required only when the design
+          <para>A survey of cross-sections is required only when the design
           flood estimation requires the application of a catchment modelling
           system to generate data that is not available from a catchment
           monitoring program. Hence, the scope of a cross-section survey
@@ -1244,7 +1254,8 @@
           of the entire floodplain inclusive of the channel are required. This
           requirement is particularly relevant to catchment modelling systems
           using one-dimensional hydraulic modelling techniques. More details
-          of this modelling approach are presented in <xref linkend="book7"/>.</para>
+          of this modelling approach are presented in <xref
+          linkend="book7"/>.</para>
 
           <para>In these circumstances, the cross-sections can be spaced more
           widely than when only in-bank flood discharges need to be
@@ -1319,10 +1330,8 @@
           result in hydrologic (and/or structural) failure of the
           levee.</para>
 
-          <para>Geometric details of these structures are required. These
+          <para>Hence, geometric details of structures are required. These
           details include:</para>
-
-          <para/>
 
           <informaltable>
             <tgroup cols="3">
@@ -1422,9 +1431,9 @@
         three techniques are presented; namely Traditional Ground Survey, Real
         Time Kinematic (RTK) Global Positioning Systems (GPS) / Differential
         GPS, and Photogrammetry. Typical accuracies for each of these
-        techniques are provided in Table 1..1. The techniques to measure
-        topography and other survey features generally fall into two main
-        categories:</para>
+        techniques are provided in <xref linkend="b1_ch4_t_nmezo"/>. The
+        techniques to measure topography and other survey features generally
+        fall into two main categories:</para>
 
         <itemizedlist>
           <listitem>
@@ -1506,11 +1515,11 @@
           <para>Traditional ground survey (that is, survey collected by
           traditional or total station ground survey techniques) is the most
           accurate survey technique with vertical and horizontal accuracies as
-          shown in Table 1..1. However, this technique is manual and labour
-          intensive. As a result, this technique is best suited to small
-          and/or difficult areas for other techniques, to supplement data
-          obtained from other techniques, and to validate data obtained from
-          other techniques.</para>
+          shown in <xref linkend="b1_ch4_t_nmezo"/>. However, this technique
+          is manual and labour intensive. As a result, this technique is best
+          suited to small and/or difficult areas for other techniques, to
+          supplement data obtained from other techniques, and to validate data
+          obtained from other techniques.</para>
 
           <para>In the context of a design flood estimation, traditional
           ground survey methods are often used for:</para>
@@ -1557,8 +1566,9 @@
           all-terrain vehicle; this unit collects data defining the location
           of the roving GPS position from the same satellites. The accuracy of
           the roving GPS location is enhanced by comparison of the satellite
-          signals for the two stations. Shown in Figure 1..4 is the concept
-          underpinning field survey using RTK GPS techniques.</para>
+          signals for the two stations. Shown in <xref
+          linkend="b1_ch4_f_z85f4"/> is the concept underpinning field survey
+          using RTK GPS techniques.</para>
 
           <para>RTK GPS has the advantage that it can collect a reasonable
           amount of data at higher accuracy than remote sensed data and much
@@ -1639,8 +1649,8 @@
         with a laser and analysing the reflected light. Raw ALS data consists
         of a dense cloud of spot elevations classified into ground and
         non-ground strikes. This raw ALS data usually has the non-ground
-        strikes removed prior to provision. Analysis of the raw ALS data will
-        result in a raster DEM.</para>
+        strikes removed prior to provision. Analysis of the raw ALS data
+        usually will result in a raster DEM.</para>
 
         <para>It should be noted that neither photogrammetry or ALS can
         penetrate water surfaces. Only the water surface level at the time of
@@ -1698,13 +1708,14 @@
           photogrammetry is sometimes able to provide some reliable points in
           vegetated areas.</para>
 
-          <para>Shown in Figure 1..5 is a region over which photogrammetric
-          data coverage and ALS data coverage will be demonstrated. Shown in
-          Figure 1..6 is a typical sample of the raw data obtained from a
-          photogrammetric technique while shown in Figure 1..7 is the raw data
-          in finer detail for the area indicated in Figure 1..6. These figures
-          demonstrate the following specifically in relation to
-          photogrammetry:</para>
+          <para>Shown in <xref linkend="b1_ch4_f_79qh2"/> is a region over
+          which photogrammetric data coverage and ALS data coverage will be
+          demonstrated. Shown in <xref linkend="b1_ch4_f_jmqdi"/> is a typical
+          sample of the raw data obtained from a photogrammetric technique
+          while shown in <xref linkend="b1_ch4_f_jrzpt"/> is the raw data in
+          finer detail for the area indicated in <xref
+          linkend="b1_ch4_f_jmqdi"/>. These figures demonstrate the following
+          specifically in relation to photogrammetry:</para>
 
           <itemizedlist>
             <listitem>
@@ -1775,14 +1786,15 @@
           orientation of the scanner is determined using differential
           kinematic GPS and the IMU to account for aircraft pitch.</para>
 
-          <para>ALS produces a dense cloud of points (See Figure 1..8, 9).
-          These points can be classified as ground or non-ground points. While
-          ALS requires little ground control in acquisition, ground control is
-          important for quality control of the ALS measurements. For example,
-          while it may be easy to scan inaccessible or sensitive areas without
-          ground survey, the accuracy and reliability of the collected data
-          may be low; in other words, ground control is important for ensuring
-          the accuracy and reliability of the ALS measurements.</para>
+          <para>ALS produces a dense cloud of points (See <xref
+          linkend="b1_ch4_f_m3tc1"/>). These points can be classified as
+          ground or non-ground points. While ALS requires little ground
+          control in acquisition, ground control is important for quality
+          control of the ALS measurements. For example, while it may be easy
+          to scan inaccessible or sensitive areas without ground survey, the
+          accuracy and reliability of the collected data may be low; in other
+          words, ground control is important for ensuring the accuracy and
+          reliability of the ALS measurements.</para>
 
           <figure xml:id="b1_ch4_f_m3tc1">
             <title>Sample of Raw ALS Dataset (Region A)</title>
@@ -1840,9 +1852,10 @@
 
           <para>The width of the land terrain sampling per pass, commonly
           referred to as the swath varies with the flying height. While
-          typical values are given in Table 1.., users are advised to obtain
-          the meta-data regarding their ALS to ensure suitability for
-          purpose.<emphasis role="bold"> (ref needed)</emphasis></para>
+          typical values are given in <xref linkend="b1_ch4_t_qmvc9"/>, users
+          are advised to obtain the meta-data regarding their ALS to ensure
+          suitability for purpose.<emphasis role="bold"> (ref
+          needed)</emphasis></para>
 
           <para><table xml:id="b1_ch4_t_qmvc9">
               <title>Typical Swath Values</title>
@@ -1945,9 +1958,9 @@
           this data. As a result, a common approach is to use “thinned" ALS
           data; this is data that has been processed to remove data points
           providing limited additional definition of the terrain surface.
-          Shown in Figure 1..9 is an example of the processed ALS dataset to
-          produce the thinned ALS dataset. Illustrated in this figure are the
-          following aspects:</para>
+          Shown in <xref linkend="b1_ch4_f_6hwo6"/> is an example of the
+          processed ALS dataset to produce the thinned ALS dataset.
+          Illustrated in this figure are the following aspects:</para>
 
           <itemizedlist>
             <listitem>
@@ -2008,15 +2021,14 @@
         <section xml:id="b1_ch4_s_kdnkn">
           <title>Aerial Survey Quality Checks</title>
 
-          <para>As discussed in <emphasis role="bold">cross reference to
-          earlier section on accuracy, </emphasis>survey data is not exact and
-          will have a tolerance or a stated level of accuracy. Data obtained
-          from aerial survey is the same. With data obtained from aerial
-          survey, accuracy is dependent upon a number of factors, including
-          flying height and the number of control points. In general, the
-          required accuracy is advised prior to commencement of data
-          collection and the surveyor designs the data collection program
-          needed to achieve the desired accuracy.</para>
+          <para>As discussed in <xref linkend="b1_ch4_s_lyk4o"/>, survey data
+          is not exact and will have a tolerance or a stated level of
+          accuracy. Data obtained from aerial survey is the same. With data
+          obtained from aerial survey, accuracy is dependent upon a number of
+          factors, including flying height and the number of control points.
+          In general, the required accuracy is advised prior to commencement
+          of data collection and the surveyor designs the data collection
+          program needed to achieve the desired accuracy.</para>
 
           <para>An important point to note is that the accuracy of the
           collected data is checked and confirmed. The resultant stated
@@ -2081,8 +2093,11 @@
           variety of sources inclusive of satellites. As a result, these
           datasets tend to be coarse with grid sizes varying from 1 second (1
           seconds in longitude and latitude is approximately 30m) to 9 seconds
-          (9 seconds in longitude and latitude is approximately 250
-          metres).</para>
+          (9 seconds in longitude and latitude is approximately 250 metres).
+          As development of these databases occur, it is likely that these
+          specifications will change. Therefore, as with other sources of
+          data, users should ensure that they use the most appropriate data
+          for their problem.</para>
         </section>
       </section>
 
@@ -2144,7 +2159,7 @@
         urban areas to define building outlines or fence lines where these are
         to be included within the hydraulic model and can be a reasonable
         source of information for assessing the total imperviousness of a
-        catchment (see Book 5, Chapter ? Cross reference to Losses).</para>
+        catchment (see <xref linkend="b5_ch4"/>).</para>
 
         <para>Finally, when historical aerial photography is available, it is
         useful in assessing catchment development or sourcing information on
@@ -2187,7 +2202,8 @@
         details of this flood event may not be adequate for its use as a
         calibration event for validation of a catchment modelling system. On
         the other hand, the data may be adequate for it to be included as a
-        high discharge censored event in a flood frequency analysis (<xref linkend="b3_ch2"/>).</para>
+        high discharge censored event in a flood frequency analysis (<xref
+        linkend="b3_ch2"/>).</para>
       </section>
 
       <section xml:id="b1_ch4_s_1ca4v">
@@ -2293,7 +2309,8 @@
         needed.</emphasis></para>
 
         <para>Subsequent versions of the Geofabric will have upgrades to data
-        and include (BoM, 2015 need <emphasis role="bold">reference</emphasis>):</para>
+        and include (BoM, 2015 need <emphasis
+        role="bold">reference</emphasis>):</para>
 
         <itemizedlist>
           <listitem>
@@ -2323,7 +2340,8 @@
 
         <para>Historical tidal data for particular events can be useful model
         calibration while long term records can be used for statistical
-        analysis for design flood estimation purposes (see <xref linkend="b6_ch5"/>). With increased sea levels induced by global
+        analysis for design flood estimation purposes (see <xref
+        linkend="b6_ch5"/>). With increased sea levels induced by global
         warming, long term records of tides and sea levels need to be checked
         for stationarity; see <emphasis role="bold">cross reference to Bryson
         </emphasis>for a discussion of climate change data.</para>
@@ -2346,7 +2364,7 @@
 
         <para>Soil property data is available spatially for the whole country
         from the Atlas of Australian Soils (<emphasis role="bold">reference
-        required</emphasis>); this information is available in shapefile
+        required</emphasis>); this information is available in a GIS
         (<emphasis role="bold">reference required to format</emphasis>) format
         from the Australian Soil Resource Information System website. These
         maps are broad scale (typically 1:250000 - 1:500000) and were
@@ -2362,7 +2380,8 @@
         therefore can be misleading. Furthermore, there is a need to ensure
         that the soil and geomorphoric data is obtained at a fine scale to
         ensure spatial variations over short distances are adequately
-        recognised.</para>
+        recognised when using soil information to assess potential flood
+        hazard.</para>
       </section>
 
       <section xml:id="b1_ch4_s_b3l7s">
@@ -2543,7 +2562,8 @@
         <para>After the need for a gauging station has been recognised, there
         is a need to determine a location for the gauging station. There are
         numerous guides on site selection with the aim of these guides on
-        ensuring the data is reliable (<emphasis role="bold">references</emphasis>). Criteria suggested by ISO (1995)
+        ensuring the data is reliable (<emphasis
+        role="bold">references</emphasis>). Criteria suggested by ISO (1995)
         for an ideal gauging station site are:</para>
 
         <itemizedlist>
@@ -2691,10 +2711,10 @@
         period of time, a number of points can be plotted on a stage-discharge
         diagram, and a curve drawn through those points, giving what is hoped
         to be a unique relationship between stage and discharge, the stage
-        discharge relationship, as shown in Figure 1..10. This rating curve is
-        used in a manner whereby the routinely measured stages are converted
-        to discharges by assuming that the corresponding discharge can be
-        obtained from the curve.</para>
+        discharge relationship, as shown in <xref linkend="b1_ch4_f_tlc1u"/>.
+        This rating curve is used in a manner whereby the routinely measured
+        stages are converted to discharges by assuming that the corresponding
+        discharge can be obtained from the curve.</para>
 
         <figure xml:id="b1_ch4_f_tlc1u">
           <title>Typical Rating Curve</title>
@@ -2727,10 +2747,10 @@
             peak than before, so that the corresponding discharge for a given
             stage height will be less after the peak. This will also
             contribute to a flood event showing a looped curve on a stage
-            discharge diagram as shown on Figure 1..11. Both Simons and
-            Richardson (1962) and Fenton and Keller (2001) have examined this
-            phenomenon and presented approaches for dealing with this
-            issue;</para>
+            discharge diagram as shown on <xref linkend="b1_ch4_f_5gqn1"/>.
+            Both Simons and Richardson (1962) and Fenton and Keller (2001)
+            have examined this phenomenon and presented approaches for dealing
+            with this issue;</para>
           </listitem>
 
           <listitem>
@@ -2745,7 +2765,8 @@
             different from that for a constant stage, depending on whether the
             discharge is increasing or decreasing. The effect of this is for
             the trajectory of a flood event to appear as a loop on a
-            stage-discharge diagram as shown in Figure 1..11;</para>
+            stage-discharge diagram as shown in <xref
+            linkend="b1_ch4_f_5gqn1"/>;</para>
           </listitem>
 
           <listitem>
@@ -2819,16 +2840,16 @@
         slope for steady flow at the same stage, and hence, according to
         conventional hydraulic theory more water is flowing down the river
         than the rating curve would suggest. The effect of this is shown in
-        Figure 1..11. When the water level is falling, the slope and, hence,
-        the discharge inferred is less. The effects of this might be important
-        - the peak discharge could be significantly underestimated during
-        highly dynamic floods, and also since the maximum discharge and
-        maximum stage do not coincide, the arrival time of the peak discharge
-        could be in error and may influence flood warning predictions.
-        Finally, the use of a discharge hydrograph derived inaccurately by
-        using a single-valued rating relationship may distort estimates for
-        resistance coefficients during calibration of an unsteady flow
-        model.</para>
+        <xref linkend="b1_ch4_f_5gqn1"/>. When the water level is falling, the
+        slope and, hence, the discharge inferred is less. The effects of this
+        might be important - the peak discharge could be significantly
+        underestimated during highly dynamic floods, and also since the
+        maximum discharge and maximum stage do not coincide, the arrival time
+        of the peak discharge could be in error and may influence flood
+        warning predictions. Finally, the use of a discharge hydrograph
+        derived inaccurately by using a single-valued rating relationship may
+        distort estimates for resistance coefficients during calibration of an
+        unsteady flow model.</para>
 
         <para>It might be expected by practitioners that good instructions and
         guidance would be provided by the International and Australian
@@ -2865,8 +2886,8 @@
           </listitem>
         </itemizedlist>
 
-        <para>A diagrammatic illustration of these two zones is shown in
-        Figure 1..12.</para>
+        <para>A diagrammatic illustration of these two zones is shown in <xref
+        linkend="b1_ch4_f_hez3n"/> .</para>
 
         <figure xml:id="b1_ch4_f_hez3n">
           <title>Stage-Discharge Relationship Zones</title>
@@ -2883,13 +2904,13 @@
         estimation, and for flood prediction in general, the reliability of
         data from measurements within the extrapolation zone will require
         consideration of the extrapolation methodology. The need for
-        extrapolation is shown in Figure 1..13 where the discharges for the
-        Annual Maxima Series extracted for Stream Gauge 222202 are plotted as
-        a function of the rating ratio (the rating ratio is the ratio of the
-        recorded discharge to the highest gauging used to develop the
-        stage-discharge relationship). All points in the Annual Maxima Series
-        where the rating ratio is greater than 1 require use of the
-        extrapolation zone of the stage-discharge relationship.</para>
+        extrapolation is shown in <xref linkend="b1_ch4_f_a160s"/> where the
+        discharges for the Annual Maxima Series extracted for Stream Gauge
+        222202 are plotted as a function of the rating ratio (the rating ratio
+        is the ratio of the recorded discharge to the highest gauging used to
+        develop the stage-discharge relationship). All points in the Annual
+        Maxima Series where the rating ratio is greater than 1 require use of
+        the extrapolation zone of the stage-discharge relationship.</para>
 
         <para><figure xml:id="b1_ch4_f_a160s">
             <title>Annual Maximum Series for Gauge 222202</title>
@@ -2899,13 +2920,14 @@
                 <imagedata fileref="../../figures/placeholder.png"/>
               </imageobject>
             </mediaobject>
-          </figure>As shown in Figure 1..13, a number of the values in the
-        Annual Maxima Series are in the extrapolation zone. The accuracy of
-        the values in the extrapolation zone has the potential to influence
-        fitting of the statistical model to the Annual Maxima Series, thereby
-        influencing the predicted design flood quantiles. Fitting a
-        statistical model to data points where the higher values are subject
-        to estimate errors is discussed in <xref linkend="b3_ch2"/>.</para>
+          </figure>As shown in <xref linkend="b1_ch4_f_a160s"/>, a number of
+        the values in the Annual Maxima Series are in the extrapolation zone.
+        The accuracy of the values in the extrapolation zone has the potential
+        to influence fitting of the statistical model to the Annual Maxima
+        Series, thereby influencing the predicted design flood quantiles.
+        Fitting a statistical model to data points where the higher values are
+        subject to estimate errors is discussed in <xref
+        linkend="b3_ch2"/>.</para>
 
         <para>There are a number of alternative techniques for development of
         the extrapolation zone of the stage-discharge relationship. The
@@ -2932,7 +2954,8 @@
         the conversion of the recorded level to an equivalent discharge
         occurred through extrapolation of the stage-discharge relationship.
         Consideration of this in the fitting of a statistical model to the
-        Annual Maxima Series is discussed later in <xref linkend="b3_ch2"/>.</para>
+        Annual Maxima Series is discussed later in <xref
+        linkend="b3_ch2"/>.</para>
       </section>
 
       <section xml:id="b1_ch4_s_86j19">
