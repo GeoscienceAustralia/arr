@@ -201,33 +201,6 @@
 
 
    <!-- Default Table Formatting -->
-   <!-- Horizontally centre tables -->
-   <xsl:template name="table.layout">
-      <xsl:param name="table.content"/>
-
-      <fo:table width="100%">
-         <fo:table-column column-width="proportional-column-width(1)"/>
-         <fo:table-column/>
-         <fo:table-column column-width="proportional-column-width(1)"/>
-         <fo:table-body start-indent="0pt">
-            <fo:table-row>
-               <fo:table-cell/>
-               <fo:table-cell>
-
-                  <fo:table>
-                     <fo:table-body start-indent="0pt">
-                        <fo:table-row><fo:table-cell><fo:block>
-                                 <xsl:copy-of select="$table.content"/>
-                        </fo:block></fo:table-cell></fo:table-row>
-                     </fo:table-body>
-                  </fo:table>
-
-               </fo:table-cell>
-               <fo:table-cell/>
-            </fo:table-row>
-         </fo:table-body>
-      </fo:table>
-   </xsl:template>
    <!-- Add some row colouring -->
    <xsl:template name="table.row.properties">
       <xsl:variable name="rownum">

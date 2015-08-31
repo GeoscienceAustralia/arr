@@ -45,4 +45,15 @@
       /section  toc
       set       toc
    </xsl:param>
+
+   <!-- Table Alternate Row Colouring -->
+   <xsl:template match="d:table" mode="htmlTable">
+      <xsl:element name="table" namespace="http://www.w3.org/1999/xhtml">
+         <xsl:attribute name="class">
+            <xsl:text>table table-bordered table-hover table-striped</xsl:text>
+         </xsl:attribute>
+         <xsl:apply-templates select="@*" mode="htmlTableAtt"/>
+         <xsl:call-template name="htmlTable"/>
+      </xsl:element>
+   </xsl:template>
 </xsl:stylesheet>
