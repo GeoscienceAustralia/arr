@@ -47,15 +47,15 @@
    <!-- Font Details -->
    <!-- Force the base font to be 11pt Times -->
    <xsl:param name="body.font.master" select="11"/>
-   <xsl:param name="body.font.family" select="'serif'"/>
+   <xsl:param name="body.font.family" select="'sans-serif'"/>
    <!-- Force the title font to be Times, with other customisations -->
    <!-- handled in the arr_title_fo.xml -->
-   <xsl:param name="title.font.family" select="'serif'"/>
+   <xsl:param name="title.font.family" select="'sans-serif'"/>
 
    <!-- Section Fonts -->
    <!-- In the style guide this is level 2-->
    <xsl:attribute-set name="section.title.level1.properties">
-      <xsl:attribute name="font-size">14pt</xsl:attribute>
+      <xsl:attribute name="font-size">16pt</xsl:attribute>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
    </xsl:attribute-set>
    <!-- In the style guide this is level 3-->
@@ -65,7 +65,7 @@
    </xsl:attribute-set>
    <!-- In the style guide this is level 4-->
    <xsl:attribute-set name="section.title.level3.properties">
-      <xsl:attribute name="font-size">11pt</xsl:attribute>
+      <xsl:attribute name="font-size">12pt</xsl:attribute>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
    </xsl:attribute-set>
 
