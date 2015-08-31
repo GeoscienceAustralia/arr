@@ -179,7 +179,7 @@
       <!-- Lay out equation and number next to equation using a table -->
       <fo:table table-layout="fixed" width="100%">
          <fo:table-column column-width="proportional-column-width(15)"/>
-         <fo:table-column column-width="proportional-column-width(1)"/>
+         <fo:table-column column-width="proportional-column-width(2)"/>
          <fo:table-body start-indent="0pt" end-indent="0pt">
             <fo:table-row>
                <fo:table-cell padding-end="6pt" text-align="center">
