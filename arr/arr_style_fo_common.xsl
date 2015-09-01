@@ -716,6 +716,38 @@
       </fo:block-container>
    </xsl:template>
 
+   <!-- Redefine the following template to center all images -->
+   <xsl:template match="d:mediaobject|d:mediaobjectco">
+      <xsl:variable name="olist" select="d:imageobject|d:imageobjectco
+         |d:videoobject|d:audioobject
+         |d:textobject"/>
+
+      <xsl:variable name="object.index">
+         <xsl:call-template name="select.mediaobject.index">
+            <xsl:with-param name="olist" select="$olist"/>
+            <xsl:with-param name="count" select="1"/>
+         </xsl:call-template>
+      </xsl:variable>
+
+      <xsl:variable name="object" select="$olist[position() = $object.index]"/>
+
+      <xsl:variable name="align">
+         <xsl:value-of select="$object/descendant::d:imagedata[@align][1]/@align"/>
+      </xsl:variable>
+
+      <xsl:variable name="id">
+         <xsl:call-template name="object.id"/>
+      </xsl:variable>
+
+      <fo:block id="{$id}">
+         <xsl:attribute name="text-align">
+            center
+         </xsl:attribute>
+
+         <xsl:apply-templates select="$object"/>
+         <xsl:apply-templates select="d:caption"/>
+      </fo:block>
+   </xsl:template>
 
 
    <!-- Glossary formatting-->
