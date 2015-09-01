@@ -46,6 +46,16 @@
       set       toc
    </xsl:param>
 
+   <!-- Control where the titles go: -->
+   <xsl:param name="formal.title.placement">
+      figure after
+      example before
+      equation before
+      table before
+      procedure before
+      task before
+   </xsl:param>
+
    <!-- Table Alternate Row Colouring -->
    <xsl:template match="d:table" mode="htmlTable">
       <xsl:element name="table" namespace="http://www.w3.org/1999/xhtml">
@@ -56,4 +66,21 @@
          <xsl:call-template name="htmlTable"/>
       </xsl:element>
    </xsl:template>
+
+   <!-- Equation title Customisation -->
+   <xsl:param name="local.l10n.xml" select="document('')"/>
+   <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+      <l:l10n language="en">
+         <l:context name="title">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>    
+         <l:context name="xref">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>
+         <l:context name="xref-number">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>
+      </l:l10n>
+   </l:i18n>
+
 </xsl:stylesheet>

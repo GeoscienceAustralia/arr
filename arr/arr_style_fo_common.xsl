@@ -198,29 +198,288 @@
          </fo:table-body>
       </fo:table>
    </xsl:template>
+   <!-- Equation XREF numbering -->
+   <xsl:param name="local.l10n.xml" select="document('')"/>
+   <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+      <l:l10n language="en">
+         <l:context name="title">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>
+         <l:context name="xref">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>
+         <l:context name="xref-number">
+            <l:template name="equation" text="&#40;%n&#41;"/>
+         </l:context>
+      </l:l10n>
+   </l:i18n>
 
 
    <!-- Default Table Formatting -->
-   <!-- Add some row colouring -->
+   <!-- Set the global parameters that controil tables -->
+   <xsl:param name="table.cell.border.thickness">.5mm</xsl:param>
+   <xsl:param name="table.cell.border.style">solid</xsl:param>
+   <xsl:param name="table.cell.border.color">#005092</xsl:param>
+   <!-- Add some row colouring 
+        This is based on table.row.properties template that is contained in
+        fo/table.xsl.  With additions -->
    <xsl:template name="table.row.properties">
+      <!-- This is the original content: -->
+      <xsl:variable name="row-height">
+         <xsl:if test="processing-instruction('dbfo')">
+            <xsl:call-template name="pi.dbfo_row-height"/>
+         </xsl:if>
+      </xsl:variable>
+
+      <xsl:if test="$row-height != ''">
+         <xsl:attribute name="block-progression-dimension">
+            <xsl:value-of select="$row-height"/>
+         </xsl:attribute>
+      </xsl:if>
+
+      <xsl:variable name="bgcolor">
+         <xsl:call-template name="pi.dbfo_bgcolor"/>
+      </xsl:variable>
+
+      <xsl:if test="$bgcolor != ''">
+         <xsl:attribute name="background-color">
+            <xsl:value-of select="$bgcolor"/>
+         </xsl:attribute>
+      </xsl:if>
+
+      <!-- Keep header row with next row -->
+      <xsl:if test="ancestor::d:thead">
+         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+      </xsl:if>
       <xsl:variable name="rownum">
          <xsl:number from="d:tbody" count="d:tr"/>
       </xsl:variable>
 
 
+      <!-- Now the specific overrides: add alternate colors to the rows of the
+           body of the table -->
       <xsl:choose>
          <xsl:when test="name(..) = 'tbody'">
             <xsl:choose>
                <xsl:when test="$rownum mod 2">
-                  <xsl:attribute name="background-color">#d9d9d9</xsl:attribute>
+                  <xsl:attribute name="background-color">#F9F9F9</xsl:attribute>
                </xsl:when>
                <xsl:otherwise>
-                  <xsl:attribute name="background-color">#eeeeee</xsl:attribute>
+                  <xsl:attribute name="background-color">#FFFFFF</xsl:attribute>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
       </xsl:choose>
    </xsl:template>
+   <!-- I'm amending the table.cell.properies template to provide the specific
+        colour and alignment formatting for tables.  This is done in two steps:
+        1) copy in the original template from fo/table.xsl
+        2) add/edit as desired. -->
+   <xsl:template name="table.cell.properties">
+      <xsl:param name="bgcolor.pi" select="''"/>
+      <xsl:param name="rowsep.inherit" select="1"/>
+      <xsl:param name="colsep.inherit" select="1"/>
+      <xsl:param name="col" select="1"/>
+      <xsl:param name="valign.inherit" select="''"/>
+      <xsl:param name="align.inherit" select="''"/>
+      <xsl:param name="char.inherit" select="''"/>
+
+      <xsl:choose>
+         <xsl:when test="ancestor::d:tgroup">
+            <xsl:if test="$bgcolor.pi != ''">
+               <xsl:attribute name="background-color">
+                  <xsl:value-of select="$bgcolor.pi"/>
+               </xsl:attribute>
+            </xsl:if>
+
+            <xsl:if test="$rowsep.inherit &gt; 0">
+               <xsl:call-template name="border">
+                  <xsl:with-param name="side" select="'bottom'"/>
+               </xsl:call-template>
+            </xsl:if>
+
+            <xsl:if test="$colsep.inherit &gt; 0 and 
+               $col &lt; (ancestor::d:tgroup/@cols|ancestor::d:entrytbl/@cols)[last()]">
+               <xsl:call-template name="border">
+                  <xsl:with-param name="side" select="'end'"/>
+               </xsl:call-template>
+            </xsl:if>
+
+            <xsl:if test="$valign.inherit != ''">
+               <xsl:attribute name="display-align">
+                  <xsl:choose>
+                     <xsl:when test="$valign.inherit='top'">before</xsl:when>
+                     <xsl:when test="$valign.inherit='middle'">center</xsl:when>
+                     <xsl:when test="$valign.inherit='bottom'">after</xsl:when>
+                     <xsl:otherwise>
+                        <xsl:message>
+                           <xsl:text>Unexpected valign value: </xsl:text>
+                           <xsl:value-of select="$valign.inherit"/>
+                           <xsl:text>, center used.</xsl:text>
+                        </xsl:message>
+                        <xsl:text>center</xsl:text>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:attribute>
+            </xsl:if>
+
+            <xsl:choose>
+               <xsl:when test="$align.inherit = 'char' and $char.inherit != ''">
+                  <xsl:attribute name="text-align">
+                     <xsl:value-of select="$char.inherit"/>
+                  </xsl:attribute>
+               </xsl:when>
+               <xsl:when test="$align.inherit != ''">
+                  <xsl:attribute name="text-align">
+                     <xsl:value-of select="$align.inherit"/>
+                  </xsl:attribute>
+               </xsl:when>
+            </xsl:choose>
+
+         </xsl:when>
+         <xsl:otherwise>
+            <!-- HTML table -->
+            <xsl:if test="$bgcolor.pi != ''">
+               <xsl:attribute name="background-color">
+                  <xsl:value-of select="$bgcolor.pi"/>
+               </xsl:attribute>
+            </xsl:if>
+
+            <xsl:if test="$align.inherit != ''">
+               <xsl:attribute name="text-align">
+                  <xsl:value-of select="$align.inherit"/>
+               </xsl:attribute>
+            </xsl:if>
+
+            <xsl:if test="$valign.inherit != ''">
+               <xsl:attribute name="display-align">
+                  <xsl:choose>
+                     <xsl:when test="$valign.inherit='top'">before</xsl:when>
+                     <xsl:when test="$valign.inherit='middle'">center</xsl:when>
+                     <xsl:when test="$valign.inherit='bottom'">after</xsl:when>
+                     <xsl:otherwise>
+                        <xsl:message>
+                           <xsl:text>Unexpected valign value: </xsl:text>
+                           <xsl:value-of select="$valign.inherit"/>
+                           <xsl:text>, center used.</xsl:text>
+                        </xsl:message>
+                        <xsl:text>center</xsl:text>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:attribute>
+            </xsl:if>
+
+            <xsl:call-template name="html.table.cell.rules"/>
+
+            <!-- The following add specific processor instructions to format
+                 the table headers but only if we are inside a HTML table-->
+            <xsl:choose>
+               <xsl:when test="ancestor::d:thead">
+                  <xsl:attribute name="background-color">#0074b4</xsl:attribute>
+                  <xsl:attribute name="color">#FFFFFF</xsl:attribute>
+                  <xsl:attribute name="text-align">center</xsl:attribute>
+                  <xsl:attribute name="border-color">#b9daf3</xsl:attribute>
+               </xsl:when>
+            </xsl:choose>
+            <xsl:choose>
+               <xsl:when test="ancestor::d:tbody">
+                  <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
+                  <xsl:attribute name="border-width">0.2mm</xsl:attribute>
+                  <xsl:attribute name="border-color">#005092</xsl:attribute>
+                  <xsl:attribute name="border-start-style">solid</xsl:attribute>
+                  <xsl:attribute name="border-end-style">solid</xsl:attribute>
+               </xsl:when>
+            </xsl:choose>
+
+
+         </xsl:otherwise>
+      </xsl:choose>
+   </xsl:template>
+   <!-- This is amending the d:table|d:informal table from htmltbl.xsl
+        to horizontally centre the table -->
+   <xsl:template match="d:table|d:informaltable" mode="htmlTable">
+
+      <xsl:variable name="numcols">
+         <xsl:call-template name="widest-html-row">
+            <xsl:with-param name="rows" select=".//d:tr"/>
+         </xsl:call-template>
+      </xsl:variable>
+
+      <xsl:variable name="prop-columns"
+         select=".//d:col[contains(@width, '%')] |
+         .//d:colgroup[contains(@width, '%')]"/>
+
+      <xsl:variable name="table.width">
+         <xsl:call-template name="table.width"/>
+      </xsl:variable>
+
+      <fo:table-and-caption text-align="center">
+         <fo:table xsl:use-attribute-sets="table.table.properties">
+            <xsl:choose>
+               <xsl:when test="$fop.extensions != 0 or
+                  $fop1.extensions != 0">
+                  <xsl:attribute name="table-layout">fixed</xsl:attribute>
+               </xsl:when>
+            </xsl:choose>
+
+            <xsl:attribute name="width">
+               <xsl:choose>
+                  <xsl:when test="@width">
+                     <xsl:value-of select="@width"/>
+                  </xsl:when>
+                  <xsl:when test="$table.width">
+                     <xsl:value-of select="$table.width"/>
+                  </xsl:when>
+                  <xsl:otherwise>100%</xsl:otherwise>
+               </xsl:choose>
+            </xsl:attribute>
+
+            <xsl:call-template name="table.frame">
+               <xsl:with-param name="frame">
+                  <xsl:choose>
+                     <xsl:when test="@frame = 'box'">all</xsl:when>
+                     <xsl:when test="@frame = 'border'">all</xsl:when>
+                     <xsl:when test="@frame = 'below'">bottom</xsl:when>
+                     <xsl:when test="@frame = 'above'">top</xsl:when>
+                     <xsl:when test="@frame = 'hsides'">topbot</xsl:when>
+                     <xsl:when test="@frame = 'vsides'">sides</xsl:when>
+                     <xsl:when test="@frame = 'lhs'">lhs</xsl:when>
+                     <xsl:when test="@frame = 'rhs'">rhs</xsl:when>
+                     <xsl:when test="@frame = 'void'">none</xsl:when>
+                     <xsl:when test="@border != '' and @border != 0">all</xsl:when>
+                     <xsl:when test="@border != '' and @border = 0">none</xsl:when>
+                     <xsl:when test="@frame != ''">
+                        <xsl:value-of select="@frame"/>
+                     </xsl:when>
+                     <xsl:when test="$default.table.frame != ''">
+                        <xsl:value-of select="$default.table.frame"/>
+                     </xsl:when>
+                     <xsl:otherwise>all</xsl:otherwise>
+                  </xsl:choose>
+               </xsl:with-param>
+            </xsl:call-template>
+
+            <xsl:call-template name="make-html-table-columns">
+               <xsl:with-param name="count" select="$numcols"/>
+            </xsl:call-template>
+
+            <xsl:apply-templates select="d:thead" mode="htmlTable"/>
+            <xsl:apply-templates select="d:tfoot" mode="htmlTable"/>
+            <xsl:choose>
+               <xsl:when test="d:tbody">
+                  <xsl:apply-templates select="d:tbody" mode="htmlTable"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <fo:table-body start-indent="0pt" end-indent="0pt">
+                     <xsl:apply-templates select="d:tr" mode="htmlTable"/>
+                  </fo:table-body>
+               </xsl:otherwise>
+            </xsl:choose>
+         </fo:table>
+      </fo:table-and-caption>
+   </xsl:template>
+
+
 
    <!-- Header and Footer Changes: -->
    <!--   - Move the "Draft" marks to the footer" -->
