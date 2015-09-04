@@ -31,11 +31,28 @@ draft: valid arr_draft.pdf all_book_pdf_draft all_chapter_pdf_draft html epub
 
 final: valid arr.pdf all_book_pdf_final all_chapter_pdf_final html epub
 
-all: valid draft final
+all: valid draft final node_count all_arr.xml
+
+#####################################################
+# all_arr.xml XML
+all_arr.xml: valid
+	$(XMLLINT) $(XMLLINT_OPTS) ../docbook/rng/docbookxi.rng ARR.xml > all_arr.xml
+	tidy -xml -indent -utf8 -quiet all_arr.xml > tmp.xml
+	$(XMLLINT) $(XMLLINT_OPTS) ../docbook/rng/docbookxi.rng --noout tmp.xml
+	mv -f tmp.xml all_arr.xml
+
+#####################################################
+# Node Count
+node_count: all_arr.xml
+	$(XSLTPROC) --xinclude count_all_nodes.xsl all_arr.xml
+
 
 ####################
 # Clean up:
-clean: clean_draft clean_final clean_style clean_html clean_epub
+clean: clean_draft clean_final clean_style clean_html clean_epub clean_all_arr.xml
+
+clean_all_arr.xml:
+	rm -f tmp.xml all_arr.xml
 
 clean_draft: clean_chapter_pdf_draft clean_book_pdf_draft
 	rm -f arr_draft.fo arr_draft.pdf
