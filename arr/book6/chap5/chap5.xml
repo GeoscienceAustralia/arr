@@ -4453,115 +4453,77 @@
     rainfall event; and (3) the full dependence case where both a fluvial
     flood and a coastal flood occur simultaneously.</para>
 
-    <para>The specific number of runs required in the pre-screening analysis
-    will depend on the number of AEPs that need to be evaluated. <xref
-    linkend="b6_c5_t_cdltr"/> presents the pre-screening analysis for three
-    AEPs, which requires nine instances (“runs”) of a hydrological and
-    hydrodynamic model. The boundary conditions are specified in terms of
-    their AEP rather than in their corresponding dimensional value (e.g.
-    <inlineequation>
+    <para>The specific number of runs required in the pre-screening analysis will depend on the
+      number of AEPs that need to be evaluated. <xref linkend="b6_c5_t_cdltr"/> presents the
+      pre-screening analysis for three AEPs, which requires nine instances (“runs”) of a
+      hydrological and hydrodynamic model. The boundary conditions are specified in terms of their
+      AEP rather than in their corresponding dimensional value (e.g. <inlineequation>
         <m:math display="inline">
           <m:semantics>
             <m:mrow>
               <m:msup>
                 <m:mi>m</m:mi>
-
                 <m:mn>3</m:mn>
               </m:msup>
             </m:mrow>
           </m:semantics>
         </m:math>
-      </inlineequation>/s, m, etc.), so that the user will need to consider
-    the probability distribution of the extremes of each boundary to enable
-    translation between an AEP and the dimensional value.</para>
-
-    <table xml:id="b6_c5_t_cdltr">
-      <title>Flood levels of different combinations of rainfall and storm tide
-      in terms of AEP with a particular storm burst duration. Only the
-      highlighted cells need to be evaluated.</title>
-
-      <tgroup cols="6">
-        <colspec colname="_1"/>
-
-        <colspec colname="_2"/>
-
-        <colspec colname="_3"/>
-
-        <colspec colname="_4"/>
-
-        <colspec colname="_5"/>
-
-        <colspec colname="_6"/>
-
+      </inlineequation>/s, m, etc.), so that the user will need to consider the probability
+      distribution of the extremes of each boundary to enable translation between an AEP and the
+      dimensional value.<table frame="void" xml:id="b6_c5_t_cdltr">
+        <caption>Flood levels of different combinations of rainfall and storm tide in terms of AEP
+          with a particular storm burst duration. Only the highlighted cells need to be
+          evaluated.</caption>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <thead>
+          <tr>
+            <th>Rainfall events in AEPs</th>
+            <th colspan="4">Storm tide events in AEPs</th>
+          </tr>
+        </thead>
         <tbody>
-          <row>
-            <entry morerows="1" nameend="_2" namest="_1"/>
-
-            <entry nameend="_6" namest="_3">Storm tide events in AEPs</entry>
-          </row>
-
-          <row>
-            <entry>Lower Bound</entry>
-
-            <entry>20%</entry>
-
-            <entry>2%</entry>
-
-            <entry>1%</entry>
-          </row>
-
-          <row>
-            <entry morerows="3">Rainfall events in AEPs</entry>
-
-            <entry>No rainfall</entry>
-
-            <entry/>
-
-            <entry>blue</entry>
-
-            <entry>blue</entry>
-
-            <entry>blue</entry>
-          </row>
-
-          <row>
-            <entry>20%</entry>
-
-            <entry>green</entry>
-
-            <entry>red</entry>
-
-            <entry/>
-
-            <entry/>
-          </row>
-
-          <row>
-            <entry>2%</entry>
-
-            <entry>green</entry>
-
-            <entry/>
-
-            <entry>red</entry>
-
-            <entry/>
-          </row>
-
-          <row>
-            <entry>1%</entry>
-
-            <entry>green</entry>
-
-            <entry/>
-
-            <entry/>
-
-            <entry>red</entry>
-          </row>
+          <tr>
+            <td></td>
+            <td>Lower Bound</td>
+            <td>20%</td>
+            <td>2%</td>
+            <td>1%</td>
+          </tr>
+          <tr>
+            <td>No rainfall</td>
+            <td/>
+            <td bgcolor="#61a9d3"/>
+            <td bgcolor="#61a9d3"/>
+            <td bgcolor="#61a9d3"/>
+          </tr>
+          <tr>
+            <td>20%</td>
+            <td bgcolor="#39b54a"/>
+            <td bgcolor="#ed1b2f"/>
+            <td/>
+            <td/>
+          </tr>
+          <tr>
+            <td>2%</td>
+            <td bgcolor="#39b54a"/>
+            <td/>
+            <td bgcolor="#ed1b2f"/>
+            <td/>
+          </tr>
+          <tr>
+            <td>1%</td>
+            <td bgcolor="#39b54a"/>
+            <td/>
+            <td/>
+            <td bgcolor="#ed1b2f"/>
+          </tr>
         </tbody>
-      </tgroup>
-    </table>
+      </table></para>
 
     <para>The pre-screening analysis should be undertaken at each
     cross-section in the flood plain where information is required, with a
