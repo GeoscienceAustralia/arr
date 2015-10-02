@@ -141,7 +141,7 @@ arr_style_guide_final.fo: arr_style_fo.xsl
 #####################################################
 #####################################################
 # HTML Common Options
-html: html_single html_chunked
+html: valid html_single html_chunked
 HTML_OPTS=--param keep.relative.image.uris 0
 
 # HTML Single Page Build
