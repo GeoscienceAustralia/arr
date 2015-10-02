@@ -881,4 +881,15 @@
          <xsl:copy-of select="$content"/>
       </fo:inline>
    </xsl:template>
+   
+   
+   <!-- Variable List Formatting -->
+   <!-- We want to format these as a block with the term on top
+      followed by a new paragraph slightly indented with the
+      definition -->
+   <xsl:param name="variablelist.as.blocks" select="1"/>
+   <xsl:attribute-set name="variablelist.term.properties">
+      <xsl:attribute name="font-style">italic</xsl:attribute>
+   </xsl:attribute-set>
+   
 </xsl:stylesheet>
