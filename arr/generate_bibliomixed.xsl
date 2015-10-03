@@ -8,12 +8,12 @@
     <!-- Generate bibliomixed
         This stylesheet is designed to parse XML files and extract xrefs that point
         to bibliography elements, e.g. linkend string contains "bibentry".  It then
-        generates a bibliograph XML file that will be included suitable for
+        generates a bibliograph XML file that would be included and suitable for
         parsing with a bibliography catalogue file.
         
-        Dr Peter Brady <peter.brady@wmawater.com.au?
+        Dr Peter Brady <peter.brady@wmawater.com.au>
         2015-10-02
-        -->
+    -->
     
     <xsl:output method="xml" indent="yes"/>
     
@@ -29,11 +29,15 @@
         <xsl:element name="bibliography">
             <xsl:for-each select="//d:xref[not(@linkend = (preceding-sibling::*/@linkend))]">
                 <xsl:sort select="@linkend"/>
-                <xsl:element name="bibliomixed">
-                    <xsl:attribute name="xml:id">
-                        <xsl:value-of select="@linkend" />
-                    </xsl:attribute>
-                </xsl:element>
+                <xsl:choose>
+                    <xsl:when test="contains(@linkend,'bibentry')">
+                        <xsl:element name="bibliomixed">
+                            <xsl:attribute name="xml:id">
+                                <xsl:value-of select="@linkend" />
+                            </xsl:attribute>
+                        </xsl:element>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
