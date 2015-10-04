@@ -14,6 +14,12 @@
    <xsl:param name="html.script">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js</xsl:param>
    <xsl:param name="html.script.type">text/javascript</xsl:param>
 
+   <!-- BIBLIOGRAPHY DETAILS -->
+   <!-- Force the bibliography to ISO690 style -->
+   <xsl:param name="bibliography.style" select="'iso690'"/>
+   <!-- Point to the common XML bibliography database -->
+   <xsl:param name="bibliography.collection">file:///arr_references.xml</xsl:param>
+   <xsl:param name="bibliography.numbered" select="1"/>
 
    <!-- Add a common stylesheet -->
    <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css arr.css</xsl:param>

@@ -76,26 +76,76 @@
             <xsl:value-of select="$book_id"/><xsl:text>_draft</xsl:text>
         </xsl:variable>
         
-        <!-- Build the draft book PDFs: -->
-        <xsl:value-of select="$book_name"/><xsl:text>.pdf: </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo</xsl:text><xsl:text>&#10;</xsl:text>
-        <xsl:text>&#9;$(FOP) -d </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo -o </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.pdf&#10;</xsl:text>
-        <xsl:value-of select="$book_name"/><xsl:text>.fo: valid arr_title_fo.xsl&#10;</xsl:text>
+        <!-- Book validation -->
+        <!-- book6_valid: -->
+        <xsl:value-of select="$book_id"/><xsl:text>_valid: </xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text>_profiled&#10;</xsl:text>
+        <!-- $(XMLLINT) (XMLLIN_OPTS) ../docbook/rng/docbookxi.rng -noout book6_profiled.xml -->
+        <xsl:text>&#9;$(XMLLINT) $(XMLLINT_OPTS) ../docbook/rng/docbook.rng \&#10;&#9;&#9;--noout </xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text>_profiled.xml&#10;</xsl:text>
+        
+        <!-- Common profile per book -->
+        <!-- book2_profiled: -->
+        <xsl:value-of select="$book_id"/><xsl:text>_profiled: &#10;</xsl:text>
+        
+        <!-- $(XSLTPROC) -stringparam  profile.arch "book" $(XSLTPROC_OPTS) \
+                book2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml -->
         <xsl:text>&#9;$(XSLTPROC) --stringparam  profile.arch "book" $(XSLTPROC_OPTS) \&#10;</xsl:text>
-        <xsl:text>&#9;</xsl:text><xsl:value-of select="$book_name"/><xsl:text>_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml&#10;</xsl:text>
-        <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text><xsl:value-of select="$book_name"/><xsl:text>.fo \&#10;</xsl:text>
-        <xsl:text>&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
-        <xsl:text>&#9;arr_style_fo_draft.xsl </xsl:text><xsl:value-of select="$book_name"/><xsl:text>_profiled.xml&#10;</xsl:text>
+        <xsl:text>&#9;&#9;</xsl:text>
+        <xsl:value-of select="$book_id"/>
+        <xsl:text>_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml&#10;</xsl:text>
+        
+        <!-- Build the draft book PDFs: -->
+        <!-- book2_draft.pdf: book2_draft.fo -->
+        <xsl:value-of select="$book_name"/>
+        <xsl:text>.pdf: </xsl:text>
+        <xsl:value-of select="$book_name"/>
+        <xsl:text>.fo</xsl:text><xsl:text>&#10;</xsl:text>
+        <!--  $(FOP) -d book2_draft.fo -o book2_draft.pdf -->
+        <xsl:text>&#9;$(FOP) -d </xsl:text>
+        <xsl:value-of select="$book_name"/>
+        <xsl:text>.fo -o </xsl:text>
+        <xsl:value-of select="$book_name"/><xsl:text>.pdf&#10;</xsl:text>
+        <!-- book2_draft.fo: valid arr_title_fo.xsl book6_refs -->
+        <xsl:value-of select="$book_name"/>
+        <xsl:text>.fo: valid_book6 arr_title_fo.xsl </xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text>_refs &#10;</xsl:text>
+        <!-- $(XSLTPROC) $(XSLTPROC_OPTS) book2_draft.fo \
+                -stringparam rootid book2 \
+                arr_style_fo_draft.xsl book2_draft_profiled.xml -->
+        <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text>
+        <xsl:value-of select="$book_name"/><xsl:text>.fo \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;--stringparam rootid </xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;arr_style_fo_draft.xsl </xsl:text>
+        <xsl:value-of select="$book_id"/>
+        <xsl:text>_profiled.xml&#10;</xsl:text>
         
         <!--Build the final PDFs: -->
         <xsl:value-of select="$book_id"/><xsl:text>.pdf: </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo</xsl:text><xsl:text>&#10;</xsl:text>
         <xsl:text>&#9;$(FOP) -d </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo -o </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.pdf&#10;</xsl:text>
-        <xsl:value-of select="$book_id"/><xsl:text>.fo: valid arr_title_fo.xsl&#10;</xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text>.fo: book6_refs valid_book6 arr_title_fo.xsl&#10;</xsl:text>
         <xsl:text>&#9;$(XSLTPROC) --stringparam  profile.arch "book" $(XSLTPROC_OPTS) \&#10;</xsl:text>
-        <xsl:text>&#9;</xsl:text><xsl:value-of select="$book_id"/><xsl:text>_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml&#10;</xsl:text>
+        <xsl:text>&#9;&#9;</xsl:text><xsl:value-of select="$book_id"/><xsl:text>_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml&#10;</xsl:text>
         <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text><xsl:value-of select="$book_id"/><xsl:text>.fo \&#10;</xsl:text>
-        <xsl:text>&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
-        <xsl:text>&#9;arr_style_fo_draft.xsl </xsl:text><xsl:value-of select="$book_id"/><xsl:text>_profiled.xml&#10;</xsl:text>
+        <xsl:text>&#9;&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;arr_style_fo_draft.xsl </xsl:text><xsl:value-of select="$book_id"/><xsl:text>_profiled.xml&#10;</xsl:text>
         
+        <!-- Build the book?_refs commands -->
+        <!-- book6_refs: -->
+        <xsl:value-of select="$book_id"/>
+        <xsl:text>_refs:&#10;</xsl:text>
+        <!-- $(XSLTPROC) $(XSLTPROC_OPTS) book6_refs.xml \
+            -stringparam target_arch book \
+            -stringparam rootid book6 \
+            -xinclude \
+            generate_bibliomixed.xsl ARR.xml -->
+        <xsl:text>&#9;$(XSLTPROC) $(XSLTPROC_OPTS) </xsl:text>
+        <xsl:value-of select="$book_id"/><xsl:text>_refs.xml \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;--stringparam target_arch book  \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;--stringparam rootid </xsl:text><xsl:value-of select="$book_id"/><xsl:text> \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;--xinclude  \&#10;</xsl:text>
+        <xsl:text>&#9;&#9;generate_bibliomixed.xsl ARR.xml&#10;</xsl:text>
         
         <!-- Build the clean command/s: -->
         <xsl:text>clean_</xsl:text><xsl:value-of select="$book_name"/>.pdf:<xsl:text>&#10;</xsl:text>

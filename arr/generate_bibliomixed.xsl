@@ -15,7 +15,11 @@
         2015-10-02
     -->
     
+    <!-- Set output method and formatting -->
     <xsl:output method="xml" indent="yes"/>
+    
+    <!-- Set a default parameter to assume we are building for the entire set -->
+    <xsl:param name="target_arch">set</xsl:param>
     
     <xsl:template match="*">
         <xsl:message terminate="no">
@@ -26,7 +30,15 @@
     </xsl:template>
     
     <xsl:template match="/">
-        <xsl:element name="bibliography">
+        <bibliography arch="{$target_arch}"
+            xmlns="http://docbook.org/ns/docbook"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:xi="http://www.w3.org/2001/XInclude"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns:m="http://www.w3.org/1998/Math/MathML"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:db="http://docbook.org/ns/docbook"
+            version="5.0">
             <xsl:for-each select="//d:xref[not(@linkend = (preceding-sibling::*/@linkend))]">
                 <xsl:sort select="@linkend"/>
                 <xsl:choose>
@@ -39,7 +51,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
-        </xsl:element>
+        </bibliography>
     </xsl:template>
     
     

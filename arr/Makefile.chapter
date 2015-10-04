@@ -1,0 +1,1230 @@
+.PHONY: clean_b1_ch1.pdf clean_b1_ch2.pdf clean_b1_ch3.pdf clean_b1_ch4.pdf clean_b1_ch5.pdf clean_b1_ch6.pdf clean_b2_ch1.pdf clean_b2_ch2.pdf clean_b2_ch3.pdf clean_b2_ch4.pdf clean_b2_ch5.pdf clean_b2_ch6.pdf clean_b3_ch1.pdf clean_b3_ch2.pdf clean_b3_ch3.pdf clean_b4_ch1.pdf clean_b4_ch2.pdf clean_b4_ch3.pdf clean_b4_ch4.pdf clean_b4_ch5.pdf clean_b4_ch6.pdf clean_b5_ch1.pdf clean_b5_ch2.pdf clean_b5_ch3.pdf clean_b5_ch4.pdf clean_b5_ch5.pdf clean_b6_ch1.pdf clean_b6_ch2.pdf clean_b6_ch3.pdf clean_b6_ch4.pdf clean_b6_ch5.pdf clean_b6_ch6.pdf clean_b6_ch7.pdf clean_b7_ch1.pdf clean_b7_ch2.pdf clean_b7_ch3.pdf clean_b7_ch4.pdf clean_b7_ch5.pdf clean_b7_ch6.pdf clean_b7_ch7.pdf clean_b7_ch8.pdf clean_b7_ch9.pdf clean_b8_ch1.pdf clean_b8_ch1_a.pdf clean_b8_ch1_b.pdf clean_b8_ch1_c.pdf clean_b8_ch1_d.pdf clean_b8_ch1_e.pdf clean_b8_ch1_f.pdf clean_b8_ch1_g.pdf clean_b9_ch1.pdf clean_b9_ch2.pdf clean_b9_ch3.pdf clean_b9_ch4.pdf clean_b9_ch5.pdf clean_b9_ch6.pdf clean_b9_ch7.pdf clean_b9_ch8.pdf
+.PHONY: clean_b1_ch1_draft.pdf clean_b1_ch2_draft.pdf clean_b1_ch3_draft.pdf clean_b1_ch4_draft.pdf clean_b1_ch5_draft.pdf clean_b1_ch6_draft.pdf clean_b2_ch1_draft.pdf clean_b2_ch2_draft.pdf clean_b2_ch3_draft.pdf clean_b2_ch4_draft.pdf clean_b2_ch5_draft.pdf clean_b2_ch6_draft.pdf clean_b3_ch1_draft.pdf clean_b3_ch2_draft.pdf clean_b3_ch3_draft.pdf clean_b4_ch1_draft.pdf clean_b4_ch2_draft.pdf clean_b4_ch3_draft.pdf clean_b4_ch4_draft.pdf clean_b4_ch5_draft.pdf clean_b4_ch6_draft.pdf clean_b5_ch1_draft.pdf clean_b5_ch2_draft.pdf clean_b5_ch3_draft.pdf clean_b5_ch4_draft.pdf clean_b5_ch5_draft.pdf clean_b6_ch1_draft.pdf clean_b6_ch2_draft.pdf clean_b6_ch3_draft.pdf clean_b6_ch4_draft.pdf clean_b6_ch5_draft.pdf clean_b6_ch6_draft.pdf clean_b6_ch7_draft.pdf clean_b7_ch1_draft.pdf clean_b7_ch2_draft.pdf clean_b7_ch3_draft.pdf clean_b7_ch4_draft.pdf clean_b7_ch5_draft.pdf clean_b7_ch6_draft.pdf clean_b7_ch7_draft.pdf clean_b7_ch8_draft.pdf clean_b7_ch9_draft.pdf clean_b8_ch1_draft.pdf clean_b8_ch1_a_draft.pdf clean_b8_ch1_b_draft.pdf clean_b8_ch1_c_draft.pdf clean_b8_ch1_d_draft.pdf clean_b8_ch1_e_draft.pdf clean_b8_ch1_f_draft.pdf clean_b8_ch1_g_draft.pdf clean_b9_ch1_draft.pdf clean_b9_ch2_draft.pdf clean_b9_ch3_draft.pdf clean_b9_ch4_draft.pdf clean_b9_ch5_draft.pdf clean_b9_ch6_draft.pdf clean_b9_ch7_draft.pdf clean_b9_ch8_draft.pdf
+.PHONY: all_chapter_pdf all_chapter_pdf_final all_chapter_pdf_draft
+
+all_chapter_pdf: all_chapter_pdf_final all_chapter_pdf_draft
+all_chapter_pdf_final: b1_ch1.pdf b1_ch2.pdf b1_ch3.pdf b1_ch4.pdf b1_ch5.pdf b1_ch6.pdf b2_ch1.pdf b2_ch2.pdf b2_ch3.pdf b2_ch4.pdf b2_ch5.pdf b2_ch6.pdf b3_ch1.pdf b3_ch2.pdf b3_ch3.pdf b4_ch1.pdf b4_ch2.pdf b4_ch3.pdf b4_ch4.pdf b4_ch5.pdf b4_ch6.pdf b5_ch1.pdf b5_ch2.pdf b5_ch3.pdf b5_ch4.pdf b5_ch5.pdf b6_ch1.pdf b6_ch2.pdf b6_ch3.pdf b6_ch4.pdf b6_ch5.pdf b6_ch6.pdf b6_ch7.pdf b7_ch1.pdf b7_ch2.pdf b7_ch3.pdf b7_ch4.pdf b7_ch5.pdf b7_ch6.pdf b7_ch7.pdf b7_ch8.pdf b7_ch9.pdf b8_ch1.pdf b8_ch1_a.pdf b8_ch1_b.pdf b8_ch1_c.pdf b8_ch1_d.pdf b8_ch1_e.pdf b8_ch1_f.pdf b8_ch1_g.pdf b9_ch1.pdf b9_ch2.pdf b9_ch3.pdf b9_ch4.pdf b9_ch5.pdf b9_ch6.pdf b9_ch7.pdf b9_ch8.pdf
+all_chapter_pdf_draft: b1_ch1_draft.pdf b1_ch2_draft.pdf b1_ch3_draft.pdf b1_ch4_draft.pdf b1_ch5_draft.pdf b1_ch6_draft.pdf b2_ch1_draft.pdf b2_ch2_draft.pdf b2_ch3_draft.pdf b2_ch4_draft.pdf b2_ch5_draft.pdf b2_ch6_draft.pdf b3_ch1_draft.pdf b3_ch2_draft.pdf b3_ch3_draft.pdf b4_ch1_draft.pdf b4_ch2_draft.pdf b4_ch3_draft.pdf b4_ch4_draft.pdf b4_ch5_draft.pdf b4_ch6_draft.pdf b5_ch1_draft.pdf b5_ch2_draft.pdf b5_ch3_draft.pdf b5_ch4_draft.pdf b5_ch5_draft.pdf b6_ch1_draft.pdf b6_ch2_draft.pdf b6_ch3_draft.pdf b6_ch4_draft.pdf b6_ch5_draft.pdf b6_ch6_draft.pdf b6_ch7_draft.pdf b7_ch1_draft.pdf b7_ch2_draft.pdf b7_ch3_draft.pdf b7_ch4_draft.pdf b7_ch5_draft.pdf b7_ch6_draft.pdf b7_ch7_draft.pdf b7_ch8_draft.pdf b7_ch9_draft.pdf b8_ch1_draft.pdf b8_ch1_a_draft.pdf b8_ch1_b_draft.pdf b8_ch1_c_draft.pdf b8_ch1_d_draft.pdf b8_ch1_e_draft.pdf b8_ch1_f_draft.pdf b8_ch1_g_draft.pdf b9_ch1_draft.pdf b9_ch2_draft.pdf b9_ch3_draft.pdf b9_ch4_draft.pdf b9_ch5_draft.pdf b9_ch6_draft.pdf b9_ch7_draft.pdf b9_ch8_draft.pdf
+
+clean_chapter_pdf_all: clean_chapter_pdf_final clean_chapter_pdf_draft
+clean_chapter_pdf_final: clean_b1_ch1.pdf clean_b1_ch2.pdf clean_b1_ch3.pdf clean_b1_ch4.pdf clean_b1_ch5.pdf clean_b1_ch6.pdf clean_b2_ch1.pdf clean_b2_ch2.pdf clean_b2_ch3.pdf clean_b2_ch4.pdf clean_b2_ch5.pdf clean_b2_ch6.pdf clean_b3_ch1.pdf clean_b3_ch2.pdf clean_b3_ch3.pdf clean_b4_ch1.pdf clean_b4_ch2.pdf clean_b4_ch3.pdf clean_b4_ch4.pdf clean_b4_ch5.pdf clean_b4_ch6.pdf clean_b5_ch1.pdf clean_b5_ch2.pdf clean_b5_ch3.pdf clean_b5_ch4.pdf clean_b5_ch5.pdf clean_b6_ch1.pdf clean_b6_ch2.pdf clean_b6_ch3.pdf clean_b6_ch4.pdf clean_b6_ch5.pdf clean_b6_ch6.pdf clean_b6_ch7.pdf clean_b7_ch1.pdf clean_b7_ch2.pdf clean_b7_ch3.pdf clean_b7_ch4.pdf clean_b7_ch5.pdf clean_b7_ch6.pdf clean_b7_ch7.pdf clean_b7_ch8.pdf clean_b7_ch9.pdf clean_b8_ch1.pdf clean_b8_ch1_a.pdf clean_b8_ch1_b.pdf clean_b8_ch1_c.pdf clean_b8_ch1_d.pdf clean_b8_ch1_e.pdf clean_b8_ch1_f.pdf clean_b8_ch1_g.pdf clean_b9_ch1.pdf clean_b9_ch2.pdf clean_b9_ch3.pdf clean_b9_ch4.pdf clean_b9_ch5.pdf clean_b9_ch6.pdf clean_b9_ch7.pdf clean_b9_ch8.pdf
+clean_chapter_pdf_draft: clean_b1_ch1_draft.pdf clean_b1_ch2_draft.pdf clean_b1_ch3_draft.pdf clean_b1_ch4_draft.pdf clean_b1_ch5_draft.pdf clean_b1_ch6_draft.pdf clean_b2_ch1_draft.pdf clean_b2_ch2_draft.pdf clean_b2_ch3_draft.pdf clean_b2_ch4_draft.pdf clean_b2_ch5_draft.pdf clean_b2_ch6_draft.pdf clean_b3_ch1_draft.pdf clean_b3_ch2_draft.pdf clean_b3_ch3_draft.pdf clean_b4_ch1_draft.pdf clean_b4_ch2_draft.pdf clean_b4_ch3_draft.pdf clean_b4_ch4_draft.pdf clean_b4_ch5_draft.pdf clean_b4_ch6_draft.pdf clean_b5_ch1_draft.pdf clean_b5_ch2_draft.pdf clean_b5_ch3_draft.pdf clean_b5_ch4_draft.pdf clean_b5_ch5_draft.pdf clean_b6_ch1_draft.pdf clean_b6_ch2_draft.pdf clean_b6_ch3_draft.pdf clean_b6_ch4_draft.pdf clean_b6_ch5_draft.pdf clean_b6_ch6_draft.pdf clean_b6_ch7_draft.pdf clean_b7_ch1_draft.pdf clean_b7_ch2_draft.pdf clean_b7_ch3_draft.pdf clean_b7_ch4_draft.pdf clean_b7_ch5_draft.pdf clean_b7_ch6_draft.pdf clean_b7_ch7_draft.pdf clean_b7_ch8_draft.pdf clean_b7_ch9_draft.pdf clean_b8_ch1_draft.pdf clean_b8_ch1_a_draft.pdf clean_b8_ch1_b_draft.pdf clean_b8_ch1_c_draft.pdf clean_b8_ch1_d_draft.pdf clean_b8_ch1_e_draft.pdf clean_b8_ch1_f_draft.pdf clean_b8_ch1_g_draft.pdf clean_b9_ch1_draft.pdf clean_b9_ch2_draft.pdf clean_b9_ch3_draft.pdf clean_b9_ch4_draft.pdf clean_b9_ch5_draft.pdf clean_b9_ch6_draft.pdf clean_b9_ch7_draft.pdf clean_b9_ch8_draft.pdf
+
+b1_ch1_draft.pdf: b1_ch1_draft.fo
+	$(FOP) -d b1_ch1_draft.fo -o b1_ch1_draft.pdf
+b1_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch1_draft.fo \
+	--stringparam rootid b1_ch1 \
+	arr_style_fo_draft.xsl b1_ch1_draft_profiled.xml
+b1_ch1.pdf: b1_ch1.fo
+	$(FOP) -d b1_ch1.fo -o b1_ch1.pdf
+b1_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch1.fo \
+	--stringparam rootid b1_ch1 \
+	arr_style_fo_draft.xsl b1_ch1_profiled.xml
+clean_b1_ch1_draft.pdf:
+	rm -f b1_ch1_draft.pdf b1_ch1_draft.fo b1_ch1_draft_profiled.xml
+clean_b1_ch1.pdf:
+	rm -f b1_ch1.pdf b1_ch1.fo b1_ch1_profiled.xml
+
+b1_ch2_draft.pdf: b1_ch2_draft.fo
+	$(FOP) -d b1_ch2_draft.fo -o b1_ch2_draft.pdf
+b1_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch2_draft.fo \
+	--stringparam rootid b1_ch2 \
+	arr_style_fo_draft.xsl b1_ch2_draft_profiled.xml
+b1_ch2.pdf: b1_ch2.fo
+	$(FOP) -d b1_ch2.fo -o b1_ch2.pdf
+b1_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch2.fo \
+	--stringparam rootid b1_ch2 \
+	arr_style_fo_draft.xsl b1_ch2_profiled.xml
+clean_b1_ch2_draft.pdf:
+	rm -f b1_ch2_draft.pdf b1_ch2_draft.fo b1_ch2_draft_profiled.xml
+clean_b1_ch2.pdf:
+	rm -f b1_ch2.pdf b1_ch2.fo b1_ch2_profiled.xml
+
+b1_ch3_draft.pdf: b1_ch3_draft.fo
+	$(FOP) -d b1_ch3_draft.fo -o b1_ch3_draft.pdf
+b1_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch3_draft.fo \
+	--stringparam rootid b1_ch3 \
+	arr_style_fo_draft.xsl b1_ch3_draft_profiled.xml
+b1_ch3.pdf: b1_ch3.fo
+	$(FOP) -d b1_ch3.fo -o b1_ch3.pdf
+b1_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch3.fo \
+	--stringparam rootid b1_ch3 \
+	arr_style_fo_draft.xsl b1_ch3_profiled.xml
+clean_b1_ch3_draft.pdf:
+	rm -f b1_ch3_draft.pdf b1_ch3_draft.fo b1_ch3_draft_profiled.xml
+clean_b1_ch3.pdf:
+	rm -f b1_ch3.pdf b1_ch3.fo b1_ch3_profiled.xml
+
+b1_ch4_draft.pdf: b1_ch4_draft.fo
+	$(FOP) -d b1_ch4_draft.fo -o b1_ch4_draft.pdf
+b1_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch4_draft.fo \
+	--stringparam rootid b1_ch4 \
+	arr_style_fo_draft.xsl b1_ch4_draft_profiled.xml
+b1_ch4.pdf: b1_ch4.fo
+	$(FOP) -d b1_ch4.fo -o b1_ch4.pdf
+b1_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch4.fo \
+	--stringparam rootid b1_ch4 \
+	arr_style_fo_draft.xsl b1_ch4_profiled.xml
+clean_b1_ch4_draft.pdf:
+	rm -f b1_ch4_draft.pdf b1_ch4_draft.fo b1_ch4_draft_profiled.xml
+clean_b1_ch4.pdf:
+	rm -f b1_ch4.pdf b1_ch4.fo b1_ch4_profiled.xml
+
+b1_ch5_draft.pdf: b1_ch5_draft.fo
+	$(FOP) -d b1_ch5_draft.fo -o b1_ch5_draft.pdf
+b1_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch5_draft.fo \
+	--stringparam rootid b1_ch5 \
+	arr_style_fo_draft.xsl b1_ch5_draft_profiled.xml
+b1_ch5.pdf: b1_ch5.fo
+	$(FOP) -d b1_ch5.fo -o b1_ch5.pdf
+b1_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch5.fo \
+	--stringparam rootid b1_ch5 \
+	arr_style_fo_draft.xsl b1_ch5_profiled.xml
+clean_b1_ch5_draft.pdf:
+	rm -f b1_ch5_draft.pdf b1_ch5_draft.fo b1_ch5_draft_profiled.xml
+clean_b1_ch5.pdf:
+	rm -f b1_ch5.pdf b1_ch5.fo b1_ch5_profiled.xml
+
+b1_ch6_draft.pdf: b1_ch6_draft.fo
+	$(FOP) -d b1_ch6_draft.fo -o b1_ch6_draft.pdf
+b1_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch6_draft.fo \
+	--stringparam rootid b1_ch6 \
+	arr_style_fo_draft.xsl b1_ch6_draft_profiled.xml
+b1_ch6.pdf: b1_ch6.fo
+	$(FOP) -d b1_ch6.fo -o b1_ch6.pdf
+b1_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b1_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b1_ch6.fo \
+	--stringparam rootid b1_ch6 \
+	arr_style_fo_draft.xsl b1_ch6_profiled.xml
+clean_b1_ch6_draft.pdf:
+	rm -f b1_ch6_draft.pdf b1_ch6_draft.fo b1_ch6_draft_profiled.xml
+clean_b1_ch6.pdf:
+	rm -f b1_ch6.pdf b1_ch6.fo b1_ch6_profiled.xml
+
+b2_ch1_draft.pdf: b2_ch1_draft.fo
+	$(FOP) -d b2_ch1_draft.fo -o b2_ch1_draft.pdf
+b2_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch1_draft.fo \
+	--stringparam rootid b2_ch1 \
+	arr_style_fo_draft.xsl b2_ch1_draft_profiled.xml
+b2_ch1.pdf: b2_ch1.fo
+	$(FOP) -d b2_ch1.fo -o b2_ch1.pdf
+b2_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch1.fo \
+	--stringparam rootid b2_ch1 \
+	arr_style_fo_draft.xsl b2_ch1_profiled.xml
+clean_b2_ch1_draft.pdf:
+	rm -f b2_ch1_draft.pdf b2_ch1_draft.fo b2_ch1_draft_profiled.xml
+clean_b2_ch1.pdf:
+	rm -f b2_ch1.pdf b2_ch1.fo b2_ch1_profiled.xml
+
+b2_ch2_draft.pdf: b2_ch2_draft.fo
+	$(FOP) -d b2_ch2_draft.fo -o b2_ch2_draft.pdf
+b2_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch2_draft.fo \
+	--stringparam rootid b2_ch2 \
+	arr_style_fo_draft.xsl b2_ch2_draft_profiled.xml
+b2_ch2.pdf: b2_ch2.fo
+	$(FOP) -d b2_ch2.fo -o b2_ch2.pdf
+b2_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch2.fo \
+	--stringparam rootid b2_ch2 \
+	arr_style_fo_draft.xsl b2_ch2_profiled.xml
+clean_b2_ch2_draft.pdf:
+	rm -f b2_ch2_draft.pdf b2_ch2_draft.fo b2_ch2_draft_profiled.xml
+clean_b2_ch2.pdf:
+	rm -f b2_ch2.pdf b2_ch2.fo b2_ch2_profiled.xml
+
+b2_ch3_draft.pdf: b2_ch3_draft.fo
+	$(FOP) -d b2_ch3_draft.fo -o b2_ch3_draft.pdf
+b2_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch3_draft.fo \
+	--stringparam rootid b2_ch3 \
+	arr_style_fo_draft.xsl b2_ch3_draft_profiled.xml
+b2_ch3.pdf: b2_ch3.fo
+	$(FOP) -d b2_ch3.fo -o b2_ch3.pdf
+b2_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch3.fo \
+	--stringparam rootid b2_ch3 \
+	arr_style_fo_draft.xsl b2_ch3_profiled.xml
+clean_b2_ch3_draft.pdf:
+	rm -f b2_ch3_draft.pdf b2_ch3_draft.fo b2_ch3_draft_profiled.xml
+clean_b2_ch3.pdf:
+	rm -f b2_ch3.pdf b2_ch3.fo b2_ch3_profiled.xml
+
+b2_ch4_draft.pdf: b2_ch4_draft.fo
+	$(FOP) -d b2_ch4_draft.fo -o b2_ch4_draft.pdf
+b2_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch4_draft.fo \
+	--stringparam rootid b2_ch4 \
+	arr_style_fo_draft.xsl b2_ch4_draft_profiled.xml
+b2_ch4.pdf: b2_ch4.fo
+	$(FOP) -d b2_ch4.fo -o b2_ch4.pdf
+b2_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch4.fo \
+	--stringparam rootid b2_ch4 \
+	arr_style_fo_draft.xsl b2_ch4_profiled.xml
+clean_b2_ch4_draft.pdf:
+	rm -f b2_ch4_draft.pdf b2_ch4_draft.fo b2_ch4_draft_profiled.xml
+clean_b2_ch4.pdf:
+	rm -f b2_ch4.pdf b2_ch4.fo b2_ch4_profiled.xml
+
+b2_ch5_draft.pdf: b2_ch5_draft.fo
+	$(FOP) -d b2_ch5_draft.fo -o b2_ch5_draft.pdf
+b2_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch5_draft.fo \
+	--stringparam rootid b2_ch5 \
+	arr_style_fo_draft.xsl b2_ch5_draft_profiled.xml
+b2_ch5.pdf: b2_ch5.fo
+	$(FOP) -d b2_ch5.fo -o b2_ch5.pdf
+b2_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch5.fo \
+	--stringparam rootid b2_ch5 \
+	arr_style_fo_draft.xsl b2_ch5_profiled.xml
+clean_b2_ch5_draft.pdf:
+	rm -f b2_ch5_draft.pdf b2_ch5_draft.fo b2_ch5_draft_profiled.xml
+clean_b2_ch5.pdf:
+	rm -f b2_ch5.pdf b2_ch5.fo b2_ch5_profiled.xml
+
+b2_ch6_draft.pdf: b2_ch6_draft.fo
+	$(FOP) -d b2_ch6_draft.fo -o b2_ch6_draft.pdf
+b2_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch6_draft.fo \
+	--stringparam rootid b2_ch6 \
+	arr_style_fo_draft.xsl b2_ch6_draft_profiled.xml
+b2_ch6.pdf: b2_ch6.fo
+	$(FOP) -d b2_ch6.fo -o b2_ch6.pdf
+b2_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b2_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b2_ch6.fo \
+	--stringparam rootid b2_ch6 \
+	arr_style_fo_draft.xsl b2_ch6_profiled.xml
+clean_b2_ch6_draft.pdf:
+	rm -f b2_ch6_draft.pdf b2_ch6_draft.fo b2_ch6_draft_profiled.xml
+clean_b2_ch6.pdf:
+	rm -f b2_ch6.pdf b2_ch6.fo b2_ch6_profiled.xml
+
+b3_ch1_draft.pdf: b3_ch1_draft.fo
+	$(FOP) -d b3_ch1_draft.fo -o b3_ch1_draft.pdf
+b3_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch1_draft.fo \
+	--stringparam rootid b3_ch1 \
+	arr_style_fo_draft.xsl b3_ch1_draft_profiled.xml
+b3_ch1.pdf: b3_ch1.fo
+	$(FOP) -d b3_ch1.fo -o b3_ch1.pdf
+b3_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch1.fo \
+	--stringparam rootid b3_ch1 \
+	arr_style_fo_draft.xsl b3_ch1_profiled.xml
+clean_b3_ch1_draft.pdf:
+	rm -f b3_ch1_draft.pdf b3_ch1_draft.fo b3_ch1_draft_profiled.xml
+clean_b3_ch1.pdf:
+	rm -f b3_ch1.pdf b3_ch1.fo b3_ch1_profiled.xml
+
+b3_ch2_draft.pdf: b3_ch2_draft.fo
+	$(FOP) -d b3_ch2_draft.fo -o b3_ch2_draft.pdf
+b3_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch2_draft.fo \
+	--stringparam rootid b3_ch2 \
+	arr_style_fo_draft.xsl b3_ch2_draft_profiled.xml
+b3_ch2.pdf: b3_ch2.fo
+	$(FOP) -d b3_ch2.fo -o b3_ch2.pdf
+b3_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch2.fo \
+	--stringparam rootid b3_ch2 \
+	arr_style_fo_draft.xsl b3_ch2_profiled.xml
+clean_b3_ch2_draft.pdf:
+	rm -f b3_ch2_draft.pdf b3_ch2_draft.fo b3_ch2_draft_profiled.xml
+clean_b3_ch2.pdf:
+	rm -f b3_ch2.pdf b3_ch2.fo b3_ch2_profiled.xml
+
+b3_ch3_draft.pdf: b3_ch3_draft.fo
+	$(FOP) -d b3_ch3_draft.fo -o b3_ch3_draft.pdf
+b3_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch3_draft.fo \
+	--stringparam rootid b3_ch3 \
+	arr_style_fo_draft.xsl b3_ch3_draft_profiled.xml
+b3_ch3.pdf: b3_ch3.fo
+	$(FOP) -d b3_ch3.fo -o b3_ch3.pdf
+b3_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b3_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b3_ch3.fo \
+	--stringparam rootid b3_ch3 \
+	arr_style_fo_draft.xsl b3_ch3_profiled.xml
+clean_b3_ch3_draft.pdf:
+	rm -f b3_ch3_draft.pdf b3_ch3_draft.fo b3_ch3_draft_profiled.xml
+clean_b3_ch3.pdf:
+	rm -f b3_ch3.pdf b3_ch3.fo b3_ch3_profiled.xml
+
+b4_ch1_draft.pdf: b4_ch1_draft.fo
+	$(FOP) -d b4_ch1_draft.fo -o b4_ch1_draft.pdf
+b4_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch1_draft.fo \
+	--stringparam rootid b4_ch1 \
+	arr_style_fo_draft.xsl b4_ch1_draft_profiled.xml
+b4_ch1.pdf: b4_ch1.fo
+	$(FOP) -d b4_ch1.fo -o b4_ch1.pdf
+b4_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch1.fo \
+	--stringparam rootid b4_ch1 \
+	arr_style_fo_draft.xsl b4_ch1_profiled.xml
+clean_b4_ch1_draft.pdf:
+	rm -f b4_ch1_draft.pdf b4_ch1_draft.fo b4_ch1_draft_profiled.xml
+clean_b4_ch1.pdf:
+	rm -f b4_ch1.pdf b4_ch1.fo b4_ch1_profiled.xml
+
+b4_ch2_draft.pdf: b4_ch2_draft.fo
+	$(FOP) -d b4_ch2_draft.fo -o b4_ch2_draft.pdf
+b4_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch2_draft.fo \
+	--stringparam rootid b4_ch2 \
+	arr_style_fo_draft.xsl b4_ch2_draft_profiled.xml
+b4_ch2.pdf: b4_ch2.fo
+	$(FOP) -d b4_ch2.fo -o b4_ch2.pdf
+b4_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch2.fo \
+	--stringparam rootid b4_ch2 \
+	arr_style_fo_draft.xsl b4_ch2_profiled.xml
+clean_b4_ch2_draft.pdf:
+	rm -f b4_ch2_draft.pdf b4_ch2_draft.fo b4_ch2_draft_profiled.xml
+clean_b4_ch2.pdf:
+	rm -f b4_ch2.pdf b4_ch2.fo b4_ch2_profiled.xml
+
+b4_ch3_draft.pdf: b4_ch3_draft.fo
+	$(FOP) -d b4_ch3_draft.fo -o b4_ch3_draft.pdf
+b4_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch3_draft.fo \
+	--stringparam rootid b4_ch3 \
+	arr_style_fo_draft.xsl b4_ch3_draft_profiled.xml
+b4_ch3.pdf: b4_ch3.fo
+	$(FOP) -d b4_ch3.fo -o b4_ch3.pdf
+b4_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch3.fo \
+	--stringparam rootid b4_ch3 \
+	arr_style_fo_draft.xsl b4_ch3_profiled.xml
+clean_b4_ch3_draft.pdf:
+	rm -f b4_ch3_draft.pdf b4_ch3_draft.fo b4_ch3_draft_profiled.xml
+clean_b4_ch3.pdf:
+	rm -f b4_ch3.pdf b4_ch3.fo b4_ch3_profiled.xml
+
+b4_ch4_draft.pdf: b4_ch4_draft.fo
+	$(FOP) -d b4_ch4_draft.fo -o b4_ch4_draft.pdf
+b4_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch4_draft.fo \
+	--stringparam rootid b4_ch4 \
+	arr_style_fo_draft.xsl b4_ch4_draft_profiled.xml
+b4_ch4.pdf: b4_ch4.fo
+	$(FOP) -d b4_ch4.fo -o b4_ch4.pdf
+b4_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch4.fo \
+	--stringparam rootid b4_ch4 \
+	arr_style_fo_draft.xsl b4_ch4_profiled.xml
+clean_b4_ch4_draft.pdf:
+	rm -f b4_ch4_draft.pdf b4_ch4_draft.fo b4_ch4_draft_profiled.xml
+clean_b4_ch4.pdf:
+	rm -f b4_ch4.pdf b4_ch4.fo b4_ch4_profiled.xml
+
+b4_ch5_draft.pdf: b4_ch5_draft.fo
+	$(FOP) -d b4_ch5_draft.fo -o b4_ch5_draft.pdf
+b4_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch5_draft.fo \
+	--stringparam rootid b4_ch5 \
+	arr_style_fo_draft.xsl b4_ch5_draft_profiled.xml
+b4_ch5.pdf: b4_ch5.fo
+	$(FOP) -d b4_ch5.fo -o b4_ch5.pdf
+b4_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch5.fo \
+	--stringparam rootid b4_ch5 \
+	arr_style_fo_draft.xsl b4_ch5_profiled.xml
+clean_b4_ch5_draft.pdf:
+	rm -f b4_ch5_draft.pdf b4_ch5_draft.fo b4_ch5_draft_profiled.xml
+clean_b4_ch5.pdf:
+	rm -f b4_ch5.pdf b4_ch5.fo b4_ch5_profiled.xml
+
+b4_ch6_draft.pdf: b4_ch6_draft.fo
+	$(FOP) -d b4_ch6_draft.fo -o b4_ch6_draft.pdf
+b4_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch6_draft.fo \
+	--stringparam rootid b4_ch6 \
+	arr_style_fo_draft.xsl b4_ch6_draft_profiled.xml
+b4_ch6.pdf: b4_ch6.fo
+	$(FOP) -d b4_ch6.fo -o b4_ch6.pdf
+b4_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b4_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b4_ch6.fo \
+	--stringparam rootid b4_ch6 \
+	arr_style_fo_draft.xsl b4_ch6_profiled.xml
+clean_b4_ch6_draft.pdf:
+	rm -f b4_ch6_draft.pdf b4_ch6_draft.fo b4_ch6_draft_profiled.xml
+clean_b4_ch6.pdf:
+	rm -f b4_ch6.pdf b4_ch6.fo b4_ch6_profiled.xml
+
+b5_ch1_draft.pdf: b5_ch1_draft.fo
+	$(FOP) -d b5_ch1_draft.fo -o b5_ch1_draft.pdf
+b5_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch1_draft.fo \
+	--stringparam rootid b5_ch1 \
+	arr_style_fo_draft.xsl b5_ch1_draft_profiled.xml
+b5_ch1.pdf: b5_ch1.fo
+	$(FOP) -d b5_ch1.fo -o b5_ch1.pdf
+b5_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch1.fo \
+	--stringparam rootid b5_ch1 \
+	arr_style_fo_draft.xsl b5_ch1_profiled.xml
+clean_b5_ch1_draft.pdf:
+	rm -f b5_ch1_draft.pdf b5_ch1_draft.fo b5_ch1_draft_profiled.xml
+clean_b5_ch1.pdf:
+	rm -f b5_ch1.pdf b5_ch1.fo b5_ch1_profiled.xml
+
+b5_ch2_draft.pdf: b5_ch2_draft.fo
+	$(FOP) -d b5_ch2_draft.fo -o b5_ch2_draft.pdf
+b5_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch2_draft.fo \
+	--stringparam rootid b5_ch2 \
+	arr_style_fo_draft.xsl b5_ch2_draft_profiled.xml
+b5_ch2.pdf: b5_ch2.fo
+	$(FOP) -d b5_ch2.fo -o b5_ch2.pdf
+b5_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch2.fo \
+	--stringparam rootid b5_ch2 \
+	arr_style_fo_draft.xsl b5_ch2_profiled.xml
+clean_b5_ch2_draft.pdf:
+	rm -f b5_ch2_draft.pdf b5_ch2_draft.fo b5_ch2_draft_profiled.xml
+clean_b5_ch2.pdf:
+	rm -f b5_ch2.pdf b5_ch2.fo b5_ch2_profiled.xml
+
+b5_ch3_draft.pdf: b5_ch3_draft.fo
+	$(FOP) -d b5_ch3_draft.fo -o b5_ch3_draft.pdf
+b5_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch3_draft.fo \
+	--stringparam rootid b5_ch3 \
+	arr_style_fo_draft.xsl b5_ch3_draft_profiled.xml
+b5_ch3.pdf: b5_ch3.fo
+	$(FOP) -d b5_ch3.fo -o b5_ch3.pdf
+b5_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch3.fo \
+	--stringparam rootid b5_ch3 \
+	arr_style_fo_draft.xsl b5_ch3_profiled.xml
+clean_b5_ch3_draft.pdf:
+	rm -f b5_ch3_draft.pdf b5_ch3_draft.fo b5_ch3_draft_profiled.xml
+clean_b5_ch3.pdf:
+	rm -f b5_ch3.pdf b5_ch3.fo b5_ch3_profiled.xml
+
+b5_ch4_draft.pdf: b5_ch4_draft.fo
+	$(FOP) -d b5_ch4_draft.fo -o b5_ch4_draft.pdf
+b5_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch4_draft.fo \
+	--stringparam rootid b5_ch4 \
+	arr_style_fo_draft.xsl b5_ch4_draft_profiled.xml
+b5_ch4.pdf: b5_ch4.fo
+	$(FOP) -d b5_ch4.fo -o b5_ch4.pdf
+b5_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch4.fo \
+	--stringparam rootid b5_ch4 \
+	arr_style_fo_draft.xsl b5_ch4_profiled.xml
+clean_b5_ch4_draft.pdf:
+	rm -f b5_ch4_draft.pdf b5_ch4_draft.fo b5_ch4_draft_profiled.xml
+clean_b5_ch4.pdf:
+	rm -f b5_ch4.pdf b5_ch4.fo b5_ch4_profiled.xml
+
+b5_ch5_draft.pdf: b5_ch5_draft.fo
+	$(FOP) -d b5_ch5_draft.fo -o b5_ch5_draft.pdf
+b5_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch5_draft.fo \
+	--stringparam rootid b5_ch5 \
+	arr_style_fo_draft.xsl b5_ch5_draft_profiled.xml
+b5_ch5.pdf: b5_ch5.fo
+	$(FOP) -d b5_ch5.fo -o b5_ch5.pdf
+b5_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b5_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b5_ch5.fo \
+	--stringparam rootid b5_ch5 \
+	arr_style_fo_draft.xsl b5_ch5_profiled.xml
+clean_b5_ch5_draft.pdf:
+	rm -f b5_ch5_draft.pdf b5_ch5_draft.fo b5_ch5_draft_profiled.xml
+clean_b5_ch5.pdf:
+	rm -f b5_ch5.pdf b5_ch5.fo b5_ch5_profiled.xml
+
+b6_ch1_draft.pdf: b6_ch1_draft.fo
+	$(FOP) -d b6_ch1_draft.fo -o b6_ch1_draft.pdf
+b6_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch1_draft.fo \
+	--stringparam rootid b6_ch1 \
+	arr_style_fo_draft.xsl b6_ch1_draft_profiled.xml
+b6_ch1.pdf: b6_ch1.fo
+	$(FOP) -d b6_ch1.fo -o b6_ch1.pdf
+b6_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch1.fo \
+	--stringparam rootid b6_ch1 \
+	arr_style_fo_draft.xsl b6_ch1_profiled.xml
+clean_b6_ch1_draft.pdf:
+	rm -f b6_ch1_draft.pdf b6_ch1_draft.fo b6_ch1_draft_profiled.xml
+clean_b6_ch1.pdf:
+	rm -f b6_ch1.pdf b6_ch1.fo b6_ch1_profiled.xml
+
+b6_ch2_draft.pdf: b6_ch2_draft.fo
+	$(FOP) -d b6_ch2_draft.fo -o b6_ch2_draft.pdf
+b6_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch2_draft.fo \
+	--stringparam rootid b6_ch2 \
+	arr_style_fo_draft.xsl b6_ch2_draft_profiled.xml
+b6_ch2.pdf: b6_ch2.fo
+	$(FOP) -d b6_ch2.fo -o b6_ch2.pdf
+b6_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch2.fo \
+	--stringparam rootid b6_ch2 \
+	arr_style_fo_draft.xsl b6_ch2_profiled.xml
+clean_b6_ch2_draft.pdf:
+	rm -f b6_ch2_draft.pdf b6_ch2_draft.fo b6_ch2_draft_profiled.xml
+clean_b6_ch2.pdf:
+	rm -f b6_ch2.pdf b6_ch2.fo b6_ch2_profiled.xml
+
+b6_ch3_draft.pdf: b6_ch3_draft.fo
+	$(FOP) -d b6_ch3_draft.fo -o b6_ch3_draft.pdf
+b6_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch3_draft.fo \
+	--stringparam rootid b6_ch3 \
+	arr_style_fo_draft.xsl b6_ch3_draft_profiled.xml
+b6_ch3.pdf: b6_ch3.fo
+	$(FOP) -d b6_ch3.fo -o b6_ch3.pdf
+b6_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch3.fo \
+	--stringparam rootid b6_ch3 \
+	arr_style_fo_draft.xsl b6_ch3_profiled.xml
+clean_b6_ch3_draft.pdf:
+	rm -f b6_ch3_draft.pdf b6_ch3_draft.fo b6_ch3_draft_profiled.xml
+clean_b6_ch3.pdf:
+	rm -f b6_ch3.pdf b6_ch3.fo b6_ch3_profiled.xml
+
+b6_ch4_draft.pdf: b6_ch4_draft.fo
+	$(FOP) -d b6_ch4_draft.fo -o b6_ch4_draft.pdf
+b6_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch4_draft.fo \
+	--stringparam rootid b6_ch4 \
+	arr_style_fo_draft.xsl b6_ch4_draft_profiled.xml
+b6_ch4.pdf: b6_ch4.fo
+	$(FOP) -d b6_ch4.fo -o b6_ch4.pdf
+b6_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch4.fo \
+	--stringparam rootid b6_ch4 \
+	arr_style_fo_draft.xsl b6_ch4_profiled.xml
+clean_b6_ch4_draft.pdf:
+	rm -f b6_ch4_draft.pdf b6_ch4_draft.fo b6_ch4_draft_profiled.xml
+clean_b6_ch4.pdf:
+	rm -f b6_ch4.pdf b6_ch4.fo b6_ch4_profiled.xml
+
+b6_ch5_draft.pdf: b6_ch5_draft.fo
+	$(FOP) -d b6_ch5_draft.fo -o b6_ch5_draft.pdf
+b6_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch5_draft.fo \
+	--stringparam rootid b6_ch5 \
+	arr_style_fo_draft.xsl b6_ch5_draft_profiled.xml
+b6_ch5.pdf: b6_ch5.fo
+	$(FOP) -d b6_ch5.fo -o b6_ch5.pdf
+b6_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch5.fo \
+	--stringparam rootid b6_ch5 \
+	arr_style_fo_draft.xsl b6_ch5_profiled.xml
+clean_b6_ch5_draft.pdf:
+	rm -f b6_ch5_draft.pdf b6_ch5_draft.fo b6_ch5_draft_profiled.xml
+clean_b6_ch5.pdf:
+	rm -f b6_ch5.pdf b6_ch5.fo b6_ch5_profiled.xml
+
+b6_ch6_draft.pdf: b6_ch6_draft.fo
+	$(FOP) -d b6_ch6_draft.fo -o b6_ch6_draft.pdf
+b6_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch6_draft.fo \
+	--stringparam rootid b6_ch6 \
+	arr_style_fo_draft.xsl b6_ch6_draft_profiled.xml
+b6_ch6.pdf: b6_ch6.fo
+	$(FOP) -d b6_ch6.fo -o b6_ch6.pdf
+b6_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch6.fo \
+	--stringparam rootid b6_ch6 \
+	arr_style_fo_draft.xsl b6_ch6_profiled.xml
+clean_b6_ch6_draft.pdf:
+	rm -f b6_ch6_draft.pdf b6_ch6_draft.fo b6_ch6_draft_profiled.xml
+clean_b6_ch6.pdf:
+	rm -f b6_ch6.pdf b6_ch6.fo b6_ch6_profiled.xml
+
+b6_ch7_draft.pdf: b6_ch7_draft.fo
+	$(FOP) -d b6_ch7_draft.fo -o b6_ch7_draft.pdf
+b6_ch7_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch7_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch7_draft.fo \
+	--stringparam rootid b6_ch7 \
+	arr_style_fo_draft.xsl b6_ch7_draft_profiled.xml
+b6_ch7.pdf: b6_ch7.fo
+	$(FOP) -d b6_ch7.fo -o b6_ch7.pdf
+b6_ch7.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b6_ch7_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b6_ch7.fo \
+	--stringparam rootid b6_ch7 \
+	arr_style_fo_draft.xsl b6_ch7_profiled.xml
+clean_b6_ch7_draft.pdf:
+	rm -f b6_ch7_draft.pdf b6_ch7_draft.fo b6_ch7_draft_profiled.xml
+clean_b6_ch7.pdf:
+	rm -f b6_ch7.pdf b6_ch7.fo b6_ch7_profiled.xml
+
+b7_ch1_draft.pdf: b7_ch1_draft.fo
+	$(FOP) -d b7_ch1_draft.fo -o b7_ch1_draft.pdf
+b7_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch1_draft.fo \
+	--stringparam rootid b7_ch1 \
+	arr_style_fo_draft.xsl b7_ch1_draft_profiled.xml
+b7_ch1.pdf: b7_ch1.fo
+	$(FOP) -d b7_ch1.fo -o b7_ch1.pdf
+b7_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch1.fo \
+	--stringparam rootid b7_ch1 \
+	arr_style_fo_draft.xsl b7_ch1_profiled.xml
+clean_b7_ch1_draft.pdf:
+	rm -f b7_ch1_draft.pdf b7_ch1_draft.fo b7_ch1_draft_profiled.xml
+clean_b7_ch1.pdf:
+	rm -f b7_ch1.pdf b7_ch1.fo b7_ch1_profiled.xml
+
+b7_ch2_draft.pdf: b7_ch2_draft.fo
+	$(FOP) -d b7_ch2_draft.fo -o b7_ch2_draft.pdf
+b7_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch2_draft.fo \
+	--stringparam rootid b7_ch2 \
+	arr_style_fo_draft.xsl b7_ch2_draft_profiled.xml
+b7_ch2.pdf: b7_ch2.fo
+	$(FOP) -d b7_ch2.fo -o b7_ch2.pdf
+b7_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch2.fo \
+	--stringparam rootid b7_ch2 \
+	arr_style_fo_draft.xsl b7_ch2_profiled.xml
+clean_b7_ch2_draft.pdf:
+	rm -f b7_ch2_draft.pdf b7_ch2_draft.fo b7_ch2_draft_profiled.xml
+clean_b7_ch2.pdf:
+	rm -f b7_ch2.pdf b7_ch2.fo b7_ch2_profiled.xml
+
+b7_ch3_draft.pdf: b7_ch3_draft.fo
+	$(FOP) -d b7_ch3_draft.fo -o b7_ch3_draft.pdf
+b7_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch3_draft.fo \
+	--stringparam rootid b7_ch3 \
+	arr_style_fo_draft.xsl b7_ch3_draft_profiled.xml
+b7_ch3.pdf: b7_ch3.fo
+	$(FOP) -d b7_ch3.fo -o b7_ch3.pdf
+b7_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch3.fo \
+	--stringparam rootid b7_ch3 \
+	arr_style_fo_draft.xsl b7_ch3_profiled.xml
+clean_b7_ch3_draft.pdf:
+	rm -f b7_ch3_draft.pdf b7_ch3_draft.fo b7_ch3_draft_profiled.xml
+clean_b7_ch3.pdf:
+	rm -f b7_ch3.pdf b7_ch3.fo b7_ch3_profiled.xml
+
+b7_ch4_draft.pdf: b7_ch4_draft.fo
+	$(FOP) -d b7_ch4_draft.fo -o b7_ch4_draft.pdf
+b7_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch4_draft.fo \
+	--stringparam rootid b7_ch4 \
+	arr_style_fo_draft.xsl b7_ch4_draft_profiled.xml
+b7_ch4.pdf: b7_ch4.fo
+	$(FOP) -d b7_ch4.fo -o b7_ch4.pdf
+b7_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch4.fo \
+	--stringparam rootid b7_ch4 \
+	arr_style_fo_draft.xsl b7_ch4_profiled.xml
+clean_b7_ch4_draft.pdf:
+	rm -f b7_ch4_draft.pdf b7_ch4_draft.fo b7_ch4_draft_profiled.xml
+clean_b7_ch4.pdf:
+	rm -f b7_ch4.pdf b7_ch4.fo b7_ch4_profiled.xml
+
+b7_ch5_draft.pdf: b7_ch5_draft.fo
+	$(FOP) -d b7_ch5_draft.fo -o b7_ch5_draft.pdf
+b7_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch5_draft.fo \
+	--stringparam rootid b7_ch5 \
+	arr_style_fo_draft.xsl b7_ch5_draft_profiled.xml
+b7_ch5.pdf: b7_ch5.fo
+	$(FOP) -d b7_ch5.fo -o b7_ch5.pdf
+b7_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch5.fo \
+	--stringparam rootid b7_ch5 \
+	arr_style_fo_draft.xsl b7_ch5_profiled.xml
+clean_b7_ch5_draft.pdf:
+	rm -f b7_ch5_draft.pdf b7_ch5_draft.fo b7_ch5_draft_profiled.xml
+clean_b7_ch5.pdf:
+	rm -f b7_ch5.pdf b7_ch5.fo b7_ch5_profiled.xml
+
+b7_ch6_draft.pdf: b7_ch6_draft.fo
+	$(FOP) -d b7_ch6_draft.fo -o b7_ch6_draft.pdf
+b7_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch6_draft.fo \
+	--stringparam rootid b7_ch6 \
+	arr_style_fo_draft.xsl b7_ch6_draft_profiled.xml
+b7_ch6.pdf: b7_ch6.fo
+	$(FOP) -d b7_ch6.fo -o b7_ch6.pdf
+b7_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch6.fo \
+	--stringparam rootid b7_ch6 \
+	arr_style_fo_draft.xsl b7_ch6_profiled.xml
+clean_b7_ch6_draft.pdf:
+	rm -f b7_ch6_draft.pdf b7_ch6_draft.fo b7_ch6_draft_profiled.xml
+clean_b7_ch6.pdf:
+	rm -f b7_ch6.pdf b7_ch6.fo b7_ch6_profiled.xml
+
+b7_ch7_draft.pdf: b7_ch7_draft.fo
+	$(FOP) -d b7_ch7_draft.fo -o b7_ch7_draft.pdf
+b7_ch7_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch7_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch7_draft.fo \
+	--stringparam rootid b7_ch7 \
+	arr_style_fo_draft.xsl b7_ch7_draft_profiled.xml
+b7_ch7.pdf: b7_ch7.fo
+	$(FOP) -d b7_ch7.fo -o b7_ch7.pdf
+b7_ch7.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch7_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch7.fo \
+	--stringparam rootid b7_ch7 \
+	arr_style_fo_draft.xsl b7_ch7_profiled.xml
+clean_b7_ch7_draft.pdf:
+	rm -f b7_ch7_draft.pdf b7_ch7_draft.fo b7_ch7_draft_profiled.xml
+clean_b7_ch7.pdf:
+	rm -f b7_ch7.pdf b7_ch7.fo b7_ch7_profiled.xml
+
+b7_ch8_draft.pdf: b7_ch8_draft.fo
+	$(FOP) -d b7_ch8_draft.fo -o b7_ch8_draft.pdf
+b7_ch8_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch8_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch8_draft.fo \
+	--stringparam rootid b7_ch8 \
+	arr_style_fo_draft.xsl b7_ch8_draft_profiled.xml
+b7_ch8.pdf: b7_ch8.fo
+	$(FOP) -d b7_ch8.fo -o b7_ch8.pdf
+b7_ch8.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch8_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch8.fo \
+	--stringparam rootid b7_ch8 \
+	arr_style_fo_draft.xsl b7_ch8_profiled.xml
+clean_b7_ch8_draft.pdf:
+	rm -f b7_ch8_draft.pdf b7_ch8_draft.fo b7_ch8_draft_profiled.xml
+clean_b7_ch8.pdf:
+	rm -f b7_ch8.pdf b7_ch8.fo b7_ch8_profiled.xml
+
+b7_ch9_draft.pdf: b7_ch9_draft.fo
+	$(FOP) -d b7_ch9_draft.fo -o b7_ch9_draft.pdf
+b7_ch9_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch9_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch9_draft.fo \
+	--stringparam rootid b7_ch9 \
+	arr_style_fo_draft.xsl b7_ch9_draft_profiled.xml
+b7_ch9.pdf: b7_ch9.fo
+	$(FOP) -d b7_ch9.fo -o b7_ch9.pdf
+b7_ch9.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b7_ch9_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b7_ch9.fo \
+	--stringparam rootid b7_ch9 \
+	arr_style_fo_draft.xsl b7_ch9_profiled.xml
+clean_b7_ch9_draft.pdf:
+	rm -f b7_ch9_draft.pdf b7_ch9_draft.fo b7_ch9_draft_profiled.xml
+clean_b7_ch9.pdf:
+	rm -f b7_ch9.pdf b7_ch9.fo b7_ch9_profiled.xml
+
+b8_ch1_draft.pdf: b8_ch1_draft.fo
+	$(FOP) -d b8_ch1_draft.fo -o b8_ch1_draft.pdf
+b8_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_draft.fo \
+	--stringparam rootid b8_ch1 \
+	arr_style_fo_draft.xsl b8_ch1_draft_profiled.xml
+b8_ch1.pdf: b8_ch1.fo
+	$(FOP) -d b8_ch1.fo -o b8_ch1.pdf
+b8_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1.fo \
+	--stringparam rootid b8_ch1 \
+	arr_style_fo_draft.xsl b8_ch1_profiled.xml
+clean_b8_ch1_draft.pdf:
+	rm -f b8_ch1_draft.pdf b8_ch1_draft.fo b8_ch1_draft_profiled.xml
+clean_b8_ch1.pdf:
+	rm -f b8_ch1.pdf b8_ch1.fo b8_ch1_profiled.xml
+
+b8_ch1_a_draft.pdf: b8_ch1_a_draft.fo
+	$(FOP) -d b8_ch1_a_draft.fo -o b8_ch1_a_draft.pdf
+b8_ch1_a_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_a_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_a_draft.fo \
+	--stringparam rootid b8_ch1_a \
+	arr_style_fo_draft.xsl b8_ch1_a_draft_profiled.xml
+b8_ch1_a.pdf: b8_ch1_a.fo
+	$(FOP) -d b8_ch1_a.fo -o b8_ch1_a.pdf
+b8_ch1_a.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_a_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_a.fo \
+	--stringparam rootid b8_ch1_a \
+	arr_style_fo_draft.xsl b8_ch1_a_profiled.xml
+clean_b8_ch1_a_draft.pdf:
+	rm -f b8_ch1_a_draft.pdf b8_ch1_a_draft.fo b8_ch1_a_draft_profiled.xml
+clean_b8_ch1_a.pdf:
+	rm -f b8_ch1_a.pdf b8_ch1_a.fo b8_ch1_a_profiled.xml
+
+b8_ch1_b_draft.pdf: b8_ch1_b_draft.fo
+	$(FOP) -d b8_ch1_b_draft.fo -o b8_ch1_b_draft.pdf
+b8_ch1_b_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_b_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_b_draft.fo \
+	--stringparam rootid b8_ch1_b \
+	arr_style_fo_draft.xsl b8_ch1_b_draft_profiled.xml
+b8_ch1_b.pdf: b8_ch1_b.fo
+	$(FOP) -d b8_ch1_b.fo -o b8_ch1_b.pdf
+b8_ch1_b.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_b_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_b.fo \
+	--stringparam rootid b8_ch1_b \
+	arr_style_fo_draft.xsl b8_ch1_b_profiled.xml
+clean_b8_ch1_b_draft.pdf:
+	rm -f b8_ch1_b_draft.pdf b8_ch1_b_draft.fo b8_ch1_b_draft_profiled.xml
+clean_b8_ch1_b.pdf:
+	rm -f b8_ch1_b.pdf b8_ch1_b.fo b8_ch1_b_profiled.xml
+
+b8_ch1_c_draft.pdf: b8_ch1_c_draft.fo
+	$(FOP) -d b8_ch1_c_draft.fo -o b8_ch1_c_draft.pdf
+b8_ch1_c_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_c_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_c_draft.fo \
+	--stringparam rootid b8_ch1_c \
+	arr_style_fo_draft.xsl b8_ch1_c_draft_profiled.xml
+b8_ch1_c.pdf: b8_ch1_c.fo
+	$(FOP) -d b8_ch1_c.fo -o b8_ch1_c.pdf
+b8_ch1_c.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_c_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_c.fo \
+	--stringparam rootid b8_ch1_c \
+	arr_style_fo_draft.xsl b8_ch1_c_profiled.xml
+clean_b8_ch1_c_draft.pdf:
+	rm -f b8_ch1_c_draft.pdf b8_ch1_c_draft.fo b8_ch1_c_draft_profiled.xml
+clean_b8_ch1_c.pdf:
+	rm -f b8_ch1_c.pdf b8_ch1_c.fo b8_ch1_c_profiled.xml
+
+b8_ch1_d_draft.pdf: b8_ch1_d_draft.fo
+	$(FOP) -d b8_ch1_d_draft.fo -o b8_ch1_d_draft.pdf
+b8_ch1_d_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_d_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_d_draft.fo \
+	--stringparam rootid b8_ch1_d \
+	arr_style_fo_draft.xsl b8_ch1_d_draft_profiled.xml
+b8_ch1_d.pdf: b8_ch1_d.fo
+	$(FOP) -d b8_ch1_d.fo -o b8_ch1_d.pdf
+b8_ch1_d.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_d_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_d.fo \
+	--stringparam rootid b8_ch1_d \
+	arr_style_fo_draft.xsl b8_ch1_d_profiled.xml
+clean_b8_ch1_d_draft.pdf:
+	rm -f b8_ch1_d_draft.pdf b8_ch1_d_draft.fo b8_ch1_d_draft_profiled.xml
+clean_b8_ch1_d.pdf:
+	rm -f b8_ch1_d.pdf b8_ch1_d.fo b8_ch1_d_profiled.xml
+
+b8_ch1_e_draft.pdf: b8_ch1_e_draft.fo
+	$(FOP) -d b8_ch1_e_draft.fo -o b8_ch1_e_draft.pdf
+b8_ch1_e_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_e_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_e_draft.fo \
+	--stringparam rootid b8_ch1_e \
+	arr_style_fo_draft.xsl b8_ch1_e_draft_profiled.xml
+b8_ch1_e.pdf: b8_ch1_e.fo
+	$(FOP) -d b8_ch1_e.fo -o b8_ch1_e.pdf
+b8_ch1_e.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_e_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_e.fo \
+	--stringparam rootid b8_ch1_e \
+	arr_style_fo_draft.xsl b8_ch1_e_profiled.xml
+clean_b8_ch1_e_draft.pdf:
+	rm -f b8_ch1_e_draft.pdf b8_ch1_e_draft.fo b8_ch1_e_draft_profiled.xml
+clean_b8_ch1_e.pdf:
+	rm -f b8_ch1_e.pdf b8_ch1_e.fo b8_ch1_e_profiled.xml
+
+b8_ch1_f_draft.pdf: b8_ch1_f_draft.fo
+	$(FOP) -d b8_ch1_f_draft.fo -o b8_ch1_f_draft.pdf
+b8_ch1_f_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_f_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_f_draft.fo \
+	--stringparam rootid b8_ch1_f \
+	arr_style_fo_draft.xsl b8_ch1_f_draft_profiled.xml
+b8_ch1_f.pdf: b8_ch1_f.fo
+	$(FOP) -d b8_ch1_f.fo -o b8_ch1_f.pdf
+b8_ch1_f.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_f_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_f.fo \
+	--stringparam rootid b8_ch1_f \
+	arr_style_fo_draft.xsl b8_ch1_f_profiled.xml
+clean_b8_ch1_f_draft.pdf:
+	rm -f b8_ch1_f_draft.pdf b8_ch1_f_draft.fo b8_ch1_f_draft_profiled.xml
+clean_b8_ch1_f.pdf:
+	rm -f b8_ch1_f.pdf b8_ch1_f.fo b8_ch1_f_profiled.xml
+
+b8_ch1_g_draft.pdf: b8_ch1_g_draft.fo
+	$(FOP) -d b8_ch1_g_draft.fo -o b8_ch1_g_draft.pdf
+b8_ch1_g_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_g_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_g_draft.fo \
+	--stringparam rootid b8_ch1_g \
+	arr_style_fo_draft.xsl b8_ch1_g_draft_profiled.xml
+b8_ch1_g.pdf: b8_ch1_g.fo
+	$(FOP) -d b8_ch1_g.fo -o b8_ch1_g.pdf
+b8_ch1_g.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b8_ch1_g_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b8_ch1_g.fo \
+	--stringparam rootid b8_ch1_g \
+	arr_style_fo_draft.xsl b8_ch1_g_profiled.xml
+clean_b8_ch1_g_draft.pdf:
+	rm -f b8_ch1_g_draft.pdf b8_ch1_g_draft.fo b8_ch1_g_draft_profiled.xml
+clean_b8_ch1_g.pdf:
+	rm -f b8_ch1_g.pdf b8_ch1_g.fo b8_ch1_g_profiled.xml
+
+b9_ch1_draft.pdf: b9_ch1_draft.fo
+	$(FOP) -d b9_ch1_draft.fo -o b9_ch1_draft.pdf
+b9_ch1_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch1_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch1_draft.fo \
+	--stringparam rootid b9_ch1 \
+	arr_style_fo_draft.xsl b9_ch1_draft_profiled.xml
+b9_ch1.pdf: b9_ch1.fo
+	$(FOP) -d b9_ch1.fo -o b9_ch1.pdf
+b9_ch1.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch1_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch1.fo \
+	--stringparam rootid b9_ch1 \
+	arr_style_fo_draft.xsl b9_ch1_profiled.xml
+clean_b9_ch1_draft.pdf:
+	rm -f b9_ch1_draft.pdf b9_ch1_draft.fo b9_ch1_draft_profiled.xml
+clean_b9_ch1.pdf:
+	rm -f b9_ch1.pdf b9_ch1.fo b9_ch1_profiled.xml
+
+b9_ch2_draft.pdf: b9_ch2_draft.fo
+	$(FOP) -d b9_ch2_draft.fo -o b9_ch2_draft.pdf
+b9_ch2_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch2_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch2_draft.fo \
+	--stringparam rootid b9_ch2 \
+	arr_style_fo_draft.xsl b9_ch2_draft_profiled.xml
+b9_ch2.pdf: b9_ch2.fo
+	$(FOP) -d b9_ch2.fo -o b9_ch2.pdf
+b9_ch2.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch2_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch2.fo \
+	--stringparam rootid b9_ch2 \
+	arr_style_fo_draft.xsl b9_ch2_profiled.xml
+clean_b9_ch2_draft.pdf:
+	rm -f b9_ch2_draft.pdf b9_ch2_draft.fo b9_ch2_draft_profiled.xml
+clean_b9_ch2.pdf:
+	rm -f b9_ch2.pdf b9_ch2.fo b9_ch2_profiled.xml
+
+b9_ch3_draft.pdf: b9_ch3_draft.fo
+	$(FOP) -d b9_ch3_draft.fo -o b9_ch3_draft.pdf
+b9_ch3_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch3_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch3_draft.fo \
+	--stringparam rootid b9_ch3 \
+	arr_style_fo_draft.xsl b9_ch3_draft_profiled.xml
+b9_ch3.pdf: b9_ch3.fo
+	$(FOP) -d b9_ch3.fo -o b9_ch3.pdf
+b9_ch3.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch3_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch3.fo \
+	--stringparam rootid b9_ch3 \
+	arr_style_fo_draft.xsl b9_ch3_profiled.xml
+clean_b9_ch3_draft.pdf:
+	rm -f b9_ch3_draft.pdf b9_ch3_draft.fo b9_ch3_draft_profiled.xml
+clean_b9_ch3.pdf:
+	rm -f b9_ch3.pdf b9_ch3.fo b9_ch3_profiled.xml
+
+b9_ch4_draft.pdf: b9_ch4_draft.fo
+	$(FOP) -d b9_ch4_draft.fo -o b9_ch4_draft.pdf
+b9_ch4_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch4_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch4_draft.fo \
+	--stringparam rootid b9_ch4 \
+	arr_style_fo_draft.xsl b9_ch4_draft_profiled.xml
+b9_ch4.pdf: b9_ch4.fo
+	$(FOP) -d b9_ch4.fo -o b9_ch4.pdf
+b9_ch4.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch4_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch4.fo \
+	--stringparam rootid b9_ch4 \
+	arr_style_fo_draft.xsl b9_ch4_profiled.xml
+clean_b9_ch4_draft.pdf:
+	rm -f b9_ch4_draft.pdf b9_ch4_draft.fo b9_ch4_draft_profiled.xml
+clean_b9_ch4.pdf:
+	rm -f b9_ch4.pdf b9_ch4.fo b9_ch4_profiled.xml
+
+b9_ch5_draft.pdf: b9_ch5_draft.fo
+	$(FOP) -d b9_ch5_draft.fo -o b9_ch5_draft.pdf
+b9_ch5_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch5_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch5_draft.fo \
+	--stringparam rootid b9_ch5 \
+	arr_style_fo_draft.xsl b9_ch5_draft_profiled.xml
+b9_ch5.pdf: b9_ch5.fo
+	$(FOP) -d b9_ch5.fo -o b9_ch5.pdf
+b9_ch5.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch5_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch5.fo \
+	--stringparam rootid b9_ch5 \
+	arr_style_fo_draft.xsl b9_ch5_profiled.xml
+clean_b9_ch5_draft.pdf:
+	rm -f b9_ch5_draft.pdf b9_ch5_draft.fo b9_ch5_draft_profiled.xml
+clean_b9_ch5.pdf:
+	rm -f b9_ch5.pdf b9_ch5.fo b9_ch5_profiled.xml
+
+b9_ch6_draft.pdf: b9_ch6_draft.fo
+	$(FOP) -d b9_ch6_draft.fo -o b9_ch6_draft.pdf
+b9_ch6_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch6_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch6_draft.fo \
+	--stringparam rootid b9_ch6 \
+	arr_style_fo_draft.xsl b9_ch6_draft_profiled.xml
+b9_ch6.pdf: b9_ch6.fo
+	$(FOP) -d b9_ch6.fo -o b9_ch6.pdf
+b9_ch6.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch6_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch6.fo \
+	--stringparam rootid b9_ch6 \
+	arr_style_fo_draft.xsl b9_ch6_profiled.xml
+clean_b9_ch6_draft.pdf:
+	rm -f b9_ch6_draft.pdf b9_ch6_draft.fo b9_ch6_draft_profiled.xml
+clean_b9_ch6.pdf:
+	rm -f b9_ch6.pdf b9_ch6.fo b9_ch6_profiled.xml
+
+b9_ch7_draft.pdf: b9_ch7_draft.fo
+	$(FOP) -d b9_ch7_draft.fo -o b9_ch7_draft.pdf
+b9_ch7_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch7_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch7_draft.fo \
+	--stringparam rootid b9_ch7 \
+	arr_style_fo_draft.xsl b9_ch7_draft_profiled.xml
+b9_ch7.pdf: b9_ch7.fo
+	$(FOP) -d b9_ch7.fo -o b9_ch7.pdf
+b9_ch7.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch7_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch7.fo \
+	--stringparam rootid b9_ch7 \
+	arr_style_fo_draft.xsl b9_ch7_profiled.xml
+clean_b9_ch7_draft.pdf:
+	rm -f b9_ch7_draft.pdf b9_ch7_draft.fo b9_ch7_draft_profiled.xml
+clean_b9_ch7.pdf:
+	rm -f b9_ch7.pdf b9_ch7.fo b9_ch7_profiled.xml
+
+b9_ch8_draft.pdf: b9_ch8_draft.fo
+	$(FOP) -d b9_ch8_draft.fo -o b9_ch8_draft.pdf
+b9_ch8_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch8_draft_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch8_draft.fo \
+	--stringparam rootid b9_ch8 \
+	arr_style_fo_draft.xsl b9_ch8_draft_profiled.xml
+b9_ch8.pdf: b9_ch8.fo
+	$(FOP) -d b9_ch8.fo -o b9_ch8.pdf
+b9_ch8.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) --stringparam  profile.arch "chapter" $(XSLTPROC_OPTS) \
+	b9_ch8_profiled.xml ../stylesheets-ns/profiling/profile.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) b9_ch8.fo \
+	--stringparam rootid b9_ch8 \
+	arr_style_fo_draft.xsl b9_ch8_profiled.xml
+clean_b9_ch8_draft.pdf:
+	rm -f b9_ch8_draft.pdf b9_ch8_draft.fo b9_ch8_draft_profiled.xml
+clean_b9_ch8.pdf:
+	rm -f b9_ch8.pdf b9_ch8.fo b9_ch8_profiled.xml
+
