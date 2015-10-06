@@ -42,9 +42,6 @@
          specifically requested -->
     <xsl:param name="show.comments" select="0"></xsl:param>
     
-    <!-- turn hyphenation on or off -->
-    <xsl:param name="hyphenate">false</xsl:param>
-    
     <!-- Local customisation to include the book number in the
      equation number -->
     <xsl:template match="d:equation" mode="label.markup">

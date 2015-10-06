@@ -5,7 +5,9 @@
    <!-- the XHTML5 (and hence EPUB3) renders. -->
    <!-- Nota Bene: this sheet is common across both single page or chunked -->
    <!-- Peter Brady peter.brady@wmawater.com.au -->
-
+   
+   <!-- Import the common global stylesheet -->
+   <xsl:import href="arr_style_common.xsl" />
 
    <!-- Common javascript/s to add to all builds: -->
    <!--    -) MathJax                             -->
@@ -13,13 +15,6 @@
    <!--    -) JQuery                              -->
    <xsl:param name="html.script">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js</xsl:param>
    <xsl:param name="html.script.type">text/javascript</xsl:param>
-
-   <!-- BIBLIOGRAPHY DETAILS -->
-   <!-- Force the bibliography to ISO690 style -->
-   <xsl:param name="bibliography.style" select="'iso690'"/>
-   <!-- Point to the common XML bibliography database -->
-   <xsl:param name="bibliography.collection">file:///arr_references.xml</xsl:param>
-   <xsl:param name="bibliography.numbered" select="1"/>
 
    <!-- Add a common stylesheet -->
    <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css arr.css</xsl:param>
@@ -34,33 +29,6 @@
       </xsl:call-template>
    </xsl:template>
 
-   <xsl:param name="generate.toc">
-      /appendix toc,title
-      article/appendix  nop
-      /article  toc,title
-      book      toc,title,figure,table,example,equation
-      /chapter  toc,title
-      part      toc,title
-      /preface  toc,title
-      reference toc,title
-      /sect1    toc
-      /sect2    toc
-      /sect3    toc
-      /sect4    toc
-      /sect5    toc
-      /section  toc
-      set       toc
-   </xsl:param>
-
-   <!-- Control where the titles go: -->
-   <xsl:param name="formal.title.placement">
-      figure after
-      example before
-      equation before
-      table before
-      procedure before
-      task before
-   </xsl:param>
 
    <!-- Table Alternate Row Colouring -->
    <xsl:template match="d:table" mode="htmlTable">

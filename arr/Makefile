@@ -25,6 +25,7 @@ L10N_REVISION = r
 XSLTPROC = xsltproc
 XMLLINT = xmllint
 FOP = AHFCmd
+FOP_OPTS = -pgbar -tpdf -pdfver PDF1.7
 MKDIR = mkdir -p
 SVNVERSION = svnversion
 DIR_BASE = /Users/pbrady/ncwe/arr_docs/trunk
@@ -43,9 +44,9 @@ XSLTPROC_OPTS=--xinclude --output
 # Default and utility targets
 ####################
 # Default target: phony target to make draft PDFs
-draft: valid arr_draft.pdf all_book_pdf_draft all_chapter_pdf_draft html epub
+draft: valid arr_draft.pdf html epub
 
-final: valid arr.pdf all_book_pdf_final all_chapter_pdf_final html epub
+final: valid arr.pdf html epub
 
 all: valid draft final node_count all_arr.xml
 
@@ -77,7 +78,11 @@ clean_all_arr.xml:
 valid: valid_set
 
 # Need to do a two pass here due to profilling
-valid_set: arr_references.xml arr_set.xml book_end_matter/set_refs.xml
+valid_set: arr_references.xml book_end_matter/set_refs.xml arr_set.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) arr_set.xml \
+		--stringparam profile.arch "set" \
+		../stylesheets-ns/profiling/profile.xsl \
+		ARR.xml
 	$(XMLLINT) $(XMLLINT_OPTS) ../docbook/rng/docbookxi.rng --noout arr_set.xml
 
 arr_set.xml:
@@ -86,15 +91,15 @@ arr_set.xml:
 		../stylesheets-ns/profiling/profile.xsl \
 		ARR.xml
 
-book_end_matter/set_refs.xml: arr_set.xml
+book_end_matter/set_refs.xml: arr_references.xml arr_set.xml
 	$(XSLTPROC) $(XSLTPROC_OPTS) book_end_matter/set_refs.xml \
-		--stringparam target_arch set \
+		--stringparam profile.arch "set" \
 		--xinclude \
 		generate_bibliomixed.xsl \
 		arr_set.xml
 
 clean_valid_set:
-	rm -f arr_set.xml
+	rm -f arr_set.xml book_end_matter/set_refs.xml
 
 
 #####################################################
@@ -102,12 +107,12 @@ clean_valid_set:
 #####################################################
 # Draft PDF of the Entire Set
 arr_draft.pdf: arr_draft.fo
-	$(FOP) -d arr_draft.fo -o arr_draft.pdf
+	$(FOP) $(FOP_OPTS) -d arr_draft.fo -o arr_draft.pdf
 arr_draft.fo: valid_set arr_title_fo.xsl
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft.fo \
 		arr_style_fo_draft.xsl arr_set.xml
 
-clean_draft: clean_chapter_pdf_draft clean_book_pdf_draft
+clean_draft:
 	rm -f arr_draft.fo arr_draft.pdf
 
 
@@ -125,8 +130,6 @@ style_version.xml:
 	$(XSLTPROC) --output style_version.xml svnlog2db.xsl style_version_tmp.xml
 	rm style_version_tmp.xml
 
-####################
-# PDF
 # Common PDF Elements
 arr_title_fo.xsl: arr_title_fo.xml
 	$(XSLTPROC) --output arr_title_fo.xsl \
@@ -179,10 +182,11 @@ clean_html:
 #####################################################
 # EPUB3
 EPUB_OPTS=--param keep.relative.image.uris 0
-epub: valid epub3_images
+epub: valid_set epub3_images
 	$(XSLTPROC) --xinclude --stringparam base.dir epub3/OEBPS \
 		--param keep.relative.image.uris 0 \
-		../stylesheets-ns/epub3/chunk.xsl ARR.xml
+		arr_style_epub.xsl arr_set.xml
+	cp arr.css epub3/OEBPS/
 	cd epub3 && zip -rX arr.epub mimetype META-INF OEBPS
 
 clean_epub:
@@ -217,8 +221,8 @@ clean_final:
 #####################################################
 # Include additional make files that are generated from the
 # script: build_make_includes
-include Makefile.book
-include Makefile.chapter
-include Makefile.html_single
+# include Makefile.book
+# include Makefile.chapter
+# include Makefile.html_single
 include Makefile.html_chunked
 include Makefile.epub3

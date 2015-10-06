@@ -27,11 +27,8 @@
    <!-- Globally turn on FOP -->
    <xsl:param name="axf.extensions" select="1"/>
 
-
-
-
-
-
+   <!-- turn hyphenation on or off -->
+   <xsl:param name="hyphenate">false</xsl:param>
 
    <!-- Page Details -->
    <!-- Define the we are using A4 -->
@@ -107,13 +104,6 @@
 
 
    <!-- titles of figures and tables -->
-   <xsl:param name="formal.title.placement">
-      figure after
-      example before
-      equation before
-      table before
-      procedure before
-   </xsl:param>
    <xsl:attribute-set name="formal.title.properties" use-attribute-sets="normal.para.spacing">
       <xsl:attribute name="font-weight">normal</xsl:attribute>
       <xsl:attribute name="hyphenate">false</xsl:attribute>
