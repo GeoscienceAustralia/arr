@@ -1,4 +1,19 @@
 /* ARR CSS3 Stylesheet */
+/* Adjust the nested lists in the TOC so that we get nested numbers such as:
+ * 1. Intro
+ * 1.1 Overview
+ * etc
+ */
+div.toc ol {
+   counter-reset: item;
+}
+div.toc li {
+   display: block;
+}
+div.toc li:before {
+   content: counters(item, ".") " ";
+   counter-increment: item;
+}
 
 /* restyle the inline glossterms to match those in the print eddition.*/
 a.glossterm {
@@ -58,9 +73,9 @@ div.figure {
 /*********************************************/
 /* Definition Lists */
 dt {
-	font-weight: normal;
-	font-style:italic;
+   font-weight: normal;
+   font-style:italic;
 }
 dd p {
-	padding-left: 20px;
+   padding-left: 20px;
 }

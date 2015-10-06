@@ -20,6 +20,7 @@
    <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css arr.css</xsl:param>
 
    <!-- Table of Contents Formatting -->
+   <xsl:param name="toc.list.type">ol</xsl:param>
    <xsl:template match="d:book" mode="toc">
       <xsl:param name="toc-context" select="."/>
 
