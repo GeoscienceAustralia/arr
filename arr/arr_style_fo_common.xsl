@@ -882,4 +882,51 @@
       <xsl:attribute name="font-style">italic</xsl:attribute>
    </xsl:attribute-set>
    
+   <!-- Author Arrangements
+      Specifically:
+      -) drop affiliations
+      -) horizontal list
+   -->
+   <xsl:template name="chapter.titlepage.recto">
+      <xsl:choose>
+         <xsl:when test="d:chapterinfo/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:chapterinfo/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:docinfo/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:docinfo/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:info/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:info/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:title"/>
+         </xsl:when>
+      </xsl:choose>
+      
+      <xsl:choose>
+         <xsl:when test="d:chapterinfo/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:chapterinfo/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:docinfo/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:docinfo/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:info/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:info/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:subtitle"/>
+         </xsl:when>
+      </xsl:choose>
+      
+      <fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="chapter.titlepage.recto.style" text-align="center" space-before="0.5em" space-after="0.5em" font-size="14pt">
+         <xsl:for-each select=".//d:author">
+            <xsl:call-template name="person.name"/>
+            <xsl:if test="position() != last()">
+               <xsl:text>, </xsl:text>
+            </xsl:if>
+         </xsl:for-each>
+      </fo:block>
+   </xsl:template>
+   
+   
 </xsl:stylesheet>
