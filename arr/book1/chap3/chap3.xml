@@ -1,69 +1,1111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" xml:id="b1_ch3"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <title>Approaches to Flood Estimation</title>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" xml:id="b1_ch3">
+	<info>
+	<title>Approaches to Flood Estimation</title>
+	<xi:include href="../../common/authors/ball_james.xml"/>
+	<xi:include href="../../common/authors/nathan_rory.xml"/>
+	    </info>
 
-  <para>Rory leading. old text here. </para>
-
-  <section>
-    <title>General</title>
-
+  <section xml:id="b1_ch3_s_n1dn4">
+    <title>Introduction</title>
+    <para/>
+    <para>Design flood estimation is a focus for many engineering hydrologists. In many situations,
+      advice is required on flood magnitudes for the design of culverts and bridges for roads and
+      railways, the design of urban drainage systems, the design of flood mitigation levees and
+      other flood mitigation structures, design of dam spillways, and many other situations. The
+      flood characteristic of most importance depends on the nature of the problem under
+      consideration, but it is often necessary to estimate peak flow, peak level, flood volume, and
+      flood rise.The analysis might be focussed on a single location – such as a bridge waterway or
+      township levee – or it may be necessary to consider the performance of the whole catchment as
+      a system, as required in urban drainage design.</para>
+    <para>Design objectives are most commonly specified using risk-based criteria, and thus the
+      focus of this guidance is on the use of methods that provide estimates of flood
+      characteristics for a specified probability of exceedance. </para>
+    <para>The general nature of the estimation problem is illustrated in <xref
+        linkend="b1_ch3_f_ndayd"/>. This figure shows the annual flood maxima (blue circular
+      symbols) from 75 years of available gauged records. These flood maxima have been ranked from
+      largest to smallest and are plotted against an estimate of their sample exceedance probability
+      (as described in Book 3). Such information can be used directly to identify the underlying
+      probability model of flood behaviour at the site which the data was collected. The flood peaks
+      are usually considered to be independent random variables, and it is often assumed that each
+      flood is a random realisation of a single probability model. The distribution of gauged flood
+      peaks shown in <xref linkend="b1_ch3_f_ndayd"/> do appear to be from a homogeneous sample (ie
+      a single probability model), but in many practical problems the relationship between rainfall
+      and flood may change over time, and it may be necessary to either censor the data or identify
+      appropriate exogenous factors to condition the fit of the adopted probability model.</para>
+    <para>The best estimate of the relationship between flood magnitude and annual exceedance
+      probability obtained by fitting a probability model is shown by the solid red curve in <xref
+        linkend="b1_ch3_f_ndayd"/>. The gauged data represent a finite sample of a given size, and
+      thus any estimate of flood risk using a fitted probability model is subject to uncertainty, as
+      illustrated by the increasingly divergent dashed red curves in <xref linkend="b1_ch3_f_ndayd"
+      />. The computation of such confidence limits usually only reflects the limits of the
+      available sample, or perhaps the increasing uncertainty involved in the extrapolation of the
+      relationship between recorded stage and estimated flood peak. However, it needs to be
+      recognised that these factors only represent the uncertainties most easily characterised;
+      other factors, such as the influence of a non-stationary climate, changing land-use during the
+      period of record, and the changing nature of flood response with event magnitude, confound
+      attempts to identify the most appropriate probability model. Accordingly, the true uncertainty
+      around such estimates will be larger than that based solely on consideration of the size of
+      the available sample. Of course, data are rarely available at the location of design interest,
+      and additional uncertainty is involved in the scaling and/or transposition of flood risk
+      estimates to the required site.</para>
+    <figure label="1031" xml:id="b1_ch3_f_ndayd">
+      <title>Illustration of stochastic influence of hydrologic factors on flood peaks and the
+        uncertainty in flood risk estimates associated with observed flood data.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/1031.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para/>
+    <para>That said, one of the great advantages of fitting a probability flood model to observed
+      data is that the approach avoids the problem of considering the complex joint probabilities
+      involved in flood generation processes. Floods are the result of the interaction between many
+      random variables associated with natural and anthropogenic factors; natural factors include
+      interactions between the characteristics of the rainfall event, antecedent conditions, and
+      other stochastic factors such as tide levels and debris flows; anthropogenic factors might
+      include the influence of dam and weir operations, urbanisation, retarding basins, flood
+      mitigation works, and land-management practices.</para>
+    <para><xref linkend="b1_ch3_f_ndayd"/> also illustrates the influence of natural variability on
+      flood generation processes, and is based on the stochastic simulation of flood processes using
+      10,000 years of rainfall data under the assumption of a stationary climate. The stochastic
+      flood maxima were obtained by varying key factors that influence the production of flood
+      runoff, namely rainfall depth, initial and continuing losses, and the spatial and temporal
+      patterns of catchment rainfalls. The flood peaks in this figure are plotted against the AEP of
+      the causative rainfall, and the scatter of the stochastic maxima illustrates the natural
+      variability inherent in the production of flood runoff. While these maxima have been derived
+      from mathematical modelling of event rainfall bursts, an indication of this variability can be
+      seen in the relationship between observed rainfalls and runoff in gauged catchments (though of
+      course with real-world data we do not have 10,000 years of observations). </para>
+    <para>The scatter of stochastic flood maxima resulting from different combination of flood
+      producing factors illustrates the inherent difficulty in removing bias from “design event”
+      methods. Such methods use a flood model to transform probabilistic bursts of rainfall (the
+      “design rainfalls” as presented in Book 2) to corresponding estimates of floods. For example
+      it is seen from <xref linkend="b1_ch3_f_ndayd"/> that the flood peaks resulting from 1% AEP
+      rainfalls range in magnitude between around 500 m3/s and 200 m3/s; it is also seen that the
+      AEP of rainfall that might generate a flood with a 1,000 m3/s peak might vary between around
+      20% and 0.1%. Traditional practice has been to adopt fixed values of losses and rainfall
+      patterns for use with design rainfalls to derive a single flood that is assumed to have the
+      same AEP as its causative rainfall. If chosen carefully it is possible to select a set of
+      values that yields an unbiased estimate of the design flood, but without taking steps to
+      explicitly cater for the joint probabilities involved, there is a considerable margin for
+      error (Weinmann et al, 2002; Kuczera et al.,
+      2006).<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></para>
+    <?oxy_custom_end?>
+    <para>Accordingly, a key difference between this and earlier versions of ARR is the focus on how
+      best to achieve “probability-neutrality” when using rainfall-based techniques. A number of
+      more computationally intensive procedures are introduced (such as ensemble event, Monte Carlo
+      event, and continuous simulation approaches) to help ensure that the method used to transform
+      rainfalls into design floods is undertaken in a fashion that minimises bias in the resulting
+      exceedance probabilities. An overview of these concepts is provided in <xref
+        linkend="b1_ch3_s_ccenm"/>, and more detailed description of the procedures is provided in
+      Book 4.</para>
+    <para>The methods discussed here are divided into two broad classes of procedures based on: (i)
+      the direct analysis of observed flood and related data (<xref linkend="b1_ch3_s_o4nkk"/>) and
+      (ii) the use of simulation models to transform rainfall into flood maxima (<xref
+        linkend="b1_ch3_s_ccenm"/>). All methods involve the use of some kind of statistical model
+      (or transfer function) to extrapolate information in space or time. Each method also has its
+      strengths and limitations and they vary in their suitability to different types of data and
+      design contexts, and this is discussed in <xref linkend="b1_ch3-1e"/>.</para>
     <para/>
   </section>
 
-  <section>
-    <title>Alternative Approaches</title>
-
-    <para>The first section of this chapter needs to introduce the conceptual
-    model of design flood estimation techniques - this will be an expansion of
-    the initial sections of the IAHR paper on revisiting the design flood
-    problem. Included in this section therefore is the presentation of the
-    design flood problem as a data mining problem (i.e. a hydroinformatic
-    problem) where a statistical model is fitted to relevant data; this data
-    can be the result of field monitoring, regional regression, or catchment
-    simulation. This needs to be carefully framed as it forms the foundation
-    of the approach being adopted in later sections.</para>
+  <section xml:id="b1_ch3_s_o4nkk">
+    <title>Flood data based procedures</title>
+    <section xml:id="b1_ch3_s_sgzmf">
+      <title>Overview</title>
+      <para>On overview of the procedures commonly used to analyse flood data directly is provided
+        in <xref linkend="b1_ch3_t_rotgx"/>. Flood frequency techniques (<xref
+          linkend="b1_ch3_s_1wjii"/>) are used to estimate the probability of flood exceedances
+        directly from observed flood maxima, and are often used to extrapolate to probabilities
+        beyond that inferred by the length of available record. Flood frequency analyses are most
+        commonly applied using only the data at the site of interest using peaks-over-threshold and
+        annual maxima series (“at-site analyses”), but the resulting estimates of flood risk can be
+        much improved by the consideration of flood behaviour at multiple sites that are judged to
+        have similar flood frequency distributions (“at-site/regional analyses”). This concept of
+        pooling information from multiple sites is often referred to as “trading space for time”
+        for, with appropriate care, the information on flood exceedances across a region can improve
+        the fit of the probability model at a single site with a short period of record.</para>
+      <para>One drawback of frequency analyses is that it can only provide quantile estimates at
+        sites where data is available. Accordingly, a range of procedures have been developed to
+        estimate flood risk at sites with little or no data (<xref linkend="b1_ch3_s_1wjii"/>).
+        These procedures generally involve the use of regression models to estimate the parameters
+        of probability models (or the flood quantiles) using physical and meteorological
+        characteristics, although simpler scaling functions can sometimes be used for local
+        analyses.</para>
+      <para>
+        <table frame="all" xml:id="b1_ch3_t_rotgx">
+          <title>Summary of common procedures used to directly analyse flood data</title>
+          <tgroup cols="5">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry/>
+                <entry>Frequency analysis of small floods</entry>
+                <entry>Frequency analysis of large floods</entry>
+                <entry>At-site/regional flood frequency analysis </entry>
+                <entry>Regional Flood Frequency Estimation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Inputs</entry>
+                <entry>Peak-over-Threshold series</entry>
+                <entry>Annual maxima series at single site of interest</entry>
+                <entry>Gauged flood maxima at multiple sites with similar flood behaviour</entry>
+                <entry>Catchment characteristics and flood quantiles (or parameters) derived from
+                  frequency analyses</entry>
+              </row>
+              <row>
+                <entry>Analysis</entry>
+                <entry>Selected probability model is fitted to flood maxima (eg exponential
+                  distribution fitted by L-Moments)</entry>
+                <entry>Selected probability model is fitted to flood maxima (eg LPIII/GEV
+                  distributions fitted by L-Moments)</entry>
+                <entry>Information from multiple catchments is used to improve fit of probability
+                  model (eg regional L-Moments or Bayesian inference)</entry>
+                <entry>Regression on model parameters or flood quantiles (eg RFFE method), or local
+                  scaling functions based on catchment characteristics</entry>
+              </row>
+              <row>
+                <entry>Outputs</entry>
+                <entry>
+                  <para>Flood quantiles for AEPs &gt; 10% at a gauged site</para>
+                </entry>
+                <entry>
+                  <para>Flood quantiles for AEPs &lt; 10% at a gauged site</para>
+                </entry>
+                <entry>Improved flood quantiles at multiple sites of interest</entry>
+                <entry>Flood quantiles at ungauged sites</entry>
+              </row>
+              <row>
+                <entry>ARR Guidance</entry>
+                <entry>Book 3, Sections 2.4.3 and 2.7</entry>
+                <entry>Book 3, Sections 2.4.2 and 2.6</entry>
+                <entry>Book 3, Sec 2.6.3 (Bayesian Calibration)</entry>
+                <entry>Book 3, Section 3</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+      <para/>
+    </section>
+    <section xml:id="b1_ch3_s_1wjii">
+      <title>Flood Frequency Techniques</title>
+      <para>Frequency analysis involves the fitting of a probability model to recorded maxima to
+        relate the magnitude of extreme events to their frequency of occurrence. The method can be
+        applied directly to flood peaks (as described in Book III) or rainfall (as used in Book II),
+        or indeed to any set of flood characteristics for which it is desired to determine the
+        relationship between event magnitude and exceedance probability. The technique is generally
+        not applicable to flood level maxima as the manner in which flood levels increase with flood
+        magnitude is heavily dependent on channel geometry and thus is not suited to statistical
+        extrapolation.</para>
+      <para>Flood frequency analyses can be broadly divided into three types of applications (<xref
+          linkend="b1_ch3_t_rotgx"/>), namely:</para>
+      <para>
+        <orderedlist>
+          <listitem>
+            <emphasis role="italic">At-site</emphasis>
+            <para> - the parameters of the probability distributions are fitted to annual maxima
+              series to derive estimates of flood risk rarer than 10% AEP (or to peaks above a given
+              threshold for more common floods) solely using information at the site of
+              interest</para>
+          </listitem>
+          <listitem>
+            <emphasis role="italic">At-site/regional</emphasis>
+            <para> – the information used to fit the model parameters is obtained from the site of
+              interest as well as from other sites considered to exhibit similar flood
+              behaviour.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Regional</emphasis> – the information used to fit the
+              model parameters is obtained from a group of sites considered to exhibit similar flood
+              behaviour, where, as described in the following section, regression-based procedures
+              may be used to estimate the model parameters (or probability quantiles) at the
+              ungauged sites of interest</para>
+          </listitem>
+        </orderedlist>
+      </para>
+      <para>Flood frequency methods are particularly attractive as they avoid the need to consider
+        the complex processes and joint probabilities involved in the transformation of rainfall
+        into flood. However, the utility of these methods is heavily dependent on both the length of
+        available record and its representativeness to the catchment and climatic conditions of
+        interest, as they are based on the assumption of stationary data series. Details on what
+        distributions should be used, and how to select the sample of maxima and fit the
+        distribution, are provided in Book 3.</para>
+      <para>There is advantage in undertaking frequency analyses at multiple sites in a local region
+        of interest as this provides information on how local flood behaviour changes with catchment
+        area, and other factors such as rainfall intensity can also be considered for more detailed
+        analyses. Simple quantile regression models (ie the development of a regression relationship
+        between, say, catchment area and 10%AEP flood peak) are readily derived and are well suited
+        to transposing flood risk estimates to locations upstream or downstream of a gauging site.
+        Such simple scaling functions can also be applied to estimates derived using rainfall-based
+        procedures.</para>
+    </section>
+    <section xml:id="b1_ch3_s_6j26d">
+      <title>Regional Flood Methods</title>
+      <para>Regional flood methods generally involve the application of a regression technique in
+        which flood characteristics are related to catchment and relevant meteorological
+        characteristics; the regression equation can be fitted to the flood quantiles directly
+        (“quantile regression technique”), or else they can be fitted to the parameters of a
+        probability model (“parameter regression technique”).</para>
+      <para>Book 3 provides details of the application of the latter approach to data sets for
+        different Australian regions in which the three parameters of the probability model are
+        estimated from catchment characteristics using a Bayesian regression approach (Rahman et al,
+        2014). The developed procedure provides a quick means to estimate the magnitude of peak
+        flows for AEPs ranging between 50% to 1%, with the additional attraction that uncertainty
+        bounds are provided. The regression equations presented in Book 3 were developed using
+        parameters obtained from at-site/regional flood frequency analyses, and thus represent a
+        rigorous example of regional flood frequency analysis based on parameter regression.</para>
+      <para>In some situations it might be useful to obtain an additional independent estimate based
+        on local data, and if so then prediction equations can be developed by regressing catchment
+        characteristics against flood quantiles obtained from at-site(/regional) flood frequency
+        analyses. The most common example of this is to develop a relationship between flood
+        quantiles and catchment area for nested sites located in the same catchment (typically this
+        is undertaken using log-transformed data). The utility of such an approach when compared to
+        the procedure presented in Book 3 depends on the relevance of the data to the problem at
+        hand, and on the extent to which the assumptions of the fitted model have been
+        satisfied.</para>
+      <para/>
+    </section>
   </section>
 
-  <section>
-    <title>Flood Frequency Techniques</title>
-
-    <para/>
+  <section xml:id="b1_ch3_s_ccenm">
+    <title>Rainfall based procedures</title>
+    <section xml:id="b1_ch3_s_qhrcw">
+      <title>General</title>
+      <para>Rainfall-based models are commonly used to extrapolate flood behaviour at a particular
+        location using information from a short period of observed data; this can be done using
+        either event-based or continuous simulation approaches, as described in <xref
+          linkend="b1_ch3_s_8739o"/> and <xref linkend="b1_ch3_s_4h1lr"/> below. The parameters of
+        such models can also be transposed to a different location (or modified to represent
+        different catchment conditions) and used to estimate flood characteristics for which no
+        gauging information is available.</para>
+      <para><xref linkend="b1_ch3_t_97p0i"/> summarises the different characteristics of the
+        event-based and continuous simulation approaches. The three broad approaches to event-based
+        simulation all use the same hydrologic model to convert design rainfall inputs into
+        hydrograph outputs, the main difference is in the level of sophistication used to minimise
+        bias in the probability-neutrality of the transformation. Continuous simulation approaches
+        utilise model structures which generally differ markedly from those used in event-based
+        models.</para>
+      <para>Event-based approaches are based on the transformation of rainfall depths of given
+        duration and annual exceedance probability (“design rainfalls”) into flood hydrographs by
+        routing rainfall excess through catchment storage. Such models can include the allowance of
+        additional pre- and post-burst rainfalls to represent complete storms, and can separately
+        consider baseflow contribution from prior rainfall events to represent total hydrographs.
+        The defining feature of such models is that they are focused on the simulation of an
+        individual flood event and that antecedent conditions need to be specified in some explicit
+        fashion. Design event methods can be applied in a deterministic fashion, where key inputs
+        are fixed at values that minimise the bias in the transformation of rainfall into runoff.
+        Alternatively, stochastic techniques can be used to explicitly resolve the joint
+        probabilities of key hydrologic interactions; ensemble techniques provide simple (and
+        approximate) means of minimising the bias associated with a single hydrologic variable,
+        whereas Monte Carlo techniques represent a more rigorous solution that can be expanded to
+        consider interactions from a range of natural and anthropogenic factors. It should be noted
+        that the guidance provided in ARR only focuses on the use of stochastic techniques to cater
+        for (aleatory) variability of key inputs, and its use to characterise epistemic uncertainty
+        is assumed to be the domain of specialist statistical hydrologists. </para>
+      <para>Continuous simulation approaches obviate the need to specify antecedent and conditions
+        as these are implicitly considered in the successive updating of state variables via the
+        simulation of continuous rainfall (and other) input time series. The continuous simulation
+        of key state variables also has the potential to simplify the consideration of the complex
+        joint probabilities involved in flood generation processes. The conceptual basis of
+        continuous simulation is the simulation of data that would have been recorded at a location
+        if a gauge were present at that location. Hence estimation of design flood characteristics
+        from data generated through application of a continuous simulation modelling system requires
+        the undertaking of subsequent statistical analysis, as outlined in <xref
+          linkend="b1_ch3_s_1wjii"/>. The advantages of continuous simulation may be offset by the
+        need to consider additional complexity which is avoided by event-based approaches, though
+        the relative merits of each approach is dependent upon the available data and the nature of
+        the design problem being considered.</para>
+      <para>
+        <table frame="all" xml:id="b1_ch3_t_97p0i">
+          <title>Summary of recommended rainfall-based procedures </title>
+          <tgroup cols="5">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <colspec colname="c5" colnum="5" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry/>
+                <entry>Design Event</entry>
+                <entry>Ensemble Event</entry>
+                <entry>Monte Carlo Event</entry>
+                <entry>Continuous Simulation</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Hydrologic Inputs</entry>
+                <entry namest="c2" nameend="c4">Design rainfalls (ie rainfall depth for given burst
+                  duration and annual exceedance probability)</entry>
+                <entry>Design rainfalls (ie rainfall depth for given burst duration and annual
+                  exceedance probability)</entry>
+              </row>
+              <row>
+                <entry>Hydrologic variability</entry>
+                <entry>Fixed patterns of rainfall and other inputs</entry>
+                <entry>Ensemble of <emphasis role="italic">N</emphasis> temporal patterns</entry>
+                <entry>Ensemble (or distribution) of temporal patterns, losses, and other
+                  factors.</entry>
+                <entry>As represented in the time series of inputs – if not in time series then not
+                  represented</entry>
+              </row>
+              <row>
+                <entry>Model</entry>
+                <entry namest="c2" nameend="c4">Event-based model based on routing rainfall excess
+                  through catchment storage (see Book 5 for details of technique) </entry>
+                <entry>Model of catchment processes influencing runoff generation</entry>
+              </row>
+              <row>
+                <entry>Framework</entry>
+                <entry>Single simulation for each combination of rainfall depth and AEP</entry>
+                <entry><emphasis role="italic">N</emphasis> simulations for each combination of
+                  rainfall depth and AEP (N»10)</entry>
+                <entry>Stochastic sampling of input distributions using continuous or stratified
+                  domain (potentially thousands of simulations)</entry>
+                <entry>Continuous simulation at time step for <emphasis role="italic">N</emphasis>
+                  years</entry>
+              </row>
+              <row>
+                <entry>Flood AEP</entry>
+                <entry namest="c2" nameend="c3">Assumed same as input rainfall</entry>
+                <entry morerows="1">Statistical analysis of joint probabilities (eg frequency
+                  analysis of maxima or Total Probability Theorem)</entry>
+                <entry>Continuous simulation at time step for <emphasis role="italic">N</emphasis>
+                  years</entry>
+              </row>
+              <row>
+                <entry>Flood magnitude</entry>
+                <entry>Single estimate derived from each set of inputs</entry>
+                <entry>Simple average (or median) of <emphasis role="italic">N</emphasis>
+                  simulations</entry>
+                <entry>Computed from frequency analysis of <emphasis role="italic">N</emphasis>
+                  annual maxima</entry>
+              </row>
+              <row>
+                <entry>ARR guidance</entry>
+                <entry>Book 4, Sect 3.2.2</entry>
+                <entry>Book 4, Sect 3.2.3</entry>
+                <entry>Book 4, Sect 3.2.4</entry>
+                <entry>Book 4, Sect 3.3</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </section>
+    <section xml:id="b1_ch3_s_8739o">
+      <title>Event-based simulation</title>
+      <para>The <emphasis role="italic">design event</emphasis> method represents common industry
+        practice in Australia and overseas, and traditionally includes the use of the Rational
+        Method, Unit Hydrograph, SCS, Gradex, SCS, and runoff-routing procedures (Haan and Schulze,
+        1987; Cordery and Pilgrim, 2000; McKercher and Macky, 2001; Smithers, 2012). With this
+        approach, a rainfall event with pre-selected AEP and duration is transformed into a flood
+        hydrograph by a simple hydrologic model (or transfer function). The approach is termed
+        “deterministic” in the sense that the single resulting flood output is uniquely derived from
+        a set of inputs that are explicitly selected. The transformation often involves the
+        application of two modelling steps, namely: (i) a <emphasis role="italic">runoff production
+          model</emphasis> to convert the storm rainfall input at any point in the catchment into
+        rainfall excess (or runoff) at that location, and (ii) a <emphasis role="italic">hydrograph
+          formation model</emphasis> to simulate the conversion of rainfall excess into a flood
+        hydrograph at the point of interest. The exceedance probability of the derived flood is
+        assumed to be the same as the input rainfall. This assumption is made on the basis that the
+        hydrologic factors that control runoff production are set to be probability-neutral. In
+        practice this means that factors related to the temporal and spatial distribution of
+        rainfall, antecedent conditions and losses, are set to “typical” values (from the central
+        tendency of their distributions) that are associated with the input rainfall. Factors
+        related to formation of the hydrograph are generally assumed to be invariant with rainfall.
+        Design events for different rainfall durations are simulated, and the one producing the
+        highest peak flow (corresponding to the critical rainfall duration) is adopted as producing
+        the design flood for the selected AEP. </para>
+      <para>The <emphasis role="italic">ensemble event</emphasis> method represents a modest
+        increase in computational requirements. Rather than adopting typical fixed values of inputs
+        in the hope of achieving probability-neutrality, selected inputs are selected from an
+        ensemble of inputs and the simulation results are based on the central tendency of the
+        outputs (ie the average or the median, as judged appropriate for the degree of non-linearity
+        involved). This can be done in a variety of ways, but most simply this is applied to
+        temporal patterns as they typically have the largest influence (after rainfall depth) on the
+        timing and magnitude of hydrograph response. To this end, a representative sample of, say,
+        ten temporal patterns is selected from recorded data in a meteorologically homogeneous
+        region, and the hydrographs obtained by simulating flood response from a given combination
+        of rainfall depth and duration are analysed to provide a centrally tended estimate (either
+        the arithmetic mean or the median) of the peak flow associated with the AEP of the input
+        rainfall. A representative hydrograph from the ensemble can be scaled to match the derived
+        peak for design purposes. This approach represents a simple means of accounting for the
+        hydrologic variability of a single dominant factor (ie temporal patterns), and testing has
+        demonstrated (eg Sih et al, 2008; Entura report, 2015) that this approach provides results
+        for many practical purposes that are similar to that obtained from more rigorous
+        methods.</para>
+      <para>The basis of the <emphasis role="italic">Monte Carlo event</emphasis> method is a
+        recognition that flood maxima can result from a variety of combinations of flood producing
+        factors, rather than from a single combination as is assumed with the design event approach.
+        For example, the same peak flood could result from a large, front-loaded storm on a dry
+        basin, or a moderate, more uniformly distributed storm on a saturated basin. Such approaches
+        attempt to mimic the joint variability of the hydrologic factors of most importance, thereby
+        providing a more realistic representation of the flood generation processes. The method is
+        easily adapted to focus on only those aspects that are most relevant to the problem. To this
+        end, it is possible to adopt single fixed values for factors that have only a small
+        influence on runoff production, and full distributions (or data ensembles) for other more
+        important inputs, such as losses, and temporal patterns, or any influential factor (such as
+        initial reservoir level) that may impact on the outcome. The approach involves undertaking
+        numerous simulations where the stochastic factors are sampled in accordance with the
+        variation observed in nature. In the most general Monte Carlo simulation approach for design
+        flood estimation, rainfall events of different duration are sampled stochastically from
+        their distribution (Weinmann et al, 2002). Alternatively, the simulations can be undertaken
+        for specific storm durations (applying the critical rainfall duration concept) and the
+        exceedance probability of the desired flood characteristic may be computed using the Total
+        Probability Theorem (Nathan et al, 2003). The latter approach is simpler and more aligned to
+        available design information, and is more easily implemented by those familiar with the
+        traditional design event approach.</para>
+    </section>
+    <section xml:id="b1_ch3_s_4h1lr">
+      <title>Continuous simulation</title>
+      <para>With continuous simulation approaches, a conceptual model of the catchment is used to
+        convert input time series of rainfall and evaporation into an output time series of
+        streamflow; the flood events of interest are then extracted from the simulated streamflow
+        record and analysed by conventional frequency analysis. The models used to transform the
+        input rainfall into streamflow tend to be rather more complex than those commonly used in
+        the design event or stochastic approaches. The main reason for this complexity is the
+        ability of the models to account for changes in state variables (eg soil moisture and other
+        catchment stores) during the simulation period. While these models have been used for the
+        past 40 years for the prediction of continuous flow sequences, their dominant purpose has
+        been for estimation of flow sequences for either yield analysis or for environmental
+        considerations (Chiew, 2010). That said, their use has been extended to the estimation of
+        design floods (Cameron et al, 2000; Boughton and Droop, 2003; Blazkova, S., &amp; Beven,
+        2004, 2009).</para>
+      <para>“Hybrid” approaches have the potential to capitalise on the advantage of both
+        event-based and continuous simulation approaches. Typically, hybrid approaches use
+        statistical information on rainfall storms in combination with continuous simulation and
+        event-based models. With these approaches, long term recorded (or stochastic) climate
+        sequences can be used in combination with a continuous simulation model to generate a time
+        series of catchment soil moisture and streamflows. This information is used to specify
+        antecedent conditions for an event-based model, which is then used in combination with
+        statistical information on rainfall storms to generate extreme flood hydrographs. For
+        example, SEFM (MGS Engineering, 2009) and SCHADEX (Paquet et al, 2013) are examples of the
+        hybrid approach. In both these models a continuous hydrological simulation model is used to
+        generate the possible hydrological states of the catchment, and floods are simulated on an
+        event basis. While there are a number of conceptual advantages to these methods, significant
+        development would be required for their implementation for routine design purposes.</para>
+    </section>
   </section>
 
   <section xml:id="b1_ch3-1e">
-    <title>Design Events</title>
-
-    <para>Real content needs to be inserted here.</para>
-
-    <section>
-      <title>Single Bursts</title>
-
-      <para>Real content needs to be inserted here.</para>
-    </section>
-
-    <section>
-      <title>Monte Carlo Bursts</title>
-
-      <para>Real content needs to be inserted here.</para>
-    </section>
-  </section>
-
-  <section>
-    <title>Continuous Simulation</title>
-
-    <para/>
-  </section>
-
-  <section>
     <title>Selection of Approach</title>
+    <section xml:id="b1_ch3_s_krhjd">
+      <title>Overview</title>
+      <para>The methods described above have their differing strengths and weaknesses, and this
+        means that each method is suited to a particular range of data availability and design
+        contexts. While the broad differences in the applicability of the different methods are
+        discussed below, it should be recognised that there is considerable overlap in their ranges
+        of applicability and it is strongly advisable to apply more than one method to any given
+        design situation. The comparison of different methods yields insights about errors or
+        assumptions that might otherwise be missed, and the process of reconciling the different
+        assessments provides valuable information that aids adoption of a final “best estimate”. </para>
+      <para>In developing guidance on selection of approach it is first worth briefly summarising
+        the strengths and weakness of the different methods. This is done separately for flood data
+        based procedures and rainfall based procedures, and this is then followed by general
+        guidance for selection of approach.</para>
+    </section>
 
-    <para/>
+    <section xml:id="b1_ch3_s_xrg5l">
+      <title>Advantages and Limitations of Flood Data Based procedures</title>
+      <para>The prime advantage of flood frequency analyses is that they provide a direct estimate
+        of flood exceedance probabilities based on gauged data. Peak flood records represent the
+        integrated response of a catchment to storm events and thus are not subject to the potential
+        for bias that can affect rainfall-based procedures. Furthermore, flood frequency analyses
+        are quick to apply compared to rainfall-based procedures and have the ability to provide
+        estimates of uncertainty, most easily those associated with the size of sample and gauging
+        errors. These represent very considerable advantages, and thus it is not surprising that
+        flood frequency analysis is an important tool for the practicing flood hydrologist. </para>
+      <para>However, there are some practical disadvantages with the technique. The available peak
+        flood records may not be representative of the conditions relevant to the problem of
+        interest: changing land-use, urbanisation, upstream regulation, and non-stationary climate
+        are all factors that may confound efforts to characterise flood risk. The length of
+        available record may also limit the utility of the flood estimates for the rarer quantiles
+        of interest. Also, peak flow records are obtained from the conversion of stage data and
+        there may be considerable uncertainty about the reliability of the rating curve when
+        extrapolated to the largest recorded events. There is also uncertainty associated with the
+        choice of probability model which is not reflected in the width of derived confidence
+        limits: the true probability distribution is unknown and it may be that different models may
+        fit the observed data equally well, yet diverge markedly when used to estimate quantiles
+        beyond the period of record.</para>
+      <para>Perhaps the most obvious limitation of flood frequency analysis is that relies upon the
+        availability of recorded flood data. This is a particular limitation in urban drainage
+        design as there are so few gauged records of any utility in developed catchments. But the
+        availability of representative records is also often a limitation in rural catchments,
+        either because of changed upstream conditions or because the site of interest may be remote
+        from the closest gauging station. </para>
+      <para>For this reason, considerable effort has been expended on the development of a regional
+        flood model that can be used to estimate flood quantiles in ungauged catchments (Book 3,
+        Section 3). The prime advantage of this technique is that it provides estimates of flood
+        risk (with uncertainty) using readily available information at ungauged sites; the estimates
+        can also be combined with at-site analyses to help improve the accuracy of the estimated
+        flood exceedance probabilities. The prime disadvantage of the technique is that the
+        estimates are only applicable to the range of catchment characteristics used in development
+        of the model, and this largely excludes urbanised catchments and those influenced by
+        upstream impoundments (or other source of major modification).</para>
+      <para>The main advantages and limitations of flood data based procedures are summarised in
+          <xref linkend="b1_ch3_t_ee1zg"/>. In addition to the points made above, specific mention
+        is made of the applicability of peak-over-threshold analysis to events more common than 10%
+        AEP, and the use of annual maxima series for the estimation of rarer events. Also included
+        in this table is reference to the use of large scale empirical techniques. While these
+        techniques have the advantage of providing an indication of the upper limiting bounds on the
+        magnitude of floods using national and global data sets (eg Nathan et al, 1994; Herschy,
+        2003), it is difficult to assign exceedance probabilities to such events and thus such
+        procedures are better seen as a complement to, and not an alternative, to traditional
+        regional flood frequency techniques (Castellarin, 2007).</para>
+      <para>
+        <table frame="all" xml:id="b1_ch3_t_ee1zg">
+          <title>Summary of advantages and limitations of common procedures used to directly analyse
+            flood data.</title>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Method</entry>
+                <entry>Advantages</entry>
+                <entry>Limitations</entry>
+                <entry>Comments on Applicability</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Peak-over-threshold analysis</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Exceedance threshold can be selected to suit frequency range of most
+                        interest</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Sensitive to adopted independence criteria </para>
+                    </listitem>
+                    <listitem>
+                      <para>Fewer generic software packages available to aid analysis </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Particularly suited to exceedance frequencies more common than 10% AEP
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>Requires development of transposition/scaling functions for application
+                        to ungauged sites</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>At-site frequency analysis based on annual maxima</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Well established procedures that are strongly supported by
+                        literature</para>
+                    </listitem>
+                    <listitem>
+                      <para>Software readily available that includes assessment of
+                        uncertainty</para>
+                    </listitem>
+                    <listitem>
+                      <para>Estimates obtained for modest investment of effort</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Rare estimates sensitive to length of available record, a small number
+                        of largest events, and assumptions of stationarity</para>
+                    </listitem>
+                    <listitem>
+                      <para>Extrapolation best undertaken with knowledge of changing channel
+                        geometry and rating curve errors</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Requires development of transposition/scaling functions for application
+                        to ungauged sites</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>At-site/regional frequency analysis based on annual maxima</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Well established procedures that are strongly supported by
+                        literature</para>
+                    </listitem>
+                    <listitem>
+                      <para>Provides more robust estimates of rare events, especially for sites with
+                        limited length of record</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Dependent on degree of homogeneity of gauged sites used in the
+                        analysis</para>
+                    </listitem>
+                    <listitem>
+                      <para>Requires more specialist expertise than at-site analysis</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Functions for transposition to ungauged sites readily derived from
+                        regional information used to undertake the analysis</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>Regional flood model</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Based on rigorous statistical procedure that takes advantage of large
+                        processed data sets</para>
+                    </listitem>
+                    <listitem>
+                      <para>Estimates include uncertainty and are derived with small investment of
+                        effort</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Largely restricted to catchments smaller than 1000 km²</para>
+                    </listitem>
+                  </itemizedlist>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Flood response needs to be within range of characteristics used in
+                        development of the method</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Ease of application allows this to be used as independent estimate for
+                        all other methods </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>Large scale empirical</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Estimates readily obtained once relevant data sets have been
+                        sourced</para>
+                    </listitem>
+                    <listitem>
+                      <para>Generally a useful indicator of the upper bound of flood
+                        behaviour</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Enveloped characteristics may not be relevant to site of interest</para>
+                    </listitem>
+                    <listitem>
+                      <para>Not suited to inferring probabilities of exceedance</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Useful as a sanity check on results obtained from other
+                        procedures</para>
+                    </listitem>
+                    <listitem>
+                      <para>Regional nature of information allows for application to ungauged
+                        sites</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </section>
+
+    <section xml:id="b1_ch3_s_8gqvw">
+      <title>Advantages and Limitations of Rainfall based procedures</title>
+      <para>A key advantage of rainfall based approaches is that they provide the means to derive
+        flood hydrographs. The derivation of a full hydrograph rather than a single attribute (such
+        as flood peak) allows the design loading condition to be assessed in terms of both peak and
+        volume, which is of prime importance when considering the mitigating influence of flood
+        storage.</para>
+      <para>Of arguably greater importance is the ability of rainfall based approaches to take
+        advantage of the extensive availability of rainfall data. This is a very important advantage
+        as rainfall characteristics vary across space in a more predictable and generally more
+        uniform fashion than floods. This feature, along with the greater length and density of
+        rainfall gauging, allows the derivation of probabilistic estimates of rainfalls that are
+        much rarer and more easily transposed than flood characteristics.</para>
+      <para>However, these significant advantages are offset by the need to transform rainfalls into
+        floods using some kind of design event transfer function or simulation model. Common
+        examples of the former include the Rational Method and Curve Number method of the US Soil
+        Conservation Service; while such methods provide an attractive means of simplifying the
+        complexity involved in generation of flood peaks, their use in this edition has been
+        replaced by the more defensible implementation of the Regional Flood Model (Book 3, Section
+        3). The focus of this guidance is thus on the use of event-based and continuous simulation
+        approaches. While these models provide a conceptually more attractive means to derive flood
+        hydrographs arising from storm rainfalls, they present the very real potential for
+        introducing probability bias in the transformation. That is, the methods are well suited to
+        the simulation of flood hydrographs, but great care is required when assigning exceedance
+        probabilities to the resulting flood characteristic.</para>
+      <para> </para>
+      <para>The advantages and limitations of some common approaches to rainfall-based procedures
+        are summarised in <xref linkend="b1_ch3_t_4c8y6"/>. The first row of this table summarises
+        the attributes of continuous simulation approaches, and the remaining rows refer to
+        event-based approaches.</para>
+      <para> The continuous simulation approach has the major advantage that it implicitly allows
+        for the correlations between the flood producing factors over different time scales. This
+        can be a great advantage in some systems (such as a cascade of storages or complex urban
+        environments) where the volume of flood runoff is the key determinant of flood risk.
+        However, its major drawback for flood estimation is that considerable modelling effort is
+        required to reproduce the flood characteristics of interest; the structure of continuous
+        simulation models is geared towards reproduction of the complete streamflow regime, and not
+        on the reproduction of annual maxima. This has implications for model structure, as well as
+        for how the model is parameterised and calibrated to suit the different flood conditions of
+        interest. The vast majority of the information used to inform model parameterisation is not
+        relevant to flood events other than to ensure that the right antecedent conditions prevail
+        before onset of the storm. Under extreme conditions, many state variables inherent to the
+        model structure might be bounded, and the process descriptions relevant to such states may
+        be poorly formulated and yield outcomes that are not consistent with physical reasoning;
+        while this is the case for flood event models, the more complex structure generally used
+        with continuous simulation models may confound attempts to detect such behaviour. In
+        addition, if the length of historic (sub-daily) rainfalls is not long enough to allow
+        estimation of the exceedance probabilities of interest, it will be necessary to use
+        stochastic rainfall generation techniques (or some down-scaling technique) to produce
+        synthetic sequences of sufficient length. Lastly, given the interdependence between model
+        parameters and the difficulty of parameter identification, it can be difficult to transpose
+        such models to ungauged catchments. </para>
+      <para> The deterministic application of “design event” models based on linear and non-linear
+        routing have a long history of application in Australia. However, considerable care needs to
+        be taken when selecting “typical” values of the key inputs to avoid the introduction of bias
+        in the transformation of design rainfalls into floods. Ensemble event approaches have the
+        potential to mitigate this bias, but these are only likely to be defensible those problems
+        influenced by a single dominant factor in addition to rainfall. Monte Carlo techniques can
+        be used to derive expected probability quantiles of selected flood characteristics arising
+        from the joint interaction of many factors, but the defensibility of these estimates rests
+        upon the representativeness of the inputs and the correct treatment of correlations which
+        may be present.</para>
+      <para>
+        <table frame="all" xml:id="b1_ch3_t_4c8y6">
+          <title>Summary of advantages and limitations of common rainfall-based procedures.</title>
+          <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Method</entry>
+                <entry>Advantages</entry>
+                <entry>Limitations</entry>
+                <entry>Comments on Applicability</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Continuous simulation</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Well suited to assessing flood risk in complex systems that are
+                        sensitive to flood volume</para>
+                    </listitem>
+                    <listitem>
+                      <para>Most applicable to range of very frequent to frequent events</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Difficult to parameterise model to correctly reproduce the frequency of
+                        flood exceedance in manner that adequately captures shape of observed
+                        hydrographs</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Useful for hindcasting streamflows for sites with short periods of
+                        record</para>
+                    </listitem>
+                    <listitem>
+                      <para>Model parameters not easily transposed to ungauged locations</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>Design event</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Long tradition of use thus familiar to most practitioners</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Difficult to demonstrate that probability-neutrality is achieved</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Little justification to use this simplistic method with currently
+                        available computing resources, but suited to derivation of preliminary
+                        estimates. </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>Ensemble event</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Simple means of minimising probability bias for modest level of
+                        effort</para>
+                    </listitem>
+                    <listitem>
+                      <para>Well suited to accommodating single source of hydrologic variability in
+                        simple catchments</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Not suited to considering multiple sources of hydrologic variability or
+                        other joint-probability influences</para>
+                    </listitem>
+                    <listitem>
+                      <para>Difficult to determine if probability bias remains in the estimates
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Provides easy transition for practitioners familiar with design event
+                        method</para>
+                    </listitem>
+                    <listitem>
+                      <para>The required sets of ensemble temporal patterns are now available</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry>Monte Carlo event</entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Rigorous means of deriving expected probability estimates for range of
+                        factors considered </para>
+                    </listitem>
+                    <listitem>
+                      <para> Readily extended to consider multiple sources of variability and
+                        additional joint-probability factors (both anthropogenic and natural)</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Requires specialist skills to develop bespoke solutions and thus
+                        dependent on availability of software </para>
+                    </listitem>
+                    <listitem>
+                      <para>For more complex applications care needs to be taken to ensure
+                        correlations between dependent factors are appropriately considered </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Non-dimensional loss distributions and temporal pattern ensembles are
+                        now available</para>
+                    </listitem>
+                    <listitem>
+                      <para>The expected probability estimates account for hydrologic variability
+                        not parameter uncertainty as the necessary information on governing
+                        distributions is generally not available.</para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+              </row>
+              <row>
+                <entry/>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </section>
+    <section xml:id="b1_ch3_s_6yx28">
+      <title>Relative Applicability of Different Approaches</title>
+      <para>The broad nature of applicability of the different methods is illustrated in <xref
+          linkend="b1_ch3_f_9qc3y"/>. This figure is not intended to be prescriptive, but rather it
+        is intended to illustrate the relative ability of the different methods to provide unbiased
+        estimates of flood characteristics in the given AEP range. The figure is best interpreted
+        with reference to Tables 3and 4, which summarises the strengths and limitations of each
+        method and provides some brief comments on their application.</para>
+      <para>Flood frequency analyses are most relevant to the estimation of peak flows for Very
+        Frequent to Rare floods. Flood frequency analysis methods can also be applied to other flood
+        characteristics (e.g. flood volume over given duration) but this involves additional
+        assumptions. </para>
+      <para>Peak-Over-Threshold analysis (S2.7, Book 3) is most relevant to the estimation of flood
+        exceedances that occur several times a year, up to floods more frequent than around 10% AEP.
+        For rarer events the use of an annual maximum series is preferred (S2.6, Book 3), and with
+        good quality information at-site frequency analyses are suited to the estimation of Rare
+        floods with AEPs as infrequent as 2% to 1%. The use of regional flood data provides valuable
+        information that can be used to help parameterise the shape of the flood distribution, and
+        thus where feasible it is desirable to use at-site/regional flood frequency methods (S2.6,
+        Book 3). The use of regional information can support the estimation of flood risks beyond 1%
+        AEP and can greatly increase the confidence of estimates obtained using information at a
+        single site.</para>
+      <figure label="1032" xml:id="b1_ch3_f_9qc3y">
+        <title>Illustration of notional efficacy of different approaches for the estimation of
+          design floods..</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/1032.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The RFFE model (Rahman et al, 2014; S2.6, Book 3) provides estimates of peak flows for
+        Frequent to Rare floods for sites where there is no streamflow data. While its primary
+        purpose is for the estimation of flood quantiles, the resulting estimates can also be used
+        to develop scaling functions to support the transposition of results obtained from
+        rainfall-based procedures to ungauged sites. This is the same concept as the simple quantile
+        regression approach discussed above, but as it is based on a more rigorous statistical
+        procedure it is more suited to transposition of results where factors other than merely area
+        are important. The RFFE method is quick to apply and provides a formal assessment of
+        uncertainty, and thus is well suited to provide independent estimates for comparison with
+        other approaches.</para>
+      <para><xref linkend="b1_ch3_f_9qc3y"/> also illustrates the areas of design application most
+        suited to rainfall-based procedures. These are applicable over a wider range of AEPs than
+        techniques based directly on the analysis of flow data as it is easier to extrapolate
+        rainfall behaviour across space and time than it is for flow data. But while these methods
+        can capitalise on our ability to extrapolate rainfall data to rarer AEPs and infill spatial
+        gaps in observations more readily than flows, their use introduces the need to model the
+        transformation of rainfalls into floods.</para>
+      <para>Continuous simulation procedures are well suited to the analysis of complex systems
+        which are dependent on the sequencing of flood volumes as the method implicitly accounts for
+        the joint probabilities involved. Application of these methods require more specialist skill
+        than event-based procedures; for example, it is important that the probabilistic behaviour
+        of the input rainfall series relevant to the catchment (either historic or synthetic) is
+        consistent with design rainfall information provided in Book 2, and that the model structure
+        yields flood hydrographs that are consistent with available evidence. Transposition of model
+        parameters to ungauged sites presents significant technical difficulties which would require
+        specialist expertise to resolve. Given these challenges it is presently recommended that the
+        main benefit of continuous simulation approaches is for the extension of flow records at
+        gauged sites with short periods of record, where system performance is critically dependent
+        on the sequencing of flow volumes; if flow data are not available, then it may be
+        appropriate to consider their application to small scale urban environments where runoff
+        processes can be inferred from an analysis of effective impervious areas.</para>
+      <para>By comparison with continuous simulation models, event based models are far more
+        parsimonious and more easily transposed to ungauged catchments; it is easier to fit the
+        fewer model parameters involved to observed floods, and their structure has been tailored
+        specifically to represent flood behaviour. However, while such models are easily calibrated
+        and their parameterisation is generally commensurate with the nature of available data,
+        their use generally involves the simulation of floods beyond the observed record. As such,
+        it is necessary to make assumptions about the changing nature of non-linearity of flood
+        response with flood magnitude and trust that the model structure and adopted process
+        descriptions are applicable over the range of floods being simulated. These assumptions
+        introduce major uncertainties into the flood estimates, and this uncertainty increases
+        markedly with the degree of extrapolation involved.</para>
+      <para>The event-based methods considered in these guidelines generally involve a similar suite
+        of storage-routing methods (Book 5). There are some conceptual differences in the way that
+        these models are formulated, but in general these differences are minor compared to the
+        constraints imposed by the available data. Australian practice has generally not favoured
+        the use of unitgraph-based methods combined with node-link routing models (eg Feldman,
+        2000); in principle such models are equally defensible as storage-routing methods, and the
+        strongest reason to prefer the latter is the desire for consistency when used to estimate
+        Extreme floods that are well beyond the observed record, and also for the local experience
+        with regionalisation of model parameters.</para>
+      <para>Perhaps the greatest choice to be made with event-based models is the adopted simulation
+        environment. For systems that are sensitive to differences in temporal patterns there is
+        little justification to use design-event methods: the additional computational burden
+        imposed by ensemble event models is modest, and the resulting estimates are much more likely
+        to satisfy the assumption of probability-neutrality. However, this additional effort may not
+        be warranted in those urban systems which are dominated by hydraulic controls, and in such
+        cases the most appropriate modelling approach is likely to be a hydraulic modelling system
+        with flow inputs provided in a deterministic manner. Monte Carlo event schemes provide a
+        rigorous solution to the joint probabilities involved, and the solution scheme ensures
+        expected probability quantiles that are probability-neutral, at least for the given set of
+        ensemble inputs and distributions used to characterise hydrologic variability. For those
+        catchments or systems where flood outputs are strongly dependent on the joint likelihood of
+        multiple factors, it is necessary to adopt a Monte Carlo event approach. </para>
+      <para>The greatest uncertainties in terms of both flood magnitude and exceedance probabilities
+        are associated with the estimation of Extreme floods beyond an AEP of 1 in 2000. There is
+        very little data to support probabilistic estimates of floods in this range, and it is
+        prudent to compare such estimates with empirical analysis of maxima based from national (eg
+        Nathan et al, 1994) or even global (Herschy, 2003) data sets. </para>
+      <para>Lastly, it should be noted that the procedures based directly on the analysis of flood
+        data can readily provide an assessment of uncertainty. Additional uncertainty is introduced
+        when transposing flood information to locations away from the gauging site used in the
+        analysis, and the regional flood model (RFFE) is the only method where this is provided in a
+        form easily accessed by practitioners. The Monte Carlo event approach provides an
+        appropriate framework to consider uncertainty in a formal fashion, though this will only
+        provide indicative uncertainties: the greater the degree of extrapolation the greater the
+        influence of uncertainty due to model structure and this is a factor that is not easily
+        characterised. The uncertainty bounds shown in the top panel of <xref
+          linkend="b1_ch3_f_9qc3y"/> are clearly notional and merely reflect the fact that
+        uncertainty of the estimates increase markedly with event magnitude. It must be accepted
+        that when the above procedures are applied to locations not included in their calibration
+        that the associated uncertainties will be perhaps up to an order of magnitude greater. </para>
+    </section>
   </section>
 </chapter>
