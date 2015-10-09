@@ -1,6 +1,8 @@
 <?xml version='1.0'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-   xmlns:d="http://docbook.org/ns/docbook">
+   xmlns:d="http://docbook.org/ns/docbook"
+   xmlns="http://www.w3.org/1999/xhtml"
+   exclude-result-prefixes="d">
    <!-- This stylesheet contains the customisations that are common across -->
    <!-- the XHTML5 (and hence EPUB3) renders. -->
    <!-- Nota Bene: this sheet is common across both single page or chunked -->
@@ -57,5 +59,52 @@
          </l:context>
       </l:l10n>
    </l:i18n>
-
+   
+   <!-- Author Arrangements
+      Specifically:
+      -) drop affiliations
+      -) horizontal list
+   -->
+   <xsl:template name="chapter.titlepage.recto">
+      <xsl:choose>
+         <xsl:when test="d:chapterinfo/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:chapterinfo/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:docinfo/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:docinfo/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:info/d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:info/d:title"/>
+         </xsl:when>
+         <xsl:when test="d:title">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:title"/>
+         </xsl:when>
+      </xsl:choose>
+      
+      <xsl:choose>
+         <xsl:when test="d:chapterinfo/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:chapterinfo/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:docinfo/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:docinfo/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:info/d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:info/d:subtitle"/>
+         </xsl:when>
+         <xsl:when test="d:subtitle">
+            <xsl:apply-templates mode="chapter.titlepage.recto.auto.mode" select="d:subtitle"/>
+         </xsl:when>
+      </xsl:choose>
+      
+      <p class="author">
+         <xsl:for-each select=".//d:author">
+            <xsl:call-template name="person.name"/>
+            <xsl:if test="position() != last()">
+               <xsl:text>, </xsl:text>
+            </xsl:if>
+         </xsl:for-each>
+      </p>
+   </xsl:template>
+   
+ 
 </xsl:stylesheet>
