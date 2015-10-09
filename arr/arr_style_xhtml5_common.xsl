@@ -10,6 +10,10 @@
    
    <!-- Import the common global stylesheet -->
    <xsl:import href="arr_style_common.xsl" />
+   
+   <xsl:param name="make.valid.html">1</xsl:param>
+   <xsl:param name="html.cleanup">1</xsl:param>
+   <xsl:param name="make.clean.html">1</xsl:param>
 
    <!-- Common javascript/s to add to all builds: -->
    <!--    -) MathJax                             -->
