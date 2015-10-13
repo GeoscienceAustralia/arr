@@ -57,12 +57,27 @@
    </xsl:attribute-set>
    <!-- In the style guide this is level 3-->
    <xsl:attribute-set name="section.title.level2.properties">
-      <xsl:attribute name="font-size">14pt</xsl:attribute>
+      <xsl:attribute name="font-size">15pt</xsl:attribute>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
    </xsl:attribute-set>
    <!-- In the style guide this is level 4-->
    <xsl:attribute-set name="section.title.level3.properties">
+      <xsl:attribute name="font-size">14pt</xsl:attribute>
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
+   </xsl:attribute-set>
+   <!-- In the style guide this is level 5-->
+   <xsl:attribute-set name="section.title.level4.properties">
+      <xsl:attribute name="font-size">13pt</xsl:attribute>
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
+   </xsl:attribute-set>
+   <!-- In the style guide this is level 6-->
+   <xsl:attribute-set name="section.title.level5.properties">
       <xsl:attribute name="font-size">12pt</xsl:attribute>
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
+   </xsl:attribute-set>
+   <!-- In the style guide this is level 7-->
+   <xsl:attribute-set name="section.title.level6.properties">
+      <xsl:attribute name="font-size">11pt</xsl:attribute>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
    </xsl:attribute-set>
 

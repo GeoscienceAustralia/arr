@@ -102,5 +102,15 @@
         
     </xsl:template>
     
+    <!-- Force formal title placement -->
+    <xsl:param name="formal.title.placement">
+        figure after
+        example before
+        equation before
+        table before
+        procedure before
+        task before
+    </xsl:param>
+    
     
 </xsl:stylesheet>
