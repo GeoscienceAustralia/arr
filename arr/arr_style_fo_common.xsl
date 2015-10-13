@@ -164,7 +164,9 @@
    </xsl:template>
 
 
-   <!-- Equations centred with number on the right -->
+   <!-- Equations centred with number on the right
+      See also below in the XREF numbering section for how the XREF
+      gentext is handled -->
    <xsl:template name="equation.without.title">
       <!-- Lay out equation and number next to equation using a table -->
       <fo:table table-layout="fixed" width="100%">
@@ -188,7 +190,10 @@
          </fo:table-body>
       </fo:table>
    </xsl:template>
-   <!-- Equation XREF numbering -->
+   
+   <!-- Gentex overrides
+      Start simple and amend the gentext blocks as that is simplest but then
+      if we get hardcore then directly amend the underlying templates -->
    <xsl:param name="local.l10n.xml" select="document('')"/>
    <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
       <l:l10n language="en">
@@ -200,9 +205,25 @@
          </l:context>
          <l:context name="xref-number">
             <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="sect1" text="&#167;%n"/>
+            <l:template name="sect2" text="&#167;%n"/>
+            <l:template name="sect3" text="&#167;%n"/>
+            <l:template name="sect4" text="&#167;%n"/>
+            <l:template name="sect5" text="&#167;%n"/>
+            <l:template name="section" text="&#167;%n"/>
          </l:context>
       </l:l10n>
    </l:i18n>
+   <!-- Get the book number and override the default xref template for book
+      xrefs from "title" to: Book n -->
+   <xsl:template match="d:book" mode="xref-to">
+      <xsl:param name="referrer"/>
+      <xsl:param name="xrefstyle"/>
+      <xsl:param name="verbose" select="1"/>
+      
+      <xsl:text>Book </xsl:text>
+      <xsl:value-of select="count(preceding-sibling::d:book)+1"/>
+   </xsl:template>
 
 
    <!-- Default Table Formatting -->
