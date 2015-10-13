@@ -198,13 +198,13 @@
    <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
       <l:l10n language="en">
          <l:context name="title">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
          </l:context>
          <l:context name="xref">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
          </l:context>
          <l:context name="xref-number">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
             <l:template name="sect1" text="&#167;%n"/>
             <l:template name="sect2" text="&#167;%n"/>
             <l:template name="sect3" text="&#167;%n"/>
@@ -285,7 +285,7 @@
          <xsl:when test="name(..) = 'tbody'">
             <xsl:choose>
                <xsl:when test="$rownum mod 2">
-                  <xsl:attribute name="background-color">#F9F9F9</xsl:attribute>
+                  <xsl:attribute name="background-color">#b9daf3</xsl:attribute>
                </xsl:when>
                <xsl:otherwise>
                   <xsl:attribute name="background-color">#FFFFFF</xsl:attribute>

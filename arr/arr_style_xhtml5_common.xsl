@@ -48,21 +48,47 @@
       </xsl:element>
    </xsl:template>
 
-   <!-- Equation title Customisation -->
+   <!-- Gentex overrides
+      Start simple and amend the gentext blocks as that is simplest but then
+      if we get hardcore then directly amend the underlying templates -->
    <xsl:param name="local.l10n.xml" select="document('')"/>
    <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
       <l:l10n language="en">
          <l:context name="title">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
          </l:context>    
          <l:context name="xref">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
          </l:context>
          <l:context name="xref-number">
-            <l:template name="equation" text="&#40;%n&#41;"/>
+            <l:template name="equation" text="Equation &#40;%n&#41;"/>
          </l:context>
       </l:l10n>
    </l:i18n>
+   
+   <!-- Get the book number and override the default xref template for book
+      xrefs from "title" to: Book n -->
+   <xsl:template match="d:book" mode="xref-to">
+      <xsl:param name="referrer"/>
+      <xsl:param name="xrefstyle"/>
+      <xsl:param name="verbose" select="1"/>
+      
+      <xsl:text>Book </xsl:text>
+      <xsl:value-of select="count(preceding-sibling::d:book)+1"/>
+   </xsl:template>
+   <!-- Override the chapter template to be of the form Book N, Chapter M
+      instead of "Chapter M" -->
+   <xsl:template match="d:chapter" mode="xref-to">
+      <xsl:param name="referrer"/>
+      <xsl:param name="xrefstyle"/>
+      <xsl:param name="verbose" select="1"/>
+      
+      <xsl:text>Book </xsl:text>
+      <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1"/>
+      <xsl:text>, Chapter </xsl:text>
+      <xsl:value-of select="count(preceding-sibling::d:chapter)+1"/>
+   </xsl:template>
+   
    
    <!-- Author Arrangements
       Specifically:
