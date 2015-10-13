@@ -224,6 +224,18 @@
       <xsl:text>Book </xsl:text>
       <xsl:value-of select="count(preceding-sibling::d:book)+1"/>
    </xsl:template>
+   <!-- Override the chapter template to be of the form Book N, Chapter M
+      instead of "Chapter M" -->
+   <xsl:template match="d:chapter" mode="xref-to">
+      <xsl:param name="referrer"/>
+      <xsl:param name="xrefstyle"/>
+      <xsl:param name="verbose" select="1"/>
+      
+      <xsl:text>Book </xsl:text>
+      <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1"/>
+      <xsl:text>, Chapter </xsl:text>
+      <xsl:value-of select="count(preceding-sibling::d:chapter)+1"/>
+   </xsl:template>
 
 
    <!-- Default Table Formatting -->
