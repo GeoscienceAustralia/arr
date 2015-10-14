@@ -10,6 +10,7 @@
 
    <!-- Chunk Specific Options -->
    <xsl:param name="chunker.output.indent">yes</xsl:param>
+   <xsl:param name="chunk.section.depth">0</xsl:param>
 
    <!-- We are overriding this template to insert div elements necessary -->
    <!-- for Bootstrap integration -->
