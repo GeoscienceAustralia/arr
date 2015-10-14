@@ -10,10 +10,17 @@
    
    <!-- Import the common global stylesheet -->
    <xsl:import href="arr_style_common.xsl" />
-   
+
+   <!-- Global XHTML Code Practices -->
    <xsl:param name="make.valid.html">1</xsl:param>
    <xsl:param name="html.cleanup">1</xsl:param>
    <xsl:param name="make.clean.html">1</xsl:param>
+   
+   <!-- Control the depth of the chapter/section numbering -->
+   <xsl:param name="chapter.autolabel">1</xsl:param>
+   <xsl:param name="section.autolabel">1</xsl:param>
+   <xsl:param name="section.label.includes.component.label">1</xsl:param>
+   <xsl:param name="section.autolabel.max.depth">8</xsl:param>
 
    <!-- Common javascript/s to add to all builds: -->
    <!--    -) MathJax                             -->
@@ -26,7 +33,7 @@
    <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css arr.css</xsl:param>
 
    <!-- Table of Contents Formatting -->
-   <xsl:param name="toc.list.type">ol</xsl:param>
+   <xsl:param name="toc.list.type">ul</xsl:param>
    <xsl:template match="d:book" mode="toc">
       <xsl:param name="toc-context" select="."/>
 

@@ -1,18 +1,16 @@
 /* ARR CSS3 Stylesheet */
-/* Adjust the nested lists in the TOC so that we get nested numbers such as:
- * 1. Intro
- * 1.1 Overview
- * etc
- */
-div.toc ol {
-   counter-reset: item;
+/* Restyle the TOC to drop the list items symbols */
+div.toc ul {
+	list-style-type: none;
 }
-div.toc li {
-   display: block;
+div.list-of-figures ul {
+	list-style-type: none;
 }
-div.toc li:before {
-   content: counters(item, ".") " ";
-   counter-increment: item;
+div.list-of-tables ul {
+	list-style-type: none;
+}
+div.list-of-equations ul {
+	list-style-type: none;
 }
 
 /* restyle the inline glossterms to match those in the print eddition.*/
