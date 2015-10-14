@@ -30,7 +30,7 @@
    <xsl:param name="html.script.type">text/javascript</xsl:param>
 
    <!-- Add a common stylesheet -->
-   <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css arr.css</xsl:param>
+   <xsl:param name="html.stylesheet">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css css/arr.css css/lightbox.css</xsl:param>
 
    <!-- Table of Contents Formatting -->
    <xsl:param name="toc.list.type">ul</xsl:param>

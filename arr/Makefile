@@ -171,7 +171,12 @@ html: valid_set html_chunked_images
 	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.html \
 		--param keep.relative.image.uris 0 \
 		arr_style_xhtml5_chunked.xsl arr_set.xml
-	cp arr.css html_chunked/arr.css
+	cp figures/close.png html_chunked/figures
+	cp figures/loading.gif html_chunked/figures
+	cp figures/next.png html_chunked/figures
+	cp figures/prev.png html_chunked/figures
+	cp -a css html_chunked/
+	cp -a js html_chunked/
 
 clean_html:
 	rm -rf html_chunked
@@ -186,7 +191,7 @@ epub: valid_set epub3_images
 	$(XSLTPROC) --xinclude --stringparam base.dir epub3/OEBPS \
 		--param keep.relative.image.uris 0 \
 		arr_style_epub.xsl arr_set.xml
-	cp arr.css epub3/OEBPS/
+	cp css/arr.css epub3/OEBPS/
 	cd epub3 && zip -rX arr.epub mimetype META-INF OEBPS
 
 clean_epub:

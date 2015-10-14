@@ -28,7 +28,6 @@ xmlns:exsl="http://exslt.org/common"
     </xsl:call-template>
 
     <body>
-       <div class="container-fluid">
       <xsl:call-template name="body.attributes"/>
 
       <xsl:call-template name="html5.header.navigation">
@@ -48,7 +47,7 @@ xmlns:exsl="http://exslt.org/common"
         <xsl:with-param name="next" select="$next"/>
         <xsl:with-param name="nav.context" select="$nav.context"/>
       </xsl:call-template>
-   </div>
+
     </body>
   </html>
   <xsl:value-of select="$chunk.append"/>
