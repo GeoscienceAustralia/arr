@@ -25,7 +25,11 @@
 
    <!-- Define some parameters first -->
    <!-- Globally turn on FOP -->
-   <xsl:param name="axf.extensions" select="1"/>
+   <xsl:param name="use.extensions">0</xsl:param>
+   <xsl:param name="axf.extensions">1</xsl:param>
+   <xsl:param name="fop.extensions">0</xsl:param>
+   <xsl:param name="fop1.extensions">0</xsl:param>
+   <xsl:param name="tablecolumns.extension">0</xsl:param>
 
    <!-- turn hyphenation on or off -->
    <xsl:param name="hyphenate">false</xsl:param>
