@@ -191,7 +191,7 @@ epub: valid_set epub3_images
 	$(XSLTPROC) --xinclude --stringparam base.dir epub3/OEBPS \
 		--param keep.relative.image.uris 0 \
 		arr_style_epub.xsl arr_set.xml
-	cp css/arr.css epub3/OEBPS/
+	cp -a css epub3/OEBPS/
 	cd epub3 && zip -rX arr.epub mimetype META-INF OEBPS
 
 clean_epub:

@@ -15,8 +15,13 @@
    <!-- Now import the global styles: -->
    <xsl:import href="arr_style_common.xsl" />
    
-   <!-- Now, as ePUB is essentailly XHTML5, simply import the
+   <!-- Now, as ePUB is essentially XHTML5, simply import the
       XHTML5 stylesheet -->
    <xsl:import href="arr_style_xhtml5_common.xsl"/> 
+   
+   <!-- Local overrides for the EPUB -->
+   <!-- Chunk Specific Options -->
+   <xsl:param name="chunker.output.indent">yes</xsl:param>
+   <xsl:param name="chunk.section.depth">0</xsl:param>
 
 </xsl:stylesheet>
