@@ -164,6 +164,8 @@
       </xsl:if>
 
       <xsl:apply-templates select="$content"/>
+      
+      <xsl:call-template name="arr.set.back.cover"/>
    </xsl:template>
 
    <xsl:template name="arr.set.front.cover">
@@ -176,7 +178,24 @@
                top="-(1mm + {$page.margin.top} + {$body.margin.top})"
                left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/Cover_Page_ARR_p5.pdf" />
+                  <fo:external-graphic src="figures/cover_front.pdf" />
+               </fo:block>
+            </fo:block-container>
+         </xsl:with-param>
+      </xsl:call-template>
+   </xsl:template>
+   
+   <xsl:template name="arr.set.back.cover">
+      <xsl:call-template name="page.sequence">
+         <xsl:with-param name="master-reference">titlepage</xsl:with-param>
+         <xsl:with-param name="content">
+            <fo:block-container absolute-position="absolute"
+               width="{$page.width}"
+               height="{$page.height}"
+               top="-(1mm + {$page.margin.top} + {$body.margin.top})"
+               left="-({$page.margin.inner})">
+               <fo:block text-align="center">
+                  <fo:external-graphic src="figures/cover_back.pdf" />
                </fo:block>
             </fo:block-container>
          </xsl:with-param>
