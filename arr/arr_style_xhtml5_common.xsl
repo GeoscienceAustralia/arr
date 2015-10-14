@@ -2,7 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
    xmlns:d="http://docbook.org/ns/docbook"
    xmlns="http://www.w3.org/1999/xhtml"
-   exclude-result-prefixes="d">
+   exclude-result-prefixes="d"
+   xmlns:stext="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.TextFactory">
    <!-- This stylesheet contains the customisations that are common across -->
    <!-- the XHTML5 (and hence EPUB3) renders. -->
    <!-- Nota Bene: this sheet is common across both single page or chunked -->

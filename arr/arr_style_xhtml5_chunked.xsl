@@ -3,7 +3,14 @@
    xmlns:d="http://docbook.org/ns/docbook"
    xmlns:exsl="http://exslt.org/common"
    xmlns="http://www.w3.org/1999/xhtml"
-   exclude-result-prefixes="exsl d"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:stext="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.TextFactory"
+   xmlns:simg="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.ImageIntrinsics"
+   xmlns:ximg="xalan://com.nwalsh.xalan.ImageIntrinsics"
+   xmlns:xtext="xalan://com.nwalsh.xalan.Text"
+   xmlns:lxslt="http://xml.apache.org/xslt"
+   exclude-result-prefixes="xlink stext xtext lxslt simg ximg d exsl"
+   extension-element-prefixes="stext xtext"
    version="1.0">
    <!-- This style sheet holds the draft XHTML5 specific objects. -->
 
@@ -16,9 +23,104 @@
    <!-- Chunk Specific Options -->
    <xsl:param name="chunker.output.indent">yes</xsl:param>
    <xsl:param name="chunk.section.depth">0</xsl:param>
+   
+   <!-- Graphic Parameters 
+      Designed to not write into a table and use BootStrap and CSS
+      to format. First we set an override parameter to dump the
+      table formatting.  Then we override the default d:imagedata
+      template to insert:
+        -) CSS elements for bootstrap
+        -) link elements for lightbox.
+      -->
+   <xsl:param name="make.graphic.viewport">0</xsl:param>
+   <xsl:template match="d:imagedata">
+      <xsl:variable name="filename">
+         <xsl:call-template name="mediaobject.filename">
+            <xsl:with-param name="object" select=".."/>
+         </xsl:call-template>
+      </xsl:variable>
+      
+      <xsl:choose>
+         <!-- Handle MathML and SVG markup in imagedata -->
+         <xsl:when xmlns:mml="http://www.w3.org/1998/Math/MathML" test="mml:*">
+            <xsl:apply-templates/>
+         </xsl:when>
+         
+         <xsl:when xmlns:svg="http://www.w3.org/2000/svg" test="svg:*">
+            <xsl:apply-templates/>
+         </xsl:when>
+         
+         <xsl:when test="@format='linespecific'">
+            <xsl:choose>
+               <xsl:when test="$use.extensions != '0'                         and $textinsert.extension != '0'">
+                  <xsl:choose>
+                     <xsl:when test="element-available('stext:insertfile')">
+                        <stext:insertfile href="{$filename}" encoding="{$textdata.default.encoding}"/>
+                     </xsl:when>
+                     <xsl:when test="element-available('xtext:insertfile')">
+                        <xtext:insertfile href="{$filename}"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:message terminate="yes">
+                           <xsl:text>No insertfile extension available.</xsl:text>
+                        </xsl:message>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:when>
+               <xsl:otherwise>
+                  <a xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" href="{$filename}"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:when>
+         <xsl:otherwise>
+            <xsl:variable name="longdesc.uri">
+               <xsl:call-template name="longdesc.uri">
+                  <xsl:with-param name="mediaobject" select="ancestor::d:imageobject/parent::*"/>
+               </xsl:call-template>
+            </xsl:variable>
+            
+            <xsl:variable name="phrases" select="ancestor::d:mediaobject/d:textobject[d:phrase]                             |ancestor::d:inlinemediaobject/d:textobject[d:phrase]                             |ancestor::d:mediaobjectco/d:textobject[d:phrase]"/>
+            
+            <xsl:element name="a">
+               <xsl:attribute name="href">
+                  <xsl:value-of select="$filename"/>
+               </xsl:attribute>
+               <xsl:attribute name="data-lightbox">
+                  <xsl:value-of select="$filename"/>
+               </xsl:attribute>
+               <xsl:attribute name="data-title">
+                  <xsl:value-of select="ancestor::d:mediaobject/preceding-sibling::d:title[1]"/>
+               </xsl:attribute>
+               <xsl:call-template name="process.image">
+                  <xsl:with-param name="alt">
+                     <xsl:choose>
+                        <xsl:when test="ancestor::d:mediaobject/d:alt">
+                           <xsl:apply-templates select="ancestor::d:mediaobject/d:alt"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:apply-templates select="$phrases[not(@role) or @role!='tex'][1]"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:with-param>
+                  <xsl:with-param name="longdesc">
+                     <xsl:call-template name="write.longdesc">
+                        <xsl:with-param name="mediaobject" select="ancestor::d:imageobject/parent::*"/>
+                     </xsl:call-template>
+                  </xsl:with-param>
+               </xsl:call-template>
+            </xsl:element>
+            
+            <xsl:if test="$html.longdesc != 0 and $html.longdesc.link != 0                     and ancestor::d:imageobject/parent::*/d:textobject[not(d:phrase)]">
+               <xsl:call-template name="longdesc.link">
+                  <xsl:with-param name="longdesc.uri" select="$longdesc.uri"/>
+               </xsl:call-template>
+            </xsl:if>
+         </xsl:otherwise>
+      </xsl:choose>
+   </xsl:template>
 
-   <!-- We are overriding this template to insert div elements necessary -->
-   <!-- for Bootstrap integration -->
+   <!-- We are overriding this template to insert div elements necessary
+      for Bootstrap integration -->
    <xsl:template name="chunk-element-content" priority="1">
       <xsl:param name="prev"/>
       <xsl:param name="next"/>
@@ -63,5 +165,7 @@
       </html>
       <xsl:value-of select="$chunk.append"/>
    </xsl:template>
+   
+   
 
 </xsl:stylesheet>
