@@ -751,11 +751,23 @@
    </xsl:template>
 
 
-   <!-- Landscape Figures -->
+   <!-- Landscape Figures
+      This is designed to:
+      -) rotate a large figure and its associated caption by 90 degrees
+      -) force a page break to dump the figure onto a new page
+      -) scale the figure to fit the full page
+      -->
    <xsl:template match="d:figure[processing-instruction('landscapeFigure')]">
-      <fo:block-container reference-orientation="90">
+      <fo:block break-after='page'/>
+      <fo:block-container reference-orientation="90"
+         absolute-position="absolute"
+         top="0mm"
+         left="0mm"
+         width="250mm"
+         height="200m">
          <xsl:apply-imports/>
       </fo:block-container>
+      <fo:block break-after='page'/>
    </xsl:template>
 
    <!-- Redefine the following template to center all images -->
