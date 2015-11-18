@@ -14,51 +14,57 @@
 
     <para>Fitting a flood probability model involves three steps:</para>
 
-    <para>1. Calibrating the model to the available data D to determine the
-    parameter values consistent with the data D.</para>
+    <para>1. Calibrating the model to the available data D to determine the parameter values
+      consistent with the data
+      D<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170510+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170510+1100" content="."?></para>
 
-    <para>2. Estimation of flood quantiles and their confidence limits.</para>
+    <para>2. Estimation of flood quantiles and their confidence
+      limits<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170514+1100"?>;
+      and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170514+1100" content="."?></para>
 
     <para>3. Evaluation of goodness of fit and consistency of model with
     data.</para>
 
-    <para>Two calibration approaches are described involving Bayesian and L
-    moment techniques. For each approach the algorithms are documented and
-    illustrated with worked examples. Implementation of the algorithms in
-    software requires specialist skill; therefore the typical user is advised
-    to make use of the available software. The use of the method of
-    product-moments applied to log flows is not recommended. The choice of
-    calibration methods depends on the type of data available (gauged and
-    censored), the extent of measurement error associated with the rating
-    curve and the availability of regional information about
-    parameters.</para>
+    <para>Two calibration approaches are described involving Bayesian and L moment techniques. For
+      each
+      approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170524+1100"?>,<?oxy_insert_end?>
+      the algorithms are documented and illustrated with worked examples. Implementation of the
+      algorithms in software requires specialist skill; therefore<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170543+1100"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170551+1100" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170551+1100"?>a
+      <?oxy_insert_end?><?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T170620+1100" comment="What is a typical user?"?>typical
+      <?oxy_comment_end?>user is advised to make use of the available software. The use of the
+      method of product-moments applied to log flows is not recommended. The choice of calibration
+      methods depends on the type of data available (gauged and censored), the extent of measurement
+      error associated with the rating curve and the availability of regional information about
+      parameters.</para>
   </section>
 
   <section xml:id="b3_ch2_s_zbwi1">
     <title>Probability Plots</title>
 
-    <para>An essential part of a Flood Frequency Analysis is the construction
-    of an empirical distribution function, better known as a probability plot.
-    In such a plot an estimate of AEP is plotted against the observed
-    discharge. This enables one to draw a smooth curve as an empirical
-    probability distribution or to visually check the adequacy of a fitted
-    distribution.</para>
+    <para>An essential part of a Flood Frequency Analysis is the construction of an empirical
+      distribution function, better known as a probability plot. In such a
+      plot<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170636+1100"?>,<?oxy_insert_end?>
+      an estimate of AEP is plotted against the observed discharge. This enables one to draw a
+      smooth curve as an empirical probability distribution or to visually check the adequacy of a
+      fitted distribution.</para>
 
     <para>The following steps describe the production of a probability plot
     for gauged Annual Maximum floods:</para>
 
     <itemizedlist>
       <listitem>
-        <para>Rank the gauged discharges in descending order (that is, from
-        largest to smallest) yielding the series {q<subscript>(1)</subscript>,
-        q<subscript>(2)</subscript>,…,q<subscript>(n)</subscript>} where
-        q<subscript>(i)</subscript> is the rank i or the
-        i<superscript>th</superscript> largest flood.</para>
+        <para>Rank the gauged discharges in descending order (that is, from largest to smallest)
+          yielding the series {q<subscript>(1)</subscript>,
+            q<subscript>(2)</subscript>,…,q<subscript>(n)</subscript>} where
+            q<subscript>(i)</subscript> is the rank i or the i<superscript>th</superscript> largest
+          flood<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170708+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170707+1100" content="."?></para>
       </listitem>
 
       <listitem>
-        <para>Estimate the AEP for each q<subscript>(i)</subscript> using a
-        suitable plotting position.</para>
+        <para>Estimate the AEP for each q<subscript>(i)</subscript> using a suitable plotting
+          position<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170714+1100"?>;
+          and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170713+1100" content="."?></para>
       </listitem>
 
       <listitem>
@@ -128,9 +134,10 @@
             <m:math display="inline">
               <m:mi>α =</m:mi>
             </m:math>
-          </inlineequation> 0 yields the Weibull plotting position which
-        produces unbiased estimates of the AEP of
-        q<subscript>(i)</subscript>.</para>
+          </inlineequation> 0 yields the Weibull plotting position
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170750+1100" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170751+1100"?>that
+          <?oxy_insert_end?>produces unbiased estimates of the AEP of
+          q<subscript>(i)</subscript><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170754+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170754+1100" content="."?></para>
       </listitem>
 
       <listitem>
@@ -138,9 +145,11 @@
             <m:math display="inline">
               <m:mi>α =</m:mi>
             </m:math>
-          </inlineequation> 0.375 yields the Blom’s plotting position which
-        produces unbiased quantile estimates for the normal
-        distribution.</para>
+          </inlineequation> 0.375 yields the Blom’s plotting position
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170801+1100" content="which"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170801+1100"?>that<?oxy_insert_end?>
+          produces unbiased quantile estimates for the normal
+          distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170806+1100"?>;
+          and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170806+1100" content="."?></para>
       </listitem>
 
       <listitem>
@@ -149,15 +158,17 @@
               <m:mi>α =</m:mi>
             </m:math>
           </inlineequation> 0.4 yields the Cunnane’s (1978) plotting position
-        which produces nearly unbiased quantile estimates for a range of
-        probability families.</para>
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170812+1100" content="which"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170812+1100"?>that<?oxy_insert_end?>
+          produces nearly unbiased quantile estimates for a range of probability families.</para>
       </listitem>
     </itemizedlist>
 
-    <para>While there are arguments in favour of plotting positions that yield
-    unbiased AEPs, usage has favoured plotting positions that yield unbiased
-    quantiles. To maintain consistency it is recommended that the Cunnane
-    plotting position be used, namely:</para>
+    <para>While there are arguments in favour of plotting positions that yield unbiased AEPs, usage
+      has favoured plotting positions that yield unbiased quantiles. To maintain
+      consistency<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170828+1100"?>,<?oxy_insert_end?>
+      it is recommended that the Cunnane plotting position
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170836+1100" content="be "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170836+1100"?>is
+      <?oxy_insert_end?>used, namely:</para>
 
     <equation xml:id="b3_ch2_e_g1lj9">
       <m:math display="block">
@@ -198,14 +209,21 @@
     estimate of the actual AEP or EY of an observed flood discharge. Such
     estimates should be obtained from the fitted distribution.</para>
 
-    <para>Judicious choice of scale for the probability plot can assist the
-    evaluation of goodness of fit. The basic idea is to select a scale so that
-    the data plot as a straight line if the data are consistent with the
-    assumed probability model.</para>
+    <para>Judicious choice of scale for the probability plot can assist the evaluation of goodness
+      of fit. The basic idea is to select a scale so that the data plot as a straight line if the
+      data
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170932+1100" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170932+1100"?>is
+      <?oxy_insert_end?>consistent with the assumed probability model.</para>
 
-    <para>This is best illustrated by an example. Suppose it is assumed that
-    floods follow an exponential distribution. From <xref
-    linkend="b3_ch2_t_s5j9j"/> the distribution function is:</para>
+    <para>This is best illustrated by an example. Suppose
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170957+1100" content="it is assumed that "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170959+1100"?>that
+      <?oxy_insert_end?>floods follow an exponential
+      distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171004+1100"?>,
+      then
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171006+1100" content=". F"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171008+1100"?>f<?oxy_insert_end?>rom
+        <xref linkend="b3_ch2_t_s5j9j"
+      /><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171015+1100"?>,<?oxy_insert_end?>
+      the distribution function is:</para>
 
     <equation xml:id="b3_ch2_e_kw2th">
       <m:math display="block">
@@ -287,9 +305,9 @@
     </equation>
 
     <para>If q<subscript>(i)</subscript> is plotted against
-    logP<subscript>(i)</subscript> the data will plot approximately as a
-    straight line if they are consistent with the exponential
-    distribution.</para>
+      logP<subscript>(i)</subscript><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171032+1100"?>,<?oxy_insert_end?>
+      the data will plot approximately as a straight line if they are consistent with the
+      exponential distribution.</para>
 
     <para>Examples for other distributions include:</para>
 
@@ -330,20 +348,21 @@
     <section xml:id="b3_ch2_s_ecz3l">
       <title>Overview</title>
 
-      <para>The Bayesian approach is a very general approach for calibrating
-      and identifying models. The Handbook of Hydrology (Stedinger
-      <emphasis>et al</emphasis>., 1993, p18.8) observes that “the Bayesian
-      approach .. allows the explicit modeling of uncertainty in parameters
-      and provides a theoretically consistent framework for integrating
-      systematic flow records with regional and other hydrologic information”.
-      However, it is only with the advent of new computational methods that
-      Bayesian methods can be routinely applied to flood frequency
-      applications.</para>
+      <para>The Bayesian approach is a very general approach for calibrating and identifying models.
+        The Handbook of Hydrology (Stedinger <emphasis>et al</emphasis>., 1993, p18.8) observes that
+        “the Bayesian
+        approach<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171130+1100" content=" .."?>
+        allows the explicit
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171136+1100" content="modeling"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171136+1100"?>modelling<?oxy_insert_end?>
+        of uncertainty in parameters and provides a theoretically consistent framework for
+        integrating systematic flow records with regional and other hydrologic information”.
+        However, it is only with the advent of new computational methods that Bayesian methods can
+        be routinely applied to flood frequency applications.</para>
 
-      <para>The core of the Bayesian approach is described below – see Lee
-      (1989) and Gelman <emphasis>et al</emphasis>. (1995) for general
-      expositions. The data D is hypothesized to be a random realisation from
-      a probability model with pdf <inlineequation>
+      <para>The core of the Bayesian approach is described below – see Lee (1989) and Gelman
+          <emphasis>et al</emphasis>. (1995) for general expositions. The data D is
+        hypothesi<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171214+1100" content="z"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171215+1100"?>s<?oxy_insert_end?>ed
+        to be a random realisation from a probability model with pdf <inlineequation>
           <m:math display="inline">
             <m:mi>p(D∣θ)</m:mi>
           </m:math>
@@ -351,23 +370,21 @@
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation> is a vector of unknown parameters. The pdf
-      <inlineequation>
+        </inlineequation> is a vector of unknown parameters. The pdf <inlineequation>
           <m:math display="inline">
             <m:mi>p(D|θ)</m:mi>
           </m:math>
-        </inlineequation> is given two labels depending on the context. When
-      <inlineequation>
+        </inlineequation> is given two labels depending on the context. When <inlineequation>
           <m:math display="inline">
             <m:mi>p(D|θ)</m:mi>
           </m:math>
-        </inlineequation> is used to describe the probability model generating
-      the sample data D for a given <inlineequation>
+        </inlineequation> is used to describe the probability model generating the sample data D for
+        a given <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation>, it is called the sampling distribution. However,
-      when inference about the parameter <inlineequation>
+        </inlineequation>, it is called the sampling distribution. However, when inference about the
+        parameter <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
@@ -375,37 +392,45 @@
           <m:math display="inline">
             <m:mi>p(D|θ)</m:mi>
           </m:math>
-        </inlineequation> is called the likelihood function to emphasize that
-      the data D is known and the parameter <inlineequation>
+        </inlineequation> is called the likelihood function to
+        emphasi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171151+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171150+1100" content="z"?>e
+        that the data D is known and the parameter <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation> is the object of attention. The same notation for
-      the sampling distribution and likelihood function is used to emphasize
-      its oneness.</para>
+        </inlineequation> is the object of attention. The same notation for the sampling
+        distribution and likelihood function is used to
+        emphasi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171158+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171157+1100" content="z"?>e
+        its oneness.</para>
 
-      <para>In Bayesian inference the parameter vector <inlineequation>
+      <para>In Bayesian
+        inference<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171236+1100"?>,<?oxy_insert_end?>
+        the parameter vector <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation> is considered to be a random vector whose
-      probability distribution describes what is known about the true value of
-      <inlineequation>
+        </inlineequation> is considered to be a random vector whose probability distribution
+        describes what is known about the true value of <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation>. Prior to analyzing the data D, knowledge about
-      <inlineequation>
+        </inlineequation>. Prior to
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171144+1100" content="analyzing"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171144+1100"?>analysing<?oxy_insert_end?>
+        the data D, knowledge about <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation> given the probability model is summarized by the pdf
-      <inlineequation>
+        </inlineequation><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171257+1100"?>,<?oxy_insert_end?>
+        given the probability
+        model<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171301+1100"?>,<?oxy_insert_end?>
+        is
+        summari<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171202+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171202+1100" content="z"?>ed
+        by the pdf <inlineequation>
           <m:math display="inline">
             <m:mi>p(θ)</m:mi>
           </m:math>
-        </inlineequation>. This density, referred to as the prior density, can
-      incorporate subjective belief about <inlineequation>
+        </inlineequation>. This density, referred to as the prior density, can incorporate
+        subjective belief about <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
@@ -487,12 +512,13 @@
     <section xml:id="b3_ch2_s_p6zyk">
       <title>Likelihood Function</title>
 
-      <para>The key to a Bayesian analysis is the formulation of the
-      likelihood function. In the context of flood frequency analysis two
-      formulations are considered. The first assumes there is no error in the
-      flood data. The focus is on the contribution to the likelihood function
-      made by gauged and censored data. The second case generalises the
-      likelihood function to allow for error-in-discharge estimates.</para>
+      <para>The key to a Bayesian analysis is the formulation of the likelihood function. In the
+        context of flood
+        frequency<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171327+1100"?>,<?oxy_insert_end?>
+        analysis two formulations are considered. The first assumes there is no error in the flood
+        data. The focus is on the contribution to the likelihood function made by gauged and
+        censored data. The second case generalises the likelihood function to allow for
+        error-in-discharge estimates.</para>
     </section>
 
     <section xml:id="b3_ch2_s_fd9op">
@@ -604,18 +630,21 @@
     <section xml:id="b3_ch2_s_6h16e">
       <title>The Likelihood Function: Error-in-discharge Case</title>
 
-      <para>The incorporation of rating errors into the likelihood function
-      complicates matters. <xref linkend="b3_ch2_s_vyzbz"/> outlines the
-      derivation of the likelihood function using the simple rating error
-      model presented in <xref linkend="b3_ch2_s_zlx6z"/>. There has been
-      limited research into the use of this likelihood and on the
-      characterization of rating errors. Kuczera (1996) shows that, as rating
-      error grows for floods well in excess of the largest gauged discharge,
-      less weight is given to high floods in the calibration. This loss of
-      information about the right tail of the flood distribution is sensitive
-      to the magnitude of rating errors when extrapolating beyond gauged
-      discharges. Unfortunately little is known about these errors. Therefore
-      caution is recommended if using this advanced likelihood.</para>
+      <para>The incorporation of rating errors into the likelihood function complicates matters.
+          <xref linkend="b3_ch2_s_vyzbz"/> outlines the derivation of the likelihood function using
+        the simple rating error model presented in <xref linkend="b3_ch2_s_zlx6z"/>. There has been
+        limited research into the use of this likelihood and on the
+        characteri<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171400+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171400+1100" content="z"?>ation
+        of rating errors. Kuczera (1996) shows that, as rating error grows for floods well in excess
+        of the largest gauged discharge, less weight is given to high floods in the calibration.
+        This loss of information about the right tail of the flood distribution is sensitive to the
+        magnitude of rating errors when extrapolating beyond gauged discharges.
+        Unfortunately<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171056+1100"?>,<?oxy_insert_end?>
+        little is known about these
+        errors<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171102+1100" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171103+1100"?>
+        and hence<?oxy_insert_end?>
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171106+1100" content="Therefore "?>caution
+        is recommended if using this advanced likelihood.</para>
     </section>
 
     <section xml:id="b3_ch2_s_xjch2">
@@ -988,18 +1017,19 @@
     <section xml:id="b3_ch2_s_287uy">
       <title>Treatment of Poor Fits</title>
 
-      <para>The standard probability models described in <xref
-      linkend="b3_ch2_s4"/> may sometimes poorly fit flood data. Typically the
-      goodness-of-fit is assessed by comparing observed data against the
-      fitted probability model and its confidence limits. A poor fit may be
-      characterized by:</para>
+      <para>The standard probability models described in <xref linkend="b3_ch2_s4"/> may sometimes
+        poorly fit flood data. Typically the goodness-of-fit is assessed by comparing observed data
+        against the fitted probability model and its confidence limits. A poor fit may be
+        characteri<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171432+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171432+1100" content="z"?>ed
+        by:</para>
 
       <itemizedlist>
         <listitem>
-          <para>Presence of outliers in the upper or lower tail of the
-          distribution. Outliers in Flood Frequency Analysis represent
-          observations that are inconsistent with the trend of the remaining
-          data and typically would lie well outside confidence limits.</para>
+          <para>Presence of outliers in the upper or lower tail of the distribution. Outliers in
+            Flood Frequency Analysis represent observations that are inconsistent with the trend of
+            the remaining data and typically would lie well outside confidence
+            limits<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171436+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171436+1100" content="."?></para>
         </listitem>
 
         <listitem>
@@ -1015,34 +1045,38 @@
 
       <orderedlist>
         <listitem>
-          <para>Small AM peaks may not be significant floods and thus may be
-          unrepresentative of significant flood peaks.</para>
+          <para>Small AM peaks may not be significant floods and thus may be unrepresentative of
+            significant flood
+            peaks<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171441+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171441+1100" content="."?></para>
         </listitem>
 
         <listitem>
-          <para>By chance, one or more observed floods may be unusually rare
-          for the length of gauged record. Recourse to the historical flood
-          record may be useful in resolving this issue.</para>
+          <para>By chance, one or more observed floods may be unusually rare for the length of
+            gauged record. Recourse to the historical flood record may be useful in resolving this
+            issue<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171446+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171446+1100" content="."?></para>
         </listitem>
 
         <listitem>
-          <para>Rating curve extensions are biased resulting in a systematic
-          under or over-estimate of large floods (see discussion in <xref
-          linkend="b3_ch2_s_zlx6z"/>).</para>
+          <para>Rating curve extensions are biased resulting in a systematic under or over-estimate
+            of large floods (see discussion in <xref linkend="b3_ch2_s_zlx6z"
+            />)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171451+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171451+1100" content="."?></para>
         </listitem>
 
         <listitem>
-          <para>A change in hydraulic control with discharge may affect the
-          shape of the frequency curve as illustrated in Example 1.</para>
+          <para>A change in hydraulic control with discharge may affect the shape of the frequency
+            curve as illustrated in Example
+            1<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171458+1100"?>;
+            <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171521+1100" content="."?></para>
         </listitem>
 
         <listitem>
-          <para>Storm events responsible for significant flooding may be
-          caused by different meteorological mechanisms which lead to a mixed
-          population not amenable to three-parameter distributions. This may
-          arise when the majority of flood-producing storms are generated by
-          one meteorological mechanism and the minority by an atypical
-          mechanism such as a tropical cyclone.</para>
+          <para>Storm events responsible for significant flooding may be caused by different
+            meteorological mechanisms which lead to a mixed population not amenable to
+            three-parameter distributions. This may arise when the majority of flood-producing
+            storms are generated by one meteorological mechanism and the minority by an atypical
+            mechanism such as a tropical
+            cyclone<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171529+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171527+1100" content="."?></para>
         </listitem>
 
         <listitem>
@@ -1059,12 +1093,14 @@
 
       <orderedlist>
         <listitem>
-          <para>Observations can be censored.</para>
+          <para>Observations can be
+            censored<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171648+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171646+1100" content="."?></para>
         </listitem>
 
         <listitem>
-          <para>The data responsible for the unsatisfactory fit may be given
-          less weight.</para>
+          <para>The data responsible for the unsatisfactory fit may be given less
+            weight<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171651+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171651+1100" content="."?></para>
         </listitem>
 
         <listitem>
@@ -1081,18 +1117,18 @@
     <section xml:id="b3_ch2_s_1f6ft">
       <title>Censoring of Potentially Influential Low Discharges</title>
 
-      <para>AM series contain many Annual Maximum discharges which are less
-      than bankfull discharge. In arid zones these low peaks may be zero or
-      very low values not associated with any significant storm event. These
-      low peaks may not be representative of the physical processes driving
-      large floods (Cohn <emphasis>et al</emphasis>., 2013; Pedruco
-      <emphasis>et al</emphasis>., 2013). The inclusion of such data in a
-      Flood Frequency Analysis runs the risk of low peaks unrepresentative of
-      large floods influencing the fit to the right-hand tail of the frequency
-      distribution, which is of most interest to the hydrologist. Therefore
-      the identification and removal of Potentially Influential Low Flows
-      (PILFs) is considered an important step in a Flood Frequency
-      Analysis.</para>
+      <para>AM series contain many Annual Maximum
+        discharges<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171706+1100"?>,<?oxy_insert_end?>
+        which are less than bank<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171711+1100"?>
+        <?oxy_insert_end?>full discharge. In arid zones these low peaks may be zero or very low
+        values<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171723+1100"?>,<?oxy_insert_end?>
+        not associated with any significant storm event. These low peaks may not be representative
+        of the physical processes driving large floods (Cohn <emphasis>et al</emphasis>., 2013;
+        Pedruco <emphasis>et al</emphasis>., 2013). The inclusion of such data in a Flood Frequency
+        Analysis runs the risk of low peaks unrepresentative of large floods influencing the fit to
+        the right-hand tail of the frequency distribution, which is of most interest to the
+        hydrologist. Therefore the identification and removal of Potentially Influential Low Flows
+        (PILFs) is considered an important step in a Flood Frequency Analysis.</para>
 
       <para>Cohn <emphasis>et al</emphasis>. (2013) developed a generalisation
       of the Grubbs-Beck test that was recommended in Bulletin 17B (IACWD,
@@ -1103,11 +1139,12 @@
 
       <orderedlist>
         <listitem>
-          <para>The outward sweep starts at the median discharge and moves
-          towards the smallest discharge. Each flow is tested at the 0.5%
-          significance level. If the k<superscript>th</superscript> smallest
-          discharge is identified as a low outlier, the outward sweep
-          stops.</para>
+          <para>The outward sweep starts at the median discharge and moves towards the smallest
+            discharge. Each flow is tested at the 0.5% significance level. If the
+              k<superscript>th</superscript> smallest discharge is identified as a low outlier, the
+            outward sweep
+            stops<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171736+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171735+1100" content="."?></para>
         </listitem>
 
         <listitem>
@@ -1181,13 +1218,13 @@
     <section xml:id="b3_ch2_s_c4z47">
       <title>Overview</title>
 
-      <para>L moments were developed by Hosking (1990) to overcome the bias
-      and sensitivity of the method of product-moments approach to fitting
-      distributions. L moment estimators are unbiased and are less sensitive
-      to outliers than product-moment estimators. They have been used
-      extensively by researchers to analyze extremes and are recommended for
-      use in Flood Frequency Analysis in the Handbook of Hydrology (Stedinger
-      <emphasis>et al</emphasis>. 1993).</para>
+      <para>L moments were developed by Hosking (1990) to overcome the bias and sensitivity of the
+        method of product-moments approach to fitting distributions. L moment estimators are
+        unbiased and are less sensitive to outliers than product-moment estimators. They have been
+        used extensively by researchers to
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T172036+1100" content="analyze"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172036+1100"?>analyse<?oxy_insert_end?>
+        extremes and are recommended for use in Flood Frequency Analysis in the Handbook of
+        Hydrology (Stedinger <emphasis>et al</emphasis>. 1993).</para>
 
       <para>The L moment approach is simpler than the Bayesian approach but
       limited in capability. It is restricted to applications involving gauged
@@ -1393,13 +1430,13 @@
       j<superscript>th</superscript> smallest variable in a sample of size m
       and E stands for expectation.</para>
 
-      <para>Wang (1996) justifies L moments as follows: “When there is only
-      one value in a sample, it gives a feel of the magnitude of the random
-      variable. When there are two values in a sample, their difference gives
-      a sense of how varied the random variable is. When there are three
-      values in a sample, they give some indication on how asymmetric the
-      distribution is. When there are four values in a sample, they give some
-      clue on how peaky, roughly speaking, the distribution is. “</para>
+      <para>Wang (1996) justifies L moments as follows: “When there is only one value in a sample,
+        it gives a feel of the magnitude of the random variable. When there are two values in a
+        sample, their difference gives a sense of how varied the random variable is. When there are
+        three values in a sample, they give some indication on how asymmetric the distribution is.
+        When there are four values in a sample, they give some clue on how peaky, roughly speaking,
+        the distribution is.
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T172107+1100" comment="Where is the closing quotes? "?>“<?oxy_comment_end?></para>
 
       <para>When many such samples are considered, the expectations
       <inlineequation>
@@ -2521,13 +2558,13 @@
     <section xml:id="b3_ch2_s_xodr0">
       <title>LH moments for fitting the GEV distribution</title>
 
-      <para>When the selected probability model does not adequately fit all
-      the gauged data the lower discharges may exert undue influence on the
-      fit and give insufficient weight to the higher discharges which are the
-      principal object of interest. To deal with this situation Wang (1997)
-      introduced a generalisation of L moments called LH moments. A more
-      detailed exposition can be found in <xref
-      linkend="b3_ch2_s_l6g7s"/>.</para>
+      <para>When the selected probability model does not adequately fit all the gauged
+        data<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171808+1100"?>,<?oxy_insert_end?>
+        the lower discharges may exert undue influence on the fit and give insufficient weight to
+        the higher discharges which are the principal object of interest. To deal with this
+        situation<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171822+1100"?>,<?oxy_insert_end?>
+        Wang (1997) introduced a generalisation of L moments called LH moments. A more detailed
+        exposition can be found in <xref linkend="b3_ch2_s_l6g7s"/>.</para>
     </section>
 
     <section xml:id="b3_ch2_s_3sslo">
@@ -2537,22 +2574,20 @@
           <m:math display="inline">
             <m:mi>p(θ|</m:mi>
           </m:math>
-        </inlineequation>D) can be approximated using the Monte Carlo method
-      known as the parametric bootstrap described in <xref
-      linkend="b3_ch2_s_wltta"/>. This procedure yields N equi-weighted
-      samples that approximate the sampling distribution <inlineequation>
+        </inlineequation>D) can be approximated using the Monte Carlo method known as the parametric
+        bootstrap described in <xref linkend="b3_ch2_s_wltta"/>. This procedure yields N
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T172140+1100" comment="Is this a technical term?"?>equi-weighted<?oxy_comment_end?>
+        samples that approximate the sampling distribution <inlineequation>
           <m:math display="inline">
             <m:mi>p(θ|D)</m:mi>
           </m:math>
-        </inlineequation>. As a result, they can be used to quantify parameter
-      uncertainty and estimate quantile confidence limits. However, because
-      the parametric bootstrap assumes <inlineequation>
+        </inlineequation>. As a result, they can be used to quantify parameter uncertainty and
+        estimate quantile confidence limits. However, because the parametric bootstrap assumes <inlineequation>
           <m:math display="inline">
             <m:mi>θ</m:mi>
           </m:math>
-        </inlineequation> is the true parameter, it underestimates the
-      uncertainty and therefore should not be used to estimate expected
-      probabilities.</para>
+        </inlineequation> is the true parameter, it underestimates the uncertainty and therefore
+        should not be used to estimate expected probabilities.</para>
     </section>
 
     <section xml:id="b3_ch2_s_e947x">
@@ -2577,11 +2612,13 @@
   <section xml:id="b3_ch2_s_nyxhe">
     <title>Method of Moments Approach</title>
 
-    <para>The method of moments used in conjunction with the LPIII
-    distribution was the recommended method in Australian Rainfall and Runoff
-    (Pilgrim, 1987). The method was simple to implement but, unlike US
-    practice, did not use regionalised skew. Its use is no longer recommended.
-    Both the Bayesian and L moment procedures make better use of the available
-    information.</para>
+    <para>The method of moments used in conjunction with the LPIII distribution was the recommended
+      method in Australian Rainfall and Runoff (Pilgrim, 1987). The method was simple to implement
+      but, unlike US practice, did not use regionalised skew. Its use is no longer recommended.
+      Both<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171934+1100"?>,<?oxy_insert_end?>
+      the Bayesian and L moment
+      procedures<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171930+1100"?>,<?oxy_insert_end?>
+      make better use of the available information.</para>
   </section>
 </section>
+<?oxy_options track_changes="on"?>

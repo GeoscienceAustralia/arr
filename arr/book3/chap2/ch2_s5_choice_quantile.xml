@@ -9,10 +9,12 @@
          xmlns:db="http://docbook.org/ns/docbook">
   <title>Choice of Flood Quantile Estimator</title>
 
-  <para>In general the estimation of a design quantile should be guided by the
-  consequences of over- and under-design (Slack <emphasis>et al</emphasis>.,
-  1975).This section considers the following question: Given data D, what is
-  the best estimate of the flood discharge which has an AEP of X%.</para>
+  <para>In general, the estimation of a design quantile should be guided by the consequences of
+    over<?oxy_delete author="RadhikaChhotai" timestamp="20151022T152902+1100" content="-"?> and
+    under-design (Slack <emphasis>et al</emphasis>., 1975).<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T152907+1100"?>
+    <?oxy_insert_end?>This section considers the following question: Given data D, what is the best
+    estimate of the flood discharge which has an AEP of
+    X%<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T152919+1100"?>?<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T152919+1100" content="."?></para>
 
   <para>If the true value of <inlineequation>
       <m:math display="inline">
@@ -181,10 +183,10 @@
   <section xml:id="b3_ch2_s_sw7yg">
     <title>Expected Parameter Quantiles</title>
 
-    <para>This section considers the case where the consequence of over- and
-    under-design is expressed by some measure of the difference between the
-    true and estimated X% AEP quantiles – this difference is called the
-    quantile error.</para>
+    <para>This section considers the case where the consequence of
+      over<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162301+1100" content="-"?> and
+      under-design is expressed by some measure of the difference between the true and estimated X%
+      AEP quantiles – this difference is called the quantile error.</para>
 
     <para>The loss function <inlineequation>
         <m:math display="inline">
@@ -322,51 +324,86 @@
     <section xml:id="b3_ch2_s_x9c77">
       <title>Quadratic loss</title>
 
-      <para>The quadratic loss function may be appropriate when the
-      consequences of under- or overdesign are judged to be the same and the
-      loss is proportional to the square of the quantile error. The loss
-      function is expressed as:<equation xml:id="b3_ch2_e_oxco0">
-        <m:math display='block'>
-          <m:mrow>
-            <m:mi>L</m:mi><m:mrow><m:mo>[</m:mo> <m:mrow>
-              <m:msub>
-                <m:mi>q</m:mi>
-                <m:mi>Y</m:mi>
-              </m:msub>
-              <m:mrow><m:mo>(</m:mo>
-                <m:mi>D</m:mi>
-                <m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:msub>
-                  <m:mi>q</m:mi>
-                  <m:mi>Y</m:mi>
-                </m:msub>
-              <m:mrow><m:mo>(</m:mo>
-                <m:mi>&#x03B8;</m:mi>
-                <m:mo>)</m:mo></m:mrow></m:mrow> <m:mo>]</m:mo></m:mrow><m:mo>&#x221D;</m:mo><m:msup>
+      <para>The quadratic loss function may be appropriate when the consequences of
+        under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162346+1100" content="-"?> or
+        over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162350+1100"?>-<?oxy_insert_end?>design
+        are judged to be
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162356+1100" content="the "?>same
+        and
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162358+1100" content="the "?>loss
+        is proportional to the square of the quantile error. The loss function is expressed
+          as:<equation xml:id="b3_ch2_e_oxco0">
+          <m:math display="block">
+            <m:mrow>
+              <m:mi>L</m:mi>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>q</m:mi>
+                    <m:mi>Y</m:mi>
+                  </m:msub>
                   <m:mrow>
-                    <m:mrow><m:mo>[</m:mo> <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>D</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>q</m:mi>
+                    <m:mi>Y</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>&#x03B8;</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+              <m:mo>&#x221D;</m:mo>
+              <m:msup>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
                       <m:msub>
                         <m:mi>q</m:mi>
                         <m:mi>Y</m:mi>
                       </m:msub>
-                      <m:mrow><m:mo>(</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
                         <m:mi>D</m:mi>
-                        <m:mo>)</m:mo></m:mrow><m:mo>&#x2212;</m:mo><m:msub>
-                          <m:mi>q</m:mi>
-                          <m:mi>Y</m:mi>
-                        </m:msub>
-                      <m:mrow><m:mo>(</m:mo>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>&#x2212;</m:mo>
+                      <m:msub>
+                        <m:mi>q</m:mi>
+                        <m:mi>Y</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
                         <m:mi>&#x03B8;</m:mi>
-                        <m:mo>)</m:mo></m:mrow></m:mrow> <m:mo>]</m:mo></m:mrow></m:mrow>
-                  <m:mn>2</m:mn>
-                </m:msup>
-          </m:mrow>
-        </m:math>
-        
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:mn>2</m:mn>
+              </m:msup>
+            </m:mrow>
+          </m:math>
         </equation></para>
 
-      <para>The expected value of this loss function is commonly referred to
-      as the Mean Squared Error (MSE). It can be shown the optimal quantile
-      estimator is the expected value of qY(D) (DeGroot, 1970):</para>
+      <para>The expected value of this loss function is
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162413+1100" content="commonly "?>referred
+        to as the Mean Squared Error
+        (MSE)<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162431+1100" content=". It "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162433+1100"?>,
+        which <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162459+1100" content="can be "?>show<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162500+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162500+1100" content="n"?>
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162454+1100"?>that
+        <?oxy_insert_end?>the optimal quantile estimator is the expected value of qY(D) (DeGroot,
+        1970):</para>
 
       <para><equation xml:id="b3_ch2_e_s97qk">
           <m:math display="block">
@@ -489,9 +526,10 @@
     <section xml:id="b3_ch2_s_97ehe">
       <title>Linear asymmetric loss</title>
 
-      <para>The linear asymmetric loss function may be appropriate when the
-      consequences of under- and overdesign are judged to be different. The
-      loss function is expressed as:</para>
+      <para>The linear asymmetric loss function may be appropriate when the consequences of
+        under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162525+1100" content="-"?> and
+        over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162529+1100"?>-<?oxy_insert_end?>design
+        are judged to be different. The loss function is expressed as:</para>
 
       <equation xml:id="b3_ch2_e_ggb3h">
         <m:math display="block">
@@ -623,9 +661,14 @@
           <m:math display="inline">
             <m:mi>β</m:mi>
           </m:math>
-        </inlineequation> are the loss coefficients for under- and overdesign
-      respectively. It can be shown that the quantile estimator that minimizes
-      the expected asymmetric linear loss must satisfy (DeGroot, 1970):</para>
+        </inlineequation> are the loss coefficients for
+        under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162536+1100" content="-"?> and
+        over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162540+1100"?>-<?oxy_insert_end?>design
+        respectively. It can be shown that the quantile estimator that
+        minimi<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162547+1100" content="z"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162547+1100"?>s<?oxy_insert_end?>es
+        the expected asymmetric linear loss must satisfy
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162612+1100"?>the
+        following<?oxy_insert_end?>(DeGroot, 1970):</para>
 
       <equation xml:id="b3_ch2_e_xmck8">
         <m:math display="block">
@@ -683,22 +726,19 @@
           <m:math display="inline">
             <m:mrow>
               <m:mi>β,</m:mi>
-
               <m:msub>
                 <m:mi>q</m:mi>
-
                 <m:mi>Y</m:mi>
               </m:msub>
-
               <m:msub>
                 <m:mi>(D)</m:mi>
-
                 <m:mi>opt</m:mi>
               </m:msub>
             </m:mrow>
           </m:math>
-        </inlineequation>, is the median of the quantile predictive
-      distribution. However, when <inlineequation>
+        </inlineequation>,
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162639+1100"?>it
+        <?oxy_insert_end?>is the median of the quantile predictive distribution. However, when <inlineequation>
           <m:math display="inline">
             <m:mi>α</m:mi>
           </m:math>
@@ -706,10 +746,16 @@
           <m:math display="inline">
             <m:mi>4β</m:mi>
           </m:math>
-        </inlineequation>, implying the consequences of underdesign are four
-      times more severe than overdesign, is the 80-percentile of the
-      predictive distribution, a far more conservative estimate than the
-      median.</para>
+        </inlineequation>,
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162645+1100"?>it implies
+        <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162649+1100" content="implying "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162657+1100"?>that
+        <?oxy_insert_end?>the consequences of
+        under<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162652+1100"?>-<?oxy_insert_end?>design
+        are four times more severe than
+        over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162704+1100"?>-<?oxy_insert_end?>design,
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162712+1100"?>which
+        <?oxy_insert_end?>is the 80-percentile of the predictive distribution, a far more
+        conservative estimate than the median.</para>
     </section>
   </section>
 
@@ -1014,34 +1060,40 @@
   <section xml:id="b3_ch2_s_up1rb">
     <title>Selection of Flood Quantile Estimator</title>
 
-    <para>The choice of flood quantile estimator depends on whether the design
-    is being carried out for many sites or a single site, on whether risk,
-    actual discharge or average annual damage is of primary interest in design
-    and on whether the consequences of under- and overdesign are different.
-    The choice is somewhat subjective and may be a matter of policy. As a
-    general guide, a non-exhaustive list of recommendations is given
-    below:</para>
+    <para>The choice of flood quantile estimator depends on whether the design is being carried out
+      for many sites or a single site, on whether risk, actual discharge or average annual damage is
+      of primary interest in design and on whether the consequences of
+      under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162738+1100" content="-"?> and
+      over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162742+1100"?>-<?oxy_insert_end?>design
+      are different. The choice is somewhat subjective and may be a matter of policy. As a general
+      guide, a non-exhaustive list of recommendations is given below:</para>
 
     <orderedlist>
       <listitem>
         <para>In situations where there is indifference to the consequences of
-        under- or overdesign, either the expected parameter or expected AEP
-        quantile can be chosen.</para>
+          under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162754+1100" content="-"?>
+          or
+          over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162757+1100"?>-<?oxy_insert_end?>design,
+          either the expected parameter or expected AEP quantile can be chosen.</para>
 
         <para>Expected parameter quantiles should be considered where:</para>
 
         <orderedlist numeration="lowerroman">
           <listitem>
-            <para>Sizing of a structure is of primary interest rather than
-            actual frequency of flooding, such as some bridges, culverts or
-            drainage pipes</para>
+            <para>Sizing of a structure is of primary interest rather than actual frequency of
+              flooding, such as some bridges, culverts or drainage
+              pipes<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162817+1100"?>;<?oxy_insert_end?></para>
           </listitem>
 
           <listitem>
-            <para>Design is carried out to an arbitrary standard which has
-            been judged to be satisfactory on the basis of experience from
-            previous practice. Many of the design standards in ARR 1987 Book 3
-            Sections 1.8 and 1.9, fall into this category.</para>
+            <para>Design is carried out to an arbitrary standard<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162827+1100"?>,<?oxy_insert_end?>
+              <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162831+1100" content="which has been "?>judged
+              to be satisfactory on the basis of experience from previous practice. Many of the
+              design standards in ARR 1987<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162842+1100"?>,<?oxy_insert_end?>
+              <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T162856+1100" comment="Does this have a link?"?>Book
+              3 Sections 1.8 and 1.9<?oxy_comment_end?>, fall into this
+              category<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162906+1100"?>;
+              and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162906+1100" content="."?></para>
           </listitem>
 
           <listitem>
@@ -1054,19 +1106,23 @@
 
         <orderedlist numeration="lowerroman">
           <listitem>
-            <para>Design is required for many sites in a region, and the
-            objective is to attain a desired AEP over all sites.</para>
+            <para>Design is required for many sites in a region, and the objective is to attain a
+              desired AEP over all
+              sites<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162913+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162913+1100" content="."?></para>
           </listitem>
 
           <listitem>
-            <para>Flood estimates are made at multiple sites with different
-            record lengths, and a comparable basis is required for flood
-            estimates of a given AEP.</para>
+            <para>Flood estimates are made at multiple sites with different record
+              lengths<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162920+1100" content=","?>
+              and a comparable basis is required for flood estimates of a given
+              AEP<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162928+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162925+1100" content="."?></para>
           </listitem>
 
           <listitem>
-            <para>Risk or frequency of exceedance is of primary importance for
-            design at a single site (such as in floodplain management).</para>
+            <para>Risk or frequency of exceedance is of primary importance for design at a single
+              site (such as in floodplain
+              management)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162934+1100"?>;
+              and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162933+1100" content="."?></para>
           </listitem>
 
           <listitem>
@@ -1078,9 +1134,13 @@
 
       <listitem>
         <para>If there are significant differences between the consequences of
-        under- and overdesign, consideration should be given to using <xref
-        linkend="b3_ch2_e_xmck8"/> as the flood quantile estimator.</para>
+          under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162804+1100" content="-"?>
+          and
+          over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162808+1100"?>-<?oxy_insert_end?>design,
+          consideration should be given to using <xref linkend="b3_ch2_e_xmck8"/> as the flood
+          quantile estimator.</para>
       </listitem>
     </orderedlist>
   </section>
 </section>
+<?oxy_options track_changes="on"?>

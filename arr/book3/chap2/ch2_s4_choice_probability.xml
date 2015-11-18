@@ -12,57 +12,64 @@
   <section xml:id="b3_ch2_s_hkt8s">
     <title>General</title>
 
-    <para>As noted in <xref linkend="b3_ch2_s2"/>, it is assumed that each
-    flood peak in an AM or POT series is statistically independent of other
-    flood peaks in the series. In addition the flood probability model,
-    described by its probability density function (pdf) <inlineequation>
+    <para>As noted in <xref linkend="b3_ch2_s2"/>, it is assumed that each flood peak in an AM or
+      POT series is statistically independent of other flood peaks in the series. In addition, the
+      flood probability model, described by its probability density function (pdf) <inlineequation>
         <m:math display="inline">
           <m:mi>p(q∣θ(x)),</m:mi>
         </m:math>
       </inlineequation> must be specified.</para>
 
-    <para>There is no universally accepted flood probability model. Many types
-    of probability distributions have been applied to Flood Frequency
-    Analysis. Unfortunately, it is not possible to determine the true or
-    correct form of distribution (see, for example, Cunnane, 1985), and there
-    is no rigorous analytical proof that any particular probability
-    distribution for floods is the correct theoretical distribution. The
-    appropriateness of these distributions can be tested by examining the fit
-    of each distribution to observed flood data. Various empirical tests of
-    different distributions have been carried out with recorded data from many
-    catchments but conclusive evidence is not possible largely because gauged
-    records are of insufficient length to eliminate the confounding effect of
-    sampling variability. Examples of sampling experiments illustrating this
-    problem are given by Alexander (1957) and Benson in Dalrymple (1960). The
-    choice of flood probability model is further exacerbated by recent
-    evidence that in certain parts of Australia the flood record is not
-    homogeneous due to variations in long-term climate controls.</para>
+    <para>There is no universally accepted flood probability model. Many types of probability
+      distributions have been applied to Flood Frequency Analysis. Unfortunately, it is not possible
+      to determine the true
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T124912+1100" content="or correct "?>form
+      of distribution (see, for example, Cunnane, 1985), and there is no rigorous analytical proof
+      that any particular probability distribution for floods is the correct theoretical
+      distribution. The appropriateness of these distributions can be tested by examining the fit of
+      each distribution to observed flood data. Various empirical tests of different distributions
+      have been carried out with recorded data from many catchments<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125225+1100"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T125227+1100" content="but "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125227+1100"?>however,
+      <?oxy_insert_end?>conclusive evidence is not possible largely because gauged records are of
+      insufficient length to eliminate the confounding effect of sampling variability. Examples of
+      sampling experiments illustrating this problem are given by Alexander (1957) and Benson in
+      Dalrymple (1960). The choice of flood probability model is further exacerbated by recent
+      evidence that in certain parts of
+      Australia<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125359+1100"?>,<?oxy_insert_end?>
+      the flood record is not homogeneous due to variations in long-term climate controls.</para>
 
-    <para>Given these considerations it is considered inappropriate to be
-    prescriptive with regard to choice of flood probability model. As a
-    general rule the selected probability distribution family should be
-    consistent with available data. It is recognized that more than one
-    probability distribution family may be consistent with the data. One
-    approach to deal with this problem is to select the distribution family on
-    the basis of best overall fit to a range of catchments within a region or
-    landscape space – L moment diagrams offer a useful tool for judging
-    overall goodness of fit (see Stedinger <emphasis>et al</emphasis>., 1993,
-    Section 18.3.3 for more details).</para>
+    <para>Given these
+      considerations<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125416+1100"?>,<?oxy_insert_end?>
+      it is
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T125422+1100" content="considered "?>inappropriate
+      to be prescriptive with regard to choice of flood probability model. As a general
+      rule<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125433+1100"?>,<?oxy_insert_end?>
+      the selected probability distribution family should be consistent with available data. It is
+      recogni<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125518+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T125518+1100" content="z"?>ed
+      that more than one probability distribution family may be consistent with the data. One
+      approach to deal with this problem is to select the distribution family on the basis of best
+      overall fit to a range of catchments within a region or landscape space – L moment diagrams
+      offer a useful tool for judging overall goodness of fit (see Stedinger <emphasis>et
+        al</emphasis>., 1993, Section 18.3.3 for more details).</para>
   </section>
 
   <section xml:id="b3_ch2_s_nhxbm">
     <title>Choice of Distribution Family for Annual Maximum Series</title>
 
-    <para>Two distribution families are suggested as reasonable initial
-    choices for AM series, namely the Generalized Extreme Value (GEV) and Log
-    Pearson III (LPIII) families. These families have been shown to fit most
-    AM flood data adequately. Nonetheless the user is reminded that there is
-    no rigorous justification for these families, which is particularly
-    important when extrapolating – Example 1 demonstrates the importance of
-    understanding the mechanisms controlling flood response. The following
-    sections describe the GEV and LPIII distributions and also some other
-    distributions which may be more appropriate in certain
-    circumstances.</para>
+    <para>Two distribution families are suggested as reasonable initial choices for AM series,
+      namely the Generalized Extreme Value (GEV) and Log Pearson III (LPIII) families. These
+      families
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T125911+1100" content="have been shown to "?>fit
+      most AM flood data adequately.
+      Nonetheless<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T125919+1100"?>,<?oxy_insert_end?>
+      the user is reminded that there is no rigorous justification for these families, which is
+      particularly important when extrapolating – Example 1 demonstrates the importance of
+      understanding the mechanisms controlling flood response. The following sections describe the
+      GEV and LPIII distributions and
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T130107+1100" content="also "?>some
+      other distributions
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T130109+1100" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130109+1100"?>that
+      <?oxy_insert_end?>may be more appropriate in certain circumstances.</para>
 
     <section xml:id="b3_ch2_s_3rv4i">
       <title>Generalized Extreme Value (GEV) Distribution</title>
@@ -75,8 +82,9 @@
           <m:math display="inline">
             <m:mi>P(Q≤q∣θ)</m:mi>
           </m:math>
-        </inlineequation> and product moments for the Generalized Extreme
-      Value (GEV) distribution. It has three parameters:<inlineequation>
+        </inlineequation> and product moments for the
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T130139+1100" content="Generalized Extreme Value ("?>GEV<?oxy_delete author="RadhikaChhotai" timestamp="20151022T130141+1100" content=")"?>
+        distribution. It has three parameters:<inlineequation>
           <m:math display="inline">
             <m:mi>τ</m:mi>
           </m:math>
@@ -88,23 +96,22 @@
           <m:math display="inline">
             <m:mi>κ,</m:mi>
           </m:math>
-        </inlineequation> the shape parameter. When the shape
-      parameter<inlineequation>
+        </inlineequation> the shape parameter. When the shape parameter<inlineequation>
           <m:math display="inline">
             <m:mi> κ</m:mi>
           </m:math>
         </inlineequation> equals 0, the GEV simplifies to the Gumbel
-      distribution whose details are also presented in <xref
-      linkend="b3_ch2_t_s5j9j"/>. For positive values of <inlineequation>
+        distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130158+1100"?>,<?oxy_insert_end?>
+        whose details are also presented in <xref linkend="b3_ch2_t_s5j9j"/>. For positive values of <inlineequation>
           <m:math display="inline">
             <m:mi>κ</m:mi>
           </m:math>
-        </inlineequation> there exists an upper bound, while for negative
-      <inlineequation>
+        </inlineequation> there exists an upper bound, while for negative <inlineequation>
           <m:math display="inline">
             <m:mi>κ</m:mi>
           </m:math>
-        </inlineequation> there exists a lower bound.</para>
+        </inlineequation><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130225+1100"?>,<?oxy_insert_end?>
+        there exists a lower bound.</para>
 
       <table orient="land" xml:id="b3_ch2_t_s5j9j">
         <title>Selected homogeneous probability models families for use in
@@ -1503,21 +1510,25 @@
         </tgroup>
       </table>
 
-      <para>Of the widely used distribution families, the GEV distribution has
-      the strongest theoretical appeal because it is the asymptotic
-      distribution of extreme values for a wide range of underlying parent
-      distributions. In the flood frequency context, suppose there are N flood
-      peaks in a year. Provided N is large and the flood peaks are identically
-      and independently distributed, the distribution of the largest peak
-      discharge in the year approaches the GEV under quite general conditions.
-      However, it is questionable whether these assumptions are satisfied in
-      practice.</para>
+      <para>Of the widely used distribution families, the GEV distribution has the strongest
+        theoretical appeal
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T130404+1100" content="because "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130404+1100"?>as
+        <?oxy_insert_end?>it is the asymptotic distribution of extreme values for a wide range of
+        underlying parent distributions. In the
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130423+1100"?>context of
+        <?oxy_insert_end?>flood
+        frequency<?oxy_delete author="RadhikaChhotai" timestamp="20151022T130427+1100" content=" context"?>,
+        suppose there are N flood peaks in a year. Provided N is large and the flood peaks are
+        identically and independently distributed, the distribution of the largest peak discharge in
+        the year approaches the GEV under quite general conditions. However, it is questionable
+        whether these assumptions are satisfied in practice.</para>
 
-      <para>The number of independent flood peaks in any year may not be
-      sufficient to ensure asymptotic behaviour particularly for catchments
-      that tend to aridity. Moreover, in strongly seasonal climates, it is
-      unlikely the within-year independent flood peaks are random realisations
-      from the same probability distribution.</para>
+      <para>The number of independent flood peaks in any year may not be sufficient to ensure
+        asymptotic behaviour particularly for catchments that tend to aridity. Moreover, in strongly
+        seasonal climates, it is unlikely
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T130905+1100"?>that
+        <?oxy_insert_end?>the within-year independent flood peaks are random realisations from the
+        same probability distribution.</para>
 
       <para>The GEV has gained widespread acceptance (for example, Natural
       Environment Research Council, 1975; Wallis and Wood, 1985; Handbook of
@@ -1531,8 +1542,8 @@
           <m:math display="inline">
             <m:mi>p(q|θ)</m:mi>
           </m:math>
-        </inlineequation> and product moments for Log Pearson III (LPIII)
-      distribution. It has three parameters: <inlineequation>
+        </inlineequation> and product moments for Log Pearson III (LPIII) distribution. It has three
+        parameters: <inlineequation>
           <m:math display="inline">
             <m:mi>τ,</m:mi>
           </m:math>
@@ -1544,18 +1555,22 @@
           <m:math display="inline">
             <m:mi>β,</m:mi>
           </m:math>
-        </inlineequation> the shape parameter. When the skew of log q is zero,
-      the distribution simplifies to the log normal whose details are provided
-      in <xref linkend="b3_ch2_t_s5j9j"/>.</para>
+        </inlineequation> the shape parameter. When the skew of log q is zero, the distribution
+        simplifies to the log
+        normal<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131002+1100"?>,<?oxy_insert_end?>
+        whose details are provided in <xref linkend="b3_ch2_t_s5j9j"/>.</para>
 
-      <para>The LPIII distribution has been widely accepted in practice
-      because it consistently fits flood data as well if not better than other
-      probability families. It has performed best of those that have been
-      tested on data for Australian catchments (Conway 1970; Kopittke
-      <emphasis>et al</emphasis>., 1976; McMahon, 1979, McMahon and
-      Srikanthan, 1981). It is the recommended distribution for the United
-      States in Bulletin 17B of the Interagency Advisory Committee on Water
-      Data (1982).</para>
+      <para>The LPIII distribution
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T131158+1100" content="has been "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131158+1100"?>is
+        <?oxy_insert_end?>widely accepted in practice
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T131202+1100" content="because "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131202+1100"?>as
+        <?oxy_insert_end?>it consistently fits flood data as
+        well<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131210+1100"?>,<?oxy_insert_end?>
+        if not better than other probability families. It has performed best of those that have been
+        tested on data for Australian catchments (Conway 1970; Kopittke <emphasis>et al</emphasis>.,
+        1976; McMahon, 1979, McMahon and Srikanthan, 1981). It is the recommended distribution for
+        the United States in Bulletin 17B of the Interagency Advisory Committee on Water Data
+        (1982).</para>
 
       <para>The distribution, however, is not well-behaved from an inference
       perspective. Direct inference of the parameters <inlineequation>
@@ -1588,8 +1603,7 @@
         </inlineequation> is a lower bound for positive skew and an upper
       bound for negative skew.</para>
 
-      <para>A problem arises when the absolute value of the skew of log q
-      exceeds 2; that is, when <inlineequation>
+      <para>A problem arises when the absolute value of the skew of log q exceeds 2; that is, when <inlineequation>
           <m:math display="inline">
             <m:mi>α ≥1</m:mi>
           </m:math>
@@ -1597,18 +1611,16 @@
           <m:math display="inline">
             <m:mi>α &lt;1</m:mi>
           </m:math>
-        </inlineequation>, the LPIII has a gamma-shaped density. However, when
-      <inlineequation>
+        </inlineequation>, the LPIII has a gamma-shaped density. However, when <inlineequation>
           <m:math display="inline">
             <m:mi>α ≥1</m:mi>
           </m:math>
-        </inlineequation>, the density changes to a J-shaped function. Indeed
-      when <inlineequation>
+        </inlineequation>, the density changes to a J-shaped function. Indeed when <inlineequation>
           <m:math display="inline">
             <m:mi>α =1</m:mi>
           </m:math>
-        </inlineequation>, the pdf degenerates to that of an exponential
-      distribution with scale parameter <inlineequation>
+        </inlineequation>, the pdf degenerates to that of an exponential distribution with scale
+        parameter <inlineequation>
           <m:math display="inline">
             <m:mi>β</m:mi>
           </m:math>
@@ -1620,10 +1632,14 @@
           <m:math display="inline">
             <m:mi>α ≥ 1</m:mi>
           </m:math>
-        </inlineequation>, the J-shaped density seems to be over-parameterised
-      with three parameters. In such circumstances, it is pointless to use the
-      LPIII. It is suggested either the GEV or the Generalized Pareto
-      Distributions be used as a substitute.</para>
+        </inlineequation>, the J-shaped density seems to be over-parameterised with three
+        parameters. In such circumstances, it is pointless to use the LPIII. It is
+        suggested<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131504+1100"?>
+        that<?oxy_insert_end?> either the GEV or the Generalized
+        Pareto<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131835+1100"?>
+        (GP)<?oxy_insert_end?> Distributions
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131525+1100"?>should
+        <?oxy_insert_end?>be used as a substitute.</para>
 
       <para>An analytical form of the distribution function is not available
       for the LPIII and log-normal distributions. To compute the quantile
@@ -1873,9 +1889,12 @@
     <section xml:id="b3_ch2_s_zhi4a">
       <title>Generalized Pareto Distribution</title>
 
-      <para>In POT modelling the Generalized Pareto (GP) distribution is often
-      found to satisfactorily fit the data. <xref linkend="b3_ch2_t_s5j9j"/>
-      lists the pdf <inlineequation>
+      <para>In POT
+        modelling<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131534+1100"?>,<?oxy_insert_end?>
+        the
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T131848+1100" content="Generalized Pareto ("?>GP<?oxy_delete author="RadhikaChhotai" timestamp="20151022T131853+1100" content=")"?>
+        distribution is often found to satisfactorily fit the data. <xref linkend="b3_ch2_t_s5j9j"/>
+        lists the pdf <inlineequation>
           <m:math display="inline">
             <m:mi>p(q|θ)</m:mi>
           </m:math>
@@ -1883,9 +1902,8 @@
           <m:math display="inline">
             <m:mi>P(Q≤q∣θ)</m:mi>
           </m:math>
-        </inlineequation> and product moments for the GP distribution. It has
-      three parameters: q<subscript>*</subscript>, the location parameter,
-      <inlineequation>
+        </inlineequation> and product moments for the GP distribution. It has three parameters:
+          q<subscript>*</subscript>, the location parameter, <inlineequation>
           <m:math display="inline">
             <m:mi>β</m:mi>
           </m:math>
@@ -1897,9 +1915,9 @@
           <m:math display="inline">
             <m:mi>κ</m:mi>
           </m:math>
-        </inlineequation> equals zero, the distribution simplifies to the
-      exponential distribution also described in <xref
-      linkend="b3_ch2_t_s5j9j"/>.</para>
+        </inlineequation> equals zero, the distribution simplifies to the exponential
+        distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T131639+1100"?>,<?oxy_insert_end?>
+        also described in <xref linkend="b3_ch2_t_s5j9j"/>.</para>
 
       <para>The GP distribution has an intimate relationship with the GEV. If
       the GP describes the distribution of peaks over a threshold, then for
@@ -1935,7 +1953,8 @@
         </m:math>
       </equation>
 
-      <para>and location parameter</para>
+      <para><?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T132045+1100" comment="Is this a repetition? "?>and
+        location parameter<?oxy_comment_end?></para>
 
       <equation xml:id="b3_ch2_e_j714f">
         <m:math display="block">
@@ -1967,13 +1986,16 @@
     <section xml:id="b3_ch2_s_f6fxj">
       <title>Zero-threshold mixture model</title>
 
-      <para>In certain parts of Australia, the AM flood series may contain one
-      or more years of zero or virtually zero flow. In such cases the flood
-      probability model is best described by a two-component mixture model. In
-      any year, there are two possibilities:</para>
+      <para>In certain parts of Australia, the AM flood series may contain one or more years of zero
+        or virtually zero flow. In such
+        cases<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132104+1100"?>,<?oxy_insert_end?>
+        the flood probability model is best described by a two-component mixture model. In any year,
+        there are two possibilities:</para>
 
-      <para>1. There is a (fixed) probability P0 that the peak flow equals the
-      zero-threshold flow q0, which may be zero or a near-zero flow.</para>
+      <para>1. There is a (fixed) probability P0 that the peak flow equals the zero-threshold flow
+        q0, which may be zero or a near-zero
+        flow<?oxy_delete author="RadhikaChhotai" timestamp="20151022T132133+1100" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132135+1100"?>;
+        and<?oxy_insert_end?></para>
 
       <para>2.There is a probability 1- P0 that the peak flow exceeds the
       threshold. In that case the distribution of the peak flow follows a
@@ -1986,22 +2008,22 @@
     <section xml:id="b3_ch2_s_o8xnr">
       <title>Multi-Component or Mixture Models</title>
 
-      <para>In some areas, flooding may be affected by different types of
-      meteorological events (for example, intense tropical cyclones and storms
-      characterised by more usual synoptic conditions) or by changing
-      hydraulic controls (e.g., see Example 1), causing abnormal slope changes
-      in the frequency curve. In such cases the GEV or LPIII families may not
-      adequately fit the data. This type of problem may be of particular
-      importance in northern Australia, and an example is described by
-      Ashkanasy and Weeks (1975). It may be desirable to separate the data by
-      cause and analyse each set separately. The above reference describes a
-      procedure using a combination of two log Normal distributions. A
-      two-component extreme value distribution has been described by Rossi
-      <emphasis>et al</emphasis>. (1984) and Fiorentino <emphasis>et
-      al</emphasis>. (1985), and developed and applied to U.K. data by Beran
-      <emphasis>et al</emphasis>. (1986). Alternatively the four or five
-      parameter Wakeby distribution may be used to fit such data (Houghton,
-      1978).</para>
+      <para>In some areas, flooding may be affected by different types of meteorological events (for
+        example, intense tropical cyclones and storms characterised by more usual synoptic
+        conditions) or by changing hydraulic controls (e.g., see Example 1), causing abnormal slope
+        changes in the frequency curve. In such
+        cases<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132210+1100"?>,<?oxy_insert_end?>
+        the GEV or LPIII families may not adequately fit the data. This type of problem may be of
+        particular importance in northern Australia, and an example is described by Ashkanasy and
+        Weeks (1975). It may be desirable to separate the data by cause and analyse each set
+        separately. The above reference describes a procedure using a combination of two log
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T132242+1100" content="N"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132243+1100"?>n<?oxy_insert_end?>ormal
+        distributions. A two-component extreme value distribution has been described by Rossi
+          <emphasis>et al</emphasis>. (1984) and Fiorentino <emphasis>et al</emphasis>. (1985), and
+        developed and applied to U.K. data by Beran <emphasis>et al</emphasis>. (1986).
+        Alternatively<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132324+1100"?>,<?oxy_insert_end?>
+        the four or five parameter Wakeby distribution may be used to fit such data (Houghton,
+        1978).</para>
     </section>
 
     <section xml:id="b3_ch2_s_wq9vi">
@@ -2017,11 +2039,13 @@
           <m:math display="inline">
             <m:mi>p(q|θ(x))</m:mi>
           </m:math>
-        </inlineequation> is identified this cannot be used to estimate
-      long-term or marginal flood risk. This is because the flood risk is
-      dependent on the exogeneous variables x. To estimate long-term flood
-      risk the dependence on x must be removed using the total probability
-      rule to give:</para>
+        </inlineequation> is
+        identified<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132857+1100"?>,<?oxy_insert_end?>
+        this cannot be used to estimate long-term or marginal flood risk. This is because
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T151912+1100" content="the "?>flood
+        risk is dependent on the exogeneous variables x. To estimate long-term flood
+        risk<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T132953+1100"?>,<?oxy_insert_end?>
+        the dependence on x must be removed using the total probability rule to give:</para>
 
       <equation xml:id="b3_ch2_e_p72ly">
         <m:math display="block">
@@ -2076,12 +2100,12 @@
       a probability model to all the record to estimate the long-term flood
       risk.</para>
 
-      <para>However, if the gauged record does not adequately sample x,
-      significant bias in flood risk may result if only at-site data are used.
-      In such instances, it will be necessary to employ regional frequency
-      methods that take the nonhomogeneity into account. This is an area of
-      current research. Users are advised to keep abreast of new
-      developments.</para>
+      <para>However, if the gauged record does not adequately sample x, significant bias in flood
+        risk may result if only at-site data are used. In such instances, it will be necessary to
+        employ regional frequency methods that take the
+        non<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T152807+1100"?>-<?oxy_insert_end?>homogeneity
+        into account. This is an area of current research. Users are advised to keep abreast of new
+        developments.</para>
 
       <para>Example 3 illustrates the impact on flood risk arising from
       multi-decadal persistence in climate state as represented by the IPO
@@ -2101,3 +2125,4 @@
     LPIII.</para>
   </section>
 </section>
+<?oxy_options track_changes="on"?>

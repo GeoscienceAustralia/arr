@@ -16,16 +16,17 @@
     <section xml:id="b3_ch2_s_k55h9">
       <title>Annual Exceedance Probability AEP</title>
 
-      <para>The objective is to derive the distribution of the maximum flood
-      peak within a specified interval of time. Referring to the continuous
-      streamflow times series <xref linkend="b3_ch2_f_e1wwl"/>, let the random
-      variable q be a local peak discharge defined as a discharge which has
-      lower discharge on either side of the peak. This presents an immediate
-      problem as any bump on the hydrograph would produce a local peak. To
-      circumvent this problem we focus on peaks greater than some threshold
-      defined as q<subscript>o</subscript>. The threshold is selected so that
-      the peaks above the threshold are sufficiently separated in time to be
-      statistically independent of each other.</para>
+      <para>The objective is to derive the distribution of the maximum flood peak within a specified
+        interval of time. Referring to the continuous streamflow times series <xref
+          linkend="b3_ch2_f_e1wwl"/>, let the random variable q be a local peak discharge defined as
+        a discharge
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T173807+1100" content="which"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T173807+1100"?>that<?oxy_insert_end?>
+        has lower discharge on either side of the peak. This presents an immediate problem as any
+        bump on the hydrograph would produce a local peak. To circumvent this
+        problem<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T173853+1100"?>,<?oxy_insert_end?>
+        we focus on peaks greater than some threshold defined as q<subscript>o</subscript>. The
+        threshold is selected so that the peaks above the threshold are sufficiently separated in
+        time to be statistically independent of each other.</para>
 
       <figure xml:id="b3_ch2_f_e1wwl">
         <title>Peak Over Threshold series</title>
@@ -41,11 +42,12 @@
       q<subscript>o</subscript> are sampled from the same distribution denoted
       by the pdf p(q|q&gt;q<subscript>o</subscript>).</para>
 
-      <para>Suppose over a time interval of length t years, there are n peaks
-      over the threshold q<subscript>o</subscript>. This defines the POT time
-      series {q<subscript>1</subscript>,…,q<subscript>n</subscript>} which
-      consists of n independent realisations sampled from the pdf
-      p(q|q&gt;q<subscript>o</subscript>).</para>
+      <para>Suppose<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T173936+1100"?>,<?oxy_insert_end?>
+        over a time interval of length t years, there are n peaks over the threshold
+          q<subscript>o</subscript>. This defines the POT time series
+          {q<subscript>1</subscript>,…,q<subscript>n</subscript>}<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174105+1100"?>,<?oxy_insert_end?>
+        which consists of n independent realisations sampled from the pdf
+          p(q|q&gt;q<subscript>o</subscript>).</para>
 
       <para>Let w be the maximum value in the POT time series; that is,</para>
 
@@ -373,9 +375,10 @@
         </m:math>
       </equation>
 
-      <para>This is recognized as an exponential distribution with parameter
-      vP(q&gt;w) which is the expected number of peaks exceeding w per
-      year.</para>
+      <para>This is
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T174112+1100" content="recognized"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174112+1100"?>recognised<?oxy_insert_end?>
+        as an exponential distribution with parameter vP(q&gt;w) which is the expected number of
+        peaks exceeding w per year.</para>
 
       <para>ARR defines this parameter as EY(w) which stands for Exceedances
       per Year, but more strictly, is the expected number of peaks that exceed
@@ -1555,13 +1558,14 @@
     <para><emphasis>Step 1:</emphasis> Find most probable parameters of the
     target distribution</para>
 
-    <para>Any robust search method can be used to locate the value of
-    <inlineequation>
+    <para>Any robust search method can be used to locate the value of <inlineequation>
         <m:math display="inline">
           <m:mi>θ</m:mi>
         </m:math>
-      </inlineequation> which maximizes the logarithm of the posterior
-    probability density; that is,</para>
+      </inlineequation><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174306+1100"?>,<?oxy_insert_end?>
+      which
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T174259+1100" content="maximizes"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174259+1100"?>maximises<?oxy_insert_end?>
+      the logarithm of the posterior probability density; that is,</para>
 
     <equation xml:id="b3_ch2_e_bqy9q">
       <m:math display="block">
@@ -1592,8 +1596,9 @@
       </inlineequation>. The shuffled complex evolution algorithm of Duan
     <emphasis>et al</emphasis>. (1992) is a recommended search method.</para>
 
-    <para><emphasis>Step 2: </emphasis>Obtain the importance distribution
-    using a multinormal approximation to the target distribution</para>
+    <para><emphasis>Step 2: </emphasis>Obtain the importance distribution using a
+      multi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174317+1100"?>-<?oxy_insert_end?>normal
+      approximation to the target distribution</para>
 
     <para>Almost always, the log of posterior pdf <inlineequation>
         <m:math display="inline">
@@ -1698,30 +1703,24 @@
             <m:math display="inline">
               <m:msub>
                 <m:mi>θ</m:mi>
-
                 <m:mi>i</m:mi>
               </m:msub>
-
               <m:mo>←</m:mo>
-
               <m:msub>
                 <m:mi>p</m:mi>
-
                 <m:mi>N</m:mi>
               </m:msub>
-
               <m:mo>(θ)</m:mo>
-
               <m:mi>,i=1,...,N</m:mi>
-
               <m:mi/>
             </m:math>
           </inlineequation>where pN(<inlineequation>
             <m:math display="inline">
               <m:mi>θ</m:mi>
             </m:math>
-          </inlineequation>) is the pdf of the multinormal approximation
-        obtained in Step 2.</para>
+          </inlineequation>) is the pdf of the
+          multi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T174335+1100"?>-<?oxy_insert_end?>normal
+          approximation obtained in Step 2.</para>
       </listitem>
 
       <listitem>
@@ -3898,14 +3897,13 @@
   <section xml:id="b3_ch2_s_9cmvk">
     <title>Example 5: Use of regional information</title>
 
-    <para>This is a continuation of Example 3. In Example 3 the posterior mean
-    of the skewness was estimated to be 0.131 with a posterior standard of
-    0.479. The uncertainty in the 1% AEP quantile was large. Suppose
-    hypothetically that a regional analysis of skewness was conducted.
-    Furthermore suppose the expected regional skew is 0.00 with a standard
-    deviation of 0.30. This information is entered into FLIKE by selecting the
-    Gaussian prior distributions button and clicking on “edit” control <xref
-    linkend="b3_ch2_f_zlnc1"/>:</para>
+    <para>This is a continuation of Example 3. In Example 3 the posterior mean of the skewness was
+      estimated to be 0.131 with a posterior standard of 0.479. The uncertainty in the 1% AEP
+      quantile was large. Suppose hypothetically that a regional analysis of skewness was conducted.
+      Furthermore<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T175036+1100"?>,<?oxy_insert_end?>
+      suppose the expected regional skew is 0.00 with a standard deviation of 0.30. This information
+      is entered into FLIKE by selecting the Gaussian prior distributions button and clicking on
+      “edit” control <xref linkend="b3_ch2_f_zlnc1"/>:</para>
 
     <figure xml:id="b3_ch2_f_zlnc1">
       <title>FLIKE - Gaussian Prior Distributions Input</title>
@@ -3918,12 +3916,11 @@
     </figure>
 
     <para>The prior information was directly entered into the following
-    dialog. Note that very large prior standard deviations are assigned to the
-    mean and standard deviation parameters to ensure there is no prior
-    information about theses parameters. If the Log Pearson III distribution
-    has been selected, the option to import the prior information from the ARR
-    Regional Flood Frequency Estimation method is available (refer to Book 3
-    Chapter 2).</para>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T175058+1100" content="dialog"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T175058+1100"?>dialogue<?oxy_insert_end?>.
+      Note that very large prior standard deviations are assigned to the mean and standard deviation
+      parameters to ensure there is no prior information about theses parameters. If the Log Pearson
+      III distribution has been selected, the option to import the prior information from the ARR
+      Regional Flood Frequency Estimation method is available (refer to Book 3 Chapter 2).</para>
 
     <figure xml:id="b3_ch2_f_pkw4b">
       <title>FLIKE - Prior Information</title>
@@ -4029,12 +4026,13 @@
       </tgroup>
     </informaltable>
 
-    <para>The table of selected AEP quantiles q<subscript>Y</subscript> and
-    their 90% confidence limits further illustrates the benefit of
-    incorporating regional information. For example, for the 1% AEP flood the
-    5% and 95% confidence limits are respectively 37% and 546% of the quantile
-    q<subscript>1%</subscript> when no prior information is used. These limits
-    are reduced to 46% and 292% using prior regional information.</para>
+    <para>The table of selected AEP quantiles q<subscript>Y</subscript> and their 90% confidence
+      limits further illustrates the benefit of incorporating regional information. For example, for
+      the 1% AEP flood the 5% and 95% confidence limits are respectively 37% and 546% of the
+      quantile
+      q<subscript>1%</subscript><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T175114+1100"?>,<?oxy_insert_end?>
+      when no prior information is used. These limits are reduced to 46% and 292% using prior
+      regional information.</para>
 
     <informaltable>
       <tgroup cols="7">
@@ -5438,3 +5436,4 @@
     <para/>
   </section>
 </section>
+<?oxy_options track_changes="on"?>
