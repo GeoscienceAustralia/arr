@@ -14,51 +14,4049 @@
   </info>
 
   <section>
-    <title>Introduction</title>
+    <title>INTRODUCTION</title>
 
-    <para>Outlined in this section will be the basic concepts necessary for
-    development of an IFD relationship.</para>
+    <para>Obtaining an estimated rainfall depth for a specified probability is
+    an essential component of the design of infrastructure including gutters,
+    roofs, culverts, storm water drains, flood mitigation levees, retarding
+    basins and dams.</para>
+
+    <para>If sufficient rainfall records are available, at-site frequency
+    analysis can be undertaken to estimate the rainfall depth corresponding to
+    the specified design probability in some cases. However, limitations
+    associated with the spatial and temporal distribution of recorded rainfall
+    data necessitates the estimation of design rainfalls for most
+    projects.</para>
+
+    <para>The purpose of this chapter is to outline the processes used to
+    derive temporally and spatially consistent design rainfalls for Australia
+    by the Bureau of Meteorology (the Bureau). The classes of design rainfall
+    values for which estimates have been developed are described in Section
+    3.2.</para>
+
+    <para>Section 3.3 summarises the current recommendations on how climate
+    change should be incorporated into design rainfalls for those situations
+    where the design life of the structure means that it could be affected by
+    climate change.</para>
+
+    <para>Section 3.4 summarises the steps involved in deriving the frequent
+    and infrequent design rainfalls (also known as the
+    Intensity-Frequency-Duration (IFD) design rainfalls) for Australia.
+    Sections 3.5 and 3.6 describe how the very frequent and rare design
+    rainfalls were estimated. The methods adopted are only briefly outlined in
+    these sections, with additional references provided to facilitate access
+    to further technical information for interested readers. More detail on
+    each of the methods is provided in Bureau of Meteorology (2016).</para>
+
+    <para>In Section 3.7 a summary of the methods adopted for the estimation
+    of Probable Maximum Precipitation is provided. Section 3.8 provides
+    information on the uncertainties associated with the design rainfalls and
+    Section 9 explains how to access estimates of each of the design rainfall
+    classes.</para>
   </section>
 
   <section>
-    <title>Design Rainfall Concepts</title>
+    <title>DESIGN RAINFALL CONCEPTS</title>
 
-    <para/>
+    <para>Design rainfalls are a probabilistic or statistically-based estimate
+    of the likelihood of a specific rainfall depth being recorded at a
+    particular location within a defined duration.This is generally classified
+    by an annual exceedance probability (AEP) or Exceedances per Year (EY).
+    Design rainfalls are therefore not real (or observed) rainfall events;
+    they are values that are probabilistic in nature.</para>
+
+    <para>There are five broad classes of design rainfalls that are currently
+    used for design purposes, generally categorised by frequency of
+    occurrence. These are summarised below and presented graphically in Figure
+    1. However, it should be noted that there is some overlap between the
+    classes. Different methods and data sets are required to estimate design
+    rainfalls for the different classes and these are discussed in the
+    following sections.</para>
+
+    <para><table frame="void">
+        <caption>Classes of Design Rainfalls</caption>
+
+        <col width="33%"/>
+
+        <col width="33%"/>
+
+        <col width="33%"/>
+
+        <thead>
+          <tr>
+            <th><emphasis role="bold">Design Rainfall Class</emphasis></th>
+
+            <th><emphasis role="bold">Frequency of occurrence</emphasis></th>
+
+            <th><emphasis role="bold">Probability Range</emphasis></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Very frequent design rainfalls</td>
+
+            <td>Very frequent</td>
+
+            <td>12EY to 1 EY</td>
+          </tr>
+
+          <tr>
+            <td>Intensity-Frequency-Duration (IFD)</td>
+
+            <td>Frequent</td>
+
+            <td>1 EY to 10% AEP</td>
+          </tr>
+
+          <tr>
+            <td>Intensity-Frequency-Duration (IFD)</td>
+
+            <td>Infrequent</td>
+
+            <td>10% to 1% AEP</td>
+          </tr>
+
+          <tr>
+            <td>Rare design rainfalls</td>
+
+            <td>Rare</td>
+
+            <td>1 in 100 AEP to 1 in 2000 AEP</td>
+          </tr>
+
+          <tr>
+            <td>Probable Maximum Precipitation (PMP)</td>
+
+            <td>Extreme</td>
+
+            <td>&lt; 1 in 2000 AEP</td>
+          </tr>
+        </tbody>
+      </table></para>
+
+    <figure>
+      <title><emphasis role="bold">Classes of Design
+      Rainfalls</emphasis></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/2031.JPG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
   </section>
 
   <section>
-    <title>Climate Change Impacts</title>
+    <title>CLIMATE CHANGE IMPACTS</title>
 
-    <para/>
+    <para>The new design rainfalls provided are based on observed rainfall
+    data that represent, primarily, the climate of the 20th century. As part
+    of the overall ARR revision, a climate change research strategy paper was
+    prepared to summarise the scientific understanding of how projected
+    changes in the climate may alter the behaviour of factors that influence
+    the estimation of the design floods that are used in policy decisions
+    involving infrastructure, town planning, floodplain management and flood
+    warning and emergency management.</para>
+
+    <para>Ongoing climate change research will provide more scientifically
+    rigorous advice on the impacts of climate change on design rainfalls.
+    However, in the interim practitioners need to assess the possible impacts
+    of climate change on design rainfall estimates that are being used
+    currently in design flood studies.</para>
+
+    <para>To address this, an Interim Climate Change Guideline for Considering
+    Climate Change in Rainfall and Runoff has been provided (Bates et al.,
+    2015) to give guidance over coming years. <emphasis role="italic">Details
+    of this guideline can be found in Bryson Bates’ chapter</emphasis></para>
   </section>
 
   <section>
-    <title>Development of IFDs</title>
+    <title>FREQUENT AND INFREQUENT DESIGN RAINFALLS (IFDs)</title>
 
-    <para/>
+    <section>
+      <title>Overview</title>
+
+      <para>This section summarises the steps involved in deriving frequent
+      and infrequent designs rainfalls for the probabilities from 1EY to 1%
+      AEP. As shown above, these classes of design rainfalls constitute the
+      traditional IFD design rainfalls. The main steps involved in the
+      derivation of the frequent and infrequent design rainfalls include the
+      collation of a quality controlled database, extraction of the extreme
+      values series, frequency analysis, regionalisation and gridding
+      processes. These steps are discussed in more detail in the following
+      sections and summarised in the flow chart provided as Figure 2 and in
+      Table 2. The Sections in which each of the steps is discussed are shown
+      in Figure 2.</para>
+
+      <figure>
+        <title><emphasis role="bold">Flow Chart of Frequent and Infrequent
+        (IFD) Design Rainfall Method</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2032.JPG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><table frame="void">
+          <caption>Summary of Frequent and Infrequent (IFD) Design Rainfall
+          Method</caption>
+
+          <col width="50%"/>
+
+          <col width="50%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Step</emphasis></th>
+
+              <th><emphasis role="bold">Method</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Number of rainfall stations</td>
+
+              <td>Daily read - 8074</td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>Continuous – 2280</td>
+            </tr>
+
+            <tr>
+              <td>Period of record</td>
+
+              <td>All available records up to 2012</td>
+            </tr>
+
+            <tr>
+              <td>Length of record used in analyses</td>
+
+              <td><para>Daily read &gt;= 30 years</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>Continuous &gt; 8 years</td>
+            </tr>
+
+            <tr>
+              <td>Source of data</td>
+
+              <td>Organisations collecting rainfall data across Australia</td>
+            </tr>
+
+            <tr>
+              <td>Extreme value series</td>
+
+              <td>Annual Maximum Series (AMS)</td>
+            </tr>
+
+            <tr>
+              <td>Frequency analysis</td>
+
+              <td>Generalised Extreme Value (GEV) distribution fitted using
+              L-moments</td>
+            </tr>
+
+            <tr>
+              <td>Extension of sub-daily rainfall statistics to daily read
+              stations</td>
+
+              <td>Bayesian Generalised Least Squares Regression (BGLSR)</td>
+            </tr>
+
+            <tr>
+              <td>Regionalisation</td>
+
+              <td>Region of influence (ROI)</td>
+            </tr>
+
+            <tr>
+              <td>Gridding</td>
+
+              <td>Regionalised at-site distribution parameters gridded using
+              ANUSPLIN</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
+
+    <section>
+      <title>Rainfall Database</title>
+
+      <para>Integral to the estimation of design rainfalls was the creation of
+      a database containing data from all available rainfall stations across
+      Australia. These rainfall data were collected at rainfall stations
+      operated by various organisations using a range of types of collecting
+      methods and instrumentation. Further information on the collection and
+      archiving of rainfall data can be found in Book 1 Chapter 4.</para>
+
+      <para><emphasis role="italic">Types of rainfall data</emphasis></para>
+
+      <para>Rainfall data are collected using a number of different types of
+      instrumentation. These provide different temporal and spatial
+      resolutions of rainfall data, depending on the instrument type and
+      reporting method used. A brief summary of each of the main types of
+      rainfall data are provided below. Table 3 summarises the types of
+      rainfall reporting methods used and indicates their use in the
+      estimation of the design rainfalls. As can be seen from Table 3, most of
+      the rainfall data used to derive the design rainfalls were recorded by a
+      daily read, pluviograph or tipping bucket rain gauge (TBRG).</para>
+
+      <para><emphasis role="underline">Daily read rainfall
+      gauges</emphasis></para>
+
+      <para>Daily read rainfall gauges are read at 9:00 am each day and a
+      total rainfall depth for the previous 24 hours is reported.</para>
+
+      <para><emphasis role="underline">Continuous rainfall
+      gauges</emphasis></para>
+
+      <para>Continuous rainfall stations measure rainfall depth at much finer
+      time intervals. In Australia there have been two main types of
+      continuous rainfall stations as discussed below.</para>
+
+      <para>(i) DINES</para>
+
+      <para>Dines tilting syphon pluviographs (DINES) recorded rainfall on a
+      paper chart which was then digitised manually. Because of the
+      limitations in the digitisation process, the minimum interval at which
+      rainfall data could be accurately provided was 5 or 6 minutes.</para>
+
+      <para>(ii) TBRG</para>
+
+      <para>Since the 1990s the majority of Dines pluviographs have been
+      replaced by Tipping Bucket Raingauges (TBRG) which typically have a
+      0.2mm capacity bucket. Each time the bucket is filled the gauge tips
+      creating an electrical impulse which is logged. Rainfall data from TBRGs
+      can be accurately provided for intervals of less than one minute.</para>
+
+      <para><emphasis role="underline">ERTS</emphasis></para>
+
+      <para>The Event-reporting Radio Telemetry Systems (ERTS) network
+      consists of over 1000 stations across Australia, operated by the Bureau,
+      local government and other water agencies. As the purpose of these
+      gauges is to provide information for use in flood forecasting and
+      warning, the location and calibration of these gauges is not necessarily
+      in accordance with the procedures adopted for the main rainfall station
+      networks. However, the data from the ERTS stations do provide an
+      additional source of information on large rainfall events.</para>
+
+      <para><emphasis role="underline">RADAR</emphasis></para>
+
+      <para>The Bureau’s network of RAdio Detection and Ranging (RADAR)
+      provides near-real time estimates of rainfall accumulations which can be
+      used in weather forecasting, flood modelling and flash flood warning. It
+      also provides information on the spatial extent of rainfall events and
+      can be used in combination with rainfall station measurements to improve
+      estimates of rainfall in areas between rainfall stations.</para>
+
+      <para>However, because of the relatively sparse spatial distribution of
+      the RADAR network across Australia and the short period of record, data
+      from RADAR were not able to be used in the estimation of the design
+      rainfalls.</para>
+
+      <para><emphasis role="underline">Metadata</emphasis></para>
+
+      <para>Metadata provides essential information about the rainfall station
+      such as the location of the rainfall station, the type of
+      instrumentation and data collection method. It therefore provides
+      context for the rainfall data collected at a station and an indication
+      of its quality. At a minimum, metadata relating to location in terms of
+      latitude and longitude were collated for each rainfall station. However,
+      any additional metadata that were available including elevation, details
+      on siting and clearance and photographs were also collated.</para>
+
+      <para><table frame="void">
+          <caption>Rainfall reporting methods</caption>
+
+          <col width="16%"/>
+
+          <col width="16%"/>
+
+          <col width="16%"/>
+
+          <col width="16%"/>
+
+          <col width="16%"/>
+
+          <col width="16%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Type</emphasis></th>
+
+              <th><emphasis role="bold">Reporting</emphasis></th>
+
+              <th><emphasis role="bold">Recording Resolution</emphasis></th>
+
+              <th><emphasis role="bold">Reporting Interval</emphasis></th>
+
+              <th><emphasis role="bold">Reporting Method</emphasis></th>
+
+              <th><emphasis role="bold">Used for design
+              rainfalls</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Daily</td>
+
+              <td>Daily</td>
+
+              <td>24 hour totals (9am – 9am)</td>
+
+              <td>Daily to monthly</td>
+
+              <td>Paper</td>
+
+              <td>Yes</td>
+            </tr>
+
+            <tr>
+              <td>DINES Pluviograph</td>
+
+              <td>Continuous</td>
+
+              <td>5-6 minutes</td>
+
+              <td>Daily to weekly</td>
+
+              <td>Digitised</td>
+
+              <td>Yes</td>
+            </tr>
+
+            <tr>
+              <td>TBRG</td>
+
+              <td>Continuous</td>
+
+              <td>On occurrence</td>
+
+              <td>Hourly to six monthly</td>
+
+              <td>Logger</td>
+
+              <td>Yes</td>
+            </tr>
+
+            <tr>
+              <td>ERTS</td>
+
+              <td>Event</td>
+
+              <td>On occurrence</td>
+
+              <td>On occurrence</td>
+
+              <td>Electronic</td>
+
+              <td>Some</td>
+            </tr>
+
+            <tr>
+              <td>RADAR</td>
+
+              <td>Spatial</td>
+
+              <td>10 minutes</td>
+
+              <td>10 minutes</td>
+
+              <td>Digital</td>
+
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table></para>
+
+      <para><emphasis role="italic">Sources of data</emphasis></para>
+
+      <para>The rainfall database used for the estimation of the design
+      rainfalls included rainfall data collected at rainfall stations operated
+      by organisations around Australia. There were two main sources of
+      data:</para>
+
+      <para><emphasis role="underline">Australian Data Archive for Meteorology
+      (ADAM)</emphasis></para>
+
+      <para>Rainfall data collected by the Bureau are stored in ADAM which
+      contains:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>approximately 20 000 daily read rainfall stations (both open
+          and closed) starting in 1800</para>
+        </listitem>
+
+        <listitem>
+          <para>nearly 1500 continuous rainfall stations – using both DINES
+          and TBRG instrumentation.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para><emphasis role="underline">Australian Water Resources Information
+      System (AWRIS)</emphasis></para>
+
+      <para>Under the terms of the Water Regulations 2008, water information
+      (including rainfall data) collected by organisations across Australia
+      are required to be provided to the Bureau. The rainfall data collected
+      by organisations including local and state government water agencies,
+      hydropower generators and urban water utilities are stored in AWRIS
+      together with other water information. At present, AWRIS
+      contains:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>approximately 350 daily read rainfall stations</para>
+        </listitem>
+
+        <listitem>
+          <para>approximately 2500 continuous rainfall stations.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Of particular importance to design rainfall estimation are the
+      dense networks of continuous rainfall stations operated by urban water
+      utilities which provide data in areas of steep rainfall gradients and
+      urban areas.</para>
+
+      <para><emphasis role="italic">Spatial distribution of rainfall
+      data</emphasis></para>
+
+      <para><emphasis role="underline">Daily read rainfall
+      stations</emphasis></para>
+
+      <para>The location and period of record of the daily read rainfall
+      stations operated by the Bureau are shown in Figure 3.</para>
+
+      <para>As can be seen from Figure 3 the spatial coverage of the daily
+      read rainfall stations across Australia is reasonably good, especially
+      over the eastern states and around the coast. Gaps in the spatial
+      coverage of the daily read rainfall station network occur in the eastern
+      half of Western Australia; the western and north eastern parts of South
+      Australia; and the parts of the Northern Territory that are removed from
+      the road and rail networks.</para>
+
+      <figure>
+        <title><emphasis role="bold">Location of Daily Read Rainfall Stations
+        with their Period of Record</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2033.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Continuous rainfall
+      stations</emphasis></para>
+
+      <para>The location and period of record of the continuous rainfall
+      stations operated by the Bureau and other organisations are shown in
+      Figure 4. The sparseness of the network of continuous rainfall stations
+      across Australia can be seen from this figure, especially when compared
+      to the spatial distribution of the daily read rainfall stations. In
+      spite of the significant improvement in the spatial coverage of the
+      continuous rainfall stations by the inclusion of rainfall stations
+      operated by other organsiations, there are still large areas of
+      Australia with either no or very few continuous rainfall
+      stations.</para>
+
+      <figure>
+        <title><emphasis role="bold">Location of Continuous Rainfall Stations
+        with their Period of Record</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2034.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Increase in spatial
+      coverage</emphasis></para>
+
+      <para>The increase in the spatial coverage of the daily read and
+      continuous rainfall stations used for the design rainfalls compared to
+      the spatial coverage available for the IFDs provided in the 1987 edition
+      of Australian Rainfall and Runoff (ARR 1987) (Pilgrim, D.H., 1987) are
+      shown in Figures 5 and 6.</para>
+
+      <figure>
+        <title><emphasis role="bold">Daily Read Rainfall Stations Used for ARR
+        1987 IFDs (blue) and Those Used for the Frequent and Infrequent Design
+        Rainfalls (red and blue)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2035.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>The increase in daily read rainfall stations is due to the
+      increased number of stations that met the minimum period of record
+      criterion.</para>
+
+      <para>As can be seen in Figure 6, the inclusion of data from continuous
+      rainfall stations operated by other organisations has resulted in a
+      significant increase in the spatial coverage of these data. In
+      particular, the spatial coverage along the east coast of Australia; the
+      west coast of Tasmania; and large areas in Western Australia has been
+      improved.</para>
+
+      <figure>
+        <title><emphasis role="bold">Continuous Rainfall Stations Used for ARR
+        1987 IFDs (blue) and Those Used for the Frequent and Infrequent Design
+        Rainfalls (red and blue)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2036.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="italic">Temporal distribution of rainfall
+      data</emphasis></para>
+
+      <para><emphasis role="underline">Daily read rainfall
+      stations</emphasis></para>
+
+      <para>Official daily read rainfall data are available as far back as the
+      early 1800s with the longest rainfall records in Australia being
+      approximately 170 years. Some of these early rainfall stations are still
+      open. The Bureau’s ADAM database contains approximately 3000 daily read
+      rainfall stations with more than 100 years of record.</para>
+
+      <para>In Figure 7 the distribution of record lengths for daily read
+      rainfall stations is shown. It can be seen that, although there are a
+      reasonable number of long term stations, approximately half of the daily
+      read rainfall stations have less than 10 years of record.</para>
+
+      <figure>
+        <title><emphasis role="bold">Length of Available Daily Read Rainfall
+        Data</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2037.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Continuous rainfall
+      stations</emphasis></para>
+
+      <para>While there are a small number of continuous rainfall stations
+      with more than 70 years of record, the majority of stations have less
+      than 40 years of record and a high proportion have less than 10 years of
+      record. Figure 8 shows the distribution of available length of record
+      for the continuous stations.</para>
+
+      <figure>
+        <title><emphasis role="bold">Length of Available Continuous Rainfall
+        Data</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2038.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Increase in length of available record
+      compared to ARR 1987</emphasis></para>
+
+      <para>The inclusion of nearly 30 years additional daily read rainfall
+      data since the estimation of the ARR 1987 IFDs has increased both the
+      amount of data available for the frequent and infrequent design
+      rainfalls as well as the number of daily read rainfall stations which
+      now met the minimum length of record criterion as shown in Figure
+      9.</para>
+
+      <figure>
+        <title><emphasis role="bold">Number of Long-term Daily Read Stations
+        Used for ARR 1987 IFDs (red) and Those Used for the Frequent and
+        Infrequent Design Rainfalls (blue)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2039.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>For the continuous rainfall data, the inclusion of stations
+      operated by other organisations and the nearly 30 years of additional
+      data resulted in a significant increase in both the length of record
+      available and the number of rainfall stations that met the minimum
+      record length criterion as can be seen in Figure 10.</para>
+
+      <figure>
+        <title><emphasis role="bold">Length of Record of Continuoud Rainfall
+        Stations Used for ARR 1987 IFDs (red) and Those Used for the Frequent
+        and Infrequent Design Rainfalls (blue and yellow)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2040.gif"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="italic">Quality controlling data</emphasis></para>
+
+      <para>In addition to ensuring that as much data as possible was used in
+      estimating the design rainfalls, it was also necessary that the rainfall
+      data be quality controlled. In light of the volume of data that needed
+      to be quality controlled, automated procedures were developed for the
+      identification of suspect data and, as far as possible, the correction
+      of these data. However, the quality controlling of the data could only
+      be automated so far and a significant amount of data was required to be
+      manually checked.</para>
+
+      <para>The quality controlling undertaken of both the daily read and
+      continuous rainfall data is summarised below; detailed descriptions of
+      these procedures can be found in Green <emphasis role="italic">et
+      al</emphasis> (2011; 2012a). The quality controlled data base prepared
+      for the estimation of the design rainfalls will be archived in AWRIS and
+      made available from the Bureau’s website via the Water Data Online
+      product.</para>
+
+      <para><emphasis role="underline">Daily read rainfall
+      stations</emphasis></para>
+
+      <para>For the daily read rainfall data automated quality controlling
+      procedures were developed in order to:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>infill missing data;</para>
+        </listitem>
+
+        <listitem>
+          <para>disaggregate flagged accumulated daily rainfall totals;</para>
+        </listitem>
+
+        <listitem>
+          <para>detect suspect data, identify and correct:</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>unflagged accumulated totals</para>
+            </listitem>
+
+            <listitem>
+              <para>time shifts</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>identify gross errors - data inconsistent with neighbouring
+          records but not either of the above two categories.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Manual correction of gross errors identified during the automated
+      quality controlling procedures was facilitated through the use of the
+      Bureau’s Quality Monitoring System (QMS). QMS is a suite of programs
+      that has functionalities to map the suspect value in relation to nearby
+      stations and to link to Geographic Information System (GIS) data from
+      other systems including RADAR, Satellite Imagery and Mean Sea Level
+      Pressure Analysis.</para>
+
+      <para><emphasis role="underline">Continuous rainfall
+      stations</emphasis></para>
+
+      <para>The automated procedures that were developed for the quality
+      controlling of the continuous rainfall data used comparisons with other
+      data sources including the Australian Water Availability Project (AWAP)
+      gridded data, daily read rainfall stations, automatic weather stations,
+      and synoptic stations to identify spurious and missing data.</para>
+
+      <para>In order to reduce the amount of continuous rainfall data that
+      needed to be quality controlled to a manageable volume, only a subset of
+      the largest rainfall events was quality controlled. The subset was
+      created by extracting the number of highest rainfall records equal to
+      three times the number of years of record at each site for each duration
+      being considered.</para>
+
+      <para>Each continuous rainfall value in the data subset that was flagged
+      as being spurious by the automated quality controlling procedures was
+      subjected to manual quality controlling. The manual quality controlling
+      of the data was undertaken in order to determine whether the flagged
+      value was correct or not. The manual quality controlling procedure
+      adopted involved comparing 09:00 am to 09:00 am continuous rainfalls
+      with daily (also 09:00 am to 09:00 am) rainfalls at the co-located daily
+      read rainfall station. For continuous rainfall sites with no co-located
+      daily site, the continuous rainfall record was compared with the daily
+      rainfall record of the nearest site. The continuous rainfall value was
+      not modified in any way - the comparison with daily values was made in
+      order to assess whether it was valid or not. Where it was assessed that
+      the flagged value was definitely incorrect it was excluded from the
+      analyses, otherwise values were retained in the continuous rainfall
+      database.</para>
+
+      <para><emphasis role="underline">Metadata</emphasis></para>
+
+      <para>The metadata associated with each of the rainfall stations were
+      also checked. For the Bureau operated rainfall stations, the Bureau’s
+      metadata database, SitesDB, includes details of the station’s location
+      in latitude and longitude, and elevation. For rainfall stations operated
+      by other organisations, metadata were provided with the rainfall data
+      and stored in AWRIS. Gross error checks on station locations and
+      elevation were performed by comparing elevations derived using a Digital
+      Elevation Model (DEM) to those recorded in the station’s metadata.
+      Checks of latitude and location were also carried out by plotting the
+      latitudes and longitudes in GIS. Revisions to station locations or
+      elevations were carried out using Google Earth and information on the
+      station provided in the Bureau’s station metadata catalogue.</para>
+
+      <para>For the limited number of closed stations for which an elevation
+      was not included in the metadata, the station elevation was extracted
+      from the Geoscience Australia 9 second DEM (<link
+      xlink:href="http://www.ga.gov.au/metadata-gateway/metadata/record/gcat_66006">http://www.ga.gov.au/metadata-gateway/metadata/record/gcat_66006</link>)
+      based on the latitude and longitude.</para>
+
+      <para><emphasis role="italic">Stationarity assessment</emphasis></para>
+
+      <para>The quality controlled data base that was established contained
+      rainfall data for the period extending from the 1800s to the present.
+      However if climate change has caused non-stationarity in the recorded
+      rainfalls, then possibly only a portion of the observed record should
+      have been used in deriving the design rainfalls. This is because a key
+      assumption in the statistical methods adopted for the derivation of the
+      design rainfalls is that the data are stationary. In order to determine
+      whether the complete period of available rainfall records could be
+      adopted in estimating the design rainfalls, it was necessary to assess
+      the degree of non-stationarity present in the historic record at
+      rainfall stations across Australia (Green and Johnson, 2011).</para>
+
+      <para>Two methods were used to establish if there are trends in the
+      annual maximum series of rainfalls for Australia. The first examined the
+      records at individual stations which were tested to assess trends in the
+      time series of the annual maximum rainfalls and changes in the
+      probability distributions fitted to the annual maxima to estimate design
+      rainfall quantiles. The second method used an area averaged approach to
+      check for regional trends in the number of exceedances of pre-determined
+      thresholds. The approach was based on that carried out by Bonnin et al.
+      (2010) to assess trends in large rainfall events in the USA as part of
+      the revisions by the National Oceanic and Atmospheric Administration
+      (NOAA) to design rainfalls.</para>
+
+      <para>It was concluded that although some stations showed strong trends
+      in the annual maximum time series, particularly for short durations and
+      more frequent events, the magnitude of these changes was within the
+      expected accuracy of the fitted design rainfall relationships. It was
+      therefore considered appropriate to assume stationarity and use the
+      complete period of record at all stations in the estimation of the
+      design rainfalls.</para>
+    </section>
+
+    <section>
+      <title>Extraction of extreme value series</title>
+
+      <para>Rainfall frequency analysis was an integral part of the estimation
+      of the design rainfalls as it enabled rainfall depths corresponding to a
+      probability quantile to be ascertained. In estimating the frequent and
+      infrequent design rainfalls it is large rainfalls that were being
+      considered and therefore it was the extreme value series that was of
+      interest.</para>
+
+      <para>The extreme value series can be defined using the Annual Maximum
+      Series (AMS) or the Partial Duraton Series (PDS) (also known as Peak
+      over Threshold). Further details on the extreme values series can be
+      found in Book 3, Chapter 2. For the frequent and infrequent design
+      rainfalls, the AMS was used to define the extreme value series because
+      of its lack of ambiguity in defining the series; its relatively simple
+      application and the problem of bias associated with the PDS for less
+      frequent AEPs.</para>
+
+      <para>It should be noted that in extracting the AMS, the focus was on
+      obtaining the largest rainfall depth in each year for each of the
+      durations considered. Therefore the extracted depths comprised both
+      total storm depths and bursts within storm storms.</para>
+
+      <para>In order to reduce the uncertainty in the design rainfall
+      estimates, minimum station record lengths were adopted. The criteria
+      were:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>30 or more years of record for daily read rainfall
+          stations</para>
+        </listitem>
+
+        <listitem>
+          <para>More than 8 years of record for continuous rainfall
+          stations</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>These criteria were selected on the basis of optimising the
+      spatial coverage of the rainfall stations while ensuring that there were
+      sufficient AMS values at each site to undertake frequency
+      analysis.</para>
+
+      <para>The daily read rainfall data are for the restricted period from
+      9am to 9am rather than for the actual duration of the event. As this may
+      not lead to the largest rainfall total, it was necessary to convert
+      these ‘restricted’ daily read rainfall depths to unrestricted rainfall
+      depths. In order to do this, ‘restricted’ to unrestricted conversions
+      factors were estimated using co-located daily read and continuous
+      rainfall gauges at a number of locations around Australia of differing
+      climatic conditions. The resultant factors are shown in Table 4.</para>
+
+      <para><table frame="void">
+          <caption>Rainfall reporting methods</caption>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <col width="12%"/>
+
+          <tbody>
+            <tr>
+              <td>Duration</td>
+
+              <td>1 day</td>
+
+              <td>2 days</td>
+
+              <td>3 days</td>
+
+              <td>4 days</td>
+
+              <td>5 days</td>
+
+              <td>6 days</td>
+
+              <td>7 days</td>
+            </tr>
+
+            <tr>
+              <td>Factor</td>
+
+              <td>1.15</td>
+
+              <td>1.11</td>
+
+              <td>1.07</td>
+
+              <td>1.05</td>
+
+              <td>1.04</td>
+
+              <td>1.03</td>
+
+              <td>1.02</td>
+            </tr>
+          </tbody>
+        </table></para>
+
+      <para><emphasis role="italic">At-site frequency
+      analysis</emphasis></para>
+
+      <para>In order to assess the most appropriate distribution to adopt
+      across Australia for the AMS, a range of distributions was trialled
+      using single site analysis. Five distributions – GEV, Generalised
+      Logistic (GLO), Generalised Normal (GNO), Pearson Type III (PE3) and
+      Generalised Pareto (GPA) – were fitted to the AMS extracted from the
+      available long-terms continuous rainfall stations for a range of
+      durations. The goodness of fit of each distribution was assessed using
+      the approach recommended by Hosking and Wallis (1997). It was found that
+      the Generalised Extreme Value (GEV) distribution produced the best fit
+      to the AMS on an at-site analysis. The comparison of distributions was
+      subsequently repeated for regional estimates with the same results
+      (Green et al, 2012b).</para>
+
+      <para><emphasis role="italic">Estimation of L-moments</emphasis></para>
+
+      <para>The linear combinations of the data (L-moments) (Hosking and
+      Wallis, 1997) of mean, variation (L-CV) and skewness (L-skewness) were
+      used to summarise the statistical properties of the extreme value series
+      data at each station location. L-moments are commonly used in rainfall
+      and flood frequency analysis (Hosking and Wallis, 1997) due to their
+      efficiency in fitting the data and lack of bias in the sample estimates,
+      particularly in the higher order moments, when compared to ordinary
+      moments.</para>
+
+      <para>While for durations of one day and longer this was a fairly
+      straightforward approach, for sub-daily durations the scarcity of long
+      term continuous rainfall records meant that an alternative approach was
+      needed to supplement the available data. For the IFD revision project, a
+      Bayesian Generalised Least Squares Regression (BGLSR) approach was
+      adopted, a summary of which is provided below; more details can be found
+      in Johnson et al (2012a) and Haddad et al (2015).</para>
+
+      <para><emphasis role="underline">Daily durations</emphasis></para>
+
+      <para>At sites at which there was a daily read rainfall station with 30
+      or more years of record, the mean, L-CV and L-skewness, were determined
+      from the at-site extreme value series for each duration.</para>
+
+      <para><emphasis role="underline">Sub-daily durations – at continuous
+      rainfall stations</emphasis></para>
+
+      <para>At sites at which there was a continuous rainfall station with
+      more than eight years of record, the mean, L-CV and L-skewness, were
+      determined from the at-site extreme value series for each duration
+      considered.</para>
+
+      <para>As can be seen from Figures 3 and 4 the spatial coverage of
+      sub-daily rainfall stations is considerably less than that of the daily
+      read stations. Therefore, a method was needed to improve the spatial
+      coverage of the sub-daily data. This is most commonly done using
+      information from the daily read stations with statistics of sub-daily
+      data being inferred from those of the daily data. Previously adopted
+      techniques for predicting rainfall depths at durations below 24 hours
+      from those for the 24, 48 and 72-hour durations have been factoring of
+      the 24 hours IFDs; principal component analysis followed by regression;
+      and Partial Least Squares Regression. However, a major weakness of these
+      previously adopted approaches is their inability to account for
+      variation in record lengths from site to site and inter-station
+      correlation</para>
+
+      <para>The approach that was adopted for the frequent and infrequent
+      design rainfalls was Bayesian Generalised Least Squares Regression
+      (BGLSR) because it accounts for possible cross-validation and unequal
+      variance between stations by constructing an error covariance matrix and
+      can explicitly account for sampling uncertainty and intersite
+      dependence. Details of the BGLSR approach can be found in Reis et al.
+      (2005) and Madsen et al. (2002; 2009). In Australia, Haddad et al.
+      (2012a) used BGLSR to obtain regional relationships to estimate peak
+      streamflow in ungauged catchments and for pilot studies for the design
+      rainfall project (Haddad and Rahman, 2009; Haddad et al., 2011;
+      2015).</para>
+
+      <para><emphasis role="underline">BGLSR – Overview</emphasis></para>
+
+      <para>BGLSR is an extension of ordinary least squares (OLS) regression
+      such that the predictand (dependent variable) is calculated from a
+      linear combination of a number of predictor variables (independent
+      variables) with a suitable error model. In general the predictions for
+      the rainfall statistic, <emphasis role="italic">y</emphasis>, of
+      interest for site <emphasis role="italic">i</emphasis>, are made
+      according to equation (1).</para>
+
+      <equation>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>y</m:mi>
+
+              <m:mi>i</m:mi>
+            </m:msub>
+
+            <m:mo>=</m:mo>
+
+            <m:mrow>
+              <m:msub>
+                <m:mi>β</m:mi>
+
+                <m:mi>0</m:mi>
+              </m:msub>
+
+              <m:mo>+</m:mo>
+
+              <m:mrow>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+
+                  <m:mi>j-1</m:mi>
+
+                  <m:mi>k</m:mi>
+                </m:munderover>
+
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>β</m:mi>
+
+                    <m:mi>j</m:mi>
+                  </m:msub>
+
+                  <m:msub>
+                    <m:mi>X</m:mi>
+
+                    <m:mi>ij</m:mi>
+                  </m:msub>
+                </m:mrow>
+              </m:mrow>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>ε</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>δ</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+
+      <para>Where <emphasis role="italic">Xij</emphasis> (<emphasis
+      role="italic">j</emphasis> = 1,…,<emphasis role="italic">k</emphasis>)
+      are the <emphasis role="italic">k</emphasis> predictor variables,
+      <emphasis role="italic">βj</emphasis>­ are the parameters of the model
+      that must be estimated, <emphasis role="italic">ε</emphasis> is the
+      sampling error and <emphasis role="italic">δ</emphasis> is the model
+      error.</para>
+
+      <para>A further advantage of the BGLSR is that the Bayesian formulation
+      allows for the separation of sampling and statistical modelling errors.
+      This is important because it was found that the sampling errors dominate
+      the total error in the statistical model. The BGLSR produces estimates
+      of the standard error in:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>the regression coefficients</para>
+        </listitem>
+
+        <listitem>
+          <para>the predicted values at-site used in establishing the
+          regression equations</para>
+        </listitem>
+
+        <listitem>
+          <para>the predicted values at new sites (that is, sites not used in
+          deriving the regression). In the application of the BGLSR these are
+          the daily rainfall stations where the predictions of sub-daily
+          rainfalls statistics are required.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The error variances for the predictions are comprised of the
+      regional model error and the sampling variance.</para>
+
+      <para>The errors in the BGLSR model are assumed to have zero mean and
+      the covariance structure described in Equation (2).</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>C</m:mi>
+
+              <m:mi>o</m:mi>
+
+              <m:mi>v</m:mi>
+
+              <m:mo>{</m:mo>
+
+              <m:msub>
+                <m:mi>ε</m:mi>
+
+                <m:mi>i</m:mi>
+              </m:msub>
+
+              <m:mo>,</m:mo>
+
+              <m:msub>
+                <m:mi>ε</m:mi>
+
+                <m:mi>j</m:mi>
+              </m:msub>
+
+              <m:mo>}</m:mo>
+
+              <m:mo>=</m:mo>
+
+              <m:mrow>
+                <m:mo>{</m:mo>
+
+                <m:mrow>
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:msubsup>
+                            <m:mi>σ</m:mi>
+
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>ε</m:mi>
+
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                            </m:mrow>
+
+                            <m:mn>2</m:mn>
+                          </m:msubsup>
+
+                          <m:mo>,</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>σ</m:mi>
+
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>ε</m:mi>
+
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                            </m:mrow>
+                          </m:msub>
+
+                          <m:msub>
+                            <m:mi>σ</m:mi>
+
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>ε</m:mi>
+
+                                <m:mi>j</m:mi>
+                              </m:msub>
+                            </m:mrow>
+                          </m:msub>
+
+                          <m:msub>
+                            <m:mi>ρ</m:mi>
+
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>ε</m:mi>
+
+                                <m:mrow>
+                                  <m:mi>i</m:mi>
+
+                                  <m:mi>j</m:mi>
+                                </m:mrow>
+                              </m:msub>
+                            </m:mrow>
+                          </m:msub>
+
+                          <m:mo>,</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mi>i</m:mi>
+
+                          <m:mo>=</m:mo>
+
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mi>i</m:mi>
+
+                          <m:mo>≠</m:mo>
+
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+
+                  <m:mo>;</m:mo>
+
+                  <m:mi>C</m:mi>
+
+                  <m:mi>o</m:mi>
+
+                  <m:mi>v</m:mi>
+
+                  <m:mo>{</m:mo>
+
+                  <m:msub>
+                    <m:mi>δ</m:mi>
+
+                    <m:mi>i</m:mi>
+                  </m:msub>
+
+                  <m:mo>,</m:mo>
+
+                  <m:msub>
+                    <m:mi>δ</m:mi>
+
+                    <m:mi>j</m:mi>
+                  </m:msub>
+
+                  <m:mo>}</m:mo>
+
+                  <m:mo>=</m:mo>
+
+                  <m:mrow>
+                    <m:mo>{</m:mo>
+
+                    <m:mrow>
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:msubsup>
+                                <m:mi>σ</m:mi>
+
+                                <m:mi>δ</m:mi>
+
+                                <m:mn>2</m:mn>
+                              </m:msubsup>
+
+                              <m:mo>,</m:mo>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mn>0</m:mn>
+
+                              <m:mo>,</m:mo>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mrow>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtext> </m:mtext>
+
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+
+                      <m:mo>=</m:mo>
+
+                      <m:mi>j</m:mi>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+
+                      <m:mo>≠</m:mo>
+
+                      <m:mi>j</m:mi>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>Where <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>σ</m:mi>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>ε</m:mi>
+
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mrow>
+
+                  <m:mn>2</m:mn>
+                </m:msubsup>
+              </m:mrow>
+
+              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4Wdm3aa0
+              baaSqaaiabew7aLnaaBaaameaacaWGPbaabeaaaSqaaiaaikdaaaaa
+              aa@3B6F@</m:annotation>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the sampling error variance at site <emphasis
+      role="italic">i,</emphasis> <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>ρ</m:mi>
+
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>ε</m:mi>
+
+                      <m:mrow>
+                        <m:mi>i</m:mi>
+
+                        <m:mi>j</m:mi>
+                      </m:mrow>
+                    </m:msub>
+                  </m:mrow>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the correlation coefficient between sites
+      <emphasis role="italic">i</emphasis> and <emphasis
+      role="italic">j</emphasis>, <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mi>σ</m:mi>
+
+                  <m:mrow>
+                    <m:mi>δ</m:mi>
+
+                    <m:mi>i</m:mi>
+                  </m:mrow>
+
+                  <m:mn>2</m:mn>
+                </m:msubsup>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the model error variance. For the Bayesian
+      framework introduced by Reis <emphasis role="italic">et</emphasis> al.
+      (2005), the parameters of the model (<emphasis
+      role="italic">β</emphasis>) are modelled with a multivariate normal
+      distribution using a non informative prior. A quasi analytic
+      approximation to the Bayesian formulation of the GLSR has been developed
+      by Reis et al. (2005) to solve for the posterior distributions of the
+      mean and variance for <emphasis role="italic">β.</emphasis></para>
+
+      <para><emphasis role="underline">BGLSR - Application</emphasis></para>
+
+      <para>The aim of the BGLSR is to predict sub-daily rainfall statistics
+      at the location of daily rainfall stations. As discussed previously,
+      L-moments have been used to summarise the statistical properties of the
+      AMS data (Hosking and Wallis, 1997) because L-moments are relatively
+      robust against outliers in the datasets. The statistics that are
+      required for the project are:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Mean of the AMS (also called the index rainfall)</para>
+        </listitem>
+
+        <listitem>
+          <para>L-coefficient of variation (L-CV)</para>
+        </listitem>
+
+        <listitem>
+          <para>L-skewness</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>These three statistics can then be used to define the parameters
+      of any appropriate probability distribution which in the case of the
+      design rainfalls had been shown to be the GEV distribution.</para>
+
+      <para>The initial work required to apply the BGLSR was to determine the
+      appropriate predictors (ie X from Equation 1) to estimate the three
+      rainfall statistics listed above. A review of literature and
+      meteorological causative mechanisms selected a number of site and
+      rainfall characteristics for use as possible predictors as reported in
+      Johnson et al. (2012a). These predictors were:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Latitude and longitude</para>
+        </listitem>
+
+        <listitem>
+          <para>Elevation</para>
+        </listitem>
+
+        <listitem>
+          <para>Slope</para>
+        </listitem>
+
+        <listitem>
+          <para>Aspect</para>
+        </listitem>
+
+        <listitem>
+          <para>Distance from the coast</para>
+        </listitem>
+
+        <listitem>
+          <para>Mean annual rainfall</para>
+        </listitem>
+
+        <listitem>
+          <para>Rainfall statistics (mean, L-CV and L-skewness) for the 24, 48
+          and 72 hour duration events</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Haddad and Rahman (2012b) provide extensive details of the cross
+      validated predictor selection process for each of the study areas. It
+      was found that the most important predictor is the 24 hour rainfall
+      statistic. However performance of the model was not changed
+      significantly by including all predictors so this approach was
+      adopted.</para>
+
+      <para>As well as determining the optimum combination of predictor
+      variables, the testing for the BGLSR needed to determine the number of
+      stations to contribute to each regression equation. Ideally the number
+      of stations in each analysis area would be maximised to improve the
+      accuracy of the regression equations. However the number of stations is
+      limited to approximately 100 by the requirement for the error covariance
+      matrices to be invertible. The delineation of the analysis areas thus
+      needed to balance these two competing requirements.</para>
+
+      <para>It was also important that stations were grouped into analysis
+      areas where the causative mechanisms for large rainfall events are
+      similar. The rainfall stations were grouped primarily according to
+      climatic zones by considering the seasonality of rainfall events and
+      mean annual rainfalls. Australian drainage divisions were also used to
+      guide the division of larger climatic zones into smaller areas over
+      which the BGLSR calculations are tractable, such as in the northern
+      tropics where three analysis areas have been adopted (NT, GULF and
+      NORTH_QLD). The final analysis areas are shown in Figure 11. A 0.2
+      degree buffer has been used in assigning stations to each analysis area
+      to provide a smooth transition between adjacent areas.</para>
+
+      <para>For each analysis area, a regression relationship was developed
+      which could be applied to all stations within the analysis area. Where
+      the density of stations was high, a ROI approach (Burn, 1990) was
+      adopted such that each station has its own ROI. This allowed the
+      regression equations to smoothly vary across the data dense analysis
+      areas. For sparser analysis areas, a clustering, or fixed region,
+      approach was adopted such that stations were grouped by spatial
+      proximity into analysis areas with rigid boundaries. All stations in
+      each analysis area were used to derive one regression equation that was
+      then adopted for the predictions at those stations.</para>
+
+      <figure>
+        <title><emphasis role="bold">Analysis Areas Adopted for the BGLSR -
+        Fixed Analysis Areas are Shown with Solid Fill, ROI Areas are Hatched.
+        Locations of Continuous Rainfall Stations are also
+        shown</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2041.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>To improve the predictions from the BGLSR it was desirable that
+      the distribution of each predictor variable was relatively symmetric and
+      preferably approximately normally distributed. For each analysis area
+      the distribution of the predictor variables from all sites in the area
+      was examined using histograms and quantile-quantile plots. For
+      predictors that appeared to be strongly skewed, a range of
+      transformations were trialled to attempt to reduce the skewness of the
+      variable. The transformations included a natural logarithm, square root
+      transformation and Box-Cox (ie power) transformation. In general the log
+      transformation and the Box-Cox transformation were successful in
+      reducing the skewness of the predictors.</para>
+
+      <para>After determining the regression coefficients for the analysis
+      areas, these coefficients were combined with the set of predictors for
+      the daily station locations to produce the estimates of the sub-daily
+      rainfall statistics. There are no observations of the sub-daily rainfall
+      statistics to which these predictions at daily sites can be compared.
+      However “sanity” checks on the values were carried out by comparing the
+      estimates to the 24 hour rainfall statistics and to the possible range
+      of values for L-CV and L‑skewness (both limited to -1 to 1).</para>
+
+      <para>The result of using estimated sub-daily rainfall statistics was
+      that the number of locations with sub-daily information was increased
+      from approximately 2300 to approximately 9700 when both the daily and
+      continuous rainfall stations locations are used. This substantially
+      increased density of sub-daily rainfall data assisted in the subsequent
+      gridding of the rainfall quantiles across Australia described in Section
+      3.4.5.</para>
+    </section>
+
+    <section>
+      <title>Regionalisation</title>
+
+      <para>Regionalisation recognises that for stations with short records,
+      there is considerable uncertainty when estimating the parameters of
+      probability distributions and short records can bias estimates of
+      rainfall statistics. To overcome this, it is assumed that information
+      can be combined from multiple stations to give more accurate estimates
+      of the parameters of the extreme value probability distributions. One
+      approach that is widely used to reduce the uncertainty and overcome bias
+      in estimating rainfall quantiles is regional frequency analysis, also
+      known as regionalisation.</para>
+
+      <para>For the design rainfalls, regionalisation was used to estimate the
+      L-CV and L-Skewness with more confidence. The regionalisation approach
+      adopted is generally called the “index flood procedure” (Hosking and
+      Wallis, 1997). This approach assumes that sites can be grouped into
+      homogenous regions, such that all sites in the region have the same
+      probability distribution, other than a scaling factor. The scaling
+      factor is termed the index flood or in this case, since the
+      regionalisation is of rainfall data, the “index rainfall”. The index
+      rainfall is the mean (that is, first L-moment) of the extreme value
+      series data at the station location.</para>
+
+      <para>The homogenous regions for the frequency analysis can be defined
+      in a number of ways. Cluster and partitioning methods divide the set of
+      all stations into a fixed number of homogenous groups (Hosking and
+      Wallis, 1997) where generally every site is assigned to one group.
+      Alternatively, a ROI approach (Burn, 1990) can be adopted, such that for
+      each station an individual homogenous region is defined. Each ROI will
+      contain a potentially unique set of sites, with each site possibly
+      contributing to multiple ROIs.</para>
+
+      <para>For the design rainfalls, the station point estimates were
+      regionalised using a ROI as the advantage of this approach is that the
+      region sizes can be easily varied according to station density and the
+      available record lengths. The assumptions of the approach are, firstly,
+      that the specified probability distribution (GEV in the case of the AMS)
+      is appropriate; that the region is truly homogenous; and, finally, that
+      sites are independent or that their dependence is quantified.</para>
+
+      <para>In the application of the ROI method, it was first necessary to
+      establish how big the ROIs should be. The size of the ROI can be defined
+      in two ways; either using the number of stations included in the region
+      or alternatively by calculating the total number of station-years in the
+      region as the sum of the record lengths of the individual stations
+      included in the ROI.</para>
+
+      <para>Region sizes from 1 to 50 stations and from 50 to 5000
+      station-years were investigated to establish the optimum ROIs for
+      estimating rainfall quantiles across Australia using a simple circular
+      ROI and the Pooled Uncertainty Measure (PUM) (Kjeldsen and Jones, 2009).
+      The minimum PUM values occur where there is an optimum size in the trade
+      off between bias and variance of generally lead to the minimum PUM
+      value. When considering the region defined using the number of stations
+      it was found that a region of 8 stations performed best. Given that the
+      average record length for stations used in the analysis was 66 years, a
+      region of 8 stations will have on average 528 years of data which is
+      consistent with the region size using the station-year criteria. The
+      findings were generally independent of rainfall event duration and
+      frequency.</para>
+
+      <para>Defining regions in terms of station-years is attractive as this
+      approach can adapt to different station densities and station record
+      lengths. Given the similar results from both methods, the station-years
+      definition for the region size was adopted.</para>
+
+      <para>After finalising the optimum region size, a number of geographic
+      and non-geographic similarity measures were investigated as methods to
+      define membership of each ROI. Three different alternatives for defining
+      the ROIs using geographical similarity were investigated:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Distance between sites (in kms) defined using latitude and
+          longitude</para>
+        </listitem>
+
+        <listitem>
+          <para>Euclidean distance between sites where distance was defined
+          using latitude, longitude and scaled elevation (Hutchinson,
+          1995)</para>
+        </listitem>
+
+        <listitem>
+          <para>Nearest neighbours defined using distance in kilometres inside
+          an elliptical ROI.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Non-geographic characteristics were selected based on their
+      potential influence on the properties of large rainfall events at a site
+      (Johnson et al, 2012a). The site characteristics that were trialled
+      were:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Location (latitude and longitude)</para>
+        </listitem>
+
+        <listitem>
+          <para>Elevation</para>
+        </listitem>
+
+        <listitem>
+          <para>Mean Annual Rainfall</para>
+        </listitem>
+
+        <listitem>
+          <para>Aspect</para>
+        </listitem>
+
+        <listitem>
+          <para>Slope</para>
+        </listitem>
+
+        <listitem>
+          <para>Distance from the coast</para>
+        </listitem>
+
+        <listitem>
+          <para>Mean date of AMS (seasonality)</para>
+        </listitem>
+
+        <listitem>
+          <para>Variability of AMS occurrence (seasonality)</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The results of the trialling showed that the best results were
+      provided using</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>a circular ROI</para>
+        </listitem>
+
+        <listitem>
+          <para>distances defined in three dimensions using latitude;
+          longitude and elevation.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para><emphasis role="italic">Regionalisation -
+      application</emphasis></para>
+
+      <para>To undertake the regionalisation the following procedure was
+      followed initially using the 24 hour rainfall data:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>For each station location, a circular ROI was expanded until
+          500 stations years of record was achieved. The resultant region was
+          tested for homogeneity using the H measure of Hosking and Wallis
+          (1997)</para>
+        </listitem>
+
+        <listitem>
+          <para>If the region was not homogenous the stations in the regions
+          were checked according to the discordancy measures of Hosking and
+          Wallis (1997) and the region membership revised where
+          appropriate.</para>
+        </listitem>
+
+        <listitem>
+          <para>The average L-CV for each region was calculated using a
+          weighted average of the L-CV at all stations in the region, with the
+          weights proportional to the station lengths. This was repeated for
+          the L-Skewness.</para>
+        </listitem>
+
+        <listitem>
+          <para>The regionalised L-CV and L-Skewness were used to estimate the
+          scale (α) and shape (κ) parameters of the growth curve (scaled GEV
+          distribution) at each location.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The regions defined for the 24 hour duration rainfall data were
+      used for all daily and sub-daily durations. More details on the
+      regionalisation can be found in Johnson et al (2012b).</para>
+    </section>
+
+    <section>
+      <title>Gridding</title>
+
+      <para>The regionalisation process resulted in estimates of the GEV
+      parameters at all station locations, which were combined with the mean
+      of the extreme value series at that site to estimate rainfall quantiles
+      for any required exceedance probability. However frequent and infrequent
+      design rainfall estimates are required across Australia, not just at
+      station locations and therefore the results of the analyses needed to be
+      extended in some way to ungauged locations.</para>
+
+      <para><emphasis role="italic">Selection of approach to be adopted for
+      gridding</emphasis></para>
+
+      <para>For the design rainfalls, the software package ANUSPLIN
+      (Hutchinson 2007) was chosen to grid the GEV parameters so that frequent
+      and infrequent design rainfall estimates are available for any point in
+      Australia. ANUSPLIN applies thin plate smoothing splines to interpolate
+      and smooth multi-variate data. The degree of smoothing of the fitted
+      functions was determined through generalised cross validation. The
+      splines are fitted using three independent variables; latitude,
+      longitude and elevation. The elevation scale was exaggerated by a factor
+      of 100 to represent the importance that elevation has on precipitation
+      patterns (Hutchinson 1995).</para>
+
+      <para><emphasis role="italic">Selection of parameters to be
+      gridded</emphasis></para>
+
+      <para>The GEV parameters were gridded in ANUSPLIN rather than the
+      rainfall depths, as earlier testing showed little difference in the
+      resulting quantile estimates irrespective of whether point GEV
+      parameters or point rainfall depths were gridded. Gridding the GEV
+      parameters provided more flexibility in the choice of exceedance
+      probabilities that could be extracted and enables the provision of a
+      greater number of AEPs.</para>
+
+      <para><emphasis role="italic">Optimisation of gridding</emphasis></para>
+
+      <para>In undertaking the gridding, a considerable number of iterations
+      was required to achieve an optimum outcome that represented the observed
+      rainfalls but which did not place too much significance on short
+      rainfall records or from poorly located rainfall stations. The
+      appropriate degree of smoothing of the fitted functions was determined
+      through generalised cross validation with the number of knots and
+      transformation adopted varied to achieve optimal results. In addition to
+      the statistical tests to determine the appropriate degree of smoothing,
+      qualitative assessments were also conducted by preparing maps which
+      compared the index rainfall derived from at-site frequency analysis of
+      rainfall records, the length of record available at each station, and
+      the spatial density of the raingauge network to the gridded index
+      rainfalls produced by ANUSPLIN for daily durations.</para>
+
+      <para>The final IFD grids were produced by the application of ANUSPLIN
+      using a 0.025 degree DEM resolution and adopting 3570 knots with no
+      transformation of the data. More details on the gridding approach
+      adopted can be found in The et al (2012; 2014) and Johnson et al
+      (2015).</para>
+
+      <para><emphasis role="italic">Calculation of growth factors and rainfall
+      depths</emphasis></para>
+
+      <para>The outputs of the ANUSPLIN analysis were grids across Australia
+      of index rainfall and the GEV scale (alpha) and shape (kappa) parameters
+      for each duration. These were then processed to firstly estimate the
+      growth factors for each grid location and then the rainfall depths for
+      each exceedance probability, according to the following
+      equations:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>ξ</m:mi>
+
+              <m:mo>=</m:mo>
+
+              <m:mn>1</m:mn>
+
+              <m:mo>−</m:mo>
+
+              <m:mi>α</m:mi>
+
+              <m:mo>{</m:mo>
+
+              <m:mn>1</m:mn>
+
+              <m:mo>−</m:mo>
+
+              <m:mi>Γ</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mn>1</m:mn>
+
+              <m:mo>+</m:mo>
+
+              <m:mi>κ</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mo>}</m:mo>
+
+              <m:mo>/</m:mo>
+
+              <m:mi>κ</m:mi>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>where <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>ξ</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the location parameter for the regionalised
+      growth curve and <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>Γ</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> represents the Gamma function.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>q</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>F</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mo>=</m:mo>
+
+              <m:mi>ξ</m:mi>
+
+              <m:mo>+</m:mo>
+
+              <m:mi>α</m:mi>
+
+              <m:mo>{</m:mo>
+
+              <m:mn>1</m:mn>
+
+              <m:mo>−</m:mo>
+
+              <m:msup>
+                <m:mrow>
+                  <m:mo stretchy="false">(</m:mo>
+
+                  <m:mo>−</m:mo>
+
+                  <m:mi>log</m:mi>
+
+                  <m:mo stretchy="false">(</m:mo>
+
+                  <m:mi>F</m:mi>
+
+                  <m:mo stretchy="false">)</m:mo>
+
+                  <m:mo stretchy="false">)</m:mo>
+                </m:mrow>
+
+                <m:mi>κ</m:mi>
+              </m:msup>
+
+              <m:mo>}</m:mo>
+
+              <m:mo>/</m:mo>
+
+              <m:mi>κ</m:mi>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>where <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:mi>q</m:mi>
+
+                <m:mo stretchy="false">(</m:mo>
+
+                <m:mi>F</m:mi>
+
+                <m:mo stretchy="false">)</m:mo>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the quantile function of the growth curve for the
+      cumulative probability <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>F</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> .</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>Q</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>F</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mo>=</m:mo>
+
+              <m:mi>μ</m:mi>
+
+              <m:mi>q</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>F</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>where <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:mi>Q</m:mi>
+
+                <m:mo stretchy="false">(</m:mo>
+
+                <m:mi>F</m:mi>
+
+                <m:mo stretchy="false">)</m:mo>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the quantile function of the scaled growth curve,
+      which is multiplied by the index rainfall <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>μ</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> .</para>
+
+      <para><emphasis role="italic">Derivation of sub-hourly rainfall
+      depths</emphasis></para>
+
+      <para>To derive frequent and infrequent design rainfalls for durations
+      of less than one hour to one minute the ‘simple scaling’ model developed
+      by Menabde et al (1999) was adopted. The model was calibrated using the
+      AMS from the Bureau’s continuous rainfall stations with more than eight
+      years of data. For each continuous rainfall station the scaling factor,
+      η, was determined and the at-site η values gridded to provide estimates
+      for all grid locations. The model was then applied to the 1 hour
+      duration rainfall depth grids to estimate the rainfall depths for the 1
+      minute to 30 minute rainfall events according to the following
+      equation:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:msub>
+                <m:mi>I</m:mi>
+
+                <m:mi>d</m:mi>
+              </m:msub>
+
+              <m:mo>=</m:mo>
+
+              <m:msup>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>d</m:mi>
+
+                        <m:mi>D</m:mi>
+                      </m:mfrac>
+                    </m:mrow>
+
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+
+                <m:mi>n</m:mi>
+              </m:msup>
+
+              <m:msub>
+                <m:mi>I</m:mi>
+
+                <m:mi>D</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>Where <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>I</m:mi>
+
+                  <m:mi>d</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the sub-hourly rainfall intensity for duration
+      <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>d</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> , <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>I</m:mi>
+
+                  <m:mi>D</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the 60 minute rainfall intensity (i.e. duration
+      <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mi>D</m:mi>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is 60 minutes).</para>
+
+      <para><emphasis role="italic">Consistency checking and
+      smoothing</emphasis></para>
+
+      <para>In order to reduce inconsistencies across durations and smooth
+      over discontinuities in the gridded data (unevenly spaced differences in
+      design rainfall estimates at neighbouring durations) arising from
+      application of the method, a smoothing process was undertaken. This was
+      done by applying a 6th order polynomial to each grid point to all the
+      standard durations from one minute up to seven days.</para>
+
+      <para>The polynomial was of the form:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>y</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>x</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mo>=</m:mo>
+
+              <m:msub>
+                <m:mi>a</m:mi>
+
+                <m:mn>0</m:mn>
+              </m:msub>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>a</m:mi>
+
+                <m:mn>1</m:mn>
+              </m:msub>
+
+              <m:mi>x</m:mi>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>a</m:mi>
+
+                <m:mn>2</m:mn>
+              </m:msub>
+
+              <m:msup>
+                <m:mi>x</m:mi>
+
+                <m:mn>2</m:mn>
+              </m:msup>
+
+              <m:mo>+</m:mo>
+
+              <m:msub>
+                <m:mi>a</m:mi>
+
+                <m:mn>3</m:mn>
+              </m:msub>
+
+              <m:msup>
+                <m:mi>x</m:mi>
+
+                <m:mn>3</m:mn>
+              </m:msup>
+
+              <m:mo>+</m:mo>
+
+              <m:mn>....</m:mn>
+
+              <m:msub>
+                <m:mi>a</m:mi>
+
+                <m:mi>n</m:mi>
+              </m:msub>
+
+              <m:msup>
+                <m:mi>x</m:mi>
+
+                <m:mi>n</m:mi>
+              </m:msup>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>where n is the degree (or order) of the polynomial and
+      <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>a</m:mi>
+
+                  <m:mn>0</m:mn>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation>, <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>a</m:mi>
+
+                  <m:mn>1</m:mn>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation>... <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>a</m:mi>
+
+                  <m:mn>n</m:mn>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> are coefficients to be determined.</para>
+
+      <para>Although polynomials up to order 12 were investigated, a 6 order
+      polynomial was adopted as investigations showed that this order
+      polynomial gives adequate results.</para>
+
+      <para>Inconsistencies with respect to duration (rainfall depths at lower
+      durations exceeding those at higher durations) were also found and were
+      addressed in the manner described below.</para>
+
+      <para>Inconsistencies were detected by subtracting each grid from a
+      longer duration grid at the same probability and checking for negative
+      values. Inconsistencies were addressed by adjusting by adjusting the
+      longer duration rainfall upwards so that the ratio of shorter duration
+      rainfall to the longer duration rainfall equals 0.99, or</para>
+
+      <para><inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:mfrac>
+                  <m:mrow>
+                    <m:mtext>Rainfall depth at the shorter duration</m:mtext>
+                  </m:mrow>
+
+                  <m:mrow>
+                    <m:mtext>Rainfall depth at the longer duration</m:mtext>
+                  </m:mrow>
+                </m:mfrac>
+
+                <m:mo>=</m:mo>
+
+                <m:mn>0.99</m:mn>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation></para>
+
+      <para>The smoothing procedure was applied first to the original grids
+      and the smoothed grids adjusted for inconsistencies. The grids were
+      smoothed once again and a final adjustment for inconsistencies across
+      durations was performed. The final grids were also checked for
+      inconsistencies across AEP.</para>
+
+      <para>Grids of the polynomial coefficients were prepared in order to
+      enable IFDs for any duration to be determined.</para>
+    </section>
+
+    <section>
+      <title>Outputs</title>
+
+      <para>The method described above produced frequent and infrequent design
+      rainfall estimates across Australia. The design rainfall estimates are
+      provided both as rainfall depths in millimetres (mm) and rainfall
+      intensities in millimetres per hour (mm/hr) for the following standard
+      durations and standard probabilities:</para>
+
+      <para><table frame="void">
+          <caption>IFD Outputs</caption>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Output</emphasis></th>
+
+              <th><emphasis role="bold">Values</emphasis></th>
+
+              <th><emphasis role="bold">Units</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Standard durations</td>
+
+              <td><para>1, 2, 3, 4, 5, 10, 15, 30</para></td>
+
+              <td><para>Minutes</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td><para>1, 2, 3, 6, 12</para></td>
+
+              <td><para>Hours</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>1, 2, 3, 4, 5, 6 7</td>
+
+              <td>Days</td>
+            </tr>
+
+            <tr>
+              <td>Standard probabilities</td>
+
+              <td>1</td>
+
+              <td><para>EY</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>50%, 20%, 10%, 5%, 2%, 1%</td>
+
+              <td>AEP</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
   </section>
 
   <section>
-    <title>Frequency Analysis</title>
+    <title>Very Frequent Design Rainfalls</title>
 
-    <para/>
+    <section>
+      <title>Overview</title>
+
+      <para>The previous section summarised the steps involved in deriving the
+      frequent and infrequent design rainfall values (IFDs) for probabilities
+      from 1EY to 1% AEP. This range of probabilities is suitable for most
+      design situations, however, many stormwater quality or Water Sensitive
+      Urban Design guidelines recommend a flow threshold of Q3month for the
+      design of stormwater quality treatment devices.</para>
+
+      <para>Design rainfalls for the 3 month average recurrence interval (4
+      EY) have not been previously available, with agencies giving their own
+      advice on the approach for estimating very frequent design rainfalls. To
+      address this need, estimates for probabilities more frequent than 1 EY
+      have been derived. In the following sections, the approach adopted for
+      deriving these very frequent design rainfalls is presented.</para>
+
+      <para>To ensure consistency between the very frequent design rainfalls
+      and the frequent and infrequent design rainfall, the overall approach
+      adopted for the very frequent design rainfalls was very similar to that
+      adopted for the frequent and infrequent design rainfall. However, some
+      modifications to the approach were necessary because of the increased
+      frequency of occurrence that was being considered. A summary of the
+      method is presented in Table 6 and in the following sections. Further
+      details can be found in The et al (2015).</para>
+
+      <para><table frame="void">
+          <caption>Summary of very frequent design rainfall method</caption>
+
+          <col width="50%"/>
+
+          <col width="50%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Step</emphasis></th>
+
+              <th><emphasis role="bold">Method</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Number of rainfall stations</td>
+
+              <td><para>Daily read – 15 364</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>Continuous – 2722</td>
+            </tr>
+
+            <tr>
+              <td>Period of record</td>
+
+              <td>All available records up to 2012</td>
+            </tr>
+
+            <tr>
+              <td>Length of record used in analyses</td>
+
+              <td><para>Daily read &gt; 5 years</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>Continuous &gt; 5 years</td>
+            </tr>
+
+            <tr>
+              <td>Source of data</td>
+
+              <td>Organisations collecting rainfall data across Australia</td>
+            </tr>
+
+            <tr>
+              <td>Extreme value series</td>
+
+              <td>Partial Duration Series (PDS)</td>
+            </tr>
+
+            <tr>
+              <td>Frequency analysis</td>
+
+              <td>Generalised Pareto (GPA) distribution fitted using
+              L-moments</td>
+            </tr>
+
+            <tr>
+              <td>Ratios</td>
+
+              <td>Ratio XEY to 50% AEP</td>
+            </tr>
+
+            <tr>
+              <td>Gridding</td>
+
+              <td>Regionalised at-site distribution parameters gridded using
+              ANUSPLIN</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
+
+    <section>
+      <title>Rainfall Database</title>
+
+      <para>The data adopted consisted of the stations used for the frequent
+      and infrequent design rainfalls (Green et al 2011) and an additional
+      7290 stations with shorter periods of record, which have undergone the
+      same rigorous quality controlling as the frequent and infrequent design
+      rainfall database.(Green et al 2011; 2012a). The locations of the
+      stations used for the estimation of the very frequent design rainfalls
+      are shown in Figure 12.</para>
+
+      <para>These additional stations could be used as the minimum number of
+      years of record was reduced from 30 (for the frequent and infrequent
+      design rainfalIs) to five years for the very frequent design rainfalls.
+      A threshold of five effective years was selected for daily and sub-daily
+      sites as this was deemed to be statistically acceptable given the high
+      frequency of the estimated exceedances compared to the previous 1 EY.
+      The shorter record length ensures greater use of available sites but
+      also ensures that there is sufficient information available to derive
+      the more frequent probabilities from 12EY to 2 EY.</para>
+
+      <figure>
+        <title><emphasis role="bold">Daily Read Rainfall Stations (light blue)
+        and Continuous Rainfall Stations (dark blue) Used for Very Frequent
+        Design Rainfalls (light blue)</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2042.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Extraction of extreme value series</title>
+
+      <para>A partial duration series (PDS) approach was adopted to estimate
+      probabilities for events occurring more frequently than once a year. The
+      advantage of using the PDS is that it extracts as much information as
+      possible about large events and produces more accurate estimates for
+      very frequent probabilities. As a PDS was used for the at-site series
+      the selection of independent events was based on rank rather than
+      temporal periods, thus completeness of record was not a
+      consideration.</para>
+
+      <para>As a PDS approach was being adopted it was necessary to define the
+      threshold above which all events will be included. It was important to
+      identify the number of values per year that are required to accurately
+      estimate the more frequent IFD's. Given that the most frequent
+      probability is 12 EY, a minimum of 12 events per year was used to
+      adequately represent the at-site distribution for these higher frequency
+      events.</para>
+
+      <para>An assumption of the method, is that the events in the PDS are
+      independent. In order to ensure that the events in the PDS were
+      independent, an method that provided a consistent and meteorologically
+      rigorous approach to defining independence of rainfall events across
+      Australia was developed. The event independence testing criteria used
+      were based on the minimum inter-event time (MIT), approach (Xuereb and
+      Green, 2012). The analyses suggested that a MIT that varied from two to
+      six days with latitude across Australia was appropriate for event
+      durations up to three days while for durations longer than three days
+      the MIT adopted was zero. For durations of less than one day, the MIT
+      for the 1 day duration was adopted (Green et al 2014).</para>
+
+      <para><emphasis role="italic">At-site frequency
+      analysis</emphasis></para>
+
+      <para>The approach adopted effectively treated the PDS as a Monthly
+      Partial Duration Series or - more correctly for the current dataset - a
+      Monthly Exceedance Series (MES) (PDS where number of values = number of
+      effective months: 12 nE). While the extracted PDS is the same, the
+      averaging duration is changed, representing the time in months rather
+      than years. The selection of an MES rather than an annual series allowed
+      significantly more records to be included from each site to establish
+      the at-site rainfall distribution, capturing the more frequent rainfall
+      patterns.</para>
+
+      <para>As discussed in Section 3.4.3 and Green et al. (2012b), testing of
+      the most appropriate distribution to adopt for both the AMS and the PDS
+      was undertaken as part of the derivation of the IFDs with results
+      identifying the GEV distribution as the most appropriate for the AMS and
+      the GPA distribution for the PDS. However, as a monthly exceedance data
+      series was adopted for the very frequent design rainfalls there is some
+      added uncertainty; to address this, a comparison was conducted of the
+      GEV and GPA distributions. Twenty-four geographically distributed test
+      sites with medium to long record lengths were selected for assessing the
+      relative fit of the distributions to the at-site data. The test sites
+      indicated that the GPA provides a closer fit to the site data in the
+      majority of cases. On the basis of this, the very frequent design
+      rainfalls used the GPA distribution fitted to the PDS for all stations
+      which met the required record length.</para>
+
+      <para><emphasis role="italic">Estimation of L-moments</emphasis></para>
+
+      <para>Regional frequency analysis was undertaken using L-moments
+      extracted from each of the at-site frequency distributions for sub-daily
+      and daily data. The L-moments were used to estimate the parameters of
+      the selected GPA distribution.</para>
+
+      <para>Extracting 12 independent events per year of record for the MES
+      introduced the issue of zero values included in the PDS at some sites.
+      This particularly occurred through the arid areas of central Australia
+      to the west coast, where annual rainfall is highly variable and strong
+      seasonality can occur. These areas have short wet seasons and can fail
+      to have 12 rain events on average that are independent of one another
+      for every year. However, given the previously defined minimum number of
+      events being 12, these zero values events are considered as part of the
+      distribution. To manage the occurrence of the zero values in the extreme
+      value series, Hosking and Wallis (1997) suggest using a ‘mixed
+      distribution’ or more correctly a conditional probability adjustment
+      that gives a probability of a zero value, and cumulative distribution
+      for the non-zero values as seen in equation 2 (Guttman et al.,
+      1993).</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>F</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>x</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mo>=</m:mo>
+
+              <m:mi>p</m:mi>
+
+              <m:mo>+</m:mo>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mn>1</m:mn>
+
+              <m:mo>−</m:mo>
+
+              <m:mi>p</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+
+              <m:mi>G</m:mi>
+
+              <m:mo stretchy="false">(</m:mo>
+
+              <m:mi>x</m:mi>
+
+              <m:mo stretchy="false">)</m:mo>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>Where <inlineequation>
+          <m:math display="inline">
+            <m:mi>p</m:mi>
+          </m:math>
+        </inlineequation> is the probability of a zero rainfall value which is
+      estimated by dividing the numbers of zeros by the total number of events
+      and <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:mi>G</m:mi>
+
+                <m:mo stretchy="false">(</m:mo>
+
+                <m:mi>x</m:mi>
+
+                <m:mo stretchy="false">)</m:mo>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the cumulative distribution function of the
+      non-zero rainfall events. Using this approach, if the non-exceedance
+      probability (NEP) of interest is less than <inlineequation>
+          <m:math display="inline">
+            <m:mi>p</m:mi>
+          </m:math>
+        </inlineequation> , then the quantile estimate is zero and if the NEP
+      is greater than <inlineequation>
+          <m:math display="inline">
+            <m:mi>p</m:mi>
+          </m:math>
+        </inlineequation> , the quantile is estimated from <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:mi>G</m:mi>
+
+                <m:mo stretchy="false">(</m:mo>
+
+                <m:mi>x</m:mi>
+
+                <m:mo stretchy="false">)</m:mo>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> using the adjusted NEP shown in equation 3.</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mi>N</m:mi>
+
+              <m:mi>E</m:mi>
+
+              <m:msub>
+                <m:mi>P</m:mi>
+
+                <m:mrow>
+                  <m:mi>a</m:mi>
+
+                  <m:mi>d</m:mi>
+
+                  <m:mi>j</m:mi>
+                </m:mrow>
+              </m:msub>
+
+              <m:mo>=</m:mo>
+
+              <m:mrow>
+                <m:mrow>
+                  <m:mo stretchy="false">(</m:mo>
+
+                  <m:mi>N</m:mi>
+
+                  <m:mi>E</m:mi>
+
+                  <m:mi>P</m:mi>
+
+                  <m:mo>−</m:mo>
+
+                  <m:mi>p</m:mi>
+
+                  <m:mo stretchy="false">)</m:mo>
+                </m:mrow>
+
+                <m:mo>/</m:mo>
+
+                <m:mrow>
+                  <m:mo stretchy="false">(</m:mo>
+
+                  <m:mn>1</m:mn>
+
+                  <m:mo>−</m:mo>
+
+                  <m:mi>p</m:mi>
+
+                  <m:mo stretchy="false">)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>For series with small proportions of zeros, the impact on the
+      distribution and resulting quantiles was negligible. For records with
+      less than 10% zeros, there is very little difference and up to nearly
+      20% zeros there is less than 10% average difference in the quantile
+      depths. However the differences become much more significant when the
+      proportion of zeros increases.</para>
+    </section>
+
+    <section>
+      <title>Ratio method</title>
+
+      <para>The parameters of the GPA distribution derived from the L-moments
+      were used to calculate at-site quantiles. The parameters or quantiles
+      could be gridded in a similar method to the frequent and infrequent
+      design rainfalls and smoothed or rescaled to intergrate them with the
+      design rainfalls less frequent than 1EY. Alternatively, as adopted, a
+      ratio method could be applied to derive the very frequent design
+      rainfall estimates. A general ratio approach is currently used by
+      various councils and authorities in Australia and internationally (Huff
+      and Angel, 1992). It involves using the at-site data to determine the
+      ratio of the various very frequent design rainfall values to either the
+      1 EY or 50% AEP gridded design rainfalls.</para>
+
+      <para>The ratio method adopted involves estimating at-site quantiles,
+      using the at-site 50% AEP as the reference values for the ratios, and
+      gridding the calculated ratios. The advantage of this approach and using
+      the at-site 50% AEP, was that it allows for the spatial variability in
+      the ratios. In addition, the ratio was generally a more accurate
+      representation of the <emphasis role="italic">X</emphasis> EY to 50% AEP
+      ratio since it was calculated from the same dataset and resulted in a
+      smooth spatial pattern. Consistency was also inherent since the ratios
+      would always decrease with increasing probability. Since the ratios were
+      spatially consistent, the final very frequent design rainfall depths
+      follow the frequent and infrequent 50% AEP depths closely. These depth
+      estimates were calculated using the gridded ratios, and multiplying by
+      the 50% AEP design rainfall.</para>
+    </section>
+
+    <section>
+      <title>Gridding</title>
+
+      <para>The ratios for all durations and EYs were gridded using the
+      splining software ANUSPLIN (Hutchinson and Xu, 2013) that was adopted
+      for the frequent and infrequent design rainfalls. To determine the most
+      appropriate method to adopt for the gridding of the ratios a range of
+      tests was undertaken of combinations of variates and different knot
+      sets. The final case adopted was a spline that incorporated latitude,
+      longitude and elevation using 4000 knots for the daily dataset and 1000
+      knots for the sub-daily dataset. The 0.025 degree Digital Elevation
+      Model (DEM) of Australia was used to provide the elevation data which
+      were the same as that used in the derivation of the frequent and
+      infrequest grids (The et al, 2014).</para>
+
+      <para><emphasis role="italic">Depth estimates</emphasis></para>
+
+      <para>Very frequent design rainfall depth estimates for each duration
+      and EY were calculated by multiplying the ratio grids with the
+      corresponding 50% AEP design rainfall grids (Figure 13). As the frequent
+      and infrequent design rainfall grids were based on AMS estimates, an
+      AMS/PDS conversion factor was applied to account for the lower estimates
+      (Green et al., 2012b).</para>
+
+      <para>The grids were smoothed across duration to reduce any
+      inconsistencies across durations and to smooth over discontinuities in
+      the gridded data. A 6th order polynomial was applied to each grid point
+      for all the standard durations from 1 minute up to 10080 minutes (7
+      days). Grids were also checked for inconsistencies across EY.</para>
+
+      <figure>
+        <title><emphasis role="bold">Procedure to derive very frequent design
+        rainfall depth grids from ratios</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2043.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Outputs</title>
+
+      <para>The method described above produced very frequent design rainfall
+      estimates across Australia. The very frequent design rainfall estimates
+      are provided both as rainfall depths in millimetres (mm) and rainfall
+      intensities in millimetres per hour (mm/hr) for the following standard
+      durations and standard probabilities:</para>
+
+      <para><table frame="void">
+          <caption>Very frequent design rainfall outputs</caption>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Output</emphasis></th>
+
+              <th><emphasis role="bold">Values</emphasis></th>
+
+              <th><emphasis role="bold">Units</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Standard durations</td>
+
+              <td><para>1, 2, 3, 4, 5, 10, 15, 30</para></td>
+
+              <td><para>Minutes</para></td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td><para>1, 2, 3, 6, 12</para></td>
+
+              <td>Hours</td>
+            </tr>
+
+            <tr>
+              <td/>
+
+              <td>1, 2, 3, 4, 5, 6 7</td>
+
+              <td>Days</td>
+            </tr>
+
+            <tr>
+              <td>Standard probabilities</td>
+
+              <td>12EY, 6EY, 4EY, 3EY, 2EY</td>
+
+              <td>EY</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
   </section>
 
   <section>
-    <title>Regionalisation and Gridding</title>
+    <title>Rare Design Rainfalls</title>
 
-    <para/>
+    <section>
+      <title>Overview</title>
+
+      <para>In the previous section, the method adopted for the estimation of
+      very frequent design rainfalls for probabilities from 12EY to 2EY has
+      been summarised. These very frequent design rainfalls, together with the
+      frequent and infrequent design rainfalls discussed in Sections 3.4
+      provide design rainfall estimates for probabilities from 12EY to 1% AEP.
+      However, there are some situations where design rainfalls less frequent
+      than 1% AEP are required. Rare design rainfalls (for AEPs from 1 in 100
+      to 1 in 2000) are used by engineers; hydrologists; planners etc for a
+      range of purposes including:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>the design of dams that fall into the Significant and Low
+          Flood Capacity Category where the Acceptable Flood Capacity is the
+          0.1% or 1 in 1000 AEP design flood (ANCOLD, 2000).</para>
+        </listitem>
+
+        <listitem>
+          <para>the design of bridges, where the ultimate limit state adopted
+          in the Australian bridge design code is defined as ‘the capability
+          of a bridge to withstand, without collapse, the design flood
+          associated with a 2000 year return interval’(AUSTROADS, 1992)</para>
+        </listitem>
+
+        <listitem>
+          <para>the incorporation of climate change into IFDs in accordance
+          with the Interim Climate Change Guideline for Australian Rainfall
+          and Runoff which recommends that if the design probability for a
+          structure is 1% AEP, then the possible impacts of climate change
+          should be assessed using 0.5% and 0.2% AEP (Bates et al,
+          2015).</para>
+        </listitem>
+
+        <listitem>
+          <para>the undertaking of spillway adequacy assessments of existing
+          dams as the Dam Crest Flood (DCF) of many dams lies between the 1%
+          AEP flood and the Probable Maximum Flood (as defined by the Probable
+          Maximum Precipitation, PMP). Rare design rainfalls enable more
+          accurate definition of the design rainfall and flood frequency
+          curves between the 1% AEP and Probable Maximum Events.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Unlike the derivation of very frequent, frequent and infrequent
+      design rainfalls which are based on observed rainfall events that lie
+      within the range of probabilities being estimated, rare design rainfalls
+      are an extrapolation beyond observed events. As can be seen from Figures
+      3 and 7, the longest period for which daily read rainfall records are
+      available is around 170 years however rare design rainfalls are required
+      for probabilities much rarer than this As a consequence it is difficult
+      to validate the resultant rare design rainfalls and therefore the method
+      adopted needs to be based on a qualitative assessment that the
+      assumptions made in the method are reasonable and that the adopted
+      approach is consistent with methods used to derive more frequent design
+      rainfalls where the results can be validated.</para>
+
+      <para>The method adopted for deriving the rare design rainfalls was
+      based on the data and method adopted for the more frequent design
+      rainfalls but places more weight on the largest observed rainfall events
+      which are of most relevance to rare design rainfalls. The adopted
+      regional LH-moments approach is summarised in Table 8 and the following
+      sections. More detail can be found in Green et al (2015) and Bureau of
+      Meteorology (2015).</para>
+
+      <para><table frame="void">
+          <caption>Summary of rare design rainfall method</caption>
+
+          <col width="50%"/>
+
+          <col width="50%"/>
+
+          <thead>
+            <tr>
+              <th>Step</th>
+
+              <th>Method</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Number of rainfall stations</td>
+
+              <td>Daily read – 3955</td>
+            </tr>
+
+            <tr>
+              <td>Period of record</td>
+
+              <td>All available records up to 2012</td>
+            </tr>
+
+            <tr>
+              <td>Length of record used in analyses</td>
+
+              <td>Daily read &gt;= 60 years</td>
+            </tr>
+
+            <tr>
+              <td>Source of data</td>
+
+              <td>Bureau of Meteorology</td>
+            </tr>
+
+            <tr>
+              <td>Extreme value series</td>
+
+              <td>Annual Maximum Series (AMS)</td>
+            </tr>
+
+            <tr>
+              <td>Frequency analysis</td>
+
+              <td>Generalised Extreme Value (GEV) distribution fitted using
+              LH(2)-moments</td>
+            </tr>
+
+            <tr>
+              <td>Regionalisation</td>
+
+              <td>Region of influence</td>
+            </tr>
+
+            <tr>
+              <td>Extension to ungauged locations</td>
+
+              <td>Regression of LH-CV and LH-Skew against hydro-climatic
+              predictors</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
+
+    <section>
+      <title>Rainfall Database</title>
+
+      <para>The quality controlled rainfall database established for the
+      derivation of the more frequent design rainfalls was used as the basis
+      for the database used for the rare design rainfalls. However, as the
+      estimation of rare design rainfalls relies on long term records, only
+      those stations with more than 60 years of record were selected. This
+      reduced to data set to approximately 4000 stations, the locations of
+      which are shown in Figure 14.</para>
+
+      <figure>
+        <title><emphasis role="bold">Location of Daily Read Rainfall Stations
+        with 60 or More Years of Record</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2044.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Extraction of extreme value series</title>
+
+      <para>The AMS was extracted from all daily read rainfall stations with
+      60 or more years of record. The AMS was used to define the extreme value
+      series for the rare design rainfalls as the focus here is on the largest
+      recorded events.</para>
+
+      <para>As discussed in Section 3.4.3, the GEV distribution was adopted
+      for AMS for the frequent and infrequent design rainfalls following
+      extensive testing of a range of candidate distributions. On the basis of
+      these trials and similar results found by Nandakumar et al (1997) and
+      Schaefer (1990), the GEV distribution was adopted for the rare design
+      rainfall analyses.</para>
+
+      <para>In keeping with the approach adopted for the more frequent design
+      rainfalls, the statistical properties of the at-site data were estimated
+      and then translated into the relevant GEV distribution parameters.
+      However, whereas L-moments were used for the more frequent design
+      rainfalls, for the rare design rainfalls LH-moments were adopted (Wang,
+      1997). LH-moments were adopted as they more accurately fit the upper
+      tail (rarer probabilities) of the distribution.</para>
+
+      <para>LH-moments are a generalisation of L-moments and allow the
+      distribution to be increasingly focused on the larger data values
+      depending on the value of <emphasis role="italic">ƞ, </emphasis>where
+      <emphasis role="italic">ƞ</emphasis>=0 is <emphasis
+      role="italic">e</emphasis>quivalent to L-moments. The equations for
+      deriving LH-moments and the associated GEV parameters are given in Wang
+      (1998). LH-moments with a <emphasis role="italic">ƞ</emphasis>=2 were
+      selected as a compromise between providing a better fit to the tail of
+      the at-site distribution without giving too much influence to the high
+      outliers. LH-moments (<emphasis role="italic">ƞ</emphasis>=2) were
+      derived for all stations with greater than 60 years AMS.</para>
+    </section>
+
+    <section>
+      <title>Regionalisation</title>
+
+      <para>For the rare design rainfalls, the ROI approach adopted for the
+      IFDs was used to reduce the uncertainty in the estimated LH-moments by
+      regionalising the station point estimates. However, where for the IFDs
+      500 station years was found to be an optimum pool size, as the rare
+      design rainfalls are provided for probabilities out to 1 in 2000 AEP,
+      the ROI needed to be increased. The tradeoff between gaining improved
+      accuracy from a larger pool of data was that the assumption of
+      homogeneity may not be satisfied. Based on testing for the pool size
+      that reduced uncertainty without introducing significant homogeneity, a
+      minimum of 2000 station years was adopted. However, where necessary, the
+      number of pooled station years was increased above this number to
+      maximize the available record used, while ensuring homogeneity.</para>
+
+      <para>The average LH-CV for each region was calculated using a weighted
+      average of the LH-CV at all stations in the region, with the weights
+      proportional to the station lengths. This was repeated for the
+      LH-Skewness.</para>
+    </section>
+
+    <section>
+      <title>Regression</title>
+
+      <para>In light of the rarer probabilities being estimated; the smaller
+      number of rainfalls stations being used; and the resultant decrease in
+      station density, a regression based approached was adopted for deriving
+      GEV parameters at ungauged locations, rather than the gridding
+      undertaken for the very frequent, frequent and infrequent design
+      rainfalls.</para>
+
+      <para>The regression was based on the BGLSR approach used with the
+      frequent and infrequent design rainfalls to derive sub-daily rainfall
+      statistics from daily rainfall statistics. However, for the rare design
+      rainfalls the BGLSR was used to define the relationship between
+      regionalised LH-CV and LH-skew and hydro-climatic predictors. To provide
+      spatial continuity, regression relationships were defined using a ROI
+      approach such that each station had its own ROI. Regression coefficients
+      were interpolated for predictands at ungauged sites to provide values
+      for each 2.5km grid point.</para>
+
+      <para>Quantiles were estimated for each grid using the GEV parameters.
+      These were then scaled to ensure consistency between the infrequent and
+      the rare design rainfalls. The depths were smoothed across durations and
+      AEPs to ensure consistency.</para>
+    </section>
+
+    <section>
+      <title>Outputs</title>
+
+      <para>The method described above produced rare design rainfall estimates
+      across Australia for the following standard durations and standard
+      probabilities:</para>
+
+      <para><table frame="void">
+          <caption>Rare design rainfall outputs</caption>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <col width="33%"/>
+
+          <thead>
+            <tr>
+              <th><emphasis role="bold">Output</emphasis></th>
+
+              <th><emphasis role="bold">Values</emphasis></th>
+
+              <th><emphasis role="bold">Units</emphasis></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Standard durations</td>
+
+              <td>1, 2, 3, 4, 5, 6 7</td>
+
+              <td>Days</td>
+            </tr>
+
+            <tr>
+              <td>Standard probabilities</td>
+
+              <td><para>1 in 100; 1 in 200; 1 in 500; 1 in 1000; 1 in
+              2000</para></td>
+
+              <td>AEP</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
   </section>
 
   <section>
-    <title>CRC-Forge Estimates</title>
+    <title>Probable Maximum Precipitation Estimates</title>
 
-    <para/>
+    <section>
+      <title>Overview</title>
+
+      <para>The very frequent, frequent and infrequent design rainfalls
+      described in the previous sections were derived using frequency
+      analysis. However, extreme rainfalls events such as the Probable Maximum
+      Precipitation (PMP), lie beyond both any directly observed events and
+      the limit to which observed data can be extrapolated. As a result,
+      estimation of extreme rainfall events is based on the broadest
+      understanding of extreme events and the meteorological processes that
+      produce them.</para>
+
+      <para><emphasis role="italic">Definition</emphasis></para>
+
+      <para>The Probable Maximum Precipitation (PMP) is defined as ‘the
+      theoretical greatest depth of precipitation that is physically possible
+      over a particular catchment’ (World Meteorological Organisation, 1986).
+      The PMP assumes the simultaneous occurrence in one storm of maximum
+      amount of moisture and the maximum conversion rate of moisture to
+      precipitation (maximum efficiency).</para>
+    </section>
+
+    <section>
+      <title>Estimation of PMPs</title>
+
+      <para>The Bureau has been providing PMP estimates for over 70 years,
+      however, the methods adopted have changed with time, as the
+      understanding of extreme storms and the mechanisms which produce them
+      have developed, and the data bases of observed extreme storms have
+      expanded. These methods include:</para>
+
+      <para><emphasis role="italic"><emphasis role="underline">In
+      Situ</emphasis></emphasis><emphasis role="underline"> Maximisation
+      Method</emphasis></para>
+
+      <para>During the 1950’s to 1970’s PMP estimates were based on the
+      maximisation of the moisture content of storms which had been observed
+      over the catchment of interest. The limitation of this method was that
+      the differing lengths of rainfall records and occurrence or
+      non-occurrence of an extreme storm led to inconsistent PMP estimates for
+      catchments within the same region.</para>
+
+      <para><emphasis role="underline">Storm Transposition
+      Method</emphasis></para>
+
+      <para>During the late 1960’s and early 1970’s the size of the extreme
+      storm sample for a specific catchment was increased by the transposition
+      to the catchment of interest of extreme storms which had been observed
+      over nearby catchments which had similar hydrometeorological and
+      topographic features. Although this improved the within-region
+      consistency of PMP estimates, the method was limited, as only storms
+      from a similar topographic region could be transposed, and the selection
+      of storms introduced a significant level of subjectivity.</para>
+
+      <para><emphasis role="underline">Generalised Methods</emphasis></para>
+
+      <para>From the mid-1970’s generalised methods were introduced into
+      Australia. Generalised methods make use of all available storm data for
+      a large region by making adjustments for moisture availability and
+      differing topographic effects. The generalised methods currently adopted
+      in Australia are described below.</para>
+    </section>
+
+    <section>
+      <title>Generalised Methods for PMP estimation</title>
+
+      <para>There are three main generalised methods used for PMP estimation
+      in Australia. These methods and their area of applicability are shown in
+      Figure 15 and described below:</para>
+
+      <para><emphasis role="underline">Generalised Short-Duration Method
+      (GSDM)</emphasis></para>
+
+      <para>The Generalised Short-Duration Method (GSDM) is applicable across
+      Australia for catchment areas less than 1000 km2 and for durations up to
+      three hours or six hours depending on the part of Australia (Bureau of
+      Meteorology, 2003).</para>
+
+      <para><emphasis role="underline">Generalised Southeast Australia Method
+      (GSAM)</emphasis></para>
+
+      <para>The Generalised Southeast Australia Method is applicable to the
+      southern third of Australia where it is assumed that the causative
+      mechanism of the PMP would not be tropical. The GSAM method is
+      applicable for durations from 12 hours to 120 hours. (Bureau of
+      Meteorology, 2006; Minty et al, 1996).</para>
+
+      <para><emphasis role="underline">Revised General Tropical Storm Method
+      (GTSMR)</emphasis></para>
+
+      <para>The Revised Generalised Tropical Storm Method (GTSMR) is
+      applicable to the northern two-thirds of Australia where it is assumed
+      that the causative mechanism of the PMP would be a tropical storm. The
+      GTSMR method is applicable for durations from 12 hours to 120 hours.
+      (Bureau of Meteorology, 2005; Walland et al, 2003).</para>
+
+      <figure>
+        <title><emphasis role="bold">Generalised PMP Method
+        Zones</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2045.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>There are two other generalised methods:</para>
+
+      <para><emphasis role="underline">West Coast Tasmania Method
+      Zone</emphasis></para>
+
+      <para>The West Coast Tasmania Method Zone method applies to the west
+      coast region of Tasmania which is outside the region of applicability of
+      the Tasmanian GSAM coastal zone. It is applicable for durations between
+      24 and 72 hours (Xuereb et al, 2001).</para>
+
+      <para><emphasis role="underline">GSAM-GTSMR Coastal Transition
+      Zone</emphasis></para>
+
+      <para>The GSAM-GTSMR Coastal Transition Zone method to the coastal area
+      In NSW where is it considered that PMPs could be caused by either
+      tropical or non-tropical storms.</para>
+    </section>
+
+    <section>
+      <title>Generalised Method of PMP estimation</title>
+
+      <para>Although each of the three generalised methods has specific
+      features, the generalised method approach can be summarised as
+      follows:</para>
+
+      <para><emphasis role="underline">Development of storm data
+      base</emphasis></para>
+
+      <para>The ten highest one to seven day rainfalls which were common to a
+      number of stations were selected and the storms prioritised according to
+      the rarity of the event in order to identify the 100 or more largest
+      storms. For each storm the following analyses were undertaken.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>To determine the spatial distribution of each storm, the
+          rainfall totals for the total storm duration were plotted on a
+          topographic map and isohyets drawn to determine the spatial extent
+          and distribution of each storm.</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>To determine the storm temporal distribution, parallelograms
+          were drawn around the storm centre for standard areas of 100; 500; 1
+          000; 2 500; 10 000; 40 000 and 60 000 km^2. The average daily
+          rainfall depths within a parallelogram were determined using
+          Thiessen weights. For each standard area, the percentage of the
+          total storm that fell during each 24-hour period was determined.
+          These daily data were supplemented by pluviograph and 3-hourly
+          synoptic charts.</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>The representative dewpoint temperature for each storm was
+          determined using a number of sources including the Australian Region
+          Mean Sea Level charts; National Climate Centre Archives; and
+          Observers’ Logbooks.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para><emphasis role="underline">Generalisation of storm
+      database</emphasis></para>
+
+      <para>The ‘site specific’ attributes of each storm were removed in order
+      to attain a homogenous data set.</para>
+
+      <para>The effects of storm type were removed from the data set by the
+      dividing of Australia into the GSAM and GTSMR regions on the basis of
+      the type of that produces the largest observed rainfall depths. The two
+      regions were further divided into Coastal and Inland Zones on the basis
+      that different mechanisms produce the largest rainfall depths in each of
+      the zones (refer Figure 15).</para>
+
+      <para>The specification of each storm in terms of depth-area-duration
+      curves as done previously effectively removed the storm specific spatial
+      distribution.</para>
+
+      <para>The removal of the site specific topographic effects was
+      undertaken using 72-hour, 50-year ‘flat land’ rainfall intensity field
+      in order to produce the convergence component of each storm.</para>
+
+      <para><emphasis role="underline">Removal of the site-specific and
+      storm-specific moisture content</emphasis></para>
+
+      <para>To remove the storm-specific moisture content from each storm and
+      simultaneously to maximise the moisture content, the convergence depths
+      were multiplied by a moisture maximisation factor. The moisture
+      maximisation factor is defined as the ratio of extreme precipitable
+      water associated with the extreme dewpoint temperature at the storm
+      location.</para>
+
+      <para>The site-specific moisture content of each storm was removed by
+      transposition to a single location which for the GSAM was chosen as
+      Brisbane and for GTSMR as Broome. For each location, representative
+      seasonal extreme 24-hour persisting dewpoint temperatures were selected
+      and the moisture content for each storm standardised.</para>
+
+      <para><emphasis role="underline">Determination of ‘Storm’ of Maximum
+      Moisture Content</emphasis></para>
+
+      <para>The moisture maximisation factor and the standardised convergence
+      depths were combined to estimate the maximised standardised convergence
+      depths. To determine a single hypothetical storm of maximum moisture
+      content, an envelope curve was drawn to the set of maximised,
+      standardised convergence depth-area curves.</para>
+
+      <para><emphasis role="underline">Determination of Catchment Specific
+      PMP</emphasis></para>
+
+      <para>The envelope curves represent the maximised convergence component
+      of the PMP at the standardising locations (Brisbane for the GSAM and
+      Broome for GTSMR). To obtain an estimate of the PMP for a specific
+      catchment it is necessary to build in the moisture content and
+      topographic influences specific to the catchment of interest. The
+      moisture content of the standard PMP convergence depth is adjustment
+      using a moisture adjustment factor such that:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>MAF=EPW</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>catchment</m:mtext>
+                </m:mrow>
+              </m:msub>
+
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>/EPW</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>std</m:mtext>
+                </m:mrow>
+              </m:msub>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+
+      <para>where MAF = moisture adjustment factor; <inlineequation>
+          <m:math display="inline">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mrow>
+                    <m:mtext>EPW</m:mtext>
+                  </m:mrow>
+
+                  <m:mrow>
+                    <m:mtext>catchment</m:mtext>
+                  </m:mrow>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the extreme precipitable water associated with
+      the catchment extreme dewpoint temperature; <inlineequation>
+          <m:math display="block">
+            <m:semantics>
+              <m:mrow>
+                <m:msub>
+                  <m:mrow>
+                    <m:mtext>EPW</m:mtext>
+                  </m:mrow>
+
+                  <m:mrow>
+                    <m:mtext>std</m:mtext>
+                  </m:mrow>
+                </m:msub>
+              </m:mrow>
+            </m:semantics>
+          </m:math>
+        </inlineequation> is the extreme precipitable water associated with
+      the standard extreme dewpoint temperature for appropriate season</para>
+
+      <para>The topographic enhancement factor (TEF) for the catchment PMP is
+      estimated in the same manner as the topographic component of the storms
+      in the database using the 72-hour 50 year rainfall intensities.</para>
+
+      <para>The total PMP for a specific catchment for each of the standard
+      durations is estimated as:</para>
+
+      <equation>
+        <m:math display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>PMP</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>catchment</m:mtext>
+                </m:mrow>
+              </m:msub>
+
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>=MCD</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>std</m:mtext>
+                </m:mrow>
+              </m:msub>
+
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>*MAF</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>catchment</m:mtext>
+                </m:mrow>
+              </m:msub>
+
+              <m:msub>
+                <m:mrow>
+                  <m:mtext>*TEF</m:mtext>
+                </m:mrow>
+
+                <m:mrow>
+                  <m:mtext>catchment</m:mtext>
+                </m:mrow>
+              </m:msub>
+            </m:mrow>
+          </m:semantics>
+        </m:math>
+      </equation>
+    </section>
+  </section>
+
+  <section>
+    <title>Uncertainty in Design Rainfalls</title>
+
+    <para>The design rainfalls described in this Chapter are the best
+    estimates currently available and have been derived using an extensive
+    rainfall database which has been analysed using the most appropriate
+    techniques.</para>
+
+    <para>However, there are uncertainties associated with the design
+    rainfalls which arise from various sources including:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>errors in the data due to short record length; instrumentation
+        errors; gaps in the data; unidentified errors in the data</para>
+      </listitem>
+
+      <listitem>
+        <para>sampling errors including network sparsity; poorly placed
+        gauges; non-representativeness of gauging networks</para>
+      </listitem>
+
+      <listitem>
+        <para>limitations in the adopted methods including delineation of
+        regions; lack of homogeneity in regions; selection of distribution;
+        parameter and quantile estimation; and extrapolation of data to
+        ungauged locations.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>These uncertainties need to be taken into consideration when the
+    design rainfalls are being used in conjunction with other design flood
+    inputs. Quantification of the uncertainties associated with the design
+    rainfalls is described in Bureau of Meteorology (2016) as well as advice
+    on how to incorporate uncertainty when using the design rainfalls.</para>
   </section>
 
   <section>
     <title>Application</title>
 
-    <para/>
+    <section>
+      <title>Design rainfalls</title>
+
+      <para>The very frequent, frequent, infrequent and rare design rainfalls
+      are available via the Bureau’s website at <link
+      xlink:href="http://www.bom.gov.au/water/designRainfalls/ifd/index.shtml">http://www.bom.gov.au/water/designRainfalls/ifd/index.shtml</link>
+      and can be estimated using the steps outlined below.</para>
+
+      <para><emphasis role="underline">Input data requirements and
+      options</emphasis></para>
+
+      <para>To estimate a design rainfall for a point location it is necessary
+      to enter the co-ordinate of the location in one of three co-ordinate
+      format options:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Decimal degrees</para>
+        </listitem>
+
+        <listitem>
+          <para>Degrees, Minutes, Seconds</para>
+        </listitem>
+
+        <listitem>
+          <para>Easting, Northing, Zone</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The location of the entered co-ordinate can be seen by using the
+      map preview option and a location label can also be entered (see Figure
+      16).</para>
+
+      <figure>
+        <title><emphasis role="bold">Design Rainfall Point Location Map
+        Preview</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2046.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>Determine the design rainfall class for which design rainfalls are
+      required:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Very frequent</para>
+        </listitem>
+
+        <listitem>
+          <para>Frequent and infrequent (IFDs)</para>
+        </listitem>
+
+        <listitem>
+          <para>Rare</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Determine the durations for which design rainfalls are
+      required:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Standard</para>
+        </listitem>
+
+        <listitem>
+          <para>Non-standard</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Determine the units in which the design rainfalls will be
+      provided:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Depths as millimetres (mm)</para>
+        </listitem>
+
+        <listitem>
+          <para>Intensities as millimetres per hour (mm/hr)</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Frequent and Infrequent Design Rainfalls (IFDs)</title>
+
+      <figure>
+        <title><emphasis role="bold">IFD Outputs</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2047.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Very frequent design rainfalls</title>
+
+      <figure>
+        <title><emphasis role="bold">Very frequent design rainfall
+        outputs</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2048.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>Rare design rainfalls</title>
+
+      <figure>
+        <title><emphasis role="bold">Rare design rainfall
+        outputs</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2049.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Output options</emphasis></para>
+
+      <para>The design rainfall information for the selected location can be
+      seen in either tabular form (Figure 20) or graphical form (Figure
+      21).</para>
+
+      <figure>
+        <title><emphasis role="bold">Design rainfall output shown as
+        table</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2050.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title><emphasis role="bold">Design rainfall output shown as
+        chart</emphasis></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2051.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><emphasis role="underline">Export options</emphasis></para>
+
+      <para>The table can be exported as a .csv file for ease of incorporation
+      into software and the chart as a .png to facilitate integration into
+      reports.</para>
+    </section>
+
+    <section>
+      <title>Probable Maximum Precipitation estimates</title>
+
+      <para>Probable Maximum Precipitation estimates for the GSDM can be
+      estimated using the method contained in Bureau of Meteorology (2003)
+      which can be downloaded from the Bureau’s website.</para>
+
+      <para>Guides for the application of the GSAM and GTSMR methods are
+      available from the Bureau (Bureau of Meteorology, 2005; Bureau of
+      Meteorology, 2006).</para>
+    </section>
+  </section>
+
+  <section>
+    <title>References</title>
+
+    <para>ANCOLD (2000), Guidelines on Selection of Acceptable Flood Capacity
+    for Dams. Australian National Committee on Large Dams, 2000.</para>
+
+    <para>AUSTROADS (1992) AUSTROADS. ’92 AUSTROADS Bridge Design Code.</para>
+
+    <para>Bates,B.C., McLuckie, D., Westra, S., Johnson, F., Green, J.,
+    Mummery, J. and Abbs, D. (2015). Revision of Australian Rainfall and
+    Runoff – The Interim Climate Change Guideline. Presented at National
+    Floodplain Management Authorities Conference, Brisbane, Qld, May
+    2015.</para>
+
+    <para>Bell, F.C., (1976), <emphasis role="italic">The areal reduction
+    factors in rainfall frequency estimation</emphasis>. Natural Environmental
+    Research Council (NERC), Report No. 35, Institute of Hydrology,
+    Wallingford, U.K.</para>
+
+    <para>Bonnin, G., Maitaria, K. &amp; Yekta, M. (2010) Trends in Heavy
+    Rainfalls in the Observed Record in Selected Areas of the U.S. IN PALMER,
+    R. N. (Ed.) <emphasis role="italic">World Environmental and Water
+    Resources Congress 2010: Challenges of Change.</emphasis> Providence,
+    Rhode Island, American Society of Civil Engineers.</para>
+
+    <para>Bureau of Meteorology (2003) <emphasis role="italic">The Estimation
+    of Probable Maximum Precipitation in Australia: Generalised Short-Duration
+    Method</emphasis>, [Online] Bureau of Meteorology, Melbourne, Australia,
+    June 2003, (39pp). Available at: <link
+    xlink:href="http://www.bom.gov.au/water/designRainfalls/pmp/gsdm_document.shtml">http://www.bom.gov.au/water/designRainfalls/pmp/gsdm_document.shtml</link></para>
+
+    <para>Bureau of Meteorology. (2005) <emphasis role="italic">Guidebook of
+    the Estimation of Probable Maximum Precipitation: Generalised Tropical
+    Storm Method</emphasis>, Included on compact disc 'Guide to the Estimation
+    of Probable Maximum Precipitation: Generalised Tropical Storm Method',
+    Hydrometeorological Advisory Service, Bureau of Meteorology, September
+    2005</para>
+
+    <para>Bureau of Meteorology. (2006) <emphasis role="italic">Guidebook of
+    the Estimation of Probable Maximum Precipitation: Generalised Southeast
+    Australia Method</emphasis>, included on the compact disc 'Guide to the
+    Estimation of Probable Maximum Precipitation: Generalised Southeast
+    Australia Method', Hydrometeorological Advisory Service, Bureau of
+    Meteorology, October 2006</para>
+
+    <para>Bureau of Meteorology. (2016) <emphasis role="italic">Design
+    rainfalls for Australia: data, methods and analyses.</emphasis> Bureau of
+    Meteorology, Melbourne VIC, 2016</para>
+
+    <para>Burn, D. H. (1990), <emphasis role="italic">An appraisal of the
+    "region of influence" approach to flood frequency analysis,</emphasis>
+    Hydrological Sciences - Journal-des Sciences Hydrologiques 35(2):
+    149-165.</para>
+
+    <para>Green, J. and Johnson, F.J., (2011). Stationarity Assessment of
+    Australian Rainfall. Internal Bureau of Meteorology Report. 2011</para>
+
+    <para>Green, J.H., Xuereb, X. and Siriwardena, L. (2011). "Establishment
+    of a Quality Controlled Rainfall Database for the Revision of the
+    Intensity-Frequency Duration (IFD) Estimates for Australia”. Presented at
+    34th IAHR Congress, Brisbane, Qld, June 2011.</para>
+
+    <para>Green, J.H., Johnson, J., McKay, D., Podger, P., Sugiyanto, M., and
+    Siriwardena, L. (2012a). Quality Controlling Daily Read Rainfall Data for
+    the Intensity-Frequency Duration (IFD) Revision Rainfall Project.
+    Presented at Hydrology and Water Resources Symposium, Sydney, NSW,
+    November 2012.</para>
+
+    <para>Green, J.H., Xuereb, K. Johnson, J., Moore, G. and The, C. (2012b).
+    The Revised Intensity-Frequency Duration (IFD) Design Rainfall Estimates
+    for Australia – An Overview. Presented at Hydrology and Water Resources
+    Symposium, Sydney, NSW, November 2012.</para>
+
+    <para>Green, J.H., Beesley, C., Frost, A., Podger, S. and The, C. (2015)
+    National Estimates of Rare Design Rainfall. Presented at Hydrology and
+    Water Resources Symposium, Hobart, Tas, December 2015.</para>
+
+    <para>Guttman, N. B., Hosking, J. R. M. and Wallis, J. R. (1993),
+    <emphasis role="italic">Regional precipitation quantile values for the
+    continental U. S. computed from L-moments</emphasis>. Journal of Climate,
+    6, 2326-2340.</para>
+
+    <para>Haddad, K., Rahman, A. and Green, J. (2011), <emphasis
+    role="italic">Design Rainfall Estimation in Australia: A Case Study using
+    L moments and Generalized Least Squares Regression,</emphasis> Stochastic
+    Environmental Research &amp; Risk Assessment, 25, 6, 815-825.</para>
+
+    <para>Haddad, K. and Rahman, A. (2012a), <emphasis role="italic">Regional
+    flood frequency analysis in eastern Australia: Bayesian GLS
+    regression-based methods within fixed region and ROI framework: quantile
+    regression vs parameter regression technique.</emphasis> Journal of
+    Hydrology, Volume 430, 2012, Pages 142-161.</para>
+
+    <para>Haddad, K. and Rahman, A. (2012b), <emphasis role="italic">A Pilot
+    Study on Design Rainfall Estimation in Australia using L-moments and
+    Bayesian Generalised Least Squares Regression: Comparison of Fixed Region,
+    Facets and Region of Influence Approach,</emphasis> EnviroWater
+    Sydney.</para>
+
+    <para>Haddad, K., Johnson, F., Rahman, A., Green, J., and Kuczera, G.
+    (2015), <emphasis role="italic">Comparing three methods to form regions
+    for design rainfall statistics: Two case studies in Australia.</emphasis>
+    Journal of Hydrology, Volume 527, August 2015, Pages 62-76</para>
+
+    <para>Hosking, J.R.M. and Wallis, J.R., (1997). Regional Frequency
+    Analysis: An Approach Based on L-Moments. CambridgeUniversity Press,
+    Cambridge, UK. 224 pp.</para>
+
+    <para>Huff, F. A., and Angel, J. R. (1992), <emphasis
+    role="italic">Rainfall Frequency Atlas of the Midwest. Illinois State
+    Water Survey</emphasis>, Champaign, Bulletin 71, 1992.</para>
+
+    <para>Hutchinson, M.F. (1998), <emphasis role="italic">Interpolation of
+    rainfall data with thin plate smoothing splines – part 2: Analysis of
+    topographic dependence</emphasis>, Journal of Geographic Information and
+    Decision Analysis 2(2): 152-167.</para>
+
+    <para>Hutchinson, M. F. (2007), ANUSPLIN version 4.37 User Guide, The
+    Australian National University, Centre for Resources and Environmental
+    Studies, Canberra</para>
+
+    <para>Hutchinson, M.F and Xu, T (2013), <emphasis role="italic">ANUSPLIN
+    Version 4.4 User Guide</emphasis>, The AustralianNationalUniversity.
+    FennerSchool of Environment and Society, Canberra, Australia</para>
+
+    <para>Johnson, F., Xuereb, K., Jeremiah, E., and Green, J. (2012a).
+    Regionalisation of Rainfall Statistics for the IFD Revision Project.
+    Presented at Hydrology and Water Resources Symposium, Sydney, NSW,
+    November 2012.</para>
+
+    <para>Johnson, F., Haddad, K., Rahman, A., and Green, J. (2012b).
+    Application of Bayesian GLSR to Estimate Sub Daily Rainfall Parameters for
+    the IFD Revision Project. Presented at Hydrology and Water Resources
+    Symposium, Sydney, NSW, November 2012.</para>
+
+    <para>Johnson, F., Hutchinson, M.F.; The, C.; Beesley, C., and Green, J.
+    (2015). Topographic relationships for design rainfalls over Australia.
+    Accepted for publication Journal of Hydrology.</para>
+
+    <para>Kjeldsen, T. R. and Jones, D. A. (2009), <emphasis role="italic">A
+    formal statistical model for pooled analysis of extreme floods,
+    </emphasis>Hydrology Research 40(5): 465-480.</para>
+
+    <para>Madsen, H., Mikkelsen, P.S., Rosbjerg, D. and Harremoes, P. (2002),
+    Regional estimation of rainfall intensity duration curves using
+    generalised least squares regression of partial duration series
+    statistics. Water Resources Research, 38 (11), 1239</para>
+
+    <para>Madsen, H., Arnbjerg-Neilsen, K. and Mikkelsen, P.S. (2009), Update
+    of regional intensity-duration-frequency curves in Denmark: Tendency
+    towards increased storm intensities. Atmospheric Research, 92,
+    343-349</para>
+
+    <para>Menabde, M, A Seed, G Pegram. (1999). <emphasis role="italic">A
+    simple scaling model for extreme rainfall</emphasis>. Water Resources
+    Research, 35, pages 335 – 339.</para>
+
+    <para>Minty, L.J., Meighen, J. and M.R. Kennedy (1996) <emphasis
+    role="italic">Development of the Generalised Southeast Australia Method
+    for Estimating Probable Maximum Precipitation</emphasis>, [Online] HRS
+    Report No. 4, Hydrology Report Series, Bureau of Meteorology, Melbourne,
+    Australia, August 1996, (48pp). Available at: <link
+    xlink:href="http://www.bom.gov.au/water/designRainfalls/pmp/gsam.shtml">http://www.bom.gov.au/water/designRainfalls/pmp/gsam.shtml</link></para>
+
+    <para>Nandakumar, N., Weinmann, P. E., Mein, R. G., Nathan, R. J. (1997),
+    Estimation of Extreme Rainfalls for Victoria using the CRCFORGE Method,
+    CRC for Catchment Hydrology.</para>
+
+    <para>Pilgrim, DH (ed) (1987) Australian Rainfall and Runoff – A Guide to
+    Flood Estimation, Institution of Engineers, Australia, Barton, ACT,
+    1987.</para>
+
+    <para>Reis Jr., D.S., Stedinger, J.R. and Martins, E.S. (2005), Bayesian
+    GLS regression with application to LP3 regional skew estimation. Water
+    Resour Res. 41, W10419, (1) 1029.</para>
+
+    <para>Schaefer, M.G. (1990), <emphasis role="italic">Regional analysis of
+    precipitation annual maxima in Washington State</emphasis>, Water Resoures
+    Research., 26(1), pp119-131.</para>
+
+    <para>The, C., Johnson, F., Hutchinson, M., and Green, J. (2012). Gridding
+    of Design Rainfall Parameters for the IFD Revision Project for Australia.
+    Presented at Hydrology and Water Resources Symposium, Sydney, NSW,
+    November 2012.</para>
+
+    <para>The, C., Hutchinson, M., Johnson, F., Beesley, C. and Green, J.
+    (2014). Application of ANUSPLIN to produce new
+    Intensity-Frequency-Duration (IFD) design rainfalls across Australia.
+    Presentated at Hydrology and Water Resources Symposium, Perth, WA,
+    February 2014.</para>
+
+    <para>The, C., Beesley, C., Podger, S., Green, J., Hutchinson, M. and
+    Jolly, C.(2015). Very frequent design rainfalls – an enhancement to the
+    new IFDs. Accepted for presentation at Hydrology and Water Resources
+    Symposium, Hobart, TAS, December 2015.</para>
+
+    <para>Walland DJ, Meighen J, Xuereb KC, Beesley CA and Hoang TMT, 2003,
+    <emphasis role="italic">Revision of the Generalised Tropical Storm Method
+    for Estimating Probable Maximum Precipitation </emphasis>[Online], HRS
+    Report No. 8, Hydrology Report Series, Bureau of Meteorology Melbourne,
+    Australia, available at: <link
+    xlink:href="http://www.bom.gov.au/water/designRainfalls/hrs8.shtml">http://www.bom.gov.au/water/designRainfalls/hrs8.shtml</link></para>
+
+    <para>Wang, QJ. (1997) <emphasis role="italic">LH moments for statistical
+    analysis of extreme events</emphasis>. Water Resources Research, 33(12)
+    2841-2848.</para>
+
+    <para>Wang, QJ. (1998) <emphasis role="italic">Approximate goodness-of-fit
+    tests of fitted generalised extreme value distributions using LH
+    moments.</emphasis> Water Resources Research, 34(12) 3497-3502.</para>
+
+    <para>World Meteorological Organisation (1986). ‘Manual for Estimation of
+    Probable Maximum Precipitation’. Second Edition. Operational Hydrology
+    Report No. 1, WMO - No. 332, Geneva.</para>
+
+    <para>Xuereb, K.C., Moore, G.J., and Taylor, B.F. (2001) <emphasis
+    role="italic">Development of the Method of Storm Transposition and
+    Maximisation for the West Coast of Tasmania.</emphasis> HRS Report No. 7,
+    Hydrology Report Series, Bureau of Meteorology, Melbourne, Australia,
+    January 2001.</para>
+
+    <para>Xuereb, K. and Green, J. (2012). <emphasis role="italic">Defining
+    Independence of Rainfall Events with a Partial Duration Series
+    Approach</emphasis>. Presented at Hydrology and Water Resources Symposium,
+    Sydney, NSW, November 2012.</para>
+
+    <para><emphasis role="bold">Acknowledgements:</emphasis></para>
+
+    <para>The authors would like to acknowledge the contributions made by the
+    following people during the IFD Revision Project:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Dr Louise Minty and Dr Ian Prosser for their direction of the
+        project</para>
+      </listitem>
+
+      <listitem>
+        <para>Andrew Frost, Khaled Haddad, Catherine Jolly, Garry Moore, Scott
+        Podger, Ataur Rahman, Lionel Siriwardena and Karin Xuereb for their
+        contribution during various stages of the project</para>
+      </listitem>
+
+      <listitem>
+        <para>Professor Mike Hutchinson for his ongoing advice on the
+        application of ANUSPLIN</para>
+      </listitem>
+
+      <listitem>
+        <para>Erwin Jeremiah, Deacon McKay, Scott Podger and Michael Sugiyanto
+        for their cheerful quality controlling of the data</para>
+      </listitem>
+
+      <listitem>
+        <para>Dr George Kuczera, Dr Nanda Nandakumar; Dr Rory Nathan and Erwin
+        Weinmann for their sage advice on the rare design rainfalls</para>
+      </listitem>
+
+      <listitem>
+        <para>Damian Chong, Ceredwyn Ealanta Murray Henderson, Chris Lee,
+        Quentin Leseney, Maria Levtova, Max Monahon, Julian Noye, and William
+        Tall for the webpages.</para>
+      </listitem>
+    </itemizedlist>
   </section>
 </chapter>
