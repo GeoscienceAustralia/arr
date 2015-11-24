@@ -21,93 +21,69 @@
 
   <section xml:id="b3_ch3_s_0g2kk">
     <title>Introduction</title>
-
-    <para>Estimation of peak flows on small to medium sized rural catchments
-    is required for the design of culverts, small to medium sized bridges,
-    causeways, soil conservation works and for various planning and regulatory
-    purposes. Typically, <?oxy_delete author="testoni" timestamp="20151118T091614+1100" content="many"?><?oxy_insert_start author="testoni" timestamp="20151118T091615+1100"?>most
-    design flood estimates for projects on<?oxy_insert_end ?> small to medium
-    sized catchments<?oxy_insert_start author="testoni" timestamp="20151118T092033+1100"?>
-    are on catchments that<?oxy_insert_end ?> are ungauged or have little
-    recorded streamflow data. In these cases, peak flow estimates can be
-    obtained using a Regional Flood Frequency Estimation (RFFE) approach,
-    which transfers flood frequency characteristics from a group of gauged
-    catchments to the location of interest. Even in cases where there is
-    recorded streamflow data it is beneficial to pool the information in the
-    gauged record with the RFFE information. A RFFE technique is expected to
-    be simple, requiring only readily accessible catchment data to obtain
-    design flood estimates relatively quickly.</para>
-
+    <para>Estimation of peak flows on small to medium sized rural catchments is required for the
+      design of culverts, small to medium sized bridges, causeways, soil conservation works and for
+      various planning and regulatory purposes. Typically,
+      <?oxy_delete author="testoni" timestamp="20151118T091614+1100" content="many"?><?oxy_insert_start author="testoni" timestamp="20151118T091615+1100"?>most
+      design flood estimates for projects on<?oxy_insert_end?> small to medium sized
+      catchments<?oxy_insert_start author="testoni" timestamp="20151118T092033+1100"?> are on
+      catchments that<?oxy_insert_end?> are ungauged or have little recorded streamflow data. In
+      these cases, peak flow estimates can be obtained using a Regional Flood Frequency Estimation
+      (RFFE) approach, which transfers flood frequency characteristics from a group of gauged
+      catchments to the location of interest. Even in cases where there is recorded streamflow data
+      it is beneficial to pool the information in the gauged record with the RFFE information. A
+      RFFE technique is expected to be simple, requiring only readily accessible catchment data to
+      obtain design flood estimates relatively quickly.</para>
     <?oxy_insert_start author="testoni" timestamp="20151118T092048+1100"?>
-
-    <para>The RFFE method described in this chapter ensures that design flood
-    discharge estimates are consistent with the gauged records and with
-    results for other ungauged catchments in a region. It is recognised that
-    there will be considerable uncertainty in estimates for ungauged
-    catchments because of the limited number of gauged catchments available to
-    develop the method and the wide range of catchment types that exist
-    throughout Australia.</para>
-
-    <?oxy_insert_end ?>
-
-    <para>In developing the RFFE technique, a number of criteria had to be
-    satisfied. These criteria included:</para>
-
+    <para>The RFFE method described in this chapter ensures that design flood discharge estimates
+      are consistent with the gauged records and with results for other ungauged catchments in a
+      region. It is recognised that there will be considerable uncertainty in estimates for ungauged
+      catchments because of the limited number of gauged catchments available to develop the method
+      and the wide range of catchment types that exist throughout Australia.</para>
+    <?oxy_insert_end?>
+    <para>In developing the RFFE technique, a number of criteria had to be satisfied. These criteria
+      included:</para>
     <itemizedlist>
       <listitem>
         <para>National consistency in approach;</para>
       </listitem>
-
       <listitem>
         <para>Smooth interfacing at the boundaries between areas;</para>
       </listitem>
-
       <listitem>
         <para>Use readily accessible data; and</para>
       </listitem>
-
       <listitem>
-        <para>Utilise as much of Australia's streamflow database as
-        possible.</para>
+        <para>Utilise as much of Australia's streamflow database as possible.</para>
       </listitem>
     </itemizedlist>
-
-    <para>The basis for the development of the RFFE technique recommended
-    herein, therefore, is a national database consisting of 853 gauged
-    catchments. These data were used to develop and test the RFFE technique
-    presented in this chapter. Further details of the development of the
-    database and RFFE technique are provided by the references noted in
-    Appendix A.</para>
-
-    <para>The following sections <?oxy_delete author="testoni" timestamp="20151118T101441+1100" content="of this chapter "?>contain
-    a description of the conceptual and statistical framework of the adopted
-    RFFE technique, a computer-based application tool, referred to as ‘RFFE
-    Model 2015’, that implements the adopted RFFE technique and a number of
-    worked examples to demonstrate the application of the model.</para>
-
-    <para>Following the guidance provided in Book 1 and Chapter 1 of this
-    book, users of the RFFE technique are reminded that there are alternatives
-    to the RFFE technique. <?oxy_delete author="testoni" timestamp="20151118T101450+1100" content="Furthermore, in accordance with this guidance, designers and analysts have a duty to use an alternative technique where that alternative is more appropriate for their design flood problem."?></para>
-
+    <para>The basis for the development of the RFFE technique recommended herein, therefore, is a
+      national database consisting of 853 gauged catchments. These data were used to develop and
+      test the RFFE technique presented in this chapter. Further details of the development of the
+      database and RFFE technique are provided by the references noted in Appendix A.</para>
+    <para>The following sections
+      <?oxy_delete author="testoni" timestamp="20151118T101441+1100" content="of this chapter "?>contain
+      a description of the conceptual and statistical framework of the adopted RFFE technique, a
+      computer-based application tool, referred to as ‘RFFE Model 2015’, that implements the adopted
+      RFFE technique and a number of worked examples to demonstrate the application of the
+      model.</para>
+    <para>Following the guidance provided in Book 1 and Chapter 1 of this book, users of the RFFE
+      technique are reminded that there are alternatives to the RFFE technique.
+      <?oxy_delete author="testoni" timestamp="20151118T101450+1100" content="Furthermore, in accordance with this guidance, designers and analysts have a duty to use an alternative technique where that alternative is more appropriate for their design flood problem."?></para>
     <?oxy_insert_start author="testoni" timestamp="20151118T101458+1100"?>
-
-    <para>While the RFFE technique described in this chapter is regarded as a
-    state-of-the-art approach for estimation of design flood peak discharges
-    at ungauged catchments, the limitations of the method must be recognised.
-    While the RFFE technique has been developed using the best available
-    database of gauged catchments throughout Australia, the fact remains that
-    only a small number of gauged catchments were available to represent the
-    wide range of conditions experienced over an area of about 7.5 million
-    km2. Therefore, in accordance with the guidance in Book 1 Chapter 1 of
-    ARR, designers and analysts have a duty to use an alternative technique if
-    that technique can be shown to be superior to RFFE Model 2015 and to
-    utilise any available local data, both formal and informal to assist in
-    understanding local conditions and improve upon RFFE Model 2015 estimates.
-    In comparing and selecting alternative methods, the uncertainty in the
-    observed flood data due to factors such as limitations in record length
-    and rating curve extrapolation should be recognised.</para>
-
-    <?oxy_insert_end ?>
+    <para>While the RFFE technique described in this chapter is regarded as a state-of-the-art
+      approach for estimation of design flood peak discharges at ungauged catchments, the
+      limitations of the method must be recognised. The RFFE technique has been developed using the
+      best available database of gauged catchments throughout Australia, but the fact remains that
+      only a small number of gauged catchments were available to represent the wide range of
+      conditions experienced over an area of about 7.5 million km2. Therefore, in accordance with
+      the guidance in Book 1 Chapter 1 of ARR, designers and analysts have a duty to use an
+      alternative technique if that technique can be shown to be superior to RFFE Model 2015 and to
+      utilise any available local data, both formal and informal to assist in understanding local
+      conditions and improve upon RFFE Model 2015 estimates. In comparing and selecting alternative
+      methods, the uncertainty in the observed flood data due to factors such as limitations in
+      record length and rating curve extrapolation should be recognised.</para>
+    <?oxy_insert_end?>
   </section>
 
   <section xml:id="b3_ch3_s_ynzmg">
@@ -294,28 +270,29 @@
       systematic error (or ‘noise’) that may be present in some flood
       data.</para>
 
-      <para>In RFFE, various sources of errors in data and their effects on
-      final flood estimates need to be recognised. The accuracy of flood
-      quantile estimates at each individual gauged site depends largely on
-      rating curve accuracy and record length at the individual site. Thus,
-      the selection of a minimum record length at an individual site in the
-      region is a very important step in any RFFE technique; the record length
-      should be as long as possible while retaining enough sites in the region
-      to make the results of RFFE useful. Also, the flood data at each site
-      should satisfy a number of basic assumptions e.g. homogeneity,
-      independence and stationarity. In the case where these assumptions are
-      violated, appropriate measures should be taken; suitable techniques
-      include GLS regression to account for the inter-station correlation
-      (e.g. Stedinger and Tasker, 1985; Griffis and Stedinger, 2007), and
-      non-stationary Flood Frequency Analysis to account for climate change
-      impact. The data preparation issues for a RFFE technique are discussed
-      in more detail by Haddad et al. (2010) and Rahman et al. <?oxy_delete author="testoni" timestamp="20151118T102026+1100" content="(2014a, 2014d)."?><?oxy_insert_start author="testoni" timestamp="20151118T102028+1100"?>(2015a,
-      2015b, 2015c, 2015d). In addition to the consideration of the data
-      available at individual gauging stations, it is important to also
-      consider the representativeness of the gauged data. The available gauged
-      catchments represent only a sample of the range of conditions that may
-      occur throughout the regions where the RFFE method is developed and
-      applied.<?oxy_insert_end ?></para>
+      <para>In RFFE, various sources of errors in data and their effects on final flood estimates
+        need to be recognised. The accuracy of flood quantile estimates at each individual gauged
+        site depends largely on rating curve accuracy and record length at the individual site.
+        Thus, the selection of a minimum record length at an individual site in the region is a very
+        important step in any RFFE technique; the record length should be as long as possible while
+        retaining enough sites in the region to make the results of RFFE useful. Also, the flood
+        data at each site should satisfy a number of basic assumptions e.g. homogeneity,
+        independence and stationarity. In the case where these assumptions are violated, appropriate
+        measures should be taken; suitable techniques include GLS regression to account for the
+        inter-station correlation (e.g. Stedinger and Tasker, 1985; Griffis and Stedinger, 2007),
+        and non-stationary Flood Frequency Analysis to account for
+        <?oxy_insert_start author="testoni" timestamp="20151124T093120+1100"?>the impacts of
+        <?oxy_insert_end?>climate change
+        <?oxy_delete author="testoni" timestamp="20151124T093128+1100" content="impact"?><?oxy_insert_start author="testoni" timestamp="20151124T093129+1100"?>and
+        changes in catchment conditions during the period of record<?oxy_insert_end?>. The data
+        preparation issues for a RFFE technique are discussed in more detail by Haddad et al. (2010)
+        and Rahman et al.
+        <?oxy_delete author="testoni" timestamp="20151118T102026+1100" content="(2014a, 2014d)."?><?oxy_insert_start author="testoni" timestamp="20151118T102028+1100"?>(2015a,
+        2015b, 2015c, 2015d). In addition to the consideration of the data available at individual
+        gauging stations, it is important to also consider the representativeness of the gauged
+        data. The available gauged catchments represent only a sample of the range of conditions
+        that may occur throughout the regions where the RFFE method is developed and
+        applied.<?oxy_insert_end?></para>
 
       <para>The transfer of flood information from gauged to ungauged
       catchments relies on the ability to identify a number of key catchment
@@ -359,36 +336,35 @@
       relationship for flood events and hence provides flood quantile
       estimates of ‘acceptable’ accuracy.</para>
 
-      <para>Because a RFFE technique typically has limited predictive power,
-      design flood estimates produced by it are likely to have a lower degree
-      of accuracy than those from a well calibrated catchment modelling
-      system. From the investigations made by Rahman et al. (2009, 2012,
-      201<?oxy_insert_start author="testoni" timestamp="20151118T102104+1100"?>5a,
-      2015b<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T102100+1100" content="4b"?>),
-      it may be stated that the relative accuracy of regional flood estimates
-      using the RFFE model presented in this chapter is likely to be within
-      ±50% of the true value; however, in a limited number of cases the
-      estimation error may exceed ±100% (see <xref
-      linkend="b3_ch3_s_yj49v"/>). It is unlikely that any RFFE technique
-      would be able to provide flood quantile estimates which are of much
-      greater accuracy <?oxy_delete author="testoni" timestamp="20151118T102533+1100" content="than this, given the current availability of streamflow data (in terms of temporal and spatial coverage) in Australia."?><?oxy_insert_start author="testoni" timestamp="20151118T102428+1100"?>given
-      the current availability of streamflow data (in terms of temporal and
-      spatial coverage) and feasibility of the extraction of a greater number
-      of catchment descriptors using simplified methods such as GIS based
-      techniques. Because of the small sample of gauged catchments and limited
-      availability of readily obtainable catchment descriptors, it is not
-      possible to prepare an extremely detailed set of descriptor variables
-      covering all possible conditions, so a sample must be selected that
-      provides a suitable range to represent the critical parameters, but to
-      limit the application of variables that do not contribute to the overall
-      performance of the RFFE technique.<?oxy_insert_end ?></para>
+      <para>Because a RFFE technique typically has limited predictive power, design flood estimates
+        produced by it are likely to have a lower degree of accuracy than those from a well
+        calibrated catchment modelling system. From the investigations made by Rahman et al. (2009,
+        2012, 201<?oxy_insert_start author="testoni" timestamp="20151118T102104+1100"?>5a,
+        2015b<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151118T102100+1100" content="4b"?>),
+        it may be stated that the relative accuracy of regional flood estimates using the RFFE model
+        presented in this chapter is likely to be within ±50% of the true value; however, in a
+        limited number of cases the estimation error may exceed
+        <?oxy_delete author="testoni" timestamp="20151124T093415+1100" content="±100%"?><?oxy_insert_start author="testoni" timestamp="20151124T093415+1100"?>the
+        estimation by a factor of two or more<?oxy_insert_end?> (see <xref linkend="b3_ch3_s_yj49v"
+        />). It is unlikely that any RFFE technique would be able to provide flood quantile
+        estimates which are of much greater accuracy
+        <?oxy_delete author="testoni" timestamp="20151118T102533+1100" content="than this, given the current availability of streamflow data (in terms of temporal and spatial coverage) in Australia."?><?oxy_insert_start author="testoni" timestamp="20151118T102428+1100"?>given
+        the current availability of streamflow data (in terms of temporal and spatial coverage) and
+        feasibility of the extraction of a greater number of catchment descriptors using simplified
+        methods such as GIS based techniques. Because of the small sample of gauged catchments and
+        limited availability of readily obtainable catchment descriptors, it is not possible to
+        prepare an extremely detailed set of descriptor variables covering all possible conditions,
+        so a sample must be selected that provides a suitable range to represent the critical
+        parameters, but to limit the application of variables that do not contribute significantly
+        to the overall performance of the RFFE technique.<?oxy_insert_end?></para>
 
-      <para>For catchments having limited recorded streamflow data, the
-      combination of at-site data with a RFFE technique is likely to provide
-      more accurate flood quantile estimates than either the at-site or
-      regional method alone. Details of how limited streamflow data can be
-      combined with a RFFE technique is presented in Book 3 Chapter 2. Testing
-      has shown this improves estimates in many cases.</para>
+      <para>For catchments having limited recorded streamflow data, the combination of at-site data
+        with a RFFE technique is likely to provide more accurate flood quantile estimates than
+        either the at-site or regional method alone. Details of how limited streamflow data can be
+        combined with a RFFE technique
+        <?oxy_delete author="testoni" timestamp="20151124T093510+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151124T093511+1100"?>are<?oxy_insert_end?>
+        presented in Book 3 Chapter 2. Testing has shown this improves estimates in many
+        cases.</para>
 
       <para>An important assumption in all RFFE techniques is that the small
       set of predictor variables used in the regression equations is able to
@@ -1225,17 +1201,19 @@
         <title>Flood data</title>
 
         <para><?oxy_delete author="testoni" timestamp="20151118T103525+1100" content="Data-rich areas include most of the coastal belts of Australia where there are a"?><?oxy_insert_start author="testoni" timestamp="20151118T103525+1100"?>Humid
-        Coast areas had a relatively<?oxy_insert_end ?> large number of
-        recorded streamflow stations as shown in <xref
-        linkend="b3_ch3_f_55d8a"/>. An upper limit of catchment size of 1,000
-        km² <?oxy_delete author="testoni" timestamp="20151118T103624+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T103624+1100"?>was
-        generally<?oxy_insert_end ?> adopted. However, in some states (such as
-        the Northern Territory), a few larger catchments <?oxy_delete author="testoni" timestamp="20151118T103635+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T103636+1100"?>were<?oxy_insert_end ?>
-        included as the total number of catchments with areas less than 1,000
-        km² <?oxy_delete author="testoni" timestamp="20151118T103616+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T103616+1100"?>was<?oxy_insert_end ?>
-        too small. The cut-off record length of 19 years was selected to
-        maximise the number of eligible stations on the consideration that a
-        higher cut-off would reduce that number.</para>
+          Coast areas had a relatively<?oxy_insert_end?> large number of recorded streamflow
+          stations<?oxy_insert_start author="testoni" timestamp="20151124T093540+1100"?>,<?oxy_insert_end?>
+          as shown in <xref linkend="b3_ch3_f_55d8a"/>. An upper limit of catchment size of 1,000
+          km²
+          <?oxy_delete author="testoni" timestamp="20151118T103624+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T103624+1100"?>was
+          generally<?oxy_insert_end?> adopted. However, in some states (such as the Northern
+          Territory), a few larger catchments
+          <?oxy_delete author="testoni" timestamp="20151118T103635+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T103636+1100"?>were<?oxy_insert_end?>
+          included as the total number of catchments with areas less than 1,000 km²
+          <?oxy_delete author="testoni" timestamp="20151118T103616+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T103616+1100"?>was<?oxy_insert_end?>
+          too small. The cut-off record length of 19 years was selected to maximise the number of
+          eligible stations on the consideration that a higher cut-off would reduce that
+          number.</para>
 
         <figure xml:id="b3_ch3_f_55d8a">
           <title>Geographical distribution of the adopted 798 catchments from
@@ -1251,22 +1229,21 @@
           </mediaobject>
         </figure>
 
-        <para>The selected streams were unregulated since major regulation
-        (e.g. a large dam on the stream) affects the rainfall-runoff
-        relationship significantly by increasing additional storage effects.
-        Streams with minor regulation, such as small farm dams and diversion
-        weirs, were not excluded because this type of regulation is unlikely
-        to have a significant effect on large annual floods. Gauging stations
-        on streams subject to major upstream regulation were excluded from the
-        data set. Catchments with more than 10% of the area affected by
-        urbanisation were also excluded from the study data set. Catchments
-        known to have undergone major land use changes, such as the clearing
-        of forests or changing of agricultural practices over the period of
-        streamflow records were excluded from the data set. Stations graded as
-        'poor quality' or with specific comments by the gauging authority
-        regarding quality of the data were assessed in greater detail; if
-        stations were deemed 'low quality' they <?oxy_delete author="testoni" timestamp="20151118T133947+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T133947+1100"?>were<?oxy_insert_end ?>
-        excluded.</para>
+        <para>The selected streams were unregulated since major regulation (e.g. a large dam on the
+          stream) affects the rainfall-runoff relationship significantly by increasing
+          <?oxy_delete author="testoni" timestamp="20151124T093556+1100" content="additional "?>storage
+          effects. Streams with minor regulation, such as small farm dams and diversion weirs, were
+          not excluded because this type of regulation is unlikely to have a significant effect on
+          large annual floods. Gauging stations on streams subject to major upstream regulation were
+          excluded from the data set. Catchments with more than 10% of the area affected by
+          urbanisation were also excluded from the study data set. Catchments known to have
+          undergone major land use changes, such as the clearing of forests or changing of
+          agricultural practices over the period of streamflow records were excluded from the data
+          set. Stations graded as 'poor quality' or with specific comments by the gauging authority
+          regarding quality of the data were assessed in greater detail; if stations were deemed
+          'low quality' they
+          <?oxy_delete author="testoni" timestamp="20151118T133947+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T133947+1100"?>were<?oxy_insert_end?>
+          excluded.</para>
 
         <para>The <?oxy_delete author="testoni" timestamp="20151118T133940+1100" content="A"?><?oxy_insert_start author="testoni" timestamp="20151118T133940+1100"?>a<?oxy_insert_end ?>nnual
         <?oxy_delete author="testoni" timestamp="20151118T133942+1100" content="M"?><?oxy_insert_start author="testoni" timestamp="20151118T133943+1100"?>m<?oxy_insert_end ?>aximum
@@ -1280,21 +1257,22 @@
         2013). This is further discussed in <xref
         linkend="b3_ch3_s_31eib"/>.</para>
 
-        <para>The data sets for the initially selected potential catchments
-        are further examined, as detailed in Haddad <emphasis>et
-        al</emphasis>. (2010) and Rahman <emphasis>et al</emphasis>. 2014 (a,
-        b, c): gaps in the Annual Maximum flood series were filled as far as
-        could be justified, outliers were detected using the multiple
-        Grubbs-Beck test (Lamontagne <emphasis>et al</emphasis>., 2013; Cohn
-        <emphasis>et al</emphasis>., 2013), errors associated with
-        extrapolation of rating curves were investigated and the presence of
-        trends with the data were checked. From an initial number of
-        approximately 1200 catchments, a total of 798 catchments were finally
-        adopted from all over Australia (excluding catchments in the
-        arid<?oxy_insert_start author="testoni" timestamp="20151118T134002+1100"?>/semi-arid
-        areas<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T134001+1100" content=" regions"?>,
-        where some of the above criteria were relaxed, as discussed in Section
-        5).</para>
+        <para>The data sets for the initially selected potential catchments are further examined, as
+          detailed in Haddad <emphasis>et al</emphasis>. (2010) and Rahman <emphasis>et
+            al</emphasis>. 2014 (a, b, c): gaps in the
+          <?oxy_insert_start author="testoni" timestamp="20151124T093627+1100"?>a<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151124T093626+1100" content="A"?>nnual
+          <?oxy_delete author="testoni" timestamp="20151124T093629+1100" content="M"?><?oxy_insert_start author="testoni" timestamp="20151124T093629+1100"?>m<?oxy_insert_end?>aximum
+          flood series
+          <?oxy_delete author="testoni" timestamp="20151124T093619+1100" content="were"?><?oxy_insert_start author="testoni" timestamp="20151124T093619+1100"?>was<?oxy_insert_end?>
+          filled as far as could be justified, outliers were detected using the multiple Grubbs-Beck
+          test (Lamontagne <emphasis>et al</emphasis>., 2013; Cohn <emphasis>et al</emphasis>.,
+          2013), errors associated with extrapolation of rating curves were investigated and the
+          presence of trends with the data were checked. From an initial number of approximately
+          1200 catchments, a total of 798 catchments were finally adopted from all over Australia
+          (excluding catchments in the
+          arid<?oxy_insert_start author="testoni" timestamp="20151118T134002+1100"?>/semi-arid
+          areas<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151118T134001+1100" content=" regions"?>,
+          where some of the above criteria were relaxed, as discussed in Section 5).</para>
 
         <para>The record lengths of the <?oxy_insert_start author="testoni" timestamp="20151118T134012+1100"?>a<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T134012+1100" content="A"?>nnual
         <?oxy_delete author="testoni" timestamp="20151118T134015+1100" content="M"?><?oxy_insert_start author="testoni" timestamp="20151118T134015+1100"?>m<?oxy_insert_end ?>aximum
@@ -1412,26 +1390,32 @@
           </tgroup>
         </table>
 
-        <para>The at-site Flood Frequency Analyses <?oxy_delete author="testoni" timestamp="20151118T134132+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134132+1100"?>were<?oxy_insert_end ?>
-        conducted using the FLIKE software (Kuczera, 1999). The Potential
-        Influential Low Flows (PILFs) <?oxy_delete author="testoni" timestamp="20151118T134135+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134135+1100"?>were<?oxy_insert_end ?>
-        identified using multiple Grubbs-Beck test (Lamontagne<emphasis> et
-        al</emphasis>., 2013) and <?oxy_delete author="testoni" timestamp="20151118T134138+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134138+1100"?>were<?oxy_insert_end ?>
-        censored in the Flood Frequency Analysis. A Bayesian parameter
-        estimation procedure with LPIII distribution <?oxy_delete author="testoni" timestamp="20151118T134151+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T134151+1100"?>was<?oxy_insert_end ?>
-        used to estimate flood quantiles for each of the gauged site for AEPs
-        of 50%, 20%, 10%, 5%, 2% and 1%.</para>
+        <para>The at-site Flood Frequency Analyses
+          <?oxy_delete author="testoni" timestamp="20151118T134132+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134132+1100"?>were<?oxy_insert_end?>
+          conducted using the FLIKE software (Kuczera, 1999). The Potential Influential Low Flows
+          (PILFs)
+          <?oxy_delete author="testoni" timestamp="20151118T134135+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134135+1100"?>were<?oxy_insert_end?>
+          identified using multiple Grubbs-Beck test (Lamontagne<emphasis> et al</emphasis>., 2013)
+          and
+          <?oxy_delete author="testoni" timestamp="20151118T134138+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T134138+1100"?>were<?oxy_insert_end?>
+          censored in the Flood Frequency Analysis. A Bayesian parameter estimation procedure with
+          LPIII distribution
+          <?oxy_delete author="testoni" timestamp="20151118T134151+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T134151+1100"?>was<?oxy_insert_end?>
+          used to estimate flood quantiles for each
+          <?oxy_delete author="testoni" timestamp="20151124T093701+1100" content="of the "?>gauged
+          site for AEPs of 50%, 20%, 10%, 5%, 2% and 1%.</para>
       </section>
 
       <section xml:id="b3_ch3_s_ujhrw">
         <title>Catchment characteristics data</title>
 
-        <para>As discussed by Rahman<emphasis> et al</emphasis>. (2009; 2012),
-        over ten predictor variables were selected initially; however, it was
-        found that the accuracy of a RFFE technique does not necessarily
-        increase with the number of adopted predictor variables. A total of
-        five predictor variables were adopted finally in the RFFE technique as
-        outlined below:</para>
+        <para>As discussed by Rahman<emphasis> et al</emphasis>. (2009; 2012), over ten predictor
+          variables were selected initially; however, it was found that the accuracy of a RFFE
+          technique does not necessarily increase with the number of adopted predictor variables. A
+          total of five<?oxy_insert_start author="testoni" timestamp="20151124T093715+1100"?>
+          candidate<?oxy_insert_end?> predictor variables were adopted finally in the RFFE
+          technique<?oxy_insert_start author="testoni" timestamp="20151124T094130+1100"?>,<?oxy_insert_end?>
+          as outlined below:</para>
 
         <para>(i) catchment area in km² (<emphasis>area</emphasis>);</para>
 
@@ -1971,40 +1955,34 @@
       <?oxy_insert_start author="testoni" timestamp="20151118T135819+1100"?>a<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T135819+1100" content="A"?>nalysis.</para>
 
       <para>In ARR1987 (Pilgrim, 1987), only a few catchments were used from
-      arid<?oxy_insert_start author="testoni" timestamp="20151118T135830+1100"?>/semi-arid<?oxy_insert_end ?>
-      areas to develop RFFE methods. Since the publication of ARR1987, there
-      has been little improvement in terms of streamflow data availability in
-      most of the arid<?oxy_insert_start author="testoni" timestamp="20151118T135835+1100"?>/semi-arid<?oxy_insert_end ?>
-      areas of Australia.<?oxy_insert_start author="testoni" timestamp="20151118T135850+1100"?>
-      There are a number of reasons for poor stream gauging coverage and
-      quality in arid/semi-arid areas, as follows:<orderedlist>
+        arid<?oxy_insert_start author="testoni" timestamp="20151118T135830+1100"?>/semi-arid<?oxy_insert_end?>
+        areas to develop RFFE methods. Since the publication of ARR1987, there has been little
+        improvement in terms of streamflow data availability in most of the
+        arid<?oxy_insert_start author="testoni" timestamp="20151118T135835+1100"?>/semi-arid<?oxy_insert_end?>
+        areas of Australia.<?oxy_insert_start author="testoni" timestamp="20151118T135850+1100"?>
+        There are a number of reasons for poor stream gauging coverage and quality in arid/semi-arid
+        areas, as follows:<orderedlist>
           <listitem>
-            <para>Poorly defined water courses catchments, meaning that the
-            water courses are hard to define and therefore gauge.</para>
+            <para>Poorly defined water course catchments, meaning that the water courses are hard to
+              define and therefore gauge.</para>
           </listitem>
-
           <listitem>
-            <para>Large floods may be outside the water course, meaning that
-            the cross section may be hard to measure and the flow may be
-            difficult to gauge.</para>
+            <para>Large floods may be outside the water course, meaning that the cross section may
+              be hard to measure and the flow may be difficult to gauge.</para>
           </listitem>
-
           <listitem>
-            <para>Infrequent flood events, meaning that the gauge may be
-            operating for extended periods of time without any flow.</para>
+            <para>Infrequent flood events, meaning that the gauge may be operating for extended
+              periods of time without any flow.</para>
           </listitem>
-
           <listitem>
-            <para>Remote location, making it difficult to take velocity
-            measurements during the flood events.</para>
+            <para>Remote location, making it difficult to take velocity measurements during the
+              flood events.</para>
           </listitem>
-
           <listitem>
-            <para>Little incentive to gauge flows because of the perceived
-            limited water resources and the limited demand for development of
-            these resources.</para>
+            <para>Little incentive to gauge flows because of the perceived limited water resources
+              and the limited demand for development of these resources.</para>
           </listitem>
-        </orderedlist><?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T140015+1100" content=" "?><?oxy_insert_start author="testoni" timestamp="20151118T135841+1100" type="split"?></para>
+        </orderedlist><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151118T140015+1100" content=" "?><?oxy_insert_start author="testoni" timestamp="20151118T135841+1100" type="split"?></para>
 
       <para><?oxy_insert_end ?>In the preparation of the Regional Flood
       Frequency Estimation database, only a handful of catchments from the
@@ -2192,25 +2170,32 @@
         </m:math>
       </equation>
 
-      <para>A prediction equation was developed for Q<subscript>10</subscript>
-      as a function of catchment characteristics, and regional growth factors
-      <?oxy_delete author="testoni" timestamp="20151118T144511+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144511+1100"?>were<?oxy_insert_end ?>
-      developed based on the <?oxy_delete author="testoni" timestamp="20151118T144529+1100" content="observed partial duration series"?><?oxy_insert_start author="testoni" timestamp="20151118T144529+1100"?>estimated
-      at-site<?oxy_insert_end ?> flood <?oxy_delete author="testoni" timestamp="20151118T144531+1100" content="data"?><?oxy_insert_start author="testoni" timestamp="20151118T144531+1100"?>quantile<?oxy_insert_end ?>.
-      In the arid areas, significant storm events do not typically occur every
-      year, and some of these events do not produce significant floods. The
-      at-site Flood Frequency Analyses for the arid catchments <?oxy_delete author="testoni" timestamp="20151118T144545+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144545+1100"?>was<?oxy_insert_end ?>
-      conducted using the FLIKE software (Kuczera, 1999). The Potential
-      Influential Low Flows (PILFs) <?oxy_delete author="testoni" timestamp="20151118T144559+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144559+1100"?>were<?oxy_insert_end ?>
-      identified using multiple Grubbs-Beck test (Lamontagne<emphasis
-      role="italic"> et al</emphasis>., 2013) and <?oxy_delete author="testoni" timestamp="20151118T144607+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144607+1100"?>were<?oxy_insert_end ?>
-      censored in the Flood Frequency Analysis. A Bayesian parameter
-      estimation procedure with LPIII distribution <?oxy_delete author="testoni" timestamp="20151118T144614+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T144614+1100"?>was<?oxy_insert_end ?>
-      used to estimate flood quantiles for each of the gauged site for AEPs of
-      50%, 20%, 10%, 5%, 2% and 1%. It should be noted that the Flood
-      Frequency Analysis procedure adopted in the Humid Coastal and arid areas
-      <?oxy_delete author="testoni" timestamp="20151118T144623+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144623+1100"?>was<?oxy_insert_end ?>
-      the same.</para>
+      <para>A prediction equation was developed for Q<subscript>10</subscript> as a function of
+        catchment characteristics, and regional growth factors
+        <?oxy_delete author="testoni" timestamp="20151118T144511+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144511+1100"?>were<?oxy_insert_end?>
+        developed based on the
+        <?oxy_delete author="testoni" timestamp="20151118T144529+1100" content="observed partial duration series"?><?oxy_insert_start author="testoni" timestamp="20151118T144529+1100"?>estimated
+        at-site<?oxy_insert_end?> flood
+        <?oxy_delete author="testoni" timestamp="20151118T144531+1100" content="data"?><?oxy_insert_start author="testoni" timestamp="20151118T144531+1100"?>quantile<?oxy_insert_end?>.
+        In the arid areas, significant storm events do not typically occur every year, and some of
+        these events do not produce significant floods. The at-site Flood Frequency Analyses for the
+        arid catchments
+        <?oxy_delete author="testoni" timestamp="20151118T144545+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144545+1100"?>was<?oxy_insert_end?>
+        conducted using the FLIKE software (Kuczera, 1999). The Potential Influential Low Flows
+        (PILFs)
+        <?oxy_delete author="testoni" timestamp="20151118T144559+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144559+1100"?>were<?oxy_insert_end?>
+        identified using multiple Grubbs-Beck test (Lamontagne<emphasis role="italic"> et
+          al</emphasis>., 2013) and
+        <?oxy_delete author="testoni" timestamp="20151118T144607+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144607+1100"?>were<?oxy_insert_end?>
+        censored in the Flood Frequency Analysis. A Bayesian parameter estimation procedure with
+        LPIII distribution
+        <?oxy_delete author="testoni" timestamp="20151118T144614+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T144614+1100"?>was<?oxy_insert_end?>
+        used to estimate flood quantiles for each
+        <?oxy_delete author="testoni" timestamp="20151124T095615+1100" content="of the "?>gauged
+        site for AEPs of 50%, 20%, 10%, 5%, 2% and 1%. It should be noted that the Flood Frequency
+        Analysis procedure adopted in the Humid Coastal and arid areas
+        <?oxy_delete author="testoni" timestamp="20151118T144623+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144623+1100"?>was<?oxy_insert_end?>
+        the same.</para>
 
       <para>The Q<subscript>x</subscript>/Q<subscript>10</subscript> values
       <?oxy_delete author="testoni" timestamp="20151118T144626+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144626+1100"?>were<?oxy_insert_end ?>
@@ -2327,27 +2312,26 @@
 
   <section xml:id="b3_ch3_s_m01jo">
     <title>Fringe Zones</title>
-
-    <para>The boundaries between the arid<?oxy_insert_start author="testoni" timestamp="20151118T144809+1100"?>/semi-arid<?oxy_insert_end ?>
-    and Humid Coastal regions in <xref linkend="b3_ch3_f_49qvf"/>
-    <?oxy_delete author="testoni" timestamp="20151118T144840+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144840+1100"?>were<?oxy_insert_end ?>
-    drawn<?oxy_insert_start author="testoni" timestamp="20151118T144848+1100"?>
-    (as a smoothed line)<?oxy_insert_end ?> approximately based on the 500 mm
-    mean annual rainfall contour<?oxy_delete author="testoni" timestamp="20151118T144902+1100" content=" line"?>.
-    To reduce the effects of sharp variation in flood estimates for the
-    ungauged catchments located close to these regional boundaries, seven
-    fringe zones <?oxy_delete author="testoni" timestamp="20151118T144908+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144908+1100"?>were<?oxy_insert_end ?>
-    delineated, as shown <xref linkend="b3_ch3_f_49qvf"/>. <?oxy_insert_start author="testoni" timestamp="20151118T144923+1100"?>The
-    boundary of the fringe zone located near Humid Coastal region was
-    approximately defined by the 500 mm mean annual rainfall isohyet, while
-    the other side was defined by 400 mm mean annual rainfall isohyet to
-    establish a fringe zone. In drawing the boundary, some minor adjustment
-    was made to make the boundary as smooth as possible. <?oxy_insert_end ?><?oxy_insert_start author="testoni" timestamp="20151118T144918+1100" type="split"?></para>
-
-    <para><?oxy_insert_end ?>For these fringe zones, the flood estimate at an
-    ungauged catchment location is taken as the inverse distance weighted
-    average value of the flood estimates based on the two nearest regions. The
-    method is embedded into the RFFE Model 2015.</para>
+    <para>The boundaries between the
+      arid<?oxy_insert_start author="testoni" timestamp="20151118T144809+1100"?>/semi-arid<?oxy_insert_end?>
+      and Humid Coastal regions in <xref linkend="b3_ch3_f_49qvf"/>
+      <?oxy_delete author="testoni" timestamp="20151118T144840+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144840+1100"?>were<?oxy_insert_end?>
+      drawn<?oxy_insert_start author="testoni" timestamp="20151118T144848+1100"?> (as a smoothed
+      line)<?oxy_insert_end?> approximately based on the 500 mm mean annual rainfall
+      contour<?oxy_delete author="testoni" timestamp="20151118T144902+1100" content=" line"?>. To
+      reduce the effects of sharp variation in flood estimates for the ungauged catchments located
+      close to these regional boundaries, seven fringe zones
+      <?oxy_delete author="testoni" timestamp="20151118T144908+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T144908+1100"?>were<?oxy_insert_end?>
+      delineated, as shown <xref linkend="b3_ch3_f_49qvf"/>.
+      <?oxy_insert_start author="testoni" timestamp="20151118T144923+1100"?>The boundary of the
+      fringe zone with the Humid Coastal region was approximately defined by the 500 mm mean annual
+      rainfall isohyet, while the other side was defined by the 400 mm mean annual rainfall isohyet
+      to establish a fringe zone. In drawing the boundary, some minor adjustment was made to make
+      the boundary as smooth as possible.
+      <?oxy_insert_end?><?oxy_insert_start author="testoni" timestamp="20151118T144918+1100" type="split"?></para>
+    <para><?oxy_insert_end?>For these fringe zones, the flood estimate at an ungauged catchment
+      location is taken as the inverse distance weighted average value of the flood estimates based
+      on the two nearest regions. The method is embedded into the RFFE Model 2015.</para>
   </section>
 
   <section xml:id="b3_ch3_s_yj49v">
@@ -2366,50 +2350,54 @@
     repeated for each catchment in the regional data set to provide an overall
     assessment of the performance of the RFFE technique.</para>
 
-    <para>The reliability of the RFFE flood quantile confidence limits
-    described in <xref linkend="b3_ch3_s_7r0rn"/> <?oxy_delete author="testoni" timestamp="20151118T145957+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T145957+1100"?>was<?oxy_insert_end ?>
-    assessed empirically using standardised quantile residuals. The quantile
-    residual is the difference between the logarithm of flood quantile
-    estimates obtained using at-site Flood Frequency Analysis and the RFFE
-    technique. The standardised quantile residual is the quantile residual
-    divided by its standard deviation which is the square root of the sum of
-    the RFFE predictive variance of the flood quantile and at-site quantile
-    variance (Haddad and Rahman, 2012; Micevski <emphasis>et al</emphasis>.,
-    201<?oxy_delete author="testoni" timestamp="20151118T150004+1100" content="4"?><?oxy_insert_start author="testoni" timestamp="20151118T150005+1100"?>5<?oxy_insert_end ?>).
-    This accounts for both the model error (e.g. inadequacy of the RFFE model)
-    and the sampling error (e.g. due to limite<?oxy_insert_start author="testoni" timestamp="20151118T150018+1100"?>ations
-    in<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T150017+1100" content="d"?>
-    streamflow record length). If the uncertainty in the log quantile
-    estimates has been adequately described, the standardized quantile
-    residuals should be consistent with a standard normal distribution.</para>
+    <para>The reliability of the RFFE flood quantile confidence limits described in <xref
+        linkend="b3_ch3_s_7r0rn"/>
+      <?oxy_delete author="testoni" timestamp="20151118T145957+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T145957+1100"?>was<?oxy_insert_end?>
+      assessed empirically using standardised quantile residuals. The quantile residual is the
+      difference between the logarithm of flood quantile estimates obtained using at-site Flood
+      Frequency Analysis and the RFFE technique. The standardised quantile residual is the quantile
+      residual divided by its standard deviation which is the square root of the sum of the RFFE
+      predictive variance of the flood quantile and at-site quantile variance (Haddad and Rahman,
+      2012; Micevski <emphasis>et al</emphasis>.,
+      201<?oxy_delete author="testoni" timestamp="20151118T150004+1100" content="4"?><?oxy_insert_start author="testoni" timestamp="20151118T150005+1100"?>5<?oxy_insert_end?>).
+      This accounts for both the model error (e.g. inadequacy of the RFFE model) and the sampling
+      error (e.g. due to
+      limite<?oxy_insert_start author="testoni" timestamp="20151118T150018+1100"?>ations
+      in<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151118T150017+1100" content="d"?>
+      streamflow record length). If the uncertainty in the log quantile estimates has been
+      adequately described, the
+      standardi<?oxy_insert_start author="testoni" timestamp="20151124T095745+1100"?>s<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151124T095745+1100" content="z"?>ed
+      quantile residuals should be consistent with a standard normal distribution.</para>
 
-    <para><xref linkend="b3_ch3_f_6ppin"/> shows the plots of standardised
-    residuals vs. normal scores for Region 1 for AEPs of 10% and 5% (the plots
-    for other AEPs for Region 1 are provided in Appendix B). Plots for other
-    regions can be seen also in Rahman <emphasis>et al</emphasis>.
-    (201<?oxy_insert_start author="testoni" timestamp="20151118T150118+1100"?>5<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151118T150117+1100" content="4"?>b).<?oxy_insert_start author="testoni" timestamp="20151118T150132+1100"?>
-    These residuals were estimated without bias correction (details of bias
-    correction are provided in ). <?oxy_insert_end ?> These plots include 558
-    catchments from Region 1 used in the RFFE model and some 28 catchments
-    which were excluded from the<?oxy_insert_start author="testoni" timestamp="20151118T150254+1100"?>
-    final<?oxy_insert_end ?> RFFE model<?oxy_insert_start author="testoni" timestamp="20151118T150259+1100"?>
-    data set<?oxy_insert_end ?> based on the results of preliminary analysis
-    and unusual characteristics such as significant natural floodplain
-    storage. <xref linkend="b3_ch3_f_6ppin"/> reveals that most of the 558
-    catchments closely follow a 1:1 straight line indicating that the
-    assumption of normality of the residuals <?oxy_delete author="testoni" timestamp="20151118T150319+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T150319+1100"?>was<?oxy_insert_end ?>
-    not inconsistent with the evidence; this is supported by the application
-    of the Anderson-Darling and Kolmogorov-Smirnov tests which
-    show<?oxy_insert_start author="testoni" timestamp="20151118T150326+1100"?>ed<?oxy_insert_end ?>
-    that the assumption of the normality of the residuals cannot be rejected
-    at the 10% level of significance. Under the assumptions of normality,
-    approximately 90% of the standardised quantile residuals should lie
-    between ± 2, which is largely satisfied. There <?oxy_delete author="testoni" timestamp="20151118T150347+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T150347+1100"?>were<?oxy_insert_end ?>
-    a few catchments with standardised residual values close to ± 3. These
-    correspond to instances where the RFFE confidence limits may not be
-    reliable; an example of such catchment is provided in <xref
-    linkend="b3_ch3_s_p4hvx"/>. Same conclusion applies to the other Humid
-    Coastal regions.</para>
+    <para><xref linkend="b3_ch3_f_6ppin"/> shows the plots of standardised residuals vs. normal
+      scores for Region 1 for AEPs of 10% and 5% (the plots for other AEPs for Region 1 are provided
+      in Appendix B). Plots for other regions can be seen also in Rahman <emphasis>et al</emphasis>.
+      (201<?oxy_insert_start author="testoni" timestamp="20151118T150118+1100"?>5<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151118T150117+1100" content="4"?>b).<?oxy_insert_start author="testoni" timestamp="20151118T150132+1100"?>
+      These residuals were estimated without bias correction (details of bias correction are
+      provided in ). <?oxy_insert_end?> These plots include 558 catchments from Region 1 used in the
+      RFFE model and some 28 catchments which were excluded from
+      the<?oxy_insert_start author="testoni" timestamp="20151118T150254+1100"?>
+      final<?oxy_insert_end?> RFFE
+      model<?oxy_insert_start author="testoni" timestamp="20151118T150259+1100"?> data
+      set<?oxy_insert_end?> based on the results of preliminary analysis and unusual characteristics
+      such as significant natural floodplain storage. <xref linkend="b3_ch3_f_6ppin"/> reveals that
+      most of the 558 catchments closely follow a 1:1 straight line indicating that the assumption
+      of normality of the residuals
+      <?oxy_delete author="testoni" timestamp="20151118T150319+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151118T150319+1100"?>was<?oxy_insert_end?>
+      not inconsistent with the evidence; this is supported by the application of the
+      Anderson-Darling and Kolmogorov-Smirnov tests which
+      show<?oxy_insert_start author="testoni" timestamp="20151118T150326+1100"?>ed<?oxy_insert_end?>
+      that the assumption of the normality of the residuals cannot be rejected at the 10% level of
+      significance. Under the assumptions of normality, approximately 90% of the standardised
+      quantile residuals should lie between ± 2, which is largely satisfied. There
+      <?oxy_delete author="testoni" timestamp="20151118T150347+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151118T150347+1100"?>were<?oxy_insert_end?>
+      a few catchments with standardised residual values close to ± 3. These correspond to instances
+      where the RFFE confidence limits may not be reliable; an example of
+      such<?oxy_insert_start author="testoni" timestamp="20151124T095809+1100"?> a<?oxy_insert_end?>
+      catchment is provided in <xref linkend="b3_ch3_s_p4hvx"/>.
+      <?oxy_insert_start author="testoni" timestamp="20151124T095813+1100"?>The
+      <?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151124T095814+1100" content="S"?><?oxy_insert_start author="testoni" timestamp="20151124T095814+1100"?>s<?oxy_insert_end?>ame
+      conclusion applies to the other Humid Coastal regions.</para>
 
     <figure xml:id="b3_ch3_f_6ppin">
       <title>Standardised residuals vs. normal scores for Region 1 based on
@@ -2508,79 +2496,72 @@
     <title>Bias Correction</title>
 
     <para>In the spatial plots of the standardised residuals,
-    <?oxy_insert_start author="testoni" timestamp="20151121T162607+1100"?>a
-    <?oxy_insert_end ?>few <?oxy_delete author="testoni" timestamp="20151121T162611+1100" content="pockets"?><?oxy_insert_start author="testoni" timestamp="20151121T162612+1100"?>cluster<?oxy_insert_end ?>
-    of notable under-estimation and over-estimation <?oxy_delete author="testoni" timestamp="20151121T162619+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151121T162619+1100"?>were<?oxy_insert_end ?>
-    detected. To overcome this problem, a bias correction <?oxy_delete author="testoni" timestamp="20151121T162625+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151121T162625+1100"?>was<?oxy_insert_end ?>
-    implemented, which attemp<?oxy_insert_start author="testoni" timestamp="20151121T162631+1100"?>ed<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T162631+1100" content="t"?>s
-    to provide estimates of <emphasis role="italic">M</emphasis> (for Humid
-    Coastal areas) (<?oxy_insert_start author="testoni" timestamp="20151121T162751+1100"?><xref
-    linkend="b3_ch3_e_yitfd"/><?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T162640+1100" content="Equation 1"?>)
-    and Q<subscript>10</subscript> (for arid<?oxy_insert_start author="testoni" timestamp="20151121T162922+1100"?>/semi-arid<?oxy_insert_end ?>
-    areas) (<?oxy_insert_start author="testoni" timestamp="20151121T162903+1100"?><xref
-    linkend="b3_ch3_e_6mwfc"/><?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T162845+1100" content="Equation 12"?>)
-    closer to the observed <emphasis role="italic">M</emphasis> or
-    Q<subscript>10</subscript> at the location of each of the 853 model gauged
-    catchments. This <?oxy_delete author="testoni" timestamp="20151121T162935+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151121T162935+1100"?>correction
-    was<?oxy_insert_end ?> based on <?oxy_delete author="testoni" timestamp="20151121T162946+1100" content="a"?><?oxy_insert_start author="testoni" timestamp="20151121T162946+1100"?>an
-    additive<?oxy_insert_end ?> bias correction factor <inlineequation>
+      <?oxy_insert_start author="testoni" timestamp="20151121T162607+1100"?>a <?oxy_insert_end?>few
+      <?oxy_delete author="testoni" timestamp="20151121T162611+1100" content="pockets"?><?oxy_insert_start author="testoni" timestamp="20151121T162612+1100"?>cluster<?oxy_insert_end?>
+      of notable under-estimation and over-estimation
+      <?oxy_delete author="testoni" timestamp="20151121T162619+1100" content="are"?><?oxy_insert_start author="testoni" timestamp="20151121T162619+1100"?>were<?oxy_insert_end?>
+      detected. To overcome this problem, a bias correction
+      <?oxy_delete author="testoni" timestamp="20151121T162625+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151121T162625+1100"?>was<?oxy_insert_end?>
+      implemented, which
+      attemp<?oxy_insert_start author="testoni" timestamp="20151121T162631+1100"?>ed<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T162631+1100" content="t"?>s
+      to provide estimates of <emphasis role="italic">M</emphasis> (for Humid Coastal areas)
+        (<?oxy_insert_start author="testoni" timestamp="20151121T162751+1100"?><xref
+        linkend="b3_ch3_e_yitfd"
+      /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T162640+1100" content="Equation 1"?>)
+      and Q<subscript>10</subscript> (for
+      arid<?oxy_insert_start author="testoni" timestamp="20151121T162922+1100"?>/semi-arid<?oxy_insert_end?>
+      areas) (<?oxy_insert_start author="testoni" timestamp="20151121T162903+1100"?><xref
+        linkend="b3_ch3_e_6mwfc"
+      /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T162845+1100" content="Equation 12"?>)
+      closer to the observed <emphasis role="italic">M</emphasis> or Q<subscript>10</subscript> at
+      the location of each of the 853 model gauged catchments. This
+      <?oxy_delete author="testoni" timestamp="20151121T162935+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151121T162935+1100"?>correction
+      was<?oxy_insert_end?> based on
+      <?oxy_delete author="testoni" timestamp="20151121T162946+1100" content="a"?><?oxy_insert_start author="testoni" timestamp="20151121T162946+1100"?>an
+      additive<?oxy_insert_end?> bias correction factor <inlineequation>
         <m:math display="inline">
           <m:mrow>
             <m:msub>
               <m:mi>M</m:mi>
-
               <m:mi>FFA</m:mi>
             </m:msub>
-
             <m:mo>-</m:mo>
-
             <m:msub>
               <m:mi>M</m:mi>
-
               <m:mi>RFFE</m:mi>
             </m:msub>
           </m:mrow>
         </m:math>
-      </inlineequation><?oxy_delete author="testoni" timestamp="20151121T162959+1100" content="(Q&lt;subscript&gt;obs_FFA/QRFFE_predicted&lt;/subscript&gt;"?><?oxy_insert_start author="testoni" timestamp="20151121T163007+1100"?><?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T163110+1100" content=")"?>,
-    <?oxy_insert_start author="testoni" timestamp="20151121T163113+1100"?>(<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T163124+1100" content="obtained at each of the 853 model gauged catchments"?><?oxy_insert_start author="testoni" timestamp="20151121T163124+1100"?>obtained
-    at each of the model 798 gauged catchments in the Humid Coastal
-    areas)<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T163143+1100" content="."?>
-    <?oxy_delete author="testoni" timestamp="20151121T163141+1100" content="A regional smooth bias correction factor is then derived applying a Natural Neighbor approach, which is embedded in the RFFE Model. In practice, for an ungauged location of interest, an interpolated bias correction factor is calculated by the software based on nearby 15 gauged catchments. It is found that this approach reduces the pockets of bias in the spatial plots of the standardised residuals and hence adopted in the RFFE Model 2015."?><?oxy_insert_start author="testoni" timestamp="20151121T163141+1100"?>and
-    <inlineequation>
+      </inlineequation><?oxy_delete author="testoni" timestamp="20151121T162959+1100" content="(Q&lt;subscript&gt;obs_FFA/QRFFE_predicted&lt;/subscript&gt;"?><?oxy_delete author="testoni" timestamp="20151121T163110+1100" content=")"?>,
+      <?oxy_insert_start author="testoni" timestamp="20151121T163113+1100"?>(<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T163124+1100" content="obtained at each of the 853 model gauged catchments"?><?oxy_insert_start author="testoni" timestamp="20151121T163124+1100"?>obtained
+      at each of the model 798 gauged catchments in the Humid Coastal areas)<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T163143+1100" content="."?>
+      <?oxy_delete author="testoni" timestamp="20151121T163141+1100" content="A regional smooth bias correction factor is then derived applying a Natural Neighbor approach, which is embedded in the RFFE Model. In practice, for an ungauged location of interest, an interpolated bias correction factor is calculated by the software based on nearby 15 gauged catchments. It is found that this approach reduces the pockets of bias in the spatial plots of the standardised residuals and hence adopted in the RFFE Model 2015."?><?oxy_insert_start author="testoni" timestamp="20151121T163141+1100"?>and <inlineequation>
         <m:math display="inline">
           <m:mfrac bevelled="true">
             <m:msub>
               <m:mi>Q</m:mi>
-
               <m:mrow>
                 <m:mi>10</m:mi>
-
                 <m:mo>,</m:mo>
-
                 <m:mi>FFA</m:mi>
               </m:mrow>
             </m:msub>
-
             <m:msub>
               <m:mi>Q</m:mi>
-
               <m:mrow>
                 <m:mi>10</m:mi>
-
                 <m:mo>,</m:mo>
-
                 <m:mi>RFFE</m:mi>
               </m:mrow>
             </m:msub>
           </m:mfrac>
         </m:math>
-      </inlineequation> (obtained at each of the model 55 catchments in
-    arid/semi-arid areas). In practice, for an ungauged location of interest,
-    an interpolated bias correction factor is calculated by the software using
-    Natural Neighbor approach based on nearby 15 gauged catchments. It was
-    found that this approach reduced the clusters of bias in the spatial plots
-    of the standardised residuals and hence was adopted in the RFFE Model
-    2015. <?oxy_insert_end ?></para>
+      </inlineequation> (obtained at each of the model 55 catchments in arid/semi-arid areas). In
+      practice, for an ungauged location of interest, an interpolated bias correction factor is
+      calculated by the software using Natural Neighbour approach based on nearby 15 gauged
+      catchments. It was found that this approach reduced the clusters of bias in the spatial plots
+      of the standardised residuals and hence was adopted in the RFFE Model 2015.
+      <?oxy_insert_end?></para>
 
     <para><table xml:id="b3_ch3_t_0hp5h">
         <title>Upper bound on (absolute) median relative error (RE) from
@@ -2783,274 +2764,196 @@
     <title>Progressive Improvement of RFFE Model 2015 v1</title>
 
     <para>It is expected that the RFFE Model 2015 v1 will be updated in
-    <?oxy_delete author="testoni" timestamp="20151121T162320+1100" content="near "?>future
-    when the streamflow record lengths at the selected 853 gauged catchments
-    increase significantly and/or when additional catchments are available
-    that satisfy the criteria of catchment selection (<xref
-    linkend="b3_ch3_s_wfiku"/>). Furthermore, additional predictor variables
-    can potentially be included in the RFFE Model to enhance model accuracy,
-    in particular if GIS based techniques can be adopted to extract the
-    additional predictor variables such as stream density and main stream
-    slope.</para>
+      <?oxy_delete author="testoni" timestamp="20151121T162320+1100" content="near "?>future when
+      the streamflow record lengths at the selected 853 gauged catchments increase significantly
+      and/or when additional catchments are available that satisfy the criteria of catchment
+      selection (<xref linkend="b3_ch3_s_wfiku"/>). Furthermore, additional predictor variables can
+      potentially be included in the RFFE Model to enhance model accuracy, in particular if GIS
+      based techniques can be adopted to
+      <?oxy_insert_start author="testoni" timestamp="20151124T095936+1100"?>more readily
+      <?oxy_insert_end?>extract the additional predictor variables such as stream density and main
+      stream slope.</para>
   </section>
 
   <section xml:id="b3_ch3_s_8airu">
-    <title>Practical Considerations for Application of the RFFE
-    Technique</title>
-
+    <title>Practical Considerations for Application of the RFFE Technique</title>
     <?oxy_insert_start author="testoni" timestamp="20151121T162123+1100"?>
-
-    <para>The basis of the RFFE Model 2015 has been the analysis of all
-    available stream gauging stations that meet the selection criteria
-    described in this chapter, primarily that the stream gauge has an adequate
-    length of record and the streamflow data are of “reasonable” quality on
-    relatively natural catchments. Most selected stream gauges have a
-    catchment area less than 1,000 km2. The RFFE Model parameters were then
-    developed based on regionalisation of the at-site flood quantiles for all
-    of these gauges from a given region. All available and suitable streamflow
-    data for all of Australia were adopted to develop the RFFE Model. While
-    the RFFE Model is appropriate for catchment types represented by the
-    gauged catchments used to develop this model, there are catchments where
-    the method either cannot be applied or where there may be gross error in
-    the flood quantile estimates. These are described below.</para>
-
+    <para>The basis of the RFFE Model 2015 has been the analysis of all available stream gauging
+      stations that meet the selection criteria described in this chapter, primarily that the stream
+      gauge has an adequate length of record and the streamflow data are of “reasonable” quality and
+      relate to relatively natural catchments. Most selected stream gauges have a catchment area
+      less than 1,000 km2. The RFFE Model parameters were then developed based on regionalisation of
+      the at-site flood quantiles for all of these gauges from a given region. All available and
+      suitable streamflow data for all of Australia were adopted to develop the RFFE Model. While
+      the RFFE Model is appropriate for catchment types represented by the gauged catchments used to
+      develop this model, there are catchments where the method either cannot be applied or where
+      there may be gross error in the flood quantile estimates if the RFFE Model were applied
+      without adjustments. These catchment types are described below.</para>
     <para><emphasis role="bold"><emphasis role="italic">Urban
-    catchments</emphasis></emphasis></para>
-
-    <para>One of the criteria for catchment selection in the development of
-    the RFFE Model was that there should be essentially no urbanisation in the
-    catchment, or at least such a small proportion that does not affect flood
-    generation. It is well known that flooding is affected, sometimes
-    significantly by urbanisation. There are insufficient gauged urban
-    catchments to allow development of a RFFE model for urban
-    catchments.</para>
-
-    <para>Therefore, the RFFE Model 2015 cannot be applied for any catchment
-    where urbanisation accounts for more than 10% of the catchment, or where
-    it is considered that there may be an impact of urbanisation on rainfall
-    runoff relationship. In these cases an alternative approach for estimating
-    design flood is needed as there is no equivalent regional method to the
-    rural RFFE Model is available.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchments containing
-    dams and other artificial storage</emphasis></emphasis></para>
-
-    <para>Dams or other artificial water storages attenuate flood hydrographs
-    and therefore reduce the flood peak discharges at the catchment outlet.
-    The catchments with dams that were regarded as sufficiently significant to
-    have an impact on flood discharges were not included in the database used
-    in the development of the RFFE Model. Hence, for a catchment having a dam,
-    the RFFE Model cannot be applied directly. In this case, the RFFE Model
-    can be used to calculate design flood discharges for the “natural”
-    catchment condition and then the effects of the dam should be included by
-    an appropriate technique such as the application of a runoff-routing model
-    where the storage effects can be modelled directly.</para>
-
+      catchments</emphasis></emphasis></para>
+    <para>One of the criteria for catchment selection in the development of the RFFE Model was that
+      there should be essentially no urbanisation in the catchment, or at least such a small
+      proportion that it does not affect flood generation. It is well known that flooding is
+      affected, sometimes significantly by urbanisation. There are insufficient gauged urban
+      catchments to allow development of a RFFE model for urban catchments.</para>
+    <para>Therefore, the RFFE Model 2015 cannot be applied for any catchment where urbanisation
+      accounts for more than 10% of the catchment area, or where it is considered that there may be
+      an impact of urbanisation on rainfall runoff relationship. In these cases an alternative
+      approach for estimating design floods is needed, as no equivalent regional method to the rural
+      RFFE Model is available.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchments containing dams and other
+          artificial storage</emphasis></emphasis></para>
+    <para>Dams or other artificial water storages attenuate flood hydrographs and therefore reduce
+      the flood peak discharges at the catchment outlet. The catchments with dams that were regarded
+      as sufficiently significant to have an impact on flood discharges were not included in the
+      database used in the development of the RFFE Model. Hence, for a catchment having a dam of
+      significant size, the RFFE Model cannot be applied directly. In this case, the RFFE Model can
+      be used to calculate design flood discharges for the “natural” catchment condition and then
+      the effects of the dam should be included by an appropriate technique such as the application
+      of a runoff-routing model where the storage effects can be modelled directly.</para>
     <para><emphasis role="bold"><emphasis role="italic">Catchments affected by
-    mining</emphasis></emphasis></para>
-
-    <para>Catchments where mining activity affected a significant proportion
-    of the catchment were not included in the database used in the development
-    of the RFFE Model. Catchments where mining activities are significant may
-    produce lower flood peak discharges than the natural condition. The
-    smaller peak discharges result from the water management processes
-    implemented in the mining operation where runoff is controlled and managed
-    in water quality ponds, tailings dams and other water management
-    infrastructure and the mine pit itself. In addition, runoff from mining
-    areas including waste dumps and rehabilitated areas are quite distinct
-    from natural catchment state.</para>
-
-    <para>In cases where mining is judged to impact a significant proportion
-    of a catchment, the RFFE Model can only be applied on the natural portions
-    of the catchment. The area affected by mining activities should be
-    modelled by an alternative method. Assessment of the water balance
-    affecting the volume of runoff is needed to ensure that the effects of
-    water control in ponds and mine pits and infiltration in highly modified
-    catchments is represented correctly. The catchment response is also
-    affected by drainage works and diversions. Calculation of runoff from
-    mining areas is a complex and specialised exercise and detailed
-    understanding of individual conditions is warranted. In general, a
-    detailed runoff-routing model is needed as well as a good understanding of
-    the water balance in these situations. However, direct calibration of
-    runoff routing models on ungauged catchments is not possible, which may
-    result in grossly inaccurate design flood estimates.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchments with
-    intensive agricultural activity</emphasis></emphasis></para>
-
-    <para>While most of the catchments used in development of the RFFE Model
-    have been located in agricultural regions, few are in areas of intensive
-    agriculture, where the flood response may have been affected by farm dams,
-    soil conservation works and irrigation infrastructure. Many intensive
-    agricultural catchments have a topography that is artificial and quite
-    different from the natural catchment condition. The objective of works on
-    agricultural land is often to slow the rate of runoff and increase
-    infiltration to the soil profile, thus the flood peak discharges is often
-    reduced on these catchment types as compared to the natural catchments.
-    Catchments affected by intense agricultural activities are similar to
-    those affected by mining. In this case, the RFFE Model cannot be applied
-    directly, and hence additional analysis is needed to assess the catchment
-    characteristics and then develop a runoff-routing model to adjust the
-    generic RFFE Model results using the catchment storage and channel
-    characteristics. However, direct calibration of runoff routing models on
-    ungauged catchments is not possible, which may result in grossly
-    inaccurate design flood estimates.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchment
-    size</emphasis></emphasis></para>
-
-    <para>The RFFE Model has been developed using all suitable gauged
-    catchments throughout Australia with catchment areas generally less than
-    1,000 km2. The RFFE Model can be applied to small catchments with no lower
-    limit though it is recognised that there are only a few gauged catchments
-    smaller than 10 km2 included in the database to develop the RFFE Model.
-    Because of the limited available data, it is likely that there will be a
-    greater degree of error in the quantile estimates for these smaller
-    catchments. The RFFE Model should not be applied for catchments larger
-    than 1,000 km2 because these larger catchments were not generally used in
-    the development of the method.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchment
-    shape</emphasis></emphasis></para>
-
-    <para>The distribution of the shape factors of the selected catchments in
-    developing the RFFE Model is shown in Table 2. An ungauged catchment with
-    shape factor beyond 10%-90% limit as shown in Table 2 will have lower
-    accuracy in the estimated flood quantiles.</para>
-
+        mining</emphasis></emphasis></para>
+    <para>Catchments where mining activity has affected a significant proportion of the catchment
+      were not included in the database used in the development of the RFFE Model. Catchments where
+      mining activities are significant may produce lower flood peak discharges than the natural
+      condition. The smaller peak discharges result from the water management processes implemented
+      in the mining operation where runoff is controlled and managed in water quality ponds,
+      tailings dams and other water management infrastructure and the mine pit itself. In addition,
+      runoff from mining areas including waste dumps and rehabilitated areas is quite distinct from
+      catchments in their natural state.</para>
+    <para>In cases where mining is judged to impact a significant proportion of a catchment, the
+      RFFE Model can only be applied on the natural portions of the catchment. The area affected by
+      mining activities should be modelled by an alternative method. Assessment of the water balance
+      affecting the volume of runoff is needed to ensure that the effects of water control in ponds
+      and mine pits and infiltration in highly modified catchments is represented correctly. The
+      catchment response is also affected by drainage works and diversions. Calculation of runoff
+      from mining areas is a complex and specialised exercise and detailed understanding of
+      individual conditions is necessary. In general, a detailed runoff-routing model is needed as
+      well as a good understanding of the water balance in these situations. However, direct
+      calibration of runoff routing models on ungauged catchments is not possible, which may result
+      in grossly inaccurate design flood estimates.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchments with intensive agricultural
+          activity</emphasis></emphasis></para>
+    <para>While most of the catchments used in development of the RFFE Model have been located in
+      agricultural regions, few are in areas of intensive agriculture, where the flood response may
+      have been affected by farm dams, soil conservation works and irrigation infrastructure. Many
+      intensive agricultural catchments have a topography that is artificial and quite different
+      from the natural catchment condition. The objective of works on agricultural land is often to
+      slow the rate of runoff and increase infiltration to the soil profile, thus the flood peak
+      discharges is often reduced on these catchment types as compared to the natural catchments.
+      Catchments affected by intense agricultural activities are similar to those affected by
+      mining. In this case, the RFFE Model cannot be applied directly, and hence additional analysis
+      is needed to assess the catchment characteristics and then develop a runoff-routing model to
+      adjust the generic RFFE Model results using the catchment storage and channel characteristics.
+      However, direct calibration of runoff routing models on ungauged catchments is not possible,
+      which may result in grossly inaccurate design flood estimates.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchment size</emphasis></emphasis></para>
+    <para>The RFFE Model has been developed using all suitable gauged catchments throughout
+      Australia with catchment areas generally less than 1,000 km2. The RFFE Model can be applied to
+      small catchments with no lower limit though it is recognised that there are only a few gauged
+      catchments smaller than 10 km2 included in the database to develop the RFFE Model. Because of
+      the limited available data, it is likely that there will be a greater degree of error in the
+      quantile estimates for these smaller catchments. The RFFE Model should not be applied for
+      catchments larger than 1,000 km2 because these larger catchments were not generally used in
+      the development of the method.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchment shape</emphasis></emphasis></para>
+    <para>The distribution of the shape factors of the selected catchments in developing the RFFE
+      Model is shown in Table 2. An ungauged catchment with shape factor beyond 10%-90% limit as
+      shown in Table 2 will have lower accuracy in the estimated flood quantiles.</para>
     <para><emphasis role="bold"><emphasis role="italic">Atypical catchment
-    types</emphasis></emphasis></para>
-
-    <para>The catchment characteristics adopted in the RFFE Model were limited
-    to readily available/easily obtainable catchment variables. It is known
-    that there are many other catchment characteristics that influence
-    catchment response and flood discharges. These include factors such
-    as:</para>
-
+        types</emphasis></emphasis></para>
+    <para>The catchment characteristics adopted in the RFFE Model were limited to readily
+      available/easily obtainable catchment variables. It is known that there are many other
+      catchment characteristics that influence catchment response and flood discharges. These
+      include factors such as:</para>
     <itemizedlist>
       <listitem>
-        <para>Catchment land use including vegetation coverage: The extent of
-        clearing or forest cover can have a significant impact, especially in
-        the south-west of Western Australia, for example.</para>
+        <para>Catchment land use including vegetation coverage: The extent of clearing or forest
+          cover can have a significant impact, especially in the south-west of Western Australia,
+          for example.</para>
       </listitem>
-
       <listitem>
-        <para>Soils and geology: These factors influence the rainfall losses
-        and catchment flood response.</para>
+        <para>Soils and geology: These factors influence the rainfall losses and catchment flood
+          response.</para>
       </listitem>
-
       <listitem>
-        <para>Slopes: Steeper catchments respond more rapidly and therefore
-        produce larger flood peaks.</para>
+        <para>Slopes: Steeper catchments respond more rapidly and therefore produce larger flood
+          peaks.</para>
       </listitem>
-
       <listitem>
-        <para>Channel types and floodplain storage: Well defined channels and
-        smaller floodplain storage extents produce faster response and
-        therefore larger flood peaks.</para>
+        <para>Channel types and floodplain storage: Well defined channels and smaller floodplain
+          storage extents produce faster response and therefore larger flood peaks.</para>
       </listitem>
     </itemizedlist>
-
-    <para>In cases where the catchment requiring the design flood estimate is
-    judged to have characteristics significantly different from those used in
-    the development of the RFFE Model, further hydrology and hydraulic
-    analyses may be needed to refine the results from the generic RFFE Model
-    results.</para>
-
+    <para>In cases where the catchment requiring the design flood estimate is judged to have
+      characteristics significantly different from those used in the development of the RFFE Model,
+      further hydrology and hydraulic analyses may be needed to refine the results from the generic
+      RFFE Model results.</para>
     <para><emphasis role="bold"><emphasis role="italic">Catchment
-    location</emphasis></emphasis></para>
-
-    <para>Considering the large size of Australia and the relatively small
-    number of gauged catchments used for the development of the RFFE Model,
-    the density of the gauged catchments used in developing the model is quite
-    low. In addition, it must be recognised that there are error in the
-    streamflow data (e.g. rating curve extrapolation error) used to develop
-    the RFFE Model. This means that catchments where design flood discharges
-    are needed may be remote from the gauged catchments used to develop the
-    RFFE Model and may have distinct differences from the adopted gauged
-    catchments. In these cases, the application of the RFFE Model may produce
-    grossly inaccurate results and hence additional review and checking are
-    necessary to confirm that the catchment being analysed has similar
-    characteristics to those used to develop the RFFE Model. Where there are
-    significant differences, a similar assessment to that needed for atypical
-    catchments should be considered, and an adjustment to the generic RFFE
-    Model result may be needed.</para>
-
+      location</emphasis></emphasis></para>
+    <para>Considering the large size of Australia and the relatively small number of gauged
+      catchments used for the development of the RFFE Model, the density of the gauged catchments
+      used in developing the model is quite low. In addition, it must be recognised that there are
+      errors in the streamflow data (e.g. rating curve extrapolation error) used to develop the RFFE
+      Model. This means that catchments where design flood discharges are needed may be remote from
+      the gauged catchments used to develop the RFFE Model and may have distinct differences from
+      the adopted gauged catchments. In these cases, the application of the RFFE Model may produce
+      grossly inaccurate results and hence additional review and checking are necessary to confirm
+      that the catchment being analysed has similar characteristics to those used to develop the
+      RFFE Model. Where there are significant differences, a similar assessment to that needed for
+      atypical catchments should be considered, and an adjustment to the generic RFFE Model result
+      may be needed.</para>
     <para><emphasis role="bold"><emphasis role="italic">Arid/semi-arid
-    areas</emphasis></emphasis></para>
-
-    <para>The arid/semi-arid areas of Australia pose a particular problem. The
-    RFFE Model divides these areas into two regions (1) Pilbara and (2) Arid
-    and semi-arid. There are few gauged catchments in these regions. Only 55
-    gauged catchments in total from an area of about 5 million km2 were
-    included in the database to develop the RFFE Model for these two
-    regions.</para>
-
-    <para>The stream gauges located in these areas are often located in sites
-    that may not be ideal, since the gauge sites are selected because of
-    access, confined channel and stable control, which may not be typical of
-    the types of sites where design flood discharges are needed in these
-    areas.</para>
-
-    <para>The Pilbara region, however, is not as diverse a region as the other
-    arid and semi-arid region, which covers a very wide range of
-    conditions.</para>
-
-    <para>The RFFE Model estimates are likely to be associated with a higher
-    level of error for arid/semi-arid areas. Because of this, the
-    arid/semi-arid areas may require some additional analysis to refine the
-    generic RFFE Model results. The RFFE Model data base report (Rahman et
-    al., 2015a) has a listing of all of the catchments that were used in the
-    development of the RFFE Model and the application of the RFFE software
-    provides a map of the neighbouring catchments that were used in the
-    development of the RFFE Model.</para>
-
-    <para>The application of the RFFE Model in arid/semi-arid areas therefore
-    may involve the following steps.</para>
-
+      areas</emphasis></emphasis></para>
+    <para>The arid/semi-arid areas of Australia pose a particular problem. The RFFE Model divides
+      these areas into two regions (1) Pilbara and (2) Arid and semi-arid. There are few gauged
+      catchments in these regions. Only 55 gauged catchments in total from an area of about 5
+      million km2 were included in the database to develop the RFFE Model for these two
+      regions.</para>
+    <para>The stream gauges located in these areas are often located in sites that may not be ideal,
+      since the gauge sites are selected because of access, confined channel and stable control,
+      which may not be typical of the types of sites where design flood discharges are needed in
+      these areas.</para>
+    <para>The Pilbara region, however, is not as diverse a region as the other arid and semi-arid
+      region, which covers a very wide range of conditions.</para>
+    <para>The RFFE Model estimates are likely to be associated with a higher level of error for
+      arid/semi-arid areas. Because of this, the arid/semi-arid areas may require some additional
+      analysis to refine the generic RFFE Model results. The RFFE Model data base report (Rahman et
+      al., 2015a) has a listing of all of the catchments that were used in the development of the
+      RFFE Model and the application of the RFFE software provides a map of the neighbouring
+      catchments that were used in the development of the RFFE Model.</para>
+    <para>The application of the RFFE Model in arid/semi-arid areas therefore may involve the
+      following steps.</para>
     <itemizedlist>
       <listitem>
-        <para>Calculate the design flood discharges using the RFFE Model and
-        produce the table of design flood discharges for the target
-        catchment.</para>
+        <para>Calculate the design flood discharges using the RFFE Model and produce the table of
+          design flood discharges for the target catchment.</para>
       </listitem>
-
       <listitem>
-        <para>Review the catchment characteristics of the target catchment.
-        This should include the location, slopes, geology, land use and
-        vegetation.</para>
+        <para>Review the catchment characteristics of the target catchment. This should include the
+          location, slopes, geology, land use and vegetation.</para>
       </listitem>
-
       <listitem>
-        <para>Review the neighbouring gauged catchments (identified on the map
-        produced by the RFFE Model and in the RFFE model output of the list of
-        nearby gauged catchments) taking into account similarity or
-        dissimilarity of catchment characteristics.</para>
+        <para>Review the neighbouring gauged catchments (identified on the map produced by the RFFE
+          Model and in the RFFE model output of the list of nearby gauged catchments) taking into
+          account similarity or dissimilarity of catchment characteristics.</para>
       </listitem>
-
       <listitem>
-        <para>Compare the catchment characteristics of the target catchment as
-        well as the gauged catchments, in conjunction with results from
-        alternative methods (if available), and determine an appropriate
-        adjustment to the generic RFFE Model results.</para>
+        <para>Compare the catchment characteristics of the target catchment as well as the gauged
+          catchments, in conjunction with results from alternative methods (if available), and
+          determine an appropriate adjustment to the generic RFFE Model results.</para>
       </listitem>
     </itemizedlist>
-
-    <para><emphasis role="bold"><emphasis
-    role="italic">Baseflow</emphasis></emphasis></para>
-
-    <para>The RFFE Model has been developed using at-site flood frequency
-    analysis results, so the peak discharges calculated using the RFFE Model
-    include baseflow. This means that the flood quantiles from the RFFE Model
-    are not consistent with those from runoff-routing models where only
-    surface runoff is estimated. While baseflow is only a minor part of the
-    total flood hydrograph in most Australian catchments, there are some areas
-    where baseflow is more significant and, in particular, it becomes more
-    important when considering smaller floods. When working with the two
-    methods, the issue of baseflow should be addressed in the consideration of
-    the total flood peak discharge and estimated hydrograph.</para>
-
-    <?oxy_insert_end ?>
+    <para><emphasis role="bold"><emphasis role="italic">Baseflow</emphasis></emphasis></para>
+    <para>The RFFE Model has been developed using at-site flood frequency analysis results, so the
+      peak discharges calculated using the RFFE Model include baseflow. This means that the flood
+      quantiles from the RFFE Model are not directly comparable with those from runoff-routing
+      models where only surface runoff is estimated. While baseflow is only a minor part of the
+      total flood hydrograph in most Australian catchments, there are some areas where baseflow is
+      more significant and, in particular, it becomes more important when considering smaller
+      floods. When working with the two methods, the issue of baseflow should be addressed in the
+      consideration of the total flood peak discharge and estimated hydrograph.</para>
+    <?oxy_insert_end?>
   </section>
 
   <section xml:id="b3_ch3_s_8u3cs">
