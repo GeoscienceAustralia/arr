@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" xml:id="b6_ch4"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" xml:id="b6_ch4">
   <info>
     <title>Numerical Models</title>
 
@@ -26,7 +19,7 @@
 
   <para/>
 
-  <section>
+  <section xml:id="b6_ch4_s_glgcz">
     <title>Introduction</title>
     <para>Up to now the main focus of this document has been on hydrology, hydrologic modelling and
       the determination of discharge characteristics of flood flows. By comparison, the main aim of
@@ -106,7 +99,7 @@
       provided on the application of 2D models for describing flood flows.</para>
   </section>
 
-  <section>
+  <section xml:id="b6_ch4_s_nlbnu">
     <title>Development Stages for Numerical Hydraulic Models</title>
     <para>The aim of a numerical hydraulic model is to provide a discrete numerical representation of
       flood flows in what is a physically continuous river and floodplain system. In this respect,
@@ -138,7 +131,7 @@
       1.</para>
 
          
-    <figure>
+    <figure xml:id="b6_ch4_f_rhvyx">
       <title>Stages in Numerical Hydraulic Model Conceptualisation and
         Development</title>
       <mediaobject>
@@ -148,7 +141,7 @@
       </mediaobject>
     </figure>
     
-    <section>
+    <section xml:id="b6_ch4_s_616o1">
       <title>Review of the Physical System</title>
       <para>It is essential to have a broad understanding of the hydraulic behaviour of the physical
         system to be modelled in order to select the most appropriate mathematical model or models
@@ -163,7 +156,7 @@
         the extent and composition of vegetation can all affect the conceptualisation and selections
         made in following steps. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_bzvir">
       <title>Selection of the Mathematical Model(s)</title>
       <para>Selection of the mathematical model (or models) to be used to describe the physical
         system is the most important decision to be made in this four step process. In this step,
@@ -184,7 +177,7 @@
         It is important that the modeller has an understanding of the limitations of the selected
         mathematical modelling approach.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_ggcnd">
       <title>Selection of the Numerical Model</title>
       <para>In going from the mathematical model to the numerical model, continuous mathematical
         equations have to be approximated by discrete arithmetic equations that can be solved by a
@@ -207,7 +200,7 @@
         generic numerical model may have for simulating the flow conditions in any particular
         application.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_b84g4">
       <title>Development of the Site-Specific Model</title>
       <para>The Site-Specific model is developed from the generic Numerical Model (software package)
         through:</para>
@@ -233,13 +226,13 @@
     </section>
   </section>
 
-  <section>
+  <section xml:id="b6_ch4_s_z28wo">
     <title>Model Reliability </title>
     <para>Assuming that the most appropriate mathematical model has been selected to describe a
       particular physical system, there are two main steps for determining the accuracy and
       reliability of the model results. These are model verification and model calibration and
       validation. These are described briefly below.</para>
-    <section>
+    <section xml:id="b6_ch4_s_0pvob">
       <title>Model Verification </title>
       <para>Model verification is the process whereby checks are made to ensure that the generic
         numerical model (i.e., the modelling software package) is actually solving the equations of
@@ -270,7 +263,7 @@
         physical model results, or more appropriate (e.g., 3D or CFD) model results to obtain an
         estimate of the likely magnitude of the errors involved.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_969ud">
       <title>Model Calibration and Validation</title>
       <para>Model calibration and validation provides an overall check of the reliability of a
         model. That is, how well the final site-specific model is representing the flow conditions
@@ -299,7 +292,7 @@
     </section>
   </section>
 
-  <section>
+  <section xml:id="b6_ch4_s_fjf74">
     <title>Steady vs Unsteady Hydraulic Models </title>
     <para>Numerical hydraulic models can be described as being either steady flow models, where the
       depth of flow remains constant with time, or unsteady flow models, where the depth of flow can
@@ -319,7 +312,7 @@
       This is because there is less reliance on specialised steady flow models and, where required,
       much of the steady flow modelling is carried out by unsteady flow models using steady flow
       boundary conditions. </para>
-    <section>
+    <section xml:id="b6_ch4_s_zob23">
       <title>Steady Flow Models</title>
         <para>In steady flow modelling, the flow velocity <emphasis role="italic">u</emphasis> and/or
         discharge <emphasis role="italic">Q </emphasis>can be assumed to be locally constant and
@@ -374,12 +367,10 @@
       <para><emphasis role="bold"><emphasis role="italic">The Manning’s
           Equation</emphasis></emphasis></para>
       <para>The Manning’s equation for uniform flow, as described in Section x.x, can be considered
-        as the simplest form of steady flow model. Here the average velocity <emphasis role="italic"
-          >u</emphasis> across a cross-section can be related to a Manning roughness coefficient
-          <emphasis role="italic">n</emphasis>, the hydraulic radius <emphasis role="italic"
-          >Rh</emphasis>, and the bed slope <emphasis role="italic">S</emphasis>: </para>
-      <equation>
-        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        as the simplest form of steady flow model. Here the average velocity <emphasis role="italic">u</emphasis> across a cross-section can be related to a Manning roughness coefficient
+          <emphasis role="italic">n</emphasis>, the hydraulic radius <emphasis role="italic">Rh</emphasis>, and the bed slope <emphasis role="italic">S</emphasis>: </para>
+      <equation xml:id="b6_ch4_e_jy3n7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <semantics>
             <mrow>
               <mi>u</mi>
@@ -413,8 +404,8 @@
       </equation>
       <para>For a wide open floodplain, the hydraulic radius can, to a first approximation, be
         replaced by the flow depth y:</para>
-      <equation>
-        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <equation xml:id="b6_ch4_e_4gli6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <semantics>
             <mrow>
               <mi>u</mi>
@@ -448,11 +439,10 @@
       <para>These equations can be used by modellers as a sanity check to ensure that their models
         are providing results with flow velocities of the correct order of magnitude. For example, a
         relatively smooth floodplain with<emphasis role="italic"> n</emphasis> = 0.04, a moderate
-        slope of <emphasis role="italic">S</emphasis> = 0.001, and a depth of <emphasis
-          role="italic">y</emphasis> = 1.0m would be expected to have a flow velocity of
+        slope of <emphasis role="italic">S</emphasis> = 0.001, and a depth of <emphasis role="italic">y</emphasis> = 1.0m would be expected to have a flow velocity of
         approximately <emphasis role="italic">u</emphasis> = 0.8 m/s.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_o3nvf">
       <title>Unsteady Flow Models</title>
       <para>Unsteady flow models are not restricted by the steady flow assumption, and can be
         applied to a much wider range of flow conditions. Referring to the limitations of steady
@@ -481,7 +471,7 @@
         water level will not correspond to the peak discharge. As a result, unsteady models should
         be used to simulate these effects.</para>
      
-      <figure>
+      <figure xml:id="b6_ch4_f_aj4n6">
         <title>Storage Effects on the Rating Curve; (a) Flood Hydrograph, 
           (b) Corresponding Rating Curve (from Cunge et al, 1980)
         </title>
@@ -502,7 +492,7 @@
         these effects.</para>
     </section>
   </section>
-  <section>
+  <section xml:id="b6_ch4_s_onrm9">
     <title>Types of Unsteady Flow Models</title>
     <para>With the exception of the steady 1D form of HEC-RAS most models currently in use have
       unsteady modelling capability. In order of increasing level of sophistication, the main types
@@ -526,7 +516,7 @@
     </itemizedlist>
     <para>These are described briefly below. More details on the use of 1D, 2D and coupled 1D/2D
       models in flood modelling applications are then provided in the following sections.</para>
-    <section>
+    <section xml:id="b6_ch4_s_9whk5">
       <title>1D Models</title>
       <para>1D flow models are based on the numerical solution of the Saint Venant equations for
         describing gradually varying unsteady flow in one horizontal dimension (as derived in
@@ -547,7 +537,7 @@
         impractical. 1D models have also been integrated with 2D models in order to make the most of
         the relative advantages of both types of model. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_7f3fa">
       <title>2D Models</title>
       <para>2D flow models are based on the numerical solution of the depth-averaged equations
         describing the conservation of mass and momentum in two horizontal dimensions (as derived in
@@ -567,7 +557,7 @@
         processing units (GPUs) has significantly enhanced the computational capability of 2D
         models. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_i9sft">
       <title>Coupled 1D/2D Models</title>
       <para>Coupled 1D/2D models are aimed at making the most of the best features of both 1D and 2D
         models. Depending upon the particular software package being used the coupling can occur in
@@ -581,7 +571,7 @@
         providing a more detailed description of the flooding associated with urban stormwater
         flows.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_8vyjc">
       <title>3D Models</title>
       <para>3D flow models are based on the numerical solution of the Reynolds-averaged
         Navier-Stokes equations describing the conservation of mass and momentum in three-dimensions
@@ -609,7 +599,7 @@
         cases where three-dimensional effects become important in determining localized flood
         effects. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_dz544">
       <title>1D, 2D and 3D Model Limitations</title>
       <para>The 1D, 2D and 3D models that have been discussed so far generally assume that the
         pressure distribution in the flow to be modelled is hydrostatic. This assumption is
@@ -628,7 +618,7 @@
         and in the transition zones between super-critical and sub-critical flow (and, in
         particular, in the location and size of any resulting hydraulic jumps).</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_ex0mg">
       <title>CFD and other Non-Hydrostatic Models</title>
       <para>In cases where it becomes important to describe the details of non-hydrostatic flow
         and/or of super-critical flow, it will become necessary to use more sophisticated numerical
@@ -670,7 +660,7 @@
         required.</para>
     </section>
   </section>
-  <section>
+  <section xml:id="b6_ch4_s_utkoe">
     <title>1D Unsteady Hydraulic Models</title>
     <para>Commercially available 1D unsteady hydraulic models typically solve the full
       one-dimensional unsteady Saint Venant equations. They can be applied to branched and looped
@@ -695,15 +685,14 @@
           the equations of motion to improve computational speed, where appropriate</para>
       </listitem>
     </itemizedlist>
-    <section>
+    <section xml:id="b6_ch4_s_2waan">
       <title>1D Equations of Motion</title>
       <para>The main properties of one-dimensional flow along a channel can be uniquely defined by
         two dependent variables, the water level or stage <emphasis role="italic">h, </emphasis>and
         the averaged discharge <emphasis role="italic">Q</emphasis>, as shown in Figure 1.6.1. These
         can be described as a function of the two main independent variables: the chainage or
-        distance along the channel <emphasis role="italic">x</emphasis>, and the time <emphasis
-          role="italic">t</emphasis></para>
-<figure>
+        distance along the channel <emphasis role="italic">x</emphasis>, and the time <emphasis role="italic">t</emphasis></para>
+<figure xml:id="b6_ch4_f_061yb">
   <title>The main dependent variables for the 1D model equations</title>
   <mediaobject>
     <imageobject>
@@ -713,8 +702,7 @@
 </figure>
       <para>With two dependent variables it is necessary to have two equations to describe the flow
         in term of <emphasis role="italic">h</emphasis> and <emphasis role="italic">Q</emphasis> at
-        any given point in <emphasis role="italic">x</emphasis> and <emphasis role="italic"
-          >t</emphasis>. The equations used are the Saint Venant equations. These equations describe
+        any given point in <emphasis role="italic">x</emphasis> and <emphasis role="italic">t</emphasis>. The equations used are the Saint Venant equations. These equations describe
         the cross-sectionally averaged conservation of mass and conservation of momentum. The
         momentum equation is used in unsteady flow models in preference to the energy equation that
         is used in steady flow models. This is because momentum is a vector and introduces
@@ -726,26 +714,26 @@
         Equation:</emphasis></emphasis></para>
       <para>The one-dimensional unsteady continuity equation as derived in Section X.X can be given
         as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_u1two"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>A</mi></mrow>
+                <mo>∂</mo><mi>A</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>V</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>A</mi></mrow>
+                <mo>∂</mo><mi>A</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>A</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>V</mi></mrow>
+                <mo>∂</mo><mi>V</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><mn>0</mn></mrow>
          
@@ -754,20 +742,20 @@
       </equation>
       <para>By combining the two spatial derivatives, the conservation law form of the
         cross-sectionally averaged mass equation can be given as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_97moi"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>A</mi></mrow>
+                <mo>∂</mo><mi>A</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+                <mo>∂</mo><mi>Q</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><mn>0</mn></mrow>
          
@@ -776,10 +764,9 @@
       </equation>
       <para>For modelling applications, this equation is transformed into terms of the required
         water level <emphasis role="italic">h</emphasis> through the introduction of a storage width
-          <emphasis role="italic">bst</emphasis> and, when a lateral inflow of <emphasis
-          role="italic">ql</emphasis> per unit length of channel is included, the mass equation
+          <emphasis role="italic">bst</emphasis> and, when a lateral inflow of <emphasis role="italic">ql</emphasis> per unit length of channel is included, the mass equation
         becomes:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_z4mio"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <msub>
@@ -789,15 +776,15 @@
             </msub>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>h</mi></mrow>
+                <mo>∂</mo><mi>h</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+                <mo>∂</mo><mi>Q</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><msub>
               <mi>q</mi>
@@ -813,19 +800,19 @@
         Equation:</emphasis></emphasis></para>
       <para>In a similar form, the equation describing the one-dimensional cross-sectionally
         averaged conservation of momentum can be given as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_uv8i4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+                <mo>∂</mo><mi>Q</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
-            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-              <mo>&#x2202;</mo>
+            <mo>+</mo><mi>β</mi><mfrac>
+              <mo>∂</mo>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mrow><mo>(</mo>
               <mrow>
@@ -843,9 +830,9 @@
                 <mrow>
                   <mfrac>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>h</mi></mrow>
+                      <mo>∂</mo><mi>h</mi></mrow>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                      <mo>∂</mo><mi>x</mi></mrow>
                   </mfrac>
                   <mo>+</mo><msub>
                     <mi>S</mi>
@@ -865,27 +852,25 @@
         </semantics>
       </math>
       </equation>
-      <para>Where: <emphasis role="italic">A</emphasis> is the cross-sectional area, <emphasis
-          role="italic">g</emphasis> is the gravitational constant, <emphasis role="italic"
-          >Sf</emphasis> is the friction slope, <emphasis role="italic">β</emphasis> is the momentum
+      <para>Where: <emphasis role="italic">A</emphasis> is the cross-sectional area, <emphasis role="italic">g</emphasis> is the gravitational constant, <emphasis role="italic">Sf</emphasis> is the friction slope, <emphasis role="italic">β</emphasis> is the momentum
         correction factor, and <emphasis role="italic">ql</emphasis> is a lateral discharge with a
         downstream velocity component <emphasis role="italic">ul</emphasis> relative to the velocity
         of the main stream.</para>
       <para>With the introduction of a bed friction term based on Manning’s equation, the momentum
         equation can be expressed as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_mxd63"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+                <mo>∂</mo><mi>Q</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
-            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-              <mo>&#x2202;</mo>
+            <mo>+</mo><mi>β</mi><mfrac>
+              <mo>∂</mo>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mrow><mo>(</mo>
               <mrow>
@@ -903,9 +888,9 @@
                 <mrow>
                   <mfrac>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>h</mi></mrow>
+                      <mo>∂</mo><mi>h</mi></mrow>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                      <mo>∂</mo><mi>x</mi></mrow>
                   </mfrac>
                   <mo>+</mo><mfrac>
                     <mrow>
@@ -972,26 +957,26 @@
         equations are sometimes called “dynamic wave” models.</para>
     </section>
     
-    <section>
+    <section xml:id="b6_ch4_s_b2muu">
       <title>Simplified Forms of the 1D Momentum Equation</title>
       <para>The water surface slope in the hydrostatic pressure term of the momentum equation can be
         expressed as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_ipqst"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>h</mi></mrow>
+                <mo>∂</mo><mi>h</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
-            <mo>&#x2212;</mo><msub>
+            <mo>−</mo><msub>
               <mi>S</mi>
               <mi>b</mi>
             </msub>
@@ -999,23 +984,22 @@
                   </semantics>
       </math>
       </equation>
-      <para>Where <emphasis role="italic">y</emphasis> is the water depth and <emphasis
-          role="italic">Sb</emphasis> is the bed slope.</para>
+      <para>Where <emphasis role="italic">y</emphasis> is the water depth and <emphasis role="italic">Sb</emphasis> is the bed slope.</para>
       <para> Ignoring the effects of lateral inflows for the purpose of this exercise, the momentum
         equation can then be rewritten as:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_gc8vw"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+                <mo>∂</mo><mi>Q</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
-            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-              <mo>&#x2202;</mo>
+            <mo>+</mo><mi>β</mi><mfrac>
+              <mo>∂</mo>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mrow><mo>(</mo>
               <mrow>
@@ -1033,11 +1017,11 @@
                 <mrow>
                   <mfrac>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>y</mi></mrow>
+                      <mo>∂</mo><mi>y</mi></mrow>
                     <mrow>
-                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                      <mo>∂</mo><mi>x</mi></mrow>
                   </mfrac>
-                  <mo>&#x2212;</mo><msub>
+                  <mo>−</mo><msub>
                     <mi>S</mi>
                     <mi>b</mi>
                   </msub>
@@ -1053,17 +1037,17 @@
       <para><emphasis role="bold"><emphasis role="italic">Diffusive Wave
           Approximation</emphasis></emphasis></para>
       <para>In the diffusive wave approximation, the local acceleration term <inlineequation>
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
             <semantics>
               <mrow>
                 <mrow>
                   <mrow>
-                    <mi>&#x03B4;</mi>
+                    <mi>δ</mi>
                     <mi>Q</mi>
                   </mrow>
                   <mo>/</mo>
                   <mrow>
-                    <mi>&#x03B4;</mi>
+                    <mi>δ</mi>
                     <mi>t</mi>
                   </mrow>
                 </mrow>
@@ -1071,21 +1055,21 @@
             </semantics>
           </math>
       </inlineequation> and the convective acceleration term 
-        <inlineequation><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <inlineequation><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
         <semantics>
           <mrow>
             <mrow><mrow>
-              <mi>&#x03B4;</mi><mo stretchy='false'>(</mo><mrow><mrow>
+              <mi>δ</mi><mo stretchy="false">(</mo><mrow><mrow>
                 <msup>
                   <mi>Q</mi>
                   <mn>2</mn>
                 </msup>
               </mrow><mo>/</mo><mrow>
-                <mi>A</mi><mo stretchy='false'>)</mo></mrow></mrow>
+                <mi>A</mi><mo stretchy="false">)</mo></mrow></mrow>
             </mrow><mo>/</mo><mrow>
-              <mi>&#x03B4;</mi><mi>x</mi></mrow></mrow>
+              <mi>δ</mi><mi>x</mi></mrow></mrow>
           </mrow>
-          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
             feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
             hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
             4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
@@ -1098,26 +1082,26 @@
       </math>
       </inlineequation>are neglected, and the momentum
         equation reduces to:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_ec2dw"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>h</mi></mrow>
+                <mo>∂</mo><mi>h</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
-            <mo>&#x2212;</mo><msub>
+            <mo>−</mo><msub>
               <mi>S</mi>
               <mi>b</mi>
             </msub>
-            <mo>=</mo><mo>&#x2212;</mo><msub>
+            <mo>=</mo><mo>−</mo><msub>
               <mi>S</mi>
               <mi>f</mi>
             </msub>
@@ -1135,7 +1119,7 @@
         <emphasis role="bold"><emphasis role="italic">Kinematic Wave
           Approximation</emphasis></emphasis></para>
       <para>In the kinematic wave approximation, the momentum equation is further reduced to:</para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_7ef7d"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <msub>
@@ -1157,7 +1141,7 @@
         moderate to steep slopes where backwater effects can be neglected.</para>
         </section>
     
-    <section>
+    <section xml:id="b6_ch4_s_pcfki">
       <title>Model Set-up</title>
       <para>Topographic input to 1D models is generally specified in terms of survey cross-sections
         of the channel and floodplain system to be modelled. These cross-sections are given as a
@@ -1167,8 +1151,7 @@
         varying roughness across a cross-section (e.g., between in-bank and over-bank areas) may
         also be included in the conveyance calculations.</para>
       <para> </para>
-      <para>The computation can be carried out on a “staggered” grid where water level <emphasis
-          role="italic">h</emphasis> and discharge <emphasis role="italic">Q</emphasis> grid points
+      <para>The computation can be carried out on a “staggered” grid where water level <emphasis role="italic">h</emphasis> and discharge <emphasis role="italic">Q</emphasis> grid points
         are specified alternately along each model branch, as shown in Figure 9.1, or on a
         non-staggered grid where the water level <emphasis role="italic">h</emphasis> and the
         discharge <emphasis role="italic">Q</emphasis> are specified at each grid point. For
@@ -1177,15 +1160,14 @@
         cross-sections. For the staggered approach, discharge grid points are located midway between
         adjacent water points</para>
       <para> </para>
-      <para>Numerical approximations to the mass equation are centred on each water level <emphasis
-          role="italic">h</emphasis> grid point, while numerical approximations to the momentum
+      <para>Numerical approximations to the mass equation are centred on each water level <emphasis role="italic">h</emphasis> grid point, while numerical approximations to the momentum
         equation are centred on each discharge <emphasis role="italic">Q</emphasis> grid point. An
         implicit finite difference procedure is then used to solve these equations. With this
         approach, the water levels and discharges at each new time step are computed through the
         simultaneous solution of a series of alternating mass and momentum equations along each
         model branch.</para>
       
-      <figure>
+      <figure xml:id="b6_ch4_f_4765b">
         <title>The Computational Grid</title>
         <mediaobject>
           <imageobject>
@@ -1263,7 +1245,7 @@
         control for culverts).</para>
       <para> </para>
 
-        <figure>
+        <figure xml:id="b6_ch4_f_b6buj">
           <title>Schematisation of a Channel and Structure Grid</title>
           <mediaobject>
           <imageobject>
@@ -1287,7 +1269,7 @@
         both the river and the floodplain. Under these conditions the effects of storage and flow
         along the floodplain can be included directly in a single combined river channel and
         floodplain branch.</para>
-      <figure>
+      <figure xml:id="b6_ch4_f_a0oms">
         <title>Different Types of Flood Plain Flow</title>
         <mediaobject>
           <imageobject>
@@ -1305,7 +1287,7 @@
         Combinations of multiple river channel and floodplain branches can be used to describe the
         flows in quite complex river and floodplain systems. </para>
       
-      <figure>
+      <figure xml:id="b6_ch4_f_isqlb">
         <title>Schematisation of a Simple River Channel/Floodplain Branch System</title>
         <mediaobject>
           <imageobject>
@@ -1316,7 +1298,7 @@
       
 
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_sua83">
       <title>Data Requirements</title>
       <para>To construct a 1D model of a river and floodplain system, it is necessary to have the
         following data:</para>
@@ -1346,7 +1328,7 @@
         hydrographs of historic flood events do not exist. Consequently, most models are calibrated
         against peak water levels surveyed after a flood.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_f1ccv">
       <title>Advantages and Limitations</title>
       <para>The main advantages of a 1D model are that the model simulations are relatively quick to
         run computationally (i.e. relative to full 2D models), and that the main river channels can
@@ -1405,41 +1387,40 @@
     </section>
   </section>
 
-  <section>
+  <section xml:id="b6_ch4_s_v3f40">
     <title>2D Unsteady Hydraulic Models </title>
     <para>Due to the limitations 1D models, there was a trend in the early 1990s towards the use of
       full 2D models in urban flood studies and other flood studies where the details of the flow
       distribution across the floodplain became important. (See for example Bishop et al, 1995.)
       This trend continued through to the early 2000s. By this time 2D modelling had become a
       virtually a standard for most rural and urban flood modelling studies. </para>
-    <section>
+    <section xml:id="b6_ch4_s_qwes6">
       <title>Model Equations</title>
       <para>As discussed in Section X.X, 2D unsteady hydrodynamic models are based on the numerical
         solution of the depth-averaged shallow water wave or long wave equations. These equations
-        describe the conservation of mass and momentum in two horizontal dimensions <emphasis
-          role="italic">x</emphasis> and <emphasis role="italic">y</emphasis>. In a form used in
+        describe the conservation of mass and momentum in two horizontal dimensions <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis>. In a form used in
         many 2D flood models, these equations can be expressed as:</para>
       <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_kftr7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+                <mo>∂</mo><mi>ς</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
             <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext></mrow>
                  </semantics>
@@ -1447,34 +1428,34 @@
       </equation>
       <para><emphasis role="bold"><emphasis role="italic">x-Momentum</emphasis></emphasis></para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_zqry2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>u</mi></mrow>
+                <mo>∂</mo><mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>u</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>u</mi></mrow>
+                <mo>∂</mo><mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>v</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>u</mi></mrow>
+                <mo>∂</mo><mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>g</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+                <mo>∂</mo><mi>ς</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
-            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+            <mo>=</mo><mo>−</mo><mfrac>
               <mrow>
                 <mi>g</mi><mi>u</mi><msqrt>
                   <mrow>
@@ -1501,12 +1482,12 @@
                 <mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>u</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>x</mi>
                       <mn>2</mn>
                     </msup>
@@ -1515,12 +1496,12 @@
                 <mo>+</mo><mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>u</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>y</mi>
                       <mn>2</mn>
                     </msup>
@@ -1533,34 +1514,34 @@
       </math>
       </equation>
       <para><emphasis role="bold"><emphasis role="italic">y-Momentum</emphasis></emphasis></para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_sc6p0"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>v</mi></mrow>
+                <mo>∂</mo><mi>v</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>v</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>v</mi></mrow>
+                <mo>∂</mo><mi>v</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>u</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>v</mi></mrow>
+                <mo>∂</mo><mi>v</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mi>g</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+                <mo>∂</mo><mi>ς</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
-            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+            <mo>=</mo><mo>−</mo><mfrac>
               <mrow>
                 <mi>g</mi><mi>v</mi><msqrt>
                   <mrow>
@@ -1587,12 +1568,12 @@
                 <mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>v</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>x</mi>
                       <mn>2</mn>
                     </msup>
@@ -1601,12 +1582,12 @@
                 <mo>+</mo><mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>v</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>y</mi>
                       <mn>2</mn>
                     </msup>
@@ -1619,19 +1600,16 @@
       </math>
       </equation>
       <para>This coupled system of equations provides the three equations necessary to solve for the
-        three dependent variables; ς the free surface elevation, <emphasis role="italic"
-          >u</emphasis> the velocity in the <emphasis role="italic">x</emphasis> direction and
-          <emphasis role="italic">v</emphasis> the velocity in the <emphasis role="italic"
-          >y</emphasis> direction. </para>
+        three dependent variables; ς the free surface elevation, <emphasis role="italic">u</emphasis> the velocity in the <emphasis role="italic">x</emphasis> direction and
+          <emphasis role="italic">v</emphasis> the velocity in the <emphasis role="italic">y</emphasis> direction. </para>
       <para> The mass and momentum equations include sources and sinks for describing the effects of
-        localised inflows and outflows. The <emphasis role="italic">x</emphasis> and <emphasis
-          role="italic">y</emphasis> momentum equations also include a quadratic Chezy-type friction
+        localised inflows and outflows. The <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis> momentum equations also include a quadratic Chezy-type friction
         formulation and a simple eddy viscosity formulation (with eddy viscosity coefficient
           <emphasis role="italic">E</emphasis>). For practical modelling applications, the Chezy
         coefficient <emphasis role="italic">C</emphasis> can be related to the more usual (for
         Australian applications) Manning’s <emphasis role="italic">“n” </emphasis>by the Strickler
         relation: </para>
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_js5d3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mi>n</mi><mo>=</mo><msup>
@@ -1643,7 +1621,7 @@
             <msup>
               <mi>C</mi>
               <mrow>
-                <mo>&#x2212;</mo><mn>1</mn></mrow>
+                <mo>−</mo><mn>1</mn></mrow>
             </msup>
           </mrow>
           
@@ -1653,13 +1631,13 @@
       <para>In some European models, the friction coefficient is sometimes specified in terms of
         Manning’s <emphasis role="italic">“M”</emphasis>, where:</para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_3gnpz"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mi>n</mi><mo>=</mo><msup>
               <mi>M</mi>
               <mrow>
-                <mo>&#x2212;</mo><mn>1</mn></mrow>
+                <mo>−</mo><mn>1</mn></mrow>
             </msup>
           </mrow>
         
@@ -1670,7 +1648,7 @@
       <para>For modelling large expanses of open water, such as in lakes and estuaries, these 2D
         model equations can be extended to include the effects of wind shear and/or Coriolis forces. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_0s2zo">
       <title>Assumptions</title>
       <para>In the derivation of the 2D model equations, it has been assumed that:</para>
       <itemizedlist>
@@ -1682,10 +1660,8 @@
             the local pressure is dependent only on the local depth). </para>
         </listitem>
         <listitem>
-          <para>The flow can be described by continuous (differentiable) functions of ς, <emphasis
-              role="italic">u</emphasis> and<emphasis role="italic">v</emphasis> (that is, the flow
-            does not include step changes in ς, <emphasis role="italic">u</emphasis> and <emphasis
-              role="italic">v).</emphasis></para>
+          <para>The flow can be described by continuous (differentiable) functions of ς, <emphasis role="italic">u</emphasis> and<emphasis role="italic">v</emphasis> (that is, the flow
+            does not include step changes in ς, <emphasis role="italic">u</emphasis> and <emphasis role="italic">v).</emphasis></para>
         </listitem>
         <listitem>
           <para>The flow is two-dimensional (that is, the effects of vertical variations in the flow
@@ -1701,39 +1677,37 @@
         </listitem>
       </itemizedlist>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_iv1j9">
       <title>Other Forms of the Equations</title>
       <para>The equations presented in Section 1.7.1 form the basis of many of the 2D numerical
         models currently in use. Another form of the equations that is finding increasing popularity
         is the so-called “conservation law” form described for example by Abbott (1969). In this
-        form of the equations, the depth average momentum “fluxes” (<emphasis role="italic"
-          >d.u</emphasis> and <emphasis role="italic">d.v</emphasis> in the <emphasis role="italic"
-          >x</emphasis> and <emphasis role="italic">y</emphasis> directions, respectively) are used
+        form of the equations, the depth average momentum “fluxes” (<emphasis role="italic">d.u</emphasis> and <emphasis role="italic">d.v</emphasis> in the <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis> directions, respectively) are used
         as the time dependent velocity variables in the momentum equations. Excluding source and
         sink terms, bed friction and eddy viscosity, the conservation law form of the shallow water
         equations can be expressed as:</para>
       <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_uw5gx"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+                <mo>∂</mo><mi>ς</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
             <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext></mrow>
           
@@ -1743,19 +1717,19 @@
       
       <para><emphasis role="bold"><emphasis role="italic">x-Momentum</emphasis></emphasis></para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_xkyim"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
-              <mo>&#x2202;</mo>
+              <mo>∂</mo>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mrow><mo>(</mo>
               <mrow>
@@ -1774,11 +1748,11 @@
               </mrow>
               <mo>)</mo></mrow><mo>+</mo><mfrac>
                 <mrow>
-                  <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                  <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
                 <mrow>
-                  <mo>&#x2202;</mo><mi>y</mi></mrow>
+                  <mo>∂</mo><mi>y</mi></mrow>
               </mfrac>
-            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+            <mo>=</mo><mo>−</mo><mfrac>
               <mrow>
                 <mi>g</mi><mi>u</mi><msqrt>
                   <mrow>
@@ -1805,12 +1779,12 @@
                 <mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>u</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>x</mi>
                       <mn>2</mn>
                     </msup>
@@ -1819,12 +1793,12 @@
                 <mo>+</mo><mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>u</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>y</mi>
                       <mn>2</mn>
                     </msup>
@@ -1839,25 +1813,25 @@
       
       <para><emphasis role="bold"><emphasis role="italic">y-Momentum</emphasis></emphasis></para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_fh33a"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>t</mi></mrow>
+                <mo>∂</mo><mi>t</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                <mo>∂</mo><mo stretchy="false">(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
             <mo>+</mo><mfrac>
-              <mo>&#x2202;</mo>
+              <mo>∂</mo>
               <mrow>
-                <mo>&#x2202;</mo><mi>y</mi></mrow>
+                <mo>∂</mo><mi>y</mi></mrow>
             </mfrac>
             <mrow><mo>(</mo>
               <mrow>
@@ -1874,7 +1848,7 @@
                   <mn>2</mn>
                 </msup>
               </mrow>
-              <mo>)</mo></mrow><mo>=</mo><mo>&#x2212;</mo><mfrac>
+              <mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac>
                 <mrow>
                   <mi>g</mi><mi>v</mi><msqrt>
                     <mrow>
@@ -1901,12 +1875,12 @@
                 <mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>v</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>x</mi>
                       <mn>2</mn>
                     </msup>
@@ -1915,12 +1889,12 @@
                 <mo>+</mo><mfrac>
                   <mrow>
                     <msup>
-                      <mo>&#x2202;</mo>
+                      <mo>∂</mo>
                       <mn>2</mn>
                     </msup>
                     <mi>v</mi></mrow>
                   <mrow>
-                    <mo>&#x2202;</mo><msup>
+                    <mo>∂</mo><msup>
                       <mi>y</mi>
                       <mn>2</mn>
                     </msup>
@@ -1935,12 +1909,11 @@
       
       <para>This is effectively the form of the equations that provides the basis of the finite
         difference solution procedure used by DHI (2005). A distinct advantage of the conservation
-        law formulation of the equations is that, when the depth average momentum fluxes <emphasis
-          role="italic">d.u</emphasis> and <emphasis role="italic">d.v</emphasis> are used as the
+        law formulation of the equations is that, when the depth average momentum fluxes <emphasis role="italic">d.u</emphasis> and <emphasis role="italic">d.v</emphasis> are used as the
         dependent velocity variables, the mass equation becomes linear and, barring coding errors,
         the numerical solutions should remain mass conservative. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_8wa5s">
       <title>Numerical Solution Procedures</title>
       <para>Development of numerical solution procedures for the shallow water wave equations is an
         active area of on-going research. There are three main approaches that have used; finite
@@ -2008,7 +1981,7 @@
         the number of grid or flexible mesh cells that flow information can travel in one timestep.
         The Courant number <emphasis role="italic">Cr</emphasis> can be defined as:</para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_n9s7w"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <msub>
@@ -2018,13 +1991,13 @@
             <mo>=</mo><mrow><mo>[</mo> <mrow>
               <mfrac>
                 <mrow>
-                  <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
+                  <mo stretchy="false">(</mo><mi>u</mi><mo>+</mo><msqrt>
                     <mrow>
                       <mi>g</mi><mi>d</mi></mrow>
                   </msqrt>
-                  <mo stretchy='false'>)</mo><mo>.</mo><mi>&#x0394;</mi><mi>t</mi></mrow>
+                  <mo stretchy="false">)</mo><mo>.</mo><mi>Δ</mi><mi>t</mi></mrow>
                 <mrow>
-                  <mi>&#x0394;</mi><mi>x</mi></mrow>
+                  <mi>Δ</mi><mi>x</mi></mrow>
               </mfrac>
             </mrow> <mo>]</mo></mrow></mrow>
          
@@ -2041,26 +2014,26 @@
         constraint on the timestep <emphasis role="italic">Δt</emphasis>, that is commonly called
         the “Courant” stability criterion, where: </para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_aky8r"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
-            <mi>&#x0394;</mi><msub>
+            <mi>Δ</mi><msub>
               <mi>t</mi>
               <mrow>
                 <mi>max</mi></mrow>
             </msub>
-            <mo>&#x2264;</mo><msub>
+            <mo>≤</mo><msub>
               <mrow>
                 <mrow><mo>[</mo> <mrow>
                   <mfrac>
                     <mrow>
-                      <mi>&#x0394;</mi><mi>x</mi></mrow>
+                      <mi>Δ</mi><mi>x</mi></mrow>
                     <mrow>
-                      <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
+                      <mo stretchy="false">(</mo><mi>u</mi><mo>+</mo><msqrt>
                         <mrow>
                           <mi>g</mi><mi>d</mi></mrow>
                       </msqrt>
-                      <mo stretchy='false'>)</mo></mrow>
+                      <mo stretchy="false">)</mo></mrow>
                   </mfrac>
                 </mrow> <mo>]</mo></mrow></mrow>
               <mrow>
@@ -2077,8 +2050,7 @@
         the old timestep and adjacent unknown values at the new timestep. As a result, the solutions
         at one grid/mesh element are linked to those in the neighbouring cells. These solutions are,
         in turn, linked to those in their neighbouring cells, and so on. In this way, the solutions
-        to the discrete numerical approximations to the mass and <emphasis role="italic"
-          >x</emphasis> and <emphasis role="italic">y</emphasis> momentum equations for each
+        to the discrete numerical approximations to the mass and <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis> momentum equations for each
         grid/mesh cell are linked “implicitly” to those in every other cell over the entire model
         domain. This approach allows flow information to travel much further than one grid point per
         timestep. As a result, the Courant stability criterion does not apply to implicit solution
@@ -2093,8 +2065,7 @@
         lines which is much simpler to implement than a fully two-dimensional implicit solution
         procedure. </para>
       <para>The ADI approach can be shown to be independent of the Courant stability criterion and
-        has been used extensively in two-dimensional flood modelling (e.g., Stelling <emphasis
-          role="italic">et al</emphasis>, 1998; McCowan <emphasis role="italic">et al</emphasis>,
+        has been used extensively in two-dimensional flood modelling (e.g., Stelling <emphasis role="italic">et al</emphasis>, 1998; McCowan <emphasis role="italic">et al</emphasis>,
         2000 and Syme, 2001). It should be noted, however, that the ADI approach is not directly
         equivalent to a fully two-dimensional implicit scheme. Although the timestep is not subject
         to the Courant stability criterion, it is subject to accuracy constraints, particularly when
@@ -2116,7 +2087,7 @@
         increase the effective computational speed by one to two orders of magnitude, depending upon
         what features are, or are not, included in the model.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_svu2t">
       <title>Discretisation Errors</title>
       <para>Irrespective of the numerical method being used, the modeller should be aware that the
         resulting Numerical Model is only a numerical approximation to the Equations of Motion (the
@@ -2129,7 +2100,7 @@
           <emphasis role="italic">uδu/δx</emphasis> “convective momentum” term in the x momentum
         equation has been examined more closely. This term is to be discretised on a square
         “staggered” grid similar to that shown in Figure X.</para>
-      <figure>
+      <figure xml:id="b6_ch4_f_eednm">
         <title>Example of a Computational Grid</title>
         <mediaobject>
           <imageobject>
@@ -2138,24 +2109,22 @@
         </mediaobject>
       </figure>
       
-      <para>For a given timestep <emphasis role="italic">nΔt</emphasis> and <emphasis role="italic"
-          >x</emphasis> grid line at <emphasis role="italic">kΔy</emphasis>, the term <emphasis
-          role="italic">uδu/δx</emphasis> can be approximated by: </para>
+      <para>For a given timestep <emphasis role="italic">nΔt</emphasis> and <emphasis role="italic">x</emphasis> grid line at <emphasis role="italic">kΔy</emphasis>, the term <emphasis role="italic">uδu/δx</emphasis> can be approximated by: </para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_ae7kh"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mi>u</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>u</mi></mrow>
+                <mo>∂</mo><mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
-            <mo>&#x2248;</mo><mi>u</mi><mfrac>
+            <mo>≈</mo><mi>u</mi><mfrac>
               <mrow>
-                <mi>&#x0394;</mi><mi>u</mi></mrow>
+                <mi>Δ</mi><mi>u</mi></mrow>
               <mrow>
-                <mi>&#x0394;</mi><mi>x</mi></mrow>
+                <mi>Δ</mi><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><msub>
               <mi>u</mi>
@@ -2163,24 +2132,24 @@
             </msub>
             <mfrac>
               <mrow>
-                <mo stretchy='false'>(</mo><msub>
+                <mo stretchy="false">(</mo><msub>
                   <mi>u</mi>
                   <mrow>
-                    <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
+                    <mi>j</mi><mi>Δ</mi><mi>x</mi></mrow>
                 </msub>
-                <mo>&#x2212;</mo><msub>
+                <mo>−</mo><msub>
                   <mi>u</mi>
                   <mrow>
-                    <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
+                    <mo stretchy="false">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
                 </msub>
                 <msub>
-                  <mrow></mrow>
+                  <mrow/>
                   <mrow>
-                    <mi>&#x0394;</mi><mi>x</mi></mrow>
+                    <mi>Δ</mi><mi>x</mi></mrow>
                 </msub>
-                <mo stretchy='false'>)</mo></mrow>
+                <mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mi>&#x0394;</mi><mi>x</mi></mrow>
+                <mi>Δ</mi><mi>x</mi></mrow>
             </mfrac>
           </mrow>
        
@@ -2188,60 +2157,58 @@
       </math>
       </equation>      
       
-      <para>With this approximation, the continuous derivative of the velocity <emphasis
-          role="italic">u</emphasis> with respect to <emphasis role="italic">x</emphasis> is
+      <para>With this approximation, the continuous derivative of the velocity <emphasis role="italic">u</emphasis> with respect to <emphasis role="italic">x</emphasis> is
         approximated by the linear gradient of the velocity between the grid point at which the
         derivative is to be taken, and the grid point immediately upstream. As a result, this
         approach is often termed “upwind” differencing. The errors associated with this
         approximation can be determined by using Taylor’s Series to expand the terms in the right
         hand side of this equation in terms of the velocity <emphasis role="italic">u</emphasis>
-        velocity at the centre-point, <emphasis role="italic">j</emphasis>Δ<emphasis role="italic"
-          >x</emphasis>. This results in the following expression:</para>
+        velocity at the centre-point, <emphasis role="italic">j</emphasis>Δ<emphasis role="italic">x</emphasis>. This results in the following expression:</para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_d2jp1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <mi>u</mi><mfrac>
               <mrow>
-                <mo stretchy='false'>(</mo><msub>
+                <mo stretchy="false">(</mo><msub>
                   <mi>u</mi>
                   <mrow>
-                    <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
+                    <mi>j</mi><mi>Δ</mi><mi>x</mi></mrow>
                 </msub>
-                <mo>&#x2212;</mo><msub>
+                <mo>−</mo><msub>
                   <mi>u</mi>
                   <mrow>
-                    <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
+                    <mo stretchy="false">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
                 </msub>
                 <msub>
-                  <mrow></mrow>
+                  <mrow/>
                   <mrow>
-                    <mi>&#x0394;</mi><mi>x</mi></mrow>
+                    <mi>Δ</mi><mi>x</mi></mrow>
                 </msub>
-                <mo stretchy='false'>)</mo></mrow>
+                <mo stretchy="false">)</mo></mrow>
               <mrow>
-                <mi>&#x0394;</mi><mi>x</mi></mrow>
+                <mi>Δ</mi><mi>x</mi></mrow>
             </mfrac>
             <mo>=</mo><mi>u</mi><mfrac>
               <mrow>
-                <mo>&#x2202;</mo><mi>u</mi></mrow>
+                <mo>∂</mo><mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><mi>x</mi></mrow>
+                <mo>∂</mo><mi>x</mi></mrow>
             </mfrac>
-            <mo>&#x2212;</mo><mi>u</mi><mfrac>
+            <mo>−</mo><mi>u</mi><mfrac>
               <mrow>
-                <mi>&#x0394;</mi><mi>x</mi></mrow>
+                <mi>Δ</mi><mi>x</mi></mrow>
               <mn>2</mn>
             </mfrac>
             <mfrac>
               <mrow>
                 <msup>
-                  <mo>&#x2202;</mo>
+                  <mo>∂</mo>
                   <mn>2</mn>
                 </msup>
                 <mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><msup>
+                <mo>∂</mo><msup>
                   <mi>x</mi>
                   <mn>2</mn>
                 </msup>
@@ -2249,7 +2216,7 @@
             </mfrac>
             <mo>+</mo><mi>u</mi><mfrac>
               <mrow>
-                <mi>&#x0394;</mi><msup>
+                <mi>Δ</mi><msup>
                   <mi>x</mi>
                   <mn>2</mn>
                 </msup>
@@ -2259,20 +2226,20 @@
             <mfrac>
               <mrow>
                 <msup>
-                  <mo>&#x2202;</mo>
+                  <mo>∂</mo>
                   <mn>3</mn>
                 </msup>
                 <mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><msup>
+                <mo>∂</mo><msup>
                   <mi>x</mi>
                   <mn>3</mn>
                 </msup>
               </mrow>
             </mfrac>
-            <mo>&#x2212;</mo><mi>u</mi><mfrac>
+            <mo>−</mo><mi>u</mi><mfrac>
               <mrow>
-                <mi>&#x0394;</mi><msup>
+                <mi>Δ</mi><msup>
                   <mi>x</mi>
                   <mn>3</mn>
                 </msup>
@@ -2282,12 +2249,12 @@
             <mfrac>
               <mrow>
                 <msup>
-                  <mo>&#x2202;</mo>
+                  <mo>∂</mo>
                   <mn>4</mn>
                 </msup>
                 <mi>u</mi></mrow>
               <mrow>
-                <mo>&#x2202;</mo><msup>
+                <mo>∂</mo><msup>
                   <mi>x</mi>
                   <mn>4</mn>
                 </msup>
@@ -2304,11 +2271,10 @@
         additional second, third, fourth and higher order truncation error terms. Further, it can be
         seen that the truncation error includes a second order term which is of the same form as one
         of the eddy viscosity terms in the <emphasis role="italic">x-</emphasis>momentum equation.
-        That is, upwinding of the convective momentum term <emphasis role="italic"
-          >u.δu/δx</emphasis> can be seen to be equivalent to introducing a numerical eddy viscosity
+        That is, upwinding of the convective momentum term <emphasis role="italic">u.δu/δx</emphasis> can be seen to be equivalent to introducing a numerical eddy viscosity
         term with, in this case, an eddy viscosity coefficient of: </para>
       
-      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+      <equation xml:id="b6_ch4_e_dtg5l"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
           <mrow>
             <msub>
@@ -2317,7 +2283,7 @@
             </msub>
             <mo>=</mo><mi>u</mi><mfrac>
               <mrow>
-                <mi>&#x0394;</mi><mi>x</mi></mrow>
+                <mi>Δ</mi><mi>x</mi></mrow>
               <mn>2</mn>
             </mfrac>
           </mrow>
@@ -2342,8 +2308,7 @@
         (or timestep <emphasis role="italic">Δt</emphasis> for time derivatives). In a similar
         manner, it can be shown that second-order schemes have third-order errors that are
         proportional to the square of the grid or mesh size <emphasis role="italic">Δx2</emphasis>
-        (or of timestep <emphasis role="italic">Δt2</emphasis>). If the grid or mesh size <emphasis
-          role="italic">Δx</emphasis> and timestep <emphasis role="italic">Δt </emphasis>are treated
+        (or of timestep <emphasis role="italic">Δt2</emphasis>). If the grid or mesh size <emphasis role="italic">Δx</emphasis> and timestep <emphasis role="italic">Δt </emphasis>are treated
         as fractions of representative length and time scales of the flood under consideration, the
         truncation errors of a second-order scheme can be shown to reduce quadratically with
         decreasing grid size and timestep. That is, the finer the grid or mesh size or shorter the
@@ -2379,7 +2344,7 @@
         result, Leonard (1979) advocates the use of higher third-order schemes for modelling
         transport dominated flows. </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_3o6ok">
       <title>Model Applications</title>
       <para>Most of the 2D flood models in common use are based on the numerical solution of the
         full mass and momentum equations, described above. This generally works well in
@@ -2413,7 +2378,7 @@
         constraints that that this may impose on the timestep, model accuracy, and on the way in
         which the computation is carried out.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_5k64p">
       <title>Site Specific Model Development</title>
       <para>To this point the discussion has focussed on the different types and properties of 2D
         Generic Numerical Models. The process of developing a Site Specific 2D Model is discussed at
@@ -2588,20 +2553,16 @@
       <para>For any model computation to move forward in time there must be a known starting point.
         For numerical hydrodynamic models this starting point is known as the model “initial
         conditions”. The initial conditions necessary for two-dimensional hydrodynamic models
-        consist of water surface elevation <emphasis role="italic">ς</emphasis> and <emphasis
-          role="italic">u </emphasis>and <emphasis role="italic">v</emphasis> velocity values at
+        consist of water surface elevation <emphasis role="italic">ς</emphasis> and <emphasis role="italic">u </emphasis>and <emphasis role="italic">v</emphasis> velocity values at
         every grid/mesh element that is “active” at the start of the computation. </para>
       <para>These values can be specified by:</para>
       <itemizedlist>
         <listitem>
-          <para>A “cold start”, where initial estimates of the water surface elevation <emphasis
-              role="italic">ς </emphasis>values are made, and the <emphasis role="italic"
-              >u</emphasis> and <emphasis role="italic">v </emphasis>velocity values are set to zero
+          <para>A “cold start”, where initial estimates of the water surface elevation <emphasis role="italic">ς </emphasis>values are made, and the <emphasis role="italic">u</emphasis> and <emphasis role="italic">v </emphasis>velocity values are set to zero
             (i.e., no flow).</para>
         </listitem>
         <listitem>
-          <para>A “hot start”, where the initial water surface elevation <emphasis role="italic"
-              >ς,</emphasis> and <emphasis role="italic">u</emphasis> and <emphasis role="italic">v
+          <para>A “hot start”, where the initial water surface elevation <emphasis role="italic">ς,</emphasis> and <emphasis role="italic">u</emphasis> and <emphasis role="italic">v
             </emphasis>velocity values are specified from the results of a previous model
             simulation.</para>
         </listitem>
@@ -2630,8 +2591,7 @@
           <para>Urban Applications<emphasis role="italic">: </emphasis>In many urban applications,
             the area to be modelled may be initially dry. In these cases, the initial water surface
             elevation ς values will typically be set to the corresponding ground surface elevation
-              <emphasis role="italic">z</emphasis> values, and the initial <emphasis role="italic"
-              >u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to zero.
+              <emphasis role="italic">z</emphasis> values, and the initial <emphasis role="italic">u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to zero.
             This approach could be considered as a special case of the cold start. It is applicable
             in model simulations where there is no initial overland flow, including direct rainfall
             on grid applications. </para>
@@ -2640,8 +2600,7 @@
       <para><emphasis><emphasis role="bold">Urban Applications:</emphasis></emphasis> In many urban
         applications, the area to be modelled may be initially dry. In these cases, the initial
         water surface elevation ς values will typically be set to the corresponding ground surface
-        elevation <emphasis role="italic">z</emphasis> values, and the initial <emphasis
-          role="italic">u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to
+        elevation <emphasis role="italic">z</emphasis> values, and the initial <emphasis role="italic">u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to
         zero. This approach could be considered as a special case of the cold start. It is
         applicable in model simulations where there is no initial overland flow, including direct
         rainfall on grid applications. </para>
@@ -2667,8 +2626,7 @@
         and the following discussion is, of necessity, relatively superficial. </para>
 
       <para><emphasis role="italic"><emphasis role="bold">External
-          Boundaries</emphasis></emphasis><emphasis role="italic"><emphasis role="bold"
-          >:</emphasis></emphasis> The model requires boundary conditions in terms of either water
+          Boundaries</emphasis></emphasis><emphasis role="italic"><emphasis role="bold">:</emphasis></emphasis> The model requires boundary conditions in terms of either water
         levels or discharges along both the upstream and downstream boundaries. </para>
       <para>The upstream boundary conditions for a 2D flood model are generally provided by a
         discharge hydrograph. This has to be converted to discharges or flow velocities and water
@@ -2693,8 +2651,7 @@
         boundaries should also be placed far enough upstream and downstream of the area of interest
         to ensure that any errors in flow distribution and/or direction do not have a significant
         effect on the model results.</para>
-      <para><emphasis><emphasis role="bold">Internal Boundaries</emphasis></emphasis><emphasis
-          role="italic"><emphasis role="bold">: </emphasis></emphasis>There are two types of
+      <para><emphasis><emphasis role="bold">Internal Boundaries</emphasis></emphasis><emphasis role="italic"><emphasis role="bold">: </emphasis></emphasis>There are two types of
         internal boundaries used in 2D models:</para>
       <itemizedlist>
         <listitem>
@@ -2719,7 +2676,7 @@
         model branch containing the required structures (see Section x.x) and coupled to the 2D
         model domain via internal boundaries<anchor xml:id="_Toc238020917"/>.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_4jr25">
       <title>Advantages and Disadvantages</title>
       <para>The main advantage of a full 2D model is that it can provide a more realistic
         description of the flows and flow distributions throughout a river and flood plain system.
@@ -2756,7 +2713,7 @@
         wide, the in-bank flows may not be described as well as in a 1D model with detailed
         cross-sections.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_echp6">
       <title>Coupled 1D/2D Hydraulic Models</title>
       <para>From the discussions above, it can be seen that 1D models are well suited to modelling
         in-bank flows and flows along long river and floodplain reaches (of the order of 10s to 100s
@@ -2811,7 +2768,7 @@
       <para> </para>
       <para> </para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_9f1m8">
       <title>Direct Rainfall Models</title>
       <para>A relatively recent development in 2D hydraulic modelling models has been the use of
         direct rainfall to estimate flows in catchments or sub-catchments where the local rainfall
@@ -2840,7 +2797,7 @@
         calibration is not possible (as in many cases), sensitivity testing should be carried out to
         assess the sensitivity of the model to variations in the main model parameters.</para>
     </section>
-    <section>
+    <section xml:id="b6_ch4_s_ch687">
       <title>Limitations of 2D Hydraulic Models</title>
       <para>One of the main limitations associated with 2D hydraulic models is that they can provide
         plausible results in situations where the underlying data may be inadequate, the model
@@ -2851,7 +2808,7 @@
     </section>
   </section>
 
-  <section>
+  <section xml:id="b6_ch4_s_47qjk">
     <title>Summary and Conclusions </title>
     <para>The aim of a hydraulic flood model is to provide a realistic representation of flood flows
       in river and floodplain systems. In general, it can be said that the more realistic the
@@ -2938,9 +2895,9 @@
           interpreting the model results. </para>
       </listitem>
     </itemizedlist>
-<para></para>
+<para/>
   </section>
-  <section>
+  <section xml:id="b6_ch4_s_uj9pk">
     <title>References</title>
     <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
     <para>(To be completed)<?oxy_custom_end?></para>
