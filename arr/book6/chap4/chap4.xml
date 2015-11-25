@@ -27,1216 +27,2935 @@
   <para/>
 
   <section>
-    <title>Steady Flow Models - see Ch 2 </title>
-<equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
- <semantics>
-  <mtable columnalign='left'>
-   <mtr>
-    <mtd>
-     <mi>m</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>u</mi><mo>=</mo><mfrac>
-      <mn>1</mn>
-      <mi>n</mi>
-     </mfrac>
-     <msubsup>
-      <mi>R</mi>
-      <mi>h</mi>
-      <mrow>
-       <mfrac bevelled='true'>
-        <mn>2</mn>
-        <mn>3</mn>
-       </mfrac>
-       </mrow>
-     </msubsup>
-     <msup>
-      <mi>S</mi>
-      <mrow>
-       <mfrac bevelled='true'>
-        <mn>1</mn>
-        <mn>2</mn>
-       </mfrac>
-       </mrow>
-     </msup>
+    <title>Introduction</title>
+    <para>Up to now the main focus of this document has been on hydrology, hydrologic modelling and
+      the determination of discharge characteristics of flood flows. By comparison, the main aim of
+      hydraulic modelling is generally to describe the details of the main water level and velocity
+      characteristics of the hydrologically derived flood flows. An appropriately set-up and
+      calibrated hydraulic model can be used to not only describe the details of flood flows and
+      their distribution throughout a river and floodplain system, but also to predict the likely
+      impacts that any changes to that system may have on these flows. Typical applications for
+      hydraulic models may include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Prediction of the behaviour of floods, including extreme flood events;</para>
+      </listitem>
+      <listitem>
+        <para>Evaluation of the effects of proposed changes that may affect flood flows; and</para>
+      </listitem>
+      <listitem>
+        <para>Assessment of a range of flood mitigation works</para>
+      </listitem>
+    </itemizedlist>
+    <para> Prior to the advent of computers, hydraulic modelling of river flows could only be
+      carried out in physical models. Although geometrically similar to the physical systems they
+      represent physical models are subject to scaling constraints as described in Chapter XX. Due
+      to the time and costs involved, physical modelling could only be justified for major projects.
+      Today, the use of physical models is typically limited to modelling complex flows in
+      relatively small reaches of river, and for modelling the behaviour of hydraulic
+      structures.</para>
+    <para> Although the basic equations governing river flow were derived in the 19th Century, it
+      was not until the development of computers in the 1960’s and 70’s that numerical modelling of
+      river flows became practical. With the rapid on-going development of computers and computing
+      power, there has been a continual evolution of numerical modelling and modelling techniques.
+      This has resulted in the availability of a wide range of numerical models with increasing
+      capability, and increased complexity.</para>
+    <para> The first numerical hydraulic models were little more than computerised backwater
+      calculators for steady flows in one (along stream) dimension. These one-dimensional (1D)
+      models gradually increased in sophistication to include hydraulic structures, unsteady flows,
+      simply connected (dendritic) branched channel networks and, ultimately, multiply connected
+      branched channel networks. With the multiply connected channel models it became possible to
+      separate floodplain flows from main channel flows through the introduction of separate
+      floodplain flow paths or systems of overbank floodplain cells. These models were sometimes
+      called quasi-2D models.</para>
+    <para> In the early to mid-1990s, numerical modellers began to apply fully two-dimensional (2D)
+      hydraulic models to river and floodplain systems. Many of these models had been originally
+      developed for modelling flows in bays and coastal seas and required modifications to make them
+      more suitable to simulating river and floodplain flows. 2D flood models use square or
+      curvilinear grids, or flexible meshes, to provide much greater resolution of the flows in
+      floodplains. As a result, 2D modelling was rapidly embraced by the modelling community and, by
+      the early 2000s, had become almost a de facto “standard” for flood modelling in Australia. </para>
+    <para> Further development saw coupling of 1D channel models with full 2D models to provide a
+      better description of in-bank flows and flows in sub-grid (or mesh) scale channels. These
+      coupled 1D/2D models also allowed the introduction of model structures in localised 1D model
+      branches to provide a better representation of hydraulic structures such as culverts, weirs
+      and bridges. Full 2D models have also been applied extensively to simulating the hydraulics of
+      urban stormwater flows. For these applications 2D models have also been coupled with pipe
+      network models to provide a better description of the flows in underground stormwater drainage
+      systems. </para>
+    <para>In the early to mid-2000s, the use of full 2D models was extended to also include the
+      effects of rainfall over the model domain. With this “direct rainfall” or “rainfall on grid”
+      approach it is possible to simulate the rainfall/runoff (hydrologic) processes throughout the
+      model area and integrate them with the hydraulic routing of the resulting overland flows. This
+      is particularly useful in urban applications or other situations where the model area includes
+      a significant proportion (or even all) of the catchment contributing to the flow within the
+      model. In these cases, the approach can reduce (and in some cases eliminate) the need for
+      separate hydrologic modelling, but is still the subject of on-going research (Project 15
+      reference).</para>
+    <para> In general, it can be said that the more realistic the modelling approach, the greater
+      the probability of achieving a successful outcome. However, the use of the most sophisticated
+      modelling approach available will not, in itself, guarantee success. This is because the skill
+      of the modeller adapting a generic modelling system to a specific application, and the quality
+      of the data used as model input can be equally (or even more) important in determining the
+      success of a modelling exercise. This can especially true for direct rainfall modelling.
+      Indeed, there will be applications where simplified approaches, suitably applied, may be more
+      appropriate than the use of more sophisticated models.</para>
+    <para> This chapter introduces the basis of numerical hydraulic models of river and floodplain
+      flows. The differences between steady and unsteady flow models are discussed, and the range of
+      modelling approaches that are currently available are described. More details are then
+      provided on the application of 2D models for describing flood flows.</para>
+  </section>
+
+  <section>
+    <title>Development Stages for Numerical Hydraulic Models</title>
+    <para>The aim of a numerical hydraulic model is to provide a discrete numerical representation of
+      flood flows in what is a physically continuous river and floodplain system. In this respect,
+      the development of a site specific numerical model can be thought of as comprising a sequence
+      of four main steps, as follows:</para>
+    <orderedlist>
+      <listitem>
+        <para>Review and define the physical system (the river and floodplain system to be
+          modelled)</para>
+      </listitem>
+      <listitem>
+        <para>Select an appropriate mathematical model (the set of equations or combination of sets
+          of equations to be used to describe the physical system)</para>
+      </listitem>
+      <listitem>
+        <para>Select a generic numerical model (the modelling software to be used to solve the
+          equations of the mathematical model)</para>
+      </listitem>
+      <listitem>
+        <para>Develop the site-specific numerical model (through the application of site specific
+          inputs to the generic modelling software. These inputs will typically include topographic
+          data, bed-friction coefficients, flow boundary conditions and other parameters such as
+          structure information, as appropriate)</para>
+      </listitem>
+    </orderedlist>
+    <para> At each step different types of assumptions, approximations and/or simplifications must
+      be made. The steps are discussed briefly below, with further supporting information provided
+      in the following sections. The conceptualisation process is shown schematically in Figure
+      1.</para>
+
+         
+    <figure>
+      <title>Stages in Numerical Hydraulic Model Conceptualisation and
+        Development</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/6088.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    
+    <section>
+      <title>Review of the Physical System</title>
+      <para>It is essential to have a broad understanding of the hydraulic behaviour of the physical
+        system to be modelled in order to select the most appropriate mathematical model or models
+        to be used. Whilst it is common that detailed hydraulic behaviour of the system is unknown,
+        a good working knowledge of the study area and contributing catchment is required. Aspects
+        such as the study area, shape and slope are important. (Is the subject land low-lying or
+        close to the sea?) The location and dimensions of the main flow paths as well as the effects
+        of any flow controls need to be understood. This can include the effects of flood protection
+        works, such as levees, as well as the effects of formal drainage infrastructure, such
+        channels, hydraulic structures and pipe networks. Land-use is also an important element of
+        the physical system to consider. The distribution of roads, number and type of buildings and
+        the extent and composition of vegetation can all affect the conceptualisation and selections
+        made in following steps. </para>
+    </section>
+    <section>
+      <title>Selection of the Mathematical Model(s)</title>
+      <para>Selection of the mathematical model (or models) to be used to describe the physical
+        system is the most important decision to be made in this four step process. In this step,
+        the description of the flow in the physical system, which can be complex and highly
+        turbulent, must be reduced to an equation, or set of equations describing the main
+        characteristics of the flow. Here assumptions have to be made as to whether the flow can be
+        considered as being one-dimensional (1D), two-dimensional (2D), a combination of 1D and 2D,
+        or even three-dimensional (3D). Further, a decision must be made as to whether the flow can
+        be described as being steady (i.e., constant with time), or unsteady (time-varying). </para>
+      <para> In 1D models, the flow is described in terms of cross-sectionally averaged discharges
+        and water levels along pre-determined flow paths. In 2D models the flow is described by
+        depth averaged velocity variables in two horizontal directions and water levels across a
+        regular grid or flexible mesh. In all cases (1D, 2D and 3D), the flow equations generally
+        assume there are no vertical accelerations and that the pressure distribution is
+        hydrostatic. As a result, empirical structure equations are frequently used to describe the
+        flow across structures (e.g., weirs, bridges and culverts) and at other locations where
+        vertical accelerations may become important (e.g., across levee banks, or road embankments).
+        It is important that the modeller has an understanding of the limitations of the selected
+        mathematical modelling approach.</para>
+    </section>
+    <section>
+      <title>Selection of the Numerical Model</title>
+      <para>In going from the mathematical model to the numerical model, continuous mathematical
+        equations have to be approximated by discrete arithmetic equations that can be solved by a
+        computer. This process is generally carried out within a generic numerical model or
+        modelling software package. The errors introduced by the discretization process are called
+        “truncation” errors and reduce with the grid size and/or time step. That is, the smaller the
+        grid size and time step, the smaller the truncation errors. In some models, low-order
+        dissipative numerical truncation errors are deliberately introduced, or can be introduced as
+        an option, to help stabilize the numerical computation. </para>
+      <para>Numerical solution procedures can involve finite difference, finite element and finite
+        volume techniques. Finite differences are generally used in 1D models, while finite volume
+        techniques are becoming increasingly popular in 2D and 3D applications. The introduction of
+        “parallel processing” through multiple core computers and graphics processing units (GPUs)
+        has dramatically increased the computing power available allowing much larger model domains
+        and/or finer grid/mesh sizes to be used in 2D and 3D modelling applications. Additionally,
+        the various commercially available generic modelling packages can have quite different
+        approaches to modelling different flow characteristics such as flooding and drying,
+        super-critical flows and sub-grid scale processes. It is therefore important that the
+        modeller has an understanding of the capability and any potential limitations that the
+        generic numerical model may have for simulating the flow conditions in any particular
+        application.</para>
+    </section>
+    <section>
+      <title>Development of the Site-Specific Model</title>
+      <para>The Site-Specific model is developed from the generic Numerical Model (software package)
+        through:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Selection of a modelling domain, </para>
+        </listitem>
+        <listitem>
+          <para>Selection of the grid or mesh size and time step,</para>
+        </listitem>
+        <listitem>
+          <para>The input of site specific data including: topographic data (cross-sections and/or
+            topography) and bed-friction data, and </para>
+        </listitem>
+        <listitem>
+          <para>The application of flow and /or water level boundary conditions. </para>
+        </listitem>
+      </itemizedlist>
+      <para> Once a site-specific model has been developed it must be calibrated and, where
+        possible, validated to ensure that it is capable of providing a reliable description of the
+        flow characteristics within the area of interest. This is described in the following
+        section. </para>
+    </section>
+  </section>
+
+  <section>
+    <title>Model Reliability </title>
+    <para>Assuming that the most appropriate mathematical model has been selected to describe a
+      particular physical system, there are two main steps for determining the accuracy and
+      reliability of the model results. These are model verification and model calibration and
+      validation. These are described briefly below.</para>
+    <section>
+      <title>Model Verification </title>
+      <para>Model verification is the process whereby checks are made to ensure that the generic
+        numerical model (i.e., the modelling software package) is actually solving the equations of
+        the mathematical model. Most hydraulic modelling work will generally involve the use of
+        well-tried and proven software packages. In these cases, it can be assumed that the
+        modelling software has been validated and that it is capable of solving the equations of
+        motion correctly. Nevertheless, it can be useful for inexperienced modellers to carry out
+        their own verification runs using standard test cases to provide confidence that they are
+        operating the model correctly. These verification runs could include reproduction of uniform
+        channel flow and/or reproduction of standard backwater or drawdown cases, as described, for
+        example, in <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Section …
+        <?oxy_custom_end?>
+      </para>
+      <para>Modellers should be aware that all software packages have “bugs”, which can lead to
+        spurious results and/or instability, particularly when used in modelling high velocity flows
+        and in “non-standard” applications. Modellers should also be aware that different modelling
+        packages can use different forms of the under-lying equations, different numerical solution
+        procedure, and different approaches and assumptions to modelling special flow cases such as
+        super-critical and flows at structures. Here it is important for a modeller to be aware of
+        the assumptions that are used in the selected modelling package, and to be confident that
+        they are appropriate for the physical system to be modelled. </para>
+      <para> Finally, there is a tendency for modellers to be innovative and to use models in
+        situations well beyond the range of conditions for which they were originally developed.
+        Typical examples might include the use of a 2D model to simulate flows where there may be
+        significant vertical accelerations, or where there may be a significant three-dimensional
+        component to the flow. Caution should always be used when using a package in these types of
+        applications. Wherever possible, model results should be compared with analytical results,
+        physical model results, or more appropriate (e.g., 3D or CFD) model results to obtain an
+        estimate of the likely magnitude of the errors involved.</para>
+    </section>
+    <section>
+      <title>Model Calibration and Validation</title>
+      <para>Model calibration and validation provides an overall check of the reliability of a
+        model. That is, how well the final site-specific model is representing the flow conditions
+        in the physical system to be modelled. Ideally, calibration and validation is a two stage
+        process, as follows.</para>
+      <para> Model calibration is the process of comparing model results against measured flood
+        levels and extents and adjusting model parameters to obtain a “best-fit”. For flood studies,
+        model calibration is typically carried out on the largest flood for which reliable water
+        level data is available. In studies where more frequent flooding may be important, the model
+        should also be calibrated against measurements taken from a more frequent flood event.
+        During the calibration process, model parameters (typically bed-friction coefficients) are
+        adjusted and the model re-run until the results give the best reproduction of the measured
+        data. </para>
+      <para> In the first instance, the calibration process is also used to identify any
+        inconsistencies in the model terrain data and boundary conditions. If after repeated
+        efforts, it is not possible to obtain a reasonable representation of the measured data or,
+        if this can only be achieved by the use of physically unrealistic input parameters, then it
+        will be necessary to look more closely at: the assumptions made in the selection of the
+        generic mathematical model, the appropriateness of the selected modelling package for
+        reproducing the flow conditions under consideration, and the reliability of the boundary
+        conditions that have been applied to the model.</para>
+      <para> Model Validation is the process whereby the calibrated model is used to simulate an
+        independent flood event to provide a check on the reliability of the calibration process.
+        The flood event will typically be somewhat lower than the calibration case and, in some
+        cases, the results may be used to further refine the calibration process.</para>
+    </section>
+  </section>
+
+  <section>
+    <title>Steady vs Unsteady Hydraulic Models </title>
+    <para>Numerical hydraulic models can be described as being either steady flow models, where the
+      depth of flow remains constant with time, or unsteady flow models, where the depth of flow can
+      vary with time. These models typically assume the flow to be gradually varying in space. That
+      is, variations in flow depth are small in relation to the distance over which they occur.
+      Under these conditions the pressure distribution can be assumed to be hydrostatic. </para>
+    <para> In the early days of numerical hydraulic modelling the distinction between steady flow
+      models and unsteady flow models was quite marked. This was because HEC-RAS (Reference), a
+      relatively sophisticated 1D steady flow model was freely available to anyone who wanted to use
+      it. By comparison, unsteady flow modelling required modellers to either have specialist
+      modelling skills to develop or adapt research-based models, or to purchase what was then quite
+      expensive specialised modelling software packages. As a result there was a tendency for
+      modellers to “push” the use of HEC-RAS well beyond the range of application for which it was
+      originally designed.</para>
+    <para> With the advent of more readily available and relatively sophisticated 1D and 2D unsteady
+      flow models, the distinction between steady and unsteady flow models has become less marked.
+      This is because there is less reliance on specialised steady flow models and, where required,
+      much of the steady flow modelling is carried out by unsteady flow models using steady flow
+      boundary conditions. </para>
+    <section>
+      <title>Steady Flow Models</title>
+        <para>In steady flow modelling, the flow velocity <emphasis role="italic">u</emphasis> and/or
+        discharge <emphasis role="italic">Q </emphasis>can be assumed to be locally constant and
+        does not vary in time. Under these conditions, the acceleration terms in the equations of
+        motion, described in Section X.X, can be assumed to be negligible. This means that the flow
+        is assumed to be in equilibrium with any potential increase in momentum or energy as water
+        flows downstream being balanced by bed-friction and other friction losses such as may occur
+        at structures. </para>
+      <para>1D steady flow models such as HEC-RAS (US Reference) can be used to compute flood
+        profiles in a wide range of situations. HEC-RAS is based on the numerical solution of the
+        profile equation presented in Section (X.X). This in turn is based on the 1D energy
+        equation. Manning’s equation is used to compute energy losses due to bed-friction, and other
+        contraction and expansion losses are calculated using a coefficient times the change in
+        velocity head. The momentum equation is used in situations where there are rapid variations
+        in the water surface profile, such as at hydraulic jumps. The computations can also include
+        empirical structure equations to describe rapidly varying flows at a range of structures
+        including bridges, culverts, weirs and spillways.</para>
+      <para> When using steady flow models, such as HEC-RAS, or using unsteady flow models with
+        steady flow boundary conditions, it is noted that the main underlying assumptions of steady
+        flow are effectively that:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The discharge is constant (usually calculated by a hydrologic model);</para>
+        </listitem>
+        <listitem>
+          <para>The peak flood levels coincide with the peak discharge; and</para>
+        </listitem>
+        <listitem>
+          <para>The peak discharge and corresponding flood levels occur simultaneously over the full
+            length of the reach of channel under consideration.</para>
+        </listitem>
+      </itemizedlist>
+      <para> For these reasons, and for the reasons described in the following section, steady flow
+        models are best suited to modelling flows along relatively short reaches of river with
+        well-defined flow paths, and/or for modelling flows at structures. Steady flow models should
+        not be used to describe flows where there are:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Rapidly changing hydrographs;</para>
+        </listitem>
+        <listitem>
+          <para>Flat channel slopes where wave propagation effects can become important;</para>
+        </listitem>
+        <listitem>
+          <para>Wide floodplains and/or other features where storage effects may affect the flow;
+            and </para>
+        </listitem>
+        <listitem>
+          <para>Channel networks where the flow splits are not well defined.</para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis role="bold"><emphasis role="italic">The Manning’s
+          Equation</emphasis></emphasis></para>
+      <para>The Manning’s equation for uniform flow, as described in Section x.x, can be considered
+        as the simplest form of steady flow model. Here the average velocity <emphasis role="italic"
+          >u</emphasis> across a cross-section can be related to a Manning roughness coefficient
+          <emphasis role="italic">n</emphasis>, the hydraulic radius <emphasis role="italic"
+          >Rh</emphasis>, and the bed slope <emphasis role="italic">S</emphasis>: </para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>u</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mi>n</mi>
+              </mfrac>
+              <msubsup>
+                <mi>R</mi>
+                <mi>h</mi>
+                <mrow>
+                  <mfrac bevelled="true">
+                    <mn>2</mn>
+                    <mn>3</mn>
+                  </mfrac>
+                </mrow>
+              </msubsup>
+              <msup>
+                <mi>S</mi>
+                <mrow>
+                  <mfrac bevelled="true">
+                    <mn>1</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+          </semantics>
+        </math>
+      </equation>
+      <para>For a wide open floodplain, the hydraulic radius can, to a first approximation, be
+        replaced by the flow depth y:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>u</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mi>n</mi>
+              </mfrac>
+              <msup>
+                <mi>y</mi>
+                <mrow>
+                  <mfrac bevelled="true">
+                    <mn>2</mn>
+                    <mn>3</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+              <msup>
+                <mi>S</mi>
+                <mrow>
+                  <mfrac bevelled="true">
+                    <mn>1</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+          </semantics>
+        </math>
+      </equation>
+      <para>These equations can be used by modellers as a sanity check to ensure that their models
+        are providing results with flow velocities of the correct order of magnitude. For example, a
+        relatively smooth floodplain with<emphasis role="italic"> n</emphasis> = 0.04, a moderate
+        slope of <emphasis role="italic">S</emphasis> = 0.001, and a depth of <emphasis
+          role="italic">y</emphasis> = 1.0m would be expected to have a flow velocity of
+        approximately <emphasis role="italic">u</emphasis> = 0.8 m/s.</para>
+    </section>
+    <section>
+      <title>Unsteady Flow Models</title>
+      <para>Unsteady flow models are not restricted by the steady flow assumption, and can be
+        applied to a much wider range of flow conditions. Referring to the limitations of steady
+        flow models, described above, situations in which an unsteady flow modelling should be used
+        are discussed below. </para>
+      <para><emphasis role="bold"><emphasis role="italic">Rapidly Changing
+          Hydrographs</emphasis></emphasis></para>
+      <para>With rapid changes in flow, the inertial (acceleration) terms in the equations of motion
+        become important. (These terms are not included in steady flow models.) Examples include
+        modelling of dam-breaks and structure operations, as well as modelling of reaches where the
+        time of propagation of a flood wave through the reach cannot be considered insignificant
+        relative to the duration of the flood hydrograph.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Flat Channel Slopes
+        </emphasis></emphasis></para>
+      <para>For flat channel slopes, flow velocities and, correspondingly, the effects of bed
+        friction can become small relative to the main time-varying acceleration terms in the
+        equations of motion. This is particularly true in lakes and estuaries. For this reason, the
+        ASCE (1995) recommends that unsteady flow modelling should be carried out for channel slopes
+        less than about 4x10-3 and, depending on the study objectives, for slopes up to about
+        1x10-3.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Storage
+        Effects</emphasis></emphasis></para>
+      <para>In reaches where there are significant storage effects, the rating curve on the rising
+        limb of a flood hydrograph will be different to the rating curve on the falling limb. This
+        results in a “looped” rating curve, as shown in Figure 1. Under these conditions the peak
+        water level will not correspond to the peak discharge. As a result, unsteady models should
+        be used to simulate these effects.</para>
      
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>u</mi><mo>=</mo><mfrac>
-      <mn>1</mn>
-      <mi>n</mi>
-     </mfrac>
-     <msup>
-      <mi>y</mi>
-      <mrow>
-       <mfrac bevelled='true'>
-        <mn>2</mn>
-        <mn>3</mn>
-       </mfrac>
-       </mrow>
-     </msup>
-     <msup>
-      <mi>S</mi>
-      <mrow>
-       <mfrac bevelled='true'>
-        <mn>1</mn>
-        <mn>2</mn>
-       </mfrac>
-       </mrow>
-     </msup>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>M</mi><mi>a</mi><mi>s</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>A</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>V</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>A</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>A</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>V</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mn>0</mn>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>A</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>Q</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mn>0</mn>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <msub>
-      <mi>b</mi>
-      <mrow>
-       <mi>s</mi><mi>t</mi></mrow>
-     </msub>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>h</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>Q</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><msub>
-      <mi>q</mi>
-      <mn>1</mn>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>Q</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-      <mo>&#x2202;</mo>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mi>Q</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-        <mi>A</mi>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mo>&#x2202;</mo><mi>h</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><mi>x</mi></mrow>
-       </mfrac>
-       <mo>+</mo><msub>
-        <mi>S</mi>
-        <mi>f</mi>
-       </msub>
-       </mrow>
-     <mo>)</mo></mrow><mo>=</mo><msub>
-      <mi>q</mi>
-      <mn>1</mn>
-     </msub>
-     <msub>
-      <mi>u</mi>
-      <mi>l</mi>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>Q</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-      <mo>&#x2202;</mo>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mi>Q</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-        <mi>A</mi>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mo>&#x2202;</mo><mi>h</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><mi>x</mi></mrow>
-       </mfrac>
-       <mo>+</mo><mfrac>
-        <mrow>
-         <msup>
-          <mi>n</mi>
-          <mn>2</mn>
-         </msup>
-         <msup>
-          <mi>Q</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-        <mrow>
-         <msup>
-          <mi>A</mi>
-          <mn>2</mn>
-         </msup>
-         <msup>
-          <mi>R</mi>
+      <figure>
+        <title>Storage Effects on the Rating Curve; (a) Flood Hydrograph, 
+          (b) Corresponding Rating Curve (from Cunge et al, 1980)
+        </title>
+           <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6089.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para><emphasis role="bold"><emphasis role="italic">Channel
+        Networks</emphasis></emphasis></para>
+      <para>Unsteady flow models have the ability to compute the distribution of flows throughout a
+        channel network or across a model domain, whereas steady flow models can only modelled on
+        the basis of pre-determined flow splits. In real-life situations peak flows in tributaries
+        rarely correspond with the peak flow in the main channel and, in some cases, backwater
+        effects from one part of a network (e.g., a main channel) can cause time-varying flow
+        reversals in another part (e.g., a tributary). Unsteady flow models are required to simulate
+        these effects.</para>
+    </section>
+  </section>
+  <section>
+    <title>Types of Unsteady Flow Models</title>
+    <para>With the exception of the steady 1D form of HEC-RAS most models currently in use have
+      unsteady modelling capability. In order of increasing level of sophistication, the main types
+      of unsteady flow model that can be applied to flood investigations, include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>1D models</para>
+      </listitem>
+      <listitem>
+        <para>2D models</para>
+      </listitem>
+      <listitem>
+        <para>Coupled 1D/2D models</para>
+      </listitem>
+      <listitem>
+        <para>3D models</para>
+      </listitem>
+      <listitem>
+        <para>CFD, physical and other non-hydrostatic models</para>
+      </listitem>
+    </itemizedlist>
+    <para>These are described briefly below. More details on the use of 1D, 2D and coupled 1D/2D
+      models in flood modelling applications are then provided in the following sections.</para>
+    <section>
+      <title>1D Models</title>
+      <para>1D flow models are based on the numerical solution of the Saint Venant equations for
+        describing gradually varying unsteady flow in one horizontal dimension (as derived in
+        Section X.X). Early 1D models required the main channel and flood plain of a river to be
+        schematised as a single one-dimensional channel. The use of these early 1D models was
+        generally restricted to modelling single river branches, or simply connected (dendritic)
+        branched river systems. As part of the evolutionary process of model development these
+        relatively simple models have been replaced by more sophisticated models that allow
+        arbitrary connections of multiple channel systems. In these models, floodplains can be
+        represented as separate flow paths and there can be multiple flow paths within a single
+        floodplain. This makes it possible to provide a somewhat more realistic description of the
+        flows in real river and floodplain systems. </para>
+      <para>1D models are computationally quick to run and are well suited to modelling flows along
+        well-defined channel and floodplain flow paths. Their more general use in flood studies has
+        been largely superseded by 2D models which can provide a much more detailed description of
+        flood flows in overbank areas. 1D models are still used in applications where large numbers
+        of multiple model runs are required and computational time requirements make 2D modelling
+        impractical. 1D models have also been integrated with 2D models in order to make the most of
+        the relative advantages of both types of model. </para>
+    </section>
+    <section>
+      <title>2D Models</title>
+      <para>2D flow models are based on the numerical solution of the depth-averaged equations
+        describing the conservation of mass and momentum in two horizontal dimensions (as derived in
+        Section X.X). These equations assume that the flow velocity is uniform over the depth, both
+        in magnitude and direction. This assumption is reasonable in most floodplain applications
+        where the flow depth is relatively shallow with respect to the horizontal dimensions of the
+        main physical features to be resolved in the model.</para>
+      <para>The 2D model equations are solved at each active water grid point or mesh element over a
+        two-dimensional model grid or mesh. The computational domain may be a square, rectangular or
+        curvilinear grid, or may be a flexible mesh comprising triangular and/or quadrilateral mesh
+        elements. With these models survey information for the area of interest is digitised onto
+        the two-dimensional model grid or mesh. This capable of providing a detailed description of
+        the flow in floodplains and overbank areas.</para>
+      <para>2D models can have problems in providing adequate resolution of in-bank flows and,
+        compared with 1D models, are heavy computationally. With respect to the latter, it is noted
+        that the use of parallel processing coupled with multi-core computers and/or graphics
+        processing units (GPUs) has significantly enhanced the computational capability of 2D
+        models. </para>
+    </section>
+    <section>
+      <title>Coupled 1D/2D Models</title>
+      <para>Coupled 1D/2D models are aimed at making the most of the best features of both 1D and 2D
+        models. Depending upon the particular software package being used the coupling can occur in
+        two ways. In the first, an overall 1D model of an extended reach of river may be coupled
+        dynamically to one or more detailed 2D model domains to provide a more detailed description
+        of the flows in local areas of interest. In the second, one or more 1D model branches may be
+        dynamically coupled within a 2D model domain to provide a better description of in-bank
+        channel flows, and flows through hydraulic structures such as culverts, weirs and bridges.
+        In some software packages, the 1D/2D coupling has also been extended to include 1D pipe
+        network models. This has extended the range of application of coupled 1D/2D models to
+        providing a more detailed description of the flooding associated with urban stormwater
+        flows.</para>
+    </section>
+    <section>
+      <title>3D Models</title>
+      <para>3D flow models are based on the numerical solution of the Reynolds-averaged
+        Navier-Stokes equations describing the conservation of mass and momentum in three-dimensions
+        (as described in Section X.X). For most 3D river and estuarine modelling applications, these
+        equations are simplified by assuming that the pressure distribution is hydrostatic. This
+        assumption is consistent with the equations used in 1D and 2D modelling, described above. As
+        for 2D models, the computational domain of a 3D model may be formed using a square,
+        rectangular or curvilinear grid, or using a flexible mesh comprising triangular and/or
+        quadrilateral mesh elements. With 3D models there are additional grid cells or mesh elements
+        in the vertical dimensional for describing the variations in flow with depth.</para>
+      <para>The use of a full 3D model should be considered in cases where it is important to
+        simulate three-dimensional flow effects. These can include: stratified flows and wind-driven
+        over-turning circulations in lakes and estuaries, “helicoidal” flows around river bends,
+        flows associated with hydraulic structures, and flows where the water depth is of the same
+        order of magnitude as, or greater than, the horizontal dimensions of the main physical
+        features to be resolved.</para>
+      <para>3D models require significantly more computing time (typically an order of magnitude or
+        more) than equivalent 2D models, even with the use of parallel processing. Further, in most
+        floodplain applications, many of the three-dimensional flow effects noted above are of
+        secondary importance, relative to the main flood flows, or can be accounted for through
+        relatively well defined additional loss parameters. In these cases, the additional
+        complexity and computing time associated with using a 3D model is considered to be
+        unnecessary and unwarranted. As such, 3D models are best suited to modelling the details of
+        complex flows in relatively short reaches of rivers, around structures and in other flows
+        cases where three-dimensional effects become important in determining localized flood
+        effects. </para>
+    </section>
+    <section>
+      <title>1D, 2D and 3D Model Limitations</title>
+      <para>The 1D, 2D and 3D models that have been discussed so far generally assume that the
+        pressure distribution in the flow to be modelled is hydrostatic. This assumption is
+        applicable for most flood flows but becomes invalid in flow situations where vertical
+        accelerations become significant. The most common cases where this might occur include flows
+        over weirs and levee banks, and flows through hydraulic structures. This is one of the
+        reasons why most 1D, 2D and even 3D models incorporate structure equations for describing
+        flows at structures such as weirs, levee banks and culverts. </para>
+      <para>Additionally, the numerical methods used to solve the equations of motion are generally
+        based on the assumption that the flow is sub-critical. As such, super-critical flows can
+        usually only be modelled through locally simplifying the momentum equation(s) and/or through
+        the addition of significant amounts of numerical dissipation. These approaches make it
+        possible to maintain the numerical computation through regions of super-critical flow.
+        Modellers should, however, be aware that these approaches only provide approximate solutions
+        to super-critical flow. Care should be taken when interpreting the results in these regions,
+        and in the transition zones between super-critical and sub-critical flow (and, in
+        particular, in the location and size of any resulting hydraulic jumps).</para>
+    </section>
+    <section>
+      <title>CFD and other Non-Hydrostatic Models</title>
+      <para>In cases where it becomes important to describe the details of non-hydrostatic flow
+        and/or of super-critical flow, it will become necessary to use more sophisticated numerical
+        modelling approaches such as Computational Fluid Dynamics (CFD) or Smoothed Particle
+        Hydrodynamics (SPM), or to use a physical model. </para>
+      <para>Computational Fluid Dynamics (CFD) refers to a class of models that are based on the
+        numerical simulation of the more generalised form of the Navier-Stokes equations. (See for
+        example, Roache, 1998). CFD can be used to model the details of non-hydrostatic flows,
+        including flows where there is no free-surface (e.g., internal flows within a structure).
+        CFD can also be used to model supercritical flows, as well as the transitions between
+        super-critical and sub-critical flows. CFD models require significantly more computing time
+        than the 3D models discussed above and are more demanding with respect to model set-up and
+        boundary condition requirements. As such, the use of CFD in flood modelling is generally
+        limited to simulating the details of complex flows at or within hydraulic structures (e.g.,
+        flow over a dam spillway or flow through a complex system of culverts).</para>
+      <para>CFD and the other types of model considered above typically operate in what is known as
+        an “Eulerian” reference frame. This involves the computation of the fluid flow relative to a
+        fixed model grid or mesh. By comparison, Smoothed Particle Hydrodynamics (SPM) uses a
+        “Lagrangian” reference frame (See for example, Violeau, 2012). Here the fluid itself is
+        broken down into small individual “particles” and, rather than using a fixed grid or mesh,
+        the computation follows the movements of these particles. This makes SPM particularly well
+        suited to modelling the dynamics of interactions at the water-air interface. For reliable
+        results SPM requires the use of very large numbers of particles. SPM has similar
+        disadvantages to CFD in relation to computational time and the demands associated with model
+        set-up and the application of appropriate boundary conditions. As for CFD, the use of SPM in
+        flood modelling is generally limited to simulating the details of complex flows at or within
+        hydraulic structures.</para>
+      <para>As discussed is Section X.X, physical models are geometrically scaled reproductions of
+        the physical system to be modelled. They typically use the same fluid (i.e., water) and
+        operate under the normal laws of gravity. This makes physical models suitable for modelling
+        non-hydrostatic flows and super-critical flows, including the transitions between
+        super-critical and sub-critical flows. As a result, physical models can be used to model
+        flow cases similar to those for 3D, CFD and SPM models discussed above. The main limitation
+        on the more general use of the physical models is the restriction on the scales that can be
+        used in order to avoid “scale effects”. This generally restricts the use of physical models
+        to modelling the details of flows in relatively short reaches of rivers. Although “distorted
+        scale” models can be used to reduce scale effects when modelling larger areas, distorted
+        models should not be used when accurate reproduction of three-dimensional flow effects is
+        required.</para>
+    </section>
+  </section>
+  <section>
+    <title>1D Unsteady Hydraulic Models</title>
+    <para>Commercially available 1D unsteady hydraulic models typically solve the full
+      one-dimensional unsteady Saint Venant equations. They can be applied to branched and looped
+      channel and river and floodplain systems, and can be used to simulate flows in a wide range of
+      physical systems from steep river reaches to tidal estuaries. The capabilities of these models
+      typically include most, if not all of the following features:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Hydraulic structures such as bridges, culverts, weirs, levees, etc., through the use
+          of in-built structure routines. </para>
+      </listitem>
+      <listitem>
+        <para>Options for including user-defined structures for describing structures such as flow
+          regulation gates and pumps.</para>
+      </listitem>
+      <listitem>
+        <para>The capability to approximate super-critical flows, including super-critical to
+          sub-critical flow transitions.</para>
+      </listitem>
+      <listitem>
+        <para>Options for specifying simplified diffusive wave or kinematic wave approximations to
+          the equations of motion to improve computational speed, where appropriate</para>
+      </listitem>
+    </itemizedlist>
+    <section>
+      <title>1D Equations of Motion</title>
+      <para>The main properties of one-dimensional flow along a channel can be uniquely defined by
+        two dependent variables, the water level or stage <emphasis role="italic">h, </emphasis>and
+        the averaged discharge <emphasis role="italic">Q</emphasis>, as shown in Figure 1.6.1. These
+        can be described as a function of the two main independent variables: the chainage or
+        distance along the channel <emphasis role="italic">x</emphasis>, and the time <emphasis
+          role="italic">t</emphasis></para>
+<figure>
+  <title>The main dependent variables for the 1D model equations</title>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="../../figures/6090.png"/>
+    </imageobject>
+  </mediaobject>
+</figure>
+      <para>With two dependent variables it is necessary to have two equations to describe the flow
+        in term of <emphasis role="italic">h</emphasis> and <emphasis role="italic">Q</emphasis> at
+        any given point in <emphasis role="italic">x</emphasis> and <emphasis role="italic"
+          >t</emphasis>. The equations used are the Saint Venant equations. These equations describe
+        the cross-sectionally averaged conservation of mass and conservation of momentum. The
+        momentum equation is used in unsteady flow models in preference to the energy equation that
+        is used in steady flow models. This is because momentum is a vector and introduces
+        directionality into the computation. By comparison, energy is a scalar and cannot.
+        Additionally, the momentum equation can be used to maintain the computation through
+        discontinuities such as hydraulic jumps. </para>
+      <para>
+        <emphasis role="bold"><emphasis role="italic">The Mass
+        Equation:</emphasis></emphasis></para>
+      <para>The one-dimensional unsteady continuity equation as derived in Section X.X can be given
+        as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
           <mrow>
-           <mrow><mn>4</mn><mo>/</mo><mn>3</mn></mrow>
-           </mrow>
-         </msup>
-         </mrow>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>=</mo><msub>
-      <mi>q</mi>
-      <mn>1</mn>
-     </msub>
-     <msub>
-      <mi>u</mi>
-      <mi>l</mi>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>S</mi><mi>i</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>f</mi><mi>i</mi><mi>e</mi><mi>d</mi><mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>h</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>&#x2212;</mo><msub>
-      <mi>S</mi>
-      <mi>b</mi>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>Q</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>&#x03B2;</mi><mfrac>
-      <mo>&#x2202;</mo>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mi>Q</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-        <mi>A</mi>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mo>&#x2202;</mo><mi>y</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><mi>x</mi></mrow>
-       </mfrac>
-       <mo>&#x2212;</mo><msub>
-        <mi>S</mi>
-        <mi>b</mi>
-       </msub>
-       <mo>+</mo><msub>
-        <mi>S</mi>
-        <mi>f</mi>
-       </msub>
-       </mrow>
-     <mo>)</mo></mrow><mo>=</mo><mn>0</mn>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>D</mi><mi>i</mi><mi>f</mi><mi>f</mi><mi>u</mi><mi>s</mi><mi>i</mi><mi>v</mi><mi>e</mi><mi>W</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>A</mi><mi>p</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>h</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>&#x2212;</mo><msub>
-      <mi>S</mi>
-      <mi>b</mi>
-     </msub>
-     <mo>=</mo><mo>&#x2212;</mo><msub>
-      <mi>S</mi>
-      <mi>f</mi>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>K</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>c</mi><mi>W</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>A</mi><mi>p</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <msub>
-      <mi>S</mi>
-      <mi>b</mi>
-     </msub>
-     <mo>=</mo><msub>
-      <mi>S</mi>
-      <mi>f</mi>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>M</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi>l</mi><mi>E</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>M</mi><mi>a</mi><mi>s</mi><mi>s</mi><mn>..</mn><mi>s</mi><mi>a</mi><mi>m</mi><mi>e</mi><mi>a</mi><mi>s</mi><mi>b</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>!</mo><mo>!</mo>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>x</mi><mo>&#x2212;</mo><mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>v</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>g</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mo>&#x2212;</mo><mfrac>
-      <mrow>
-       <mi>g</mi><mi>u</mi><msqrt>
-        <mrow>
-         <msup>
-          <mi>u</mi>
-          <mn>2</mn>
-         </msup>
-         <mo>+</mo><msup>
-          <mi>v</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </msqrt>
-       </mrow>
-      <mrow>
-       <msup>
-        <mi>C</mi>
-        <mn>2</mn>
-       </msup>
-       <mi>d</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>E</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>u</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>x</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       <mo>+</mo><mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>u</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>y</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mtext>Source</mtext><mo>/</mo><mtext>Sink</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>y</mi><mo>&#x2212;</mo><mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>v</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>v</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>v</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>v</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>g</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mo>&#x2212;</mo><mfrac>
-      <mrow>
-       <mi>g</mi><mi>v</mi><msqrt>
-        <mrow>
-         <msup>
-          <mi>u</mi>
-          <mn>2</mn>
-         </msup>
-         <mo>+</mo><msup>
-          <mi>v</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </msqrt>
-       </mrow>
-      <mrow>
-       <msup>
-        <mi>C</mi>
-        <mn>2</mn>
-       </msup>
-       <mi>d</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>E</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>v</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>x</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       <mo>+</mo><mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>v</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>y</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mtext>Source</mtext><mo>/</mo><mtext>Sink</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>n</mi><mo>=</mo><msup>
-      <mi>d</mi>
-      <mrow>
-       <mrow><mn>1</mn><mo>/</mo><mn>6</mn></mrow>
-       </mrow>
-     </msup>
-     <msup>
-      <mi>C</mi>
-      <mrow>
-       <mo>&#x2212;</mo><mn>1</mn></mrow>
-     </msup>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>n</mi><mo>=</mo><msup>
-      <mi>M</mi>
-      <mrow>
-       <mo>&#x2212;</mo><mn>1</mn></mrow>
-     </msup>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>O</mi><mi>T</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>F</mi><mi>o</mi><mi>r</mi><mi>m</mi><mi>s</mi><mi>O</mi><mi>f</mi><mi>T</mi><mi>h</mi><mi>e</mi><mi>E</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>M</mi><mi>a</mi><mi>s</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>x</mi><mo>&#x2212;</mo><mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mo>&#x2202;</mo>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mrow><mo>(</mo>
-      <mrow>
-       <mi>d</mi><mo>.</mo><msup>
-        <mi>u</mi>
-        <mn>2</mn>
-       </msup>
-       <mo>+</mo><mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-       </mfrac>
-       <mi>g</mi><mo>.</mo><msup>
-        <mi>d</mi>
-        <mn>2</mn>
-       </msup>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mo>&#x2212;</mo><mfrac>
-      <mrow>
-       <mi>g</mi><mi>u</mi><msqrt>
-        <mrow>
-         <msup>
-          <mi>u</mi>
-          <mn>2</mn>
-         </msup>
-         <mo>+</mo><msup>
-          <mi>v</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </msqrt>
-       </mrow>
-      <mrow>
-       <msup>
-        <mi>C</mi>
-        <mn>2</mn>
-       </msup>
-       <mi>d</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>E</mi><mo>.</mo><mi>d</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>u</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>x</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       <mo>+</mo><mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>u</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>y</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mtext>Source</mtext><mo>/</mo><mtext>Sink</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>y</mi><mo>&#x2212;</mo><mi>M</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>u</mi><mi>m</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>t</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mfrac>
-      <mo>&#x2202;</mo>
-      <mrow>
-       <mo>&#x2202;</mo><mi>y</mi></mrow>
-     </mfrac>
-     <mrow><mo>(</mo>
-      <mrow>
-       <mi>d</mi><mo>.</mo><msup>
-        <mi>v</mi>
-        <mn>2</mn>
-       </msup>
-       <mo>+</mo><mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-       </mfrac>
-       <mi>g</mi><mo>.</mo><msup>
-        <mi>d</mi>
-        <mn>2</mn>
-       </msup>
-       </mrow>
-     <mo>)</mo></mrow><mo>=</mo><mo>&#x2212;</mo><mfrac>
-      <mrow>
-       <mi>g</mi><mi>v</mi><msqrt>
-        <mrow>
-         <msup>
-          <mi>u</mi>
-          <mn>2</mn>
-         </msup>
-         <mo>+</mo><msup>
-          <mi>v</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </msqrt>
-       </mrow>
-      <mrow>
-       <msup>
-        <mi>C</mi>
-        <mn>2</mn>
-       </msup>
-       <mi>d</mi></mrow>
-     </mfrac>
-     <mo>+</mo><mi>E</mi><mo>.</mo><mi>d</mi><mrow><mo>(</mo>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>v</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>x</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       <mo>+</mo><mfrac>
-        <mrow>
-         <msup>
-          <mo>&#x2202;</mo>
-          <mn>2</mn>
-         </msup>
-         <mi>v</mi></mrow>
-        <mrow>
-         <mo>&#x2202;</mo><msup>
-          <mi>y</mi>
-          <mn>2</mn>
-         </msup>
-         </mrow>
-       </mfrac>
-       </mrow>
-     <mo>)</mo></mrow><mo>+</mo><mtext>Source</mtext><mo>/</mo><mtext>Sink</mtext>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mstyle mathvariant='bold' mathsize='normal'><mi>E</mi><mi>x</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>c</mi><mi>i</mi><mi>t</mi></mstyle><mtext>&#x00A0;</mtext><mstyle mathvariant='bold' mathsize='normal'><mi>v</mi><mi>s</mi></mstyle><mtext>&#x00A0;</mtext><mstyle mathvariant='bold' mathsize='normal'><mi>I</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>c</mi><mi>i</mi><mi>t</mi></mstyle><mtext>&#x00A0;</mtext><mstyle mathvariant='bold' mathsize='normal'><mi>S</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mstyle><mtext>&#x00A0;</mtext><mstyle mathvariant='bold' mathsize='normal'><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>d</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi>s</mi></mstyle>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <msub>
-      <mi>C</mi>
-      <mi>r</mi>
-     </msub>
-     <mo>=</mo><mrow><mo>[</mo> <mrow>
-      <mfrac>
-       <mrow>
-        <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
-         <mrow>
-          <mi>g</mi><mi>d</mi></mrow>
-        </msqrt>
-        <mo stretchy='false'>)</mo><mo>.</mo><mi>&#x0394;</mi><mi>t</mi></mrow>
-       <mrow>
-        <mi>&#x0394;</mi><mi>x</mi></mrow>
-      </mfrac>
-      </mrow> <mo>]</mo></mrow>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>&#x0394;</mi><msub>
-      <mi>t</mi>
-      <mrow>
-       <mi>max</mi></mrow>
-     </msub>
-     <mo>&#x2264;</mo><msub>
-      <mrow><mo>[</mo> <mrow>
-       <mfrac>
-        <mrow>
-         <mi>&#x0394;</mi><mi>x</mi></mrow>
-        <mrow>
-         <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>A</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>V</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>A</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>A</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>V</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mn>0</mn></mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      <para>By combining the two spatial derivatives, the conservation law form of the
+        cross-sectionally averaged mass equation can be given as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
           <mrow>
-           <mi>g</mi><mi>d</mi></mrow>
-         </msqrt>
-         <mo stretchy='false'>)</mo></mrow>
-       </mfrac>
-       </mrow> <mo>]</mo></mrow>
-      <mrow>
-       <mi>min</mi></mrow>
-     </msub>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>D</mi><mi>i</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>e</mi><mi>t</mi><mi>i</mi><mi>s</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mtext>&#x00A0;</mtext><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mi>s</mi>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>u</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>&#x2248;</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mi>&#x0394;</mi><mi>u</mi></mrow>
-      <mrow>
-       <mi>&#x0394;</mi><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><msub>
-      <mi>u</mi>
-      <mi>j</mi>
-     </msub>
-     <mfrac>
-      <mrow>
-       <mo stretchy='false'>(</mo><msub>
-        <mi>u</mi>
-        <mrow>
-         <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
-       </msub>
-       <mo>&#x2212;</mo><msub>
-        <mi>u</mi>
-        <mrow>
-         <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
-       </msub>
-       <msub>
-        <mrow></mrow>
-        <mrow>
-         <mi>&#x0394;</mi><mi>x</mi></mrow>
-       </msub>
-       <mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mi>&#x0394;</mi><mi>x</mi></mrow>
-     </mfrac>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mi>u</mi><mfrac>
-      <mrow>
-       <mo stretchy='false'>(</mo><msub>
-        <mi>u</mi>
-        <mrow>
-         <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
-       </msub>
-       <mo>&#x2212;</mo><msub>
-        <mi>u</mi>
-        <mrow>
-         <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
-       </msub>
-       <msub>
-        <mrow></mrow>
-        <mrow>
-         <mi>&#x0394;</mi><mi>x</mi></mrow>
-       </msub>
-       <mo stretchy='false'>)</mo></mrow>
-      <mrow>
-       <mi>&#x0394;</mi><mi>x</mi></mrow>
-     </mfrac>
-     <mo>=</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mo>&#x2202;</mo><mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><mi>x</mi></mrow>
-     </mfrac>
-     <mo>&#x2212;</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mi>&#x0394;</mi><mi>x</mi></mrow>
-      <mn>2</mn>
-     </mfrac>
-     <mfrac>
-      <mrow>
-       <msup>
-        <mo>&#x2202;</mo>
-        <mn>2</mn>
-       </msup>
-       <mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><msup>
-        <mi>x</mi>
-        <mn>2</mn>
-       </msup>
-       </mrow>
-     </mfrac>
-     <mo>+</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mi>&#x0394;</mi><msup>
-        <mi>x</mi>
-        <mn>2</mn>
-       </msup>
-       </mrow>
-      <mn>6</mn>
-     </mfrac>
-     <mfrac>
-      <mrow>
-       <msup>
-        <mo>&#x2202;</mo>
-        <mn>3</mn>
-       </msup>
-       <mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><msup>
-        <mi>x</mi>
-        <mn>3</mn>
-       </msup>
-       </mrow>
-     </mfrac>
-     <mo>&#x2212;</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mi>&#x0394;</mi><msup>
-        <mi>x</mi>
-        <mn>3</mn>
-       </msup>
-       </mrow>
-      <mn>2</mn>
-     </mfrac>
-     <mfrac>
-      <mrow>
-       <msup>
-        <mo>&#x2202;</mo>
-        <mn>4</mn>
-       </msup>
-       <mi>u</mi></mrow>
-      <mrow>
-       <mo>&#x2202;</mo><msup>
-        <mi>x</mi>
-        <mn>4</mn>
-       </msup>
-       </mrow>
-     </mfrac>
-     <mo>+</mo><mn>.........</mn>
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <msub>
-      <mi>E</mi>
-      <mi>N</mi>
-     </msub>
-     <mo>=</mo><mi>u</mi><mfrac>
-      <mrow>
-       <mi>&#x0394;</mi><mi>x</mi></mrow>
-      <mn>2</mn>
-     </mfrac>
-     
-    </mtd>
-   </mtr>
-   <mtr>
-    <mtd>
-     <mrow></mrow>
-    </mtd>
-   </mtr>
-  </mtable>
-  
- </semantics>
-</math>
-</equation>
-    <para/>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>A</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mn>0</mn></mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      <para>For modelling applications, this equation is transformed into terms of the required
+        water level <emphasis role="italic">h</emphasis> through the introduction of a storage width
+          <emphasis role="italic">bst</emphasis> and, when a lateral inflow of <emphasis
+          role="italic">ql</emphasis> per unit length of channel is included, the mass equation
+        becomes:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>b</mi>
+              <mrow>
+                <mi>s</mi><mi>t</mi></mrow>
+            </msub>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>h</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><msub>
+              <mi>q</mi>
+              <mn>1</mn>
+            </msub>
+          </mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      <para>
+        <emphasis role="bold"><emphasis role="italic">The Momentum
+        Equation:</emphasis></emphasis></para>
+      <para>In a similar form, the equation describing the one-dimensional cross-sectionally
+        averaged conservation of momentum can be given as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mi>Q</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mi>A</mi>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>h</mi></mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                  </mfrac>
+                  <mo>+</mo><msub>
+                    <mi>S</mi>
+                    <mi>f</mi>
+                  </msub>
+                </mrow>
+                <mo>)</mo></mrow><mo>=</mo><msub>
+                  <mi>q</mi>
+                  <mn>1</mn>
+                </msub>
+            <msub>
+              <mi>u</mi>
+              <mi>l</mi>
+            </msub>
+          </mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      <para>Where: <emphasis role="italic">A</emphasis> is the cross-sectional area, <emphasis
+          role="italic">g</emphasis> is the gravitational constant, <emphasis role="italic"
+          >Sf</emphasis> is the friction slope, <emphasis role="italic">β</emphasis> is the momentum
+        correction factor, and <emphasis role="italic">ql</emphasis> is a lateral discharge with a
+        downstream velocity component <emphasis role="italic">ul</emphasis> relative to the velocity
+        of the main stream.</para>
+      <para>With the introduction of a bed friction term based on Manning’s equation, the momentum
+        equation can be expressed as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mi>Q</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mi>A</mi>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>h</mi></mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                  </mfrac>
+                  <mo>+</mo><mfrac>
+                    <mrow>
+                      <msup>
+                        <mi>n</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <msup>
+                        <mi>Q</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                    <mrow>
+                      <msup>
+                        <mi>A</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <msup>
+                        <mi>R</mi>
+                        <mrow>
+                          <mrow><mn>4</mn><mo>/</mo><mn>3</mn></mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo></mrow><mo>=</mo><msub>
+                  <mi>q</mi>
+                  <mn>1</mn>
+                </msub>
+            <msub>
+              <mi>u</mi>
+              <mi>l</mi>
+            </msub>
+          </mrow>
+                  </semantics>
+      </math>
+      </equation>
+      <para>Where: <emphasis role="italic">n</emphasis> is Manning’s roughness coefficient and
+          <emphasis role="italic">R</emphasis> is the hydraulic radius (defined as the
+        cross-sectional area divided by the wetted perimeter)</para>
+      <para><emphasis role="bold"><emphasis role="italic">Equation
+          Assumptions:</emphasis></emphasis></para>
+      <para>The Saint Venant equations for unsteady flow, as described above, are based on the
+        following assumptions:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The flow is one-dimensional (i.e., the flow velocity is uniform and the water
+            surface is horizontal across each cross-section).</para>
+        </listitem>
+        <listitem>
+          <para>The pressure is hydrostatic (i.e., streamline curvature is small and vertical
+            accelerations can be neglected).</para>
+        </listitem>
+        <listitem>
+          <para>The effects of bed friction and turbulence can be included through resistance laws
+            (e.g., Manning’s equation) that have been derived for steady flow conditions.</para>
+        </listitem>
+        <listitem>
+          <para>The flow is nearly horizontal (i.e., the average channel bed slope is small)</para>
+        </listitem>
+      </itemizedlist>
+      <para> Unsteady flow models based on the numerical solution of the full de Saint Venant
+        equations are sometimes called “dynamic wave” models.</para>
+    </section>
+    
+    <section>
+      <title>Simplified Forms of the 1D Momentum Equation</title>
+      <para>The water surface slope in the hydrostatic pressure term of the momentum equation can be
+        expressed as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>h</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>&#x2212;</mo><msub>
+              <mi>S</mi>
+              <mi>b</mi>
+            </msub>
+          </mrow>
+                  </semantics>
+      </math>
+      </equation>
+      <para>Where <emphasis role="italic">y</emphasis> is the water depth and <emphasis
+          role="italic">Sb</emphasis> is the bed slope.</para>
+      <para> Ignoring the effects of lateral inflows for the purpose of this exercise, the momentum
+        equation can then be rewritten as:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>Q</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>&#x03B2;</mi><mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mi>Q</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mi>A</mi>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mi>g</mi><mi>A</mi><mrow><mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>y</mi></mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo><mi>x</mi></mrow>
+                  </mfrac>
+                  <mo>&#x2212;</mo><msub>
+                    <mi>S</mi>
+                    <mi>b</mi>
+                  </msub>
+                  <mo>+</mo><msub>
+                    <mi>S</mi>
+                    <mi>f</mi>
+                  </msub>
+                </mrow>
+                <mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow>
+             </semantics>
+      </math>
+      </equation>
+      <para><emphasis role="bold"><emphasis role="italic">Diffusive Wave
+          Approximation</emphasis></emphasis></para>
+      <para>In the diffusive wave approximation, the local acceleration term <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mrow>
+                  <mrow>
+                    <mi>&#x03B4;</mi>
+                    <mi>Q</mi>
+                  </mrow>
+                  <mo>/</mo>
+                  <mrow>
+                    <mi>&#x03B4;</mi>
+                    <mi>t</mi>
+                  </mrow>
+                </mrow>
+              </mrow>
+            </semantics>
+          </math>
+      </inlineequation> and the convective acceleration term 
+        <inlineequation><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mrow><mrow>
+              <mi>&#x03B4;</mi><mo stretchy='false'>(</mo><mrow><mrow>
+                <msup>
+                  <mi>Q</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow><mo>/</mo><mrow>
+                <mi>A</mi><mo stretchy='false'>)</mo></mrow></mrow>
+            </mrow><mo>/</mo><mrow>
+              <mi>&#x03B4;</mi><mi>x</mi></mrow></mrow>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSGbaeaacq
+            aH0oazcaGGOaWaaSGbaeaacaWGrbWaaWbaaSqabeaacaaIYaaaaaGc
+            baGaamyqaiaacMcaaaaabaGaeqiTdqMaamiEaaaaaaa@3E51@
+          </annotation>
+        </semantics>
+      </math>
+      </inlineequation>are neglected, and the momentum
+        equation reduces to:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>h</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>&#x2212;</mo><msub>
+              <mi>S</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>=</mo><mo>&#x2212;</mo><msub>
+              <mi>S</mi>
+              <mi>f</mi>
+            </msub>
+          </mrow>
+
+        </semantics>
+      </math>
+      </equation>
+      <para>That is, the water surface slope is balanced by the friction slope.</para>
+      <para>This approximation includes backwater effects and is valid for gradually varying flows
+        in reaches with moderate to steep slopes. It should not be used for rapidly varying flows
+        such as in dam-breaks, or in reaches with flat bed slopes where the acceleration terms
+        become important.</para>
+      <para>
+        <emphasis role="bold"><emphasis role="italic">Kinematic Wave
+          Approximation</emphasis></emphasis></para>
+      <para>In the kinematic wave approximation, the momentum equation is further reduced to:</para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>S</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>=</mo><msub>
+              <mi>S</mi>
+              <mi>f</mi>
+            </msub>
+          </mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      <para>This approximation assumes that the friction slope is equal to the bed slope. As such,
+        water can only flow downstream and backwater effects cannot be included. The kinematic wave
+        approximation should therefore only be used for gradually varying flows in reaches with
+        moderate to steep slopes where backwater effects can be neglected.</para>
+        </section>
+    
+    <section>
+      <title>Model Set-up</title>
+      <para>Topographic input to 1D models is generally specified in terms of survey cross-sections
+        of the channel and floodplain system to be modelled. These cross-sections are given as a
+        series of x–z co-ordinates specified perpendicular to the direction of flow. At each
+        cross-section key computational parameters may be pre-computed as a function of water level.
+        These parameters include cross-sectional area, storage width and conveyance. The effects of
+        varying roughness across a cross-section (e.g., between in-bank and over-bank areas) may
+        also be included in the conveyance calculations.</para>
+      <para> </para>
+      <para>The computation can be carried out on a “staggered” grid where water level <emphasis
+          role="italic">h</emphasis> and discharge <emphasis role="italic">Q</emphasis> grid points
+        are specified alternately along each model branch, as shown in Figure 9.1, or on a
+        non-staggered grid where the water level <emphasis role="italic">h</emphasis> and the
+        discharge <emphasis role="italic">Q</emphasis> are specified at each grid point. For
+        staggered grids, water level grid points are typically allocated to each cross-section and,
+        if necessary, additional intermediate water level points may be allocated between
+        cross-sections. For the staggered approach, discharge grid points are located midway between
+        adjacent water points</para>
+      <para> </para>
+      <para>Numerical approximations to the mass equation are centred on each water level <emphasis
+          role="italic">h</emphasis> grid point, while numerical approximations to the momentum
+        equation are centred on each discharge <emphasis role="italic">Q</emphasis> grid point. An
+        implicit finite difference procedure is then used to solve these equations. With this
+        approach, the water levels and discharges at each new time step are computed through the
+        simultaneous solution of a series of alternating mass and momentum equations along each
+        model branch.</para>
+      
+      <figure>
+        <title>The Computational Grid</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6091.png"/>
+          </imageobject>
+        </mediaobject>
+              </figure>
+      
+      <para><emphasis role="bold"><emphasis role="italic">Initial
+        Conditions</emphasis></emphasis></para>
+      <para>Before starting a model simulation, initial water level and discharge values must be
+        specified at each water level and discharge grid-point, respectively. Depending upon the
+        particular modelling package being used, these initial values can be obtained from:</para>
+      <itemizedlist>
+        <listitem>
+          <para>User specified values</para>
+        </listitem>
+        <listitem>
+          <para>Hot start conditions obtained from the results of an earlier model run</para>
+        </listitem>
+        <listitem>
+          <para>Internally generated “auto-start” conditions computed using an assumed initial
+            steady state flow solution </para>
+        </listitem>
+        <listitem>
+          <para>A combination of user defined and auto-start conditions (e.g., using user defined
+            conditions in initially dry flood plains).</para>
+        </listitem>
+      </itemizedlist>
+      <para> </para>
+      <para><emphasis role="bold"><emphasis role="italic">Boundary
+        Conditions</emphasis></emphasis></para>
+      <para>The main input to the model is generally provided by the boundary conditions. These must
+        be specified at each upstream or downstream open boundary. In most flood studies the
+        upstream boundary conditions are generally specified as discharge hydrographs (typically
+        computed by a hydrologic model such as RORB). Corresponding downstream boundary conditions
+        are generally specified as tail water levels (either constant or time varying), or through
+        some means of relating the model discharge to a corresponding water level. This can be done
+        by specifying a rating curve, where the discharge is explicitly linked to the water surface
+        elevation, or through the use of the kinematic wave approximation at the boundary. The
+        latter effectively links the discharge to the water surface elevation through the Manning
+        equation. In tidal estuaries the downstream boundary will generally be specified in terms of
+        a fixed or time-varying tidal elevation.</para>
+      <para> </para>
+      <para><emphasis role="bold"><emphasis role="italic">Model
+        Structures</emphasis></emphasis></para>
+      <para>1D hydraulic models typically incorporate a range of structure formulations for
+        including flow control structures within a model. These may include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Weirs: for describing flows over weirs, levees, road and rail embankments and
+            overtopping of bridges, etc. A range of weir formulations may typically be available for
+            describing different weir characteristics (e.g., broad-crested or sharp-crested) and
+            different flow combinations (e.g., free overflow or drowned flow). Special weir
+            formulations may also be included through which user-defined flow relationships can be
+            specified.</para>
+        </listitem>
+        <listitem>
+          <para>Culverts: for describing flows through culverts, bridges and pipes. Different
+            formulations are used for a range of different upstream and downstream controlled flow
+            conditions. User-defined culvert relationships can also be used.</para>
+        </listitem>
+        <listitem>
+          <para>Regulating structures: where flows at structures such as gates or pumps can be
+            specified as a level or discharge at another point in the model.</para>
+        </listitem>
+      </itemizedlist>
+      <para> </para>
+      <para>In staggered grid models, structures are located at discharge grid points, and water
+        level grid points (and therefore cross-sections) must be specified immediately upstream and
+        downstream of the structure, as shown in Figure 3. For these cases, the momentum equation at
+        the discharge grid point is replaced by the structure formulation. Flow through the
+        structure then becomes a function of the upstream and/or downstream water levels, depending
+        on the flow conditions (e.g., free overflow or drowned flow for weirs, or inlet or outlet
+        control for culverts).</para>
+      <para> </para>
+
+        <figure>
+          <title>Schematisation of a Channel and Structure Grid</title>
+          <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6092.png"/>
+          </imageobject>
+        </mediaobject>
+        </figure>
+        
+
+      <para><emphasis role="bold">Figure 3 Schematisation of a Channel and Structure
+        Grid</emphasis></para>
+      <para>Multiple structures can be defined at a single discharge point. For example, a bridge
+        which can be overtopped can be described by the combination of a culvert, for normal flow
+        conditions, and a weir, for overtopping flows. </para>
+      <para> </para>
+      <para><emphasis role="bold"><emphasis role="italic">Floodplain
+        Flows</emphasis></emphasis></para>
+      <para>The treatment of floodplain flows can be very different depending on the main
+        characteristics of the river channel and floodplain system. For floodplains that drain
+        naturally to the river channel, as shown in Figure 4(a), the water level can be the same in
+        both the river and the floodplain. Under these conditions the effects of storage and flow
+        along the floodplain can be included directly in a single combined river channel and
+        floodplain branch.</para>
+      <figure>
+        <title>Different Types of Flood Plain Flow</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6093.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para> For floodplains where the river flows spill out over a natural or man-made levees, as
+        shown in Figure 4(b), the water level in the floodplain can be very different to the water
+        level in the main channel. Under these conditions, the effects of storage and flow along the
+        floodplain should be incorporated in a separate model branch. Flow exchange between the
+        river channel and floodplain branches can then be controlled by a link branch with a
+        broad-crested weir representing the levee bank. </para>
+      <para> A simple river channel/floodplain branch system is schematised in Figure 5.
+        Combinations of multiple river channel and floodplain branches can be used to describe the
+        flows in quite complex river and floodplain systems. </para>
+      
+      <figure>
+        <title>Schematisation of a Simple River Channel/Floodplain Branch System</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6094.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      
+
+    </section>
+    <section>
+      <title>Data Requirements</title>
+      <para>To construct a 1D model of a river and floodplain system, it is necessary to have the
+        following data:</para>
+      <itemizedlist>
+        <listitem>
+          <para>A knowledge of the main flow paths throughout the system.</para>
+        </listitem>
+        <listitem>
+          <para>Survey cross-sections at representative locations across the river channel and
+            floodplain.</para>
+        </listitem>
+        <listitem>
+          <para>Survey levels along flow controls such as levees, weirs and road embankments.</para>
+        </listitem>
+        <listitem>
+          <para>Survey of control structures such as bridges and culverts.</para>
+        </listitem>
+        <listitem>
+          <para>Survey cross-sections immediately upstream and downstream of branch junctions, and
+            flow control structures.</para>
+        </listitem>
+      </itemizedlist>
+      <para> Additionally, data on historic flood levels is required for model calibration. Ideally,
+        a 1D model should be calibrated against water level hydrographs at various locations
+        throughout the model area. This will provide a measure of how well the model can reproduce
+        the timing of a flood and the shape of the hydrograph. In many cases, however, water level
+        hydrographs of historic flood events do not exist. Consequently, most models are calibrated
+        against peak water levels surveyed after a flood.</para>
+    </section>
+    <section>
+      <title>Advantages and Limitations</title>
+      <para>The main advantages of a 1D model are that the model simulations are relatively quick to
+        run computationally (i.e. relative to full 2D models), and that the main river channels can
+        be well defined by survey cross-sections. As such, 1D models are well suited to modelling
+        long reaches of river systems, and to modelling of river and floodplain systems where the
+        flow paths are reasonably well defined.</para>
+      <para> The main disadvantages of 1D models are that they are based on cross-sectionally
+        averaged one-dimensional equations of motion. As such:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The floodplain flow paths must be pre-determined by the user.</para>
+        </listitem>
+        <listitem>
+          <para>The flow paths cannot change with increases in water level (thus, it may be
+            necessary to develop separate models for simulating low flow and high flow
+            conditions).</para>
+        </listitem>
+        <listitem>
+          <para>Losses due to two-dimensional effects such as bends, flow separations, etc., must
+            all be lumped into the bed-friction parameter (making detailed calibration
+            essential).</para>
+        </listitem>
+        <listitem>
+          <para>No information is available on the distribution of flows within an individual flow
+            path.</para>
+        </listitem>
+        <listitem>
+          <para>There can be problems in interpreting model results for mapping flood extents and
+            depths of inundation.</para>
+        </listitem>
+      </itemizedlist>
+      <para> As such, 1D models are not well suited to modelling the details of flood flows within
+        the floodplain.</para>
+      <para>
+        <emphasis role="bold">Example 1. LindsayRiver Study</emphasis></para>
+      <para> </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="clip_image002_-1174904458.gif" depth="323" width="606"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para><emphasis role="bold">Figure Ex 1.1: LindsayRiver Branched 1D Model
+        Network</emphasis></para>
+      <para> </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="clip_image004_1584556413.gif" depth="298" width="619"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para><emphasis role="bold">Figure Ex 1.2: LindsayRiver Water Level Profile</emphasis></para>
+      <para> </para>
+    </section>
   </section>
 
   <section>
-    <title>Unsteady flow models - see ch 2 </title>
+    <title>2D Unsteady Hydraulic Models </title>
+    <para>Due to the limitations 1D models, there was a trend in the early 1990s towards the use of
+      full 2D models in urban flood studies and other flood studies where the details of the flow
+      distribution across the floodplain became important. (See for example Bishop et al, 1995.)
+      This trend continued through to the early 2000s. By this time 2D modelling had become a
+      virtually a standard for most rural and urban flood modelling studies. </para>
+    <section>
+      <title>Model Equations</title>
+      <para>As discussed in Section X.X, 2D unsteady hydrodynamic models are based on the numerical
+        solution of the depth-averaged shallow water wave or long wave equations. These equations
+        describe the conservation of mass and momentum in two horizontal dimensions <emphasis
+          role="italic">x</emphasis> and <emphasis role="italic">y</emphasis>. In a form used in
+        many 2D flood models, these equations can be expressed as:</para>
+      <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext></mrow>
+                 </semantics>
+      </math>
+      </equation>
+      <para><emphasis role="bold"><emphasis role="italic">x-Momentum</emphasis></emphasis></para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>v</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>g</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+              <mrow>
+                <mi>g</mi><mi>u</mi><msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>u</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo><msup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </msqrt>
+              </mrow>
+              <mrow>
+                <msup>
+                  <mi>C</mi>
+                  <mn>2</mn>
+                </msup>
+                <mi>d</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>E</mi><mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>u</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo><mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>u</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mtext>Source/Sink</mtext></mrow>
 
-    <para/>
+        </semantics>
+      </math>
+      </equation>
+      <para><emphasis role="bold"><emphasis role="italic">y-Momentum</emphasis></emphasis></para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>v</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>v</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>v</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>v</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>g</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+              <mrow>
+                <mi>g</mi><mi>v</mi><msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>u</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo><msup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </msqrt>
+              </mrow>
+              <mrow>
+                <msup>
+                  <mi>C</mi>
+                  <mn>2</mn>
+                </msup>
+                <mi>d</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>E</mi><mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>v</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo><mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>v</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mtext>Source/Sink</mtext></mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      <para>This coupled system of equations provides the three equations necessary to solve for the
+        three dependent variables; ς the free surface elevation, <emphasis role="italic"
+          >u</emphasis> the velocity in the <emphasis role="italic">x</emphasis> direction and
+          <emphasis role="italic">v</emphasis> the velocity in the <emphasis role="italic"
+          >y</emphasis> direction. </para>
+      <para> The mass and momentum equations include sources and sinks for describing the effects of
+        localised inflows and outflows. The <emphasis role="italic">x</emphasis> and <emphasis
+          role="italic">y</emphasis> momentum equations also include a quadratic Chezy-type friction
+        formulation and a simple eddy viscosity formulation (with eddy viscosity coefficient
+          <emphasis role="italic">E</emphasis>). For practical modelling applications, the Chezy
+        coefficient <emphasis role="italic">C</emphasis> can be related to the more usual (for
+        Australian applications) Manning’s <emphasis role="italic">“n” </emphasis>by the Strickler
+        relation: </para>
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mi>n</mi><mo>=</mo><msup>
+              <mi>d</mi>
+              <mrow>
+                <mrow><mn>1</mn><mo>/</mo><mn>6</mn></mrow>
+              </mrow>
+            </msup>
+            <msup>
+              <mi>C</mi>
+              <mrow>
+                <mo>&#x2212;</mo><mn>1</mn></mrow>
+            </msup>
+          </mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      <para>In some European models, the friction coefficient is sometimes specified in terms of
+        Manning’s <emphasis role="italic">“M”</emphasis>, where:</para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mi>n</mi><mo>=</mo><msup>
+              <mi>M</mi>
+              <mrow>
+                <mo>&#x2212;</mo><mn>1</mn></mrow>
+            </msup>
+          </mrow>
+        
+        </semantics>
+      </math>
+      </equation>
+      
+      <para>For modelling large expanses of open water, such as in lakes and estuaries, these 2D
+        model equations can be extended to include the effects of wind shear and/or Coriolis forces. </para>
+    </section>
+    <section>
+      <title>Assumptions</title>
+      <para>In the derivation of the 2D model equations, it has been assumed that:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The flow is incompressible</para>
+        </listitem>
+        <listitem>
+          <para>The pressure is hydrostatic (that is, vertical accelerations can be neglected and
+            the local pressure is dependent only on the local depth). </para>
+        </listitem>
+        <listitem>
+          <para>The flow can be described by continuous (differentiable) functions of ς, <emphasis
+              role="italic">u</emphasis> and<emphasis role="italic">v</emphasis> (that is, the flow
+            does not include step changes in ς, <emphasis role="italic">u</emphasis> and <emphasis
+              role="italic">v).</emphasis></para>
+        </listitem>
+        <listitem>
+          <para>The flow is two-dimensional (that is, the effects of vertical variations in the flow
+            velocity can be neglected).</para>
+        </listitem>
+        <listitem>
+          <para>The flow is nearly horizontal (that is, the average channel bed slope is small).
+          </para>
+        </listitem>
+        <listitem>
+          <para>The effects of bed friction can be included through resistance laws (e.g., Manning’s
+            equation) that have been derived for steady flow conditions.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section>
+      <title>Other Forms of the Equations</title>
+      <para>The equations presented in Section 1.7.1 form the basis of many of the 2D numerical
+        models currently in use. Another form of the equations that is finding increasing popularity
+        is the so-called “conservation law” form described for example by Abbott (1969). In this
+        form of the equations, the depth average momentum “fluxes” (<emphasis role="italic"
+          >d.u</emphasis> and <emphasis role="italic">d.v</emphasis> in the <emphasis role="italic"
+          >x</emphasis> and <emphasis role="italic">y</emphasis> directions, respectively) are used
+        as the time dependent velocity variables in the momentum equations. Excluding source and
+        sink terms, bed friction and eddy viscosity, the conservation law form of the shallow water
+        equations can be expressed as:</para>
+      <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>&#x03C2;</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mtext>Sources</mtext><mo>-</mo><mtext>Sinks</mtext></mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      
+      <para><emphasis role="bold"><emphasis role="italic">x-Momentum</emphasis></emphasis></para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mrow><mo>(</mo>
+              <mrow>
+                <mi>d</mi><mo>.</mo><msup>
+                  <mi>u</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>+</mo><mfrac>
+                  <mn>1</mn>
+                  <mn>2</mn>
+                </mfrac>
+                <mi>g</mi><mo>.</mo><msup>
+                  <mi>d</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+                <mrow>
+                  <mo>&#x2202;</mo><mi>y</mi></mrow>
+              </mfrac>
+            <mo>=</mo><mo>&#x2212;</mo><mfrac>
+              <mrow>
+                <mi>g</mi><mi>u</mi><msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>u</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo><msup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </msqrt>
+              </mrow>
+              <mrow>
+                <msup>
+                  <mi>C</mi>
+                  <mn>2</mn>
+                </msup>
+                <mi>d</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mi>E</mi><mo>.</mo><mi>d</mi><mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>u</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo><mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>u</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mtext>Source/Sink</mtext></mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      
+      <para><emphasis role="bold"><emphasis role="italic">y-Momentum</emphasis></emphasis></para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>t</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mo stretchy='false'>(</mo><mi>d</mi><mo>.</mo><mi>u</mi><mo>.</mo><mi>v</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>+</mo><mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo><mi>y</mi></mrow>
+            </mfrac>
+            <mrow><mo>(</mo>
+              <mrow>
+                <mi>d</mi><mo>.</mo><msup>
+                  <mi>v</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>+</mo><mfrac>
+                  <mn>1</mn>
+                  <mn>2</mn>
+                </mfrac>
+                <mi>g</mi><mo>.</mo><msup>
+                  <mi>d</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+              <mo>)</mo></mrow><mo>=</mo><mo>&#x2212;</mo><mfrac>
+                <mrow>
+                  <mi>g</mi><mi>v</mi><msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo><msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi></mrow>
+              </mfrac>
+            <mo>+</mo><mi>E</mi><mo>.</mo><mi>d</mi><mrow><mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>v</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo><mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>v</mi></mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo><msup>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo></mrow><mo>+</mo><mtext>Source/Sink</mtext></mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      
+      <para>This is effectively the form of the equations that provides the basis of the finite
+        difference solution procedure used by DHI (2005). A distinct advantage of the conservation
+        law formulation of the equations is that, when the depth average momentum fluxes <emphasis
+          role="italic">d.u</emphasis> and <emphasis role="italic">d.v</emphasis> are used as the
+        dependent velocity variables, the mass equation becomes linear and, barring coding errors,
+        the numerical solutions should remain mass conservative. </para>
+    </section>
+    <section>
+      <title>Numerical Solution Procedures</title>
+      <para>Development of numerical solution procedures for the shallow water wave equations is an
+        active area of on-going research. There are three main approaches that have used; finite
+        difference, finite element and finite volume techniques. The main characteristics of, and
+        the differences between, these methods are discussed in detail by, for example, Peiro and
+        Sherwin (2005). The main features of each of these approaches are outlined below.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Finite Difference Methods:
+          </emphasis></emphasis>With finite differences, the differential forms of the equations of
+        motion described above are used directly. The dependent water level and velocity variables
+        are defined at individual grid points on a structured rectilinear or curvilinear grid.
+        Spatial derivatives are approximated by taking arithmetic differences between the dependent
+        variables in adjacent grid points, while time derivatives are approximated by taking
+        arithmetic differences between the variables at different time levels. The main advantages
+        of finite difference methods are that they are relatively simple to implement and are easy
+        to use. The main disadvantage is that complex geometries cannot be readily resolved without
+        the use of fine scale grid resolution. Finite difference techniques for providing solutions
+        to the shallow water wave equations have been described by, for example, Abbott, 1979;
+        Stelling, 1984; and Abbott and Basco (1989).</para>
+      <para><emphasis role="bold"><emphasis role="italic">Finite Element Methods:
+          </emphasis></emphasis>With finite elements, the equations of motion are transformed into
+        integral formulations. Weighting or trial functions are introduced and the resulting
+        equations are then solved numerically over an mesh of regular or irregularly shaped
+        elements. The shapes of these elements are typically triangles and/or quadrilaterals, but
+        can take other forms. Finite element methods provide solutions that are smooth and
+        continuous over each element and which have matching values at the interfaces between
+        elements. One of the main advantages of finite elements is that the integral formulation of
+        the equations does not require a structured mesh. This makes it possible to use an
+        unstructured flexible mesh which can be aligned with the local flow direction, or which can
+        provide greater resolution in particular areas of interest. The main disadvantage with flood
+        modelling with standard finite element techniques is that mass is not necessarily conserved.
+        Finite element techniques for providing solutions to the shallow water wave equations have
+        been described by, for example, Connor and Brebbia, 1976; and Zienkiewicz et al
+        (2014).</para>
+      <para><emphasis role="bold"><emphasis role="italic">Finite Volume Methods:
+          </emphasis></emphasis>Finite volume methods are similar to finite elements in that they
+        use integral formulations of the equations of motion and can be solved over an unstructured
+        flexible mesh of irregularly shaped (typically triangular and/or quadrilateral) mesh cells.
+        The main differences are that finite volume methods use integral forms of the conservation
+        law form of the equations of motion and each mesh cell is treated as a control volume
+        represented by volume-averaged values of the conserved variables (mass and momentum). The
+        rates of change of these conserved variables are derived by integrating the cell-interface
+        fluxes. A key step in these methods involves calculating the numerical fluxes at the cell
+        interfaces. As for finite elements, the integral formulation of the equations used in finite
+        volumes makes it possible to use unstructured flexible meshes that can be aligned with the
+        local flow directions and which can provide greater resolution in particular areas of
+        interest. The main advantage of finite volumes over finite elements is that mass is
+        conserved. Finite volume techniques for providing solutions to the shallow water wave
+        equations have been described by, for example, LeVeque (2012).</para>
+      <para>Finite difference methods have been used extensively in the historical development of
+        numerical 2D flood modelling practice (e.g., Bishop <emphasis role="italic">et
+        al</emphasis>, 1995, Stelling <emphasis role="italic">et al</emphasis>, 1998; McCowan
+          <emphasis role="italic">et al</emphasis>, 2000 and Syme, 2001) and are still used widely
+        today. Early flexible mesh flood model development was mostly carried out using finite
+        element techniques (e.g., King and Roig, 1988). However, due to potential mass conservation
+        issues, more recent flexible mesh model development has focussed more on finite volume
+        techniques. In this respect, it is noted there are also hybrid approaches that combine the
+        finite element and finite volume schemes. Further, the conservation law formulation of the
+        shallow water wave equations can be used to develop finite difference solution procedures
+        that apply the finite volume approach to a structured rectilinear or curvilinear grid. </para>
+      <para><emphasis role="bold">Explicit vs Implicit Solution Procedures</emphasis></para>
+      <para>The way in which these different solution procedures move forward in time can be
+        described as being either “explicit” or “implicit”. In this respect it is noted that the
+        “Courant” number <emphasis role="italic">Cr</emphasis> is a key parameter for defining the
+        differences between explicit and implicit solution procedures. The Courant number expresses
+        the number of grid or flexible mesh cells that flow information can travel in one timestep.
+        The Courant number <emphasis role="italic">Cr</emphasis> can be defined as:</para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>C</mi>
+              <mi>r</mi>
+            </msub>
+            <mo>=</mo><mrow><mo>[</mo> <mrow>
+              <mfrac>
+                <mrow>
+                  <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
+                    <mrow>
+                      <mi>g</mi><mi>d</mi></mrow>
+                  </msqrt>
+                  <mo stretchy='false'>)</mo><mo>.</mo><mi>&#x0394;</mi><mi>t</mi></mrow>
+                <mrow>
+                  <mi>&#x0394;</mi><mi>x</mi></mrow>
+              </mfrac>
+            </mrow> <mo>]</mo></mrow></mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      
+      <para> With an explicit solution procedure, the solutions to the water surface elevations and
+        flow velocities at the new timestep are computed directly (explicitly) as a function of the
+        known values at the old timestep. Explicit schemes tend to be computationally efficient, but
+        have a stability constraint that information can only travel a maximum of one grid/mesh
+        element in a single timestep. That is, that the Courant number must always be less than or
+        equal to one (i.e., <emphasis role="italic">Cr</emphasis> ≤ 1). This provides a stability
+        constraint on the timestep <emphasis role="italic">Δt</emphasis>, that is commonly called
+        the “Courant” stability criterion, where: </para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mi>&#x0394;</mi><msub>
+              <mi>t</mi>
+              <mrow>
+                <mi>max</mi></mrow>
+            </msub>
+            <mo>&#x2264;</mo><msub>
+              <mrow>
+                <mrow><mo>[</mo> <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mi>&#x0394;</mi><mi>x</mi></mrow>
+                    <mrow>
+                      <mo stretchy='false'>(</mo><mi>u</mi><mo>+</mo><msqrt>
+                        <mrow>
+                          <mi>g</mi><mi>d</mi></mrow>
+                      </msqrt>
+                      <mo stretchy='false'>)</mo></mrow>
+                  </mfrac>
+                </mrow> <mo>]</mo></mrow></mrow>
+              <mrow>
+                <mi>min</mi></mrow>
+            </msub>
+          </mrow>
+        
+        </semantics>
+      </math>
+      </equation>
+      
+      <para>By comparison, in an implicit solution procedure, the water surface elevations and flow
+        velocities at the new timestep are expressed as a combination of both the known values at
+        the old timestep and adjacent unknown values at the new timestep. As a result, the solutions
+        at one grid/mesh element are linked to those in the neighbouring cells. These solutions are,
+        in turn, linked to those in their neighbouring cells, and so on. In this way, the solutions
+        to the discrete numerical approximations to the mass and <emphasis role="italic"
+          >x</emphasis> and <emphasis role="italic">y</emphasis> momentum equations for each
+        grid/mesh cell are linked “implicitly” to those in every other cell over the entire model
+        domain. This approach allows flow information to travel much further than one grid point per
+        timestep. As a result, the Courant stability criterion does not apply to implicit solution
+        procedures and model time steps can be determined more by accuracy requirements rather than
+        by stability constraints.</para>
+      <para><emphasis role="bold">ADI Solution Procedures</emphasis></para>
+      <para>Most of the early 2D model developments were for coastal and marine applications where
+        the use of high Courant numbers was found to provide significant computational advantages.
+        Following Leendertse (1967) many of these models used finite difference schemes which used
+        what is known as an “alternating direction implicit” or ADI algorithm. This approach
+        involves the use of a series of implicit 1D sweeps alternating along x-grid lines and y-grid
+        lines which is much simpler to implement than a fully two-dimensional implicit solution
+        procedure. </para>
+      <para>The ADI approach can be shown to be independent of the Courant stability criterion and
+        has been used extensively in two-dimensional flood modelling (e.g., Stelling <emphasis
+          role="italic">et al</emphasis>, 1998; McCowan <emphasis role="italic">et al</emphasis>,
+        2000 and Syme, 2001). It should be noted, however, that the ADI approach is not directly
+        equivalent to a fully two-dimensional implicit scheme. Although the timestep is not subject
+        to the Courant stability criterion, it is subject to accuracy constraints, particularly when
+        the solution involves flow in relatively narrow channels at an angle to the grid (Benque
+          <emphasis role="italic">et al</emphasis>, 1982). In practice, the timestep should be
+        selected such that the Courant number is less than the minimum number of grid cells used to
+        describe the width of a channel. In many cases this tends to restrict the timestep such that
+        the Courant number is of order Cr ≈ 1 in narrow channels, although higher Courant numbers
+        can occur in other parts of the model.</para>
+      <para><emphasis role="bold">Parallel Processing and GPUs</emphasis></para>
+      <para>With the advent of multiple-core processors and graphics processing units (GPUs) it
+        became possible to carry out multiple computations in parallel. This has provided
+        significant increases in computational speed for models with code that could be readily
+        “parallelised”. The direct explicit relationships between water surface elevations and flow
+        velocities at the new timestep and the corresponding values at the old time step make
+        explicit solution procedures particularly well suited to parallel processing. As a result,
+        much of the recent development in 2D flood modelling has focussed on explicit finite volume
+        numerical solution procedures (need references here). These models have the capability to
+        increase the effective computational speed by one to two orders of magnitude, depending upon
+        what features are, or are not, included in the model.</para>
+    </section>
+    <section>
+      <title>Discretisation Errors</title>
+      <para>Irrespective of the numerical method being used, the modeller should be aware that the
+        resulting Numerical Model is only a numerical approximation to the Equations of Motion (the
+        Mathematical Model). Discretisation errors are introduced when the continuous mathematical
+        equations have to be approximated by discrete (discontinuous) arithmetic expressions that
+        can then be solved by the computer. These errors are called “truncation” errors. They are
+        different to computer “round-off” errors, and can have significant implications on the
+        accuracy of a model’s results. </para>
+      <para> To illustrate this effect, a simple first-order finite difference approximation to the
+          <emphasis role="italic">uδu/δx</emphasis> “convective momentum” term in the x momentum
+        equation has been examined more closely. This term is to be discretised on a square
+        “staggered” grid similar to that shown in Figure X.</para>
+      <figure>
+        <title>Example of a Computational Grid</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6093.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      
+      <para>For a given timestep <emphasis role="italic">nΔt</emphasis> and <emphasis role="italic"
+          >x</emphasis> grid line at <emphasis role="italic">kΔy</emphasis>, the term <emphasis
+          role="italic">uδu/δx</emphasis> can be approximated by: </para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mi>u</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>&#x2248;</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mi>&#x0394;</mi><mi>u</mi></mrow>
+              <mrow>
+                <mi>&#x0394;</mi><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><msub>
+              <mi>u</mi>
+              <mi>j</mi>
+            </msub>
+            <mfrac>
+              <mrow>
+                <mo stretchy='false'>(</mo><msub>
+                  <mi>u</mi>
+                  <mrow>
+                    <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
+                </msub>
+                <mo>&#x2212;</mo><msub>
+                  <mi>u</mi>
+                  <mrow>
+                    <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
+                </msub>
+                <msub>
+                  <mrow></mrow>
+                  <mrow>
+                    <mi>&#x0394;</mi><mi>x</mi></mrow>
+                </msub>
+                <mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mi>&#x0394;</mi><mi>x</mi></mrow>
+            </mfrac>
+          </mrow>
+       
+        </semantics>
+      </math>
+      </equation>      
+      
+      <para>With this approximation, the continuous derivative of the velocity <emphasis
+          role="italic">u</emphasis> with respect to <emphasis role="italic">x</emphasis> is
+        approximated by the linear gradient of the velocity between the grid point at which the
+        derivative is to be taken, and the grid point immediately upstream. As a result, this
+        approach is often termed “upwind” differencing. The errors associated with this
+        approximation can be determined by using Taylor’s Series to expand the terms in the right
+        hand side of this equation in terms of the velocity <emphasis role="italic">u</emphasis>
+        velocity at the centre-point, <emphasis role="italic">j</emphasis>Δ<emphasis role="italic"
+          >x</emphasis>. This results in the following expression:</para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mi>u</mi><mfrac>
+              <mrow>
+                <mo stretchy='false'>(</mo><msub>
+                  <mi>u</mi>
+                  <mrow>
+                    <mi>j</mi><mi>&#x0394;</mi><mi>x</mi></mrow>
+                </msub>
+                <mo>&#x2212;</mo><msub>
+                  <mi>u</mi>
+                  <mrow>
+                    <mo stretchy='false'>(</mo><mi>j</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
+                </msub>
+                <msub>
+                  <mrow></mrow>
+                  <mrow>
+                    <mi>&#x0394;</mi><mi>x</mi></mrow>
+                </msub>
+                <mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <mi>&#x0394;</mi><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mo>&#x2202;</mo><mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><mi>x</mi></mrow>
+            </mfrac>
+            <mo>&#x2212;</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mi>&#x0394;</mi><mi>x</mi></mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mo>&#x2202;</mo>
+                  <mn>2</mn>
+                </msup>
+                <mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>+</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mi>&#x0394;</mi><msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+              <mn>6</mn>
+            </mfrac>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mo>&#x2202;</mo>
+                  <mn>3</mn>
+                </msup>
+                <mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><msup>
+                  <mi>x</mi>
+                  <mn>3</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>&#x2212;</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mi>&#x0394;</mi><msup>
+                  <mi>x</mi>
+                  <mn>3</mn>
+                </msup>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mo>&#x2202;</mo>
+                  <mn>4</mn>
+                </msup>
+                <mi>u</mi></mrow>
+              <mrow>
+                <mo>&#x2202;</mo><msup>
+                  <mi>x</mi>
+                  <mn>4</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>+</mo><mn>.........</mn></mrow>
+          
+        </semantics>
+      </math>
+      </equation>
+      
+      <para>This shows that, the discrete finite difference approximation is equal to the original
+        continuous partial differential term <emphasis role="italic">u.δu/δx</emphasis>, but with
+        additional second, third, fourth and higher order truncation error terms. Further, it can be
+        seen that the truncation error includes a second order term which is of the same form as one
+        of the eddy viscosity terms in the <emphasis role="italic">x-</emphasis>momentum equation.
+        That is, upwinding of the convective momentum term <emphasis role="italic"
+          >u.δu/δx</emphasis> can be seen to be equivalent to introducing a numerical eddy viscosity
+        term with, in this case, an eddy viscosity coefficient of: </para>
+      
+      <equation><math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>E</mi>
+              <mi>N</mi>
+            </msub>
+            <mo>=</mo><mi>u</mi><mfrac>
+              <mrow>
+                <mi>&#x0394;</mi><mi>x</mi></mrow>
+              <mn>2</mn>
+            </mfrac>
+          </mrow>
+         
+        </semantics>
+      </math>
+      </equation>
+      
+      <para>This numerical eddy viscosity coefficient is grid size and flow velocity dependent. For
+        typical floodplain flow conditions and model dimensions, the numerical eddy viscosity
+        introduced by first-order upwind differencing can be an order of magnitude or more greater
+        than the corresponding physically realistic values. Issues associated with first-order
+        upwind differencing of the convective momentum terms are discussed in detail by Leonard
+        (1979). </para>
+      <para>Similar truncation error terms can be developed for numerical approximations to the
+        other terms in the mass and momentum equations. The properties of these truncation errors
+        can have a significant effect on the accuracy and stability of the numerical procedures
+        being used. </para>
+      <para><emphasis role="bold">Accuracy and Stability</emphasis></para>
+      <para>From the above, it can be seen that first-order schemes have second-order truncation
+        errors that are proportional to the grid or mesh size <emphasis role="italic">Δx</emphasis>
+        (or timestep <emphasis role="italic">Δt</emphasis> for time derivatives). In a similar
+        manner, it can be shown that second-order schemes have third-order errors that are
+        proportional to the square of the grid or mesh size <emphasis role="italic">Δx2</emphasis>
+        (or of timestep <emphasis role="italic">Δt2</emphasis>). If the grid or mesh size <emphasis
+          role="italic">Δx</emphasis> and timestep <emphasis role="italic">Δt </emphasis>are treated
+        as fractions of representative length and time scales of the flood under consideration, the
+        truncation errors of a second-order scheme can be shown to reduce quadratically with
+        decreasing grid size and timestep. That is, the finer the grid or mesh size or shorter the
+        timestep, the smaller the numerical truncation errors.</para>
+      <para>In general, it can be said that first-order schemes are “diffusive”. That is, they tend
+        to damp out sharp gradients in water levels and flow velocities. The artificially high
+        levels of numerical eddy viscosity, discussed above, help to smooth out flow irregularities
+        and make the model calculations very stable. However, the unrealistically high levels of
+        smoothing results in the suppression of flow separations and eddy formation and makes it
+        impractical to compute channel/overbank interactions, where the specification of appropriate
+        eddy viscosity coefficients becomes important.</para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
+          suppression of flow separation with numerical eddy viscosity form a first order upwind
+          scheme </emphasis></para>
+      <para>By comparison, second-order schemes are “dispersive”. That is, high frequency components
+        of flood flow can travel at different speeds. This is not normally a problem with the
+        propagation of flood waves which tend to be very long (low frequency) with respect to the
+        model grid or mesh size and timestep. As a result, second-order schemes are generally well
+        suited to modelling the wave propagation properties of flood flow. They are, however, not as
+        well suited to modelling high velocity flows and flows where there are strong velocity
+        gradients. Under these conditions, the convective momentum terms in the momentum equations
+        become more important and the use of second-order schemes can result in artificial
+        “zig-zagging” of the flow and non-linear instabilities (Abbott and Rasmussen, 1977). As a
+        result, Leonard (1979) advocates the use of higher third-order schemes for modelling
+        transport dominated flows. </para>
+    </section>
+    <section>
+      <title>Model Applications</title>
+      <para>Most of the 2D flood models in common use are based on the numerical solution of the
+        full mass and momentum equations, described above. This generally works well in
+        straight-forward flow situations. However, many of the commonly used solution procedures can
+        have stability issues when modelling high velocity flows, and most, if not all, become
+        ill-conditioned when modelling super-critical flows. This is generally approached by either
+        deliberately introducing numerical stabilising terms, or by using simplified forms of the
+        momentum equation to describe the flow. </para>
+      <para> Stelling <emphasis role="italic">et al</emphasis> (1998) describe a finite difference
+        model based on first-order upwind differences. The model provides smooth stable solutions
+        for high velocity flows. However, as discussed above, the high levels of numerical diffusion
+        (numerical eddy viscosity) may result in reduced accuracy under flow conditions where the
+        use of more physically realistic values of eddy viscosity may be required. To avoid this
+        problem, McCowan et al (2000) use a second order scheme for the main part of the
+        computation, but gradually introduce first-order upwinding in localised areas where the
+        Froude number exceeds Fr = 0.25. In both cases, the numerical diffusion introduced in this
+        way is sufficient to maintain the numerical computation through regions of super-critical
+        flows.</para>
+      <para> As an alternative, BMT WBM (2008) uses the kinematic wave approximation to describe
+        flow conditions in regions with super-critical flow. This approach is reasonable for most
+        flooding applications as super-critical flows are upstream controlled and are normally
+        friction dominated. However, whenever simplified forms of the equations are used, it is
+        important for the modeller to understand their limitations, and care may be required in
+        interpreting the results, particularly in transition areas.</para>
+      <para>It is noted that the full set of the equations should always be used for describing
+        flows in relatively flat river reaches, and in regions of relatively flat, deep water such
+        as in estuaries and lakes</para>
+      <para>Clearly, there is a wide range of models with quite different solution procedures with
+        varying orders of accuracy available to the numerical flood modeller. It is important for
+        the modeller to be aware of the type of solution procedure being used, and of any
+        constraints that that this may impose on the timestep, model accuracy, and on the way in
+        which the computation is carried out.</para>
+    </section>
+    <section>
+      <title>Site Specific Model Development</title>
+      <para>To this point the discussion has focussed on the different types and properties of 2D
+        Generic Numerical Models. The process of developing a Site Specific 2D Model is discussed at
+        length by Engineers Australia (2012) and only an overview of the key stages of model
+        development have been summarised here. They include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Selection of the Generic 2D Numerical Model to be used</para>
+        </listitem>
+        <listitem>
+          <para>Model schematisation (model domain, cell size, time step)</para>
+        </listitem>
+        <listitem>
+          <para>Key model inputs (topography, bed resistance, eddy viscosity) </para>
+        </listitem>
+        <listitem>
+          <para>Inclusion of flow controls and hydraulic structures</para>
+        </listitem>
+        <listitem>
+          <para>Initial Conditions </para>
+        </listitem>
+        <listitem>
+          <para>Boundary Conditions</para>
+        </listitem>
+        <listitem>
+          <para>Hydraulic Structures</para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis role="bold">Generic Numerical Model Selection</emphasis></para>
+      <para>In practice, the selection of the Generic Numerical Model or modelling software package
+        to be used can be limited to the software available within the modeller’s organisation or,
+        in the case of a consulting project, may even be specified externally by the client. Where a
+        choice is available some of the key factors to be considered in selecting the particular
+        software to be used include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The skill, experience and personal preferences of the modeller;</para>
+        </listitem>
+        <listitem>
+          <para>The choice of finite difference or finite volume solution procedures; </para>
+        </listitem>
+        <listitem>
+          <para>The choice of the use of a structured grid or an unstructured flexible mesh:
+            and</para>
+        </listitem>
+        <listitem>
+          <para>The availability of any particular features required in the modelling.</para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis role="bold"><emphasis role="italic">Modeller Experience:</emphasis></emphasis>
+        The skill level and experience of the modeller is an important factor in determining the
+        success of any modelling exercise and should be taken into account when selecting the
+        software package to be used.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Finite Difference vs Finite
+            Volume:</emphasis></emphasis> A big advantage with finite volume models and finite
+        difference models based on finite volume techniques is that, barring coding errors, they
+        conserve mass. This is a very important property in a flood model, as any loss or gain of
+        mass caused by the approximations made in the numerical solution procedure can invalidate
+        the model results. It should be noted that this does not preclude the use of finite
+        difference models. It only means that care should be taken when using finite difference
+        models to ensure that there is no significant loss or gain of mass during the model
+        simulations.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Structured Grid vs Unstructured Flexible
+            Mesh:</emphasis></emphasis> Until relatively recently, most of the commercially
+        available flood models operated with a structured rectilinear (square or rectangular) grid.
+        The advantages of these structured grid models are that they are easy to set-up and can be
+        very computationally efficient. A disadvantage is that they do not provide a good
+        description of flows along relatively narrow channels aligned at an angle to the grid, as
+        shown in Figure x.x(a). To get adequate resolution of these flow paths may require reduction
+        in the model grid size, as shown in Figure x.x(b), with a corresponding significant increase
+        in computational requirements. </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
+          suppression of flow separation with numerical eddy viscosity form a first order upwind
+          scheme </emphasis></para>
+      <para>By comparison, flexible mesh models typically use a combination of unstructured
+        triangular and quadrilateral mesh cells as shown in Figure x.x(a). These can be aligned more
+        closely with the main flow paths allowing good resolution with larger mesh cells than with a
+        corresponding structured grid model, as shown in Figure x.x (b). Larger mesh sizes can
+        sometimes also be used in regions with relatively uniform flow and away from particular
+        areas of interest. The main disadvantages of the flexible mesh models are that they take
+        more time and skill to set up the initial model mesh and, due to their increased complexity,
+        they generally take more computer time to run, even with the use of larger mesh sizes. </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para> </para>
+      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
+          suppression of flow separation with numerical eddy viscosity form a first order upwind
+          scheme </emphasis></para>
+      <para><emphasis role="bold">Model Schematization</emphasis></para>
+      <para>The first task in schematizing a model is to decide on the model domain. This is the
+        area to be included within the model. It should include the main area of interest and should
+        extend out far enough to include all the areas that are likely to be inundated in the most
+        extreme flood to be considered. It should also extend sufficiently upstream and downstream
+        such that any irregularities in the flow at the model boundaries will not affect the model
+        results in the main area of interest. Wherever possible, the model boundaries should be
+        located in areas of relatively uniform flow. </para>
+      <para>For structured grid models, a square or rectangular is overlaid on the model domain.
+        This grid should, where possible, be aligned with the main flow direction. The grid size
+        should be selected to provide adequate resolution of the main features to be modelled (e.g.,
+        channels, levees, bridges, etc). Care should be taken to ensure that the main flow paths to
+        be considered can be adequately described, particularly when they are aligned at an angle to
+        the grid. </para>
+      <para>For unstructured flexible mesh models, a model mesh covering the model domain must be
+        developed. This mesh may typically be formed using triangular mesh cells, or a combination
+        of triangular and quadrilateral mesh cells, although some software allows the use of other
+        shapes as well. As seen in Section X.X, one advantage of the flexible mesh approach is that
+        the mesh cells can be aligned to the main flow paths irrespective of their orientation.
+        Another is that finer cell sizes can be used to provide greater resolution in particular
+        areas of interest. Conversely, larger cell sizes can be used to reduce computational
+        requirements in less important areas. </para>
+      <para>Clearly, the smallest feature that can be resolved will be one grid or mesh cell wide.
+        However, if realistic simulation of flow separation and eddy formation behind structures
+        such as bridge abutments is required, then these structures will need to be resolved by a
+        minimum of 6 to 8 grid or mesh cells. </para>
+      <para>The selection of the appropriate cell size is generally a trade-off between model
+        resolution and computational requirements. In this respect it is noted that the
+        computational time required by a model is roughly proportional to the cube of the cell size.
+        That is, halving the cell size could be expected to increase the computational time by a
+        factor of 8. </para>
+      <para>The time step is generally set to the largest value that can be used without affecting
+        the accuracy of the model results. For explicit models, the time step is set close to the
+        maximum allowable under the Courant stability criterion, discussed in Section X.X. Although
+        implicit models are not affected by this constraint, their timestep is usually limited by
+        accuracy requirements, and the optimum timestep is typically determined by sensitivity
+        testing during model calibration.</para>
+      <para><emphasis role="bold">Key Model Inputs </emphasis></para>
+      <para>Some of the key inputs to a 2D model include: the model topography, bed resistance
+        values and, where appropriate, the eddy viscosity formulation. These are discussed briefly
+        below.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Topography:</emphasis></emphasis> The
+        model topography forms the basis of any 2D hydraulic model. It is the numerical analogue of
+        the actual terrain over which the water flows. It comprises survey data (e.g., from a
+        digital terrain model) that has been interpolated onto the model grid or mesh. Following the
+        initial interpolation process, some degree of manipulation may be required to ensure that
+        the main flow paths and flow controls, such as road embankments or levee banks, have been
+        adequately resolved. For flow paths that are less than a few cell widths wide, some degree
+        of schematization may be required to ensure that the model flow path provides a realistic
+        description of the flow path conveyance. This is particularly true for structured grid
+        models. Care taken in setting up the model topography can significantly reduce the amount of
+        time required to calibrate a 2D model.</para>
+      <para><emphasis role="bold"><emphasis role="italic">Bed Resistance: </emphasis></emphasis>2D
+        models also require bed-friction coefficients to be specified for application to each
+        computational cell. These are generally specified in terms of different Mannings “n”
+        coefficients that are assigned to a range of different land-use categories. These can be
+        determined on the basis of a combination of information gained through site inspections,
+        from aerial imagery and from cadastral data.</para>
+      <para>
+        <emphasis role="bold"><emphasis role="italic">Eddy Viscosity:</emphasis></emphasis> Eddy
+        viscosity is used in 2D models to represent the effects of turbulence and sub-grid scale
+        processes. The use of appropriate eddy viscosity values is necessary in simulations where
+        the realistic representation of flow separations and eddy formation, or of momentum
+        transfers between the main channel and overbank areas are important. Depending on the
+        software being used eddy viscosity coefficients can be described as constant values,
+        spatially varying values, or values computed internally by a turbulence closure model. In
+        this respect, it is noted that a “Smagorinsky-type” eddy viscosity formulation has been
+        found to be suitable for describing the effects of sub-grid scale processes in many
+        applications. </para>
+      <para><emphasis role="bold">Initial Conditions</emphasis></para>
+      <para>For any model computation to move forward in time there must be a known starting point.
+        For numerical hydrodynamic models this starting point is known as the model “initial
+        conditions”. The initial conditions necessary for two-dimensional hydrodynamic models
+        consist of water surface elevation <emphasis role="italic">ς</emphasis> and <emphasis
+          role="italic">u </emphasis>and <emphasis role="italic">v</emphasis> velocity values at
+        every grid/mesh element that is “active” at the start of the computation. </para>
+      <para>These values can be specified by:</para>
+      <itemizedlist>
+        <listitem>
+          <para>A “cold start”, where initial estimates of the water surface elevation <emphasis
+              role="italic">ς </emphasis>values are made, and the <emphasis role="italic"
+              >u</emphasis> and <emphasis role="italic">v </emphasis>velocity values are set to zero
+            (i.e., no flow).</para>
+        </listitem>
+        <listitem>
+          <para>A “hot start”, where the initial water surface elevation <emphasis role="italic"
+              >ς,</emphasis> and <emphasis role="italic">u</emphasis> and <emphasis role="italic">v
+            </emphasis>velocity values are specified from the results of a previous model
+            simulation.</para>
+        </listitem>
+      </itemizedlist>
+<para><emphasis><emphasis role="bold">Cold Starts:</emphasis></emphasis> In many flood modelling
+        applications, the precise values of the initial conditions are not that critical, provided
+        the model computation starts in a reasonably realistic manner; that is, relatively smoothly
+        and with no initial instabilities. However, in applications where there are lakes, wetlands,
+        retarding basins, or other depressions that may provide initial flood storage, it is
+        important that the initial water surface elevations provide the correct amount of initial
+        storage in these areas. If the initial amount of water in these storage areas is
+        underestimated, this may cause the model to artificially attenuate the flood peak.
+        Conversely, if it is overestimated, the flood peak may be artificially enhanced. </para>
+
+        <para><emphasis><emphasis role="bold">Hot Starts:</emphasis></emphasis> Hot starts are not
+        used extensively in practice. Their main uses tend to be limited to:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Providing initial conditions for model simulations where significant computing
+              time may be required for the model “warm-up” period required. In these cases, the
+              results of a single prolonged “warm-up” simulation can be used to provide initial
+              conditions for a subsequent series of model simulations.</para>
+          </listitem>
+          <listitem>
+            <para>Breaking-up very long model simulations into more manageable sub-sections.</para>
+          <para>Urban Applications<emphasis role="italic">: </emphasis>In many urban applications,
+            the area to be modelled may be initially dry. In these cases, the initial water surface
+            elevation ς values will typically be set to the corresponding ground surface elevation
+              <emphasis role="italic">z</emphasis> values, and the initial <emphasis role="italic"
+              >u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to zero.
+            This approach could be considered as a special case of the cold start. It is applicable
+            in model simulations where there is no initial overland flow, including direct rainfall
+            on grid applications. </para>
+          </listitem>
+        </itemizedlist>
+      <para><emphasis><emphasis role="bold">Urban Applications:</emphasis></emphasis> In many urban
+        applications, the area to be modelled may be initially dry. In these cases, the initial
+        water surface elevation ς values will typically be set to the corresponding ground surface
+        elevation <emphasis role="italic">z</emphasis> values, and the initial <emphasis
+          role="italic">u</emphasis> and <emphasis role="italic">v </emphasis>velocity values set to
+        zero. This approach could be considered as a special case of the cold start. It is
+        applicable in model simulations where there is no initial overland flow, including direct
+        rainfall on grid applications. </para>
+      <para><emphasis role="bold">Boundary Conditions</emphasis></para>
+      <para>With the initial conditions specified, the model boundary conditions are the remaining
+        pieces of necessary information required for the model computation to proceed. In this
+        respect it is noted that boundary conditions are required at every grid/mesh element along
+        the model boundaries. These boundaries include both external boundaries and internal
+        boundaries, where:</para>
+      <itemizedlist>
+        <listitem>
+          <para> External boundaries are located along the external edges or boundaries of the
+            model, where water can flow into or out of the model domain.</para>
+        </listitem>
+        <listitem>
+          <para>Internal boundaries are located within the model domain, and include the interface
+            between wet (water) cells, where the computation is to be carried out, and dry (land)
+            cells where there is no computation. </para>
+          
+        </listitem>
+      </itemizedlist>
+      <para>The subject of boundary conditions for two-dimensional flow models is quite complex
+        and the following discussion is, of necessity, relatively superficial. </para>
+
+      <para><emphasis role="italic"><emphasis role="bold">External
+          Boundaries</emphasis></emphasis><emphasis role="italic"><emphasis role="bold"
+          >:</emphasis></emphasis> The model requires boundary conditions in terms of either water
+        levels or discharges along both the upstream and downstream boundaries. </para>
+      <para>The upstream boundary conditions for a 2D flood model are generally provided by a
+        discharge hydrograph. This has to be converted to discharges or flow velocities and water
+        depths at each boundary cell. For this to be done, some assumptions need to be made with
+        respect to the distribution of the flows along the boundary, and to the direction of the
+        flow. Depending on the modelling package being used, the flow distribution along the
+        boundary may be computed internally using a range of possible assumptions (e.g., uniform
+        flow or the use of Manning’s equation). There may also be options for providing user
+        specified flow distributions and directions.</para>
+      <para>The downstream boundary conditions are generally specified in terms of water surface
+        elevations. These may be specified as a constant, a times series, or computed internally
+        using a rating curve. As a first approximation, it can be assumed that the water surface
+        elevations along the boundary are horizontal. As such, the water surface elevation specified
+        at each individual boundary cell will be the same. Depending on the modelling package being
+        used, the flow directions may be specified as being normal to the boundary, or there may be
+        options for them to be computed as a function of the upstream flow conditions, or specified
+        externally by the user.</para>
+      <para>Whatever forms of boundary conditions that are being used, it is important to recognise
+        that the model has no information regarding the flow conditions upstream or downstream of
+        the model boundaries. As such, it is important that, wherever possible, the model boundaries
+        should be located in areas where the flow is expected to be relatively uniform. The model
+        boundaries should also be placed far enough upstream and downstream of the area of interest
+        to ensure that any errors in flow distribution and/or direction do not have a significant
+        effect on the model results.</para>
+      <para><emphasis><emphasis role="bold">Internal Boundaries</emphasis></emphasis><emphasis
+          role="italic"><emphasis role="bold">: </emphasis></emphasis>There are two types of
+        internal boundaries used in 2D models:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The first occurs at the land/water interfaces within the interior of the model
+            domain. These internal boundaries can be considered as a special case of a velocity
+            boundary where the flow velocity between adjacent pairs of wet and dry cells is set to
+            zero. The locations of these internal boundaries are dynamic as different cells are
+            brought into the computation as the flood rises, and taken out again as the flood
+            recedes. </para>
+        </listitem>
+        <listitem>
+          <para>The second type of internal boundary occurs where there are source or sink terms
+            (related to local inflows and outflows), hydraulic structures, or where there are links
+            to embedded 1D model branches. </para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis role="bold">Hydraulic Structures</emphasis></para>
+      <para>Depending upon the particular software being used, hydraulic structures such as weirs,
+        culverts, bridges and regulating structures can be introduced into the model. This may be
+        done either by introducing a structure equation to replace the momentum equation between two
+        adjacent computational cells (similar to the 1D model approach), or by introducing a 1D
+        model branch containing the required structures (see Section x.x) and coupled to the 2D
+        model domain via internal boundaries<anchor xml:id="_Toc238020917"/>.</para>
+    </section>
+    <section>
+      <title>Advantages and Disadvantages</title>
+      <para>The main advantage of a full 2D model is that it can provide a more realistic
+        description of the flows and flow distributions throughout a river and flood plain system.
+        When compared with the disadvantages of 1D models discussed above, it can be said
+        that:</para>
+      <itemizedlist>
+        <listitem><para>The floodplain flow paths do not need to be pre-determined by the user, as they
+          are computed directly as a function of the model terrain and the applied flows.      </para></listitem>
+    
+        <listitem><para>The flow paths can change with increases in water level in much the same way as
+          they do in real life.</para></listitem>
+        <listitem><para>Losses due to two-dimensional effects such as bends, flow separations, etc, are
+          automatically included within the computation, and do not need to be lumped into the
+          bed-friction parameter (as such, the bed-friction coefficients can be specified directly
+          as a function of bed-roughness only).</para></listitem>
+        <listitem><para>Model results can provide details of the flow distribution within individual flow
+          paths.</para></listitem>
+        <listitem><para>Model results can be used directly for mapping flood extents and depths of
+          inundation.</para></listitem>
+      </itemizedlist>
+      <para> In the early days of full 2D modelling, the main disadvantages of the 2D models were
+        that they required significantly more survey data than 1D models, and that they were very
+        heavy computationally. The advent of LiDAR has, to some extent, overcome some of the survey
+        requirements. There have also been significant increases in computing power, which combined
+        with the introduction of parallel processors and GPUs has greatly increased the
+        computational capacity of modern computers. However, along with the increase in computing
+        capacity, there has been a tendency for modellers to use smaller cell sizes, to get better
+        resolution, and also to use much larger model domains. As a result, long simulation times
+        can still be an issue with 2D models. Further, the result files of these model runs can
+        become very large, and can make significant demands on data storage and processing
+        capability.</para>
+      <para> Another disadvantage of 2D models is that flow paths and channels can only be resolved
+        at the same scale as the model grid. Even when a channel may be several computational cells
+        wide, the in-bank flows may not be described as well as in a 1D model with detailed
+        cross-sections.</para>
+    </section>
+    <section>
+      <title>Coupled 1D/2D Hydraulic Models</title>
+      <para>From the discussions above, it can be seen that 1D models are well suited to modelling
+        in-bank flows and flows along long river and floodplain reaches (of the order of 10s to 100s
+        or even 1,000s of kilometres) while full 2D models are well suited to modelling the details
+        of the flow in smaller areas (of order 100s of metres to 10s of kilometres). This led to the
+        proposal for integrated modelling (Carr and McCowan, 1988) whereby overall 1D models are
+        used to provide water level and discharge boundary conditions for use in a detailed 2D model
+        of a particular area of interest. This concept of model integration has been taken further
+        (references needed) with 1D models being dynamically coupled with 2D models. </para>
+      <para>The coupling can work in different ways depending upon the particular software package
+        being used. These can include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The use of a 1D model to simulate an overall river and floodplain system dynamically
+            coupled to a 2D model providing detailed flow computations in particular areas of
+            interest. </para>
+        </listitem>
+        <listitem>
+          <para>The use of dynamically coupled 1D model branches to provide a better description of
+            in-bank channel flows within a 2D model domain. The coupling of these branches can
+            provide for the exchange of water between the 1D in-bank flows and the 2D model flood
+            plain flows.</para>
+        </listitem>
+        <listitem>
+          <para>The use of dynamically coupled 1D model branch to introduce hydraulic structures
+            (such as weirs, culverts, bridges, etc.) into the 2D model domain.</para>
+        </listitem>
+      </itemizedlist>
+      <para> A further extension of the integrated 1D/2D modelling concept has been the dynamic
+        coupling of 2D models with 1D pipe network models. This has significantly enhanced the
+        capabilities of 2D models for urban flood modelling applications.</para>
+      <para><emphasis role="bold">Example 3. LindsayRiver (revisited)</emphasis></para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="clip_image018_-1709097060.gif" depth="265" width="606"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para><emphasis role="bold">Figure Ex 3.1: LindsayRiver Integrated Branched 1D Model
+          Network</emphasis></para>
+      <para> </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="clip_image020_1826519485.gif" depth="333" width="607"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para><emphasis role="bold">Figure Ex 3.2: LindsayRiver Integrated 2D Model
+          Topography</emphasis></para>
+      <para> </para>
+      <para> </para>
+    </section>
+    <section>
+      <title>Direct Rainfall Models</title>
+      <para>A relatively recent development in 2D hydraulic modelling models has been the use of
+        direct rainfall to estimate flows in catchments or sub-catchments where the local rainfall
+        within the 2D model domain is contributing to the flow that we are interested in. Under
+        these circumstances it is difficult to use traditional approaches such as the use a
+        hydrologic model to provide flows at the model boundaries. </para>
+      <para> With the direct rainfall approach, the rainfall-runoff process is simulated by applying
+        rainfall directly to each cell within the model domain. Losses are accounted for using
+        different approaches depending upon the software package being used. With the simplest
+        approach, the losses are applied directly to the rainfall with only a resulting rainfall
+        “excess” being applied to the model cells. More sophisticated approaches may use
+        infiltration models incorporated within the 2D modelling software and, ultimately, may
+        involve coupling with a groundwater model.</para>
+      <para> The use of direct rainfall on a 2D model makes it possible to simulate the
+        rainfall-runoff process, as well as the hydraulic routing of the resulting overland flows
+        throughout model domain. This provides a more realistic representation of catchment storage
+        and runoff effects. It is, however, essential to have good topographic data. The selection
+        of appropriate roughness coefficients is critical to the success of this approach (Muncaster
+        et al, 2006). Further, roughness values may need to be increased for describing shallow
+        flows in rural areas, or decreased to allow for more rapid runoff from rooves and some paved
+        areas in urban applications (Caddis et al, 2008). </para>
+      <para> The use of a 2D hydraulic model in this way integrates both the hydrologic and
+        hydraulic aspects of the rainfall-runoff process into a single model. The use of direct
+        rainfall is, however, an area of on-going research and care should be used when interpreting
+        the model results. Wherever possible models should be calibrated to measurements. Where
+        calibration is not possible (as in many cases), sensitivity testing should be carried out to
+        assess the sensitivity of the model to variations in the main model parameters.</para>
+    </section>
+    <section>
+      <title>Limitations of 2D Hydraulic Models</title>
+      <para>One of the main limitations associated with 2D hydraulic models is that they can provide
+        plausible results in situations where the underlying data may be inadequate, the model
+        schematization is does not adequately describe all the physical system being represented, or
+        in flow cases where the assumption of two-dimensional flow becomes invalid.
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(To be
+        expanded)<?oxy_custom_end?></para>
+    </section>
   </section>
 
   <section>
-    <title>Types of unsteady flow models </title>
-
-    <para/>
-  </section>
-
-  <section>
-    <title>1D Equations of Motion </title>
-
-    <para/>
-  </section>
-
-  <section>
-    <title>Branched 1D Unsteady Flow Models </title>
-
-    <para/>
-  </section>
-
-  <section>
-    <title>2D Equations of Motion </title>
-
+    <title>Summary and Conclusions </title>
+    <para>The aim of a hydraulic flood model is to provide a realistic representation of flood flows
+      in river and floodplain systems. In general, it can be said that the more realistic the
+      modelling approach, the greater the probability of achieving a successful outcome. However,
+      the use of the most sophisticated modelling approach available will not, in itself, guarantee
+      success. This is because the skill of the modeller adapting a generic modelling system to a
+      specific application, and the quality of the data used as model input can be equally (or even
+      more) important in determining the success of a modelling exercise. </para>
+    <para>The reliability of a hydraulic model is determined by a three stage process:</para>
     <itemizedlist>
       <listitem>
-        <para>The Mass Equation</para>
+        <para>Validation: to confirm that the modelling software is doing what it is supposed to
+          do.</para>
       </listitem>
-
       <listitem>
-        <para>The Momentum Equations</para>
+        <para>Calibration: the process of adjusting model parameters to obtain a best fit with
+          measured flood data.</para>
       </listitem>
-
       <listitem>
-        <para>Assumptions </para>
+        <para>Verification: ideally, a check of the model calibration against an independent set of
+          flood data.</para>
       </listitem>
     </itemizedlist>
-  </section>
-
-  <section>
-    <title>Properties of the Equations </title>
-
+    <para> In cases where there is insufficient or no calibration data, sensitivity tests should be
+      carried out to assess the sensitivity of the model to variations in the main model
+      parameters</para>
+    <para> Steady flow hydraulic models are best suited to modelling flows along relatively short
+      reaches of river with well-defined flow paths, and/or for modelling flows at structures.
+      However, unsteady hydraulic models should be used to describe flows where there are:</para>
     <itemizedlist>
       <listitem>
-        <para>Propagation Properties of the Equations</para>
+        <para>Rapidly changing hydrographs;</para>
       </listitem>
-
       <listitem>
-        <para>Transport Properties of Momentum Equation </para>
+        <para>Flat channel slopes where wave propagation effects can become important;</para>
+      </listitem>
+      <listitem>
+        <para>Wide floodplains and/or other features where storage effects may affect the flow; and
+        </para>
+      </listitem>
+      <listitem>
+        <para>Channel networks where the flow splits are not well defined.</para>
       </listitem>
     </itemizedlist>
-  </section>
-
-  <section>
-    <title>Extension of the Equations for Modelling Applications </title>
-
+    <para> With respect to the different types of unsteady hydraulic models that are available, it
+      can be said that:</para>
     <itemizedlist>
       <listitem>
-        <para>Extension of the Mass Equation</para>
+        <para>The use of CFD and other non-hydrostatic models, including physical models, is
+          generally limited to simulating the details of complex flows in relatively short reaches
+          of a river, or at or within hydraulic structures.</para>
       </listitem>
-
       <listitem>
-        <para>Extension of the Momentum Equations </para>
+        <para>3D models are very heavy computationally, and are best suited to modelling the details
+          of complex flows in relatively short reaches of rivers, around structures and in other
+          flows cases where three-dimensional effects become important in determining localized
+          flood effects. </para>
+      </listitem>
+      <listitem>
+        <para>1D models are computationally quick to run and are well suited to modelling flows
+          along well-defined channel and floodplain systems. However, the more general use of 1D
+          models in flood studies has been largely superseded by 2D models.</para>
+      </listitem>
+      <listitem>
+        <para>2D models can provide a much more detailed description of flood flows and flow
+          distributions within individual flow paths and have become virtually the standard for
+          rural and urban flood studies. 2D models are, however, more demanding on input data and on
+          computing resources.</para>
+      </listitem>
+          <listitem>
+            <para>The integration of 1D models with 2D models has made it possible to include 1D
+              model branches within a 2D model domain to provide a better description of in-bank
+              flows and/or to introduce hydraulic structures (such as weirs, culverts, bridges,
+              etc.) into the 2D model domain.</para>
+          </listitem>
+      <listitem>
+        <para>The integration of 1D pipe network models with 2D models has significantly enhanced
+          the capabilities of 2D models for urban flood modelling applications.</para>
+      </listitem>
+      <listitem>
+        <para>The use of rainfall on grid has made it possible to integrate both the hydrologic and
+          hydraulic aspects of the rainfall-runoff process into a single model. The use of direct
+          rainfall is, however, an area of on-going research and care should be used when
+          interpreting the model results. </para>
       </listitem>
     </itemizedlist>
+<para></para>
   </section>
-
   <section>
-    <title>Final Forms of the Equations </title>
-
+    <title>References</title>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+    <para>(To be completed)<?oxy_custom_end?></para>
+    <para> Abbott, M.B. (1979), Computational Hydraulics – Elements of the Theory of Free Surface
+      Flows, Pitman, London.</para>
+    <para> American Society of Engineers (1996), River Hydraulics – Technical Engineering and Design
+      Guides as Adapted From the US Army Corps of Engineers, No. 18, ASCE Press, New York.</para>
+    <para> Bishop, W.A., McCowan, A.D., Sutherland, R.J. and Watkinson, R.J. (1995), Application of
+      Two-Dimensional Numerical Models to Urban Flood Studies, 2nd International Symposium on
+      Stormwater Management, Melbourne. </para>
+    <para> Carr, R.S. and McCowan A.D. (1988), An Integrated Approach to Two‑Dimensional Flood Plain
+      Modelling, ACADS Workshop on 2D Flood Plain Modelling, Monash University.</para>
+    <para> Cunge, J.A., Holly, F.M. and Verwey, A. (1980), Practical Aspects of Computational River
+      Hydraulics, Pitman, London (Reprinted by University of Iowa).</para>
+    <para> </para>
     <para/>
-  </section>
-
-  <section>
-    <title>Modelling Requirements and Simplifications </title>
-
-    <itemizedlist>
-      <listitem>
-        <para>The Mass Equation</para>
-      </listitem>
-
-      <listitem>
-        <para>The Momentum Equation </para>
-      </listitem>
-    </itemizedlist>
-  </section>
-
-  <section>
-    <title>Alternative Forms of the Equations </title>
-
-    <para/>
-  </section>
-
-  <section>
-    <title>Numerical Solution Procedures </title>
-
-    <itemizedlist>
-      <listitem>
-        <para>Types of Numerical Solutions</para>
-      </listitem>
-
-      <listitem>
-        <para>The Discretisation Process</para>
-      </listitem>
-
-      <listitem>
-        <para>Discretisation Errors</para>
-      </listitem>
-
-      <listitem>
-        <para>Numerical Eddy Viscosity </para>
-      </listitem>
-    </itemizedlist>
-  </section>
-
-  <section>
-    <title>Solution Procedures </title>
-
-    <itemizedlist>
-      <listitem>
-        <para>Explicit Solution Procedures</para>
-      </listitem>
-
-      <listitem>
-        <para>Implicit Solution Procedures</para>
-      </listitem>
-
-      <listitem>
-        <para>ADI Solution Procedures </para>
-      </listitem>
-    </itemizedlist>
-  </section>
-
-  <section>
-    <title>Numerical Solution Requirements </title>
-
-    <itemizedlist>
-      <listitem>
-        <para>Initial Conditions</para>
-      </listitem>
-
-      <listitem>
-        <para>Boundary Conditions</para>
-      </listitem>
-
-      <listitem>
-        <para>External Boundaries</para>
-      </listitem>
-
-      <listitem>
-        <para>Internal boundaries </para>
-      </listitem>
-    </itemizedlist>
   </section>
 </chapter>
