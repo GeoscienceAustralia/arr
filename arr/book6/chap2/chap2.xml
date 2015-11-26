@@ -4275,9 +4275,1125 @@ Needs reference
   </section>
 
   <section xml:id="b6_ch2_s_ndmob">
-    <title>Flow in Channels of Compound Cross-Section</title>
-
-    <para>See Chapter 2 of [9].</para>
+    <title>Methods for Calculating Steady State Backwater and Drawdown Curves</title>
+    <para>Irrespective of whether steady-state flows are subcritical or supercritical, there are two
+      well known methods for calculating the water surface profiles, be they (i) backwater curves or
+      (ii) drawdown curves. In backwater profiles, the water surface deepens in the downstream
+      direction and such flows are decelerating flows. In drawdown profiles, the water depths become
+      shallower in the downstream direction and the flows are accelerating flows.</para>
+    <para>The two main numerical techniques for calculating steady water surface profiles
+      are:</para>
+    <itemizedlist>
+      <listitem>
+        <para>the direct step method, and </para>
+      </listitem>
+      <listitem>
+        <para>the standard step method.</para>
+      </listitem>
+    </itemizedlist>
+    <para>A brief comparison of the two methods can be seen in Table
+      <?oxy_comment_start author="ward" timestamp="20151126T171427+1100" comment="???"?>7<?oxy_comment_end?>.</para>
+    <para>Since the direct step and other direct integration methods are based on a first order
+      differential equation, a single boundary condition is required to initiate the computations.
+      Suitable boundary conditions could be near (but not at) a control where the water level is
+      known or can be approximated, or any location, reasonably well removed from any regions of
+      rapidly varying flow, where the water level is known.</para>
+    <para>If the flow is subcritical, the flow is controlled from the downstream end and
+      computations should advance in the upstream direction. On the other hand, for supercritical
+      flows, the flow is controlled from the upstream end and computations should proceed in the
+      downstream direction <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>([18]
+      and [19])<?oxy_custom_end?>. If these guidelines regarding the direction of the solution
+      procedure are not observed, it has been stated ([<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>18]<?oxy_custom_end?>
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>and [19])<?oxy_custom_end?>
+      that the calculations will eventually depart from the true solution. This rule-of-thumb is not
+      without contention. There is some evidence which suggests that if an implicit finite
+      difference method is employed to solve the governing equations, then the direction of
+      computation is immaterial
+      (<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>[25]).</para>
+    <section xml:id="b6_ch2_s_dc2x1">
+      <title><?oxy_custom_end?>Direct Step Method for Calculating Backwater and Drawdown
+        Curves</title>
+      <para>In the direct step method for calculating steady state, gradually varying flow profiles,
+        the distance between two sections with specified depths is calculated.</para>
+      <para>The direct step method of calculating gradually varied flow profiles is only applicable
+        to prismatic channels (which are more commonly manmade than natural). In this method, the
+        flow depths at those sections where computations are to be carried out along the waterway
+        are known (or specified) in advance. The (specified) depth increments or decrements between
+        these sections need not be constant. With the depths (y) along the waterway known, the
+        direct step method enables the distances between these sections (Δx) to be calculated
+        directly without the need for iteration or trial and error. The governing equation is the
+        first order ordinary differential equation:</para>
+      <equation xml:id="b6_ch2_e_m23y6">
+        <?oxy_comment_start author="ward" timestamp="20151126T171951+1100" comment="This should be sf bar. See later section"?>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>E</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <msub>
+                <mi>S</mi>
+                <mi>o</mi>
+              </msub>
+              <mo>&#x2212;</mo>
+              <msub>
+                <mi>S</mi>
+                <mi>f</mi>
+              </msub>
+            </mrow>
+          </semantics>
+        </math>
+        <?oxy_comment_end?>
+      </equation>
+      <equation xml:id="b6_ch2_e_odm6w">
+        <?oxy_comment_start author="ward" timestamp="20151126T172001+1100" comment="u?"?>
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>where... E</m:mi>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mi>y</m:mi>
+              <m:mo>+</m:mo>
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>v</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msup>
+                <m:mi>2g</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+        <?oxy_comment_end?>
+      </equation>
+      <para>= specific head or specific energy (m) x = co-ordinate in downstream direction
+        (m)</para>
+      <para>It is conventional to choose the x−coordinate such that it increases in the downstream
+        direction, irrespective of whether the flow is subcritical or supercritical. When
+        <?oxy_comment_start author="ward" timestamp="20151126T172018+1100" comment="?? what was eq 27 is it  1.57? "?>equation
+        (27)<?oxy_comment_end?> is recast in a finite difference form, equation (27) becomes:</para>
+      <equation xml:id="b6_ch2_e_jwzu6">
+        <m:math display="block">
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>E</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>E</m:mi>
+                  <m:mi>1</m:mi>
+                </m:msub>
+              </m:mrow>
+              <m:mi>Δx</m:mi>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:msub>
+                <m:mi>S</m:mi>
+                <m:mi>o</m:mi>
+              </m:msub>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>S</m:mi>
+                <m:mi>f</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation xml:id="b6_ch2_e_nq0ml">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>⇒ Δx</m:mi>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>E</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>E</m:mi>
+                  <m:mi>1</m:mi>
+                </m:msub>
+              </m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>S</m:mi>
+                  <m:mi>o</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>S</m:mi>
+                  <m:mi>f</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>where. . . 1, 2 = spatial indices which increase in the downstream direction</para>
+      <equation xml:id="b6_ch2_e_9l4oc">
+        <m:math display="block">
+          <m:mrow>
+            <m:mi>Δx</m:mi>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>2</m:mi>
+              </m:msub>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>1</m:mi>
+              </m:msub>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation xml:id="b6_ch2_e_epjcm">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mtext>(bedslope)&#x00A0;</mtext>
+              <msub>
+                <mi>S</mi>
+                <mi>o</mi>
+              </msub>
+              <mo>=</mo>
+              <mtext>&#x00A0;</mtext>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>z</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </semantics>
+        </math>
+      </equation>
+      <equation xml:id="b6_ch2_e_oc0hd">
+        <?oxy_comment_start author="ward" timestamp="20151126T172224+1100" comment="u?"?>
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>(friction slope) S</m:mi>
+              <m:mi>f</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:msup>
+                <m:mi>(nv)</m:mi>
+                <m:mi>2</m:mi>
+              </m:msup>
+              <m:msubsup>
+                <m:mi>R</m:mi>
+                <m:mi>h</m:mi>
+                <m:mi>4/3</m:mi>
+              </m:msubsup>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+        <?oxy_comment_end?>
+      </equation>
+      <para>n is the Manning roughness parameter</para>
+      <para>S<subscript>f </subscript>is the average friction slope over the elemental reach
+        Δx</para>
+      <equation xml:id="b6_ch2_e_5by6n">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>f 1</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>f 2</m:mi>
+                  </m:msub>
+                </m:mrow>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mi>2</m:mi>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>S<subscript>f 1</subscript> = friction slope at Section 1</para>
+      <para>S<subscript>f 2</subscript> = friction slope at Section 2</para>
+      <para>The reason that the direct step method is only applicable to prismatic channels is that
+        the unknown in equation
+        (<?oxy_comment_start author="ward" timestamp="20151126T172313+1100" comment="which equation is this "?>29<?oxy_comment_end?>)
+        is Δx. In the case of a subcritical flow, the computations proceed in the upstream
+        direction; while x2 will be known (or specified), x1 will be
+        unknown<?oxy_comment_start author="ward" timestamp="20151126T172331+1100" comment="do we have this foot note "?>9<?oxy_comment_end?>.
+        Unless the section properties at x1 are known, the computation of the specific energy and
+        friction slope at this location cannot (in principle) proceed. The requirement imposed by
+        the direct step method is therefore that the channel be prismatic.</para>
+      <para>Since the direct step method is explicit, no iteration is needed. The solution of
+        equation (29) is straightforward and easily executed in tabular form on a
+        spreadsheet.</para>
+    </section>
+    <section xml:id="b6_ch2_s_kft5b">
+      <title>Standard Step Method for Calculating Backwater and Drawdown Curves</title>
+      <para>The standard step method is more versatile than the direct step method in that it can be
+        applied to irregular (usually natural) channels i.e. channels with cross-sections which are
+        changing along the length of the waterway. The relevant equations for the standard step
+        method are based on the definition for total head, the difference in head between two
+        sections separated by a horizontal distance Δx, and an expression for the friction slope
+        based on the Manning (or Chezy or Colebrook-White) equation.</para>
+      <para><?oxy_comment_start author="ward" timestamp="20151126T172642+1100" comment="need this figure "?>Figure
+        17<?oxy_comment_end?>  contains a definition diagram for calculating the gradually varying
+        flow water surface profile for a subcritical flow.</para>
+      <para>In the standard step method, the aim is to satisfy the two expressions below
+        [<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>equations (30) and
+        (31)<?oxy_custom_end?>] and this will only happen when the correct unknown depth
+          y<subscript>1</subscript> has been determined. Because the unknown depth
+          y<subscript>1</subscript> is needed for the flow area A<subscript>1</subscript> and the
+        friction slope S<subscript>f1</subscript>, a trial and error process or some other iterative
+        technique is needed to arrive at a solution.</para>
+      <equation xml:id="b6_ch2_e_qr7i7">
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>H</m:mi>
+              <m:mi>1</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:msub>
+                <m:mi>y</m:mi>
+                <m:mi>1</m:mi>
+              </m:msub>
+              <m:mo>+</m:mo>
+              <m:msub>
+                <m:mi>z</m:mi>
+                <m:mi>1</m:mi>
+              </m:msub>
+              <m:mo>+</m:mo>
+              <m:mfrac>
+                <m:msup>
+                  <m:mi>Q</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msup>
+                <m:msubsup>
+                  <m:mi>2gA</m:mi>
+                  <m:mi>1</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msubsup>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation xml:id="b6_ch2_e_075fm">
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>H</m:mi>
+              <m:mi>1</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>2</m:mi>
+              </m:msub>
+              <m:mo>+Δx</m:mo>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>S</m:mi>
+                      <m:mi>f 1</m:mi>
+                    </m:msub>
+                    <m:mo>+</m:mo>
+                    <m:msub>
+                      <m:mi>S</m:mi>
+                      <m:mi>f 2</m:mi>
+                    </m:msub>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mi>2</m:mi>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation xml:id="b6_ch2_e_ovk6i">
+        <m:math display="block">
+          <m:mrow>
+            <m:msub>
+              <m:mi>where... S</m:mi>
+              <m:mi>f</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:msup>
+                <m:mi>(nQ)</m:mi>
+                <m:mi>2</m:mi>
+              </m:msup>
+              <m:mrow>
+                <m:msup>
+                  <m:mi>A</m:mi>
+                  <m:mi>2</m:mi>
+                </m:msup>
+                <m:msubsup>
+                  <m:mi>R</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mi>4/3</m:mi>
+                </m:msubsup>
+              </m:mrow>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>If the Newton-Raphson technique is applied to H<subscript>E</subscript> = the difference
+        in H<subscript>1</subscript> as given by equation
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(30)
+        <?oxy_custom_end?>less that from
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(31)<?oxy_custom_end?>,
+        the solution process can be speeded up:</para>
+      <equation xml:id="b6_ch2_e_w20ck">
+        <m:math display="block">
+          <m:mrow>
+            <m:mrow>
+              <m:msub>
+                <m:mi>(y</m:mi>
+                <m:mi>1</m:mi>
+              </m:msub>
+              <m:msup>
+                <m:mi>)</m:mi>
+                <m:mi>now</m:mi>
+              </m:msup>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(y</m:mi>
+                  <m:mi>1</m:mi>
+                </m:msub>
+                <m:msup>
+                  <m:mi>)</m:mi>
+                  <m:mi>old</m:mi>
+                </m:msup>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mfrac>
+                <m:msub>
+                  <m:mi>H</m:mi>
+                  <m:mi>E</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mi>1</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>IF</m:mi>
+                      <m:mi>1</m:mi>
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+                    <m:mo>+</m:mo>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>Δx</m:mi>
+                        <m:msub>
+                          <m:mi>y</m:mi>
+                          <m:mi>1</m:mi>
+                        </m:msub>
+                      </m:mfrac>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mrow>
+                            <m:mi>1</m:mi>
+                            <m:mo>+</m:mo>
+                            <m:mfrac>
+                              <m:msub>
+                                <m:mi>2Rh</m:mi>
+                                <m:mi>1</m:mi>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>3y</m:mi>
+                                <m:mi>1</m:mi>
+                              </m:msub>
+                            </m:mfrac>
+                          </m:mrow>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:msub>
+                          <m:mi>S</m:mi>
+                          <m:mi>f 1</m:mi>
+                        </m:msub>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation xml:id="b6_ch2_e_w34o9">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>(for a wide channel with Rh1≈y1) ≈</m:mo>
+            <m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>(y</m:mi>
+                  <m:mi>1</m:mi>
+                </m:msub>
+                <m:msup>
+                  <m:mi>)</m:mi>
+                  <m:mi>old</m:mi>
+                </m:msup>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mfrac>
+                <m:msub>
+                  <m:mi>H</m:mi>
+                  <m:mi>E</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mi>1</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mrow>
+                    <m:msubsup>
+                      <m:mi>IF</m:mi>
+                      <m:mi>1</m:mi>
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+                    <m:mo>+</m:mo>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mi>5</m:mi>
+                        <m:mi>3</m:mi>
+                      </m:mfrac>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mfrac>
+                            <m:mi>Δx</m:mi>
+                            <m:msub>
+                              <m:mi>y</m:mi>
+                              <m:mi>1</m:mi>
+                            </m:msub>
+                          </m:mfrac>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>S</m:mi>
+                            <m:mi>f 1</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>where. . . H<subscript>E</subscript> = error or difference between the two values of
+          H<subscript>1</subscript> in
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>equations (30) and
+        (31)<?oxy_custom_end?></para>
+      <equation xml:id="b6_ch2_e_68hvc">
+        <m:math display="block">
+          <m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>1</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>z</m:mi>
+                    <m:mi>1</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:msup>
+                      <m:mi>Q</m:mi>
+                      <m:mi>2</m:mi>
+                    </m:msup>
+                    <m:msubsup>
+                      <m:mi>2gA</m:mi>
+                      <m:mi>1</m:mi>
+                      <m:mi>2</m:mi>
+                    </m:msubsup>
+                  </m:mfrac>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>H</m:mi>
+                    <m:mi>2</m:mi>
+                  </m:msub>
+                  <m:mo>+Δx</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>S</m:mi>
+                          <m:mi>f 1</m:mi>
+                        </m:msub>
+                        <m:mo>+</m:mo>
+                        <m:msub>
+                          <m:mi>S</m:mi>
+                          <m:mi>f 2</m:mi>
+                        </m:msub>
+                      </m:mrow>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mi>2</m:mi>
+                  </m:mfrac>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>(y<subscript>1</subscript>)<superscript>old </superscript>= previous value of
+          y<subscript>1</subscript></para>
+      <para>(y<subscript>1</subscript>)<superscript>new</superscript> = new value of
+          y<subscript>1</subscript> after iteration</para>
+      <para>In the case of a supercritical flow, the equations above would need to be modified with
+        the unknown being
+        y<subscript>2</subscript>.<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></para>
+      <?oxy_custom_end?>
+    </section>
+    <section>
+      <title>Averaging Required in Water Surface Profile Calculations</title>
+      <para>Because both
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>equations (27) and
+        (35)<?oxy_custom_end?> are ordinary differential equations, they are a point relation which
+        hold at all points in the 1D continuum. When these equations are discretised using (say) a
+        finite difference method, the resulting equations span a small elemental reach of length Δx
+        and are equations
+        <?oxy_comment_start author="ward" timestamp="20151126T173245+1100" comment="both are 36?"?>(36)
+        and (36 )<?oxy_comment_end?> respectively. </para>
+      <para><?oxy_comment_start author="ward" timestamp="20151126T173330+1100" comment="start of sentence missing"?>contain<?oxy_comment_end?>
+        one or two non-linear terms which are discretised using a finite difference method, that in
+        both cases, there are some non-linear terms which require representation over the length of
+        the elemental reach Δx. Various methods have been adopted to provide these approximations
+        and four versions are identified below with respect to the friction slope Sf at sections j
+        and (j + 1).</para>
+      <para/>
+      <equation>
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mtable columnalign="left">
+              <mtr>
+                <mtd>
+                  <mtext>(average&#x00A0;conveyance)&#x00A0;</mtext>
+                  <msub>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mover accent="true">
+                          <mrow>
+                            <msub>
+                              <mi>S</mi>
+                              <mi>f</mi>
+                            </msub>
+                          </mrow>
+                          <mo stretchy="true">&#x00AF;</mo>
+                        </mover>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>K</mi>
+                  </msub>
+                  <mo>=</mo>
+                  <msup>
+                    <mrow>
+                      <mo>[</mo>
+                      <mrow>
+                        <mfrac>
+                          <mi>Q</mi>
+                          <mi>K</mi>
+                        </mfrac>
+                      </mrow>
+                      <mo>]</mo>
+                    </mrow>
+                    <mn>2</mn>
+                  </msup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mtext>(arithmetic&#x00A0;mean)&#x00A0;</mtext>
+                  <msub>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mover accent="true">
+                          <mrow>
+                            <msub>
+                              <mi>S</mi>
+                              <mi>f</mi>
+                            </msub>
+                          </mrow>
+                          <mo stretchy="true">&#x00AF;</mo>
+                        </mover>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>a</mi>
+                  </msub>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                  <mrow>
+                    <mo>[</mo>
+                    <mrow>
+                      <msub>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <msub>
+                                <mi>S</mi>
+                                <mi>f</mi>
+                              </msub>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mn>1</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <msub>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <msub>
+                                <mi>S</mi>
+                                <mi>f</mi>
+                              </msub>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mn>2</mn>
+                      </msub>
+                    </mrow>
+                    <mo>]</mo>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mtext>(geometric&#x00A0;mean)&#x00A0;</mtext>
+                  <msub>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mover accent="true">
+                          <mrow>
+                            <msub>
+                              <mi>S</mi>
+                              <mi>f</mi>
+                            </msub>
+                          </mrow>
+                          <mo stretchy="true">&#x00AF;</mo>
+                        </mover>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>g</mi>
+                  </msub>
+                  <mo>=</mo>
+                  <msqrt>
+                    <mrow>
+                      <msub>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <msub>
+                                <mi>S</mi>
+                                <mi>f</mi>
+                              </msub>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mn>1</mn>
+                      </msub>
+                      <msub>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <msub>
+                                <mi>S</mi>
+                                <mi>f</mi>
+                              </msub>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mn>2</mn>
+                      </msub>
+                    </mrow>
+                  </msqrt>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mtext>(harmonic&#x00A0;mean)&#x00A0;</mtext>
+                  <msub>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mover accent="true">
+                          <mrow>
+                            <msub>
+                              <mi>S</mi>
+                              <mi>f</mi>
+                            </msub>
+                          </mrow>
+                          <mo stretchy="true">&#x00AF;</mo>
+                        </mover>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>h</mi>
+                  </msub>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                      </mfrac>
+                      <mrow>
+                        <mo>[</mo>
+                        <mrow>
+                          <msub>
+                            <mrow>
+                              <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                  <msub>
+                                    <mi>S</mi>
+                                    <mi>f</mi>
+                                  </msub>
+                                </mrow>
+                                <mo>)</mo>
+                              </mrow>
+                            </mrow>
+                            <mn>1</mn>
+                          </msub>
+                          <mo>+</mo>
+                          <msub>
+                            <mrow>
+                              <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                  <msub>
+                                    <mi>S</mi>
+                                    <mi>f</mi>
+                                  </msub>
+                                </mrow>
+                                <mo>)</mo>
+                              </mrow>
+                            </mrow>
+                            <mn>2</mn>
+                          </msub>
+                        </mrow>
+                        <mo>]</mo>
+                      </mrow>
+                    </mrow>
+                  </mfrac>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mtext>where</mtext>
+                  <mn>...</mn>
+                  <mtext>&#x00A0;</mtext>
+                  <mover accent="true">
+                    <mi>v</mi>
+                    <mo stretchy="true">&#x00AF;</mo>
+                  </mover>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>v</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo>+</mo>
+                  <msub>
+                    <mi>v</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mtd>
+              </mtr>
+            </mtable>
+          </semantics>
+        </math>
+        <?oxy_custom_end?>
+      </equation>
+      <para>Q = K.S<superscript>1/2</superscript></para>
+      <para>K = conveyance</para>
+      <para>K = 1 /2 (K<subscript>1</subscript> + K<subscript>2</subscript>)</para>
+      <para>The four averages listed above vary systematically ([16]) so that:</para>
+      <para><inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>a</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> &gt; <inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>g</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> &gt; (S¯f )K<inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>K</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> &gt; (S¯f )h<inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>h</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation></para>
+      <para>In addition to the above averages, there are many other equations which average
+        reach-end parameters A, P, Rh by arithmetic, geometric or harmonic methods, but the averaged
+        friction slope values have all been found to lie between the two extremes given by <inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>a</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> and (S¯f )h<inlineequation>
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mover accent="true">
+                      <mrow>
+                        <msub>
+                          <mi>S</mi>
+                          <mi>f</mi>
+                        </msub>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>h</mi>
+              </msub>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+                qdaaqaaiaadofadaWgaaWcbaGaamOzaaqabaaaaaGccaGLOaGaayzk
+                aaWaaSbaaSqaaiaadggaaeqaaaaa@3A9B@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation>
+        (<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>[6]<?oxy_custom_end?>.</para>
+      <para>The effect of using the various estimates for the average friction slope have been
+        explored by various investigators. Laurenson’s conclusion
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>([16])<?oxy_custom_end?>
+        was that the best single method of averaging appears to be the arithmetic average of
+        reach-end friction slopes, especially if this method is used in concert with the selection
+        of representative cross-sections of the channel.</para>
+    </section>
   </section>
 
   <section xml:id="b6_ch2_s_lxjol">
@@ -6083,770 +7199,6 @@ Needs reference
       There is some evidence which suggests that if an implicit finite difference method is employed
       to solve the governing equations, then the direction of computation is immaterial
       ([25]).</para>
-
-    <section xml:id="b6_ch2_s_dc2x1">
-      <title>Direct Step Method for Calculating Backwater and Drawdown Curves</title>
-
-      <para>In the direct step method for calculating steady state, gradually varied flow profiles,
-        the distance between two sections with specified depths is calculated.</para>
-
-      <para>The direct step method of calculating gradually varied flow profiles is only applicable
-        to prismatic channels (which are more commonly manmade than natural). In this method, the
-        flow depths at those sections where computations are to be carried out along the waterway
-        are known (or specified) in advance. The (specified) depth increments or decrements between
-        these sections need not be constant. With the depths (y) along the waterway known, the
-        direct step method enables the distances between these sections (Δx) to be calculated
-        directly without the need for iteration or trial and error. The governing equation is the
-        first order ordinary differential equation:</para>
-
-      <equation xml:id="b6_ch2_e_m23y6">
-        <m:math display="block">
-          <m:mrow>
-            <m:mfrac>
-              <m:mi>dE</m:mi>
-
-              <m:mi>dx</m:mi>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>S</m:mi>
-
-                <m:mi>o</m:mi>
-              </m:msub>
-
-              <m:mo>-</m:mo>
-
-              <m:msub>
-                <m:mi>S</m:mi>
-
-                <m:mi>f</m:mi>
-              </m:msub>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_odm6w">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>where... E</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:mi>y</m:mi>
-
-              <m:mo>+</m:mo>
-
-              <m:mfrac>
-                <m:msup>
-                  <m:mi>v</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-
-                <m:mi>2g</m:mi>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>= specific head or specific energy (m) x = co-ordinate in downstream direction
-        (m)</para>
-
-      <para>It is conventional to choose the x−coordinate such that it increases in the downstream
-        direction, irrespective of whether the flow is subcritical or supercritical. When equation
-        (27) is recast in a finite difference form, equation (27) becomes:</para>
-
-      <equation xml:id="b6_ch2_e_jwzu6">
-        <m:math display="block">
-          <m:mrow>
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>E</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>E</m:mi>
-
-                  <m:mi>1</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mi>Δx</m:mi>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>S</m:mi>
-
-                <m:mi>o</m:mi>
-              </m:msub>
-
-              <m:mo>-</m:mo>
-
-              <m:msub>
-                <m:mi>S</m:mi>
-
-                <m:mi>f</m:mi>
-              </m:msub>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_nq0ml">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>⇒ Δx</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>E</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>E</m:mi>
-
-                  <m:mi>1</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mrow>
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>o</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>f</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>where. . . 1, 2 = spatial indices which increase in the downstream direction</para>
-
-      <equation xml:id="b6_ch2_e_9l4oc">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>Δx</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>x</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msub>
-
-              <m:mo>-</m:mo>
-
-              <m:msub>
-                <m:mi>x</m:mi>
-
-                <m:mi>1</m:mi>
-              </m:msub>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_epjcm">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>(bedslope) S</m:mi>
-
-              <m:mi>o</m:mi>
-            </m:msub>
-
-            <m:mo>= -</m:mo>
-
-            <m:mfrac>
-              <m:mi>dz</m:mi>
-
-              <m:mi>dx</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_oc0hd">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>(friction slope) S</m:mi>
-
-              <m:mi>f</m:mi>
-            </m:msub>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>(nv)</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-
-              <m:msubsup>
-                <m:mi>R</m:mi>
-
-                <m:mi>h</m:mi>
-
-                <m:mi>4/3</m:mi>
-              </m:msubsup>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>n = Manning roughness parameter</para>
-
-      <para>S<subscript>f </subscript>= average friction slope over the elemental reach Δx</para>
-
-      <equation xml:id="b6_ch2_e_5by6n">
-        <m:math display="block">
-          <m:mrow>
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:mo>(</m:mo>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f 1</m:mi>
-                  </m:msub>
-
-                  <m:mo>+</m:mo>
-
-                  <m:msub>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f 2</m:mi>
-                  </m:msub>
-                </m:mrow>
-
-                <m:mo>)</m:mo>
-              </m:mrow>
-
-              <m:mi>2</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>S<subscript>f 1</subscript> = friction slope at Section 1</para>
-
-      <para>S<subscript>f 2</subscript> = friction slope at Section 2</para>
-
-      <para>The reason that the direct step method is only applicable to prismatic channels is that
-        the unknown in equation (29) is Δx. In the case of a subcritical flow, the computations
-        proceed in the upstream direction; while x<subscript>2</subscript> will be known (or
-        specified), x<subscript>1</subscript> will be unknown<superscript>9</superscript>. Unless
-        the section properties at x1 are known, the computation of the specific energy and friction
-        slope at this location cannot (in principle) proceed. The requirement imposed by the direct
-        step method is therefore that the channel be prismatic.</para>
-
-      <para>Since the direct step method is explicit, no iteration is needed. The solution of
-        equation (29) is straightforward and easily executed in tabular form on a
-        spreadsheet.</para>
-    </section>
-
-    <section xml:id="b6_ch2_s_kft5b">
-      <title>Standard Step Method for Calculating Backwater and Drawdown Curves</title>
-
-      <para>The standard step method is more versatile than the direct step method in that it can be
-        applied to irregular (usually natural) channels i.e. channels with cross-sections which are
-        changing along the length of the waterway. The relevant equations for the standard step
-        method are based on the definition for total head, the difference in head between two
-        sections separated by a horizontal distance Δx, and an expression for the friction slope
-        based on the Manning (or Chezy or Colebrook-White) equation.</para>
-
-      <para>Figure 17 contains a definition diagram for calculating the gradually varied flow water
-        surface profile for a subcritical flow.</para>
-
-      <para>In the standard step method, the aim is to satisfy the two expressions below [equations
-        (30) and (31)] and this will only happen when the correct unknown depth
-          y<subscript>1</subscript> has been determined. Because the unknown depth
-          y<subscript>1</subscript> is needed for the flow area A<subscript>1</subscript> and the
-        friction slope S<subscript>f 1</subscript>, a trial and error process or some other
-        iterative technique is needed to arrive at a solution.</para>
-
-      <equation xml:id="b6_ch2_e_qr7i7">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>H</m:mi>
-
-              <m:mi>1</m:mi>
-            </m:msub>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>y</m:mi>
-
-                <m:mi>1</m:mi>
-              </m:msub>
-
-              <m:mo>+</m:mo>
-
-              <m:msub>
-                <m:mi>z</m:mi>
-
-                <m:mi>1</m:mi>
-              </m:msub>
-
-              <m:mo>+</m:mo>
-
-              <m:mfrac>
-                <m:msup>
-                  <m:mi>Q</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-
-                <m:msubsup>
-                  <m:mi>2gA</m:mi>
-
-                  <m:mi>1</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msubsup>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_075fm">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>H</m:mi>
-
-              <m:mi>1</m:mi>
-            </m:msub>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>H</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msub>
-
-              <m:mo>+Δx</m:mo>
-
-              <m:mfrac>
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mrow>
-                    <m:msub>
-                      <m:mi>S</m:mi>
-
-                      <m:mi>f 1</m:mi>
-                    </m:msub>
-
-                    <m:mo>+</m:mo>
-
-                    <m:msub>
-                      <m:mi>S</m:mi>
-
-                      <m:mi>f 2</m:mi>
-                    </m:msub>
-                  </m:mrow>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:mi>2</m:mi>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_ovk6i">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>where... S</m:mi>
-
-              <m:mi>f</m:mi>
-            </m:msub>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>(nQ)</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-
-              <m:mrow>
-                <m:msup>
-                  <m:mi>A</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-
-                <m:msubsup>
-                  <m:mi>R</m:mi>
-
-                  <m:mi>h</m:mi>
-
-                  <m:mi>4/3</m:mi>
-                </m:msubsup>
-              </m:mrow>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>If the Newton-Raphson technique is applied to H<subscript>E</subscript> = the difference
-        in H<subscript>1</subscript> as given by equation (30) less that from (31), the solution
-        process can be speeded up:</para>
-
-      <equation xml:id="b6_ch2_e_w20ck">
-        <m:math display="block">
-          <m:mrow>
-            <m:mrow>
-              <m:msub>
-                <m:mi>(y</m:mi>
-
-                <m:mi>1</m:mi>
-              </m:msub>
-
-              <m:msup>
-                <m:mi>)</m:mi>
-
-                <m:mi>now</m:mi>
-              </m:msup>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>(y</m:mi>
-
-                  <m:mi>1</m:mi>
-                </m:msub>
-
-                <m:msup>
-                  <m:mi>)</m:mi>
-
-                  <m:mi>old</m:mi>
-                </m:msup>
-              </m:mrow>
-
-              <m:mo>-</m:mo>
-
-              <m:mfrac>
-                <m:msub>
-                  <m:mi>H</m:mi>
-
-                  <m:mi>E</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mi>1</m:mi>
-
-                  <m:mo>-</m:mo>
-
-                  <m:mrow>
-                    <m:msubsup>
-                      <m:mi>IF</m:mi>
-
-                      <m:mi>1</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msubsup>
-
-                    <m:mo>+</m:mo>
-
-                    <m:mrow>
-                      <m:mfrac>
-                        <m:mi>Δx</m:mi>
-
-                        <m:msub>
-                          <m:mi>y</m:mi>
-
-                          <m:mi>1</m:mi>
-                        </m:msub>
-                      </m:mfrac>
-
-                      <m:mrow>
-                        <m:mrow>
-                          <m:mo>(</m:mo>
-
-                          <m:mrow>
-                            <m:mi>1</m:mi>
-
-                            <m:mo>+</m:mo>
-
-                            <m:mfrac>
-                              <m:msub>
-                                <m:mi>2Rh</m:mi>
-
-                                <m:mi>1</m:mi>
-                              </m:msub>
-
-                              <m:msub>
-                                <m:mi>3y</m:mi>
-
-                                <m:mi>1</m:mi>
-                              </m:msub>
-                            </m:mfrac>
-                          </m:mrow>
-
-                          <m:mo>)</m:mo>
-                        </m:mrow>
-
-                        <m:msub>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>f 1</m:mi>
-                        </m:msub>
-                      </m:mrow>
-                    </m:mrow>
-                  </m:mrow>
-                </m:mrow>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_w34o9">
-        <m:math display="block">
-          <m:mrow>
-            <m:mo>(for a wide channel with Rh1≈y1) ≈</m:mo>
-
-            <m:mrow>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>(y</m:mi>
-
-                  <m:mi>1</m:mi>
-                </m:msub>
-
-                <m:msup>
-                  <m:mi>)</m:mi>
-
-                  <m:mi>old</m:mi>
-                </m:msup>
-              </m:mrow>
-
-              <m:mo>-</m:mo>
-
-              <m:mfrac>
-                <m:msub>
-                  <m:mi>H</m:mi>
-
-                  <m:mi>E</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mi>1</m:mi>
-
-                  <m:mo>-</m:mo>
-
-                  <m:mrow>
-                    <m:msubsup>
-                      <m:mi>IF</m:mi>
-
-                      <m:mi>1</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msubsup>
-
-                    <m:mo>+</m:mo>
-
-                    <m:mrow>
-                      <m:mfrac>
-                        <m:mi>5</m:mi>
-
-                        <m:mi>3</m:mi>
-                      </m:mfrac>
-
-                      <m:mrow>
-                        <m:mrow>
-                          <m:mo>(</m:mo>
-
-                          <m:mfrac>
-                            <m:mi>Δx</m:mi>
-
-                            <m:msub>
-                              <m:mi>y</m:mi>
-
-                              <m:mi>1</m:mi>
-                            </m:msub>
-                          </m:mfrac>
-
-                          <m:mo>)</m:mo>
-                        </m:mrow>
-
-                        <m:mrow>
-                          <m:msub>
-                            <m:mi>S</m:mi>
-
-                            <m:mi>f 1</m:mi>
-                          </m:msub>
-                        </m:mrow>
-                      </m:mrow>
-                    </m:mrow>
-                  </m:mrow>
-                </m:mrow>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>where. . . H<subscript>E</subscript> = error or difference between the two values of
-          H<subscript>1</subscript> in equations (30) and (31)</para>
-
-      <equation xml:id="b6_ch2_e_68hvc">
-        <m:math display="block">
-          <m:mrow>
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:mrow>
-                <m:mo>[</m:mo>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>y</m:mi>
-
-                    <m:mi>1</m:mi>
-                  </m:msub>
-
-                  <m:mo>+</m:mo>
-
-                  <m:msub>
-                    <m:mi>z</m:mi>
-
-                    <m:mi>1</m:mi>
-                  </m:msub>
-
-                  <m:mo>+</m:mo>
-
-                  <m:mfrac>
-                    <m:msup>
-                      <m:mi>Q</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msup>
-
-                    <m:msubsup>
-                      <m:mi>2gA</m:mi>
-
-                      <m:mi>1</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msubsup>
-                  </m:mfrac>
-                </m:mrow>
-
-                <m:mo>]</m:mo>
-              </m:mrow>
-
-              <m:mo>-</m:mo>
-
-              <m:mrow>
-                <m:mo>[</m:mo>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>H</m:mi>
-
-                    <m:mi>2</m:mi>
-                  </m:msub>
-
-                  <m:mo>+Δx</m:mo>
-
-                  <m:mfrac>
-                    <m:mrow>
-                      <m:mo>(</m:mo>
-
-                      <m:mrow>
-                        <m:msub>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>f 1</m:mi>
-                        </m:msub>
-
-                        <m:mo>+</m:mo>
-
-                        <m:msub>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>f 2</m:mi>
-                        </m:msub>
-                      </m:mrow>
-
-                      <m:mo>)</m:mo>
-                    </m:mrow>
-
-                    <m:mi>2</m:mi>
-                  </m:mfrac>
-                </m:mrow>
-
-                <m:mo>]</m:mo>
-              </m:mrow>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>(y<subscript>1</subscript>)<superscript>old </superscript>= previous value of
-          y<subscript>1</subscript></para>
-
-      <para>(y<subscript>1</subscript>)<superscript>new</superscript> = new value of
-          y<subscript>1</subscript> after iteration</para>
-
-      <para>In the case of a supercritical flow, the equations above would need to be modified with
-        the unknown being y<subscript>2</subscript>.</para>
-    </section>
 
     <section xml:id="b6_ch2_s_4fx1h">
       <title>Direct Integration Method for Calculating Backwater and Drawdown Curves</title>
