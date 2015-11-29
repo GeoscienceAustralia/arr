@@ -9216,7 +9216,7 @@ think / rather than -1
         properties, discussed in Section <emphasis role="bold">Error! Reference source not
           found.</emphasis>, the momentum equation can also have diffusion properties.</para>
       <para>Eddy viscosity and its application to 2D flood models is discussed in more detail in
-        Chapter 10.<anchor xml:id="_anchor_1"/>[M1] It is noted, however, that for eddy viscosity
+        Chapter 10. It is noted, however, that for eddy viscosity
         calculations to be meaningful, the and convective momentum terms must be modelled with
         sufficient accuracy. This is discussed in more detail in Section <emphasis role="bold"
           >Error! Reference source not found.</emphasis>.</para>
@@ -9343,12 +9343,8 @@ think / rather than -1
           included, and water can only flow downstream. As such, the kinematic wave approximation
           can only be used to describe gradually varied flows in reaches with moderate to steep
           slopes where backwater effects can be neglected. </para>
-        <para>
-          <xref linkend="_msoanchor_1"/>[M1]Don’t this chapter has been copied across. Just refer to
-          Project 15 then</para>
       </section>
     </section>
-    <para/>
   </section>
   <section>
     <title>Three Dimensional Flow Equations</title>
@@ -9394,7 +9390,6 @@ think / rather than -1
     </equation>
     <para>Momentum conservation: Navier-Stokes equations</para>
     <equation>
-      <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
       <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
         <semantics>
           <mrow>
@@ -9511,14 +9506,15 @@ think / rather than -1
       be necessary to cover the flow domain in three dimensions.</para>
     <para>A statistical approach to turbulence suggested by Reynolds (1894) may be used to solve the
       Navier-Stokes equations for mean values of velocity and pressure when the turbulence
-      correlations <anchor xml:id="_anchor_2"/>[M2] which result can be determined in some way. The
-      determination of these correlations is the main problem in calculating turbulent flows and a
-      turbulence model must be introduced which approximates the correlations and simulates the
-      average character of real turbulence. The instantaneous values of velocity <emphasis
-        role="bold">u</emphasis>i and pressure <emphasis role="bold">P</emphasis> are separated into
-      mean and fluctuating components, as shown in Eq. (A‑4).</para>
+      correlations <emphasis role="bold"
+        ><?oxy_comment_start author="ward" timestamp="20151130T085120+1100" comment="there is a stray here"?>u'v'<?oxy_comment_end?></emphasis>
+      which result can be determined in some way. The determination of these correlations is the
+      main problem in calculating turbulent flows and a turbulence model must be introduced which
+      approximates the correlations and simulates the average character of real turbulence. The
+      instantaneous values of velocity <emphasis role="bold">u</emphasis>i and pressure <emphasis
+        role="bold">P</emphasis> are separated into mean and fluctuating components, as shown in Eq.
+      (A‑4).</para>
     <equation>
-      <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
       <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
         <semantics>
           <mrow>
@@ -9571,9 +9567,7 @@ think / rather than -1
       </math>
     </equation>
     <para>where the mean quantities are defined as: </para>
-    <para>
-      <inlineequation>
-        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+    <equation>
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
           <semantics>
             <mrow>
@@ -9691,13 +9685,11 @@ think / rather than -1
               aiaadshadaWgaaadbaGaaGOmaaqabaaaniabgUIiYdGccaWGKbGaam iDaaaa@5EA7@ </annotation>
           </semantics>
         </math>
-      </inlineequation></para>
+</equation>
     <para>and the averaging time t<subscript>2</subscript>-t<subscript>1</subscript> is long compared with the time scale of the turbulent
       fluctuations. This results in the following equations:</para>
     <para>Continuity equation:</para>
-    <para>
-      <inlineequation>
-        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+    <equation>
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
           <semantics>
             <mrow>
@@ -9736,17 +9728,316 @@ think / rather than -1
             </annotation>
           </semantics>
         </math>
-      </inlineequation></para>
+      </equation>
     <para>Momentum equation written in terms of the cartesian coordinates for the <emphasis
         role="bold">x</emphasis>-direction, Eq. (A-7) becomes:</para>
-    <para>where ,and are the local time-averaged velocity values in the <emphasis role="bold"
-        >x,</emphasis><emphasis role="bold">y</emphasis> and <emphasis role="bold">z</emphasis>
-      directions and <emphasis role="bold">u</emphasis>', <emphasis role="bold">v</emphasis>' and
-        <emphasis role="bold">w</emphasis>' are their fluctuating components. The terms on the
-      left-hand side of the equation represent the momentum flux through an element d<emphasis
-        role="bold">x</emphasis>, d<emphasis role="bold">y</emphasis>, d<emphasis role="bold"
-        >z</emphasis>. The three terms on the right-hand side are the external forces acting on the
-      element. </para>
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mover accent="true">
+                  <mtext>u</mtext>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>t</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mover accent="true">
+              <mtext>u</mtext>
+              <mo stretchy="true">&#x00AF;</mo>
+            </mover>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mover accent="true">
+                  <mtext>u</mtext>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mtext>x</mtext>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mover accent="true">
+              <mi>v</mi>
+              <mo stretchy="true">&#x00AF;</mo>
+            </mover>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mover accent="true">
+                  <mtext>u</mtext>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mtext>y</mtext>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mover accent="true">
+              <mi>w</mi>
+              <mo stretchy="true">&#x00AF;</mo>
+            </mover>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mover accent="true">
+                  <mtext>u</mtext>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mtext>z</mtext>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>&#x03C1;</mi>
+            </mfrac>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mover accent="true">
+                  <mtext>P</mtext>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mtext>x</mtext>
+              </mrow>
+            </mfrac>
+            <mo>&#x2212;</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mover accent="true">
+                      <mrow>
+                        <mtext>u'v'</mtext>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mtext>y</mtext>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mover accent="true">
+                      <mrow>
+                        <mtext>u'u'</mtext>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mtext>x</mtext>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mover accent="true">
+                      <mrow>
+                        <mtext>u'w'</mtext>
+                      </mrow>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mtext>z</mtext>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>+</mo>
+            <mi>&#x03C5;</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mover accent="true">
+                      <mtext>u</mtext>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <msup>
+                      <mtext>x</mtext>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mover accent="true">
+                      <mtext>u</mtext>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <msup>
+                      <mtext>y</mtext>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mo>&#x2202;</mo>
+                      <mn>2</mn>
+                    </msup>
+                    <mover accent="true">
+                      <mtext>u</mtext>
+                      <mo stretchy="true">&#x00AF;</mo>
+                    </mover>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <msup>
+                      <mtext>z</mtext>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qadaWcaaqaaiabgkGi2oaanaaabaGaaeyDaaaaaeaacqGHciITcaWG
+            0baaaiabgUcaRmaanaaabaGaaeyDaaaadaWcaaqaaiabgkGi2oaana
+            aabaGaaeyDaaaaaeaacqGHciITcaqG4baaaiabgUcaRmaanaaabaGa
+            amODaaaadaWcaaqaaiabgkGi2oaanaaabaGaaeyDaaaaaeaacqGHci
+            ITcaqG5baaaiabgUcaRmaanaaabaGaam4DaaaadaWcaaqaaiabgkGi
+            2oaanaaabaGaaeyDaaaaaeaacqGHciITcaqG6baaaiabg2da9maala
+            aabaGaeyOeI0IaaGymaaqaaiabeg8aYbaadaWcaaqaaiabgkGi2oaa
+            naaabaGaaeiuaaaaaeaacqGHciITcaqG4baaaiabgkHiTmaabmaaba
+            WaaSaaaeaacqGHciITdaqdaaqaaiaabwhacaqGNaGaaeODaiaabEca
+            aaaabaGaeyOaIyRaaeyEaaaacqGHRaWkdaWcaaqaaiabgkGi2oaana
+            aabaGaaeyDaiaabEcacaqG1bGaae4jaaaaaeaacqGHciITcaqG4baa
+            aiabgUcaRmaalaaabaGaeyOaIy7aa0aaaeaacaqG1bGaae4jaiaabE
+            hacaqGNaaaaaqaaiabgkGi2kaabQhaaaaacaGLOaGaayzkaaGaey4k
+            aSIaeqyXdu3aaeWaaeaadaWcaaqaaiabgkGi2oaaCaaaleqabaGaaG
+            OmaaaakmaanaaabaGaaeyDaaaaaeaacqGHciITcaqG4bWaaWbaaSqa
+            beaacaaIYaaaaaaakiabgUcaRmaalaaabaGaeyOaIy7aaWbaaSqabe
+            aacaaIYaaaaOWaa0aaaeaacaqG1baaaaqaaiabgkGi2kaabMhadaah
+            aaWcbeqaaiaaikdaaaaaaOGaey4kaSYaaSaaaeaacqGHciITdaahaa
+            WcbeqaaiaaikdaaaGcdaqdaaqaaiaabwhaaaaabaGaeyOaIyRaaeOE
+            amaaCaaaleqabaGaaGOmaaaaaaaakiaawIcacaGLPaaaaaa@8CA8@ </annotation>
+        </semantics>
+      </math>
+    </equation>
+    <para>where <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mover accent="true">
+                <mtext>u</mtext>
+                <mo stretchy="true">&#x00AF;</mo>
+              </mover>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8 qadaqdaaqaaiaabwhaaaaaaa@3720@
+            </annotation>
+          </semantics>
+        </math>
+      </inlineequation>,<inlineequation>
+        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mover accent="true">
+                <mtext>v</mtext>
+                <mo stretchy="true">&#x00AF;</mo>
+              </mover>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8 qadaqdaaqaaiaabwhaaaaaaa@3720@
+            </annotation>
+          </semantics>
+        </math>
+      </inlineequation>and <inlineequation>
+        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mover accent="true">
+                <mtext>w</mtext>
+                <mo stretchy="true">&#x00AF;</mo>
+              </mover>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8 qadaqdaaqaaiaabwhaaaaaaa@3720@
+            </annotation>
+          </semantics>
+        </math>
+      </inlineequation> ,and are the local time-averaged velocity values in the <emphasis
+        role="bold">x,</emphasis><emphasis role="bold">y</emphasis> and <emphasis role="bold"
+        >z</emphasis> directions and <emphasis role="bold">u</emphasis>', <emphasis role="bold"
+        >v</emphasis>' and <emphasis role="bold">w</emphasis>' are their fluctuating components. The
+      terms on the left-hand side of the equation represent the momentum flux through an element
+        d<emphasis role="bold">x</emphasis>, d<emphasis role="bold">y</emphasis>, d<emphasis
+        role="bold">z</emphasis>. The three terms on the right-hand side are the external forces
+      acting on the element. </para>
     <para>The three components of the external forces are:</para>
     <para>1. The body force of the element (due to its weight).</para>
     <para>2. The resulting turbulent shear forces on all surfaces (resulting from Reynolds stress
@@ -9754,7 +10045,38 @@ think / rather than -1
     <para>3. The viscous forces causing shear stresses at the molecular level.</para>
     <para>Physically, the correlations when multiplied by the density represent the transport of
       momentum due to the fluctuating motion as shown below:</para>
-    <para> </para>
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>&#x03C4;</mi>
+              <mrow>
+                <mi>x</mi>
+                <mi>y</mi>
+              </mrow>
+            </msub>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mi>&#x03C1;</mi>
+            <mover accent="true">
+              <mrow>
+                <mtext>u'v'</mtext>
+              </mrow>
+              <mo stretchy="true">&#x00AF;</mo>
+            </mover>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qacqaHepaDdaWgaaWcbaGaamiEaiaadMhaaeqaaOGaeyypa0JaeyOe
+            I0IaeqyWdi3aa0aaaeaacaqG1bGaae4jaiaabAhacaqGNaaaaaaa@4116@ </annotation>
+        </semantics>
+      </math>
+    </equation>
     <para>The equation above represents the transport of <emphasis role="bold"
       >x</emphasis>-direction momentum in the <emphasis role="bold">y-</emphasis>direction and may
       be considered as a shear stress on the fluid called the turbulent or Reynolds stress.</para>
@@ -9762,36 +10084,571 @@ think / rather than -1
       obtain the one-dimensional open channel flow equations for an incompressible homogeneous
       fluid. Further work was presented by Yen (1973) providing a more detailed and unified view of
       the general open channel flow equations.</para>
-    <para> </para>
-    <para>Often 3D models are applied to steady flows. One approach was described by Olsen et
+    <para> Often 3D models are applied to steady flows. One approach was described by Olsen et
       al(2003, 2004). He solves the three-dimensional Reynolds Averaged Navier-Stokes equations
       (RANS) for each cell. The equations can be written in Cartesian form as:</para>
-    <para> </para>
-    <para>for continuity, and </para>
-    <para> </para>
-    <para>for momentum, where <emphasis role="italic">i </emphasis>and <emphasis role="italic">j
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>0</mn>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qadaWcaaqaaiabgkGi2kaadAfadaWgaaWcbaGaamyAaaqabaaakeaa
+            cqGHciITcaWG4bWaaSbaaSqaaiaadMgaaeqaaaaakiabg2da9iaaic daaaa@3ED3@ </annotation>
+        </semantics>
+      </math>
+    </equation>
+    <para> for continuity, and </para>
+    <equation>
+      <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"/>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>t</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <msub>
+              <mi>V</mi>
+              <mi>j</mi>
+            </msub>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mi>&#x03C1;</mi>
+            </mfrac>
+            <mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mi>p</mi>
+                <msub>
+                  <mi>&#x03B4;</mi>
+                  <mrow>
+                    <mi>i</mi>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>&#x2212;</mo>
+                <mi>&#x03C1;</mi>
+                <mover accent="true">
+                  <mrow>
+                    <msub>
+                      <mi>u</mi>
+                      <mi>i</mi>
+                    </msub>
+                    <msub>
+                      <mi>u</mi>
+                      <mi>j</mi>
+                    </msub>
+                  </mrow>
+                  <mo stretchy="true">&#x00AF;</mo>
+                </mover>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qadaWcaaqaaiabgkGi2kaadAfadaWgaaWcbaGaamyAaaqabaaakeaa
+            cqGHciITcaWG0baaaiabgUcaRiaadAfadaWgaaWcbaGaamOAaaqaba
+            GcdaWcaaqaaiabgkGi2kaadAfadaWgaaWcbaGaamyAaaqabaaakeaa
+            cqGHciITcaWG4bWaaSbaaSqaaiaadQgaaeqaaaaakiabg2da9maala
+            aabaGaaGymaaqaaiabeg8aYbaadaWcaaqaaiabgkGi2cqaaiabgkGi
+            2kaadIhadaWgaaWcbaGaamOAaaqabaaaaOWaaeWaaeaacqGHsislca
+            WGWbGaeqiTdq2aaSbaaSqaaiaadMgacaWGQbaabeaakiabgkHiTiab
+            eg8aYnaanaaabaGaamyDamaaBaaaleaacaWGPbaabeaakiaadwhada
+            WgaaWcbaGaamOAaaqabaaaaaGccaGLOaGaayzkaaaaaa@5C77@ </annotation>
+        </semantics>
+      </math>
+    </equation>
+    <para> for momentum, where <emphasis role="italic">i </emphasis>and <emphasis role="italic">j
       </emphasis>represent standard tensor notation indicating the <emphasis role="italic">x, y
         </emphasis>and<emphasis role="italic"> z </emphasis>coordinate directions, <emphasis
         role="italic">Vi</emphasis>is the mean velocity component in the <emphasis role="italic"
         >xi</emphasis>direction, <emphasis role="italic">p</emphasis> is the pressure, <emphasis
-        role="italic">ρ</emphasis> is the fluid density, δij is the Kronecker delta and is the
-      turbulent Reynolds stress, where <emphasis role="italic">ui</emphasis> and <emphasis
-        role="italic">uj</emphasis> are fluctuating velocities, and is Reynolds averaged value
-        of<emphasis role="italic"> uiuj</emphasis>. The first term is the transient term which is
-      neglected and the second term is the convective term. The third term is the pressure term and
-      the final term is the Reynolds stress term which requires a turbulence model to be evaluated.
-      The standard <emphasis role="italic">k-ε</emphasis> model was used for turbulence closure. The
-      model calculates the eddy-viscosity as:</para>
-    <para> </para>
-    <para>where <emphasis role="italic">cμ</emphasis> is a constant, and is the turbulent kinetic
-      energy and<emphasis role="italic"> ε</emphasis> is the dissipation rate of turbulent kinetic
-      energy. The turbulent kinetic energy <emphasis role="italic">k </emphasis>is modelled
-      as:</para>
-    <para> </para>
-    <para>where <emphasis role="italic">σk</emphasis> is a constant and which is a term for the
-      production of turbulence. The dissipation of turbulent kinetic energy <emphasis role="italic"
-        >ε </emphasis>is modelled as:</para>
-    <para> </para>
+        role="italic">ρ</emphasis> is the fluid density, <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>&#x03B4;</mi>
+                <mrow>
+                  <mi>i</mi>
+                  <mi>j</mi>
+                </mrow>
+              </msub>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcqaaaaaaaaaWdbe
+              aacqaH0oazdaWgaaWcbaGaamyAaiaadQgaaeqaaaaa@39C5@ </annotation>
+          </semantics>
+        </math>
+      </inlineequation> is the Kronecker delta and is the turbulent Reynolds stress, where <emphasis
+        role="italic">ui</emphasis> and <emphasis role="italic">uj</emphasis> are fluctuating
+      velocities, and is Reynolds averaged value of<emphasis role="italic"> uiuj</emphasis>. The
+      first term is the transient term which is neglected and the second term is the convective
+      term. The third term is the pressure term and the final term is the Reynolds stress term which
+      requires a turbulence model to be evaluated. The standard <emphasis role="italic"
+        >k-ε</emphasis> model was used for turbulence closure. The model calculates the
+      eddy-viscosity as:</para>
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>v</mi>
+              <mi>T</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mi>c</mi>
+              <mi>&#x03BC;</mi>
+            </msub>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mi>k</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+              <mi>&#x03B5;</mi>
+            </mfrac>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamODamaaBa
+            aaleaacaWGubaabeaakiabg2da9iaadogadaWgaaWcbaGaeqiVd0ga
+            beaakmaalaaabaGaam4AamaaCaaaleqabaGaaGOmaaaaaOqaaiabew 7aLbaaaaa@3F75@ </annotation>
+        </semantics>
+      </math>
+    </equation>
+    <para> where <emphasis role="italic">cμ</emphasis> is a constant, <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>k</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mn>2</mn>
+              </mfrac>
+              <mover accent="true">
+                <mrow>
+                  <msub>
+                    <mi>u</mi>
+                    <mi>i</mi>
+                  </msub>
+                  <msub>
+                    <mi>u</mi>
+                    <mi>j</mi>
+                  </msub>
+                </mrow>
+                <mo stretchy="true">&#x00AF;</mo>
+              </mover>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4Aaiabg2
+              da9maalaaabaGaaGymaaqaaiaaikdaaaWaa0aaaeaacaWG1bWaaSba
+              aSqaaiaadMgaaeqaaOGaamyDamaaBaaaleaacaWGQbaabeaaaaaaaa@3DB8@ </annotation>
+          </semantics>
+        </math>
+      </inlineequation>and is the turbulent kinetic energy and<emphasis role="italic"> ε</emphasis>
+      is the dissipation rate of turbulent kinetic energy. The turbulent kinetic energy <emphasis
+        role="italic">k </emphasis>is modelled as:</para>
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>k</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>t</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <msub>
+              <mi>V</mi>
+              <mi>j</mi>
+            </msub>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>k</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msub>
+                      <mi>v</mi>
+                      <mi>T</mi>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msub>
+                      <mi>&#x03C3;</mi>
+                      <mi>k</mi>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>k</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <msub>
+                      <mi>x</mi>
+                      <mi>j</mi>
+                    </msub>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>+</mo>
+            <msub>
+              <mi>P</mi>
+              <mi>k</mi>
+            </msub>
+            <mo>&#x2212;</mo>
+            <mi>&#x03B5;</mi>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qadaWcaaqaaiabgkGi2kaadUgaaeaacqGHciITcaWG0baaaiabgUca
+            RiaadAfadaWgaaWcbaGaamOAaaqabaGcdaWcaaqaaiabgkGi2kaadU
+            gaaeaacqGHciITcaWG4bWaaSbaaSqaaiaadQgaaeqaaaaakiabg2da
+            9maalaaabaGaeyOaIylabaGaeyOaIyRaamiEamaaBaaaleaacaWGQb
+            aabeaaaaGcdaqadaqaamaalaaabaGaamODamaaBaaaleaacaWGubaa
+            beaaaOqaaiabeo8aZnaaBaaaleaacaWGRbaabeaaaaGcdaWcaaqaai
+            abgkGi2kaadUgaaeaacqGHciITcaWG4bWaaSbaaSqaaiaadQgaaeqa
+            aaaaaOGaayjkaiaawMcaaiabgUcaRiaadcfadaWgaaWcbaGaam4Aaa qabaGccqGHsislcqaH1oqzaaa@5B9B@
+          </annotation>
+        </semantics>
+      </math>
+    </equation>
+    <para>where <emphasis role="italic">σk</emphasis> is a constant and <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>P</mi>
+                <mi>k</mi>
+              </msub>
+              <mo>=</mo>
+              <msub>
+                <mi>v</mi>
+                <mi>T</mi>
+              </msub>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <msub>
+                    <mi>v</mi>
+                    <mi>j</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                  </msub>
+                </mrow>
+              </mfrac>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msub>
+                        <mi>v</mi>
+                        <mi>j</mi>
+                      </msub>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msub>
+                        <mi>x</mi>
+                        <mi>i</mi>
+                      </msub>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msub>
+                        <mi>v</mi>
+                        <mi>i</mi>
+                      </msub>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msub>
+                        <mi>x</mi>
+                        <mi>j</mi>
+                      </msub>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qacaWGqbWaaSbaaSqaaiaadUgaaeqaaOGaeyypa0JaamODamaaBaaa
+              leaacaWGubaabeaakmaalaaabaGaeyOaIyRaamODamaaBaaaleaaca
+              WGQbaabeaaaOqaaiabgkGi2kaadIhadaWgaaWcbaGaamyAaaqabaaa
+              aOWaaeWaaeaadaWcaaqaaiabgkGi2kaadAhadaWgaaWcbaGaamOAaa
+              qabaaakeaacqGHciITcaWG4bWaaSbaaSqaaiaadMgaaeqaaaaakiab
+              gUcaRmaalaaabaGaeyOaIyRaamODamaaBaaaleaacaWGPbaabeaaaO
+              qaaiabgkGi2kaadIhadaWgaaWcbaGaamOAaaqabaaaaaGccaGLOaGa ayzkaaaaaa@52E4@ </annotation>
+          </semantics>
+        </math>
+      </inlineequation>which is a term for the production of turbulence. The dissipation of
+      turbulent kinetic energy <emphasis role="italic">ε </emphasis>is modelled as: </para>
+    <equation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>k</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>t</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <msub>
+              <mi>V</mi>
+              <mi>j</mi>
+            </msub>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>k</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mo>&#x2202;</mo>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>j</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msub>
+                      <mi>v</mi>
+                      <mi>T</mi>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msub>
+                      <mi>&#x03C3;</mi>
+                      <mi>k</mi>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>k</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <msub>
+                      <mi>x</mi>
+                      <mi>j</mi>
+                    </msub>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>+</mo>
+            <msub>
+              <mi>C</mi>
+              <mrow>
+                <mi>&#x03B5;</mi>
+                <mn>1</mn>
+              </mrow>
+            </msub>
+            <mfrac>
+              <mi>&#x03B5;</mi>
+              <mi>k</mi>
+            </mfrac>
+            <msub>
+              <mi>P</mi>
+              <mi>k</mi>
+            </msub>
+            <mo>&#x2212;</mo>
+            <msub>
+              <mi>C</mi>
+              <mrow>
+                <mi>&#x03B5;</mi>
+                <mn>2</mn>
+              </mrow>
+            </msub>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mi>&#x03B5;</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+              <mi>k</mi>
+            </mfrac>
+          </mrow>
+          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+            qadaWcaaqaaiabgkGi2kaadUgaaeaacqGHciITcaWG0baaaiabgUca
+            RiaadAfadaWgaaWcbaGaamOAaaqabaGcdaWcaaqaaiabgkGi2kaadU
+            gaaeaacqGHciITcaWG4bWaaSbaaSqaaiaadQgaaeqaaaaakiabg2da
+            9maalaaabaGaeyOaIylabaGaeyOaIyRaamiEamaaBaaaleaacaWGQb
+            aabeaaaaGcdaqadaqaamaalaaabaGaamODamaaBaaaleaacaWGubaa
+            beaaaOqaaiabeo8aZnaaBaaaleaacaWGRbaabeaaaaGcdaWcaaqaai
+            abgkGi2kaadUgaaeaacqGHciITcaWG4bWaaSbaaSqaaiaadQgaaeqa
+            aaaaaOGaayjkaiaawMcaaiabgUcaRiaadoeadaWgaaWcbaGaeqyTdu
+            MaaGymaaqabaGcdaWcaaqaaiabew7aLbqaaiaadUgaaaGaamiuamaa
+            BaaaleaacaWGRbaabeaakiabgkHiTiaadoeadaWgaaWcbaGaeqyTdu
+            MaaGOmaaqabaGcdaWcaaqaaiabew7aLnaaCaaaleqabaGaaGOmaaaa aOqaaiaadUgaaaaaaa@66F6@
+          </annotation>
+        </semantics>
+      </math>
+    </equation>
     <para>where <emphasis role="italic">C</emphasis><emphasis role="italic">ɛ</emphasis><emphasis
         role="italic">1</emphasis><emphasis role="italic">,C</emphasis><emphasis role="italic"
         >ɛ</emphasis><emphasis role="italic">2</emphasis>and<emphasis role="italic">σε</emphasis>
@@ -9801,116 +10658,80 @@ think / rather than -1
       across the geometry. Model convergence was assumed when all residuals of the RANS and
       turbulence equations between consecutive iterations were of the order of 10-4. An approach for
       the application of these equations in compound open channels is given in Conway et al (2013). </para>
-    <para> </para>
-    <para>
-      <xref linkend="_msoanchor_2"/>[M2]Is there a stray ( here, Yeah</para>
     
   </section>
 
   <section xml:id="b6_ch2_s_yekzq">
     <title>Physical Modelling</title>
-
-    <para>All the sections and subsections on physical modelling have borrowed heavily from the
-      previous version of Australian Rainfall and Runoff i.e. Chapter 4 by B. S. Jenkins ([15]). The
-      treatment of physical modelling presented here is an overview. For more details on physical
-      modelling, the interested reader is referred to [28], [27], [20], [26] or [30].</para>
+    <para>The first designed physical model pre-dates the routine use of numerical models in
+      hydraulic engineering practice by approximately a century. Prior to the advent of digital
+      computers, physical models offered the most practical means for the investigation of problems
+      involving complex bathymetry, sediment transport, unsteady flow and 2D or 3D flow.</para>
+    <para>Since the advent of numerical models, the domain of application of physical models has
+      been shrinking. However, certain problems remain which are still more appropriately
+      investigated through the use of physical models, and this is likely to remain the case for
+      some time yet. Further consideration between the choice of physical model versus numerical
+      model will be given in Section 13.</para>
+    <para>Physical models have been around for hundreds of years, however, it was only in 1885 when
+      the first physical model study based on scientific principles, was undertaken. This model
+      study was conducted by Osborne Reynolds for investigating the tidal currents in the Mersey
+      Estuary near Liverpool, England. Reynolds is reputedly the first person to introduce the time
+      scale into physical modelling (p2 [17], p69 [1]). His first model was distorted with the
+      vertical and horizontal length scales differing by a factor of 33.1. The model sides were
+      vertical and initially, the bed of sand was flat. After a period of model operation however,
+      Reynolds observed that the bed was reshaped with the principal features of the natural
+      estuary. This early success provided the impetus for Reynolds to follow up on this work with
+      another bigger model, again of the Mersey Estuary.</para>
+    <para>The sorts of problems for which physical and numerical models are suited, are somewhat
+      complementary, but this aspect will be considered in Section 13.</para>
 
     <section xml:id="b6_ch2_s_xmff2">
-      <title>Introduction</title>
-
-      <para>The first designed physical model pre-dates the routine use of numerical models in
-        hydraulic engineering practice by approximately a century. Prior to the advent of digital
-        computers, physical models offered the most practical means for the investigation of
-        problems involving complex bathymetry, sediment transport, unsteady flow and 2D or 3D
-        flow.</para>
-
-      <para>Since the advent of numerical models, the domain of application of physical models has
-        been shrinking. However, certain problems remain which are still more appropriately
-        investigated through the use of physical models, and this is likely to remain the case for
-        some time yet. Further consideration between the choice of physical model versus numerical
-        model will be given in Section 13.</para>
-
-      <para>Physical models have been around for hundreds of years, however, it was only in 1885
-        when the first physical model study based on scientific principles, was undertaken. This
-        model study was conducted by Osborne Reynolds for investigating the tidal currents in the
-        Mersey Estuary near Liverpool, England. Reynolds is reputedly the first person to introduce
-        the time scale into physical modelling (p2 [17], p69 [1]). His first model was distorted
-        with the vertical and horizontal length scales differing by a factor of 33.1. The model
-        sides were vertical and initially, the bed of sand was flat. After a period of model
-        operation however, Reynolds observed that the bed was reshaped with the principal features
-        of the natural estuary. This early success provided the impetus for Reynolds to follow up on
-        this work with another bigger model, again of the Mersey Estuary.</para>
-
-      <para>The sorts of problems for which physical and numerical models are suited, are somewhat
-        complementary, but this aspect will be considered in Section 13.</para>
-    </section>
-
-    <section xml:id="b6_ch2_s_zhnf5">
       <title>The Basis for Physical Model Design</title>
-
       <para>Physical models are scaled (usually reduced) representations of the real life or
         prototype flows and their boundaries. The flow boundaries may be:</para>
-
       <itemizedlist>
-        <listitem>
-          <para>fixed bed - often made out of cement mortar. Such models yield information about the
-            flow patterns and velocity field in, for example, estuaries, river channels or tidal
-            inlets.</para>
-        </listitem>
-
-        <listitem>
-          <para>mobile bed - with the model bed typically consisting of one of the following: sand,
-            particles of coal or a granulated plastic. Mobile bed models yield (qualitative)
-            information about the sediment movement as well as the water motion; they are of
-            interest for investigating scour holes, or regions of sediment accretion or
-            erosion.</para>
-        </listitem>
+        <listitem><para><emphasis role="italic">fixed bed</emphasis> - often
+          made out of cement mortar. Such models yield information about the flow patterns and
+          velocity field in, for example, estuaries, river channels or tidal inlets.</para></listitem>
+        <listitem><para><emphasis role="italic">mobile bed</emphasis> - with the
+          model bed typically consisting of one of the following: sand, particles of coal or a
+          granulated plastic. Mobile bed models yield (qualitative) information about the sediment
+          movement as well as the water motion; they are of interest for investigating scour holes,
+          or regions of sediment accretion or erosion.</para></listitem>
       </itemizedlist>
-
       <para>The flow boundaries of a modelled region of interest can be:</para>
-
       <itemizedlist>
-        <listitem>
-          <para>natural where the flood plains and river channels of fixed bed models are
-            constructed by first locating a series of templates made out of metal or plywood into
-            position. Vertically, these sections are positioned using a theodolite. The channel bed
-            and land form between the templates is interpolated. Sand is used as a fill material
-            between the templates, and then a cement mortar capping is applied and frequently
-            painted. See Figure 14.</para>
-        </listitem>
-
-        <listitem>
-          <para>manmade in which case, physical models often incorporate a hydraulic structures such
-            as a culvert, pipe, drainage channel, basin, levee, spillway or outlet works. In the
-            model, hydraulic structures could be made out of (painted) timber, marine plywood, PVC
-            pipes and also perspex when visibility is a consideration e.g. for tracing the flow
-            patterns through a structure with the use of a dye. See Figure ??.</para>
-        </listitem>
+        <listitem><para><emphasis role="italic">natural</emphasis> - where the
+          floodplains and river channels of fixed bed models are constructed by first locating a
+          series of templates made out of metal or plywood into position. Vertically, these sections
+          are positioned using a theodolite. The channel bed and land form between the templates is
+          interpolated. Sand is used as a fill material between the templates, and then a cement
+          mortar capping is applied and frequently painted. See Figure 14.</para></listitem>
+        <listitem><para><emphasis role="italic">manmade</emphasis> - in which
+          case, physical models often incorporate a hydraulic structure such as a culvert, pipe,
+          drainage channel, basin, levee, spillway or outlet works. In the model, hydraulic
+          structures could be made out of (painted) timber, marine plywood, PVC pipes and also
+          Perspex when visibility is a consideration e.g. for tracing the flow patterns through a
+          structure with the use of a dye. See Figure ??.</para></listitem>
       </itemizedlist>
-
       <para>Accurate simulation of the flows in a physical model requires three kinds of similitude
         (or similarity) and it will be noticed that the word geometry enters the description of each
         kind of similitude:</para>
-
       <itemizedlist>
-        <listitem>
-          <para>Geometric similitude requires the geometry or shapes of the flow boundaries to be
-            similar in model and prototype. Lengths in the model are scaled versions of the
-            corresponding prototype lengths. Geometric similitude is secured by ensuring that the
-            model is a scaled reproduction of the prototype.</para>
-        </listitem>
-
-        <listitem>
-          <para>dynamic similitude requires that all forces (be they pressure forces, weight,
-            boundary friction forces, drag forces, surface tension forces, centripetal forces) at
-            each point in the flow domain are each scaled by the same factor between model and
-            prototype. If this were to be achieved, the force polygon acting on each elemental fluid
-            parcel in the flow field, would have the same geometry in model and prototype; this is
-            referred to as complete similitude. Complete similitude is the ideal situation, but in
-            practice, is impossible to achieve. The reasons for this are twofold.</para>
-        </listitem>
+        <listitem><para><emphasis role="italic">Geometric similitude</emphasis>-
+          requires the geometry or shapes of the flow boundaries to be similar in model and
+          prototype. Lengths in the model are scaled versions of the corresponding prototype
+          lengths. Geometric similitude is secured by ensuring that the model is a scaled
+          reproduction of the prototype.</para></listitem>
+        <listitem><para><emphasis role="italic">dynamic similitude</emphasis>-
+          requires that all forces (be they pressure forces, weight, boundary friction forces, drag
+          forces, surface tension forces, centripetal forces) at each point in the flow domain are
+          each scaled by the same factor between model and prototype. If this were to be achieved,
+          the force polygon acting on each elemental fluid parcel in the flow field, would have the
+          same geometry in model and prototype; this is referred to as complete similitude. Complete
+          similitude is the ideal situation, but in practice, is impossible to achieve. The reasons
+          for this are twofold.</para></listitem>
       </itemizedlist>
-
       <para>Firstly, the scaling requirements of the various forces are incompatible because some
         forces act through volumes (e.g. gravity and centripetal forces), other forces act over
         areas (e.g. pressure, drag and viscous forces) and another force acts over lengths (the
@@ -9920,7 +10741,6 @@ think / rather than -1
         smaller the model compared to the prototype, the larger the length scale and the greater the
         discrepancy between the scalings of the various forces which act through volumes or over
         areas or lengths.</para>
-
       <para>Secondly, the limited fluids available for use in models (in terms of their fluid
         properties of density and viscosity, and cost and safety) restrict the range of length
         scales which can be used in physical models. In nearly all cases in engineering practice,
@@ -9928,20 +10748,18 @@ think / rather than -1
         compromise has to be reached in which only the dominant forces are correctly scaled by the
         same factor, and the incorrect scalings of the smaller forces are of negligible consequence
         in a well designed model. This is termed incomplete similitude.</para>
-
       <para>The task of the modeller is to identify the dominant forces, ensure that these forces
         are scaled correctly, and disregard any insignificant forces. The effects (i.e. errors) due
         to those incorrectly scaled, insignificant forces are known as scale effects. In current
         engineering practice, most hydraulic investigations involve free surface flows and to a much
         lesser extent, pressurised or closed conduit flows. These two types of problems require
         different scaling criteria:</para>
-
       <para>In free surface flows, the dominant forces are usually gravity, the associated pressure
         force, and boundary friction. By asserting equality of the Froude number between model and
         prototype at all points in the flow field, the gravity and pressure forces are scaled by the
         same (desired) factor. By adjusting the model boundary roughness, consistent scaling of the
         boundary friction force is then achieved. Dynamic similitude is achieved provided the scale
-        effects are negligible. A model which is based on pointto- point equality of the Froude
+        effects are negligible. A model which is based on point-to-point equality of the Froude
         number between model and prototype is known as a Froude model. Effectively, what the
         modeller is doing here is to ensure that gravity, pressure and boundary friction forces are
         scaled consistently. All other forces are insignificant and so the momentum equation (or
@@ -9953,16 +10771,10 @@ think / rather than -1
         dynamic scaling requirement is that there is point-to-point equality of the Reynolds number
         in model and prototype. The dominant forces are the viscous and pressure forces which are
         correctly scaled in a Reynolds model.</para>
-
-      <itemizedlist>
-        <listitem>
-          <para>kinematic similitude requires the flow patterns in the model and prototype to be
-            geometrically similar. In other words, the velocities at all points in the model, bear
-            the same ratio between model and prototype. If this is achieved, then the model is in
-            similitude with the prototype.</para>
-        </listitem>
-      </itemizedlist>
-
+      <para>Kinematic similitude requires the flow patterns in the model and prototype to be
+        geometrically similar. In other words, the velocities at all points in the model, bear the
+        same ratio between model and prototype. If this is achieved, then the model is in similitude
+        with the prototype.</para>
       <para>If any two of the above three kinds of similitude are satisfied, then the remaining
         similitude is inferred. In normal modelling practice, models are designed to satisfy both
         geometric and dynamic similitude. It then follows that kinematic similitude is also
@@ -9972,7 +10784,6 @@ think / rather than -1
         numbers, but in practice, the most common criterion which has been mentioned above, is based
         on the Froude number (for free surface flows). The next most common criterion is based on
         the Reynolds number (for closed conduit or pressurised flows).</para>
-
       <para>The Froude number may be regarded as the ratio of the inertial (or resultant) force to
         the gravity force, and the Reynolds number as the ratio of the inertial force to the viscous
         force. In models based on the Froude criterion or the Reynolds criterion, the correct
@@ -9981,19 +10792,17 @@ think / rather than -1
         are all correctly scaled, then the force polygon in model and prototype will also be
         correctly scaled. Consequently, one of these forces is a dependent force and this is taken
         to be the pressure force in Froude and Reynolds type models (p139 [28]).</para>
-
-      <para>If once again, we consider any small parcel of fluid in the prototype, what is required
-        of the model is that the corresponding parcel of fluid in the model moves along the
-        corresponding path at a scaled velocity of the prototype velocity. For this to happen, all
-        forces (weight, pressure, drag, viscous, surface tension, elastic) acting on that parcel of
-        fluid in the prototype must be in the same proportions to each other in the model. If this
-        is the case, then there would be complete similitude between model and prototype. However,
-        the various forces scale in different ways: some forces scale as the length cubed (e.g.
-        weight, centripetal forces), other forces scale as length squared (e.g. pressure) and one
-        other scales as length (i.e. surface tension). Therefore, as soon as the length scale
-        departs from unity (i.e. full scale model), it is impossible or very difficult for all these
-        forces to scale together in the same proportion.</para>
-
+      <para>Considering any small parcel of fluid in the prototype, what is required of the model is
+        that the corresponding parcel of fluid in the model moves along the corresponding path at a
+        scaled velocity of the prototype velocity. For this to happen, all forces (weight, pressure,
+        drag, viscous, surface tension, elastic) acting on that parcel of fluid in the prototype
+        must be in the same proportions to each other in the model. If this is the case, then there
+        would be complete similitude between model and prototype. However, the various forces scale
+        in different ways: some forces scale as the length cubed (e.g. weight, centripetal forces),
+        other forces scale as length squared (e.g. pressure) and one other scales as length (i.e.
+        surface tension). Therefore, as soon as the length scale departs from unity (i.e. full scale
+        model), it is impossible or very difficult for all these forces to scale together in the
+        same proportion.</para>
       <para>Fortunately, however, it is frequently the case, that there are one or two dominant
         forces present in the flow field and it is therefore of no consequence if the minor forces
         are not scaled correctly, so long as the dominant forces are. This is termed incomplete
@@ -10002,62 +10811,40 @@ think / rather than -1
 
     <section xml:id="b6_ch2_s_54f9e">
       <title>Model Scales</title>
-
       <para>The design of a physical model requires the selection of a modelling criterion and
         following on from this, the scales to be used in the model.</para>
-
       <para>In general, it is desirable that the model be as large as possible because:</para>
-
       <itemizedlist>
-        <listitem>
-          <para>scale effects will be reduced.</para>
-        </listitem>
-
-        <listitem>
-          <para>the accuracy of model construction will be less critical, and</para>
-        </listitem>
-
-        <listitem>
-          <para>the results derived from the model will be less sensitive to errors in
-            measurements.</para>
-        </listitem>
+        <listitem><para>scale effects will be reduced,</para></listitem>
+        <listitem><para>the accuracy of model construction will be less
+          critical, and</para></listitem>
+        <listitem><para>the results derived from the model will be less
+          sensitive to errors in measurements.</para></listitem>
       </itemizedlist>
-
       <para>On the other hand, there are a number of factors which tend to limit the size of the
-        physical mode:</para>
-
+        physical model:</para>
       <itemizedlist>
-        <listitem>
-          <para>model construction costs. Construction costs depend on the complexity of the
-            bathymetry and topography, and the detail in any hydraulic structures.</para>
-        </listitem>
-
-        <listitem>
-          <para>the extent of the available floor area to accommodate the model. Models are
-            preferably housed under cover so that the model testing is weather independent i.e. free
-            of wind and rain and the model itself is sheltered. Moreover, to fit a model into a
-            given area, a river channel can be ’folded’ into a more compact form. If additional
-            bends are introduced into the model which do not exist in the prototype, it may be
-            necessary to take the additional head losses into consideration. Also, channel areas
-            which in the prototype provide storage, can have their effects simulated by having areas
-            of different shape but equivalent plan area.</para>
-        </listitem>
-
-        <listitem>
-          <para>flows available from the water supply. The bigger the model, the larger the flow
-            needed. In Australia, available flows for testing physical models in excess of ???m3s−1
-            are unusual. For greater flows, special laboratory constructions may be needed involving
-            large header tanks.</para>
-        </listitem>
+        <listitem><para>model construction costs. Construction costs depend on
+          the complexity of the bathymetry and topography, and the detail in any hydraulic
+          structures.</para></listitem>
+        <listitem><para>the extent of the available floor area to accommodate
+          the model. Models are preferably housed under cover so that the model testing is weather
+          independent i.e. free of wind and rain and the model itself is sheltered. Moreover, to fit a model into a given area, a river channel can
+            be ’folded’ into a more compact form. If additional bends are introduced into the model
+            which do not exist in the prototype, it may be necessary to take the additional head
+            losses into consideration. Also, channel areas which in the prototype provide storage,
+            can have their effects simulated by having areas of different shape but equivalent plan
+            area.</para></listitem>
+        <listitem><para>flows available from the water supply. The bigger the
+          model, the larger the flow needed. </para></listitem>
       </itemizedlist>
+      <para>The length scales for most (undistorted) physical models are generally in the range of
+        1: 5 to 1: 2000.</para>
 
-      <para>The length scales for most (undistorted) physical models are generally in the range of 1
-        : 5 to 1 : 2000.</para>
     </section>
 
     <section xml:id="b6_ch2_s_la2kq">
       <title>Distorted Models</title>
-
       <para>It is often useful to be able to distort a physical model by asserting different length
         scales in the horizontal and vertical directions. While undistorted models should be used
         whenever there is significant vertical and horizontal fluid motion, distorted models can be
@@ -10068,13 +10855,15 @@ think / rather than -1
 
       <para>The advantage of distorting a free surface flow model is that for the same plan area of
         model, the depths of flow will be deeper in the distorted model. In nearly all prototype
-        free surface flows7, the flow is turbulent; and prototype turbulent flows can only be
+        free surface flows, the flow is turbulent; and prototype turbulent flows can only be
         simulated in a model with turbulent flows. For example, if a model is distorted by a factor
         of 5, for the same (available) plan area, the model depths would be deeper by a factor of √5
-        and the model velocities would be greater by a factor of p 5 when compared to an undistorted
-        model. Consequently, the Reynolds numbers in the distorted model will be greater by a factor
-        of 5<superscript>3/2</superscript> = 11.2 compared to the corresponding undistorted model
-        (with the same plan area) and turbulent flow is more likely to be guaranteed.</para>
+        and the model velocities would be greater by a factor of
+        <?oxy_comment_start author="ward" timestamp="20151130T092547+1100" comment="? No idea. I suspect it is root 5"?>p<?oxy_comment_end?>5
+        when compared to an undistorted model. Consequently, the Reynolds numbers in the distorted
+        model will be greater by a factor of 5<superscript>3/2</superscript> = 11.2 compared to the
+        corresponding undistorted model (with the same plan area) and turbulent flow is more likely
+        to be guaranteed.</para>
     </section>
 
     <section xml:id="b6_ch2_s_bgg06">
@@ -10153,9 +10942,9 @@ think / rather than -1
     <section xml:id="b6_ch2_s_sfg3x">
       <title>Model Roughness in Froude Models</title>
 
-      <para>One scale which has not been mentioned above is the roughness scale, and to determine
-        this, recourse is made to the Manning equation to determine the scale for Manning’s n
-          (n<subscript>r</subscript>).</para>
+      <para>One scale which has not been discussed above is the roughness scale, and to determine
+        this, recourse is made to the Manning equation (refer to section XXX) to determine the scale
+        for Manning’s n  (n<subscript>r</subscript>).</para>
 
       <equation xml:id="b6_ch2_e_1abmb">
         <m:math display="block">
@@ -10336,58 +11125,49 @@ think / rather than -1
         pebbles or other roughness elements glued to the model surface; sometimes a light gauge wire
         mesh is attached to the model. Model roughness is adjusted empirically during the
         calibration phase of the model investigation.</para>
-
-      <para>Figure 16 is of a distorted flood model in which the model roughness was increased in
-        two ways:</para>
-
+      <para>Figure 16 is of a distorted physical flood model in which the model roughness was
+        increased in two ways:</para>
       <itemizedlist>
-        <listitem>
-          <para>the overbank areas were artificially roughened with appropriately spaced and
-            patterned, vertical dowels or roughness elements. The dowels exert a drag force on the
-            water moving over the model floodplain; this additional force is designed to make up for
-            the deficit of boundary friction at the overly smooth model bed.</para>
-        </listitem>
-
-        <listitem>
-          <para>the inbank areas were roughened with small pads of synthetic fibrous material. The
-            spacing of these pads was adjusted by trial and error until the slope of the water
-            surface matched the required slope.</para>
-        </listitem>
+        <listitem><para>the over-bank areas were artificially roughened with
+          appropriately spaced and patterned, vertical dowels or roughness elements. The dowels
+          exert a drag force on the water moving over the model floodplain; this additional force is
+          designed to make up for the deficit of boundary friction at the overly smooth model
+          bed.</para></listitem>
+        <listitem><para>the in-bank areas were roughened with small pads of
+          synthetic fibrous material. The spacing of these pads was adjusted by trial and error
+          until the slope of the water surface matched the required slope.</para></listitem>
       </itemizedlist>
-
       <para>If the roughness in the model is too smooth, not only will the magnitude of the
-        velocities be too large, but also, the flow pathlines will tend to be too straight. The
-        opposite trends tend to occur in a model which is too rough.</para>
-
-      <para>In the design of the distorted model depicted in Figure 16, it was known that found
-        while the model simulation of floods with a 50 year and 100 year return period satisfied the
-        requirement for turbulent flow in the model, the model flow corresponding to a smaller flood
-        with a return period of 25 years was transitional between laminar and turbulent and
-        therefore could not be tested in the model.</para>
+        velocities be too large, but also, the flow paths will tend to be too straight. The opposite
+        trends tend to occur in a model which is too rough.</para>
+      <para>In the design of the distorted model depicted in Figure 16, it was found that while the
+        model simulation of floods with a 50 year and 100 year Average Recurrence Interval (2% and
+        1% AEP) satisfied the requirement for turbulent flow in the model, the model flow
+        corresponding to a smaller flood with a return period of
+        <?oxy_comment_start author="ward" timestamp="20151130T093128+1100" comment="Convert to AEP"?>25
+        years<?oxy_comment_end?> was transitional between laminar and turbulent and therefore could
+        not be tested in the model.</para>
 
       <para>In an undistorted model with n<subscript>r</subscript> =
           L<subscript>r</subscript><superscript>1/6</superscript> , the Manning’s n for the model
         surface is too high. Model spillways are usually constructed of timber and marine plywood
         and the usual approach is to try and achieve as smooth a surface as possible through sanding
-        and painting, and to tolerate the mismatch. Because the boundary friction forces in this
-        flow scenario are not as important as the dominant gravity force, any scale effect in the
-        model roughness is not usually significant.</para>
+        and painting, and to tolerate the mismatch. As the boundary friction forces in this flow
+        scenario are not as important as the dominant gravity force, any scale effect in the model
+        roughness is not usually significant.</para>
     </section>
 
     <section xml:id="b6_ch2_s_zpkd5">
       <title>Mobile Bed Models</title>
-
       <para>Physical models can be classified as (i) fixed bed or (ii) mobile bed. Most studies by
-        physical models are of the fixed bad variety. In fixed bed models, the bottom flow
-        boundaries remain the same throughout model testing. ????????????????</para>
-
-      <para>In mobile bed models, the water movement and the sediment movement have to be reproduced
-        at the same time. The model bed consists of a sediment which may be natural or artificial. A
-        diverse range of materials have been used in mobile bed models to simulate non-cohesive8
-        prototype sediments; amongst other materials, they include sand, grains of coal, crushed
-        walnut shells, granulated plastics. Mobile bed models are used to investigate erosion,
-        accretion and localised scour holes.</para>
-
+        physical models are of the fixed bed variety. In fixed bed models, the bottom flow
+        boundaries remain the same throughout model testing. In mobile bed models, the water
+        movement and the sediment movement have to be reproduced at the same time. The model bed
+        consists of a sediment which may be natural or artificial. A diverse range of materials have
+        been used in mobile bed models to simulate non-cohesive prototype sediments; amongst other
+        materials, they include sand, grains of coal, crushed walnut shells, granulated plastics.
+        Mobile bed models are used to investigate erosion, accretion and localised scour
+        holes.</para>
       <para>Mobile bed models are considerably more complex than fixed bed models, and only some
         general considerations will be included here. With the introduction of a sediment, the
         specifications for the sediment particles in the model need to be decided. If the model
@@ -10400,42 +11180,29 @@ think / rather than -1
         plastic. By balancing sediment density and particle size for the model sediment particles,
         their fall velocity can be scaled according to the velocity scale according to the Froude
         criterion.</para>
-
       <para>Mobile bed modelling of non-cohesive sediments is far from routine. The bed roughness of
         a mobile bed is a combination of grain roughness and bedforms. The size and type of the
         bedforms (ripples or dunes) cannot be specified a priori, but rather are determined by
         interactions between the near-bed fluid dynamics and morphodynamics; this includes the
         turbulence intensity and its distribution, the permeability of the bed and the shape of the
         deformable bed.</para>
-
       <para>With the introduction of sediment into a model, there is the need to establish a
         morphological time scale which is best based on comparisons between the model and prototype
-        bed evolution. This may require distortion of the flow scale in the model to achieve</para>
-
-      <para>????????????????? Physical modelling is a specialised area of hydraulics investigation.
-        Most physical model studies require judgement, experience and compromise; few physical model
-        studies could be regarded as routine.</para>
-
+        bed evolution. This may require distortion of the flow scale in the model to achieve.</para>
       <para>The motion of the sediment in the prototype is a mixture of suspended sediment and bed
         load. While the suspended sediment moves at approximately the flow velocity, the bed load
         travels much slower. The simulation of sediment movement which consists of nearly all
         suspended load or nearly all bed load is easier than the much more difficult problem of
         modelling the total sediment load which consists of comparable proportions of both suspended
         and bed load. It is possible also, that the proportions of bed load and suspended load vary
-        with time, such as during a flood hydrograph. When this happens, the sedimentation time ??
+        with time, such as during a flood hydrograph. When this happens, the sedimentation time
         scale will also vary with time.</para>
-
       <para>In connection to physical modelling, the comment or question is often raised in which
         physical modelling is referred to as an art or a science?</para>
-
       <para>Some flow scenarios may involve a combination of free surface flow (which required a
         Froude model) and pressurised flow (which requires a Reynolds model). The resulting scales
         from applying the Froude and Reynolds criteria are in conflict. Therefore, some other
         solution, probably involving some compromises, must be sought in such a situation.</para>
-
-      <para>Two instances of when flow scale is distorted - p14 of de Vries</para>
-
-      <para>sea level rise - refer to Institution of Engineers paper</para>
     </section>
 
     <section xml:id="b6_ch2_s_iz8n1">
@@ -10446,1175 +11213,966 @@ think / rather than -1
 
       <itemizedlist>
         <listitem>
-          <para>Model design - the modeling criterion is selected (IF<subscript>r</subscript> = 1),
-            a decision on the model type is made (distorted or undistorted model, fixed bed or
-            mobile bed), the length scale/s is/are selected taking cognisance of available space,
-            flows and funding, drainage system and model boundaries, which should be well removed
-            from the study area.</para>
+          <para><emphasis>Model design</emphasis> - the modeling criterion is selected
+              (IF<subscript>r</subscript> = 1), a decision on the model type is made (distorted or
+            undistorted model, fixed bed or mobile bed), the length scale/s is/are selected taking
+            cognisance of available space, flows and funding, drainage system and model boundaries,
+            which should be well removed from the study area.</para>
         </listitem>
 
         <listitem>
-          <para>Model calibration - the model is adjusted so as to reproduce a known event, such as
-            a flood, to within an accepted tolerance. If the model fails to achieve this, the
-            validity of the model geometry should be checked as a first response. Next,
-            consideration should be given to the possibility of changes having taken place between
-            the time of the recorded event and the time of the bathymetric survey. Following on from
-            this, the the roughness of the flow boundaries should be adjusted until the event has
-            been successfully simulated in the model (p82 [15]).</para>
+          <para><emphasis>Model calibration</emphasis> - the model is adjusted so as to reproduce a
+            known event, such as a flood, to within an accepted tolerance. If the model fails to
+            achieve this, the validity of the model geometry should be checked as a first response.
+            Next, consideration should be given to the possibility of changes having taken place
+            between the time of the recorded event and the time of the bathymetric survey. Following
+            on from this, the roughness of the flow boundaries should be adjusted until the event
+            has been successfully simulated in the model (p82 [15]).</para>
         </listitem>
 
         <listitem>
-          <para>Models verification - the performance of the model is further checked on another
-            event, which is independent of the data used for calibration. While verification is a
-            desirable stage of model testing to perform, it is not often carried out due to a lack
-            of appropriate data or inadequate funding. In selecting the data for both the
-            calibration and verification phases, it good practice to use the data from events which
-            are of comparable magnitude to the scenarios to be tested. For example, it is not sound
-            modelling practice to calibrate a model on a small and frequent event when the purpose
-            of building the model is to undertake tests corresponding to rare, major events. The
-            reason for this is that the reliability of extrapolating the model performance cannot be
-            taken for granted and should be questioned.</para>
+          <para><emphasis>Model verification</emphasis> - the performance of the model is further
+            checked on another event, which is independent of the data used for calibration. While
+            verification is a desirable stage of model testing to perform, it is not often carried
+            out due to a lack of appropriate data or inadequate funding. In selecting the data for
+            both the calibration and verification phases, it good practice to use the data from
+            events which are of comparable magnitude to the scenarios to be tested. For example, it
+            is not sound modelling practice to calibrate a model on a small and frequent event when
+            the purpose of building the model is to undertake tests corresponding to rare events.
+            The reason for this is that the reliability of extrapolating the model performance
+            cannot be taken for granted and should be questioned.</para>
         </listitem>
 
         <listitem>
-          <para>Model testing - the model is tested under one or more scenarios which may correspond
-            to real or synthesised events.</para>
+          <para><emphasis>Model testing </emphasis>- the model is tested under one or more scenarios
+            which may correspond to real or synthesised events.</para>
         </listitem>
 
         <listitem>
-          <para>Reporting of model results - a technical report is prepared which includes the
-            investigation methodology and the findings of the investigation. All results should be
-            in terms of prototype values rather than model values.</para>
+          <para><emphasis>Reporting of model results</emphasis> - a technical report is prepared
+            which includes the investigation methodology and the findings of the investigation. All
+            results should be in terms of prototype values rather than model values.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section>
+      <title>Physical Models Development And Non-dimensional Analysis</title>
+      <para>In most cases of fluid motion in hydraulics, the complexity is such that the strict
+        application of basic equations is possible in only relatively simple geometries. Analytical
+        treatment requires the situation to be idealised to some extent and the effect of the
+        consequent simplifications can only be tested by experiment.</para>
+      <para>As a result, the science of hydraulics has been marked by intense development of
+        experimental methods. Experimental observation and measurements, and consequent conceptual
+        deductions, have been at the heart of many of the great discoveries in fluid mechanics and
+        hydraulics. Along with the experimental study of basic fluid phenomena, the science and art
+        of physical hydraulic modelling have developed.</para>
+      <para>With the advent of widespread, powerful, and cheap computing facilities, numerical
+        modelling has advanced significantly. Physical modelling, however, is by no means obsolete.
+        Indeed, as discussed by
+        <?oxy_comment_start author="ward" timestamp="20151130T093630+1100" comment="Get references for Bob Keller’s work for Chapter 3"?>Martins
+        (1)<?oxy_comment_end?>, the development of physical modelling has kept pace with numerical
+        modelling. Often the two are intertwined through the concept of “hybrid modelling” where a
+        physical model of a complex flow region provides the boundary conditions for a numerical
+        model covering a much larger area.</para>
+      <para>This section examines the particular application of physical modelling to the design of
+        hydraulic structures and identifies outstanding issues that remain to be solved. The field
+        of physical modelling is vast, both with regard to the range of problems tackled and the
+        breadth of literature in the field. Excellent reviews and texts include those of Martins
+        (1), Kobus (2), and Novak and Cábelka (3).</para>
+      <para>Firstly general modelling criteria are reviewed. In particular, the need to supplement
+        pure dimensional analysis with process functions, based on sound analytical concepts, is
+        emphasised. Attention is then focussed on the modelling of hydraulic structures and the
+        potential implications of scale effects. Actual model studies are used to illustrate these
+        issues. Finally some outstanding issues for further development are then identified.</para>
+    </section>
+    <section>
+      <title>Model Criteria - Dimensional Analysis and Process Functions</title>
+      <para>As an example of the use of dimensional analysis, and to illustrate its insufficiency on
+        its own, the simple case of flow in a fixed-bed open channel is considered. Adopting the
+        mantle of dimensional analysis, the controlling parameters and their dimensional units are
+        identified as follows:</para>
+      <para>Flow velocity, <emphasis role="italic">V</emphasis>,                       L/T</para>
+      <para>Channel width, <emphasis role="italic">W</emphasis>                      L</para>
+      <para>Channel depth, <emphasis role="italic">y</emphasis>                       L</para>
+      <para>Fluid density, <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03C1;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqyWdihaaa@37B7@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> M/L<superscript>3</superscript></para>
+      <para>Fluid viscosity, <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03BC;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiVd0gaaa@37AD@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> M/(LT)</para>
+      <para>Fluid surface tension, <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03C3;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4Wdmhaaa@37BA@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> M/T<superscript>2</superscript></para>
+      <para>Surface roughness, <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03B5;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqyTdugaaa@379E@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> L</para>
+      <para>Gravitational acceleration, <emphasis role="italic">g</emphasis>      L/T<superscript>2</superscript></para>
+      <para>Dimensional analysis enables the grouping of these parameters in a number of ways.
+        Adopting <emphasis role="italic">V</emphasis>, <emphasis role="italic">y</emphasis>, and <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03C1;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqyWdihaaa@37B7@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> as the repeating variables, we can develop a legitimate set of
+        dimensionless variables as follows:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>f</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mi>V</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                    <mrow>
+                      <mi>g</mi>
+                      <mi>y</mi>
+                    </mrow>
+                  </mfrac>
+                  <mo>,</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mi>V</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                    <mrow>
+                      <mfrac bevelled="true">
+                        <mi>&#x03C3;</mi>
+                        <mrow>
+                          <mi>y</mi>
+                          <mi>&#x03C1;</mi>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                  </mfrac>
+                  <mo>,</mo>
+                  <mfrac>
+                    <mrow>
+                      <mi>V</mi>
+                      <mi>y</mi>
+                      <mi>&#x03C1;</mi>
+                    </mrow>
+                    <mi>&#x03BC;</mi>
+                  </mfrac>
+                  <mo>,</mo>
+                  <mfrac>
+                    <mi>W</mi>
+                    <mi>y</mi>
+                  </mfrac>
+                  <mo>,</mo>
+                  <mfrac>
+                    <mi>&#x03B5;</mi>
+                    <mi>y</mi>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mn>0</mn>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamOzamaabm
+              aabaWaaSaaaeaacaWGwbWaaWbaaSqabeaacaaIYaaaaaGcbaGaam4z
+              aiaadMhaaaGaaiilamaalaaabaGaamOvamaaCaaaleqabaGaaGOmaa
+              aaaOqaamaaliaabaGaeq4WdmhabaGaamyEaiabeg8aYbaaaaGaaiil
+              amaalaaabaGaamOvaiaadMhacqaHbpGCaeaacqaH8oqBaaGaaiilam
+              aalaaabaGaam4vaaqaaiaadMhaaaGaaiilamaalaaabaGaeqyTduga
+              baGaamyEaaaaaiaawIcacaGLPaaacqGH9aqpcaaIWaaaaa@5122@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>Strict similitude would only be possible if all five groups are identical in model and
+        prototype. It can quickly be established, however, that this is not possible, especially if
+        the same fluid is used in model and prototype. Using physical understanding and a process
+        function the first term of Equation (1) represents the ratio of inertial forces to
+        gravitational forces. Since open channel flow phenomena in general, and most hydraulic
+        structure flows in particular, are gravity driven, this parameter must be retained.
+        Requiring equality of the first term at homologous points in the model and the prototype
+        leads to the well-known Froude law of modelling, appropriate to open channel flows,
+        of:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>V</mi>
+              <mo>=</mo>
+              <msqrt>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>y</mi>
+                </mrow>
+              </msqrt>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              Ovaiabg2da9maakaaabaGaeq4UdWMaamyEaaWcbeaaaaa@3C59@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>where <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03BB;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWgaaa@37AB@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation> means “the scale of” (model to prototype).</para>
+      <para>The second term of Equation (1) is a Weber number, representing the ratio of inertial
+        forces to surface tension forces. This ratio increases with model size because the inertial
+        forces act on a volume whereas the surface tension forces act on an area. Thus the surface
+        tension forces become negligible, provided the model is reasonably large, and the second
+        term can be disregarded.</para>
+      <para>Turning now to the third term of Equation (1), we identify a Reynolds number, Re,
+        representing the ratio of inertia forces to viscous forces. In the context of an open
+        channel flow, viscous forces affect the surface resistance, apparently requiring Reynolds
+        number equality between model and prototype for full similarity. </para>
+      <para>If the same fluid is used in model and prototype, Reynolds number equality at homologous
+        points would require that:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>V</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              Ovaiabg2da9maalaaabaGaaGymaaqaaiabeU7aSjaadMhaaaaaaa@3D09@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>and this condition is clearly incompatible with Equation (2). Indeed, it is readily
+        shown that, if the velocity scale is based on Equation (2):</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>Re</mi>
+              <mo>=</mo>
+              <mi>&#x03BB;</mi>
+              <msup>
+                <mi>y</mi>
+                <mrow>
+                  <mfrac>
+                    <mn>3</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaci
+              OuaiaacwgacqGH9aqpcqaH7oaBcaWG5bWaaWbaaSqabeaadaWcaaqa
+              aiaaiodaaeaacaaIYaaaaaaaaaa@3EDA@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>This can be resolved by making use of a process function for flow resistance which links
+        the friction factor, Reynolds number, and relative roughness through the well-known
+        Colebrook-White equation. This function is conveniently plotted as a Moody diagram and is
+        reproduced in Figure 1.</para>
+      <figure>
+        <title>Process Function Diagram for Friction</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6075.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The equation for friction factor, the ordinate of Figure 1, shows that the Froude
+        criterion of Equation (2) can only be satisfied if the friction factor is the same in model
+        and prototype. Superimposed on Figure 1 is a hypothetical range of prototype Reynolds
+        numbers and a corresponding range of model operation, assuming a model scale of 1:25. For
+        the example given, it is evident that equality of friction factor between model and
+        prototype can only be obtained if the model is relatively smoother than the prototype. It is
+        noted, further, that this equality is only possible for one particular operating condition
+        (characterised by Reynolds number). For other operating conditions, the model friction
+        factor will be different from that in the prototype, introducing a friction scale effect.
+        The scale effect can be calculated, however, and model results adjusted when scaling up to
+        prototype values.</para>
+      <para>Figure 1 also demonstrates that, if the prototype is relatively smooth, it may not be
+        possible to build a model with a low enough friction factor to match that of the prototype.
+        In this situation, the higher model friction factor may be accepted as at least conservative
+        with respect to predicted flow depths, or, again, the scale effect can be calculated and
+        used to adjust the predicted prototype values.</para>
+      <para>The discussion above has demonstrated that dimensional analysis is insufficient on its
+        own to provide a basis for the modelling of open channel flow. Indeed, relying solely on
+        dimensional analysis, it would be concluded that accurate modelling is not possible. It is
+        only by using knowledge of flow resistance and its corresponding process function to
+        dimensional analysis that an appropriate modelling procedure is possible.</para>
+      <para>Other examples of the necessity for process functions, in addition to dimensional
+        analysis, for physical modelling of weir flows and vortex drop shafts have been discussed by
+        Ackers (4).</para>
+      <para>The discussion above applies to undistorted models only - ie those for which the
+        horizontal and vertical scales are identical. Undistorted models are common in hydraulic
+        structure investigations, but are often impractical for large rivers because of their
+        typically large width:depth ratios. A typical river may have a width of 500 m and a depth of
+        perhaps 2 m. The corresponding undistorted model of a scale of, say, 1:250 would be 2 m wide
+        and 8 mm deep. The model flow is then likely to be totally different in character to the
+        prototype flow due to surface tension effects and the likelihood of laminar model
+        flow.</para>
+      <para>This situation is resolved by utilising a vertical scale that is larger than the
+        horizontal. The Froude relationship is still expressed in the form of Equation (2), where,
+        however, <emphasis role="italic">l</emphasis><emphasis role="italic">y</emphasis> represents
+        the vertical scale because it is vertical, rather than horizontal distances which measure
+        the effect of gravity on velocity.</para>
+      <para>Given Figure 1 and the expression for head loss:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>h</mi>
+                <mi>L</mi>
+              </msub>
+              <mo>=</mo>
+              <mi>f</mi>
+              <mfrac>
+                <mi>L</mi>
+                <mrow>
+                  <mn>4</mn>
+                  <mi>R</mi>
+                </mrow>
+              </mfrac>
+              <mfrac>
+                <mrow>
+                  <msup>
+                    <mi>V</mi>
+                    <mn>2</mn>
+                  </msup>
+                </mrow>
+                <mrow>
+                  <mn>2</mn>
+                  <mi>g</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAamaaBa
+              aaleaacaWGmbaabeaakiabg2da9iaadAgadaWcaaqaaiaadYeaaeaa
+              caaI0aGaamOuaaaadaWcaaqaaiaadAfadaahaaWcbeqaaiaaikdaaa aakeaacaaIYaGaam4zaaaaaaa@3FD8@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>Rearrangement and expression in terms of scale ratio yields:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>S</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>y</mi>
+                </mrow>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mi>&#x03BB;</mi>
+              <mi>f</mi>
+              <mfrac>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>R</mi>
+                </mrow>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              4uaiabg2da9maalaaabaGaeq4UdWMaamyEaaqaaiabeU7aSjaadIha
+              aaGaeyypa0Jaeq4UdWMaamOzamaalaaabaGaeq4UdWMaamOuaaqaai abeU7aSjaadIhaaaaaaa@47ED@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>or</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>f</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>R</mi>
+                </mrow>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>y</mi>
+                </mrow>
+                <mrow>
+                  <mi>&#x03BB;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              4uaiabg2da9maalaaabaGaeq4UdWMaamOuaaqaaiabeU7aSjaadIha
+              aaGaeyypa0ZaaSaaaeaacqaH7oaBcaWG5baabaGaeq4UdWMaamiEaa aaaaa@454E@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para> if the channel is wide.</para>
+      <para>Because <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03BB;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWgaaa@37AB@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation><emphasis role="italic">y</emphasis> is always greater than <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mi>&#x03BB;</mi>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWgaaa@37AB@ </annotation>
+            </semantics>
+          </math>
+        </inlineequation><emphasis role="italic">x</emphasis>, Equation (7) shows that the model
+        must be rougher than the prototype. Indeed, in direct contrast to undistorted models,
+        significant effort is often required to make the model rough enough!</para>
+      <para>Mobile bed models introduce an additional degree of complexity because the roughness of
+        the bed is largely dependent on the form losses associated with the bed features. Because
+        the bed features are formed by the flow conditions, and hence cannot be directly established
+        by the modeller, it is important that the model flow conditions are such that the model bed
+        simulates closely the bed of the prototype.</para>
+      <para>Resolution of these complexities is beyond the scope of this chapter. Further details
+        are provided in (5).</para>
+    </section>
+    <section>
+      <title> Scale Effects </title>
+      <para>The whole issue of scale effects is too broad to be effectively covered in this chapter.
+        There is a large body of literature on the topic and several specialist symposia have been
+        held eg Kobus (6). Herein, attention is confined to scale effects in hydraulic structures,
+        specifically flow measurement structures where scale effects can significantly affect the
+        model determination of prototype rating curves. </para>
+      <para>An undistorted geometric scale model is normally built and operated under conditions of
+        Froudian similarity. The model head (stage)-discharge data are then simply scaled up to
+        prototype values, utilizing the equations:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>h</mi>
+              <mo>=</mo>
+              <mi>&#x03BB;</mi>
+              <mi>L</mi>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              iAaiabg2da9iabeU7aSjaadYeaaaa@3C23@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03BB;</mi>
+              <mi>Q</mi>
+              <mo>=</mo>
+              <mi>&#x03BB;</mi>
+              <msup>
+                <mi>L</mi>
+                <mrow>
+                  <mfrac>
+                    <mn>5</mn>
+                    <mn>2</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaam
+              yuaiabg2da9iabeU7aSjaadYeadaahaaWcbeqaamaalaaabaGaaGyn aaqaaiaaikdaaaaaaaaa@3DC4@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>The characteristics of boundary layer growth are such that model scaling for
+        reproduction of free surface effects (Froudian scale) will introduce dissimilarities. We
+        illustrate this by considering the equations for turbulent boundary layer growth on a flat
+        plate (Streeter and Wylie (7)):</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03B4;</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mn>0.38</mn>
+                  <mi>x</mi>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mrow>
+                      <mi>Re</mi>
+                    </mrow>
+                    <mrow>
+                      <mn>0.2</mn>
+                    </mrow>
+                  </msup>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiTdqMaey
+              ypa0ZaaSaaaeaacaaIWaGaaiOlaiaaiodacaaI4aGaamiEaaqaaiGa
+              ckfacaGGLbWaaWbaaSqabeaacaaIWaGaaiOlaiaaikdaaaaaaaaa@40B0@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>&#x03B4;</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mn>8</mn>
+              </mfrac>
+              <mi>&#x03B4;</mi>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiTdqMaey
+              ypa0ZaaSaaaeaacaaIXaaabaGaaGioaaaacqaH0oazaaa@3BD4@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para> Equation (21) is developed from the one-seventh power law velocity distribution:</para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mi>u</mi>
+                <mi>U</mi>
+              </mfrac>
+              <mo>=</mo>
+              <msup>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mi>y</mi>
+                        <mi>&#x03B4;</mi>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mn>7</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca
+              WG1baabaGaamyvaaaacqGH9aqpdaqadaqaamaalaaabaGaamyEaaqa
+              aiabes7aKbaaaiaawIcacaGLPaaadaahaaWcbeqaamaalaaabaGaaG ymaaqaaiaaiEdaaaaaaaaa@3ED6@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para>In the above equations, <emphasis role="italic">d</emphasis> and <emphasis role="italic"
+          >d</emphasis><emphasis role="italic">*</emphasis> are boundary layer thickness and
+        boundary layer displacement thickness respectively, Re is the flow Reynolds number defined
+        with respect to the length <emphasis role="italic">x</emphasis> of boundary layer
+        development,
+          <?oxy_comment_start author="ward" timestamp="20151130T100444+1100" comment="Check this symbol compared to rest of chapter Yes bad news"?><emphasis
+          role="italic">u</emphasis> is the velocity at elevation<emphasis role="italic">
+          y</emphasis> above the bed<?oxy_comment_end?>, and <emphasis role="italic">U</emphasis> is
+        the free stream velocity.</para>
+      <para>Equations (20) and (21) indicate that similarity of boundary layer growth will only be
+        possible if the Reynolds numbers are the same in model and prototype. As discussed in
+        Section X this criterion is not met in a Froudian model, for which <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>&#x03BB;</mi>
+                <mi>Re</mi>
+                <mo>=</mo>
+                <mi>&#x03BB;</mi>
+                <msup>
+                  <mi>L</mi>
+                  <mrow>
+                    <mn>1.5</mn>
+                  </mrow>
+                </msup>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbeqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeq4UdWMaci
+                OuaiaacwgacqGH9aqpcqaH7oaBcaWGmbWaaWbaaSqabeaacaaIXaGa aiOlaiaaiwdaaaaaaa@3F50@
+              </annotation>
+            </semantics>
+          </math>
+        </inlineequation>.</para>
+      <para>The measured water surface elevation upstream of the flume control is affected by the
+        boundary layer growth on the flume floor in that the water surface is displaced by a
+        distance equal to the boundary layer displacement thickness. Accordingly, any
+        dissimilarities in the modelling of the boundary layer displacement thickness will reflect
+        as a dissimilarity in the position of the water surface, and a consequent scale effect in
+        the measurement of pressure head.</para>
+      <para>Keller (8) has developed a procedure for determining the magnitude of the scale effect
+        and for adjusting the model data to correctly predict the prototype behaviour. For details,
+        the reader is referred to the original paper. The procedure relies on the use of the process
+        function for boundary layer growth embodied in Equations (20) to (22).</para>
+      <para>Keller (9) has applied the procedure to undrowned cut-throat flumes and typical results
+        are presented in Figure 4. These data were obtained from a study involving three
+        geometrically similar flumes to scale ratios of 1:2:4. Flume 1 (x) is the smallest, Flume 2
+        (¤) is twice as large as Flume 1, and Flume 3 (+) is four times as large as Flume 1. The
+        ordinate is the piezometric head, <emphasis role="italic">ha</emphasis>, normalised with the
+        throat width, <emphasis role="italic">BT</emphasis>. The abscissa is the non-dimensional
+        discharge parameter.</para>
+      <para>The data in Figure 4(a) are uncorrected and show a tendency at values of <emphasis
+          role="italic">ha</emphasis>/<emphasis role="italic">BT</emphasis> below about 0.8 to plot
+        progressively to the right with flume size - ie for <emphasis role="italic">ha</emphasis> to
+        be slightly less for the large flume than would be predicted from tests on the small flumes.
+        Expressed in terms of more relevance to the practising engineer, an uncorrected model rating
+        would result in an under-prediction in the discharge through a four times larger prototype
+        structure by up to 10%.Figure 4(b) shows the data adjusted for dissimilar boundary layer
+        growth. It is clear that the small trend with flume size has been completely
+        eliminated.</para>
+      <para>The point of this example has been to demonstrate that scale effects arise in many model
+        studies. However, with an understanding of the physical processes which govern the phenomena
+        and with a knowledge of the appropriate process functions, the scale effects can be assessed
+        and, in many cases, explicitly determined.</para>
+      <figure>
+        <title>Data for Cut-throat flumes (a) Uncorrected, (b) Corrected for Scale Effects (after
+          Keller (9)) </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6076.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+    <section>
+      <title>Some Issues for the Future</title>
+      <para>It is fashionable in some quarters to predict the eventual demise of physical modelling
+        as computing power becomes ever cheaper and more readily available, and as our ability to
+        translate knowledge of the physics of a phenomenon into process equations for its
+        quantitative solution develops. It is indeed true that some problems that were once
+        routinely solved using physical models may now be solved using numerical models. Among these
+        are simple spillway layouts, flow measurement structures, and far-field dispersion problems
+        in rivers. It is equally true, however, that many problems remain the exclusive province of
+        the physical modeller. Problems with complex boundary conditions and/or strongly
+        three-dimensional characteristics remain extremely difficult to solve by numerical means.
+        The same problems, however, are amenable to study by physical models because the model
+        represents, within generally understood limits, an exact replica of the prototype.</para>
+      <para>Developments over the next few years are likely to concentrate on hybrid models – ie
+        model approaches where physical modelling and numerical modelling are applied in tandem to
+        the solution of complex hydraulic problems. There is evidence of this already, and two
+        examples are given in the following.</para>
+      <para>The mixing processes downstream of a pollutant outfall are often classified as “near
+        field” and “far field”. Sometimes an additional “mid-field” may be introduced. Rutherford
+        (10) provides an excellent review of mixing processes.</para>
+      <para>In all but the most simple of cases, near-field mixing is extremely difficult to model
+        numerically. The flow field is very strongly three-dimensional and the mixing processes may
+        be dominated by vertical mixing, transverse mixing, or both. In the far-field region, full
+        vertical mixing may well have been achieved, and a numerical two dimensional mixing model
+        may be adequate to describe the continuing diffusion of the pollutant. In this situation,
+        the most efficient modelling framework may be to build an undistorted physical model to
+        simulate the near-field region and to use its measured downstream parameters as the upstream
+        boundary conditions for the numerical model.</para>
+      <para>The second example has been described by Ackers (4) and concerns prototype phenomena
+        where air entrainment is a primary parameter. On spillways, self-aeration through floor
+        slots is commonly permitted in order to control cavitation damage on the spillway. The
+        amount of air that is entrained depends on the length of the trajectory of the nappe which
+        springs from the upstream edge of the spillway slot. However, the length of the trajectory
+        depends on the air pressure beneath the nappe. This depends on the rate of air entrainment,
+        which, in turn, is a function of the resistance of the air supply ducts. Neither of these
+        features can be properly simulated in an undistorted scale model. The trick is, in fact, to
+        link the general spillway model with a separate computational study of the performance of
+        the ducts with a design value of air demand. The aerodynamic resistance of the prototype
+        supply duct determines the pressure to be expected beneath the nappe and this
+        (sub-atmospheric) pressure must then be reproduced artificially in the model.</para>
+      <para>There are many other areas that will keep the physical modeller busy for many years to
+        come. Some examples are:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Interactions between hydrodynamic loads and structural loads and vibrations,</para>
+        </listitem>
+        <listitem>
+          <para>Self-aeration in free surface spillway flows,</para>
+        </listitem>
+        <listitem>
+          <para>Modelling of the scour potential of cohesive sediments and clays,</para>
+        </listitem>
+        <listitem>
+          <para>Modelling of the influence of turbulence and flocculation on the performance of
+            settling basins, and</para>
+        </listitem>
+        <listitem>
+          <para>Modelling of the scour resistance of bank and bed vegetation.</para>
         </listitem>
       </itemizedlist>
     </section>
   </section>
-
-  <section xml:id="b6_ch2_s_08gyl">
-    <title>Methods for Calculating Steady State Backwater and Drawdown Curves</title>
-
-    <para>Irrespective of whether steady-state flows are subcritical or supercritical, there are two
-      well known methods for calculating the water surface profiles, be they (i) backwater curves or
-      (ii) drawdown curves. In backwater profiles, the water surface deepens in the downstream
-      direction and such flows are decelerating flows.In drawdown profiles, the water depths become
-      more shallow in the downstream direction and the flows are accelerating flows.</para>
-
-    <para>The three main numerical techniques for calculating steady water surface profiles
-      are:</para>
-
-    <itemizedlist>
-      <listitem>
-        <para>the direct step method,</para>
-      </listitem>
-
-      <listitem>
-        <para>the direct integration method, and</para>
-      </listitem>
-
-      <listitem>
-        <para>the standard step method.</para>
-      </listitem>
-    </itemizedlist>
-
-    <para>A brief comparison of the two methods can be seen in Table 7.</para>
-
-    <para>Since the direct step and direct integration methods are based on a first order
-      differential equation, a single boundary condition is required to initiate the computations.
-      Suitable boundary conditions could be near (but not at) a control where the water level is
-      known or can be approximated, or any location, reasonably well removed from any regions of
-      rapidly varied flow, where the water level is known.</para>
-
-    <para>If the flow is subcritical, the flow is controlled from the downstream end and
-      computations should advance in the upstream direction. On the other hand, for supercritical
-      flows, the flow is controlled from the upstream end and computations should proceed in the
-      downstream direction ([18] and [19]). If these guidelines regarding the direction of the
-      solution procedure are not observed, it has been stated ([18] and [19]) that the calculations
-      will eventually depart from the true solution. This rule-of-thumb is not without contention.
-      There is some evidence which suggests that if an implicit finite difference method is employed
-      to solve the governing equations, then the direction of computation is immaterial
-      ([25]).</para>
-
-    <section xml:id="b6_ch2_s_4fx1h">
-      <title>Direct Integration Method for Calculating Backwater and Drawdown Curves</title>
-
-      <para>In the direct integration method for calculating steady state water surface profiles,
-        the depths are calculated at specified locations along the channel.</para>
-
-      <para>The direct integration method can also be applied to irregular channels with changing
-        crosssections along the length of the waterway. The governing equation for direct
-        integration method is equation (35).</para>
-
-      <equation xml:id="b6_ch2_e_grhg4">
-        <m:math display="block">
-          <m:mrow>
-            <m:mfrac>
-              <m:mi>dy</m:mi>
-
-              <m:mi>dx</m:mi>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>o</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>f</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mrow>
-                <m:mi>1</m:mi>
-
-                <m:mo>-</m:mo>
-
-                <m:msup>
-                  <m:mi>IF</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-              </m:mrow>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>where. . . x = co-ordinate in downstream direction (m)</para>
-
-      <para>A finite difference form of equation (35) is equation (36) below:</para>
-
-      <equation xml:id="b6_ch2_e_ijp0k">
-        <m:math display="block">
-          <m:mrow>
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>y</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>y</m:mi>
-
-                  <m:mi>1</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mi>Δx</m:mi>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>o</m:mi>
-                </m:msub>
-
-                <m:mo>-</m:mo>
-
-                <m:msub>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>f</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mrow>
-                <m:mi>1</m:mi>
-
-                <m:mo>-</m:mo>
-
-                <m:msup>
-                  <m:mi>IF</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-              </m:mrow>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>where 1, 2 = spatial indices which increase in the downstream direction</para>
-
-      <equation xml:id="b6_ch2_e_pi5iz">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>Δx</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msub>
-                <m:mi>x</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msub>
-
-              <m:mo>-</m:mo>
-
-              <m:msub>
-                <m:mi>x</m:mi>
-
-                <m:mi>1</m:mi>
-              </m:msub>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_ooum9">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>(bedslope) S</m:mi>
-
-              <m:mi>o</m:mi>
-            </m:msub>
-
-            <m:mo>= -</m:mo>
-
-            <m:mfrac>
-              <m:mi>dz</m:mi>
-
-              <m:mi>dx</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_xv79l">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>(friction slope) S</m:mi>
-
-              <m:mi>f</m:mi>
-            </m:msub>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>(nv)</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-
-              <m:msubsup>
-                <m:mi>R</m:mi>
-
-                <m:mi>h</m:mi>
-
-                <m:mi>4/3</m:mi>
-              </m:msubsup>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>n = Manning roughness parameter</para>
-
-      <para>S<subscript>f</subscript> = average friction slope over the elemental reach Δx</para>
-
-      <equation xml:id="b6_ch2_e_8nrt1">
-        <m:math display="block">
-          <m:mrow>
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:mfrac>
-                <m:mi>1</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:mfrac>
-
-              <m:mrow>
-                <m:mo>[</m:mo>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f 1</m:mi>
-                  </m:msub>
-
-                  <m:mo>+</m:mo>
-
-                  <m:msub>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f 2</m:mi>
-                  </m:msub>
-                </m:mrow>
-
-                <m:mo>]</m:mo>
-              </m:mrow>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>(S<subscript>f </subscript>)<subscript>1</subscript> = friction slope at
-          x<subscript>1</subscript></para>
-
-      <para>(S<subscript>f</subscript> )<subscript>2 </subscript>= friction slope at
-          x<subscript>2</subscript></para>
-
-      <equation xml:id="b6_ch2_e_l3qlb">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>(Froude number) IF</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:msqrt>
-                <m:mfrac>
-                  <m:mrow>
-                    <m:msup>
-                      <m:mi>Q</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msup>
-
-                    <m:mo>b</m:mo>
-                  </m:mrow>
-
-                  <m:mrow>
-                    <m:mi>g</m:mi>
-
-                    <m:msup>
-                      <m:mi>A</m:mi>
-
-                      <m:mi>3</m:mi>
-                    </m:msup>
-                  </m:mrow>
-                </m:mfrac>
-              </m:msqrt>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>b = top width of water surface in channel cross-section (m)</para>
-
-      <para>IF<superscript>2</superscript> = average of Froude number squared over the elemental
-        reach Δx</para>
-
-      <equation xml:id="b6_ch2_e_t0qh2">
-        <m:math display="block">
-          <m:mrow>
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:mfrac>
-                <m:mi>1</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:mfrac>
-
-              <m:mrow>
-                <m:mo>(</m:mo>
-
-                <m:mrow>
-                  <m:msubsup>
-                    <m:mi>IF</m:mi>
-
-                    <m:mi>1</m:mi>
-
-                    <m:mi>2</m:mi>
-                  </m:msubsup>
-
-                  <m:mo>+</m:mo>
-
-                  <m:msubsup>
-                    <m:mi>IF</m:mi>
-
-                    <m:mi>2</m:mi>
-
-                    <m:mi>2</m:mi>
-                  </m:msubsup>
-                </m:mrow>
-
-                <m:mo>)</m:mo>
-              </m:mrow>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>In the case of a subcritical flow, the unknown in equation (36) is
-          y<subscript>j</subscript> , while for a supercritical flow, the unknown would be
-          y<subscript>j+1</subscript>. Solution of equation (36) requires iteration because the
-        Froude number and friction slope on the right hand side, require the depth before being able
-        to be evaluated at both locations x<subscript>1</subscript> and x<subscript>2</subscript> .
-        The direct integration method therefore requires iteration to solve an implicit
-        equation.</para>
-    </section>
-
-    <section xml:id="b6_ch2_s_pafln">
-      <title>Variations in the Application of the Direct Integration Method</title>
-
-      <para>The standard step method can be applied in a number of ways which differ according
-        to:</para>
-
-      <para>1. solution technique, and</para>
-
-      <para>2. averaging method for the non-linear terms.</para>
-
-      <section xml:id="b6_ch2_s_briak">
-        <title>Solution Method for Applying the Direct Integration Method or Standard Step
-          Method</title>
-
-        <para/>
-      </section>
-
-      <section xml:id="b6_ch2_s_3ytr9">
-        <title>Averaging Required in Water Surface Profile Calculations</title>
-
-        <para>Because both equations (27) and (35) are ordinary differential equations, they are a
-          point relation which hold at all points in the 1D continuum. When these equations are
-          discretised using (say) a finite difference method, the resulting equations span a small
-          elemental reach of length Δx and are equations (36) and (36) respectively.</para>
-
-        <para>contain one or two non-linear terms which are</para>
-
-        <para>are discretised using a finite difference method, that in both cases, there are some
-          non-linear terms which require representation over the length of the elemental reach Δx.
-          Various methods have been adopted to provide these approximations and four versions are
-          identified below with respect to the friction slope S<subscript>f </subscript>at sections
-          j and (j + 1).</para>
-
-        <equation xml:id="b6_ch2_e_8z6sr">
-          <m:math display="block"/>
-        </equation>
-
-        <equation xml:id="b6_ch2_e_trn8b">
-          <m:math display="block">
-            <m:mrow>
-              <m:msub>
-                <m:mrow>
-                  <m:mo>(average conveyance) (</m:mo>
-
-                  <m:msubsup>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f</m:mi>
-
-                    <m:mi>-</m:mi>
-                  </m:msubsup>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:mi>K</m:mi>
-              </m:msub>
-
-              <m:mo>=</m:mo>
-
-              <m:msup>
-                <m:mrow>
-                  <m:mo>[</m:mo>
-
-                  <m:mfrac>
-                    <m:mi>Q</m:mi>
-
-                    <m:mi>K</m:mi>
-                  </m:mfrac>
-
-                  <m:mo>]</m:mo>
-                </m:mrow>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-            </m:mrow>
-          </m:math>
-        </equation>
-
-        <equation xml:id="b6_ch2_e_rwcwe">
-          <m:math display="block">
-            <m:mrow>
-              <m:msub>
-                <m:mrow>
-                  <m:mo>(arithmetic mean) (</m:mo>
-
-                  <m:msubsup>
-                    <m:mi>S</m:mi>
-
-                    <m:mi>f</m:mi>
-
-                    <m:mi>-</m:mi>
-                  </m:msubsup>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:mi>a</m:mi>
-              </m:msub>
-
-              <m:mo>=</m:mo>
-
-              <m:mrow>
-                <m:mfrac>
-                  <m:mi>1</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:mfrac>
-
-                <m:mrow>
-                  <m:mo>[</m:mo>
-
-                  <m:mrow>
-                    <m:msub>
-                      <m:mrow>
-                        <m:mo>(</m:mo>
-
-                        <m:msub>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>f</m:mi>
-                        </m:msub>
-
-                        <m:mo>)</m:mo>
-                      </m:mrow>
-
-                      <m:mi>1</m:mi>
-                    </m:msub>
-
-                    <m:mo>+</m:mo>
-
-                    <m:msub>
-                      <m:mrow>
-                        <m:mo>(</m:mo>
-
-                        <m:msub>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>f</m:mi>
-                        </m:msub>
-
-                        <m:mo>)</m:mo>
-                      </m:mrow>
-
-                      <m:mi>2</m:mi>
-                    </m:msub>
-                  </m:mrow>
-
-                  <m:mo>]</m:mo>
-                </m:mrow>
-              </m:mrow>
-            </m:mrow>
-          </m:math>
-        </equation>
-
-        <equation xml:id="b6_ch2_e_kevye">
-          <m:math display="block">
-            <m:mrow>
-              <m:mrow>
-                <m:msubsup>
-                  <m:mi>(geometric mean) (S</m:mi>
-
-                  <m:mi>f</m:mi>
-
-                  <m:mi>-</m:mi>
-                </m:msubsup>
-
-                <m:msub>
-                  <m:mi>)</m:mi>
-
-                  <m:mi>g</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mo>=</m:mo>
-
-              <m:msqrt>
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>(S</m:mi>
-
-                    <m:mi>f</m:mi>
-                  </m:msub>
-
-                  <m:mrow>
-                    <m:msub>
-                      <m:mi>)</m:mi>
-
-                      <m:mi>1</m:mi>
-                    </m:msub>
-
-                    <m:mrow>
-                      <m:msub>
-                        <m:mi>(S</m:mi>
-
-                        <m:mi>f</m:mi>
-                      </m:msub>
-
-                      <m:msub>
-                        <m:mi>)</m:mi>
-
-                        <m:mi>2</m:mi>
-                      </m:msub>
-                    </m:mrow>
-                  </m:mrow>
-                </m:mrow>
-              </m:msqrt>
-            </m:mrow>
-          </m:math>
-        </equation>
-
-        <equation xml:id="b6_ch2_e_bdrpx">
-          <m:math display="block">
-            <m:mrow>
-              <m:mrow>
-                <m:msubsup>
-                  <m:mi>(harmonic mean) (S</m:mi>
-
-                  <m:mi>f</m:mi>
-
-                  <m:mi>-</m:mi>
-                </m:msubsup>
-
-                <m:msub>
-                  <m:mi>)</m:mi>
-
-                  <m:mi>h</m:mi>
-                </m:msub>
-              </m:mrow>
-
-              <m:mo>=</m:mo>
-
-              <m:mfrac>
-                <m:mi>1</m:mi>
-
-                <m:mrow>
-                  <m:mfrac>
-                    <m:mi>1</m:mi>
-
-                    <m:mi>2</m:mi>
-                  </m:mfrac>
-
-                  <m:mrow>
-                    <m:mo>[</m:mo>
-
-                    <m:mrow>
-                      <m:mfrac>
-                        <m:mi>1</m:mi>
-
-                        <m:mrow>
-                          <m:msub>
-                            <m:mi>(S</m:mi>
-
-                            <m:mi>f</m:mi>
-                          </m:msub>
-
-                          <m:msub>
-                            <m:mi>)</m:mi>
-
-                            <m:mi>1</m:mi>
-                          </m:msub>
-                        </m:mrow>
-                      </m:mfrac>
-
-                      <m:mo>+</m:mo>
-
-                      <m:mfrac>
-                        <m:mi>1</m:mi>
-
-                        <m:mrow>
-                          <m:msub>
-                            <m:mi>(S</m:mi>
-
-                            <m:mi>f</m:mi>
-                          </m:msub>
-
-                          <m:msub>
-                            <m:mi>)</m:mi>
-
-                            <m:mi>2</m:mi>
-                          </m:msub>
-                        </m:mrow>
-                      </m:mfrac>
-                    </m:mrow>
-
-                    <m:mo>]</m:mo>
-                  </m:mrow>
-                </m:mrow>
-              </m:mfrac>
-            </m:mrow>
-          </m:math>
-        </equation>
-
-        <equation xml:id="b6_ch2_e_zxqij">
-          <m:math display="block">
-            <m:mrow>
-              <m:mi>where... ⊽</m:mi>
-
-              <m:mo>=</m:mo>
-
-              <m:mrow>
-                <m:mfrac>
-                  <m:mi>1</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:mfrac>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mrow>
-                    <m:msub>
-                      <m:mi>v</m:mi>
-
-                      <m:mi>1</m:mi>
-                    </m:msub>
-
-                    <m:mo>+</m:mo>
-
-                    <m:msub>
-                      <m:mi>v</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msub>
-                  </m:mrow>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-              </m:mrow>
-            </m:mrow>
-          </m:math>
-        </equation>
-
-        <para>Q = K.S<superscript>1/2</superscript></para>
-
-        <para>K = conveyance</para>
-
-        <para>K = 1 /2 (K<subscript>1</subscript> + K<subscript>2</subscript>)</para>
-
-        <para>The four averages listed above vary systematically ([16]) so that:</para>
-
-        <para>(S¯<subscript>f</subscript> )<subscript>a</subscript> &gt; (S¯<subscript>f
-            </subscript>)<subscript>g</subscript> &gt; (S¯<subscript>f</subscript>
-            )<subscript>K</subscript> &gt; (S¯<subscript>f</subscript>
-          )<subscript>h</subscript></para>
-
-        <para>In addition to the above averages, there are many other equations which average
-          reach-end parameters A, P, R<subscript>h</subscript> by arithmetic, geometric or harmonic
-          methods, but the averaged friction slope values have all been found to lie between the two
-          extremes given by (S¯<subscript>f </subscript>)<subscript>a</subscript> and
-            (S¯<subscript>f</subscript> )<subscript>h</subscript> ([6].</para>
-
-        <para>The effect of using the various estimates for the average friction slope have been
-          explored by various investigators. Laurenson’s conclusion ([16]) was that the best single
-          method of averaging appears to be the arithmetic average of reach-end friction slopes,
-          especially if this method is used in concert with the selection of representative
-          cross-sections of the channel.</para>
-      </section>
-    </section>
-  </section>
-
-  <section xml:id="b6_ch2_s_t4pa4">
-    <title>Worked Examples</title>
-
-    <para/>
-
-    <section xml:id="b6_ch2_s_8grf3">
-      <title>Channel with Trapezoidal Cross-Section</title>
-
-      <para>A smooth concrete trapezoidal channel with a base width of 3.0m has side slopes 1H : 2V
-        and bed slope of S<subscript>o</subscript> = 0.001. For a flow of
-          20m<superscript>3</superscript>/s determine the normal flow depth
-          (y<subscript>o</subscript>) and critical flow depth (y<subscript>c</subscript>). Also find
-        the corresponding total heads and specific energy if the datum is 1m below the channel
-        invert. See Figure 18.</para>
-
-      <para><emphasis role="bold">Solution:</emphasis></para>
-
-      <para>From the geometry of the channel cross-section, the section properties of flow area (A),
-        wetted perimeter (P) and top width (b) are given by:</para>
-
-      <para>A = 3y + y<superscript>2</superscript></para>
-
-      <para>P = 3 + y √5</para>
-
-      <para>b = 3 + y</para>
-
-      <para>From Table 2, for a smooth concrete surface, Manning’s n = 0.012.</para>
-
-      <para>It is convenient to rearrange the Manning equation [i.e. equation (37)] so that the
-        known variables and parameters are moved to the left hand side of the equation (say) and the
-        unknowns moved to the right hand side.</para>
-
-      <equation xml:id="b6_ch2_e_tbebt">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>Q</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msubsup>
-                  <m:mi>AR</m:mi>
-
-                  <m:mi>h</m:mi>
-
-                  <m:mi>2/3</m:mi>
-                </m:msubsup>
-
-                <m:msup>
-                  <m:mi>S</m:mi>
-
-                  <m:mi>1/2</m:mi>
-                </m:msup>
-              </m:mrow>
-
-              <m:mi>n</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_x0zjc">
-        <m:math display="block">
-          <m:mrow>
-            <m:mrow>
-              <m:mi>⇒</m:mi>
-
-              <m:mrow>
-                <m:mrow>
-                  <m:msup>
-                    <m:mrow>
-                      <m:mo>(</m:mo>
-
-                      <m:mfrac>
-                        <m:msub>
-                          <m:mi>Q</m:mi>
-
-                          <m:mi>n</m:mi>
-                        </m:msub>
-
-                        <m:msup>
-                          <m:mi>S</m:mi>
-
-                          <m:mi>1/2</m:mi>
-                        </m:msup>
-                      </m:mfrac>
-
-                      <m:mo>)</m:mo>
-                    </m:mrow>
-
-                    <m:mi>3</m:mi>
-                  </m:msup>
-                </m:mrow>
-              </m:mrow>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>A</m:mi>
-
-                <m:mi>5</m:mi>
-              </m:msup>
-
-              <m:msup>
-                <m:mi>P</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_i8lht">
-        <m:math display="block">
-          <m:mrow>
-            <m:mrow>
-              <m:msup>
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mfrac>
-                    <m:mrow>
-                      <m:mi>20</m:mi>
-
-                      <m:mo>×</m:mo>
-
-                      <m:mi>0.012</m:mi>
-                    </m:mrow>
-
-                    <m:msup>
-                      <m:mi>0.001</m:mi>
-
-                      <m:mi>1/2</m:mi>
-                    </m:msup>
-                  </m:mfrac>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:mi>3</m:mi>
-              </m:msup>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>A</m:mi>
-
-                <m:mi>5</m:mi>
-              </m:msup>
-
-              <m:msup>
-                <m:mi>P</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_0x2e5">
-        <m:math display="block">
-          <m:mrow>
-            <m:mrow>
-              <m:mi>437.15</m:mi>
-
-              <m:mo>=</m:mo>
-
-              <m:mfrac>
-                <m:msup>
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-
-                    <m:mrow>
-                      <m:mi>3y</m:mi>
-
-                      <m:mo>+</m:mo>
-
-                      <m:msup>
-                        <m:mi>y</m:mi>
-
-                        <m:mi>2</m:mi>
-                      </m:msup>
-                    </m:mrow>
-
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-
-                  <m:mi>5</m:mi>
-                </m:msup>
-
-                <m:msup>
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-
-                    <m:mrow>
-                      <m:mi>3</m:mi>
-
-                      <m:mo>+</m:mo>
-
-                      <m:mi>y√</m:mi>
-                    </m:mrow>
-
-                    <m:mo>5)</m:mo>
-                  </m:mrow>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-              </m:mfrac>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>Equation (38) can be solved by trial and error or other method for the normal depth y =
-          y<subscript>o</subscript> with the following results:</para>
-
-      <para>y<subscript>o</subscript> = 1.89m</para>
-
-      <para>A = 7.439m<superscript>2</superscript></para>
-
-      <para>u = 2.689 m/s</para>
-
-      <para>H = z + y + u<superscript>2</superscript> /2g</para>
-
-      <para>= 1 + 1.886 + 0.368</para>
-
-      <para>= 3.25m</para>
-
-      <para>E = y + u<superscript>2</superscript>/ 2g</para>
-
-      <para>= 1.886 + 0.368</para>
-
-      <para>= 2.25m</para>
-
-      <para>To find the critical depth y<subscript>c</subscript> corresponding to the same flow of
-          20m<superscript>3</superscript>/s it is known that the Froude number (IF) is unity.</para>
-
-      <equation xml:id="b6_ch2_e_jyx0o">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>IF</m:mi>
-
-            <m:mrow>
-              <m:mi>=1</m:mi>
-
-              <m:mo>=</m:mo>
-            </m:mrow>
-
-            <m:msqrt>
-              <m:mfrac>
-                <m:mrow>
-                  <m:msup>
-                    <m:mi>Q</m:mi>
-
-                    <m:mi>2</m:mi>
-                  </m:msup>
-
-                  <m:mo>b</m:mo>
-                </m:mrow>
-
-                <m:mrow>
-                  <m:mi>g</m:mi>
-
-                  <m:msup>
-                    <m:mi>A</m:mi>
-
-                    <m:mi>3</m:mi>
-                  </m:msup>
-                </m:mrow>
-              </m:mfrac>
-            </m:msqrt>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_fet3y">
-        <m:math display="block">
-          <m:mrow>
-            <m:mrow>
-              <m:mi>⇒</m:mi>
-
-              <m:mfrac>
-                <m:msup>
-                  <m:mi>Q</m:mi>
-
-                  <m:mi>2</m:mi>
-                </m:msup>
-
-                <m:mi>g</m:mi>
-              </m:mfrac>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>A</m:mi>
-
-                <m:mi>3</m:mi>
-              </m:msup>
-
-              <m:mi>b</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_hu5kz">
-        <m:math display="block">
-          <m:mrow>
-            <m:mfrac>
-              <m:msup>
-                <m:mi>20</m:mi>
-
-                <m:mi>2</m:mi>
-              </m:msup>
-
-              <m:mi>9.81</m:mi>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mi>A</m:mi>
-
-                <m:mi>3</m:mi>
-              </m:msup>
-
-              <m:mi>b</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <equation xml:id="b6_ch2_e_oz3yi">
-        <m:math display="block">
-          <m:mrow>
-            <m:mi>40.775</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:msup>
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mrow>
-                    <m:mi>3y</m:mi>
-
-                    <m:mo>+</m:mo>
-
-                    <m:msup>
-                      <m:mi>y</m:mi>
-
-                      <m:mi>2</m:mi>
-                    </m:msup>
-                  </m:mrow>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:mi>3</m:mi>
-              </m:msup>
-
-              <m:mi>y+3</m:mi>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
-      </equation>
-
-      <para>Solving by trial and error or other numerical method yields the following results to the
-        nearest centimeter:</para>
-
-      <para>y<subscript>c</subscript> = 1.51m</para>
-
-      <para>H<subscript>c</subscript> = 3.14m</para>
-
-      <para>E<subscript>c</subscript> = 2.14m</para>
-    </section>
+  <section>
+    <title>References </title>
+    <para>HENDERSON, F.M. 1966. Open Channel Flow, Macmillan Publishing Co., New York, 1966.</para>
+    <para>CHOW, V.T. 1959. Open-Channel Hydraulics. McGraw-Hill Book Company, New York.,
+      1959.</para>
+    <para>STREETER, V.L. and WYLIE, E.B. 1981. Fluid Mechanics. McGraw-Hill Ryerson Ltd., Singapore,
+      1981.</para>
+    <para>Chaudhry, M.H. (2007) Open Channel Flow, Springer Publishing Company.</para>
+    <para>Sturm T (2009) Open Channel Hydraulics Sturm, McGraw-Hill Water Resources and
+      Environmental Engineering Series, New York,</para>
+    <para>Elger, D.F. Williams, B.C. Clayton T. Crowe, C.T. and Roberson, J.A. (2014) Engineering
+      Fluid Mechanics, 10th Edition</para>
+    <para> PETRYK, S. and GRANT, E.U. 1978. Critical Flow in Rivers with Flood Plains, <emphasis
+        role="italic">Journal of the Hydraulics Division,</emphasis> May, 1978, vol. 104, no. HY5,
+      pp. 583-594.</para>
+    <para> BLALOCK, M.E. and STURM, T.W. 1981. Minimum Specific Energy in Compound Open Channel.
+        <emphasis role="italic">Journal of the Hydraulics Division, ASCE</emphasis>, Jun. 1981, vol.
+      107, no. HY6, pp. 699-717.</para>
+    <para> BLALOCK, M.E. and STURM, T.W. 1983. Closure to Blalock and Sturm (1981) <emphasis
+        role="italic">Journal of Hydraulic Engineering, ASCE</emphasis>, Mar. 1983, vol. 109, no. 3,
+      pp. 483-486.</para>
+    <para>Lee P., <emphasis role="bold">Lambert M.F.</emphasis> and Simpson A.R. (2002). “Critical
+      depth prediction in straight compound channels.” <emphasis role="italic">Water and Maritime
+        Engineering</emphasis>, Journal of Institution of Civil Engineers, London, 154(4), pp. 317 -
+      332. </para>
+    <para> CHAUDHRY, M.H. and BHALLAMUDI, S.M. 1988. Computation of critical depth in symmetrical
+      compound channels. <emphasis role="italic">Journal of Hydraulic Research, IAHR</emphasis>,
+      Apr. 1988, vol. 26, no. 4, pp. 377-396.</para>
+    <para> YUEN, K.W.H. and KNIGHT, D.W. 1990. Critical Flow in a Two Stage Channel. <emphasis
+        role="italic">International conference on River Flood Hydraulics</emphasis>, Sept. 1990,
+      Wallingford, England. Editor Dr. W.R. White, John Wiley &amp; Sons.</para>
+    <para> Sturm, T.W. and Sadiq, A. Water surface profiles in compound channel with multiple
+      critical depths. <emphasis role="italic">Journal of Hydraulic Engineering</emphasis>. ASCE.
+      Vol. 122, No, 12, 1996. Pp. 703-709. </para>
+    <para>Schoellhamer, D.H., Peters, J.C. and Larok, B.E. Subdivision Froude Number<emphasis
+        role="italic">.</emphasis><emphasis role="italic">Journal of Hydraulic
+        Engineering,</emphasis> ASCE Vol. 111, No 7, July, 1985. pp. 1099-1104.</para>
+    <para> ANONYMOUS, 1963. Friction Factors in Open Channels. <emphasis role="italic">Report of the
+        ASCE Task Force, Journal of Hydraulic Engineering</emphasis>, Mar. 1963, vol. 89, no. HY2,
+      pp. 97-143.</para>
+    <para> JAMES, C.S. and WARK, J.B. 1992,<emphasis role="italic"> Conveyance Estimation for
+        Meandering Channels,</emphasis> Report SR329, HR Wallingford, U.K., Dec. 1992.</para>
+    <para><emphasis role="bold">Lambert M.F.</emphasis> and Sellin R.H.J. (1996). “Discharge
+      prediction in compound channels using the mixing length concept.” <emphasis role="italic"
+        >Journal of Hydraulic Research</emphasis>, International Association of Hydraulic Research,
+      34(3), pp. 381-394. </para>
+    <para><emphasis role="bold">Lambert M.F.</emphasis> and Myers W.R.C. (1998). “Estimating the
+      discharge capacity in compound channels.” <emphasis role="italic">Water, Energy and
+        Maritime</emphasis>, Journal of Institution of Civil Engineers, London, 130,
+      pp.84-94.</para>
+    <para><emphasis role="bold">Lambert M.F.</emphasis> and Sellin R.H.J. (1996a). “Velocity
+      distribution in a doubly-sinuous compound channel.” <emphasis role="italic">Water, Energy and
+        Maritime</emphasis>, Journal of Institution of Civil Engineers, London, 118, March, pp.
+      10-20.</para>
+    <para> Conway, P., O'Sullivan, J.J., <emphasis role="bold">Lambert M.F.</emphasis> (2013).
+      Stage-discharge prediction in straight compound channels using 3D numerical models,
+      Proceedings of the Institution of Civil Engineers: Water Management, Vol. 166, No. 1, January,
+      3-15.</para>
+    <para> Olsen, N. R. B. (2004), <link
+        xlink:href="http://ascelibrary.org/hyo/resource/1/jhend8/v130/i8/p838_s1">Closure to
+        "Three-dimensional CFD modeling of self-forming meandering channel"</link>, Journal of
+      Hydraulic Engineering, Vol. 130, No 8, pp. 838-839,
+      doi:10.1061/(ASCE)0733-9429(2004)130:8(838).</para>
+    <para> Olsen, N. R. B. (2003), <link
+        xlink:href="http://ascelibrary.org/hyo/resource/1/jhend8/v129/i5/p366_s1">3D CFD Modeling of
+        a Self-Forming Meandering Channel</link>, Journal of Hydraulic Engineering, No. 5, May, pp
+      366-372, doi:10.1061/(ASCE)0733-9429(2003)129:5(366).</para>
+    <para> Abbott, M.B. (1979), Computational Hydraulics – `s of the Theory of Free Surface Flows,
+      Pitman, London.</para>
+    <para>Abbott, M.B. and Basco, D.R. (1989), Computatinal Fluid Dynamics – An Introducton for
+      Engineers, Longman Scientific &amp; Technical, Singapore</para>
+    <para>Abbott, M.B. and Rasmussen C.H. (1977), On the Numerical Modelling of Rapid Contraction
+      and Expansion in Models that are Two-dimensional in Plan, Proc. XV11 Congress, IAHR,
+      Baden-Baden.</para>
+    <para>Benque, J.P., Cunge, J.A., Feuillet, J., Hauguel, A. and Holly, F.M. (1982), New Method
+      for Tidal Computation, ASCE, J. Waterway, Port, Coastal and Ocean Division, Vol. 108, No.
+      3.</para>
+    <para>Bishop, W.A., McCowan, A.D., Sutherland, R.J. and Watkinson, R.J. (1995), Application of
+      Two-Dimensional Numerical Models to Urban Flood Studies, 2nd International Symposium on
+      Stormwater Management, Melbourne. </para>
+    <para>Cunge, J.A., Holly, F.M. and Verwey, A. (1980), Practical Aspects of Computational River
+      Hydraulics, Pitman, London (Reprinted by University of Iowa).</para>
+    <para>DHI Water and Environment (2005), MIKE Flood – Integrated 1D - 2D Flood Modelling,
+      Reference Manual, DHI Software, Hørsholm</para>
+    <para>King, I.P. and Roig, L.C. (1988), Two-Dimensional Finite Element Models for Flood Plains
+      and Tidal Flats, Int’l Conf. on Computational Methods in Flow Analysis, Okayama. </para>
+    <para>Leendertse, J.J. (1967), Aspects of a Computational Model for Long-Period Water-Wave
+      Propagation, RM-5294-PR, Rand Corporation, Santa Monica.</para>
+    <para>Leonard, B.P. (1979a), A Survey of Finite Differences of Opinion on Numerical Muddling of
+      the Incomprehensible Defective Confusion Equation, In: T.J.R. Hughes (ed.) Finite Element
+      Methods for Convection Dominated Flows, AMSE, New York.</para>
+    <para>Leonard, B.P. (1979b), A Stable and Accurate Convective Modelling Procedure Based on
+      Quadratic Upstream Interpolation, Computer Methods in Applied Mech and Eng.,
+      North-Holland.</para>
+    <para>LeVeque, R.J (2002), Finite Volume Methods for Hyperbolic Problems, Cambridge University
+      Press, Cambridge.</para>
+    <para>McCowan, A D, Rasmussen, E B and Berg, P. (2000), Improving the Performance of a
+      Two-dimensional Hydraulic Model for Floodplain Applications, Proceedings of the 6th Conference
+      on Hydraulics in Civil Engineering, Hobart, 2001</para>
+    <para>Stelling, G.S. (1984), On the Construction of Computational Methods for Shallow Water Flow
+      Problems, Rijkswaterstaat Communications, No. 35/1984, The Hague.</para>
+    <para>Stelling, G.S., Kernkamp, H.W.J and Laguzzi, M.M. (1998), Delft Flooding System: A
+      Powerful Tool for Inundation Assessment based upon a Positive Flow Simulation, in V. Babovic
+      and L.C. Larsen (eds) Hydroinformatics ’98, A.A. Balkema, Brookfield.</para>
+    <para>Syme W.J. (2001), TUFLOW – Two &amp; One-dimensional Unsteady FLOW Software for Rivers,
+      Estuaries and Coastal Waters, IEAust Water Panel Seminar and Workshop on 2D Flood Modelling,
+      Sydney. </para>
   </section>
 </chapter>
