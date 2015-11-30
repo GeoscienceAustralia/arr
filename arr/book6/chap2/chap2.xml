@@ -9166,7 +9166,58 @@ think / rather than -1
       <para>For modelling applications, the mass equation can be expanded to include additional
         source and/or sink terms to allow for localised and/or distributed inflows and outflows, as
         follows:</para>
-      <para/>
+      <equation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>ς</mi>
+                </mrow>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mfrac>
+                <mrow>
+                  <mo>∂</mo>
+                  <mo stretchy="false">(</mo>
+                  <mi>d</mi>
+                  <mo>.</mo>
+                  <mi>u</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mfrac>
+                <mrow>
+                  <mo>∂</mo>
+                  <mo stretchy="false">(</mo>
+                  <mi>d</mi>
+                  <mo>.</mo>
+                  <mi>v</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mtext>Sources</mtext>
+              <mo>-</mo>
+              <mtext>Sinks</mtext>
+            </mrow>
+          </semantics>
+        </math>
+      </equation>
       <para>Where the Source terms can represent localised inflows such as may occur at stormwater
         or pump outlets, or distributed inflows associated with rainfall, and the Sink terms can
         represent localised outflows at drainage pits or pump intakes or distributed losses due to
@@ -9181,15 +9232,164 @@ think / rather than -1
       <para>For flood modelling applications, the momentum equation must be coupled with a suitable
         friction formulation. This is typically achieved by adding a Chezy-type friction term to the
         momentum equation, which then becomes: </para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>g</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>g</mi>
+                  <mi>u</mi>
+                  <msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qadaWcaaWdaeaapeGaeyOaIyRaamyDaaWdaeaapeGaeyOaIyRaamiD
+              aaaacqGHRaWkcaWG1bWaaSaaa8aabaWdbiabgkGi2kaadwhaa8aaba
+              WdbiabgkGi2kaadIhaaaGaey4kaSIaamODamaalaaapaqaa8qacqGH
+              ciITcaWG1baapaqaa8qacqGHciITcaWG5baaaiabgUcaRiaadEgada
+              WcaaWdaeaapeGaeyOaIyRaeqOWdyfapaqaa8qacqGHciITcaWG4baa
+              aiabg2da9iabgkHiTmaalaaapaqaa8qacaWGNbGaamyDamaakaaapa
+              qaa8qacaWG1bWdamaaCaaaleqabaWdbiaaikdaaaGccqGHRaWkcaWG
+              2bWdamaaCaaaleqabaWdbiaaikdaaaaabeaaaOWdaeaapeGaam4qa8
+              aadaahaaWcbeqaa8qacaaIYaaaaOGaamizaaaaaaa@5C9D@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para>where:</para>
       <para>
-        <emphasis role="italic">C: </emphasis> is a Chezy roughness coefficient (m1/2s-1)</para>
+        <emphasis role="italic">C: </emphasis> is a Chezy roughness coefficient (m<superscript>1/2</superscript>s<superscript>-1</superscript>)</para>
       <para>For practical modelling applications, the Chezy coefficient can be related to the more
         usual (for Australian applications) Manning’s <emphasis role="italic"
           >‘</emphasis>n’<emphasis role="italic"> roughness coefficient </emphasis>by the Strickler
         relation, where: </para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>n</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <msup>
+                    <mi>d</mi>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>/</mo>
+                      <mn>6</mn>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mi>C</mi>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qacaWGUbGaeyypa0ZaaSaaaeaacaWGKbWdamaaCaaaleqabaWdbiaa
+              igdacaGGVaGaaGOnaaaaaOqaaiaadoeaaaaaaa@3C54@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para>In some European models, the friction coefficient is sometimes specified in terms of
         Manning’s ‘M’, where:</para>
+      <equation xml:id="b6_ch4_e_3gnpz">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>n</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mi>M</mi>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qacaWGUbGaeyypa0ZaaSaaaeaacaaIXaaabaGaamytaaaaaaa@39AC@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para><emphasis role="bold"><emphasis role="italic">Eddy
         Viscosity</emphasis></emphasis></para>
       <para>Most commercially available 2D models also include an “eddy viscosity” type term to
@@ -9198,16 +9398,256 @@ think / rather than -1
         channel/overbank interactions. </para>
       <para>Introducing a typical eddy viscosity formulation, the <emphasis role="italic"
           >x</emphasis> momentum equation becomes:</para>
-      <para>
-        <anchor xml:id="OLE_LINK1"/>
-      </para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>g</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>g</mi>
+                  <mi>u</mi>
+                  <msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>E</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qadaWcaaWdaeaapeGaeyOaIyRaamyDaaWdaeaapeGaeyOaIyRaamiD
+              aaaacqGHRaWkcaWG1bWaaSaaa8aabaWdbiabgkGi2kaadwhaa8aaba
+              WdbiabgkGi2kaadIhaaaGaey4kaSIaamODamaalaaapaqaa8qacqGH
+              ciITcaWG1baapaqaa8qacqGHciITcaWG5baaaiabgUcaRiaadEgada
+              WcaaWdaeaapeGaeyOaIyRaeqOWdyfapaqaa8qacqGHciITcaWG4baa
+              aiabg2da9iabgkHiTmaalaaapaqaa8qacaWGNbGaamyDamaakaaapa
+              qaa8qacaWG1bWdamaaCaaaleqabaWdbiaaikdaaaGccqGHRaWkcaWG
+              2bWdamaaCaaaleqabaWdbiaaikdaaaaabeaaaOWdaeaapeGaam4qa8
+              aadaahaaWcbeqaa8qacaaIYaaaaOGaamizaaaacqGHRaWkcaWGfbWa
+              aeWaa8aabaWdbmaalaaapaqaa8qacqGHciITpaWaaWbaaSqabeaape
+              GaaGOmaaaakiaadwhaa8aabaWdbiabgkGi2kaadIhapaWaaWbaaSqa
+              beaapeGaaGOmaaaaaaGccqGHRaWkdaWcaaWdaeaapeGaeyOaIy7dam
+              aaCaaaleqabaWdbiaaikdaaaGccaWG1baapaqaa8qacqGHciITcaWG
+              5bWdamaaCaaaleqabaWdbiaaikdaaaaaaaGccaGLOaGaayzkaaaaaa@6F3E@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para>where:</para>
       <para>
-        <emphasis role="italic">E: </emphasis> is an “eddy viscosity” coefficient (m2s-1)</para>
+        <emphasis role="italic">E: </emphasis> is an “eddy viscosity” coefficient (m<superscript>2</superscript>s<superscript>-1</superscript>)</para>
       <para>If, for illustration purposes only, the hydrostatic pressure and friction terms are
         neglected, the <emphasis role="italic">x</emphasis> momentum equation can be rearranged to
         the form:</para>
-      <para> </para>
+      <equation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>&#x2212;</mo>
+              <mi>E</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mn>0</mn>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+              qadaWcaaWdaeaapeGaeyOaIyRaamyDaaWdaeaapeGaeyOaIyRaamiD
+              aaaacqGHRaWkcaWG1bWaaSaaa8aabaWdbiabgkGi2kaadwhaa8aaba
+              WdbiabgkGi2kaadIhaaaGaey4kaSIaamODamaalaaapaqaa8qacqGH
+              ciITcaWG1baapaqaa8qacqGHciITcaWG5baaaiabgkHiTiaadweada
+              qadaWdaeaapeWaaSaaa8aabaWdbiabgkGi2+aadaahaaWcbeqaa8qa
+              caaIYaaaaOGaamyDaaWdaeaapeGaeyOaIyRaamiEa8aadaahaaWcbe
+              qaa8qacaaIYaaaaaaakiabgUcaRmaalaaapaqaa8qacqGHciITpaWa
+              aWbaaSqabeaapeGaaGOmaaaakiaadwhaa8aabaWdbiabgkGi2kaadM
+              hapaWaaWbaaSqabeaapeGaaGOmaaaaaaaakiaawIcacaGLPaaacqGH 9aqpcaaIWaaaaa@5D6B@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para>This is analogous to a two-dimensional advection-diffusion equation describing the
         transport and diffusion of <emphasis role="italic">u</emphasis>, the <emphasis role="italic"
           >x</emphasis> velocity component. Continuing the analogy, the eddy viscosity coefficient
@@ -9215,11 +9655,64 @@ think / rather than -1
         in advection-diffusion modelling. Thus, as well as having wave propagation and transport
         properties, discussed in Section <emphasis role="bold">Error! Reference source not
           found.</emphasis>, the momentum equation can also have diffusion properties.</para>
-      <para>Eddy viscosity and its application to 2D flood models is discussed in more detail in
-        Chapter 10. It is noted, however, that for eddy viscosity
-        calculations to be meaningful, the and convective momentum terms must be modelled with
-        sufficient accuracy. This is discussed in more detail in Section <emphasis role="bold"
-          >Error! Reference source not found.</emphasis>.</para>
+      <para><?oxy_comment_start author="ward" timestamp="20151130T112228+1100" comment="Don’t think this chapter has been copied across. Just refer to Project 15 then"?>Eddy
+        viscosity and its application to 2D flood models is discussed in more detail in Chapter
+        10<?oxy_comment_end?>. It is noted, however, that for eddy viscosity calculations to be
+        meaningful, the <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>u</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+                qacaWG1bWaaSaaa8aabaWdbiabgkGi2kaadwhaa8aabaWdbiabgkGi 2kaadIhaaaaaaa@3C21@
+              </annotation>
+            </semantics>
+          </math>
+        </inlineequation> and <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>v</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>y</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
+                qacaWG2bWaaSaaa8aabaWdbiabgkGi2kaadwhaa8aabaWdbiabgkGi 2kaadMhaaaaaaa@3C23@
+              </annotation>
+            </semantics>
+          </math>
+        </inlineequation>convective momentum terms must be modelled with sufficient accuracy. This
+        is discussed in more detail in Section <emphasis role="bold">Error! Reference source not
+          found.</emphasis>.</para>
       <para/>
       <para><emphasis role="bold"><emphasis role="italic">Other Terms</emphasis></emphasis></para>
       <para>The early 2D flood models were originally derived from 2D coastal and estuarine models.
@@ -9227,8 +9720,163 @@ think / rather than -1
         effects. When these terms are included, along with additional source/sink terms to allow for
         the addition or loss of momentum associated with any sources or sinks of mass, discussed
         above, the <emphasis role="italic">x</emphasis> momentum equation becomes: </para>
-      <para> </para>
-      <para>where:</para>
+      <equation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>g</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>g</mi>
+                  <mi>u</mi>
+                  <msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>E</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mi>f</mi>
+              <mi>V</mi>
+              <msub>
+                <mi>V</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>&#x2212;</mo>
+              <mi>&#x03A9;</mi>
+              <mi>u</mi>
+              <mo>+</mo>
+              <mtext>Source/Sink</mtext>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+              GHciITcaWG1baabaGaeyOaIyRaamiDaaaacqGHRaWkcaWG1bWaaSaa
+              aeaacqGHciITcaWG1baabaGaeyOaIyRaamiEaaaacqGHRaWkcaWG2b
+              WaaSaaaeaacqGHciITcaWG1baabaGaeyOaIyRaamyEaaaacqGHRaWk
+              caWGNbWaaSaaaeaacqGHciITcqaHcpGvaeaacqGHciITcaWG4baaai
+              abg2da9iabgkHiTmaalaaabaGaam4zaiaadwhadaGcaaqaaiaadwha
+              daahaaWcbeqaaiaaikdaaaGccqGHRaWkcaWG2bWaaWbaaSqabeaaca
+              aIYaaaaaqabaaakeaacaWGdbWaaWbaaSqabeaacaaIYaaaaOGaamiz
+              aaaacqGHRaWkcaWGfbWaaeWaaeaadaWcaaqaaiabgkGi2oaaCaaale
+              qabaGaaGOmaaaakiaadwhaaeaacqGHciITcaWG4bWaaWbaaSqabeaa
+              caaIYaaaaaaakiabgUcaRmaalaaabaGaeyOaIy7aaWbaaSqabeaaca
+              aIYaaaaOGaamyDaaqaaiabgkGi2kaadMhadaahaaWcbeqaaiaaikda
+              aaaaaaGccaGLOaGaayzkaaGaey4kaSIaamOzaiaadAfacaWGwbWaaS
+              baaSqaaiaadIhaaeqaaOGaeyOeI0IaeuyQdCLaamyDaiabgUcaRiaa
+              bofacaqGVbGaaeyDaiaabkhacaqGJbGaaeyzaiaab+cacaqGtbGaae yAaiaab6gacaqGRbaaaa@7F39@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para> where:</para>
       <para>
         <emphasis role="italic">f </emphasis> is a wind shear stress coefficient</para>
       <para><emphasis role="italic">V</emphasis> is the wind speed (m/s)</para>
@@ -9244,10 +9892,360 @@ think / rather than -1
       <para>As developed above, the final forms of the mass and momentum equations used in many 2D
         flood models can be expressed as:</para>
       <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
-      <para/>
+      <equation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mo stretchy="false">(</mo>
+                  <mi>d</mi>
+                  <mo>.</mo>
+                  <mi>u</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mo stretchy="false">(</mo>
+                  <mi>d</mi>
+                  <mo>.</mo>
+                  <mi>v</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mtext>Sources</mtext>
+              <mo>-</mo>
+              <mtext>Sinks</mtext>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+              GHciITcqaHcpGvaeaacqGHciITcaWG0baaaiabgUcaRmaalaaabaGa
+              eyOaIyRaaiikaiaadsgacaGGUaGaamyDaiaacMcaaeaacqGHciITca
+              WG4baaaiabgUcaRmaalaaabaGaeyOaIyRaaiikaiaadsgacaGGUaGa
+              amODaiaacMcaaeaacqGHciITcaWG5baaaiabg2da9iaabofacaqGVb
+              GaaeyDaiaabkhacaqGJbGaaeyzaiaabohacaGGTaGaae4uaiaabMga caqGUbGaae4Aaiaabohaaaa@598C@
+            </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para><emphasis role="bold"><emphasis role="italic">x-Momentum</emphasis></emphasis></para>
+      <equation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>u</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>g</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>g</mi>
+                  <mi>u</mi>
+                  <msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>E</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mtext>Source/Sink</mtext>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+              GHciITcaWG1baabaGaeyOaIyRaamiDaaaacqGHRaWkcaWG1bWaaSaa
+              aeaacqGHciITcaWG1baabaGaeyOaIyRaamiEaaaacqGHRaWkcaWG2b
+              WaaSaaaeaacqGHciITcaWG1baabaGaeyOaIyRaamyEaaaacqGHRaWk
+              caWGNbWaaSaaaeaacqGHciITcqaHcpGvaeaacqGHciITcaWG4baaai
+              abg2da9iabgkHiTmaalaaabaGaam4zaiaadwhadaGcaaqaaiaadwha
+              daahaaWcbeqaaiaaikdaaaGccqGHRaWkcaWG2bWaaWbaaSqabeaaca
+              aIYaaaaaqabaaakeaacaWGdbWaaWbaaSqabeaacaaIYaaaaOGaamiz
+              aaaacqGHRaWkcaWGfbWaaeWaaeaadaWcaaqaaiabgkGi2oaaCaaale
+              qabaGaaGOmaaaakiaadwhaaeaacqGHciITcaWG4bWaaWbaaSqabeaa
+              caaIYaaaaaaakiabgUcaRmaalaaabaGaeyOaIy7aaWbaaSqabeaaca
+              aIYaaaaOGaamyDaaqaaiabgkGi2kaadMhadaahaaWcbeqaaiaaikda
+              aaaaaaGccaGLOaGaayzkaaGaey4kaSIaae4uaiaab+gacaqG1bGaae
+              OCaiaabogacaqGLbGaae4laiaabofacaqGPbGaaeOBaiaabUgaaaa@770E@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para><emphasis role="bold"><emphasis role="italic">y-Momentum</emphasis></emphasis></para>
-      <para/>
+      <equation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>v</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>v</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>v</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>u</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>v</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>g</mi>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>&#x03C2;</mi>
+                </mrow>
+                <mrow>
+                  <mo>&#x2202;</mo>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>g</mi>
+                  <mi>v</mi>
+                  <msqrt>
+                    <mrow>
+                      <msup>
+                        <mi>u</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </msqrt>
+                </mrow>
+                <mrow>
+                  <msup>
+                    <mi>C</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>d</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mi>E</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mrow>
+                      <msup>
+                        <mo>&#x2202;</mo>
+                        <mn>2</mn>
+                      </msup>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mo>&#x2202;</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mtext>Source/Sink</mtext>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+              GHciITcaWG2baabaGaeyOaIyRaamiDaaaacqGHRaWkcaWG2bWaaSaa
+              aeaacqGHciITcaWG2baabaGaeyOaIyRaamyEaaaacqGHRaWkcaWG1b
+              WaaSaaaeaacqGHciITcaWG2baabaGaeyOaIyRaamiEaaaacqGHRaWk
+              caWGNbWaaSaaaeaacqGHciITcqaHcpGvaeaacqGHciITcaWG5baaai
+              abg2da9iabgkHiTmaalaaabaGaam4zaiaadAhadaGcaaqaaiaadwha
+              daahaaWcbeqaaiaaikdaaaGccqGHRaWkcaWG2bWaaWbaaSqabeaaca
+              aIYaaaaaqabaaakeaacaWGdbWaaWbaaSqabeaacaaIYaaaaOGaamiz
+              aaaacqGHRaWkcaWGfbWaaeWaaeaadaWcaaqaaiabgkGi2oaaCaaale
+              qabaGaaGOmaaaakiaadwhaaeaacqGHciITcaWG4bWaaWbaaSqabeaa
+              caaIYaaaaaaakiabgUcaRmaalaaabaGaeyOaIy7aaWbaaSqabeaaca
+              aIYaaaaOGaamyDaaqaaiabgkGi2kaadMhadaahaaWcbeqaaiaaikda
+              aaaaaaGccaGLOaGaayzkaaGaey4kaSIaae4uaiaab+gacaqG1bGaae
+              OCaiaabogacaqGLbGaae4laiaabofacaqGPbGaaeOBaiaabUgaaaa@7713@ </annotation>
+          </semantics>
+        </math>
+      </equation>
       <para>This coupled system of equations provides the three equations necessary to solve for the
         three dependent variables; ς the free surface elevation, <emphasis role="italic"
           >u</emphasis> the velocity in the <emphasis role="italic">x</emphasis> direction and
@@ -9289,7 +10287,147 @@ think / rather than -1
           is dependent upon the level of detail and/or accuracy required. </para>
         <para>Ignoring wind, Coriolis and source/sink terms, the x-momentum equation developed above
           can be expressed as: </para>
-        <para> </para>
+        <equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>u</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>v</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>y</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>g</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>&#x03C2;</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>g</mi>
+                    <mi>u</mi>
+                    <msqrt>
+                      <mrow>
+                        <msup>
+                          <mi>u</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                          <mi>v</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </msqrt>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>C</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>d</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>E</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <msup>
+                          <mo>&#x2202;</mo>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>u</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>&#x2202;</mo>
+                        <msup>
+                          <mi>x</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mfrac>
+                    <mo>+</mo>
+                    <mfrac>
+                      <mrow>
+                        <msup>
+                          <mo>&#x2202;</mo>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>u</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>&#x2202;</mo>
+                        <msup>
+                          <mi>y</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+                GHciITcaWG1baabaGaeyOaIyRaamiDaaaacqGHRaWkcaWG1bWaaSaa
+                aeaacqGHciITcaWG1baabaGaeyOaIyRaamiEaaaacqGHRaWkcaWG2b
+                WaaSaaaeaacqGHciITcaWG1baabaGaeyOaIyRaamyEaaaacqGHRaWk
+                caWGNbWaaSaaaeaacqGHciITcqaHcpGvaeaacqGHciITcaWG4baaai
+                abg2da9iabgkHiTmaalaaabaGaam4zaiaadwhadaGcaaqaaiaadwha
+                daahaaWcbeqaaiaaikdaaaGccqGHRaWkcaWG2bWaaWbaaSqabeaaca
+                aIYaaaaaqabaaakeaacaWGdbWaaWbaaSqabeaacaaIYaaaaOGaamiz
+                aaaacqGHRaWkcaWGfbWaaeWaaeaadaWcaaqaaiabgkGi2oaaCaaale
+                qabaGaaGOmaaaakiaadwhaaeaacqGHciITcaWG4bWaaWbaaSqabeaa
+                caaIYaaaaaaakiabgUcaRmaalaaabaGaeyOaIy7aaWbaaSqabeaaca
+                aIYaaaaOGaamyDaaqaaiabgkGi2kaadMhadaahaaWcbeqaaiaaikda
+                aaaaaaGccaGLOaGaayzkaaaaaa@6C56@ </annotation>
+            </semantics>
+          </math>
+        </equation>
         <para>Using this as a base, some of the more commonly used approximations to the momentum
           equation are discussed below.</para>
         <para><emphasis role="bold"><emphasis role="italic">The Linearised Momentum
@@ -9298,8 +10436,76 @@ think / rather than -1
           neglected. When these terms are neglected, the eddy viscosity (momentum dispersion) terms
           have little physical meaning and can also be neglected. With this approach, the <emphasis
             role="italic">x-</emphasis>momentum equation reduces to: </para>
-        <para> </para>
-        <para>This approach should only be used in areas where the velocities are small, and the
+        <equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>g</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>&#x03C2;</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>g</mi>
+                    <mi>u</mi>
+                    <msqrt>
+                      <mrow>
+                        <msup>
+                          <mi>u</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                          <mi>v</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </msqrt>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>C</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>d</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+                GHciITcaWG1baabaGaeyOaIyRaamiDaaaacqGHRaWkcaWGNbWaaSaa
+                aeaacqGHciITcqaHcpGvaeaacqGHciITcaWG4baaaiabg2da9iabgk
+                HiTmaalaaabaGaam4zaiaadwhadaGcaaqaaiaadwhadaahaaWcbeqa
+                aiaaikdaaaGccqGHRaWkcaWG2bWaaWbaaSqabeaacaaIYaaaaaqaba
+                aakeaacaWGdbWaaWbaaSqabeaacaaIYaaaaOGaamizaaaaaaa@4D6C@ </annotation>
+            </semantics>
+          </math>
+        </equation>
+        <para> This approach should only be used in areas where the velocities are small, and the
           wave propagation properties of the flow are dominant. This rarely happens in most
           practical flood flow simulations. However, it is noted that the linearised momentum
           equation is sometimes used for numerical expediency in order to maintain stability in high
@@ -9307,36 +10513,272 @@ think / rather than -1
           maintains the wave propagation properties of the full momentum equation, it cannot model
           momentum dominated effects, including flow separations and eddies, and main
           channel/overbank momentum transfers. </para>
-        <para> </para>
-        <para><emphasis role="bold"><emphasis role="italic">The Steady State Momentum
+        <para>
+          <emphasis role="bold"><emphasis role="italic">The Steady State Momentum
               Equation</emphasis></emphasis></para>
         <para>With this approximation, the local acceleration term <emphasis role="italic"
             >δu/δt</emphasis> is neglected and the <emphasis role="italic">x-</emphasis>momentum
           equation reduces to: </para>
-        <para> </para>
-        <para>This approximation neglects the wave propagation properties of the momentum equation.
+        <equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>u</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>v</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>u</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>y</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>g</mi>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>&#x03C2;</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>g</mi>
+                    <mi>u</mi>
+                    <msqrt>
+                      <mrow>
+                        <msup>
+                          <mi>u</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                          <mi>v</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </msqrt>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>C</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>d</mi>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mi>E</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <msup>
+                          <mo>&#x2202;</mo>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>u</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>&#x2202;</mo>
+                        <msup>
+                          <mi>x</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mfrac>
+                    <mo>+</mo>
+                    <mfrac>
+                      <mrow>
+                        <msup>
+                          <mo>&#x2202;</mo>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>u</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>&#x2202;</mo>
+                        <msup>
+                          <mi>y</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyDamaala
+                aabaGaeyOaIyRaamyDaaqaaiabgkGi2kaadIhaaaGaey4kaSIaamOD
+                amaalaaabaGaeyOaIyRaamyDaaqaaiabgkGi2kaadMhaaaGaey4kaS
+                Iaam4zamaalaaabaGaeyOaIyRaeqOWdyfabaGaeyOaIyRaamiEaaaa
+                cqGH9aqpcqGHsisldaWcaaqaaiaadEgacaWG1bWaaOaaaeaacaWG1b
+                WaaWbaaSqabeaacaaIYaaaaOGaey4kaSIaamODamaaCaaaleqabaGa
+                aGOmaaaaaeqaaaGcbaGaam4qamaaCaaaleqabaGaaGOmaaaakiaads
+                gaaaGaey4kaSIaamyramaabmaabaWaaSaaaeaacqGHciITdaahaaWc
+                beqaaiaaikdaaaGccaWG1baabaGaeyOaIyRaamiEamaaCaaaleqaba
+                GaaGOmaaaaaaGccqGHRaWkdaWcaaqaaiabgkGi2oaaCaaaleqabaGa
+                aGOmaaaakiaadwhaaeaacqGHciITcaWG5bWaaWbaaSqabeaacaaIYa
+                aaaaaaaOGaayjkaiaawMcaaaaa@66A5@ </annotation>
+            </semantics>
+          </math>
+        </equation>
+        <para> This approximation neglects the wave propagation properties of the momentum equation.
           It can be used in reaches with moderate to steep slopes, where the flow is dominated by
           friction. However, it should not be used for rapidly varying flows, such as in dam-breaks,
           or in reaches with flat slopes and/or deep water where the local acceleration term (and
           wave propagation properties of the equation) becomes more important.</para>
-        <para> </para>
-        <para><emphasis role="bold"><emphasis role="italic">The Diffusive Wave Approximation
+        <para>
+          <emphasis role="bold"><emphasis role="italic">The Diffusive Wave Approximation
             </emphasis></emphasis></para>
         <para>With this approximation, the convective momentum and eddy viscosity terms are also
           neglected and the <emphasis role="italic">x-</emphasis>momentum equation reduces to: </para>
-        <para> </para>
-        <para>That is, the water surface slope is balanced by the friction slope. </para>
+        <equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>&#x03C2;</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>u</mi>
+                    <msqrt>
+                      <mrow>
+                        <msup>
+                          <mi>u</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                          <mi>v</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </msqrt>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>C</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>d</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+                GHciITcqaHcpGvaeaacqGHciITcaWG4baaaiabg2da9iabgkHiTmaa
+                laaabaGaamyDamaakaaabaGaamyDamaaCaaaleqabaGaaGOmaaaaki
+                abgUcaRiaadAhadaahaaWcbeqaaiaaikdaaaaabeaaaOqaaiaadoea
+                daahaaWcbeqaaiaaikdaaaGccaWGKbaaaaaa@45E3@ </annotation>
+            </semantics>
+          </math>
+        </equation>
+        <para> That is, the water surface slope is balanced by the friction slope. </para>
         <para>As for the steady state momentum equation, this approximation can be used to describe
           gradually varied flows in reaches with moderate to steep slopes. It includes backwater
           effects, but has the added limitation that it cannot be used to simulate flow separations
           and eddies, or main channel/overbank momentum transfers. </para>
-        <para> </para>
-        <para><emphasis role="bold"><emphasis role="italic">The Kinematic Wave Approximation
+        <para>
+          <emphasis role="bold"><emphasis role="italic">The Kinematic Wave Approximation
             </emphasis></emphasis></para>
         <para>With this approximation, the surface slope of the water is assumed to be the same as
           the bed slope the <emphasis role="italic">x-</emphasis>momentum equation further reduces
           to: </para>
-        <para> </para>
+        <equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>z</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>&#x2202;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>u</mi>
+                    <msqrt>
+                      <mrow>
+                        <msup>
+                          <mi>u</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                          <mi>v</mi>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </msqrt>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>C</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>d</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+                GHciITcaWG6baabaGaeyOaIyRaamiEaaaacqGH9aqpcqGHsisldaWc
+                aaqaaiaadwhadaGcaaqaaiaadwhadaahaaWcbeqaaiaaikdaaaGccq
+                GHRaWkcaWG2bWaaWbaaSqabeaacaaIYaaaaaqabaaakeaacaWGdbWa
+                aWbaaSqabeaacaaIYaaaaOGaamizaaaaaaa@453D@ </annotation>
+            </semantics>
+          </math>
+        </equation>
         <para>That is, the friction slope is equal to the bed slope. </para>
         <para>This approximation is effectively the same as solving for the flow properties using a
           steady state friction law (such as the Manning equation). Backwater effects are not
