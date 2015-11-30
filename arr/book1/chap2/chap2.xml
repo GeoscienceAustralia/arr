@@ -1,793 +1,546 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" xml:id="b1_ch2"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+<chapter status="In Preparation" xml:id="b1_ch2" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Fundamental Issues</title>
-
+    <xi:include href="../../common/authors/pilgrim_david.xml"/>
     <xi:include href="../../common/authors/ball_james.xml"/>
-
-    <xi:include href="../../common/authors/kuczera_george.xml"/>
+    <xi:include href="../../common/authors/babister_mark.xml"/>
+    <xi:include href="../../common/authors/retallick_monique.xml"/>
+    <xi:include href="../../common/authors/ling_fiona.xml"/>
+    <xi:include href="../../common/authors/thyer_mark.xml"/>
   </info>
-
   <para>Real content needs to be inserted here.</para>
-
   <section>
     <title>Introduction</title>
-
-    <para>Th<?oxy_insert_start author="retallick" timestamp="20151126T180748+1100"?>is
-    <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T180745+1100" content="e first "?><?oxy_insert_start author="retallick" timestamp="20151126T180756+1100"?>chapter<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T180757+1100" content="section"?>
-    <?oxy_delete author="retallick" timestamp="20151126T181100+1100" content="needs to "?>introduce<?oxy_insert_start author="retallick" timestamp="20151126T181107+1100"?>s<?oxy_insert_end ?>
-    the concepts of probability and statistics with respect to flood
-    estimation<?oxy_insert_start author="retallick" timestamp="20151126T181120+1100"?>
-    including the <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T181124+1100" content=". Included in this discussion needs to be the "?>concepts
-    of A<?oxy_insert_start author="retallick" timestamp="20151126T181132+1100"?>nnual
-    Exceedance <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T181136+1100" content="E"?><?oxy_insert_start author="retallick" timestamp="20151126T181142+1100"?>Probability
-    (AEP)<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T181153+1100" content="P"?>
-    and E<?oxy_insert_start author="retallick" timestamp="20151126T181210+1100"?>xceedances
-    per <?oxy_insert_end ?>Y<?oxy_insert_start author="retallick" timestamp="20151126T181215+1100"?>ear
-    (EY)<?oxy_insert_end ?> and how they relate to statistics.<?oxy_delete author="retallick" timestamp="20151126T181225+1100" content=" Risk concepts need to be included in this section but the extent needs to be determined."?><?oxy_insert_start author="retallick" timestamp="20151126T211433+1100"?>
-    Recommended probability terminology is presented. The chapter also
-    discusses the difference between design and actual events, conversion of
-    rainfall of a given probability to a flood of the same probability,
-    closure of service routes, risk and dealing with uncertainty in flood
-    estimates.<?oxy_insert_end ?></para>
+    <para>This chapter introduces important concepts of probability and statistics with respect to
+      flood estimation, and defines the recommended terminology for these probability concepts. The
+      chapter also discusses the difference between design and actual events, conversion of rainfall
+      of a given probability to a flood of the same probability, risk-based design and dealing with
+      uncertainty in flood estimates. Much of the text from the 1987 edition of ARR is still
+      relevant and has formed the basis for the information provided in some of following
+      sections.</para>
   </section>
-
   <section>
     <title>Terminology</title>
-
     <section xml:id="b1_ch1-3_s_vt33jid">
       <title>Background</title>
-
-      <para>Probability concepts are fundamental to design flood estimation.
-      <?oxy_insert_start author="retallick" timestamp="20151126T181243+1100"?>T<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T181240+1100" content="Furthermore, t"?>he
-      terminology used is important if the aim is for effective communication
-      of design flood estimates. Terms commonly used in the past have included
-      "<emphasis role="italic">recurrence interval</emphasis>", "<emphasis
-      role="italic">return period</emphasis>", and various terms involving
-      "<emphasis role="italic">probability</emphasis>". It is common for these
-      terms to be used in a loose manner, and sometimes quite incorrectly.
-      This has resulted in misinterpretation by the profession, the general
-      community impacted by floods, and other stakeholders.</para>
-
-      <para>In considering the terminology that should be used in this edition
-      of Australian Rainfall and Runoff, the National Committee on Water
-      Engineering<?oxy_insert_start author="retallick" timestamp="20151126T182012+1100"?>'s<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T182010+1100" content=" had"?>
-      three major concerns<?oxy_delete author="retallick" timestamp="20151126T181308+1100" content=";"?>
-      <?oxy_delete author="retallick" timestamp="20151126T182016+1100" content="namely"?><?oxy_insert_start author="retallick" timestamp="20151126T181306+1100"?>were:<?oxy_insert_end ?></para>
-
+      <para>Probability concepts are fundamental to design flood estimation and appropriate
+        terminology is important for effective communication of design flood estimates. Terms
+        commonly used in the past have included "<emphasis role="italic">recurrence
+          interval</emphasis>", "<emphasis role="italic">return period</emphasis>", and various
+        terms involving "<emphasis role="italic">probability</emphasis>". It is common for these
+        terms to be used in a loose manner, and sometimes quite incorrectly. This has resulted in
+        misinterpretation by the profession, the general community impacted by floods, and other
+        stakeholders.</para>
+      <para>In considering the terminology that should be used in this edition of Australian
+        Rainfall and Runoff, the National Committee on Water Engineering's three major concerns
+        were:</para>
       <itemizedlist mark="bullet">
         <listitem>
           <para>Clarity of meaning;</para>
         </listitem>
-
         <listitem>
           <para>Technical correctness; and</para>
         </listitem>
-
         <listitem>
           <para>Practicality and acceptability.</para>
         </listitem>
       </itemizedlist>
     </section>
-
     <section xml:id="b1_ch1-3_s_xe7xl">
       <title>Clarity of Meaning</title>
-
-      <para>Use of the terms "<emphasis role="italic">recurrence
-      interval</emphasis>" and "<emphasis role="italic">return
-      period</emphasis>" has been criticised as leading to confusion in the
-      minds of some decision-makers and members of the public. Although the
-      terms are simple superficially, they are misinterpreted regularly as
-      implying that the associated event magnitude is only exceeded at regular
-      intervals, and that they are referring to the elapsed time till the next
-      exceedance. This misinterpretation of the terms used for expressing
-      probabilities of flood magnitudes can be misleading and result in poor
-      decisions.</para>
-
-      <para>It is believed that irrespective of the terms used, that it is
-      critical that all stakeholders have a common interpretation of the
-      terms. Furthermore, it is believed that it is important that
-      stakeholders understand that the terms refer to long term averages. This
-      means, for a given climatic environment, that the probability of an
-      event of a given magnitude being equalled or exceeded in a given period
-      of time (for example, one year) is unchanged throughout the life of the
-      structure or the drainage network. Furthermore, it is not uncommon for
-      more than one occurrence of an event to occur in a single year.</para>
-
-      <para>Additionally, given the wet and dry phases that occur in many
-      regions of Australia, these events are likely to be clustered in time.
-      The occurrence of these wet and dry climatic phases highlight the
-      misleading and inappropriate interpretation that flood events occur at
-      regular intervals as implied by "<emphasis role="italic">recurrence
-      interval</emphasis>" and "<emphasis role="italic">return
-      period</emphasis>”.</para>
-
-      <para>Flood events generally are random occurrences, and the period
-      between exceedances of a given value usually is a random variate, the
-      properties of which are assumed to be constant in time for a given
-      location and climatic environment. The adopted terminology reflects this
-      fundamental concept and is intended to convey a clear and precise
-      interpretation.</para>
+      <para>Use of the terms "<emphasis role="italic">recurrence interval</emphasis>" and "<emphasis
+          role="italic">return period</emphasis>" has been criticised as leading to confusion in the
+        minds of some decision-makers and members of the public. Although the terms are simple
+        superficially, they are misinterpreted regularly as implying that the associated event
+        magnitude is only exceeded at regular intervals, and that they are referring to the expected
+        elapsed time till the next exceedance. This misinterpretation of the terms used for
+        expressing probabilities of flood magnitudes can be misleading and result in poor
+        decisions.</para>
+      <para>It is believed that irrespective of the terms used, it is critical that all stakeholders
+        have a common interpretation of the terms. Furthermore, it is important that stakeholders
+        understand that the terms refer to long term averages. This means, for a given climatic
+        environment, that the probability of an event of a given magnitude being equalled or
+        exceeded in a given period of time (for example, one year) is unchanged throughout the life
+        of the structure or the drainage network. Furthermore, it is not uncommon for an event to
+        occur for than once in a single year.</para>
+      <para>Additionally, given the wet and dry phases that occur in many regions of Australia,
+        these events are likely to be clustered in time. The occurrence of these wet and dry
+        climatic phases highlight the misleading and inappropriate interpretation that flood events
+        occur at regular intervals as implied by "<emphasis role="italic">recurrence
+          interval</emphasis>" and "<emphasis role="italic">return period</emphasis>”.</para>
+      <para>Flood events generally are random occurrences, and the period between exceedances of a
+        given event magnitude usually is a random variate, the properties of which are assumed to be
+        constant in time for a given location and climatic environment. The adopted terminology
+        reflects this fundamental concept and is intended to convey a clear and precise
+        interpretation.</para>
     </section>
-
     <section xml:id="b1_ch1-3_s_ijnsl">
       <title>Technical Correctness</title>
-
-      <para>In view of the loose and frequently incorrect manner in which
-      probability terms are often used, it was considered that Australian
-      Rainfall and Runoff should adopt terminology that is technically
-      correct, as far as this is possible and in harmony with other
-      objectives. Additionally, even if this is not entirely popular with all
-      <?oxy_delete author="retallick" timestamp="20151126T182038+1100" content="users"?><?oxy_insert_start author="retallick" timestamp="20151126T182038+1100"?>practitioners<?oxy_insert_end ?>,
-      Engineers Australia has a responsibility to encourage and educate
-      engineers regarding correct terminology.</para>
-
-      <para>The two approaches used when describing probabilities of flood
-      events in previous editions of Australian Rainfall and Runoff
-      were:</para>
-
+      <para>In view of the loose and frequently incorrect manner in which probability terms are
+        often used, it was considered that Australian Rainfall and Runoff should adopt terminology
+        that is technically correct, as far as this is possible and in harmony with other
+        objectives. Additionally, even if this is not entirely popular with all practitioners,
+        Engineers Australia has a responsibility to encourage and educate engineers regarding
+        correct terminology.</para>
+      <para>The two approaches used when describing probabilities of flood events in previous
+        editions of Australian Rainfall and Runoff were:</para>
       <itemizedlist mark="bullet">
         <listitem>
-          <para><?oxy_insert_start author="retallick" timestamp="20151126T181659+1100" type="surround"?><emphasis><?oxy_insert_end ?>Annual
-          Exceedance Probability (AEP) </emphasis>- the probability of an
-          event being equalled or exceeded within a year. Typically the AEP is
-          estimated by extracting the annual maximum in each year to produce
-          an Annual Maxima Series (AMS); and</para>
+          <para><emphasis>Annual Exceedance Probability (AEP) </emphasis>- the probability of an
+            event being equalled or exceeded within a year. Typically the AEP is estimated by
+            extracting the annual maximum in each year to produce an Annual Maxima Series (AMS);
+            and</para>
         </listitem>
-
         <listitem>
-          <para><?oxy_insert_start author="retallick" timestamp="20151126T181703+1100" type="surround"?><emphasis><?oxy_insert_end ?>Average
-          Recurrence Interval (ARI) </emphasis>- the average time period
-          between occurrences equalling or exceeding a given value. Usually
-          the ARI is derived from a Peak over Threshold series (PoTs) where
-          every value over a chosen threshold is extracted from the period of
-          record.</para>
+          <para><emphasis>Average Recurrence Interval (ARI) </emphasis>- the average time period
+            between occurrences equalling or exceeding a given value. Usually the ARI is derived
+            from a Peak over Threshold series (PoTS) where every value over a chosen threshold is
+            extracted from the period of record.</para>
         </listitem>
       </itemizedlist>
-
-      <para>Details of AMS and PoTs and the background to these alternative
-      techniques for extracting flood series from recorded data are presented
-      in <?oxy_comment_start author="retallick" timestamp="20151126T181757+1100" comment="dont think this reference right
-"?>Chapter 2 of Book 1<?oxy_comment_end ?> of Australian Rainfall and Runoff.
-      Included in this discussion are the assumptions necessary for conversion
-      of one probability terminology to the other using the Langbein formula
-      (Langbein, 1949).</para>
-
-      <para>Using the Langbein formula, in probability terms, there is little
-      practical difference for events rarer than 10% AEP. Historically,
-      however, there has been a reluctance to convert from the approach used
-      for derivation of the design flood estimate. Furthermore, terminology
-      was attached to particular design flood estimation techniques; for
-      example, when AMS were used to derive design flood estimates, the
-      resultant probability was expressed as an AEP while when a PoTS was used
-      for the same purpose, the resultant probability was expressed as an
-      ARI.</para>
-
-      <para>In many situations, this distinction between an ARI and an AEP was
-      imprecise as the design flood prediction methodology adopted did not
-      explicitly note use of either an AMS or a PoTS in the methodology. As a
-      result, use of ARI and AEP was considered to be interchangeable. This
-      interchangeable use often resulted in confusion.</para>
-
-      <para>The National Committee on Water Engineering believes that within
-      Australian Rainfall and Runoff a terminology should be used which, while
-      being technically correct, is consistent with other uses. Furthermore,
-      the terminology adopted should be easily understood both by the
-      profession and by other stakeholders within the community.</para>
+      <para>Details of AMS and PoTs and the background to these alternative techniques for
+        extracting flood series from recorded data are presented in Chapter 2 of Book 3 of
+        Australian Rainfall and Runoff. Included in this discussion are the assumptions necessary
+        for conversion of one probability terminology to the other using the Langbein formula
+        (Langbein, 1949).</para>
+      <para>Using the Langbein formula, in probability terms, there is little practical difference
+        for events rarer than 10% AEP. Historically, however, there has been a reluctance to convert
+        from the approach used for derivation of the design flood estimate. Furthermore, terminology
+        was attached to particular design flood estimation techniques; for example, when AMS were
+        used to derive design flood estimates, the resultant probability was expressed as an AEP
+        while when a PoTS was used for the same purpose, the resultant probability was expressed as
+        an ARI.</para>
+      <para>In many situations, this distinction between an ARI and an AEP was imprecise as the
+        design flood prediction methodology adopted did not explicitly note the use of either an AMS
+        or a PoTS in the methodology. As a result, use of ARI and AEP was considered to be
+        interchangeable. This interchangeable use often resulted in confusion.</para>
+      <para>The National Committee on Water Engineering believes that within Australian Rainfall and
+        Runoff a terminology should be used which, while being technically correct, is consistent
+        with other uses. Furthermore, the terminology adopted should be easily understood both by
+        the profession and by other stakeholders within the community.</para>
     </section>
-
     <section xml:id="b1_ch1-3_s_c6s8d">
       <title>Practicality and Acceptability</title>
-
-      <para>The National Committee on Water Engineering is aware that while
-      the terminology adopted must be technically correct it must also be
-      relatively simple and suitable for use in practice. Terminology that
-      meets this criterion will be accepted by the profession and by other
-      stakeholders.</para>
-
-      <para>A change from the terminology adopted in the 1987 Edition of
-      Australian Rainfall and Runoff has been deemed necessary as some
-      confusion still exists with regard to the interpretation of certain
-      terminology. This confusion exists both within the profession and within
-      the community and other stakeholders.</para>
-
-      <para>The interaction of the profession with the community and the
-      increased public participation in decision making means that terminology
-      needs to be clear not only to the profession but also to the community
-      and other stakeholders, other professions involved in flood management,
-      and to the managers of flood-prone land. This need has resulted in a
-      strong move for a clear and unambiguous terminology by the National
-      Committee on Water Engineering of Engineers Australia and the National
-      Flood Risk Advisory Group (NFRAG<?oxy_insert_start author="retallick" timestamp="20151126T182414+1100"?>,
-      <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T182415+1100" content="): NFRAG is "?>a
-      reference group under the Australian and New Zealand Emergency
-      Management Committee<?oxy_insert_start author="retallick" timestamp="20151126T182454+1100"?>)<?oxy_insert_end ?>.
-      All parties believe that terminology involving annual percentage
-      probability best conveys the likelihood of flooding and is less open to
-      misinterpretation by the public.</para>
+      <para>The National Committee on Water Engineering is aware that while the terminology adopted
+        must be technically correct it must also be relatively simple and suitable for use in
+        practice. Terminology that meets this criterion will be accepted by the profession and by
+        other stakeholders.</para>
+      <para>The interaction of the profession with the community and the increased public
+        participation in decision making means that terminology needs to be clear not only to the
+        profession but also to the community and other stakeholders, other professions involved in
+        flood management, and to the managers of flood-prone land. This need has resulted in a move
+        away from the terminology adopted in the 1987 Edition of Australian Rainfall and Runoff
+        towards a clear and unambiguous terminology supported by the National Committee on Water
+        Engineering of Engineers Australia and the National Flood Risk Advisory Group (NFRAG, a
+        reference group under the Australian and New Zealand Emergency Management Committee). All
+        parties believe that terminology involving annual percentage probability best conveys the
+        likelihood of flooding and is less open to misinterpretation by the public.</para>
     </section>
-
     <section xml:id="b1_ch1-3_s_aona4">
       <title>Adopted Terminology</title>
-
-      <para>The term x year ARI and 1 in x AEP has caused confusion both
-      within the industry and with the community and other stakeholders. It
-      has been interpreted by many to imply<?oxy_delete author="retallick" timestamp="20151126T183206+1100" content=" that"?>
-      the periods between exceedances of a given event magnitude.</para>
-
-      <para>To mitigate this confusion, the National Committee on Water
-      Engineering has decided to adopt the terms shown in <xref
-      linkend="arr_pref_term_table"/> and the suggested <?oxy_delete author="retallick" timestamp="20151126T182524+1100" content="usage"?><?oxy_insert_start author="retallick" timestamp="20151126T182524+1100"?>frequency
-      indicators<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T182539+1100" content=" as indicated in that table"?>.</para>
-
+      <para>To achieve the desired clarity of meaning, technical correctness, practicality and
+        acceptability, the National Committee on Water Engineering has decided to adopt the terms
+        shown in <xref linkend="arr_pref_term_table"/> and the suggested frequency
+        indicators.</para>
       <figure xml:id="arr_pref_term_table">
         <title>Australian Rainfall and Runoff Preferred Terminology</title>
-
         <mediaobject>
           <imageobject>
             <imagedata fileref="../../figures/1044.PNG"/>
           </imageobject>
         </mediaobject>
       </figure>
-
-      <para>Navy outline indicates preferred terminology. Shading indicates
-      acceptable terminology which is depends on the typical use in the far
-      right column. For example in floodplain management 0.5% AEP might be
-      used while in dam design this event would be described as a 1 in 200
-      AEP.</para>
-
-      <para>As shown in <xref linkend="arr_pref_term_table"/>, the term Annual
-      Exceedance Probability (AEP) where AEP expresses the probability of an
-      event being equalled or exceeded in any year. Additionally, AEP are to
-      be expressed using percentage probability; for example, the 1% AEP
-      design flood discharge. However, their will be situations where the use
-      of percentage probability is not practicable; expression of extreme
-      flood probabilities associated with dam spillways are one example of a
-      situation where percentage probability is not appropriate. In these
-      cases, it is recommended that the probability be expressed as 1 in X AEP
-      where 100/X would be the equivalent percentage probability.</para>
-
-      <para>For more frequent events an annualised exceedance probability is
-      misleading and confusing. Furthermore, a recurrence interval approach
-      also is misleading where strong seasonality is experienced. An example
-      of strong seasonality is where the rainfall occurs predominately during
-      the Summer or Winter period and as a consequence flood flows are more
-      likely to occur during that period. As a result, when strong seasonality
-      exists, calculating a design flood flow with a 3 month recurrence
-      interval is of limited value as the expectation of the time period
-      between occurrences will not be consistent throughout the year. For
-      example, a flow with the magnitude of a 3 month recurrence interval
-      would be expected to occur or be exceeded 4 times a year; however, in
-      situations where there is strong seasonality in the rainfall, all of the
-      occurrences are likely to occur in the domina<?oxy_delete author="retallick" timestamp="20151126T183423+1100" content="te"?><?oxy_insert_start author="retallick" timestamp="20151126T183425+1100"?>nt<?oxy_insert_end ?>
-      season.</para>
-
-      <para>Consequently, events more frequent than 50% AEP should be
-      expressed as X Exceedances per Year (EY). For example, 2 EY is
-      equivalent to a design event with a 6 month recurrence interval when
-      there is no seasonality in flood occurrence.</para>
-
-      <para>An additional consideration in reducing the confusion is that
-      different users of Australian Rainfall and Runoff, in general, will use
-      different segments of the relationship between flood magnitude and
-      exceedance probability. As the desire is to reduce confusion, switching
-      between different terminologies within an industry segment will not
-      reduce confusion but rather increase the confusion. Hence, while the
-      recommended terminology for alternative frequencies is presented in
-      <xref linkend="arr_pref_term_table"/>, it is recognised that usage may
-      differ from the suggestions shown in <xref
-      linkend="arr_pref_term_table"/>.</para>
-
-      <para><?oxy_insert_start author="retallick" timestamp="20151126T183517+1100"?>These
-      expressions of estimated frequencies relate to the particular time
-      period for which they have been determined and ttherefore with
-      <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T183535+1100" content="Finally, it should be noted that "?>no
-      consideration <?oxy_delete author="retallick" timestamp="20151126T183545+1100" content="has been "?>given
-      to the long term effects of climatic chang<?oxy_insert_start author="retallick" timestamp="20151126T183553+1100"?>e<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T183551+1100" content="e in developing this terminology"?>.
-      Nonetheless, the adopted terminology is considered to be equally
-      applicable to both stationary and non-stationary climatic environments
-      as there is no requirement for the annual exceedance probabilities to be
-      constant over time. <?oxy_delete author="retallick" timestamp="20151126T183609+1100" content="In other words, t"?><?oxy_insert_start author="retallick" timestamp="20151126T183611+1100"?>T<?oxy_insert_end ?>here
-      is no requirement for a given flood characteristic magnitude to maintain
-      a given AEP over different years or, conversely, for a given AEP to
-      maintain a constant flood characteristic magnitude over different
-      years.</para>
+      <para>Navy outline indicates preferred terminology. Shading indicates acceptable terminology
+        which is depends on the typical use. For example in floodplain management 0.5% AEP might be
+        used while in dam design this event would be described as a 1 in 200 AEP.</para>
+      <para>As shown in the third column of <xref linkend="arr_pref_term_table"/>, the term Annual
+        Exceedance Probability (AEP) expresses the probability of an event being equalled or
+        exceeded in any year in percentage terms, for example, the 1% AEP design flood discharge.
+        There will be situations where the use of percentage probability is not practicable; extreme
+        flood probabilities associated with dam spillways are one example of a situation where
+        percentage probability is not appropriate. In these cases, it is recommended that the
+        probability be expressed as 1 in X AEP where 100/X would be the equivalent percentage
+        probability.</para>
+      <para>For events more frequent than 50% AEP, expressing frequency in terms of annual
+        exceedance probability is not meaningful and misleading , as probability is constrained to a
+        maximum value of 1.0 or 100%. Furthermore, where strong seasonality is experienced, a
+        recurrence interval approach would also be misleading. An example of strong seasonality is
+        where the rainfall occurs predominately during the Summer or Winter period and as a
+        consequence flood flows are more likely to occur during that period. Accordingly, when
+        strong seasonality exists, calculating a design flood flow with a 3 month recurrence
+        interval is of limited value as the expectation of the time period between occurrences will
+        not be consistent throughout the year. For example, a flow with the magnitude of a 3 month
+        recurrence interval would be expected to occur or be exceeded 4 times a year; however, in
+        situations where there is strong seasonality in the rainfall, all of the occurrences are
+        likely to occur in the dominant season.</para>
+      <para>Consequently, events more frequent than 50% AEP should be expressed as X Exceedances per
+        Year (EY). For example, 2 EY is equivalent to a design event with a 6 month recurrence
+        interval when there is no seasonality in flood occurrence.</para>
+      <para>Different users of Australian Rainfall and Runoff, in general, will use different
+        segments of the relationship between flood magnitude and exceedance probability. To reduce
+        confusion, that may arise from switching between different terminologies, it is recommended
+        that consistent terminology in accordance with one of the columns of<xref
+          linkend="arr_pref_term_table"/> be used within an industry segment.</para>
+      <para>These expressions of estimated frequencies relate directly to the particular time period
+        for which data have been analysed and frequencies determined with no consideration given to
+        the long term effects of climatic change. Nonetheless, the adopted terminology is considered
+        to be equally applicable to both stationary and non-stationary climatic environments, as
+        there is no requirement for the annual exceedance probabilities to be constant over time.
+        Consequently, where flood characteristics are changing as result of long term climatic
+        change, the AEP of a flood characteristic for a future time period may be different or,
+        conversely, a flood characteristic magnitude corresponding to a given AEP may change.</para>
     </section>
   </section>
-
   <section>
     <title>Difference Between Design Events and Actual Events</title>
-
-    <para><?oxy_insert_start author="retallick" timestamp="20151126T183857+1100" type="surround"?><emphasis
-    role="bold"><?oxy_insert_end ?>Taken from 1987:</emphasis></para>
-
-    <para>Much confusion has resulted from lack of recognition of the
-    fundamental differences between these two types of flood estimation
-    problems. Although the same mathematical procedures may be involved in
-    both cases, the implications and assumptions involved, and the validity of
-    application, are quite different. <?oxy_delete author="retallick" timestamp="20151126T183917+1100" content="As noted in Section 1.1.4, t"?><?oxy_insert_start author="retallick" timestamp="20151126T183919+1100"?>T<?oxy_insert_end ?>he
-    emphasis in this document is<?oxy_insert_start author="retallick" timestamp="20151126T183922+1100"?>
-    largely<?oxy_insert_end ?> on design floods.</para>
-
-    <para>A design flood is a probabilistic or statistical estimate, being
-    generally based on some form of probability analysis of flood or rainfall
-    data. An <?oxy_delete author="retallick" timestamp="20151126T184132+1100" content="average recurrence interval or"?><?oxy_insert_start author="retallick" timestamp="20151126T184132+1100"?>Annual<?oxy_insert_end ?>
-    <?oxy_insert_start author="retallick" timestamp="20151126T184141+1100"?>E<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T184140+1100" content="e"?>xceedance
-    <?oxy_insert_start author="retallick" timestamp="20151126T184143+1100"?>P<?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T184143+1100" content="p"?>robability
-    is attributed to the estimate. This applies not only to normal routine
-    design, but also to probable maximum estimates, where the intention is to
-    obtain a design value with an extremely low probability of exceedance. If
-    a design rainfall is used in the estimation of a flood, it is not intended
-    to imply that if a rainfall of that amount occurred at a given time, the
-    estimated flood would result. Occurrence of the rainfall when the
-    catchment was wet might result in a very large flood of magnitude greater
-    than the design estimate, while occurrence of the rainfall when the
-    catchment was dry might result in relatively little, or even no, runoff.
-    For the design situation, the conditions are not known and must be
-    assumed, often implicitly in the design values that are adopted.</para>
-
-    <para>The approach to estimating an actual <?oxy_insert_start author="retallick" timestamp="20151126T184229+1100"?>(or
-    historic) <?oxy_insert_end ?>flood from a <?oxy_delete author="retallick" timestamp="20151127T113101+1100" content="sectioni"?><?oxy_insert_start author="retallick" timestamp="20151127T113101+1100"?>parti<?oxy_insert_end ?><?oxy_comment_start author="retallick" timestamp="20151126T184212+1100" comment="????????"?>cular
-    <?oxy_comment_end ?>rainfall is quite different in concept and is of a
-    deterministic nature. All causes and effects require consideration. The
-    actual antecedent conditions prevailing at the time of occurrence of the
-    rain are very important and must be allowed for in estimation of the
-    resulting flood. No real information is given regarding the probability of
-    the estimated flood.</para>
-
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-
-    <para>Although the differences in these two types of problems are often
-    not recognised, they have three important practical consequences. The
-    first is that a <?oxy_delete author="retallick" timestamp="20151127T113125+1100" content="section"?><?oxy_insert_start author="retallick" timestamp="20151127T113125+1100"?>part<?oxy_insert_end ?>icular
-    procedure may be good or satisfactory for one case, but quite unsuitable
-    for the other. For example, the Rational Method using the probabilistic
-    interpretation (Book IV Section 1.3.2) can be a very satisfactory approach
-    for estimating design floods for small to medium sized catchments, but is
-    not satisfactory for estimating the flood resulting from a given rainfall
-    (French et al., 1974).<?oxy_custom_end ?></para>
-
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-
-    <para>The second concerns the manner in which values of parameters are
-    derived from recorded data, and the manner in which designers regard these
-    values and apply them. If actual floods are to be estimated, values for
-    use in the calculations should be derived from calibration on individual
-    observed events. If design floods are to be estimated, the values should
-    be derived from statistical analyses of data from many observed floods.
-    For example, if the runoff coefficient in the Rational Method is to be
-    used to estimate floods resulting from actual rainfalls, values would have
-    to be derived as the ratio of flood peak to observed rainfall intensity in
-    individual floods. However for the design case, coefficients should be
-    derived as the ratio of values taken from frequency analyses of peak
-    discharge and rainfall intensity.</para>
-
-    <para>The third practical consequence concerns the manner in which
-    parameters are viewed by designers and analysts. For example, the common
-    visualisation of the runoff coefficient as the fraction of rainfall that
-    runs off is correct in the very unusual case where the Rational Method is
-    used to estimate an actual flood, but this concept is incorrect and
-    fundamentally misleading in the usual case where a design flood is to be
-    estimated. These particular examples are discussed further in Book IV
-    Section 1.3.2<?oxy_custom_end ?></para>
-
-    <para/>
+    <para>Much confusion has resulted from lack of recognition of the fundamental differences
+      between these two types events and associated of flood estimation problems. Although the same
+      mathematical procedures may be involved in both cases, the implications and assumptions
+      involved, and the validity of application, are quite different. The emphasis in this document
+      is largely on design floods.</para>
+    <para>A design flood is a probabilistic or statistical estimate, being generally based on some
+      form of probability analysis of flood or rainfall data. An Annual Exceedance Probability is
+      attributed to the estimate. This applies not only to normal routine design, but also to
+      probable maximum estimates, where no specific probability can be assigned but the intention is
+      to obtain a design value with an extremely low probability of exceedance. In the flood
+      estimation methods based on design rainfalls, the probability relationship between design
+      rainfall events and design flood events is not a direct one. Occurrence of a rainfall
+      eventwhen the catchment is wet might result in a very large flood, while occurrence of the
+      same rainfall event when the catchment was dry might result in relatively little, or even no
+      runoff. For the design situation, the combinations of different factors combining to produce a
+      flood event are not known and must be assumed, often implicitly in the design values that are
+      adopted.</para>
+    <para>The approach to estimating an actual (or historic) flood from a particular rainfall event
+      is quite different in concept and is of a deterministic nature. All causes and effects are
+      directly related to the specific event under consideration. The actual antecedent conditions
+      prevailing at the time of occurrence of the rain are directly reflected in the resulting flood
+      and must be allowed for in its estimation. No real information on the probability of the on
+      flood probability can be gained from consideration of a single actual flood event.</para>
+    <para>Although the differences in these two types of events are often not recognised, they have
+      three important practical consequences. The first is that a particular procedure might be
+      might be appropriate for analysing actual flood events but quite unsuitable for probabilistic
+      design flood events. </para>
+    <para>The second concerns the manner in which values of parameters are derived from recorded
+      data, and the manner in which designers regard these values and apply them. If actual floods
+      are to be estimated, values for use in the calculations should be derived from calibration on
+      individual observed events. If design floods are to be estimated, the values should be derived
+      from statistical analyses of data from many observed floods.</para>
+    <para>The third practical consequence concerns the manner in which parameters are viewed by
+      designers and analysts. For example, design initial losses for bursts can be very different
+      from event initial losses derived from actual events, yet practitioners still often compare
+      them without understanding the differences.</para>
   </section>
-
   <section>
-    <title>Flood Concepts</title>
-
-    <para/>
-
+    <title>Probability Concepts</title>
     <section>
-      <title>Conversion of Rainfall of a Given Probability to a Flood of the
-      Same Probability</title>
-
-      <para><?oxy_insert_start author="retallick" timestamp="20151126T185131+1100" type="surround"?><emphasis
-      role="bold"><?oxy_insert_end ?>From 1987:</emphasis></para>
-
-      <para>In many applications of design flood estimation, the intention is
-      to derive a flood of selected probability of exceedance from a design
-      rainfall of the same probability. However, each section of the design
-      model introduces some joint probability, resulting in the fundamental
-      problem that the true probability of the derived flood may be obscure,
-      and its magnitude may be biased with respect to the true flood magnitude
-      with the same probability as the design rainfall, especially at the low
-      probabilities of interest in design.</para>
-
-      <para>Three approaches have been used in Australian practice to deal
-      with this problem:</para>
-
-      <para><orderedlist numeration="lowerroman">
-          <listitem>
-            <para>Use of median values of variables other than rainfall depth.
-            Use of extreme values of losses, baseflow, temporal pattern of
-            rainfall and hydrograph model parameters would be likely to
-            convert the design rainfall of selected probability to a flood
-            with much lower probability. For each of the variables that
-            contribute to the flood estimate, the probability of occurrence of
-            a value higher than the median is the same as that of a value
-            lower than the median. While rigorous proof is not possible, use
-            of median values is likely to lead to a flood estimate of similar
-            probability to that of the design rainfall. In some regions,
-            seasonality of values may need to be considered. This approach has
-            been used as a basis for much of the design data in this
-            <?oxy_delete author="retallick" timestamp="20151126T190345+1100" content="document"?><?oxy_insert_start author="retallick" timestamp="20151126T190346+1100"?>guideline<?oxy_insert_end ?>.
-            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>There
-            is a need for research to test this approach. <?oxy_custom_end ?>“Worst”
-            values of design parameters have sometimes been used to provide
-            some conservatism in design. Examples are high runoff
-            coefficients, the lowest derived loss rate,<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-            or the highest peak of derived unit hydrographs.<?oxy_custom_end ?>
-            This results in a flood estimate with a probability of exceedance
-            lower than that of the design rainfall but of unknown value. If
-            more conservative design is required, it is better to select a
-            lower design probability, and then use median values of all other
-            relevant variables to estimate the flood of that
-            probability.</para>
-          </listitem>
-
-          <listitem>
-            <para>Derivation of design relations or data from comparison of
-            values of the same probability obtained from frequency analyses of
-            observed floods and rainfalls. The effects of other variables are
-            automatically taken care of by this approach, as the flood of
-            selected probability is directly linked with the rainfall of the
-            same probability. T<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>he
-            probabilistic interpretation of the Rational Method (Book IV
-            Section 1.3.2) is the best example of this approach, but it can
-            also be used to determine design values of other
-            variables.<?oxy_custom_end ?> Some of the design data in this
-            <?oxy_delete author="retallick" timestamp="20151126T190607+1100" content="document"?><?oxy_insert_start author="retallick" timestamp="20151126T190607+1100"?>guideline<?oxy_insert_end ?>
-            have been derived using this approach.</para>
-          </listitem>
-
-          <listitem>
-            <para>Consideration of the joint probabilities of the variables
-            contributing to the flood discharge. The stochastic nature of the
-            variables can be incorporated into the flood estimate by means of
-            transition probability matrices, or a large number of simulations
-            using values drawn randomly from assumed probability distributions
-            of the variables. While this approach is theoretically superior to
-            the two described previously, uncertainty at the low probabilities
-            of interest in design is increased by lack of definition of the
-            tails of the several probability distributions involved. This type
-            of approach was developed by Beran and Sutcliffe (1972) and Beran
-            (1973) for the UK Flood Studies Report (Natural Environment
-            Research Council 1975).<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-            Although the approach has not been used in developing any of the
-            design data in this document, it is recommended as an attractive
-            design approach where the work involved is warranted. The method
-            is capable of further development. Some Australian applications
-            are described by Laurenson (1973, 1974), Ahern and Weinmann
-            (1982), Gutteridge Haskins and Davey (1982) and Goyen
-            (1983).<?oxy_custom_end ?><?oxy_comment_start author="retallick" timestamp="20151126T190832+1100" comment="modern references?"?></para>
-
-            <?oxy_comment_end ?>
-          </listitem>
-        </orderedlist></para>
-
-      <para/>
+      <title>Probability Relationship Between Design Rainfall and Design Flood
+        Characteristics</title>
+      <para>In the flood frequency based design flood estimation approaches covered in Book 3, the
+        probabilities of a specific event magnitude being equalled or exceeded are estimated
+        directly for the flood characteristic of interest (e.g. peak flow or flood volume). However,
+        for the catchment simulation and hydrograph estimation procedures covered in Books 4, 5 and
+        7, the exceedance probability associated with design rainfall, as the primary probabilistic
+        input to the design flood estimation procedure, needs to preserved in its transformation to
+        a design flood. This concept is often referred to as AEP neutrality. </para>
+      <para>However, each of the processes represented in a model that converts rainfall to runoff
+        and forms a flood hydrograph at the point of interest introduces some joint probability,
+        resulting in the fundamental problem that the true probability of the derived flood
+        characteristic may be obscure, and its magnitude may be biased with respect to the true
+        flood magnitude with the same probability as the design rainfall, especially at the low
+        probabilities of interest in design.</para>
+      <para>Since publication of ARR87 (Pilgrim,1987) there has been a steady shift towards methods
+        that better account for the stochastic nature of how floods of different magnitude and
+        exceedance probabilities are generated. Procedures of different complexity to deal with this
+        fundamental issue are discussed in Chapter 3.</para>
     </section>
-
     <section>
-      <title>Expected Probability</title>
-
-      <para><?oxy_insert_start author="retallick" timestamp="20151126T190839+1100" type="surround"?><emphasis
-      role="bold"><?oxy_insert_end ?>From 1987:</emphasis></para>
-
-      <para>Estimates of probabilities and of population frequency
-      distributions from recorded data samples are always biased as a result
-      of the relatively short length of record and hence small sample size.
-      For a given event magnitude, the ARI is overestimated or the AEP is
-      underestimated. If the estimate involves little or no extrapolation of
-      the observed range of data, and especially if the skew is small, the
-      effect of bias is small. However, if extrapolation is required and high
-      skews are involved, the bias can be large. <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The
-      problem of, and methods for, obtaining unbiased estimates of the
-      population probabilities (which are generally termed “expected
-      probabilities”) are discussed, for example, in Beard (1960), Hardison
-      and Jennings (1972), Doran and Irish (1980), Bulletin 17B of the
-      Interagency Advisory Committee on Water Data (1982), and Pescod and
-      Canterford (1985). <?oxy_custom_end ?></para>
-
-      <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The
-      problem has been largely ignored in Australian practice in the past.
-      <?oxy_custom_end ?>However, sound design requires that bias should be
-      eliminated where possible. <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>In
-      view of the long records of rainfall and their relatively low skews, a
-      decision was made in conjunction with the Bureau of Meteorology that the
-      effect of expected probabilities would not be incorporated in the
-      derivation of the design rainfall data in Book II Section 1 for ARIs up
-      to 100 years. <?oxy_custom_end ?>The effects for flood frequency
-      analysis are greater, and these are considered explicitly as
-      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>discussed
-      in Book IV Section 2.6. Suggestions are made of design situations where
-      corrections for expected probability should be made, and of those where
-      no correction should be made.<?oxy_custom_end ?></para>
+      <title>Choosing a Quantile Estimator</title>
+      <para>The 1 in Y AEP quantile corresponds to the flood magnitude with annual probability of
+        exceedance equal to 1/Y. Because the parameters of the flood frequency distribution have to
+        be estimated from limited data, the true quantile is not known. Different quantile estimates
+        are available depending on the application. These are described in Book 3, Chapter 2. </para>
+      <para>In cases where the interest is principally on the accurate estimation of the AEP that
+        corresponds to a specified flood magnitude (e.g. the flood level at which a particular flood
+        protection structure is expected to fail), an expected AEP (or expected probability)
+        quantile should be used. The use of such a quantile ensures that, on average, its AEP equals
+        the true value. In cases where the mean-squared-error in the flood magnitude is to be
+        minimized for a given AEP, expected parameter quantiles should be used. </para>
+      <para>The difference between these quantile estimates is typically not of significance when
+        there is little or no extrapolation of the observed range of data, and especially if the
+        skew is small. However, if extrapolation is required and high skews are involved, the
+        difference can be appreciable. The methods in Book 3, Chapter 2 describes how to estimates
+        these quantiles.</para>
     </section>
-
-    <?oxy_delete author="retallick" timestamp="20151126T212655+1100" content="&lt;section&gt;&lt;title&gt;Probability of Failure of Works Involving a Series of Structures&lt;/title&gt;&lt;para&gt;&lt;emphasis role=&quot;bold&quot;&gt;From 1987:&lt;/emphasis&gt;&lt;/para&gt;&lt;para&gt;With a railway or major road, flooding of any one stream crossing will cause closure of the route. The item of real interest is the probability of this closure, and not of failure at any sectionicular site. This probability of closure will be much greater than that at an individual site. Closure of the route at any site may cause major disruption and economic losses. &lt;/para&gt;&lt;para&gt;This problem has received little recognition in Australia, but the approaches used to provide solutions for iron ore railways of high economic importance in the Pilbara region of Western Australia are described by Ribeny (1971), Fricke et al (1983) and Netchaef (1983), as discussed in Book III Section 1.6.&lt;/para&gt;&lt;/section&gt;"?>
+    <section>
+      <title>Avoiding Inconsistencies in Procedures and Resolution</title>
+      <para>The important step often overlooked by practitioners is mistakenly using an input or
+        parameter that was derived a particular way and at a particular resolution in a manner that
+        is different to how it was derived. This is particularly difficult to avoid with digital
+        data sets compiled from different sources and resolutions. Historically problems have arisen
+        when a method was derived from one scale map and used at a different scale.[pew1]
+        [pew1]Without giving a clear recommendation (e.g. It is the responsibility of practitioners
+        to ensure that procedures and design data applied in a particular application are
+        appropriate for the nature and location of their specific design problem) this section is of
+        not much use and can be left out.</para>
+    </section>
   </section>
-
-  <?oxy_insert_start author="retallick" timestamp="20151126T212227+1100"?>
-
   <section>
-    <title>Risk</title>
-
-    <para>Floods can cause significant impacts where they interact with the
-    community and the supporting natural and built environment. However,
-    flooding also has the potential to be the most manageable natural disaster
-    as the likelihood and consequences of the full range of flood events can
-    be understood enabling risks to be assessed and where necessary managed.
-    Risk and design flood estimation is discussed in detail in<emphasis
-    role="bold"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-    Section 1.5.<?oxy_custom_end ?></emphasis></para>
-
-    <para/>
-
+    <title>Risk-based Design</title>
+    <para>Floods can cause significant impacts where they interact with the community and the
+      supporting natural and built environment. However, flooding also has the potential to be the
+      most manageable natural disaster as the likelihood and consequences of the full range of flood
+      events can be understood, enabling risks to be assessed and where necessary managed. There is
+      strong move from managing floods by a by simple standards approach, where a certain frequency
+      of flooding is deemed acceptable, to risk-based approaches, where the consequence and
+      probability of design capacity being exceeded are assessed explicitly. Risk and design flood
+      estimation concepts are discussed in detail in<emphasis role="bold"> Section
+      1.5.</emphasis></para>
     <section>
-      <title>Probability of Failure of Works Involving a Series of
-      Structures</title>
-
-      <para><emphasis role="bold">From 1987:</emphasis></para>
-
-      <para>With a railway or major road, flooding of any one stream crossing
-      will cause closure of the route. The item of real interest is the
-      probability of this closure, and not of failure at any particular site.
-      This probability of closure will be much greater than that at an
-      individual site. Closure of the route at any site may cause major
-      disruption and economic losses. <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?></para>
-
-      <para>This problem has received little recognition in Australia, but the
-      approaches used to provide solutions for iron ore railways of high
-      economic importance in the Pilbara region of Western Australia are
-      described by Ribeny (1971), Fricke et al (1983) and Netchaef (1983), as
-      discussed in Book III Section 1.6.<?oxy_custom_end ?></para>
-
-      <para>This is discussed in detail in <emphasis
-      role="bold"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>SECTION
-      1.<?oxy_custom_end ?>5</emphasis></para>
+      <title>Route Serviceability</title>
+      <para>A particular aspect of risk based approaches is where total system risk is of main
+        interest. With a railway or major road, flooding of any one of many stream crossings will
+        cause closure of the route. The item of real interest is the probability of this closure,
+        and not of failure at any particular site. This probability of closure will be much greater
+        than that at an individual site. Closure of the route at any site may cause major disruption
+        and economic losses. Upgrade works can be targeted at reducing the probability of
+        closure.</para>
+      <para>This problem is receiving increasing attention from transport managers and is discussed
+        in detail in <emphasis role="bold">SECTION 1.5</emphasis></para>
     </section>
   </section>
-
   <section>
     <title>The Importance of Data</title>
-
-    <para>Data is fundamental to flood estimation. Data is needed to
-    understand the processes and to ensure that models are accurate and
-    reflect the real world issues being analysed. Flood estimation primarily
-    uses data that describes the rainfall, water levels and streamflow. The
-    procedures and guidelines presented in ARR could not have been developed
-    without historical data, and often the reliability of the methods
-    presented depends on the extent of data that has been used in
-    development.</para>
-
-    <para>For the first time, ARR has been based completely on Australian data
-    to better reflect Australia’s variable landscape, including a national
-    database of extreme flood hazards. A major task of the current ARR update
-    was assembling national databases of rainfall and streamflow data for
-    developing inputs and methodologies. ARR 1987 used 600 pluviographs
-    rainfall gauge (measures the amount of rainfall which fell) with greater
-    than 6 years data and 7500 daily rainfall gauges with over 30 years
-    record. ARR 2015 uses almost 30 years of extra rainfall and streamflow
-    data. ARR 2016 used over 2200 pluviographs and over 8000 daily rainfall
-    gauges. Over 900 streamflow gauges were analysed. Over 100, 000 storm
-    events were analysed. This data provides a valuable resource for the
-    development of future methodologies.</para>
-
-    <para>Major improvements have been made to design flood estimation methods
-    but national databases will allow the use and parameterisation of more
-    complex methods. Major advances will continue that will allow us to
-    leverage the limited data we can afford to collect on the continent
-    nation. Many projects have opened the eyes of researchers and
-    practitioners on what could be done with more time, money and the limited
-    data available. The data sets developed as part of this update should be
-    enhanced and used for future improvements.</para>
-
+    <para>Data is fundamental to flood estimation. Data is needed to understand the processes
+      involved in the formation of floods and to ensure that models are accurate and reflect the
+      real world issues being analysed. Flood estimation primarily uses data that describes the
+      rainfall, streamflow and water levels. The procedures and guidelines presented in ARR could
+      not have been developed without historical data, and often the reliability of the methods
+      presented depends on the extent of data that has been used in development.</para>
+    <para>For the first time, ARR has been based completely on Australian data to better reflect
+      Australia’s variable landscape, including a national database of extreme flood hazards. A
+      major task of the current ARR update was assembling a national databases of rainfall and
+      streamflow data for developing inputs and methodologies. ARR 1987 used 600 pluviographs
+      rainfall gauge (measures the amount of rainfall which fell) with greater than 6 years data and
+      7500 daily rainfall gauges with over 30 years record. ARR 2016 uses almost 30 years of extra
+      rainfall and streamflow data, including data from over 2200 pluviographs and over 8000 daily
+      rainfall gauges. Over 900 streamflow gauges were analysed. Over 100, 000 storm events were
+      analysed. This data provides a valuable resource for the development of future
+      methodologies.</para>
+    <para>Major improvements have been made to design flood estimation methods but national
+      databases will allow the use and parameterisation of more complex methods. Major advances will
+      continue that will allow us to leverage the limited data we can afford to collect on the
+      continent nation. Many projects have opened the eyes of researchers and practitioners on what
+      could be done with more time, money and the still limited data available. The data sets
+      developed as part of this update should be enhanced and applied to for future
+      improvements.</para>
     <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-
-    <para>Section xxx <?oxy_custom_end ?>provides a summary the types of data
-    used for flood estimation.</para>
+    <para>Schapter 4 <?oxy_custom_end?>provides a summary of the types of data used for flood
+      estimation.</para>
   </section>
-
   <section>
     <title>Climate Change</title>
-
-    <para>ARR 1987 (Pilgrim,1987) while acknowledging climate change did not
-    address climate change or non-stationarity or provide guidance on the
-    inclusion of climate change impacts in flood estimation. One key aim of
-    this edition was the incorporation of the best available information of
-    climate change impacts on flooding.</para>
-
-    <para>This edition of ARR funded research projects which investigated:How
-    climate change will affect flooding and the factors influencing flooding;
-    How to incorporate climate change into the investigation methodologies
-    used by the engineering profession to estimate design floods;Updating of
-    the methodology in Australian Rainfall and Runoff so that the outcomes
-    from climate change research (eg. regional dynamic downscaling) can be
-    incorporated easily into the investigation methodology as the science and
-    results become available.</para>
-
-    <para>The impacts of climate change on design flood estimation is
-    discussed in detail in <emphasis role="bold"><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Section
-    1.7<?oxy_custom_end ?>.</emphasis> More detail can be found in the
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>ARR
-    Climate Change Research Plan and ARR Project 1: Climate Change Synthesis
-    report. <?oxy_custom_end ?></para>
-
+    <para>ARR 1987 (Pilgrim,1987) while acknowledging climate change did not address climate change
+      or non-stationarity or provide guidance on the inclusion of climate change impacts in flood
+      estimation. One key aim of this edition was the incorporation of the best available
+      information of climate change impacts on flooding.</para>
+    <para>This edition of ARR funded research projects which investigated the following aspects:<itemizedlist>
+        <listitem>
+          <para>How climate change will affect flooding and the factors influencing flooding;
+          </para>
+        </listitem>
+        <listitem>
+          <para>How to incorporate climate change into the investigation methodologies used by the
+            engineering profession to estimate design floods;</para>
+        </listitem>
+        <listitem>
+          <para>Updating of the methodology in Australian Rainfall and Runoff so that the outcomes
+            from climate change research (eg. regional dynamic downscaling) can be incorporated
+            easily into the investigation methodology as the science and results become
+            available.</para>
+        </listitem>
+      </itemizedlist></para>
+    <para>The impacts of climate change on design flood estimation are discussed in detail in
+        <emphasis role="bold"
+        ><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Section
+        1.7<?oxy_custom_end?>.</emphasis> More detail can be found in the
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>ARR Climate Change Research
+      Plan and ARR Project 1: Climate Change Synthesis report. <?oxy_custom_end?></para>
     <section>
       <title>Climate change impacts on flooding</title>
-
-      <para>Global warming has been observed over several decades, and has
-      been linked to changes in the large-scale hydrological cycle including
-      increasing atmospheric water vapour content; changing precipitation
-      patterns, intensity and extremes; changes in soil moisture and runoff;
-      and increasing melting of snow and ice (Bates et al., 2008).There is
-      increasing evidence that human-induced climate change is changing
-      precipitation extremes, and that extreme flooding globally has increased
-      over the 20th century (Trenberth, 2011). There is confidence that these
-      changes in the hydrological cycle will lead to increased variability in
-      precipitation and increased frequency of flood events over many areas
-      (IPCC 2007, Bates et al. 2008). Changes in climate will result in
-      changes in the frequency, intensity, spatial extent, duration, and
-      timing of extreme weather and climate events, and may lead to
-      unprecedented extreme weather and climate events (IPCC, 2012).</para>
-
-      <para>The major areas where climate change will impact flooding
-      are:</para>
-
+      <para>Global warming has been observed over several decades, and has been linked to changes in
+        the large-scale hydrological cycle including increasing atmospheric water vapour content;
+        changing precipitation patterns, intensity and extremes; changes in soil moisture and
+        runoff; and increasing melting of snow and ice (Bates et al., 2008).There is increasing
+        evidence that human-induced climate change is changing precipitation extremes, and that
+        extreme flooding globally has increased over the 20th century (Trenberth, 2011). There is
+        confidence that these changes in the hydrological cycle will lead to increased variability
+        in precipitation and increased frequency of flood events over many areas (IPCC 2007, Bates
+        et al. 2008). Changes in climate will result in changes in the frequency, intensity, spatial
+        extent, duration, and timing of extreme weather and climate events, and may lead to
+        unprecedented extreme weather and climate events (IPCC, 2012).</para>
+      <para>The major areas where climate change will impact flooding are:</para>
       <itemizedlist>
         <listitem>
           <para>Design rainfall intensity-frequency-duration;</para>
         </listitem>
-
         <listitem>
           <para>Storm type, frequency, and depth;</para>
         </listitem>
-
         <listitem>
           <para>Rainfall spatial and temporal patterns;</para>
         </listitem>
-
         <listitem>
           <para>Antecedent conditions;</para>
         </listitem>
-
         <listitem>
           <para>Changes in sea level and;</para>
         </listitem>
-
         <listitem>
-          <para>The joint probability of storm surge and flood producing
-          rainfall.</para>
+          <para>The joint probability of storm surge and flood producing rainfall.</para>
         </listitem>
       </itemizedlist>
-
       <section>
         <title>Climate Change Impacts on Rainfall</title>
-
-        <para>Changes in extremes events, such as floods, can be linked to
-        changes in the mean, variance, or shape of probability distributions,
-        or all of these (IPCC, 2012). For example, climate change projections
-        have shown that a relatively small shift in the distribution of
-        precipitation may result in a large change in the frequency and
-        magnitude of extreme precipitation events (Nicholls and Alexander,
-        2007). Studies have shown that a change in the shape of the
-        distribution of precipitation is likely to have a greater effect on
-        the frequency of extremes than a shift in the mean precipitation
-        (White, 2010; Groisman et al. 1999), and that climate change is most
-        likely to increase climate variability, particularly affecting the
-        extremes (Jones et al., 2012; Fowler and Ekstrom, 2009).</para>
-
-        <para>A warming climate leads to an increase in the water holding
-        capacity of the air, which causes an increase in the atmospheric water
-        vapour that supplies storms, resulting in more intense precipitation.
-        This effect is observed, even in areas where total precipitation is
-        decreasing (Trenberth, 2011). Indeed, some of the largest impacts of
-        climate change are likely to result from a shift in the frequency and
-        strength of climatic extremes, including precipitation (White et al.,
-        2010). It is likely that the frequency of heavy precipitation will
-        increase by the end of the 21st century, particularly in the high
-        latitudes and tropical regions and there is likely to be an increase
-        in heavy rainfalls associated with tropical cyclones (IPCC,
-        2012).</para>
-
-        <para>There have been many studies globally that have found increases
-        in the intensity or frequency of extreme precipitation events (Bates
-        et al., 2008; Westra et al., 2013). It is likely that since the 1970s
-        the frequency of heavy precipitation events has increased over most
-        areas (Bates, et al. 2008). From 1950 to 2005, extreme daily rainfall
-        intensity and frequency has increased in north-western and central
-        Australia and over the western tablelands of New South Wales, but
-        decreased in the south-east and south-west and along the central east
-        coast (CSIRO, 2007). Projections analysed by CSIRO (2007) showed that
-        an increase in daily precipitation intensity is likely under climate
-        change. The study found that the highest 1% of daily rainfalls tends
-        to increase in the north of Australia and decrease in the south, with
-        widespread increases in summer and autumn, but not in the south in
-        winter and spring when there is a strong decrease in mean
-        precipitation (CSIRO 2007).</para>
-
-        <para>The increases in precipitation are more evident in sub-daily
-        rainfalls and major changes in the intensity and temporal patterns of
-        sub-daily rainfalls can be expected by the end of the 21st century
-        (Westra et al., 2013). In a study of downscaled outputs from climate
-        models, Abbs and Rafter (2008) found that by 2070 the models projected
-        an increase of an average of 40% in intensity for 24 and 72 hour
-        events around the Queensland-New South Wales border, and an increase
-        of more than 70% in the two hour rainfall events in the high terrain
-        inland from the Gold Coast.</para>
+        <para>Changes in extremes events, such as floods, can be linked to changes in the mean,
+          variance, or shape of probability distributions, or all of these (IPCC, 2012). For
+          example, climate change projections have shown that a relatively small shift in the
+          distribution of precipitation may result in a large change in the frequency and magnitude
+          of extreme precipitation events (Nicholls and Alexander, 2007). Studies have shown that a
+          change in the shape of the distribution of precipitation is likely to have a greater
+          effect on the frequency of extremes than a shift in the mean precipitation (White, 2010;
+          Groisman et al. 1999), and that climate change is most likely to increase climate
+          variability, particularly affecting the extremes (Jones et al., 2012; Fowler and Ekstrom,
+          2009).</para>
+        <para>A warming climate leads to an increase in the water holding capacity of the air, which
+          causes an increase in the atmospheric water vapour that supplies storms, resulting in more
+          intense precipitation. This effect is observed, even in areas where total precipitation is
+          decreasing (Trenberth, 2011). Indeed, some of the largest impacts of climate change are
+          likely to result from a shift in the frequency and strength of climatic extremes,
+          including precipitation (White et al., 2010). It is likely that the frequency of heavy
+          precipitation will increase by the end of the 21st century, particularly in the high
+          latitudes and tropical regions and there is likely to be an increase in heavy rainfalls
+          associated with tropical cyclones (IPCC, 2012).</para>
+        <para>There have been many studies globally that have found increases in the intensity or
+          frequency of extreme precipitation events (Bates et al., 2008; Westra et al., 2013). It is
+          likely that since the 1970s the frequency of heavy precipitation events has increased over
+          most areas (Bates, et al. 2008). From 1950 to 2005, extreme daily rainfall intensity and
+          frequency has increased in north-western and central Australia and over the western
+          tablelands of New South Wales, but decreased in the south-east and south-west and along
+          the central east coast (CSIRO, 2007). Projections analysed by CSIRO (2007) showed that an
+          increase in daily precipitation intensity is likely under climate change. The study found
+          that the highest 1% of daily rainfalls tends to increase in the north of Australia and
+          decrease in the south, with widespread increases in summer and autumn, but not in the
+          south in winter and spring when there is a strong decrease in mean precipitation (CSIRO
+          2007).</para>
+        <para>The increases in precipitation are more evident in sub-daily rainfalls and major
+          changes in the intensity and temporal patterns of sub-daily rainfalls can be expected by
+          the end of the 21st century (Westra et al., 2013). In a study of downscaled outputs from
+          climate models, Abbs and Rafter (2008) found that by 2070 the models projected an increase
+          of an average of 40% in intensity for 24 and 72 hour events around the Queensland-New
+          South Wales border, and an increase of more than 70% in the two hour rainfall events in
+          the high terrain inland from the Gold Coast.</para>
       </section>
-
       <section>
         <title>Antecedent Conditions</title>
-
-        <para>Changes in the patterns of precipitation and in evaporation will
-        lead to changes in antecedent conditions prior to flood events,
-        affecting soil moisture and thus loss rates in the catchment (Bates
-        et. al., 2008). Potential evaporation is projected to increase almost
-        everywhere on a global scale due to an increase in the water-holding
-        capacity of the atmosphere with higher temperatures combined with
-        little projected change in relative humidity (Bates et al.
-        2008).</para>
-
-        <para>Projections of potential evapotranspiration over Australia show
-        increases by 2030 and 2070. The largest projected increases are in the
-        north and east, where the change by 2030 ranges from little change to
-        a 6% increase, with the best estimate being a 2% increase. By 2070,
-        the A1FI scenario gives increases of 2% to 10% in the south and west
-        with a best estimate of around 6%, and a range of 6% to 16% in the
-        north and east with a best estimate around 10%. (CSIRO, 2007).</para>
-
-        <para>Projected decreases in rainfall over much of Australia combined
-        with increases in evaporation may result in disproportionate decreases
-        in runoff due to a disconnection between surface and groundwater, as
-        was experienced in parts of Australia during the Millennium drought
-        (CSIRO, 2012).</para>
+        <para>Changes in the patterns of precipitation and in evaporation will lead to changes in
+          antecedent conditions prior to flood events, affecting soil moisture and thus loss rates
+          in the catchment (Bates et. al., 2008). Potential evaporation is projected to increase
+          almost everywhere on a global scale due to an increase in the water-holding capacity of
+          the atmosphere with higher temperatures combined with little projected change in relative
+          humidity (Bates et al. 2008).</para>
+        <para>Projections of potential evapotranspiration over Australia show increases by 2030 and
+          2070. The largest projected increases are in the north and east, where the change by 2030
+          ranges from little change to a 6% increase, with the best estimate being a 2% increase. By
+          2070, the A1FI scenario gives increases of 2% to 10% in the south and west with a best
+          estimate of around 6%, and a range of 6% to 16% in the north and east with a best estimate
+          around 10%. (CSIRO, 2007).</para>
+        <para>Projected decreases in rainfall over much of Australia combined with increases in
+          evaporation may result in disproportionate decreases in runoff due to a disconnection
+          between surface and groundwater, as was experienced in parts of Australia during the
+          Millennium drought (CSIRO, 2012).</para>
       </section>
-
       <section>
         <title>Sea Level</title>
-
-        <para>The relatively small rise in sea level that is seen in observed
-        data over the past century has already caused a significant change in
-        the frequency of extreme sea-level events, and associated flooding
-        (Hunter, 2007). Studies of observed sea level data worldwide have
-        shown that sea level rise is the predominant cause of increases in the
-        frequency of extreme sea level events (IPCC, 2007; Hunter, 2007).
-        There is high confidence that there has been an increase in the
-        frequency of high coastal sea level events of a given magnitude, and
-        that extreme flooding events due to sea level rise will increase
-        significantly, dependent on location (Church et al. 2012). The likely
-        range of global-mean sea level rise between the 1980 – 1999 and 2090 –
-        2099 periods is given by IPCC (2007) as 0.18 – 0.59 m. There is high
-        confidence that the global rate of sea level rise has increased
-        between the mid-19th and the mid-20th centuries. The average rate was
-        1.7 ± 0.5 mm/yr for the 20th century and 3.1 ± 0.7 mm/yr for 1993–2003
-        (Bates et al., 2008). The observed rate of sea level rise in the
-        Australian region from 1993 - 2011 has high spatial variability, with
-        a maximum in the north and north-west coasts of Australia of 9mm/yr,
-        and a rate of 2 to 4 mm/yr on the south-eastern and eastern Australian
-        coastline (Church et al., 2012).</para>
+        <para>The relatively small rise in sea level that is seen in observed data over the past
+          century has already caused a significant change in the frequency of extreme sea-level
+          events, and associated flooding (Hunter, 2007). Studies of observed sea level data
+          worldwide have shown that sea level rise is the predominant cause of increases in the
+          frequency of extreme sea level events (IPCC, 2007; Hunter, 2007). There is high confidence
+          that there has been an increase in the frequency of high coastal sea level events of a
+          given magnitude, and that extreme flooding events due to sea level rise will increase
+          significantly, dependent on location (Church et al. 2012). The likely range of global-mean
+          sea level rise between the 1980 – 1999 and 2090 – 2099 periods is given by IPCC (2007) as
+          0.18 – 0.59 m. There is high confidence that the global rate of sea level rise has
+          increased between the mid-19th and the mid-20th centuries. The average rate was 1.7 ± 0.5
+          mm/yr for the 20th century and 3.1 ± 0.7 mm/yr for 1993–2003 (Bates et al., 2008). The
+          observed rate of sea level rise in the Australian region from 1993 - 2011 has high spatial
+          variability, with a maximum in the north and north-west coasts of Australia of 9mm/yr, and
+          a rate of 2 to 4 mm/yr on the south-eastern and eastern Australian coastline (Church et
+          al., 2012).</para>
       </section>
     </section>
   </section>
-
-  <?oxy_insert_end ?>
-
   <section>
     <title>Dealing with Uncertainty</title>
-
-    <para>Real content needs to be inserted h<?oxy_insert_start author="retallick" timestamp="20151126T212043+1100"?>ere.
-    <?oxy_insert_end ?><?oxy_delete author="retallick" timestamp="20151126T212042+1100" content="ere."?></para>
+    <para>Real content needs to be inserted here. </para>
+  </section>
+  <section>
+    <title>References</title>
+    <para>Abbs and Rafter (2008)</para>
+    <para>Abbs and Rafter (2009): <emphasis role="italic">Impact of Climate Variability and Climate
+        Change on Rainfall Extremes in Western Sydney and Surrounding Areas</emphasis>: Component 4
+      – dynamical downscaling, CSIRO</para>
+    <para>Bates, B. C., Z. W. Kundzewicz, S. Wu, and J. P. Palutikof (2008): <emphasis role="italic"
+        >Climate Change and Water. Technical Paper of the Intergovernmental Panel on Climate Change,
+      </emphasis>Rep., 210 pp, IPCC Secretariat, Geneva.</para>
+    <para>Church, J.A., N.J.White, J.RHunter, K.L.McInnes (2012) <emphasis role="italic">Sea level.
+        In A Marine Climate Change Impacts and Adaptation Report Card for Australia 2012
+      </emphasis>(Eds. E.S. Poloczanska, A.J. Hobday and A.J. Richardson).
+      &lt;http://www.oceanclimatechange.org.au>. ISBN: 978-0-643-10928-5 </para>
+    <para>CSIRO and Australian Bureau of Meteorology. (2007). <emphasis role="italic">Climate Change
+        in Australia, CSIRO and Bureau of Meteorology Technical Report</emphasis>, 140 pp.
+      www.climatechangeinaustralia.gov.au </para>
+    <para>CSIRO (2012): <emphasis role="italic">Climate and water availability in south-eastern
+        Australia: A synthesis of findings from Phase 2 of the South Eastern Australian Climate
+        Initiative (SEACI)</emphasis>, CSIRO, Australia, September 2012, 41 pp.</para>
+    <para>Fowler, H.J., and M.Ekstrom (2009): <emphasis role="italic">Multi-model ensemble estimates
+        of climate change impacts on UK seasonal precipitation extremes</emphasis>, International
+      Journal of Climatology, 29, 385-416.</para>
+    <para>Groisman PY, Karl TR, Easterling DR, Knight RW, Jamason PF, Hennessy KJ, Suppiah R, Page
+      CM, Wibig J, Fortuniak K, Razuvaev VN, Douglas A, Forland E and Zhai PM (1999): <emphasis
+        role="italic">Changes in the probability of heavy precipitation: Important indicators of
+        climatic change,</emphasis>Climatic Change, 42, 243–283.</para>
+    <para>Hunter, J., (2007): Estimating sea-level extremes in a world of uncertain sea-level rise,
+      5th Flood Management Conference, Warrnambool, Australia, 9-12 October 2007.</para>
+    <para>IPCC (2012): <emphasis role="italic">Workshop Report of the Intergovernmental Panel on
+        Climate Change Workshop on Socio-Economic Scenarios</emphasis> [Edenhofer, O., R.
+      Pichs-Madruga, Y. Sokona, V. Barros, C.B. Field, T. Zwickel, S. Schloemer, K. Ebi, M.
+      Mastrandrea, K. Mach, C. von Stechow (eds.)]. IPCC Working Group III Technical Support Unit,
+      Potsdam Institute for Climate Impact Research, Potsdam Germany, pp. 51.</para>
+    <para>Jones et al. (2012) </para>
+    <para>Nicholls N and Alexander L (2007): <emphasis role="italic">Has the climate become more
+        variable or extreme? Progress 1992</emphasis><emphasis role="italic">‑</emphasis><emphasis
+        role="italic">2006</emphasis>, <emphasis role="italic">Progress in Physical Geography,
+      </emphasis>31, 77‑87.</para>
+    <para>Stedinger, J.R., Vogel, R.M and Foufoula-Georgiou, E. (1993). Frequency analysis of
+      extreme events. Chapter 18 in Maidment, D.R.(ed.) Handbook of Hydrology, McGraw Hill
+      Inc.</para>
+    <para>Stedinger, J.R. (1997). Expected probability and annual damage estimators. ASCE Journal of
+      Water resources Planning and Management, Vol. 123, No. 2, pp 125-</para>
+    <para>Trenberth KE (2011): <emphasis role="italic">Changes in precipitation with climate
+        change</emphasis>. Clim Res 47:123–138. </para>
+    <para> Westra, S., L.V. Alexander, F.W. Zwiers (2013): <emphasis role="italic">Global increasing
+        trends in annual maximum daily precipitation</emphasis>. Journal of Climate, in press,
+      doi:10.1175/JCLI-D-12-00502.1</para>
+    <para> White C.J., Grose M.R., Corney S.P., Bennett J.C., Holz G.K., Sanabria L.A., McInnes
+      K.L., Cechet R.P., Gaynor S.M. and Bindoff N.L. (2010): <emphasis role="italic">Climate
+        Futures for Tasmania: extreme events technical report</emphasis>, Antarctic Climate and
+      Ecosystems Cooperative Research Centre, Hobart, Tasmania.</para>
   </section>
 </chapter>
-<?oxy_options track_changes="on"?>
+
+
