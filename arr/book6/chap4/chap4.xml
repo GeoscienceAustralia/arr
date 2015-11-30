@@ -101,10 +101,10 @@
 
   <section xml:id="b6_ch4_s_nlbnu">
     <title>Development Stages for Numerical Hydraulic Models</title>
-    <para>The aim of a numerical hydraulic model is to provide a discrete numerical representation of
-      flood flows in what is a physically continuous river and floodplain system. In this respect,
-      the development of a site specific numerical model can be thought of as comprising a sequence
-      of four main steps, as follows:</para>
+    <para>The aim of a numerical hydraulic model is to provide a discrete numerical representation
+      of flood flows in what is a physically continuous river and floodplain system. In this
+      respect, the development of a site specific numerical model can be thought of as comprising a
+      sequence of four main steps, as follows:</para>
     <orderedlist>
       <listitem>
         <para>Review and define the physical system (the river and floodplain system to be
@@ -125,9 +125,9 @@
           structure information, as appropriate)</para>
       </listitem>
     </orderedlist>
-    <para> At each step different types of assumptions, approximations and/or simplifications must
-      be made. The steps are discussed briefly below, with further supporting information provided
-      in the following sections. The conceptualisation process is shown schematically in Figure
+    <para>At each step different types of assumptions, approximations and/or simplifications must be
+      made. The steps are discussed briefly below, with further supporting information provided in
+      the following sections. The conceptualisation process is shown schematically in Figure
       1.</para>
 
          
@@ -154,7 +154,7 @@
         channels, hydraulic structures and pipe networks. Land-use is also an important element of
         the physical system to consider. The distribution of roads, number and type of buildings and
         the extent and composition of vegetation can all affect the conceptualisation and selections
-        made in following steps. </para>
+        made in following steps.  </para>
     </section>
     <section xml:id="b6_ch4_s_bzvir">
       <title>Selection of the Mathematical Model(s)</title>
@@ -166,7 +166,7 @@
         considered as being one-dimensional (1D), two-dimensional (2D), a combination of 1D and 2D,
         or even three-dimensional (3D). Further, a decision must be made as to whether the flow can
         be described as being steady (i.e., constant with time), or unsteady (time-varying). </para>
-      <para> In 1D models, the flow is described in terms of cross-sectionally averaged discharges
+      <para>In 1D models, the flow is described in terms of cross-sectionally averaged discharges
         and water levels along pre-determined flow paths. In 2D models the flow is described by
         depth averaged velocity variables in two horizontal directions and water levels across a
         regular grid or flexible mesh. In all cases (1D, 2D and 3D), the flow equations generally
@@ -242,10 +242,7 @@
         motion correctly. Nevertheless, it can be useful for inexperienced modellers to carry out
         their own verification runs using standard test cases to provide confidence that they are
         operating the model correctly. These verification runs could include reproduction of uniform
-        channel flow and/or reproduction of standard backwater or drawdown cases, as described, for
-        example, in <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Section …
-        <?oxy_custom_end?>
-      </para>
+        channel flow and/or reproduction of standard backwater or drawdown cases.</para>
       <para>Modellers should be aware that all software packages have “bugs”, which can lead to
         spurious results and/or instability, particularly when used in modelling high velocity flows
         and in “non-standard” applications. Modellers should also be aware that different modelling
@@ -254,7 +251,7 @@
         super-critical and flows at structures. Here it is important for a modeller to be aware of
         the assumptions that are used in the selected modelling package, and to be confident that
         they are appropriate for the physical system to be modelled. </para>
-      <para> Finally, there is a tendency for modellers to be innovative and to use models in
+      <para>Finally, there is a tendency for modellers to be innovative and to use models in
         situations well beyond the range of conditions for which they were originally developed.
         Typical examples might include the use of a 2D model to simulate flows where there may be
         significant vertical accelerations, or where there may be a significant three-dimensional
@@ -269,7 +266,7 @@
         model. That is, how well the final site-specific model is representing the flow conditions
         in the physical system to be modelled. Ideally, calibration and validation is a two stage
         process, as follows.</para>
-      <para> Model calibration is the process of comparing model results against measured flood
+      <para>Model calibration is the process of comparing model results against measured flood
         levels and extents and adjusting model parameters to obtain a “best-fit”. For flood studies,
         model calibration is typically carried out on the largest flood for which reliable water
         level data is available. In studies where more frequent flooding may be important, the model
@@ -277,7 +274,7 @@
         During the calibration process, model parameters (typically bed-friction coefficients) are
         adjusted and the model re-run until the results give the best reproduction of the measured
         data. </para>
-      <para> In the first instance, the calibration process is also used to identify any
+      <para>In the first instance, the calibration process is also used to identify any
         inconsistencies in the model terrain data and boundary conditions. If after repeated
         efforts, it is not possible to obtain a reasonable representation of the measured data or,
         if this can only be achieved by the use of physically unrealistic input parameters, then it
@@ -285,7 +282,7 @@
         generic mathematical model, the appropriateness of the selected modelling package for
         reproducing the flow conditions under consideration, and the reliability of the boundary
         conditions that have been applied to the model.</para>
-      <para> Model Validation is the process whereby the calibrated model is used to simulate an
+      <para>Model Validation is the process whereby the calibrated model is used to simulate an
         independent flood event to provide a check on the reliability of the calibration process.
         The flood event will typically be somewhat lower than the calibration case and, in some
         cases, the results may be used to further refine the calibration process.</para>
@@ -299,7 +296,7 @@
       vary with time. These models typically assume the flow to be gradually varying in space. That
       is, variations in flow depth are small in relation to the distance over which they occur.
       Under these conditions the pressure distribution can be assumed to be hydrostatic. </para>
-    <para> In the early days of numerical hydraulic modelling the distinction between steady flow
+    <para>In the early days of numerical hydraulic modelling the distinction between steady flow
       models and unsteady flow models was quite marked. This was because HEC-RAS (Reference), a
       relatively sophisticated 1D steady flow model was freely available to anyone who wanted to use
       it. By comparison, unsteady flow modelling required modellers to either have specialist
@@ -307,30 +304,32 @@
       expensive specialised modelling software packages. As a result there was a tendency for
       modellers to “push” the use of HEC-RAS well beyond the range of application for which it was
       originally designed.</para>
-    <para> With the advent of more readily available and relatively sophisticated 1D and 2D unsteady
+    <para>With the advent of more readily available and relatively sophisticated 1D and 2D unsteady
       flow models, the distinction between steady and unsteady flow models has become less marked.
       This is because there is less reliance on specialised steady flow models and, where required,
       much of the steady flow modelling is carried out by unsteady flow models using steady flow
       boundary conditions. </para>
     <section xml:id="b6_ch4_s_zob23">
       <title>Steady Flow Models</title>
-        <para>In steady flow modelling, the flow velocity <emphasis role="italic">u</emphasis> and/or
-        discharge <emphasis role="italic">Q </emphasis>can be assumed to be locally constant and
-        does not vary in time. Under these conditions, the acceleration terms in the equations of
-        motion, described in Section X.X, can be assumed to be negligible. This means that the flow
-        is assumed to be in equilibrium with any potential increase in momentum or energy as water
-        flows downstream being balanced by bed-friction and other friction losses such as may occur
-        at structures. </para>
-      <para>1D steady flow models such as HEC-RAS (US Reference) can be used to compute flood
-        profiles in a wide range of situations. HEC-RAS is based on the numerical solution of the
-        profile equation presented in Section (X.X). This in turn is based on the 1D energy
-        equation. Manning’s equation is used to compute energy losses due to bed-friction, and other
-        contraction and expansion losses are calculated using a coefficient times the change in
-        velocity head. The momentum equation is used in situations where there are rapid variations
-        in the water surface profile, such as at hydraulic jumps. The computations can also include
-        empirical structure equations to describe rapidly varying flows at a range of structures
-        including bridges, culverts, weirs and spillways.</para>
-      <para> When using steady flow models, such as HEC-RAS, or using unsteady flow models with
+        <para>In steady flow modelling, the flow velocity <emphasis role="italic">u</emphasis>
+        and/or discharge <emphasis role="italic">Q </emphasis>can be assumed to be locally constant
+        and does not vary in time. Under these conditions, the acceleration terms in the equations
+        of motion, described in Section X.X, can be assumed to be negligible. This means that the
+        flow is assumed to be in equilibrium with any potential increase in momentum or energy as
+        water flows downstream being balanced by bed-friction and other friction losses such as may
+        occur at structures. </para>
+      <para>1D steady flow models such as HEC-RAS (US
+        <?oxy_insert_start author="ward" timestamp="20151130T115445+1100"?>Army Corps of Engineers,
+        2010<?oxy_insert_end?><?oxy_delete author="ward" timestamp="20151130T115437+1100" content="reference"?>)
+        can be used to compute flood profiles in a wide range of situations. HEC-RAS is based on the
+        numerical solution of the profile equation presented in Section (X.X). This in turn is based
+        on the 1D energy equation. Manning’s equation is used to compute energy losses due to
+        bed-friction, and other contraction and expansion losses are calculated using a coefficient
+        times the change in velocity head. The momentum equation is used in situations where there
+        are rapid variations in the water surface profile, such as at hydraulic jumps. The
+        computations can also include empirical structure equations to describe rapidly varying
+        flows at a range of structures including bridges, culverts, weirs and spillways.</para>
+      <para>When using steady flow models, such as HEC-RAS, or using unsteady flow models with
         steady flow boundary conditions, it is noted that the main underlying assumptions of steady
         flow are effectively that:</para>
       <itemizedlist>
@@ -345,7 +344,7 @@
             length of the reach of channel under consideration.</para>
         </listitem>
       </itemizedlist>
-      <para> For these reasons, and for the reasons described in the following section, steady flow
+      <para>For these reasons, and for the reasons described in the following section, steady flow
         models are best suited to modelling flows along relatively short reaches of river with
         well-defined flow paths, and/or for modelling flows at structures. Steady flow models should
         not be used to describe flows where there are:</para>
@@ -364,11 +363,16 @@
           <para>Channel networks where the flow splits are not well defined.</para>
         </listitem>
       </itemizedlist>
-      <para><emphasis role="bold"><emphasis role="italic">The Manning’s
-          Equation</emphasis></emphasis></para>
-      <para>The Manning’s equation for uniform flow, as described in Section x.x, can be considered
-        as the simplest form of steady flow model. Here the average velocity <emphasis role="italic">u</emphasis> across a cross-section can be related to a Manning roughness coefficient
-          <emphasis role="italic">n</emphasis>, the hydraulic radius <emphasis role="italic">Rh</emphasis>, and the bed slope <emphasis role="italic">S</emphasis>: </para>
+      <para><emphasis role="bold"><emphasis role="italic">The
+            Manning<?oxy_delete author="ward" timestamp="20151130T115509+1100" content="’s"?>
+            Equation</emphasis></emphasis></para>
+      <para>The Manning<?oxy_delete author="ward" timestamp="20151130T115512+1100" content="’s"?>
+        equation for uniform
+        flow<?oxy_delete author="ward" timestamp="20151130T115518+1100" content=", as described in Section x.x,"?>
+        can be considered as the simplest form of steady flow model. Here the average velocity
+          <emphasis role="italic">u</emphasis> across a cross-section can be related to a Manning
+        roughness coefficient <emphasis role="italic">n</emphasis>, the hydraulic radius <emphasis
+          role="italic">Rh</emphasis>, and the bed slope <emphasis role="italic">S</emphasis>: </para>
       <equation xml:id="b6_ch4_e_jy3n7">
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <semantics>
@@ -467,9 +471,10 @@
         Effects</emphasis></emphasis></para>
       <para>In reaches where there are significant storage effects, the rating curve on the rising
         limb of a flood hydrograph will be different to the rating curve on the falling limb. This
-        results in a “looped” rating curve, as shown in Figure 1. Under these conditions the peak
-        water level will not correspond to the peak discharge. As a result, unsteady models should
-        be used to simulate these effects.</para>
+        results in a “looped” rating curve, as shown in Figure
+        <?oxy_delete author="ward" timestamp="20151130T115605+1100" content="1"?><?oxy_insert_start author="ward" timestamp="20151130T115605+1100"?>2<?oxy_insert_end?>.
+        Under these conditions the peak water level will not correspond to the peak discharge. As a
+        result, unsteady models should be used to simulate these effects.</para>
      
       <figure xml:id="b6_ch4_f_aj4n6">
         <title>Storage Effects on the Rating Curve; (a) Flood Hydrograph, 
@@ -519,16 +524,17 @@
     <section xml:id="b6_ch4_s_9whk5">
       <title>1D Models</title>
       <para>1D flow models are based on the numerical solution of the Saint Venant equations for
-        describing gradually varying unsteady flow in one horizontal dimension (as derived in
-        Section X.X). Early 1D models required the main channel and flood plain of a river to be
-        schematised as a single one-dimensional channel. The use of these early 1D models was
-        generally restricted to modelling single river branches, or simply connected (dendritic)
-        branched river systems. As part of the evolutionary process of model development these
-        relatively simple models have been replaced by more sophisticated models that allow
-        arbitrary connections of multiple channel systems. In these models, floodplains can be
-        represented as separate flow paths and there can be multiple flow paths within a single
-        floodplain. This makes it possible to provide a somewhat more realistic description of the
-        flows in real river and floodplain systems. </para>
+        describing gradually varying unsteady flow in one horizontal dimension
+        <?oxy_delete author="ward" timestamp="20151130T115631+1100" content="(as derived in Section X.X)"?>.
+        Early 1D models required the main channel and flood plain of a river to be schematised as a
+        single one-dimensional channel. The use of these early 1D models was generally restricted to
+        modelling single river branches, or simply connected (dendritic) branched river systems. As
+        part of the evolutionary process of model development these relatively simple models have
+        been replaced by more sophisticated models that allow arbitrary connections of multiple
+        channel systems. In these models, floodplains can be represented as separate flow paths and
+        there can be multiple flow paths within a single floodplain. This makes it possible to
+        provide a somewhat more realistic description of the flows in real river and floodplain
+        systems. </para>
       <para>1D models are computationally quick to run and are well suited to modelling flows along
         well-defined channel and floodplain flow paths. Their more general use in flood studies has
         been largely superseded by 2D models which can provide a much more detailed description of
@@ -540,11 +546,12 @@
     <section xml:id="b6_ch4_s_7f3fa">
       <title>2D Models</title>
       <para>2D flow models are based on the numerical solution of the depth-averaged equations
-        describing the conservation of mass and momentum in two horizontal dimensions (as derived in
-        Section X.X). These equations assume that the flow velocity is uniform over the depth, both
-        in magnitude and direction. This assumption is reasonable in most floodplain applications
-        where the flow depth is relatively shallow with respect to the horizontal dimensions of the
-        main physical features to be resolved in the model.</para>
+        describing the conservation of mass and momentum in two horizontal
+        dimensions<?oxy_delete author="ward" timestamp="20151130T115644+1100" content=" (as derived in Section X.X)"?>.
+        These equations assume that the flow velocity is uniform over the depth, both in magnitude
+        and direction. This assumption is reasonable in most floodplain applications where the flow
+        depth is relatively shallow with respect to the horizontal dimensions of the main physical
+        features to be resolved in the model.</para>
       <para>The 2D model equations are solved at each active water grid point or mesh element over a
         two-dimensional model grid or mesh. The computational domain may be a square, rectangular or
         curvilinear grid, or may be a flexible mesh comprising triangular and/or quadrilateral mesh
@@ -646,18 +653,20 @@
         set-up and the application of appropriate boundary conditions. As for CFD, the use of SPM in
         flood modelling is generally limited to simulating the details of complex flows at or within
         hydraulic structures.</para>
-      <para>As discussed is Section X.X, physical models are geometrically scaled reproductions of
-        the physical system to be modelled. They typically use the same fluid (i.e., water) and
-        operate under the normal laws of gravity. This makes physical models suitable for modelling
-        non-hydrostatic flows and super-critical flows, including the transitions between
-        super-critical and sub-critical flows. As a result, physical models can be used to model
-        flow cases similar to those for 3D, CFD and SPM models discussed above. The main limitation
-        on the more general use of the physical models is the restriction on the scales that can be
-        used in order to avoid “scale effects”. This generally restricts the use of physical models
-        to modelling the details of flows in relatively short reaches of rivers. Although “distorted
-        scale” models can be used to reduce scale effects when modelling larger areas, distorted
-        models should not be used when accurate reproduction of three-dimensional flow effects is
-        required.</para>
+      <para><?oxy_delete author="ward" timestamp="20151130T115717+1100" content="As discussed is Section X.X, p"?><?oxy_insert_start author="ward" timestamp="20151130T115717+1100"?>P<?oxy_insert_end?>hysical
+        models are geometrically scaled reproductions of the physical system to be
+        modelled<?oxy_insert_start author="ward" timestamp="20151130T115725+1100"?> and are
+        disscussed in more detail in Chapter X<?oxy_insert_end?>. They typically use the same fluid
+        (i.e., water) and operate under the normal laws of gravity. This makes physical models
+        suitable for modelling non-hydrostatic flows and super-critical flows, including the
+        transitions between super-critical and sub-critical flows. As a result, physical models can
+        be used to model flow cases similar to those for 3D, CFD and SPM models discussed above. The
+        main limitation on the more general use of the physical models is the restriction on the
+        scales that can be used in order to avoid “scale effects”. This generally restricts the use
+        of physical models to modelling the details of flows in relatively short reaches of rivers.
+        Although “distorted scale” models can be used to reduce scale effects when modelling larger
+        areas, distorted models should not be used when accurate reproduction of three-dimensional
+        flow effects is required.</para>
     </section>
   </section>
   <section xml:id="b6_ch4_s_utkoe">
@@ -696,8 +705,10 @@
   <title>The main dependent variables for the 1D model equations</title>
   <mediaobject>
     <imageobject>
-      <imagedata fileref="../../figures/6090.png"/>
-    </imageobject>
+            <?oxy_comment_start author="ward" timestamp="20151130T120003+1100" comment="document revision: AR&amp;RBook6Chpt4AMC_Mk7.docx gives a newer drawn figure - this orginal has already been sent to graphic artist however."?>
+            <imagedata fileref="../../figures/6090.png"/>
+            <?oxy_comment_end?>
+          </imageobject>
   </mediaobject>
 </figure>
       <para>With two dependent variables it is necessary to have two equations to describe the flow
@@ -1203,14 +1214,16 @@
       <para>The main input to the model is generally provided by the boundary conditions. These must
         be specified at each upstream or downstream open boundary. In most flood studies the
         upstream boundary conditions are generally specified as discharge hydrographs (typically
-        computed by a hydrologic model such as RORB). Corresponding downstream boundary conditions
-        are generally specified as tail water levels (either constant or time varying), or through
-        some means of relating the model discharge to a corresponding water level. This can be done
-        by specifying a rating curve, where the discharge is explicitly linked to the water surface
-        elevation, or through the use of the kinematic wave approximation at the boundary. The
-        latter effectively links the discharge to the water surface elevation through the Manning
-        equation. In tidal estuaries the downstream boundary will generally be specified in terms of
-        a fixed or time-varying tidal elevation.</para>
+        computed by a hydrologic
+        model<?oxy_delete author="ward" timestamp="20151130T120044+1100" content=" such as RORB"?>).
+        Corresponding downstream boundary conditions are generally specified as tail water levels
+        (either constant or time varying), or through some means of relating the model discharge to
+        a corresponding water level. This can be done by specifying a rating curve, where the
+        discharge is explicitly linked to the water surface elevation, or through the use of the
+        kinematic wave approximation at the boundary. The latter effectively links the discharge to
+        the water surface elevation through the Manning equation. In tidal estuaries the downstream
+        boundary will generally be specified in terms of a fixed or time-varying tidal
+        elevation.</para>
       <para> </para>
       <para><emphasis role="bold"><emphasis role="italic">Model
         Structures</emphasis></emphasis></para>
@@ -1238,11 +1251,12 @@
       <para> </para>
       <para>In staggered grid models, structures are located at discharge grid points, and water
         level grid points (and therefore cross-sections) must be specified immediately upstream and
-        downstream of the structure, as shown in Figure 3. For these cases, the momentum equation at
-        the discharge grid point is replaced by the structure formulation. Flow through the
-        structure then becomes a function of the upstream and/or downstream water levels, depending
-        on the flow conditions (e.g., free overflow or drowned flow for weirs, or inlet or outlet
-        control for culverts).</para>
+        downstream of the structure, as shown in Figure
+        <?oxy_insert_start author="ward" timestamp="20151130T120106+1100"?>5<?oxy_insert_end?><?oxy_delete author="ward" timestamp="20151130T120106+1100" content="3"?>.
+        For these cases, the momentum equation at the discharge grid point is replaced by the
+        structure formulation. Flow through the structure then becomes a function of the upstream
+        and/or downstream water levels, depending on the flow conditions (e.g., free overflow or
+        drowned flow for weirs, or inlet or outlet control for culverts).</para>
       <para> </para>
 
         <figure xml:id="b6_ch4_f_b6buj">
@@ -1265,10 +1279,11 @@
         Flows</emphasis></emphasis></para>
       <para>The treatment of floodplain flows can be very different depending on the main
         characteristics of the river channel and floodplain system. For floodplains that drain
-        naturally to the river channel, as shown in Figure 4(a), the water level can be the same in
-        both the river and the floodplain. Under these conditions the effects of storage and flow
-        along the floodplain can be included directly in a single combined river channel and
-        floodplain branch.</para>
+        naturally to the river channel, as shown in Figure
+        <?oxy_delete author="ward" timestamp="20151130T120119+1100" content="4"?><?oxy_insert_start author="ward" timestamp="20151130T120119+1100"?>6<?oxy_insert_end?>(a),
+        the water level can be the same in both the river and the floodplain. Under these conditions
+        the effects of storage and flow along the floodplain can be included directly in a single
+        combined river channel and floodplain branch.</para>
       <figure xml:id="b6_ch4_f_a0oms">
         <title>Different Types of Flood Plain Flow</title>
         <mediaobject>
@@ -1362,28 +1377,24 @@
       </itemizedlist>
       <para> As such, 1D models are not well suited to modelling the details of flood flows within
         the floodplain.</para>
-      <para>
-        <emphasis role="bold">Example 1. LindsayRiver Study</emphasis></para>
-      <para> </para>
-      <para>
+      <figure>
+        <title><?oxy_insert_start author="ward" timestamp="20151130T120154+1100"?>Example of a
+          <?oxy_insert_end?><?oxy_delete author="ward" timestamp="20151130T120211+1100" content=" "?>Branched
+          1D Model Network</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="clip_image002_-1174904458.gif" depth="323" width="606"/>
+            <imagedata fileref="../../figures/6113.png"/>
           </imageobject>
         </mediaobject>
-      </para>
-      <para><emphasis role="bold">Figure Ex 1.1: LindsayRiver Branched 1D Model
-        Network</emphasis></para>
-      <para> </para>
-      <para>
+      </figure>
+      <figure>
+        <title>Lindsay River Water Level Profile</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="clip_image004_1584556413.gif" depth="298" width="619"/>
+            <imagedata fileref="../../figures/6114.png"/>
           </imageobject>
         </mediaobject>
-      </para>
-      <para><emphasis role="bold">Figure Ex 1.2: LindsayRiver Water Level Profile</emphasis></para>
-      <para> </para>
+      </figure>
     </section>
   </section>
 
@@ -1396,10 +1407,12 @@
       virtually a standard for most rural and urban flood modelling studies. </para>
     <section xml:id="b6_ch4_s_qwes6">
       <title>Model Equations</title>
-      <para>As discussed in Section X.X, 2D unsteady hydrodynamic models are based on the numerical
-        solution of the depth-averaged shallow water wave or long wave equations. These equations
-        describe the conservation of mass and momentum in two horizontal dimensions <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis>. In a form used in
-        many 2D flood models, these equations can be expressed as:</para>
+      <para><?oxy_delete author="ward" timestamp="20151130T120246+1100" content="As discussed in Section X.X, "?>2D
+        unsteady hydrodynamic models are based on the numerical solution of the depth-averaged
+        shallow water wave or long wave equations. These equations describe the conservation of mass
+        and momentum in two horizontal dimensions <emphasis role="italic">x</emphasis> and <emphasis
+          role="italic">y</emphasis>. In a form used in many 2D flood models, these equations can be
+        expressed as:</para>
       <para><emphasis role="bold"><emphasis role="italic">Mass</emphasis></emphasis></para>
       <equation xml:id="b6_ch4_e_kftr7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
         <semantics>
@@ -1681,8 +1694,11 @@
       <title>Other Forms of the Equations</title>
       <para>The equations presented in Section 1.7.1 form the basis of many of the 2D numerical
         models currently in use. Another form of the equations that is finding increasing popularity
-        is the so-called “conservation law” form described for example by Abbott (1969). In this
-        form of the equations, the depth average momentum “fluxes” (<emphasis role="italic">d.u</emphasis> and <emphasis role="italic">d.v</emphasis> in the <emphasis role="italic">x</emphasis> and <emphasis role="italic">y</emphasis> directions, respectively) are used
+        is the so-called “conservation law” form described for example by Abbott
+        (19<?oxy_delete author="ward" timestamp="20151130T120300+1100" content="6"?><?oxy_insert_start author="ward" timestamp="20151130T120300+1100"?>7<?oxy_insert_end?>9).
+        In this form of the equations, the depth average momentum “fluxes” (<emphasis role="italic"
+          >d.u</emphasis> and <emphasis role="italic">d.v</emphasis> in the <emphasis role="italic"
+          >x</emphasis> and <emphasis role="italic">y</emphasis> directions, respectively) are used
         as the time dependent velocity variables in the momentum equations. Excluding source and
         sink terms, bed friction and eddy viscosity, the conservation law form of the shallow water
         equations can be expressed as:</para>
@@ -2099,7 +2115,8 @@
       <para> To illustrate this effect, a simple first-order finite difference approximation to the
           <emphasis role="italic">uδu/δx</emphasis> “convective momentum” term in the x momentum
         equation has been examined more closely. This term is to be discretised on a square
-        “staggered” grid similar to that shown in Figure X.</para>
+        “staggered” grid similar to that shown in Figure
+        <?oxy_delete author="ward" timestamp="20151130T120325+1100" content="X"?><?oxy_insert_start author="ward" timestamp="20151130T120326+1100"?>10<?oxy_insert_end?>.</para>
       <figure xml:id="b6_ch4_f_eednm">
         <title>Example of a Computational Grid</title>
         <mediaobject>
@@ -2297,7 +2314,7 @@
         introduced by first-order upwind differencing can be an order of magnitude or more greater
         than the corresponding physically realistic values. Issues associated with first-order
         upwind differencing of the convective momentum terms are discussed in detail by Leonard
-        (1979). </para>
+        (19<?oxy_insert_start author="ward" timestamp="20151130T120359+1100"?>6<?oxy_insert_end?><?oxy_delete author="ward" timestamp="20151130T120359+1100" content="7"?>9). </para>
       <para>Similar truncation error terms can be developed for numerical approximations to the
         other terms in the mass and momentum equations. The properties of these truncation errors
         can have a significant effect on the accuracy and stability of the numerical procedures
@@ -2320,18 +2337,17 @@
         smoothing results in the suppression of flow separations and eddy formation and makes it
         impractical to compute channel/overbank interactions, where the specification of appropriate
         eddy viscosity coefficients becomes important.</para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
+      <figure>
+        <title>Figures showing (a) flow separation and eddy formation, and (b)
           suppression of flow separation with numerical eddy viscosity form a first order upwind
-          scheme </emphasis></para>
+          scheme</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6109.png"/>
+          </imageobject>
+        </mediaobject>
+        </figure>
+
       <para>By comparison, second-order schemes are “dispersive”. That is, high frequency components
         of flood flow can travel at different speeds. This is not normally a problem with the
         propagation of flood waves which tend to be very long (low frequency) with respect to the
@@ -2450,17 +2466,15 @@
         shown in Figure x.x(a). To get adequate resolution of these flow paths may require reduction
         in the model grid size, as shown in Figure x.x(b), with a corresponding significant increase
         in computational requirements. </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
-          suppression of flow separation with numerical eddy viscosity form a first order upwind
-          scheme </emphasis></para>
+      <figure>
+        <title>Showing (a) poor resolution of a sinuous flow path on a coarse square grid, and (b)
+          improved, but still relatively poor resolution at a finer grid scale. </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6110.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
       <para>By comparison, flexible mesh models typically use a combination of unstructured
         triangular and quadrilateral mesh cells as shown in Figure x.x(a). These can be aligned more
         closely with the main flow paths allowing good resolution with larger mesh cells than with a
@@ -2469,17 +2483,15 @@
         areas of interest. The main disadvantages of the flexible mesh models are that they take
         more time and skill to set up the initial model mesh and, due to their increased complexity,
         they generally take more computer time to run, even with the use of larger mesh sizes. </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para> </para>
-      <para><emphasis role="bold">Figures showing (a) flow separation and eddy formation, and (b)
-          suppression of flow separation with numerical eddy viscosity form a first order upwind
-          scheme </emphasis></para>
+      <figure>
+        <title>Showing (a) improved resolution of a sinuous flow path using a flexible mesh,
+          relative to (b) a fine square grid. </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6112.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
       <para><emphasis role="bold">Model Schematization</emphasis></para>
       <para>The first task in schematizing a model is to decide on the model domain. This is the
         area to be included within the model. It should include the main area of interest and should
@@ -2745,27 +2757,22 @@
       <para> A further extension of the integrated 1D/2D modelling concept has been the dynamic
         coupling of 2D models with 1D pipe network models. This has significantly enhanced the
         capabilities of 2D models for urban flood modelling applications.</para>
-      <para><emphasis role="bold">Example 3. LindsayRiver (revisited)</emphasis></para>
-      <para>
+      <figure>
+        <title>Example of an Integrated Branched 1D Model Network of the Lindsay River </title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="clip_image018_-1709097060.gif" depth="265" width="606"/>
+            <imagedata fileref="../../figures/6115.png"/>
           </imageobject>
         </mediaobject>
-      </para>
-      <para><emphasis role="bold">Figure Ex 3.1: LindsayRiver Integrated Branched 1D Model
-          Network</emphasis></para>
-      <para> </para>
-      <para>
+      </figure>
+      <figure>
+        <title>Lindsay River Integrated 2D Model Topography </title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="clip_image020_1826519485.gif" depth="333" width="607"/>
+            <imagedata fileref="../../figures/6116.png"/>
           </imageobject>
         </mediaobject>
-      </para>
-      <para><emphasis role="bold">Figure Ex 3.2: LindsayRiver Integrated 2D Model
-          Topography</emphasis></para>
-      <para> </para>
+      </figure>
       <para> </para>
     </section>
     <section xml:id="b6_ch4_s_9f1m8">
@@ -2801,10 +2808,41 @@
       <title>Limitations of 2D Hydraulic Models</title>
       <para>One of the main limitations associated with 2D hydraulic models is that they can provide
         plausible results in situations where the underlying data may be inadequate, the model
-        schematization is does not adequately describe all the physical system being represented, or
-        in flow cases where the assumption of two-dimensional flow becomes invalid.
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(To be
-        expanded)<?oxy_custom_end?></para>
+        schematization
+        <?oxy_delete author="ward" timestamp="20151130T123721+1100" content="is "?>does not
+        adequately describe all the physical system being represented, or in flow cases where the
+        assumption<?oxy_insert_start author="ward" timestamp="20151130T123728+1100"?>s<?oxy_insert_end?>
+        of two-dimensional flow
+        <?oxy_delete author="ward" timestamp="20151130T123737+1100" content="becomes invalid. (To be expanded)"?><?oxy_insert_start author="ward" timestamp="20151130T123748+1100"?>or
+        of hydrostatic pressure becomes invalid.<?oxy_insert_end?></para>
+      <?oxy_insert_start author="ward" timestamp="20151130T123753+1100"?>
+      <para>Examples of situations where the two-dimensional assumption becomes invalid
+        include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Modelling the details of “helicoidal” flows around river bends</para>
+        </listitem>
+        <listitem>
+          <para>Modelling the details of flows at bridges, culverts and intake and outlet
+            structures</para>
+        </listitem>
+        <listitem>
+          <para>Modelling separation zones and wakes behind structures where the horizontal
+            dimensions of the structure, and of the cell size, are much smaller than the water
+            depth</para>
+        </listitem>
+      </itemizedlist>
+      <para>In these situations care needs to be taken in interpreting the model results. In some
+        models the effects of three-dimensional flows can be included through additional loss terms,
+        or the inclusion of sub cell-scale pier loss formulae. If, however, it is necessary to model
+        the details of these types of flow, then a full three-dimensional model should be used. </para>
+      <para>Situations where the hydrostatic pressure assumption becomes invalid include free
+        overflows of water over levees and embankments. In these cases the hydrostatic pressure
+        assumption can lead to a significant over-estimation of the overflows. Depending upon the
+        software being used, these effects can be overcome by incorporating weir equations into the
+        computation, or by widening the model description of the levee or embankment to include two
+        cell widths.</para>
+      <?oxy_insert_end?>
     </section>
   </section>
 
@@ -2817,7 +2855,7 @@
       success. This is because the skill of the modeller adapting a generic modelling system to a
       specific application, and the quality of the data used as model input can be equally (or even
       more) important in determining the success of a modelling exercise. </para>
-    <para>The reliability of a hydraulic model is determined by a three stage process:</para>
+    <para> The reliability of a hydraulic model is determined by a three stage process:</para>
     <itemizedlist>
       <listitem>
         <para>Validation: to confirm that the modelling software is doing what it is supposed to
@@ -2884,6 +2922,8 @@
               flows and/or to introduce hydraulic structures (such as weirs, culverts, bridges,
               etc.) into the 2D model domain.</para>
           </listitem>
+        
+    
       <listitem>
         <para>The integration of 1D pipe network models with 2D models has significantly enhanced
           the capabilities of 2D models for urban flood modelling applications.</para>
@@ -2895,24 +2935,85 @@
           interpreting the model results. </para>
       </listitem>
     </itemizedlist>
-<para/>
   </section>
   <section xml:id="b6_ch4_s_uj9pk">
     <title>References</title>
-    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-    <para>(To be completed)<?oxy_custom_end?></para>
+    <?oxy_delete author="ward" timestamp="20151130T123836+1100" content="&lt;para&gt;(To be completed)&lt;/para&gt;"?>
     <para> Abbott, M.B. (1979), Computational Hydraulics – Elements of the Theory of Free Surface
       Flows, Pitman, London.</para>
+    <?oxy_insert_start author="ward" timestamp="20151130T123844+1100"?>
+    <para>Abbott, M.B. and Basco, D.R. (1989), Computational Fluid Dynamics: an Introduction for
+      Engineers, Longman.</para>
+    <para>Abbott, M.B. and Rasmussen, C.H. (1977), On the Numerical Modelling of Rapid Contractions
+      and Expansions in Models that are Two-Dimensional in Plan, Proc. 17th Congress IAHR,
+      Baden-Baden.</para>
+    <?oxy_insert_end?>
     <para> American Society of Engineers (1996), River Hydraulics – Technical Engineering and Design
       Guides as Adapted From the US Army Corps of Engineers, No. 18, ASCE Press, New York.</para>
+    <?oxy_insert_start author="ward" timestamp="20151130T123907+1100"?>
+    <para>Benque, J.P., Hauguel, A. and Viollet, P.L. (1982), Numerical Models in Environmental
+      Fluid Mechanics, Pitman.</para>
+    <para>BMT WBM (2007), TUFLOW User Manual. GIS Based 2D/1D Hydrodynamic Modelling.</para>
+    <?oxy_insert_end?>
     <para> Bishop, W.A., McCowan, A.D., Sutherland, R.J. and Watkinson, R.J. (1995), Application of
       Two-Dimensional Numerical Models to Urban Flood Studies, 2nd International Symposium on
       Stormwater Management, Melbourne. </para>
+    <?oxy_insert_start author="ward" timestamp="20151130T123918+1100"?>
+    <para>Caddis, B.M., Jempson, M.A., Ball, J.E. and Syme, W.J. (2008), Incorporating Hydrology
+      into 2D Hydraulic Models – the Direct Rainfall Approach, (9th Aust. Conf. on Hydraulics in
+      Water Engineering, Darwin.</para>
+    <?oxy_insert_end?>
     <para> Carr, R.S. and McCowan A.D. (1988), An Integrated Approach to Two‑Dimensional Flood Plain
       Modelling, ACADS Workshop on 2D Flood Plain Modelling, Monash University.</para>
-    <para> Cunge, J.A., Holly, F.M. and Verwey, A. (1980), Practical Aspects of Computational River
+    <?oxy_insert_start author="ward" timestamp="20151130T123925+1100"?>
+    <para>Connor, J.J. and Brebbia, C.A. (1976), Finite Element Techniques for Fluid Flow,
+      Newnes-Butterworths.</para>
+    <?oxy_insert_end?>
+    <?oxy_delete author="ward" timestamp="20151130T124132+1100" content="&lt;para&gt; Cunge, J.A., Holly, F.M. and Verwey, A. (1980), Practical Aspects of Computational River Hydraulics, Pitman, London (Reprinted by University of Iowa).&lt;/para&gt;&lt;para&gt; &lt;/para&gt;"?>
+    <?oxy_insert_start author="ward" timestamp="20151130T124001+1100"?>
+    <para>Cunge, J.A., Holly, F.M. and Verwey, A. (1980), Practical Aspects of Computational River
       Hydraulics, Pitman, London (Reprinted by University of Iowa).</para>
-    <para> </para>
+    <para>DHI Water and Environment (2005), MIKE 11 – A Modelling System for Rivers and Channels –
+      Reference Manual, DHI Software, Hørsholm.</para>
+    <para>DHI Water and Environment (2005), MIKE 21 – Coastal Hydraulics and Oceanography –
+      Hydrodynamic Module, Scientific Documentation, DHI Software, Hørsholm</para>
+    <para>DHI Water and Environment (2005), MIKE Flood – Integrated 1D - 2D Flood Modelling,
+      Reference Manual, DHI Software, Hørsholm.</para>
+    <para>Engineers Australia (2012), Australian Rainfall and Runoff Revision Project 15:
+      Two-Dimensional Modelling in Urban and Rural Floodplains.</para>
+    <para>King, I.P. and Roig, L.C. (1988), Recent Applications of RMA’s Finite Element Models for
+      Two-Dimensional Hydrodynamics and Water Quality, Proc 2nd Int. Conf. on Finite Elements in
+      Water Resources, Pentech Press.</para>
+    <para>LeVeque, R.J. (1990), Numerical Methods for Conservation Laws, Springer Basel.</para>
+    <para>Leendertse, J. (1967), Aspects of a Computational Model for Long-Period Water Wave
+      Propagation, Rand Memorandum RM-5294-PR, Santa Monica.</para>
+    <para>Leonard, B.P. (1976), A Survey of Finite Differences of Opinion on the Numerical Muddling
+      of the Incomprehensible Defective Confusion Equation, City University of New York.</para>
+    <para>Leonard, B.P. (1979), A Stable and Accurate Convective Modelling Procedure Based on
+      Quadratic Upstream Interpolation, Computer Methods In Applied Mechanics and Engineering, Vol
+      19.</para>
+    <para>McCowan, A D, Rasmussen, E B and Berg, P. (2001) Improving the Performance of a
+      Two-dimensional Hydraulic Model for Floodplain Applications, Proceedings of the 6th Conference
+      on Hydraulics in Civil Engineering, Hobart.</para>
+    <para>Muncaster, S.H., Bishop, W.A. and McCowan, A.D. (2006), Design Flood Estimation in Small
+      Catchments Using Two-Dimensional Hydraulic Modelling – A Case Study, 30th Hydrology and Water
+      Resources Symposium, Launceston.</para>
+    <para>Roache, P.J. (1998), Fundamentals of Computational Fluid Dynamics, Hermosa.</para>
+    <para>Stelling, G.S. (1984), On the Construction of Computational Methods for Shallow Water Flow
+      Problems, Delft University of Technology.</para>
+    <para>Stelling, G.S., Kernkamp, H.W.J and Laguzzi, M.M. (1998), Delft Flooding System: A
+      Powerful Tool for Inundation Assessment based upon a Positive Flow Simulation, in
+      Hydroinformatics ’98, V. Babovic and L.C. Larsen (ed’s), Balkema.</para>
+    <para>Syme, W.J. (2001), TUFLOW – Two and One-Dimensional Unsteady Flow Software for Rivers,
+      Estuaries and Coastal Waters, I.E.Aust Workshop on 2D Flood Modelling, Sydney. </para>
+    <para>US Army Corps of Engineers (2010), HEC-RAS River Analysis System, Hydraulic Reference
+      Manual, Version 4.1, Hydrologic Engineering Center.</para>
+    <para>Violeau, D. (2012), Fluid Mechanics and the SPH Method, Theory and Applications, Oxford
+      University Press.</para>
+    <para>Zienkiewicz, O.C., Taylor, R.L. and Nithiarasu, P. (2014), The Finite Element Method for
+      Fluid Dynamics, 7th Edition, Butterworth-Heinemann.</para>
+    <?oxy_insert_end?>
     <para/>
   </section>
 </chapter>
+
