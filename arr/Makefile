@@ -97,6 +97,7 @@ book_end_matter/set_refs.xml: arr_references.xml arr_set.xml
 		--xinclude \
 		generate_bibliomixed.xsl \
 		arr_set.xml
+	   rm -f book_end_matter/set_refs.xml
 
 clean_valid_set:
 	rm -f arr_set.xml book_end_matter/set_refs.xml
