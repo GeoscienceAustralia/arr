@@ -162,62 +162,88 @@
       defined as:</para>
 
       <equation xml:id="b3_ch2_e_dds1u">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>I</m:mi>
-
-              <m:mi>t</m:mi>
-            </m:msub>
-
-            <m:mo>(q)=</m:mo>
-
-            <m:mrow>
-              <m:mrow>
-                <m:mo>{</m:mo>
-
-                <m:mtable>
-                  <m:mtr>
-                    <m:mtd>
-                      <m:mrow>
-                        <m:mi>1 if the</m:mi>
-
-                        <m:mrow>
-                          <m:msup>
-                            <m:mi>t</m:mi>
-
-                            <m:mi>th</m:mi>
-                          </m:msup>
-
-                          <m:mtext>flood peak ≥threshold discharge q</m:mtext>
-                        </m:mrow>
-                      </m:mrow>
-                    </m:mtd>
-                  </m:mtr>
-
-                  <m:mtr>
-                    <m:mtd>
-                      <m:mrow>
-                        <m:mi>-1 if the</m:mi>
-
-                        <m:mrow>
-                          <m:msup>
-                            <m:mi>t</m:mi>
-
-                            <m:mi>th</m:mi>
-                          </m:msup>
-
-                          <m:mtext>flood peak ≤ threshold discharge
-                          q</m:mtext>
-                        </m:mrow>
-                      </m:mrow>
-                    </m:mtd>
-                  </m:mtr>
-                </m:mtable>
-              </m:mrow>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>I</mi>
+                <mi>t</mi>
+              </msub>
+              <mrow>
+                <mo>(</mo>
+                <mi>q</mi>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mrow>
+                <mo>{</mo>
+                <mrow>
+                  <mtable>
+                    <mtr>
+                      <mtd>
+                        <mrow>
+                          <mn>1</mn>
+                          <msup>
+                            <mrow>
+                              <mtext>&#x00A0;if&#x00A0;t</mtext>
+                            </mrow>
+                            <mrow>
+                              <mi>t</mi>
+                              <mi>h</mi>
+                            </mrow>
+                          </msup>
+                          <mtext>&#x00A0;flood&#x00A0;peak&#x00A0;&#x003E;&#x00A0;threshold&#x00A0;&#x00A0;</mtext>
+                          <mi>q</mi>
+                        </mrow>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mrow>
+                          <mo>&#x2212;</mo>
+                          <mn>1</mn>
+                          <msup>
+                            <mrow>
+                              <mtext>&#x00A0;if&#x00A0;t</mtext>
+                            </mrow>
+                            <mrow>
+                              <mi>t</mi>
+                              <mi>h</mi>
+                            </mrow>
+                          </msup>
+                          <mtext>&#x00A0;flood&#x00A0;peak&#x00A0;</mtext>
+                          <mo>&#x2264;</mo>
+                          <mtext>&#x00A0;threshold&#x00A0;&#x00A0;</mtext>
+                          <mi>q</mi>
+                        </mrow>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                  <mtext>&#x00A0;</mtext>
+                </mrow>
+                <mo>}</mo>
+              </mrow>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaBa
+              aaleaacaWG0baabeaakmaabmaabaGaamyCaaGaayjkaiaawMcaaiab
+              g2da9maacmaabaqbaeqabiqaaaqaaiaaigdacaqGGaGaaeyAaiaabA
+              gacaqGGaGaaeiDamaaCaaaleqabaGaamiDaiaadIgaaaGccaqGGaGa
+              aeOzaiaabYgacaqGVbGaae4BaiaabsgacaqGGaGaaeiCaiaabwgaca
+              qGHbGaae4AaiaabccacaqG+aGaaeiiaiaabshacaqGObGaaeOCaiaa
+              bwgacaqGZbGaaeiAaiaab+gacaqGSbGaaeizaiaabccacaqGGaGaam
+              yCaaqaaiabgkHiTiaaigdacaqGGaGaaeyAaiaabAgacaqGGaGaaeiD
+              amaaCaaaleqabaGaamiDaiaadIgaaaGccaqGGaGaaeOzaiaabYgaca
+              qGVbGaae4BaiaabsgacaqGGaGaaeiCaiaabwgacaqGHbGaae4Aaiaa
+              bccacqGHKjYOcaqGGaGaaeiDaiaabIgacaqGYbGaaeyzaiaabohaca
+              qGObGaae4BaiaabYgacaqGKbGaaeiiaiaabccacaWGXbaaaiaabcca aiaawUhacaGL9baaaaa@7A90@
+            </annotation>
+          </semantics>
+        </math>
       </equation>
 
       <para>They arise in a number of ways. For example, prior to gauging, water level records may
