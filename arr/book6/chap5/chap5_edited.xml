@@ -213,13 +213,15 @@
     is provided in<emphasis role="bold"> </emphasis><xref
     linkend="b3_ch2"/>.</para>
 
-    <para><emphasis role="bold">Continuous simulation:</emphasis> As discussed in <xref
-        linkend="b6_c5_s_soltc"/>, floods in the joint probability zone can be influenced by a large
-      number of processes operating at a range of timescales, including subdaily variability in
-      tides, storm surges and the flood hydrograph from the upstream catchment, superimposed on
-      lower-frequency variability at daily, seasonal, annual and interannual timescales. In many
-      cases, dynamical features, such as the progression and attenuation of tides up the estuary,
-      can significantly influence flood behaviour.</para>
+    <para><emphasis role="bold">Continuous simulation:</emphasis> As discussed
+    in <xref linkend="b6_c5_s_soltc"/>, floods in the joint probability zone
+    can be influenced by a large number of processes operating at a range of
+    timescales, including subdaily variability in tides, storm surges and the
+    flood hydrograph from the upstream catchment, superimposed on
+    lower-frequency variability at daily, seasonal, annual and interannual
+    timescales. In many cases, dynamical features, such as the progression and
+    attenuation of tides up the estuary, can significantly influence flood
+    behaviour.</para>
 
     <para>Continuous simulation approaches aim to simulate these complex
     dynamics, by running continuous hydrological and hydraulic models to
@@ -251,12 +253,13 @@
     <para>Further information on implementation of continuous simulation
     approaches is provided in <xref linkend="b2_ch6"/>.</para>
 
-    <para><emphasis role="bold">The design variable method:</emphasis> This approach has been
-      developed as a simpler alternative to continuous simulation, without the limiting assumptions
-      of flood frequency analysis. For further information on the theory and practical
-      implementation of the method, refer to <xref linkend="b6_c5_s_inliq"/> and <xref
-        linkend="b6_c5_s_expsz"/>, respectively. The primary assumptions of the approach are as
-      follows:</para>
+    <para><emphasis role="bold">The design variable method:</emphasis> This
+    approach has been developed as a simpler alternative to continuous
+    simulation, without the limiting assumptions of flood frequency analysis.
+    For further information on the theory and practical implementation of the
+    method, refer to <xref linkend="b6_c5_s_inliq"/> and <xref
+    linkend="b6_c5_s_expsz"/>, respectively. The primary assumptions of the
+    approach are as follows:</para>
 
     <itemizedlist>
       <listitem>
@@ -7514,82 +7517,91 @@
   <section xml:id="b6_c5_s_fjic5">
     <title>ASYMPTOTIC DEPENDENCE OR INDEPENDENCE</title>
 
-    <para>Flood risk estimation is often concerned with understanding the
-    behaviour of the upper tail of a probability distribution. In the context
-    of multivariate extremes, this requires assumptions about how the
-    dependence between variables changes as the variables become increasingly
-    extreme.</para>
+    <sidebar>
+      <para>Flood risk estimation is often concerned with understanding the
+      behaviour of the upper tail of a probability distribution. In the
+      context of multivariate extremes, this requires assumptions about how
+      the dependence between variables changes as the variables become
+      increasingly extreme.</para>
 
-    <para>Multivariate probability distributions can be classified based on
-    how they behave in the limit as each variable becomes increasingly extreme
-    [see <emphasis>Coles</emphasis>, 2001 for additional coverage of the
-    theory of asymptotic dependence]. Examples of an asymptotically
-    independent and an asymptotically dependent distribution are given the
-    figure below: the dependence between variables for the Gaussian
-    distribution decreases with extremity of <inlineequation>
-        <m:math display="inline">
-          <m:mi>X</m:mi>
-        </m:math>
-      </inlineequation> or <inlineequation>
-        <m:math display="inline">
-          <m:mi>Y</m:mi>
-        </m:math>
-      </inlineequation> (evidenced by the increased scatter of points away
-    from the leading diagonal), where dependence remains high for the
-    asymptotically dependent bivariate logistic distribution.</para>
+      <para>Multivariate probability distributions can be classified based on
+      how they behave in the limit as each variable becomes increasingly
+      extreme [see <emphasis>Coles</emphasis>, 2001 for additional coverage of
+      the theory of asymptotic dependence]. Examples of an asymptotically
+      independent and an asymptotically dependent distribution are given the
+      figure below: the dependence between variables for the Gaussian
+      distribution decreases with extremity of <inlineequation>
+          <m:math display="inline">
+            <m:mi>X</m:mi>
+          </m:math>
+        </inlineequation> or <inlineequation>
+          <m:math display="inline">
+            <m:mi>Y</m:mi>
+          </m:math>
+        </inlineequation> (evidenced by the increased scatter of points away
+      from the leading diagonal), where dependence remains high for the
+      asymptotically dependent bivariate logistic distribution.</para>
 
-    <para>A detailed study along the Australian coastline [<emphasis>Zheng et
-    a</emphasis><emphasis>l.</emphasis>, 2013] found that at most locations,
-    the bivariate distribution between extreme rainfall and storm surge was
-    asymptotically dependent, meaning that rarer events are more likely to
-    occur jointly compared to more frequent events. This is the basis for the
-    recommendation to use a bivariate logistic distribution for dependence
-    analysis, and provides a cautionary note for using correlation-based
-    measures (which assume Gaussianity) for representing joint
-    dependence.</para>
+      <para>A detailed study along the Australian coastline [<emphasis>Zheng
+      et a</emphasis><emphasis>l.</emphasis>, 2013] found that at most
+      locations, the bivariate distribution between extreme rainfall and storm
+      surge was asymptotically dependent, meaning that rarer events are more
+      likely to occur jointly compared to more frequent events. This is the
+      basis for the recommendation to use a bivariate logistic distribution
+      for dependence analysis, and provides a cautionary note for using
+      correlation-based measures (which assume Gaussianity) for representing
+      joint dependence.</para>
 
-    <figure xml:id="b6_c5_f_jeqzp">
-      <title/>
+      <figure xml:id="b6_c5_f_jeqzp">
+        <title/>
 
-      <mediaobject>
-        <imageobject>
-          <imagedata contentdepth="100%" fileref="../../figures/6048.jpeg"
-                     scalefit="1" width="100%"/>
-        </imageobject>
-      </mediaobject>
-    </figure>
+        <mediaobject>
+          <imageobject>
+            <imagedata contentdepth="100%" fileref="../../figures/6048.jpeg"
+                       scalefit="1" width="100%"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </sidebar>
   </section>
 
   <section xml:id="b6_c5_s_o2rvu">
     <title>CONCLUSION</title>
 
-    <para>Flood estimation in estuarine regions is generally more complicated than for other
-      locations due to the range of processes and timescales that can lead to flood events. As
-      described in <xref linkend="b6_c5_s_soltc"/>, these processes can include extreme rainfall
-      events on the upstream catchment, combined with storm surges and high astronomical tides in
-      the lower reaches of the estuary. The strengths and limitations of three alternative
-      methods—flood frequency analysis, continuous simulation and the design variable method—were
-      reviewed in <xref linkend="b6_c5_s_eacb1"/>, with the design variable method identified as the
-      most appropriate method for general application in Australia.</para>
+    <para>Flood estimation in estuarine regions is generally more complicated
+    than for other locations due to the range of processes and timescales that
+    can lead to flood events. As described in <xref linkend="b6_c5_s_soltc"/>,
+    these processes can include extreme rainfall events on the upstream
+    catchment, combined with storm surges and high astronomical tides in the
+    lower reaches of the estuary. The strengths and limitations of three
+    alternative methods—flood frequency analysis, continuous simulation and
+    the design variable method—were reviewed in <xref
+    linkend="b6_c5_s_eacb1"/>, with the design variable method identified as
+    the most appropriate method for general application in Australia.</para>
 
-    <para>A detailed overview of the theory joint probability modelling was presented in <xref
-        linkend="b6_c5_s_inliq"/>, and a practical approach to implementing the design variable
-      method was provided in <xref linkend="b6_c5_s_expsz"/>. The recommended approach includes a
-      pre-screening analysis that can be used to ensure that a detailed joint probability analysis
-      is only conducted for cases where the additional complexity is warranted. The implementation
-      of the method has been designed to be generally applicable to a range of situations across the
-      Australian coastline, and the method is able to accommodate changes to extreme rainfall and
-      ocean levels as a result of anthropogenic climate change. Worked examples describing the
-      implementation of the method were provided in <xref linkend="b6_c5_s_c85dd"/> and <xref
-        linkend="b6_c5_s_f47d3"/>.</para>
+    <para>A detailed overview of the theory joint probability modelling was
+    presented in <xref linkend="b6_c5_s_inliq"/>, and a practical approach to
+    implementing the design variable method was provided in <xref
+    linkend="b6_c5_s_expsz"/>. The recommended approach includes a
+    pre-screening analysis that can be used to ensure that a detailed joint
+    probability analysis is only conducted for cases where the additional
+    complexity is warranted. The implementation of the method has been
+    designed to be generally applicable to a range of situations across the
+    Australian coastline, and the method is able to accommodate changes to
+    extreme rainfall and ocean levels as a result of anthropogenic climate
+    change. Worked examples describing the implementation of the method were
+    provided in <xref linkend="b6_c5_s_c85dd"/> and <xref
+    linkend="b6_c5_s_f47d3"/>.</para>
 
-    <para>The additional complexity of joint probability modelling means that the methods described
-      here should only be implemented by users with sufficient understanding of the theoretical
-      basis of each method. In all cases, the assumptions and limitations of each method (summarised
-      in <xref linkend="b6_c5_s_eacb1"/>) should be taken into account to ensure that the selected
-      methodis appropriate for the problem. The theory, computational methods and supporting
-      datasets required to implement joint probability approaches will continue to advance, and
-      users should maintain familiarity with on-going developments in this field.</para>
+    <para>The additional complexity of joint probability modelling means that
+    the methods described here should only be implemented by users with
+    sufficient understanding of the theoretical basis of each method. In all
+    cases, the assumptions and limitations of each method (summarised in <xref
+    linkend="b6_c5_s_eacb1"/>) should be taken into account to ensure that the
+    selected methodis appropriate for the problem. The theory, computational
+    methods and supporting datasets required to implement joint probability
+    approaches will continue to advance, and users should maintain familiarity
+    with on-going developments in this field.</para>
   </section>
 
   <section>
