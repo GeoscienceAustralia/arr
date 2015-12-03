@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" xml:id="b2_ch6">
+<chapter status="In Preparation" xml:id="b2_ch6"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Continuous Rainfall Simulation</title>
 
@@ -10,7 +17,57 @@
     <xi:include href="../../common/authors/mehrotra_raj.xml"/>
 
     <xi:include href="../../common/authors/westra_seth.xml"/>
+    <xi:include href="../../common/authors/lambert_martin.xml"/>
+    
   </info>
+
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+
+    <tr>
+      <td>Book</td>
+
+      <td>2</td>
+    </tr>
+
+    <tr>
+      <td>Chapter</td>
+
+      <td>6</td>
+    </tr>
+
+    <tr>
+      <td>Date</td>
+
+      <td>27/11/2015</td>
+    </tr>
+
+    <tr>
+      <td>Content</td>
+
+      <td>Working draft</td>
+    </tr>
+
+    <tr>
+      <td>Graphs and Figures</td>
+
+      <td>Working draft</td>
+    </tr>
+
+    <tr>
+      <td>Examples</td>
+
+      <td>Working draft</td>
+    </tr>
+
+    <tr>
+      <td>General</td>
+
+      <td>Integration of different methods required</td>
+    </tr>
+  </informaltable>
 
   <section xml:id="b2_ch6_s_ly1qa">
     <title>Use of Continuous Simulation for Design Flood Estimation</title>
@@ -33,7 +90,11 @@
     place of an event-based approach. In general, the primary benefits of
     continuous simulation approaches arise when the relationship between the
     catchment’s antecedent moisture stores and the flood-producing rainfall
-    event are not independent of each other, or change over time [<emphasis role="italic">Blazkova and Beven</emphasis>, 2002; <emphasis role="italic">W Boughton and Droop</emphasis>, 2003; <emphasis role="italic">Cameron et al.</emphasis>, 2000; <emphasis role="italic">Lamb and Kay</emphasis>, 2004]. Continuous simulation allows
+    event are not independent of each other, or change over time [<emphasis
+    role="italic">Blazkova and Beven</emphasis>, 2002; <emphasis
+    role="italic">W Boughton and Droop</emphasis>, 2003; <emphasis
+    role="italic">Cameron et al.</emphasis>, 2000; <emphasis
+    role="italic">Lamb and Kay</emphasis>, 2004]. Continuous simulation allows
     an explicit representation of the joint probability of antecedent moisture
     conditions and flood-producing rainfall data, which can be challenging for
     event-based approaches. Therefore key areas where continuous simulation
@@ -58,7 +119,8 @@
         design period. This is may occur as a result of climate change, but
         may also be relevant when calibrating over a period that is
         over-represented in terms of El Niño or La Niña events (e.g.
-        [<emphasis role="italic">Pui et al.</emphasis>, 2011] [<emphasis role="italic">Das et al.</emphasis>, 2012; <emphasis role="italic">Pui
+        [<emphasis role="italic">Pui et al.</emphasis>, 2011] [<emphasis
+        role="italic">Das et al.</emphasis>, 2012; <emphasis role="italic">Pui
         et al.</emphasis>, 2012; <emphasis role="italic">Steinschneider and
         Lall</emphasis>, 2015] [<emphasis role="italic">Micevski and
         </emphasis><emphasis role="italic">Kuczera</emphasis>, 2009]).</para>
@@ -83,13 +145,13 @@
       </listitem>
     </itemizedlist>
 
-    <para>Consider the example in 
-      <xref linkend="b2_ch6_f_ihzwo"/> which uses data for a South Australian catchment
-      to illustrate the workings of the three approaches used for design flood estimation. While the
-      figure uses the 90-day antecedent rainfall to illustrate its relation with the extreme rain,
-      similar joint relationships could exist between antecedent rainfall for longer periods, or
-      other more subtle rainfall characteristics that are difficult to summarise using a simple
-      metric.</para>
+    <para>Consider the example in <xref linkend="b2_ch6_f_ihzwo"/> which uses
+    data for a South Australian catchment to illustrate the workings of the
+    three approaches used for design flood estimation. While the figure uses
+    the 90-day antecedent rainfall to illustrate its relation with the extreme
+    rain, similar joint relationships could exist between antecedent rainfall
+    for longer periods, or other more subtle rainfall characteristics that are
+    difficult to summarise using a simple metric.</para>
 
     <figure xml:id="b2_ch6_f_ihzwo">
       <title>Illustrative flood events for a typical Australian catchment,
@@ -102,18 +164,21 @@
       </mediaobject>
     </figure>
 
-    <para>The first two panels illustrate the working of a flood-frequency or event based modelling
-      approach for design flood estimation. The last panel illustrates a continuous simulation model
-      that attempts to capture the strong relationship in extreme rainfall with the 90-day
-      Antecedent rain.</para>
+    <para>The first two panels illustrate the working of a flood-frequency or
+    event based modelling approach for design flood estimation. The last panel
+    illustrates a continuous simulation model that attempts to capture the
+    strong relationship in extreme rainfall with the 90-day Antecedent
+    rain.</para>
 
-    <para>As highlighted in <xref linkend="b2_ch6_f_ihzwo"/>, continuous simulation
-      approaches for design flood estimation require continuous rainfall sequences as the primary
-      data input. Although continuous rainfall data exist in some locations for periods of several
-      decades or longer, for most locations in Australia the continuous data is either unavailable,
-      too short or of insufficient quality to support continuous rainfall-runoff modelling. This
-      chapter therefore presents the basis and techniques for stochastically generating continuous
-      rainfall records in a catchment. Also discussed are:</para>
+    <para>As highlighted in <xref linkend="b2_ch6_f_ihzwo"/>, continuous
+    simulation approaches for design flood estimation require continuous
+    rainfall sequences as the primary data input. Although continuous rainfall
+    data exist in some locations for periods of several decades or longer, for
+    most locations in Australia the continuous data is either unavailable, too
+    short or of insufficient quality to support continuous rainfall-runoff
+    modelling. This chapter therefore presents the basis and techniques for
+    stochastically generating continuous rainfall records in a catchment. Also
+    discussed are:</para>
 
     <para><orderedlist numeration="lowerroman">
         <listitem>
@@ -192,7 +257,8 @@
           bucket raingauges can underestimate the rainfall when intensities
           are high due to the water lost as a result of the tipping motion of
           the raingauge. Typical errors for intensities greater than
-          200mm/hour can range from 10-15% of the true rainfall [ <emphasis role="italic">La Barbera et al.</emphasis> , 2002]. A simple model
+          200mm/hour can range from 10-15% of the true rainfall [ <emphasis
+          role="italic">La Barbera et al.</emphasis> , 2002]. A simple model
           for characterising gauge measurement errors was proposed by
           <emphasis role="italic">Ciach</emphasis> , 2003], marking them
           inversely proportional to the measured rainfall intensity.</para>
@@ -201,19 +267,23 @@
 
       <itemizedlist>
         <listitem>
-          <para><emphasis role="bold">Homogeneity of rainfall measurements</emphasis> - The double
-            mass curve is a commonly used technique to identify and correct for changes in the
-            exposure or location of the gauge, changes in the manner in which data is collected, or
-            any other changes that result in a systematic bias in the measurements compared to the
-            general trend in nearby locations. An example of such change is illustrated in <xref
-              linkend="b2_ch6_f_ozunq"/> for a hypothetical rainfall record, where the
-            change appears to have occurred around 1955 with the slope of the mass curve changing
-            from 0.95 to 0.75 from that point onwards. Changes such as those illustrated in <xref
-              linkend="b2_ch6_f_ozunq"/> should be investigated in greater detail and
-            corrective measures (e.g. multiplicative scaling) may need to be used. Note that similar
-            comparative checks can also be used in the context of identifying ‘odd’ raingauge
-            locations from the regional average (slope of the double mass curve will be
-            significantly different to 1).</para>
+          <para><emphasis role="bold">Homogeneity of rainfall
+          measurements</emphasis> - The double mass curve is a commonly used
+          technique to identify and correct for changes in the exposure or
+          location of the gauge, changes in the manner in which data is
+          collected, or any other changes that result in a systematic bias in
+          the measurements compared to the general trend in nearby locations.
+          An example of such change is illustrated in <xref
+          linkend="b2_ch6_f_ozunq"/> for a hypothetical rainfall record, where
+          the change appears to have occurred around 1955 with the slope of
+          the mass curve changing from 0.95 to 0.75 from that point onwards.
+          Changes such as those illustrated in <xref
+          linkend="b2_ch6_f_ozunq"/> should be investigated in greater detail
+          and corrective measures (e.g. multiplicative scaling) may need to be
+          used. Note that similar comparative checks can also be used in the
+          context of identifying ‘odd’ raingauge locations from the regional
+          average (slope of the double mass curve will be significantly
+          different to 1).</para>
 
           <figure xml:id="b2_ch6_f_ozunq">
             <title>Double Mass Curve analysis for rainfall at Station A (from
@@ -230,36 +300,43 @@
 
       <itemizedlist>
         <listitem>
-          <para><emphasis role="bold">Homogeneity of gridded rainfall</emphasis> – An important
-            source of error in gridded rainfall data is related to the use of varying number of rain
-            gauges over time in the process of reconstructing records. A recent paper looking at the
-            extent of this variability in the context of radar rainfall estimation expressed this as
-            a function of the grid size and the density of gauges within the grid. Using daily gauge
-            data for Sydney, the coefficient of variation of the of the rainfall for a 1km x1km grid
-            cell having a single gauge was estimated as 1.35, with reductions in this value as more
-            gauge were included, and increases when extended to larger grid sizes. This error was
-            found to be considerably larger than the measurement error discussed before [ <emphasis
-              role="italic">Ciach</emphasis> , 2003]. While there is no clear way of addressing this
-            error, its variation over time can be factored in the specification of any model that is
-            developed using this as inputs [ <emphasis role="italic">Chowdhury and Sharma</emphasis>
-            , 2007].</para>
+          <para><emphasis role="bold">Homogeneity of gridded
+          rainfall</emphasis> – An important source of error in gridded
+          rainfall data is related to the use of varying number of rain gauges
+          over time in the process of reconstructing records. A recent paper
+          looking at the extent of this variability in the context of radar
+          rainfall estimation expressed this as a function of the grid size
+          and the density of gauges within the grid. Using daily gauge data
+          for Sydney, the coefficient of variation of the of the rainfall for
+          a 1km x1km grid cell having a single gauge was estimated as 1.35,
+          with reductions in this value as more gauge were included, and
+          increases when extended to larger grid sizes. This error was found
+          to be considerably larger than the measurement error discussed
+          before [ <emphasis role="italic">Ciach</emphasis> , 2003]. While
+          there is no clear way of addressing this error, its variation over
+          time can be factored in the specification of any model that is
+          developed using this as inputs [ <emphasis role="italic">Chowdhury
+          and Sharma</emphasis> , 2007].</para>
         </listitem>
 
         <listitem>
-          <para><emphasis role="bold">Effect of untagged multi-day accumulations in daily rainfall
-              data</emphasis> – As nearly a third of the long-term daily rainfall records are
-            recorded at post offices and other public buildings, the occurrence of multi-day
-            readings (representing Saturday to Monday) recorded on the first working day after the
-            weekend is frequent. An example of one such station is illustrated in <xref
-              linkend="b2_ch6_f_d6lnp"/>. Viney and Bates [2004] outline a hypothesis
-            test for identifying the periods in a rainfall record that reflect significant multi-day
-            accumulations. While there is no simple corrective procedure that can be employed,
-            common-sense alternatives such as comparing with data at nearby locations (after
-            ascertaining that they do not suffer from the same problem), and using the persistence
-            structure of the non-accumulated data to disaggregate the accumulated values, should be
-            adopted. It should be noted that while such accumulations may not affect calculations in
-            yield or water balance studies, their implications in flood estimation studies can be
-            significant.</para>
+          <para><emphasis role="bold">Effect of untagged multi-day
+          accumulations in daily rainfall data</emphasis> – As nearly a third
+          of the long-term daily rainfall records are recorded at post offices
+          and other public buildings, the occurrence of multi-day readings
+          (representing Saturday to Monday) recorded on the first working day
+          after the weekend is frequent. An example of one such station is
+          illustrated in <xref linkend="b2_ch6_f_d6lnp"/>. Viney and Bates
+          [2004] outline a hypothesis test for identifying the periods in a
+          rainfall record that reflect significant multi-day accumulations.
+          While there is no simple corrective procedure that can be employed,
+          common-sense alternatives such as comparing with data at nearby
+          locations (after ascertaining that they do not suffer from the same
+          problem), and using the persistence structure of the non-accumulated
+          data to disaggregate the accumulated values, should be adopted. It
+          should be noted that while such accumulations may not affect
+          calculations in yield or water balance studies, their implications
+          in flood estimation studies can be significant.</para>
         </listitem>
       </itemizedlist>
 
@@ -298,7 +375,8 @@
           studies, datasets of gridded rainfall and temperature have been
           produced for Australia and elsewhere. Two gridded datasets used
           routinely in Australia are the SILO and the AWAP daily rainfall
-          5kmx5km gridded datasets. The SILO project [<emphasis role="italic">Jeffrey et al.</emphasis> , 2001] by the Queensland
+          5kmx5km gridded datasets. The SILO project [<emphasis
+          role="italic">Jeffrey et al.</emphasis> , 2001] by the Queensland
           Centre for Climate Applications, Department of Natural Resources,
           aimed to develop a comprehensive archive of key meteorological
           variables (Maximum and Minimum Temperature, Rainfall, Class-A pan
@@ -489,7 +567,8 @@
               <m:mo>─</m:mo>
             </m:mover>
           </m:math>
-        </inlineequation> the average annual rainfall at gauges <emphasis role="italic">g</emphasis> and <emphasis role="italic">i</emphasis>
+        </inlineequation> the average annual rainfall at gauges <emphasis
+      role="italic">g</emphasis> and <emphasis role="italic">i</emphasis>
       respectively, and <inlineequation>
           <m:math display="inline">
             <m:msub>
@@ -498,7 +577,8 @@
               <m:mi>i</m:mi>
             </m:msub>
           </m:math>
-        </inlineequation> the rainfall at gauge <emphasis role="italic">i</emphasis> for the time period being filled. Care must
+        </inlineequation> the rainfall at gauge <emphasis
+      role="italic">i</emphasis> for the time period being filled. Care must
       be taken to ensure that the “host” raingauges have similar climatic
       conditions as the gauge where the missing observations are being
       infilled.</para>
@@ -617,7 +697,9 @@
       </itemizedlist>
 
       <para>where <emphasis role="italic">d<subscript>i</subscript></emphasis>
-      is the Euclidean distance between gauges <emphasis role="italic">i</emphasis> and <emphasis role="italic">g</emphasis>.</para>
+      is the Euclidean distance between gauges <emphasis
+      role="italic">i</emphasis> and <emphasis
+      role="italic">g</emphasis>.</para>
 
       <itemizedlist>
         <listitem>
@@ -789,7 +871,8 @@
         low-frequency climatic anomalies such as the El Nino Southern
         Oscillation (ENSO) phenomenon. This inability of rainfall generation
         models to simulate observed variability at aggregated (annual or
-        longer) scales is referred to as “over-dispersion”[<emphasis role="italic">Katz and Parlange</emphasis>, 1998].</para>
+        longer) scales is referred to as “over-dispersion”[<emphasis
+        role="italic">Katz and Parlange</emphasis>, 1998].</para>
 
         <para>In addition to the representation of persistence, a rainfall
         generation model needs to also allow for seasonal variation. This is
@@ -799,220 +882,314 @@
         observational records, these can also be regionalised for use in
         ungauged locations.</para>
 
-        <para><xref linkend="b2_ch6_t_04g6n"/> (adapted from [<emphasis role="italic"
-            >Sharma and Mehrotra</emphasis>, 2010]) summarise the approaches used for generation of
-          daily rainfall. The higher-order Markov approaches listed are especially relevant for
-          Australia, given the significant low-frequency variability that characterises Australian
-          rainfall. Mis-representation of this variability can have serious implications in the
-          representation of pre-burst antecedent conditions, as well as the relationship between the
-          rainfall extremes and the longer-range antecedent rainfall, given both are known to be
-          modulated by climatic anomalies responsible for such variability in rainfall time series.
-            <table frame="void" xml:id="b2_ch6_t_04g6n">
-            <caption>A summary of alternative methods for stochastic generation of daily
-              rainfall</caption>
+        <para><xref linkend="b2_ch6_t_04g6n"/> (adapted from [<emphasis
+        role="italic">Sharma and Mehrotra</emphasis>, 2010]) summarise the
+        approaches used for generation of daily rainfall. The higher-order
+        Markov approaches listed are especially relevant for Australia, given
+        the significant low-frequency variability that characterises
+        Australian rainfall. Mis-representation of this variability can have
+        serious implications in the representation of pre-burst antecedent
+        conditions, as well as the relationship between the rainfall extremes
+        and the longer-range antecedent rainfall, given both are known to be
+        modulated by climatic anomalies responsible for such variability in
+        rainfall time series. <table frame="void" xml:id="b2_ch6_t_04g6n">
+            <caption>A summary of alternative methods for stochastic
+            generation of daily rainfall</caption>
+
             <col width="33%"/>
+
             <col width="33%"/>
+
             <col width="33%"/>
+
             <thead>
               <tr>
                 <th>Model</th>
+
                 <th>Description/Advantages/Drawbacks</th>
+
                 <th>References</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <th colspan="3">Daily rainfall occurrence generation</th>
               </tr>
+
               <tr>
                 <td>Low order Markov chain models</td>
-                <td>Based on wet days probabilities. For some regions generates rainfall series with
-                  too few long dry spells.</td>
-                <td>[<emphasis role="italic">Buishand</emphasis>, 1977; <emphasis role="italic"
-                    >Caskey</emphasis>, 1963; <emphasis role="italic">Feyerherm and Bark</emphasis>,
-                  1965; 1967; <emphasis role="italic">Gabriel and Neumann</emphasis>, 1962;
-                    <emphasis role="italic">Hopkins and Robillard</emphasis>, 1964; <emphasis
-                    role="italic">Racsko et al.</emphasis>, 1991; <emphasis role="italic"
-                    >Selvalingam and Miura</emphasis>, 1978; <emphasis role="italic">Stern and
-                    Coe</emphasis>, 1984; <emphasis role="italic">Wilks</emphasis>, 1998];
-                    [<emphasis role="italic">Chapman</emphasis>, 1997]</td>
+
+                <td>Based on wet days probabilities. For some regions
+                generates rainfall series with too few long dry spells.</td>
+
+                <td>[<emphasis role="italic">Buishand</emphasis>, 1977;
+                <emphasis role="italic">Caskey</emphasis>, 1963; <emphasis
+                role="italic">Feyerherm and Bark</emphasis>, 1965; 1967;
+                <emphasis role="italic">Gabriel and Neumann</emphasis>, 1962;
+                <emphasis role="italic">Hopkins and Robillard</emphasis>,
+                1964; <emphasis role="italic">Racsko et al.</emphasis>, 1991;
+                <emphasis role="italic">Selvalingam and Miura</emphasis>,
+                1978; <emphasis role="italic">Stern and Coe</emphasis>, 1984;
+                <emphasis role="italic">Wilks</emphasis>, 1998]; [<emphasis
+                role="italic">Chapman</emphasis>, 1997]</td>
               </tr>
+
               <tr>
                 <td>Higher order Markov chain models</td>
-                <td>Based on wet day probabilities of few consecutive days. The approach increases
-                  the length of the Markov model’s ‘memory’ of antecedent wet and dry days. The
-                  number of parameters (i.e., transition probabilities) required increases
-                  exponentially as the order increases, being 2k for a <emphasis role="italic"
-                    >k</emphasis>th-order chain. These models improves the representation of
-                  observed inter- annual variance in the simulations but still fell short of
-                  observed climatic variability on average.</td>
-                <td>[<emphasis role="italic">Coe and Stern</emphasis>, 1982; <emphasis role="italic"
-                    >Dennett et al.</emphasis>, 1983; <emphasis role="italic">Gates and
-                    Tong</emphasis>, 1976; <emphasis role="italic">P G Jones and
-                  Thornton</emphasis>, 1997; <emphasis role="italic">R. Mehrotra and
-                    Sharma</emphasis>, 2007a; b; <emphasis role="italic">Raj Mehrotra et
-                    al.</emphasis>, 2012; <emphasis role="italic">Pegram</emphasis>, 1980; <emphasis
-                    role="italic">Singh and Kripalani</emphasis>, 1986]</td>
+
+                <td>Based on wet day probabilities of few consecutive days.
+                The approach increases the length of the Markov model’s
+                ‘memory’ of antecedent wet and dry days. The number of
+                parameters (i.e., transition probabilities) required increases
+                exponentially as the order increases, being 2k for a <emphasis
+                role="italic">k</emphasis>th-order chain. These models
+                improves the representation of observed inter- annual variance
+                in the simulations but still fell short of observed climatic
+                variability on average.</td>
+
+                <td>[<emphasis role="italic">Coe and Stern</emphasis>, 1982;
+                <emphasis role="italic">Dennett et al.</emphasis>, 1983;
+                <emphasis role="italic">Gates and Tong</emphasis>, 1976;
+                <emphasis role="italic">P G Jones and Thornton</emphasis>,
+                1997; <emphasis role="italic">R. Mehrotra and
+                Sharma</emphasis>, 2007a; b; <emphasis role="italic">Raj
+                Mehrotra et al.</emphasis>, 2012; <emphasis
+                role="italic">Pegram</emphasis>, 1980; <emphasis
+                role="italic">Singh and Kripalani</emphasis>, 1986]</td>
               </tr>
+
               <tr>
                 <td>‘hybrid-order’ Markov models</td>
-                <td>The Markov ‘memory’ extends further back in time for the dry spells only.</td>
-                <td>[<emphasis role="italic">Stern and Coe</emphasis>, 1984; <emphasis role="italic"
-                    >Wilks</emphasis>, 1999b]</td>
+
+                <td>The Markov ‘memory’ extends further back in time for the
+                dry spells only.</td>
+
+                <td>[<emphasis role="italic">Stern and Coe</emphasis>, 1984;
+                <emphasis role="italic">Wilks</emphasis>, 1999b]</td>
               </tr>
+
               <tr>
                 <td rowspan="2">Alternating renewal process based models</td>
-                <td>These spell-length models operate by fitting probability distributions to
-                  observed relative frequencies of wet and dry-spell lengths. The approach may not
-                  be suited in arid regions or in cases with less than 25 years of
-                  observations.</td>
-                <td>
-                  <para>[<emphasis role="italic">Buishand</emphasis>, 1977; <emphasis role="italic"
-                      >Racsko et al.</emphasis>, 1991; <emphasis role="italic">Roldan and
-                      Woolhiser</emphasis>, 1982; <emphasis role="italic">Wilks</emphasis>, 1999b;
-                      <emphasis role="italic">David A. Woolhiser</emphasis>, 1992]</para>
-                  <para>Heneker et al. 2001</para>
-                </td>
+
+                <td>These spell-length models operate by fitting probability
+                distributions to observed relative frequencies of wet and
+                dry-spell lengths. The approach may not be suited in arid
+                regions or in cases with less than 25 years of
+                observations.</td>
+
+                <td><para>[<emphasis role="italic">Buishand</emphasis>, 1977;
+                <emphasis role="italic">Racsko et al.</emphasis>, 1991;
+                <emphasis role="italic">Roldan and Woolhiser</emphasis>, 1982;
+                <emphasis role="italic">Wilks</emphasis>, 1999b; <emphasis
+                role="italic">David A. Woolhiser</emphasis>, 1992]</para>
+                <para>Heneker et al. 2001</para></td>
               </tr>
+
               <tr>
                 <td>Non-parametric wet-dry spell length models</td>
-                <td>[<emphasis role="italic">Lall et al.</emphasis>, 1996; <emphasis role="italic"
-                    >Sharma and Lall</emphasis>, 1999]</td>
+
+                <td>[<emphasis role="italic">Lall et al.</emphasis>, 1996;
+                <emphasis role="italic">Sharma and Lall</emphasis>, 1999]</td>
               </tr>
+
               <tr>
-                <th colspan="3">Daily rainfall generation including amount</th>
+                <th colspan="3">Daily rainfall generation including
+                amount</th>
               </tr>
+
               <tr>
                 <td>Parametric precipitation amounts models</td>
-                <td>Based on some distribution like a two parameter gamma distribution, exponential
-                  and mixed exponential distribution. These models assume that precipitation amounts
-                  on wet days are independent, and follow the same distribution.</td>
-                <td>[<emphasis role="italic">Wilks</emphasis>, 1999a][<emphasis role="italic">Coe
-                    and Stern</emphasis>, 1982; <emphasis role="italic">Richardson</emphasis>, 1981;
-                    <emphasis role="italic">David A. Woolhiser and Pegram</emphasis>, 1979;
-                    <emphasis role="italic">David A. Woolhiser and Roldán</emphasis>, 1982;
-                    <emphasis role="italic">D. A. Woolhiser and Roldán</emphasis>, 1986]</td>
+
+                <td>Based on some distribution like a two parameter gamma
+                distribution, exponential and mixed exponential distribution.
+                These models assume that precipitation amounts on wet days are
+                independent, and follow the same distribution.</td>
+
+                <td>[<emphasis role="italic">Wilks</emphasis>,
+                1999a][<emphasis role="italic">Coe and Stern</emphasis>, 1982;
+                <emphasis role="italic">Richardson</emphasis>, 1981; <emphasis
+                role="italic">David A. Woolhiser and Pegram</emphasis>, 1979;
+                <emphasis role="italic">David A. Woolhiser and
+                Roldán</emphasis>, 1982; <emphasis role="italic">D. A.
+                Woolhiser and Roldán</emphasis>, 1986]</td>
               </tr>
+
               <tr>
                 <td>Wet spell based precipitation amount models</td>
-                <td>These models allow different probability distributions for precipitation amounts
-                  depending on that day’s position in a wet spell (separate models for start, mid
-                  and end of a wet spell).</td>
-                <td>[<emphasis role="italic">Chapman</emphasis>, 1997][<emphasis role="italic"
-                    >Buishand</emphasis>, 1977][<emphasis role="italic">Wilks</emphasis>,
-                    1999a][<emphasis role="italic">Chin and Miller</emphasis>, 1980; <emphasis
-                    role="italic">Cole and Sherriff</emphasis>, 1972]</td>
+
+                <td>These models allow different probability distributions for
+                precipitation amounts depending on that day’s position in a
+                wet spell (separate models for start, mid and end of a wet
+                spell).</td>
+
+                <td>[<emphasis role="italic">Chapman</emphasis>,
+                1997][<emphasis role="italic">Buishand</emphasis>,
+                1977][<emphasis role="italic">Wilks</emphasis>,
+                1999a][<emphasis role="italic">Chin and Miller</emphasis>,
+                1980; <emphasis role="italic">Cole and Sherriff</emphasis>,
+                1972]</td>
               </tr>
+
               <tr>
                 <td>Nonparametric precipitation amount models</td>
-                <td>A nonparametric kernel density estimation based procedure is used to simulate
-                  the rainfall conditional on previous time step value of rainfall and/or other
-                  variables</td>
-                <td>[<emphasis role="italic">Harrold et al.</emphasis>, 2003b; <emphasis
-                    role="italic">R. Mehrotra and Sharma</emphasis>, 2006; <emphasis role="italic"
-                    >Oriani et al.</emphasis>, 2014]</td>
+
+                <td>A nonparametric kernel density estimation based procedure
+                is used to simulate the rainfall conditional on previous time
+                step value of rainfall and/or other variables</td>
+
+                <td>[<emphasis role="italic">Harrold et al.</emphasis>, 2003b;
+                <emphasis role="italic">R. Mehrotra and Sharma</emphasis>,
+                2006; <emphasis role="italic">Oriani et al.</emphasis>,
+                2014]</td>
               </tr>
+
               <tr>
                 <td>Multistate Markov models</td>
-                <td>These Markov models simulate both precipitation occurrence and amounts, by
-                  defining different ranges of precipitation amounts as constituting distinct
-                  states. The outcome of this approach depends on the choice of the number of
-                  states, their ranges and on the distributions used for wet-day amounts in any
-                  given state. These models involve comparatively large numbers of parameters, and
-                  thus require quite long data records in order to be estimated well.</td>
-                <td>[<emphasis role="italic">W C Boughton</emphasis>, 1999][<emphasis role="italic"
-                    >Gregory et al.</emphasis>, 1993; <emphasis role="italic">Haan et
-                  al.</emphasis>, 1976; <emphasis role="italic">McMahon and Srikanthan</emphasis>,
-                  1983; <emphasis role="italic">R. Srikanthan and McMahon</emphasis>, 1985]</td>
+
+                <td>These Markov models simulate both precipitation occurrence
+                and amounts, by defining different ranges of precipitation
+                amounts as constituting distinct states. The outcome of this
+                approach depends on the choice of the number of states, their
+                ranges and on the distributions used for wet-day amounts in
+                any given state. These models involve comparatively large
+                numbers of parameters, and thus require quite long data
+                records in order to be estimated well.</td>
+
+                <td>[<emphasis role="italic">W C Boughton</emphasis>,
+                1999][<emphasis role="italic">Gregory et al.</emphasis>, 1993;
+                <emphasis role="italic">Haan et al.</emphasis>, 1976;
+                <emphasis role="italic">McMahon and Srikanthan</emphasis>,
+                1983; <emphasis role="italic">R. Srikanthan and
+                McMahon</emphasis>, 1985]</td>
               </tr>
+
               <tr>
                 <td>Cluster based point processes models</td>
-                <td>Rainfall process is described using cluster of rectangular pulses. In the
-                  approach, storms arrive according to a Poisson process and are represented by
-                  clusters of rainfall cells temporally displaced from the storm centre.</td>
-                <td>[<emphasis role="italic">Evin and Favre</emphasis>, 2012; <emphasis
-                    role="italic">Kavvas and Delleur</emphasis>, 1981; <emphasis role="italic">D Kim
-                    et al.</emphasis>, 2014; <emphasis role="italic">Leblois and Creutin</emphasis>,
-                  2013; <emphasis role="italic">Leonard et al.</emphasis>, 2008; <emphasis
-                    role="italic">Onof et al.</emphasis>, 2000; <emphasis role="italic">Ramirez and
-                    Bras</emphasis>, 1985; <emphasis role="italic">Ignacio Rodriguez-Iturbe et
-                    al.</emphasis>, 1984; <emphasis role="italic">I. Rodriguez-Iturbe et
-                    al.</emphasis>, 1987; 1988; <emphasis role="italic">Waymire and
-                  Gupta</emphasis>, 1981a; b; <emphasis role="italic">Wheater et al.</emphasis>,
-                  2000]</td>
+
+                <td>Rainfall process is described using cluster of rectangular
+                pulses. In the approach, storms arrive according to a Poisson
+                process and are represented by clusters of rainfall cells
+                temporally displaced from the storm centre.</td>
+
+                <td>[<emphasis role="italic">Evin and Favre</emphasis>, 2012;
+                <emphasis role="italic">Kavvas and Delleur</emphasis>, 1981;
+                <emphasis role="italic">D Kim et al.</emphasis>, 2014;
+                <emphasis role="italic">Leblois and Creutin</emphasis>, 2013;
+                <emphasis role="italic">Leonard et al.</emphasis>, 2008;
+                <emphasis role="italic">Onof et al.</emphasis>, 2000;
+                <emphasis role="italic">Ramirez and Bras</emphasis>, 1985;
+                <emphasis role="italic">Ignacio Rodriguez-Iturbe et
+                al.</emphasis>, 1984; <emphasis role="italic">I.
+                Rodriguez-Iturbe et al.</emphasis>, 1987; 1988; <emphasis
+                role="italic">Waymire and Gupta</emphasis>, 1981a; b;
+                <emphasis role="italic">Wheater et al.</emphasis>, 2000]</td>
               </tr>
+
               <tr>
                 <td>Copula theory based models</td>
-                <td>Multivariate copulas are used to describe the spatial structure of rainfall
-                  amounts and occurrences</td>
-                <td>[<emphasis role="italic">A. Bárdossy and Pegram</emphasis>, 2009; <emphasis
-                    role="italic">Serinaldi</emphasis>, 2009]</td>
+
+                <td>Multivariate copulas are used to describe the spatial
+                structure of rainfall amounts and occurrences</td>
+
+                <td>[<emphasis role="italic">A. Bárdossy and
+                Pegram</emphasis>, 2009; <emphasis
+                role="italic">Serinaldi</emphasis>, 2009]</td>
               </tr>
+
               <tr>
                 <td>Multifractal simulation techniques</td>
-                <td>These models characterize rainfall by scale invariant (scaling) and fractal
-                  properties.</td>
-                <td>[<emphasis role="italic">Seed et al.</emphasis>, 1999][<emphasis role="italic"
-                    >Merab Menabde et al.</emphasis>, 1997][<emphasis role="italic">Jha et
-                    al.</emphasis>, 2015]</td>
+
+                <td>These models characterize rainfall by scale invariant
+                (scaling) and fractal properties.</td>
+
+                <td>[<emphasis role="italic">Seed et al.</emphasis>,
+                1999][<emphasis role="italic">Merab Menabde et al.</emphasis>,
+                1997][<emphasis role="italic">Jha et al.</emphasis>,
+                2015]</td>
               </tr>
+
               <tr>
                 <td>Conditioning on covariates</td>
-                <td>Monthly statistics of rainfall, long-range forecasts of the monthly statistics,
-                  random numbers or a ‘hidden’ mixture approach to capture some interannual
-                  variability.</td>
-                <td>[<emphasis role="italic">P G Jones and Thornton</emphasis>, 1997][<emphasis
-                    role="italic">Katz et al.</emphasis>, 2003][<emphasis role="italic"
-                    >Wilks</emphasis>, 1999b]</td>
+
+                <td>Monthly statistics of rainfall, long-range forecasts of
+                the monthly statistics, random numbers or a ‘hidden’ mixture
+                approach to capture some interannual variability.</td>
+
+                <td>[<emphasis role="italic">P G Jones and
+                Thornton</emphasis>, 1997][<emphasis role="italic">Katz et
+                al.</emphasis>, 2003][<emphasis
+                role="italic">Wilks</emphasis>, 1999b]</td>
               </tr>
+
               <tr>
-                <td>Conditioning on previous time history of simulated rainfall</td>
-                <td>Rainfall occurrences and amounts are simulated conditional on the recent past
-                  rainfall behaviour.</td>
-                <td>[<emphasis role="italic">Harrold et al.</emphasis>, 2003a; b; <emphasis
-                    role="italic">R. Mehrotra and Sharma</emphasis>, 2007a; b; <emphasis
-                    role="italic">Sharma and O'Neill</emphasis>, 2002]</td>
+                <td>Conditioning on previous time history of simulated
+                rainfall</td>
+
+                <td>Rainfall occurrences and amounts are simulated conditional
+                on the recent past rainfall behaviour.</td>
+
+                <td>[<emphasis role="italic">Harrold et al.</emphasis>, 2003a;
+                b; <emphasis role="italic">R. Mehrotra and Sharma</emphasis>,
+                2007a; b; <emphasis role="italic">Sharma and
+                O'Neill</emphasis>, 2002]</td>
               </tr>
+
               <tr>
-                <td>Conditioning on some aspect of large-scale atmospheric circulation/weather
-                  patterns</td>
-                <td>Using the Lamb Weather Type weather classification, monthly Southern Oscillation
-                  Index (SOI), North Atlantic Oscillation Index (NAOI), North Atlantic sea surface
-                  temperature (SST) anomalies and other atmospheric predictors.</td>
-                <td>[<emphasis role="italic">Katz and Parlange</emphasis>, 1998]Hay <emphasis
-                    role="italic">et al</emphasis>. (1991)[<emphasis role="italic">Charles et
-                    al.</emphasis>, 1999; <emphasis role="italic">Hughes and Guttorp</emphasis>,
-                    1994][<emphasis role="italic">David A. Woolhiser</emphasis>, 1992][<emphasis
-                    role="italic">Wilby et al.</emphasis>, 1998][<emphasis role="italic">D Kim et
-                    al.</emphasis>, 2014][<emphasis role="italic">Bardossy and Plate</emphasis>,
-                  1992; <emphasis role="italic">Serinaldi and Kilsby</emphasis>, 2014; <emphasis
-                    role="italic">Wallis and Griffiths</emphasis>, 1997][<emphasis role="italic">D
-                    Kim et al.</emphasis>, 2014; <emphasis role="italic">Y Kim et al.</emphasis>,
-                  2012; <emphasis role="italic">Kleiber et al.</emphasis>, 2012][<emphasis
-                    role="italic">Carey-Smith et al.</emphasis>, 2014; <emphasis role="italic">Heaps
-                    et al.</emphasis>, 2015]</td>
+                <td>Conditioning on some aspect of large-scale atmospheric
+                circulation/weather patterns</td>
+
+                <td>Using the Lamb Weather Type weather classification,
+                monthly Southern Oscillation Index (SOI), North Atlantic
+                Oscillation Index (NAOI), North Atlantic sea surface
+                temperature (SST) anomalies and other atmospheric
+                predictors.</td>
+
+                <td>[<emphasis role="italic">Katz and Parlange</emphasis>,
+                1998]Hay <emphasis role="italic">et al</emphasis>.
+                (1991)[<emphasis role="italic">Charles et al.</emphasis>,
+                1999; <emphasis role="italic">Hughes and Guttorp</emphasis>,
+                1994][<emphasis role="italic">David A. Woolhiser</emphasis>,
+                1992][<emphasis role="italic">Wilby et al.</emphasis>,
+                1998][<emphasis role="italic">D Kim et al.</emphasis>,
+                2014][<emphasis role="italic">Bardossy and Plate</emphasis>,
+                1992; <emphasis role="italic">Serinaldi and Kilsby</emphasis>,
+                2014; <emphasis role="italic">Wallis and Griffiths</emphasis>,
+                1997][<emphasis role="italic">D Kim et al.</emphasis>, 2014;
+                <emphasis role="italic">Y Kim et al.</emphasis>, 2012;
+                <emphasis role="italic">Kleiber et al.</emphasis>,
+                2012][<emphasis role="italic">Carey-Smith et al.</emphasis>,
+                2014; <emphasis role="italic">Heaps et al.</emphasis>,
+                2015]</td>
               </tr>
+
               <tr>
                 <td>Model nesting at multiple time scales</td>
-                <td>Rainfall amounts are adjusted at monthly/seasonal and annual time scales to
-                  maintain the desired variability at higher time scales</td>
-                <td>[<emphasis role="italic">W C Boughton</emphasis>, 1999][<emphasis role="italic"
-                    >R. Srikanthan and Pegram</emphasis>, 2009][<emphasis role="italic">Wang and
-                    Nathan</emphasis>, 2007], Lambert et al. (2003), Thyer and Kuczera (2003a,
-                  2003b)</td>
+
+                <td>Rainfall amounts are adjusted at monthly/seasonal and
+                annual time scales to maintain the desired variability at
+                higher time scales</td>
+
+                <td>[<emphasis role="italic">W C Boughton</emphasis>,
+                1999][<emphasis role="italic">R. Srikanthan and
+                Pegram</emphasis>, 2009][<emphasis role="italic">Wang and
+                Nathan</emphasis>, 2007], Lambert et al. (2003), Thyer and
+                Kuczera (2003a, 2003b)</td>
               </tr>
             </tbody>
           </table></para>
 
-        <para>The daily generation models in <xref linkend="b2_ch6_t_04g6n"/> are often
-          formulated using high quality observed rainfall records, and then regionalised for use
-          anywhere. Regionalisation of a rainfall generation model is accomplished either by
-          interpolating model parameters for use at ungauged locations, or by sampling data from
-          other locations as representative for the location of interest. In the discussion that
-          follows, two methods - the regionalised Nested Transition Probability Model (N-TPM) and
-          the Regionalised Modified Markov Model (RMMM), are summarised due to their widespread use
-          in Australia and the availability of software to facilitate implementation within the
-          country.</para>
+        <para>The daily generation models in <xref linkend="b2_ch6_t_04g6n"/>
+        are often formulated using high quality observed rainfall records, and
+        then regionalised for use anywhere. Regionalisation of a rainfall
+        generation model is accomplished either by interpolating model
+        parameters for use at ungauged locations, or by sampling data from
+        other locations as representative for the location of interest. In the
+        discussion that follows, two methods - the regionalised Nested
+        Transition Probability Model (N-TPM) and the Regionalised Modified
+        Markov Model (RMMM), are summarised due to their widespread use in
+        Australia and the availability of software to facilitate
+        implementation within the country.</para>
       </section>
 
       <section xml:id="b2_ch6_s_egx9g">
@@ -1020,7 +1197,8 @@
 
         <para>The Transition Probability Model (TPM) offers a simple and
         effective characterisation of Markov order-one persistence in the
-        daily rainfall generation process [<emphasis role="italic">Ratnasingham Srikanthan et al.</emphasis>, 2003]. In the
+        daily rainfall generation process [<emphasis
+        role="italic">Ratnasingham Srikanthan et al.</emphasis>, 2003]. In the
         TPM, the daily rainfalls are divided into a maximum of seven states.
         State 1 is dry (no rainfall) and the other states are wet. The
         rainfall amounts in the largest state are generated using a Gamma
@@ -1034,326 +1212,578 @@
         inflating the variability of rain on each day, while keeping the
         fraction of wet days in a year constant.</para>
 
-        <para>The TPM has been applied in a number of studies, and exists in a regionalised form for
-          use anywhere in Australia. The computer program for the TPM can be obtained from the
-          Stochastic Climate Library as part of the e-Water Toolkit (<link
-            xlink:href="http://toolkit.net.au/Tools/SCL">http://toolkit.net.au/Tools/SCL</link> ).
-          Parameters for major city centres and recommendations for ungauged locations are provided
-          within the software. <xref linkend="b2_ch6_t_1n4n0"/> and <xref
-            linkend="b2_ch6_t_6gzdy"/> present the number of states and the rainfall
-          amount associated with highest state used for major city centres in Australia. If the
-          number of states is less than seven the upper limit of the last state is infinite. <xref
-            linkend="b2_ch6_f_cvuvq"/> provides regional extents that are used in
-          applying the method to other locations not included in the tables.</para>
+        <para>The TPM has been applied in a number of studies, and exists in a
+        regionalised form for use anywhere in Australia. The computer program
+        for the TPM can be obtained from the Stochastic Climate Library as
+        part of the e-Water Toolkit (<link
+        xlink:href="http://toolkit.net.au/Tools/SCL">http://toolkit.net.au/Tools/SCL</link>
+        ). Parameters for major city centres and recommendations for ungauged
+        locations are provided within the software. <xref
+        linkend="b2_ch6_t_1n4n0"/> and <xref linkend="b2_ch6_t_6gzdy"/>
+        present the number of states and the rainfall amount associated with
+        highest state used for major city centres in Australia. If the number
+        of states is less than seven the upper limit of the last state is
+        infinite. <xref linkend="b2_ch6_f_cvuvq"/> provides regional extents
+        that are used in applying the method to other locations not included
+        in the tables.</para>
 
-        <para>
-          <table frame="void" xml:id="b2_ch6_t_1n4n0">
-            <caption>Number of states used for different rainfall stations in the Transition
-              Probability Model [<emphasis role="italic">Ratnasingham Srikanthan et al.</emphasis>,
-              2003]</caption>
+        <para><table frame="void" xml:id="b2_ch6_t_1n4n0">
+            <caption>Number of states used for different rainfall stations in
+            the Transition Probability Model [<emphasis
+            role="italic">Ratnasingham Srikanthan et al.</emphasis>,
+            2003]</caption>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <col width="6%"/>
+
             <thead>
               <tr>
                 <th>Station</th>
-                <th>
-                  <para>Latitude °S</para>
-                </th>
-                <th>
-                  <para>Longitude</para>
-                  <para> °E</para>
-                </th>
+
+                <th><para>Latitude °S</para></th>
+
+                <th><para>Longitude</para> <para> °E</para></th>
+
                 <th>J</th>
+
                 <th>F</th>
+
                 <th>M</th>
+
                 <th>A</th>
+
                 <th>M</th>
+
                 <th>J</th>
+
                 <th>J</th>
+
                 <th>A</th>
+
                 <th>S</th>
+
                 <th>O</th>
+
                 <th>N</th>
+
                 <th>D</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td>Melbourne</td>
+
                 <td>37 49</td>
+
                 <td>144 58</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Lerderderg</td>
+
                 <td>37 30</td>
+
                 <td>144 22</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Monto</td>
+
                 <td>24 51</td>
+
                 <td>151 01</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Cowra</td>
+
                 <td>33 49</td>
+
                 <td>148 42</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Adelaide</td>
+
                 <td>34 56</td>
+
                 <td>138 35</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Perth</td>
+
                 <td>31 57</td>
+
                 <td>115 51</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
               </tr>
+
               <tr>
                 <td>Sydney</td>
+
                 <td>33 52</td>
+
                 <td>151 12</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
               </tr>
+
               <tr>
                 <td>Brisbane</td>
+
                 <td>27 28</td>
+
                 <td>121 06</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
               </tr>
+
               <tr>
                 <td>Mackay</td>
+
                 <td>21 06</td>
+
                 <td>149 06</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
               </tr>
+
               <tr>
                 <td>Kalgoorlie</td>
+
                 <td>30 47</td>
+
                 <td>21 27</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
               </tr>
+
               <tr>
                 <td>Alice Springs</td>
+
                 <td>23 49</td>
+
                 <td>133 53</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
               </tr>
+
               <tr>
                 <td>Onslow</td>
+
                 <td>21 40</td>
+
                 <td>115 07</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>4</td>
+
                 <td>3</td>
+
                 <td>4</td>
+
                 <td>3</td>
+
                 <td>4</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
               </tr>
+
               <tr>
                 <td>Bamboo Springs</td>
+
                 <td>22 03</td>
+
                 <td>119 38</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>6</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>5</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>2</td>
               </tr>
+
               <tr>
                 <td>Broome</td>
+
                 <td>17 57</td>
+
                 <td>122 15</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>3</td>
+
                 <td>4</td>
               </tr>
+
               <tr>
                 <td>Darwin</td>
+
                 <td>12 27</td>
+
                 <td>130 48</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>3</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>2</td>
+
                 <td>3</td>
+
                 <td>7</td>
+
                 <td>7</td>
+
                 <td>7</td>
               </tr>
             </tbody>
-          </table>
-        </para>
+          </table></para>
 
         <figure xml:id="b2_ch6_f_cvuvq">
-          <title>Location of the rainfall stations in <xref linkend="b2_ch6_t_04g6n"/>
-            for the Transition Probability model [Ratnasingham Srikanthan et al.<emphasis>,
-              2003]</emphasis></title>
+          <title>Location of the rainfall stations in <xref
+          linkend="b2_ch6_t_04g6n"/> for the Transition Probability model
+          [Ratnasingham Srikanthan et al.<emphasis>, 2003]</emphasis></title>
 
           <mediaobject>
             <imageobject>
@@ -1435,7 +1865,8 @@
         variability in rainfall across a range of time scales, making the
         generated series more useable for hydrological applications. As with
         the TPM, the computer program for the Nested TPM can be obtained from
-        the Stochastic Climate Library as part of the e-Water Toolkit (<link xlink:href="http://toolkit.net.au/Tools/SCL">http://toolkit.net.au/Tools/SCL</link>
+        the Stochastic Climate Library as part of the e-Water Toolkit (<link
+        xlink:href="http://toolkit.net.au/Tools/SCL">http://toolkit.net.au/Tools/SCL</link>
         ).</para>
       </section>
 
@@ -1468,8 +1899,8 @@
         generated using a nonparametric kernel density estimation
         approach.</para>
 
-        <para>The algorithm for generating daily rainfall using the MMM is presented in <xref
-            linkend="b2_ch6_f_gfdnjfsd"/> below.</para>
+        <para>The algorithm for generating daily rainfall using the MMM is
+        presented in <xref linkend="b2_ch6_f_gfdnjfsd"/> below.</para>
 
         <para><sidebar xml:id="b2_ch6_f_gfdnjfsd">
             <orderedlist>
@@ -1519,7 +1950,7 @@
                         <m:mo form="postfix">^</m:mo>
                       </m:mover>
                     </m:math>
-                  </inlineequation>. </para>
+                  </inlineequation>.</para>
 
                 <informalequation>
                   <m:math display="block">
@@ -2185,12 +2616,12 @@
                         <m:mo>⁡</m:mo>
 
                         <m:mfenced>
-                          <m:mi> </m:mi>
+                          <m:mi/>
                         </m:mfenced>
                       </m:mrow>
                     </m:math>
-                  </inlineequation> represents the determinant operation.
-                </para>
+                  </inlineequation> represents the determinant
+                operation.</para>
               </listitem>
 
               <listitem>
@@ -2275,7 +2706,8 @@
         algorithm. A R-package to generate daily rainfall at multiple
         locations given observed rainfall time series has been developed
         [<emphasis role="italic">R. Mehrotra et al.</emphasis>, 2015] and is
-        available for download from Hydrology@UNSW Software website (<link xlink:href="http://www.hydrology.unsw.edu.au/download/software/multisite-rainfall-simulator">http://www.hydrology.unsw.edu.au/download/software/multisite-rainfall-simulator</link>).
+        available for download from Hydrology@UNSW Software website (<link
+        xlink:href="http://www.hydrology.unsw.edu.au/download/software/multisite-rainfall-simulator">http://www.hydrology.unsw.edu.au/download/software/multisite-rainfall-simulator</link>).
         The package exists as a Multi-site Rainfall Simulator (abbreviated
         MRS), offering the capability to generate rainfall at multiple
         locations of interest while maintaining their spatial dependence
@@ -2288,8 +2720,10 @@
           <para>The MMM as described above requires a representative sample of
           daily rainfall for generation to proceed. This restricts its
           application only to locations having long-length observed records.
-          An attempt to regionalise the MMM was presented in [<emphasis role="italic">Raj Mehrotra et al.</emphasis>, 2012], using a similar
-          approach to the regionalised sub-daily generation model [<emphasis role="italic">Seth Westra et al.</emphasis>, 2012] described later.
+          An attempt to regionalise the MMM was presented in [<emphasis
+          role="italic">Raj Mehrotra et al.</emphasis>, 2012], using a similar
+          approach to the regionalised sub-daily generation model [<emphasis
+          role="italic">Seth Westra et al.</emphasis>, 2012] described later.
           Unlike the regionalised version of the Nested TPM presented earlier,
           here the regionalisation involved identifying rainfall records for
           locations deemed ‘similar’ to the target, followed by rescaling to
@@ -2311,16 +2745,19 @@
           distance to coast is likely to be greater for two stations having
           greater proximity to the coastline.</para>
 
-          <para>‘Similarity’ between any two sites was assessed based on the similarity in the
-            bivariate probability distributions of a daily-scale attribute of interest, and the
-            annual rainfall total. <xref linkend="b2_ch6_t_6gzdy"/> outlines the
-            attributes used in formulation of the RMMM. Each of the attributes listed were used to
-            define similarity between stations based on a 2-sample, 2-dimensional Kolgomorov-Smirnov
-            test [<emphasis role="italic">Fasano and Franceschini</emphasis>, 1987]. The resulting
-            classification of similarity (‘1’ for similar and ‘0’ for dis-similar) for each
-            attribute was pooled in a logistic regression framework, using the difference in
-            latitude for the two stations, difference in longitude, and difference in the relative
-            distance to coast as covariates.</para>
+          <para>‘Similarity’ between any two sites was assessed based on the
+          similarity in the bivariate probability distributions of a
+          daily-scale attribute of interest, and the annual rainfall total.
+          <xref linkend="b2_ch6_t_6gzdy"/> outlines the attributes used in
+          formulation of the RMMM. Each of the attributes listed were used to
+          define similarity between stations based on a 2-sample,
+          2-dimensional Kolgomorov-Smirnov test [<emphasis
+          role="italic">Fasano and Franceschini</emphasis>, 1987]. The
+          resulting classification of similarity (‘1’ for similar and ‘0’ for
+          dis-similar) for each attribute was pooled in a logistic regression
+          framework, using the difference in latitude for the two stations,
+          difference in longitude, and difference in the relative distance to
+          coast as covariates.</para>
 
           <para><table frame="void" xml:id="b2_ch6_t_v3e2v">
               <caption>Daily scale attributes used to define similarity
@@ -2390,7 +2827,8 @@
           to be generated, one can now rank stations with data from
           most-similar to least-similar for each attribute. The approach
           adopted in RMMM is to form an average rank using all attributes for
-          all nearby stations, and use the lowest <emphasis role="italic">S</emphasis> ranks to identify the stations to use as
+          all nearby stations, and use the lowest <emphasis
+          role="italic">S</emphasis> ranks to identify the stations to use as
           the basis of rainfall generation. To account for the relative
           similarity across these <emphasis role="italic">S</emphasis>
           stations, each station is selected with a probability equal
@@ -2448,13 +2886,15 @@
             </m:math>
           </equation>
 
-          <para>where w<subscript>i</subscript> represents the weight associated with the <emphasis
-              role="italic">i</emphasis>th station and r<subscript>i</subscript> the rank associated
-            with that station, used as the basis for probabilistically selecting nearby stations in
-            the modified Markov model. Lower-ranked stations, which, by definition have rainfall
-            attributes which are most statistically similar to the target site, attain higher weight
-            and therefore a higher probability of being used in MMM. This rationale is summarised in
-              <xref linkend="b2_ch6_f_dg0kh"/> below.</para>
+          <para>where w<subscript>i</subscript> represents the weight
+          associated with the <emphasis role="italic">i</emphasis>th station
+          and r<subscript>i</subscript> the rank associated with that station,
+          used as the basis for probabilistically selecting nearby stations in
+          the modified Markov model. Lower-ranked stations, which, by
+          definition have rainfall attributes which are most statistically
+          similar to the target site, attain higher weight and therefore a
+          higher probability of being used in MMM. This rationale is
+          summarised in <xref linkend="b2_ch6_f_dg0kh"/> below.</para>
 
           <figure xml:id="b2_ch6_f_dg0kh">
             <title>Identification of “similar” locations for daily rainfall
@@ -2467,15 +2907,16 @@
             </mediaobject>
           </figure>
 
-          <para>Once the ‘similar’ <emphasis role="italic">S</emphasis> stations have been
-            identified, the generation of rainfall sequences at the target location proceeds as per
-            the generation algorithm for MMM in <xref linkend="b2_ch6_f_gfdnjfsd"/>,
-            with the inclusion of two additional steps. The first of these steps involves a
-            re-scaling of the “similar” locations identified as described in <xref
-              linkend="b2_ch6_f_dg0kh"/>. The second of these steps is a probabilistic
-            selection of the “similar” locations, based on the weights associated with each
-            location. These steps are summarised in <xref linkend="b2_ch6_f_kqjty"
-            />.</para>
+          <para>Once the ‘similar’ <emphasis role="italic">S</emphasis>
+          stations have been identified, the generation of rainfall sequences
+          at the target location proceeds as per the generation algorithm for
+          MMM in <xref linkend="b2_ch6_f_gfdnjfsd"/>, with the inclusion of
+          two additional steps. The first of these steps involves a re-scaling
+          of the “similar” locations identified as described in <xref
+          linkend="b2_ch6_f_dg0kh"/>. The second of these steps is a
+          probabilistic selection of the “similar” locations, based on the
+          weights associated with each location. These steps are summarised in
+          <xref linkend="b2_ch6_f_kqjty"/>.</para>
 
           <figure xml:id="b2_ch6_f_kqjty">
             <title>Algorithm for generation of daily rainfall sequences using
@@ -2523,19 +2964,21 @@
     <section xml:id="b2_ch6_s_1jn8s">
       <title>Sub-daily Rainfall Generation</title>
 
-      <para>While considerable work has been done on generation of daily rainfall sequences, for
-        design flood estimation, information is often required at a sub-daily time scale. Sub-daily
-        rainfall sequences are generated using two sets of approaches. In the first case, rainfall
-        is generated assuming a model formulated based on sub-daily rainfall observations. In the
-        second case, sub-daily rainfall is generated conditional to daily rainfall through a
-        disaggregation algorithm, the aim being to utilise the value of the much longer daily
-        rainfall data and adopt a sensible approach to convert it to finer time steps. <xref
-          linkend="b2_ch6_t_2izo5"/> summarises many of the sub-daily rainfall
-        generation approaches available in the literature.</para>
+      <para>While considerable work has been done on generation of daily
+      rainfall sequences, for design flood estimation, information is often
+      required at a sub-daily time scale. Sub-daily rainfall sequences are
+      generated using two sets of approaches. In the first case, rainfall is
+      generated assuming a model formulated based on sub-daily rainfall
+      observations. In the second case, sub-daily rainfall is generated
+      conditional to daily rainfall through a disaggregation algorithm, the
+      aim being to utilise the value of the much longer daily rainfall data
+      and adopt a sensible approach to convert it to finer time steps. <xref
+      linkend="b2_ch6_t_2izo5"/> summarises many of the sub-daily rainfall
+      generation approaches available in the literature.</para>
 
       <para><table frame="void" xml:id="b2_ch6_t_2izo5">
-          <caption>Commonly used sub-daily rainfall generation models
-          </caption>
+          <caption>Commonly used sub-daily rainfall generation
+          models</caption>
 
           <col width="33%"/>
 
@@ -2570,7 +3013,10 @@
               <emphasis role="italic">Wheater et al.</emphasis>,
               2000][<emphasis role="italic">Gyasi-Agyei</emphasis>,
               2013][<emphasis role="italic">I. Rodriguez-Iturbe et
-              al.</emphasis>, 1987; 1988][<emphasis role="italic">Eagleson</emphasis>, 1978; <emphasis role="italic">Heneker et al.</emphasis>, 2001; <emphasis role="italic">Koutsoyiannis and Pachakis</emphasis>, 1996;
+              al.</emphasis>, 1987; 1988][<emphasis
+              role="italic">Eagleson</emphasis>, 1978; <emphasis
+              role="italic">Heneker et al.</emphasis>, 2001; <emphasis
+              role="italic">Koutsoyiannis and Pachakis</emphasis>, 1996;
               <emphasis role="italic">M. Menabde and Sivapalan</emphasis>,
               2000]</td>
             </tr>
@@ -2632,7 +3078,8 @@
         <para>Also known as ‘alternating renewal’ or ‘profile-based’ models,
         event-based models break the rainfall process into a series of events
         characterised by inter-arrival time, storm duration and mean storm
-        intensity. Early work on such models by [<emphasis role="italic">Eagleson</emphasis>, 1978] involved simulating rainfall
+        intensity. Early work on such models by [<emphasis
+        role="italic">Eagleson</emphasis>, 1978] involved simulating rainfall
         arrivals using a Poisson distribution, the time between events and the
         event duration using an exponential distribution, and the storm event
         depth using a gamma distribution. Since this time these models have
@@ -2647,25 +3094,30 @@
         durations [<emphasis role="italic">Lambert and Kuczera</emphasis>,
         1998].</para>
 
-        <para>The Disaggregated Rectangular Intensity Pulse (DRIP) model was developed by [<emphasis
-            role="italic">Heneker et al.</emphasis>, 2001] with the view to addressing several
-          perceived deficiencies in existing event-based models, particularly with regard to the
-          simulation of extreme rainfall and aggregation statistics. The DRIP modelling process is
-          divided into two stages. The generation stage (<emphasis role="bold"><xref
-              linkend="b2_ch6_f_0rmsb"/>a</emphasis>) is represented by three random
-          variables: dry spell or inter-event time <emphasis role="italic">ta</emphasis>, the wet
-          spell or storm duration <emphasis role="italic">td</emphasis>, and the average intensity
-            <emphasis role="italic">i</emphasis>, with <emphasis role="italic">ta</emphasis> and
-            <emphasis role="italic">td</emphasis>both described by a generalised exponential
-          distribution and the intensity (<emphasis role="italic">i</emphasis>) described by a
-          generalised Pareto distribution. In the second stage, the individual events are
-          disaggregated through a constrained random walk (<xref
-            linkend="b2_ch6_f_0rmsb"/><emphasis role="bold">b</emphasis>) to represent
-          the rainfall temporal pattern for each event.</para>
+        <para>The Disaggregated Rectangular Intensity Pulse (DRIP) model was
+        developed by [<emphasis role="italic">Heneker et al.</emphasis>, 2001]
+        with the view to addressing several perceived deficiencies in existing
+        event-based models, particularly with regard to the simulation of
+        extreme rainfall and aggregation statistics. The DRIP modelling
+        process is divided into two stages. The generation stage (<emphasis
+        role="bold"><xref linkend="b2_ch6_f_0rmsb"/>a</emphasis>) is
+        represented by three random variables: dry spell or inter-event time
+        <emphasis role="italic">ta</emphasis>, the wet spell or storm duration
+        <emphasis role="italic">td</emphasis>, and the average intensity
+        <emphasis role="italic">i</emphasis>, with <emphasis
+        role="italic">ta</emphasis> and <emphasis
+        role="italic">td</emphasis>both described by a generalised exponential
+        distribution and the intensity (<emphasis role="italic">i</emphasis>)
+        described by a generalised Pareto distribution. In the second stage,
+        the individual events are disaggregated through a constrained random
+        walk (<xref linkend="b2_ch6_f_0rmsb"/><emphasis
+        role="bold">b</emphasis>) to represent the rainfall temporal pattern
+        for each event.</para>
 
         <figure xml:id="b2_ch6_f_0rmsb">
           <title>The Disaggregated Rectangular Intensity Pulse model
-          (extracted from Heneker<emphasis role="italic"><emphasis role="bold"> </emphasis></emphasis>et al, 2001)</title>
+          (extracted from Heneker<emphasis role="italic"><emphasis
+          role="bold"> </emphasis></emphasis>et al, 2001)</title>
 
           <mediaobject>
             <imageobject>
@@ -2674,42 +3126,55 @@
           </mediaobject>
         </figure>
 
-        <para>The random walk through a nondimensional time-depth space is illustrated in <xref
-            linkend="b2_ch6_f_ozunq"/>. This is then used to disaggregate the
-          rectangular pulse to time steps of the order of six or fewer minutes. Time during the
-          storm is non-dimensionalised by <inlineequation>
+        <para>The random walk through a nondimensional time-depth space is
+        illustrated in <xref linkend="b2_ch6_f_ozunq"/>. This is then used to
+        disaggregate the rectangular pulse to time steps of the order of six
+        or fewer minutes. Time during the storm is non-dimensionalised by
+        <inlineequation>
             <m:math display="inline">
               <m:mrow>
                 <m:mi>τ</m:mi>
+
                 <m:mo>=</m:mo>
+
                 <m:mfrac bevelled="true">
                   <m:mi>t</m:mi>
+
                   <m:msub>
                     <m:mi>t</m:mi>
+
                     <m:mi>d</m:mi>
                   </m:msub>
                 </m:mfrac>
               </m:mrow>
             </m:math>
-          </inlineequation> where t is the time since the start of the storm and depth is
-          non-dimensionalised by <inlineequation>
+          </inlineequation> where t is the time since the start of the storm
+        and depth is non-dimensionalised by <inlineequation>
             <m:math display="inline">
               <m:mrow>
                 <m:mi>δ</m:mi>
+
                 <m:mo>=</m:mo>
+
                 <m:mfrac bevelled="true">
                   <m:mrow>
                     <m:mi>d</m:mi>
+
                     <m:mo>⁡</m:mo>
+
                     <m:mfenced>
                       <m:mi>t</m:mi>
                     </m:mfenced>
                   </m:mrow>
+
                   <m:mrow>
                     <m:mi>i</m:mi>
+
                     <m:mo>⁢</m:mo>
+
                     <m:msub>
                       <m:mi>t</m:mi>
+
                       <m:mi>d</m:mi>
                     </m:msub>
                   </m:mrow>
@@ -2720,24 +3185,28 @@
             <m:math display="inline">
               <m:mrow>
                 <m:mi>d</m:mi>
+
                 <m:mo>⁡</m:mo>
+
                 <m:mfenced>
                   <m:mi>t</m:mi>
                 </m:mfenced>
               </m:mrow>
             </m:math>
-          </inlineequation> is the cumulative rainfall up to time t. The random walk progresses in
-          discrete time intervals <inlineequation>
+          </inlineequation> is the cumulative rainfall up to time t. The
+        random walk progresses in discrete time intervals <inlineequation>
             <m:math display="inline">
               <m:mrow>
                 <m:mi>Δ</m:mi>
+
                 <m:mo>⁢</m:mo>
+
                 <m:mi>τ</m:mi>
               </m:mrow>
             </m:math>
           </inlineequation> from coordinate (0,0) to (1,1) in <xref
-            linkend="b2_ch6_f_lrnm4"/>, always with a non-negative slope. There are two
-          possibilities for a jump from <inlineequation>
+        linkend="b2_ch6_f_lrnm4"/>, always with a non-negative slope. There
+        are two possibilities for a jump from <inlineequation>
             <m:math display="inline">
               <m:mi>τ</m:mi>
             </m:math>
@@ -2745,10 +3214,14 @@
             <m:math display="inline">
               <m:mrow>
                 <m:mi>τ</m:mi>
+
                 <m:mo>+</m:mo>
+
                 <m:mrow>
                   <m:mi>Δ</m:mi>
+
                   <m:mo>⁢</m:mo>
+
                   <m:mi>τ</m:mi>
                 </m:mrow>
               </m:mrow>
@@ -2757,22 +3230,26 @@
 
         <orderedlist>
           <listitem>
-            <para>An internal dry spell (represented by a horizontal segment in Figure <xref
-                linkend="b2_ch6_f_lrnm4"/>) whose probability of occurrence is defined
-              by a probability distribution; or</para>
+            <para>An internal dry spell (represented by a horizontal segment
+            in Figure <xref linkend="b2_ch6_f_lrnm4"/>) whose probability of
+            occurrence is defined by a probability distribution; or</para>
           </listitem>
 
           <listitem>
-            <para>A rainburst (represented by a sloping segment in Figure <xref
-                linkend="b2_ch6_f_lrnm4"/>) whose nondimemsional depth <inlineequation>
+            <para>A rainburst (represented by a sloping segment in Figure
+            <xref linkend="b2_ch6_f_lrnm4"/>) whose nondimemsional depth
+            <inlineequation>
                 <m:math display="inline">
                   <m:mrow>
                     <m:mi>Δ</m:mi>
+
                     <m:mo>⁢</m:mo>
+
                     <m:mi>δ</m:mi>
                   </m:mrow>
                 </m:math>
-              </inlineequation> is sampled from a probability distribution.</para>
+              </inlineequation> is sampled from a probability
+            distribution.</para>
           </listitem>
         </orderedlist>
 
@@ -2791,14 +3268,17 @@
         time <emphasis role="italic">ta</emphasis> and storm duration
         <emphasis role="italic">td</emphasis>populations, a procedure was
         employed to extract independent events from the continuous historical
-        record. After analysis of correlation results, Heneker <emphasis role="italic">et al.</emphasis> (2001) adopted a minimum inter-event
+        record. After analysis of correlation results, Heneker <emphasis
+        role="italic">et al.</emphasis> (2001) adopted a minimum inter-event
         time of 2 hours to distinguish independent storms and inter-storm
         periods. This value provides a balance between ensuring consecutive
         events are sufficiently independent and the need to have as much
         calibration storm data as possible within a fixed length historical
         record. While different minimum inter-event times have been reported
         (e.g. Grace and Eagleson (1967), Sariahmed and Kisiel (1968),
-        Koutsoyiannis and Xanthopoulos (1990), Heneker <emphasis role="italic">et al.</emphasis> (2001)), Heneker <emphasis role="italic">et al.</emphasis> (2001) showed that 2 hours was shown
+        Koutsoyiannis and Xanthopoulos (1990), Heneker <emphasis
+        role="italic">et al.</emphasis> (2001)), Heneker <emphasis
+        role="italic">et al.</emphasis> (2001) showed that 2 hours was shown
         to assure independence of storm events across numerous Australian
         sites.</para>
 
@@ -2915,7 +3395,8 @@
 
         <para>where <emphasis role="italic">X</emphasis> is an independently
         distributed random variable and <emphasis role="italic">qt
-        </emphasis>is a parameter vector which may be dependent on<emphasis role="italic">t</emphasis> defined as the time at the start of the
+        </emphasis>is a parameter vector which may be dependent on<emphasis
+        role="italic">t</emphasis> defined as the time at the start of the
         storm or inter-event time, and <inlineequation>
             <m:math display="inline">
               <m:mrow>
@@ -3150,20 +3631,23 @@
             <m:math display="inline">
               <m:msub>
                 <m:mi>θ</m:mi>
+
                 <m:mi>t</m:mi>
               </m:msub>
             </m:math>
-          </inlineequation> is estimated using maximum likelihood techniques. The DRIP parameters
-          are usually calibrated for each month of the year to capture seasonal variability in the
-          rainfall process. <xref linkend="b2_ch6_f_5bb77"/> and <xref
-            linkend="b2_ch6_f_o1tcc"/> illustrate observed and fitted probability
-          distributions for inter-event and storm durations for Melbourne for select months and
-          demonstrate the good fit typically achieved by the generalized exponential distribution.
-          Noting that exponentially distributed data would plot as a straight line in <xref
-            linkend="b2_ch6_f_5bb77"/> and <xref linkend="b2_ch6_f_o1tcc"
-          />, the use of an exponential distribution for inter-event and storm durations would be
-          clearly inappropriate. A detailed comparison of the DRIP model with other point process
-          models is given in Frost et al. (2004)</para>
+          </inlineequation> is estimated using maximum likelihood techniques.
+        The DRIP parameters are usually calibrated for each month of the year
+        to capture seasonal variability in the rainfall process. <xref
+        linkend="b2_ch6_f_5bb77"/> and <xref linkend="b2_ch6_f_o1tcc"/>
+        illustrate observed and fitted probability distributions for
+        inter-event and storm durations for Melbourne for select months and
+        demonstrate the good fit typically achieved by the generalized
+        exponential distribution. Noting that exponentially distributed data
+        would plot as a straight line in <xref linkend="b2_ch6_f_5bb77"/> and
+        <xref linkend="b2_ch6_f_o1tcc"/>, the use of an exponential
+        distribution for inter-event and storm durations would be clearly
+        inappropriate. A detailed comparison of the DRIP model with other
+        point process models is given in Frost et al. (2004)</para>
 
         <figure xml:id="b2_ch6_f_5bb77">
           <title>Heneker <emphasis role="italic">et al.</emphasis>(2001) model
@@ -3200,7 +3684,8 @@
         between the master and the target.</para>
 
         <para>The software for DRIP is available via the Stochastic Climate
-        Library as part of the e-Water Toolkit (<link xlink:href="http://toolkit.net.au/Tools/DRIP">http://toolkit.net.au/Tools/DRIP</link>
+        Library as part of the e-Water Toolkit (<link
+        xlink:href="http://toolkit.net.au/Tools/DRIP">http://toolkit.net.au/Tools/DRIP</link>
         ).</para>
       </section>
 
@@ -3227,27 +3712,30 @@
         to reduce the disconnect in sub-daily rainfall attributes across daily
         boundaries.</para>
 
-        <para><xref linkend="b2_ch6_f_byzkg"/> illustrates the rationale behind the
-          regionalised version of the state-based Method of Fragments procedure used in [<emphasis
-            role="italic">Seth Westra et al.</emphasis>, 2012]. Here, I(Rt) represents the state
-          (wet or dry) of the rainfall on day t. Conditioning the selection of a “similar” day in
-          the historical record involves selecting from a subset of days that (a) fall within a
-          calendar window representative of the season (chosen equal to +/-15 days in [<emphasis
-            role="italic">Seth Westra et al.</emphasis>, 2012]), and (b) represent the same state
-          (I(Rt-1),I(Rt=1),I(Rt+1)). Once these subsets of days are identified, they are ranked
-          based on their similarity with the rainfall amount that is sought to be disaggregated.
-          This forms the sample of days the fragments can be resampled from. Resampling proceeds
-          probabilistically using the k-nn resampling approach of [<emphasis role="italic">Lall and
-            Sharma</emphasis>, 1996]. Once the fragments have been resampled, they are scaled back
-          to rainfall amounts by multiplication with the daily rainfall total for the day being
-          disaggregated.</para>
+        <para><xref linkend="b2_ch6_f_byzkg"/> illustrates the rationale
+        behind the regionalised version of the state-based Method of Fragments
+        procedure used in [<emphasis role="italic">Seth Westra et
+        al.</emphasis>, 2012]. Here, I(Rt) represents the state (wet or dry)
+        of the rainfall on day t. Conditioning the selection of a “similar”
+        day in the historical record involves selecting from a subset of days
+        that (a) fall within a calendar window representative of the season
+        (chosen equal to +/-15 days in [<emphasis role="italic">Seth Westra et
+        al.</emphasis>, 2012]), and (b) represent the same state
+        (I(Rt-1),I(Rt=1),I(Rt+1)). Once these subsets of days are identified,
+        they are ranked based on their similarity with the rainfall amount
+        that is sought to be disaggregated. This forms the sample of days the
+        fragments can be resampled from. Resampling proceeds probabilistically
+        using the k-nn resampling approach of [<emphasis role="italic">Lall
+        and Sharma</emphasis>, 1996]. Once the fragments have been resampled,
+        they are scaled back to rainfall amounts by multiplication with the
+        daily rainfall total for the day being disaggregated.</para>
 
         <figure xml:id="b2_ch6_f_byzkg">
-          <title> Illustration of the state-based method of fragments
-          algorithm used in the Regionalised Method of Fragments sub-daily
-          rainfall generation procedure. A sub-daily time-step of 6-minutes is
-          used in this illustration, although no change in the procedure is
-          needed if an alternate sub-daily time-step is to be adopted</title>
+          <title>Illustration of the state-based method of fragments algorithm
+          used in the Regionalised Method of Fragments sub-daily rainfall
+          generation procedure. A sub-daily time-step of 6-minutes is used in
+          this illustration, although no change in the procedure is needed if
+          an alternate sub-daily time-step is to be adopted</title>
 
           <mediaobject>
             <imageobject>
@@ -3256,14 +3744,16 @@
           </mediaobject>
         </figure>
 
-        <para>The logic used to regionalise the method is similar to that adopted in case of the
-          Regionalised Modified Markov Model (RMMM) earlier. Here, the importance of regionalisation
-          is all the more given the paucity of sub-daily rainfall records in most parts of Australia
-          (and the world). However, here the aim of the regionalisation is not to identify locations
-          having similar rainfall attributes as the target, but a similar daily to sub-daily
-          disaggregation relationships. As with the daily rainfall generation, a range of criteria
-          were used to characterise this relationship. These are listed in <xref
-            linkend="b2_ch6_t_sgsgw"/> below.</para>
+        <para>The logic used to regionalise the method is similar to that
+        adopted in case of the Regionalised Modified Markov Model (RMMM)
+        earlier. Here, the importance of regionalisation is all the more given
+        the paucity of sub-daily rainfall records in most parts of Australia
+        (and the world). However, here the aim of the regionalisation is not
+        to identify locations having similar rainfall attributes as the
+        target, but a similar daily to sub-daily disaggregation relationships.
+        As with the daily rainfall generation, a range of criteria were used
+        to characterise this relationship. These are listed in <xref
+        linkend="b2_ch6_t_sgsgw"/> below.</para>
 
         <para><table frame="void" xml:id="b2_ch6_t_sgsgw">
             <caption>Sub-daily attributes used to define similarity between
@@ -3331,7 +3821,7 @@
         1 for a significant test outcome) response for each sub-daily
         attribute can be expressed as:</para>
 
-        <para> (4)</para>
+        <para>(4)</para>
 
         <equation xml:id="b2_ch6_e_2nut3">
           <m:math display="block">
@@ -3389,10 +3879,10 @@
           </m:math>
         </equation>
 
-        <para>The logit function transforms the continuous predictor variables in <xref
-            linkend="b2_ch6_t_4chxl"/> to the range [0,1] as required when modelling a
-          binomial response. In this equation, <emphasis role="bold">z</emphasis> is defined
-          as:</para>
+        <para>The logit function transforms the continuous predictor variables
+        in <xref linkend="b2_ch6_t_4chxl"/> to the range [0,1] as required
+        when modelling a binomial response. In this equation, <emphasis
+        role="bold">z</emphasis> is defined as:</para>
 
         <para>(5)</para>
 
@@ -3455,7 +3945,8 @@
         </equation>
 
         <para>with β representing the regression coefficients in <xref
-            linkend="b2_ch6_t_4chxl"/> for the five predictor variables used.</para>
+        linkend="b2_ch6_t_4chxl"/> for the five predictor variables
+        used.</para>
 
         <para><table frame="void" xml:id="b2_ch6_t_4chxl">
             <caption>Logistic Regression Coefﬁcients for the Regionalised
@@ -3839,9 +4330,10 @@
           regression model presented in <emphasis role="bold">Equation 4
           </emphasis> and</para>
 
-          <para><emphasis role="bold"> 5 </emphasis> using the regression coefficients shown in
-              <xref linkend="b2_ch6_t_1n4n0"/> for each season and attribute to
-            calculate the probability Pr(<emphasis role="italic">u</emphasis> =1);</para>
+          <para><emphasis role="bold"> 5 </emphasis> using the regression
+          coefficients shown in <xref linkend="b2_ch6_t_1n4n0"/> for each
+          season and attribute to calculate the probability Pr(<emphasis
+          role="italic">u</emphasis> =1);</para>
         </listitem>
 
         <listitem>
@@ -3864,25 +4356,28 @@
       season, as physiographic influences may vary depending on the dominant
       synoptic systems occurring and different times of the year. It is noted
       that the selection of the size of <emphasis role="italic">S</emphasis>
-      represents a somewhat subjective decision, as larger values of <emphasis role="italic">S</emphasis> increase the probability of selecting
+      represents a somewhat subjective decision, as larger values of <emphasis
+      role="italic">S</emphasis> increase the probability of selecting
       stations which are statistically different to the target station,
       whereas smaller values of S will result in small sample sizes. For this
       case we a total of 500 years of data (including zero rainfalls)
       distributed over the 13 stations (S=13).</para>
 
-      <para>These lowest-ranked 13 stations for the summer season are shown in <xref
-          linkend="b2_ch6_f_5z8tk"/>. As expected, the lowest ranked stations (i.e.
-        those with the greatest chance of being ‘similar’ to Sydney Airport) are those which are
-        most proximate to this station, generally within a small distance to coast, and all are at
-        low coastal elevations. In this case, therefore, the stations appear to be selected over a
-        wide range of latitudes, which is probably due to the strong increases in elevation and
-        relative distance to coast with changing longitude.</para>
+      <para>These lowest-ranked 13 stations for the summer season are shown in
+      <xref linkend="b2_ch6_f_5z8tk"/>. As expected, the lowest ranked
+      stations (i.e. those with the greatest chance of being ‘similar’ to
+      Sydney Airport) are those which are most proximate to this station,
+      generally within a small distance to coast, and all are at low coastal
+      elevations. In this case, therefore, the stations appear to be selected
+      over a wide range of latitudes, which is probably due to the strong
+      increases in elevation and relative distance to coast with changing
+      longitude.</para>
 
       <figure xml:id="b2_ch6_f_5z8tk">
         <title>Sydney Airport (large red dot) and nearby pluviograph stations
         (blue and brown dots). The highest ranked 13 pluviograph stations
         based on the full logistic regression model are shown as brown dots,
-        with the associated ranking. </title>
+        with the associated ranking.</title>
 
         <mediaobject>
           <imageobject>
@@ -3910,7 +4405,8 @@
 
       <para>The software for the RMOF approach is available on request from
       the authors at this stage, and will be uploaded to the Hydrology@UNSW
-      Software website after a formal review process (<link xlink:href="http://www.hydrology.unsw.edu.au/download/software/">http://www.hydrology.unsw.edu.au/download/software/</link>).
+      Software website after a formal review process (<link
+      xlink:href="http://www.hydrology.unsw.edu.au/download/software/">http://www.hydrology.unsw.edu.au/download/software/</link>).
       This document will be updated to reflect the full location once the
       download of the software is completed.</para>
     </section>
@@ -3931,17 +4427,20 @@
       catchment’s antecedent moisture content conditional to pre-specified
       design rainfall features.</para>
 
-      <para>For cases where it is necessary to have consistency between the Australian Bureau of
-        Meteorology IFDs and the IFDs derived from continuous simulation, a modification in the
-        generation algorithms for RMMM and RMOF was proposed. The main steps involved as illustrated
-        in <xref linkend="b2_ch6_f_8xo6m"/>. First, annual extreme rainfall is
-        corrected at multiple durations so that the IFD based on the generated rainfall matches up
-        with the observed IFD (henceforth referred as ‘target IFD’). Second, the non-extreme
-        rainfall (i.e., rainfall that is not part of the annual extreme series) is corrected in such
-        a way that the cumulative rainfall before and after correction is maintained. The dry
-        periods are kept the same before and after bias correction, hence no correction is required
-        for dry periods. As the majority of the data is in the non-extreme category, the corrections
-        are markedly smaller for the non-extreme case.</para>
+      <para>For cases where it is necessary to have consistency between the
+      Australian Bureau of Meteorology IFDs and the IFDs derived from
+      continuous simulation, a modification in the generation algorithms for
+      RMMM and RMOF was proposed. The main steps involved as illustrated in
+      <xref linkend="b2_ch6_f_8xo6m"/>. First, annual extreme rainfall is
+      corrected at multiple durations so that the IFD based on the generated
+      rainfall matches up with the observed IFD (henceforth referred as
+      ‘target IFD’). Second, the non-extreme rainfall (i.e., rainfall that is
+      not part of the annual extreme series) is corrected in such a way that
+      the cumulative rainfall before and after correction is maintained. The
+      dry periods are kept the same before and after bias correction, hence no
+      correction is required for dry periods. As the majority of the data is
+      in the non-extreme category, the corrections are markedly smaller for
+      the non-extreme case.</para>
 
       <para>Due to the inter-dependence of the extreme rainfall across various
       durations, it is necessary to apply the above corrections in a recursive
@@ -4041,10 +4540,11 @@
       reduce the dependence between them. Options exist to use a broader set
       of durations in the second iteration (6m, 30m, 1h, 3h, 6h, 12h) although
       assessment with data for selected city centres in Australia indicated
-      the benefits from this were not significant.<figure xml:id="b2_ch6_f_8xo6m">
-          <title>Overview of workflow illustrating the main steps involved in the adjustment of raw
-            continuous rainfall sequences to preserve the intensity-frequency-duration (IFD)
-            relationships.</title>
+      the benefits from this were not significant.<figure
+          xml:id="b2_ch6_f_8xo6m">
+          <title>Overview of workflow illustrating the main steps involved in
+          the adjustment of raw continuous rainfall sequences to preserve the
+          intensity-frequency-duration (IFD) relationships.</title>
 
           <mediaobject>
             <imageobject>
@@ -4056,7 +4556,8 @@
       <para>The software for the post-processing approach described above is
       available on request from the authors at this stage, and will be
       uploaded to the Hydrology@UNSW Software website after a formal review
-      process (<link xlink:href="http://www.hydrology.unsw.edu.au/download/software/">http://www.hydrology.unsw.edu.au/download/software/</link>).
+      process (<link
+      xlink:href="http://www.hydrology.unsw.edu.au/download/software/">http://www.hydrology.unsw.edu.au/download/software/</link>).
       This document will be updated to reflect the full location once the
       download of the software is completed.</para>
     </section>
@@ -4086,64 +4587,92 @@
         generation) and b) no daily rainfall record is available i.e. location
         is ungauged (regionalised generation).</para>
 
-        <para>
-          <table frame="void" xml:id="b2_ch6_t_e2k73">
-            <caption>Statistical assessment of daily rainfall from RMMM for Alice Springs using 100
-              replicates 67 years long.</caption>
+        <para><table frame="void" xml:id="b2_ch6_t_e2k73">
+            <caption>Statistical assessment of daily rainfall from RMMM for
+            Alice Springs using 100 replicates 67 years long.</caption>
+
             <col width="25%"/>
+
             <col width="25%"/>
+
             <col width="25%"/>
+
             <col width="25%"/>
+
             <thead>
               <tr>
                 <th rowspan="2">Attribute</th>
+
                 <th rowspan="2">Observed</th>
+
                 <th colspan="2">Simulated</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td><emphasis role="bold">At-site</emphasis></td>
+
                 <td><emphasis role="bold">Regionalised</emphasis></td>
               </tr>
+
               <tr>
                 <td>Average annual wet days (Nos)</td>
+
                 <td>41</td>
+
                 <td>40</td>
+
                 <td>31</td>
               </tr>
+
               <tr>
                 <td>Average Annual rainfall (mm)</td>
+
                 <td>279</td>
+
                 <td>297</td>
+
                 <td>306</td>
               </tr>
+
               <tr>
                 <td>Average standard deviation of annual wet days (Nos)</td>
+
                 <td>13</td>
+
                 <td>12</td>
+
                 <td>15</td>
               </tr>
+
               <tr>
                 <td>Average standard deviation of annual rainfall (mm)</td>
+
                 <td>152</td>
+
                 <td>160</td>
+
                 <td>189</td>
               </tr>
             </tbody>
-          </table>
-        </para>
+          </table></para>
 
-        <para> Annual rainfall simulations for Alice Springs using 100 replicates. The probability
-          distribution of annual rainfall is well represented even in the case of the regionalized
-          simulation where at-site data was not used. This indicates a reasonable representation of
-          the inter-annual variability that characterizes Australian rainfall.</para>
+        <para>Annual rainfall simulations for Alice Springs using 100
+        replicates. The probability distribution of annual rainfall is well
+        represented even in the case of the regionalized simulation where
+        at-site data was not used. This indicates a reasonable representation
+        of the inter-annual variability that characterizes Australian
+        rainfall.</para>
 
         <figure xml:id="b2_ch6_f_w9zla">
-<title>Annual rainfall simulations for Alice Springs using 100 replicates. The probability
-            distribution of annual rainfall is well represented even in the case of the regionalized
-            simulation where at-site data was not used. This indicates a reasonable representation
-            of the inter-annual variability that characterizes Australian rainfall.</title>
+          <title>Annual rainfall simulations for Alice Springs using 100
+          replicates. The probability distribution of annual rainfall is well
+          represented even in the case of the regionalized simulation where
+          at-site data was not used. This indicates a reasonable
+          representation of the inter-annual variability that characterizes
+          Australian rainfall.</title>
+
           <mediaobject>
             <imageobject>
               <imagedata fileref="../../figures/2027.png"/>
@@ -4152,10 +4681,11 @@
         </figure>
 
         <figure xml:id="b2_ch6_f_26l3v">
-          <title>Intensity-frequency relationship for 24-hour duration. As with the annual rainfall
-            in <xref linkend="b2_ch6_f_8xo6m"/>, the extremes are reasonably well
-            simulated even for the regionalized case, except for the most extreme event on record,
-            which the model undersimulates in the regionalized setting.</title>
+          <title>Intensity-frequency relationship for 24-hour duration. As
+          with the annual rainfall in <xref linkend="b2_ch6_f_8xo6m"/>, the
+          extremes are reasonably well simulated even for the regionalized
+          case, except for the most extreme event on record, which the model
+          undersimulates in the regionalized setting.</title>
 
           <mediaobject>
             <imageobject>
@@ -4207,87 +4737,133 @@
         </orderedlist>
 
         <para>Selected results from this assessment are presented in <xref
-            linkend="b2_ch6_t_n5jse"/> and <xref linkend="b2_ch6_f_26l3v"
-          />. Once can notice the deterioration in the representation of extremes in the shorter
-          duration case when regionalised options are considered, especially for the smallest
-          duration (6-minute).</para>
+        linkend="b2_ch6_t_n5jse"/> and <xref linkend="b2_ch6_f_26l3v"/>. Once
+        can notice the deterioration in the representation of extremes in the
+        shorter duration case when regionalised options are considered,
+        especially for the smallest duration (6-minute).</para>
 
-        <para>
-          <table frame="void" xml:id="b2_ch6_t_n5jse">
-            <caption>Performance of extremes and representation of zeroes (for 6-minute time-steps)
-              from the sub-daily rainfall generation using RMOF for at-site generation using
-              observed sub-daily data (option A), at-site disaggregation using observed daily data
-              (option B), and the purely regionalized case (option C).</caption>
+        <para><table frame="void" xml:id="b2_ch6_t_n5jse">
+            <caption>Performance of extremes and representation of zeroes (for
+            6-minute time-steps) from the sub-daily rainfall generation using
+            RMOF for at-site generation using observed sub-daily data (option
+            A), at-site disaggregation using observed daily data (option B),
+            and the purely regionalized case (option C).</caption>
+
             <col width="20%"/>
+
             <col width="20%"/>
+
             <col width="20%"/>
+
             <col width="20%"/>
+
             <col width="20%"/>
+
             <thead>
               <tr>
-                <th colspan="5">Average annual maximum rainfall (mm) in spell of</th>
+                <th colspan="5">Average annual maximum rainfall (mm) in spell
+                of</th>
               </tr>
+
               <tr>
                 <th>Duration</th>
+
                 <th>Observed</th>
+
                 <th>Option A</th>
+
                 <th>Option B</th>
+
                 <th>Option C</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td>6 min</td>
+
                 <td>5.5</td>
+
                 <td>6.75</td>
+
                 <td>6.77</td>
+
                 <td>8.02</td>
               </tr>
+
               <tr>
                 <td>30 min</td>
+
                 <td>16.71</td>
+
                 <td>18.07</td>
+
                 <td>18.23</td>
+
                 <td>20.97</td>
               </tr>
+
               <tr>
                 <td>1 hr</td>
+
                 <td>22.14</td>
+
                 <td>24.19</td>
+
                 <td>24.17</td>
+
                 <td>26.56</td>
               </tr>
+
               <tr>
                 <td>3 hr</td>
+
                 <td>32.58</td>
+
                 <td>34.77</td>
+
                 <td>33.56</td>
+
                 <td>34.94</td>
               </tr>
+
               <tr>
                 <td>6 hr</td>
+
                 <td>39.61</td>
+
                 <td>41.73</td>
+
                 <td>39.79</td>
+
                 <td>40.74</td>
               </tr>
+
               <tr>
                 <td>12 hr</td>
+
                 <td>48.18</td>
+
                 <td>47.65</td>
+
                 <td>46.5</td>
+
                 <td>46.78</td>
               </tr>
+
               <tr>
                 <td>Percentage of zeros</td>
+
                 <td>98.54</td>
+
                 <td>98.62</td>
+
                 <td>98.78</td>
+
                 <td>98.68</td>
               </tr>
             </tbody>
-          </table>
-        </para>
+          </table></para>
 
         <figure xml:id="b2_ch6_f_oju3g">
           <title>6-minute (left column) and 6 hour (right column) annual
@@ -4313,21 +4889,25 @@
         <title>Post-processing of continuous rainfall to correct for IFD
         biases</title>
 
-        <para>As illustrated in <xref linkend="b2_ch6_f_oju3g"/>, in cases where
-          observed rainfall datasets used for continuous simulation are of poor quality or are
-          pooled from locations that are dis-similar to the target, the RMMM and RMOF approaches
-          will simulate sequences with different IFD attributes compared to those published by the
-          Australian Bureau of Meteorology. This is addressed using a post-processing step that
-          involves scaling of the continuous sequences to alter extremes while attempting to
-          maintain the average annual rainfall for the location of interest.</para>
+        <para>As illustrated in <xref linkend="b2_ch6_f_oju3g"/>, in cases
+        where observed rainfall datasets used for continuous simulation are of
+        poor quality or are pooled from locations that are dis-similar to the
+        target, the RMMM and RMOF approaches will simulate sequences with
+        different IFD attributes compared to those published by the Australian
+        Bureau of Meteorology. This is addressed using a post-processing step
+        that involves scaling of the continuous sequences to alter extremes
+        while attempting to maintain the average annual rainfall for the
+        location of interest.</para>
 
-        <para>Results from this post-processing step for the continuous rainfall sequences from RMOF
-          for Alice Springs are presented in <xref linkend="b2_ch6_f_fmx30"/>. The
-          continuous series that was generated has not used rainfall data from Alice Springs for the
-          purpose of generation. In addition to representing low-frequency variability
-          characteristics through the proper simulation of daily rainfalls, these continuous
-          sequences are able to mimic actual IFDs and annual rainfall totals, thus making them
-          suitable for continuous flow simulation.</para>
+        <para>Results from this post-processing step for the continuous
+        rainfall sequences from RMOF for Alice Springs are presented in <xref
+        linkend="b2_ch6_f_fmx30"/>. The continuous series that was generated
+        has not used rainfall data from Alice Springs for the purpose of
+        generation. In addition to representing low-frequency variability
+        characteristics through the proper simulation of daily rainfalls,
+        these continuous sequences are able to mimic actual IFDs and annual
+        rainfall totals, thus making them suitable for continuous flow
+        simulation.</para>
 
         <figure xml:id="b2_ch6_f_fmx30">
           <title>Intensity-duration-frequency (IFD) relationships for target
@@ -4348,30 +4928,35 @@
   <section xml:id="b2_ch6_s_tblms">
     <title>Implications of climate change</title>
 
-    <para>The implications of climate change on design rainfall have been discussed in
-      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Chapter X<?oxy_custom_end?>
-      and are not repeated here. The focus of this section is to discuss how the procedures for
-      continuous simulation described here may be altered to account for climate change. This may be
-      particularly important if there are changes in extreme rainfall, in antecedent rainfall, or in
-      the dependence between the two, all of which will have significant impacts on the resulting
-      design flood.</para>
+    <para>The implications of climate change on design rainfall have been
+    discussed in <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Chapter
+    X<?oxy_custom_end ?> and are not repeated here. The focus of this section
+    is to discuss how the procedures for continuous simulation described here
+    may be altered to account for climate change. This may be particularly
+    important if there are changes in extreme rainfall, in antecedent
+    rainfall, or in the dependence between the two, all of which will have
+    significant impacts on the resulting design flood.</para>
 
     <para>Both the daily and the sub-daily continuous simulation alternatives
     discussed here will be affected by climate change. Users may need to use
     daily rainfall sequences that are representative of future warmer
     climates, and are referred to the statistical downscaling extensions of
-    the RMMM daily generation approach discussed here [<emphasis role="italic">R. Mehrotra and Sharma</emphasis>, 2010] for an alternative
+    the RMMM daily generation approach discussed here [<emphasis
+    role="italic">R. Mehrotra and Sharma</emphasis>, 2010] for an alternative
     for generating daily sequences for any location of interest. This
     generation requires selection of appropriate General Circulation Models
     (GCMs) and atmospheric predictors, followed by sensible correction of GCM
-    simulations to remove known biases. Readers are referred to [<emphasis role="italic">Sharma et al.</emphasis>, 2013] for a review of the
+    simulations to remove known biases. Readers are referred to [<emphasis
+    role="italic">Sharma et al.</emphasis>, 2013] for a review of the
     approaches used commonly for these purposes.</para>
 
     <para>Generation of sub-daily sequences will require modification of the
     RMOF to alternatives that take into account changes to extremes at
     sub-daily timescales [<emphasis role="italic">S. Westra et al.</emphasis>,
-    2014] as well as changes to associated temporal patterns [<emphasis role="italic">Wasko and Sharma</emphasis>, 2015]. An alternative that can
-    be used to accommodate these changes is presented in [<emphasis role="italic">S. Westra et al.</emphasis>, 2013]. In general, approaches
+    2014] as well as changes to associated temporal patterns [<emphasis
+    role="italic">Wasko and Sharma</emphasis>, 2015]. An alternative that can
+    be used to accommodate these changes is presented in [<emphasis
+    role="italic">S. Westra et al.</emphasis>, 2013]. In general, approaches
     for stochastically generating continuous (sub-daily) rainfall sequences
     under a future climate are a rapidly evolving area of research, and
     detailed advice on theory and approaches for continuous simulation under a
@@ -4387,7 +4972,9 @@
     0161.</para>
 
     <para>Bardossy, A., and E. J. Plate (1992), Space-time model for daily
-    rainfall using atmospheric circulation patterns, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">28</emphasis>(5), 1247-1259.</para>
+    rainfall using atmospheric circulation patterns, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">28</emphasis>(5), 1247-1259.</para>
 
     <para>Bárdossy, A., and G. G. S. Pegram (2009), Copula based multisite
     model for daily precipitation simulation, <emphasis role="italic">Hydrol.
@@ -4396,7 +4983,8 @@
 
     <para>Bárdossy, A., and G. Pegram (2014), Infilling missing precipitation
     records – A comparison of a new copula-based method with other techniques,
-    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">519, Part A</emphasis>, 1162-1170.</para>
+    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">519, Part A</emphasis>, 1162-1170.</para>
 
     <para>Beesley, C. A., A. J. Frost, and J. Zajaczkowski (2009), A
     comparison of the BAWAP and SILO spatially interpolated daily rainfall
@@ -4410,7 +4998,8 @@
 
     <para>Boughton, W., and O. Droop (2003), Continuous simulation for design
     flood estimation - a review, <emphasis role="italic">Environmental
-    Modelling &amp; Software</emphasis>, <emphasis role="italic">18</emphasis>(4), 309-318.</para>
+    Modelling &amp; Software</emphasis>, <emphasis
+    role="italic">18</emphasis>(4), 309-318.</para>
 
     <para>Boughton, W. C. (1999), A daily rainfall generating model for water
     yield and flood studies<emphasis role="italic">Rep. Report
@@ -4429,10 +5018,14 @@
     23-34.</para>
 
     <para>Carey-Smith, T., J. Sansom, and P. Thomson (2014), A hidden seasonal
-    switching model for multisite daily rainfall, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">50</emphasis>(1), 257-272.</para>
+    switching model for multisite daily rainfall, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">50</emphasis>(1), 257-272.</para>
 
     <para>Caskey, J. E. (1963), A MARKOV CHAIN MODEL FOR THE PROBABILITY OF
-    PRECIPITATION OCCURRENCE IN INTERVALS OF VARIOUS LENGTH, <emphasis role="italic">Mon. Wea. Rev.</emphasis>, <emphasis role="italic">91</emphasis>(6), 298-301.</para>
+    PRECIPITATION OCCURRENCE IN INTERVALS OF VARIOUS LENGTH, <emphasis
+    role="italic">Mon. Wea. Rev.</emphasis>, <emphasis
+    role="italic">91</emphasis>(6), 298-301.</para>
 
     <para>Chapman, T. G. (1997), Stochastic models for daily rainfall in the
     Western Pacific, <emphasis role="italic">Mathematics and Computers in
@@ -4441,12 +5034,15 @@
 
     <para>Chappell, A., L. J. Renzullo, T. H. Raupach, and M. Haylock (2013),
     Evaluating geostatistical methods of blending satellite and gauge data to
-    estimate near real-time daily rainfall for Australia, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">493</emphasis>, 105-114.</para>
+    estimate near real-time daily rainfall for Australia, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">493</emphasis>, 105-114.</para>
 
     <para>Charles, S. P., B. C. Bates, and J. P. Hughes (1999), A
     spatiotemporal model for downscaling precipitation occurrence and amounts,
     <emphasis role="italic">Journal of Geophysical
-    Research-Atmospheres</emphasis>, <emphasis role="italic">104</emphasis>(D24), 31657-31669.</para>
+    Research-Atmospheres</emphasis>, <emphasis
+    role="italic">104</emphasis>(D24), 31657-31669.</para>
 
     <para>Chin, E. H., and J. F. Miller (1980), On the Conditional
     Distribution of Daily Precipitation Amounts, <emphasis role="italic">Mon.
@@ -4454,7 +5050,9 @@
     1462-1464.</para>
 
     <para>Chowdhury, S., and A. Sharma (2007), Mitigating Parameter Bias in
-    Hydrological Modelling due to Uncertainty in Covariates, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">340</emphasis>(doi:10.1016/j.jhydrol.2007.04.010),
+    Hydrological Modelling due to Uncertainty in Covariates, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">340</emphasis>(doi:10.1016/j.jhydrol.2007.04.010),
     197-204.</para>
 
     <para>Ciach, G. J. (2003), Local random errors in tipping-bucket rain
@@ -4467,7 +5065,9 @@
     <emphasis role="italic">21</emphasis>(7), 1024-1031.</para>
 
     <para>Cole, J. A., and J. D. F. Sherriff (1972), Some single- and
-    multi-site models of rainfall within discrete time increments, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">17</emphasis>(1-2), 97-113.</para>
+    multi-site models of rainfall within discrete time increments, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">17</emphasis>(1-2), 97-113.</para>
 
     <para>Connolly, R. D., J. Schirmer, and P. K. Dunn (1998), A daily
     rainfall disaggregation model, <emphasis role="italic">Agricultural and
@@ -4475,7 +5075,9 @@
     105-117.</para>
 
     <para>Cowpertwait, P. S. P. (2010), A spatial-temporal point process model
-    with a continuous distribution of storm types, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">46</emphasis>(12).</para>
+    with a continuous distribution of storm types, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">46</emphasis>(12).</para>
 
     <para>Cowpertwait, P. S. P., C. G. Kilsby, and P. E. O'Connell (2002), A
     space-time Neyman-Scott model of rainfall: Empirical analysis of extremes
@@ -4490,11 +5092,14 @@
     47-65.</para>
 
     <para>Das, D., E. Kodra, Z. Obradovic, and A. R. Ganguly (2012), Mining
-    extremes: Severe rainfall and climate change, in <emphasis role="italic">Frontiers in Artificial Intelligence and
+    extremes: Severe rainfall and climate change, in <emphasis
+    role="italic">Frontiers in Artificial Intelligence and
     Applications</emphasis>, edited, pp. 899-900.</para>
 
     <para>de Lima, M. I. P., and J. Grasman (1999), Multifractal analysis of
-    15-min and daily rainfall from a semi-arid region in Portugal, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">220</emphasis>(1-2), 1-11.</para>
+    15-min and daily rainfall from a semi-arid region in Portugal, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">220</emphasis>(1-2), 1-11.</para>
 
     <para>Deidda, R., R. Benzi, and F. Siccardi (1999), Multifractal modeling
     of anomalous scaling laws in rainfall, <emphasis role="italic">Water
@@ -4514,10 +5119,12 @@
 
     <para>Econopouly, T. W., D. R. Davis, and D. A. Woolhiser (1990),
     Parameter transferability for a daily rainfall disaggregation model,
-    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">118</emphasis>(1-4), 209-228.</para>
+    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">118</emphasis>(1-4), 209-228.</para>
 
     <para>Evin, G., and A.-C. Favre (2012), Further developments of a
-    transient Poisson-cluster model for rainfall, <emphasis role="italic">Stochastic Environmental Research and Risk
+    transient Poisson-cluster model for rainfall, <emphasis
+    role="italic">Stochastic Environmental Research and Risk
     Assessment</emphasis>, <emphasis role="italic">27</emphasis>(4),
     831-847.</para>
 
@@ -4531,7 +5138,9 @@
     320-328.</para>
 
     <para>Feyerherm, A. M., and L. D. Bark (1967), Goodness of Fit of a Markov
-    Chain Model for Sequences of Wet and Dry Days, <emphasis role="italic">Journal of Applied Meteorology</emphasis>, <emphasis role="italic">6</emphasis>(5), 770-773.</para>
+    Chain Model for Sequences of Wet and Dry Days, <emphasis
+    role="italic">Journal of Applied Meteorology</emphasis>, <emphasis
+    role="italic">6</emphasis>(5), 770-773.</para>
 
     <para>Gabriel, K. R., and J. Neumann (1962), A Markov chain model for
     daily rainfall occurrence at Tel Aviv, <emphasis role="italic">Q.J Royal
@@ -4582,7 +5191,8 @@
     <para>Heaps, S. E., R. J. Boys, and M. Farrow (2015), Bayesian modelling
     of rainfall data by using non-homogeneous hidden Markov models and latent
     Gaussian variables, <emphasis role="italic">Journal of the Royal
-    Statistical Society: Series C (Applied Statistics)</emphasis>, <emphasis role="italic">64</emphasis>(3), 543-568.</para>
+    Statistical Society: Series C (Applied Statistics)</emphasis>, <emphasis
+    role="italic">64</emphasis>(3), 543-568.</para>
 
     <para>Heneker, T. M., M. F. Lambert, and G. Kuczera (2001), A point
     rainfall model for risk-based design, <emphasis role="italic">Journal of
@@ -4594,26 +5204,36 @@
     <emphasis role="italic">95</emphasis>(3-4), 299-322.</para>
 
     <para>Hopkins, J. W., and P. Robillard (1964), Some Statistics of Daily
-    Rainfall Occurrence for the Canadian Prairie Provinces, <emphasis role="italic">Journal of Applied Meteorology</emphasis>, <emphasis role="italic">3</emphasis>(5), 600-602.</para>
+    Rainfall Occurrence for the Canadian Prairie Provinces, <emphasis
+    role="italic">Journal of Applied Meteorology</emphasis>, <emphasis
+    role="italic">3</emphasis>(5), 600-602.</para>
 
     <para>Hughes, J. P., and P. Guttorp (1994), Incorporating Spatial
-    Dependence and Atmospheric Data in a Model of Precipitation, <emphasis role="italic">Journal of Applied Meteorology</emphasis>, <emphasis role="italic">33</emphasis>(12), 1503-1515.</para>
+    Dependence and Atmospheric Data in a Model of Precipitation, <emphasis
+    role="italic">Journal of Applied Meteorology</emphasis>, <emphasis
+    role="italic">33</emphasis>(12), 1503-1515.</para>
 
     <para>Jeffrey, S. J., J. O. Carter, K. B. Moodie, and A. R. Beswick
     (2001), Using spatial interpolation to construct a comprehensive archive
     of Australian climate data, <emphasis role="italic">Environmental
-    Modelling &amp; Software</emphasis>, <emphasis role="italic">16</emphasis>(6), 309-330.</para>
+    Modelling &amp; Software</emphasis>, <emphasis
+    role="italic">16</emphasis>(6), 309-330.</para>
 
     <para>Jha, S. K., G. Mariethoz, J. Evans, M. F. McCabe, and A. Sharma
     (2015), A space and time scale dependent non-linear geostatistical
-    approach for downscaling daily precipitation and temperature, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">online 20 July 2015</emphasis>.</para>
+    approach for downscaling daily precipitation and temperature, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">online 20 July 2015</emphasis>.</para>
 
     <para>Jones, D., W. Wang, and R. Fawcett (2009), High-quality spatial
     climate data-sets for Australia, <emphasis role="italic">Australian
-    Meteorological and Oceanographic Journal</emphasis>, <emphasis role="italic">58</emphasis>, 233-248.</para>
+    Meteorological and Oceanographic Journal</emphasis>, <emphasis
+    role="italic">58</emphasis>, 233-248.</para>
 
     <para>Jones, P. G., and P. K. Thornton (1997), Spatial and temporal
-    variability of rainfall related to a third-order Markov model, <emphasis role="italic">Agricultural and Forest Meteorology</emphasis>, <emphasis role="italic">86</emphasis>(1-2), 127-138.</para>
+    variability of rainfall related to a third-order Markov model, <emphasis
+    role="italic">Agricultural and Forest Meteorology</emphasis>, <emphasis
+    role="italic">86</emphasis>(1-2), 127-138.</para>
 
     <para>Katz, R. W., and M. B. Parlange (1998), Overdispersion phenomenon in
     stochastic modeling of precipitation, <emphasis role="italic">Journal of
@@ -4663,11 +5283,14 @@
     EGS, Nice.</para>
 
     <para>Koutsoyiannis, D., C. Onof, and H. S. Wheater (2003), Multivariate
-    rainfall disaggregation at a fine timescale - art. no. 1173, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">39</emphasis>(7), 1173-1173.</para>
+    rainfall disaggregation at a fine timescale - art. no. 1173, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">39</emphasis>(7), 1173-1173.</para>
 
     <para>La Barbera, P., L. G. Lanza, and L. Stagi (2002), Tipping bucket
     mechanical errors and their influence on rainfall statistics and extremes,
-    <emphasis role="italic">Water Science and Technology</emphasis>, <emphasis role="italic">45</emphasis>(2), 1-10.</para>
+    <emphasis role="italic">Water Science and Technology</emphasis>, <emphasis
+    role="italic">45</emphasis>(2), 1-10.</para>
 
     <para>Lall, U., and A. Sharma (1996), A nearest neighbor bootstrap for
     time series resampling, <emphasis role="italic">Water Resources
@@ -4675,7 +5298,9 @@
     679-693.</para>
 
     <para>Lall, U., B. Rajagopalan, and D. G. Tarboton (1996), A nonparametric
-    wet/dry spell model for resampling daily precipitation, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">32</emphasis>(9), 2803-2823.</para>
+    wet/dry spell model for resampling daily precipitation, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">32</emphasis>(9), 2803-2823.</para>
 
     <para>Lamb, R., and A. L. Kay (2004), Confidence intervals for a spatially
     generalized, continuous simulation flood frequency model for Great
@@ -4684,7 +5309,8 @@
 
     <para>Lambert, M., and G. Kuczera (1998), Seasonal generalized exponential
     probability models with application to interstorm and storm durations,
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">34</emphasis>(1), 143-148.</para>
+    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">34</emphasis>(1), 143-148.</para>
 
     <para>Leblois, E., and J.-D. Creutin (2013), Space-time simulation of
     intermittent rainfall with prescribed advection field: Adaptation of the
@@ -4699,18 +5325,23 @@
 
     <para>Lovejoy, S., and D. Schertzer (1990), Multifractals, universality
     classes and satellite and radar measurements of cloud and rain fields,
-    <emphasis role="italic">J. Geophys. Res.</emphasis>, <emphasis role="italic">95</emphasis>(D3), 2021.</para>
+    <emphasis role="italic">J. Geophys. Res.</emphasis>, <emphasis
+    role="italic">95</emphasis>(D3), 2021.</para>
 
     <para>McMahon, T. A., and R. Srikanthan (1983), Statistical
-    characteristics of Australian Rainfall and Evaporation<emphasis role="italic">Rep.</emphasis></para>
+    characteristics of Australian Rainfall and Evaporation<emphasis
+    role="italic">Rep.</emphasis></para>
 
     <para>Mehrotra, R., and A. Sharma (2006), A nonparametric stochastic
-    downscaling framework for daily rainfall at multiple locations, <emphasis role="italic">Journal of Geophysical Research-Atmospheres</emphasis>,
+    downscaling framework for daily rainfall at multiple locations, <emphasis
+    role="italic">Journal of Geophysical Research-Atmospheres</emphasis>,
     <emphasis role="italic">111</emphasis>(D15101),
     doi:10.1029/2005JD006637.</para>
 
     <para>Mehrotra, R., and A. Sharma (2007a), Preserving low-frequency
-    variability in generated daily rainfall sequences, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">345</emphasis>(1-2), 102-120.</para>
+    variability in generated daily rainfall sequences, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">345</emphasis>(1-2), 102-120.</para>
 
     <para>Mehrotra, R., and A. Sharma (2007b), A semi-parametric model for
     stochastic generation of multi-site daily rainfall exhibiting
@@ -4746,16 +5377,20 @@
     13509.</para>
 
     <para>Micevski, T., and G. Kuczera (2009), Combining Site and Regional
-    Flood Information Using a Bayesian Monte Carlo Approach, <emphasis role="italic">Water Resources
-    Research</emphasis>(doi:10.1029/2008WR007173), in press (online on <link xlink:href="http://www.agu.org/journals/wr/papersinpress.shtml)">http://www.agu.org/journals/wr/papersinpress.shtml)</link>.</para>
+    Flood Information Using a Bayesian Monte Carlo Approach, <emphasis
+    role="italic">Water Resources
+    Research</emphasis>(doi:10.1029/2008WR007173), in press (online on <link
+    xlink:href="http://www.agu.org/journals/wr/papersinpress.shtml)">http://www.agu.org/journals/wr/papersinpress.shtml)</link>.</para>
 
     <para>Molnar, P., and P. Burlando (2005), Preservation of rainfall
     properties in stochastic disaggregation by a simple random cascade model,
-    <emphasis role="italic">Atmospheric Research</emphasis>, <emphasis role="italic">77</emphasis>(1-4), 137-151.</para>
+    <emphasis role="italic">Atmospheric Research</emphasis>, <emphasis
+    role="italic">77</emphasis>(1-4), 137-151.</para>
 
     <para>Olsson, J., and R. Berndtsson (1998), Temporal rainfall
     disaggregration based on scaling properties, <emphasis role="italic">Water
-    Science and Technology</emphasis>, <emphasis role="italic">37</emphasis>(11), 73-79.</para>
+    Science and Technology</emphasis>, <emphasis
+    role="italic">37</emphasis>(11), 73-79.</para>
 
     <para>Onof, C., and J. Townend (2004), Modelling 5-minute rainfall
     extremes, paper presented at British Hydrological Society International
@@ -4764,7 +5399,8 @@
     <para>Onof, C., R. E. Chandler, A. Kakou, P. Northrop, H. S. Wheater, and
     V. Isham (2000), Rainfall modelling using Poisson-cluster processes: a
     review of developments, <emphasis role="italic">Stochastic Environmental
-    Research and Risk Assessment</emphasis>, <emphasis role="italic">14</emphasis>(6), 384-411.</para>
+    Research and Risk Assessment</emphasis>, <emphasis
+    role="italic">14</emphasis>(6), 384-411.</para>
 
     <para>Oriani, F., J. Straubhaar, P. Renard, and G. Mariethoz (2014),
     Simulation of rainfall time series from different climatic regions using
@@ -4779,19 +5415,23 @@
 
     <para>Pathiraja, S., S. Westra, and A. Sharma (2012), Why Continuous
     Simulation? The Role of Antecedent Moisture in Design Flood Estimation,
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">48</emphasis>(W06534).</para>
+    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">48</emphasis>(W06534).</para>
 
     <para>Pegram, G. G. S. (1980), An Autoregressive Model for Multilag Markov
     Chains, <emphasis role="italic">Journal of Applied Probability</emphasis>,
     <emphasis role="italic">17</emphasis>(2), 350.</para>
 
     <para>Pui, A., A. Lal, and A. Sharma (2011), How does the Interdecadal
-    Pacific Oscillation affect design floods in Australia?, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">47</emphasis>(5).</para>
+    Pacific Oscillation affect design floods in Australia?, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">47</emphasis>(5).</para>
 
     <para>Pui, A., A. Sharma, A. Santoso, and S. Westra (2012), Impact of the
     El Niño Southern Oscillation, Indian Ocean Dipole, and Southern Annular
     Mode on daily to sub-daily rainfall characteristics in East Australia,
-    <emphasis role="italic">Monthly Weather Review</emphasis>, <emphasis role="italic">140</emphasis>, 1665-1681.</para>
+    <emphasis role="italic">Monthly Weather Review</emphasis>, <emphasis
+    role="italic">140</emphasis>, 1665-1681.</para>
 
     <para>Racsko, P., L. Szeidl, and M. Semenov (1991), A serial approach to
     local stochastic weather models, <emphasis role="italic">Ecological
@@ -4804,29 +5444,41 @@
     <emphasis role="italic">21</emphasis>(3), 317-330.</para>
 
     <para>Richardson, C. W. (1981), Stochastic Simulation of Daily
-    Precipitation, Temperature, and Solar-Radiation, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">17</emphasis>(1), 182-190.</para>
+    Precipitation, Temperature, and Solar-Radiation, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">17</emphasis>(1), 182-190.</para>
 
     <para>Rodriguez-Iturbe, I., V. K. Gupta, and E. Waymire (1984), Scale
-    considerations in the modeling of temporal rainfall, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">20</emphasis>(11), 1611-1619.</para>
+    considerations in the modeling of temporal rainfall, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">20</emphasis>(11), 1611-1619.</para>
 
     <para>Rodriguez-Iturbe, I., D. R. Cox, and V. Isham (1987), Some Models
-    for Rainfall Based on Stochastic Point Processes, <emphasis role="italic">Proceedings of the Royal Society A: Mathematical, Physical
-    and Engineering Sciences</emphasis>, <emphasis role="italic">410</emphasis>(1839), 269-288.</para>
+    for Rainfall Based on Stochastic Point Processes, <emphasis
+    role="italic">Proceedings of the Royal Society A: Mathematical, Physical
+    and Engineering Sciences</emphasis>, <emphasis
+    role="italic">410</emphasis>(1839), 269-288.</para>
 
     <para>Rodriguez-Iturbe, I., D. R. Cox, and V. Isham (1988), A Point
-    Process Model for Rainfall: Further Developments, <emphasis role="italic">Proceedings of the Royal Society A: Mathematical, Physical
-    and Engineering Sciences</emphasis>, <emphasis role="italic">417</emphasis>(1853), 283-298.</para>
+    Process Model for Rainfall: Further Developments, <emphasis
+    role="italic">Proceedings of the Royal Society A: Mathematical, Physical
+    and Engineering Sciences</emphasis>, <emphasis
+    role="italic">417</emphasis>(1853), 283-298.</para>
 
     <para>Roldan, J., and D. A. Woolhiser (1982), Stochastic daily
-    precipitation models 1. A comparison of occurrence models, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">18</emphasis>(5), 1451-1459.</para>
+    precipitation models 1. A comparison of occurrence models, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">18</emphasis>(5), 1451-1459.</para>
 
     <para>Schertzer, D., and S. Lovejoy (1987), Physical modeling and analysis
     of rain and clouds by anisotropic scaling multiplicative processes,
-    <emphasis role="italic">J. Geophys. Res.</emphasis>, <emphasis role="italic">92</emphasis>(D8), 9693.</para>
+    <emphasis role="italic">J. Geophys. Res.</emphasis>, <emphasis
+    role="italic">92</emphasis>(D8), 9693.</para>
 
     <para>Seed, A. W., R. Srikanthan, and M. Menabde (1999), A space and time
     model for design storm rainfall, <emphasis role="italic">Journal of
-    Geophysical Research-Atmospheres</emphasis>, <emphasis role="italic">104</emphasis>(D24), 31623-31630.</para>
+    Geophysical Research-Atmospheres</emphasis>, <emphasis
+    role="italic">104</emphasis>(D24), 31623-31630.</para>
 
     <para>Selvalingam, S., and M. Miura (1978), STOCHASTIC MODELING OF MONTHLY
     AND DAILY RAINFALL SEQUENCES, <emphasis role="italic">J Am Water Resour
@@ -4834,10 +5486,13 @@
 
     <para>Serinaldi, F. (2009), A multisite daily rainfall generator driven by
     bivariate copula-based mixed distributions, <emphasis role="italic">J.
-    Geophys. Res.</emphasis>, <emphasis role="italic">114</emphasis>(D10).</para>
+    Geophys. Res.</emphasis>, <emphasis
+    role="italic">114</emphasis>(D10).</para>
 
     <para>Serinaldi, F., and C. G. Kilsby (2014), Simulating daily rainfall
-    fields over large areas for collective risk estimation, <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">512</emphasis>, 285-302.</para>
+    fields over large areas for collective risk estimation, <emphasis
+    role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">512</emphasis>, 285-302.</para>
 
     <para>Sharma, A., and U. Lall (1999), A nonparametric approach for daily
     rainfall simulation, <emphasis role="italic">Mathematics and Computers in
@@ -4861,7 +5516,8 @@
 
     <para>Sharma, A., R. Mehrotra, and F. Johnson (2013), A New Framework for
     Modeling Future Hydrologic Extremes: Nested Bias Correction as a Precursor
-    to Stochastic Rainfall Downscaling (invited), in <emphasis role="italic">Climate Change Modeling, Mitigation, and
+    to Stochastic Rainfall Downscaling (invited), in <emphasis
+    role="italic">Climate Change Modeling, Mitigation, and
     Adaptation</emphasis>, edited by R. Y. Surampalli, T. C. Zhang, C. S. P.
     Ojha, B. R. Gurjar, R. D. Tyagi and C. M. Kao, p. 698, American Society of
     Civil Engineers, Reston, Virginia.</para>
@@ -4872,7 +5528,9 @@
     625-639.</para>
 
     <para>Sivakumar, B., R. Berndtsson, J. Olsson, and K. Jinno (2001),
-    Evidence of chaos in the rainfall-runoff process, <emphasis role="italic">Hydrological Sciences Journal</emphasis>, <emphasis role="italic">46</emphasis>(1), 131-145.</para>
+    Evidence of chaos in the rainfall-runoff process, <emphasis
+    role="italic">Hydrological Sciences Journal</emphasis>, <emphasis
+    role="italic">46</emphasis>(1), 131-145.</para>
 
     <para>Srikanthan, R., and T. A. McMahon (1985), Stochastic generation of
     rainfall and evaporation data, Tech. Paper No. 84, Aust. Water Resour.
@@ -4882,43 +5540,56 @@
     <para>Srikanthan, R., and G. Pegram (2009), A Nested Multisite Daily
     Rainfall Stochastic Generation Model, <emphasis role="italic">Journal of
     Hydrology</emphasis>, <emphasis role="italic">in
-    press</emphasis>(available online at <link xlink:href="http://www.science-direct.com/">http://www.science-direct.com/</link>
+    press</emphasis>(available online at <link
+    xlink:href="http://www.science-direct.com/">http://www.science-direct.com/</link>
     until publication).</para>
 
     <para>Srikanthan, R., T. McMahon, T. Harrold, and A. Sharma (2003),
-    Stochastic Generation of Daily Rainfall Data<emphasis role="italic">Rep.</emphasis>, CRC for Catchment Hydrology Technical
+    Stochastic Generation of Daily Rainfall Data<emphasis
+    role="italic">Rep.</emphasis>, CRC for Catchment Hydrology Technical
     Report 03/?, Melbourne, Australia.</para>
 
     <para>Steinschneider, S., and U. Lall (2015), A hierarchical Bayesian
     regional model for nonstationary precipitation extremes in Northern
-    California conditioned on tropical moisture exports, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">51</emphasis>(3), 1472-1492.</para>
+    California conditioned on tropical moisture exports, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">51</emphasis>(3), 1472-1492.</para>
 
     <para>Stern, R. D., and R. Coe (1984), A Model Fitting Analysis of Daily
     Rainfall Data, <emphasis role="italic">Journal of the Royal Statistical
-    Society. Series A (General)</emphasis>, <emphasis role="italic">147</emphasis>(1), 1.</para>
+    Society. Series A (General)</emphasis>, <emphasis
+    role="italic">147</emphasis>(1), 1.</para>
 
     <para>Viney, N. R., and B. C. Bates (2004), It never rains on Sunday: The
     prevalence and implications of untagged multi-day rainfall accumulations
-    in the Australian high quality data set, <emphasis role="italic">International Journal of Climatology</emphasis>, <emphasis role="italic">24</emphasis>, 1171-1192.</para>
+    in the Australian high quality data set, <emphasis
+    role="italic">International Journal of Climatology</emphasis>, <emphasis
+    role="italic">24</emphasis>, 1171-1192.</para>
 
     <para>Wallis, T. W. R., and J. F. Griffiths (1997), Simulated
-    meteorological input for agricultural models, <emphasis role="italic">Agricultural and Forest Meteorology</emphasis>, <emphasis role="italic">88</emphasis>(1-4), 241-258.</para>
+    meteorological input for agricultural models, <emphasis
+    role="italic">Agricultural and Forest Meteorology</emphasis>, <emphasis
+    role="italic">88</emphasis>(1-4), 241-258.</para>
 
     <para>Wang, Q. J., and R. J. Nathan (2007), A method for coupling daily
     and monthly time scales in stochastic generation of rainfall series,
-    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis role="italic">346</emphasis>(3-4), 122-130.</para>
+    <emphasis role="italic">Journal of Hydrology</emphasis>, <emphasis
+    role="italic">346</emphasis>(3-4), 122-130.</para>
 
     <para>Wasko, C., and A. Sharma (2015), Steeper temporal distribution of
-    rain intensity at higher temperatures within Australian storms, <emphasis role="italic">Nat Geosci</emphasis>, <emphasis role="italic">8</emphasis>,
+    rain intensity at higher temperatures within Australian storms, <emphasis
+    role="italic">Nat Geosci</emphasis>, <emphasis role="italic">8</emphasis>,
     527–529.</para>
 
     <para>Waymire, E., and V. K. Gupta (1981a), The mathematical structure of
     rainfall representations: 1. A review of the stochastic rainfall models,
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">17</emphasis>(5), 1261-1272.</para>
+    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">17</emphasis>(5), 1261-1272.</para>
 
     <para>Waymire, E., and V. K. Gupta (1981b), The mathematical structure of
     rainfall representations: 2. A review of the theory of point processes,
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">17</emphasis>(5), 1273-1285.</para>
+    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">17</emphasis>(5), 1273-1285.</para>
 
     <para>Westra, S., R. Mehrotra, A. Sharma, and R. Srikanthan (2012),
     Continuous rainfall simulation: 1 - A regionalised sub-daily
@@ -4935,7 +5606,8 @@
     <para>Westra, S., H. J. Fowler, J. P. Evans, L. V. Alexander, P. Berg, F.
     Johnson, E. J. Kendon, G. Lenderink, and N. M. Roberts (2014), Future
     changes to the intensity and frequency of short-duration extreme rainfall,
-    <emphasis role="italic">Rev Geophys</emphasis>, <emphasis role="italic">52</emphasis>.</para>
+    <emphasis role="italic">Rev Geophys</emphasis>, <emphasis
+    role="italic">52</emphasis>.</para>
 
     <para>Wheater, H. S., V. S. Isham, D. R. Cox, R. E. Chandler, A. Kakou, P.
     J. Northrop, L. Oh, C. Onof, and I. Rodriguez-Iturbe (2000),
@@ -4945,7 +5617,9 @@
 
     <para>Wilby, R. L., T. M. L. Wigley, D. Conway, P. D. Jones, B. C.
     Hewitson, J. Main, and D. S. Wilks (1998), Statistical Downscaling of
-    General Circulation Model Output - a Comparison of Methods, <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">34</emphasis>(11), 2995-3008.</para>
+    General Circulation Model Output - a Comparison of Methods, <emphasis
+    role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">34</emphasis>(11), 2995-3008.</para>
 
     <para>Wilks, D. S. (1998), Multisite generalization of a daily stochastic
     precipitation generation model, <emphasis role="italic">Journal of
@@ -4974,11 +5648,14 @@
 
     <para>Woolhiser, D. A., and G. G. S. Pegram (1979), Maximum Likelihood
     Estimation of Fourier Coefficients to Describe Seasonal Variations of
-    Parameters in Stochastic Daily Precipitation Models, <emphasis role="italic">Journal of Applied Meteorology</emphasis>, <emphasis role="italic">18</emphasis>(1), 34-42.</para>
+    Parameters in Stochastic Daily Precipitation Models, <emphasis
+    role="italic">Journal of Applied Meteorology</emphasis>, <emphasis
+    role="italic">18</emphasis>(1), 34-42.</para>
 
     <para>Woolhiser, D. A., and J. Roldán (1982), Stochastic daily
     precipitation models: 2. A comparison of distributions of amounts,
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis role="italic">18</emphasis>(5), 1461-1468.</para>
+    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
+    role="italic">18</emphasis>(5), 1461-1468.</para>
 
     <para>Woolhiser, D. A., and J. Roldán (1986), Seasonal and Regional
     Variability of Parameters for Stochastic Daily Precipitation Models: South
