@@ -21,93 +21,71 @@
 
   <section xml:id="b3_ch3_s_0g2kk">
     <title>Introduction</title>
-
-    <para>Estimation of peak flows on small to medium sized rural catchments
-    is required for the design of culverts, small to medium sized bridges,
-    causeways, soil conservation works and for various planning and regulatory
-    purposes. Typically, <?oxy_delete author="testoni" timestamp="20151118T091614+1100" content="many"?><?oxy_insert_start author="testoni" timestamp="20151118T091615+1100"?>most
-    design flood estimates for projects on<?oxy_insert_end ?> small to medium
-    sized catchments<?oxy_insert_start author="testoni" timestamp="20151118T092033+1100"?>
-    are on catchments that<?oxy_insert_end ?> are ungauged or have little
-    recorded streamflow data. In these cases, peak flow estimates can be
-    obtained using a Regional Flood Frequency Estimation (RFFE) approach,
-    which transfers flood frequency characteristics from a group of gauged
-    catchments to the location of interest. Even in cases where there is
-    recorded streamflow data it is beneficial to pool the information in the
-    gauged record with the RFFE information. A RFFE technique is expected to
-    be simple, requiring only readily accessible catchment data to obtain
-    design flood estimates relatively quickly.</para>
-
+    <para>Estimation of peak flows on small to medium sized rural catchments is required for the
+      design of culverts, small to medium sized bridges, causeways, soil conservation works and for
+      various planning and regulatory purposes. Typically,
+      <?oxy_delete author="testoni" timestamp="20151118T091614+1100" content="many"?><?oxy_insert_start author="testoni" timestamp="20151118T091615+1100"?>most
+      design flood estimates for projects on<?oxy_insert_end?> small to medium sized
+      catchments<?oxy_insert_start author="testoni" timestamp="20151118T092033+1100"?> are on
+      catchments that<?oxy_insert_end?> are ungauged or have little recorded streamflow data. In
+      these cases, peak flow estimates can be obtained using a Regional Flood Frequency Estimation
+      (RFFE) approach, which transfers flood frequency characteristics from a group of gauged
+      catchments to the location of interest. Even in cases where there is recorded streamflow data
+      it is beneficial to pool the information in the gauged record with the RFFE information. A
+      RFFE technique is expected to be simple, requiring only readily accessible catchment data to
+      obtain design flood estimates relatively quickly.</para>
     <?oxy_insert_start author="testoni" timestamp="20151118T092048+1100"?>
-
-    <para>The RFFE method described in this chapter ensures that design flood
-    discharge estimates are consistent with the gauged records and with
-    results for other ungauged catchments in a region. It is recognised that
-    there will be considerable uncertainty in estimates for ungauged
-    catchments because of the limited number of gauged catchments available to
-    develop the method and the wide range of catchment types that exist
-    throughout Australia.</para>
-
-    <?oxy_insert_end ?>
-
-    <para>In developing the RFFE technique, a number of criteria had to be
-    satisfied. These criteria included:</para>
-
+    <para>The RFFE method described in this chapter ensures that design flood discharge estimates
+      are consistent with the gauged records and with results for other ungauged catchments in a
+      region. It is recognised that there will be considerable uncertainty in estimates for ungauged
+      catchments because of the limited number of gauged catchments available to develop the method
+      and the wide range of catchment types that exist throughout Australia.</para>
+    <?oxy_insert_end?>
+    <para>In developing the RFFE technique, a number of criteria had to be satisfied. These criteria
+      included:</para>
     <itemizedlist>
       <listitem>
         <para>National consistency in approach;</para>
       </listitem>
-
       <listitem>
         <para>Smooth interfacing at the boundaries between areas;</para>
       </listitem>
-
       <listitem>
         <para>Use readily accessible data; and</para>
       </listitem>
-
       <listitem>
-        <para>Utilise as much of Australia's streamflow database as
-        possible.</para>
+        <para>Utilise as much of Australia's streamflow database as possible.</para>
       </listitem>
     </itemizedlist>
-
-    <para>The basis for the development of the RFFE technique recommended
-    herein, therefore, is a national database consisting of 853 gauged
-    catchments. These data were used to develop and test the RFFE technique
-    presented in this chapter. Further details of the development of the
-    database and RFFE technique are provided by the references noted in
-    Appendix A.</para>
-
-    <para>The following sections <?oxy_delete author="testoni" timestamp="20151118T101441+1100" content="of this chapter "?>contain
-    a description of the conceptual and statistical framework of the adopted
-    RFFE technique, a computer-based application tool, referred to as ‘RFFE
-    Model 2015’, that implements the adopted RFFE technique and a number of
-    worked examples to demonstrate the application of the model.</para>
-
-    <para>Following the guidance provided in Book 1 and Chapter 1 of this
-    book, users of the RFFE technique are reminded that there are alternatives
-    to the RFFE technique. <?oxy_delete author="testoni" timestamp="20151118T101450+1100" content="Furthermore, in accordance with this guidance, designers and analysts have a duty to use an alternative technique where that alternative is more appropriate for their design flood problem."?></para>
-
+    <para>The basis for the development of the RFFE technique recommended herein, therefore, is a
+      national database consisting of 853 gauged catchments. These data were used to develop and
+      test the RFFE technique presented in this chapter. Further details of the development of the
+      database and RFFE technique are provided by the references noted in Appendix A.</para>
+    <para>The following sections
+      <?oxy_delete author="testoni" timestamp="20151118T101441+1100" content="of this chapter "?>contain
+      a description of the conceptual and statistical framework of the adopted RFFE technique, a
+      computer-based application tool, referred to as ‘RFFE Model 2015’, that implements the adopted
+      RFFE technique and a number of worked examples to demonstrate the application of the
+      model.</para>
+    <para>Following the guidance provided in <xref linkend="book1"/> and <xref linkend="b3_ch1"/>,
+      users of the RFFE technique are reminded that there are alternatives to the RFFE technique.
+      <?oxy_delete author="testoni" timestamp="20151118T101450+1100" content="Furthermore, in accordance with this guidance, designers and analysts have a duty to use an alternative technique where that alternative is more appropriate for their design flood problem."?></para>
     <?oxy_insert_start author="testoni" timestamp="20151118T101458+1100"?>
-
-    <para>While the RFFE technique described in this chapter is regarded as a
-    state-of-the-art approach for estimation of design flood peak discharges
-    at ungauged catchments, the limitations of the method must be recognised.
-    The RFFE technique has been developed using the best available database of
-    gauged catchments throughout Australia, but the fact remains that only a
-    small number of gauged catchments were available to represent the wide
-    range of conditions experienced over an area of about 7.5 million km2.
-    Therefore, in accordance with the guidance in Book 1 Chapter 1 of ARR,
-    designers and analysts have a duty to use an alternative technique if that
-    technique can be shown to be superior to RFFE Model 2015 and to utilise
-    any available local data, both formal and informal to assist in
-    understanding local conditions and improve upon RFFE Model 2015 estimates.
-    In comparing and selecting alternative methods, the uncertainty in the
-    observed flood data due to factors such as limitations in record length
-    and rating curve extrapolation should be recognised.</para>
-
-    <?oxy_insert_end ?>
+    <para>While the RFFE technique described in this chapter is regarded as a state-of-the-art
+      approach for estimation of design flood peak discharges at ungauged catchments, the
+      limitations of the method must be recognised. The RFFE technique has been developed using the
+      best available database of gauged catchments throughout Australia, but the fact remains that
+      only a small number of gauged catchments were available to represent the wide range of
+      conditions experienced over an area of about 7.5 million km<superscript>2</superscript>. Therefore, in accordance with
+      the guidance in <?oxy_insert_end?><xref linkend="b1_ch1"
+      /><?oxy_insert_start author="testoni" timestamp="20151118T101458+1100"?> of ARR, designers and
+      analysts have a duty to use an alternative technique if that technique can be shown to be
+      superior to RFFE Model 2015 and to utilise any available local data, both formal and informal
+      to assist in understanding local conditions and improve upon RFFE Model 2015 estimates. In
+      comparing and selecting alternative methods, the uncertainty in the observed flood data due to
+      factors such as limitations in record length and rating curve extrapolation should be
+      recognised.</para>
+    <?oxy_insert_end?>
   </section>
 
   <section xml:id="b3_ch3_s_ynzmg">
@@ -116,21 +94,18 @@
     <section xml:id="b3_ch3_s_oubiy">
       <title>Definition of Regional Flood Frequency Estimation</title>
 
-      <para>Regional Flood Frequency Estimation (RFFE) is a data-driven
-      approach, which attempts to transfer flood characteristics from a group
-      of gauged catchments to ungauged locations of interest (where design
-      floods need to be estimated). A range of different methods are available
-      to extract regional flood information from the pooled data and to
-      transfer the relevant information to an individual ungauged catchment in
-      the region (Sivapalan et al. 2013). All of these RFFE techniques use the
-      results of at-site Flood Frequency Analysis (FFA, refer to Book 3
-      Chapter 2) as basic data. A RFFE technique essentially consists of two
-      steps: (i) <emphasis>Formation of Regions</emphasis> - which involves
-      identification of the regions for which flood data from the available
-      streamflow gauging stations can be pooled for analysis; and
-      (ii)<emphasis> Development of Regional Estimation Equations</emphasis> -
-      which involves derivation of prediction equations to be used for design
-      flood estimation within a region.</para>
+      <para>Regional Flood Frequency Estimation (RFFE) is a data-driven approach, which attempts to
+        transfer flood characteristics from a group of gauged catchments to ungauged locations of
+        interest (where design floods need to be estimated). A range of different methods are
+        available to extract regional flood information from the pooled data and to transfer the
+        relevant information to an individual ungauged catchment in the region (Sivapalan et al.
+        2013). All of these RFFE techniques use the results of at-site Flood Frequency Analysis
+        (FFA, refer to <xref linkend="b3_ch2"/>) as basic data. A RFFE technique essentially
+        consists of two steps: (i) <emphasis>Formation of Regions</emphasis> - which involves
+        identification of the regions for which flood data from the available streamflow gauging
+        stations can be pooled for analysis; and (ii)<emphasis> Development of Regional Estimation
+          Equations</emphasis> - which involves derivation of prediction equations to be used for
+        design flood estimation within a region.</para>
     </section>
 
     <section xml:id="b3_ch3_s_mctc1">
@@ -253,10 +228,9 @@
         </listitem>
 
         <listitem>
-          <para>It is straightforward to combine any at-site flood information
-          with regional estimates (see Book 3 Chapter 2) using the approach
-          described by Micevski and Kuczera (2009) to produce more accurate
-          quantile estimates; and</para>
+          <para>It is straightforward to combine any at-site flood information with regional
+            estimates (see <xref linkend="b3_ch2"/>) using the approach described by Micevski and
+            Kuczera (2009) to produce more accurate quantile estimates; and</para>
         </listitem>
 
         <listitem>
@@ -388,13 +362,13 @@
       limit the application of variables that do not contribute significantly
       to the overall performance of the RFFE technique.<?oxy_insert_end ?></para>
 
-      <para>For catchments having limited recorded streamflow data, the
-      combination of at-site data with a RFFE technique is likely to provide
-      more accurate flood quantile estimates than either the at-site or
-      regional method alone. Details of how limited streamflow data can be
-      combined with a RFFE technique <?oxy_delete author="testoni" timestamp="20151124T093510+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151124T093511+1100"?>are<?oxy_insert_end ?>
-      presented in Book 3 Chapter 2. Testing has shown this improves estimates
-      in many cases.</para>
+      <para>For catchments having limited recorded streamflow data, the combination of at-site data
+        with a RFFE technique is likely to provide more accurate flood quantile estimates than
+        either the at-site or regional method alone. Details of how limited streamflow data can be
+        combined with a RFFE technique
+        <?oxy_delete author="testoni" timestamp="20151124T093510+1100" content="is"?><?oxy_insert_start author="testoni" timestamp="20151124T093511+1100"?>are<?oxy_insert_end?>
+        presented in <xref linkend="b3_ch2"/>. Testing has shown this improves estimates in many
+        cases.</para>
 
       <para>An important assumption in all RFFE techniques is that the small
       set of predictor variables used in the regression equations is able to
@@ -1463,57 +1437,38 @@
         square root of catchment area.<?oxy_insert_start author="testoni" timestamp="20151118T134510+1100"?>
         <?oxy_insert_end ?></para>
 
-        <para>Design rainfall values were extracted from the new Intensity
-        Frequency Duration (IFD) data for Australia as discussed in Book 2
-        Chapter 3 of ARR.<?oxy_insert_start author="testoni" timestamp="20151118T134314+1100"?><xref
-        linkend="b3_ch3_t_osmfhe"/> provides the distribution of shape factors
-        for the selected catchments.<table frame="void"
-            xml:id="b3_ch3_t_osmfhe">
-            <caption><emphasis role="bold">Distribution of shape factors for
-            the selected catchments</emphasis></caption>
-
+        <para>Design rainfall values were extracted from the new Intensity Frequency Duration (IFD)
+          data for Australia as discussed in <xref linkend="b2_ch3"/> of
+            ARR.<?oxy_insert_start author="testoni" timestamp="20151118T134314+1100"?><xref
+            linkend="b3_ch3_t_osmfhe"/> provides the distribution of shape factors for the selected
+            catchments.<table frame="void" xml:id="b3_ch3_t_osmfhe">
+            <caption><emphasis role="bold">Distribution of shape factors for the selected
+                catchments</emphasis></caption>
             <col width="16%"/>
-
             <col width="16%"/>
-
             <col width="16%"/>
-
             <col width="16%"/>
-
             <col width="16%"/>
-
             <col width="16%"/>
-
             <tbody>
               <tr>
                 <td>Percentile</td>
-
                 <td>1%</td>
-
                 <td>10%</td>
-
                 <td>50%</td>
-
                 <td>90%</td>
-
                 <td>99%</td>
               </tr>
-
               <tr>
                 <td>Shape Factor</td>
-
                 <td>0.32</td>
-
                 <td>0.51</td>
-
                 <td>0.76</td>
-
                 <td>1.06</td>
-
                 <td>1.51</td>
               </tr>
             </tbody>
-          </table><?oxy_insert_end ?></para>
+          </table><?oxy_insert_end?></para>
       </section>
     </section>
 
@@ -2759,15 +2714,15 @@
   <section xml:id="b3_ch3_s_5x575">
     <title>Combining Regional and At-Site Quantile Estimates</title>
 
-    <para>Unless a station has a very long <?oxy_insert_start author="testoni" timestamp="20151121T162500+1100"?>a<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T162500+1100" content="A"?>nnual
-    <?oxy_insert_start author="testoni" timestamp="20151121T162502+1100"?>m<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T162502+1100" content="M"?>aximum
-    flood series data (e.g. greater than 100 years), it is desirable to
-    combine at-site and regional flood frequency quantile estimates to achieve
-    a more accurate estimate. The RFFE Model 2015 (see <xref
-    linkend="b3_ch3_s_8u3cs"/> for the description of the model) provides the
-    necessary parameter set and data in its output to combine the regional
-    flood quantile estimates with the at-site data. This is discussed in more
-    detail in Book 3 Chapter 2.</para>
+    <para>Unless a station has a very long
+      <?oxy_insert_start author="testoni" timestamp="20151121T162500+1100"?>a<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T162500+1100" content="A"?>nnual
+      <?oxy_insert_start author="testoni" timestamp="20151121T162502+1100"?>m<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T162502+1100" content="M"?>aximum
+      flood series data (e.g. greater than 100 years), it is desirable to combine at-site and
+      regional flood frequency quantile estimates to achieve a more accurate estimate. The RFFE
+      Model 2015 (see <xref linkend="b3_ch3_s_8u3cs"/> for the description of the model) provides
+      the necessary parameter set and data in its output to combine the regional flood quantile
+      estimates with the at-site data. This is discussed in more detail in <xref linkend="b3_ch2"
+      />.</para>
   </section>
 
   <section xml:id="b3_ch3_s_31eib">
@@ -2808,264 +2763,188 @@
   </section>
 
   <section xml:id="b3_ch3_s_8airu">
-    <title>Practical Considerations for Application of the RFFE
-    Technique</title>
-
+    <title>Practical Considerations for Application of the RFFE Technique</title>
     <?oxy_insert_start author="testoni" timestamp="20151121T162123+1100"?>
-
-    <para>The basis of the RFFE Model 2015 has been the analysis of all
-    available stream gauging stations that meet the selection criteria
-    described in this chapter, primarily that the stream gauge has an adequate
-    length of record and the streamflow data are of “reasonable” quality and
-    relate to relatively natural catchments. Most selected stream gauges have
-    a catchment area less than 1,000 km2. The RFFE Model parameters were then
-    developed based on regionalisation of the at-site flood quantiles for all
-    of these gauges from a given region. All available and suitable streamflow
-    data for all of Australia were adopted to develop the RFFE Model. While
-    the RFFE Model is appropriate for catchment types represented by the
-    gauged catchments used to develop this model, there are catchments where
-    the method either cannot be applied or where there may be gross error in
-    the flood quantile estimates if the RFFE Model were applied without
-    adjustments. These catchment types are described below.</para>
-
+    <para>The basis of the RFFE Model 2015 has been the analysis of all available stream gauging
+      stations that meet the selection criteria described in this chapter, primarily that the stream
+      gauge has an adequate length of record and the streamflow data are of “reasonable” quality and
+      relate to relatively natural catchments. Most selected stream gauges have a catchment area
+      less than 1,000 km<superscript>2</superscript>. The RFFE Model parameters were then developed based on regionalisation of
+      the at-site flood quantiles for all of these gauges from a given region. All available and
+      suitable streamflow data for all of Australia were adopted to develop the RFFE Model. While
+      the RFFE Model is appropriate for catchment types represented by the gauged catchments used to
+      develop this model, there are catchments where the method either cannot be applied or where
+      there may be gross error in the flood quantile estimates if the RFFE Model were applied
+      without adjustments. These catchment types are described below.</para>
     <para><emphasis role="bold"><emphasis role="italic">Urban
-    catchments</emphasis></emphasis></para>
-
-    <para>One of the criteria for catchment selection in the development of
-    the RFFE Model was that there should be essentially no urbanisation in the
-    catchment, or at least such a small proportion that it does not affect
-    flood generation. It is well known that flooding is affected, sometimes
-    significantly by urbanisation. There are insufficient gauged urban
-    catchments to allow development of a RFFE model for urban
-    catchments.</para>
-
-    <para>Therefore, the RFFE Model 2015 cannot be applied for any catchment
-    where urbanisation accounts for more than 10% of the catchment area, or
-    where it is considered that there may be an impact of urbanisation on
-    rainfall runoff relationship. In these cases an alternative approach for
-    estimating design floods is needed, as no equivalent regional method to
-    the rural RFFE Model is available.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchments containing
-    dams and other artificial storage</emphasis></emphasis></para>
-
-    <para>Dams or other artificial water storages attenuate flood hydrographs
-    and therefore reduce the flood peak discharges at the catchment outlet.
-    The catchments with dams that were regarded as sufficiently significant to
-    have an impact on flood discharges were not included in the database used
-    in the development of the RFFE Model. Hence, for a catchment having a dam
-    of significant size, the RFFE Model cannot be applied directly. In this
-    case, the RFFE Model can be used to calculate design flood discharges for
-    the “natural” catchment condition and then the effects of the dam should
-    be included by an appropriate technique such as the application of a
-    runoff-routing model where the storage effects can be modelled
-    directly.</para>
-
+      catchments</emphasis></emphasis></para>
+    <para>One of the criteria for catchment selection in the development of the RFFE Model was that
+      there should be essentially no urbanisation in the catchment, or at least such a small
+      proportion that it does not affect flood generation. It is well known that flooding is
+      affected, sometimes significantly by urbanisation. There are insufficient gauged urban
+      catchments to allow development of a RFFE model for urban catchments.</para>
+    <para>Therefore, the RFFE Model 2015 cannot be applied for any catchment where urbanisation
+      accounts for more than 10% of the catchment area, or where it is considered that there may be
+      an impact of urbanisation on rainfall runoff relationship. In these cases an alternative
+      approach for estimating design floods is needed, as no equivalent regional method to the rural
+      RFFE Model is available.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchments containing dams and other
+          artificial storage</emphasis></emphasis></para>
+    <para>Dams or other artificial water storages attenuate flood hydrographs and therefore reduce
+      the flood peak discharges at the catchment outlet. The catchments with dams that were regarded
+      as sufficiently significant to have an impact on flood discharges were not included in the
+      database used in the development of the RFFE Model. Hence, for a catchment having a dam of
+      significant size, the RFFE Model cannot be applied directly. In this case, the RFFE Model can
+      be used to calculate design flood discharges for the “natural” catchment condition and then
+      the effects of the dam should be included by an appropriate technique such as the application
+      of a runoff-routing model where the storage effects can be modelled directly.</para>
     <para><emphasis role="bold"><emphasis role="italic">Catchments affected by
-    mining</emphasis></emphasis></para>
-
-    <para>Catchments where mining activity has affected a significant
-    proportion of the catchment were not included in the database used in the
-    development of the RFFE Model. Catchments where mining activities are
-    significant may produce lower flood peak discharges than the natural
-    condition. The smaller peak discharges result from the water management
-    processes implemented in the mining operation where runoff is controlled
-    and managed in water quality ponds, tailings dams and other water
-    management infrastructure and the mine pit itself. In addition, runoff
-    from mining areas including waste dumps and rehabilitated areas is quite
-    distinct from catchments in their natural state.</para>
-
-    <para>In cases where mining is judged to impact a significant proportion
-    of a catchment, the RFFE Model can only be applied on the natural portions
-    of the catchment. The area affected by mining activities should be
-    modelled by an alternative method. Assessment of the water balance
-    affecting the volume of runoff is needed to ensure that the effects of
-    water control in ponds and mine pits and infiltration in highly modified
-    catchments is represented correctly. The catchment response is also
-    affected by drainage works and diversions. Calculation of runoff from
-    mining areas is a complex and specialised exercise and detailed
-    understanding of individual conditions is necessary. In general, a
-    detailed runoff-routing model is needed as well as a good understanding of
-    the water balance in these situations. However, direct calibration of
-    runoff routing models on ungauged catchments is not possible, which may
-    result in grossly inaccurate design flood estimates.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchments with
-    intensive agricultural activity</emphasis></emphasis></para>
-
-    <para>While most of the catchments used in development of the RFFE Model
-    have been located in agricultural regions, few are in areas of intensive
-    agriculture, where the flood response may have been affected by farm dams,
-    soil conservation works and irrigation infrastructure. Many intensive
-    agricultural catchments have a topography that is artificial and quite
-    different from the natural catchment condition. The objective of works on
-    agricultural land is often to slow the rate of runoff and increase
-    infiltration to the soil profile, thus the flood peak discharges is often
-    reduced on these catchment types as compared to the natural catchments.
-    Catchments affected by intense agricultural activities are similar to
-    those affected by mining. In this case, the RFFE Model cannot be applied
-    directly, and hence additional analysis is needed to assess the catchment
-    characteristics and then develop a runoff-routing model to adjust the
-    generic RFFE Model results using the catchment storage and channel
-    characteristics. However, direct calibration of runoff routing models on
-    ungauged catchments is not possible, which may result in grossly
-    inaccurate design flood estimates.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchment
-    size</emphasis></emphasis></para>
-
-    <para>The RFFE Model has been developed using all suitable gauged
-    catchments throughout Australia with catchment areas generally less than
-    1,000 km2. The RFFE Model can be applied to small catchments with no lower
-    limit though it is recognised that there are only a few gauged catchments
-    smaller than 10 km2 included in the database to develop the RFFE Model.
-    Because of the limited available data, it is likely that there will be a
-    greater degree of error in the quantile estimates for these smaller
-    catchments. The RFFE Model should not be applied for catchments larger
-    than 1,000 km2 because these larger catchments were not generally used in
-    the development of the method.</para>
-
-    <para><emphasis role="bold"><emphasis role="italic">Catchment
-    shape</emphasis></emphasis></para>
-
-    <para>The distribution of the shape factors of the selected catchments in
-    developing the RFFE Model is shown in Table 2. An ungauged catchment with
-    shape factor beyond 10%-90% limit as shown in Table 2 will have lower
-    accuracy in the estimated flood quantiles.</para>
-
+        mining</emphasis></emphasis></para>
+    <para>Catchments where mining activity has affected a significant proportion of the catchment
+      were not included in the database used in the development of the RFFE Model. Catchments where
+      mining activities are significant may produce lower flood peak discharges than the natural
+      condition. The smaller peak discharges result from the water management processes implemented
+      in the mining operation where runoff is controlled and managed in water quality ponds,
+      tailings dams and other water management infrastructure and the mine pit itself. In addition,
+      runoff from mining areas including waste dumps and rehabilitated areas is quite distinct from
+      catchments in their natural state.</para>
+    <para>In cases where mining is judged to impact a significant proportion of a catchment, the
+      RFFE Model can only be applied on the natural portions of the catchment. The area affected by
+      mining activities should be modelled by an alternative method. Assessment of the water balance
+      affecting the volume of runoff is needed to ensure that the effects of water control in ponds
+      and mine pits and infiltration in highly modified catchments is represented correctly. The
+      catchment response is also affected by drainage works and diversions. Calculation of runoff
+      from mining areas is a complex and specialised exercise and detailed understanding of
+      individual conditions is necessary. In general, a detailed runoff-routing model is needed as
+      well as a good understanding of the water balance in these situations. However, direct
+      calibration of runoff routing models on ungauged catchments is not possible, which may result
+      in grossly inaccurate design flood estimates.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchments with intensive agricultural
+          activity</emphasis></emphasis></para>
+    <para>While most of the catchments used in development of the RFFE Model have been located in
+      agricultural regions, few are in areas of intensive agriculture, where the flood response may
+      have been affected by farm dams, soil conservation works and irrigation infrastructure. Many
+      intensive agricultural catchments have a topography that is artificial and quite different
+      from the natural catchment condition. The objective of works on agricultural land is often to
+      slow the rate of runoff and increase infiltration to the soil profile, thus the flood peak
+      discharges is often reduced on these catchment types as compared to the natural catchments.
+      Catchments affected by intense agricultural activities are similar to those affected by
+      mining. In this case, the RFFE Model cannot be applied directly, and hence additional analysis
+      is needed to assess the catchment characteristics and then develop a runoff-routing model to
+      adjust the generic RFFE Model results using the catchment storage and channel characteristics.
+      However, direct calibration of runoff routing models on ungauged catchments is not possible,
+      which may result in grossly inaccurate design flood estimates.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchment size</emphasis></emphasis></para>
+    <para>The RFFE Model has been developed using all suitable gauged catchments throughout
+      Australia with catchment areas generally less than 1,000 km<superscript>2</superscript>. The RFFE Model can be applied to
+      small catchments with no lower limit though it is recognised that there are only a few gauged
+      catchments smaller than 10 km<superscript>2</superscript> included in the database to develop the RFFE Model. Because of
+      the limited available data, it is likely that there will be a greater degree of error in the
+      quantile estimates for these smaller catchments. The RFFE Model should not be applied for
+      catchments larger than 1,000 km<superscript>2</superscript> because these larger catchments were not generally used in
+      the development of the method.</para>
+    <para><emphasis role="bold"><emphasis role="italic">Catchment shape</emphasis></emphasis></para>
+    <para>The distribution of the shape factors of the selected catchments in developing the RFFE
+      Model is shown in <?oxy_insert_end?><xref linkend="b3_ch3_t_osmfhe"
+      /><?oxy_insert_start author="testoni" timestamp="20151121T162123+1100"?>. An ungauged
+      catchment with shape factor beyond 10%-90% limit as shown in <?oxy_insert_end?><xref
+        linkend="b3_ch3_t_osmfhe"
+      /><?oxy_insert_start author="testoni" timestamp="20151121T162123+1100"?> will have lower
+      accuracy in the estimated flood quantiles.</para>
     <para><emphasis role="bold"><emphasis role="italic">Atypical catchment
-    types</emphasis></emphasis></para>
-
-    <para>The catchment characteristics adopted in the RFFE Model were limited
-    to readily available/easily obtainable catchment variables. It is known
-    that there are many other catchment characteristics that influence
-    catchment response and flood discharges. These include factors such
-    as:</para>
-
+        types</emphasis></emphasis></para>
+    <para>The catchment characteristics adopted in the RFFE Model were limited to readily
+      available/easily obtainable catchment variables. It is known that there are many other
+      catchment characteristics that influence catchment response and flood discharges. These
+      include factors such as:</para>
     <itemizedlist>
       <listitem>
-        <para>Catchment land use including vegetation coverage: The extent of
-        clearing or forest cover can have a significant impact, especially in
-        the south-west of Western Australia, for example.</para>
+        <para>Catchment land use including vegetation coverage: The extent of clearing or forest
+          cover can have a significant impact, especially in the south-west of Western Australia,
+          for example.</para>
       </listitem>
-
       <listitem>
-        <para>Soils and geology: These factors influence the rainfall losses
-        and catchment flood response.</para>
+        <para>Soils and geology: These factors influence the rainfall losses and catchment flood
+          response.</para>
       </listitem>
-
       <listitem>
-        <para>Slopes: Steeper catchments respond more rapidly and therefore
-        produce larger flood peaks.</para>
+        <para>Slopes: Steeper catchments respond more rapidly and therefore produce larger flood
+          peaks.</para>
       </listitem>
-
       <listitem>
-        <para>Channel types and floodplain storage: Well defined channels and
-        smaller floodplain storage extents produce faster response and
-        therefore larger flood peaks.</para>
+        <para>Channel types and floodplain storage: Well defined channels and smaller floodplain
+          storage extents produce faster response and therefore larger flood peaks.</para>
       </listitem>
     </itemizedlist>
-
-    <para>In cases where the catchment requiring the design flood estimate is
-    judged to have characteristics significantly different from those used in
-    the development of the RFFE Model, further hydrology and hydraulic
-    analyses may be needed to refine the results from the generic RFFE Model
-    results.</para>
-
+    <para>In cases where the catchment requiring the design flood estimate is judged to have
+      characteristics significantly different from those used in the development of the RFFE Model,
+      further hydrology and hydraulic analyses may be needed to refine the results from the generic
+      RFFE Model results.</para>
     <para><emphasis role="bold"><emphasis role="italic">Catchment
-    location</emphasis></emphasis></para>
-
-    <para>Considering the large size of Australia and the relatively small
-    number of gauged catchments used for the development of the RFFE Model,
-    the density of the gauged catchments used in developing the model is quite
-    low. In addition, it must be recognised that there are errors in the
-    streamflow data (e.g. rating curve extrapolation error) used to develop
-    the RFFE Model. This means that catchments where design flood discharges
-    are needed may be remote from the gauged catchments used to develop the
-    RFFE Model and may have distinct differences from the adopted gauged
-    catchments. In these cases, the application of the RFFE Model may produce
-    grossly inaccurate results and hence additional review and checking are
-    necessary to confirm that the catchment being analysed has similar
-    characteristics to those used to develop the RFFE Model. Where there are
-    significant differences, a similar assessment to that needed for atypical
-    catchments should be considered, and an adjustment to the generic RFFE
-    Model result may be needed.</para>
-
+      location</emphasis></emphasis></para>
+    <para>Considering the large size of Australia and the relatively small number of gauged
+      catchments used for the development of the RFFE Model, the density of the gauged catchments
+      used in developing the model is quite low. In addition, it must be recognised that there are
+      errors in the streamflow data (e.g. rating curve extrapolation error) used to develop the RFFE
+      Model. This means that catchments where design flood discharges are needed may be remote from
+      the gauged catchments used to develop the RFFE Model and may have distinct differences from
+      the adopted gauged catchments. In these cases, the application of the RFFE Model may produce
+      grossly inaccurate results and hence additional review and checking are necessary to confirm
+      that the catchment being analysed has similar characteristics to those used to develop the
+      RFFE Model. Where there are significant differences, a similar assessment to that needed for
+      atypical catchments should be considered, and an adjustment to the generic RFFE Model result
+      may be needed.</para>
     <para><emphasis role="bold"><emphasis role="italic">Arid/semi-arid
-    areas</emphasis></emphasis></para>
-
-    <para>The arid/semi-arid areas of Australia pose a particular problem. The
-    RFFE Model divides these areas into two regions (1) Pilbara and (2) Arid
-    and semi-arid. There are few gauged catchments in these regions. Only 55
-    gauged catchments in total from an area of about 5 million km2 were
-    included in the database to develop the RFFE Model for these two
-    regions.</para>
-
-    <para>The stream gauges located in these areas are often located in sites
-    that may not be ideal, since the gauge sites are selected because of
-    access, confined channel and stable control, which may not be typical of
-    the types of sites where design flood discharges are needed in these
-    areas.</para>
-
-    <para>The Pilbara region, however, is not as diverse a region as the other
-    arid and semi-arid region, which covers a very wide range of
-    conditions.</para>
-
-    <para>The RFFE Model estimates are likely to be associated with a higher
-    level of error for arid/semi-arid areas. Because of this, the
-    arid/semi-arid areas may require some additional analysis to refine the
-    generic RFFE Model results. The RFFE Model data base report (Rahman et
-    al., 2015a) has a listing of all of the catchments that were used in the
-    development of the RFFE Model and the application of the RFFE software
-    provides a map of the neighbouring catchments that were used in the
-    development of the RFFE Model.</para>
-
-    <para>The application of the RFFE Model in arid/semi-arid areas therefore
-    may involve the following steps.</para>
-
+      areas</emphasis></emphasis></para>
+    <para>The arid/semi-arid areas of Australia pose a particular problem. The RFFE Model divides
+      these areas into two regions (1) Pilbara and (2) Arid and semi-arid. There are few gauged
+      catchments in these regions. Only 55 gauged catchments in total from an area of about 5
+      million km<superscript>2</superscript> were included in the database to develop the RFFE Model for these two
+      regions.</para>
+    <para>The stream gauges located in these areas are often located in sites that may not be ideal,
+      since the gauge sites are selected because of access, confined channel and stable control,
+      which may not be typical of the types of sites where design flood discharges are needed in
+      these areas.</para>
+    <para>The Pilbara region, however, is not as diverse a region as the other arid and semi-arid
+      region, which covers a very wide range of conditions.</para>
+    <para>The RFFE Model estimates are likely to be associated with a higher level of error for
+      arid/semi-arid areas. Because of this, the arid/semi-arid areas may require some additional
+      analysis to refine the generic RFFE Model results. The RFFE Model data base report (Rahman et
+      al., 2015a) has a listing of all of the catchments that were used in the development of the
+      RFFE Model and the application of the RFFE software provides a map of the neighbouring
+      catchments that were used in the development of the RFFE Model.</para>
+    <para>The application of the RFFE Model in arid/semi-arid areas therefore may involve the
+      following steps.</para>
     <itemizedlist>
       <listitem>
-        <para>Calculate the design flood discharges using the RFFE Model and
-        produce the table of design flood discharges for the target
-        catchment.</para>
+        <para>Calculate the design flood discharges using the RFFE Model and produce the table of
+          design flood discharges for the target catchment.</para>
       </listitem>
-
       <listitem>
-        <para>Review the catchment characteristics of the target catchment.
-        This should include the location, slopes, geology, land use and
-        vegetation.</para>
+        <para>Review the catchment characteristics of the target catchment. This should include the
+          location, slopes, geology, land use and vegetation.</para>
       </listitem>
-
       <listitem>
-        <para>Review the neighbouring gauged catchments (identified on the map
-        produced by the RFFE Model and in the RFFE model output of the list of
-        nearby gauged catchments) taking into account similarity or
-        dissimilarity of catchment characteristics.</para>
+        <para>Review the neighbouring gauged catchments (identified on the map produced by the RFFE
+          Model and in the RFFE model output of the list of nearby gauged catchments) taking into
+          account similarity or dissimilarity of catchment characteristics.</para>
       </listitem>
-
       <listitem>
-        <para>Compare the catchment characteristics of the target catchment as
-        well as the gauged catchments, in conjunction with results from
-        alternative methods (if available), and determine an appropriate
-        adjustment to the generic RFFE Model results.</para>
+        <para>Compare the catchment characteristics of the target catchment as well as the gauged
+          catchments, in conjunction with results from alternative methods (if available), and
+          determine an appropriate adjustment to the generic RFFE Model results.</para>
       </listitem>
     </itemizedlist>
-
-    <para><emphasis role="bold"><emphasis
-    role="italic">Baseflow</emphasis></emphasis></para>
-
-    <para>The RFFE Model has been developed using at-site flood frequency
-    analysis results, so the peak discharges calculated using the RFFE Model
-    include baseflow. This means that the flood quantiles from the RFFE Model
-    are not directly comparable with those from runoff-routing models where
-    only surface runoff is estimated. While baseflow is only a minor part of
-    the total flood hydrograph in most Australian catchments, there are some
-    areas where baseflow is more significant and, in particular, it becomes
-    more important when considering smaller floods. When working with the two
-    methods, the issue of baseflow should be addressed in the consideration of
-    the total flood peak discharge and estimated hydrograph.</para>
-
-    <?oxy_insert_end ?>
+    <para><emphasis role="bold"><emphasis role="italic">Baseflow</emphasis></emphasis></para>
+    <para>The RFFE Model has been developed using at-site flood frequency analysis results, so the
+      peak discharges calculated using the RFFE Model include baseflow. This means that the flood
+      quantiles from the RFFE Model are not directly comparable with those from runoff-routing
+      models where only surface runoff is estimated. While baseflow is only a minor part of the
+      total flood hydrograph in most Australian catchments, there are some areas where baseflow is
+      more significant and, in particular, it becomes more important when considering smaller
+      floods. When working with the two methods, the issue of baseflow should be addressed in the
+      consideration of the total flood peak discharge and estimated hydrograph.</para>
+    <?oxy_insert_end?>
   </section>
 
   <section xml:id="b3_ch3_s_8u3cs">
@@ -3249,12 +3128,12 @@
       </listitem>
 
       <listitem>
-        <para>A second table labelled <?oxy_insert_start author="testoni" timestamp="20151121T160727+1100"?>"S<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T160728+1100" content="s"?>tatistics<?oxy_insert_start author="testoni" timestamp="20151121T160730+1100"?>",
-        <?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T160735+1100" content=" tha"?><?oxy_insert_start author="testoni" timestamp="20151121T160737+1100"?>w<?oxy_insert_end ?><?oxy_delete author="testoni" timestamp="20151121T160740+1100" content="t"?><?oxy_insert_start author="testoni" timestamp="20151121T160740+1100"?>hich<?oxy_insert_end ?>
-        shows the statistics for the regional LPIII model at the catchment of
-        interest, which are particularly useful to combine at-site and
-        regional information to enhance the accuracy of flood quantile
-        estimates (for details see Book 3 Chapter 2).</para>
+        <para>A second table labelled
+          <?oxy_insert_start author="testoni" timestamp="20151121T160727+1100"?>"S<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T160728+1100" content="s"?>tatistics<?oxy_insert_start author="testoni" timestamp="20151121T160730+1100"?>",
+          <?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T160735+1100" content=" tha"?><?oxy_insert_start author="testoni" timestamp="20151121T160737+1100"?>w<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20151121T160740+1100" content="t"?><?oxy_insert_start author="testoni" timestamp="20151121T160740+1100"?>hich<?oxy_insert_end?>
+          shows the statistics for the regional LPIII model at the catchment of interest, which are
+          particularly useful to combine at-site and regional information to enhance the accuracy of
+          flood quantile estimates (for details see <xref linkend="b3_ch2"/>).</para>
       </listitem>
 
       <listitem>
@@ -4752,4 +4631,4 @@
     </figure>
   </section>
 </chapter>
-<?oxy_options track_changes="on"?>
+
