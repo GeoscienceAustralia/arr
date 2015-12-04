@@ -1,0 +1,195 @@
+/* ARR CSS3 Stylesheet */
+/* Restyle the TOC to drop the list items symbols */
+div.toc ul {
+	list-style-type: none;
+}
+div.list-of-figures ul {
+	list-style-type: none;
+}
+div.list-of-tables ul {
+	list-style-type: none;
+}
+div.list-of-equations ul {
+	list-style-type: none;
+}
+
+/* restyle the inline glossterms to match those in the print eddition.*/
+a.glossterm {
+   color: inherit;
+   font-style: normal;
+   text-decoration: underline;
+   text-decoration-style: dashed;
+}
+em.glossterm {
+   font-style: normal;
+}
+/*********************************************/
+/* Table formatting */
+/* Centre align small tables */
+div.table  {
+   text-align: left;
+   font-size: 0.9em;
+   line-height: 140%;
+}
+div.informaltable {
+   text-align: center;
+}
+
+/* Font, colour, borders, etc */
+/* First we'll format individual cells: */
+
+div.table {
+   padding: 20px 0 0 0;
+}
+
+div.table table {
+   border: none;
+   border-spacing: 0;
+   border-collapse: separate;
+   font-size: 0.85em;
+   line-height: 140%;
+   -webkit-hyphens:none; hyphens: none;
+   background-color: rgba(185,218,243,0.4);
+}
+
+div.table table td, div.table table th {
+   padding: 7px;
+}
+
+thead th {
+   background-color: #005092;
+   color: #FFFFFF;
+   text-align: center;
+}
+
+tbody tr th {
+   font-weight: bold;
+}
+
+tbody tr:nth-of-type(1) th, tbody tr:nth-of-type(1) td {
+   background-color: rgba(0,80,146,0.7);
+   color: #FFFFFF;
+   text-align: center;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+   background-color: rgba(255,255,255,0.4);
+ }
+
+/*********************************************
+ * Set some CSS colours, mostly used in      
+ * tables                                    */
+.colour_bfcbe3 {
+	background-color: #bfcbe3;
+}
+
+.colour_ada1c6 {
+	background-color: #ada1c6;
+}
+.colour_c9d69e {
+	background-color: #c9d69e;
+}
+.colour_c4dce7 {
+	background-color: #c4dce7;
+}
+.colour_d0b3b2 {
+	background-color: #d0b3b2;
+}
+
+/*********************************************/
+/* Equation formatting
+ * 
+ * Use the existing DocBook div elements and
+ * the float to obtain. */
+div.equation-title {
+   float: right;
+   font-weight: normal;
+}
+.equation-contents {
+   text-align: center;
+}
+.equation-break {
+   clear: both;
+}
+
+/*********************************************/
+/* Figure Layout */
+div.figure {
+   text-align: center;
+}
+
+/*********************************************/
+/* Definition Lists */
+dt {
+   font-weight: normal;
+   font-style:italic;
+}
+dd p {
+   padding-left: 20px;
+}
+
+body {
+  font-size: 0.7em;
+  font-family: iBooks_Iowan_Old_Style;
+  /*line-height: 16px;*/
+  line-height: 1.6em;
+}
+
+/* Table of contents label */
+.toc-title {font-style: italic;font-size: 1.2em;}
+
+/* First level contents list */
+div.toc ul {padding-left:0; margin-left: 0; line-height: 180%; text-align: left;}
+/* First level contents list items */
+div.toc ol li, div.toc ul li {padding-left: 20px; font-weight: bold; font-size: 1em; -webkit-hyphens:none; hyphens: none;}
+
+/* Second level contents list */
+div.toc ul ol, div.toc ul ul {}
+/* Second level contents list items */
+div.toc ul ol li, div.toc ul ul li {font-weight: normal; font-size: 0.9em;}
+
+
+/* Book title */
+h1.title {-webkit-margin-before: 0; font-size: 2.5em; margin-top: 20%; -webkit-hyphens:none; hyphens: none;line-height: 120%;}
+
+/* Chapter title */
+.chapter h1.title {font-size: 2em; margin-top: 10%; margin-bottom: 5px;}
+
+/* Chapter headings */
+h2.title {font-size: 1.4em; line-height: 1.4em; margin-top: 80px; -webkit-hyphens:none; hyphens: none;line-height: 120%;}
+
+/* Chapter author */
+.titlepage .author {
+   color: rgba(128, 128, 128, 1);
+   font-size: 1.2em;
+   letter-spacing: 1px;
+   margin-bottom: 25px;
+   -webkit-margin-before: 0;
+}
+
+/* Figures */
+.figure .figure-title, .table .table-title {
+   font-size: 0.9em;
+   line-height: 130%;
+   color: rgba(128, 128, 128, 0.8);
+   font-weight: bold;
+   margin-bottom: 20px;
+   -webkit-hyphens:none; hyphens: none;
+}
+
+/* Equations */
+
+.equation {
+   border-left: 3px solid rgba(205, 233, 244, 1);
+   padding: 4px 0 4px 0;
+   margin: 18px 0 18px 0;
+}
+
+.equation .equation-title {
+   text-transform: uppercase;
+   font-size: 0.7em;
+   font-family: Menlo, monospace;
+   letter-spacing: 0.5px;
+   color: rgba(128, 128, 128, 1);
+}
+
+
