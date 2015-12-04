@@ -130,9 +130,9 @@
          <xsl:apply-imports/>
       </xsl:param>
       
-      <xsl:call-template name="user.preroot"/>
+      <!--<xsl:call-template name="user.preroot"/>-->
       
-      <html>
+      <!--<html>-->
          <xsl:call-template name="root.attributes"/>
          <!--
          <xsl:call-template name="html.head">
@@ -140,8 +140,8 @@
             <xsl:with-param name="next" select="$next"/>
          </xsl:call-template>-->
          
-         <body>
-               <xsl:call-template name="body.attributes"/>
+         <!--<body>
+               <xsl:call-template name="body.attributes"/>-->
                
                <!--<xsl:call-template name="html5.header.navigation">
                   <xsl:with-param name="prev" select="$prev"/>
@@ -160,9 +160,9 @@
                   <xsl:with-param name="next" select="$next"/>
                   <xsl:with-param name="nav.context" select="$nav.context"/>
                </xsl:call-template>-->
-            <script src="js/lightbox.js"></script>
+            <!--<script src="js/lightbox.js"></script>
          </body>
-      </html>
+      </html>-->
       <xsl:value-of select="$chunk.append"/>
    </xsl:template>
    
