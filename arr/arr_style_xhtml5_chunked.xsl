@@ -182,7 +182,7 @@
             <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1" />
          </xsl:attribute>
          <xsl:attribute name="data-ch">
-            <xsl:value-of select="count(ancestor::d:book/child::d:section)+1" />
+            <xsl:value-of select="count(ancestor::d:chapter/preceding-sibling::d:chapter)+1" />
          </xsl:attribute>
          <xsl:attribute name="data-sec">
             <xsl:value-of select="blah" />
