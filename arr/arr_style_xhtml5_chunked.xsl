@@ -120,7 +120,7 @@
    </xsl:template>
 
    <!-- We are overriding this template to insert div elements necessary
-      for Bootstrap integration -->
+      for integration with the AJAX by Bennett -->
    <xsl:template name="chunk-element-content" priority="1">
       <xsl:param name="prev"/>
       <xsl:param name="next"/>
@@ -133,20 +133,20 @@
       
       <html>
          <xsl:call-template name="root.attributes"/>
+         <!--
          <xsl:call-template name="html.head">
             <xsl:with-param name="prev" select="$prev"/>
             <xsl:with-param name="next" select="$next"/>
-         </xsl:call-template>
+         </xsl:call-template>-->
          
          <body>
-            <div class="container-fluid">
                <xsl:call-template name="body.attributes"/>
                
-               <xsl:call-template name="html5.header.navigation">
+               <!--<xsl:call-template name="html5.header.navigation">
                   <xsl:with-param name="prev" select="$prev"/>
                   <xsl:with-param name="next" select="$next"/>
                   <xsl:with-param name="nav.context" select="$nav.context"/>
-               </xsl:call-template>
+               </xsl:call-template>-->
                
                <xsl:call-template name="user.header.content"/>
                
@@ -154,16 +154,56 @@
                
                <xsl:call-template name="user.footer.content"/>
                
-               <xsl:call-template name="html5.footer.navigation">
+               <!--<xsl:call-template name="html5.footer.navigation">
                   <xsl:with-param name="prev" select="$prev"/>
                   <xsl:with-param name="next" select="$next"/>
                   <xsl:with-param name="nav.context" select="$nav.context"/>
-               </xsl:call-template>
-            </div>
+               </xsl:call-template>-->
             <script src="js/lightbox.js"></script>
          </body>
       </html>
       <xsl:value-of select="$chunk.append"/>
+   </xsl:template>
+   
+   <!-- Override to add additional target attributes for Bennett's AJAX -->
+   <xsl:template match="d:section">
+      <xsl:variable name="depth" select="count(ancestor::d:section)+1"/>
+      
+      <xsl:call-template name="id.warning"/>
+      
+      <xsl:element name="{$div.element}" namespace="http://www.w3.org/1999/xhtml">
+         <xsl:call-template name="common.html.attributes">
+            <xsl:with-param name="inherit" select="1"/>
+         </xsl:call-template>
+         <xsl:call-template name="id.attribute">
+            <xsl:with-param name="conditional" select="0"/>
+         </xsl:call-template>
+         <xsl:attribute name="data-bk">
+            <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1" />
+         </xsl:attribute>
+         <xsl:attribute name="data-ch">
+            <xsl:value-of select="count(ancestor::d:book/child::d:section)+1" />
+         </xsl:attribute>
+         <xsl:attribute name="data-sec">
+            <xsl:value-of select="blah" />
+         </xsl:attribute>
+         <xsl:call-template name="section.titlepage"/>
+         
+         <xsl:variable name="toc.params">
+            <xsl:call-template name="find.path.params">
+               <xsl:with-param name="table" select="normalize-space($generate.toc)"/>
+            </xsl:call-template>
+         </xsl:variable>
+         
+         <xsl:if test="contains($toc.params, 'toc')                   and $depth &lt;= $generate.section.toc.level">
+            <xsl:call-template name="section.toc">
+               <xsl:with-param name="toc.title.p" select="contains($toc.params, 'title')"/>
+            </xsl:call-template>
+            <xsl:call-template name="section.toc.separator"/>
+         </xsl:if>
+         <xsl:apply-templates/>
+         <xsl:call-template name="process.chunk.footnotes"/>
+      </xsl:element>
    </xsl:template>
    
    
