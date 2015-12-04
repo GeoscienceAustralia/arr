@@ -1,919 +1,804 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter>
 <chapter status="External Review" version="5.0" xml:id="b5_ch4"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+  xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Baseflow Models</title>
-
     <xi:include href="../../common/authors/hill_peter.xml"/>
-
     <xi:include href="../../common/authors/brown_rachel.xml"/>
-
     <xi:include href="../../common/authors/nathan_rory.xml"/>
-
     <xi:include href="../../common/authors/graszkiewicz_zuzanna.xml"/>
   </info>
-
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Book</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Chapter</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>27/11/2015</td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>Graphs and Figures</td>
+      <td>Working draft</td>
+    </tr>
+    <tr>
+      <td>Examples</td>
+      <td>Working draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>some tidy up required</td>
+    </tr>
+  </informaltable>
   <section xml:id="section_71967788">
     <title>Introduction</title>
-
-    <para>Streamflow <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144721+1000" content="is made up "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144721+1000"?>consists
-    <?oxy_insert_end ?>of two <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144725+1000" content="main "?>components
-    based on <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144729+1000" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144729+1000"?>response
-    <?oxy_insert_end ?>timing<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144736+1000"?>,<?oxy_insert_end ?>
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144733+1000" content="of response "?>following
-    a rainfall event. <?oxy_delete author="RadhikaChhotai" timestamp="20150921T145116+1000" content="The w"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145116+1000"?>W<?oxy_insert_end ?>ater
-    that enters a stream rapidly is termed <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145122+1000"?>as
-    <?oxy_insert_end ?>quickflow and is sourced from rainfall
-    excess<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145131+1000"?>,<?oxy_insert_end ?>
-    after <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145133+1000"?>the
-    <?oxy_insert_end ?>loss has been satisfied (representing a range of
-    processes such as interception, infiltration and depression storage).
-    <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145151+1000"?>On
-    the contrary, <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T145157+1000" content="W"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145157+1000"?>w<?oxy_insert_end ?>ater
-    that takes longer to reach a river is termed <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145226+1000"?>as
-    <?oxy_insert_end ?>baseflow and is sourced primarily from groundwater
-    discharge into the river. <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145447+1000"?>Also,
-    <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T145449+1000" content="D"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145449+1000"?>d<?oxy_insert_end ?>ifferent
-    locations have varying degrees of baseflow contribution to
-    streamflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145512+1000"?>,<?oxy_insert_end ?>
-    based on regional hydrogeological conditions.</para>
-
-    <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150302+1000"?>According
-    to Nathan and McMahon (1990) and Brodie and Hostetler (2005),
-    <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T150306+1000" content="T"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150306+1000"?>t<?oxy_insert_end ?>he
-    baseflow hydrograph <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150235+1000" content="is considered to "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150320+1000"?>has
-    <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T150235+1000" content="have "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150235+1000"?>the
-    following <?oxy_insert_end ?>features<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150333+1000"?>:<?oxy_insert_end ?>
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150248+1000" content="as described by Nathan and McMahon (1990) and Brodie and Hostetler (2005):"?></para>
-
+    <para>Streamflow
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144721+1000" content="is made up "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144721+1000"?>consists
+      <?oxy_insert_end?>of two
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144725+1000" content="main "?>components
+      based on
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144729+1000" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144729+1000"?>response <?oxy_insert_end?>timing<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T144736+1000"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T144733+1000" content="of response "?>following
+      a rainfall event.
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T145116+1000" content="The w"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145116+1000"?>W<?oxy_insert_end?>ater
+      that enters a stream rapidly is termed
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145122+1000"?>as
+      <?oxy_insert_end?>quickflow and is sourced from rainfall
+      excess<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145131+1000"?>,<?oxy_insert_end?>
+      after <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145133+1000"?>the
+      <?oxy_insert_end?>loss has been satisfied (representing a range of processes such as
+      interception, infiltration and depression storage).
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145151+1000"?>On the contrary,
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T145157+1000" content="W"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145157+1000"?>w<?oxy_insert_end?>ater
+      that takes longer to reach a river is termed
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145226+1000"?>as
+      <?oxy_insert_end?>baseflow and is sourced primarily from groundwater discharge into the river.
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145447+1000"?>Also,
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T145449+1000" content="D"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145449+1000"?>d<?oxy_insert_end?>ifferent
+      locations have varying degrees of baseflow contribution to
+      streamflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T145512+1000"?>,<?oxy_insert_end?>
+      based on regional hydrogeological conditions.</para>
+    <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150302+1000"?>According to
+      Nathan and McMahon (1990) and Brodie and Hostetler (2005),
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T150306+1000" content="T"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150306+1000"?>t<?oxy_insert_end?>he
+      baseflow hydrograph
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150235+1000" content="is considered to "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150320+1000"?>has
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T150235+1000" content="have "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150235+1000"?>the
+      following <?oxy_insert_end?>features<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150333+1000"?>:<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150248+1000" content="as described by Nathan and McMahon (1990) and Brodie and Hostetler (2005):"?></para>
     <itemizedlist>
       <listitem>
-        <para>The low flow before the start of a flood event is <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150449+1000" content="generally "?>assumed
-        to consist entirely of baseflow;</para>
+        <para>The low flow before the start of a flood event is
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150449+1000" content="generally "?>assumed
+          to consist entirely of baseflow;</para>
       </listitem>
-
       <listitem>
-        <para>The rapid rise of <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150506+1000" content="the "?>river
-        during a rainfall event increases the volume of water held as bank
-        storage<?oxy_delete author="RadhikaChhotai" timestamp="20150921T150517+1000" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150518+1000"?>,
-        which<?oxy_insert_end ?> <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150520+1000" content="This water "?>returns
-        to the main streamflow after a delay and creates a baseflow peak after
-        the main flood peak;</para>
+        <para>The rapid rise of
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150506+1000" content="the "?>river
+          during a rainfall event increases the volume of water held as bank
+          storage<?oxy_delete author="RadhikaChhotai" timestamp="20150921T150517+1000" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T150518+1000"?>, which<?oxy_insert_end?>
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T150520+1000" content="This water "?>returns
+          to the main streamflow after a delay and creates a baseflow peak after the main flood
+          peak;</para>
       </listitem>
-
       <listitem>
-        <para>The recession of the baseflow peak continues after the recession
-        of the streamflow peak;</para>
+        <para>The recession of the baseflow peak continues after the recession of the streamflow
+          peak;</para>
       </listitem>
-
       <listitem>
-        <para>The baseflow recession generally follows an exponential decay
-        function; and</para>
+        <para>The baseflow recession generally follows an exponential decay function; and</para>
       </listitem>
-
       <listitem>
-        <para>The baseflow hydrograph re<?oxy_delete author="RadhikaChhotai" timestamp="20150921T150623+1000" content="-"?>joins
-        the total hydrograph as the quickflow ceases.</para>
+        <para>The baseflow hydrograph
+          re<?oxy_delete author="RadhikaChhotai" timestamp="20150921T150623+1000" content="-"?>joins
+          the total hydrograph as the quickflow ceases.</para>
       </listitem>
     </itemizedlist>
-
-    <para>The majority of design flood estimation in Australia utilises flood
-    event models that focus on surface runoff processes<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T154210+1000"?>.<?oxy_insert_end ?>
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150921T154211+1000" content="and i"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T154214+1000"?>I<?oxy_insert_end ?>n
-    such models the baseflow component is either ignored or incorporated after
-    the surface runoff has been estimated. The conceptualisation of some
-    continuous models or fully integrated surface water - groundwater models
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150921T154238+1000" content="do "?>explicitly
-    incorporate the estimation of the baseflow component. However, given the
-    prevalence of flood event models for design flood estimation, the
-    following <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184459+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184503+1000"?>guide<?oxy_insert_end ?>
-    concentrates on estimating a baseflow hydrographs to combine with an
-    existing estimate of surface runoff.</para>
-
+    <para>The majority of design flood estimation in Australia utilises flood event models that
+      focus on surface runoff processes<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T154210+1000"?>.<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T154211+1000" content="and i"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T154214+1000"?>I<?oxy_insert_end?>n
+      such models the baseflow component is either ignored or incorporated after the surface runoff
+      has been estimated. The conceptualisation of some continuous models or fully integrated
+      surface water - groundwater models
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T154238+1000" content="do "?>explicitly
+      incorporate the estimation of the baseflow component. However, given the prevalence of flood
+      event models for design flood estimation, the following
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184459+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184503+1000"?>guide<?oxy_insert_end?>
+      concentrates on estimating a baseflow hydrographs to combine with an existing estimate of
+      surface runoff.</para>
     <para><?oxy_delete author="ward" timestamp="20151120T145717+1100" content="Australian Rainfall and Runoff ("?>ARR<?oxy_delete author="ward" timestamp="20151120T145721+1100" content=")"?>
-    Revision Project 7 - Baseflow for Catchment Simulation<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T155804+1000"?>,<?oxy_insert_end ?>
-    developed a method <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171359+1000" content="for "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171359+1000"?>to
-    <?oxy_insert_end ?>calculat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171404+1000"?>e<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T171402+1000" content="ing"?>
-    and incorporat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171407+1000"?>e<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T171406+1000" content="ing"?>
-    the <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171427+1000"?>baseflow
-    <?oxy_insert_end ?>contribution <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171414+1000" content="from baseflow "?>to
-    design flood estimates. Stage 1 of the project (Murphy et al. 2009 and
-    2011a, and Graszkiewicz et al. 2011)<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171635+1000"?>,<?oxy_insert_end ?>
-    focussed on the physical processes of groundwater-surface water
-    interaction and theoretical approaches to baseflow separation. The
-    identified methods were applied to eight case study catchments across
-    Australia in order to develop a suitable approach for <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171934+1000" content="more "?>wide
-    scale application. Stage 2 of Project 7 (Murphy et al. 2011b) covered the
-    analysis of 236 catchments across Australia, the development of prediction
-    equations to estimate baseflow parameters and the development of a method
-    for <?oxy_delete author="RadhikaChhotai" timestamp="20150921T172456+1000" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T172503+1000"?>their
-    <?oxy_insert_end ?>application <?oxy_delete author="RadhikaChhotai" timestamp="20150921T172505+1000" content="of these "?>to
-    design estimates for catchments across Australia.</para>
-
-    <para>This document utilises the method developed in ARR Revision Project
-    7 to provide guidance on how to estimate baseflow for design flood
-    estimation.</para>
-
+      Revision Project 7 - Baseflow for Catchment
+      Simulation<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T155804+1000"?>,<?oxy_insert_end?>
+      developed a method
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171359+1000" content="for "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171359+1000"?>to
+      <?oxy_insert_end?>calculat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171404+1000"?>e<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T171402+1000" content="ing"?>
+      and
+      incorporat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171407+1000"?>e<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T171406+1000" content="ing"?>
+      the <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171427+1000"?>baseflow
+      <?oxy_insert_end?>contribution
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171414+1000" content="from baseflow "?>to
+      design flood estimates. Stage 1 of the project (Murphy et al. 2009 and 2011a, and Graszkiewicz
+      et al.
+      2011)<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T171635+1000"?>,<?oxy_insert_end?>
+      focussed on the physical processes of groundwater-surface water interaction and theoretical
+      approaches to baseflow separation. The identified methods were applied to eight case study
+      catchments across Australia in order to develop a suitable approach for
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T171934+1000" content="more "?>wide
+      scale application. Stage 2 of Project 7 (Murphy et al. 2011b) covered the analysis of 236
+      catchments across Australia, the development of prediction equations to estimate baseflow
+      parameters and the development of a method for
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T172456+1000" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T172503+1000"?>their
+      <?oxy_insert_end?>application
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T172505+1000" content="of these "?>to
+      design estimates for catchments across Australia.</para>
+    <para>This document utilises the method developed in ARR Revision Project 7 to provide guidance
+      on how to estimate baseflow for design flood estimation.</para>
     <para>This remainder of this chapter is structured as follows:</para>
-
     <itemizedlist>
       <listitem>
-        <para><xref linkend="b5_ch4_s_4iwkw"/> describes those characteristics
-        of the baseflow that need to be estimated;</para>
+        <para><xref linkend="b5_ch4_s_4iwkw"/> describes those characteristics of the baseflow that
+          need to be estimated;</para>
       </listitem>
-
       <listitem>
-        <para><xref linkend="section_93981341"/> discusses considerations when
-        selecting the approach to estimating baseflow;</para>
+        <para><xref linkend="section_93981341"/> discusses considerations when selecting the
+          approach to estimating baseflow;</para>
       </listitem>
-
       <listitem>
-        <para><xref linkend="section_53207573"/> outlines the different
-        approaches to estimating the baseflow contribution to design
-        hydrographs; and</para>
+        <para><xref linkend="section_53207573"/> outlines the different approaches to estimating the
+          baseflow contribution to design hydrographs; and</para>
       </listitem>
-
       <listitem>
-        <para><xref linkend="section_03656764"/> provides 2 worked
-        examples.</para>
+        <para><xref linkend="section_03656764"/> provides 2 worked examples.</para>
       </listitem>
     </itemizedlist>
   </section>
-
   <section xml:id="b5_ch4_s_4iwkw">
     <title>Guiding Principles</title>
-
-    <para>This <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184319+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184319+1000"?>guide<?oxy_insert_end ?>
-    on baseflow draws upon a significant body of work undertaken through ARR
-    Revision Project 7, and provides advice on how to estimate baseflow for
-    design flood estimation.</para>
-
-    <para>Users should consider the characteristics of the particular
-    catchment with respect to the underlying assumptions that form the basis
-    of the method outlined in this chapter. The following approach is
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150921T173855+1000" content="considered "?>applicable
-    across the vast majority of Australian catchments. However, users should
-    draw upon their understanding of the particular catchment of interest to
-    make an informed decision regarding the relevance of each
-    step<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T174056+1000"?>,<?oxy_insert_end ?>
-    considering the following issues:</para>
-
+    <para>This
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184319+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184319+1000"?>guide<?oxy_insert_end?>
+      on baseflow draws upon a significant body of work undertaken through ARR Revision Project 7,
+      and provides advice on how to estimate baseflow for design flood estimation.</para>
+    <para>Users should consider the characteristics of the particular catchment with respect to the
+      underlying assumptions that form the basis of the method outlined in this chapter. The
+      following approach is
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T173855+1000" content="considered "?>applicable
+      across the vast majority of Australian catchments. However, users should draw upon their
+      understanding of the particular catchment of interest to make an informed decision regarding
+      the relevance of each
+      step<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T174056+1000"?>,<?oxy_insert_end?>
+      considering the following issues:</para>
     <itemizedlist>
       <listitem>
         <para><?oxy_insert_start author="ward" timestamp="20151120T145825+1100" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Snow melt</emphasis>, which is not
-        considered in this approach.</para>
+            role="bold"><?oxy_insert_end?>Snow melt</emphasis>, which is not considered in this
+          approach.</para>
       </listitem>
-
       <listitem>
         <para>Significant farm dam development or other flow
-        regulation<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T174126+1000"?>s<?oxy_insert_end ?>
-        in the catchment, which can mask the contribution of baseflow.</para>
+          regulation<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T174126+1000"?>s<?oxy_insert_end?>
+          in the catchment, which can mask the contribution of baseflow.</para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T183948+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Design flood estimation for Rare to
-        Extreme events.</emphasis> The method outlined below is only relevant
-        to events up to approximately the 1% <?oxy_delete author="ward" timestamp="20151120T145921+1100" content="Annual Exceedence Probability ("?>AEP<?oxy_delete author="ward" timestamp="20151120T145923+1100" content=")"?>
-        and guidance for baseflow contribution to very rare and extreme events
-        is provided in <xref linkend="book8"/>.</para>
+            role="bold"><?oxy_insert_end?>Design flood estimation for Rare to Extreme
+            events.</emphasis> The method outlined below is only relevant to events up to
+          approximately the 1%
+          <?oxy_delete author="ward" timestamp="20151120T145921+1100" content="Annual Exceedence Probability ("?>AEP<?oxy_delete author="ward" timestamp="20151120T145923+1100" content=")"?>
+          and guidance for baseflow contribution to very rare and extreme events is provided in
+            <xref linkend="book8"/>.</para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184020+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Seasonality of events, <?oxy_delete author="ward" timestamp="20151120T145947+1100" content="which is not explicitly considered in this approach."?></emphasis><?oxy_insert_start author="ward" timestamp="20151120T145947+1100"?>Seasonality
-        is not explicitly considered in this approach.<?oxy_insert_end ?>
-        Region-specific analysis should be undertaken <?oxy_delete author="RadhikaChhotai" timestamp="20150921T183856+1000" content="for those regions of Australia "?>where
-        seasonality of flood producing factors is important. Kinkela and
-        Pearce (2014) <?oxy_delete author="ward" timestamp="20151120T150014+1100" content="outline"?><?oxy_insert_start author="ward" timestamp="20151120T150014+1100"?>describe<?oxy_insert_end ?>
-        such a study for the south-west of Western Australia.</para>
+            role="bold"><?oxy_insert_end?>Seasonality of events,
+            <?oxy_delete author="ward" timestamp="20151120T145947+1100" content="which is not explicitly considered in this approach."?></emphasis><?oxy_insert_start author="ward" timestamp="20151120T145947+1100"?>Seasonality
+          is not explicitly considered in this approach.<?oxy_insert_end?> Region-specific analysis
+          should be undertaken
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T183856+1000" content="for those regions of Australia "?>where
+          seasonality of flood producing factors is important. Kinkela and Pearce (2014)
+          <?oxy_delete author="ward" timestamp="20151120T150014+1100" content="outline"?><?oxy_insert_start author="ward" timestamp="20151120T150014+1100"?>describe<?oxy_insert_end?>
+          such a study for the south-west of Western Australia.</para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184025+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Urbanised catchments. </emphasis>The
-        approach and catchments considered in developed of the method were
-        selected to represent rural conditions<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184053+1000"?>,
-        therefore the <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T184057+1000" content=" and as such the "?>approach
-        is not applicable <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184103+1000" content="for "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184103+1000"?>to
-        <?oxy_insert_end ?>urban catchments (flood estimation for urban
-        catchments is covered in <xref linkend="book9"/>).<?oxy_insert_start author="ward" timestamp="20151120T172426+1100"?>
-        Baseflow is typically a small contribution to the
-        flows.<?oxy_insert_end ?></para>
+            role="bold"><?oxy_insert_end?>Urbanised catchments. </emphasis>The approach and
+          catchments considered in developed of the method were selected to represent rural
+          conditions<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184053+1000"?>,
+          therefore the
+          <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150921T184057+1000" content=" and as such the "?>approach
+          is not applicable
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184103+1000" content="for "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184103+1000"?>to
+          <?oxy_insert_end?>urban catchments (flood estimation for urban catchments is covered in
+            <xref linkend="book9"
+          />).<?oxy_insert_start author="ward" timestamp="20151120T172426+1100"?> Baseflow is
+          typically a small contribution to the flows.<?oxy_insert_end?></para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184114+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Small catchments away from the main
-        stem of the river network. </emphasis>The regional estimates relate to
-        a location on the main stem of the river and reflect the
-        characteristics of <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184139+1000" content="the entire "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184139+1000"?>all
-        the <?oxy_insert_end ?>contributing catchments. The baseflow
-        characteristics of individual tributaries may be different from those
-        in the larger contributing catchment.</para>
+            role="bold"><?oxy_insert_end?>Small catchments away from the main stem of the river
+            network. </emphasis>The regional estimates relate to a location on the main stem of the
+          river and reflect the characteristics of
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184139+1000" content="the entire "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184139+1000"?>all
+          the <?oxy_insert_end?>contributing catchments. The baseflow characteristics of individual
+          tributaries may be different from those in the larger contributing catchment.</para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184209+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Estimation of <?oxy_delete author="ward" timestamp="20151120T150030+1100" content="streamflow"?><?oxy_insert_start author="ward" timestamp="20151120T150030+1100"?>historic
-        events<?oxy_insert_end ?>. </emphasis>The approach in this chapter has
-        been developed for application in design flood estimation,
-        <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184222+1000"?>but
-        <?oxy_insert_end ?>not <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184224+1000"?>for
-        <?oxy_insert_end ?>the estimation of the baseflow component of
-        streamflow for individual historic events.</para>
+            role="bold"><?oxy_insert_end?>Estimation of
+            <?oxy_delete author="ward" timestamp="20151120T150030+1100" content="streamflow"?><?oxy_insert_start author="ward" timestamp="20151120T150030+1100"?>historic
+            events<?oxy_insert_end?>. </emphasis>The approach in this chapter has been developed for
+          application in design flood estimation,
+          <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184222+1000"?>but
+          <?oxy_insert_end?>not
+          <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184224+1000"?>for
+          <?oxy_insert_end?>the estimation of the baseflow component of streamflow for individual
+          historic events.</para>
       </listitem>
-
       <listitem>
         <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184241+1000" type="surround"?><emphasis
-        role="bold"><?oxy_insert_end ?>Estimation of baseflow for extended
-        periods. </emphasis>This <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184337+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184337+1000"?>guide<?oxy_insert_end ?>
-        is relevant for design events only. Users should refer to the
-        technical documents supporting ARR Revision Project 7 for more general
-        information on baseflow estimation for longer sequences.</para>
+            role="bold"><?oxy_insert_end?>Estimation of baseflow for extended periods.
+          </emphasis>This
+          <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184337+1000" content="guidance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184337+1000"?>guide<?oxy_insert_end?>
+          is relevant for design events only. Users should refer to the technical documents
+          supporting ARR Revision Project 7 for more general information on baseflow estimation for
+          longer sequences.</para>
       </listitem>
     </itemizedlist>
-
-    <para>If any of the above factors are deemed to be important for the
-    catchment of interest, <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184525+1000" content="then "?>it
-    is recommended that the user consider<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184527+1000"?>s<?oxy_insert_end ?>
-    the suitability of this approach to their catchment of interest. It is
-    <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184539+1000"?>also
-    <?oxy_insert_end ?>relevant to interpret the outcomes in
-    <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184544+1000"?>the
-    <?oxy_insert_end ?>light of <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184549+1000" content="the "?>underlying
-    assumptions, and <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184550+1000" content="to "?>draw
-    on local data to supplement the approach or to consider alternative
-    methods<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184607+1000"?>,<?oxy_insert_end ?>
-    where these assumptions are not fully met.</para>
-
-    <para>Users <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184619+1000" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184619+1000"?>should
-    <?oxy_insert_end ?>refer<?oxy_delete author="RadhikaChhotai" timestamp="20150921T184622+1000" content="red"?>
-    to the technical reports and analyses undertaken for ARR Revision Project
-    7 (Murphy et al. 2009 and Murphy et al. 2011b) for full details of the
-    data analysis and assumptions that form the basis of the method outlined
-    in this chapter. Users may also like to refer to these supporting
-    documents and data to draw further local conclusions from the significant
-    body of work undertaken through the study.</para>
+    <para>If any of the above factors are deemed to be important for the catchment of interest,
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184525+1000" content="then "?>it is
+      recommended that the user
+      consider<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184527+1000"?>s<?oxy_insert_end?>
+      the suitability of this approach to their catchment of interest. It is
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184539+1000"?>also
+      <?oxy_insert_end?>relevant to interpret the outcomes in
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184544+1000"?>the
+      <?oxy_insert_end?>light of
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184549+1000" content="the "?>underlying
+      assumptions, and
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184550+1000" content="to "?>draw on
+      local data to supplement the approach or to consider alternative
+      methods<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184607+1000"?>,<?oxy_insert_end?>
+      where these assumptions are not fully met.</para>
+    <para>Users
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T184619+1000" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T184619+1000"?>should
+      <?oxy_insert_end?>refer<?oxy_delete author="RadhikaChhotai" timestamp="20150921T184622+1000" content="red"?>
+      to the technical reports and analyses undertaken for ARR Revision Project 7 (Murphy et al.
+      2009 and Murphy et al. 2011b) for full details of the data analysis and assumptions that form
+      the basis of the method outlined in this chapter. Users may also like to refer to these
+      supporting documents and data to draw further local conclusions from the significant body of
+      work undertaken through the study.</para>
   </section>
-
   <section xml:id="section_93981341">
     <title>Baseflow Characteristics</title>
-
-    <para>For design flood estimation in Australia, baseflow has traditionally
-    been considered to be a relatively minor contributor to the flood
-    hydrograph, but baseflow can potentially be significant in more frequent
-    events. This is particularly the case where the catchment geology consists
-    of high yielding aquifers.</para>
-
-    <para>For instance, for a 10% AEP, about two-thirds of Australian
-    unregulated rural catchments have baseflow contributions that are
-    estimated to be between approximately 5<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185054+1000"?>%<?oxy_insert_end ?>
-    and 30% of the peak flow. There are only <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185103+1000" content="approximately "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185103+1000"?>about
-    <?oxy_insert_end ?>5% of catchments <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185107+1000" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185107+1000"?>that
-    <?oxy_insert_end ?>have a higher proportion of baseflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185121+1000"?>,
-    which<?oxy_insert_end ?> <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185116+1000" content="and "?>these
-    tend to be located in south-west WA, south-east SA and some areas in the
-    tropics. <?oxy_comment_start author="RadhikaChhotai" timestamp="20150921T185312+1000" comment="Unclear statement. Please explain. "?>In
-    just less than a third of unregulated rural catchments<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185249+1000"?>,<?oxy_insert_end ?>
-    the baseflow is estimated to be less than 5% of the peak (for a 10%
-    AEP)<?oxy_comment_end ?>. Baseflow is typically insignificant in urban
-    catchments due to the degree of channel modifications and extent of
-    impervious areas.</para>
-
-    <para>The variation of baseflow with exceedance probability is discussed
-    in <xref linkend="b5_ch4_s_4iwkw"/>. For events more frequent than a 10%
-    AEP, the baseflow can represent a significant proportion of the peak
-    flow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115456+1000"?>,<?oxy_insert_end ?>
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150922T115454+1000" content="and "?>particularly
-    volume. For rarer events, baseflow makes up a smaller relative
-    contribution to the surface runoff. For the majority of catchments, it is
-    likely that the contribution of baseflow for extreme events will be less
-    important<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115800+1000"?>;<?oxy_insert_end ?>
-    although<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115802+1000"?>,<?oxy_insert_end ?>
-    for volume dependent systems, the baseflow volume may still be
-    significant. Guidance for baseflow contribution to very rare and extreme
-    events is provided in Book 8.</para>
-
-    <para>This chapter concentrates on the estimation of baseflow contribution
-    to be included with surface runoff estimated from a flood event model,
-    rather than separating baseflow from recorded streamflow. Approaches for
-    separating baseflow are described in the ARR Revision Project 7 Stage 1
-    report (Murphy, et al. 2009).</para>
-
-    <para>In the context of design flood estimation, a surface runoff
-    hydrograph will typically be generated using a flood event model that
-    excludes baseflow. It is therefore necessary to estimate the baseflow
-    contribution in order to <?oxy_delete author="ward" timestamp="20151120T150117+1100" content="completely "?>represent
-    the total event peak and volume, and to generate a total streamflow
-    hydrograph. This concept is represented in <xref
-    linkend="figure_28340800"/><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T101723+1000"?>,<?oxy_insert_end ?>
-    which depicts the following features of an event hydrograph:</para>
-
+    <para>For design flood estimation in Australia, baseflow has traditionally been considered to be
+      a relatively minor contributor to the flood hydrograph, but baseflow can potentially be
+      significant in more frequent events. This is particularly the case where the catchment geology
+      consists of high yielding aquifers.</para>
+    <para>For instance, for a 10% AEP, about two-thirds of Australian unregulated rural catchments
+      have baseflow contributions that are estimated to be between approximately
+      5<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185054+1000"?>%<?oxy_insert_end?>
+      and 30% of the peak flow. There are only
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185103+1000" content="approximately "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185103+1000"?>about
+      <?oxy_insert_end?>5% of catchments
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185107+1000" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185107+1000"?>that
+      <?oxy_insert_end?>have a higher proportion of
+      baseflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185121+1000"?>, which<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150921T185116+1000" content="and "?>these
+      tend to be located in south-west WA, south-east SA and some areas in the tropics.
+      <?oxy_comment_start author="RadhikaChhotai" timestamp="20150921T185312+1000" comment="Unclear statement. Please explain. "?>In
+      just less than a third of unregulated rural
+      catchments<?oxy_insert_start author="RadhikaChhotai" timestamp="20150921T185249+1000"?>,<?oxy_insert_end?>
+      the baseflow is estimated to be less than 5% of the peak (for a 10% AEP)<?oxy_comment_end?>.
+      Baseflow is typically insignificant in urban catchments due to the degree of channel
+      modifications and extent of impervious areas.</para>
+    <para>The variation of baseflow with exceedance probability is discussed in <xref
+        linkend="b5_ch4_s_4iwkw"/>. For events more frequent than a 10% AEP, the baseflow can
+      represent a significant proportion of the peak flow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115456+1000"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150922T115454+1000" content="and "?>particularly
+      volume. For rarer events, baseflow makes up a smaller relative contribution to the surface
+      runoff. For the majority of catchments, it is likely that the contribution of baseflow for
+      extreme events will be less
+      important<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115800+1000"?>;<?oxy_insert_end?>
+      although<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T115802+1000"?>,<?oxy_insert_end?>
+      for volume dependent systems, the baseflow volume may still be significant. Guidance for
+      baseflow contribution to very rare and extreme events is provided in Book 8.</para>
+    <para>This chapter concentrates on the estimation of baseflow contribution to be included with
+      surface runoff estimated from a flood event model, rather than separating baseflow from
+      recorded streamflow. Approaches for separating baseflow are described in the ARR Revision
+      Project 7 Stage 1 report (Murphy, et al. 2009).</para>
+    <para>In the context of design flood estimation, a surface runoff hydrograph will typically be
+      generated using a flood event model that excludes baseflow. It is therefore necessary to
+      estimate the baseflow contribution in order to
+      <?oxy_delete author="ward" timestamp="20151120T150117+1100" content="completely "?>represent
+      the total event peak and volume, and to generate a total streamflow hydrograph. This concept
+      is represented in <xref linkend="figure_28340800"
+      /><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T101723+1000"?>,<?oxy_insert_end?>
+      which depicts the following features of an event hydrograph:</para>
     <itemizedlist>
       <listitem>
-        <para><emphasis>Surface runoff peak</emphasis> - the maximum flow
-        associated with the surface runoff event.</para>
+        <para><emphasis>Surface runoff peak</emphasis> - the maximum flow associated with the
+          surface runoff event.</para>
       </listitem>
-
       <listitem>
-        <para><emphasis>Time to the surface runoff peak</emphasis> - measured
-        from the start of the event to the surface runoff peak.</para>
+        <para><emphasis>Time to the surface runoff peak</emphasis> - measured from the start of the
+          event to the surface runoff peak.</para>
       </listitem>
-
       <listitem>
-        <para><emphasis>Volume of surface runoff for the event</emphasis> -
-        event volume, represented by the area under the hydrograph.</para>
+        <para><emphasis>Volume of surface runoff for the event</emphasis> - event volume,
+          represented by the area under the hydrograph.</para>
       </listitem>
-
       <listitem>
-        <para><emphasis>Baseflow peak</emphasis> - maximum baseflow associated
-        with the event.</para>
+        <para><emphasis>Baseflow peak</emphasis> - maximum baseflow associated with the
+          event.</para>
       </listitem>
-
       <listitem>
-        <para><emphasis>Time to the baseflow peak</emphasis> - measured from
-        the start of the event to the baseflow peak.</para>
+        <para><emphasis>Time to the baseflow peak</emphasis> - measured from the start of the event
+          to the baseflow peak.</para>
       </listitem>
-
       <listitem>
-        <para><emphasis>Baseflow under the surface runoff peak</emphasis> -
-        baseflow that occurs at the time of the surface runoff peak.</para>
+        <para><emphasis>Baseflow under the surface runoff peak</emphasis> - baseflow that occurs at
+          the time of the surface runoff peak.</para>
       </listitem>
     </itemizedlist>
-
     <figure xml:id="figure_28340800">
       <title>Key Characteristics for Calculation in a Flood Hydrograph</title>
-
       <mediaobject>
         <imageobject>
-          <imagedata contentdepth="100%" fileref="../../figures/5001.png"
-                     scalefit="1" width="100%"/>
+          <imagedata contentdepth="100%" fileref="../../figures/5001.png" scalefit="1" width="100%"
+          />
         </imageobject>
       </mediaobject>
     </figure>
   </section>
-
   <section xml:id="section_53207573">
     <title>Selection of Approach</title>
-
     <para>The <?oxy_insert_start author="ward" timestamp="20151120T150211+1100"?>recommended
-    <?oxy_insert_end ?>approach to quantifying baseflow is <?oxy_delete author="RadhikaChhotai" timestamp="20150922T132617+1000" content="dependen"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163630+1000"?>dependent<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T132617+1000" content="t"?>
-    <?oxy_delete author="RadhikaChhotai" timestamp="20150922T132620+1000" content="upon "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T132620+1000"?>on
-    <?oxy_insert_end ?>the catchment characteristics, data availability and
-    baseflow characteristics of the catchment. <xref
-    linkend="figure_97744967"/> provides a decision pathway to determine the
-    most suitable approach to estimate baseflow contribution to design flood
-    events, based on site specific criteria.</para>
-
+      <?oxy_insert_end?>approach to quantifying baseflow is <?oxy_delete author="RadhikaChhotai" timestamp="20150922T132617+1000" content="dependen"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163630+1000"?>dependent<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T132617+1000" content="t"?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20150922T132620+1000" content="upon "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T132620+1000"?>on
+      <?oxy_insert_end?>the catchment characteristics, data availability and baseflow
+      characteristics of the catchment. <xref linkend="figure_97744967"/> provides a decision
+      pathway to determine the most suitable approach to estimate baseflow contribution to design
+      flood events, based on site specific criteria.</para>
     <figure xml:id="figure_97744967">
-      <title>Decision Tree for Method to Estimate Baseflow Contribution to
-      Design Flood</title>
-
+      <title>Decision Tree for Method to Estimate Baseflow Contribution to Design Flood</title>
       <mediaobject>
         <imageobject>
-          <imagedata contentdepth="100%" fileref="../../figures/5002.png"
-                     scalefit="1" width="100%"/>
+          <imagedata contentdepth="100%" fileref="../../figures/5002.png" scalefit="1" width="100%"
+          />
         </imageobject>
       </mediaobject>
     </figure>
-
     <section xml:id="section_40603913">
       <title>Preliminary Assessment of Baseflow</title>
-
-      <para>A preliminary assessment should be undertaken<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133435+1000"?>,<?oxy_insert_end ?>
-      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133439+1000"?>in
-      order <?oxy_insert_end ?>to consider whether baseflow is likely to be a
-      significant component of the design flood hydrograph.
-      <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133640+1000"?>However,
-      <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133647+1000" content="A"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133648+1000"?>a<?oxy_insert_end ?>
-      detailed analysis is not suggested at this point<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133653+1000"?>,<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133652+1000" content=". I"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133656+1000"?>i<?oxy_insert_end ?>nstead,
-      this assessment is intended to be a coarse screening test to help
-      determine the most appropriate approach <?oxy_delete author="RadhikaChhotai" timestamp="20150922T133720+1000" content="to "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133720+1000"?>in
-      <?oxy_insert_end ?>estimat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133723+1000"?>ing<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133722+1000" content="e"?>
-      baseflow for the catchment of interest based on the expected baseflow
-      characteristics. A number of tools are available to support this
-      assessment:</para>
-
+      <para>A preliminary assessment should be undertaken<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133435+1000"?>,<?oxy_insert_end?>
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133439+1000"?>in order
+        <?oxy_insert_end?>to consider whether baseflow is likely to be a significant component of
+        the design flood hydrograph.
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133640+1000"?>However,
+        <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133647+1000" content="A"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133648+1000"?>a<?oxy_insert_end?>
+        detailed analysis is not suggested at this
+        point<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133653+1000"?>,<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133652+1000" content=". I"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133656+1000"?>i<?oxy_insert_end?>nstead,
+        this assessment is intended to be a coarse screening test to help determine the most
+        appropriate approach
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T133720+1000" content="to "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133720+1000"?>in
+        <?oxy_insert_end?>estimat<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T133723+1000"?>ing<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T133722+1000" content="e"?>
+        baseflow for the catchment of interest based on the expected baseflow characteristics. A
+        number of tools are available to support this assessment:</para>
       <itemizedlist>
         <listitem>
-          <para><xref linkend="figure_15142923"/> is provided to readily
-          identify the relative magnitude of baseflow compared to surface
-          runoff for catchments across Australia for a 10% AEP event.
-          Practitioners can identify their catchment of interest within this
-          data set and note the value of <?oxy_delete author="RadhikaChhotai" timestamp="20150922T145416+1000" content="the "?>Baseflow
-          Peak Factor. This map shows catchments to match with the screening
-          criteria identified below, while <xref linkend="figure_85594555"/>
-          provides a more detailed estimate of <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145629+1000"?>the
-          <?oxy_insert_end ?>baseflow. The data used to generate these figures
-          <?oxy_delete author="RadhikaChhotai" timestamp="20150922T145707+1000" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145707+1000"?>is
-          <?oxy_insert_end ?>available in Geographic Information System (GIS)
-          format<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145719+1000"?>,<?oxy_insert_end ?>
-          to assist locating catchments/points of interest.</para>
+          <para><xref linkend="figure_15142923"/> is provided to readily identify the relative
+            magnitude of baseflow compared to surface runoff for catchments across Australia for a
+            10% AEP event. Practitioners can identify their catchment of interest within this data
+            set and note the value of
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T145416+1000" content="the "?>Baseflow
+            Peak Factor. This map shows catchments to match with the screening criteria identified
+            below, while <xref linkend="figure_85594555"/> provides a more detailed estimate of
+            <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145629+1000"?>the
+            <?oxy_insert_end?>baseflow. The data used to generate these figures
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T145707+1000" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145707+1000"?>is
+            <?oxy_insert_end?>available in Geographic Information System (GIS)
+            format<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T145719+1000"?>,<?oxy_insert_end?>
+            to assist locating catchments/points of interest.</para>
         </listitem>
-
         <listitem>
-          <para>If available, streamflow data for the catchment should be
-          reviewed. The magnitude of <?oxy_delete author="ward" timestamp="20151120T150325+1100" content="low "?>flows
-          <?oxy_insert_start author="ward" timestamp="20151120T150329+1100"?>between
-          flood events <?oxy_insert_end ?>relative to peaks can be used to
-          determine whether baseflow is likely to be an important component of
-          the design flood hydrograph.</para>
+          <para>If available, streamflow data for the catchment should be reviewed. The magnitude of
+            <?oxy_delete author="ward" timestamp="20151120T150325+1100" content="low "?>flows
+            <?oxy_insert_start author="ward" timestamp="20151120T150329+1100"?>between flood events
+            <?oxy_insert_end?>relative to peaks can be used to determine whether baseflow is likely
+            to be an important component of the design flood hydrograph.</para>
         </listitem>
       </itemizedlist>
-
-      <para>Where baseflow is expected to be a small component compared to the
-      surface runoff, the design flood peak can <?oxy_delete author="RadhikaChhotai" timestamp="20150922T150243+1000" content="simply "?>be
-      adjusted <?oxy_delete author="RadhikaChhotai" timestamp="20150922T150248+1000" content="by "?>up
-      to approximately 5% to make an allowance for baseflow. Catchments with a
-      Baseflow Peak Factor less than 0.05 are considered suitable for this
-      approach. This reflects approximately 30% of the catchments mapped in
-      <xref linkend="figure_15142923"/>.</para>
-
-      <para>It is suggested that catchments that have a baseflow contribution
-      greater than approximately 5% of the surface runoff should explicitly
-      incorporate the baseflow component into the design
-      flood<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T150839+1000"?>,<?oxy_insert_end ?>
-      using a more rigorous approach.</para>
-
+      <para>Where baseflow is expected to be a small component compared to the surface runoff, the
+        design flood peak can
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T150243+1000" content="simply "?>be
+        adjusted
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T150248+1000" content="by "?>up to
+        approximately 5% to make an allowance for baseflow. Catchments with a Baseflow Peak Factor
+        less than 0.05 are considered suitable for this approach. This reflects approximately 30% of
+        the catchments mapped in <xref linkend="figure_15142923"/>.</para>
+      <para>It is suggested that catchments that have a baseflow contribution greater than
+        approximately 5% of the surface runoff should explicitly incorporate the baseflow component
+        into the design
+        flood<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T150839+1000"?>,<?oxy_insert_end?>
+        using a more rigorous approach.</para>
       <para><?oxy_delete author="RadhikaChhotai" timestamp="20150922T150856+1000" content="Where "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T150856+1000"?>While
-      <?oxy_insert_end ?>baseflow is a very large component of the event (a
-      contribution of more than approximately 30% is suggested, reflected by a
-      Baseflow Peak Factor greater than 0.3), the baseflow contributions
-      should be estimated using techniques that are suited to the nature and
-      availability of local data (e.g. see Brodie and Hostetler 2005; Chapman
-      and Maxwell 1996; Nathan and McMahon 1990; Ladson et al. 2013).
-      Approximately 5% of Australian catchments, generally <?oxy_delete author="RadhikaChhotai" timestamp="20150922T151300+1000" content="located in "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T151300+1000"?>the
-      areas of <?oxy_insert_end ?>tropical north Australia, south-west Western
-      Australia and the south-east coastline of South Australia, fall into
-      this category. The specific approach of relevance will depend on local
-      conditions<?oxy_delete author="RadhikaChhotai" timestamp="20150922T151339+1000" content=","?>
-      and the user is guided to the above references to determine the most
-      appropriate baseflow estimation technique.</para>
-
-      <para>Where baseflow is between approximately 5% and 30% of the surface
-      runoff (Baseflow Peak Factor between 0.05 and 0.3), the approach
-      outlined below is recommended. This relates to approximately 65% of the
-      catchments mapped in <xref linkend="figure_15142923"/>.</para>
+        <?oxy_insert_end?>baseflow is a very large component of the event (a contribution of more
+        than approximately 30% is suggested, reflected by a Baseflow Peak Factor greater than 0.3),
+        the baseflow contributions should be estimated using techniques that are suited to the
+        nature and availability of local data (e.g. see Brodie and Hostetler 2005; Chapman and
+        Maxwell 1996; Nathan and McMahon 1990; Ladson et al. 2013). Approximately 5% of Australian
+        catchments, generally
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T151300+1000" content="located in "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T151300+1000"?>the
+        areas of <?oxy_insert_end?>tropical north Australia, south-west Western Australia and the
+        south-east coastline of South Australia, fall into this category. The specific approach of
+        relevance will depend on local
+        conditions<?oxy_delete author="RadhikaChhotai" timestamp="20150922T151339+1000" content=","?>
+        and the user is guided to the above references to determine the most appropriate baseflow
+        estimation technique.</para>
+      <para>Where baseflow is between approximately 5% and 30% of the surface runoff (Baseflow Peak
+        Factor between 0.05 and 0.3), the approach outlined below is recommended. This relates to
+        approximately 65% of the catchments mapped in <xref linkend="figure_15142923"/>.</para>
     </section>
-
     <section xml:id="section_87631628">
       <title>Suitability of Stream Flow Data</title>
-
-      <para>Where possible, recorded streamflow data should be used directly
-      to quantify baseflow. However, ideally more than 10 years of continuous
-      streamflow data would be required to undertake detailed site-specific
-      analyses. Appropriate data quality checks should be undertaken prior to
-      ascertaining the period of record available for analysis. Preferably,
-      the streamflow data should extend over a period of record that enables
-      the identification of an event of similar magnitude to the design flood
-      of interest. Some subjectivity may be required to determine the
-      suitability of available streamflow for this approach, depending on the
-      period of record and the events represented within this data, with
-      reference to <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152106+1000" content="the "?>event
-      magnitude and duration of interest.</para>
-
-      <para><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152247+1000" content="In addition"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152247+1000"?>Additionally<?oxy_insert_end ?>,
-      there are various activities that can impact upon the flow
-      characteristics <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152316+1000" content="usually "?>associated
-      with <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152319+1000"?>the
-      <?oxy_insert_end ?>baseflow. These activities include:</para>
-
+      <para>Where possible, recorded streamflow data should be used directly to quantify baseflow.
+        However, ideally more than 10 years of continuous streamflow data would be required to
+        undertake detailed site-specific analyses. Appropriate data quality checks should be
+        undertaken prior to ascertaining the period of record available for analysis. Preferably,
+        the streamflow data should extend over a period of record that enables the identification of
+        an event of similar magnitude to the design flood of interest. Some subjectivity may be
+        required to determine the suitability of available streamflow for this approach, depending
+        on the period of record and the events represented within this data, with reference to
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152106+1000" content="the "?>event
+        magnitude and duration of interest.</para>
+      <para><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152247+1000" content="In addition"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152247+1000"?>Additionally<?oxy_insert_end?>,
+        there are various activities that can impact upon the flow characteristics
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152316+1000" content="usually "?>associated
+        with <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152319+1000"?>the
+        <?oxy_insert_end?>baseflow. These activities include:</para>
       <itemizedlist>
         <listitem>
-          <para><emphasis>Flow regulation from upstream reservoirs</emphasis>
-          – reservoirs that release outflows that are different to inflows
-          will produce a low flow response that can be misinterpreted as
-          baseflow at downstream flow gauges.</para>
+          <para><emphasis>Flow regulation from upstream reservoirs</emphasis> – reservoirs that
+            release outflows that are different to inflows will produce a low flow response that can
+            be misinterpreted as baseflow at downstream flow gauges.</para>
         </listitem>
-
         <listitem>
           <para><emphasis>Catchment farm dams </emphasis>– high
-          concentration<?oxy_delete author="RadhikaChhotai" timestamp="20150922T152500+1000" content="s"?>
-          of catchment farm dams could influence baseflow but only where the
-          dams are located in a manner where they intercept and store flows
-          arising from long-term depletion of catchment storage.</para>
+            concentration<?oxy_delete author="RadhikaChhotai" timestamp="20150922T152500+1000" content="s"?>
+            of catchment farm dams could influence baseflow but only where the dams are located in a
+            manner where they intercept and store flows arising from long-term depletion of
+            catchment storage.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis>Major diversions –</emphasis> diversions for
-          consumptive use such as irrigation channels, urban diversions, etc.
-          These diversions <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152603+1000" content="can "?>decrease
-          low flows and hence appear to reduce estimates of baseflow.
-          Allowances can be made for those diversions where they are
-          metered.</para>
+          <para><emphasis>Major diversions –</emphasis> diversions for consumptive use such as
+            irrigation channels, urban diversions, etc. These diversions
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152603+1000" content="can "?>decrease
+            low flows and hence appear to reduce estimates of baseflow. Allowances can be made for
+            those diversions where they are metered.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis>Urbanisation</emphasis> – <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152820+1000" content="I"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152821+1000"?>i<?oxy_insert_end ?>n
-          urban areas, features such as excess garden or sports field watering
-          can increase low flows during summer that appear similar to baseflow
-          in streamflow data.</para>
+          <para><emphasis>Urbanisation</emphasis> –
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152820+1000" content="I"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152821+1000"?>i<?oxy_insert_end?>n
+            urban areas, features such as excess garden or sports field watering can increase low
+            flows during summer that appear similar to baseflow in streamflow data.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis>Return flows </emphasis>– <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152939+1000" content="W"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152939+1000"?>w<?oxy_insert_end ?>ater
-          can be returned to rivers from sewage treatment plants or from
-          industry<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152947+1000"?>,<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152947+1000" content=". This will "?>increas<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152951+1000"?>ing<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152951+1000" content="e"?>
-          low flows and appear<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152955+1000"?>ing<?oxy_insert_end ?>
-          similar to baseflow.</para>
+          <para><emphasis>Return flows </emphasis>–
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T152939+1000" content="W"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152939+1000"?>w<?oxy_insert_end?>ater
+            can be returned to rivers from sewage treatment plants or from
+            industry<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152947+1000"?>,<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152947+1000" content=". This will "?>increas<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152951+1000"?>ing<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T152951+1000" content="e"?>
+            low flows and
+            appear<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T152955+1000"?>ing<?oxy_insert_end?>
+            similar to baseflow.</para>
         </listitem>
       </itemizedlist>
-
-      <para>Where present, these activities will influence the observed flow
-      characteristics making it difficult to identify and quantify baseflow.
-      While it is possible to estimate baseflow in these locations using the
-      regional approach, the baseflow estimate will reflect the unregulated
-      baseflow conditions.</para>
-
+      <para>Where present, these activities will influence the observed flow characteristics making
+        it difficult to identify and quantify baseflow. While it is possible to estimate baseflow in
+        these locations using the regional approach, the baseflow estimate will reflect the
+        unregulated baseflow conditions.</para>
       <figure xml:id="figure_15142923">
-        <?landscapeFigure ?>
-
-        <title>Preliminary Assessment of Baseflow Peak Factor for a 10% AEP
-        Event</title>
-
+        <?landscapeFigure?>
+        <title>Preliminary Assessment of Baseflow Peak Factor for a 10% AEP Event</title>
         <mediaobject>
           <imageobject>
-            <imagedata align="center" contentdepth="150mm"
-                       fileref="../../figures/5003.png"/>
+            <imagedata align="center" contentdepth="150mm" fileref="../../figures/5003.png"/>
           </imageobject>
         </mediaobject>
       </figure>
     </section>
   </section>
-
   <section xml:id="section_03656764">
     <title>Quantifying Baseflow Contribution to Design Flood Estimates</title>
-
     <section xml:id="section_53663056">
       <title>Estimating Baseflow Using Streamflow Data</title>
-
-      <para>As outlined in <xref linkend="section_87631628"/>, available
-      streamflow data should meet a number of conditions<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T153618+1000"?>,<?oxy_insert_end ?>
-      to be considered suitable for application to assess baseflow. If
-      streamflow data does not meet these criteria, this approach is not
-      relevant and practitioners are directed to the regional approach
-      outlined in <xref linkend="section_75228116"/>.</para>
-
-      <para>To estimate baseflow directly from available streamflow data, the
-      following steps should be followed:</para>
-
+      <para>As outlined in <xref linkend="section_87631628"/>, available streamflow data should meet
+        a number of
+        conditions<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T153618+1000"?>,<?oxy_insert_end?>
+        to be considered suitable for application to assess baseflow. If streamflow data does not
+        meet these criteria, this approach is not relevant and practitioners are directed to the
+        regional approach outlined in <xref linkend="section_75228116"/>.</para>
+      <para>To estimate baseflow directly from available streamflow data, the following steps should
+        be followed:</para>
       <orderedlist numeration="loweralpha">
         <listitem>
           <para><emphasis role="bold">Review Data Quality</emphasis></para>
-
           <para>Review the streamflow data and eliminate any poor quality
-          data<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T153758+1000"?>,<?oxy_insert_end ?>
-          as determined using the quality codes for each time step.</para>
+            data<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T153758+1000"?>,<?oxy_insert_end?>
+            as determined using the quality codes for each time step.</para>
         </listitem>
-
         <listitem>
           <para><emphasis role="bold">Check Record Length</emphasis></para>
-
-          <para>Determine the resulting period of record available for
-          analysis. If less than 10 years of data is available, the regional
-          approach in <xref linkend="section_75228116"/> may be more
-          appropriate for application. If more than approximately 10 years of
-          data is available, the following steps can be applied.</para>
+          <para>Determine the resulting period of record available for analysis. If less than 10
+            years of data is available, the regional approach in <xref linkend="section_75228116"/>
+            may be more appropriate for application. If more than approximately 10 years of data is
+            available, the following steps can be applied.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis role="bold">Flood Frequency
-          Analysis</emphasis></para>
-
-          <para>Extract a series of peak flows from the recorded streamflow
-          data and undertake a <?oxy_delete author="ward" timestamp="20151120T150632+1100" content="F"?><?oxy_insert_start author="ward" timestamp="20151120T150632+1100"?>f<?oxy_insert_end ?>lood
-          <?oxy_delete author="ward" timestamp="20151120T150635+1100" content="F"?><?oxy_insert_start author="ward" timestamp="20151120T150636+1100"?>f<?oxy_insert_end ?>requency
-          <?oxy_delete author="ward" timestamp="20151120T150639+1100" content="A"?><?oxy_insert_start author="ward" timestamp="20151120T150639+1100"?>a<?oxy_insert_end ?>nalysis
-          as described in <xref linkend="b3_ch2"/>. It is recommended that as
-          a minimum, the 10% AEP event should be identified. If the streamflow
-          data record is suitable, identify events of similar magnitude to the
-          design flood of interest.</para>
+          <para><emphasis role="bold">Flood Frequency Analysis</emphasis></para>
+          <para>Extract a series of peak flows from the recorded streamflow data and undertake a
+            <?oxy_delete author="ward" timestamp="20151120T150632+1100" content="F"?><?oxy_insert_start author="ward" timestamp="20151120T150632+1100"?>f<?oxy_insert_end?>lood
+            <?oxy_delete author="ward" timestamp="20151120T150635+1100" content="F"?><?oxy_insert_start author="ward" timestamp="20151120T150636+1100"?>f<?oxy_insert_end?>requency
+            <?oxy_delete author="ward" timestamp="20151120T150639+1100" content="A"?><?oxy_insert_start author="ward" timestamp="20151120T150639+1100"?>a<?oxy_insert_end?>nalysis
+            as described in <xref linkend="b3_ch2"/>. It is recommended that as a minimum, the 10%
+            AEP event should be identified. If the streamflow data record is suitable, identify
+            events of similar magnitude to the design flood of interest.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis role="bold">Estimate Baseflow from Recorded
-          Floods</emphasis></para>
-
-          <para>Estimate the baseflow for <?oxy_delete author="RadhikaChhotai" timestamp="20150922T154907+1000" content="the "?>flood
-          events identified <?oxy_delete author="RadhikaChhotai" timestamp="20150922T154913+1000" content="in the step "?>above.
-          Literature<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T154916+1000"?>,<?oxy_insert_end ?>
-          such as Nathan and McMahon (1990), Chapman and Maxwell (1996) and
-          Brodie and Hostetler (2005)<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T154921+1000"?>,<?oxy_insert_end ?>
-          provides guidance on key features of the baseflow hydrograph. If the
-          streamflow data is suitable, the baseflow should be estimated for
-          events of similar magnitude to the design flood of interest.</para>
+          <para><emphasis role="bold">Estimate Baseflow from Recorded Floods</emphasis></para>
+          <para>Estimate the baseflow for
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T154907+1000" content="the "?>flood
+            events identified
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T154913+1000" content="in the step "?>above.
+            Literature<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T154916+1000"?>,<?oxy_insert_end?>
+            such as Nathan and McMahon (1990), Chapman and Maxwell (1996) and Brodie and Hostetler
+            (2005)<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T154921+1000"?>,<?oxy_insert_end?>
+            provides guidance on key features of the baseflow hydrograph. If the streamflow data is
+            suitable, the baseflow should be estimated for events of similar magnitude to the design
+            flood of interest.</para>
         </listitem>
-
         <listitem>
-          <para><emphasis role="bold">Adjust for Different
-          AEPs</emphasis></para>
-
-          <para>If the above step has been applied to events of similar
-          magnitude to the design flood of interest, the estimated baseflow
-          magnitude and volume can be used directly with the design flood
-          surface runoff hydrograph to generate the total streamflow estimate.
-          Refer to <xref linkend="section_70922883"/> for a description of how
-          to generate the total streamflow hydrograph. In this case, the key
-          baseflow features, including <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155139+1000" content="the "?>timing,
-          should be taken from <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155143+1000" content="the "?>baseflow
-          estimated <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155147+1000" content="in the "?>above
-          <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155149+1000" content="step"?>.</para>
-
-          <para>If the design events are outside of the range of recorded
-          events <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155220+1000" content="then "?>it
-          is necessary to scale the baseflow contribution to reflect the AEP
-          of interest. The method outlined in <xref
-          linkend="section_75228116"/> should be applied, with the key
-          baseflow characteristics determined from the recorded streamflow
-          rather than the regional approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155241+1000"?>,<?oxy_insert_end ?>
-          as outlined in the following section.</para>
+          <para><emphasis role="bold">Adjust for Different AEPs</emphasis></para>
+          <para>If the above step has been applied to events of similar magnitude to the design
+            flood of interest, the estimated baseflow magnitude and volume can be used directly with
+            the design flood surface runoff hydrograph to generate the total streamflow estimate.
+            Refer to <xref linkend="section_70922883"/> for a description of how to generate the
+            total streamflow hydrograph. In this case, the key baseflow features, including
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155139+1000" content="the "?>timing,
+            should be taken from
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155143+1000" content="the "?>baseflow
+            estimated
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155147+1000" content="in the "?>above
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155149+1000" content="step"?>.</para>
+          <para>If the design events are outside of the range of recorded events
+            <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155220+1000" content="then "?>it
+            is necessary to scale the baseflow contribution to reflect the AEP of interest. The
+            method outlined in <xref linkend="section_75228116"/> should be applied, with the key
+            baseflow characteristics determined from the recorded streamflow rather than the
+            regional
+            approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155241+1000"?>,<?oxy_insert_end?>
+            as outlined in the following section.</para>
         </listitem>
       </orderedlist>
     </section>
-
     <section xml:id="section_75228116">
       <title>Estimating Baseflow in the Absence of Streamflow Data</title>
-
-      <para>A regional method to estimate baseflow contribution to design
-      flood events has been developed <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155418+1000" content="that is "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155418+1000"?>so
-      that it is <?oxy_insert_end ?>applicable for unregulated catchments
-      across Australia. This method was developed using catchments across
-      Australia with catchment areas between <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T155458+1000" comment="Is this a huge range? "?>7
-      and 7800 km<?oxy_comment_end ?><superscript>2</superscript>, and as such
-      the approach is considered most suitable for application for catchments
-      within this range. Practitioners should be mindful of these constraints
-      when applying and interpreting the outcomes from this method.</para>
-
-      <para>The following three parameters <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155744+1000" content="have been "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155744+1000"?>are
-      <?oxy_insert_end ?>defined to characterise the contribution of baseflow
-      to design flood hydrographs:</para>
-
+      <para>A regional method to estimate baseflow contribution to design flood events has been
+        developed
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155418+1000" content="that is "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155418+1000"?>so
+        that it is <?oxy_insert_end?>applicable for unregulated catchments across Australia. This
+        method was developed using catchments across Australia with catchment areas between
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T155458+1000" comment="Is this a huge range? "?>7
+        and 7800 km<?oxy_comment_end?><superscript>2</superscript>, and as such the approach is
+        considered most suitable for application for catchments within this range. Practitioners
+        should be mindful of these constraints when applying and interpreting the outcomes from this
+        method.</para>
+      <para>The following three parameters
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T155744+1000" content="have been "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155744+1000"?>are
+        <?oxy_insert_end?>defined to characterise the contribution of baseflow to design flood
+        hydrographs:</para>
       <orderedlist>
         <listitem>
-          <para><emphasis role="bold">Baseflow Peak Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155758+1000"?>:<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155758+1000" content="."?></emphasis>
-          This factor is applied to the estimated surface runoff peak flow to
-          give the value of peak baseflow for a 10% AEP event.</para>
+          <para><emphasis role="bold">Baseflow Peak
+              Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155758+1000"?>:<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155758+1000" content="."?></emphasis>
+            This factor is applied to the estimated surface runoff peak flow to give the value of
+            peak baseflow for a 10% AEP event.</para>
         </listitem>
-
         <listitem>
           <para><emphasis role="bold">Baseflow Volume
-          Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155824+1000"?>:<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155822+1000" content="."?></emphasis>
-          This factor is applied to the estimated surface runoff volume to
-          give the volume of the baseflow for a 10% AEP event.</para>
+              Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155824+1000"?>:<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155822+1000" content="."?></emphasis>
+            This factor is applied to the estimated surface runoff volume to give the volume of the
+            baseflow for a 10% AEP event.</para>
         </listitem>
-
         <listitem>
           <para><emphasis role="bold">Baseflow Under Peak
-          Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155839+1000"?>:<?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155840+1000" content="."?></emphasis>
-          This factor is applied to the estimated surface runoff peak flow to
-          give the baseflow at the time of the peak surface
-          runoff<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155851+1000"?>
-          and <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155854+1000" content=". This factor "?>can
-          be determined from the Baseflow Peak Factor, such that the Baseflow
-          Under Peak Factor = 0.7 x Baseflow Peak Factor.</para>
+              Factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155839+1000"?>:<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155840+1000" content="."?></emphasis>
+            This factor is applied to the estimated surface runoff peak flow to give the baseflow at
+            the time of the peak surface
+            runoff<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T155851+1000"?> and
+            <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T155854+1000" content=". This factor "?>can
+            be determined from the Baseflow Peak Factor, such that the Baseflow Under Peak Factor =
+            0.7 x Baseflow Peak Factor.</para>
         </listitem>
       </orderedlist>
-
-      <para>The Baseflow Peak Factor and Baseflow Volume Factor are presented
-      in <xref linkend="figure_85594555"/> and <xref
-      linkend="figure_85594556"/>, which covers the whole of Australia. It
-      should be noted that the maps represent the values for the total area
-      upstream of the main stem of the river<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160014+1000"?>,<?oxy_insert_end ?>
-      rather than any smaller sub-catchments. As baseflow characteristics may
-      vary <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160027+1000" content="away "?>from
-      the main stream, the estimation of baseflow in sub<?oxy_delete author="RadhikaChhotai" timestamp="20150922T160031+1000" content="-"?>catchments
-      may require the approach to be supplemented with additional local data
-      or through an alternative approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160043+1000"?>,<?oxy_insert_end ?>
-      such as transposition from another location.</para>
-
-      <para>ARR Revision Project 7 developed a series of regression
-      relationships to estimate the Baseflow Peak Factor and Baseflow
-      Volume<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160445+1000"?>,<?oxy_insert_end ?>
-      based on catchment characteristics (Murphy et al 2011).
-      The<?oxy_insert_start author="ward" timestamp="20151120T150711+1100"?>
-      <?oxy_insert_end ?><?oxy_delete author="ward" timestamp="20151120T150713+1100" content="se"?><?oxy_insert_start author="ward" timestamp="20151120T150714+1100"?>resulting
-      values<?oxy_insert_end ?> are presented in <xref
-      linkend="figure_85594555"/><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160459+1000"?>,<?oxy_insert_end ?>
-      <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160457+1000" content="and "?><xref
-      linkend="figure_85594556"/> and supporting spatial data for use with
-      GIS<?oxy_delete author="RadhikaChhotai" timestamp="20150922T160506+1000" content=")"?>,
-      and can be used to determine the Baseflow Peak Factor and the Baseflow
-      Volume Factor for a 10% AEP event for the catchment of interest.</para>
-
-      <para>These factors provide information on <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160547+1000" content="the "?>baseflow
-      contribution to design flood events for a 10% AEP event. <xref
-      linkend="table_35408146"/> shows the AEP scaling factors that should be
-      applied to the 10% AEP Baseflow Peak Factor and Baseflow Volume Factor
-      to scale <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160607+1000" content="the "?>relevant
-      factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160609+1000"?>s<?oxy_insert_end ?>
-      to reflect events of other AEPs.</para>
-
+      <para>The Baseflow Peak Factor and Baseflow Volume Factor are presented in <xref
+          linkend="figure_85594555"/> and <xref linkend="figure_85594556"/>, which covers the whole
+        of Australia. It should be noted that the maps represent the values for the total area
+        upstream of the main stem of the
+        river<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160014+1000"?>,<?oxy_insert_end?>
+        rather than any smaller sub-catchments. As baseflow characteristics may vary
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160027+1000" content="away "?>from
+        the main stream, the estimation of baseflow in
+        sub<?oxy_delete author="RadhikaChhotai" timestamp="20150922T160031+1000" content="-"?>catchments
+        may require the approach to be supplemented with additional local data or through an
+        alternative
+        approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160043+1000"?>,<?oxy_insert_end?>
+        such as transposition from another location.</para>
+      <para>ARR Revision Project 7 developed a series of regression relationships to estimate the
+        Baseflow Peak Factor and Baseflow
+        Volume<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160445+1000"?>,<?oxy_insert_end?>
+        based on catchment characteristics (Murphy et al 2011). The<?oxy_insert_start author="ward" timestamp="20151120T150711+1100"?>
+        <?oxy_insert_end?><?oxy_delete author="ward" timestamp="20151120T150713+1100" content="se"?><?oxy_insert_start author="ward" timestamp="20151120T150714+1100"?>resulting
+        values<?oxy_insert_end?> are presented in <xref linkend="figure_85594555"/><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160459+1000"?>,<?oxy_insert_end?>
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160457+1000" content="and "?><xref
+          linkend="figure_85594556"/> and supporting spatial data for use with
+        GIS<?oxy_delete author="RadhikaChhotai" timestamp="20150922T160506+1000" content=")"?>, and
+        can be used to determine the Baseflow Peak Factor and the Baseflow Volume Factor for a 10%
+        AEP event for the catchment of interest.</para>
+      <para>These factors provide information on
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160547+1000" content="the "?>baseflow
+        contribution to design flood events for a 10% AEP event. <xref linkend="table_35408146"/>
+        shows the AEP scaling factors that should be applied to the 10% AEP Baseflow Peak Factor and
+        Baseflow Volume Factor to scale
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T160607+1000" content="the "?>relevant
+        factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T160609+1000"?>s<?oxy_insert_end?>
+        to reflect events of other AEPs.</para>
       <table xml:id="table_35408146">
-        <caption>AEP Scaling Factors, F<subscript>AEP</subscript>, to be
-        applied to the 10% AEP Baseflow Peak Factor and the Baseflow Volume
-        Factor to determine the Baseflow Peak Factor for events of various
-        AEPs</caption>
-
+        <caption>AEP Scaling Factors, F<subscript>AEP</subscript>, to be applied to the 10% AEP
+          Baseflow Peak Factor and the Baseflow Volume Factor to determine the Baseflow Peak Factor
+          for events of various AEPs</caption>
         <thead>
           <tr>
             <th>EY</th>
-
             <th>AEP (%)</th>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;th&gt;ARI (years)&lt;/th&gt;"?>
-
             <th>Baseflow Peak Factor</th>
-
             <th>Baseflow Volume Factor</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td>2</td>
-
             <td>86.47</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;0.5&lt;/td&gt;"?>
-
             <td>3.0</td>
-
             <td>2.6</td>
           </tr>
-
           <tr>
             <td>1</td>
-
             <td>63.21</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;1&lt;/td&gt;"?>
-
             <td>2.2</td>
-
             <td>2.0</td>
           </tr>
-
           <tr>
             <td>0.5</td>
-
             <td>50</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;2&lt;/td&gt;"?>
-
             <td>1.7</td>
-
             <td>1.6</td>
           </tr>
-
           <tr>
             <td>0.2</td>
-
             <td>18.13</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;5&lt;/td&gt;"?>
-
             <td>1.2</td>
-
             <td>1.2</td>
           </tr>
-
           <tr>
             <td>0.11</td>
-
             <td>10</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;10&lt;/td&gt;"?>
-
             <td>1.0</td>
-
             <td>1.0</td>
           </tr>
-
           <tr>
             <td>0.05</td>
-
             <td>5</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;20&lt;/td&gt;"?>
-
             <td>0.8</td>
-
             <td>0.8</td>
           </tr>
-
           <tr>
             <td>0.02</td>
-
             <td>2</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;50&lt;/td&gt;"?>
-
             <td>0.7</td>
-
             <td>0.7</td>
           </tr>
-
           <tr>
             <td>0.01</td>
-
             <td>1</td>
-
             <?oxy_delete author="ward" timestamp="20151120T150815+1100" content="&lt;td&gt;100&lt;/td&gt;"?>
-
             <td>0.6</td>
-
             <td>0.6</td>
           </tr>
         </tbody>
       </table>
-
-      <para>For events of AEPs not shown in <xref linkend="table_35408146"/>,
-      <xref linkend="figure_19570097"/> can be used to determine an
-      appropriate AEP factor. This is to be multiplied by the 10% AEP Baseflow
-      Peak Factor or the Baseflow Volume Factor as relevant<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161018+1000"?>,<?oxy_insert_end ?>
-      to determine the factor for other event magnitudes. Guidance for
-      baseflow contribution to <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T161051+1000" comment="Any reason why this is capitalised?"?>Rare
-      and Extreme Events <?oxy_comment_end ?>is provided in Book 8.</para>
-
+      <para>For events of AEPs not shown in <xref linkend="table_35408146"/>, <xref
+          linkend="figure_19570097"/> can be used to determine an appropriate AEP factor. This is to
+        be multiplied by the 10% AEP Baseflow Peak Factor or the Baseflow Volume Factor as
+        relevant<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161018+1000"?>,<?oxy_insert_end?>
+        to determine the factor for other event magnitudes. Guidance for baseflow contribution to
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T161051+1000" comment="Any reason why this is capitalised?"?>Rare
+        and Extreme Events <?oxy_comment_end?>is provided in Book 8.</para>
       <figure xml:id="figure_19570097">
-        <title>AEP Factors, F<subscript>AEP</subscript> to be applied to the
-        10% AEP Baseflow Volume Factor to determined the Baseflow Volume
-        Factor for events of various AEPs</title>
-
+        <title>AEP Factors, F<subscript>AEP</subscript> to be applied to the 10% AEP Baseflow Volume
+          Factor to determined the Baseflow Volume Factor for events of various AEPs</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="../../figures/5004.PNG" scalefit="1"
-                       width="100%"/>
+            <imagedata fileref="../../figures/5004.PNG" scalefit="1" width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
-
-      <para>This information is <?oxy_delete author="RadhikaChhotai" timestamp="20150922T161258+1000" content="then "?>applied
-      to the design flood event using the procedure outlined in the
-      relationships below <?oxy_delete author="RadhikaChhotai" timestamp="20150922T161414+1000" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161414+1000"?>that
-      <?oxy_insert_end ?>relate to the typical flood hydrograph in <xref
-      linkend="figure_28340800"/>.</para>
-
-      <para><emphasis role="bold">To Calculate the Peak Baseflow (Point C in
-      <xref linkend="figure_28340800"/>):</emphasis></para>
-
+      <para>This information is
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T161258+1000" content="then "?>applied
+        to the design flood event using the procedure outlined in the relationships below
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T161414+1000" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161414+1000"?>that
+        <?oxy_insert_end?>relate to the typical flood hydrograph in <xref linkend="figure_28340800"
+        />.</para>
+      <para><emphasis role="bold">To Calculate the Peak Baseflow (Point C in <xref
+            linkend="figure_28340800"/>):</emphasis></para>
       <orderedlist>
         <listitem>
-          <para>Determine the Baseflow Peak Factor for a 10% AEP
-          (<inlineequation>
+          <para>Determine the Baseflow Peak Factor for a 10% AEP (<inlineequation>
               <m:math display="inline">
                 <m:msub>
                   <m:mi>R</m:mi>
-
                   <m:mi>BPF,10%AEP</m:mi>
                 </m:msub>
               </m:math>
             </inlineequation>) from <xref linkend="figure_85594555"/>.</para>
         </listitem>
-
         <listitem>
-          <para>Determine the AEP factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161505+1000"?>,<?oxy_insert_end ?>
-          corresponding to the event AEP using <xref
-          linkend="table_35408146"/> or <xref linkend="figure_19570097"/>.
-          Scale the 10% AEP Baseflow Peak Factor appropriately to determine
-          the Baseflow Peak Factor for the event severity of interest.</para>
+          <para>Determine the AEP
+            factor<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T161505+1000"?>,<?oxy_insert_end?>
+            corresponding to the event AEP using <xref linkend="table_35408146"/> or <xref
+              linkend="figure_19570097"/>. Scale the 10% AEP Baseflow Peak Factor appropriately to
+            determine the Baseflow Peak Factor for the event severity of interest.</para>
         </listitem>
-
         <listitem>
-          <para>Apply the Baseflow Peak Factor to the calculated peak surface
-          runoff as in <xref linkend="equation_23454030"/>.</para>
-
+          <para>Apply the Baseflow Peak Factor to the calculated peak surface runoff as in <xref
+              linkend="equation_23454030"/>.</para>
           <equation xml:id="equation_23454030">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>Q</m:mi>
-
                   <m:mi>Peak baseflow</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:mrow>
                   <m:msub>
                     <m:mi>R</m:mi>
-
                     <m:mi>BPF</m:mi>
                   </m:msub>
-
                   <m:mrow>
                     <m:msub>
                       <m:mi>Q</m:mi>
-
                       <m:mi>Peak surface runoff</m:mi>
                     </m:msub>
                   </m:mrow>
@@ -922,32 +807,24 @@
             </m:math>
           </equation>
         </listitem>
-
         <listitem>
-          <para>Calculate the timing of the baseflow peak using <xref
-          linkend="equation_56532397"/>. The time to the peak surface runoff
-          should be applied in units of hours from the start of the
-          event.</para>
-
+          <para>Calculate the timing of the baseflow peak using <xref linkend="equation_56532397"/>.
+            The time to the peak surface runoff should be applied in units of hours from the start
+            of the event.</para>
           <equation xml:id="equation_56532397">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>T</m:mi>
-
                   <m:mi>Peak baseflow</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:mrow>
                   <m:mrow>
                     <m:msub>
                       <m:mi>0.92 T</m:mi>
-
                       <m:mi>Peak surface runoff</m:mi>
                     </m:msub>
-
                     <m:mi>+ 33.4</m:mi>
                   </m:mrow>
                 </m:mrow>
@@ -956,97 +833,69 @@
           </equation>
         </listitem>
       </orderedlist>
-
       <figure xml:id="figure_85594555">
-        <?landscapeFigure ?>
-
+        <?landscapeFigure?>
         <title>Map of Baseflow Peak Factor for a 10% AEP</title>
-
         <mediaobject>
           <imageobject>
-            <imagedata align="center" contentdepth="150mm"
-                       fileref="../../figures/5005.png"/>
+            <imagedata align="center" contentdepth="150mm" fileref="../../figures/5005.png"/>
           </imageobject>
         </mediaobject>
       </figure>
-
       <figure xml:id="figure_85594556">
-        <?landscapeFigure ?>
-
+        <?landscapeFigure?>
         <title>Map of Baseflow Volume Factor for a 10% AEP</title>
-
         <mediaobject>
           <imageobject>
-            <imagedata align="center" contentdepth="150mm"
-                       fileref="../../figures/5006.png"/>
+            <imagedata align="center" contentdepth="150mm" fileref="../../figures/5006.png"/>
           </imageobject>
         </mediaobject>
       </figure>
-
-      <para><emphasis role="bold">To calculate the baseflow under the peak
-      streamflow (Point B in <xref
-      linkend="figure_28340800"/>):</emphasis></para>
-
+      <para><emphasis role="bold">To calculate the baseflow under the peak streamflow (Point B in
+            <xref linkend="figure_28340800"/>):</emphasis></para>
       <orderedlist>
         <listitem>
-          <para>The Baseflow Peak Factor (R<subscript>BPF</subscript>)
-          calculated for the appropriate AEP event as above should be used in
-          <xref linkend="equation_99686820"/> to calculate the Baseflow Under
-          Peak Factor (R<subscript>BUPF</subscript>).</para>
-
+          <para>The Baseflow Peak Factor (R<subscript>BPF</subscript>) calculated for the
+            appropriate AEP event as above should be used in <xref linkend="equation_99686820"/> to
+            calculate the Baseflow Under Peak Factor (R<subscript>BUPF</subscript>).</para>
           <equation xml:id="equation_99686820">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>R</m:mi>
-
                   <m:mi>BUPF</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:msub>
                   <m:mrow>
                     <m:mi>0.7</m:mi>
-
                     <m:mo>×</m:mo>
-
                     <m:mi>R</m:mi>
                   </m:mrow>
-
                   <m:mi>BPF</m:mi>
                 </m:msub>
               </m:mrow>
             </m:math>
           </equation>
         </listitem>
-
         <listitem>
-          <para>R<subscript>BUPF</subscript> should be used as in <xref
-          linkend="equation_47798745"/> to calculate the baseflow under the
-          peak streamflow.</para>
-
+          <para>R<subscript>BUPF</subscript> should be used as in <xref linkend="equation_47798745"
+            /> to calculate the baseflow under the peak streamflow.</para>
           <equation xml:id="equation_47798745">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>Q</m:mi>
-
                   <m:mi>Baseflow under peak streamflow</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:mrow>
                   <m:msub>
                     <m:mi>R</m:mi>
-
                     <m:mi>BUPF</m:mi>
                   </m:msub>
-
                   <m:msub>
                     <m:mi>Q</m:mi>
-
                     <m:mi>Peak surface runoff</m:mi>
                   </m:msub>
                 </m:mrow>
@@ -1055,97 +904,73 @@
           </equation>
         </listitem>
       </orderedlist>
-
-      <para><emphasis role="bold">To Calculate the Total Streamflow Peak
-      (Point A in <xref linkend="figure_28340800"/>):</emphasis></para>
-
+      <para><emphasis role="bold">To Calculate the Total Streamflow Peak (Point A in <xref
+            linkend="figure_28340800"/>):</emphasis></para>
       <orderedlist>
         <listitem>
-          <para>Calculate the baseflow under the streamflow peak for the
-          appropriate AEP as above.</para>
+          <para>Calculate the baseflow under the streamflow peak for the appropriate AEP as
+            above.</para>
         </listitem>
-
         <listitem>
-          <para>Add the baseflow under the streamflow peak calculated using
-          <xref linkend="equation_47798745"/><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162004+1000"?>,<?oxy_insert_end ?>
-          to the calculated peak surface runoff as in <xref
-          linkend="equation_31567661"/>.</para>
+          <para>Add the baseflow under the streamflow peak calculated using <xref
+              linkend="equation_47798745"
+            /><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162004+1000"?>,<?oxy_insert_end?>
+            to the calculated peak surface runoff as in <xref linkend="equation_31567661"/>.</para>
         </listitem>
       </orderedlist>
-
       <equation xml:id="equation_31567661">
         <m:math display="block">
           <m:mrow>
             <m:msub>
               <m:mi>Q</m:mi>
-
               <m:mi>Peak streamflow</m:mi>
             </m:msub>
-
             <m:mo>=</m:mo>
-
             <m:mrow>
               <m:msub>
                 <m:mi>Q</m:mi>
-
                 <m:mi>Peak surface runoff</m:mi>
               </m:msub>
-
               <m:mo>+</m:mo>
-
               <m:msub>
                 <m:mi>Q</m:mi>
-
                 <m:mi>Baseflow under peak streamflow</m:mi>
               </m:msub>
             </m:mrow>
           </m:mrow>
         </m:math>
       </equation>
-
-      <para><emphasis role="bold">To Calculate the Total Baseflow Volume for
-      an Event:</emphasis></para>
-
+      <para><emphasis role="bold">To Calculate the Total Baseflow Volume for an
+        Event:</emphasis></para>
       <orderedlist>
         <listitem>
           <para>Determine the Baseflow Volume Factor for a 10% AEP
-          (R<subscript>BVF,10yrARI</subscript>) from <xref
-          linkend="figure_85594555"/>.</para>
+              (R<subscript>BVF,10yrARI</subscript>) from <xref linkend="figure_85594555"/>.</para>
         </listitem>
-
         <listitem>
-          <para>Determine the AEP factor corresponding to the AEP event using
-          <xref linkend="table_35408146"/> or <xref
-          linkend="figure_19570097"/>. Scale the 10% AEP Baseflow Volume
-          Factor appropriately to determine the Baseflow Volume Factor
-          (R<subscript>BVF</subscript>) for the event.</para>
+          <para>Determine the AEP factor corresponding to the AEP event using <xref
+              linkend="table_35408146"/> or <xref linkend="figure_19570097"/>. Scale the 10% AEP
+            Baseflow Volume Factor appropriately to determine the Baseflow Volume Factor
+              (R<subscript>BVF</subscript>) for the event.</para>
         </listitem>
-
         <listitem>
-          <para>Apply the Baseflow Volume Factor to the calculated surface
-          runoff volume as in <xref linkend="equation_59216713"/>.</para>
-
+          <para>Apply the Baseflow Volume Factor to the calculated surface runoff volume as in <xref
+              linkend="equation_59216713"/>.</para>
           <equation xml:id="equation_59216713">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>V</m:mi>
-
                   <m:mi>Baseflow</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:mrow>
                   <m:msub>
                     <m:mi>R</m:mi>
-
                     <m:mi>BVF</m:mi>
                   </m:msub>
-
                   <m:msub>
                     <m:mi>V</m:mi>
-
                     <m:mi>Surface Runoff</m:mi>
                   </m:msub>
                 </m:mrow>
@@ -1154,42 +979,31 @@
           </equation>
         </listitem>
       </orderedlist>
-
-      <para><emphasis role="bold">To Calculate the Total Streamflow Volume for
-      an Event:</emphasis></para>
-
+      <para><emphasis role="bold">To Calculate the Total Streamflow Volume for an
+        Event:</emphasis></para>
       <orderedlist>
         <listitem>
-          <para>Calculate the baseflow volume for the event using the
-          appropriate AEP factors.</para>
+          <para>Calculate the baseflow volume for the event using the appropriate AEP
+            factors.</para>
         </listitem>
-
         <listitem>
-          <para>The baseflow volume calculated using <xref
-          linkend="equation_59216713"/> should be added to the calculated
-          surface runoff as in <xref linkend="equation_67337800"/>.</para>
-
+          <para>The baseflow volume calculated using <xref linkend="equation_59216713"/> should be
+            added to the calculated surface runoff as in <xref linkend="equation_67337800"/>.</para>
           <equation xml:id="equation_67337800">
             <m:math display="block">
               <m:mrow>
                 <m:msub>
                   <m:mi>V</m:mi>
-
                   <m:mi>Total streamflow</m:mi>
                 </m:msub>
-
                 <m:mo>=</m:mo>
-
                 <m:mrow>
                   <m:msub>
                     <m:mi>V</m:mi>
-
                     <m:mi>Surface runoff</m:mi>
                   </m:msub>
-
                   <m:msub>
                     <m:mi>+ V</m:mi>
-
                     <m:mi>Baseflow</m:mi>
                   </m:msub>
                 </m:mrow>
@@ -1198,524 +1012,420 @@
           </equation>
         </listitem>
       </orderedlist>
-
-      <para>This approach can be directly applied to estimate the baseflow
-      contribution to any event between a<?oxy_delete author="RadhikaChhotai" timestamp="20150922T162152+1000" content="n"?>
-      <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T162217+1000" comment="What does this stand for? Does this need an explanation? "?>2
-      EY <?oxy_comment_end ?>and a 1% AEP.</para>
+      <para>This approach can be directly applied to estimate the baseflow contribution to any event
+        between a<?oxy_delete author="RadhikaChhotai" timestamp="20150922T162152+1000" content="n"?>
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20150922T162217+1000" comment="What does this stand for? Does this need an explanation? "?>2
+        EY <?oxy_comment_end?>and a 1% AEP.</para>
     </section>
-
     <section xml:id="section_70922883">
       <title>Generating the Total Streamflow Hydrograph</title>
-
-      <para>The characteristics of <?oxy_delete author="RadhikaChhotai" timestamp="20150922T162241+1000" content="the "?>surface
-      runoff, baseflow and total streamflow can be used to estimate the
-      hydrograph for the event. For simplicity, a linear approach can
-      <?oxy_delete author="RadhikaChhotai" timestamp="20150922T162343+1000" content="typically "?>be
-      used to estimate the baseflow at each time step, by fitting between the
-      data values estimated through the process described above and matching
-      the baseflow volume. This time series can be manually added to the
-      surface runoff time series data to generate a time series for the total
-      streamflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162730+1000"?>,
-      which is <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T162735+1000" content=". The time series "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162737+1000"?>
-      <?oxy_insert_end ?>generated through this process <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162741+1000"?>and
-      <?oxy_insert_end ?>should be reviewed<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162749+1000"?>.
-      <?oxy_insert_end ?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T162752+1000" content=", and "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162752+1000"?>It
-      <?oxy_insert_end ?>may require smoothing to produce a more realistic
-      temporal distribution of baseflow. This process is presented in <xref
-      linkend="figure_93046598"/>.</para>
-
+      <para>The characteristics of
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T162241+1000" content="the "?>surface
+        runoff, baseflow and total streamflow can be used to estimate the hydrograph for the event.
+        For simplicity, a linear approach can
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T162343+1000" content="typically "?>be
+        used to estimate the baseflow at each time step, by fitting between the data values
+        estimated through the process described above and matching the baseflow volume. This time
+        series can be manually added to the surface runoff time series data to generate a time
+        series for the total
+        streamflow<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162730+1000"?>,
+        which is <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T162735+1000" content=". The time series "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162737+1000"?>
+        <?oxy_insert_end?>generated through this process
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162741+1000"?>and
+        <?oxy_insert_end?>should be
+        reviewed<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162749+1000"?>.
+        <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20150922T162752+1000" content=", and "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T162752+1000"?>It
+        <?oxy_insert_end?>may require smoothing to produce a more realistic temporal distribution of
+        baseflow. This process is presented in <xref linkend="figure_93046598"/>.</para>
       <figure xml:id="figure_93046598">
-        <title>Total flow hydrograph generation approach, where (a) the data
-        values calculated through the baseflow estimation process are plotted;
-        (b) linear interpolation between the baseflow data points and matching
-        the area under the curve to the baseflow event volume is used to
-        estimate the baseflow time series, which is plotted on the hydrograph
-        in green; and (c) the total streamflow time series is generated by
-        summing the surface runoff and baseflow time series values, with the
-        streamflow hydrograph plotted in dark blue.</title>
-
+        <title>Total flow hydrograph generation approach, where (a) the data values calculated
+          through the baseflow estimation process are plotted; (b) linear interpolation between the
+          baseflow data points and matching the area under the curve to the baseflow event volume is
+          used to estimate the baseflow time series, which is plotted on the hydrograph in green;
+          and (c) the total streamflow time series is generated by summing the surface runoff and
+          baseflow time series values, with the streamflow hydrograph plotted in dark blue.</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="../../figures/5007.png" scalefit="1"
-                       width="50%"/>
+            <imagedata fileref="../../figures/5007.png" scalefit="1" width="50%"/>
           </imageobject>
         </mediaobject>
       </figure>
     </section>
   </section>
-
   <section xml:id="section_23859128">
     <title>Example</title>
-
-    <para>The process described in <xref linkend="section_70922883"/> is
-    worked through in a number of different case study examples.</para>
-
+    <para>The process described in <xref linkend="section_70922883"/> is worked through in a number
+      of different case study examples.</para>
     <section xml:id="section_72945007">
       <title>North Maroochy River at Eumundi, Queensland</title>
-
-      <para>Catchment 1 is located in south-east Queensland and has a
-      catchment area of 40 km<superscript>2</superscript>. Hourly flow data
-      has been collected at this location since 1982, providing approximately
-      30 years of data. Very little data is missing <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163128+1000"?>was
-      <?oxy_insert_end ?>or of poor quality<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163136+1000"?>,<?oxy_insert_end ?>
-      during this period.</para>
-
-      <para>The 10% AEP event is of interest for this case study. The reviewed
-      flow data was used to identify flood peaks, in particular the 10% AEP
-      event. A comparable event was identified in the record in February 1999.
-      The event hydrograph was plotted and key characteristics of the baseflow
-      were identified manually (<xref linkend="figure_20223222"/>; manually
-      identified baseflow features shown by green points). Straight lines were
-      used to join the key baseflow features, to estimate the baseflow time
-      series. In this instance, the baseflow peak occurs 18 hours after the
-      peak of the streamflow.</para>
-
+      <para>Catchment 1 is located in south-east Queensland and has a catchment area of 40
+          km<superscript>2</superscript>. Hourly flow data has been collected at this location since
+        1982, providing approximately 30 years of data. Very little data is missing
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163128+1000"?>was
+        <?oxy_insert_end?>or of poor
+        quality<?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163136+1000"?>,<?oxy_insert_end?>
+        during this period.</para>
+      <para>The 10% AEP event is of interest for this case study. The reviewed flow data was used to
+        identify flood peaks, in particular the 10% AEP event. A comparable event was identified in
+        the record in February 1999. The event hydrograph was plotted and key characteristics of the
+        baseflow were identified manually (<xref linkend="figure_20223222"/>; manually identified
+        baseflow features shown by green points). Straight lines were used to join the key baseflow
+        features, to estimate the baseflow time series. In this instance, the baseflow peak occurs
+        18 hours after the peak of the streamflow.</para>
       <figure xml:id="figure_20223222">
-        <title>Streamflow Hydrograph Approximating the 10% AEP Event for the
-        North Maroochy River at Eumundi</title>
-
+        <title>Streamflow Hydrograph Approximating the 10% AEP Event for the North Maroochy River at
+          Eumundi</title>
         <mediaobject>
           <imageobject>
-            <imagedata contentdepth="100%" fileref="../../figures/5008.png"
-                       scalefit="1" width="100%"/>
+            <imagedata contentdepth="100%" fileref="../../figures/5008.png" scalefit="1"
+              width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
-
-      <para>The surface runoff hydrograph for the design flood event was
-      generated using a flood event model with a critical duration of 18 hours
-      (<xref linkend="figure_75706184"/>, and details in <xref
-      linkend="table_87725131"/>).</para>
-
+      <para>The surface runoff hydrograph for the design flood event was generated using a flood
+        event model with a critical duration of 18 hours (<xref linkend="figure_75706184"/>, and
+        details in <xref linkend="table_87725131"/>).</para>
       <figure xml:id="figure_21301951">
-        <title>Surface Runoff Hydrograph for the 10% AEP Design Flood event at
-        Eumundi</title>
-
+        <title>Surface Runoff Hydrograph for the 10% AEP Design Flood event at Eumundi</title>
         <mediaobject>
           <imageobject>
-            <imagedata contentdepth="100%" fileref="../../figures/5009.png"
-                       scalefit="1" width="100%"/>
+            <imagedata contentdepth="100%" fileref="../../figures/5009.png" scalefit="1"
+              width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
-
       <table xml:id="table_01057465">
-        <caption>Key Surface Runoff Characteristics for the 10% AEP Design
-        Flood Event at Eumundi</caption>
-
+        <caption>Key Surface Runoff Characteristics for the 10% AEP Design Flood Event at
+          Eumundi</caption>
         <thead>
           <tr>
             <td>Characteristic</td>
-
             <td>Data from design flood</td>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td>Surface runoff peak flow
-            (m<superscript>3</superscript>/s)</td>
-
+            <td>Surface runoff peak flow (m<superscript>3</superscript>/s)</td>
             <td>160.6</td>
           </tr>
-
           <tr>
-            <td>Time to the surface runoff peak (hours, from the start of the
-            event)</td>
-
+            <td>Time to the surface runoff peak (hours, from the start of the event)</td>
             <td>16</td>
           </tr>
-
           <tr>
-            <td>Volume of surface runoff for the event
-            (m<superscript>3</superscript>)</td>
-
+            <td>Volume of surface runoff for the event (m<superscript>3</superscript>)</td>
             <td>9.9 x 10<superscript>6</superscript></td>
           </tr>
         </tbody>
       </table>
-
-      <para>The baseflow series estimated above was used directly to
-      approximate the baseflow for the 10% AEP design flood event. The
-      baseflow at the time of the streamflow peak (from <xref
-      linkend="figure_20223222"/>) was aligned with the Surface Runoff Peak in
-      the design hydrograph (<xref linkend="figure_75706184"/>), with the rest
-      of the baseflow hydrograph used to guide the behaviour through the
-      duration of the design event.</para>
-
+      <para>The baseflow series estimated above was used directly to approximate the baseflow for
+        the 10% AEP design flood event. The baseflow at the time of the streamflow peak (from <xref
+          linkend="figure_20223222"/>) was aligned with the Surface Runoff Peak in the design
+        hydrograph (<xref linkend="figure_75706184"/>), with the rest of the baseflow hydrograph
+        used to guide the behaviour through the duration of the design event.</para>
       <figure xml:id="figure_57998828">
-        <title>Surface Runoff, Baseflow and Total Streamflow Hydrographs for
-        the 10% AEP Event at Eumundi</title>
-
+        <title>Surface Runoff, Baseflow and Total Streamflow Hydrographs for the 10% AEP Event at
+          Eumundi</title>
         <mediaobject>
           <imageobject>
-            <imagedata contentdepth="100%" fileref="../../figures/5010.png"
-                       scalefit="1" width="100%"/>
+            <imagedata contentdepth="100%" fileref="../../figures/5010.png" scalefit="1"
+              width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
     </section>
-
     <section xml:id="section_94910940">
       <title>Dirk Brook, Western Australia</title>
-
-      <para>Catchment 2 is located in south-west Western Australia. The 1% AEP
-      event is of interest. The Surface Runoff Hydrograph for this event was
-      generated using a flood event model with a critical duration of 18 hours
-      (<xref linkend="figure_75706184"/>, and details in <xref
-      linkend="table_87725131"/>). This case study assumes that no streamflow
-      data is available for use. The process described in <xref
-      linkend="section_75228116"/> has been used to estimate baseflow.</para>
-
+      <para>Catchment 2 is located in south-west Western Australia. The 1% AEP event is of interest.
+        The Surface Runoff Hydrograph for this event was generated using a flood event model with a
+        critical duration of 18 hours (<xref linkend="figure_75706184"/>, and details in <xref
+          linkend="table_87725131"/>). This case study assumes that no streamflow data is available
+        for use. The process described in <xref linkend="section_75228116"/> has been used to
+        estimate baseflow.</para>
       <figure xml:id="figure_75706184">
-        <title>Surface Runoff Hydrograph for the 1% AEP Design Flood Event at
-        Dirk Brook</title>
-
+        <title>Surface Runoff Hydrograph for the 1% AEP Design Flood Event at Dirk Brook</title>
         <mediaobject>
           <imageobject>
-            <imagedata contentdepth="100%" fileref="../../figures/5011.png"
-                       scalefit="1" width="100%"/>
+            <imagedata contentdepth="100%" fileref="../../figures/5011.png" scalefit="1"
+              width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
-
       <table xml:id="table_87725131">
-        <caption>Key Surface Runoff Characteristics for the 1% AEP Design
-        Flood Event at Dirk Brook</caption>
-
+        <caption>Key Surface Runoff Characteristics for the 1% AEP Design Flood Event at Dirk
+          Brook</caption>
         <thead>
           <tr>
             <td>Characteristic</td>
-
             <td>Data from design flood event</td>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td>Surface runoff peak flow
-            (m<superscript>3</superscript>/s)</td>
-
+            <td>Surface runoff peak flow (m<superscript>3</superscript>/s)</td>
             <td>23.9<?oxy_delete author="ward" timestamp="20151120T150858+1100" content="1"?></td>
           </tr>
-
           <tr>
-            <td>Time to the surface runoff peak (hours, from the start of the
-            event)</td>
-
+            <td>Time to the surface runoff peak (hours, from the start of the event)</td>
             <td>8</td>
           </tr>
-
           <tr>
-            <td>Volume of surface runoff for the event
-            (m<superscript>3</superscript>)</td>
-
+            <td>Volume of surface runoff for the event (m<superscript>3</superscript>)</td>
             <td>1.25 x 10<superscript>6</superscript></td>
           </tr>
         </tbody>
       </table>
-
-      <para>Aligning the catchment boundary <?oxy_delete author="RadhikaChhotai" timestamp="20150922T163903+1000" content="shapefile"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163903+1000"?>shape
-      file<?oxy_insert_end ?> with the spatial data from <xref
-      linkend="figure_85594555"/> allows the Baseflow Peak Factor and Baseflow
-      Volume Factor for the 10% event to be extracted for the catchment area
-      directly:</para>
-
+      <para>Aligning the catchment boundary
+        <?oxy_delete author="RadhikaChhotai" timestamp="20150922T163903+1000" content="shapefile"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20150922T163903+1000"?>shape
+        file<?oxy_insert_end?> with the spatial data from <xref linkend="figure_85594555"/> allows
+        the Baseflow Peak Factor and Baseflow Volume Factor for the 10% event to be extracted for
+        the catchment area directly:</para>
       <para>R<subscript>BPF 10 % AEP</subscript> = 0.186</para>
-
       <para>R<subscript>BVF 10 % AEP</subscript> =1.099</para>
-
-      <para>The scaling factor for the 1% AEP event is sourced from <xref
-      linkend="table_35408146"/>, with a value of 0.6 for both the peak and
-      volume calculations. Using the relationships described earlier, the
-      final Baseflow Peak Factor, Baseflow Volume Factor and Baseflow Under
-      Peak Factor for application are outlined in <xref
-      linkend="table_00839046"/>. These values are applied to calculate the
-      baseflow and total streamflow characteristics in <xref
-      linkend="table_74453170"/>, and plotted in <xref
-      linkend="figure_86477209"/>.</para>
-
+      <para>The scaling factor for the 1% AEP event is sourced from <xref linkend="table_35408146"
+        />, with a value of 0.6 for both the peak and volume calculations. Using the relationships
+        described earlier, the final Baseflow Peak Factor, Baseflow Volume Factor and Baseflow Under
+        Peak Factor for application are outlined in <xref linkend="table_00839046"/>. These values
+        are applied to calculate the baseflow and total streamflow characteristics in <xref
+          linkend="table_74453170"/>, and plotted in <xref linkend="figure_86477209"/>.</para>
       <table xml:id="table_00839046">
-        <caption>Calculation of Baseflow Factors for the 1% AEP Design Event
-        for the Dirk Brook</caption>
-
+        <caption>Calculation of Baseflow Factors for the 1% AEP Design Event for the Dirk
+          Brook</caption>
         <thead>
           <tr>
             <td>Factors for application</td>
-
             <td>Factor values for 1% AEP design event</td>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td><para>Final Baseflow Peak Factor</para>
-            <para>R<subscript>BPF</subscript> =
-            F<subscript>AEP</subscript>R<subscript>BPF, 10 %
-            AEP</subscript></para></td>
-
-            <td><para>= 0.6 x 0.186</para> <para>= 0.11</para></td>
+            <td>
+              <para>Final Baseflow Peak Factor</para>
+              <para>R<subscript>BPF</subscript> = F<subscript>AEP</subscript>R<subscript>BPF, 10 %
+                  AEP</subscript></para>
+            </td>
+            <td>
+              <para>= 0.6 x 0.186</para>
+              <para>= 0.11</para>
+            </td>
           </tr>
-
           <tr>
-            <td><para>Final Baseflow Volume Factor</para>
-            <para>R<subscript>BVF</subscript> =
-            F<subscript>AEP</subscript>R<subscript>BVF, 10 %
-            AEP</subscript></para></td>
-
-            <td><para>= 0.6 x 1.099</para> <para>= 0.66</para></td>
+            <td>
+              <para>Final Baseflow Volume Factor</para>
+              <para>R<subscript>BVF</subscript> = F<subscript>AEP</subscript>R<subscript>BVF, 10 %
+                  AEP</subscript></para>
+            </td>
+            <td>
+              <para>= 0.6 x 1.099</para>
+              <para>= 0.66</para>
+            </td>
           </tr>
-
           <tr>
-            <td><para>Final Baseflow Under Peak Factor</para>
-            <para>R<subscript>BUBF</subscript> = 0.7 ×
-            R<subscript>BPF</subscript></para></td>
-
-            <td><para>= 0.7 x 0.112</para> <para>= 0.08</para></td>
+            <td>
+              <para>Final Baseflow Under Peak Factor</para>
+              <para>R<subscript>BUBF</subscript> = 0.7 × R<subscript>BPF</subscript></para>
+            </td>
+            <td>
+              <para>= 0.7 x 0.112</para>
+              <para>= 0.08</para>
+            </td>
           </tr>
         </tbody>
       </table>
-
       <table xml:id="table_74453170">
-        <caption>Calculation of Baseflow and Total Streamflow Characteristics
-        for the 1% AEP Event for the Dirk Brook Catchment</caption>
-
+        <caption>Calculation of Baseflow and Total Streamflow Characteristics for the 1% AEP Event
+          for the Dirk Brook Catchment</caption>
         <thead>
           <tr>
             <td>Baseflow and total streamflow characteristics</td>
-
             <td>Factor values for 1% AEP</td>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td colspan="2"><emphasis role="bold">Peak
-            Baseflow</emphasis></td>
+            <td colspan="2"><emphasis role="bold">Peak Baseflow</emphasis></td>
           </tr>
-
           <tr>
-            <td><para>Peak Baseflow <xref linkend="equation_23454030"/></para>
-            <para>Q<subscript>Peak baseflow</subscript>=
-            R<subscript>BPF</subscript> Q<subscript>Peak surface
-            runoff</subscript></para></td>
-
-            <td><para>= 0.11 x 23.9</para> <para>= 2.6
-            m<superscript>3</superscript>/s</para></td>
+            <td>
+              <para>Peak Baseflow <xref linkend="equation_23454030"/></para>
+              <para>Q<subscript>Peak baseflow</subscript>= R<subscript>BPF</subscript>
+                  Q<subscript>Peak surface runoff</subscript></para>
+            </td>
+            <td>
+              <para>= 0.11 x 23.9</para>
+              <para>= 2.6 m<superscript>3</superscript>/s</para>
+            </td>
           </tr>
-
           <tr>
-            <td><para>Time to Peak Baseflow <xref
-            linkend="equation_56532397"/></para> <para>T<subscript>Peak
-            baseflow</subscript> = 0.92T<subscript>Peak surface
-            runoff</subscript> + 33.4</para></td>
-
-            <td><para>= (0.92 x 8) +33.4</para> <para>= 41 hours</para></td>
+            <td>
+              <para>Time to Peak Baseflow <xref linkend="equation_56532397"/></para>
+              <para>T<subscript>Peak baseflow</subscript> = 0.92T<subscript>Peak surface
+                  runoff</subscript> + 33.4</para>
+            </td>
+            <td>
+              <para>= (0.92 x 8) +33.4</para>
+              <para>= 41 hours</para>
+            </td>
           </tr>
-
           <tr>
-            <td colspan="2"><emphasis role="bold">Baseflow Under the
-            Peak</emphasis></td>
+            <td colspan="2"><emphasis role="bold">Baseflow Under the Peak</emphasis></td>
           </tr>
-
           <tr>
-            <td><para>Baseflow Under the Streamflow Peak <xref
-            linkend="equation_47798745"/></para> <para>Q<subscript>Baseflow
-            under peak streamflow</subscript> = R<subscript>BUPF</subscript>
-            Q<subscript>Peak surface runoff</subscript></para></td>
-
-            <td><para>= 0.08 x 23.9</para> <para>= 1.9
-            m<superscript>3</superscript>/s</para></td>
+            <td>
+              <para>Baseflow Under the Streamflow Peak <xref linkend="equation_47798745"/></para>
+              <para>Q<subscript>Baseflow under peak streamflow</subscript> =
+                  R<subscript>BUPF</subscript> Q<subscript>Peak surface runoff</subscript></para>
+            </td>
+            <td>
+              <para>= 0.08 x 23.9</para>
+              <para>= 1.9 m<superscript>3</superscript>/s</para>
+            </td>
           </tr>
-
           <tr>
-            <td colspan="2"><emphasis role="bold">Total Streamflow Peak
-            </emphasis></td>
+            <td colspan="2"><emphasis role="bold">Total Streamflow Peak </emphasis></td>
           </tr>
-
           <tr>
-            <td><para>Total Streamflow Peak Flow <xref
-            linkend="equation_31567661"/></para> <para>Q<subscript>Peak
-            streamflow</subscript> = Q<subscript>Peak surface
-            runoff</subscript> + Q<subscript>Baseflow under peak
-            streamflow</subscript></para></td>
-
-            <td><para>= 23.9 + 1.9</para> <para>= 25.8
-            m<superscript>3</superscript>/s</para></td>
+            <td>
+              <para>Total Streamflow Peak Flow <xref linkend="equation_31567661"/></para>
+              <para>Q<subscript>Peak streamflow</subscript> = Q<subscript>Peak surface
+                  runoff</subscript> + Q<subscript>Baseflow under peak streamflow</subscript></para>
+            </td>
+            <td>
+              <para>= 23.9 + 1.9</para>
+              <para>= 25.8 m<superscript>3</superscript>/s</para>
+            </td>
           </tr>
-
           <tr>
-            <td colspan="2"><emphasis role="bold">Baseflow Volume
-            </emphasis></td>
+            <td colspan="2"><emphasis role="bold">Baseflow Volume </emphasis></td>
           </tr>
-
           <tr>
-            <td><para>Baseflow Volume <xref
-            linkend="equation_59216713"/></para> <para>V<subscript>Baseflow
-            </subscript> = R<subscript>BVF</subscript> V<subscript>Surface
-            runoff</subscript></para></td>
-
-            <td><para>= 0.66 x 1.25 x 10<superscript>6</superscript></para>
-            <para>= 0.83 x 10<superscript>6</superscript></para></td>
+            <td>
+              <para>Baseflow Volume <xref linkend="equation_59216713"/></para>
+              <para>V<subscript>Baseflow </subscript> = R<subscript>BVF</subscript>
+                  V<subscript>Surface runoff</subscript></para>
+            </td>
+            <td>
+              <para>= 0.66 x 1.25 x 10<superscript>6</superscript></para>
+              <para>= 0.83 x 10<superscript>6</superscript></para>
+            </td>
           </tr>
-
           <tr>
-            <td colspan="2"><emphasis role="bold">Total Streamflow Volume
-            </emphasis></td>
+            <td colspan="2"><emphasis role="bold">Total Streamflow Volume </emphasis></td>
           </tr>
-
           <tr>
-            <td><para>Total Streamflow Volume <xref
-            linkend="equation_67337800"/></para> <para>V<subscript>Total
-            streamflow</subscript> = V<subscript>Surface runoff</subscript> +
-            V<subscript>Baseflow</subscript></para></td>
-
-            <td><para>= 1.25 x 10<superscript>6</superscript> + 0.83 x
-            10<superscript>6</superscript></para> <para>= 2.08 x
-            10<superscript>6</superscript></para></td>
+            <td>
+              <para>Total Streamflow Volume <xref linkend="equation_67337800"/></para>
+              <para>V<subscript>Total streamflow</subscript> = V<subscript>Surface
+                  runoff</subscript> + V<subscript>Baseflow</subscript></para>
+            </td>
+            <td>
+              <para>= 1.25 x 10<superscript>6</superscript> + 0.83 x
+                10<superscript>6</superscript></para>
+              <para>= 2.08 x 10<superscript>6</superscript></para>
+            </td>
           </tr>
         </tbody>
       </table>
-
       <figure xml:id="figure_86477209">
-        <title>Surface Runoff, Baseflow and Total Streamflow Hydrographs for
-        the 1% AEP Event at Dirk Brook</title>
-
+        <title>Surface Runoff, Baseflow and Total Streamflow Hydrographs for the 1% AEP Event at
+          Dirk Brook</title>
         <mediaobject>
           <imageobject>
-            <imagedata contentdepth="100%" fileref="../../figures/5012.png"
-                       scalefit="1" width="100%"/>
+            <imagedata contentdepth="100%" fileref="../../figures/5012.png" scalefit="1"
+              width="100%"/>
           </imageobject>
         </mediaobject>
       </figure>
     </section>
   </section>
-
   <section xml:id="section_53645143">
     <title>References</title>
-
-    <para>Brodie, R.S. and Hostetler, S. (2005) <emphasis>A review of
-    techniques for analysing baseflow from stream hydrographs</emphasis> in
-    <emphasis>Proceedings of the NZHS-IAH-NZSSS 2005 conference</emphasis>,
-    Auckland, New Zealand, 28 November – 2 December, 2005.</para>
-
-    <para>Chapman, T.G. and Maxwell, A.I. (1996) <emphasis>Baseflow separation
-    – Comparison of numerical methods with tracer experiments,</emphasis>
-    Proceedings of the 23rd Hydrology and Water Resources Symposium, Hobart
-    Australia, 21-24 May 1996.</para>
-
-    <para>Graszkiewicz, Z, Murphy, R.E, Hill, P.I., Nathan, R.J (2011) Review
-    of techniques for estimating the contribution of baseflow to flood
-    hydrographs. <emphasis>34th IAHR World Congress.</emphasis> 26 June to 1
-    July 2011 Brisbane, Australia.</para>
-
-    <para>Kinkela, K., Pearce, L.J. (2014) Assessment of baseflow seasonality
-    and application to design flood events in southwest Western Australia.
-    Australian Journal of Water Resources. Vol 18. No. 1</para>
-
-    <para>Ladson, A.R., Brown, R., Neal, B., and Nathan, R. (2013): A standard
-    approach to baseflow separation using the Lyne and Hollick
-    filter.<emphasis> Aus J Water Resour.</emphasis> 17(1): 25-33.</para>
-
-    <para>Murphy, R., Graszkiewicz, Z., Hill, P., Neal, B., Nathan, R., and
-    Ladson, T. (2009) <emphasis>Project 7: Baseflow for catchment simulation.
-    Phase 1 – selection of baseflow separation approach, </emphasis>Report
-    prepared for the Australian Rainfall and Runoff Technical Committee by
-    Sinclair Knight Merz. AR&amp;R Report Number P7/S1/004, ISBN
-    978-085825-9218.</para>
-
-    <para>Murphy, R.E., Graszkiewicz, Z, Hill, P.I., Neal, B.P., Nathan, R.J.
-    (2011a) Predicting baseflow contributions to design flood events in
-    Australia. <emphasis>34th IAHR World Congress.</emphasis> 26 June to 1
-    July 2011 Brisbane, Australia.</para>
-
-    <para>Murphy, R., Graszkiewicz, Z., Hill, P., Neal, B., and Nathan, R.
-    (2011b)<emphasis> Project 7: Baseflow for catchment simulation. Phase 2 –
-    development of baseflow estimation approach.</emphasis> Report prepared
-    for the Australian Rainfall and Runoff Technical Committee by Sinclair
-    Knight Merz. ARR Report Number P7/S2/017, ISBN 978-0-85825-916-4.</para>
-
-    <para>Nathan, R.J, and McMahon, T.A. (1990) <emphasis>Evaluation of
-    Automated Techniques for Base Flow and Recession Analyses,</emphasis>
-    Water Resources Research, 26(7), 1465-1473.</para>
+    <para>Brodie, R.S. and Hostetler, S. (2005) <emphasis>A review of techniques for analysing
+        baseflow from stream hydrographs</emphasis> in <emphasis>Proceedings of the NZHS-IAH-NZSSS
+        2005 conference</emphasis>, Auckland, New Zealand, 28 November – 2 December, 2005.</para>
+    <para>Chapman, T.G. and Maxwell, A.I. (1996) <emphasis>Baseflow separation – Comparison of
+        numerical methods with tracer experiments,</emphasis> Proceedings of the 23rd Hydrology and
+      Water Resources Symposium, Hobart Australia, 21-24 May 1996.</para>
+    <para>Graszkiewicz, Z, Murphy, R.E, Hill, P.I., Nathan, R.J (2011) Review of techniques for
+      estimating the contribution of baseflow to flood hydrographs. <emphasis>34th IAHR World
+        Congress.</emphasis> 26 June to 1 July 2011 Brisbane, Australia.</para>
+    <para>Kinkela, K., Pearce, L.J. (2014) Assessment of baseflow seasonality and application to
+      design flood events in southwest Western Australia. Australian Journal of Water Resources. Vol
+      18. No. 1</para>
+    <para>Ladson, A.R., Brown, R., Neal, B., and Nathan, R. (2013): A standard approach to baseflow
+      separation using the Lyne and Hollick filter.<emphasis> Aus J Water Resour.</emphasis> 17(1):
+      25-33.</para>
+    <para>Murphy, R., Graszkiewicz, Z., Hill, P., Neal, B., Nathan, R., and Ladson, T. (2009)
+        <emphasis>Project 7: Baseflow for catchment simulation. Phase 1 – selection of baseflow
+        separation approach, </emphasis>Report prepared for the Australian Rainfall and Runoff
+      Technical Committee by Sinclair Knight Merz. AR&amp;R Report Number P7/S1/004, ISBN
+      978-085825-9218.</para>
+    <para>Murphy, R.E., Graszkiewicz, Z, Hill, P.I., Neal, B.P., Nathan, R.J. (2011a) Predicting
+      baseflow contributions to design flood events in Australia. <emphasis>34th IAHR World
+        Congress.</emphasis> 26 June to 1 July 2011 Brisbane, Australia.</para>
+    <para>Murphy, R., Graszkiewicz, Z., Hill, P., Neal, B., and Nathan, R. (2011b)<emphasis> Project
+        7: Baseflow for catchment simulation. Phase 2 – development of baseflow estimation
+        approach.</emphasis> Report prepared for the Australian Rainfall and Runoff Technical
+      Committee by Sinclair Knight Merz. ARR Report Number P7/S2/017, ISBN 978-0-85825-916-4.</para>
+    <para>Nathan, R.J, and McMahon, T.A. (1990) <emphasis>Evaluation of Automated Techniques for
+        Base Flow and Recession Analyses,</emphasis> Water Resources Research, 26(7),
+      1465-1473.</para>
   </section>
-
   <section>
     <title>Appendix - Calculation of the Timing of the Baseflow Peak</title>
-
-  <para>Analyses undertaken to develop most of the method outlined in <xref
-  linkend="section_75228116"/> is described in detail in separate technical
-  documents, available online at the ARR website (SKM, 2010, available online
-  http://www.arr.org.au/p7.html). However, the background behind the
-  calculation of the timing of the baseflow peak is not captured in those
-  documents. A full description of the development of <xref
-  linkend="equation_56532397"/> is provided below. The description below
-  assumes that the reader has an understanding of the work presented in the
-  separate technical documents, and a full background of the broader study
-  concepts is not provided here.</para>
-
-  <para>More than 230 suitable catchments across Australia were identified for
-  analysis for ARR Revision Project 7, and hourly streamflow data was collated
-  for each of these locations. A baseflow time series was generated from each
-  flow record using the Lyne and Hollick digital filter, modified to suit
-  hourly streamflow data. The top 4N flood events were identified in the
-  hourly time series data for each catchment, generating a data set of more
-  than 30,000 flood events across the 236 catchments. For each of these
-  events, the magnitude and timing of the total streamflow peak and baseflow
-  peak were identified. The time to these peaks was calculated from the start
-  of the event. At each location, the average time to the streamflow and
-  baseflow peaks were then calculated based on the 4N events.</para>
-
-  <para>For the purposes of this assessment, it was assumed that the total
-  streamflow and surface runoff peaks would coincide. This is considered a
-  reasonable assumption since surface runoff is generally the main component
-  of the total streamflow hydrograph.</para>
-
-  <para>Analysis of the average time to peak data identified a strong
-  relationship between the time to the surface runoff (and streamflow) and
-  baseflow peaks, as presented in <xref linkend="figure_74876507"/>. This
-  relationship provides a direct calculation from which to estimate the timing
-  of the baseflow peak, based upon knowledge of the surface runoff event
-  generated using a flood event model. That is, the time to the baseflow peak
-  (in hours from the start of the event) can be calculated as:</para>
-
-  <equation xml:id="equation_08366567">
-    <m:math display="block">
-      <m:mrow>
-        <m:msub>
-          <m:mi>T</m:mi>
-
-          <m:mi>Peak baseflow</m:mi>
-        </m:msub>
-
-        <m:mo>=</m:mo>
-
+    <para>Analyses undertaken to develop most of the method outlined in <xref
+        linkend="section_75228116"/> is described in detail in separate technical documents,
+      available online at the ARR website (SKM, 2010, available online
+      http://www.arr.org.au/p7.html). However, the background behind the calculation of the timing
+      of the baseflow peak is not captured in those documents. A full description of the development
+      of <xref linkend="equation_56532397"/> is provided below. The description below assumes that
+      the reader has an understanding of the work presented in the separate technical documents, and
+      a full background of the broader study concepts is not provided here.</para>
+    <para>More than 230 suitable catchments across Australia were identified for analysis for ARR
+      Revision Project 7, and hourly streamflow data was collated for each of these locations. A
+      baseflow time series was generated from each flow record using the Lyne and Hollick digital
+      filter, modified to suit hourly streamflow data. The top 4N flood events were identified in
+      the hourly time series data for each catchment, generating a data set of more than 30,000
+      flood events across the 236 catchments. For each of these events, the magnitude and timing of
+      the total streamflow peak and baseflow peak were identified. The time to these peaks was
+      calculated from the start of the event. At each location, the average time to the streamflow
+      and baseflow peaks were then calculated based on the 4N events.</para>
+    <para>For the purposes of this assessment, it was assumed that the total streamflow and surface
+      runoff peaks would coincide. This is considered a reasonable assumption since surface runoff
+      is generally the main component of the total streamflow hydrograph.</para>
+    <para>Analysis of the average time to peak data identified a strong relationship between the
+      time to the surface runoff (and streamflow) and baseflow peaks, as presented in <xref
+        linkend="figure_74876507"/>. This relationship provides a direct calculation from which to
+      estimate the timing of the baseflow peak, based upon knowledge of the surface runoff event
+      generated using a flood event model. That is, the time to the baseflow peak (in hours from the
+      start of the event) can be calculated as:</para>
+    <equation xml:id="equation_08366567">
+      <m:math display="block">
         <m:mrow>
           <m:msub>
-            <m:mi>0.92 T</m:mi>
-
-            <m:mi>Peak surface runoff</m:mi>
+            <m:mi>T</m:mi>
+            <m:mi>Peak baseflow</m:mi>
           </m:msub>
-
-          <m:mo>+ 33.4</m:mo>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:msub>
+              <m:mi>0.92 T</m:mi>
+              <m:mi>Peak surface runoff</m:mi>
+            </m:msub>
+            <m:mo>+ 33.4</m:mo>
+          </m:mrow>
         </m:mrow>
-      </m:mrow>
-    </m:math>
-  </equation>
-
-  <figure xml:id="figure_74876507">
-    <title>Comparison of Average Time to Surface Runoff Peak and Time to
-    Baseflow Peak, Based on Analysis of more than 30,000 Flood Events from
-    Catchments across Australia.</title>
-
-    <mediaobject>
-      <imageobject>
-        <imagedata fileref="../../figures/5013.jpg"/>
-      </imageobject>
-    </mediaobject>
-  </figure>
-
+      </m:math>
+    </equation>
+    <figure xml:id="figure_74876507">
+      <title>Comparison of Average Time to Surface Runoff Peak and Time to Baseflow Peak, Based on
+        Analysis of more than 30,000 Flood Events from Catchments across Australia.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/5013.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
   </section>
 </chapter>
-<?oxy_options track_changes="on"?>
+
