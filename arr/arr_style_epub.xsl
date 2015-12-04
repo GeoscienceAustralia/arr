@@ -24,10 +24,6 @@
    <xsl:param name="chunker.output.indent">yes</xsl:param>
    <xsl:param name="chunk.section.depth">0</xsl:param>
 
-
-   <!-- We don't need JS for EPUB-->
-   <xsl:param name="html.script" />
-
    <!-- Add a common stylesheet and drop the master docbook.css -->
    <xsl:param name="html.stylesheet">css/arr_epub.css</xsl:param>
    <xsl:param name="docbook.css.link" select="0"></xsl:param>
