@@ -9,101 +9,136 @@
          xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Introduction</title>
+
     <xi:include href="../../common/authors/weinmann_erwin.xml"/>
 
     <xi:include href="../../common/authors/ball_james.xml"/>
   </info>
+
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
+
     <tr>
       <td>Book</td>
+
       <td>5</td>
     </tr>
+
     <tr>
       <td>Chapter</td>
+
       <td>1</td>
     </tr>
+
     <tr>
       <td>Date</td>
+
       <td>27/11/2015</td>
     </tr>
+
     <tr>
       <td>Content</td>
+
       <td>In preparation</td>
     </tr>
+
     <tr>
       <td>Graphs and Figures</td>
+
       <td>In preparation</td>
     </tr>
+
     <tr>
       <td>Examples</td>
+
       <td>In preparation</td>
     </tr>
+
     <tr>
       <td>General</td>
+
       <td>Chapters 4 and 5 are included in the book</td>
     </tr>
   </informaltable>
 
   <section xml:id="b5_ch1_s_brgjq">
     <title>Flood Hydrograph Modelling</title>
-    <para>From the alternative flood estimation approaches introduced in <xref linkend="b1_ch3"/>,
-      the methods and models covered in this book of Australian Rainfall and Runoff focus on the
-        <emphasis role="italic">event-based simulation </emphasis>approach. On the background of the
-      more general aspects of catchment simulation for design flood estimation covered in <xref
-        linkend="book4"/>, the chapters in this book deal specifically with the models and design
-      inputs required to transform the design rainfall inputs from <xref linkend="book2"/> into
-      design flood hydrographs at catchment locations of interest. </para>
-    <para>The models typically applied in the event-based simulation approach are semi-distributed
-      in nature; they represent the catchment being modelled by a number of sub-catchments or
-      subareas, where the degree of spatial resolution used typically varies between around 10 to
-      100 subareas. if. The flood producing processes are divided into a <emphasis role="italic"
-        >runoff generation phase</emphasis>, modelled at the sub-catchment or subarea scale, and a
-        <emphasis role="italic">hydrograph formation phase</emphasis>, in which the hydrograph
-      contributions from the subareas are routed along the different stream reaches and storages in
-      the catchment to the point of interest. Node-link type runoff routing models are the most
-      common form of these models, where the nodes represent the subareas and the links the routing
-      reaches.</para>
-    <para>The hydrologic processes involved in the runoff generation phase, described in more detail
-      in <xref linkend="b4_ch2"/>, are represented in a highly conceptualised form as <emphasis
-        role="italic">loss models</emphasis>, which divide the rainfall inputs into rainfall excess
-      and loss (without modelling what happens with the loss component). As the name implies, the
-      rainfall excess reflects only the surface runoff component that is directly attributable to
-      the event rainfall. The additional component of streamflow originating from recession flows of
-      previous rainfall events or groundwater inflows is referred to as baseflow. This baseflow
-      component is represented in conceptual <emphasis role="italic">baseflow models</emphasis> and
-      added to the rainfall excess component either at the sub-catchment scale or, more commonly, as
-      a total baseflow hydrograph at the catchment outlet.</para>
-    <para>In the hydrograph formation phase, the routing of flood contributions from subareas
-      through the various stream reaches, floodplains and natural or artificial storages is modelled
-      by hydrologic or hydraulic routing models of different complexity.</para>
+
+    <para>From the alternative flood estimation approaches introduced in <xref
+    linkend="b1_ch3"/>, the methods and models covered in this book of
+    Australian Rainfall and Runoff focus on the <emphasis
+    role="italic">event-based simulation </emphasis>approach. On the
+    background of the more general aspects of catchment simulation for design
+    flood estimation covered in <xref linkend="book4"/>, the chapters in this
+    book deal specifically with the models and design inputs required to
+    transform the design rainfall inputs from <xref linkend="book2"/> into
+    design flood hydrographs at catchment locations of interest.</para>
+
+    <para>The models typically applied in the event-based simulation approach
+    are semi-distributed in nature; they represent the catchment being
+    modelled by a number of sub-catchments or subareas, where the degree of
+    spatial resolution used typically varies between around 10 to 100
+    subareas. The flood producing processes are divided into a <emphasis
+    role="italic">runoff generation phase</emphasis>, modelled at the
+    sub-catchment or subarea scale, and a <emphasis role="italic">hydrograph
+    formation phase</emphasis>, in which the hydrograph contributions from the
+    subareas are routed along the different stream reaches and storages in the
+    catchment to the point of interest. Node-link type runoff routing models
+    are the most common form of these models, where the nodes represent the
+    subareas and the links the routing reaches.</para>
+
+    <para>The hydrologic processes involved in the runoff generation phase,
+    described in more detail in <xref linkend="b4_ch2"/>, are represented in a
+    highly conceptualised form as <emphasis role="italic">loss
+    models</emphasis>, which divide the rainfall inputs into rainfall excess
+    and loss (without modelling what happens with the loss component). As the
+    name implies, the rainfall excess reflects only the surface runoff
+    component that is directly attributable to the event rainfall. The
+    additional component of streamflow originating from recession flows of
+    previous rainfall events or groundwater inflows is referred to as
+    baseflow. This baseflow component is represented in conceptual <emphasis
+    role="italic">baseflow models</emphasis> and added to the rainfall excess
+    component either at the sub-catchment scale or, more commonly, as a total
+    baseflow hydrograph at the catchment outlet.</para>
+
+    <para>In the hydrograph formation phase, the routing of flood
+    contributions from subareas through the various stream reaches,
+    floodplains and natural or artificial storages is modelled by hydrologic
+    or hydraulic routing models of different complexity.</para>
   </section>
 
   <section xml:id="b5_ch1_s_mwjqz">
     <title>Scope</title>
-    <para>This book of Australian Rainfall and Runoff provides background information on the most
-      common models currently used for flood hydrograph estimation, and the derivation of design
-      inputs used with these models. It also provides guidance on how these models and design inputs
-      can be applied for flood hydrograph estimation in rural and urban catchments located in
-      different parts of Australia.</para>
-    <para>As in other books, the guidance provided here should not be interpreted as being
-      prescriptive, as unusual catchment conditions may require special considerations. Importantly,
-      the application of the models and design data for flood hydrograph estimation should be guided
-      by a good understanding of relevant catchment hydrology concepts.</para>
+
+    <para>This book of Australian Rainfall and Runoff provides background
+    information on the most common models currently used for flood hydrograph
+    estimation, and the derivation of design inputs used with these models. It
+    also provides guidance on how these models and design inputs can be
+    applied for flood hydrograph estimation in rural and urban catchments
+    located in different parts of Australia.</para>
+
+    <para>As in other books, the guidance provided here should not be
+    interpreted as being prescriptive, as unusual catchment conditions may
+    require special considerations. Importantly, the application of the models
+    and design data for flood hydrograph estimation should be guided by a good
+    understanding of relevant catchment hydrology concepts.</para>
   </section>
 
   <section xml:id="b5_ch1_s_0wjaz">
     <title>Book Contents</title>
-    <para>This introductory chapter is followed by a chapter that introduces basic modelling
-      concepts applied in event-based simulation of flood hydrographs and the components of a range
-      of currently used modelling systems. The next two chapters then give details of the baseflow
-      models and loss models applied in flood hydrograph estimation. Both chapters are based on
-      research undertaken as part of the AR&amp;R Revision Projects funded by the Federal Department
-      of Climate Change and Energy Efficiency. They first give the background to the selection of
-      the adopted models, then describe the sources of information for the derivation of design
-      values of baseflow and losses, and finally provide guidance for the practical application of
-      baseflow models and loss models.</para>
+
+    <para>This introductory chapter is followed by a chapter that introduces
+    basic modelling concepts applied in event-based simulation of flood
+    hydrographs and the components of a range of currently used modelling
+    systems. The next two chapters then give details of the baseflow models
+    and loss models applied in flood hydrograph estimation. Both chapters are
+    based on research undertaken as part of the AR&amp;R Revision Projects
+    funded by the Federal Department of Climate Change and Energy Efficiency.
+    They first give the background to the selection of the adopted models,
+    then describe the sources of information for the derivation of design
+    values of baseflow and losses, and finally provide guidance for the
+    practical application of baseflow models and loss models.</para>
   </section>
 </chapter>
