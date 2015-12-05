@@ -446,11 +446,7 @@
       derived. This is particularly difficult to avoid with digital data sets
       compiled from different sources and resolutions. Historically problems
       have arisen when a method was derived from one scale map and used at a
-      different scale.Without giving a clear recommendation (e.g. It is the
-      responsibility of practitioners to ensure that procedures and design
-      data applied in a particular application are appropriate for the nature
-      and location of their specific design problem) this section is of not
-      much use and can be left out.</para>
+      different scale.</para>
     </section>
   </section>
 
@@ -720,745 +716,1054 @@
 
   <section xml:id="b1_ch2_s_4vjbf">
     <title>Dealing with Uncertainty</title>
+
     <section>
       <title>Introduction</title>
-      <para>This section provides an overview of the uncertainties in the design flood estimation.
-        The specific aims are to </para>
+
+      <para>This section provides an overview of the uncertainties in the
+      design flood estimation. The specific aims are to</para>
+
       <itemizedlist>
-        <listitem><para>Identify the types of uncertainty in design flood
-          estimation</para></listitem>
-        <listitem><para>Motivate practitioners on the value of undertaking uncertainty analysis </para></listitem>
-        <listitem><para>Raise awareness of the various sources of uncertainty in common techniques for
-          design flood estimates </para></listitem>
+        <listitem>
+          <para>Identify the types of uncertainty in design flood
+          estimation</para>
+        </listitem>
+
+        <listitem>
+          <para>Motivate practitioners on the value of undertaking uncertainty
+          analysis</para>
+        </listitem>
+
+        <listitem>
+          <para>Raise awareness of the various sources of uncertainty in
+          common techniques for design flood estimates</para>
+        </listitem>
       </itemizedlist>
-      <para> </para>
+
+      <para/>
     </section>
-      <section>
-        <title>Types of uncertainty in design flood
-          estimation</title>
-        <para>It is typical in current practise for design flood estimation to ignore the
-          uncertainty in the estimates of the design flood. This is despite the considerable
-          uncertainties that are introduced when undertaking a flood frequency analysis using short
-          data records and extrapolating the fitted flood frequency distribution to estimate the 100
-          year or 200 year flood. Similarly, when using a catchment modelling approach to obtain
-          estimates of the design flood, the typical situation is that the catchment model is
-          calibrated to a data from few selected rainfall-runoff events, and the calibrated model is
-          then extrapolated using design rainfall estimates (which itself is an extrapolation of
-          observed rainfall data) to provide estimates of 100 or 200 year flood. Both these type of
-          approaches introduce significant uncertainties in estimates of the design flood.</para>
-        <para>The causes of these uncertainties are that practitioners are required to (1) Use
-          mathematical algorithms to represent the complexity of catchment processes that transform
-          large rainfall into large flood events. (2) Calibrate and validate these algorithms using
-          measurements of the catchment process that are highly uncertain. It is widely acknowledge
-          that there is significant spatial variation in catchments and temporal and spatial
-          variation in the antecedent catchment wetness and rainfall events that drive significant
-          flood events. Practitioners, use hydrological models, which are simplified mathematical
-          conceptualisations to represent these complex spatially and temporally distributed
-          hydrological processes. These hydrological models are calibrated to measurements of data
-          on variables such as rainfall, evaporation and river flow. It is widely acknowledged that
-          these data can have significant measurement errors. Rainfall is spatial heterogeneous,
-          however, typically there are only a small number rain gauges in a given catchment. River
-          flow is based on river height measurements and a rating curve, which can be difficult to
-          reliability estimate for large flood events. Typically, though these uncertainties are
-          ignored in the design flood estimation process. </para>
-        <para>Uncertainty analysis provides the tools with which to handle this uncertainty and
-          incorporate it into the design flood estimates. To enable the use of uncertainty analysis
-          tools, it is first important to distinguish two broad types of uncertainty: </para>
-        <itemizedlist>
-          <listitem>
-            <para>Aleatory (or inherent) uncertainty refers to uncertainty that arises through
-              natural randomness or natural variability that we observe in nature. </para>
-          </listitem>
-          <listitem>
-            <para>Epistemic (or knowledge-based) uncertainty refers to uncertainty that is
-              associated with the state of knowledge of a physical system (our estimation of
-              reality), our ability to measure it and the inaccuracies in our predictions of the
-              physical system. </para>
-          </listitem>
-        </itemizedlist>
-        <para>These definitions are consistent with the broad definitions provided by [Ang and Tang,
-          2007] in wider context of general engineering and the specific context of flood risk by
-          [Pappenberger and Beven, 2006]. The major differences between the two types of uncertainty
-          is that epistemic uncertainty can be reduced, through advances in process understanding or
-          improvement in measurement techniques, while aleatory uncertainty cannot be reduced, and
-          therefore needs to be characterised. Both types of uncertainty can be characterised using
-          tools of uncertainty analysis. [Ang and Tang, 2007] provide a wealth of examples of the
-          two types of uncertainty in a general engineering context. </para>
-        <para>In the context of design flood estimation, a simple example to understand the
-        differences between these two types of uncertainty is to consider a an example of a flood
-        frequency distribution, as shown in <xref linkend="b1_ch2_f_o0gf8"/>, with probability
-        limits on the design flood estimates over the range of AEP. </para>
-        <para>An illustration of aleatory uncertainty is the natural variability in annual maximum
-          floods which is due to the climate variability in extreme rainfall and antecedent soil
-          moisture condition from year to year. This aleatory uncertainty influences the shape of
-          the flood frequency distribution, and influences the values of 1% AEP design flood
-          estimates. The aleatory uncertainty is why practitioners undertake a risk-based design
-          approach to estimate the likelihood of flooding. At different catchments, the flood
-          frequency distribution changes due to the natural variability in the climate and catchment
-          processes, hence this is also of type aleatory uncertainty. </para>
-        <para>An illustration of epistemic uncertainty is the uncertainty in the estimate of the
-        design flood for a given AEP, e.g. in <xref linkend="b1_ch2_f_o0gf8"/>, the design flood for
-        a 1% AEP has an expected value of
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>X<?oxy_custom_end?>% and
-        the 95% probability limits are +/-
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>X and
-        Y<?oxy_custom_end?>. This uncertainty in the design flood estimate for a given AEP is
-        primarily of type epistemic (or knowledge based) uncertainty. There is an opportunity to
-        reduce this uncertainty, if there were longer flow records which would reduce the
-        uncertainty in the parameters of the flood frequency distribution fitted to the annual
-        maximum floods. Similarly, for catchment modelling, or if there was a better understanding
-        on the catchment processes obtained through better data to calibrate and verify the
-        catchment model, this would reduce the uncertainty in the flood estimates of the catchment
-        model. </para>
-        <figure xml:id="b1_ch2_f_o0gf8">
-        <title>Conceptual diagram illustrating the different types of uncertainty, aleatory and
-          epistemic, in the context of design flood estimation</title>
+
+    <section>
+      <title>Types of uncertainty in design flood estimation</title>
+
+      <para>It is typical in current practise for design flood estimation to
+      ignore the uncertainty in the estimates of the design flood. This is
+      despite the considerable uncertainties that are introduced when
+      undertaking a flood frequency analysis using short data records and
+      extrapolating the fitted flood frequency distribution to estimate the
+      100 year or 200 year flood. Similarly, when using a catchment modelling
+      approach to obtain estimates of the design flood, the typical situation
+      is that the catchment model is calibrated to a data from few selected
+      rainfall-runoff events, and the calibrated model is then extrapolated
+      using design rainfall estimates (which itself is an extrapolation of
+      observed rainfall data) to provide estimates of 100 or 200 year flood.
+      Both these type of approaches introduce significant uncertainties in
+      estimates of the design flood.</para>
+
+      <para>The causes of these uncertainties are that practitioners are
+      required to (1) Use mathematical algorithms to represent the complexity
+      of catchment processes that transform large rainfall into large flood
+      events. (2) Calibrate and validate these algorithms using measurements
+      of the catchment process that are highly uncertain. It is widely
+      acknowledge that there is significant spatial variation in catchments
+      and temporal and spatial variation in the antecedent catchment wetness
+      and rainfall events that drive significant flood events. Practitioners,
+      use hydrological models, which are simplified mathematical
+      conceptualisations to represent these complex spatially and temporally
+      distributed hydrological processes. These hydrological models are
+      calibrated to measurements of data on variables such as rainfall,
+      evaporation and river flow. It is widely acknowledged that these data
+      can have significant measurement errors. Rainfall is spatial
+      heterogeneous, however, typically there are only a small number rain
+      gauges in a given catchment. River flow is based on river height
+      measurements and a rating curve, which can be difficult to reliability
+      estimate for large flood events. Typically, though these uncertainties
+      are ignored in the design flood estimation process.</para>
+
+      <para>Uncertainty analysis provides the tools with which to handle this
+      uncertainty and incorporate it into the design flood estimates. To
+      enable the use of uncertainty analysis tools, it is first important to
+      distinguish two broad types of uncertainty:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Aleatory (or inherent) uncertainty refers to uncertainty that
+          arises through natural randomness or natural variability that we
+          observe in nature.</para>
+        </listitem>
+
+        <listitem>
+          <para>Epistemic (or knowledge-based) uncertainty refers to
+          uncertainty that is associated with the state of knowledge of a
+          physical system (our estimation of reality), our ability to measure
+          it and the inaccuracies in our predictions of the physical
+          system.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>These definitions are consistent with the broad definitions
+      provided by [Ang and Tang, 2007] in wider context of general engineering
+      and the specific context of flood risk by [Pappenberger and Beven,
+      2006]. The major differences between the two types of uncertainty is
+      that epistemic uncertainty can be reduced, through advances in process
+      understanding or improvement in measurement techniques, while aleatory
+      uncertainty cannot be reduced, and therefore needs to be characterised.
+      Both types of uncertainty can be characterised using tools of
+      uncertainty analysis. [Ang and Tang, 2007] provide a wealth of examples
+      of the two types of uncertainty in a general engineering context.</para>
+
+      <para>In the context of design flood estimation, a simple example to
+      understand the differences between these two types of uncertainty is to
+      consider a an example of a flood frequency distribution, as shown in
+      <xref linkend="b1_ch2_f_o0gf8"/>, with probability limits on the design
+      flood estimates over the range of AEP.</para>
+
+      <para>An illustration of aleatory uncertainty is the natural variability
+      in annual maximum floods which is due to the climate variability in
+      extreme rainfall and antecedent soil moisture condition from year to
+      year. This aleatory uncertainty influences the shape of the flood
+      frequency distribution, and influences the values of 1% AEP design flood
+      estimates. The aleatory uncertainty is why practitioners undertake a
+      risk-based design approach to estimate the likelihood of flooding. At
+      different catchments, the flood frequency distribution changes due to
+      the natural variability in the climate and catchment processes, hence
+      this is also of type aleatory uncertainty.</para>
+
+      <para>An illustration of epistemic uncertainty is the uncertainty in the
+      estimate of the design flood for a given AEP, e.g. in <xref
+      linkend="b1_ch2_f_o0gf8"/>, the design flood for a 1% AEP has an
+      expected value of <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>X<?oxy_custom_end ?>%
+      and the 95% probability limits are +/- <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>X
+      and Y<?oxy_custom_end ?>. This uncertainty in the design flood estimate
+      for a given AEP is primarily of type epistemic (or knowledge based)
+      uncertainty. There is an opportunity to reduce this uncertainty, if
+      there were longer flow records which would reduce the uncertainty in the
+      parameters of the flood frequency distribution fitted to the annual
+      maximum floods. Similarly, for catchment modelling, or if there was a
+      better understanding on the catchment processes obtained through better
+      data to calibrate and verify the catchment model, this would reduce the
+      uncertainty in the flood estimates of the catchment model.</para>
+
+      <figure xml:id="b1_ch2_f_o0gf8">
+        <title>Conceptual diagram illustrating the different types of
+        uncertainty, aleatory and epistemic, in the context of design flood
+        estimation</title>
+
         <mediaobject>
           <imageobject>
             <imagedata fileref="../../figures/1046.png"/>
           </imageobject>
         </mediaobject>
       </figure>
-        <para>Despite the simplicity of the two illustrations of aleatory and epistemic uncertainty,
-        given in the flood frequency distribution in <xref linkend="b1_ch2_f_o0gf8"/>, there are
-        occasions where the distinction between the two different types of uncertainty is not always
-        clear. For example, the illustration of <xref linkend="b1_ch2_f_o0gf8"/> implies that as
-        level of information increases and the epistemic uncertainty is reduced then “true” flood
-        frequency distribution for a given catchment will emerge. There is practical limit on the
-        level of information (data and/or process understanding) available on a given catchment
-        hence the concept of a single “true” flood frequency distribution for a given catchment is
-        likely to unobtainable. Hence the epistemic uncertainty given in <xref
-          linkend="b1_ch2_f_o0gf8"/>, will have a component of aleatory uncertainty.
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Similarly, provide an
-        counter example, where aleatory uncertainty turns into epistemic uncertainty.
-        <?oxy_custom_end?></para>
-        <para>Mention that the concepts of aleatory and epistemic uncertainty are similar to
-          concepts of flood likelihood and uncertainty from risk-based decision-making (cross
-          ref)</para>
-      </section>
-      <section>
-        <title>Motivation for incorporating uncertainty into design
-          flood estimates</title>
-        <para>There are a range of approaches for dealing with uncertainty, the simplest of which is
-        to ignore it, to qualitative descriptions (highly uncertain) or relative rankings, (option 1
-        is more uncertainty than option 2) i.e. to rigourous quantitative approaches which use
-        uncertainty analysis techniques to characterise the individual sources of uncertainty, and
-        use advanced techniques to estimate their impacts on the uncertainty in the design flood
-        estimations (see
-        cross-<?oxy_comment_start author="ward" timestamp="20151204T171613+1100" comment="Refer to approaches in other chapters. "?>ref<?oxy_comment_end?>
-        for an overview of the various approaches). The greater the rigour in uncertainty analysis
-        approach the more effort and resources is required. The reward for this greater effort is
-        more informed decision making. </para>
-        <para>An example of the potential benefits of incorporating uncertainty for more informed
-        decision making is provided in <xref linkend="b1_ch2_f_o0gf458"/>. Consider two different
-        designs; design A and design B. The decision-maker needs to choose the design that reduces
-        the flood magnitude for given catchment location. Design A has a higher value for the most
-        likely estimate of the design flood, but has a lower uncertainty than design B. The
-        differences in the uncertainty estimates could arise because design B is a more complicated
-        design option than design A and requires the use of more complex flood modelling approach
-        (e.g. fully distributed flood model) and there was a lack of spatial data in the catchment
-        to calibrate the distributed model and hence parameter estimates had to be based on regional
-        information. In contrast design A was based on flood modelling approach that was
-        well-calibrated using high quality data that was readily available in the catchment. If the
-        uncertainty is ignored then design B would be the preferred choice of the decision maker,
-        because the most likely estimate of the flood magnitude is lower than design A. If the
-        uncertainty in the flood magnitude incorporated than a decision-maker who is risk-averse may
-        prefer to choose design A, because it the probability of a large magnitude flood with
-        major/catastrophic consequence is lower than design B. This example illustrates how the
-        uncertainty in the design flood estimates, when combined with risk attitude (risk-averse,
-        risk-neutral, or risk-seeking) of the design-maker provides a more information on which to
-        base the design choice </para>
-        <figure xml:id="b1_ch2_f_o0gf458">
-        <title>Conceptual diagram illustrating the impact of uncertainty when comparing the
-          estimates of the design flood from two different designs: Design A and Design B</title>
+
+      <para>Despite the simplicity of the two illustrations of aleatory and
+      epistemic uncertainty, given in the flood frequency distribution in
+      <xref linkend="b1_ch2_f_o0gf8"/>, there are occasions where the
+      distinction between the two different types of uncertainty is not always
+      clear. For example, the illustration of <xref linkend="b1_ch2_f_o0gf8"/>
+      implies that as level of information increases and the epistemic
+      uncertainty is reduced then “true” flood frequency distribution for a
+      given catchment will emerge. There is practical limit on the level of
+      information (data and/or process understanding) available on a given
+      catchment hence the concept of a single “true” flood frequency
+      distribution for a given catchment is likely to unobtainable. Hence the
+      epistemic uncertainty given in <xref linkend="b1_ch2_f_o0gf8"/>, will
+      have a component of aleatory uncertainty. <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Similarly,
+      provide an counter example, where aleatory uncertainty turns into
+      epistemic uncertainty. <?oxy_custom_end ?></para>
+
+      <para>Mention that the concepts of aleatory and epistemic uncertainty
+      are similar to concepts of flood likelihood and uncertainty from
+      risk-based decision-making (cross ref)</para>
+    </section>
+
+    <section>
+      <title>Motivation for incorporating uncertainty into design flood
+      estimates</title>
+
+      <para>There are a range of approaches for dealing with uncertainty, the
+      simplest of which is to ignore it, to qualitative descriptions (highly
+      uncertain) or relative rankings, (option 1 is more uncertainty than
+      option 2) i.e. to rigourous quantitative approaches which use
+      uncertainty analysis techniques to characterise the individual sources
+      of uncertainty, and use advanced techniques to estimate their impacts on
+      the uncertainty in the design flood estimations (see
+      cross-<?oxy_comment_start author="ward" timestamp="20151204T171613+1100" comment="Refer to approaches in other chapters. "?>ref<?oxy_comment_end ?>
+      for an overview of the various approaches). The greater the rigour in
+      uncertainty analysis approach the more effort and resources is required.
+      The reward for this greater effort is more informed decision
+      making.</para>
+
+      <para>An example of the potential benefits of incorporating uncertainty
+      for more informed decision making is provided in <xref
+      linkend="b1_ch2_f_o0gf458"/>. Consider two different designs; design A
+      and design B. The decision-maker needs to choose the design that reduces
+      the flood magnitude for given catchment location. Design A has a higher
+      value for the most likely estimate of the design flood, but has a lower
+      uncertainty than design B. The differences in the uncertainty estimates
+      could arise because design B is a more complicated design option than
+      design A and requires the use of more complex flood modelling approach
+      (e.g. fully distributed flood model) and there was a lack of spatial
+      data in the catchment to calibrate the distributed model and hence
+      parameter estimates had to be based on regional information. In contrast
+      design A was based on flood modelling approach that was well-calibrated
+      using high quality data that was readily available in the catchment. If
+      the uncertainty is ignored then design B would be the preferred choice
+      of the decision maker, because the most likely estimate of the flood
+      magnitude is lower than design A. If the uncertainty in the flood
+      magnitude incorporated than a decision-maker who is risk-averse may
+      prefer to choose design A, because it the probability of a large
+      magnitude flood with major/catastrophic consequence is lower than design
+      B. This example illustrates how the uncertainty in the design flood
+      estimates, when combined with risk attitude (risk-averse, risk-neutral,
+      or risk-seeking) of the design-maker provides a more information on
+      which to base the design choice</para>
+
+      <figure xml:id="b1_ch2_f_o0gf458">
+        <title>Conceptual diagram illustrating the impact of uncertainty when
+        comparing the estimates of the design flood from two different
+        designs: Design A and Design B</title>
+
         <mediaobject>
           <imageobject>
             <imagedata fileref="../../figures/1047.png"/>
           </imageobject>
         </mediaobject>
       </figure>
-        <para>From a practical and scientific perspective [Pappenberger and Beven, 2006] provide an
-          overview of the common reasons for not undertaking uncertainty analysis for hydrological
-          and hydraulic models and argue that these arguments are not tenable. A summary of the
-          reasons provided by [Pappenberger and Beven, 2006] and their counter arguments are
-          summarized as follows:</para>
-        <para>1. <emphasis role="bold">Uncertainty analysis is not necessary given physically
-          realistic models.</emphasis></para>
-        <para>[Pappenberger and Beven, 2006] states there are a group of modellers who believe that
-        their models are (or at least will be in the future) physically correct and thus parameter
-        calibration or uncertainty analysis should not be necessary (or only minimal) if predictions
-        are based on a true understanding of the physics of the system simulated. This position is
-        difficult to justify considering published discussions of the modeling process in respect of
-        the sources and impacts of uncertainties [see Beven, 1989, 2006; Oreskes et al.,
-        <?oxy_comment_start author="ward" timestamp="20151204T171645+1100" comment="Add own references"?>1994<?oxy_comment_end?>
-        ]. It is argued that this group of modellers have too much faith in the model representation
-        of physical laws or empirical equations. An alternative is a group of modellers who
-        inherently accept uncertainties in the modeling process, at least as a result of errors and
-        natural variability in time and space.</para>
-        <para>2. <emphasis role="bold">Uncertainty analysis is not useful in understanding
-          hydrological and hydraulic processes. </emphasis></para>
-        <para>To be able to learn about how water flows through the landscape and the best model to
-        represent this water flow requires the use of a
-        <?oxy_comment_start author="ward" timestamp="20151204T171457+1100" comment="Add refs to DK’s "?>hypothesis
-        testing framework<?oxy_comment_end?> . In real applications, this hypothesis testing
-        framework would evaluate different competing hypothesis (i.e. models) against the
-        observations, and should explicitly consider the potential sources of uncertainty in
-        applications to real systems to enable the results to be stated in a probabilistic rather
-        than a deterministic manner. This would enable evaluation of whether the differences in
-        model performance, can be reliability identified given the uncertainty in the predictions
-        and observations.</para>
-        <para>3. <emphasis role="bold">Uncertainty (probability) distributions cannot be understood
-          by policy makers and the public.</emphasis></para>
-        <para>[Pappenberger and Beven, 2006] cite several scientific studies that suggest decision
-          makers actually want to get a feeling for the range of uncertainty and the risk of
-          possible outcomes. Furthermore, policy makers derive decisions on a regular basis under
-          severe uncertainties. If uncertainty is not communicated and there is a misunderstanding
-          of the certainty of modeling results this can lead to a loss of credibility and trust in
-          the model and the modelling process. </para>
-        <para>However, it is acknowledge that there are a wide range of different perceptions of
-          “risk” and “uncertainty” and that effort is required on the part of both pracitioners and
-          policy-makers to work together to achieve a common understanding of uncertainty. </para>
-        <para>4.<emphasis role="bold"> Uncertainty analysis cannot be incorporated into the
-          decision-making process. </emphasis></para>
-        <para>There are two supporting arguments to this reason (1) Decisions are binary; (2)
-          Uncertainty bounds are too wide to be useful in decision making. [Pappenberger and Beven,
-          2006] conclude there is no question that, for many environmental systems, a rigorous
-          estimate of uncertainty leads to wide ranges of predictions. There are certainly cases in
-          which the predictive uncertainty for outcomes of different scenarios is significantly
-          larger than the differences between the expected values of those scenarios. This leads to
-          the perception that decisions are difficult to make. To counter these arguments,
-          [Pappenberger and Beven, 2006] present numerous examples from the literature on decision
-          support systems and decision analysis which provide a range of methods for decision making
-          under uncertainty based on assessments of the risk and costs of possible outcomes.
-          Examples of decisions under uncertainty for flood frequency analysis are illustrated by
-          [Wood and Rodríguez-Iturbe, 1975] and more recently by [Botto<emphasis role="italic"> et
-            al.</emphasis>, 2014]. The key outcome from [Botto<emphasis role="italic"> et
-            al.</emphasis>, 2014] was that incorporating uncertainty in estimating the design floods
-          (by minimising the total expected costs) leads to substantial higher estimates of the
-          design flood compared to standard approaches when uncertainty is ignored. This suggests
-          incorporating uncertainty leads to reduce expected costs and highlights the benefits of
-          incorporating uncertainty. </para>
-        <para>5. <emphasis role="bold">Uncertainty analysis is too
-          <?oxy_comment_start author="ward" timestamp="20151204T171718+1100" comment="Needs to be shortened"?>subjective<?oxy_comment_end?></emphasis></para>
-        <para>[Pappenberger and Beven, 2006] identify that in the application of uncertainty
-          analysis methods, certain decisions must be made, some of which include an element of
-          subjectivity, including the choice of probability distributions for data errors, prior
-          distributions for parameter uncertainty or predictive errors. In principle, many of these
-          assumptions can be checked as part of the analysis but it is common to find that not all
-          assumptions can be fully justified or some assumptions cannot be checked, and hence this
-          leads to the conclusion that predictions with uncertainty are too subjective.
-          [Pappenberger and Beven, 2006] conclude that implies that any analysis which does not
-          considering uncertainties in the modeling can be objective. This view is based on a
-          misplaced faith in deterministic modeling in the light of the inevitable uncertainty in
-          the modeling process (see also argument 1 above). Even a fully deterministic model run
-          requires necessarily subjective assumptions about model inputs and boundary conditions and
-          performance evaluation. The important issue is that the nature of the assumptions should
-          be made explicit so that they can be assessed and discussed. Uncertainty analysis provides
-          a set of tools to make these assumptions transparent and subject them to explicit
-          scrutiny. </para>
-        <para>6. <emphasis role="bold">Uncertainty analysis is too difficult to
-        perform</emphasis></para>
-        <para>[Pappenberger and Beven, 2006] note this is a common attitude amongst practitioners
-        and is consequence of the need to spend more time and money on assessing the different
-        potential sources of uncertainty in any particular application, coupled with a lack of clear
-        guidance about which methods might be useful in different circumstances. They note that in
-        general, uncertainty analysis is not too difficult to perform and provide list of relevant
-        software that is available. Since, [Pappenberger and Beven, 2006] review, the research
-        publications on uncertainty analysis in hydrological modelling has increased substantially,
-        with many new tools/techniques and reviews available (see for example the recent review by
-          [Uusitalo<emphasis role="italic"> et al.</emphasis>, 2015]. These tools will be reviewed
-        as part of
-        (<?oxy_comment_start author="ward" timestamp="20151204T171409+1100" comment="need to add"?>insert
-        ref<?oxy_comment_end?>) to provide guidance for practitioners on which is applicable for
-        different situations in the context of design flood estimation. The continued increases in
-        computational power have reduced the computational costs of uncertainty analysis, which
-        reduces the difficulty in undertaking uncertainty analysis. </para>
-        <para>In summary, [Pappenberger and Beven, 2006] conclude that in the past many modeling and
-        decision-making processes have ignored uncertainty analysis and it could be argued that
-        under many circumstances it simply would not have mattered to the eventual outcome. However,
-        they note that the arguments for uncertainty analysis
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>[after Morgan,
-        1994<?oxy_custom_end?>] are compelling because (1) it makes the modeller think about the
-        processes involved and the decisions based on our model results, (2) it makes predictions of
-        different experts more comparable and leads to a transparent science, (3) it allows a more
-        fundamental retrospective analysis and allows new or revised decisions to be based on the
-        full understanding of the problem and not only a partial snapshot, and (4) decision makers
-        and the public have the right to know all limitations in order to make up their own minds
-        and lobby for their individual causes . </para>
-      </section>
-      <section>
-        <title>Sources of uncertainty in context of design flood estimation</title>
-        <para>The previous section outlined the practical advantages of undertaking uncertainty
-          analysis. The first step of undertaking uncertainty analysis is to identify the various
-          sources of uncertainty in the modelling processes (see section X for more detailed
-          overview of these steps). To raise awareness of the various sources of uncertainty in the
-          context of design flood estimation, this section will outline the various sources of
-          uncertainty and identify how these sources of uncertainty manifest themselves in the two
-          common techniques used for design flood estimation; the flood frequency analysis and
-          catchment modelling approaches to design flood estimation. The primary drivers of each of
-          the sources of uncertainty will then also be discussed. </para>
-        <para>The various sources of uncertainty that are relevant to design flood estimation are
-          outlined as follows: </para>
-        <itemizedlist>
-          <listitem>
-            <para><emphasis role="bold">Predictive Uncertainty</emphasis></para>
-          </listitem>
-        </itemizedlist>
-        <para>Predictive uncertainty represents the total uncertainty in the predictions of
-          interest, typically the estimates of the design flood. It is comprised of the various
-          sources of uncertainty that are outlined below, including data uncertainty, parametric
-          uncertainty, structural uncertainty, regionalisation uncertainty (if relevant) and deep
-          uncertainty (if relevant). This total predictive uncertainty is what used as input to the
-          decision making uncertainty framework, to provide reliable predictions. The magnitude of
-          the total predictive uncertainty and the relative contribution of the various sources of
-          uncertainty is of obvious interest. The magnitude provides an indication of the total
-          uncertainty fo the predictions, while the relative contribution highlights which sources
-          of uncertainty are the key contributors and which can be reduced. </para>
-        <itemizedlist>
-          <listitem>
-            <para><emphasis role="bold">Data Uncertainty</emphasis></para>
-          </listitem>
-        </itemizedlist>
-        <para>Data uncertainty is a key source of predictive uncertainty. The more uncertain the
-        data used to inform the methods used to estimate the peak flows, the more uncertainty in the
-        predictions of the peak flows. The definition of “data” is a challenging one in the context
-        of design flood estimation since in each step of the modelling process, the data used an
-        input maybe based on the output of a prior modelling process, rather than actual
-        measurements. Data uncertainty is dependent on the quality and number of measurements
-        undertaken to inform that data.
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need some examples of
-        streamflow data and rainfall data uncertainty<?oxy_custom_end?></para>
-        <itemizedlist>
-          <listitem>
-            <para><emphasis role="bold">Parametric Uncertainty </emphasis></para>
-          </listitem>
-        </itemizedlist>
-        <para>Design flood estimates relay on using mathematical models to predict design floods.
-          These models are estimated using time series of uncertain data with finite length. These
-          limitations induce uncertainty in the estimates of these parameters, called parametric
-          uncertainty. This parametric uncertainty would occur even if the mathematical model were
-          exact. The magnitude of this parametric uncertainty, decreases as the length of the time
-          series of data increases and increases when the uncertainty of the data increases. When
-          time series are short and/or uncertainty in the data are high then parametric uncertainty
-          can contribute significantly to total predictive uncertainty. </para>
-        <itemizedlist>
-          <listitem>
-            <para><emphasis role="bold">Structural Uncertainty </emphasis></para>
-          </listitem>
-        </itemizedlist>
-        <para>Structural uncertainty refers to the uncertainty in the mathematical model used to
-        provide the predictions of the peak flows. It is a consequence of the simplifying
-        assumptions made in approximating the actual environmental system with a mathematical
-        hypothesis [Renard<emphasis role="italic"> et al.</emphasis>, 2010]. The structural error of
-        a hydrological model depends the model formulation, etc,.
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>need some examples of
-        structural uncertainty <?oxy_custom_end?></para>
-        <itemizedlist>
-          <listitem>
-            <para><emphasis role="bold">Regionalisation Uncertainty </emphasis></para>
-          </listitem>
-        </itemizedlist>
-        <para>Regionalisation uncertainty refers to the uncertainty induced when there is a
-        geographical migration of hydrological information from data rich location to a data-poor
-        location. This is an extension of the concepts of regionalisation of hydrological model
-        parameters, as outlined by [Buytaert and Beven, 2009]. In the context in of design flood
-        estimation is refers to any information that is transferred from one site to another, and
-        could include the parameters of the flood frequency distribution, the parameters of the
-        runoff routing model, the loss model or the design rainfall used in the catchment modelling
-        approach. Ii is a function of the predictive uncertainty of the original application of the
-        model at the data-rich location (which is a dependent on the structural, parametric and data
-        uncertainty at that data-rich site) and the regionalisation model used to transfer
-        information from one site to another. Given there are large number of sources of uncertainty
-        in regionalisation uncertainty, it can induce significant predictive uncertainty, when there
-        is very limited at-site data.
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need mention cases where
-        regional information can reduce uncertainty <?oxy_custom_end?></para>
-        <itemizedlist>
-          <listitem><para><emphasis role="bold">Deep
-              <?oxy_comment_start author="ward" timestamp="20151204T171856+1100" comment="Look in Holger Maiers recent papers for a definition "?>Uncertainty<?oxy_comment_end?>
-            </emphasis></para></listitem>
-        </itemizedlist>
-        <para>Deep uncertainty refers to the sources of uncertainty that impact on the robustness of
-        design but are difficult to assign apriori probabilities measures to. It acknowledges that
-        practitioners and decision makers may not be able to enumerate all sources of uncertainty in
-        a system nor their associated probabilities [Herman<emphasis role="italic"> et
-          al.</emphasis>, 2014]. It is related to the emerging field of robust decision making,
-        where it is assumed that future states of the world are deeply uncertainty and instead of
-        assigning probabilities, it seeks to identify robust strategies which perform well across
-        the range of plausible future states. In the context of design flood estimation, examples of
-        deep uncertainty could include the effects of climate change, because the different
-        scenarios used for future greenhouse gas emissions cannot be assigned probabilities, another
-        example might be future landuse changes within a catchment, because it depends on variety of
-        political, social and economic factors, which can be difficult to reliably assign
-        probabilities. This source of uncertainty requires a different approach to the other
-        sources, where scenario analysis is used to test the system and identify thresholds where
-        significant failures occur. This approach has seen recent application in analysing water
-        resources systems for long-term drought planning
-        <?oxy_comment_start author="ward" timestamp="20151204T171312+1100" comment="Need to add"?>(insert
-        refs<?oxy_comment_end?>), however the application in flood design is limited. Given this is
-        still a burgeoning area with significant research required, the approaches to treat this
-        source of uncertainty will not be further considered in the scope of this uncertainty in
-        ARR. </para>
-      </section>
-      <section>
-        <title><anchor xml:id="_Ref415574763"/>Raising awareness of the sources of uncertainty in
-          techniques used for design flood estimation </title>
-      <para>In this section, it will be illustrated how to identify the sources of uncertainty for
-        the two common techniques used for design flood estimation; flood frequency analysis and
-        catchment modelling. The identification of the sources of uncertainty involves the following
-        steps</para>
+
+      <para>From a practical and scientific perspective [Pappenberger and
+      Beven, 2006] provide an overview of the common reasons for not
+      undertaking uncertainty analysis for hydrological and hydraulic models
+      and argue that these arguments are not tenable. A summary of the reasons
+      provided by [Pappenberger and Beven, 2006] and their counter arguments
+      are summarized as follows:</para>
+
+      <para>1. <emphasis role="bold">Uncertainty analysis is not necessary
+      given physically realistic models.</emphasis></para>
+
+      <para>[Pappenberger and Beven, 2006] states there are a group of
+      modellers who believe that their models are (or at least will be in the
+      future) physically correct and thus parameter calibration or uncertainty
+      analysis should not be necessary (or only minimal) if predictions are
+      based on a true understanding of the physics of the system simulated.
+      This position is difficult to justify considering published discussions
+      of the modeling process in respect of the sources and impacts of
+      uncertainties [see Beven, 1989, 2006; Oreskes et al.,
+      <?oxy_comment_start author="ward" timestamp="20151204T171645+1100" comment="Add own references"?>1994<?oxy_comment_end ?>
+      ]. It is argued that this group of modellers have too much faith in the
+      model representation of physical laws or empirical equations. An
+      alternative is a group of modellers who inherently accept uncertainties
+      in the modeling process, at least as a result of errors and natural
+      variability in time and space.</para>
+
+      <para>2. <emphasis role="bold">Uncertainty analysis is not useful in
+      understanding hydrological and hydraulic processes. </emphasis></para>
+
+      <para>To be able to learn about how water flows through the landscape
+      and the best model to represent this water flow requires the use of a
+      <?oxy_comment_start author="ward" timestamp="20151204T171457+1100" comment="Add refs to DK’s "?>hypothesis
+      testing framework<?oxy_comment_end ?> . In real applications, this
+      hypothesis testing framework would evaluate different competing
+      hypothesis (i.e. models) against the observations, and should explicitly
+      consider the potential sources of uncertainty in applications to real
+      systems to enable the results to be stated in a probabilistic rather
+      than a deterministic manner. This would enable evaluation of whether the
+      differences in model performance, can be reliability identified given
+      the uncertainty in the predictions and observations.</para>
+
+      <para>3. <emphasis role="bold">Uncertainty (probability) distributions
+      cannot be understood by policy makers and the public.</emphasis></para>
+
+      <para>[Pappenberger and Beven, 2006] cite several scientific studies
+      that suggest decision makers actually want to get a feeling for the
+      range of uncertainty and the risk of possible outcomes. Furthermore,
+      policy makers derive decisions on a regular basis under severe
+      uncertainties. If uncertainty is not communicated and there is a
+      misunderstanding of the certainty of modeling results this can lead to a
+      loss of credibility and trust in the model and the modelling
+      process.</para>
+
+      <para>However, it is acknowledge that there are a wide range of
+      different perceptions of “risk” and “uncertainty” and that effort is
+      required on the part of both pracitioners and policy-makers to work
+      together to achieve a common understanding of uncertainty.</para>
+
+      <para>4.<emphasis role="bold"> Uncertainty analysis cannot be
+      incorporated into the decision-making process. </emphasis></para>
+
+      <para>There are two supporting arguments to this reason (1) Decisions
+      are binary; (2) Uncertainty bounds are too wide to be useful in decision
+      making. [Pappenberger and Beven, 2006] conclude there is no question
+      that, for many environmental systems, a rigorous estimate of uncertainty
+      leads to wide ranges of predictions. There are certainly cases in which
+      the predictive uncertainty for outcomes of different scenarios is
+      significantly larger than the differences between the expected values of
+      those scenarios. This leads to the perception that decisions are
+      difficult to make. To counter these arguments, [Pappenberger and Beven,
+      2006] present numerous examples from the literature on decision support
+      systems and decision analysis which provide a range of methods for
+      decision making under uncertainty based on assessments of the risk and
+      costs of possible outcomes. Examples of decisions under uncertainty for
+      flood frequency analysis are illustrated by [Wood and Rodríguez-Iturbe,
+      1975] and more recently by [Botto<emphasis role="italic"> et
+      al.</emphasis>, 2014]. The key outcome from [Botto<emphasis
+      role="italic"> et al.</emphasis>, 2014] was that incorporating
+      uncertainty in estimating the design floods (by minimising the total
+      expected costs) leads to substantial higher estimates of the design
+      flood compared to standard approaches when uncertainty is ignored. This
+      suggests incorporating uncertainty leads to reduce expected costs and
+      highlights the benefits of incorporating uncertainty.</para>
+
+      <para>5. <emphasis role="bold">Uncertainty analysis is too
+      <?oxy_comment_start author="ward" timestamp="20151204T171718+1100" comment="Needs to be shortened"?>subjective<?oxy_comment_end ?></emphasis></para>
+
+      <para>[Pappenberger and Beven, 2006] identify that in the application of
+      uncertainty analysis methods, certain decisions must be made, some of
+      which include an element of subjectivity, including the choice of
+      probability distributions for data errors, prior distributions for
+      parameter uncertainty or predictive errors. In principle, many of these
+      assumptions can be checked as part of the analysis but it is common to
+      find that not all assumptions can be fully justified or some assumptions
+      cannot be checked, and hence this leads to the conclusion that
+      predictions with uncertainty are too subjective. [Pappenberger and
+      Beven, 2006] conclude that implies that any analysis which does not
+      considering uncertainties in the modeling can be objective. This view is
+      based on a misplaced faith in deterministic modeling in the light of the
+      inevitable uncertainty in the modeling process (see also argument 1
+      above). Even a fully deterministic model run requires necessarily
+      subjective assumptions about model inputs and boundary conditions and
+      performance evaluation. The important issue is that the nature of the
+      assumptions should be made explicit so that they can be assessed and
+      discussed. Uncertainty analysis provides a set of tools to make these
+      assumptions transparent and subject them to explicit scrutiny.</para>
+
+      <para>6. <emphasis role="bold">Uncertainty analysis is too difficult to
+      perform</emphasis></para>
+
+      <para>[Pappenberger and Beven, 2006] note this is a common attitude
+      amongst practitioners and is consequence of the need to spend more time
+      and money on assessing the different potential sources of uncertainty in
+      any particular application, coupled with a lack of clear guidance about
+      which methods might be useful in different circumstances. They note that
+      in general, uncertainty analysis is not too difficult to perform and
+      provide list of relevant software that is available. Since,
+      [Pappenberger and Beven, 2006] review, the research publications on
+      uncertainty analysis in hydrological modelling has increased
+      substantially, with many new tools/techniques and reviews available (see
+      for example the recent review by [Uusitalo<emphasis role="italic"> et
+      al.</emphasis>, 2015]. These tools will be reviewed as part of
+      (<?oxy_comment_start author="ward" timestamp="20151204T171409+1100" comment="need to add"?>insert
+      ref<?oxy_comment_end ?>) to provide guidance for practitioners on which
+      is applicable for different situations in the context of design flood
+      estimation. The continued increases in computational power have reduced
+      the computational costs of uncertainty analysis, which reduces the
+      difficulty in undertaking uncertainty analysis.</para>
+
+      <para>In summary, [Pappenberger and Beven, 2006] conclude that in the
+      past many modeling and decision-making processes have ignored
+      uncertainty analysis and it could be argued that under many
+      circumstances it simply would not have mattered to the eventual outcome.
+      However, they note that the arguments for uncertainty analysis
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>[after
+      Morgan, 1994<?oxy_custom_end ?>] are compelling because (1) it makes the
+      modeller think about the processes involved and the decisions based on
+      our model results, (2) it makes predictions of different experts more
+      comparable and leads to a transparent science, (3) it allows a more
+      fundamental retrospective analysis and allows new or revised decisions
+      to be based on the full understanding of the problem and not only a
+      partial snapshot, and (4) decision makers and the public have the right
+      to know all limitations in order to make up their own minds and lobby
+      for their individual causes .</para>
+    </section>
+
+    <section>
+      <title>Sources of uncertainty in context of design flood
+      estimation</title>
+
+      <para>The previous section outlined the practical advantages of
+      undertaking uncertainty analysis. The first step of undertaking
+      uncertainty analysis is to identify the various sources of uncertainty
+      in the modelling processes (see section X for more detailed overview of
+      these steps). To raise awareness of the various sources of uncertainty
+      in the context of design flood estimation, this section will outline the
+      various sources of uncertainty and identify how these sources of
+      uncertainty manifest themselves in the two common techniques used for
+      design flood estimation; the flood frequency analysis and catchment
+      modelling approaches to design flood estimation. The primary drivers of
+      each of the sources of uncertainty will then also be discussed.</para>
+
+      <para>The various sources of uncertainty that are relevant to design
+      flood estimation are outlined as follows:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Predictive Uncertainty</emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Predictive uncertainty represents the total uncertainty in the
+      predictions of interest, typically the estimates of the design flood. It
+      is comprised of the various sources of uncertainty that are outlined
+      below, including data uncertainty, parametric uncertainty, structural
+      uncertainty, regionalisation uncertainty (if relevant) and deep
+      uncertainty (if relevant). This total predictive uncertainty is what
+      used as input to the decision making uncertainty framework, to provide
+      reliable predictions. The magnitude of the total predictive uncertainty
+      and the relative contribution of the various sources of uncertainty is
+      of obvious interest. The magnitude provides an indication of the total
+      uncertainty fo the predictions, while the relative contribution
+      highlights which sources of uncertainty are the key contributors and
+      which can be reduced.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Data Uncertainty</emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Data uncertainty is a key source of predictive uncertainty. The
+      more uncertain the data used to inform the methods used to estimate the
+      peak flows, the more uncertainty in the predictions of the peak flows.
+      The definition of “data” is a challenging one in the context of design
+      flood estimation since in each step of the modelling process, the data
+      used an input maybe based on the output of a prior modelling process,
+      rather than actual measurements. Data uncertainty is dependent on the
+      quality and number of measurements undertaken to inform that data.
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need
+      some examples of streamflow data and rainfall data
+      uncertainty<?oxy_custom_end ?></para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Parametric Uncertainty
+          </emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Design flood estimates relay on using mathematical models to
+      predict design floods. These models are estimated using time series of
+      uncertain data with finite length. These limitations induce uncertainty
+      in the estimates of these parameters, called parametric uncertainty.
+      This parametric uncertainty would occur even if the mathematical model
+      were exact. The magnitude of this parametric uncertainty, decreases as
+      the length of the time series of data increases and increases when the
+      uncertainty of the data increases. When time series are short and/or
+      uncertainty in the data are high then parametric uncertainty can
+      contribute significantly to total predictive uncertainty.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Structural Uncertainty
+          </emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Structural uncertainty refers to the uncertainty in the
+      mathematical model used to provide the predictions of the peak flows. It
+      is a consequence of the simplifying assumptions made in approximating
+      the actual environmental system with a mathematical hypothesis
+      [Renard<emphasis role="italic"> et al.</emphasis>, 2010]. The structural
+      error of a hydrological model depends the model formulation, etc,.
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>need
+      some examples of structural uncertainty <?oxy_custom_end ?></para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Regionalisation Uncertainty
+          </emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Regionalisation uncertainty refers to the uncertainty induced when
+      there is a geographical migration of hydrological information from data
+      rich location to a data-poor location. This is an extension of the
+      concepts of regionalisation of hydrological model parameters, as
+      outlined by [Buytaert and Beven, 2009]. In the context in of design
+      flood estimation is refers to any information that is transferred from
+      one site to another, and could include the parameters of the flood
+      frequency distribution, the parameters of the runoff routing model, the
+      loss model or the design rainfall used in the catchment modelling
+      approach. Ii is a function of the predictive uncertainty of the original
+      application of the model at the data-rich location (which is a dependent
+      on the structural, parametric and data uncertainty at that data-rich
+      site) and the regionalisation model used to transfer information from
+      one site to another. Given there are large number of sources of
+      uncertainty in regionalisation uncertainty, it can induce significant
+      predictive uncertainty, when there is very limited at-site data.
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Need
+      mention cases where regional information can reduce uncertainty
+      <?oxy_custom_end ?></para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Deep <?oxy_comment_start author="ward" timestamp="20151204T171856+1100" comment="Look in Holger Maiers recent papers for a definition "?>Uncertainty<?oxy_comment_end ?>
+          </emphasis></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Deep uncertainty refers to the sources of uncertainty that impact
+      on the robustness of design but are difficult to assign apriori
+      probabilities measures to. It acknowledges that practitioners and
+      decision makers may not be able to enumerate all sources of uncertainty
+      in a system nor their associated probabilities [Herman<emphasis
+      role="italic"> et al.</emphasis>, 2014]. It is related to the emerging
+      field of robust decision making, where it is assumed that future states
+      of the world are deeply uncertainty and instead of assigning
+      probabilities, it seeks to identify robust strategies which perform well
+      across the range of plausible future states. In the context of design
+      flood estimation, examples of deep uncertainty could include the effects
+      of climate change, because the different scenarios used for future
+      greenhouse gas emissions cannot be assigned probabilities, another
+      example might be future landuse changes within a catchment, because it
+      depends on variety of political, social and economic factors, which can
+      be difficult to reliably assign probabilities. This source of
+      uncertainty requires a different approach to the other sources, where
+      scenario analysis is used to test the system and identify thresholds
+      where significant failures occur. This approach has seen recent
+      application in analysing water resources systems for long-term drought
+      planning <?oxy_comment_start author="ward" timestamp="20151204T171312+1100" comment="Need to add"?>(insert
+      refs<?oxy_comment_end ?>), however the application in flood design is
+      limited. Given this is still a burgeoning area with significant research
+      required, the approaches to treat this source of uncertainty will not be
+      further considered in the scope of this uncertainty in ARR.</para>
+    </section>
+
+    <section>
+      <title><anchor xml:id="_Ref415574763"/>Raising awareness of the sources
+      of uncertainty in techniques used for design flood estimation</title>
+
+      <para>In this section, it will be illustrated how to identify the
+      sources of uncertainty for the two common techniques used for design
+      flood estimation; flood frequency analysis and catchment modelling. The
+      identification of the sources of uncertainty involves the following
+      steps</para>
+
       <orderedlist>
         <listitem>
-          <para>Identify the information required for each step of the methods</para>
+          <para>Identify the information required for each step of the
+          methods</para>
         </listitem>
+
         <listitem>
-          <para>Identify the potential sources of uncertainty in the information required for each
-            of the steps</para>
+          <para>Identify the potential sources of uncertainty in the
+          information required for each of the steps</para>
         </listitem>
       </orderedlist>
-      <para>Uncertainty is related to the level of information (i.e. available of at-site data, its
-        length and quality). For the purposes of this illustration, two different scenarios of
-        available information will be considered (a) Using at-site data (b) No at-site data
-        available, using regional information only. In practise, the level of information will be
-        commonly be somewhere in between these two scenario, nonetheless these two scenarios provide
-        convenient “use” case, to illustrate the identification of the sources of
-        uncertainty.</para>
-      <para>The relative contribution of each of these sources of uncertainty to the total
-        predictive uncertainty is catchment specific, and depend on a range of factors (outlined
-        below). Hence, to evaluate and determine the dominant source of uncertainty in a particular
-        catchment requires a rigourous uncertainty analysis. Hence the following description will
-        focus on describing the various source of uncertainty for each of the steps in both ffa and
-        CM and identify the factors that will impact on the magnitude of that particular source. In
-        any particular combination of information available means that one source could dominant the
-        other. Hence in the following descriptions, each uncertainty source will not be described as
-        low or high, rather the description will identify what increases or decreases the magnitude
-        of the sources uncertainty. </para>
+
+      <para>Uncertainty is related to the level of information (i.e. available
+      of at-site data, its length and quality). For the purposes of this
+      illustration, two different scenarios of available information will be
+      considered (a) Using at-site data (b) No at-site data available, using
+      regional information only. In practise, the level of information will be
+      commonly be somewhere in between these two scenario, nonetheless these
+      two scenarios provide convenient “use” case, to illustrate the
+      identification of the sources of uncertainty.</para>
+
+      <para>The relative contribution of each of these sources of uncertainty
+      to the total predictive uncertainty is catchment specific, and depend on
+      a range of factors (outlined below). Hence, to evaluate and determine
+      the dominant source of uncertainty in a particular catchment requires a
+      rigourous uncertainty analysis. Hence the following description will
+      focus on describing the various source of uncertainty for each of the
+      steps in both ffa and CM and identify the factors that will impact on
+      the magnitude of that particular source. In any particular combination
+      of information available means that one source could dominant the other.
+      Hence in the following descriptions, each uncertainty source will not be
+      described as low or high, rather the description will identify what
+      increases or decreases the magnitude of the sources uncertainty.</para>
+
       <para>FFA</para>
+
       <orderedlist>
         <listitem>
           <para>Estimate flood frequency distribution (FFD) parameters</para>
-            <orderedlist numeration = "loweralpha">
+
+          <orderedlist numeration="loweralpha">
             <listitem>
               <para>Using at-site data</para>
-            
-          
-        
-      
-      <para>Data uncertainty</para>
-      <para>When using at-site streamflow data to estimate the FFD, the data uncertainty in this
-        streamflow data is a source of uncertainty. The factors that effect the magnitude of this
-        source of uncertainty are primarily the quality of the rating curve used to estimate the
-        streamflow, the number of gaugings (and their quality), the degree of extrapolation of the
-        rating, the stability of the rating curve, among others, insert refs to BARATIN</para>
-      <para>Parametric Uncertainty</para>
-      <para>As parameters of the FFD are estimated based on limited time series of data, this
-        induces uncertainty in the parameters. This parametric uncertainty is determined by the
-        length of data (uncertainty increases as the length decreases) and the quality of the data
-        (parametric uncertainty increases as data uncertainty increases) </para>
-      <para>Structural Uncertainty</para>
-      <para>The source of structural uncertainty is the assumed form of the food frequency
-        distribution probability model, i.e. log-normal, log pearson III etc. When calibrating to
-        as-site data, this source of uncertainty can be checked by comparing against the observed
-        data, to determine if the quality of the fit to observed data. </para>
+
+              <para>Data uncertainty</para>
+
+              <para>When using at-site streamflow data to estimate the FFD,
+              the data uncertainty in this streamflow data is a source of
+              uncertainty. The factors that effect the magnitude of this
+              source of uncertainty are primarily the quality of the rating
+              curve used to estimate the streamflow, the number of gaugings
+              (and their quality), the degree of extrapolation of the rating,
+              the stability of the rating curve, among others, insert refs to
+              BARATIN</para>
+
+              <para>Parametric Uncertainty</para>
+
+              <para>As parameters of the FFD are estimated based on limited
+              time series of data, this induces uncertainty in the parameters.
+              This parametric uncertainty is determined by the length of data
+              (uncertainty increases as the length decreases) and the quality
+              of the data (parametric uncertainty increases as data
+              uncertainty increases)</para>
+
+              <para>Structural Uncertainty</para>
+
+              <para>The source of structural uncertainty is the assumed form
+              of the food frequency distribution probability model, i.e.
+              log-normal, log pearson III etc. When calibrating to as-site
+              data, this source of uncertainty can be checked by comparing
+              against the observed data, to determine if the quality of the
+              fit to observed data.</para>
             </listitem>
+
+            <listitem>
+              <para>Using regional information without at-site data</para>
+
+              <para>Data, Parametric, and Structural uncertainty</para>
+
+              <para>When there is no at-site data, then regional information
+              is used to inform the parameters and the choice of the
+              probability model used for the flood frequency distribution. For
+              this case, there data uncertainty is not a source of
+              uncertainty, however the parametric uncertainty is higher than
+              case (a), because no as-site data is available, and the
+              structural uncertainty is also high than case (a) because no
+              at-site data is available to evaluated if the chosen probability
+              model for the flood frequency distribution is
+              appropriate.</para>
+
+              <para>Regionalisation Uncertainty</para>
+
+              <para>When using regional information there is also
+              regionalisation uncertainty because the parameters of the flood
+              frequency has been transferred from another catchment. All the
+              sources of uncertainty that contribute to the regionalisation
+              uncertainty as described previously will be relevant to this
+              source of uncertainty</para>
+            </listitem>
+          </orderedlist>
+        </listitem>
+
         <listitem>
-          <para>Using regional information without at-site data</para>
-        
-      
-      <para>Data, Parametric, and Structural uncertainty</para>
-      <para>When there is no at-site data, then regional information is used to inform the
-        parameters and the choice of the probability model used for the flood frequency
-        distribution. For this case, there data uncertainty is not a source of uncertainty, however
-        the parametric uncertainty is higher than case (a), because no as-site data is available,
-        and the structural uncertainty is also high than case (a) because no at-site data is
-        available to evaluated if the chosen probability model for the flood frequency distribution
-        is appropriate. </para>
-      <para>Regionalisation Uncertainty</para>
-      <para>When using regional information there is also regionalisation uncertainty because the
-        parameters of the flood frequency has been transferred from another catchment. All the
-        sources of uncertainty that contribute to the regionalisation uncertainty as described
-        previously will be relevant to this source of uncertainty </para>
-      
-        </listitem>
-      </orderedlist>
-        </listitem>
-          <listitem>
           <para>Predicting design floods using FFA</para>
-        
-      
-      <para>In this step 2 of predicting design floods using FFA, the data, parametric and
-        structural uncertainty sources identified in step 1 will be present. A additional
-        contributor to the structural uncertainty when predicting design floods with AEP beyond the
-        range of the streamdata (eg. AEP of 1 in 100 year based on 30 years of streamflow data) is
-        the assumption that the chosen probability model will provide a reliable estimate of design
-        floods under extrapolation to the the AEP 1 in 100 year or 1 in 200 year flood. This
-        additional source of structural uncertainty will be present, irrespective of case (a) or
-        case (b) levels of information. A longer time series of at-site streamflow data, and hence a
-        lower degree of extrapolation will decrease, but not eliminate, he magnitude of this source
-        of uncertainty.</para>
+
+          <para>In this step 2 of predicting design floods using FFA, the
+          data, parametric and structural uncertainty sources identified in
+          step 1 will be present. A additional contributor to the structural
+          uncertainty when predicting design floods with AEP beyond the range
+          of the streamdata (eg. AEP of 1 in 100 year based on 30 years of
+          streamflow data) is the assumption that the chosen probability model
+          will provide a reliable estimate of design floods under
+          extrapolation to the the AEP 1 in 100 year or 1 in 200 year flood.
+          This additional source of structural uncertainty will be present,
+          irrespective of case (a) or case (b) levels of information. A longer
+          time series of at-site streamflow data, and hence a lower degree of
+          extrapolation will decrease, but not eliminate, he magnitude of this
+          source of uncertainty.</para>
         </listitem>
       </orderedlist>
-        <para><emphasis role="bold">Catchment Modeling (CM) approach to estimating design
-          floods</emphasis></para>
-      <para>The catchment modelling approach to design flood estimation relies on estimates of the
-        design rainfall, which is converted into effective rainfall using a loss model and then used
-        as input into runoff-routing model (calibrated to a limited number of rainfall-runoff
-        events) to simulated flow events and therefore provide estimates of the design flood. The
-        steps of this approach are at (1) Estimate the parameters of runoff-routing model (2)
-        Estimate the loss model parameters (3) Estimate the design rainfall and </para>
+
+      <para><emphasis role="bold">Catchment Modeling (CM) approach to
+      estimating design floods</emphasis></para>
+
+      <para>The catchment modelling approach to design flood estimation relies
+      on estimates of the design rainfall, which is converted into effective
+      rainfall using a loss model and then used as input into runoff-routing
+      model (calibrated to a limited number of rainfall-runoff events) to
+      simulated flow events and therefore provide estimates of the design
+      flood. The steps of this approach are at (1) Estimate the parameters of
+      runoff-routing model (2) Estimate the loss model parameters (3) Estimate
+      the design rainfall and</para>
+
       <orderedlist>
         <listitem>
-        <para>Estimate runoff-routing model and loss model parameters</para>
-      <para>The parameters for the runoff-routing model and the loss model are usually calibrated
-        jointly using rainfall-runoff events in a given catchment. There are distinct components of
-        the catchment modelling processes, however as their sources of uncertainty are similar, they
-        will be discussed together. </para>
-      <orderedlist numeration = "loweralpha">
-        <listitem> 
-        <para> Using at-site data</para>
-      <para>Data Uncertainty </para>
-      <para>Runoff-routing models (e.g. RORB) and loss models (e.g. required in the catchment
-        modelling approach are typically calibrated to at-site rainfall-runoff event data. In this
-        calibration step, the data uncertainty is the uncertainty in the streamflow data (discussed
-        previously) and the additional uncertainty in the rainfall data, which as discussed
-        previously, increases as the rainfall gauge density within the catchment decreases. </para>
-      <para>Parametric Uncertainty</para>
-      <para>The runoff-routing model loss model have parameters estimated through calibration to a
-        limited number of rainfall-runoff events. This source of parametric uncertainty will
-        decreases as the number of events decreases, and the consistency of the parameter estimates
-        between events also increases. If the parameter estimates vary significantly between events,
-        this will increase the parametric uncertainty</para>
-      <para>Structural Uncertainty</para>
-      <para>As the runoff routing model and the loss models represents a mathematical simplification
-        of the actual catchment processes, will be a source of structural uncertainty. As the fit to
-        the data used for calibration increases this source of uncertainty will decrease, but will
-        not be eliminated. If the complexity of the runoff-routing model increases, e.g. move from
-        lumped to a spatially distributed model, may potentially decreased the structural
-        uncertainty, however, with a spatially distributed model the challenge becomes estimating
-        the parameters over a spatial grid. Hence, if there is a lack of spatial streamflow and
-        rainfall data to calibrate the model, than there is a potentially a shift from structural
-        uncertainty to parametric uncertainty, which may results in no reduction the total
-        predictive uncertainty.</para>
-        </listitem> 
-        <listitem>
-          <para>Regional information only</para>
-      <para>Data, Parametric, and Structural uncertainty</para>
-      <para>Similar to FFA, when there is no at-site data, the regional information is used to
-        inform the parameter estimates, and choice of runoff-routing and loss model. For this case,
-        there is data uncertainty is not a source of uncertainty, however the parametric uncertainty
-        is higher than case (a), because no as-site data is available, and the structural
-        uncertainty is also high than case (a) because no at-site data is available to evaluated if
-        the runoff-routing model or loss model is is appropriate.</para>
-      <para>Regionalisation Uncertainty</para>
-      <para>When using regional information there is also regionalisation uncertainty because the
-        parameters of the runoff-routing model and loss model have been transferred from another
-        catchment. All the sources of uncertainty that contribute to the regionalisation uncertainty
-        as described previously will be relevant to this source of uncertainty, but they will apply
-        both to the loss model and the runoff-routing model. In comparison to regionalisation of
-        flood frequency distribution which is relatively well advanced
-        <?oxy_comment_start author="ward" timestamp="20151204T173319+1100" comment="Need to add. "?>(insert
-        refs)<?oxy_comment_end?> , the regionalisation of runoff-routing models and loss models is
-        still relatively unreliable (insert refs) and hence the regionalisation uncertainty of
-        runoff-routing and loss models is likely to far larger than regionalisation of flood
-        frequency distributions. </para>
+          <para>Estimate runoff-routing model and loss model parameters</para>
+
+          <para>The parameters for the runoff-routing model and the loss model
+          are usually calibrated jointly using rainfall-runoff events in a
+          given catchment. There are distinct components of the catchment
+          modelling processes, however as their sources of uncertainty are
+          similar, they will be discussed together.</para>
+
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>Using at-site data</para>
+
+              <para>Data Uncertainty</para>
+
+              <para>Runoff-routing models (e.g. RORB) and loss models (e.g.
+              required in the catchment modelling approach are typically
+              calibrated to at-site rainfall-runoff event data. In this
+              calibration step, the data uncertainty is the uncertainty in the
+              streamflow data (discussed previously) and the additional
+              uncertainty in the rainfall data, which as discussed previously,
+              increases as the rainfall gauge density within the catchment
+              decreases.</para>
+
+              <para>Parametric Uncertainty</para>
+
+              <para>The runoff-routing model loss model have parameters
+              estimated through calibration to a limited number of
+              rainfall-runoff events. This source of parametric uncertainty
+              will decreases as the number of events decreases, and the
+              consistency of the parameter estimates between events also
+              increases. If the parameter estimates vary significantly between
+              events, this will increase the parametric uncertainty</para>
+
+              <para>Structural Uncertainty</para>
+
+              <para>As the runoff routing model and the loss models represents
+              a mathematical simplification of the actual catchment processes,
+              will be a source of structural uncertainty. As the fit to the
+              data used for calibration increases this source of uncertainty
+              will decrease, but will not be eliminated. If the complexity of
+              the runoff-routing model increases, e.g. move from lumped to a
+              spatially distributed model, may potentially decreased the
+              structural uncertainty, however, with a spatially distributed
+              model the challenge becomes estimating the parameters over a
+              spatial grid. Hence, if there is a lack of spatial streamflow
+              and rainfall data to calibrate the model, than there is a
+              potentially a shift from structural uncertainty to parametric
+              uncertainty, which may results in no reduction the total
+              predictive uncertainty.</para>
+            </listitem>
+
+            <listitem>
+              <para>Regional information only</para>
+
+              <para>Data, Parametric, and Structural uncertainty</para>
+
+              <para>Similar to FFA, when there is no at-site data, the
+              regional information is used to inform the parameter estimates,
+              and choice of runoff-routing and loss model. For this case,
+              there is data uncertainty is not a source of uncertainty,
+              however the parametric uncertainty is higher than case (a),
+              because no as-site data is available, and the structural
+              uncertainty is also high than case (a) because no at-site data
+              is available to evaluated if the runoff-routing model or loss
+              model is is appropriate.</para>
+
+              <para>Regionalisation Uncertainty</para>
+
+              <para>When using regional information there is also
+              regionalisation uncertainty because the parameters of the
+              runoff-routing model and loss model have been transferred from
+              another catchment. All the sources of uncertainty that
+              contribute to the regionalisation uncertainty as described
+              previously will be relevant to this source of uncertainty, but
+              they will apply both to the loss model and the runoff-routing
+              model. In comparison to regionalisation of flood frequency
+              distribution which is relatively well advanced
+              <?oxy_comment_start author="ward" timestamp="20151204T173319+1100" comment="Need to add. "?>(insert
+              refs)<?oxy_comment_end ?> , the regionalisation of
+              runoff-routing models and loss models is still relatively
+              unreliable (insert refs) and hence the regionalisation
+              uncertainty of runoff-routing and loss models is likely to far
+              larger than regionalisation of flood frequency
+              distributions.</para>
+            </listitem>
+          </orderedlist>
         </listitem>
-      </orderedlist>
-        </listitem>
+
         <listitem>
-        <para>Estimating design rainfall and the temporal and spatial patterns</para>
-      <para>In the majority of cases practitioners will use the design rainfall estimates provided
-        by the Bureau of Meteorology, rather than undertake an IFD analysis of the observed rainfall
-        data within a catchment, hence only the case when regional information is available will be
-        considered in this description. There are many similarities to sources of uncertainty in the
-        FFA, except the goal is to estimate extreme rainfall events rather than flow events. </para>
-      <para>Data, Parametric, Structural and Regionalisation Uncertainty, </para>
-      <para>The source of data uncertainty is rainfall gauge density and the length of rainfall data
-        across Australia, is highly variable in different parts of Australia and with far lower
-        gauge density and shorter records for subdaily rainfall data then daily. This can induce
-        significant data uncertainty in the design rainfall estimates. Similar to FFA, a probability
-        model is used to estimate the extreme rainfall events (e.g. AEP of 1 in 100 year) based on
-        the limited rainfall data available. This probability model has parametric uncertainty,
-        which increases as the length and quality of the rainfall data decreases. There is
-        structural uncertainty in the choice of the probability model for extreme rainfall, and this
-        is increased when the probability model is used to extrapolate to from shorter rainfall time
-        series to extreme events. This is particular problematic for subdaily rainfall, because
-        records are typically shorter than daily rainfall data. There is regionalisation uncertainty
-        because the design rainfall estimates are regionalised to areas with limited gauged data. </para>
-      <para>This design rainfall for an event is then disaggregated into a time series using
-        temporal patterns, they have their own sources of data, parametric, structural and
-        regionalisation uncertainty, because they are estimated based on rainfall data from outside
-        the catchment of interest. If spatial patterns are used to distribute design rainfall
-        spatially across a catchment, then they will similar sources of uncertainty. </para>
-      <para>Considering the high spatial and temporal variability of rainfall process these
-        uncertainties in design rainfall are unlikely to be small. </para>
-      </listitem>
+          <para>Estimating design rainfall and the temporal and spatial
+          patterns</para>
+
+          <para>In the majority of cases practitioners will use the design
+          rainfall estimates provided by the Bureau of Meteorology, rather
+          than undertake an IFD analysis of the observed rainfall data within
+          a catchment, hence only the case when regional information is
+          available will be considered in this description. There are many
+          similarities to sources of uncertainty in the FFA, except the goal
+          is to estimate extreme rainfall events rather than flow
+          events.</para>
+
+          <para>Data, Parametric, Structural and Regionalisation
+          Uncertainty,</para>
+
+          <para>The source of data uncertainty is rainfall gauge density and
+          the length of rainfall data across Australia, is highly variable in
+          different parts of Australia and with far lower gauge density and
+          shorter records for subdaily rainfall data then daily. This can
+          induce significant data uncertainty in the design rainfall
+          estimates. Similar to FFA, a probability model is used to estimate
+          the extreme rainfall events (e.g. AEP of 1 in 100 year) based on the
+          limited rainfall data available. This probability model has
+          parametric uncertainty, which increases as the length and quality of
+          the rainfall data decreases. There is structural uncertainty in the
+          choice of the probability model for extreme rainfall, and this is
+          increased when the probability model is used to extrapolate to from
+          shorter rainfall time series to extreme events. This is particular
+          problematic for subdaily rainfall, because records are typically
+          shorter than daily rainfall data. There is regionalisation
+          uncertainty because the design rainfall estimates are regionalised
+          to areas with limited gauged data.</para>
+
+          <para>This design rainfall for an event is then disaggregated into a
+          time series using temporal patterns, they have their own sources of
+          data, parametric, structural and regionalisation uncertainty,
+          because they are estimated based on rainfall data from outside the
+          catchment of interest. If spatial patterns are used to distribute
+          design rainfall spatially across a catchment, then they will similar
+          sources of uncertainty.</para>
+
+          <para>Considering the high spatial and temporal variability of
+          rainfall process these uncertainties in design rainfall are unlikely
+          to be small.</para>
+        </listitem>
+
         <listitem>
           <para>Predicting design floods using catchment models</para>
-        
-      
-      <para>When a catchment modelling approaches is used to predict design floods, the data,
-        parametric, structural and regionalistion uncertainty identified in steps 1-2 will be
-        present. There are two sources of addition uncertainty, parameter uncertainty and structural
-        uncertainty. These sources of uncertainty are because the runoff-routing and loss models in
-        step 1 are calibrated on runoff events are then extrapolated to larger design flow events,
-        e.g. 1 in 100 year AEP. The source of uncertainty is whether the parameters and model
-        structural based on calibrations to (inevitable) smaller rainfall-runoff events can be
-        applied to the larger design flow events.</para>
-      <para>Total predictive uncertainty</para>
-      <para><xref linkend="b1_ch2_t_o0gf8"/> provides a summary of the various sources of
-            uncertainty for the two different techniques (flood frequency analysis versus catchment
-            modelling) for design flood estimation. It can be seen that due to the larger number of
-            components in the catchment modelling, there are a greater number of sources of
-            uncertainty in this process, compared with flood frequency analysis. Typically when
-            there are a larger number of sources of uncertainty the total predictive uncertainty is
-            higher. Based on this analysis it can be concluded that catchment modelling is likely to
-            have a higher total predictive uncertainty compared with flood frequency analysis.
-            However, the relative magnitude of the total predictive uncertainty for the two
-            different techniques would vary on a catchment basis. </para>
+
+          <para>When a catchment modelling approaches is used to predict
+          design floods, the data, parametric, structural and regionalistion
+          uncertainty identified in steps 1-2 will be present. There are two
+          sources of addition uncertainty, parameter uncertainty and
+          structural uncertainty. These sources of uncertainty are because the
+          runoff-routing and loss models in step 1 are calibrated on runoff
+          events are then extrapolated to larger design flow events, e.g. 1 in
+          100 year AEP. The source of uncertainty is whether the parameters
+          and model structural based on calibrations to (inevitable) smaller
+          rainfall-runoff events can be applied to the larger design flow
+          events.</para>
+
+          <para>Total predictive uncertainty</para>
+
+          <para><xref linkend="b1_ch2_t_o0gf8"/> provides a summary of the
+          various sources of uncertainty for the two different techniques
+          (flood frequency analysis versus catchment modelling) for design
+          flood estimation. It can be seen that due to the larger number of
+          components in the catchment modelling, there are a greater number of
+          sources of uncertainty in this process, compared with flood
+          frequency analysis. Typically when there are a larger number of
+          sources of uncertainty the total predictive uncertainty is higher.
+          Based on this analysis it can be concluded that catchment modelling
+          is likely to have a higher total predictive uncertainty compared
+          with flood frequency analysis. However, the relative magnitude of
+          the total predictive uncertainty for the two different techniques
+          would vary on a catchment basis.</para>
         </listitem>
       </orderedlist>
-        <para> </para>
-        <table frame="void" width="1170" xml:id="b1_ch2_t_o0gf8">
-        <caption>Summary table on sources of uncertainty in different techniques used for design
-          flood estimation for different levels of information available</caption>
+
+      <para/>
+
+      <table frame="void" width="1170" xml:id="b1_ch2_t_o0gf8">
+        <caption>Summary table on sources of uncertainty in different
+        techniques used for design flood estimation for different levels of
+        information available</caption>
+
         <col width="16%"/>
+
         <col width="17%"/>
+
         <col width="17%"/>
+
         <col width="16%"/>
+
         <col width="16%"/>
+
         <col width="16%"/>
+
         <tbody>
           <tr>
             <td rowspan="2"><emphasis role="bold">Steps</emphasis></td>
-            <td rowspan="2"><emphasis role="bold">Information available</emphasis></td>
-            <td colspan="4"><emphasis role="bold">Sources of Uncertainty</emphasis></td>
+
+            <td rowspan="2"><emphasis role="bold">Information
+            available</emphasis></td>
+
+            <td colspan="4"><emphasis role="bold">Sources of
+            Uncertainty</emphasis></td>
           </tr>
+
           <tr>
             <td><emphasis role="bold">Data</emphasis></td>
+
             <td><emphasis role="bold">Parametric</emphasis></td>
+
             <td><emphasis role="bold">Regionalisation</emphasis></td>
+
             <td><emphasis role="bold">Structural</emphasis></td>
           </tr>
+
           <tr>
             <td colspan="6">Flood Frequency Analysis (FFA)</td>
           </tr>
+
           <tr>
             <td rowspan="2">1. Estimate FFA model parameters</td>
+
             <td>a. At-site data</td>
+
             <td>yes - streamflow</td>
+
             <td>yes</td>
+
             <td>No</td>
+
             <td>yes</td>
           </tr>
+
           <tr>
-            <td>b. Regional information only </td>
+            <td>b. Regional information only</td>
+
             <td>No</td>
+
             <td>yes – higher than case(a)</td>
+
             <td>yes</td>
+
             <td>yes – higher than case(a)</td>
           </tr>
+
           <tr>
             <td>2. Predict design floods using FFA</td>
+
             <td>Based on step 1</td>
+
             <td>n/a - identified in step 1</td>
+
             <td>n/a - identified in step 1</td>
+
             <td>n/a - identified in step 1</td>
+
             <td>yes - in addition to step 1</td>
           </tr>
+
           <tr>
             <td colspan="6">Catchment Modelling (CM)</td>
           </tr>
+
           <tr>
-            <td rowspan="2">1. Estimate parameters for runoff-routing model and loss model </td>
+            <td rowspan="2">1. Estimate parameters for runoff-routing model
+            and loss model</td>
+
             <td>a. At-site data</td>
+
             <td>yes – rainfall and streamflow</td>
+
             <td>yes</td>
+
             <td>No</td>
+
             <td>yes</td>
           </tr>
+
           <tr>
-            <td>b. Regional information only </td>
+            <td>b. Regional information only</td>
+
             <td>No</td>
+
             <td>yes – higher than case(a)</td>
+
             <td>yes</td>
+
             <td>yes – higher than case(a)</td>
           </tr>
+
           <tr>
-            <td>2. Estimate design rainfall and its temporal/spatial patterns</td>
+            <td>2. Estimate design rainfall and its temporal/spatial
+            patterns</td>
+
             <td>Based on Bureau of Meteorology IFD</td>
+
             <td>yes – rainfall</td>
+
             <td>yes</td>
+
             <td>yes</td>
+
             <td>yes</td>
           </tr>
+
           <tr>
-            <td>3. Predict design floods using CM </td>
+            <td>3. Predict design floods using CM</td>
+
             <td>Based on steps 1-2</td>
+
             <td>n/a – identified in steps 1-2</td>
+
             <td>yes – in addition to steps 1-2</td>
+
             <td>n/a – identified in steps 1-2</td>
+
             <td>yes – in addition to steps 1-2</td>
           </tr>
         </tbody>
       </table>
-      </section>
-      <section>
-        <title>Summary</title>
-        <para>This overview of the uncertainty in design flood frequency estimation has identified
-        the two different types of uncertainty in the context of design flood estimation, aleatory
-        uncertainty (due to natural variability) and epistemic uncertainty (due to knowledge
-        uncertainty). It then outlined the motivation for undertaking uncertainty analysis, which is
-        to provide more informed and transparent information on the uncertainty in the design flood
-        estimates to enable practitioners and design makers to make better judgements on the
-        appropriate design. The major sources of uncertainty in the context of design flood
-        estimation were then outlined, and include data (uncertainty in measurements), parametric
-        uncertainty of the models used, structural uncertainty in the models mathematical
-        representation of the physical process, regionalisation uncertainty when information is
-        moved from data-rich to data-poor catchments, and the total predictive uncertainty, which is
-        composed of the elements of the individual sources of uncertainty. To raise awareness of the
-        sources of uncertainty in the different techniques used for design flood estimation were
-        identified. The conclusion, was that comparing flood frequency analysis and catchment
-        modelling, due to the larger number of components, the catchment modelling technique has a
-        larger number of sources of uncertainty than flood frequency analysis, and hence this will
-        likely lead to a higher predictive uncertainty. However, the magnitude of the total
-        predictive uncertainty is catchment specific, depending the availability of data and
-        knowledge of the processes that driver design flood events.  </para>
-      </section>
-      <section>
-        <title>References</title>
-        <para>Ang, A., and W. Tang (2007), <emphasis role="italic">Probability Concepts in
-            Engineering</emphasis>, 2nd edition ed., Wiley, United States of America.</para>
-        <para>Botto, A., D. Ganora, F. Laio, and P. Claps (2014), Uncertainty compliant design flood
-          estimation, <emphasis role="italic">Water Resour Res</emphasis>, <emphasis role="italic"
-            >50</emphasis>(5), 4242-4253, 10.1002/2013WR014981</para>
-        <para>Buytaert, W., and K. Beven (2009), Regionalization as a learning process, <emphasis
-            role="italic">Water Resour Res</emphasis>, <emphasis role="italic">45</emphasis>(11),
-          n/a-n/a, 10.1029/2008WR007359</para>
-        <para>Herman, J. D., H. B. Zeff, P. M. Reed, and G. W. Characklis (2014), Beyond optimality:
-          Multistakeholder robustness tradeoffs for regional water portfolio planning under deep
-          uncertainty, <emphasis role="italic">Water Resour Res</emphasis>, <emphasis role="italic"
-            >50</emphasis>(10), 7692-7713, 10.1002/2014WR015338</para>
-        <para>Pappenberger, F., and K. J. Beven (2006), Ignorance is bliss: Or seven reasons not to
-          use uncertainty analysis, <emphasis role="italic">Water Resour Res</emphasis>, <emphasis
-            role="italic">42</emphasis>(5), 8, W05302</para>
-        <para>10.1029/2005wr004820</para>
-        <para>Renard, B., D. Kavetski, G. Kuczera, M. Thyer, and S. W. Franks (2010), Understanding
-          predictive uncertainty in hydrologic modeling: The challenge of identifying input and
-          structural errors, <emphasis role="italic">Water Resour. Res.</emphasis>, <emphasis
-            role="italic">46</emphasis>(5), W05521, 10.1029/2009wr008328</para>
-        <para>Uusitalo, L., A. Lehikoinen, I. Helle, and K. Myrberg (2015), An overview of methods
-          to evaluate uncertainty of deterministic models in decision support, <emphasis
-            role="italic">Environmental Modelling &amp; Software</emphasis>, <emphasis role="italic"
-            >63</emphasis>, 24-31, <link
-            xlink:href="http://dx.doi.org/10.1016/j.envsoft.2014.09.017"
-            >http://dx.doi.org/10.1016/j.envsoft.2014.09.017</link></para>
-        <para>Wood, E. F., and I. Rodríguez-Iturbe (1975), Bayesian inference and decision making
-          for extreme hydrologic events, <emphasis role="italic">Water Resour Res</emphasis>,
-            <emphasis role="italic">11</emphasis>(4), 533-542, 10.1029/WR011i004p00533</para>
-      </section>
-     
     </section>
 
+    <section>
+      <title>Summary</title>
+
+      <para>This overview of the uncertainty in design flood frequency
+      estimation has identified the two different types of uncertainty in the
+      context of design flood estimation, aleatory uncertainty (due to natural
+      variability) and epistemic uncertainty (due to knowledge uncertainty).
+      It then outlined the motivation for undertaking uncertainty analysis,
+      which is to provide more informed and transparent information on the
+      uncertainty in the design flood estimates to enable practitioners and
+      design makers to make better judgements on the appropriate design. The
+      major sources of uncertainty in the context of design flood estimation
+      were then outlined, and include data (uncertainty in measurements),
+      parametric uncertainty of the models used, structural uncertainty in the
+      models mathematical representation of the physical process,
+      regionalisation uncertainty when information is moved from data-rich to
+      data-poor catchments, and the total predictive uncertainty, which is
+      composed of the elements of the individual sources of uncertainty. To
+      raise awareness of the sources of uncertainty in the different
+      techniques used for design flood estimation were identified. The
+      conclusion, was that comparing flood frequency analysis and catchment
+      modelling, due to the larger number of components, the catchment
+      modelling technique has a larger number of sources of uncertainty than
+      flood frequency analysis, and hence this will likely lead to a higher
+      predictive uncertainty. However, the magnitude of the total predictive
+      uncertainty is catchment specific, depending the availability of data
+      and knowledge of the processes that driver design flood events.</para>
+    </section>
+
+    <section>
+      <title>References</title>
+
+      <para>Ang, A., and W. Tang (2007), <emphasis role="italic">Probability
+      Concepts in Engineering</emphasis>, 2nd edition ed., Wiley, United
+      States of America.</para>
+
+      <para>Botto, A., D. Ganora, F. Laio, and P. Claps (2014), Uncertainty
+      compliant design flood estimation, <emphasis role="italic">Water Resour
+      Res</emphasis>, <emphasis role="italic">50</emphasis>(5), 4242-4253,
+      10.1002/2013WR014981</para>
+
+      <para>Buytaert, W., and K. Beven (2009), Regionalization as a learning
+      process, <emphasis role="italic">Water Resour Res</emphasis>, <emphasis
+      role="italic">45</emphasis>(11), n/a-n/a, 10.1029/2008WR007359</para>
+
+      <para>Herman, J. D., H. B. Zeff, P. M. Reed, and G. W. Characklis
+      (2014), Beyond optimality: Multistakeholder robustness tradeoffs for
+      regional water portfolio planning under deep uncertainty, <emphasis
+      role="italic">Water Resour Res</emphasis>, <emphasis
+      role="italic">50</emphasis>(10), 7692-7713, 10.1002/2014WR015338</para>
+
+      <para>Pappenberger, F., and K. J. Beven (2006), Ignorance is bliss: Or
+      seven reasons not to use uncertainty analysis, <emphasis
+      role="italic">Water Resour Res</emphasis>, <emphasis
+      role="italic">42</emphasis>(5), 8, W05302</para>
+
+      <para>10.1029/2005wr004820</para>
+
+      <para>Renard, B., D. Kavetski, G. Kuczera, M. Thyer, and S. W. Franks
+      (2010), Understanding predictive uncertainty in hydrologic modeling: The
+      challenge of identifying input and structural errors, <emphasis
+      role="italic">Water Resour. Res.</emphasis>, <emphasis
+      role="italic">46</emphasis>(5), W05521, 10.1029/2009wr008328</para>
+
+      <para>Uusitalo, L., A. Lehikoinen, I. Helle, and K. Myrberg (2015), An
+      overview of methods to evaluate uncertainty of deterministic models in
+      decision support, <emphasis role="italic">Environmental Modelling &amp;
+      Software</emphasis>, <emphasis role="italic">63</emphasis>, 24-31, <link
+      xlink:href="http://dx.doi.org/10.1016/j.envsoft.2014.09.017">http://dx.doi.org/10.1016/j.envsoft.2014.09.017</link></para>
+
+      <para>Wood, E. F., and I. Rodríguez-Iturbe (1975), Bayesian inference
+      and decision making for extreme hydrologic events, <emphasis
+      role="italic">Water Resour Res</emphasis>, <emphasis
+      role="italic">11</emphasis>(4), 533-542, 10.1029/WR011i004p00533</para>
+    </section>
+  </section>
 
   <section xml:id="b1_ch2_s_u0c4v">
     <title>References</title>
