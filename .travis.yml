@@ -1,0 +1,13 @@
+language: c
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y xsltproc
+  - xsltproc --version
+  
+script:
+  - cd arr
+  - chmod +x build_make_includes
+  - ./build_make_includes
+  - make clean
+  - make epub
