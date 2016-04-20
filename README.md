@@ -1,5 +1,37 @@
 # Australian Rainfall and Runoff Document Source
 
+This repository contains the complete source code required to build the current edition of Australian Rainfall and Runoff.  The supported formats you can build from here include:
+
+* EPUB
+* HTML
+
+If you don't want to build the document yourself from source it can be downloaded for free from the [ARR Website](http://www.arr.org.au).
+
+## Getting Started
+### Introduction
+
+The source for ARR is in XML documents using the DocBook V5 schema.  EXtensible Stylesheet Language (XSL) stylesheets are used to Transform (XSLT) the source XML into the desired output.  The majority of this process is transparent to the end user as it is quite rare to touch the sylesheets, with most of the work undertaken in the source XML themselves.
+
+### Prerequisites
+
+TODO: add the pre-requisite instructions.
+
+### Build From Source
+
+The general build process is:
+
+```bash
+cd arr
+chmod +x build_make_includes
+./build_make_includes
+make clean
+make epub
+```
+
+## Contributing
+
+TODO: need to define the contribution process.
+
 ## Authors
 
 Too many people have contributed directly to this project to list in this README.  Please see the individual books and chapters as well as the [ARR website](http://www.arr.org.au/) for direct authors and project teams.
