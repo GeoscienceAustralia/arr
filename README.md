@@ -50,13 +50,13 @@ The Commonwealth of Australia and the ARR’s contributing authors (through Engi
 
 If you have any questions about the copyright of the ARR, please contact:
 
-arr\_admin@arr.org.au
+arr_admin@arr.org.au
 c/o 11 National Circuit,
 Barton, ACT
 
-ISBN Pending Publication March 2016
+ISBN 978-1-925297-07-2
 
 How to reference this book:
-Ball, J (Ed), Australian Rainfall and Runoff: A Guide to Flood Estimation – Draft for Industry Comment 151205, © Commonwealth of Australia (Geoscience Australia), 2015.
+Ball J, Babister M, Nathan R, Weeks W, Weinmann E, Retallick M, Testoni I, (Editors),  2016, Australian Rainfall and Runoff: A Guide to Flood Estimation, Commonwealth of Australia
 
 ## Acknowledgments
