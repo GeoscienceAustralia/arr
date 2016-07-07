@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section status="In Preparation" xml:id="b3_ch2_s7"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Fitting Flood Probability Models to Peak Over Threshold
+  Series</title>
+
+  <section xml:id="b3_ch2_s_3pnks">
+    <title>Probability Plots</title>
+
+    <para>As with the analysis of Annual Maximum
+      series<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172253+1100"?>,<?oxy_insert_end?>
+      it is recommended that a probability plot of the POT data series be prepared.
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T172339+1100" content="The plot"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172339+1100"?>Its<?oxy_insert_end?>
+      involves plotting an estimate of the observed AEP against the discharge. The AEP of a gauged
+      flood can be estimated using:</para>
+
+    <equation xml:id="b3_ch2_e_8fo4w">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msub>
+            <mi>T</mi>
+
+            <mi>(i)</mi>
+          </msub>
+
+          <mo>=</mo>
+
+          <mfrac>
+            <mrow>
+              <mi>n</mi>
+
+              <mo>+</mo>
+
+              <mi>0.2</mi>
+            </mrow>
+
+            <mrow>
+              <mi>i</mi>
+
+              <mo>-</mo>
+
+              <mi>0.4</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+    </equation>
+
+    <para>where i is the rank of the gauged flood (in descending order) and n
+    is the number of years of record.</para>
+  </section>
+
+  <section xml:id="b3_ch2_s_gzz1z">
+    <title>Fitting POT Models</title>
+
+    <para>In some cases, it may be desirable to analytically fit a probability
+    distribution to POT data. Two general approaches have been used.</para>
+
+    <para>In the first<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172810+1100"?>
+      approach<?oxy_insert_end?>, the annual flow series distribution has been estimated from the
+      POT series on the basis that the latter considers all of the relevant data and should thus
+      provide a better estimate. The basis for the procedure is <xref linkend="b3_ch2_e_dds1u"/> eqn
+      (5)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172912+1100"?>,<?oxy_insert_end?>
+      which links Poisson arrivals of flood peaks with a distribution of flood magnitudes above some
+      threshold. Jayasuriya and Mein (1985), Ashkar and Rousselle (1983) and Tavares and da Silva
+      (1983) explored this approach using the exponential distribution. The approach has been fairly
+      successful, but some results have diverged from the distribution derived directly from the
+      annual series. At this stage, the approach cannot be recommended as a replacement for the
+      analysis of annual series data. If possible, the threshold for this approach should be
+      selected so that the number of floods in the POT series K is at least
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T173144+1100" content="2"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T173144+1100"?>two<?oxy_insert_end?>
+      to
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T173149+1100" content="3"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T173149+1100"?>three<?oxy_insert_end?>
+      times the number of years of record N. However, it may be necessary to use a much lower value
+      of K in regions with low rainfall where the number of recorded events that could be considered
+      as floods is low.</para>
+
+    <para>The second approach uses a probability distribution as an arbitrary
+    means of providing a consistent and objective fit to POT series data. For
+    example, McDermott and Pilgrim (1982), Adams and McMahon (1985) and
+    Jayasuriya and Mein (1985) used the LP3 distribution – they found that
+    selecting a threshold discharge such that K equalled N was best. Example
+    11 illustrates this approach using L moments to fit an exponential
+    distribution to a POT series.</para>
+  </section>
+</section>
+<?oxy_options track_changes="on"?>

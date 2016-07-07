@@ -15,205 +15,168 @@
     <xi:include href="../../common/authors/retallick_monique.xml"/>
 
     <xi:include href="../../common/authors/loveridge_melanie.xml"/>
-  </info>
 
+
+    <xi:include href="../../common/authors/testoni_isabelle.xml"/>
+    <xi:include href="../../common/authors/podger_scott.xml"/>
+  </info>
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
-
     <tr>
-      <td>Book</td>
-
-      <td>2</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
-
-    <tr>
-      <td>Chapter</td>
-
-      <td>4</td>
-    </tr>
-
-    <tr>
-      <td>Date</td>
-
-      <td>27/11/2015</td>
-    </tr>
-
     <tr>
       <td>Content</td>
-
-      <td>Working draft</td>
+      <td>Advanced draft</td>
     </tr>
-
-    <tr>
-      <td>Graphs and Figures</td>
-
-      <td>Working draft</td>
-    </tr>
-
-    <tr>
-      <td>Examples</td>
-
-      <td>In preparation</td>
-    </tr>
-
     <tr>
       <td>General</td>
-
-      <td>IFD subject to change</td>
+      <td>Subject to industry feedback and final testing with 2016 IFDs </td>
     </tr>
   </informaltable>
 
   <section xml:id="b2_ch5_s_01">
     <title>Introduction</title>
 
-    <para>Nearly every hydrograph estimation method used for flood estimation
-    needs a temporal pattern that describes how rainfall falls over time as a
-    design input. Traditionally a single burst temporal pattern has been used
-    for each rainfall event duration. The use of a single pattern has been
-    questioned for some time (Nathan and Weinmann, 1995) as the analysis of
-    observed events from even a single pluviograph shows that a wide variety
-    of patterns is possible.</para>
+    <para>The majority of  hydrograph estimation methods used for flood estimation require a
+      temporal pattern that describes how rainfall falls over time as a design input. Traditionally
+      a single burst temporal pattern has been used for each rainfall event duration. The use of a
+      single pattern has been questioned for some time <citation>b2_c5_r15</citation> as the
+      analysis of observed rainfall events from even a single pluviograph shows that a wide variety
+      of temporal patterns is possible.</para>
 
-    <para>The importance of temporal patterns has increased as the practice of
-    flood estimation have evolved from peak flow estimation to full hydrograph
-    estimation. There has been a strong move toward storage-based mitigation
-    solutions in urban catchments which need realistic temporal patterns that
-    reproduce total storm volumes as well as the temporal distribution within
-    the event.</para>
+    <para>The importance of temporal patterns has increased as the practice of flood estimation has
+      evolved from peak flow estimation to full hydrograph estimation. There has been a strong move
+      toward storage-based mitigation solutions in urban catchments which require realistic temporal
+      patterns that reproduce total storm volumes as well as the temporal distribution of rainfall
+      within the event.</para>
+    <para>This chapter discusses use of temporal patterns for design flood estimation where a fixed
+      temporal pattern is applied over the entire catchment. <xref linkend="b2_ch6_6"/> discusses
+      the more complex case of space-time patterns. </para>
 
     <para>This chapter is structured as follows:</para>
 
     <itemizedlist>
       <listitem>
-        <para>Section 2 – discusses fundamental temporal pattern concepts and
-        how the concept using ensembles of temporal pattern developed</para>
+        <para><xref linkend="b2_ch5_s_02"/> – discusses fundamental temporal pattern concepts and
+          how the concept of using ensembles of temporal pattern developed;</para>
       </listitem>
 
       <listitem>
-        <para>Section 3 – discusses the storm database that was used to
-        develop temporal patterns</para>
+        <para><xref linkend="b2_ch5_s_06"/> – discusses the storm database that was used to develop
+          temporal patterns; </para>
       </listitem>
 
       <listitem>
-        <para>Section 4 – describes the estimation of pre burst
-        rainfall</para>
+        <para><xref linkend="b2_ch5_s_10"/> – describes the estimation of pre-burst rainfall;</para>
       </listitem>
 
       <listitem>
-        <para>Section 5 – describes the development of ensembles of design
-        temporal patterns</para>
+        <para><xref linkend="b2_ch5_s_11"/> – describes the development of ensembles of design
+          temporal patterns;</para>
       </listitem>
       <listitem>
-        <para>Section 6 – discusses areal temporal patterns</para>
-      </listitem>
-
-      <listitem>
-        <para>Section 6 – discusses possible effects of climate change on
-        temporal patterns</para>
+        <para><xref linkend="b2_ch5_s_12"/> – discusses areal temporal patterns;</para>
       </listitem>
 
       <listitem>
-        <para>Section 7 – discusses the application of design temporal
-        patterns</para>
+        <para><xref linkend="b2_ch5_s_15"/> – discusses possible effects of climate change on
+          temporal patterns;</para>
       </listitem>
 
       <listitem>
-        <para>Section 8 – demonstrate the application of temporal
-        pattern</para>
+        <para><xref linkend="b2_ch5_s_16"/> – discusses the application of design temporal
+          patterns;</para>
       </listitem>
     </itemizedlist>
   </section>
 
   <section xml:id="b2_ch5_s_02">
-    <title>Temporal pattern concepts</title>
+    <title>Temporal Pattern Concepts</title>
 
     <section xml:id="b2_ch5_s_03">
       <title>Storm Components</title>
-
-      <para>To properly understand the temporal patterns it is necessary to understand the
+      <para>In order to properly understand the temporal patterns it is necessary to understand the
         components of a storm event and how they relate to Intensity Frequency Duration Data (IFD)
-        and catchment response. <xref linkend="b2_ch5_f_01"/> shows a typical storm pattern and how
-        components of the storm can be characterised. It is important to note the components can be
-        characterised either by IFD relationships or by catchment response and are highly dependent
-        on the definitions used. The components of a storm include:</para>
-
-      <para>- <emphasis role="italic">antecedent rainfall</emphasis> - that
-      has fallen before the storm event and is not considered part of the
-      storm but can affect catchment response. This is not considered in this
-      chapter but is introduced for completeness.</para>
-
-      <para>- <emphasis role="italic">pre-burst rainfall - </emphasis>is storm
-      rainfall that occurs before the main burst. Except for relatively
-      frequent events, it generally does not have a significant influence on
-      catchment response but is very important for understanding catchment and
-      storage conditions before the main rainfall burst.</para>
-
-      <para>- <emphasis role="italic">the burst - </emphasis>represents the
-      main part of the storm but is very dependent on the definition used.
-      Bursts have typically been characterised by duration. The burst could be
-      defined as the <emphasis role="italic">critical rainfall burst,
-      </emphasis>the rainfall period within the storm that has the lowest
-      probability, or <emphasis role="italic">the critical response
-      burst</emphasis> that corresponds to the duration which produces the
-      largest catchment response for a given rainfall AEP.</para>
-
-      <para>- <emphasis role="italic">post-burst rainfall</emphasis> - is
-      rainfall that occurs after the burst and is generally only considered
-      when aspects of hydrograph recession are important. This could be for
-      drawing down a dam after a flood or understanding how inundation times
-      affect flood recovery, road closures or agricultural land.</para>
-
+        and catchment response. <xref linkend="b2_ch5_f_01"/> depicts a typical storm pattern and
+        how components of the storm can be characterised. It is important to note the components can
+        be characterised either by IFD relationships or by catchment response and are highly
+        dependent on the definitions used. The components of a storm include:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="italic">antecedent rainfall</emphasis> - is rainfall that has fallen
+            before the storm event and is not considered part of the storm but can affect catchment
+            response. This is not considered in this chapter but is introduced for
+            completeness.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">pre-burst rainfall - </emphasis>is storm rainfall that
+            occurs before the main burst. With the exception of relatively frequent events, it
+            generally does not have a significant influence on catchment response but is very
+            important for understanding catchment and storage conditions before the main rainfall
+            burst.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">the burst - </emphasis>represents the main part of the storm
+            but is very dependent on the definition used. Bursts have typically been characterised
+            by duration. The burst could be defined as the <emphasis role="italic">critical rainfall
+              burst </emphasis>, the rainfall period within the storm that has the lowest
+            probability, or <emphasis role="italic">the critical response burst</emphasis> that
+            corresponds to the duration which produces the largest catchment response for a given
+            rainfall Annual Exceedance Probability (AEP).</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">post-burst rainfall</emphasis> - is rainfall that occurs
+            after the main burst and is generally only considered when aspects of hydrograph
+            recession are important. This could be for drawing down a dam after a flood event or
+            understanding how inundation times affect flood recovery, road closures or agricultural
+            land.</para>
+        </listitem>
+      </itemizedlist>
       <figure xml:id="b2_ch5_f_01">
         <title>Typical Storm Components</title>
-
         <mediaobject>
           <imageobject>
             <imagedata fileref="../../figures/2070.jpg"/>
           </imageobject>
         </mediaobject>
       </figure>
-
-      <para>If the critical response burst is not the same as the critical
-      rainfall burst then the critical response burst is either:</para>
-
+      <para>If the critical response burst is not the same as the critical rainfall burst then the
+        critical response burst is either:</para>
       <itemizedlist>
         <listitem>
-          <para>part of a longer critical rainfall burst or</para>
+          <para>part of a longer critical rainfall burst; or</para>
         </listitem>
-
         <listitem>
           <para>a storm that contains rarer shorter duration bursts.</para>
         </listitem>
       </itemizedlist>
-
-      <para>Rarer shorter duration bursts within a burst are typically called
-      embedded bursts and can cause modelling problems as, while the intention
-      may be to assess the catchment response to a burst of a defined duration
-      and probability, the response to a rarer shorter duration burst is also
-      being assessed.</para>
-
-      <para>The distinction between a burst and a complete storm is important
-      as complete storms are used for calibration and bursts are typically
-      used for design. Though this difference is less important for catchments
-      with long duration responses, as the bursts typically represent nearly
-      the whole storm event.</para>
+      <para>Rarer shorter duration bursts within a burst are typically called embedded bursts and
+        can cause problems in modelling as, while the intention may be to assess the catchment
+        response to a burst of a defined duration and probability, the response to a rarer shorter
+        duration burst is also being assessed.</para>
+      <para>The distinction between a burst and a complete storm is important as complete storms are
+        used for calibration and bursts are typically used for design. Though this difference is
+        less important for catchments with long duration responses, as the bursts typically
+        represent nearly the entire storm event.</para>
     </section>
 
     <section xml:id="b2_ch5_s_04">
       <title>Pattern Variability</title>
 
-      <para>It has been well recognized that temporal patterns exhibit
-      significant variability between rainfall events of similar magnitude,
-      and the adopted pattern can have a significant effect on the estimated
-      peak flow. Askew (1975), Milston (1979), Brown (1982), Wood and Alvarez
-      (1982), Cordery et al. (1984) give examples of differences of up to 50%
-      in flood peaks resulting from different assumed temporal patterns. Ball
-      (1994) discusses how catchment peak flow tends to increase as the
-      variability of the pattern increases.</para>
+      <para>It has been well recognised that temporal patterns exhibit significant variability
+        between rainfall events of similar magnitude, and the adopted pattern can have a significant
+        effect on the estimated peak flow. <citation>b2_c5_r1+1</citation>,
+          <citation>b2_c5_r14+1</citation>, <citation>b2_c5_r3+1</citation>,
+          <citation>b2_c5_r37+1</citation>, <citation>b2_c5_r4+1</citation> give examples of
+        differences of up to 50% in flood peaks resulting from different assumed temporal patterns.
+          <citation>b2_c5_r2+1</citation> discusses how catchment peak flow tends to increase as the
+        variability of the pattern increases.</para>
 
-      <para>Pilgrim et al. (1969) describe the variability of patterns:</para>
+      <para><citation>b2_c5_r22+1</citation> describe the variability of patterns:</para>
 
       <para><quote>In nature, a wide range of patterns is possible. Some
       storms have their period of peak intensity occur early, while other
@@ -221,18 +184,19 @@
       storm period and a large number have a tendency for the peak to occur
       more or less centrally.</quote></para>
 
-      <para><xref linkend="b2_ch5_f_02"/> shows two very different storms from a location at Sydney
-        Observatory Hill that have similar IFD characteristics from 15 min to 12 hrs and a 2hr
-        critical rainfall burst, however on other criteria they are very different. The first
-        pattern has 182 mm before the 2 hr burst, while the second pattern has 16 mm. <xref
-          linkend="b2_ch5_f_03"/> presents the temporal patterns (as dimensionless mass curves) of
-        ten 2 hr bursts of similar probability that show the variability described by Pilgrim et al.
-        (1969).</para>
+      <para><xref linkend="b2_ch5_f_02"/> depicts two very different storms from Sydney Observatory
+        Hill that have similar IFD characteristics from 15 min to 12 hrs and a 2 hr critical
+        rainfall burst, however on other criteria they are very different. The first pattern has 182
+        mm before the 2 hr burst, while the second pattern has 16 mm. For the 2nd event the
+        commencement of runoff will be closely aligned with the main burst while the former event is
+        likely to have significant runoff prior to the main burst. The rainfall burst also exhibits
+        significant variability, <xref linkend="b2_ch5_f_03"/> presents the temporal patterns (as
+        dimensionless mass curves) of ten 2 hr bursts of similar probability that show the
+        variability described by <citation>b2_c5_r22+1</citation>.</para>
 
       <figure xml:id="b2_ch5_f_02">
-        <title>Two different storm events with similar IFD Characteristics
-        (Sydney Observatory Hill) – 2 hyetographs plus burst probability
-        graph</title>
+        <title>Two Different Storm Events with Similar Intensity Frequency Duration Characteristics
+          (Sydney Observatory Hill) – Two Hyetographs plus Burst Probability Graph</title>
 
         <mediaobject>
           <imageobject>
@@ -242,7 +206,7 @@
       </figure>
 
       <figure xml:id="b2_ch5_f_03">
-        <title>Ten 2 hr dimensionless mass curves</title>
+        <title>Ten 2 hr Dimensionless Mass Curves</title>
 
         <mediaobject>
           <imageobject>
@@ -251,169 +215,173 @@
         </mediaobject>
       </figure>
 
-      <para>Most of the historical work on temporal patterns has assumed that
-      the central tendency of the pattern is more important than the
-      variability, with the aim of producing a typical, representative or
-      median pattern. French (1986) describes how a pattern can be considered
-      a two-dimensional quantity with most methods breaking the pattern into
-      two manageable one-dimensional quantities that describe the magnitude of
-      the element and the order of the elements. This can be described as a
-      rank order vector and a decay curve that describes how the magnitude
-      decreases between ranks.</para>
+      <para>Most of the historical research on temporal patterns has assumed that the central
+        tendency of the pattern is more important than the variability, with the aim of producing a
+        typical, representative or median pattern. <citation>b6_c3_r6+1</citation> describes how a
+        pattern can be considered a two dimensional quantity with most methods breaking the pattern
+        into two manageable one dimensional quantities that describe the magnitude of the element
+        and the order of the elements. This can be described as a rank order vector and a decay
+        curve that describes how the magnitude decreases between ranks.</para>
 
-      <para>Monte Carlo and ensemble modelling techniques try to overcome the
-      problems associated with this simplification by using an ensemble of
-      patterns. A short history of temporal patterns helps explain that, while
-      the complexity of temporal patterns has been well understood for a long
-      time, it has been difficult to produce a simple set of design
-      patterns.</para>
+      <para>Monte Carlo and ensemble modelling techniques try to overcome the problems associated
+        with this simplification by using an ensemble of temporal patterns. A short history of
+        temporal patterns helps explain that, while the complexity of temporal patterns has been
+        well understood for a long time, it has been difficult to produce a simple set of design
+        patterns.</para>
     </section>
 
     <section xml:id="b2_ch5_s_05">
-      <title>History of design temporal pattern development</title>
-
-      <para>ARR 1977 (Pattison (Ed), 1977) notes that there has historically
-      been a slow change in the application of temporal distributions of
-      rainfall in hydrologic studies from more arbitrary approaches to
-      approaches that reproduce the IFD characteristics (Keifer and Chu (1957)
-      and Huff (1967)). The modern interpretation is the duration independent
-      storm (Morris, 1996). These approaches reproduce the IFD loading and at
-      best can reproduce aspects of a single storm. Such approaches have some
-      applicability for peak flow estimation but cannot reproduce realistic
-      hydrographs.</para>
-
-      <para>Other early approaches included in the development of patterns
-      based on observed pluviograph records were for complete storms rather
-      than bursts. Such approaches require the scaling of complete storms.
-      Other methods have allowed the arbitrary rearrangement of patterns to
-      maximise peak discharge. Such approaches are very far removed from
-      concept of probability neutrality.</para>
-
-      <para>The development of the Average Variability Method by Pilgrim et
-      al. (1969) and Pilgrim and Cordery (1975) analysed the variability of
-      patterns by separating the analysis of the magnitude or the ranks from
-      the analysis of rank order. This approach is only applicable to bursts
-      and was applied in ARR 1977 and in a very detailed way in ARR 1987. A
-      variation of this approach was developed by Hall and Kneen (1973).
-      During the finalisation of ARR 1987 some problems where found with the
-      use of the patterns and extensive testing was carried out which resulted
-      in some changes to remove some embedded bursts, including some arbitrary
-      rank order changes. It has been assumed that an AVM pattern would
-      preserve probability neutrality. Single burst per duration AVM patterns
-      have been extensively used since ARR 1987 and appear to have performed
-      reasonable well for peak flow estimation. The issues that have arisen
-      have been discussed in Retallick et al (2009):</para>
-
-      <para>· Specific durations tend to dominate;</para>
-
-      <para>· Big changes in pattern and corresponding peak flow occur at some
-      region boundaries;</para>
-
-      <para>· The burst-only approach has made conversion of observed losses
-      to burst losses difficult;</para>
-
-      <para>· The design patterns often contain significant embedded bursts;
-      and</para>
-
-      <para>· Filtering to remove embedded bursts that was recommended has had
-      a mixed uptake and sometimes produces unrealistically long critical
-      durations.</para>
-
-      <para>The complexity of producing a representative or median pattern has
-      led many practitioners to question the concept and ask whether it is
-      better to specifically account for this variability by modelling an
-      ensemble of patterns.</para>
-
-      <para>The problems with the AVM method and other median or reprehensive
-      patterns is that it assumes the variability of actual patterns is much
-      less important than their central tendency. Such an approach does not
-      account for how patterns interact with catchments to produce peak flows
-      and hydrographs. The response can be very catchment specific, and there
-      is no guarantee that a representative pattern will produce the medium
-      response from an ensemble of patterns that properly captures the
-      variability of observed patterns. These problems can become more
-      pronounced when changes are made to the catchment response or storage
-      characteristics. Phillips and Yu (2015) examined the impact of storage
-      on an ensemble of events for at the lot, neighbourhood and sub-catchment
-      scale.</para>
-
-      <para>It is unclear who first proposed the concept of running an
-      ensemble of patterns to account for the variability of patterns.
-      Practitioners have a long history of comparing the peak flow estimates
-      from design patterns to estimates from patterns extracted from storms
-      that occurred on that catchment. The development of Monte Carlo methods
-      (Hoang et al, 1999, Rahman 2001, Weinmann 2000) that stochastically
-      sample from observed events based on complete storms and embedded bursts
-      of maximum intensity (“storm cores”) is well documented and has helped
-      highlight the value of using ensembles. Others, such as Nathan et al
-      (2002, 2003) have used ensembles of storm bursts based on observed point
-      and areal storms to facilitate their use directly with design IFD
-      information. The development of the BoM significant storm database
-      (Meighen, J. and M.R. Kennedy 1995) enabled practitioners to easily test
-      ensembles of areal patterns and how they affected other flood
-      characteristics; examples include Webb McKeown and Associates (2003).
-      While there is a long history of testing ensembles of temporal patterns,
-      Sih et al. (2008) is the first example of detailed test of ensemble
-      patterns as a design input outside a Monte Carlo environment. This long
-      development history of ensemble simulation can probably be explained by
-      the fact that the concept could not be confirmed until rigorous Monte
-      Carlo techniques became available for validation.</para>
-
-      <para>Parallel to the development of ensemble and Monte Carlo
-      approaches, practitioners have become concerned about using burst
-      patterns where complete storm volume is important. Rigby and Bannigan
-      (1996) suggest the whole burst approach needed to be reviewed and design
-      storms needed to replace design bursts. For the Wollongong area they
-      demonstrated that historically most short duration events were embedded
-      in longer events. They recommended that short duration events could be
-      embedded in a 24 hour event of the same probability. They particularly
-      cautioned against using bursts on catchments with significant natural or
-      man-made storages. Phillips et al. (1994) had found similar problems in
-      the upper Parramatta River and suggested embedded storms were more
-      realistic, and that basin storages would be under estimated with a burst
-      approach unless the embedded nature of events was factored into the
-      starting volumes. Rigby et al. (2003) extended their earlier work to
-      include guidance on using the embedded design storms. Roso and Rigby
-      (2006) recommended a storm based approach be used when there are
-      significant storages or diversions present in the catchment. Kuczera et
-      al. (2003), inspired by Rigby and Bannigan (1996), explored basin
-      performance using a theoretical catchment at Observatory Hill Sydney in
-      a continuous simulation approach and found similar problems with peak
-      flow being underestimated by a similar amount when storages were
-      present. All of these studies were based on catchments less than 110 km<superscript>2</superscript>
-      that are close to Sydney.</para>
+      <title>History of Design Temporal Pattern Development</title>
+      <para>Australian Rainfall and Runoff 1977 <citation>b2_c5_r18, b9_c3_r14</citation> notes that
+        there has historically been a slow change in the application of temporal distributions of
+        rainfall in hydrologic studies from more arbitrary approaches to approaches that reproduce
+        the IFD characteristics (<citation>b2_c5_r11+1</citation> and
+          <citation>b2_c5_r10+1</citation>). The modern interpretation is the duration independent
+        storm <citation>b2_c5_r38</citation>. These approaches reproduce the IFD loading and at best
+        can reproduce aspects of a single storm. Such approaches have some applicability for peak
+        flow estimation but cannot reproduce realistic hydrographs.</para>
+      <para>Other early approaches included in the development of patterns based on observed
+        pluviograph records were for complete storms rather than bursts. Such approaches require the
+        scaling of complete storms. Other methods have allowed the arbitrary rearrangement of
+        patterns to maximise peak discharge. Such approaches are very far removed from concept of
+        probability neutrality.</para>
+      <para>The development of the Average Variability Method by <citation>b2_c5_r22+1</citation>
+        and <citation>b2_c5_r23+1</citation> analysed the variability of patterns by separating the
+        analysis of the magnitude or the ranks from the analysis of rank order. This approach is
+        only applicable to bursts and was applied in ARR 1977 and in a very detailed way in ARR
+        1987. A variation of this approach was developed by <citation>b2_c5_r7+1</citation>. During
+        the finalisation of ARR 1987 some problems where found with the use of the patterns and
+        extensive testing was carried out which resulted in some changes to remove some embedded
+        bursts, including some arbitrary rank order changes. It has been assumed that an AVM pattern
+        would preserve probability neutrality. Single burst per duration AVM patterns have been
+        extensively used since ARR 1987 and appear to have performed reasonable well for peak flow
+        estimation. </para>
+      <para>By their very nature AVM patterns do preserve the average rank magnitudes. <xref
+          linkend="b2_ch5_f_odj34"/> plots the magnitude or decay curve for the ten dimensionless
+        curves in <xref linkend="b2_ch5_f_03"/> and the AVM curve from these events and all 10
+        events that would be considered in a AVM analysis.</para>
+      <figure xml:id="b2_ch5_f_odj34">
+        <title>Decay Curve of Ten Dimensionless Patterns and AVM Patterns</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2085.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The issues that have arisen have been discussed in
+        <citation>b2_c5_r25+1</citation><?oxy_comment_start author="retallick" timestamp="20160622T200814+1000" comment="can we add others"?>:<?oxy_comment_end?></para>
+      <itemizedlist>
+        <listitem>
+          <para>Specific durations tend to dominate;</para>
+        </listitem>
+        <listitem>
+          <para>Big changes in pattern and corresponding peak flow occur at some region
+            boundaries;</para>
+        </listitem>
+        <listitem>
+          <para>The burst only approach has made conversion of observed losses to burst losses
+            difficult;</para>
+        </listitem>
+        <listitem>
+          <para>The design patterns often contain significant embedded bursts; and</para>
+        </listitem>
+        <listitem>
+          <para>Filtering to remove embedded bursts that was recommended in ARR 1987
+              <citation>arr_1987</citation> has had a mixed uptake and sometimes produces
+            unrealistically long critical durations.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The AVM approach also works best when there is a dominant typical pattern shape. As part
+        of the AVM approach the average and standard deviation of the rank of each period is
+        calculated, when there is no dominant pattern these averages can be very similar and the
+        resultant AVM pattern need not bare any resemblance to any of the observed
+        patterns.<?oxy_comment_start author="testoni" timestamp="20160704T181802+1000" comment="possible text if we add a figure: &quot;Figure z shows such an AVM pattern&quot;"?></para>
+      <?oxy_comment_end?>
+      <para>The complexity of producing a representative or median pattern has led many
+        practitioners to question the concept and ask whether it is better to specifically account
+        for this variability by modelling an ensemble of temporal patterns.</para>
+      <para>The problems with the AVM method and other median or representative patterns is that it
+        assumes the variability of actual patterns is much less important than their central
+        tendency. Such an approach does not account for how temporal patterns interact with
+        catchments to produce peak flows and hydrographs. The response can be very
+        catchment-specific, and there is no guarantee that a representative pattern will produce the
+        medium response from an ensemble of patterns that properly captures the variability of
+        observed patterns. These problems can become more pronounced when changes are made to the
+        catchment response or storage characteristics. <citation>b2_c5_r20+1</citation> examined the
+        impact of storage on an ensemble of events for the lot, neighbourhood and subcatchment
+        scale.</para>
+      <para>It is unclear who first proposed the concept of running an ensemble of temporal patterns
+        to account for the variability of patterns. Practitioners have a long history of comparing
+        the peak flow estimates from design patterns to estimates from patterns extracted from real
+        storms that occurred on that catchment of interest. The development of Monte Carlo methods
+          <citation>b2_c5_r9, b2_c5_r24, b2_c5_r32</citation> that stochastically sample from
+        observed events based on complete storms and embedded bursts of maximum intensity (“storm
+        cores”) is well documented and has helped highlight the value of using ensembles. Others,
+        such as <citation>b2_c5_r16+1, b2_c5_r17+1</citation> have used ensembles of storm bursts
+        based on observed point and areal storms to facilitate their use directly with design IFD
+        information. The development of the Bureau of Meteorology significant storm database
+          <citation>b2_c5_r13</citation> enabled practitioners to easily test ensembles of areal
+        patterns and how they affected other flood characteristics; examples include
+          <citation>b2_c5_r31+1</citation>. While there is a long history of testing ensembles of
+        temporal patterns, <citation>b2_c5_r29+1</citation> is the first example of detailed testing
+        of ensemble patterns as a design input outside a Monte Carlo environment. This long
+        development history of ensemble simulation can probably be explained by the fact that the
+        concept could not be confirmed until rigorous Monte Carlo techniques became available for
+        validation.</para>
+      <para>Parallel to the development of ensemble and Monte Carlo approaches, practitioners have
+        become concerned with using burst patterns where complete storm volume is important.
+          <citation>b2_c5_r26+1</citation> suggest the entire burst approach needed to be reviewed
+        and design storms needed to replace design bursts. For the Wollongong area
+          <citation>b2_c5_r26+1</citation> demonstrated that historically most short duration events
+        were embedded in longer duration events. They recommended that short duration events could
+        be embedded in a 24 hour event of the same probability. They particularly cautioned against
+        using bursts on catchments with significant natural or man-made storages.
+          <citation>b2_c5_r19+1</citation> had found similar problems in the upper Parramatta River
+        and suggested embedded storms were more realistic, and that basin storages would be
+        underestimated with a burst approach unless the embedded nature of events was factored into
+        the starting volumes. <citation>b2_c5_r27+1</citation> extended the earlier work to include
+        guidance on using the embedded design storms. <citation>b2_c5_r28+1</citation> recommended a
+        storm based approach be used when there are significant storages or diversions present in
+        the catchment. <citation>b2_c5_r12+1</citation>, inspired by
+          <citation>b2_c5_r26+1</citation>, explored basin performance using a theoretical catchment
+        at Observatory Hill, Sydney in a continuous simulation approach and found similar problems
+        with peak flow being underestimated by a similar amount when storages were present. All of
+        these studies were based on catchments less than 110 km<superscript>2</superscript> that are
+        close to Sydney.</para>
     </section>
   </section>
 
   <section xml:id="b2_ch5_s_06">
-    <title> Storm database</title>
+    <title>Storm Database</title>
 
-    <para>As part of the IFD revision (<xref linkend="b2_ch3"/>) the BoM produced a quality
-      controlled pluviograph database, containing 2280 stations with more than 8 station years. The
-      average station record length is 25 years, with a combined record length of 57,000 years. A
-      total of 754 of the stations are owned by the BoM and the other 1526 are owned by other data
-      agencies throughout Australia. This data was provided by the BoM, who undertook quality
-      controlling to identify suspect data, such as missing data, accumulated totals and time shifts
-      (Green et al. 2011). All station data was provided as time series data sampled at a 5 minute
-      time step. In addition to the rainfall depths, each data point had a quality code indicating
-      the quality of the data. <xref linkend="b2_ch5_f_04"/> below depicts the geographical
-      distribution of the pluviographs across Australia. Each station is represented as a circle,
-      with the size of the circle indicating the record length of the station.</para>
+    <para>As part of the IFD revision (<xref linkend="b2_ch3"/>) the Bureau of Meteorology produced
+      a quality controlled pluviograph database, containing 2280 stations with more than 8 station
+      years (refer to<xref linkend="b2_ch3"/> and <xref linkend="b1_ch4"/>). The average station
+      record length is 25 years, with a combined record length of 57 000 years. A total of 754 of
+      the stations are owned by the Bureau of Meteorology and the other 1526 are owned by other data
+      agencies throughout Australia. This data was provided by the Bureau of Meteorology, who
+      undertook quality controlling to identify suspect data, such as missing data, accumulated
+      totals and time shifts <citation>b2_c5_r6</citation>. All station data was provided as time
+      series data sampled at a 5 minute time step. In addition to the rainfall depths, each data
+      point had a quality code indicating the quality of the data. <xref linkend="b2_ch5_f_04"/>
+      below depicts the geographical distribution of the pluviographs across Australia. Each station
+      is represented as a circle, with the size of the circle indicating the record length of the
+      station.</para>
 
     <figure xml:id="b2_ch5_f_04">
-      <title>Pluviograph stations record lengths</title>
+      <title>Pluviograph Stations Record Lengths</title>
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../../figures/2073.jpg"/>
+          <imagedata fileref="../../figures/2073.png"/>
         </imageobject>
       </mediaobject>
     </figure>
 
-    <para><xref linkend="b2_ch5_t_00"/> shows the maximum number stations available in any year for
-      decadal periods. This Table demonstrates that most of the pluviograph record is from 1960
-      onwards. Though overall the data comes from a period that starts before 1900, over half of the
-      data is from the period from 1993 onwards.</para>
+    <para><xref linkend="b2_ch5_t_00"/> presents the maximum number stations available in any year
+      for decadal periods. <xref linkend="b2_ch5_t_00"/> demonstrates that most of the pluviograph
+      record is from 1960 onwards. Though overall the data comes from a period that starts before
+      1900, over half of the data is from the period from 1993 onwards.</para>
 
    
     <table xml:id="b2_ch5_t_00" frame="void">
@@ -423,7 +391,7 @@
         <thead>
           <tr>
             <th>Decade</th>
-            <th>Maximum Number of Pluviographs in any year</th>
+            <th>Maximum Number of Pluviographs in any Year</th>
           </tr>
         </thead>
         <tbody>
@@ -457,32 +425,26 @@
           </tr>
           <tr>
             <td>2000-2010</td>
-            <td>1837(1)</td>
+            <td>1837<footnote>
+              <para>Not all data was available from 2009 onwards</para>
+            </footnote></td>
           </tr>
         </tbody>
       </table>
-    
-
-    <orderedlist>
-      <listitem>
-        <para>Not all data was available from 2009 onwards</para>
-      </listitem>
-    </orderedlist>
 
     <para>As shown in <xref linkend="b2_ch5_f_04"/> the highest density of pluviograph stations is
       typically found along coastal areas of Australia around key population centres. In <xref
         linkend="b2_ch5_f_05"/>, the pluviograph stations are seen to be clustered around urban
-      areas, such as Sydney, Wollongong, Melbourne and Canberra. Less data is available in in
-      central Australia, with the exception of the Alice Springs area. Large areas of central
-      Western Australia contain no data.</para>
+      areas, such as Sydney, Wollongong, Melbourne and Canberra. Less data is available in central
+      Australia, with the exception of the Alice Springs area. Large areas of central Western
+      Australia contain no data.</para>
 
     <figure xml:id="b2_ch5_f_05">
-      <title>Pluviograph stations used throughout south eastern Australia with
-      record lengths indicated</title>
+      <title>Pluviograph Stations used Throughout South-Eastern Australia with Record Lengths </title>
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../../figures/2074.jpg"/>
+          <imagedata fileref="../../figures/2074.png"/>
         </imageobject>
       </mediaobject>
     </figure>
@@ -490,12 +452,11 @@
     <section xml:id="b2_ch5_s_07">
       <title>Data Quality</title>
 
-      <para>Where a single station is being analysed it is important that it
-      has a reasonably long record (preferably longer than 30 years) and only
-      a small percentage of missing data. However, for studies that pool data
-      together the quality of the data is a bigger issue than record length.
-      It is however, important to remember that most of the pluviograph data
-      is from the last few decades.</para>
+      <para>Where a single station is being analysed it is important that it has a reasonably long
+        record (preferably longer than 30 years) and only a small percentage of missing data.
+        However, for studies that pool data the quality of the data is a bigger issue than record
+        length. It is however, important to remember that most of the pluviograph data is from the
+        last few decades.</para>
 
       <para>The pluviograph database contains a significant number of events
       with long periods of apparently uniform rainfall. While some of this
@@ -525,47 +486,53 @@
     </section>
 
     <section xml:id="b2_ch5_s_08">
-      <title>Event selection and analysis</title>
-
-      <para>Once the data quality checking was complete, all events with a
-      burst greater than 1 Exceedance per Year (EY) using the 2013 IFD and
-      which were not flagged with problems were extracted for further
-      analysis. For each event the start and finish of the event was defined
-      using method described in ARR Revision Project 3-Temporal Patterns of
-      Rainfall Report Part 1 (WMAwater, 2015), which was consistent with the
-      storm event definition used in the losses report (Hill et al, 2014).
-      Once all events with a burst greater than 1EY were defined for every
-      duration, the following properties where calculated:</para>
-
-      <para>-burst rainfall depth probabilities for each duration;</para>
-
-      <para>- start and finish time for each burst;</para>
-
-      <para>- time when 50% of the burst depth occurred (burst
-      loading);</para>
-
-      <para>- pre-burst rainfall depth for each burst duration;</para>
-
-      <para>- pre-burst to burst rainfall ratio for each duration; and</para>
-
-      <para>- Post-burst depth.</para>
-
-      <para>For each event the rarest or critical rainfall burst (of any
-      duration and location within the overall event) was also
-      calculated.</para>
+      <title>Event Selection and Analysis</title>
+      <para>Once the data quality checking was complete, all events with a burst greater than 1
+        Exceedance per Year (EY) using the
+        <?oxy_comment_start author="retallick" timestamp="20160622T202541+1000" comment="what are we going to do with this"?>2013
+        IFD <?oxy_comment_end?>and which were not flagged with problems were extracted for further
+        analysis. For each event the start and finish of the event was defined using the methodology
+        described in ARR Revision Project 3 - Temporal Patterns of Rainfall Report Part 1
+          <citation>b2_c5_r34</citation>, which was consistent with the storm event definition used
+        in the ARR Revision Project 6 - Losses  <citation>b2_c5_r8</citation>. Once all events with
+        a burst greater than 1EY were defined for every duration, the following properties where
+        calculated:</para>
+      <itemizedlist>
+        <listitem>
+          <para>burst rainfall depth probabilities for each duration;</para>
+        </listitem>
+        <listitem>
+          <para>start and finish time for each burst;</para>
+        </listitem>
+        <listitem>
+          <para>time when 50% of the burst depth occurred (ie. burst loading);</para>
+        </listitem>
+        <listitem>
+          <para>pre-burst rainfall depth for each burst duration;</para>
+        </listitem>
+        <listitem>
+          <para>pre-burst to burst rainfall ratio for each duration; and</para>
+        </listitem>
+        <listitem>
+          <para>Post-burst depth.</para>
+        </listitem>
+      </itemizedlist>
+      <para>For each event the rarest or critical rainfall burst (of any duration and location
+        within the overall event) was also calculated.</para>
     </section>
 
     <section xml:id="b2_ch5_s_09">
-      <title>Regional characteristics</title>
+      <title>Regional Characteristics</title>
 
       <para>To assess the regional characteristics, 12 temporal pattern regions were defined based
         on the 54 Natural Resource Management (NRM) sub-regions used for investigating the impacts
-        of climate change (CSIRO, 2015). The adopted regions follow drainage basin boundaries. <xref
-          linkend="b2_ch5_f_001"/> depicts the adopted temporal pattern regions. <xref
-          linkend="b2_ch5_t_001"/> summarises how many gauges and storm events exist in each
-        region.</para>
+        of climate change <citation>b2_c5_r5</citation>. The adopted regions follow drainage basin
+        boundaries. <xref linkend="b2_ch5_f_001"/> depicts the adopted temporal pattern regions.
+          <xref linkend="b2_ch5_t_001"/> summarises the number of rainfall gauges and storm events
+        that exist in each region.</para>
       <table  xml:id="b2_ch5_t_001" frame="void">
-        <caption>Regions- Number of Gauges and Events</caption>
+        <caption>Regions- Number of Gauges and
+          <?oxy_comment_start author="retallick" timestamp="20160622T203106+1000" comment="isabelle - did you rename the regions? need to update this table "?>Events<?oxy_comment_end?></caption>
         <col width="20%"/>
         <col width="20%"/>
         <col width="20%"/>
@@ -652,14 +619,14 @@
             <td>2.27</td>
           </tr>
           <tr>
-            <td>Southern and South Western Flatlands (West)</td>
+            <td>Flatlands West </td>
             <td>349</td>
             <td>9113</td>
             <td>26402</td>
             <td>2.90</td>
           </tr>
           <tr>
-            <td>Southern and South Western Flatlands (East)</td>
+            <td>Flatlands East </td>
             <td>56</td>
             <td>1401</td>
             <td>3450</td>
@@ -689,19 +656,19 @@
 
       <itemizedlist>
         <listitem>
-          <para>front loaded – 0-40% of the time,</para>
+          <para>front loaded – 0 to 40% of the time,</para>
         </listitem>
 
         <listitem>
-          <para>middle loaded – 40-60% of the time, and</para>
+          <para>middle loaded – 40 to 60% of the time, and</para>
         </listitem>
 
         <listitem>
-          <para>back loaded – 60-100% of the time.</para>
+          <para>back loaded – 60 to 100% of the time.</para>
         </listitem>
       </itemizedlist>
 
-      <para><xref linkend="b2_ch5_f_06"/> shows a typical event from each category.</para>
+      <para><xref linkend="b2_ch5_f_06"/> depicts a typical event from each category.</para>
 
       <para><figure xml:id="b2_ch5_f_06">
           <title> Example of Front, Middle and Back Loaded Events</title>
@@ -713,11 +680,10 @@
           </mediaobject>
         </figure></para>
 
-      <para>This simple categorisation provides a pragmatic means of capturing
-      when the peak loading occurs, as described by Pilgrim et al (1969),
-      though it is worth recognising that for a double-peaked event, when most
-      of the rainfall is in the early and later part of the burst, the loading
-      can somewhat illogically fall into the middle category.</para>
+      <para>This simple categorisation provides a pragmatic means of capturing when the peak loading
+        occurs, as described by <citation>b2_c5_r22+1</citation>, though it is worth recognising
+        that for a double peaked event, when most of the rainfall is in the early and later part of
+        the burst, the loading can somewhat illogically fall into the middle category.</para>
 
       <para>Each region was characterised by its burst loading distribution, which describes the
         percentage of front, middle and back loaded events for different durations. The proportion
@@ -725,303 +691,185 @@
         hours duration (<xref linkend="b2_ch5_t_01"/>). The proportion was assumed to be constant
         across all AEPs.</para>
 
-   
-
-      <table xml:id="b2_ch5_t_01">
-        <title>Burst loading by region and duration</title>
-        <tgroup cols="5">
-          <colspec colname="col1" colnum="1"/>
-
-          <colspec colname="col2" colnum="2"/>
-
-          <colspec colname="col3" colnum="3"/>
-
-          <colspec colname="col4" colnum="4"/>
-
-          <colspec colname="col5" colnum="5"/>
-
-          <tbody>
-            <row>
-              <entry><emphasis role="bold">Region</emphasis></entry>
-
-              <entry><emphasis role="bold">Duration</emphasis></entry>
-
-              <entry><emphasis role="bold">Front Loaded (%)</emphasis></entry>
-
-              <entry><emphasis role="bold">Middle Loaded
-              (%)</emphasis></entry>
-
-              <entry><emphasis role="bold">Back Loaded (%)</emphasis></entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Southern Slopes (Tasmania)</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>21.5</entry>
-
-              <entry>64.1</entry>
-
-              <entry>14.4</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>20.5</entry>
-
-              <entry>60.0</entry>
-
-              <entry>19.5</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Southern Slopes (mainland)</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>30.1</entry>
-
-              <entry>53.0</entry>
-
-              <entry>16.9</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>22.7</entry>
-
-              <entry>53.7</entry>
-
-              <entry>23.6</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Murray Basin</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>28.3</entry>
-
-              <entry>53.8</entry>
-
-              <entry>17.9</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>24.7</entry>
-
-              <entry>52.5</entry>
-
-              <entry>22.7</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Central Slopes</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>31.0</entry>
-
-              <entry>53.3</entry>
-
-              <entry>15.7</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>27.0</entry>
-
-              <entry>46.9</entry>
-
-              <entry>26.1</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">East Coast South</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>26.5</entry>
-
-              <entry>57.1</entry>
-
-              <entry>16.4</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>17.1</entry>
-
-              <entry>58.6</entry>
-
-              <entry>24.3</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">East Coast North</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>28.9</entry>
-
-              <entry>56.5</entry>
-
-              <entry>14.6</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>23.4</entry>
-
-              <entry>48.5</entry>
-
-              <entry>28.1</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Wet Tropics</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>16.0</entry>
-
-              <entry>71.8</entry>
-
-              <entry>12.2</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>18.7</entry>
-
-              <entry>58.1</entry>
-
-              <entry>23.2</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Monsoonal North</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>27.6</entry>
-
-              <entry>63.7</entry>
-
-              <entry>8.8</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>27.5</entry>
-
-              <entry>41.4</entry>
-
-              <entry>31.2</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Rangelands West</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>23.7</entry>
-
-              <entry>62.5</entry>
-
-              <entry>13.8</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>23.6</entry>
-
-              <entry>49.2</entry>
-
-              <entry>27.2</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Rangelands</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>29.0</entry>
-
-              <entry>56.6</entry>
-
-              <entry>14.3</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>24.4</entry>
-
-              <entry>49.2</entry>
-
-              <entry>26.4</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Southern and South Western Flatlands
-              (West)</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>30.8</entry>
-
-              <entry>49.3</entry>
-
-              <entry>19.9</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>31.4</entry>
-
-              <entry>48.9</entry>
-
-              <entry>19.7</entry>
-            </row>
-
-            <row>
-              <entry morerows="1">Southern and South Western Flatlands
-              (East)</entry>
-
-              <entry>≤ 6hr</entry>
-
-              <entry>27.6</entry>
-
-              <entry>52.4</entry>
-
-              <entry>20.0</entry>
-            </row>
-
-            <row>
-              <entry>&gt; 6hr</entry>
-
-              <entry>17.4</entry>
-
-              <entry>54.4</entry>
-
-              <entry>28.2</entry>
-            </row>
-          </tbody>
-        </tgroup>
+      <table xml:id="b2_ch5_t_01" frame="void">
+        <caption>Burst Loading by Region and
+          <?oxy_comment_start author="retallick" timestamp="20160622T203359+1000" comment="have the region names changed"?>Duration<?oxy_comment_end?></caption>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+        <thead>
+          <tr>
+            <th><emphasis role="bold">Region</emphasis></th>
+            <th><emphasis role="bold">Duration</emphasis></th>
+            <th><emphasis role="bold">Front Loaded (%)</emphasis></th>
+            <th><emphasis role="bold">Middle Loaded (%)</emphasis></th>
+            <th><emphasis role="bold">Back Loaded (%)</emphasis></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">Southern Slopes (Tasmania)</td>
+            <td>≤ 6hr</td>
+            <td>21.5</td>
+            <td>64.1</td>
+            <td>14.4</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>20.5</td>
+            <td>60.0</td>
+            <td>19.5</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Southern Slopes (mainland)</td>
+            <td>≤ 6hr</td>
+            <td>30.1</td>
+            <td>53.0</td>
+            <td>16.9</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>22.7</td>
+            <td>53.7</td>
+            <td>23.6</td>
+            <td/>
+          </tr>
+          <tr>
+            <td rowspan="2">Murray Basin</td>
+            <td>≤ 6hr</td>
+            <td>28.3</td>
+            <td>53.8</td>
+            <td>17.9</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>24.7</td>
+            <td>52.5</td>
+            <td>22.7</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Central Slopes</td>
+            <td>≤ 6hr</td>
+            <td>31.0</td>
+            <td>53.3</td>
+            <td>15.7</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>27.0</td>
+            <td>46.9</td>
+            <td>26.1</td>
+          </tr>
+          <tr>
+            <td rowspan="2">East Coast South</td>
+            <td>≤ 6hr</td>
+            <td>26.5</td>
+            <td>57.1</td>
+            <td>16.4</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>17.1</td>
+            <td>58.6</td>
+            <td>24.3</td>
+          </tr>
+          <tr>
+            <td rowspan="2">East Coast North</td>
+            <td>≤ 6hr</td>
+            <td>28.9</td>
+            <td>56.5</td>
+            <td>14.6</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>23.4</td>
+            <td>48.5</td>
+            <td>28.1</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Wet Tropics</td>
+            <td>≤ 6hr</td>
+            <td>16.0</td>
+            <td>71.8</td>
+            <td>12.2</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>18.7</td>
+            <td>58.1</td>
+            <td>23.2</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Monsoonal North</td>
+            <td>≤ 6hr</td>
+            <td>27.6</td>
+            <td>63.7</td>
+            <td>8.8</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>27.5</td>
+            <td>41.4</td>
+            <td>31.2</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Rangelands West</td>
+            <td>≤ 6hr</td>
+            <td>23.7</td>
+            <td>62.5</td>
+            <td>13.8</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>23.6</td>
+            <td>49.2</td>
+            <td>27.2</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Rangelands</td>
+            <td>≤ 6hr</td>
+            <td>29.0</td>
+            <td>56.6</td>
+            <td>14.3</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>24.4</td>
+            <td>49.2</td>
+            <td>26.4</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Flatlands West</td>
+            <td>≤ 6hr</td>
+            <td>30.8</td>
+            <td>49.3</td>
+            <td>19.9</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>31.4</td>
+            <td>48.9</td>
+            <td>19.7</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Flatlands East</td>
+            <td>≤ 6hr</td>
+            <td>27.6</td>
+            <td>52.4</td>
+            <td>20.0</td>
+          </tr>
+          <tr>
+            <td>&gt; 6hr</td>
+            <td>17.4</td>
+            <td>54.4</td>
+            <td>28.2</td>
+          </tr>
+        </tbody>
       </table>
+
+     
     
     </section>
   </section>
@@ -1029,35 +877,40 @@
   <section xml:id="b2_ch5_s_10">
     <title>Pre Burst Rainfall and Antecedent Conditions</title>
 
-    <para>The events database allowed the pre-burst behaviour of rainfall
-    events to be characterised, regionalised and mapped. Temporal Patterns
-    report 2 (WMAwater (2015)) presents the detailed analysis, regionalisation
-    and mapping of pre-burst behaviour for Australia. Due to the relatively
-    short pluviograph records, the approach assumes that this behaviour can be
-    pooled to develop reasonable size samples by transferring storms from
-    nearby locations with similar IFD characteristics. This was done on a
-    Region of Influence basis and not a fixed region basis, as the ratio of
-    pre-burst rainfall has some correlation with IFD. In many parts of
-    Australia the pre-burst rainfall generally represents a very small amount
-    of the event and generally does not contribute to the runoff response, so
-    it can be treated in a relatively simply manner. However, in some parts of
-    the country pre-burst rainfall can represent a significant part of the
-    rainfall event and runoff response. Pre-burst can also be important in
-    urban catchments with large directly connected impervious areas (<xref
-    linkend="book5"/>). Storage strategies need to account for this additional
-    runoff when sizing storage tanks and basins (<xref
-    linkend="book9"/>).</para>
+    <para>The events database allowed the pre-burst behaviour of rainfall events to be
+      characterised, regionalised and mapped.
+      <?oxy_comment_start author="retallick" timestamp="20160622T203624+1000" comment="fix reference "?>Temporal
+      Patterns report 2 <citation>b2_c5_r34+1</citation><?oxy_comment_end?> presents the detailed
+      analysis, regionalisation and mapping of pre-burst behaviour for Australia. Due to the
+      relatively short pluviograph records, the approach assumes that this behaviour can be pooled
+      to develop reasonably sized samples by transferring storms from nearby locations with similar
+      IFD characteristics. This was done on a Region of Influence basis and not a fixed region
+      basis, as the ratio of pre-burst rainfall has some correlation with Intensity Frequency
+      Duration characteristics. In many parts of Australia the pre-burst rainfall generally
+      represents a very small amount of the event and generally does not contribute to the runoff
+      response, so it can be treated in a relatively simply manner. However, in some parts of the
+      country pre-burst rainfall can represent a significant part of the rainfall event and runoff
+      response. Pre-burst can also be important in urban catchments with large directly connected
+      impervious areas (<xref linkend="book5"/>). Storage strategies need to account for this
+      additional runoff when sizing storage tanks and basins (<xref linkend="book9"/>). The
+      pre-burst was characterised based on the rarest rainfall duration burst within the storm using
+      the 2013 IFDs. <citation>b5_c3_r38+1</citation> found this approach gave a biased estimate of
+      the average pre-burst, systematically underestimating the depth of the pre-burst. Following
+      from this work and the expected update of the IFDs from the Bureau of Meteorology in 2016 this
+      work will be updated and <xref linkend="b2_ch5_f_08"/>, <xref linkend="b2_ch5_f_09"/> and
+        <xref linkend="b2_ch5_f_10"/> will be updated accordingly.</para>
 
     <para><xref linkend="b2_ch5_f_08"/> and <xref linkend="b2_ch5_f_09"/> depict the median ratio of
       the pre-burst to burst and the depth of pre-burst in mm for the 6hr duration and probabilities
-      mapped across Australia. The full data set of maps is available online at the ARR data
-      repository.</para>
+      mapped across Australia. The full data set of maps is available online at the
+      <?oxy_comment_start author="retallick" timestamp="20160622T203703+1000" comment="link?"?>ARR
+      data repository<?oxy_comment_end?> (<link xlink:href="http://data.arr.org.au/"/>).</para>
 
     <para><xref linkend="b2_ch5_f_10"/> shows the probability distribution of the pre-burst rainfall
       for each region.</para>
 
     <figure xml:id="b2_ch5_f_08">
-      <title>Pre-burst rainfall</title>
+      <title>Pre-burst Rainfall</title>
 
       <mediaobject>
         <imageobject>
@@ -1099,37 +952,36 @@
   </section>
 
   <section xml:id="b2_ch5_s_11">
-    <title>Design Temporal Patterns</title>
+    <title>Design Point Temporal Patterns</title>
 
-    <para>As part of the ARR temporal pattern Revision project (ARR Project 3, WMAwater (2015)) a
-      series of temporal pattern techniques were trialled. A total of 35 test catchments were
-      adopted across Australia, ranging in area from 30 to 80 km<superscript>2</superscript>. The
-      aims of the testing were to assess the performance of the design method using best estimates
-      of the revised inputs and to determine what influence the temporal patterns have on design
-      estimates. Temporal pattern ensembles were tested within a Monte Carlo framework and a simpler
-      quantile ensemble framework. Two methods were trialled, the regional temporal patterns (as
-      discussed in <xref linkend="b2_ch5_s_09"/>) along with a Region-of-Influence (ROI) approach.
-      Three event types were trialled with burst only, burst plus pre-burst and complete storm
-      events (for ROI only). A range of initial loss approaches were trailed, including burst and
-      storm losses, combined with the median value or a distribution of values. The nature of
-      regional temporal pattern ensembles requires AEP bins to be derived. The ensembles for each
-      AEP bin were trialled across all AEPs to assess the sensitivity of the AEP bins.</para>
+    <para>As part of the ARR Revision Project 3 - Temporal Patterns of Rainfall
+        <citation>b2_c5_r36</citation> a series of temporal pattern techniques were trialled. A
+      total of 35 test catchments were adopted across Australia, ranging in area from 30 to 80
+        km<superscript>2</superscript>. The aims of the testing were to assess the performance of
+      the design method using best estimates of the revised inputs and to determine what influence
+      the temporal patterns have on design estimates. Temporal pattern ensembles were tested within
+      a Monte Carlo framework and a simpler quantile ensemble framework. Two methods were trialled,
+      the regional temporal patterns (as discussed in <xref linkend="b2_ch5_s_09"/>) along with a
+      Region of Influence (ROI) approach. Three event types were trialled being burst only, burst
+      plus pre-burst and complete storm events (for ROI only). A range of initial loss approaches
+      were trailed, including burst and storm losses, combined with the median value or a
+      distribution of values. The nature of regional temporal pattern ensembles requires AEP bins to
+      be derived. The ensembles for each AEP bin were trialled across all AEPs to assess the
+      sensitivity of the AEP bins.</para>
 
-    <para>Based on the results of this performance testing, the temporal
-    patterns derived by the Regional burst approach are recommended for
-    general use. Temporal patterns for complete storms derived by the ROI
-    approach are left as an alternative for small, volume-sensitive systems
-    where pre- and post-burst rainfall is important, though it may be that
-    such systems are better analysed using continuous simulation
-    approaches.</para>
+    <para>Based on the results of this performance testing, the temporal patterns derived by
+      theregional burst approach are recommended for general use. Temporal patterns for complete
+      storms derived by the ROI approach are left as an alternative for small, volume-sensitive
+      systems where pre- and post-burst rainfall is important, though it may be that such systems
+      are better analysed using continuous simulation approaches.</para>
 
-    <para>Other major findings from ARR Project 3 were:</para>
+    <para>Other major findings from ARR Revision Project 3 - Temporal Patterns of Rainfall
+        <citation>b2_c5_r36</citation> were:</para>
 
     <orderedlist>
       <listitem>
-        <para>Irrespective of the method used to derive the temporal patterns,
-        when using a representative ensemble of patterns all methods produce
-        relatively similar results,</para>
+        <para>Irrespective of the method used to derive the temporal patterns, when using a
+          representative ensemble of patterns all methods produce relatively similar results; and </para>
       </listitem>
 
       <listitem>
@@ -1147,232 +999,161 @@
       generated for each AEP bin, duration and region. The four AEP bins adopted (see <xref
         linkend="b2_ch5_t_02"/> and <xref linkend="b2_ch5_f_11"/>) were based on the burst AEP at
       the source of the event. Temporal Pattern were extracted for the following durations from 15
-      minutes to 7 days, as shown in <xref linkend="b2_ch5_t_03"/></para>
+      minutes to 7 days, as shown in <xref linkend="b2_ch5_t_03"/>.</para>
 
+    <table xml:id="b2_ch5_t_02" frame="void">
+      <caption>Regional Temporal Pattern Bins</caption>
+      <col width="50%"/>
+      <col width="50%"/>
+      <thead>
+        <tr>
+          <th><emphasis role="bold">AEP Group</emphasis></th>
+          <th><emphasis role="bold">AEP Range</emphasis></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Very Rare</td>
+          <td>Rarest 10 within region</td>
+        </tr>
+        <tr>
+          <td>Rare</td>
+          <td>Rarer than 3.2% AEP</td>
+        </tr>
+        <tr>
+          <td>Intermediate</td>
+          <td>Between 3.2% and 14.4% AEP</td>
+        </tr>
+        <tr>
+          <td>Frequent</td>
+          <td>More frequent than 14.4% AEP</td>
+        </tr>
+      </tbody>
+    </table>
     
 
-    <table xml:id="b2_ch5_t_02">
-      <title>Regional Temporal Pattern bins</title>
-      <tgroup cols="2">
-        <colspec colname="col1" colnum="1"/>
-
-        <colspec colname="col2" colnum="2"/>
-
-        <tbody>
-          <row>
-            <entry><emphasis role="bold">AEP Group</emphasis></entry>
-
-            <entry><emphasis role="bold">AEP Range</emphasis></entry>
-          </row>
-
-          <row>
-            <entry>Very Rare</entry>
-
-            <entry>Rarest 10 within region</entry>
-          </row>
-
-          <row>
-            <entry>Rare</entry>
-
-            <entry>Rarer than 3.2% AEP</entry>
-          </row>
-
-          <row>
-            <entry>Intermediate</entry>
-
-            <entry>Between 3.2% and 14.4% AEP</entry>
-          </row>
-
-          <row>
-            <entry>Frequent</entry>
-
-            <entry>More frequent than 14.4% AEP</entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
 
     <figure xml:id="b2_ch5_f_11">
       <title>Temporal Pattern Ranges</title>
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../../figures/2080.jpg"/>
+          <imagedata fileref="../../figures/2080.png"/>
         </imageobject>
       </mediaobject>
     </figure>
 
-   
-
-    <table xml:id="b2_ch5_t_03">
-      <title>Temporal Pattern Durations</title>
-      <tgroup cols="3">
-        <colspec colname="col1" colnum="1"/>
-
-        <colspec colname="col2" colnum="2"/>
-
-        <colspec colname="col3" colnum="3"/>
-
-        <tbody>
-          <row>
-            <entry nameend="col3" namest="col1"><emphasis
-            role="bold">Duration</emphasis></entry>
-          </row>
-
-          <row>
-            <entry><emphasis role="italic">Minutes</emphasis></entry>
-
-            <entry><emphasis role="italic">Hours</emphasis></entry>
-
-            <entry><emphasis role="italic">Days</emphasis></entry>
-          </row>
-
-          <row>
-            <entry>15</entry>
-
-            <entry>0.25</entry>
-
-            <entry>0.010</entry>
-          </row>
-
-          <row>
-            <entry>30</entry>
-
-            <entry>0.5</entry>
-
-            <entry>0.021</entry>
-          </row>
-
-          <row>
-            <entry>60</entry>
-
-            <entry>1</entry>
-
-            <entry>0.042</entry>
-          </row>
-
-          <row>
-            <entry>120</entry>
-
-            <entry>2</entry>
-
-            <entry>0.083</entry>
-          </row>
-
-          <row>
-            <entry>180</entry>
-
-            <entry>3</entry>
-
-            <entry>0.125</entry>
-          </row>
-
-          <row>
-            <entry>270</entry>
-
-            <entry>4.5</entry>
-
-            <entry>0.188</entry>
-          </row>
-
-          <row>
-            <entry>360</entry>
-
-            <entry>6</entry>
-
-            <entry>0.250</entry>
-          </row>
-
-          <row>
-            <entry>540</entry>
-
-            <entry>9</entry>
-
-            <entry>0.375</entry>
-          </row>
-
-          <row>
-            <entry>720</entry>
-
-            <entry>12</entry>
-
-            <entry>0.500</entry>
-          </row>
-
-          <row>
-            <entry>1080</entry>
-
-            <entry>18</entry>
-
-            <entry>0.750</entry>
-          </row>
-
-          <row>
-            <entry>1440</entry>
-
-            <entry>24</entry>
-
-            <entry>1</entry>
-          </row>
-
-          <row>
-            <entry>2160</entry>
-
-            <entry>36</entry>
-
-            <entry>1.5</entry>
-          </row>
-
-          <row>
-            <entry>2880</entry>
-
-            <entry>48</entry>
-
-            <entry>2</entry>
-          </row>
-
-          <row>
-            <entry>4320</entry>
-
-            <entry>72</entry>
-
-            <entry>3</entry>
-          </row>
-
-          <row>
-            <entry>5760</entry>
-
-            <entry>96</entry>
-
-            <entry>4</entry>
-          </row>
-
-          <row>
-            <entry>7200</entry>
-
-            <entry>120</entry>
-
-            <entry>5</entry>
-          </row>
-
-          <row>
-            <entry>8640</entry>
-
-            <entry>144</entry>
-
-            <entry>6</entry>
-          </row>
-
-          <row>
-            <entry>10080</entry>
-
-            <entry>168</entry>
-
-            <entry>7</entry>
-          </row>
-        </tbody>
-      </tgroup>
+    <table xml:id="b2_ch5_t_03" frame="void">
+      <caption>Temporal Pattern Durations</caption>
+      <col width="33%"/>
+      <col width="33%"/>
+      <col width="33%"/>
+      <thead>
+        <tr>
+          <th colspan="3"><emphasis role="bold">Duration</emphasis></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><emphasis role="italic">Minutes</emphasis></td>
+          <td><emphasis role="italic">Hours</emphasis></td>
+          <td><emphasis role="italic">Days</emphasis></td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>0.25</td>
+          <td>0.010</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>0.5</td>
+          <td>0.021</td>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td>1</td>
+          <td>0.042</td>
+        </tr>
+        <tr>
+          <td>120</td>
+          <td>2</td>
+          <td>0.083</td>
+        </tr>
+        <tr>
+          <td>180</td>
+          <td>3</td>
+          <td>0.125</td>
+        </tr>
+        <tr>
+          <td>270</td>
+          <td>4.5</td>
+          <td>0.188</td>
+        </tr>
+        <tr>
+          <td>360</td>
+          <td>6</td>
+          <td>0.250</td>
+        </tr>
+        <tr>
+          <td>540</td>
+          <td>9</td>
+          <td>0.375</td>
+        </tr>
+        <tr>
+          <td>720</td>
+          <td>12</td>
+          <td>0.500</td>
+        </tr>
+        <tr>
+          <td>1080</td>
+          <td>18</td>
+          <td>0.750</td>
+        </tr>
+        <tr>
+          <td>1440</td>
+          <td>24</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2160</td>
+          <td>36</td>
+          <td>1.5</td>
+        </tr>
+        <tr>
+          <td>2880</td>
+          <td>48</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>4320</td>
+          <td>72</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>5760</td>
+          <td>96</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>7200</td>
+          <td>120</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>8640</td>
+          <td>144</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>10080</td>
+          <td>168</td>
+          <td>7</td>
+        </tr>
+      </tbody>
     </table>
+    
+
+  
 
     <para>When selecting a small ensemble of temporal patterns it is important
     to capture the typical variability of the observed events. A methodology
@@ -1390,53 +1171,38 @@
       preferred criteria in <xref linkend="b2_ch5_t_06"/>. The relaxed criteria were used where less
       than 10 suitable patterns could be found using the preferred criteria.</para>
 
-
-
-    <table xml:id="b2_ch5_t_06">
-      <title>Temporal Pattern selection criteria</title>
-      <tgroup cols="2">
-        <colspec colname="col1" colnum="1"/>
-
-        <colspec colname="col2" colnum="2"/>
-
-        <tbody>
-          <row>
-            <entry><emphasis role="bold">Preferred Criteria (for data rich
-            regions)</emphasis></entry>
-
-            <entry><emphasis role="bold">Relaxed Criteria (for data sparse
-            regions)</emphasis></entry>
-          </row>
-
-          <row>
-            <entry>No rarer embedded bursts</entry>
-
-            <entry>n/a</entry>
-          </row>
-
-          <row>
-            <entry>No events overlapping in time</entry>
-
-            <entry>n/a</entry>
-          </row>
-
-          <row>
-            <entry>Loading characteristics enforced</entry>
-
-            <entry>Loading characteristics ignored</entry>
-          </row>
-
-          <row>
-            <entry>Events from within a region</entry>
-
-            <entry>Sampled from within region and neighbouring region with
-            similar climatic characteristics</entry>
-          </row>
-        </tbody>
-      </tgroup>
+    <table xml:id="b2_ch5_t_06" frame="void">
+      <caption>Temporal Pattern Selection Criteria</caption>
+      <col width="50%"/>
+      <col width="50%"/>
+      <thead>
+        <tr>
+          <th><emphasis role="bold">Preferred Criteria (for Data Rich Regions)</emphasis></th>
+          <th><emphasis role="bold">Relaxed Criteria (for Data Sparse Regions)</emphasis></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>No rarer embedded bursts</td>
+          <td>n/a</td>
+        </tr>
+        <tr>
+          <td>No events overlapping in time</td>
+          <td>n/a</td>
+        </tr>
+        <tr>
+          <td>Loading characteristics enforced</td>
+          <td>Loading characteristics ignored</td>
+        </tr>
+        <tr>
+          <td>Events from within a region</td>
+          <td>Sampled from within region and neighbouring region with similar climatic
+            characteristics</td>
+        </tr>
+      </tbody>
     </table>
 
-    <para>While patterns containing embedded rarer bursts at their recording
+      <para>While patterns containing embedded rarer bursts at their recording
     location were not selected, events can still have embedded bursts at other
     locations within the region. The presence of major embedded bursts may
     warrant filtering of patterns.</para>
@@ -1444,235 +1210,841 @@
 
   <section xml:id="b2_ch5_s_12">
     <title>Temporal Patterns for Areal Rainfall Bursts</title>
-
-    <para>As part of the temporal pattern project a series of areal average
-    temporal patterns have been produced for different sized hypothetical
-    catchments. These patterns average the spatial variability of rainfall in
-    each time step which does remove some of the variability of actual
-    space-time rainfall fields.</para>
-
+    <para>As part of ARR Revision Project 3 - Temporal Patterns of Rainfall a series of areal
+      average temporal patterns have been produced for different sized hypothetical catchments.
+      These patterns average the spatial variability of rainfall in each time step which does remove
+      some of the variability of actual space-time rainfall fields. The process of calculating areal
+      temporal patterns involves identifying high rainfall areal events and calculating areal
+      temporal patterns. A brief summary is provided in this chapter (refer to
+        <citation>b2_c5_r39+1</citation> for more detail). Areal rainfall temporal patterns were
+      calculated for the area and duration combinations listed in <xref linkend="b2_ch5_t_3js8f"
+      />.</para>
+    <table frame="void" xml:id="b2_ch5_t_3js8f">
+      <caption>Areal Rainfall Temporal Patterns - Catchment Areas and Durations</caption>
+      <col width="50%"/>
+      <col width="50%"/>
+      <thead>
+        <tr>
+          <th><emphasis role="bold">Variable </emphasis></th>
+          <th/>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Catchment Area (km<superscript>2</superscript>)</td>
+          <td>100, 200, 500, 1000, 2500, 5000, 10 000, 20 000, 40 000</td>
+        </tr>
+        <tr>
+          <td>Durations (Hours)</td>
+          <td>12, 18, 24, 36, 48, 72, 96, 120, 144, 168</td>
+        </tr>
+      </tbody>
+    </table>
+     
+  
+    <section>
+      <title>Areal Rainfall Time Series Grid for All Australia</title>
+      <para>To create sets of areal temporal patterns an areal rainfall grid was derived for 30
+        minute time steps using the events database (described in <xref linkend="b2_ch5_s_06"/>, ie.
+        2280 pluviographs). Rainfall values from these pluviographs were further filtered for long
+        disaggregations and erroneously high rainfall values. A grid resolution of 0.025° identical
+        to the grid cell size used for the design rainfalls (<xref linkend="b2_ch3"/>) was chosen
+        for simplicity of use. A natural neighbours algorithm, which is a variant of Thiessen
+        polygons, was used to interpolate rainfall values from the pluviograph stations to each grid
+        cell with rainfall values for each time step from January 1960 to December 2010.</para>
+    </section>
+    <section>
+      <title>Average Areal Rainfall Calculation</title>
+      <para>The approach aims to identify the largest set of independent areal rainfall events
+        within the Temporal Pattern Regions shown in <xref linkend="b2_ch5_f_001"/> by not
+        restricting catchments to a particular shape. For each combination of duration and area, a
+        set of rectangular hypothetical catchments were used to sample the areal rainfall time
+        series and create catchment average rainfalls. At each catchment centroid, 12 hypothetical
+        catchments were trialled using the combinations of 3 aspect ratios (1.5, 2.3 and 3.6) and 4
+        rotations (0, 45, 90 and 135 degrees) shown in <xref linkend="b2_ch5_f_dn49w"/>. To best
+        represent Australian catchments, the aspect ratios were chosen by selecting the 20th, 50th
+        and 80th percentiles of shape factors calculated for the 798 catchments that were adopted
+        for the RFFE method described in <xref linkend="b3_ch3"/>. Average areal rainfall was
+        calculated for a hypothetical catchment’s each time step simply by averaging the rainfall of
+        all the grid cells with midpoints within the catchment area. To lessen computational
+        requirements, larger time steps were used for larger catchment areas.</para>
+      <figure xml:id="b2_ch5_f_dn49w">
+        <title>Combinations of Aspect Ratio and Rotation for Hypothetical Catchments</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2081.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+    <section>
+      <title>Areal Temporal Pattern Selection</title>
+      <para>Event rainfall totals were calculated for the sampled areal temporal patterns. For each
+        of the temporal pattern regions (<xref linkend="b2_ch5_f_001"/>) a set of events for all
+        combinations of catchment area and durations (as per <xref linkend="b2_ch5_t_3js8f"/>) with
+        the largest depths and no space-time overlap were selected. The space-time filter required a
+        minimum of 3 days between the end of one event and the start of another and for catchment
+        centres to be a minimum of either twice their longest side or 100 km apart.</para>
+      <para>To ensure data quality, hypothetical catchments that did not contain the minimum number
+        of pluviograph stations (<xref linkend="b2_ch5_t_jre30"/>) within their vicinity that were
+        producing quality data at the time of the event were disregarded. An additional filter was
+        then applied to remove events that had too much area assigned to a single gauge or
+        erroneous/unrealistic rainfall values. Each space-time independent areal temporal pattern
+        had a Pearson correlation coefficient derived between the areal pattern and all the
+        corresponding temporal patterns of pluviograph stations within its vicinity. Patterns that
+        had a very high correlation to a single gauge and no others or did not have enough stations
+        with a reasonable correlation to the areal pattern were removed.</para>
+      <table frame="void"  xml:id="b2_ch5_t_jre30">
+        <caption>Minimum Number of Pluviographs Required for Event
+          Selection for Each Catchment Area</caption>
+        <col width="50%"/>
+        <col width="50%"/>
+        <thead>
+          <tr>
+            <th><emphasis role="bold">Catchment Areas (km<superscript>2</superscript>)</emphasis></th>
+            <th><emphasis role="bold">Minimum Number of Pluviographs</emphasis></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>1000</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>2500</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>5000</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>10 000</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>20 000</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>40 000</td>
+            <td>40</td>
+          </tr>
+        </tbody>
+      </table>
+     
+      <para>Given that events were chosen simply based on their total rainfall depth, many of the
+        longer duration patterns selected represented a shorter duration. Using the same procedure
+        implemented in defining event extents in the events database, events that had extents less
+        than the duration shorter than the duration of interest were removed. </para>
+    </section>
+    <section>
+      <title>Design Areal Temporal Patterns</title>
+      <para>Due to the constraints on data quality, a full set of areal temporal patterns for every
+        region, duration and area could not be generated. Therefore, to use areal temporal patterns
+        for data sparse regions, it is necessary to sample patterns from climatically similar or
+        nearby regions. This is especially a problem for longer durations, with some durations such
+        as the 7 days not having enough patterns in any region. For these durations patterns must
+        therefore be sampled from all of Australia, although data dense areas contain the majority
+        of these events.</para>
+      <para>Like the point temporal patterns, meta-data on each pattern has been provided that
+        allows practitioners to track the location and time of the event. <xref
+          linkend="b2_ch5_f_j5k3w"/> compares the cumulative mass curves for 24 hour point and area
+        temporal patterns. This demonstrates how the spatial averaging produced by areal temporal
+        patterns reduces the variability. <xref linkend="b2_ch5_f_wqan4"/> compares areal temporal
+        patterns to the temporal patterns of the pluviograph closest to the area’s centroid, further
+        highlighting a reduction in variability with the areal temporal patterns.</para>
+      <figure xml:id="b2_ch5_f_j5k3w">
+        <title>Comparison of Point Temporal Patterns and Areal Temporal Patterns - East Coast South
+          Region - 1 Day </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2082.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <figure xml:id="b2_ch5_f_wqan4">
+        <title>Comparison of Areal Temporal Patterns and the Temporal Pattern of the Closest
+          Pluviograph for the Same Event</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/2083.PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+  </section>
+  <section  xml:id="b2_ch5_s_12dgr">
+    <title>Other Temporal Pattern Options</title>
     <section xml:id="b2_ch5_s_13">
       <title>Use of Historical Temporal Patterns</title>
-
-      <para>On a large catchment with good data it is not uncommon to have a
-      reasonable number of historical patterns for events rarer than 20%
-      AEP.</para>
-
-      <para>PLACEHOLDER MORE TO COME</para>
+      <para>On a large catchment with good quality temporal rainfall data it is not uncommon to have
+        a reasonable number of historical patterns for events rarer than the 20% AEP event. Where
+        there is a reasonable amount of local temporal data of appropriate AEPs across the
+        catchment, it is appropriate to use this local data in place of regional temporal patterns.
+        On large catchments, local point patterns will exhibit more variability and generally
+        produce higher flow estimates than locally derived areal temporal patterns and should be
+        used with caution. Some guidance on the use of local temporal patterns is provided in <xref
+          linkend="b2_ch6_6"/>. </para>
+      <para><xref linkend="b2_ch6_6"/> provides advice on the assignment of historical temporal
+        patterns when modelling observed events for calibration or analysis.</para>
     </section>
-
     <section xml:id="b2_ch5_s_14">
       <title>Complete Storm Patterns</title>
-
-      <para>PLACEHOLDER MORE TO COME</para>
+      <para>The methodology developed for the pre-burst estimation pooled storm events from nearby
+        catchments based on distance and IFD similarity. This approach was extended to develop
+        ensembles of complete storms based on their critical burst duration by selecting events that
+        can be put in a site specific duration probability bin with minimal scaling. The approach is
+        somewhat experimental and has performed as well as burst approaches in limited testing.
+        While categorising events on the basis of critical storm burst solves a lot of event
+        selection problems but it is different from more traditional burst approaches. Aspects of
+        the approach are described in ARR Revision Project 3 – Temporal Patterns of Rainfall Report
+          <citation>b1_c3_r21</citation>.</para>
+      <para>The major differences are:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Events are selected and duration binned on the basis of the critical rainfall
+            duration;</para>
+        </listitem>
+        <listitem>
+          <para>An event can only be used in one duration so a large storm sample is required;
+          </para>
+        </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <listitem>
+          <para>Duration bins represent a range of storm durations instead of a fixed
+            duration;</para>
+        </listitem>
+        <listitem>
+          <para>Event filtering is not required; and </para>
+        </listitem>
+        <listitem>
+          <para>A new sample needs to be created at each location so a regional approach is not
+            possible.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The process of binning events on the basis of their critical rainfall duration means
+        that events that produce a catchment response because of rainfall over a certain duration
+        can be placed in a bin of a very different duration. This means that under a critical
+        duration approach these event are unlikely to influence the design estimate even if they
+        produce the largest catchment response. This problem would not occur in a Monte Carlo
+        framework that samples across durations. </para>
+      <para> Despite these limitations, a complete storm approach has the advantage of producing
+        realistic rainfall storm events that have the correct burst IFD and storm volume
+        characteristics. <citation>b2_c5_r40+1</citation> showed considerable difference in basin
+        performance on a small urban catchment between burst and complete storm approaches.</para>
+    </section>
+    <section>
+      <title>Continuous Data</title>
+      <para>While continuous simulation is generally more appropriate for modelling very frequent
+        events there are some situations where event models might be appropriate. For these
+        situations temporal patterns could be sampled from a local pluviograph or sampled from a
+        generated continuous sequence using the techniques described in<xref linkend="b2_ch6"
+        />.</para>
     </section>
   </section>
 
   <section xml:id="b2_ch5_s_15">
     <title>Climate Change Impacts</title>
-
-    <para>Very little information is known about how climate change will
-    affect storm or burst temporal patterns. The most definitive work is by
-    Wasco and Sharma (2015) which analysed the relationship between burst
-    patterns from 79 Australian rain gauges and temperature variations. This
-    study found that, regardless of the climate region or season, temperature
-    increases are associated with patterns becoming less uniform, with the
-    largest fractions increasing in rainfall intensity and the lower fraction
-    decreasing. The scaling of the largest fractions was more pronounced in
-    short duration bursts, and gauges to the north of the country showed more
-    pronounced changes. While this work is based on the present climate, it
-    provides an insight into how patterns could change under a future warming.
-    Such climate changes would also affect IFD characteristics.</para>
-
-    <para>Westra et al (2013) proposed rainfall sequences for future climates
-    could be constructed by sampling historical rainfall patterns
-    corresponding to warmer days at the same location, or from locations which
-    have an atmospheric profile more reflective of expected future climate.
-    Such an approach could conceptually be applied in the selection of design
-    burst patterns but would require significant testing.</para>
-
-    <para>It is currently not possible to provide practical advice to
-    practitioners on this aspect of temporal patterns. It is recommended that
-    until further studies are completed, for simulations applying projected
-    climate change, the temporal patterns applied should those derived for
-    existing climatic conditions but recognising the additional uncertainty in
-    simulation results.</para>
+    <para>Very little information is known about how climate change will affect storm or burst
+      temporal patterns. The most definitive work is by <citation>b2_c5_r30+1</citation> which
+      analysed the relationship between burst patterns from 79 Australian rainfall gauges and
+      temperature variations. This study found that, regardless of the climate region or season,
+      temperature increases are associated with patterns becoming less uniform, with the largest
+      fractions increasing in rainfall intensity and the lower fraction decreasing. The scaling of
+      the largest fractions was more pronounced in short duration bursts, and rainfall gauges to the
+      north of the country showed more pronounced changes. While this work is based on the present
+      climate, it provides an insight into how patterns could change under a future warming. Such
+      climate changes would also affect IFD characteristics.</para>
+    <para><citation>b2_c5_r33+1</citation> proposed rainfall sequences for future climates could be
+      constructed by sampling historical rainfall patterns corresponding to warmer days at the same
+      location, or from locations which have an atmospheric profile more reflective of expected
+      future climate. Such an approach could conceptually be applied in the selection of design
+      burst patterns but would require significant testing.</para>
+    <para>It is currently not possible to provide practical advice to practitioners on this aspect
+      of temporal patterns. It is recommended that until further studies are completed, for
+      simulations applying projected climate change, the temporal patterns applied should be those
+      derived for existing climatic conditions but recognising the additional uncertainty in
+      simulation results.</para>
   </section>
 
   <section xml:id="b2_ch5_s_16">
     <title>Temporal Pattern Application and Pre-burst</title>
-
-    <para>PLACEHOLDER MORE TO COME</para>
+    <section>
+      <title>General</title>
+      <para>For the majority of problems, the practitioner needs to select a temporal pattern based
+        on the area and probability of the event they are modelling. For Very Rare and Extreme
+        events specific advice is provided in <xref linkend="book8"/>. The derivation of long
+        duration events (both point or areal temporal patterns) present a number of challenges. Many
+        of the events selected in the IFD Annual Maxima Series were from shorter duration events and
+        can not be selected as longer duration temporal patterns. Some long duration events are more
+        like consecutive events with none or little rainfall in between shorter events. For this
+        reason, in most locations, it was necessary to borrow temporal patterns (point and areal)
+        from adjoining regions. Daily rainfall gauges located in the catchment of interest should
+        give a good insight into the applicability of longer duration temporal patterns approaching
+        7 days.</para>
+      <para>Point temporal patterns should be used for catchments less than 75
+          km<superscript>2</superscript>. Areal temporal patterns have been derived for a number of
+        different catchment areas. <xref linkend="b2_ch5_t_heg84"/> provides a guide to applying the
+        areal patterns.</para>
+      <table frame="void" xml:id="b2_ch5_t_heg84">
+        <caption>Areal Temporal Pattern Sets for Ranges of Catchment Areas</caption>
+        <col width="50%"/>
+        <col width="50%"/>
+        <thead>
+          <tr>
+            <th><emphasis role="bold">Range of Target Catchment Areas (km<superscript>2</superscript>)</emphasis>
+            </th>
+            <th><emphasis role="bold">Catchment Area of Designated Areal Temporal Pattern Set
+              (km<superscript>2</superscript>)</emphasis></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>75 – 140</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>140 – 300</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>300 – 700</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>700 – 1600</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>1600 – 3500</td>
+            <td>2500</td>
+          </tr>
+          <tr>
+            <td>3500 – 7000</td>
+            <td>5000</td>
+          </tr>
+          <tr>
+            <td>7000 – 14,000</td>
+            <td>10,000</td>
+          </tr>
+          <tr>
+            <td>14,000 – 28,000</td>
+            <td>20,000</td>
+          </tr>
+          <tr>
+            <td>28,000 +</td>
+            <td>40,000</td>
+          </tr>
+        </tbody>
+      </table>
+     
+    </section>
+    <section>
+      <title>Ensemble Considerations</title>
+      <para>The use of an ensemble of 10 temporal patterns as discussed in <xref
+          linkend="b2_ch5_s_11"/> is recommended. The temporal patterns have been chosen to
+        represent the variability in observed patterns. Given the run times of two dimensional
+        hydraulic models it is not practical to run all 10 patterns (for multiple durations). A more
+        practical approach would be to run a separate hydrological modelling process of the whole
+        catchment of interest in order to determine the average pattern in terms of peak flow or
+        volume depending on the problem (<xref linkend="b2_ch5_s_j4892"/>). It is not recommended
+        that the temporal pattern that represents the worst (or best) case be used by itself for
+        design. Testing has demonstrated that on most catchments large number of events in the
+        ensemble patterns are clustered around the mean and median. <sidebar>
+          <para>When selecting a single representative (average) pattern the practitioner needs to
+            look at the whole catchment response hydrograph and not local inflow hydrographs.</para>
+        </sidebar></para>
+      <para>The ensemble of 10 pattern provides a range of plausible answers. The practitioner
+        should consider the benefits of investigating multiple temporal patterns or Monte Carlo for
+        sensitive designs and solutions. </para>
+      <sidebar>
+        <para>Running an ensemble of ten temporal patterns through a two dimensional model could be
+          time consuming. One option is to double the grid cell size which will decrease run time 8
+          fold.</para>
+      </sidebar>
+    </section>
+    <section>
+      <title>Upscaling of Patterns</title>
+      <para>Practitioners are cautioned to avoid or minimise upscaling patterns from frequent events
+        to rare events. In some locations the dominate rainfall mechanism might change with
+        probability and frequent events can exhibit more variability than rarer events. While there
+        are good meteorological reasons for very rare events to exhibit less variability then
+        frequent events (need reference) the causes are probably more complex than a single reason
+        and somewhat region specific. Testing carried out as part of the ARR Revision Project 3 –
+        Temporal Patterns of Rainfall has shown that in some locations that upscaling can be a
+        significant issue <citation>b2_c5_r41</citation> while in other locations results were
+        insensitive. In nearly all testing locations results were relatively insensitive to down
+        scaling of patterns.</para>
+    </section>
+    <section>
+      <title>Dealing with Inconsistencies and Smoothing of Results</title>
+      <para>Testing has demonstrated that inconsistent results can sometimes occur with AEP when the
+        bin patterns are drawn from changes particularly between the frequent and intermediate bins.
+        The problem was more pronounced in drier regions where a large part of the rainfall was
+        taken up by losses. In some cases, flood magnitude decreased for rarer AEPs while in others
+        the change with AEP was very stepped. On some catchments, the critical duration varied
+        inconsistently with AEP. Where problems are mainly caused by the pattern bin changing two
+        simple options are suggested, either: <orderedlist>
+          <listitem>
+            <para>Draw from both bins at the boundary effectively doubling the ensemble size which
+              effectively smooths the results; or</para>
+          </listitem>
+          <listitem>
+            <para>Replacing the frequent probability bin with the intermediate bin to ensure a
+              smooth catchment response with rainfall.</para>
+          </listitem>
+        </orderedlist></para>
+      <para>Consideration should be given to filtering out (or excluding) embedded bursts of lower
+        AEP by re-distributing rainfalls of high intensity to other time increments proportionally
+        to their magnitude (eg. <citation>b8_c_r18+1</citation>). In some situations results will
+        still need to be smoothed.</para>
+    </section>
+    <section>
+      <title>Practical Issues</title>
+      <para>If modelling events greater than 5 day, the practitioner should look at the daily
+        rainfall gauge totals for gauges within the catchment and confirm what the 7 day events look
+        like in the catchment compared to the regional patterns. </para>
+      <para>If 10 temporal patterns are not available for a given region, duration and frequency bin
+        then patterns were taken from other similar regions (<xref linkend="b2_ch5_t_fjeh2"/>). For
+        7 day events there was not enough patterns and all regions were pooled. Local knowledge can
+        be used to add events to the ensemble that weren’t selected in the regional sample.</para>
+      <table frame="void" xml:id="b2_ch5_t_fjeh2">
+        <caption>Alternate Regions Used for Data</caption>
+        <col width="20%"/>
+        <col width="20%"/>
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Alternate Region</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Southern Slopes (Tasmania)</td>
+            <td>Southern Slopes (mainland), Murray Basin</td>
+          </tr>
+          <tr>
+            <td>Southern Slopes (mainland)</td>
+            <td>Murray Basin, Southern Slopes (Tasmania), Central Slopes, East Coast South</td>
+          </tr>
+          <tr>
+            <td>Murray Basin</td>
+            <td>Central Slopes, Southern Slopes (mainland), Flatlands East, East Coast South</td>
+          </tr>
+          <tr>
+            <td>Central Slopes</td>
+            <td>Murray Basin, East Coast South, East Coast North, Southern Slopes (mainland)</td>
+          </tr>
+          <tr>
+            <td>East Coast South</td>
+            <td>East Coast North, Central Slopes, Murray Basin, Southern Slopes (mainland)</td>
+          </tr>
+          <tr>
+            <td>East Coast North</td>
+            <td>East Coast South, Wet Tropics, Central Slopes, Murray Basin</td>
+          </tr>
+          <tr>
+            <td>Wet Tropics</td>
+            <td>Monsoonal North, East Coast North</td>
+          </tr>
+          <tr>
+            <td>Monsoonal North</td>
+            <td>Wet Tropics, East Coast North, Rangelands West</td>
+          </tr>
+          <tr>
+            <td>Rangelands West</td>
+            <td>Rangelands, Flatlands West </td>
+          </tr>
+          <tr>
+            <td>Rangelands</td>
+            <td>Flatlands West, Flatlands East, Flatlands West</td>
+          </tr>
+          <tr>
+            <td>Flatlands West </td>
+            <td>Flatlands East, Rangelands West</td>
+          </tr>
+          <tr>
+            <td>Flatlands East </td>
+            <td>Flatlands West, Flatlands West, Rangelands</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <title>Point and Areal Temporal Pattern Meta-Data</title>
+      <para>Meta-data is provided (accessed via <link xlink:href="data.arr.org.au"
+          >data.arr.org.au</link>) which describes where the regional point and areal temporal
+        patterns were originally located and when they occurred. This includes: </para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis>Event ID</emphasis> - Unique ID given to each pattern;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Region</emphasis> - The region in which the pattern applies;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Region (Source)</emphasis> - The region the temporal pattern occurred
+            in;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Burst Loading</emphasis> - Classified events as front, middle or back (see
+              <xref linkend="b2_ch5_s_09"/>);</para>
+        </listitem>
+        <listitem>
+          <?oxy_comment_start author="testoni" timestamp="20160704T185152+1000" comment="CHECK THIS!!"?>
+          <para><emphasis>Burst Loading (%)</emphasis> - The percentage of the event that falls into
+            the loading category;</para>
+          <?oxy_comment_end?>
+        </listitem>
+        <listitem>
+          <para><emphasis>Burst Depth</emphasis> - Source temporal pattern burst depth. This is the
+            total depth the original pattern had, patterns are given in percentages and not original
+            depths;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>AEP (source)</emphasis> - The source temporal pattern AEP at the location
+            it was recorded. This AEP is based of the 2016 IFDs and the burst depth of the
+            event;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Burst Start </emphasis>- The time and date at which the burst
+            began;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Burst End</emphasis> - The time and date at which the burst ended;
+            and</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Pluviograph number</emphasis> - The ID of the pluviograph as from the
+            Bureau of Meteorology. </para>
+        </listitem>
+      </itemizedlist>
+      <para>There will be events that weren’t picked up in the regional sample however, local
+        experience will allow them to be used in the ensemble (note when doing this the front,
+        middle and back loading of the regional needs to be considered).</para>
+    </section>
+    <section>
+      <title>Very Rare Point Temporal Patterns</title>
+      <para>For point temporal patterns 4 bins are provided (<xref linkend="b2_ch5_f_11"/>). The
+        very rare bin contains the rarest ten patterns within the region. These patterns may not
+        feature in the rare bin for the region as the rare bin is sampled randomly. </para>
+    </section>
+    <section>
+      <title>Region Considerations</title>
+      <para>The regional point temporal patterns have been sourced from various locations throughout
+        the region and due to IFD gradients within the regions embedded bursts may occur. Depending
+        on the severity of the embedded burst, filtering of rarer bursts is recommended. When minor
+        embedded bursts occur in only a few of the 10 patterns in the ensemble filtering can be
+        neglected. Testing has shown with the 2013 Intensity Frequency Duration data that there are
+        some locations where all observed temporal patterns would have embedded bursts.</para>
+      <para>Locations close to region boundaries might experience storm mechanisms represented by
+        both regions. In these cases it is recommended to run a larger ensemble of all patterns, ie.
+        All 10 patterns from each neighboring region.</para>
+    </section>
+    <section>
+      <title>Pre-burst</title>
+      <para>The treatment is dependent on the approach taken to model losses and the magnitude of
+        the pre-burst. In most cases practitioners will use just the median pre-burst and median
+        storm initial loss. However, in some cases the practitioner may sample from distributions of
+        pre-burst and initial loss. As pre-burst varies with location, duration and probability the
+        adopted approach will vary, but it is probably sensible to adopt a consistent approach
+        across durations and probabilities being assessed. </para>
+      <para>In locations and for durations that do not have significant pre-burst (<xref
+          linkend="b2_ch5_f_09"/>), the pre-burst depth can be ignored when applying a temporal
+        pattern. Therefore the Burst IL (IL<subscript>b</subscript>) can be taken as the Storm IL
+          (IL<subscript>s</subscript>). In those locations where the pre-burst is significant a
+        number of approaches are possible:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="italic">Storm IL is greater than Pre-burst</emphasis> – Pre-burst
+            should be taken out of the storm IL</para>
+          <para>ie. IL<subscript>s</subscript> – Pre-burst = IL<subscript>b</subscript>;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Storm IL is approximately equal to Pre-burst</emphasis> – In
+            the case where storm IL and pre-burst are close to equal IL is satisfied and no IL needs
+            to be taken from the burst temporal pattern;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Pre-burst is greater than storm IL</emphasis> - In the case
+            where pre-burst is larger than the storm IL there are a number of options:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Apply a pre-burst temporal pattern after taking out the Storm IL. There is
+                little research that has investigated pre-burst temporal patterns; </para>
+            </listitem>
+            <listitem>
+              <para>Test the sensitivity of pre-burst on the resultant flood estimate and determine
+                if it can be ignored;</para>
+            </listitem>
+            <listitem>
+              <para>Apply a complete storm approach instead of a burst approach eg.
+                  <citation>b2_c5_r40+1</citation>.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+  <section xml:id="b2_ch5_s_j4892">
+    <title>Example</title>
+    <para>The Tennant Creek Catchment is located in the Northern Territory and was used for the ARR
+      research Projects 3 and 6. The catchment and catchment location is shown in <xref
+        linkend="b2_ch5_f_j3en9"/>. It is located in the Rangeland Region for temporal patterns. The
+      temporal pattern data for the region can be extracted at data.arr.org.au. In this particular
+      example a RORB model was set up for the catchment. The model was previously calibrated with an
+        IL<subscript>b</subscript>=0 and a CL=7 mm/hr. As the catchment area is 72.3
+        km<superscript>2</superscript> it was decided that the critical duration would be between 60
+      minutes and 1440 minutes (1 day). </para>
+    <figure xml:id="b2_ch5_f_j3en9">
+      <title>Tennant Creek Catchment</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/2086.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>For this example only the 1% AEP patterns were run through the hydrologic model. 10
+      patterns from the rare AEP bin and the Rangelands region were run for each of the following
+      durations:</para>
+    <itemizedlist>
+      <listitem>
+        <para>60 minute</para>
+      </listitem>
+      <listitem>
+        <para>120 minute</para>
+      </listitem>
+      <listitem>
+        <para>180 minute</para>
+      </listitem>
+      <listitem>
+        <para>270 minute</para>
+      </listitem>
+      <listitem>
+        <para>360 minute</para>
+      </listitem>
+      <listitem>
+        <para>540 minute</para>
+      </listitem>
+      <listitem>
+        <para>720 minute</para>
+      </listitem>
+      <listitem>
+        <para>1080 minute</para>
+      </listitem>
+      <listitem>
+        <para>1440 minute</para>
+      </listitem>
+    </itemizedlist>
+    <para><xref linkend="b2_ch5_f_9k53d"/> is a presentation of the results in a box plot. The
+      results are also presented in <xref linkend="b2_ch5_t_jeb39"/>, it should be noted that even
+      though the columns are labelled bursts 1 to 10 they are not the same storms across the
+      durations. The box plot presents clearly that the 180 minute duration is critical. The average
+      peak flow of the 180 minute duration bursts (277.35 m<superscript>3</superscript>/s) should
+      then be taken as the 1% AEP flow. If a practitioner wanted to run a pattern through a
+      hydraulic model and it was not practical to run all 10 patterns, the pattern closest to the
+      average (shown in <xref linkend="b2_ch5_t_jeb39"/>) is Burst number 1.</para>
+    <figure  xml:id="b2_ch5_f_9k53d">
+      <title>Duration Box plot for the 1% AEP</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/2084.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <table frame="void" width="720" xml:id="b2_ch5_t_jeb39">
+      <caption>Flows for the 1% Annual Exceedance Probability for Ten Burst Events</caption>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <col width="7%"/>
+      <thead>
+        <tr>
+          <th rowspan="2">Duration</th>
+          <th colspan="12">1% AEP Peak Flow (m<superscript>3</superscript>/s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Burst 1</td>
+          <td>Burst 2</td>
+          <td>Burst 3</td>
+          <td>Burst 4</td>
+          <td>Burst 5</td>
+          <td>Burst 6</td>
+          <td>Burst 7</td>
+          <td>Burst 8</td>
+          <td>Burst 9</td>
+          <td>Burst 10</td>
+          <td>Average</td>
+          <td>Median</td>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td>146.9</td>
+          <td>173.8</td>
+          <td>179.6</td>
+          <td>145.7</td>
+          <td>157.2</td>
+          <td>159.6</td>
+          <td>169.4</td>
+          <td>141.6</td>
+          <td>148.8</td>
+          <td>150.2</td>
+          <td>157.28</td>
+          <td>153.7</td>
+        </tr>
+        <tr>
+          <td>120</td>
+          <td>221.5</td>
+          <td>230.2</td>
+          <td>261.9</td>
+          <td>238.1</td>
+          <td>260.3</td>
+          <td>259.5</td>
+          <td>233</td>
+          <td>240.2</td>
+          <td>244.9</td>
+          <td>262.6</td>
+          <td>245.22</td>
+          <td>242.55</td>
+        </tr>
+        <tr>
+          <td>180</td>
+          <td>279.4</td>
+          <td>264.8</td>
+          <td>279.6</td>
+          <td>274.4</td>
+          <td>263.5</td>
+          <td>273.5</td>
+          <td>264.1</td>
+          <td>272.8</td>
+          <td>273.1</td>
+          <td>268.3</td>
+          <td>277.35</td>
+          <td>273.95</td>
+        </tr>
+        <tr>
+          <td>270</td>
+          <td>262.5</td>
+          <td>241.1</td>
+          <td>284.1</td>
+          <td>288.5</td>
+          <td>306.6</td>
+          <td>264.7</td>
+          <td>266.8</td>
+          <td>261.2</td>
+          <td>287.8</td>
+          <td>254.4</td>
+          <td>271.77</td>
+          <td>265.75</td>
+        </tr>
+        <tr>
+          <td>360</td>
+          <td>255.5</td>
+          <td>285.5</td>
+          <td>214.4</td>
+          <td>243.9</td>
+          <td>199.7</td>
+          <td>223.2</td>
+          <td>246.3</td>
+          <td>246.3</td>
+          <td>269.8</td>
+          <td>283.9</td>
+          <td>246.85</td>
+          <td>246.3</td>
+        </tr>
+        <tr>
+          <td>540</td>
+          <td>230.9</td>
+          <td>163.1</td>
+          <td>168.7</td>
+          <td>195.4</td>
+          <td>254.7</td>
+          <td>203.2</td>
+          <td>236.6</td>
+          <td>235.6</td>
+          <td>177.5</td>
+          <td>259.7</td>
+          <td>212.54</td>
+          <td>217.05</td>
+        </tr>
+        <tr>
+          <td>720</td>
+          <td>193.7</td>
+          <td>173.5</td>
+          <td>188.1</td>
+          <td>143.8</td>
+          <td>254.9</td>
+          <td>243.6</td>
+          <td>195.2</td>
+          <td>210.3</td>
+          <td>172.3</td>
+          <td>224.2</td>
+          <td>199.96</td>
+          <td>194.45</td>
+        </tr>
+        <tr>
+          <td>1080</td>
+          <td>197.7</td>
+          <td>159.2</td>
+          <td>103.8</td>
+          <td>239</td>
+          <td>179.1</td>
+          <td>151.3</td>
+          <td>191.2</td>
+          <td>160.5</td>
+          <td>148.1</td>
+          <td>151.5</td>
+          <td>168.14</td>
+          <td>159.85</td>
+        </tr>
+        <tr>
+          <td>1440</td>
+          <td>177.9</td>
+          <td>113.5</td>
+          <td>144</td>
+          <td>108.8</td>
+          <td>222.5</td>
+          <td>103.4</td>
+          <td>173.2</td>
+          <td>156.9</td>
+          <td>272</td>
+          <td>130.5</td>
+          <td>160.27</td>
+          <td>150.45</td>
+        </tr>
+      </tbody>
+    </table>
+  
   </section>
 
-  <section xml:id="b2_ch5_s_17">
-    <title>Examples</title>
-
-    <para>PLACEHOLDER MORE TO COME</para>
-  </section>
-
-  <section xml:id="b2_ch5_s_18">
-    <title>References</title>
-
-    <para>Askew, A.J. (1975). Use of Risk Premium in Chance-Constrained
-    Dynamic Programming. Water Resources Research 11(6):862-866.</para>
-
-    <para>Ball, J.E. (1994), 'The influence of storm temporal patterns on
-    catchment response', Journal of Hydrology, vol. 158, no. 3-4, pp.
-    285-303.</para>
-
-    <para>Brown J.A.H. (1982), A Review of flood estimation procedures,
-    Proceedings of the workshop on spillway design, Department of National
-    Development and Energy, AWRC Conference Series No. 6</para>
-
-    <para>Cordery I., Pilgrim D.H and Rowbottom I.A. (1984). Time patterns of
-    rainfall for estimating design floods on a frequency basis. Wat. Sci.
-    Tech., 16(8-9), 155-165</para>
-
-    <para>CSIRO and Bureau of Meteorology 2015, Climate Change in Australia
-    Information for Australia’s Natural Resource Management Regions: Technical
-    Report, CSIRO and Bureau of Meteorology, Australia</para>
-
-    <para>Green, J.H., Xuereb, K. and Siriwardena, L. (2011), Establishment of
-    a Quality Controlled Rainfall Database for the Revision of the (IFD)
-    Estimates for Australia, Proceedings of 34th IAHR World Congress,
-    Brisbane, 26 June–1st July 2011</para>
-
-    <para>Hall, A.J. and Kneen, T.H. (1973) Design Temporal Patterns of Storm
-    Rainfall in Australia, Proc. Hydrology Symposium, Inst. Eng. Aust., pp
-    77-84</para>
-
-    <para>Hill, P.H., Graszkiewicz, Z., Taylor, M., and Nathan, R. (2014),
-    Australian Rainfall and Runoff Revision Project 6: Loss Models for
-    Catchment Simulation, Phase 4, October 2014, Report No. P6/S3/016B</para>
-
-    <para>Hoang TMT, Rahman A, Weinmann PE, Laurenson E, Nathan R, Joint
-    Probability description of design rainfall, Water 99 Joint congress-
-    Brisbane 1999</para>
-
-    <para>Huff, A. (1967), Time distribution in heavy storms, Water Resources
-    Research, 3, 1007-1019</para>
-
-    <para>Keifer, C. J., and H. H. Chu (1957), Synthetic storm pattern for
-    drainage design, ASCE Journal of the Hydraulics Division, 83 (HY4),
-    1-25.</para>
-
-    <para>Kuczera G, Lambert M, Heneker T, Jennings S, Frost A, Coombes P,
-    Joint Probability and design storms at the cross roads, (2003) Proceedings
-    of the 28th International Hydrology and Water Resources Symposium,
-    Wollongong, 2003</para>
-
-    <para>Meighen, J. and Kennedy, M.R. (1995) Catalogue of Significant
-    Rainfall Occurrences over Southeast Australia , HRS Report No. 3,
-    Hydrology Report Series, Bureau of Meteorology, Melbourne, Australia,
-    October 1995</para>
-
-    <para>Milston, A.K. (1979), The influence of temporal patterns of design
-    rainfall in peak flood discharge, Thesis (M.Eng.Sci.), University of New
-    South Wales</para>
-
-    <para>Nathan, R.J. and Weinmann, P.E. (1995): The estimation of extreme
-    floods - the need and scope for revision of our national guidelines. Aus J
-    Water Resources, 1(1): 40-50.</para>
-
-    <para>Nathan, R.J., Weinmann, P.E., and Hill, P.I. (2002): Use of a
-    Monte-Carlo framework to characterise hydrologic risk. Proc., ANCOLD
-    conference on dams, Adelaide, 2002</para>
-
-    <para>Nathan, R., Weinmann, E., Hill, P. (2003) Use of Monte Carlo
-    Simulation to Estimate the Expected Probability of Large to Extreme
-    Floods, Proc. 28th Int. Hydrology and Water Res. Symp., Wollongong, pp
-    1.105-1.112.</para>
-
-    <para>Pattison, A, (ed) 1977, Australian Rainfall and Runoff: Flood
-    Analysis and Design, The Institution of Engineers Australia</para>
-
-    <para>Phillips, BC; Lees, SJ and Lynch, SJ. Embedded Design Storms - an
-    Improved Procedure for Design Flood Level Estimation?. In: Water Down
-    Under 94: Surface Hydrology and Water Resources Papers; Preprints of
-    Papers. Barton, ACT: Institution of Engineers, Australia, 1994: 235-240.
-    National conference publication (Institution of Engineers, Australia) ;
-    no. 94/15.</para>
-
-    <para>Phillips P and Yu S, (2015), How robust are OSD and OSR Systems?,
-    2015 WSUD &amp; IECA, Sydney</para>
-
-    <para>Pilgrim D, Editor, Australian Rainfall and Runoff: A Guide to Flood
-    estimation, Engineers Australia, 1987</para>
-
-    <para>Pilgrim, D.H., Cordery, I. And French, R. (1969). Temporal patterns
-    of design rainfall for Sydney, Institution of Engineers, Australia, Civil
-    Eng. Trans., Vol CE11, 9-14.</para>
-
-    <para>Pilgrim, D.H. and Cordery, I. (1975), Rainfall temporal patterns for
-    design floods, Journal of the Hydraulics Division, Vol. 101, No. 1,
-    January 1975, pp. 81-95</para>
-
-    <para>Rahman, A., Weinmann, P. E., Hoang, T. M. T., &amp; Laurenson, E. M.
-    (2002). Monte Carlo simulation of flood frequency curves from rainfall.
-    Journal of Hydrology</para>
-
-    <para>Retallick M, Babister M, Varga C, Ball J, Askew A (2009), Do
-    Filtered patterns resemble real patterns? Proceedings of the Hydrology and
-    Water Resources Symposium, Newcastle 2009, Engineers Australia,</para>
-
-    <para>Rigby E and Bannigan D (1996) The Embedded design storm concept – A
-    critical review, 23rd Hydrology and Water Resources Symposium Hobart
-    1996</para>
-
-    <para>Rigby E, Boyd M, Roso S, Van Drie R (2003), Storms, Storm bursts and
-    flood estimation- A need for review of the AR&amp;R procedures,
-    Proceedings of the 28th International Hydrology and Water Resources
-    Symposium, Wollongong 2003</para>
-
-    <para>Roso S and Rigby E, (2006), The impact of embedded design storms on
-    flows within a catchment, Proceedings of the 30th Hydrology and Water
-    Resources Symposium Launceston 2006</para>
-
-    <para>Sih, K; Hill, P and Nathan, R. (2008), Evaluation of Simple
-    Approaches to Incorporating Variability in Design Temporal Patterns . In:
-    Lambert, Martin (Editor); Daniell, TM (Editor); Leonard, Michael (Editor).
-    Proceedings of Water Down Under 2008. Modbury, SA: Engineers Australia;
-    Causal Productions, 2008: 1049-1059.</para>
-
-    <para>Wasco C and Sharma A (2015) Steeper temporal distribution of rain
-    intensity at higher temperatures within Australian storms, Nature
-    Geoscience Letter, 8 June 2015</para>
-
-    <para>Webb McKeown and Associates, (2003), Assessment of the variability
-    of rates of rise for hydrographs on the Hawkesbury Nepean River, December
-    2003</para>
-
-    <para>Weinmann P, Rahman A, Hoang T, Laurenson E, Nathan R, (2000), Monte
-    Carlo Simulation of flood Frequency Curves, Proceedings of Hydro 2000, 3rd
-    International hydrology and water resources symposium, Perth, Inst. Of
-    Engineers Australia, pp 564-569.</para>
-
-    <para>Westra S, Evans J, Mehrotra R, Sharma A, (2013), A conditional
-    disaggregation algorithm for generating fine time-scale rainfall data in a
-    warmer climate, Journal of Hydrology, 479, 86-99</para>
-
-    <para>WMAwater, (2015) Australian Rainfall and Runoff Revision Project 3:
-    Temporal Patterns of Rainfall, Part 1 – Development of an Events Database,
-    Stage 3 Report, October 2015</para>
-
-    <para>WMAwater, (2015) Australian Rainfall and Runoff Revision Project 3:
-    Temporal Patterns of Rainfall, Part 2 – Analysis of Pre-burst Rainfalls,
-    Stage 3 Report, October 2015</para>
-
-    <para>WMAwater, (2015) Australian Rainfall and Runoff Revision Project 3:
-    Temporal Patterns of Rainfall, Part 3 – Preliminary Testing of Temporal
-    Pattern Ensembles, Stage 3 Report, October 2015</para>
-
-    <para>Wood, J.F. and Alvarez, K. (1982), Review of Pindari Dam Design
-    Inflow Flood Estimate, Proceedings of the workshop on spillway design,
-    Department of National Development and Energy, AWRC Conference Series No.
-    6</para>
-
-    <para>Varga C, Ball J, Babister M, An Alternative for Developing Temporal
-    Patterns, Proceedings of the Hydrology and Water Resources Symposium,
-    Newcastle 2009, Engineers Australia, 2009</para>
-
-    <para/>
-  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
 </chapter>

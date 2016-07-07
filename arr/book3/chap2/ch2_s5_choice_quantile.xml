@@ -9,313 +9,354 @@
          xmlns:db="http://docbook.org/ns/docbook">
   <title>Choice of Flood Quantile Estimator</title>
 
-  <para>In general, the estimation of a design quantile should be guided by the consequences of
-    over<?oxy_delete author="RadhikaChhotai" timestamp="20151022T152902+1100" content="-"?> and
-    under-design (Slack <emphasis>et al</emphasis>., 1975).<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T152907+1100"?>
-    <?oxy_insert_end?>This section considers the following question: Given data D, what is the best
-    estimate of the flood discharge which has an AEP of
-    X%<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T152919+1100"?>?<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T152919+1100" content="."?></para>
+  <para>This section considers the following question: Given data D, what is the best estimate of
+    the 1 in Y AEP flood discharge.</para>
 
   <para>If the true value of <inlineequation>
-      <m:math display="inline">
-        <m:mi>θ</m:mi>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x03B8;</mi>
+      </math>
     </inlineequation> were known, then the pdf <inlineequation>
-      <m:math display="inline">
-        <m:mi>p(q|θ)</m:mi>
-      </m:math>
-    </inlineequation> can be used to compute the flood quantile
-  <inlineequation>
-      <m:math display="inline">
-        <m:mrow>
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:mo>(θ)</m:mo>
-        </m:mrow>
-      </m:math>
-    </inlineequation>. For AM series the quantile with an AEP of X% is defined
-  as:</para>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow>
+              <mi>q</mi>
+              <mo>|</mo>
+            </mrow>
+            <mi>&#x03B8;</mi>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+      </math>
+    </inlineequation> can be used to compute the flood quantile <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+          <mi>q</mi>
+          <mi>Y</mi>
+        </msub>
+        <mrow>
+          <mo>(</mo>
+          <mi>&#x03B8;</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
+    </inlineequation>. For AM series the 1 in Y AEP quantile is defined as:</para>
 
   <equation xml:id="b3_ch2_e_aq26s">
-    <m:math display="block">
-      <m:mrow>
-        <m:mrow>
-          <m:mo>P(q&gt;</m:mo>
-
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:mi>∣θ</m:mi>
-        </m:mrow>
-
-        <m:mo>)=</m:mo>
-
-        <m:mrow>
-          <m:mfrac>
-            <m:mi>1</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:mfrac>
-
-          <m:mrow>
-            <m:mo>=</m:mo>
-
-            <m:mrow>
-              <m:munderover>
-                <m:mo>∫</m:mo>
-
-                <m:msub>
-                  <m:mi>q</m:mi>
-
-                  <m:mi>Y</m:mi>
-                </m:msub>
-
-                <m:mi>∞</m:mi>
-              </m:munderover>
-
-              <m:mi>p(q∣θ</m:mi>
-            </m:mrow>
-          </m:mrow>
-
-          <m:mi>)dq</m:mi>
-        </m:mrow>
-      </m:mrow>
-    </m:math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mi>P</mi>
+      <mo stretchy="false">(</mo>
+      <mi>Q</mi>
+      <mo>&#x2264;</mo>
+      <msub>
+        <mi>q</mi>
+        <mi>Y</mi>
+      </msub>
+      <mo>|</mo>
+      <mi>&#x03B8;</mi>
+      <mo stretchy="false">)</mo>
+      <mo>=</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mi>Y</mi>
+      </mfrac>
+      <mo>=</mo>
+      <munderover>
+        <mstyle mathsize="140%" displaystyle="true">
+          <mo>&#x222B;</mo>
+        </mstyle>
+        <mrow>
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+        </mrow>
+        <mi>&#x221E;</mi>
+      </munderover>
+      <mi>p</mi>
+      <mo stretchy="false">(</mo>
+      <mi>q</mi>
+      <mo>|</mo>
+      <mi>&#x03B8;</mi>
+      <mo stretchy="false">)</mo>
+      <mi>d</mi>
+      <mi>q</mi>
+    </math>
   </equation>
 
   <para>However, in practice the true value of <inlineequation>
-      <m:math display="inline">
-        <m:mi>θ</m:mi>
-      </m:math>
-    </inlineequation> (as well as the distribution family) is unknown. All
-  that is known about <inlineequation>
-      <m:math display="inline">
-        <m:mi>θ</m:mi>
-      </m:math>
-    </inlineequation>, given the data D, is summarized by a probability
-  distribution with pdf <inlineequation>
-      <m:math display="inline">
-        <m:mi>p(θ|D)</m:mi>
-      </m:math>
-    </inlineequation>. <xref linkend="b3_ch2_s6"/> describes how this
-  distribution may be obtained – this distribution is the posterior
-  distribution if performing a Bayesian analysis or the sampling distribution
-  if performing a bootstrap analysis.</para>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x03B8;</mi>
+      </math>
+    </inlineequation> (as well as the distribution family) is unknown. All that is known about <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x03B8;</mi>
+      </math>
+    </inlineequation>, given the data D, is summarized by a probability distribution with pdf <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow>
+              <mi>&#x03B8;</mi>
+              <mo>|</mo>
+            </mrow>
+            <mi>D</mi>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+      </math>
+    </inlineequation>. <xref linkend="b3_ch2_s6"/> describes how this distribution may be obtained –
+    this distribution is the posterior distribution if performing a Bayesian analysis or the
+    sampling distribution if performing a bootstrap analysis.</para>
 
   <para>If the true value of <inlineequation>
-      <m:math display="inline">
-        <m:mi>θ</m:mi>
-      </m:math>
-    </inlineequation> is not known, it follows that the true value of the
-  quantile <inlineequation>
-      <m:math display="inline">
-        <m:mi>p(θ|D)</m:mi>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x03B8;</mi>
+      </math>
+    </inlineequation> is not known, it follows that the true value of the quantile <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+          <mi>q</mi>
+          <mi>Y</mi>
+        </msub>
+        <mrow>
+          <mo>(</mo>
+          <mi>&#x03B8;</mi>
+          <mo>)</mo>
+        </mrow>
+      </math>
     </inlineequation> is not known. The uncertainty about <inlineequation>
-      <m:math display="inline">
-        <m:mi>θ</m:mi>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>&#x03B8;</mi>
+      </math>
     </inlineequation> described by the pdf <inlineequation>
-      <m:math display="inline">
-        <m:mi>p(θ|D)</m:mi>
-      </m:math>
-    </inlineequation> , translates into uncertainty about the quantile,
-  described by the quantile predictive pdf <inlineequation>
-      <m:math display="inline">
-        <m:mrow>
-          <m:mi>p(</m:mi>
-
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mo>|D)</m:mo>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
-    </inlineequation>. The question then arises, which value from the quantile
-  predictive pdf <inlineequation>
-      <m:math display="inline">
-        <m:mrow>
-          <m:mi>p(</m:mi>
-
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:mi>|</m:mi>
-
-          <m:mo>D)</m:mo>
-        </m:mrow>
-      </m:math>
-    </inlineequation>should be adopted as the flood quantile estimate? This
-  section presents two approaches for determining the best estimate of a flood
-  discharge with a X% AEP knowing the pdf <inlineequation>
-      <m:math display="inline">
-        <m:mrow>
-          <m:mi>p(</m:mi>
-
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:mi>|</m:mi>
-
-          <m:mo>D)</m:mo>
-        </m:mrow>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow>
+              <mi>&#x03B8;</mi>
+              <mo>|</mo>
+            </mrow>
+            <mi>D</mi>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+      </math>
+    </inlineequation> , translates into uncertainty about the quantile, described by the quantile
+    predictive pdf <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>q</mi>
+          <mi>Y</mi>
+        </msub>
+        <mo>&#x007C;</mo>
+        <mi>D</mi>
+        <mo stretchy="false">)</mo>
+      </math>
+    </inlineequation>. The question then arises, which value from the quantile predictive pdf <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>q</mi>
+          <mi>Y</mi>
+        </msub>
+        <mo>&#x007C;</mo>
+        <mi>D</mi>
+        <mo stretchy="false">)</mo>
+      </math>
+    </inlineequation>should be adopted as the flood quantile estimate? This section presents two
+    approaches for determining the best estimate of a flood discharge with a 1 in Y AEP knowing the
+    pdf <inlineequation>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow>
+              <mi>&#x03B8;</mi>
+              <mo>|</mo>
+            </mrow>
+            <mi>D</mi>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+      </math>
     </inlineequation>.</para>
 
   <section xml:id="b3_ch2_s_sw7yg">
     <title>Expected Parameter Quantiles</title>
-
-    <para>This section considers the case where the consequence of
-      over<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162301+1100" content="-"?> and
-      under-design is expressed by some measure of the difference between the true and estimated X%
-      AEP quantiles – this difference is called the quantile error.</para>
+    <para>In general the estimation of a design quantile should be guided by the consequences of
+      under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162346+1100" content="-"?> or
+      over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162350+1100"?>-<?oxy_insert_end?>design
+        <citation>b3_c2_r68</citation>. This section considers the case where the consequence of
+      over- and under-design is expressed by some measure of the difference between the true and
+      estimated 1 in Y AEP quantiles – this difference is called the quantile error.</para>
 
     <para>The loss function <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:mi>L(</m:mi>
-
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mrow>
-              <m:mi>(D),</m:mi>
-
-              <m:mrow>
-                <m:msub>
-                  <m:mi>q</m:mi>
-
-                  <m:mi>Y</m:mi>
-                </m:msub>
-
-                <m:mo>(θ)]</m:mo>
-              </m:mrow>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
-      </inlineequation> describes the loss or consequence when the true
-    quantile <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mo>(θ),</m:mo>
-          </m:mrow>
-        </m:math>
-      </inlineequation> which depends on <inlineequation>
-        <m:math display="inline">
-          <m:mi>θ</m:mi>
-        </m:math>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>L</mi>
+            <mrow>
+              <mo>[</mo>
+              <mrow>
+                <msub>
+                  <mi>q</mi>
+                  <mi>Y</mi>
+                </msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mi>D</mi>
+                  <mo>)</mo>
+                </mrow>
+                <mo>,</mo>
+                <msub>
+                  <mi>q</mi>
+                  <mi>Y</mi>
+                </msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mi>&#x03B8;</mi>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mo>]</mo>
+            </mrow>
+          </mrow>
+        </math>
+      </inlineequation> describes the loss or consequence when the true quantile <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mrow>
+            <mo>(</mo>
+            <mi>&#x03B8;</mi>
+            <mo>)</mo>
+          </mrow>
+        </math>
+      </inlineequation>, which depends on <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>&#x03B8;</mi>
+        </math>
       </inlineequation>, is incorrectly estimated by <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mo>(D),</m:mo>
-          </m:mrow>
-        </m:math>
-      </inlineequation> which depends on the data D. Because the true value of
-    <inlineequation>
-        <m:math display="inline">
-          <m:mi>θ</m:mi>
-        </m:math>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mrow>
+            <mo>(</mo>
+            <mi>D</mi>
+            <mo>)</mo>
+          </mrow>
+        </math>
+      </inlineequation>, which depends on the data D. Because the true value of <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>&#x03B8;</mi>
+        </math>
       </inlineequation> is uncertain, the best estimator <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:msub>
-              <m:mi>(D)</m:mi>
-
-              <m:mi>opt</m:mi>
-            </m:msub>
-          </m:mrow>
-        </m:math>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <msub>
+            <mrow>
+              <mo>(</mo>
+              <mi>D</mi>
+              <mo>)</mo>
+            </mrow>
+            <mrow>
+              <mi>o</mi>
+              <mi>p</mi>
+              <mi>t</mi>
+            </mrow>
+          </msub>
+        </math>
       </inlineequation> is the one that minimises the expected loss:</para>
 
     <equation xml:id="b3_ch2_e_uko3q">
-      <m:math display="block">
-        <m:mrow>
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:msub>
-            <m:mi>(D)</m:mi>
-
-            <m:mi>opt</m:mi>
-          </m:msub>
-
-          <m:mi>←</m:mi>
-
-          <m:mo>min</m:mo>
-
-          <m:mrow>
-            <m:munderover>
-              <m:mo>∫</m:mo>
-
-              <m:mi>θ</m:mi>
-
-              <m:mi/>
-            </m:munderover>
-
-            <m:mi>L[</m:mi>
-          </m:mrow>
-
-          <m:msub>
-            <m:mi>q</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:msub>
-
-          <m:mrow>
-            <m:mi>(D),</m:mi>
-
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mi>(θ)]p(θ|D)dθ</m:mi>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+          <mi>q</mi>
+          <mi>Y</mi>
+        </msub>
+        <msub>
+          <mrow>
+            <mo>(</mo>
+            <mi>D</mi>
+            <mo>)</mo>
+          </mrow>
+          <mrow>
+            <mi>o</mi>
+            <mi>p</mi>
+            <mi>t</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2190;</mo>
+        <mi>min</mi>
+        <mstyle displaystyle="true">
+          <mrow>
+            <munder>
+              <mo>&#x222B;</mo>
+              <mi>&#x03B8;</mi>
+            </munder>
+            <mrow>
+              <mi>L</mi>
+              <mrow>
+                <mo>[</mo>
+                <mrow>
+                  <msub>
+                    <mi>q</mi>
+                    <mi>Y</mi>
+                  </msub>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>D</mi>
+                    <mo>)</mo>
+                  </mrow>
+                  <mo>,</mo>
+                  <msub>
+                    <mi>q</mi>
+                    <mi>Y</mi>
+                  </msub>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>&#x03B8;</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>]</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+        </mstyle>
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mrow>
+              <mi>&#x03B8;</mi>
+              <mo>|</mo>
+            </mrow>
+            <mi>D</mi>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mi>d</mi>
+        <mi>&#x03B8;</mi>
+      </math>
     </equation>
 
     <para>The optimal quantile estimator depends on the choice of loss
@@ -333,103 +374,21 @@
         <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162358+1100" content="the "?>loss
         is proportional to the square of the quantile error. The loss function is expressed
           as:<equation xml:id="b3_ch2_e_oxco0">
-          <m:math display="block">
-            <m:mrow>
-              <m:mi>L</m:mi>
-              <m:mrow>
-                <m:mo>[</m:mo>
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>q</m:mi>
-                    <m:mi>Y</m:mi>
-                  </m:msub>
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-                    <m:mi>D</m:mi>
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-                  <m:mo>,</m:mo>
-                  <m:msub>
-                    <m:mi>q</m:mi>
-                    <m:mi>Y</m:mi>
-                  </m:msub>
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-                    <m:mi>&#x03B8;</m:mi>
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-                </m:mrow>
-                <m:mo>]</m:mo>
-              </m:mrow>
-              <m:mo>&#x221D;</m:mo>
-              <m:msup>
-                <m:mrow>
-                  <m:mrow>
-                    <m:mo>[</m:mo>
-                    <m:mrow>
-                      <m:msub>
-                        <m:mi>q</m:mi>
-                        <m:mi>Y</m:mi>
-                      </m:msub>
-                      <m:mrow>
-                        <m:mo>(</m:mo>
-                        <m:mi>D</m:mi>
-                        <m:mo>)</m:mo>
-                      </m:mrow>
-                      <m:mo>&#x2212;</m:mo>
-                      <m:msub>
-                        <m:mi>q</m:mi>
-                        <m:mi>Y</m:mi>
-                      </m:msub>
-                      <m:mrow>
-                        <m:mo>(</m:mo>
-                        <m:mi>&#x03B8;</m:mi>
-                        <m:mo>)</m:mo>
-                      </m:mrow>
-                    </m:mrow>
-                    <m:mo>]</m:mo>
-                  </m:mrow>
-                </m:mrow>
-                <m:mn>2</m:mn>
-              </m:msup>
-            </m:mrow>
-          </m:math>
-        </equation></para>
-
-      <para>The expected value of this loss function is
-        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162413+1100" content="commonly "?>referred
-        to as the Mean Squared Error
-        (MSE)<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162431+1100" content=". It "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162433+1100"?>,
-        which <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162459+1100" content="can be "?>show<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162500+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162500+1100" content="n"?>
-        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162454+1100"?>that
-        <?oxy_insert_end?>the optimal quantile estimator is the expected value of qY(D) (DeGroot,
-        1970):</para>
-
-      <para><equation xml:id="b3_ch2_e_s97qk">
           <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-            <semantics>
+            <mi>L</mi>
+            <mrow>
+              <mo>[</mo>
               <mrow>
-                <mi>E</mi>
+                <msub>
+                  <mi>q</mi>
+                  <mi>Y</mi>
+                </msub>
                 <mrow>
-                  <mo>[</mo>
-                  <mrow>
-                    <msub>
-                      <mi>q</mi>
-                      <mi>Y</mi>
-                    </msub>
-                    <mo>&#x007C;</mo>
-                    <mi>D</mi>
-                  </mrow>
-                  <mo>]</mo>
+                  <mo>(</mo>
+                  <mi>D</mi>
+                  <mo>)</mo>
                 </mrow>
-                <mo>=</mo>
-                <munderover>
-                  <mstyle mathsize="140%" displaystyle="true">
-                    <mo>&#x222B;</mo>
-                  </mstyle>
-                  <mi>&#x03B8;</mi>
-                  <mrow/>
-                </munderover>
+                <mo>,</mo>
                 <msub>
                   <mi>q</mi>
                   <mi>Y</mi>
@@ -439,39 +398,119 @@
                   <mi>&#x03B8;</mi>
                   <mo>)</mo>
                 </mrow>
-                <mi>p</mi>
-                <mrow>
-                  <mo>(</mo>
-                  <mrow>
-                    <mi>&#x03B8;</mi>
-                    <mo>&#x007C;</mo>
-                    <mi>D</mi>
-                  </mrow>
-                  <mo>)</mo>
-                </mrow>
-                <mi>d</mi>
-                <mi>&#x03B8;</mi>
               </mrow>
-              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
-                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
-                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
-                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
-                qacaWGfbWaamWaaeaacaWGXbWdamaaBaaaleaapeGaamywaaWdaeqa
-                aOWdbiaacYhacaWGebaacaGLBbGaayzxaaGaeyypa0ZaaybCaeqal8
-                aabaWdbiabeI7aXbWdaeaaa0qaa8qacqGHRiI8aaGccaWGXbWdamaa
-                BaaaleaapeGaamywaaWdaeqaaOWdbmaabmaabaGaeqiUdehacaGLOa
-                GaayzkaaGaamiCamaabmaabaGaeqiUdeNaaiiFaiaadseaaiaawIca
-                caGLPaaacaWGKbGaeqiUdehaaa@507B@ </annotation>
-            </semantics>
+              <mo>]</mo>
+            </mrow>
+            <mo>&#x221D;</mo>
+            <msup>
+              <mrow>
+                <mo>[</mo>
+                <mrow>
+                  <msub>
+                    <mi>q</mi>
+                    <mi>Y</mi>
+                  </msub>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>D</mi>
+                    <mo>)</mo>
+                  </mrow>
+                  <mo>&#x2212;</mo>
+                  <msub>
+                    <mi>q</mi>
+                    <mi>Y</mi>
+                  </msub>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>&#x03B8;</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>]</mo>
+              </mrow>
+              <mn>2</mn>
+            </msup>
           </math>
         </equation></para>
 
-      <para>Stedinger (1983) observes that this integral may not exist for
-      some of the probability distributions used in Flood Frequency Analysis.
-      To avoid this problem the following first-order approximation may be
-      used:</para>
+      <para>The expected value of this loss function is
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162413+1100" content="commonly "?>referred
+        to as the Mean Squared Error
+        (MSE)<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162431+1100" content=". It "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162433+1100"?>,
+        which <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162459+1100" content="can be "?>show<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162500+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162500+1100" content="n"?>
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162454+1100"?>that
+        <?oxy_insert_end?>the optimal quantile estimator is the expected value of <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>q</mi>
+              <mi>Y</mi>
+            </msub>
+            <mrow>
+              <mo>(</mo>
+              <mi>D</mi>
+              <mo>)</mo>
+            </mrow>
+          </math>
+        </inlineequation>
+        <citation>b3_c2_r24</citation>:</para>
+
+      <para><equation xml:id="b3_ch2_e_s97qk">
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>E</mi>
+            <mrow>
+              <mo>[</mo>
+              <mrow>
+                <msub>
+                  <mi>q</mi>
+                  <mi>Y</mi>
+                </msub>
+                <mrow>
+                  <mo>|</mo>
+                  <mi>D</mi>
+                </mrow>
+              </mrow>
+              <mo>]</mo>
+            </mrow>
+            <mo>=</mo>
+            <mstyle displaystyle="true">
+              <mrow>
+                <munder>
+                  <mo>&#x222B;</mo>
+                  <mi>&#x03B8;</mi>
+                </munder>
+                <mrow>
+                  <msub>
+                    <mi>q</mi>
+                    <mi>Y</mi>
+                  </msub>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>&#x03B8;</mi>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>p</mi>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mi>&#x03B8;</mi>
+                      <mrow>
+                        <mo>|</mo>
+                        <mi>D</mi>
+                      </mrow>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>d</mi>
+                  <mi>&#x03B8;</mi>
+                </mrow>
+              </mrow>
+            </mstyle>
+          </math>
+        </equation></para>
+
+      <para><citation>b3_c2_r69+1</citation> observes that this integral may not exist for some of
+        the probability distributions used in Flood Frequency Analysis. To avoid this problem the
+        following first-order approximation may be used:</para>
 
       <para><equation xml:id="b3_ch2_e_m9gsz">
           <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -512,24 +551,19 @@
                   <mo>]</mo>
                 </mrow>
               </mrow>
-              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-                feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
-                hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
-                4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
-                vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
-                qacaWGfbWaamWaaeaacaWGXbWdamaaBaaaleaapeGaamywaaWdaeqa
-                aOWdbiaacYhacaWGebaacaGLBbGaayzxaaGaeyypa0JaamyCa8aada
-                WgaaWcbaWdbiaadMfaa8aabeaakmaadmaabaGaamyra8qadaqadaqa
-                aiabeI7aXjaacYhacaWGebaacaGLOaGaayzkaaaapaGaay5waiaaw2 faaaaa@4804@ </annotation>
             </semantics>
           </math>
         </equation></para>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:mi>E(θ|D)</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>E</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B8;</mi>
+            <mo>&#x007C;</mo>
+            <mi>D</mi>
+            <mo stretchy="false">)</mo>
+          </math>
         </inlineequation> is the expected parameter given the data D:</para>
 
       <equation xml:id="b3_ch2_e_p4y0l">
@@ -562,41 +596,36 @@
               <mi>d</mi>
               <mi>&#x03B8;</mi>
             </mrow>
-            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
-              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
-              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
-              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
-              qacaWGfbWaamWaaeaacqaH4oqCcaGG8bGaamiraaGaay5waiaaw2fa
-              aiabg2da9iabgUIiYlabeI7aXjaadchadaqadaqaaiabeI7aXjaacY
-              hacaWGebaacaGLOaGaayzkaaGaamizaiabeI7aXbaa@4974@ </annotation>
           </semantics>
         </math>
       </equation>
 
       <para>The term <inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:msub>
-                <m:mi>q</m:mi>
-
-                <m:mi>Y</m:mi>
-              </m:msub>
-
-              <m:mo>[E(θ|D)]</m:mo>
-            </m:mrow>
-          </m:math>
-        </inlineequation> is referred to as the expected parameter X% AEP
-      quantile. When this term is used it is understood that the quantile is
-      computed with <inlineequation>
-          <m:math display="inline">
-            <m:mi>θ</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+              <msub>
+                <mi>q</mi>
+                <mi>Y</mi>
+              </msub>
+              <mo>[E(θ|D)]</mo>
+            </mrow>
+          </math>
+        </inlineequation> is referred to as the expected parameter 1 in Y AEP quantile. When this
+        term is used it is understood that the quantile is computed with <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B8;</mi>
+          </math>
         </inlineequation> assigned <inlineequation>
-          <m:math display="inline">
-            <m:mi>[E(θ|D)]</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo stretchy="false">[</mo>
+            <mi>E</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B8;</mi>
+            <mo>&#x007C;</mo>
+            <mi>D</mi>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">]</mo>
+          </math>
         </inlineequation>.</para>
     </section>
 
@@ -610,205 +639,146 @@
 
       <equation xml:id="b3_ch2_e_ggb3h">
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-          <semantics>
+          <mi>L</mi>
+          <mo stretchy="false">[</mo>
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <mi>D</mi>
+          <mo stretchy="false">)</mo>
+          <msub>
+            <mtext>,q</mtext>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <mi>&#x03B8;</mi>
+          <mo stretchy="false">)</mo>
+          <mo stretchy="false">]</mo>
+          <mtext>&#x2009;</mtext>
+          <mtext>&#x2009;</mtext>
+          <mo>=</mo>
+          <mrow>
+            <mo>{</mo>
             <mrow>
-              <mtext>L</mtext>
-              <mrow>
-                <mo>[</mo>
-                <mrow>
-                  <msub>
-                    <mtext>q</mtext>
-                    <mi>Y</mi>
-                  </msub>
-                  <mrow>
-                    <mo>(</mo>
-                    <mtext>D</mtext>
-                    <mo>)</mo>
-                  </mrow>
-                  <msub>
+              <mtable columnalign="left">
+                <mtr columnalign="left">
+                  <mtd columnalign="left">
                     <mrow>
-                      <mtext>,q</mtext>
+                      <mi>&#x03B1;</mi>
+                      <mo stretchy="false">(</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mtext>(&#x03B8;</mtext>
+                      <mo stretchy="false">)</mo>
+                      <mo>&#x2212;</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>D</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo stretchy="false">)</mo>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>if</mtext>
+                      <mtext>&#x2009;</mtext>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>&#x03B8;</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>&#x003E;</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>D</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>,</mo>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>&#x00A0;underdesign</mtext>
+                      <mtext>&#x2009;</mtext>
                     </mrow>
-                    <mi>Y</mi>
-                  </msub>
-                  <mrow>
-                    <mo>(</mo>
-                    <mi>&#x03B8;</mi>
-                    <mo>)</mo>
-                  </mrow>
-                </mrow>
-                <mo>]</mo>
-              </mrow>
-              <mtext>&#x2009;</mtext>
-              <mtext>&#x2009;</mtext>
-              <mo>=</mo>
-              <mrow>
-                <mo>{</mo>
-                <mrow>
-                  <mtable columnalign="left">
-                    <mtr columnalign="left">
-                      <mtd columnalign="left">
-                        <mrow>
-                          <mi>&#x03B1;</mi>
-                          <mrow>
-                            <mo>(</mo>
-                            <mrow>
-                              <msub>
-                                <mtext>q</mtext>
-                                <mi>Y</mi>
-                              </msub>
-                              <mtext>(&#x03B8;</mtext>
-                              <mo stretchy="false">)</mo>
-                              <mo>&#x2212;</mo>
-                              <msub>
-                                <mtext>q</mtext>
-                                <mi>Y</mi>
-                              </msub>
-                              <mrow>
-                                <mo>(</mo>
-                                <mtext>D</mtext>
-                                <mo>)</mo>
-                              </mrow>
-                            </mrow>
-                            <mo>)</mo>
-                          </mrow>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>if</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <msub>
-                            <mtext>q</mtext>
-                            <mi>Y</mi>
-                          </msub>
-                          <mrow>
-                            <mo>(</mo>
-                            <mi>&#x03B8;</mi>
-                            <mo>)</mo>
-                          </mrow>
-                          <mo>&#x003E;</mo>
-                          <msub>
-                            <mtext>q</mtext>
-                            <mi>Y</mi>
-                          </msub>
-                          <mrow>
-                            <mo>(</mo>
-                            <mtext>D</mtext>
-                            <mo>)</mo>
-                          </mrow>
-                          <mtext>,</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>&#x00A0;underdesign</mtext>
-                          <mtext>&#x2009;</mtext>
-                        </mrow>
-                      </mtd>
-                    </mtr>
-                    <mtr columnalign="left">
-                      <mtd columnalign="left">
-                        <mrow>
-                          <mi>&#x03B2;</mi>
-                          <mrow>
-                            <mo>(</mo>
-                            <mrow>
-                              <msub>
-                                <mtext>q</mtext>
-                                <mi>Y</mi>
-                              </msub>
-                              <mrow>
-                                <mo>(</mo>
-                                <mtext>D</mtext>
-                                <mo>)</mo>
-                              </mrow>
-                              <mo>&#x2212;</mo>
-                              <msub>
-                                <mtext>q</mtext>
-                                <mi>Y</mi>
-                              </msub>
-                              <mrow>
-                                <mo>(</mo>
-                                <mi>&#x03B8;</mi>
-                                <mo>)</mo>
-                              </mrow>
-                            </mrow>
-                            <mo>)</mo>
-                          </mrow>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <mtext>if</mtext>
-                          <mtext>&#x2009;</mtext>
-                          <msub>
-                            <mtext>q</mtext>
-                            <mi>Y</mi>
-                          </msub>
-                          <mrow>
-                            <mo>(</mo>
-                            <mi>&#x03B8;</mi>
-                            <mo>)</mo>
-                          </mrow>
-                          <mo>&#x2264;</mo>
-                          <msub>
-                            <mtext>q</mtext>
-                            <mi>Y</mi>
-                          </msub>
-                          <mrow>
-                            <mo>(</mo>
-                            <mtext>D</mtext>
-                            <mo>)</mo>
-                          </mrow>
-                          <mtext>,&#x00A0;overdesign</mtext>
-                        </mrow>
-                      </mtd>
-                    </mtr>
-                  </mtable>
-                </mrow>
-              </mrow>
+                  </mtd>
+                </mtr>
+                <mtr columnalign="left">
+                  <mtd columnalign="left">
+                    <mrow>
+                      <mi>&#x03B2;</mi>
+                      <mo stretchy="false">(</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>D</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>&#x2212;</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>&#x03B8;</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo stretchy="false">)</mo>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>if</mtext>
+                      <mtext>&#x2009;</mtext>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>&#x03B8;</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>&#x2264;</mo>
+                      <msub>
+                        <mi>q</mi>
+                        <mi>Y</mi>
+                      </msub>
+                      <mo stretchy="false">(</mo>
+                      <mi>D</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>,</mo>
+                      <mtext>&#x2009;</mtext>
+                      <mtext>&#x00A0;overdesign</mtext>
+                      <mtext>&#x2009;</mtext>
+                    </mrow>
+                  </mtd>
+                </mtr>
+              </mtable>
             </mrow>
-            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbbjxAHX
-              garmWu51MyVXgaruWqVvNCPvMCG4uz3bqefqvATv2CG4uz3bIuV1wy
-              Ubqee0evGueE0jxyaibaieYdf9irVeeu0dXdh9vqqj=hEeeu0xXdbb
-              a9frFj0=OqFfea0dXdd9vqaq=JfrVkFHe9pgea0dXdar=Jb9hs0dXd
-              bPYxe9vr0=vr0=vqpWqaaeaabiGaciaacaqabeaadaabauaaaOqaai
-              aabYeadaWadaqaaiaabghadaWgaaWcbaGaamywaaqabaGcdaqadaqa
-              aiaabseaaiaawIcacaGLPaaacaqGSaGaaeyCamaaBaaaleaacaWGzb
-              aabeaakmaabmaabaGaeqiUdehacaGLOaGaayzkaaaacaGLBbGaayzx
-              aaGaaGPaVlaaykW7cqGH9aqpdaGabaqaauaabaqaceaaaeaacqaHXo
-              qydaqadaqaaiaabghadaWgaaWcbaGaamywaaqabaGccaqGOaGaaeiU
-              diaacMcacqGHsislcaqGXbWaaSbaaSqaaiaadMfaaeqaaOWaaeWaae
-              aacaqGebaacaGLOaGaayzkaaaacaGLOaGaayzkaaGaaGPaVlaaykW7
-              caaMc8UaaeyAaiaabAgacaaMc8UaaeyCamaaBaaaleaacaWGzbaabe
-              aakmaabmaabaGaeqiUdehacaGLOaGaayzkaaGaeyOpa4JaaeyCamaa
-              BaaaleaacaWGzbaabeaakmaabmaabaGaaeiraaGaayjkaiaawMcaai
-              aabYcacaaMc8UaaeiiaiaabwhacaqGUbGaaeizaiaabwgacaqGYbGa
-              aeizaiaabwgacaqGZbGaaeyAaiaabEgacaqGUbGaaGPaVdqaaiabek
-              7aInaabmaabaGaaeyCamaaBaaaleaacaWGzbaabeaakmaabmaabaGa
-              aeiraaGaayjkaiaawMcaaiabgkHiTiaabghadaWgaaWcbaGaamywaa
-              qabaGcdaqadaqaaiabeI7aXbGaayjkaiaawMcaaaGaayjkaiaawMca
-              aiaaykW7caaMc8UaaeyAaiaabAgacaaMc8UaaeyCamaaBaaaleaaca
-              WGzbaabeaakmaabmaabaGaeqiUdehacaGLOaGaayzkaaGaeyizImQa
-              aeyCamaaBaaaleaacaWGzbaabeaakmaabmaabaGaaeiraaGaayjkai
-              aawMcaaiaabYcacaqGGaGaae4BaiaabAhacaqGLbGaaeOCaiaabsga
-              caqGLbGaae4CaiaabMgacaqGNbGaaeOBaaaaaiaawUhaaaaa@A2A4@ </annotation>
-          </semantics>
+          </mrow>
         </math>
       </equation>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B1;</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>β</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B2;</mi>
+          </math>
         </inlineequation> are the loss coefficients for
         under<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162536+1100" content="-"?> and
         over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162540+1100"?>-<?oxy_insert_end?>design
         respectively. It can be shown that the quantile estimator that
         minimi<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162547+1100" content="z"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162547+1100"?>s<?oxy_insert_end?>es
         the expected asymmetric linear loss must satisfy
-        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162612+1100"?>the
-        following<?oxy_insert_end?>(DeGroot, 1970):</para>
+        <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162612+1100"?>the following<?oxy_insert_end?>
+        <citation>b3_c2_r24</citation>:</para>
 
       <equation xml:id="b3_ch2_e_xmck8">
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -856,50 +826,46 @@
                 </mrow>
               </mfrac>
             </mrow>
-            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbbjxAHX
-              garmWu51MyVXgaruWqVvNCPvMCG4uz3bqefqvATv2CG4uz3bIuV1wy
-              Ubqee0evGueE0jxyaibaieYdf9irVeeu0dXdh9vqqj=hEeeu0xXdbb
-              a9frFj0=OqFfea0dXdd9vqaq=JfrVkFHe9pgea0dXdar=Jb9hs0dXd
-              bPYxe9vr0=vr0=vqpWqaaeaabiGaciaacaqabeaadaabauaaaOqaaa
-              baaaaaaaaapeGaamiuamaabmaabaGaamyua8aadaWgaaWcbaWdbiaa
-              dMfaa8aabeaak8qacqGHKjYOcaWGXbWdamaaBaaaleaapeGaamywaa
-              WdaeqaaOWdbmaabmaabaGaamiraaGaayjkaiaawMcaa8aadaWgaaWc
-              baWdbiaad+gacaWGWbGaamiDaaWdaeqaaOWdbiaacYhacaWGebaaca
-              GLOaGaayzkaaGaeyypa0ZaaSaaa8aabaWdbiabeg7aHbWdaeaapeGa
-              eqySdeMaey4kaSIaeqOSdigaaaaa@4F02@ </annotation>
           </semantics>
         </math>
       </equation>
 
       <para>When <inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B1;</mi>
+          </math>
         </inlineequation> equals <inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mi>β,</m:mi>
-              <m:msub>
-                <m:mi>q</m:mi>
-                <m:mi>Y</m:mi>
-              </m:msub>
-              <m:msub>
-                <m:mi>(D)</m:mi>
-                <m:mi>opt</m:mi>
-              </m:msub>
-            </m:mrow>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B2;</mi>
+            <mo>,</mo>
+            <msub>
+              <mi>q</mi>
+              <mi>Y</mi>
+            </msub>
+            <msub>
+              <mrow>
+                <mo>(</mo>
+                <mi>D</mi>
+                <mo>)</mo>
+              </mrow>
+              <mrow>
+                <mi>o</mi>
+                <mi>p</mi>
+                <mi>t</mi>
+              </mrow>
+            </msub>
+          </math>
         </inlineequation>,
         <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162639+1100"?>it
         <?oxy_insert_end?>is the median of the quantile predictive distribution. However, when <inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B1;</mi>
+          </math>
         </inlineequation> equals <inlineequation>
-          <m:math display="inline">
-            <m:mi>4β</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mn>4</mn>
+            <mi>&#x03B2;</mi>
+          </math>
         </inlineequation>,
         <?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162645+1100"?>it implies
         <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162649+1100" content="implying "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162657+1100"?>that
@@ -921,32 +887,62 @@
     quantile for a given AEP was considered. In this section the uncertainty
     in AEP for a given q is considered.</para>
 
-    <para>Stedinger (1983) showed that the dependence of the flood peak pdf on
-    uncertain parameters can be removed using total probability to yield the
-    design flood distribution:</para>
+    <para><citation>b3_c2_r69+1</citation> showed that the dependence of the flood peak pdf on
+      uncertain parameters can be removed using total probability to yield the design flood
+      distribution:</para>
 
     <equation xml:id="b3_ch2_e_anzoc">
-      <m:math display="block">
-        <m:mrow>
-          <m:mi>p(q|D)</m:mi>
-
-          <m:mo>=</m:mo>
-
-          <m:mrow>
-            <m:mrow>
-              <m:munderover>
-                <m:mo>∫</m:mo>
-
-                <m:mi>θ</m:mi>
-
-                <m:mi/>
-              </m:munderover>
-
-              <m:mi>p(q|θ)p(θ|D)dθ</m:mi>
-            </m:mrow>
-          </m:mrow>
-        </m:mrow>
-      </m:math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mi>q</mi>
+            <mrow>
+              <mo>|</mo>
+              <mi>D</mi>
+            </mrow>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mstyle displaystyle="true">
+          <mrow>
+            <munder>
+              <mo>&#x222B;</mo>
+              <mi>&#x03B8;</mi>
+            </munder>
+            <mrow>
+              <mi>p</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>q</mi>
+                  <mrow>
+                    <mo>|</mo>
+                    <mi>&#x03B8;</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>p</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x03B8;</mi>
+                  <mrow>
+                    <mo>|</mo>
+                    <mi>D</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>d</mi>
+              <mi>&#x03B8;</mi>
+            </mrow>
+          </mrow>
+        </mstyle>
+      </math>
     </equation>
 
     <para>This distribution only depends on the data D (and the assumed
@@ -957,290 +953,321 @@
 
     <equation xml:id="b3_ch2_e_xze2m">
       <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-        <semantics>
+        <mi>p</mi>
+        <mrow>
+          <mo>(</mo>
           <mrow>
-            <mi>P</mi>
-            <mo stretchy="false">(</mo>
             <mi>q</mi>
             <mo>&#x003E;</mo>
             <msub>
               <mi>q</mi>
               <mi>Y</mi>
             </msub>
-            <mo>&#x007C;</mo>
-            <mi>D</mi>
-            <mo stretchy="false">)</mo>
-            <mo>=</mo>
-            <munderover>
-              <mstyle mathsize="140%" displaystyle="true">
-                <mo>&#x222B;</mo>
-              </mstyle>
-              <mi>&#x03B8;</mi>
-              <mrow/>
-            </munderover>
             <mrow>
-              <mo>(</mo>
-              <mrow>
-                <munderover>
-                  <mstyle mathsize="140%" displaystyle="true">
-                    <mo>&#x222B;</mo>
-                  </mstyle>
-                  <mrow>
-                    <msub>
-                      <mi>q</mi>
-                      <mi>Y</mi>
-                    </msub>
-                  </mrow>
-                  <mi>&#x221E;</mi>
-                </munderover>
-                <mi>p</mi>
-                <mo stretchy="false">(</mo>
-                <mi>q</mi>
-                <mo>&#x007C;</mo>
-                <mi>&#x03B8;</mi>
-                <mo stretchy="false">)</mo>
-                <mi>d</mi>
-                <mi>q</mi>
-              </mrow>
-              <mo>)</mo>
+              <mo>|</mo>
+              <mi>D</mi>
             </mrow>
-            <mi>p</mi>
-            <mo stretchy="false">(</mo>
-            <mi>&#x03B8;</mi>
-            <mo>&#x007C;</mo>
-            <mi>D</mi>
-            <mo stretchy="false">)</mo>
-            <mi>d</mi>
-            <mi>&#x03B8;</mi>
-            <mo>=</mo>
-            <mfrac>
-              <mn>1</mn>
-              <mi>Y</mi>
-            </mfrac>
           </mrow>
-          <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
-            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
-            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
-            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaaeaaaaaaaaa8
-            qacaWGqbGaaiikaiaadghacqGH+aGpcaWGXbWdamaaBaaaleaapeGa
-            amywaaWdaeqaaOWdbiaacYhacaWGebGaaiykaiabg2da9maawahabe
-            Wcpaqaa8qacqaH4oqCa8aabaaaneaapeGaey4kIipaaOWaaeWaa8aa
-            baWdbmaawahabeWcpaqaa8qacaWGXbWdamaaBaaameaapeGaamywaa
-            WdaeqaaaWcbaWdbiabg6HiLcqdpaqaa8qacqGHRiI8aaGccaWGWbGa
-            aiikaiaadghacaGG8bGaeqiUdeNaaiykaiaadsgacaWGXbaacaGLOa
-            GaayzkaaGaamiCaiaacIcacqaH4oqCcaGG8bGaamiraiaacMcacaWG
-            KbGaeqiUdeNaeyypa0ZaaSaaa8aabaWdbiaaigdaa8aabaWdbiaadM faaaaaaa@5F16@ </annotation>
-        </semantics>
+          <mo>)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mstyle displaystyle="true">
+          <mrow>
+            <munder>
+              <mo>&#x222B;</mo>
+              <mi>&#x03B8;</mi>
+            </munder>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mstyle displaystyle="true">
+                    <mrow>
+                      <munderover>
+                        <mo>&#x222B;</mo>
+                        <mrow>
+                          <msub>
+                            <mi>q</mi>
+                            <mi>Y</mi>
+                          </msub>
+                        </mrow>
+                        <mi>&#x221E;</mi>
+                      </munderover>
+                      <mrow>
+                        <mi>p</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>q</mi>
+                            <mrow>
+                              <mo>|</mo>
+                              <mi>&#x03B8;</mi>
+                            </mrow>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>d</mi>
+                        <mi>q</mi>
+                      </mrow>
+                    </mrow>
+                  </mstyle>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>p</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x03B8;</mi>
+                  <mrow>
+                    <mo>|</mo>
+                    <mi>D</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>d</mi>
+              <mi>&#x03B8;</mi>
+            </mrow>
+          </mrow>
+        </mstyle>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mi>Y</mi>
+        </mfrac>
       </math>
     </equation>
 
     <para>This quantile is greater than the expected parameter X% AEP quantile
     <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>q</mi>
 
-              <m:mi>Y</m:mi>
-            </m:msub>
+              <mi>Y</mi>
+            </msub>
 
-            <m:mo>[E(θ|D)]</m:mo>
-          </m:mrow>
-        </m:math>
+            <mo>[E(θ|D)]</mo>
+          </mrow>
+        </math>
       </inlineequation>. To gain further insight suppose we make
     q<subscript>Y</subscript> equal to the expected parameter X% AEP quantile
     and compute its design flood AEP using <xref linkend="b3_ch2_e_xze2m"/>.
     Noting the inner integral is the probability of the flood peak exceeding
     <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>q</mi>
 
-              <m:mi>Y</m:mi>
-            </m:msub>
-          </m:mrow>
-        </m:math>
+              <mi>Y</mi>
+            </msub>
+          </mrow>
+        </math>
       </inlineequation> given a particular value of <inlineequation>
-        <m:math display="inline">
-          <m:mi>θ</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>θ</mi>
+        </math>
       </inlineequation> , <xref linkend="b3_ch2_e_xze2m"/> can be rewritten
     as:</para>
 
     <para><equation>
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-          <semantics>
-            <mrow>
-              <mi>P</mi>
-              <mo stretchy="false">(</mo>
-              <mi>q</mi>
-              <mo>&#x003E;</mo>
-              <msub>
-                <mi>q</mi>
-                <mi>Y</mi>
-              </msub>
-              <mo>&#x007C;</mo>
-              <mi>D</mi>
-              <mo stretchy="false">)</mo>
-              <mtext>&#x2009;</mtext>
-              <mo>=</mo>
-              <mtext>&#x2009;</mtext>
-              <mstyle displaystyle="true">
+          <mtable columnalign="left">
+            <mtr>
+              <mtd>
+                <mi>p</mi>
                 <mrow>
-                  <munder>
-                    <mo>&#x222B;</mo>
-                    <mi>&#x03B8;</mi>
-                  </munder>
+                  <mo>(</mo>
                   <mrow>
-                    <mrow>
-                      <mo>(</mo>
-                      <mrow>
-                        <mstyle displaystyle="true">
-                          <mrow>
-                            <munderover>
-                              <mo>&#x222B;</mo>
-                              <mrow>
-                                <msub>
-                                  <mi>q</mi>
-                                  <mi>Y</mi>
-                                </msub>
-                              </mrow>
-                              <mi>&#x221E;</mi>
-                            </munderover>
-                            <mrow>
-                              <mi>p</mi>
-                              <mo stretchy="false">(</mo>
-                              <mi>q</mi>
-                              <mo>&#x007C;</mo>
-                              <mi>&#x03B8;</mi>
-                              <mo stretchy="false">)</mo>
-                            </mrow>
-                          </mrow>
-                        </mstyle>
-                        <mtext>&#x2009;</mtext>
-                        <mi>d</mi>
-                        <mi>q</mi>
-                      </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                    <mtext>&#x2009;</mtext>
-                    <mi>p</mi>
-                    <mo stretchy="false">(</mo>
-                    <mi>&#x03B8;</mi>
-                    <mo>&#x007C;</mo>
-                    <mi>D</mi>
-                    <mo stretchy="false">)</mo>
-                    <mtext>&#x2009;</mtext>
-                    <mi>d</mi>
-                    <mi>&#x03B8;</mi>
-                  </mrow>
-                </mrow>
-              </mstyle>
-              <mo>=</mo>
-              <mtext>&#x2009;</mtext>
-              <mtext>&#x2009;</mtext>
-              <mstyle displaystyle="true">
-                <mrow>
-                  <munder>
-                    <mo>&#x222B;</mo>
-                    <mi>&#x03B8;</mi>
-                  </munder>
-                  <mrow>
-                    <mi>P</mi>
-                    <mo stretchy="false">(</mo>
                     <mi>q</mi>
                     <mo>&#x003E;</mo>
                     <msub>
                       <mi>q</mi>
                       <mi>Y</mi>
                     </msub>
-                    <mo>&#x007C;</mo>
-                    <mi>&#x03B8;</mi>
-                    <mo stretchy="false">)</mo>
-                    <mtext>&#x2009;</mtext>
-                    <mtext>&#x2009;</mtext>
-                    <mi>p</mi>
-                    <mo stretchy="false">(</mo>
-                    <mi>&#x03B8;</mi>
-                    <mo>&#x007C;</mo>
-                    <mi>D</mi>
-                    <mo stretchy="false">)</mo>
-                    <mtext>&#x2009;</mtext>
-                    <mi>d</mi>
-                    <mi>&#x03B8;</mi>
+                    <mrow>
+                      <mo>|</mo>
+                      <mi>D</mi>
+                    </mrow>
                   </mrow>
+                  <mo>)</mo>
                 </mrow>
-              </mstyle>
-              <mo>=</mo>
-              <mfrac>
-                <mn>1</mn>
-                <mi>Y</mi>
-              </mfrac>
-            </mrow>
-            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
-              feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbbjxAHX
-              garmWu51MyVXgaruWqVvNCPvMCG4uz3bqefqvATv2CG4uz3bIuV1wy
-              Ubqee0evGueE0jxyaibaieYdf9irVeeu0dXdh9vqqj=hEeeu0xXdbb
-              a9frFj0=OqFfea0dXdd9vqaq=JfrVkFHe9pgea0dXdar=Jb9hs0dXd
-              bPYxe9vr0=vr0=vqpWqaaeaabiGaciaacaqabeaadaabauaaaOqaai
-              aadcfacaGGOaGaamyCaiabg6da+iaadghadaWgaaWcbaGaamywaaqa
-              baGccaGG8bGaamiraiaacMcacaaMc8Uaeyypa0JaaGPaVpaapefaba
-              WaaeWaaeaadaWdXbqaaiaadchacaGGOaGaamyCaiaacYhacqaH4oqC
-              caGGPaaaleaacaWGXbWaaSbaaWqaaiaadMfaaeqaaaWcbaGaeyOhIu
-              kaniabgUIiYdGccaaMc8UaamizaiaadghaaiaawIcacaGLPaaacaaM
-              c8UaamiCaiaacIcacqaH4oqCcaGG8bGaamiraiaacMcacaaMc8Uaam
-              izaiabeI7aXbWcbaGaeqiUdehabeqdcqGHRiI8aOGaeyypa0JaaGPa
-              VlaaykW7daWdrbqaaiaadcfacaGGOaGaamyCaiabg6da+iaadghada
-              WgaaWcbaGaamywaaqabaGccaGG8bGaeqiUdeNaaiykaiaaykW7caaM
-              c8UaamiCaiaacIcacqaH4oqCcaGG8bGaamiraiaacMcacaaMc8Uaam
-              izaiabeI7aXbWcbaGaeqiUdehabeqdcqGHRiI8aOGaeyypa0ZaaSaa
-              aeaacaaIXaaabaGaamywaaaaaaa@852B@ </annotation>
-          </semantics>
+                <mo>=</mo>
+                <mstyle displaystyle="true">
+                  <mrow>
+                    <munder>
+                      <mo>&#x222B;</mo>
+                      <mi>&#x03B8;</mi>
+                    </munder>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mstyle displaystyle="true">
+                            <mrow>
+                              <munderover>
+                                <mo>&#x222B;</mo>
+                                <mrow>
+                                  <msub>
+                                    <mi>q</mi>
+                                    <mi>Y</mi>
+                                  </msub>
+                                </mrow>
+                                <mi>&#x221E;</mi>
+                              </munderover>
+                              <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                  <mo>(</mo>
+                                  <mrow>
+                                    <mi>q</mi>
+                                    <mrow>
+                                      <mo>|</mo>
+                                      <mi>&#x03B8;</mi>
+                                    </mrow>
+                                  </mrow>
+                                  <mo>)</mo>
+                                </mrow>
+                                <mi>d</mi>
+                                <mi>q</mi>
+                              </mrow>
+                            </mrow>
+                          </mstyle>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>p</mi>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mi>&#x03B8;</mi>
+                          <mrow>
+                            <mo>|</mo>
+                            <mi>D</mi>
+                          </mrow>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>d</mi>
+                      <mi>&#x03B8;</mi>
+                    </mrow>
+                  </mrow>
+                </mstyle>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mstyle displaystyle="true">
+                  <mrow>
+                    <mo>=</mo>
+                    <munder>
+                      <mo>&#x222B;</mo>
+                      <mi>&#x03B8;</mi>
+                    </munder>
+                    <mrow>
+                      <mi>p</mi>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mi>q</mi>
+                          <mo>&#x003E;</mo>
+                          <msub>
+                            <mi>q</mi>
+                            <mi>Y</mi>
+                          </msub>
+                          <mrow>
+                            <mo>|</mo>
+                            <mi>D</mi>
+                          </mrow>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>p</mi>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mi>&#x03B8;</mi>
+                          <mrow>
+                            <mo>|</mo>
+                            <mi>D</mi>
+                          </mrow>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>d</mi>
+                      <mi>&#x03B8;</mi>
+                    </mrow>
+                  </mrow>
+                </mstyle>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mi>Y</mi>
+                </mfrac>
+              </mtd>
+            </mtr>
+          </mtable>
         </math>
       </equation></para>
 
-    <para>It thus follows that the expected parameter X% AEP quantile
-    <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mo>[Eθ |</m:mo>
-
-            <m:mi>D)]</m:mi>
-          </m:mrow>
-        </m:math>
+    <para>It thus follows that the expected parameter 1 in Y AEP quantile <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy="false">[</mo>
+          <mi>E</mi>
+          <mo stretchy="false">(</mo>
+          <mi>&#x03B8;</mi>
+          <mo>&#x007C;</mo>
+          <mi>D</mi>
+          <mo stretchy="false">)</mo>
+          <mo stretchy="false">]</mo>
+        </math>
+      </inlineequation>. Moreover, it follows that the expected parameter 1 in Y AEP quantile <inlineequation>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy="false">[</mo>
+          <mi>E</mi>
+          <mo stretchy="false">(</mo>
+          <mi>&#x03B8;</mi>
+          <mo>&#x007C;</mo>
+          <mi>D</mi>
+          <mo stretchy="false">)</mo>
+          <mo stretchy="false">]</mo>
+        </math>
       </inlineequation> has an expected AEP given by <inlineequation>
-        <m:math display="inline">
-          <m:mrow>
-            <m:mi>P(q</m:mi>
-
-            <m:mo>&gt;</m:mo>
-
-            <m:msub>
-              <m:mi>q</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mo>| D)</m:mo>
-          </m:mrow>
-        </m:math>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>P</mi>
+          <mo stretchy="false">(</mo>
+          <mi>q</mi>
+          <mo>&#x003E;</mo>
+          <msub>
+            <mi>q</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo>&#x007C;</mo>
+          <mi>D</mi>
+          <mo stretchy="false">)</mo>
+        </math>
       </inlineequation> which exceeds <inlineequation>
-        <m:math display="inline">
-          <m:mfrac bevelled="true">
-            <m:mi>1</m:mi>
-
-            <m:mi>Y</m:mi>
-          </m:mfrac>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mfrac bevelled="true">
+            <mi>1</mi>
+            <mi>Y</mi>
+          </mfrac>
+        </math>
       </inlineequation>.</para>
   </section>
 
@@ -1263,58 +1290,32 @@
           over<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162757+1100"?>-<?oxy_insert_end?>design,
           either the expected parameter or expected AEP quantile can be chosen.</para>
 
-        <para>Expected parameter quantiles should be considered where:</para>
+        <para>Expected parameter quantiles may be applicable where:</para>
 
         <orderedlist numeration="lowerroman">
           <listitem>
-            <para>Sizing of a structure is of primary interest rather than actual frequency of
-              flooding, such as some bridges, culverts or drainage
-              pipes<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162817+1100"?>;<?oxy_insert_end?></para>
-          </listitem>
-
-          <listitem>
-            <para>Design is carried out to an arbitrary standard<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162827+1100"?>,<?oxy_insert_end?>
-              <?oxy_delete author="RadhikaChhotai" timestamp="20151022T162831+1100" content="which has been "?>judged
-              to be satisfactory on the basis of experience from previous practice. Many of the
-              design standards in ARR 1987<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162842+1100"?>,<?oxy_insert_end?>
-              <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T162856+1100" comment="Does this have a link?"?>Book
-              3 Sections 1.8 and 1.9<?oxy_comment_end?>, fall into this
-              category<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162906+1100"?>;
-              and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162906+1100" content="."?></para>
+            <para>Sizing of a structure for a given AEP is the primary consideration and minimizing
+              quadratic loss, as expressed by <xref linkend="b3_ch2_e_oxco0"/>, is a reasonable
+              criterion.</para>
           </listitem>
 
           <listitem>
             <para>Unbiased estimates of annual flood damages are required
-            (Doran and Irish, 1980).</para>
+                <citation>b3_c2_r25</citation>.</para>
           </listitem>
         </orderedlist>
 
-        <para>Expected AEP quantiles should be considered where:</para>
+        <para>Expected AEP quantiles may be applicable where:</para>
 
         <orderedlist numeration="lowerroman">
           <listitem>
             <para>Design is required for many sites in a region, and the objective is to attain a
-              desired AEP over all
-              sites<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162913+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162913+1100" content="."?></para>
+              desired AEP over all sites.</para>
           </listitem>
 
           <listitem>
-            <para>Flood estimates are made at multiple sites with different record
-              lengths<?oxy_delete author="RadhikaChhotai" timestamp="20151022T162920+1100" content=","?>
-              and a comparable basis is required for flood estimates of a given
-              AEP<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162928+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162925+1100" content="."?></para>
-          </listitem>
-
-          <listitem>
-            <para>Risk or frequency of exceedance is of primary importance for design at a single
-              site (such as in floodplain
-              management)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T162934+1100"?>;
-              and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T162933+1100" content="."?></para>
-          </listitem>
-
-          <listitem>
-            <para>Split sample testing of flood estimation procedures (Beard,
-            1960).</para>
+            <para>Probability of exceedance is of primary importance for design at a single site
+              (such as in floodplain management).</para>
           </listitem>
         </orderedlist>
       </listitem>

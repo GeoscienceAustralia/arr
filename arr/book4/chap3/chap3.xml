@@ -1,49 +1,909 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b4_ch3" version="5.0" xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:m="http://www.w3.org/1998/Math/MathML"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:db="http://docbook.org/ns/docbook"
-    status = "In Preparation">
-    
-    <title>Types of Catchment Modelling Systems</title>
-    
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="b4_ch3" version="5.0" status="In Preparation">
+    <info><title>Types of Simulation Approaches</title>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/ling_fiona.xml"/>
+
+    </info>
     <para>
         <informaltable border="1">
             <tr>
                 <td colspan="2">Chapter Status</td>
             </tr>
             <tr>
-                <td>Book</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Chapter</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Date</td>
-                <td>27/11/2015</td>
+                <td>Date last updated</td>
+                <td>06/07/16 </td>
             </tr>
             <tr>
                 <td>Content</td>
-                <td>In preparation</td>
-            </tr>
-            <tr>
-                <td>Graphs and Figures</td>
-                <td>In preparation</td>
-            </tr>
-            <tr>
-                <td>Examples</td>
-                <td>In preparation</td>
+                <td>Advanced draft</td>
             </tr>
             <tr>
                 <td>General</td>
-                <td/>
+                <td>Subject to industry feedback </td>
             </tr>
         </informaltable>
     </para>
-    
+    <section xml:id="b4_ch3_s_3ic4t">
+        <title>Introduction</title>
+        <para>Rainfall-based models are commonly used to extrapolate flood behaviour at a particular
+            location using information from a short period of observed data. This can be done using
+            either event-based or continuous simulation approaches. </para>
+        <para>Event-based approaches are based on the transformation of a discrete rainfall event
+            into a flood hydrograph using a simplified model of the physical processes involved. It
+            requires the application of two modelling steps, namely: a <emphasis role="italic"
+                >runoff production</emphasis> model to convert the storm rainfall input at any point
+            in the catchment into rainfall excess or runoff at that location, and a <emphasis
+                role="italic">hydrograph formation</emphasis> model to simulate the conversion of
+            these local runoffs into a flood hydrograph at the point of interest. The rainfall event
+            is described by a given depth of rainfall occurring over a selected duration, where it
+            is necessary to specify the manner in which the rainfall varies in both time and space.
+            The input rainfall may represent a particular observed event, or else it may represent
+            the depth of rainfall with a specific Annual Exceedance Probability (ie. a design
+            rainfall). The former approach is most commonly used for model calibration and flood
+            forecasting, the latter approach is used to estimate flood risk for design and planning
+            purposes. The defining feature of such models is that they are focused on the simulation
+            of an individual flood event, and that antecedent (and baseflow) conditions need to be
+            specified in some explicit fashion.</para>
+        <para>In contrast, continuous simulation approaches transform a long time series of rainfall
+            (and other climatic inputs) into a corresponding series of streamflows. Such time series
+            may span many weeks or years, and may represent behaviour that reflects the full
+            spectrum of flood and drought conditions. Such models comprise simplified representation
+            of catchment processes, and most usually involve the simulation of soil moisture and its
+            control over the partitioning of rainfall into various surface and subsurface
+            contributions to recharge and streamflow. Once simulated, information on the frequency
+            and magnitude of flood behaviour needs to be extracted from the resulting time series
+            using the same methods adopted for historical streamflow data. </para>
+        <para>The relative strengths and weaknesses of these approaches are outlined in <xref
+                linkend="b1_ch3"/>. The following sections provide information on simulation
+            approaches relevant to each approach, where guidance on their calibration and
+            application is presented in <xref linkend="book7"/>. Event-based models may be
+            implemented in a variety of ways, and three approaches of increasing sophistication are
+            described in <xref linkend="b4_ch3_s_k7niq"/> to <xref linkend="b4_ch3_s_u6s3a"/>. The
+            Simple Event approach is first described in <xref linkend="b4_ch3_s_k7niq"/>, and this
+            includes discussion of the main elements that are common to all event-based approaches.
+            The Ensemble Event approach (<xref linkend="b4_ch3_s_0xgbz"/>) provides a simple means
+            to accommodate variability of a selected input, and this is followed by description of
+            Monte Carlo approaches in <xref linkend="b4_ch3_s_u6s3a"/>, which provide a rigorous
+            treatment of the joint probabilities involved in estimation of design floods. Continuous
+            Simulation approaches are described in <xref linkend="b4_ch3_s_5wtrv"/>, and hybrid
+            approaches based on a mixture of event- and continuous schemes are briefly described in
+                <xref linkend="b4_ch3_s_lccad"/>. The performance, strengths and limitations of the
+            different approaches are discussed in <xref linkend="b4_ch3_s_dnc92"/> and <xref
+                linkend="b4_ch3_s_g1cka"/>, and finally, the elements of a worked example are
+            presented in <xref linkend="b4_ch3_s_je5b4"/>.</para>
+    </section>
+    <section xml:id="b4_ch3_s_y3noq">
+        <title>Event-Based Approaches</title>
+        <section xml:id="b4_ch3_s_9qx17">
+            <title>General Concepts</title>
+            <para>Event-based approaches represent traditional practice in Australia and most
+                overseas countries for derivation of design floods from design rainfalls. Typical
+                hydrologic inputs to event-based models include:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>A <emphasis role="italic">design storm</emphasis> of preselected AEP and
+                        duration: historically it has been most common to only consider the most
+                        intense parts of complete storms (“design burst"), where the average
+                        intensity of the burst is determined from rainfall Intensity Frequency
+                        Duration (IFD) data (<xref linkend="b2_ch2"/>). This information is
+                        generally available as a point rainfall intensity, and it is necessary to
+                        apply an Areal Reduction Factor (<xref linkend="b2_ch4"/>) to correctly
+                        represent the areal average rainfall intensity over a catchment;</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">Temporal patterns</emphasis> to distribute the
+                        design rainfall over the duration of the event, and this can include
+                        additional rainfalls before the start (and after the end) of the burst to
+                        represent complete storms (<xref linkend="b2_ch5"/>);</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">Spatial patterns</emphasis> to represent rainfall
+                        variation over a catchment that occurs as the result of factors such as
+                        catchment topography and storm movement (<xref linkend="b2_ch4"/>);
+                        and</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">Loss parameters</emphasis> that represent soil
+                        moisture conditions in the catchment antecedent to the event and the
+                        capacity of the soil to absorb rainfall during the event (<xref linkend="b5_ch3"/>). </para>
+                </listitem>
+            </itemizedlist>
+            <para>A range of event-based models are available to convert rainfalls into a flood
+                hydrograph, though in generally these models provide highly simplified
+                representations of the key processes relevant to flood generation:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><emphasis role="italic">A loss model </emphasis> is used to estimate the
+                        portion of rainfall that is absorbed by the catchment and the portion that
+                        appears as direct runoff (<xref linkend="b5_ch5"/>). This loss is typically
+                        attributed to a range of processes, including: interception by vegetation,
+                        infiltration into the soil, retention on the surface (depression storage),
+                        and transmission loss through the stream bed and banks; and </para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">A hydrograph formation model or hydrologic routing
+                            model </emphasis> (usually based on runoff-routing concepts, as
+                        discussed in <xref linkend="b5_ch6"/>) is used to transform the patterns of
+                        rainfall excess into a design flood hydrograph. This flood hydrograph may
+                        include a baseflow component which initially represents the delayed
+                        contribution from previous rainfall events, and in the latter stages of the
+                        event may represent the contribution from earlier losses.</para>
+                </listitem>
+            </itemizedlist>
+            <para>The most commonly applied event-based approach is the Design Event approach which
+                assumes that there is a <emphasis role="italic">critical rainfall
+                    duration</emphasis> that produces the design flood for a given catchment. This
+                critical duration depends on the interplay of catchment and rainfall
+                characteristics; it is not known <emphasis role="italic">a priori</emphasis> but is
+                usually determined by trialling a number of rainfall durations and then selecting
+                the one that produces the highest flood peak (or volume) for the specific design
+                situation. </para>
+            <para>An important consideration in the application of this approach is that the inputs
+                defining the Design Event should be selected to be probability neutral. This
+                involves selecting model inputs and parameter values such that the 1 in X AEP design
+                rainfalls are converted to the corresponding 1 in X AEP floods. The task of defining
+                a typical combination of flood producing factors for application in the ‘Design
+                Event’ approach is made particularly difficult by the fact that flood response to
+                rainfall is generally non-linear and can be highly non-linear. This means that
+                average conditions of rainfall or loss are unlikely to produce average flood
+                conditions. The probability neutrality of inputs can only be tested if independent
+                flood estimates are available for comparison; for more extreme events, the adopted
+                values of probability neutral inputs must be conditioned by physical and theoretical
+                reasoning. </para>
+            <para>The following guidance presents three approaches to dealing with probability
+                neutrality, namely:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><emphasis role="italic">Simple Event</emphasis>, where all hydrologic
+                        inputs are represented as single probability neutral estimates from the
+                        central range of their distribution;</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">Ensemble Event, </emphasis>where the dominant
+                        factor influencing the transformation is selected from a range of values
+                        representing the expected range of behaviour, and all other inputs are
+                        treated as fixed; and</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">Monte Carlo Event, </emphasis>where all key
+                        factors influencing the transformation are stochastically sampled from
+                        probability distributions or ensembles, preserving any significant
+                        correlations between the factors, and probability neutrality is assured (for
+                        the given set of inputs) by undertaking statistical analysis of the
+                        outputs.</para>
+                    
+                </listitem>
+            </itemizedlist>
+            <para>The key differences between these approaches is illustrated in <xref
+                    linkend="b4ch3_f_nwtiy"/>.<xref linkend="b4_ch3_s_k7niq"/> to <xref
+                    linkend="b4_ch3_s_u6s3a"/> describe each of these procedures in turn, though it
+                is worth noting here the essential similarities between the three methods as shown
+                in <xref linkend="b4ch3_f_nwtiy"> </xref>. It is seen that these three methods use
+                the same source of design rainfalls and the same conceptual model to convert
+                rainfall into a flood hydrograph. The process involved in calibrating a conceptual
+                model to historic events is common to all three approaches, they differ only in how
+                selected inputs are treated when deriving design floods. </para>
+            <figure xml:id="b4ch3_f_nwtiy">
+                <title>Elements of Three Different Approaches to Flooding</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4007.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+  
+        <section xml:id="b4_ch3_s_k7niq">
+    <title>Simple Event</title>
+    <para>As shown in <xref linkend="b4ch3_f_nwtiy"/>, the first step in the Simple Event method is
+                to estimate the average intensity or depth of rainfall corresponding to a given AEP
+                for a selected duration using Intensity Frequency Duration (IFD) data, as provided
+                in <xref linkend="b2_ch2"/>. The next step is to select representative values of
+                other factors that influence the transformation of rainfall to flood hydrograph. At
+                a minimum, this involves selecting representative temporal and spatial patterns of
+                rainfall, and selecting appropriate loss parameters.</para>
+    <para>Representative temporal patterns of rainfall may be obtained by applying the Average
+                Variability Method to a sample of historic patterns
+                    <citation>b4_c3_r38,b4_c3_r39</citation>. The intent of this method is to derive
+                a single temporal pattern which is representative of the average variability of
+                intense rainfall relevant to the selected storm duration and severity. Their use is
+                based on the assumption that such patterns should minimise the introduction of joint
+                probabilities into the design flood model and aid in estimation of a flood with the
+                same frequency as the design rainfall. However, there is good evidence that patterns
+                of average variability do not ensure probability neutrality (eg.
+                    <citation>b4_c3_r31,b4_c3_r42</citation>), and it is possible that adoption of
+                historical patterns selected from within the range of observed variability are as
+                efficacious as synthetic ones derived using the Average Variability Method. Temporal
+                patterns based on the Average Variability Method have been developed for point
+                rainfalls up to the 1 in 500 AEP (<citation>arr_1987+1</citation> Volume 2) and for
+                areal Probable Maximum Precipitation estimates
+                    <citation>b4_c3_r41,b4_c3_r42</citation>.</para>
+    <para>Spatial patterns of rainfall generally have a lower influence on flood characteristics
+                than temporal patterns, and consequently simpler approaches are used to accommodate
+                the joint probabilities involved. For most practical situations it is assumed
+                sufficient to adopt a fixed non-uniform pattern that reflects the systematic
+                variation arising from topographic influences (<xref linkend="b2_ch4"/>). </para>
+    <para>For estimating losses, various types of models ranging from a simple loss model to complex
+                conceptual runoff-routing models are available
+                    <citation>b4_c3_r48,b4_c3_r12</citation>. Loss models most suited for design
+                purposes generally involve specification of a parameter (such as initial loss) that
+                is related to soil moisture conditions in the catchment prior to the onset of the
+                storm. They also generally involve specification of a loss term related to the
+                infiltration of a proportion of storm rainfall during the event (eg. continuing loss
+                or proportional loss). The most comprehensive analyses of design loss values
+                available to date have been undertaken by <citation>b4_c3_r17+1</citation> and
+                    <citation>b4_c3_r24+1</citation>, and guidance on suitable loss values to adopt
+                is provided in <xref linkend="b5_ch3"/>. The selected loss values can have a large
+                influence on the resulting flood characteristic, and the adoption of regional
+                estimates does not guarantee unbiased estimates of the resulting floods; for this
+                reason it is also desirable to reconcile design values with independent flood
+                frequency estimates where possible (as discussed in <xref linkend="b5_ch3"
+                />).</para>
+    <para>The direct runoff simulated by the loss model is then routed through the catchment to
+                generate the design flood hydrograph. The hydrograph corresponding to the rainfall
+                burst duration that results in the highest peak (the critical rainfall duration) is
+                taken as the design flood hydrograph, and it is assumed to have the same Annual
+                Exceedance Probability as its causative rainfall. It needs to be stressed that
+                probability neutrality is an untested assumption with the simple event approach, and
+                without reconciliation with flood frequency estimates using at-site or transposed
+                gauged maxima, there is no way of determining how the selected inputs may have
+                biased the outcome.</para>
+    <para>In summary, the only probabilistic variable considered with the Simple Event approach is
+                average rainfall intensity or depth, while other inputs (eg. losses, rainfall
+                temporal and spatial patterns) are represented by fixed values drawn from the
+                central tendency of their distribution
+                    <citation>b4_c3_r26,b4_c3_r22,b4_c3_r28,b4_c3_r17,b4_c3_r23</citation>.</para>
+        </section>
+        <section xml:id="b4_ch3_s_0xgbz">
+            <title>Ensemble Event</title>
+            <para>The Ensemble Event approach is essentially an intermediate step between a Simple
+                Event approach and Monte Carlo Event simulation. In its simplest implementation, a
+                fixed factor with large influence on flood magnitude is replaced by a sample of
+                values (an “ensemble”); each of these values is then input to the
+                <?oxy_comment_start author="retallick" timestamp="20160701T140907+1000" comment="catchment modelling system"?>flood
+                event model <?oxy_comment_end?>to derive a set of flood hydrographs. The magnitude
+                of the design flood is then estimated from the weighted average of the hydrographs,
+                where the weighting applied to each result reflects the relative likelihood of the
+                selected input occurring. If a sample of observed temporal patterns is used instead
+                of a single pattern of average variability, then studies have shown
+                    <citation>b4_c3_r31,b4_c3_r18</citation> that a simple arithmetic average based
+                on a sample of 10 to 20 patterns provides a reasonably unbiased estimate of the
+                design flood. The rationale for this approach is that each of the patterns selected
+                for the ensemble is equally likely.</para>
+            <para>In concept the approach could be extended to take account of factors that are
+                non-uniformly distributed, though here it would be necessary to carefully weight the
+                outcome by the relative likelihood of the different values selected, or else select
+                the input values in a way that reflects the form of their distribution. For example,
+                if a sample of ten initial loss values were selected, then it would be necessary to
+                weight each result by the probability of each loss value occurring, which could be
+                determined (for example) from the cumulative distribution of losses presented in
+                    <xref linkend="b5_ch3"/>; alternatively, the distribution of losses could be
+                divided into ten equally likely exceedance percentile ranges, and the results then
+                be given equal weighting.</para>
+            <para>It is expected that the approach is most suited to the consideration of temporal
+                patterns, as suitable ensemble sets of patterns are readily available (as described
+                in <xref linkend="b2_ch5"/>). Flood magnitudes are generally very sensitive to
+                temporal patterns and thus the ensemble approach provides a straightforward, if
+                somewhat tedious, means of avoiding the introduction of bias due to this source of
+                variability. Extending the ensemble method to consider other inputs, jointly or
+                otherwise, would appear to introduce additional problems which are probably most
+                easily handled by Monte Carlo approaches. </para>
+        </section>
+        <section xml:id="b4_ch3_s_u6s3a">
+            <title>Monte Carlo Event</title>
+            <para>Monte Carlo methods provide a framework for simulating the natural variability in
+                the key processes that influence flood runoff: all important flood producing factors
+                are treated as stochastic variables, and the less important ones are fixed. The
+                primary advantage of the method is that it allows the exceedance probability of the
+                flood characteristic to be determined without bias (subject to the
+                representativeness of the selected inputs).</para>
+            <para>In the most general Monte Carlo simulation approach for design flood estimation,
+                    <emphasis role="italic">rainfall events of different duration</emphasis> are
+                sampled stochastically from their distribution. The simulated design floods are then
+                weighted in accordance with the observed frequency of occurrence of rainfall events
+                of different durations that produced them. This avoids any positive bias of
+                estimated flood probabilities which may be associated with the application of the
+                critical rainfall duration concept
+                    <citation>b4_c3_r36,b4_c3_r37,b4_c3_r27</citation>. The application of this
+                generalised approach relies on the derivation of new design data for rainfall events
+                that are consistent with a new probabilistic definition of storm ‘cores’ or complete
+                storms <citation>b4_c3_r48</citation>. Such design rainfall data is currently not
+                available, thus limiting the application of the generalised approach. To obviate the
+                need for this, <citation>b4_c3_r22+1</citation> and <citation>b4_c3_r23+1</citation>
+                adapted the approach to separately consider different rainfall durations; the
+                resulting peak flows are then enveloped to select the critical event duration,
+                consistent with the ‘critical rainfall duration’ concept used in traditional design
+                flood estimation practice. This is the approach further described herein. Whilst
+                adherence to the ‘critical duration’ concept could possibly introduce systematic
+                bias into the results, it has the advantage of ensuring consistency with existing
+                design approaches and allows much of the currently available design data to be
+                readily used.</para>
+            <para>Undertaking a Monte Carlo simulation requires three sets of key decisions,
+                followed by a simulation step that involves construction of the derived flood
+                frequency curve. The overall steps involved are as follows:<orderedlist numeration="lowerroman">
+                    <listitem>
+                        <para><emphasis role="italic">Select an Appropriate Flood Event Simulation
+                                Model  </emphasis>- The criteria for selecting an appropriate model
+                            are similar to those used with the traditional Design Event approach and
+                            are described in <xref linkend="book5"/>. The selected model should be
+                            able to be run in batch mode with pre-prepared input files or be called
+                            from the Monte Carlo simulation application. Models with fast execution
+                            speeds are well suited to Monte Carlo simulation; complex models with
+                            slow run-times can still be utilised, though generally they need to be
+                            invoked within a stratified sampling scheme (<xref
+                                linkend="b4_ch4_s_0kbrt"/>) to ensure that the simulations times are
+                            within practical constraints. </para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Identify the Model Inputs and Parameters to be
+                                Stochastically Generated </emphasis>- The stochastic representation
+                            of model inputs should focus on those inputs and parameters which are
+                            characterised by a high degree of natural variability and a non-linear
+                            flood response. Examples include rainfall temporal pattern, initial loss
+                            and reservoir storage content at the start of a storm event. If the
+                            assessment indicates limited variability and essentially linear system
+                            response, then there may be little to be gained from extending the Monte
+                            Carlo simulation approach to include such additional inputs or
+                            parameters.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Define the Variation of Inputs/Parameters by
+                                Appropriate Distributions and Correlations</emphasis> - The
+                            considerations and methods applicable to joint probability aspects are
+                            described in <xref linkend="b4_ch4"/>. The distributions used to
+                            generate the stochastic inputs can be defined by the use of specific
+                            theoretical probability distributions or else an empirical,
+                            non-parametric approach can be adopted. <citation>b4_c3_r29+1</citation>
+                            and <citation>b4_c3_r30+1</citation> adopts a strongly parametric
+                            approach to sampling a wide range of storm and catchment processes,
+                                <citation>b4_c3_r27+1</citation> and
+                                <citation>b4_c3_r28+1</citation> provides examples in which both
+                            losses and temporal patterns are defined using a Beta distribution.
+                                <citation>b4_c3_r23</citation> and <citation>b4_c3_r44</citation>
+                            adopt a more empirical approach that is more closely aligned to the
+                            nature of design information used in the traditional Design Event
+                            method. If any of the stochastic inputs exhibit significant
+                            correlations, their correlation structure needs to be defined, and the
+                            correlations included in the sampling scheme.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Undertake Monte Carlo Simulation </emphasis> -
+                            The design inputs and parameters exhibiting significant variability are
+                            sampled in turn from their distributions allowing for significant
+                            correlations, and the resulting combination of inputs and parameters is
+                            then used in a simulation model run. Only those inputs that have a
+                            significant influence on the results need to be stochastically sampled,
+                            and other inputs can be treated as fixed (usually average or median)
+                            values. For Monte Carlo simulation involving several stochastic
+                            variables, many thousands of simulations are required to adequately
+                            sample the inherent variability in the system, and thus for most
+                            practical problems some thought is required to minimise disc storage
+                            space and simulation times.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Construct the Derived Flood Frequency Curve
+                            </emphasis> - Once the required number of runs has been undertaken, it
+                            is necessary to analyse the results to derive the exceedance
+                            probabilities of different flood magnitudes. Where very simple models
+                            are used or the probabilities of interest are not extreme – more
+                            frequent than, say, 1 in 100 Annual Exceedance Probabilities (AEP) – the
+                            simulation results can be analysed directly using frequency analysis (as
+                            described in <xref linkend="b3_ch2"/>). Alternatively, in order to
+                            estimate rarer exceedance probabilities (or use more complex models with
+                            slow execution speeds) it is desirable to adopt a stratified sampling
+                            approach to derive the expected probabilities of given event magnitudes,
+                            as described in <xref linkend="b4_ch4"/>.</para>
+                    </listitem>
+                </orderedlist></para>
+            <para>An example flowchart for the last two steps is illustrated in <xref
+                    linkend="b4ch3_f_4b7fw"/>. This flowchart represents the high level procedure
+                relevant to the consideration of the joint probabilities involved in the variation
+                of loss parameters and temporal patterns. The starting point for this simple Monte
+                Carlo simulation is the Step “A” in <xref linkend="b4ch3_f_4b7fw"/>. The loss and
+                temporal patterns are then sampled and combined with fixed values of other inputs
+                for simulation using a flood event model. Once many thousands of combinations of
+                rainfall depth, losses and temporal patterns have been undertaken, the resulting
+                flood maxima are analysed to derive unbiased estimates of flood risk (represented by
+                Step “B”, <xref linkend="b4ch3_f_4b7fw"/>). Suitable sampling schemes and analyses
+                relevant to these steps are described in <xref linkend="b7_ch7"/>, where additional
+                variables (such as reservoir level or rainfall spatial pattern) can be included as
+                additional sampling steps as required.</para>
+            <para><xref linkend="b4ch3_f_4b7fw"/> also depicts the relationship between Monte Carlo
+                schemes and the other simpler event-based methods discussed above. The blue-shaded
+                shapes represent the steps involved in the traditional Simple Event (or Design
+                Event) approach, where the flood characteristic obtained from a single simulation
+                using the selected inputs (Step “C”) is assumed to have the same Annual Exceedance
+                Probability as its causative rainfall. The ensemble approach is shown as an added
+                loop: in this example the simulation would be repeated for each available temporal
+                pattern, and the results would be averaged (at Step “C”) to yield the flood
+                characteristic of interest, where again it is assumed that the Annual Exceedance
+                Probability of the calculated flood is the same as its causative rainfall. The 2nd
+                and 3rd last shapes represent the additional steps required to implement a Monte
+                Carlo scheme.</para>
+            <para>It should be noted that the steps involved between points A and B in <xref
+                    linkend="b4ch3_f_4b7fw"/> represent the scheme required to consider the joint
+                probabilities associated with the variability of selected inputs. It represents the
+                characterisation of <emphasis role="italic">aleatory uncertainty</emphasis>, which
+                is the (irreducible) uncertainty associated with variability inherent in the
+                selected inputs. However, Monte Carlo schemes can also be used to consider <emphasis
+                    role="italic">epistemic uncertainty</emphasis>, and the additional steps
+                involved in this are shown by the first and last steps in <xref
+                    linkend="b4ch3_f_4b7fw"/> Epistemic (or reducible) uncertainty is due to lack of
+                knowledge, and is associated with errors in the data or the simplifications involved
+                in representing the real world by a conceptual model. In essence, the consideration
+                of aleatory uncertainty allows the derivation of a single (probability neutral)
+                “best estimate” of flood risk, and consideration of epistemic uncertainty allows the
+                characterisation of confidence limits about this best estimate. The outer (dark
+                blue-shaded) iteration loop shows extension of approach to estimate confidence
+                limits. <xref linkend="b4ch3_f_4b7fw"/> has inner (blue-shaded) shapes that show
+                steps involved in Simple Event approach, where dashed lines indicate additional
+                iteration required for Ensemble Event approach.</para>
+            <figure xml:id="b4ch3_f_4b7fw">
+                <title>Simple Framework for Monte Carlo Simulation for Handling Joint Probabilities
+                    Associated with Both Losses and Temporal Patterns </title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4008.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>In general, while the information required to characterise aleatory uncertainty can
+                be readily obtained from the observed record, this is not the case with epistemic
+                uncertainty. Indeed it is quite difficult to obtain information on the likely errors
+                associated with input data or model parameterisation, and it is very difficult to
+                characterise the uncertainty associated with model structure. Accordingly, the
+                guidance presented here focuses on the assessment of aleatory uncertainty as it is
+                considered that this approach can be readily understood and applied by practitioners
+                with the appropriate skills. Thus, while it seems reasonable to regard the use of
+                Monte Carlo procedures to accommodate hydrologic variability as “best practice” for
+                many practical design problems, its use to derive confidence limits is expected to
+                remain the domain of more academic specialists for the foreseeable future.</para>
+        </section>
+        
+        
+    </section>
+    <section xml:id="b4_ch3_s_5wtrv">
+        <title>Continuous Simulation Approaches</title>
+        <section xml:id="b4_ch3_s_71e6n">
+            <title>General Concepts</title>
+            <para>The last few decades have seen considerable advances in computational power. This
+                has allowed implementation of models that are more complex and that provide greater
+                (and more elaborate) representation of the physical processes occurring in a
+                catchment <citation>b4_c3_r2</citation>. This has led to development of large
+                numbers of runoff-routing models from the highly conceptualised Stanford Watershed
+                Model <citation>b4_c3_r19</citation> to more physically based models such as the
+                Systeme Hydrologique Europeen Model (SHE; <citation>b4_c3_r1</citation>).
+                Traditionally, rainfall based methods of estimating the design flood have
+                predominately been event-based, while continuous simulation has been applied for
+                yield estimation or flow forecasting. However, development of tools and methods that
+                allow generation of long periods of synthetic rainfall data has led to increased
+                interest in using continuous simulation for design flood estimation and the concept
+                of using models traditionally developed for yield estimation for the estimation of
+                design floods <citation>b4_c3_r2</citation>. </para>
+            <para>The Continuous Simulation method of estimating the design flood is similar in
+                intent to the event-based Monte Carlo approach discussed in <xref
+                    linkend="b4_ch3_s_u6s3a"/>. Both methods seek to adequately simulate the
+                interactions between flood producing (rainfall and catchment characteristics)
+                variables <citation>b4_c3_r17</citation>. Conceptually, the differences between the
+                two methods arise in how wet and dry periods are sampled and incorporated into the
+                process of estimating the design flood. In the event-based Monte Carlo method
+                rrunoff-routing models are used to simulate the interactions occurring only during
+                the storm (wet period) event. There is implicit consideration of the influence of
+                dry periods in sampling the catchment-rainfall interactions (antecedent conditions,
+                temporal patterns, storm durations) from exogenously derived distributions of
+                initial conditions <citation>b4_c3_r17</citation>. The Continuous Simulation method,
+                on the other hand, accounts for these interactions through direct simulation of the
+                processes occurring in the catchment over an extended period
+                    <citation>b4_c3_r17,b5_c3_r8,b4_c3_r5</citation>. The Continuous Simulation
+                method is also applicable in situations where the critical event duration extends
+                over many weeks or months, as is the case for systems with large storage capacity
+                but limited outflow capacity.</para>
+            <para>The Continuous Simulation method of estimating the design flood involves running a
+                conceptual runoff-routing model for a long period of time such that all important
+                interactions (covering the dry and wet periods) between the storm (intensity,
+                duration, temporal pattern) and the catchment characteristics are adequately sampled
+                to derive the flood frequency distribution. In general, pluviograph data of hourly
+                resolution (or less) is used to drive the runoff-routing models. In most cases the
+                period of record of pluviograph data rarely exceeds 20 years, therefore rainfall
+                data is extended by using stochastic rainfall data generation. The runoff-routing
+                model is calibrated using flow data, where available, and the calibrated model is
+                then used to generate a long series of simulated flow. Finally the simulated flow is
+                then used to extract the Annual Maximum Series and estimate the derived flood
+                frequency curve. Important components of the Continuous Simulation approach are
+                further discussed <xref linkend="b4_ch3_s_6xe8d"/> to <xref linkend="b4_ch3_s_zxb5t"
+                />. </para>
+        </section>
+        <section xml:id="b4_ch3_s_6xe8d">
+            <title>Stochastic Rainfall Data Generation</title>
+            <para>The effectiveness of the Continuous Simulation method depends upon the
+                availability of a sufficiently long rainfall data set to provide adequate
+                information on extreme storm (and drought) events. In reality however, pluviograph
+                data rarely extends beyond 50 years, and the inference of floods greater than 2% AEP
+                is difficult <citation>b5_c3_r8</citation>. </para>
+            <para>In such cases stochastic rainfall generation has been used to provide a long time
+                series of synthetic rainfall
+                    <citation>b5_c3_r8,b4_c3_r5,b4_c3_r45,b4_c3_r10</citation>. The synthetic data
+                set thus generated is designed to be statistically indistinguishable from observed
+                rainfall data <citation>b4_c3_r17</citation>. </para>
+            <para>There are well established methods to generate stochastic data at a coarse time
+                scale. However, generating fine resolution synthetic data that can reproduce the
+                statistics of the observed rainfall series at various temporal scales (annual,
+                monthly, daily and hourly) is challenging
+                    <citation>b4_c3_r33,b4_c3_r2,b4_c3_r17</citation>. Therefore, a commonly used
+                approach is to generate the synthetic rainfall data at a daily time step first, and
+                then disaggregate to a sub-daily time step by using functional relationships between
+                daily and sub-daily rainfall statistics. <citation>b2_c6_r8+1</citation> used the
+                Transition Probability Matrix (TPM) model to generate thousands of years of daily
+                rainfall data and then disaggregated the daily data to an hourly time-step using the
+                sub-daily rainfall statistics derived from IFD curves and temporal patterns.
+                    <citation>b4_c3_r17+1</citation> tested the ability of the DRIP rainfall
+                generating model <citation>b4_c3_r11+1</citation> to reproduce observed rainfall
+                statistics at different levels of aggregation (hourly to yearly) and found that the
+                model was able to reproduce the observed rainfall statistics satisfactorily for the
+                large storms. </para>
+            <para>Techniques are available for generating daily rainfalls at any site in Australia
+                    (<xref linkend="b2_ch6"/>) thus the inputs required for continuous simulation
+                models can be developed for catchments without adequate at-site rainfall data. </para>
+        </section>
+        <section xml:id="b4_ch3_s_qfg1x">
+            <title>Runoff- Routing Model</title>
+            <para>Types of runoff-routing models used to simulate the flow can be varied and depend
+                upon the complexity required to provide unbiased simulation of the hydrologic
+                process in the catchment. For example, <citation>b2_c6_r8+1</citation> and
+                    <citation>b4_c3_r45+1</citation> used a simple lumped Australian Water Balance
+                Model (AWBM) to simulate a long series of precipitation excess, for small to
+                mid-sized catchments, which were then routed using an hourly hydrograph generation
+                model. <citation>b4_c3_r10+1</citation> used HEC-HMS <citation>b4_c3_r46</citation>,
+                a semi distributed rainfall-runoff model, in three medium sized catchments in
+                Germany. <citation>b4_c3_r5+1</citation> applied a semi-distributed conceptual
+                runoff-routing model known as TOPMODEL <citation>b4_c3_r49</citation> for design
+                flood estimation in small sized catchments in the UK. For large catchments with
+                large spatial heterogeneity, England (2006) recommends using a physically based
+                distributed model to fully characterise the spatial distribution of the processes
+                occurring in the catchment. Other commonly used continuous simulation models include
+                SIMHYD <citation>b4_c3_r47</citation>, Sacramento Model
+                    <citation>b4_c3_r4</citation> and GR4H <citation>b4_c3_r20</citation>.</para>
+            <para>The three factors that need to be considered when selecting a continuous
+                simulation model for flood estimation are: <orderedlist>
+                    <listitem>
+                        <para>The ability of the model to represent the physical processes occurring
+                            in the catchment (model complexity);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Adequate temporal resolution to simulate the embedded flood
+                            hydrographs; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>The amount of data and computational resources available to properly
+                            describe and calibrate the model (model parsimony).</para>
+                    </listitem>
+                </orderedlist>Useful guidance on the trade-offs involved in matching model
+                complexity with data availability is provided in <citation>b4_c3_r34</citation>. </para>
+        </section>
+        <section xml:id="b4_ch3_s_77dp8">
+            <title>Model Calibration</title>
+            <para>Implementation of Continuous Simulation, and the use of synthetic data, is
+                complicated by the need to calibrate both the rainfall data generation model and the
+                runoff-routing model using the observed data set. Effective calibration depends upon
+                the calibration method applied, the length and the quality of data used for
+                calibration. <citation>b4_c3_r9+1</citation> report that the benefit of using
+                additional data (with similar information content) diminishes with the reciprocal of
+                the square root of the number of data points used in the calibration. Therefore,
+                while the length of data is an important factor, the data series should also contain
+                a sufficient number of ‘unusual events’ (or extreme events) to enable estimation of
+                the parameter values <citation>b4_c3_r32</citation>. </para>
+            <para>The rainfall generation model is generally calibrated to storm events, as in
+                alternating renewal models like DRIP, or to aggregation statistics (such as mean,
+                skewness, coefficient of variation, auto correlations etc.) at various time scales
+                    <citation>b4_c3_r17</citation>. The runoff-routing models are calibrated to
+                observed flow data, flow statistics <citation>b5_c3_r8</citation> and in some cases
+                the flood frequency curve <citation>b4_c3_r5</citation>. The alternative calibration
+                strategies will result in different model parameter values, leading to differing
+                representation of hydrographs and peak events.</para>
+            <para>Lack of observed data is a major problem for calibration of the rainfall
+                generation model or the runoff-routing model. In the case of the rainfall generation
+                model, for example, the short rainfall data sets generally available are unlikely to
+                include extreme rainfall events caused by various rain producing mechanisms (for
+                example cyclones vs. thunderstorms) and to sample the full range of natural
+                variability. </para>
+        </section>
+        <section xml:id="b4_ch3_s_zxb5t">
+            <title>Applications to Design Flood Estimation</title>
+            <para><citation>b5_c3_r8+1</citation> developed a Continuous Simulation System (CSS) for
+                estimation of design floods, and applied this to a number of catchments of mid to
+                small sizes in Victoria. The CSS comprised of a stochastic rainfall generator, the
+                AWBM water balance model and a hydrograph model. The stochastic rainfall generator
+                was based on Transition Probability Matrix model to generate daily rainfalls, and
+                these were then disaggregated to hourly data. A multi objective calibration strategy
+                was used to calibrate the runoff-routing model against the monthly runoff volume and
+                maximum values of daily flow. To reduce the computational time, the model was run at
+                daily time step during the long relatively dry periods and hourly time step during
+                the storm event. They estimated the design flood values to 0.05% AEP and showed that
+                the derived frequency curve calculated by the method was able to properly match the
+                observed flood frequency curve for more frequent floods (5% AEP).</para>
+            <para><citation>b4_c3_r24+1</citation> further applied the CSS in a large (13 000
+                    km<superscript>2</superscript>), semi-arid catchment in Western Australia. They
+                compared the design estimates produced by the CSS to the observed flood frequency
+                curve and found that the design flood estimates overestimated the observed flood
+                frequency curve for more frequent floods. They speculated that the discrepancy
+                between observed flood frequency curve and the CSS result might be due to the
+                sampling problem; the observed flood frequency curve was estimated based on a
+                shorter period (31 years) of data, while the rainfall generation model was
+                calibrated to longer (93 years) data. The observed streamflow data covered a
+                relatively dry period and did not represent the total climatic variability over a
+                longer period. </para>
+            <para>There have been other applications of Continuous Simulation approaches for
+                estimation of the derived flood frequency curve, for example
+                    <citation>b4_c3_r10+1</citation>, <citation>b4_c3_r5+1</citation> and
+                    <citation>b4_c3_r45+1</citation>, to catchments of various sizes and
+                characteristics. In all cases stochastic rainfall generators were used to extend the
+                rainfall data. Although different rainfall generation and process models were used,
+                all report that the derived distribution curve produced by the method was able to
+                provide a satisfactory match to the observed flood frequency curves for large
+                floods. However, in all cases described, the ability of the model to properly
+                reproduce extreme flood events has not been confirmed, due to lack of data for
+                extreme events.</para>
+        </section>
+    </section>
+    <section xml:id="b4_ch3_s_lccad">
+        <title>Hybrid Continuous Event-Based Simulation</title>
+        <para>There is a range of “hybrid” approaches that do not fit neatly into the foregoing
+            categories. Typically, hybrid approaches use statistical information on rainfall storms
+            in combination with continuous simulation and event-based models. With this approach,
+            long-term recorded (or stochastically generated) climate sequences might be used in
+            combination with a continuous simulation model to produce a time series of catchment
+            soil moisture and streamflows (which also may include simulation of snowpack
+            conditions). This information is used to specify antecedent conditions for an
+            event-based model, which is then used in combination with statistical information on
+            rainfall storms to generate extreme flood hydrographs. For example, the SEFM model
+                <citation>b4_c3_r21</citation> undertakes soil moisture accounting and snowpack
+            modelling for an extended period prior to the onset of an event to establish antecedent
+            conditions, then uses a flood event model in combination with probabilistic design
+            rainfall intensities to simulate the flood hydrographs. </para>
+        <para>SCHADEX <citation>b4_c3_r25</citation> is also an example of a hybrid approach.
+            SCHADEX is a semi-continuous runoff-routing model in which a continuous hydrological
+            simulation model is used to generate the possible hydrological states of the catchment,
+            and floods are simulated on an event basis. The method incorporates a statistical model
+            to characterise the distribution of rainfalls, where the observed rainfall series is
+            split into several homogeneous sub-samples based on a classification of regional weather
+            characteristics. The MORDOR hydrological model is used to convert rainfalls into floods;
+            this is a conceptual, lumped, reservoir model with daily areal rainfall and air
+            temperature as the driving input data. The principal hydrological processes represented
+            are evapotranspiration, direct and indirect runoff, groundwater, snow accumulation and
+            melt, and routing. Selected daily rainfalls are replaced by a synthetic generator for
+            extreme rainfall estimation <citation>b4_c3_r8</citation>, and the resulting daily
+            discharge volumes are converted to peak flows using an empirical function derived from
+            observed hydrographs. The results are fitted to a frequency distribution and used to
+            derive flood quantiles typically out to 1 in 1000 AEP.</para>
+    </section>
+    <section xml:id="b4_ch3_s_dnc92">
+        <title>Performance of Methods</title>
+        <para><citation>b4_c3_r18+1</citation> tested the Monte Carlo and Ensemble Event approaches
+            using ten natural test catchments located in different areas of Australia, and the
+            Continuous Simulation approach was applied to five of these catchments. [It should be
+            noted that <citation>b4_c3_r18+1</citation> used the term “design event” to denote the
+            use of an event model with a sample of temporal patterns, which corresponds to the
+            Ensemble Event approach as described in <xref linkend="b4_ch3_s_0xgbz"/>; they did not
+            test the deterministic “Simple Event” method as described in <xref
+                linkend="b4_ch3_s_k7niq"/>]. The catchments were selected to cover a range of
+            climatic conditions, catchment sizes and catchment characteristics. Monte Carlo and
+            Ensemble Event models were developed for each of the ten catchments and calibrated using
+            observed rainfall and flow data. Three continuous simulation models were considered, the
+            Australian Water Balance Model (AWBM, <citation>b4_c3_r2</citation>), SIMHYD
+                <citation>b4_c3_r47</citation> and GR4H <citation>b4_c3_r20</citation>.</para>
+        <para>The results of the event-based modelling showed that in general an initial
+            loss-continuing loss model run using both the Monte Carlo and Ensemble approaches
+            performed well in reproducing the at-site flood frequency curve over the range of
+            catchments tested, over a range  from 50% to 1% AEP. The exception to this was that the
+            Monte Carlo model did not perform well for one catchment (located in the south-west of
+            Western Australia) where the flow response to rainfall events varied widely. SWMOD
+                <citation>b4_c3_r35</citation> was used as an alternative loss model for this
+            catchment, and it was found that use of this model improved the results significantly
+            over the initial loss-continuing loss model.</para>
+        <para><citation>b4_c3_r31+1</citation> also evaluated the performance of Monte Carlo and
+            Ensemble Event approaches, and they included comparison with the traditional Simple
+            Event method. They tested the three methods on seven catchments covering the temperate
+            and tropical regions of Australia, and considered both long duration (24 hours and
+            longer) and short duration (less than 6 hour) storms. The Simple Event method was found
+            to generally underestimate the peak flows for events. On the basis of the seven
+            catchments considered, the Simple Event method underestimated the Monte Carlo solution
+            by around 10% to 15%, although in some cases the method underestimated peak flows by
+            between 50% to 70%. <citation>b4_c3_r31+1</citation> found much closer agreement between
+            the Ensemble Event and Monte Carlo approaches, where generally the Ensemble Event method
+            was found to underestimate the Monte Carlo solution by around 5%.</para>
+        <para>The results of the method testing on continuous simulation models by
+                <citation>b4_c3_r18+1</citation> found that while it was possible to calibrate the
+            models to reproduce the overall flow regime of the catchments, the highest flow peaks
+            were markedly underestimated and the simulated flood frequency curve calculated from
+            simulated Annual Maximum Series provided a very poor fit to the observed flood frequency
+            curve. Weighting the calibration to the largest events in the series reduced the ability
+            of the model to reproduce the overall flow regime, and provided only slight improvements
+            in the accuracy of the derived frequency curves. It was found that the models could be
+            calibrated directly to selected quantiles of the observed flood frequency curve, but
+            this resulted in a very poor representation of hydrograph behaviour and large biases in
+            flood volume. This testing clearly illustrated the multi-criteria nature of the
+            calibration problem <citation>b4_c3_r50</citation>, and showed that it is difficult to
+            obtain a very good fit to both the flood frequency curve and hydrograph behaviour.
+            Furthermore, comparison of the calibrated parameters resulting from the different
+            calibration approaches also showed large differences in values, indicating a trade-off
+            between reproducing the hydrograph and the best representation of the flood frequency
+            curve.</para>
+        <para><citation>b4_c3_r18+1</citation> investigated the effect of record length on model
+            performance. The results from the two test catchments tested by
+                <citation>b4_c3_r18+1</citation> found that even when twenty years of data is
+            available at a site, the model results can vary significantly based on the period of
+            record used in analysis. This is particularly evident when one period is noticeably
+            drier or wetter than the other. This highlights the need to investigate how
+            representative the available flow data is in the context of any available long-term
+            rainfall records. Both the Monte Carlo and Ensemble Event approaches gave similar
+            results.</para>
+        <para><citation>b4_c3_r18+1</citation> also investigated the efficacy of applying the
+            methods to ungauged catchments. The results of the investigation by
+                <citation>b4_c3_r18+1</citation>  illustrated that even when data is available from
+            a neighboring gauged catchment, care must be taken in transposing inputs and parameters
+            from similar gauged catchments. When parameters were transferred between models from
+            dissimilar catchments, the results of both the Monte Carlo and Ensemble Event approaches
+            were very poor. From these tests it is concluded that only catchments with similar
+            climatic conditions, catchment sizes and catchment characteristics should be considered
+            for providing model parameters for ungauged catchments.</para>
+    </section>
+    <section xml:id="b4_ch3_s_g1cka">
+        <title>Advantages and Limitations</title>
+        <para>An overview of the advantages and limitations of the different approaches to flood
+            estimation is provided in <xref linkend="b1_ch3"/>, though it is worth emphasizing some
+            points here that are specific to the methods discussed in <xref linkend="b4_ch3_s_y3noq"
+            /> to <xref linkend="b4_ch3_s_lccad"/>.</para>
+        <para>The Simple Event method has been the most commonly used approach to date in Australia.
+            It is simple to apply, and information on the required design inputs - design rainfalls,
+            single temporal patterns of average variability, and median design losses - are readily
+            available for most locations in Australia. The probability neutrality assumption is
+            maintained by selecting single “representative” values of the inputs; however, without
+            independent information there is no way of knowing whether this assumption has been
+            satisfied. Thus, while simple and easy to apply, the method is lacking in robustness and
+            defensibility.</para>
+        <para>The Ensemble Event method represents a modest increase in complexity. Rather than
+            undertaking a single run for each combination of event AEP and duration, it is necessary
+            to undertake ten or so simulations and average the outcome; if single hydrographs are
+            required for design purposes then these can be obtained by simple scaling of a
+            hydrograph obtained from a representative event. The method does involve a little more
+            tedium for practitioners, though most modelling software can be configured for batch
+            processing, and the additional computation burden is of no consequence. The method is
+            most readily suited to the consideration of temporal patterns, where testing has shown
+            that in natural catchments it yields similar estimates to those derived from more
+            rigorous approaches. While the approach represents an appreciable improvement over
+            Simple Event methods, the approach does suffer from the limitation that it is not well
+            suited to considering the influence of additional stochastic factors that may have an
+            influence on the derived flood estimates. In natural catchments this includes the
+            estimation of floods which are heavily influenced by the joint occurrence of highly
+            variable losses and temporal patterns, catchments in which natural lake (or snowpack)
+            levels are subject to variable antecedent conditions, or catchments where it necessary
+            to consider seasonal variation in individual inputs. In disturbed catchments the method
+            is unable to consider the influence of variable initial reservoir levels on dam
+            outflows, the likelihood of debris blocking culverts and bridge waterway areas, or the
+            influence of controlled discharges from infrastructure works that may be subject to some
+            variability. </para>
+        <para>In contrast, Monte Carlo methods are well suited to the consideration of multiple
+            sources of variability from natural or anthropogenic sources. Once the simulation scheme
+            has been established, it is easily expanded to consider additional factors of
+            importance. For example, the same sampling scheme can be used to accommodate the
+            variability associated with seasonality of storm occurrence or temporal patterns,
+            drawdown in a reservoir, or blockage factors. The information required to characterise
+            aleatory uncertainty (ie. hydrologic variability) is often available in the historic
+            record: if there is sufficient information available to simulate a process with a
+            deterministic model, then the necessary information required to characterise variability
+            can be readily obtained (or generated). Importantly, it is a simple matter to expand a
+            simulation scheme to allow for correlations between the stochastic factors modelled.
+            Thus, if there is information available that suggests that the dominant season is
+            dependent on event severity, or that the available airspace in a reservoir decreases
+            with event severity, then this is easily accommodated by using a conditional sampling
+            scheme. The limitation of the method is that specialist modelling skills are required to
+            develop bespoke Monte Carlo schemes, and that additional effort is required to ensure
+            that the distributions used to characterise variability are appropriate for the
+            conditions being simulated. The method can be expanded to include consideration of
+            epistemic uncertainty (eg. uncertainty in the routing parameters or in the design
+            estimate of rainfall depth), but the necessary information for such schemes can be
+            difficult to obtain and justify.</para>
+        <para>If the catchment is subject to complex interactions between stochastic factors and/or
+            antecedent conditions, then consideration should be given to use of the Continuous
+            Simulation approach. This method is particularly suited to the analysis of
+            volume-dependent problems which are influenced by the interaction between multiple
+            factors. For example, the analysis of peak levels at multiple points in a catchment that
+            is influenced by hydraulic controls or which contain a cascade of storages. The use of
+            Continuous Simulation approaches in these cases obviates the need to explicitly consider
+            the manner in which factors combine, and if a long enough sequence is considered then it
+            implicitly accounts for the joint probabilities involved. This approach also lends
+            itself to the analysis of systems which are influenced by long duration events or
+            sequences of flood events. Its limitation, however, is that the models most commonly
+            used for Continuous Simulation are not well suited to representing the flood response in
+            a catchment, particularly for rarer events. It is difficult to calibrate (then validate)
+            a continuous model in a manner that adequately captures the sequencing and variability
+            of streamflows while reproducing the behaviour that determines peak and volume of flood
+            events. For estimating rare events, it is also necessary to calibrate and apply a
+            suitable stochastic climate generator. </para>
+        <para>Hybrid models have the potential to combine the benefits of both continuous and event
+            approaches, though at this stage insufficient investigations have been undertaken to
+            determine whether such schemes provide demonstrable benefits over other
+            approaches.</para>
+    </section>
+    <section xml:id="b4_ch3_s_je5b4">
+        <title>Example - Delatite River </title>
+        <para>The Delatite River is located in central Victoria and has a catchment area of 368
+                km<superscript>2</superscript>. The catchment headwaters are located between Mount
+            Buller and Mount Stirling in the Great Dividing Range. The river flows generally
+            westwards through forests which become less dense as the river descends and then flows
+            into Lake Eildon. The river descends a total of 1230 m over its 85 km length. A map of
+            the catchment and its drainage network is shown in <xref linkend="b4ch3_f_zq6e5"/> which
+            also shows the schematic of a conceptual runoff-routing model developed for the
+            catchment. Streamflow data is available at the Tonga Bridge gauging site (Gauge No.
+            405214) from March 1957 to date.</para>
+        <para>The runoff-routing model was fitted to three historic flood events, and the results
+            for the largest event (September 2010) are also shown in <xref linkend="b4ch3_f_zq6e5"
+            />. The initial loss parameters fitted to the three events were 25, 10, and 15 mm, and
+            the corresponding continuing loss parameters were 2.5, 1.5, and 2.5 mm/hr.</para>
+        <figure xml:id="b4ch3_f_zq6e5">
+            <title> Schematic Layout of Delatite River catchment and Calibration  to December 2010
+                Event</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4009.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Three different approaches were used to derive design estimates using the calibrated
+            runoff-routing model. The Simple Event approach used a single temporal pattern of
+            average variability, along with a single set of loss parameters obtained from
+            calibration to the three historic events. The Ensemble Event approach replaced the
+            single temporal pattern with a sample of 19 patterns derived from rainfall events that
+            have occurred in the inland region of south-east Australia, and used the same loss
+            parameters as used in the Simple Event method. Monte Carlo results were obtained using
+            the same set of temporal patterns as used in the Ensemble Event approach; the continuing
+            loss parameter was held constant, and the initial loss was sampled from a
+            non-dimensional distribution of initial losses <citation>b4_c3_r14</citation> with a
+            median loss value set equal to the value adopted for the Simple Event method. The
+            results from these three approaches are shown in <xref linkend="b4ch3_f_sdws0"/> where
+            it is seen that the Monte Carlo approach yields estimates that are very similar to the
+            quantiles obtained from Flood Frequency Analysis. The Ensemble Event estimates are
+            similar to but lower than those obtained using Monte Carlo analysis, and the Simple
+            Event estimates are substantially higher. It is worth noting that all design flood
+            estimates rarer than about 5% AEP lie within the confidence limits associated with the
+            Flood Frequency Analysis.</para>
+        <para>Also shown in <xref linkend="b4ch3_f_sdws0"/> are the results obtained from Continuous
+            Simulation. A number of conceptual models were trialled and the Sacramento model
+                <citation>b4_c3_r4</citation> was found to provide the best results. Rainfall inputs
+            to the model were obtained using gridded rainfall data <citation>b4_c3_r16</citation>
+            and mean monthly areal potential evapotranspiration inputs were obtained from the Bureau
+            of Meteorology <citation>b4_c3_r7</citation>. The model was initially calibrated to
+            daily streamflows using 20 years of historic data, and then adjusted to reproduce the
+            instantaneous peak flows over the same period. The model was used to derive 101 years of
+            simulated streamflows using the gridded rainfall data, and a Generalised Extreme Value
+            distribution was then fitted to the annual maxima extracted from the time series. The
+            results are shown in <xref linkend="b4ch3_f_sdws0"/>, where it is seen that the design
+            estimates are substantially lower than the results obtained from the event-based
+            approaches. The derived flood frequency curve generally lies along the lower confidence
+            limits of the frequency curve fitted using gauged maxima.</para>
+        <para>While no general conclusions should be drawn from this example about the relative
+            efficacy of the different methods used, the results do illustrate the range of estimates
+            obtained for a well gauged catchment. They indicate the degree of ‘model uncertainty’
+            that generally remains unknown when only a single simulation method is employed. The
+            largest event used to fit the runoff-routing model occurred in December 2010 and has a
+            peak similar in magnitude to the 2% AEP event determined from Flood Frequency Analysis.
+            The period of record used to calibrate the Sacramento model spanned a representative
+            range of climatic conditions. The data used in this example is more than is typically
+            available, and nevertheless the design estimates vary by about a factor of two.</para>
+        <figure xml:id="b4ch3_f_sdws0">
+            <title> Comparison of Design Flood Estimates with Flood Frequency Curve for the Delatite
+                River at Tonga Bridge</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4010.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include> 
 </chapter>

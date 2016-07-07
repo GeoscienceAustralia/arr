@@ -1,47 +1,617 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b4_ch2" version="5.0" xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook"
-         status = "In Preparation">
-         
-         <info> <title>Catchment Modelling Concepts</title>
-
-            </info>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="b4_ch2" version="5.0" status="In Preparation">
+    <info>
+        <title>Hydrologic Processes Contributing to Floods</title>
+    <xi:include href="../../common/authors/ladson_anthony.xml"/>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+        
+    </info>
     <informaltable border="1">
         <tr>
             <td colspan="2">Chapter Status</td>
         </tr>
         <tr>
-            <td>Book</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>Chapter</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>27/11/2015</td>
+            <td>Date last updated</td>
+            <td>06/07/16 </td>
         </tr>
         <tr>
             <td>Content</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Graphs and Figures</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Examples</td>
-            <td>In preparation</td>
+            <td>Advanced draft</td>
         </tr>
         <tr>
             <td>General</td>
-            <td/>
+            <td>Subject to industry feedback </td>
         </tr>
     </informaltable>
+    <section xml:id="b4ch2_s_f2ad3">
+        <title>Introduction</title>
+        <para>This chapter outlines the hydrologic processes that contribute to floods including a
+            review of runoff generation, baseflow contributions to flood flow, flow routing and
+            losses. The chapter concludes with a discussion of the conceptualisation of these
+            processes in models and case studies of floods in tropical and temperate rural
+            catchments, and in urban areas. </para>
+        <para>Under Australian conditions, the ultimate cause of the large streamflows that result
+            in floods is usually rainfall. Other causes, such as melting of snow and ice, are less
+            important in our temperate climate. In places storm surge may combine with stream flows
+            to cause flooding as discussed in <xref linkend="b6_ch5"/>. </para>
+        <para>The link between rainfall and streamflow is mediated by a number of processes (<xref
+                linkend="b4ch2_f_odmn5"/>). Rainfall landing on the catchment surface can be
+            converted to runoff in different ways that depend on infiltration capacity and whether
+            soils are saturated. Four runoff processes are discussed in <xref
+                linkend="b4ch2_s_bp6h9"/>: those relating to infiltration excess, saturation excess,
+            sub-surface stormflow and impervious area runoff. Typically, only a small proportion of
+            rainfall will become streamflow with the rest being evaporated perhaps after being
+            intercepted by vegetation, stored in surface depressions or infiltrated to become soil
+            moisture or groundwater. Some groundwater may contribute to floods via baseflow (refer
+            to <xref linkend="b5_ch4"/>). </para>
+        <para>There are particular conditions that can lead to high streamflow, and flooding. A
+            'wet' catchment means reduced losses so that a greater proportion of rainfall will be
+            converted to runoff. A catchment could be wet up by a long period of low intensity
+            rainfall, particularly when evaportranspiration is low, such as in winter. A short burst
+            of high intensity rainfall can lead to flooding if there are limited opportunities for
+            rain to be lost. This is particularly the case in catchments where impervious surfaces
+            and piped drainage systems link runoff to streams. </para>
+        <para><xref linkend="b4ch2_f_odmn5"/> summarises the physical processes that can lead to
+            floods, but floods can also be considered stochastic events caused by the random
+            simultaneous occurrence of unusual conditions. The stochastic nature of flooding was
+            illustrated in <xref linkend="b1_ch3"/>
+            <?oxy_comment_start author="retallick" timestamp="20160630T144918+1000" comment="is this needed "?>where
+            it was shown that flood peaks resulting from 1% AEP rainfalls ranged in magnitude from
+            500 m<superscript>3</superscript>/s to 2000
+            m<superscript>3</superscript>/s.<?oxy_comment_end?> The cause of this disparity in
+            response is random variation in catchment processes, such as interception and storage,
+            and other factors such as the spatial and temporal patterns of rainfall. The series of
+            peak flows at a gauge are manifestations of the joint probability of these random
+            processes. </para>
+        <figure xml:id="b4ch2_f_odmn5">
+            <title>Catchment and Runoff Generation Processes</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4003.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+
+    </section>
+    <section xml:id="b4ch2_s_bp6h9">
+        <title>Runoff Generation</title>
+        <para>This section outlines some of the key runoff generation processes that can lead to
+            floods. In particular, the following topics are addressed:</para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>Infiltration excess runoff;</para>
+                </listitem>
+                <listitem>
+                    <para>Saturation excess runoff;</para>
+                </listitem>
+                <listitem>
+                    <para>Variable source areas;</para>
+                </listitem>
+                <listitem>
+                    <para>Partial area runoff;</para>
+                </listitem>
+                <listitem>
+                    <para>Subsurface storm flow; and</para>
+                </listitem>
+                <listitem>
+                    <para>Impervious area runoff.</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para>Here we are focussing on quickflow and the mechanisms that rapidly convert rainfall to
+            streamflow and so cause a flood hydrograph. <xref linkend="b4ch2_s_2nv2f"/> briefly
+            discusses the slower process of baseflow along with losses and flow routing (<xref
+                linkend="b4ch2_f_nou74"/>). </para>
+        
+        <figure xml:id="b4ch2_f_nou74">
+            <title>Simplified Description of the Process of Converting Rainfall to Runoff and
+                Streamflow</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4002.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>        
+        <section xml:id="b4ch2_s_dr7u9">
+            <title>Infiltration Excess Runoff</title>
+            <para>Once rainfall on a catchment reaches the soil surface, some will infiltrate into
+                the soil. The infiltration rate, the rate at which water enters the soil, depends
+                on: </para>
+            <para><itemizedlist>
+                    <listitem>
+                        <para>the rate at which water is supplied to the soil surface; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>the infiltration capacity which is the maximum rate at which water can
+                            enter the soil.</para>
+                    </listitem>
+                </itemizedlist>If the rainfall rate (mm/hr) is greater than the infiltration
+                capacity, water will pond at the soil surface; if the ground is sloping, then water
+                will runoff. Runoff produced in this way is called infiltration excess overland
+                flow, or Hortonian<footnote>
+                    <para>Hortonian runoff is named for Robert E. Horton (1875-1945); a pioneer of
+                        modern hydrology.</para>
+                </footnote>overland flow. Hortonian overland flow can provide a rapid pathway for
+                water to be converted from rainfall to runoff. Hortonian flow is likely to
+                contribute to floods when catchment surfaces have low infiltration capacity, when
+                there is intense rainfall and where there is a rapid mechanism for runoff to reach a
+                stream.</para>
+        </section>
+        <section xml:id="b4ch2_s_5k7dj">
+            <title>Saturation Excess Runoff, Variable Source Areas and Partial Area Runoff</title>
+            <para>If soil becomes saturated, from rising soil moisture or because of flow from
+                up-slope, then no additional rainfall can infiltrate. Any rainfall striking the
+                saturated soil surface will be converted to saturation excess runoff. These
+                saturated regions of a catchment are referred to as source areas. </para>
+            <para>Usually there are some areas within a catchment that are wetter than others. Areas
+                along valleys and adjacent to streams may remain saturated for long periods with
+                up-slope areas being dryer. Saturated areas enlarge and contract with the seasonal
+                wetting and drying of a catchment. Saturated areas may expand during a storm and
+                then shrink once rainfall ceases. As the amount of saturated area changes so does
+                the source area contributing to runoff. </para>
+            <para>The concept of partial area runoff arises because only part of a catchment may be
+                saturated and this area may be the only contributor to streamflow
+                    <citation>b4_c2_r10</citation>. Saturation excess runoff can contribute to
+                floods when source areas are large and convert intense rainfall to runoff that flows
+                directly to streams. </para>
+        </section>
+        <section xml:id="b4ch2_s_7nskv">
+            <title>Impervious Area Runoff</title>
+            <?oxy_comment_start author="retallick" timestamp="20160630T213631+1000" comment="bad sentence "?>
+            <para>Some natural catchments may contain impervious areas, such as rocky outcrops.
+                <?oxy_comment_end?>Urbanisation leads to catchments being covered with roofs, roads,
+                car parks and other impervious surfaces. A large proportion of rainfall landing on
+                these surfaces is converted to runoff as there are few opportunities for rainfall to
+                be intercepted and lost. Consequently, urbanisation leads to a large increase in
+                runoff volume, flood frequency and magnitude. The hydrologic impacts of urbanisation
+                have been quantified in a wide range of studies. Urbanisation causes up to a 10-fold
+                increase in peak flows of floods in the range of 1 to 4 Exceedances per Year (EY),
+                with diminishing impacts on larger floods
+                    <citation>b4_c2_r26,b4_c2_r1,b4_c2_r11,b4_c2_r18,b4_c2_r6,b4_c2_r12</citation>.
+                Runoff in urban streams responds more rapidly compared to rural catchments
+                    <citation>b4_c2_r21</citation> and flow volumes increase
+                    <citation>b4_c2_r15,b4_c2_r6,b4_c2_r12</citation>. Hydrologic impacts of
+                urbanisation are discussed in <xref linkend="b4ch2_s_sgovb"/> and in <xref
+                    linkend="book9"/>.</para>
+        </section>
+        <section xml:id="b4ch2_s_66x2t">
+            <title>Subsurface Storm Flow</title>
+            <para>Subsurface flows can be an important source of flood runoff in areas with steep
+                slopes, conductive soils and where the soil profile becomes saturated so that water
+                can move through large pores. In many forested catchments surface runoff is rare.
+                Soil infiltration rates are never exceeded by rainfall and confined streams limit
+                opportunities for formation of saturated source areas. Instead, given appropriate
+                soil conditions, water may be rapidly transferred down-slope as subsurface flow.
+                This process is enhanced where there is an impeding soil layer that leads to the
+                formation of perched water tables which cause soils to saturate and become highly
+                conductive <citation>b4_c2_r27</citation>. </para>
+        </section>
+        <section xml:id="b4ch2_s_6acwa">
+            <title>Runoff in Real Catchments</title>
+            <para>Although the distinctions between the various runoff mechanisms are useful and
+                important, they may not be so clear cut in real catchments where runoff may be
+                produced from a variety of mechanisms which vary between and during storms. Runoff
+                processes may also differ compared to what would be expected. The runoff production
+                that occurs during extreme events may not just be a variation on normal behaviour
+                but the result of completely different processes. For example, infiltration excess
+                processes may switch on during very intense rainfall in a catchment where runoff is
+                normally contributed  to by saturated source areas. In many cases, the catchment
+                area can change if water flows across a drainage divide because of blockage or
+                insufficient capacity of drainage structures. These issues are discussed further in
+                the case studies in <xref linkend="b4ch2_s_sgovb"/>. Blockage issues are
+                specifically addressed in <xref linkend="b6_ch6"/>.</para>
+        </section>
+   
+     
+     
+        
+    </section>
+    <section xml:id="b4ch2_s_2nv2f">
+        <title>Baseflow</title>
+        <para>Streamflow is often divided into quickflow and baseflow. Quickflow is the
+            characteristic rapid response of a stream to rainfall and catchment runoff while
+            baseflow is contributed by slow release of stored water. Quickflow is often referred to
+            as ‘direct runoff’ or as ‘surface runoff’ but, as noted above, can include subsurface
+            stormflow. During floods, quickflow is of the greatest relevance but, particularly for
+            modelling, baseflow must be considered where it provides a significant contribution to a
+            flood hydrograph (<xref linkend="b4ch2_f_jg49k"/>). </para>
+        <para>There are a range of processes that contribute to the conceptual baseflow hydrograph
+            as shown in <xref linkend="b4ch2_f_jg49k"/>. The initial baseflow represents the
+            contribution from previous events; then as the hydrograph rises, baseflow can be
+            depleted as water enters bank storage or is removed by transmission loss. Later,
+            baseflow can increase as bank storage re-enters the stream, or through other processes
+            such as interflow and discharge from groundwater <citation>b4_c2_r19</citation>. </para>
+        <para>Generally, quickflow will be explicitly modelled, by for example, a runoff-routing
+            model, and then baseflow must be added to produce a flood hydrograph and unbiased
+            estimate of the peak flow. Baseflow provides a significant contribution to peak flows in
+            around 70% of Australian catchments (refer to <xref linkend="b5_ch4"/>).</para>
+        <para>
+            <figure xml:id="b4ch2_f_jg49k">
+                <title>Observed Hydrograph - Sum of the Baseflow Hydrograph and the
+                    Quickflow</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4001.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </para>
+    </section>
+    <section xml:id="b4ch2_s_n5abk">
+        <title>Losses</title>
+        <para>In flood hydrology, losses refer to any rainfall that is not converted to quickflow.
+            The amount of loss is subtracted from storm rainfall to leave the “rainfall excess”,
+            that is, quickflow is produced by the rainfall excess on the catchment. Some of the
+            water accounted for in losses is evaporated, perhaps after being intercepted by
+            vegetation or held in surface depressions. Some losses are infiltrated rainfall that may
+            contribute baseflow to the stream.</para>
+        <para>Losses can be estimated for historic events. Where there are measurements of the
+            volume of runoff, catchment area and rainfall depth, losses can be calculated as the
+            difference between the volume of rainfall and the volume of the quickflow hydrograph
+            (the flood hydrograph with the baseflow removed). This approach was used to estimate
+            losses for a range of catchments as discussed in <xref linkend="book5"/> and in earlier
+            work on losses e.g. <citation>b4_c2_r16+1,b4_c2_r7+1,b4_c2_r20+1</citation>. </para>
+        <para>Losses must also be predicted as part of flood forecasting and design values for
+            losses are required as part of design flood estimation. A variety of loss models have
+            been developed as discussed in <xref linkend="b4ch2_s_9vhzi"/> and in <xref
+                linkend="b5_ch5_s_8u8o4"/>.</para>
+    </section>
+    <section xml:id="b4ch2_s_th1tf">
+        <title>Flow Routing</title>
+        <para>During a flood, rainfall is converted to runoff and is transferred through a network
+            of flow paths to the catchment outlet. These flow paths include overland flow on hill
+            slopes, down tributaries, across floodplains, through natural and artificial storages
+            and along main streams. Flow routing is the mathematical description of flow processes
+            that model the attenuation and translation of hydrographs as water moves through this
+            network. A variety of flood routing approaches are described in <xref linkend="book5"
+            />.</para>
+    </section>
+    <section xml:id="b4ch2_s_au5mo">
+        <title>Conceptualising Processes in Models</title>
+        <para>The physical processes related to losses, runoff production, baseflow and routing need
+            to be conceptualised and made mathematically explicit if they are to be used in
+            modelling. This conceptualisation can vary in complexity as a function of the scales
+            used for space and time and the representation of the underlying physics
+                <citation>b4_c2_r14,b4_c2_r25,b4_c3_r1,b4_c2_r31,b4_c2_r32,b4_c2_r34,b4_c2_r35</citation>. </para>
+        <para>In general, the choice of model should depend on the amount of data that is available
+                (<xref linkend="b4ch2_f_knr8c"/>). Models that are too simple are not able to
+            exploit the available data, while models that are too complex may suffer from ‘over
+            fitting’ and have poor predictive ability. The enduring popularity of reasonably simple
+            hydrologic
+            models,<?oxy_comment_start author="retallick" timestamp="20160701T114922+1000" comment="?"?>
+            such as RORB<?oxy_comment_end?>, is because they have been found to be of a complexity
+            that matches the reasonably limited data that is available for most catchments. </para>
+        <para>This section briefly reviews the conceptualisation of hydrologic processes leading to
+            floods and refers to other sections where more detail is available.</para>
+        <figure xml:id="b4ch2_f_knr8c">
+            <title>Conceptual Relationship between Data Availability, Model Complexity and
+                Predictive Performance <citation>b4_c2_r13</citation></title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4005.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <section xml:id="b4ch2_s_yicyj">
+            <title>Runoff Production</title>
+            <para>Models of runoff production usually require rainfall as an input, which is then
+                allocated to surface runoff and possibly infiltration and evaporation. Rigorous
+                approaches to modelling infiltration are available such as those based on the
+                Richards Equation or the Green and Ampt approach
+                    <citation>b4_c2_r22,b4_c2_r8</citation>. Evaporation can be modelled as a
+                function of meteorological drivers, soil properties and moisture content (Soil
+                Vegetation Atmosphere Transfer (SVAT) models) <citation>b4_c2_r9</citation>.</para>
+            <para>For flood modelling the physics of infiltration or evaporation, are seldom
+                modelled explicitly, instead design or observed rainfall is converted to ‘rainfall
+                excess’ by subtracting losses ie. the portion of rainfall that does not become
+                direct runoff. </para>
+        </section>
+        <section xml:id="b4ch2_s_9vhzi">
+            <title>Losses</title>
+            <para>The loss models used in flood modelling are often simple, based on two parameters,
+                one to characterise the Initial Loss (IL) (the water required to wet up the
+                catchment) and one to characterise the Continuing Loss (CL). The output of these
+                models is the rainfall excess that is then used to generate a direct flow
+                hydrograph. Loss models can be standalone, ie. the rainfall excess can be calculated
+                separately, or integrated within acatchment modelling system. </para>
+            <para>The current recommendation in ARR (<xref linkend="b5_ch5_s_8u8o4"/>) is that the
+                IL/CL model is the most suitable for design flood estimation for both rural and
+                urban catchments. This model uses a constant value of initial loss and constant
+                value of continuing loss for a flood event. </para>
+            <para>For urban catchments, ARR (<xref linkend="b5_ch5_s_3w0mq"/>) provides IL and CL
+                values for three hydrologically distinct surfaces:</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Effective Impervious Areas (impervious areas that are connected to
+                            streams by hydraulically efficient drainage); </para>
+                    </listitem>
+                    <listitem>
+                        <para>Pervious Areas - recommended loss values are the same as those for
+                            rural areas; and </para>
+                    </listitem>
+                    <listitem>
+                        <para>Indirectly Connected Areas (a combination of indirectly connected
+                            impervious and pervious areas). Recommended loss values are between
+                            those recommended for pervious and effective impervious areas. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>Where losses must be estimated for flood forecasting, continuous simulation or
+                other design problems, more complex loss model may be appropriate. Potential
+                candidate models are discussed in <xref linkend="b5_ch5_s_8u8o4"/>.</para>
+        </section>
+        <section xml:id="b4ch2_s_jghc6">
+            <title>Baseflow</title>
+            <para>For flood modelling, important aspects of baseflow that must be addressed
+                are:</para>
+            <orderedlist>
+                <listitem>
+                    <para>The removal of baseflow from measured hydrographs of historic flood events
+                        so that the quickflow hydrograph can be determined; and </para>
+                </listitem>
+                <listitem>
+                    <para>The addition of a baseflow hydrograph to modelled direct flow so the total
+                        flood hydrograph, and particularly flood peak, can be correctly
+                        estimated.</para>
+                </listitem>
+            </orderedlist>
+            <para>Features of the baseflow hydrograph and the key processes are discussed in <xref
+                    linkend="b5_ch4"/>. </para>
+            <para>When determining a design baseflow hydrograph, of particular relevance is the
+                baseflow under the hydrograph peak as this provides a direct contribution to the
+                maximum flood flow for an event. Procedures to estimate baseflow characteristics for
+                design flood estimation are provided in <xref linkend="b5_ch4"/>. </para>
+        </section>
+        <section xml:id="b4ch2_s_wwln6">
+            <title>Routing</title>
+            <para>The purpose of flow routing in models is to provide a calculated estimate of the
+                hydrograph at the downstream end of a reach given a hydrograph at the upstream end.
+                This section briefly reviews catchment processes that are represented by routing
+                methods in flood models. For further information on these methods, see <xref
+                    linkend="b5_ch3"/>. </para>
+            <para>At any point in a stream, at a particular time during a flood event, the water
+                flowing past will be contributed by a variety of pathways and processes that all
+                come together to make up the flow at that instant. If we traced each drop of water
+                within the flow, all would have originated as rainfall but have been on a variety of
+                journeys through the catchment and travelled at different speeds: one drop of
+                streamflow may have started as rainfall on the water surface a short distance
+                upstream, another may have come from rain falling on saturated soil beside the river
+                bank; yet another may have originated from a previous storm event and travelled to
+                the stream via groundwater.</para>
+            <para>Streamflow derived from rainfall, passes through various storages. Groundwater
+                represents long-term storage. There is also temporary storage, lasting as long as a
+                flood event, consisting of water in transit in each element of the drainage system
+                including water in the main stream, tributaries, hill slopes and overland flow.
+                Water can be temporarily stored on floodplains and in retarding basins. There is
+                also riverbank storage, water wetting up the bank profile at the start of an event
+                and later flowing back into the stream as the water level drops.</para>
+            <para>This process description suggests routing models would need to be highly complex
+                to represent the large number of pathways, flow speeds, and storage characteristics.
+                However, surprisingly, simple mathematical approaches can be used to represent the
+                movement of water along the different catchment pathways. Catchment response is
+                usually highly damped so that short-term fluctuations in rainfall have little
+                influence on the streamflow hydrograph and individual pathways do not need to be
+                explicitly modelled. Instead, the dominant effect of routing is attenuation and
+                translation which can be well represented by average response over longer time
+                periods. </para>
+            <para>Routing of flows in a catchment may be achieved using hydrologic or hydraulic
+                methods, and the various approaches to this are discussed in <xref linkend="b5_ch3"
+                />. The simplest representation of routing in models is hydrologic routing which
+                combines continuity with a relationship between storage and flow. With this
+                approach, flow paths in a catchment are divided into a series of elements, where the
+                volume of storage at any time is related to the discharge in each element.
+                Differences between rural and urban streams may be represented by parameters which
+                control the amount of water that is stored temporarily for a given flow rate.
+                Hydrologic routing methods cannot easily accommodate backwater effects, and thus
+                they are not well suited to situations which are influenced by tides and storm
+                surges, or reaches in which waves propagate upstream due to the effects of large
+                tributary inflows and waterway constrictions.</para>
+            <para>Hydraulic routing provides an increase in complexity and a reduction in the
+                requirements for simplifying assumptions. Unsteady modelling of flows in two
+                dimensions can be undertaken by solving the depth-averaged equations that describe
+                the conservation of mass and momentum. These two dimesnaional (2D) models are
+                described in more detail in <xref linkend="b6_ch4_s_onrm9"/> along with one
+                dimensional (1D) unsteady models and coupled 1D/2D approaches. The limitations and
+                appropriate use of these procedures, and others, are described in detail in <xref
+                    linkend="book6"/>.</para>
+            <para>It is possible to combine hydrologic and hydraulic routing. Hydrologic models have
+                a short run time which facilitates the use of Monte Carlo approaches while hydraulic
+                models are better able to represent complex routing situations. If a hydraulic model
+                can be used to establish a storage discharge relationship, then this can be included
+                in the hydrologic model which can then be run multiple times as part of an ensemble
+                or Monte Carlo analysis. The use of 1D hydraulic models with short run time coupled
+                with hydrologic models for Monte Carlo modelling is also possible.</para>
+        </section>
+        <section xml:id="b4ch2_s_pfupn">
+            <title>Spatial Representation of Hydrological Processes</title>
+            <para>The sections above have outlined the conceptual representation of flood processes
+                in models. Another key issue is how processes are represented spatially. In order of
+                increasing complexity, models may be described as being lumped, semi-distributed, or
+                distributed (<xref linkend="b4ch2_f_lsm3n"/>).</para>
+            <para> </para>
+            <para>Lumped models (left panel of <xref linkend="b4ch2_f_lsm3n"/>) treat a drainage
+                area as a single unit and use catchment averaged values of inputs and parameters.
+                For example, spatially averaged rainfall is used as the main driver with single
+                average values for initial and continuing loss. Simple routing approaches are used
+                perhaps based on the passage of a hydrograph through a single storage or separate
+                storages for surface water and groundwater. Lumped models are less common in design
+                flood estimation or flood forecasting.</para>
+            <figure xml:id="b4ch2_f_lsm3n">
+                <title>Spatial Representation of Physical Processes in Hydrologic Models</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4004.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>Semi-distributed models (middle panel of <xref linkend="b4ch2_f_lsm3n"/>) consider
+                catchments as a number of reasonably large sub-areas. The spatial distribution of
+                catchment rainfall is represented by the rainfall depth on each sub-catchment and
+                losses and routing parameters can vary by sub-area. This approach is commonly used
+                in design flood estimation to represents areal variations in rainfall and losses,
+                and the effects of varying flow distance to the catchment outlet. Semi-distributed
+                approaches can be used to create groups of hydrologic processes that are modelled in
+                a consistent way. For example, the routing of flow down hill slopes can be modelled
+                separately from flow routing in channels. Model setup then requires the explicit
+                identification of hill slopes and channels that are to be modelled. The modelling
+                equations, inputs and parameters for these areas must be provided. This group of
+                models is discussed in detail in <xref linkend="b5_ch6_s_do8jr"/>.</para>
+            <para>Distributed models (right panel of <xref linkend="b4ch2_f_lsm3n"/>) use a more
+                spatially explicit approach, usually based on a grid that may be of a consistent
+                size and shape across a study area or may be varied adaptively. Distributed models
+                require inputs and parameters for each grid cell; the advantage is that results can
+                then be produced for each grid cell. For example, two dimensional unsteady hydraulic
+                routing approaches are commonly applied to grids to create spatially detailed
+                information on flow depths, velocities and flood hazard in rural and urban areas. </para>
+            <para>Current approaches to design flood modelling are commonly based on a
+                semi-distributed hydrologic model of an upper catchment area providing inputs to a
+                distributed hydraulic model that generates outputs suitable for spatial flood
+                mapping. The hydrologic model uses a semi-distributed approach to deal with losses
+                and runoff generation. Hydrologic routing is used for flow down hill slopes and the
+                upper reaches of the stream channel system. Hydraulic routing characterises flow
+                both within channels and overbank areas where detailed information on depths and
+                extents are required. </para>
+            <para>An alternative to combining a semi-distributed hydrologic model with a distributed
+                hydraulic model is ‘direct rainfall’ or ‘rainfall on grid’ models. These types of
+                models use a distributed approach to both hydrology and hydraulics by gridding an
+                entire catchment and simulating the runoff-routing process for each grid cell. Rain
+                falling on a grid cell is converted to runoff, after allowing for losses, and this
+                is added to any existing flow and hydraulically routed downstream using an unsteady
+                2D approach. Some information on these models is provided in <xref
+                    linkend="b6_ch4_s_9f1m8"/> with additional detail. </para>
+        </section>
+    </section>
+    <section xml:id="b4ch2_s_sgovb">
+        <title>Examples </title>
+        <para>Three case studies are provided that outline flood runoff processes in:</para>
+        <itemizedlist>
+            <listitem>
+                <para>A tropical catchment (South Creek, North Queensland);</para>
+            </listitem>
+            <listitem>
+                <para>A temperate catchment (Tarrawarra, Victoria); and</para>
+            </listitem>
+            <listitem>
+                <para>Urban areas.</para>
+            </listitem>
+        </itemizedlist>
+        <section xml:id="b4ch2_s_rr81s">
+            <title>South Creek -  North Queensland</title>
+            <para>The South Creek catchment provides a surprising example of flood runoff processes
+                in a tropical environment with steep slopes and soils with high infiltration
+                capacity. South Creek is 6 km east of Babinda, between Townsville and Cairns in
+                north-east Queensland (17.35S, 145.98E) and has been well studied to determine key
+                hydrological processes. The climate is tropical with high average annual rainfall
+                compared to other regions of Australia. Cyclones produce rainfall intensities
+                amongst the highest in Australia and daily rainfalls in excess of 250 mm have been
+                reported. The catchment area is 25.7 ha with steep slopes (mean catchment slope
+                34%). The average saturated hydraulic conductivity of the surface soils is very
+                high, mean value 1350 mm/hour which is higher than the rainfall intensity during the
+                most extreme storms (the 1% Annual Exceedance Probability, 5 minute rainfall
+                intensity is about 300 mm/hr). Saturated hydraulic conductivity decreases rapidly
+                with depth to about 13 mm/hr below 0.2 m <citation>b4_c2_r4</citation>. </para>
+            <para>At the time the South Creek catchment was instrumented, it was expected that there
+                would be little or no overland flow. The steep, well drained and permeable slopes,
+                along with high annual rainfall (> 4000 mm), and restricted layer at shallow depth,
+                was expected to result in the upper layers of the soil profile becoming saturated,
+                suggesting ideal conditions for lateral subsurface stormflow. However, this was
+                found not to be the case.</para>
+            <para>Measurements showed that overland flow was the dominant runoff process. For
+                example, during storms in January and March 1976, over 90% of runoff was produced by
+                overland flow. Although rain infiltrated into the soils, the restricting layer at
+                200 mm depth led to a perched water table and caused saturation at the surface.
+                Exfiltration and further rainfall landing on saturated areas, which covered most of
+                the catchment, led to overland flow <citation>b4_c2_r3</citation>.</para>
+            <para>The dominance of overland flow has implications for modelling of South Creek and
+                similar catchments. The routing approach must be suitable for rapid flow down steep
+                slopes that results in short lag times between rainfall and streamflow
+                    <citation>b4_c2_r4</citation>. A constant continuing loss model may be suitable
+                although this would need to be tested. </para>
+        </section>
+        <section xml:id="b4ch2_s_xahlw">
+            <title>Tarrawarra – Southern Victoria</title>
+            <para>There has been extensive collection of hydrologic data at a small catchment (10.5
+                ha) at Tarrawarra 50 km ENE of Melbourne (37.66S, 145.42E), which demonstrates
+                runoff processes in this agricultural environment <citation>b4_c2_r28</citation>.
+                The climate is temperate with annual rainfall 820 mm and annual potential
+                evaporation 830 mm. Evaporation exceeds rainfall in summer and surface soils dry out
+                and crack.</para>
+            <para>During dry periods, runoff has not been observed, even during summer storms with
+                rainfall intensities up to 50 mm/hr. When the catchment is dry, there may be local
+                areas where rainfall intensity exceeds infiltration capacity, but any runoff that is
+                produced enters the soil by running down surface cracks or infiltrating further
+                down-slope and never reaches the catchment outlet.</para>
+            <para>Runoff only occurs after the catchment wets up, cracks close, and a zone of
+                saturated soil provides a link to the catchment outlet. During wet periods, the
+                soils at the bottom of swales saturate creating variable source areas that expand
+                with additional rainfall. For example, during the storms of 29 and 30 July 1996
+                approximately half of the rainfall was converted to runoff
+                    <citation>b4_c2_r29</citation>. </para>
+            <para>The runoff production processes at Tarrawarra have implications for modelling of
+                this type of catchment. For runoff-routing models, spatially explicit soil moisture
+                accounting will be important as the water content of soils has a strong influence on
+                losses <citation>b4_c2_r29</citation>. For event models, seasonal estimates of
+                losses may be necessary. A proportional loss model may be more appropriate than one
+                that relies on constant continuing loss. </para>
+        </section>
+        <section xml:id="b4ch2_s_0hsvn">
+            <title>Runoff from Urban Areas</title>
+            <para>Flood runoff from urban areas is larger than from rural catchments both because of
+                catchment process and because of efficient drainage.</para>
+            <para>In an urban catchment, runoff is produced from impervious surfaces. On these
+                surfaces: interception loss are low, because there is little vegetation; depression
+                storage is small because the surfaces are smooth, and there is low infiltration.
+                This means that even small amounts of rainfall will produce runoff. </para>
+            <para>In the analysis of events in urban areas, a significant feature is the small
+                values of initial loss. <citation>b4_c2_r5+1</citation> analysed 763 events in urban
+                areas. For most of these, the initial loss was less than 1 mm. The average initial
+                loss weighted by the number of events was 0.62 mm. Considering initial loss on
+                individual catchments, information summarised in <xref linkend="b5_ch5_t_o0kcz"/>
+                shows that 70% of catchments have an initial loss of 1 mm or less (refer also <xref
+                    linkend="b5_ch5_s_gpuyp"/>).</para>
+            <para>It is possible to compare the initial loss on rural and urbanised catchments. Data
+                for Australian catchments is summarised in the Appendix to Book 5 (<xref
+                    linkend="b5_ch5_a"/>). A density plot of this data shows the substantially lower
+                initial loss for urban catchments and the concentration near 0 mm. For rural
+                catchments, the mean initial loss across all catchments is 32 mm but the high
+                standard deviation (16.8 mm) means the density is spread across a wide range of
+                values.</para>
+            <figure>
+                <title>Comparison of Initial Loss in Urban and Rural Catchments</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4027.jpg"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>During larger events in urban areas, pervious surfaces also produce runoff either
+                through infiltration excess or saturation excess processes. Many pervious surfaces
+                in urban areas are compacted because they are walked or driven on, decreasing
+                infiltration capacity and increasing the proportion of rainfall running off.</para>
+            <para>Along with these catchment processes, the piped drainage system in urban areas
+                efficiently delivers water to streams. Piped drainage represents an extension of the
+                drainage network so that even areas distant from the original natural waterways
+                contribute flow to those waterways. In highly urbanised catchments every impervious
+                surface will be drained to the stream. </para>
+            <para>In addition to catchment changes, the modification to urban streams also changes
+                the transfer of flood flows. Modified urban streams have less attenuation,
+                transmission losses are reduced and water travels more quickly. The results is a
+                substantial increase in magnitude and frequency of flooding. Further details are
+                provided in <xref linkend="book9"/>. </para>
+            <para>Modelling urban hydrology can be challenging because of the variety of different
+                surface types and variation in connections between surfaces and drains. There are
+                parallel flow paths with different routing characteristics. Some water will pass
+                through the piped system while some will flow overland. Water can surcharge out of
+                pipes or enter pipes at various locations in the catchment. Flow behaviour, and even
+                catchment area, depends on flood magnitude. Modelling approaches for urban areas are
+                discussed in <xref linkend="book9"/>.</para>
+        </section>
+    </section>
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include>
 </chapter>

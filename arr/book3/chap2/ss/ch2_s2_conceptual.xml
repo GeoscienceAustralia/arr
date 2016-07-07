@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section status="In Preparation" version="5.0" xml:id="b3_ch2_s2"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Conceptual Framework</title>
+
+  <section xml:id="b3_ch2_s_8ez98">
+    <title>Definition of Flood Probability Model</title>
+    <indexterm>
+      <primary>Flood Probability Model</primary>
+    </indexterm>
+    <para><?oxy_delete author="RadhikaChhotai" timestamp="20151020T180518+1100" content="In "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180518+1100"?>For
+      <?oxy_insert_end?>flood frequency
+      analysis<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180632+1100"?>,<?oxy_insert_end?>
+      flood peaks are considered to be random variables. Following
+      convention<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180800+1100"?>,<?oxy_insert_end?>
+      the random variable denoting the flood peak discharge is denoted by an upper-case symbol (e.g.
+      Q) whereas a specific realisation (or sample) is denoted by the lower-case symbol (e.g. q)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180852+1100"?>;<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151020T180831+1100" content="– "?>where
+      there is no
+      ambiguity<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180842+1100"?>,<?oxy_insert_end?>
+      lower-case symbols will be used.</para>
+    <para>It is assumed that each realisation q is statistically independent of other realisations<?oxy_delete author="RadhikaChhotai" timestamp="20151020T180909+1100" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T180912+1100"?>
+      <?oxy_comment_start author="RadhikaChhotai" timestamp="20151020T181023+1100" comment="This needs to be an &apos;em-dash&apos; "?>-
+      <?oxy_comment_end?>a
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151020T180945+1100" content=" This is the "?>standard
+      assumption in flood frequency
+      analysis<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T181037+1100"?>, which<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151020T181035+1100" content="and "?>is
+      believed to be widely applicable (e.g. Stedinger <emphasis>et al</emphasis>. 1993).</para>
+    <para>In its most general form, the flood probability model can be described by its Probability
+      Density Function <?oxy_comment_start author="RadhikaChhotai" timestamp="20151020T182242+1100" comment="Should this be capital?"?>(pdf)<?oxy_comment_end?>
+      <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>p(q| θ(x))</mi>
+        </math>
+      </inlineequation> where <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>θ(x)</mi>
+        </math>
+      </inlineequation> is the vector (or list) of parameters dependent on x, a vector of exogenous
+      or external variables such as climate indices. The symbol ‘|’ is interpreted as follows: the
+      variable to the left of ‘|’ is a random variable, while the
+      variable<?oxy_delete author="RadhikaChhotai" timestamp="20151020T182018+1100" content="s"?> to
+      the right of ‘|’ are known values.</para>
+    <para>The distribution function of Q is defined as the non-exceedance probability <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>P(Q≤q)</mi>
+        </math>
+      </inlineequation> and is related to the pdf by:</para>
+    <equation xml:id="b3_ch2_e_lbfua">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mi>P</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>Q</mi>
+                <mo>≤</mo>
+                <mi>q</mi>
+                <mo>|</mo>
+                <mi>θ</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mi>x</mi>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>=</mo>
+            <mstyle displaystyle="true">
+              <mrow>
+                <msubsup>
+                  <mo>∫</mo>
+                  <mn>0</mn>
+                  <mi>q</mi>
+                </msubsup>
+                <mrow>
+                  <mi>p</mi>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mi>s</mi>
+                      <mo>|</mo>
+                      <mi>θ</mi>
+                      <mrow>
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>d</mi>
+                  <mi>s</mi>
+                </mrow>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </semantics>
+      </math>
+    </equation>
+    <para>Empirically<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T182253+1100"?>,<?oxy_insert_end?>
+      the pdf of q is the limiting form of the histogram of
+      q<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T182303+1100"?>,<?oxy_insert_end?>
+      as the number of samples approaches infinity. Importantly, <xref linkend="b3_ch2_e_lbfua"/>
+      shows that the area under the pdf is interpreted as probability.</para>
+    <para>Homogeneous flood probability
+      model<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T103902+1100"?>:<?oxy_insert_end?></para>
+    <para>The simplest form of
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151020T182336+1100" content="the "?>flood
+      probability model arises when the parameters <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>θ</mi>
+        </math>
+      </inlineequation>
+      do<?oxy_delete author="RadhikaChhotai" timestamp="20151020T182343+1100" content="es"?> not
+      depend on an exogenous vector x. In
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151020T182351+1100" content="that "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T182351+1100"?>such
+      a
+      <?oxy_insert_end?>case<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T182354+1100"?>,<?oxy_insert_end?>
+      each flood peak is considered to be a random realisation from the same probability model <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>p (q | θ)</mi>
+        </math>
+      </inlineequation>. Under this
+      assumption<?oxy_insert_start author="RadhikaChhotai" timestamp="20151020T182414+1100"?>,<?oxy_insert_end?>
+      flood peaks form a homogeneous time series.</para>
+    <para>Non-homogeneous flood probability
+      model<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T103858+1100"?>:<?oxy_insert_end?></para>
+    <para><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T105329+1100"?>The situation
+      becomes
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151021T105336+1100" content="A "?>more
+      complicated
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T105341+1100" content="situation arises "?>when
+      flood peaks do not form a homogeneous time
+      series<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T105713+1100"?>, which may
+      be due to many reasons,
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151021T105728+1100" content=". This may arise for a number of reasons "?>including
+      the following:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Rainfall and flood mechanisms may be changing over
+          time<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112447+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151021T112445+1100" content=". F"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112449+1100"?>f<?oxy_insert_end?>or
+          example, long-term climate change due to global warming, land use change and river
+          regulation may render the flood record non-homogeneous.</para>
+      </listitem>
+      <listitem>
+        <para>Climate may experience pseudo-periodic shifts that persist over
+          periods<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112509+1100"?>,<?oxy_insert_end?>
+          lasting from several years to several decades. There is growing evidence that parts of
+          Australia are subject to such forcing and that this significantly affects flood risk (for
+          example, Franks and Kuczera, 2002; Franks, 2002a,b; Kiem <emphasis>et al</emphasis>.,
+          2003; Micevski <emphasis>et al</emphasis>., 2003)</para>
+      </listitem>
+    </itemizedlist>
+    <para>The user needs to assess the significance of such factors and identify appropriate
+      exogenous variables
+      x<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112550+1100"?>, in
+      order<?oxy_insert_end?> to condition the flood probability model. Although this chapter will
+      provide some guidance<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112603+1100"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T112616+1100" content="it is stressed that "?>this
+      is an area of continuing research
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T112621+1100" content="– "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T112621+1100"?>
+      and <?oxy_insert_end?>users are therefore advised to keep abreast
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T114010+1100" content="of "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T114010+1100"?>with
+      <?oxy_insert_end?>new developments.</para>
+  </section>
+
+  <section xml:id="b3_ch2_s_gt55y">
+    <title>Annual Maximum and Peak-Over-Threshold Perspectives</title>
+
+    <para>Flood frequency analysis deals with the probability distribution of significant flood
+      peaks. Throughout the year, there are typically many flood peaks associated with individual
+      storm events. This is illustrated in <xref linkend="b3_ch2_f_fig1"
+      /><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T114208+1100"?>,<?oxy_insert_end?>
+      which illustrates a time series record of continuous streamflow discharge. Two types of flood
+      data can be extracted from such a
+      record<?oxy_delete author="RadhikaChhotai" timestamp="20151021T114231+1100" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T114231+1100"?>
+      and therefore,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T114237+1100" content="In turn "?>two
+      measures of flood risk can be estimated:</para>
+
+    <section xml:id="b3_ch2_s_msqcx">
+      <title>Annual Maximum (AM) Series</title>
+
+      <para>The AM series is formed by extracting
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T114250+1100" content="the "?>maximum
+        discharge in each year. This yields the series
+          {w<subscript>1</subscript>,..,w<subscript>n</subscript>} where w<subscript>i</subscript>
+        is the maximum discharge in the i<superscript>th</superscript> year of the n-year
+        record.</para>
+
+      <para>The data in the AM series can be used to estimate the probability that
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T114320+1100" content="the "?>maximum
+        flood discharge in a year exceeds a particular magnitude w. In
+        ARR<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T114324+1100"?>,<?oxy_insert_end?>
+        this probability is called the Annual Exceedance Probability AEP(w) and is formally defined
+        as:</para>
+
+      <equation xml:id="b3_ch2_e_nfd16">
+        <?oxy_insert_start author="ward" timestamp="20151203T143144+1100"?>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>A</mi>
+              <mi>E</mi>
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mi>w</mi>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>W</mi>
+                  <mo>&#x003E;</mo>
+                  <mi>w</mi>
+                  <mo>&#x2223;</mo>
+                  <mi>&#x03B8;</mi>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>x</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <munderover>
+                <mstyle mathsize="140%" displaystyle="true">
+                  <mo>&#x222B;</mo>
+                </mstyle>
+                <mi>q</mi>
+                <mi>&#x221E;</mi>
+              </munderover>
+              <mi>p</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>s</mi>
+                  <mo>&#x2223;</mo>
+                  <mi>&#x03B8;</mi>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>x</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>d</mi>
+              <mi>s</mi>
+            </mrow>
+          </semantics>
+        </math>
+        <?oxy_insert_end?>
+        <?oxy_delete author="ward" timestamp="20151203T143144+1100" content="&lt;m:math display=&quot;block&quot;&gt;&lt;m:mrow&gt; &lt;m:mrow&gt; &lt;m:mi&gt;AEP(w)&lt;/m:mi&gt; &lt;m:mo&gt;=&lt;/m:mo&gt; &lt;m:mi&gt;P(W&amp;gt;w∣θ(x))&lt;/m:mi&gt; &lt;/m:mrow&gt; &lt;m:mo&gt;=&lt;/m:mo&gt; &lt;m:mrow&gt; &lt;m:munderover&gt; &lt;m:mo&gt;∫&lt;/m:mo&gt; &lt;m:mi&gt;q&lt;/m:mi&gt; &lt;m:mi&gt;∞&lt;/m:mi&gt; &lt;/m:munderover&gt; &lt;m:mi&gt;p(s∣θ(x))ds&lt;/m:mi&gt; &lt;/m:mrow&gt; &lt;/m:mrow&gt;&lt;/m:math&gt;"?>
+      </equation>
+
+      <para>where w is the maximum flood discharge in a year. Often it is convenient to express the
+        AEP as a percentage X% or alternatively for rare
+        events<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T114349+1100"?>.<?oxy_insert_end?>
+        as a ratio 1 in Y. For example, the 1% AEP is equivalent to an AEP of 1 in 100 or
+        0.01.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_0sy4a">
+      <title>Peak-Over-Threshold (POT) series</title>
+
+      <para>The POT series is formed by extracting
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T130913+1100" content="from the record "?>every
+        statistically independent peak discharge (that exceeds a threshold
+        discharge)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T130924+1100"?>,
+        from the record<?oxy_insert_end?>. This yields the series
+          {q<subscript>1</subscript>,..,q<subscript>m</subscript>} where q<subscript>i</subscript>
+        is the peak discharge associated with the i<superscript>th</superscript> statistically
+        independent flood event in the n-year record. Typically the threshold discharge is selected
+        so that m is about 2 to 3 times greater than n.</para>
+
+      <para>The data in the POT series can be used to estimate the probability
+      distribution of the time to the next peak discharge that exceeds a
+      particular magnitude:</para>
+
+      <equation xml:id="b3_ch2_e_0qvta">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mtext>P</mtext>
+              <mi>&#x0020;</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>Time&#x00A0;to&#x00A0;next&#x00A0;peak&#x00A0;exceeding&#x00A0;</mtext>
+                  <mi>&#x0020;</mi>
+                  <mi>q</mi>
+                  <mo>&#x2264;</mo>
+                  <mi>t</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mn>1</mn>
+              <mo>&#x2212;</mo>
+              <msup>
+                <mi>e</mi>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mi>E</mi>
+                  <mi>Y</mi>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>q</mi>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+            </mrow>
+          </semantics>
+        </math>
+      </equation>
+
+      <para>where t is time expressed in years and EY(q), the number of
+      exceedances per year, is the expected number of times in a year that the
+      peak discharge exceeds q.<figure xml:id="b3_ch2_f_fig1">
+          <title>Peak-Over-Threshold series</title>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/3001.jpg"/>
+            </imageobject>
+          </mediaobject>
+        </figure></para>
+    </section>
+
+    <section xml:id="b3_ch2_s_u56ub">
+      <title>When to use AM and POT Series</title>
+
+      <para>The risk measures AEP and Exceedances per Year (EY) are intimately connected. The
+        analysis presented in <xref linkend="b3_ch2_s_k55h9"/> shows that:</para>
+
+      <para><equation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mtable>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mi>E</mi>
+                        <mi>Y</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>w</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mo>&#x2212;</mo>
+                        <msub>
+                          <mrow>
+                            <mi>log</mi>
+                          </mrow>
+                          <mi>e</mi>
+                        </msub>
+                        <mo stretchy="false">[</mo>
+                        <mn>1</mn>
+                        <mo>-</mo>
+                        <mi>A</mi>
+                        <mi>E</mi>
+                        <mi>P</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mi>w</mi>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo stretchy="false">]</mo>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mo>=</mo>
+                        <mo>&#x2212;</mo>
+                        <msub>
+                          <mrow>
+                            <mi>log</mi>
+                          </mrow>
+                          <mi>e</mi>
+                        </msub>
+                        <mrow>
+                          <mo>[</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>&#x2212;</mo>
+                            <mfrac>
+                              <mn>1</mn>
+                              <mrow>
+                                <mi>Y</mi>
+                                <mrow>
+                                  <mo>(</mo>
+                                  <mi>w</mi>
+                                  <mo>)</mo>
+                                </mrow>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>]</mo>
+                        </mrow>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mrow>
+            </semantics>
+          </math>
+        </equation></para>
+
+      <para>where AEP(w) is expressed as the ratio 1 in Y(w). This relationship is plotted in <xref
+          linkend="b3_ch2_f_qs0z6"/>. For AEPs less than 10% ( 0.1 or 1 in 10), EY and AEP are
+        numerically
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180211+1100" content="the "?>same<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180214+1100"?>,<?oxy_insert_end?>
+        from a practical perspective. However, as the AEP increases beyond 10% (0.1), EY increases
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180224+1100" content="more "?>rapidly
+        than AEP. This occurs because in years with a large annual maximum peak, the smaller peaks
+        of that year may exceed the annual maximum peak in other years.</para>
+
+      <figure xml:id="b3_ch2_f_qs0z6">
+        <title>AEP-EY relationship</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/3002.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>The question arises when should one use AM or POT approaches. Consistent with the
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180338+1100" content="guideance"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180338+1100"?>guidelines<?oxy_insert_end?>
+        provided in Book 1 of ARR, the following guideline is offered:</para>
+
+      <para>(i) AEP of interest ≤ 10%</para>
+
+      <para>AEPs<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180355+1100"?>,<?oxy_insert_end?>
+        in this
+        range<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180358+1100"?>,<?oxy_insert_end?>
+        are generally required for estimation of a design flood for a structure or works at a
+        particular site. Use of AM series is
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180417+1100" content="generally"?>
+        preferred
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180419+1100" content="because"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180419+1100"?>as<?oxy_insert_end?>
+        it yields virtually identical answers to POT series in most cases, provides a more robust<footnote>
+          <para>In a POT
+            series<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180443+1100"?>,<?oxy_insert_end?>
+            there are typically
+            <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180602+1100" content="2 "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180602+1100"?>two
+            <?oxy_insert_end?>to
+            <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180605+1100" content="3 "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180605+1100"?>three
+            <?oxy_insert_end?>times more peaks than in the corresponding AM series. The additional
+            peaks are largely smaller peaks. In the case when the data is not well fitted by the
+            chosen probability model, the fit to the upper part of the distribution may be
+            compromised in order to obtain a good fit to the smaller peaks where the bulk of the
+            data lies.</para>
+          <para>Use of POT series is generally preferred because all floods are of interest in this
+            range, whether they are the highest in the particular year of record or not. The AM
+            series may omit many floods of interest. The POT series is appropriate for estimating
+            design floods with a relatively high EY in urban stormwater contexts and for diversion
+            works, coffer dams and other temporary structures. However, in practice, flow records
+            are not often available at sites where minor works with a design EY greater than 0.2 EY
+            is required.</para>
+        </footnote> estimate of low AEP floods and is easier to extract and define.</para>
+
+      <para>(ii) EY of interest ≥ 0.2 Events per Year</para>
+    </section>
+  </section>
+
+  <section xml:id="b3_ch2_s_dh3wa">
+    <title>Advantages and Disadvantages of Flood Frequency Analysis</title>
+
+    <para>Users need to be aware of the advantages and disadvantages of Flood
+    Frequency Analysis.</para>
+
+    <para>Flood peaks are the product of a complex joint probability process involving
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180707+1100" content="the"?>
+      interaction of
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180709+1100" content="many"?> random
+      variables associated with the rainfall event, antecedent conditions and rainfall-runoff
+      transformation. Peak flood records represent the integrated response of the storm event with
+      the catchment. They provide a direct measure of flood exceedance probabilities. As a
+      result<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180732+1100"?>,<?oxy_insert_end?>
+      Flood Frequency Analysis is not subject to the potential for bias, possibly large, that can
+      affect alternative methods based on design rainfall (Kuczera <emphasis>et al</emphasis>.,
+      2006).</para>
+
+    <para>Other advantages of Flood Frequency Analysis include its comparative
+    simplicity and capacity to quantify uncertainty arising from limited
+    information.</para>
+
+    <para>Offsetting these significant advantages are several
+    disadvantages:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>The true probability distribution family is unknown.
+        Unfortunately, different models can fit the flood data with similar
+        capability, yet can diverge in the right hand tail when extrapolated
+        beyond the data.</para>
+      </listitem>
+
+      <listitem>
+        <para>Short records may compromise the utility of flood estimates.
+        Confidence limits inform the user about the credibility of the
+        estimate.</para>
+      </listitem>
+
+      <listitem>
+        <para>It may be difficult or impossible to adjust the data if the
+        catchment conditions under which the flood data were obtained have
+        changed during the period of record, or are different to those
+        applying to the future economic life of a structure or works being
+        designed.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Considerable extrapolation of rating curves is necessary to convert recorded stage to
+      discharge for the largest flood peaks at most Australian gauging stations.
+      Also<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180935+1100"?>,<?oxy_insert_end?>
+      the probability of
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180948+1100" content="the malfunction of "?>recording
+      instruments
+      <?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180950+1100"?>malfunctioning
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151021T180956+1100" content="is "?>increased
+      during major floods. Suspect floods and the years in which they occurred may be omitted in
+      analysis of Annual Maximum series,
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T181010+1100" content="but "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T181010+1100"?>however,
+      <?oxy_insert_end?>this reduces the sample size and may introduce
+      bias<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T181025+1100"?>ed
+      behaviour<?oxy_insert_end?> if
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T181032+1100" content="the "?>suspect
+      floods are all major events. These problems are inherent to
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T181039+1100" content="the"?>
+      calibration of all methods employing major flood peaks. At this
+      stage<?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T181046+1100"?>,<?oxy_insert_end?>
+      it is not clear whether Flood Frequency Analysis is more sensitive to such problems than other
+      methods.</para>
+  </section>
+
+  <section xml:id="b3_ch2_s_fw1lx">
+    <title>Range of Application</title>
+
+    <para>As noted the true flood probability family is unknown. In practice
+    the choice of model is guided by goodness of fit to the observed data.
+    Therefore, use of the fitted frequency curve for AEPs reflected in the
+    data is regarded as an interpolation exercise deemed to be reliable in the
+    sense that confidence limits capture the uncertainty. However, when the
+    frequency curve is extrapolated well beyond the observed data, confidence
+    limits which quantify the effect of sampling variability on parameter
+    uncertainty may underestimate the true uncertainty - model bias may be
+    significant and even dominant. Example 1 demonstrates the need to
+    understand the processes affecting flood peaks beyond the observed record
+    and illustrates the pitfall of blind extrapolation.</para>
+
+    <para>Large extrapolation of a flood frequency curve is not recommended. It is acknowledged that
+      prescribing strict limits on the minimum AEP does not have a strong conceptual foundation. The
+      limits to extrapolation should be guided by consideration of confidence limits, which are
+      affected by the information content of the data and choice of flood model, and by
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151021T180923+1100" content="judgments"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151021T180923+1100"?>judgements<?oxy_insert_end?>
+      about model bias which cannot be quantified. In situations where the analyst is prepared to
+      make the judgment that the processes operating in the range of the observed record continue to
+      operate for larger floods, model bias may be deemed to be manageable – of course the effects
+      of sampling uncertainty may be so amplified under significant extrapolation to render the
+      frequency estimate of little value.</para>
+
+    <para>In the absence of user analysis about the degree of model bias when extrapolating, the
+      following guidelines are offered to promote consistency with previous practice: As discussed
+      further in ARR 1987 Book 8 Section 1.2, the 1% (1 in 100) AEP flood is the largest event that
+      should be estimated by direct frequency analysis for important work. The maximum flood that
+      should be estimated by this means under any circumstances is the 0.2% (1 in 500) AEP event.
+      Where a regional flood frequency method is used, the limiting AEP should be the 1% AEP. ARR
+      1987
+      <?oxy_comment_start author="RadhikaChhotai" timestamp="20151021T180851+1100" comment="Should this be linked to Book 8 Section 1?"?>Book
+      8 Section 1<?oxy_comment_end?> describes procedures for estimating floods beyond the
+      probabilities noted above. These procedures interpolate flood magnitudes between the 1% AEP
+      event and the Probable Maximum Flood. While these procedures involve some arbitrary
+      assumptions, they provide a consistent approach and overcome many of the problems involved in
+      extrapolation of Flood Frequency Analysis arising from the choice of probability model and
+      estimation method.</para>
+  </section>
+</section>

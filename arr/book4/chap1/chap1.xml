@@ -7,40 +7,142 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:db="http://docbook.org/ns/docbook"
     status = "In Preparation">
-    
-  <title>Introduction</title>
+    <info>
+    <title>Introduction</title>
+    <xi:include href="../../common/authors/ball_james.xml"/>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+</info>
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
     <tr>
-      <td>Book</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Chapter</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Date</td>
-      <td>27/11/2015</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
     <tr>
       <td>Content</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Graphs and Figures</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Examples</td>
-      <td>In preparation</td>
+      <td>Advanced draft</td>
     </tr>
     <tr>
       <td>General</td>
-      <td/>
+      <td>Subject to industry feedback </td>
     </tr>
   </informaltable>
-
+    <section>
+      <title>Simulation of Design Flood Hydrographs</title>
+      <para>There are many problems where design flood characteristics other than the peak flows are
+      required. Most commonly this involves problems where the volume of the flood hydrograph has a
+      dominant influence on the design objective of interest. Typical problems include the design of
+      urban stormwater drainage systems where it is necessary to size on-site detention storages,
+      the estimation of maximum surcharge levels in detention basins and dams, and the derivation of
+      design flood levels in situations where the floodplain can store an appreciable proportion of
+      the event. It may also be necessary to characterise the rate of rise of selected events for
+      flood warning purposes. The assessment of such problems requires the simulation of complete
+      design flood hydrographs, where it may be necessary to give particular attention to the rate
+      of rise and the total volume of the hydrograph. If design interest is focused on a location in
+      the catchment that is materially influenced by hydraulic controls (as in many urban
+      catchments), then it is likely that it will be necessary to model the catchment as a “system”
+      using an integrated combination of hydrologic and hydraulic modelling (therefore use of a
+      catchment modelling system, <xref linkend="book7"/>). Conversely, if the point of interest is
+      largely uninfluenced by hydraulic controls (as in many rural catchments or trunk drainage
+      networks in urban areas) then it should be sufficient to model the catchment with a hydrologic
+      model.</para>
+    <para>The simulation of design flood hydrographs is most easily undertaken using rainfall data.
+      While the methods presented in <xref linkend="book3"/> provide useful independent estimates on
+      the peak of simulated hydrographs, additional information is required to check the shape and
+      volume of design flood hydrographs. Rainfall-based methods involve the transformation of
+      rainfalls into a selected flood characteristic: <itemizedlist>
+        <listitem>
+          <para>event-based models transform probabilistic bursts of rainfall to corresponding
+            estimates of floods; and</para>
+        </listitem>
+        <listitem>
+          <para>continuous simulation models transform a time series of rainfall into probabilistic
+            flood estimates</para>
+        </listitem>
+      </itemizedlist> Hydraulic models are then used to simulate flood levels from hydrologic
+      (and/or rainfall) inputs. The challenge with these methods is how to achieve probability
+      neutrality, that is how to ensure that the method used to transform rainfalls into design
+      floods is undertaken in a fashion that minimises bias in the resulting exceedance
+      probabilities.</para>
+    <para>The guidance in this Book is focused on the conceptual frameworks used to derive design
+      flood hydrographs, rather than on the models used to transform rainfall into runoff. Detailed
+      guidance on the different types of hydrologic models is provided in <xref linkend="book5"/>,
+      and guidance on the hydraulic modelling of runoff through the catchment is provided in <xref
+        linkend="book6"/>. Guidance on the application of catchment modelling systems and the
+      interpretation of the results obtained is provided in <xref linkend="book7"/>.</para>
+      
+  </section>
+  <section>
+    <title>Difference Between Historic and Design Flood Simulations</title>
+    <para>It is worth noting that there is a considerable difference in the modelling approaches
+      required to simulate historic (or observed) and design floods. Although the same mathematical
+      procedures (and software) may be involved in both, the simulation objectives and modelling
+      considerations are markedly different. </para>
+    <para>Estimation of a design flood involves the derivation of the relationship between the
+      magnitude and probability of a given flood characteristic. The objective of the analysis is to
+      provide information for risk-based planning or design purposes. Such information can be
+      extended to provide standards-based estimates such as the Probable Maximum Flood, but the
+      simulation objective is still to assess the performance of a system under particular set of
+      loading conditions. </para>
+    <para>In contrast, the modelling required to simulate floods using historic or forecast
+      rainfalls involves quite different considerations. The challenge of selecting data inputs and
+      analysis frameworks to estimate the exceedance probability of a particular outcome is replaced
+      by the difficulty of preparing data to reflect conditions specific to a particular event in
+      time. The focus of the analysis might be on simulating a particular historic flood, or it may
+      involve assessment of the antecedent conditions and forecast rainfalls associated with a flood
+      forecast required at a particular point in time.</para>
+    <para>Identical models might be used to simulate the response of the catchment under historic or
+      design conditions. The essential difference is that design flood simulations are undertaken to
+      derive the best estimate of the relationship between flood magnitude and exceedance
+      probability, whereas simulation of actual floods represent the best estimate of flood
+      characteristics for a particular point in time. The Guidance provided in <xref linkend="book6"
+      /> and <xref linkend="book7"/> is equally applicable to models used for the simulation of
+      design or actual floods. The guidance provided in this Book is specific to the issues involved
+      in assigning an exceedance probability to flood characteristics.</para>
+  </section>
+  <section>
+    <title>Scope</title>
+    <para>The scope of this Book is largely on the simulation frameworks used to derive design
+      floods. Particular attention is paid to those hydrologic processes that most influence flood
+      magnitude, and on the approaches required to estimate the exceedance probability of a flood
+      characteristic of interest. Guidance is included on the treatment of joint probability, as the
+      explicit analysis of the way in which factors combine to influence the frequency of floods is
+      an essential consideration in the estimation of design floods. Worked examples are provided to
+      assist practitioners apply the guidance to typical real-world problems.</para>
+  </section>
+  <section>
+    <title>Outline</title>
+    <para>This book is structured as follows:</para>
+    <itemizedlist>
+      <listitem>
+        <para><xref linkend="b4_ch2"/> provide a broad description of the runoff processes that
+          contribute to streamflows (interception, depression storage, infiltration, interflow, and
+          groundwater contributions), and identifies those components of most relevance to flood
+          generation;</para>
+      </listitem>
+      <listitem>
+        <para><xref linkend="b4_ch3"/> describes three different approaches to event-based modelling
+          (simple, ensemble, and Monte Carlo methods) and describes how increasing levels of
+          sophistication can be used to minimise bias in the transformation of design rainfalls into
+          design floods; <xref linkend="b4_ch3"/> also describes the use of continuous (and hybrid)
+          simulation approaches to flood estimation, and summarises the strengths and weaknesses of
+          the various approaches;</para>
+      </listitem>
+      <listitem>
+        <para><xref linkend="b4_ch4"/> introduces the generic nature of joint probability
+          requirements; it covers the factors involved in the transformation of rainfall to runoff,
+          and other factors (eg. initial reservoir level or tide levels) that may influence the
+          design performance of interest; and</para>
+      </listitem>
+      <listitem>
+        <para><xref linkend="b4_ch3"/> and <xref linkend="b4_ch4"/> include worked examples that
+          illustrate application of the techniques to practical problems.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
 </chapter>
+
+

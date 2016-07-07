@@ -1,248 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" xml:id="b2_ch2"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+<chapter status="In Preparation" xml:id="b2_ch2" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Rainfall Models</title>
-
     <xi:include href="../../common/authors/ball_james.xml"/>
     <xi:include href="../../common/authors/jordan_phillip.xml"/>
+    
+    <xi:include href="../../common/authors/seed_alan.xml"/>
+    
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
     <xi:include href="../../common/authors/leonard_michael.xml"/>
     <xi:include href="../../common/authors/weinmann_erwin.xml"/>
-
+    
   </info>
-
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
-
     <tr>
-      <td>Book</td>
-
-      <td>2</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
-
-    <tr>
-      <td>Chapter</td>
-
-      <td>2</td>
-    </tr>
-
-    <tr>
-      <td>Date</td>
-
-      <td>27/11/2015</td>
-    </tr>
-
     <tr>
       <td>Content</td>
-
-      <td>Working draft</td>
+      <td>Advanced draft</td>
     </tr>
-
-    <tr>
-      <td>Graphs and Figures</td>
-
-      <td>Working draft</td>
-    </tr>
-
-    <tr>
-      <td>Examples</td>
-
-      <td>N/A</td>
-    </tr>
-
     <tr>
       <td>General</td>
-
-      <td>Needs finalisation</td>
+      <td>Subject to industry feedback </td>
     </tr>
   </informaltable>
-
   <section xml:id="b2_ch2_s_1">
     <title>Introduction</title>
-
-    <para>The philosophical basis for use of a catchment modelling approach is
-    the generation of data that would have been recorded if a gauge were
-    present at the location(s) of interest for the catchment condition(s) of
-    interest. For reliable and robust predictions of design flood estimates
-    with this philosophical basis, there is a need to ensure that rainfall
-    characteristics as one of the major influencing factors are considered
-    appropriately</para>
-
-    <para>There are many features of rainfall to consider when developing a
-    rainfall model for design flood prediction; exploration of these features
-    can be undertaken using historical storm events as a basis. In using this
-    approach, there is a need to acknowledge that consideration of historical
-    events is an analysis problem and not a design problem. Nonetheless,
-    insights into the characteristics of rainfall events for design purposes
-    can be obtained from this review.</para>
-
-    <para>Rainfall exhibits both spatial and temporal variability at all
-    spatial and temporal scales that are of interest in flood hydrology. High
-    resolution recording instruments have identified temporal variability in
-    rainfall from time scales of less than one minute to several days (Marani,
-    2005). Similarly, observations of rainfall from high resolution weather
-    radar and satellites have demonstrated spatial variability in rainfall at
-    spatial resolutions from 1 km to more than 500 km (Lovejoy and Schertzer,
-    2006).</para>
-
-    <para>While it is important to be aware of this large degree of
-    variability, for design flood estimation based on catchment modelling it
-    is only necessary to reflect rainfall variability at space and time scales
-    that are influential in the formation of flood events. The main focus is
-    generally on individual storms or bursts of intense rainfall within storms
-    that cover the catchment extent. However, it needs to be recognised that,
-    depending on the design problem (e.g. flood level determination in a
-    system with very large storage and small outflow capacity), the relevant
-    ‘event’ to be considered may consist of rainfall sequences that include
-    not just one storm but extend over several months or even years.</para>
-
-    <para>A broad distinction between different rainfall models can be made on
-    the basis of their scope. Commonly rainfall models consider only the
-    temporal dimension by neglecting the spatial dimension. Inclusion of the
-    spatial dimension together with the temporal dimension results in an
-    alternative form of a rainfall model. A categorisation of rainfall models
-    is:</para>
-
+    <para>The philosophical basis for use of a
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>catchment
+      modelling<?oxy_custom_end?> approach is the generation of data that would have been recorded
+      if a gauge were present at the location(s) of interest for the catchment condition(s) of
+      interest. For reliable and robust predictions of design flood estimates with this
+      philosophical basis, there is a need to ensure that rainfall characteristics as one of the
+      major influencing factors are considered
+      appropriately<?oxy_insert_start author="retallick" timestamp="20160616T183702+1000"?>.<?oxy_insert_end?></para>
+    <para>There are many features of rainfall to consider when developing a rainfall model for
+      design flood prediction; exploration of these features can be undertaken using historical
+      storm events as a basis. In using this approach, there is a need to acknowledge that
+      consideration of historical events is an analysis problem and not a design problem.
+      Nonetheless, insights into the characteristics of rainfall events for design purposes can be
+      obtained from this review.</para>
+    <para>Rainfall exhibits both spatial and temporal variability at all spatial and temporal scales
+      that are of interest in flood hydrology. High resolution recording instruments have identified
+      temporal variability in rainfall from time scales of less than one minute to several days
+        <citation>b2_c2_r6</citation>. Similarly, observations of rainfall from high resolution
+      weather radar and satellites have demonstrated spatial variability in rainfall at spatial
+      resolutions from 1 km to more than 500 km <citation>b2_c2_r5</citation>.</para>
+    <para>While it is important to be aware of this large degree of variability, for design flood
+      estimation based on catchment modelling it is only necessary to reflect rainfall variability
+      at space and time scales that are influential in the formation of flood events. The main focus
+      is generally on individual storms or bursts of intense rainfall within storms that cover the
+      catchment extent. However, it needs to be recognised that, depending on the design problem
+      (eg. flood level determination in a system with very large storage and small outflow
+      capacity), the relevant ‘event’ to be considered may consist of rainfall sequences that
+      include not just one storm but extend over several months or even years.</para>
+    <para>Rainfall models are designed to capture in a simplified fashion those aspects of the
+      spatial and temporal variability of rainfall that a relevant to specific applications. A broad
+      distinction between different rainfall models can be made on the basis of their scope.
+      Commonly rainfall models consider only the temporal dimension by neglecting the spatial
+      dimension. Inclusion of the spatial dimension together with the temporal dimension results in
+      an alternative form of a rainfall model. This leads to the following categorisation of
+      rainfall models:</para>
     <itemizedlist>
       <listitem>
-        <para>Models that concentrate on significant rainfall events (storms
-        or intense bursts within storms) at a point or with a typical spatial
-        pattern that have the potential to produce floods;</para>
+        <para>Models that concentrate on significant rainfall events (storms or intense bursts
+          within storms) at a point or with a typical spatial pattern that have the potential to
+          produce floods;</para>
       </listitem>
-
       <listitem>
-        <para>Models that attempt to simulate rainfall behaviour over an
-        extended period at a point, producing essentially a complete rainfall
-        time series incorporating flood producing bursts of rainfall, low
-        intensity bursts of rainfall and the dry period between bursts of
-        rainfall ; and</para>
+        <para>Models that attempt to simulate rainfall behaviour over an extended period at a point,
+          producing essentially a complete (continuous) rainfall time series incorporating flood
+          producing bursts of rainfall, low intensity bursts of rainfall and the dry periods between
+          bursts of
+            rainfall<?oxy_delete author="retallick" timestamp="20160616T184029+1000" content=" "?>(<xref
+            linkend="b2_ch6"/>); and</para>
       </listitem>
-
       <listitem>
-        <para>Models that attempt to replicate rainfall in both the spatial
-        and temporal dimensions. Currently, models in this category are being
-        researched and are not in general usage. There are, however, many
-        problems where rainfall models of this form may be applicable.</para>
+        <para>Models that attempt to replicate rainfall in both the spatial and temporal dimensions.
+          Currently, models in this category are being researched and are not in general usage.
+          There are, however, many problems where rainfall models of this form may be
+          applicable.</para>
       </listitem>
     </itemizedlist>
-
-    <para>Rainfall models that concentrate on the flood producing bursts of
-    rainfall have the inherent advantage of conciseness (from a flood
-    perspective, only the interesting bursts of rainfall are considered).
-    Hence, there is great potential to consider interactions of rainfall with
-    other influential flood producing factors but also a need to allow for the
-    impact of varying initial conditions.</para>
-
-    <para>Continuous rainfall models have the inherent advantage of allowing
-    the initial catchment conditions (e.g. soil moisture status, initial
-    reservoir content) at the onset of a storm event to be simulated directly.
-    However, the need to model the rainfall characteristics of both storm
-    events (intense rainfall) and inter-event periods (no rainfall to low
-    intensity rainfall) adds significant complexity to continuous rainfall
-    models. The greater range of events these models cover tends to be
-    achieved at the cost of reduced ability to represent rarer rainfall
-    events. Additionally, very long sequences of rainfall observations are
-    required to properly sample rarer events. These issues make continuous
-    rainfall models more suitable for simulation of frequent events.</para>
-
-    <para>Rainfall data are mostly obtained from individual gauges (daily read
-    gauges or pluviographs) and only provide data on point rainfalls. However,
-    for catchment simulation the interest is on rainfall characteristics over
-    the whole catchment. Rainfall models thus are needed to allow
-    extrapolation of rainfall characteristics from the point scale to the
-    catchment scale. In extrapolating rainfall characteristics from a point to
-    a catchment or subcatchment, there is a need to ensure that the
-    extrapolation does not introduce bias into the predictions. This applies
-    to both continuous rainfall models and event rainfall models.</para>
+    <para>Rainfall models that concentrate on the flood producing bursts of rainfall have the
+      inherent advantage of conciseness (from a flood perspective, only the interesting bursts of
+      rainfall are considered). Hence, there is great potential to consider interactions of rainfall
+      with other influential flood producing factors but they also need to allow for the impact of
+      varying initial conditions.</para>
+    <para>Continuous rainfall models
+        <?oxy_insert_start author="retallick" timestamp="20160616T184152+1000"?>(<?oxy_insert_end?><xref
+        linkend="b2_ch6"/><?oxy_insert_start author="retallick" timestamp="20160616T184152+1000"?>)
+      <?oxy_insert_end?>have the inherent advantage of allowing the initial catchment conditions
+      (e<?oxy_delete author="retallick" timestamp="20160616T184219+1000" content="."?>g. soil
+      moisture status<?oxy_insert_start author="retallick" timestamp="20160616T184224+1000"?>
+      and<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T184223+1000" content=","?>
+      initial reservoir content) at the onset of a storm event to be simulated directly. However,
+      the need to model the rainfall characteristics of both storm events (intense rainfall) and
+      inter-event periods (no rainfall to low intensity rainfall) adds significant complexity to
+      continuous rainfall models. The greater range of events these models cover tends to be
+      achieved at the cost of reduced ability to represent rarer, higher intensity rainfall events.
+      Additionally, very long sequences of rainfall observations are required to properly sample
+      rarer events. These issues make continuous rainfall models more suitable for simulation of
+      frequent events.</para>
+    <para>Rainfall data are mostly obtained from individual gauges (daily read gauges or
+      pluviographs) and only provide data on point rainfalls. However, for catchment simulation the
+      interest is on rainfall characteristics over the whole catchment. Rainfall models thus are
+      needed to allow extrapolation of rainfall characteristics from the point scale to the
+      catchment scale. In extrapolating rainfall characteristics from a point to a catchment or
+      subcatchment, there is a need to ensure that the extrapolation does not introduce bias into
+      the predictions. This applies to both continuous rainfall models and event rainfall
+      models.</para>
   </section>
-
   <section xml:id="b2_ch2_s_2">
-    <title>Space-time representation of rainfall events</title>
-
-    <para>When combined, the spatial and temporal variability of rainfall will
-    be referred to as the space-time variability of rainfall. The space-time
-    pattern of rainfall over a catchment or study area is therefore defined in
-    three dimensions: two horizontal dimensions, which are normally latitude
-    and longitude (or easting and northing in a projected coordinate system)
-    and one temporal dimension. In practice, the space-time pattern of
-    rainfall will often be described as a three-dimensional matrix, with the
-    value in each element of the matrix representing either the accumulated
-    rainfall or the mean rainfall intensity for a grid cell over the catchment
-    and a specified period of time for the event, as shown in <xref
-    linkend="b2_ch2_f_1"/>.</para>
-
+    <title>Space-Time Representation of Rainfall Events</title>
+    <para>When combined, the spatial and temporal variability of rainfall will be referred to as the
+      space-time variability of rainfall. The space-time pattern of rainfall over a catchment or
+      study area is therefore defined in three dimensions: two horizontal dimensions, which are
+      normally latitude and longitude (or easting and northing in a projected coordinate system) and
+      one temporal dimension. In practice, the space-time pattern of rainfall will often be
+      described as a three dimensional matrix, with the value in each element of the matrix
+      representing either the accumulated rainfall or the mean rainfall intensity for a grid cell
+      over the catchment and a specified period of time within the event, as shown in <xref
+        linkend="b2_ch2_f_1"/>.</para>
     <figure xml:id="b2_ch2_f_1">
-      <title>Conceptual diagram of space-time pattern of rainfall</title>
-
+      <title>Conceptual Diagram of Space-Time Pattern of Rainfall</title>
       <mediaobject>
         <imageobject>
           <imagedata fileref="../../figures/2056.png"/>
         </imageobject>
       </mediaobject>
     </figure>
-
-    <para>If the space-time pattern of rainfall is considered as a field
-    defined in three-dimensions, then the temporal and spatial patterns of
-    rainfall that have conventionally been used in hydrology can be considered
-    as convenient statistical means of summarising that field. The temporal
-    pattern of rainfall over a catchment area is derived by taking an average
-    in space (over one or more grid elements) of the rainfall depth (or mean
-    intensity) over each time increment of the storm. The spatial pattern of
-    rainfall for an event is defined by taking an average in time (over one or
-    more time periods) of the rainfall depth (or mean intensity) over each
-    grid cell of the catchment. Derivation of spatial and temporal patterns is
-    demonstrated with the conceptual diagram in <xref linkend="b2_ch2_f_2"/>.
-    Commonly, the spatial pattern is defined by averaging over each subarea to
-    be used in a model of the catchment or study area as shown in <xref
-    linkend="b2_ch2_f_3"/>. The application of some catchment modelling
-    systems (for example, rainfall on grid models commonly used in urban
-    simulations), however, require grid based spatial patterns of rainfall. In
-    these situations, each grid element can be considered as a subarea or
-    subcatchment.</para>
-
-    <para>The space-time pattern of rainfall varies in a random manner between
-    events and within events. The random variability within the space-time
-    pattern is influenced by spatial and temporal correlation structures that
-    are an inherent observed property of rainfall. The random space-time
-    variability may make it difficult to specify typical or representative
-    spatial patterns for some catchments. Umakhanthan and Ball (2005) in a
-    study of the Upper Parramatta River Catchment in NSW showed the variation
-    in the temporal and spatial correlation between storm events on that
-    catchment.</para>
-
-    <para>However, there are often hydrometeorological drivers, as discussed
-    in <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Section
-    <emphasis role="bold">XX</emphasis><?oxy_custom_end ?> that cause some
-    degree of similarity in spatial and space-time patterns of flood producing
-    rainfall between events for a particular catchment. This similarity
-    increases for the rarer events and decreases for the more frequent
-    events.</para>
-
+    <para>If the space-time pattern of rainfall is considered as a field defined in three
+      dimensions, then the temporal and spatial patterns of rainfall that have conventionally been
+      used in hydrology can be considered as convenient statistical means of summarising that field.
+      The temporal pattern of rainfall over a catchment area is derived by taking an average in
+      space (over one or more grid elements) of the rainfall depth (or mean intensity) over each
+      time increment of the storm. The spatial pattern of rainfall for an event is defined by taking
+      an average in time (over one or more time periods) of the rainfall depth (or mean intensity)
+      over each grid cell of the catchment. Derivation of spatial and temporal patterns is
+      demonstrated with the conceptual diagram in <xref linkend="b2_ch2_f_2"/>. Commonly, the
+      spatial pattern is defined by averaging over each subarea to be used in a model of the
+      catchment or study area as shown in <xref linkend="b2_ch2_f_3"/>. The application of some
+      catchment modelling systems (for example,
+      rainfall<?oxy_insert_start author="retallick" timestamp="20160616T184717+1000"?>-<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T184717+1000" content=" "?>on<?oxy_insert_start author="retallick" timestamp="20160616T184720+1000"?>-<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T184720+1000" content=" "?>grid
+      models commonly used
+      <?oxy_delete author="retallick" timestamp="20160616T184803+1000" content="in "?><?oxy_insert_start author="retallick" timestamp="20160616T184803+1000"?>to
+      simulate floods in <?oxy_insert_end?>urban
+      <?oxy_delete author="retallick" timestamp="20160616T184814+1000" content="simulations"?><?oxy_insert_start author="retallick" timestamp="20160616T184814+1000"?>areas<?oxy_insert_end?>),
+      however, require grid based spatial patterns of rainfall. In these situations, each grid
+      element can be considered as a subarea or subcatchment.</para>
+    <para>The space-time pattern of rainfall varies in a random manner between events and within
+      events influenced by spatial and temporal correlation structures that are an inherent observed
+      property of rainfall. The random space-time variability may make it difficult to specify
+      typical or representative spatial patterns for some catchments.
+        <citation>b2_c2_r8+1</citation> in a study of the Upper Parramatta River Catchment in NSW
+      showed the variation in the temporal and spatial correlation between storm events on that
+      catchment.</para>
+    <para>However, there are often hydrometeorological drivers, as discussed in <xref
+      linkend="b2_ch4"/> that cause some degree of similarity in spatial and space-time
+      patterns of flood producing rainfall between events for a particular catchment. This
+      similarity increases for the rarer events and decreases for the more frequent events.</para>
     <figure xml:id="b2_ch2_f_2">
-      <title>Conceptual diagram showing the spatial pattern and temporal
-      pattern temporal and spatial averages derived from the space-time
-      rainfall field</title>
-
+      <title>Conceptual Diagram
+        <?oxy_delete author="retallick" timestamp="20160616T185145+1000" content="Showing"?><?oxy_insert_start author="retallick" timestamp="20160616T185145+1000"?>of<?oxy_insert_end?>
+        the
+        <?oxy_comment_start author="retallick" timestamp="20160616T185306+1000" comment="can we delete this part of the caption?"?>Spatial
+        Pattern and Temporal Pattern <?oxy_comment_end?>Temporal and Spatial Averages Derived from
+        the Space-Time Rainfall Field</title>
       <mediaobject>
         <imageobject>
           <imagedata fileref="../../figures/2057.png"/>
         </imageobject>
       </mediaobject>
     </figure>
-
     <figure xml:id="b2_ch2_f_3">
-      <title>Conceptual diagram showing the temporal pattern over a catchment
-      and the spatial pattern derived over model subareas of the
-      catchment</title>
-
+      <title>Conceptual Diagram
+        <?oxy_insert_start author="retallick" timestamp="20160616T171111+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T171110+1000" content="D"?>howing
+        the Temporal Pattern over a Catchment and the Spatial Pattern Derived over Model Subareas of
+        the Catchment</title>
       <mediaobject>
         <imageobject>
           <imagedata fileref="../../figures/2058.png"/>
@@ -250,296 +193,309 @@
       </mediaobject>
     </figure>
   </section>
-
-  <section xml:id="b2_ch2_s_3">
-    <title>Conceptualisation of design rainfall events</title>
-
-    <para>Ideally, the space-time variation of rainfall over a catchment would
-    be represented as moving space-time field of rainfall at the appropriate
-    spatial and temporal resolution, However, while current developments are
-    progressing in that direction (see, for example, stochastic –space-time
-    rainfall models developed by Seed et al, 2002; Leonard et al, 2008), the
-    rainfall models widely used in practice are based on a more reductionist
-    approach, dealing separately with the spatial and temporal variability of
-    rainfall. A result of this reductionist approach is that rainfall bursts
-    are assumed to be stationary; in other words, the storm does not move
-    during the period of rainfall.</para>
-
-    <para>For ease of modelling, storm events can be conceptualised and
-    represented by four main event characteristics that are analysed and
-    modelled separately:</para>
-
+  <section>
+    <title>Orographic Enhancement and Rain Shadow Effects on Space-Time Patterns</title>
+    <para>Orographic precipitation, also known as relief precipitation, is precipitation generated
+      by a forced upward movement of air upon encountering a physiographic upland. This lifting can
+      be caused by two mechanisms:</para>
     <itemizedlist>
       <listitem>
-        <para>Duration of storm or burst event</para>
+        <para>Upward deflection of large scale horizontal flow by the topography; or</para>
       </listitem>
-
       <listitem>
-        <para>Total rainfall depth (or average intensity) over the event
-        duration</para>
-      </listitem>
-
-      <listitem>
-        <para>Spatial distribution (or pattern) of rainfall over the catchment
-        during the event</para>
-      </listitem>
-
-      <listitem>
-        <para>Temporal distribution (or pattern) of rainfall during the
-        event</para>
+        <para>Anabatic or upward vertical propagation of moist air up an orographic slope caused by
+          daytime heating of the mountain barrier surface.</para>
       </listitem>
     </itemizedlist>
-
-    <para>These rainfall event characteristics are discussed in separate
-    sections below.</para>
-
-    <section xml:id="b2_ch2_s_3_1">
-      <title>Event definitions</title>
-
-      <para>The modelling of rainfall events first requires a clear definition
-      of what constitutes an event. Given the variation of rainfall in time
-      and space, it is not immediately apparent when an event starts and ends.
-      Start and end points of rainfall events need to be defined by rainfall
-      thresholds or separation in time from preceding/subsequent rainfall. For
-      an event to be significant, it may also need to exceed a total event
-      rainfall threshold.</para>
-
-      <para>Two different types of rainfall events are relevant for design
-      flood estimation: complete storm events and internal bursts of intense
-      rainfall. While complete storm events are the theoretically more
-      appropriate form of event for flood simulation, the internal rainfall
-      bursts of given duration, regardless of where they occur within a storm
-      event, lend themselves more readily for statistical analysis. The IFD
-      data covered in <xref linkend="b2_ch3"/> are thus for rainfall burst
-      events.</para>
-    </section>
-
-    <section xml:id="b2_ch2_s_3_2">
-      <title>Rainfall event duration.</title>
-
-      <para>Actual storm events vary in their duration, from local
-      thunderstorms lasting minutes to extended rainfall events lasting
-      several days. This variation occurs in a random fashion, and rainfall
-      event duration for a particular region can be characterised by a
-      probability distribution. However, for practical design flood
-      estimation, the occurrence of rainfalls of different durations within an
-      appropriate range is generally assumed to have equal probability, and
-      the ‘critical rainfall duration’ is then determined as the one that
-      maximises the value of the design flood characteristic of direct
-      interest.</para>
-
-      <para>The design rainfall data provided in ARR covers the range of
-      rainfall burst durations from 1 minute to 7 days.</para>
-    </section>
-
-    <section xml:id="b2_ch2_s_3_3">
-      <title>Event rainfall depth (or average intensity)</title>
-
-      <para>The basic methods for estimating design rainfall depths (or
-      average intensities) for different durations are discussed in <xref
-      linkend="b2_ch3"/> (both point rainfalls and average catchment
-      rainfalls). The principal modelling approach used is to fit a
-      probability distribution to series of rainfall depths (annual maximum or
-      peak over threshold) for the selected event duration at sites with long,
-      reliable rainfall records. The results of these at-site analyses are the
-      generalised over regions with similar rainfall characteristics and
-      mapped over the whole of Australia.</para>
-    </section>
-
-    <section xml:id="b2_ch2_s_3_4">
-      <title>Spatial rainfall patterns</title>
-
-      <para>The conversion of point design rainfalls to average catchment
-      design rainfalls is modelled through rainfall areal reduction factors is
-      discussed in <xref linkend="b2_ch4"/>. Also, presented in <xref
-      linkend="b2_ch4"/> are techniques for estimating the spatial pattern of
-      rainfall over a catchment; models for representing the typical spatial
-      variability of rainfall. These models are based either on the analysis
-      and generalisation of historical storms or on spatial trends derived
-      from analysis of design rainfall depths (IFD maps). The application of
-      these models is explained in that chapter.</para>
-    </section>
-
-    <section xml:id="b2_ch2_s_3_5">
-      <title>Temporal rainfall patterns</title>
-
-      <para>There are two distinct model representations of the temporal
-      variability of rainfall within events (for complete storms or internal
-      bursts), depending on whether the model only reflects the central
-      tendency of different observed patterns or the variability of patterns
-      for different events is also modelled. These differences in modelling
-      approach are further discussed in <xref linkend="b2_ch2_s_4"/> and <xref
-      linkend="b2_ch5"/>.</para>
-
-      <para>In the following, a number of different approaches to model the
-      space-time characteristics of event rainfall for design flood estimation
-      are introduced briefly.</para>
-    </section>
+    <para>Upon ascent, the air that is being lifted will expand and cool. This adiabatic cooling of
+      a rising moist air parcel may lower its temperature to its dew point, thus allowing for
+      condensation of the water vapour contained within it, and hence the formation of a cloud.
+      Rainfall can be generated from the cloud through a number of physical processes
+        <citation>b2_c4_r12</citation>. The cloud liquid droplets grow through collisions with other
+      droplets to the size where they fall as rain. Rain drops from clouds at high altitude may fall
+      through the clouds near the surface that have formed because of the uplift due to topography
+      and grow as a result of collisions with the cloud droplets. Air may also become unstable as it
+      is lifted over higher areas of terrain and convective storms may be triggered by this
+      instability. These influences combine to typically produce a greater incidence of rainfall on
+      the upwind side of hills and mountains and also typically larger rainfall intensities on the
+      upwind side than would otherwise occur in flat terrain.</para>
+    <para>The space-time pattern will vary between every individual rainfall event that occurs in a
+      catchment. In catchments that are subject to orographic influences, there will commonly be
+      similarity in the space-time pattern of rainfall between many of the different events that are
+      observed over the catchment. This will typically be the case for catchments that are subject
+      to flood producing rainfall events that have similar hydrometeorological influences. For
+      example, the spatial patterns of rainfall for different events may often demonstrate similar
+      ratios of total rainfall depth in the higher elevations of the catchment to total rainfall
+      depth at lower elevations.</para>
+    <para> The spatial patterns of rainfall in catchments that are influenced by orographic effects
+      represent a systematic bias away from a completely uniform spatial pattern. The influence of
+      this systematic bias in spatial pattern of rainfall should be explicitly considered in design
+      flood estimation. Other hydrometeorological influences, such as the distance from a
+      significant moisture source like the ocean may also give rise to systematic bias in the
+      spatial pattern of rainfall.</para>
   </section>
-
-  <section xml:id="b2_ch2_s_4">
-    <title>Spatial and temporal resolution of design rainfall models</title>
-
-    <para>The space-time pattern of rainfall for an individual flood event
-    will often have an appreciable influence on the flow hydrograph generated
-    at the outlet of a catchment. Two rainfall events may have identical total
-    volumes over a defined catchment area and duration but differences in
-    their space-time patterns may produce very different hydrographs at the
-    outlet of the catchment. Both the runoff generation and runoff routing
-    processes in catchments are typically non-linear, so a space-time pattern
-    that exhibits more variability will normally generate a higher volume of
-    runoff and larger peak flow at the catchment outlet than a space-time
-    pattern that is more uniform.</para>
-
-    <para>Variability in hydrographs introduced by space-time variability in
-    rainfall will be accentuated in catchments that have spatial and temporal
-    variability in runoff generation and routing processes. For example, in a
-    partly urbanised catchment, a rain storm with a spatial pattern that has
-    larger depths on the urban part of the catchment than the rural part would
-    normally produce both a larger volume of runoff and flood peak at the
-    catchment outlet than a storm of the same depth and duration that has a
-    spatially uniform rainfall pattern. Other factors in catchments that may
-    accentuate the influence of the space-time rainfall pattern on the
-    variability in hydrographs produced at the catchment outlet
-    include:</para>
-
+  <section xml:id="b2_ch2_s_3">
+    <title>Conceptualisation of Design Rainfall Events</title>
+    <para>Ideally, the space-time variation of rainfall over a catchment would be represented as
+      <?oxy_insert_start author="retallick" timestamp="20160616T185351+1000"?>a
+      <?oxy_insert_end?>moving space-time field of rainfall at the appropriate spatial and temporal
+      resolution<?oxy_insert_start author="retallick" timestamp="20160616T185359+1000"?>.<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T185359+1000" content=","?>
+      However, while current developments are progressing in that direction
+      (<?oxy_delete author="retallick" timestamp="20160616T185407+1000" content="see, "?>for
+      example,
+      stochastic<?oxy_delete author="retallick" timestamp="20160616T185410+1000" content=" –"?><?oxy_insert_start author="retallick" timestamp="20160616T185411+1000"?>-<?oxy_insert_end?>space-time
+      rainfall models developed by <citation>b2_c2_r7,b2_c2_r4</citation>), the rainfall models
+      widely used in practice are based on a more reductionist approach, dealing separately with the
+      spatial and temporal variability of rainfall. A result of this reductionist approach is that
+      rainfall bursts are assumed to be stationary; in other words, the storm does not move during
+      the period of rainfall.</para>
+    <para>For ease of modelling, storm events can be conceptualised and represented by four main
+      event characteristics that are analysed and modelled separately:</para>
     <itemizedlist>
       <listitem>
-        <para>the presence of reservoirs and lakes, for which all rainfall is
-        converted to runoff;</para>
+        <para>Duration of storm or burst
+          event<?oxy_insert_start author="retallick" timestamp="20160616T185441+1000"?>;<?oxy_insert_end?></para>
       </listitem>
-
       <listitem>
-        <para>the presence of dams, weirs, drains and other flow regulating
-        structures;</para>
+        <para>Total rainfall depth (or average intensity) over the event duration, at a point or
+          over a
+          catchment<?oxy_insert_start author="retallick" timestamp="20160616T185444+1000"?>;<?oxy_insert_end?></para>
       </listitem>
-
+      <listitem>
+        <para>Spatial distribution (or pattern) of rainfall over the catchment during the
+          event<?oxy_insert_start author="retallick" timestamp="20160616T185448+1000"?>; and
+          <?oxy_insert_end?></para>
+      </listitem>
+      <listitem>
+        <para>Temporal distribution (or pattern) of rainfall during the
+          event<?oxy_insert_start author="retallick" timestamp="20160616T185454+1000"?>.<?oxy_insert_end?></para>
+      </listitem>
+    </itemizedlist>
+    <para>These rainfall event characteristics are discussed in
+        <?oxy_delete author="retallick" timestamp="20160616T185517+1000" content="separate sections below"?><xref
+        linkend="b2_ch2_s_3_1"
+      /><?oxy_insert_start author="retallick" timestamp="20160616T185517+1000"?>. to
+        <?oxy_insert_end?><xref linkend="b2_ch2_s_3_4"/></para>
+    <section xml:id="b2_ch2_s_3_1">
+      <title>Event Definitions</title>
+      <para>The modelling of rainfall events first requires a clear definition of what constitutes
+        an event <citation>b4_c3_r48</citation>. Given the variation of rainfall in time and space,
+        it is not immediately apparent when an event starts and ends. Start and end points of
+        rainfall events need to be defined by rainfall thresholds or separation in time from
+        preceding/subsequent rainfall. For an event to be significant, it may also need to exceed a
+        total event rainfall threshold.</para>
+      <para>Two different types of rainfall events are relevant for design flood estimation:
+        complete storm events and internal bursts of intense rainfall. While complete storm events
+        are the theoretically more appropriate form of event for flood simulation, the internal
+        rainfall bursts of given duration, regardless of where they occur within a storm event, lend
+        themselves more readily for statistical analysis. The
+        I<?oxy_insert_start author="retallick" timestamp="20160616T185803+1000"?>ntensity
+        <?oxy_insert_end?>F<?oxy_insert_start author="retallick" timestamp="20160616T185809+1000"?>requency <?oxy_insert_end?>D<?oxy_insert_start author="retallick" timestamp="20160616T185812+1000"?>uration<?oxy_insert_end?>
+        <?oxy_insert_start author="retallick" timestamp="20160616T190036+1000"?>(IFD)
+        <?oxy_insert_end?>data covered in <xref linkend="b2_ch3"/> are thus for rainfall burst
+        events.</para>
+    </section>
+    <section xml:id="b2_ch2_s_3_2">
+      <title>Rainfall Event
+        Duration<?oxy_delete author="retallick" timestamp="20160616T185758+1000" content="."?></title>
+      <para>Actual storm events vary in their duration, from local thunderstorms lasting minutes to
+        extended rainfall events lasting several days. This variation occurs in a random fashion,
+        and rainfall event duration for a particular region can be characterised by a probability
+        distribution. However, for practical design flood estimation, the occurrence of rainfalls of
+        different durations within an appropriate range is generally assumed to have equal
+        probability, and the ‘critical rainfall duration’ is then determined as the one that
+        maximises the value of the design flood characteristic of direct interest.</para>
+      <para>The design rainfall data provided in ARR covers the range of rainfall burst durations
+        from 1 minute to 7 days.</para>
+    </section>
+    <section xml:id="b2_ch2_s_3_3">
+      <title>Event Rainfall Depth (or Average Intensity)</title>
+      <para>The basic methods for estimating design rainfall depths (or average intensities) for
+        different durations are discussed in <xref linkend="b2_ch3"/>  for both point rainfalls .
+        The principal modelling approach used is to fit a probability distribution to series of
+        rainfall depth observations (annual maximum or peak over threshold) for the selected event
+        duration at sites with long, reliable rainfall records. The results of these at-site
+        analyses are
+        the<?oxy_insert_start author="retallick" timestamp="20160616T185954+1000"?>n<?oxy_insert_end?>
+        generalised over regions with similar rainfall characteristics and mapped over the whole of
+        Australia. The conversion of point design rainfalls to average catchment design rainfalls is
+        modelled through rainfall areal reduction factors is discussed in <xref linkend="b2_ch4"
+        />.</para>
+    </section>
+    <section>
+      <title>Temporal
+        <?oxy_insert_start author="retallick" timestamp="20160616T190134+1000"?>Patterns of
+        <?oxy_insert_end?>Rainfall
+        <?oxy_delete author="retallick" timestamp="20160616T190131+1000" content="Patterns"?></title>
+      <para>There are two distinct model representations of the temporal variability of rainfall
+        within events (for complete storms or internal bursts), depending on whether the model only
+        reflects the central tendency of different observed patterns or the variability of patterns
+        for different events is also modelled. These differences in modelling approach are further
+        discussed in <xref linkend="b2_ch2_s_4"/> and <xref linkend="b2_ch5"/>.</para>
+    </section>
+    <section xml:id="b2_ch2_s_3_4">
+      <title>Spatial
+        <?oxy_insert_start author="retallick" timestamp="20160616T190124+1000"?>Patterns of
+        <?oxy_insert_end?>Rainfall<?oxy_delete author="retallick" timestamp="20160616T190129+1000" content=" Patterns"?></title>
+      <para>In larger catchments and where there is a consistent spatial trend in observed rainfall
+        depths, (see <xref linkend="b2_ch2_s_3"/>) this needs to be represented by a non-uniform
+        spatial rainfall pattern. . The models for representing the typical spatial variability of
+        rainfall are based either on the analysis and generalisation of historical storms or on
+        spatial trends derived from analysis of design rainfall depths (IFD maps). The application
+        of these models is explained in <xref linkend="b2_ch4_s_4ho8s"/></para>
+      <para>In the following, a number of different approaches to model the space-time
+        characteristics of event rainfall for design flood estimation are introduced briefly.</para>
+    </section>
+  </section>
+  <section xml:id="b2_ch2_s_4">
+    <title>Spatial and Temporal Resolution of Design Rainfall Models</title>
+    <para>The space-time pattern of rainfall for an individual flood event will often have an
+      appreciable influence on the flow hydrograph generated at the outlet of a catchment. Two
+      rainfall events may have identical total volumes over a defined catchment area and duration
+      but differences in their space-time patterns may produce very different hydrographs at the
+      outlet of the catchment. Both the runoff generation and
+      runoff<?oxy_insert_start author="retallick" timestamp="20160616T190247+1000"?>-<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160616T190246+1000" content=" "?>routing
+      processes in catchments are typically non-linear, so a space-time pattern that exhibits more
+      variability will normally generate a higher volume of runoff and larger peak flow at the
+      catchment outlet than a space-time pattern that is more uniform.</para>
+    <para>Variability in hydrographs introduced by space-time variability in rainfall will be
+      accentuated in catchments that have spatial and temporal variability in runoff generation and
+      routing processes. For example, in a partly urbanised catchment, a <?oxy_delete author="retallick" timestamp="20160616T190316+1000" content="rain storm"?><?oxy_insert_start author="retallick" timestamp="20160620T194412+1000"?>rainfall<?oxy_insert_end?>
+      <?oxy_insert_start author="retallick" timestamp="20160616T190319+1000"?>event
+      <?oxy_insert_end?>with a spatial pattern that has larger depths on the urban part of the
+      catchment than the rural part would normally produce both a larger volume of runoff and flood
+      peak at the catchment outlet than a storm of the same depth and duration that has a spatially
+      uniform rainfall pattern. Other factors in catchments that may accentuate the influence of the
+      space-time rainfall pattern on the variability in hydrographs produced at the catchment outlet
+      include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>the presence of reservoirs and lakes, for which all rainfall on the water surface is
+          converted to runoff;</para>
+      </listitem>
+      <listitem>
+        <para>the presence of dams, weirs, drains and other flow regulating structures;</para>
+      </listitem>
       <listitem>
         <para>significant variations in soil type;</para>
       </listitem>
-
       <listitem>
-        <para>significant variations in vegetation type, such as forested and
-        cleared areas;</para>
+        <para>significant variations in vegetation type, such as forested and cleared areas;</para>
       </listitem>
-
       <listitem>
-        <para>the arrangement of the drainage network of the catchment the
-        dependency of alternative flow paths on event magnitude and
-        differences in contributing area with length of network;</para>
+        <para>the arrangement of the drainage network of the catchment the dependency of alternative
+          flow paths on event magnitude and differences in contributing area with length of
+          network;</para>
       </listitem>
-
       <listitem>
-        <para>significant variations in stream channel and floodplain
-        roughness;</para>
+        <para>significant variations in stream channel and floodplain roughness;</para>
       </listitem>
-
       <listitem>
-        <para>significant variations in slope of stream channels and
-        floodplains;</para>
+        <para>significant variations in slope of stream channels and floodplains;</para>
       </listitem>
-
       <listitem>
-        <para>significant variations in antecedent climatic conditions across
-        the catchment prior to the events; and</para>
+        <para>significant variations in antecedent climatic conditions across the catchment prior to
+          the events; and</para>
       </listitem>
-
       <listitem>
-        <para>variations in elevation, snowpack depth, density and temperature
-        in those catchments subject to rain-on-snow flood events.</para>
+        <para>variations in elevation, snowpack depth, density and temperature in those catchments
+          subject to rain-on-snow flood events.</para>
       </listitem>
     </itemizedlist>
-
-    <para>The required resolution of rainfall models to adequately reflect the
-    variability of rainfall in historical rainfall events has been
-    investigated by Umakhanthan and Ball (2005) for the Upper Parramatta River
-    catchment. They categorised the variability of recorded storm events in
-    the spatial and temporal domains and confirmed that the degree of spatial
-    and temporal resolution of rainfall inputs to flood estimation models can
-    have a significant impact on resulting flood estimates. A range of other
-    studies have come to similar conclusions but have found it difficult to
-    give more than qualitative guidance on the required degree of spatial and
-    temporal resolution of rainfall for different modelling applications. The
-    conclusions can be summarised in qualitative terms as:</para>
-
+    <para>The required resolution of rainfall models to adequately reflect the variability of
+      rainfall in historical rainfall events has been investigated by <citation>b2_c2_r8</citation>
+      for the Upper Parramatta River catchment.
+        <?oxy_delete author="retallick" timestamp="20160616T190605+1000" content="They"?><citation>b2_c2_r8</citation><?oxy_insert_start author="retallick" timestamp="20160616T190605+1000"?>
+      <?oxy_insert_end?> categorised the variability of recorded storm events in the spatial and
+      temporal domains and confirmed that the degree of spatial and temporal resolution of rainfall
+      inputs to flood estimation models can have a significant impact on resulting flood estimates.
+      A range of other studies have come to similar conclusions but have found it difficult to give
+      more than qualitative guidance on the required degree of spatial and temporal resolution of
+      rainfall for different modelling applications. The conclusions can be summarised in
+      qualitative terms as:</para>
     <itemizedlist>
       <listitem>
-        <para>“Spatial rainfall patterns are understood to be a dominant
-        source of variability for very large catchments and for urban
-        catchments but for other hydrological contexts, results vary. Much of
-        this knowledge is either site specific or is expressed qualitatively”
-        (Woods and Sivapalan, 1999).</para>
+        <para>“Spatial rainfall patterns are understood to be a dominant source of variability for
+          very large catchments and for urban catchments but for other hydrological contexts,
+          results vary. Much of this knowledge is either site specific or is expressed
+          qualitatively” <citation>b2_c2_r9</citation>.</para>
       </listitem>
-
       <listitem>
-        <para>Where short response times are involved in urban catchments,
-        inadequate representation of temporal variability of rainfall can lead
-        to significant underestimation of design flood peaks (Ball, 1994).
-        More generally, the importance of temporal variability of rainfall in
-        flood modelling depends on the degree of ‘filtering’ of shorter term
-        rainfall peaks through catchment routing processes (i.e. the amount of
-        storage in the catchment system) and the interaction of flood
-        contributions from different parts of a catchment system</para>
+        <para>Where short response times are involved in urban catchments, inadequate representation
+          of temporal variability of rainfall can lead to significant underestimation of design
+          flood peaks <citation>b2_c5_r2</citation>. More generally, the importance of temporal
+          variability of rainfall in flood modelling depends on the degree of ‘filtering’ of shorter
+          term rainfall peaks through catchment routing processes
+          (i<?oxy_delete author="retallick" timestamp="20160616T190727+1000" content="."?>e. the
+          amount of storage in the catchment system) and the interaction of flood contributions from
+          different parts of a catchment
+          system<?oxy_insert_start author="retallick" timestamp="20160616T190644+1000"?>.<?oxy_insert_end?></para>
       </listitem>
     </itemizedlist>
-
-    <para>Sensitivity analyses can be applied to determine for a specific
-    application the influence of the adopted spatial and temporal resolution
-    of design rainfalls on flood estimates and their uncertainty
-    bounds.</para>
-
-    <para/>
+    <para>Sensitivity analyses can be applied to determine for a specific application the influence
+      of the adopted spatial and temporal resolution of design rainfalls on flood estimates and
+      their uncertainty bounds.</para>
   </section>
-
-  <section xml:id="b2_ch2_s_5">
-    <title>References</title>
-
-    <para>Diermanse, F.L.M., Carroll, Beckers, J.V.L., Ayre, R. and
-    Schuurmans, J.M. (2014). A Monte Carlo framework for the Brisbane River
-    Catchment Flood Study. Engineers Australia, Hydrology and Water Resources
-    Symposium 2014), pp 62-69.</para>
-
-    <para>Hoang, T., Rahman, A., Weinmann, P. E., Laurenson, E. M., Nathan, R.
-    J. (1999). Joint probability descriptions of design rainfalls. Intl.
-    Hydrology and Water Resour. Symp of the I.E. Aust. and 2nd Int. Conference
-    on Water Resour. and Env. Research, Brisbane, Australia, 6-8 July,
-    1999.</para>
-
-    <para>Jordan, P., Nathan, R and Seed, A. (2015) Application of spatial and
-    space-time patterns of design rainfall to design flood estimation.
-    Engineers Australia, Hydrology and Water Resources Symposium 2015), pp
-    XX-XX.</para>
-
-    <para>Leonard, M., Lambert, M. F., Metcalfe, A. V., Cowpertwait, P. S. P.
-    (2008) A space-time Neyman–Scott rainfall model with defined storm extent.
-    <emphasis role="italic">Water Resources Research</emphasis>, <emphasis
-    role="italic">44</emphasis>(9), 1–10.
-    http://doi.org/10.1029/2007WR006110</para>
-
-    <para>Lovejoy, S. and D. Schertzer, 2006: Multifractals, cloud radiances
-    and rain, J. Hydrology, 322, 59-88.</para>
-
-    <para>Marani, M., 2005: Non-power-law-scale properties of rainfall in
-    space and time, Water Resour. Res., 41, W08413,
-    doi:10.1029/2004WR003822.</para>
-
-    <para>Seed, A. W., Srikanthan, R., &amp; Menabde, M. (2002). Stochastic
-    space-time rainfall for designing urban drainage systems. Proc.
-    International Conference on Urban Hydrology for the 21st Century, (pp.
-    109-123). Kuala Lumpur.</para>
-
-    <para>Umakhanthan, K and Ball, JE (2005). Rainfall models for catchment
-    simulation. Australian Journal of Water Resources, 2005, 9 (1), pp. 55 –
-    67.</para>
-
-    <para>Woods and Sivapalan (1999). A synthesis of space-time variability in
-    storm response: rainfall, runoff generation and routing. Water Resources
-    Research, Vol. 35, No. 8, 1999, p. 2469-2485.</para>
-
-    <para/>
-
-    <para/>
-
-    <para/>
+  <section>
+    <title>Applications Where Flood Estimates are Required at Multiple Locations</title>
+    <para>Design flood estimates are often required at multiple locations within a catchment or
+      study area. Ideally, flood simulation (eg. using Monte Carlo approaches) should consider a
+      large number of complete storm events that cover the whole AEP spectrum of interest and have
+      internal characteristics which automatically reproduce the critical rainfall bursts over a
+      range of temporal and spatial scales. Unfortunately, such comprehensive ensembles of synthetic
+      storm events are not currently available, and combined system wide analysis is thus not yet
+      feasible. Instead, separate analysis at the different locations (subcatchments) of interest is
+      required, using design rainfall events for the relevant space and time scales. To this end, it
+      is necessary to derive design rainfall inputs for the catchment upstream of each required
+      location. This involves:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Deriving average values of the point design rainfalls for the total catchment upstream
+          of each location;</para>
+      </listitem>
+      <listitem>
+        <para>Conversion of average point design rainfall values to areal estimates by multiplying
+          by the ARF applicable to the total catchment area upstream of each location; and</para>
+      </listitem>
+      <listitem>
+        <para>Adoption of space-time patterns of rainfall relevant to the total catchment area
+          upstream of each location.</para>
+      </listitem>
+    </itemizedlist>
+    <para>It is commonly found that design flood estimates are required at one or more locations in
+      a catchment where flow gauges are not located. If so, it will be necessary to use the above
+      procedure to derive design rainfalls for the catchment upstream of each gauge location so that
+      the rainfall-based design floods estimates can be verified against estimates derived from
+      Flood Frequency Analysis at each flow gauge. Different sets of design rainfall intensities,
+      ARF and space-time patterns should be calculated for the each of the catchments draining to
+      the other locations of interest, which are not at flow gauges.</para>
   </section>
+  <section>
+    <title>Climate Change Impacts</title>
+    <para>Statistically significant increases in rainfall intensity have been detected in Australia
+      for short duration rainfall events and are likely to become more evident towards the end of
+      the 21st century <citation>b2_c5_r33</citation>. Changes in long duration events are expected
+      to be smaller and harder to detect, but projections analysed by
+        <citation>b1_c2_r7+1</citation> show that an increase in daily precipitation intensity is
+      likely under climate change. It is worth noting that a warming climate can lead to decreases
+      in annual rainfall along with increases in flood producing rainfall.</para>
+    <para>The impact of climate change on storm frequency, mechanism, spatial and temporal behaviour
+      is less understood. </para>
+    <para>Work by <citation>b1_c4_r1+1</citation> suggests that increases are likely to be more
+      pronounced in areas with strong orographic enhancement. There is insufficient evidence to
+      confirm whether this result is applicable to other parts of Australia. Work by
+        <citation>b2_c5_r30+1</citation> analysing historical storms found that, regardless of the
+      climate region or season, temperature increases are associated with patterns becoming less
+      uniform, with the largest fractions increasing in rainfall intensity and the lower fraction
+      decreasing.</para>
+    <para>The implications of these expected climate change impacts on the different design rainfall
+      inputs to catchment modelling are discussed further in the relevant sub-sections of the
+      following chapters. </para>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
 </chapter>

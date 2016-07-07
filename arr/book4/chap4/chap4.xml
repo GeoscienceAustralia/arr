@@ -1,49 +1,2665 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b4_ch4" version="5.0" xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:m="http://www.w3.org/1998/Math/MathML"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:db="http://docbook.org/ns/docbook"
-    status = "In Preparation">
-    
-    <title>Catchment Modelling System Processes</title>
-    
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="b4_ch4" version="5.0" status="In Preparation">
+    <info> 
+    <title>Treatment of Joint Probability</title>
+                  <xi:include href="../../common/authors/nathan_rory.xml"/>
+                  <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+                  </info>
     <para>
         <informaltable border="1">
             <tr>
                 <td colspan="2">Chapter Status</td>
             </tr>
             <tr>
-                <td>Book</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Chapter</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Date</td>
-                <td>27/11/2015</td>
+                <td>Date last updated</td>
+                <td>06/07/16 </td>
             </tr>
             <tr>
                 <td>Content</td>
-                <td>In preparation</td>
-            </tr>
-            <tr>
-                <td>Graphs and Figures</td>
-                <td>In preparation</td>
-            </tr>
-            <tr>
-                <td>Examples</td>
-                <td>In preparation</td>
+                <td>Advanced draft</td>
             </tr>
             <tr>
                 <td>General</td>
-                <td/>
+                <td>Subject to industry feedback </td>
             </tr>
         </informaltable>
     </para>
-    
+    <section xml:id="b4_ch4_s_l02m4">
+        <title>Introduction</title>
+        <para>In many applications of flood simulation it is necessary to understand and apply the
+            basic probability concepts involved when a range of factors combine to produce a flood
+            event or when different events occur jointly. Such applications range from the
+            stochastic simulation of design flood events allowing for the joint probabilities of
+            several key flood producing or flood modifying factors, to typical situations where
+            flood risk results from various combinations of flood events that have different causes
+            or occur at different locations.</para>
+        <para><xref linkend="b4_ch4_s_kprus"/> introduces basic probability concepts that are
+            applied in flood simulation methods and in determining flood risks for situations where
+            several factors or events interact. It then describes typical practical applications
+            where the interaction of different factors or events need to be considered and points to
+            other sections where individual applications are treated in more detail. <xref
+                linkend="b4_ch4_s_r2h4p"/> is devoted to introducing Monte Carlo simulation as the
+            most practical and flexible method of deriving distributions that result from the
+            interaction of several stochastic components. <xref linkend="b4_ch4_s_0lxln"/>
+            illustrates the application of joint probability concepts to a typical flood estimation
+            problem </para>
+    </section>
+    <section xml:id="b4_ch4_s_kprus">
+        <title>Probability Concepts</title>
+        <section xml:id="b4_ch4_s_x2mu0">
+            <title>Variability and Uncertainty</title>
+            <para>When considering the variabilities of different factors involved producing flood
+                risk and in the assessment of joint probabilities, it is worth differentiating
+                between the <emphasis role="italic">temporal and spatial variability</emphasis> of
+                the climate and hydrologic factors being modelled (aleatory uncertainty), and the
+                random variation resulting from unavoidable <emphasis role="italic">uncertainty</emphasis> in the model inputs, structure, and parameters
+                (epistemic uncertainty). Similar solution methods can be used to consider both these
+                sources of uncertainty and thus there is sometimes some confusion about what aspects
+                are being considered. However, the nature of the information available for these two
+                broad sources of uncertainty – and hence the defensibility of the analyses
+                undertaken – is markedly different.</para>
+            <para>Aleatory uncertainty represents the <emphasis role="italic"
+                    >natural</emphasis><emphasis role="italic">variability </emphasis>inherent in
+                most hydrologic systems. In the context of design flood estimation, this usually
+                involves consideration of natural variability in the characteristics of storm
+                rainfalls (depths, temporal and spatial patterns), antecedent conditions (as they
+                relate to initial losses, water levels in natural lake systems and snowpack
+                characteristics), coincident streamflows (or levels) at the confluence of two
+                streams, and the influence of tide levels on estuarine flood behaviour. Aleatory
+                uncertainty associated with anthropogenic causes is also commonly a factor that
+                needs to be considered. Perhaps the most common factor to be considered in design
+                flood estimation is initial reservoir levels in dams (either singly or in cascade),
+                though this can include consideration of the reliability of operating equipment (eg.
+                spillway gates and other forms of outlet works), and debris blockage of waterway
+                areas provided for spillways, drainage works and bridges. Factors which vary
+                randomly over time are termed stochastic variables.</para>
+            <para>Epistemic uncertainty, on the other hand, relates to the uncertainty arising from
+                    <emphasis role="italic">a lack of knowledge </emphasis>about hydrologic factors
+                and their governing processes. In the context of design flood estimation, epistemic
+                uncertainty is commonly associated with errors involved in rating curves (ie. in the
+                relationship used to estimate streamflows from gauged levels), in the estimation of
+                catchment rainfalls from point observations, and the uncertainties involved in
+                estimating model parameters from a limited number of relevant events. An important
+                source of epistemic uncertainty arises from the need for extrapolation. That is,
+                there may be an adequate amount of information available at a particular site for
+                estimating the exceedance probability of frequent floods, but additional uncertainty
+                is introduced when transposing such information to an ungauged location, or when
+                extrapolating to events much larger than have occurred in the historic record. As
+                the degree of extrapolation increases, so does the uncertainty in the
+                appropriateness of the configuration, or indeed of the conceptual structure, of the
+                model being used. Such uncertainties arise from lack of knowledge, and as such can
+                be reduced over time with collection of relevant data and increases in our
+                understanding. </para>
+            <para>This Chapter only considers the influence of aleatory uncertainty on joint
+                probability, and consideration of epistemic uncertainty is discussed in <xref
+                    linkend="b1_ch2"/> and <xref linkend="b7_ch8"/>. The focus of this chapter is on
+                the use of techniques that minimise the introduction of bias in the exceedance
+                probability of the final design estimate. Such estimates will always contain
+                uncertainty due to lack of knowledge, but the methods presented here are intended to
+                make best use of the information on natural variability that we do have.</para>
+        </section>
+        <section xml:id="b4_ch4_s_jdqid">
+            <title>Joint and Conditional Probabilities</title>
+            <para>The range of situations or applications when combinations of different factors or
+                events need to be considered can be grouped on the basis of the different
+                probability concepts being applied.</para>
+            <section xml:id="b4_ch4_s_79yvl">
+                <title>Joint Occurrence of Different Factors or Events</title>
+                <para>In flood hydrology there are many situations where a number of factors need to
+                    be considered jointly when determining the probability of a flood outcome, in
+                    other words when “Event A” <emphasis role="italic">AND</emphasis> “Event B”
+                    determine the flood outcome. This includes the joint influence of a number of
+                    factors in determining the magnitude of a design flood event, eg. the average
+                    depth and spatial/temporal distribution of rainfall inputs, the magnitude and
+                    temporal distribution of losses and the influence of flood modifying factors,
+                    such as the initial conditions of natural and artificial storages in the
+                    catchment. The flood simulation process then needs to allow for the joint
+                    probability of the different factors, which may be correlated or independent of
+                    each other.</para>
+                <para>The interaction of these different factors can be described by a <emphasis
+                        role="italic">joint probability distribution</emphasis>
+                    <citation>b4_c4_r1,b4_c4_r7</citation>. A <emphasis role="italic">bivariate
+                        probability distribution</emphasis> describes the joint probability of two
+                    variates <emphasis role="italic">x</emphasis> and <emphasis role="italic"
+                        >y</emphasis>, and this case is the simplest to visualise (refer to <xref
+                        linkend="b4_ch4_f_jat38"/>). Each of the two variables has a marginal
+                    probability distribution, <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mi>x</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation> and <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mi>y</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation>, which represents the probability distribution without
+                    considering the influence of the other variable. At a particular value of one
+                    variable, say at <emphasis role="italic">x<subscript>0</subscript></emphasis>,
+                    the distribution of the other variable <emphasis role="italic">y</emphasis> can
+                    be said to be conditioned on <emphasis role="italic">x</emphasis> and this is
+                    referred to as the <emphasis role="italic">conditional probability
+                        distribution</emphasis> of <emphasis role="italic">y</emphasis>:</para>
+                <equation xml:id="b4_ch4_e_0qlot">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>p</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                                <mi>y</mi>
+                                <mrow>
+                                    <mo>|</mo>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mn>0</mn>
+                                        </msub>
+                                    </mrow>
+                                </mrow>
+                            </mrow>
+                            <mo>)</mo>
+                        </mrow>
+                    </math>
+                </equation>
+                <para>The marginal distributions are illustrated in <xref linkend="b4_ch4_f_jat38"/>
+                    for the probability densities of a bivariate normal distribution in <emphasis
+                        role="italic">x</emphasis> and <emphasis role="italic">y </emphasis>(with
+                    means of 70 and 50, respectively), where the conditional probability
+                    distribution is shown for <emphasis role="italic">x </emphasis>= 90.</para>
+                <para>It is clear from the figure that the marginal probability distribution of
+                        <emphasis role="italic">y</emphasis> can be obtained by integrating the
+                    conditional probability distributions of <emphasis role="italic">y</emphasis>
+                    for all values of <emphasis role="italic">x</emphasis>. For independent events,
+                    the distribution of one variable is not conditioned on the other, and all
+                    conditional distributions are thus identical to the marginal distributions of
+                    that variable.</para>
+                <para>The concepts of marginal and conditional probability distributions can be
+                    extended to <emphasis role="italic">multivariate probability distributions
+                    </emphasis>where several variables are involved.</para>
+                <figure xml:id="b4_ch4_f_jat38">
+                    <title>Joint Probability Density for a Bivariate Normal Distribution</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4011.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>The joint probability distribution concepts can also be applied to deal with
+                    the joint occurrence of events that are simulated separately. Examples of such
+                    applications include the interactions of riverine (or overland) flooding and sea
+                    level anomalies (<xref linkend="b6_ch5"/>), the joint probability of reservoir
+                    inflows and initial storage contents, and the joint consideration of mainstream
+                    and tributary floods.</para>
+                <para>The general solution approach to joint probability problems and the selection
+                    of factors or events to be included in the joint probability framework are
+                    discussed in Sections <xref linkend="b4_ch4_s_7wdcd"/> and <xref
+                        linkend="b4_ch4_s_n40vs"/> respectively. </para>
+                <para>Analytical approaches are available to deal with relatively simple joint
+                    probability applications. A special case is where component probability
+                    distributions can be considered to be independent of each other. In this case
+                    the joint probability can be evaluated simply by multiplying the component
+                    probabilities from the marginal distributions. However, in practice most joint
+                    probability applications are more complex and are most readily addressed by
+                    Monte Carlo simulation. In this approach the joint probability distribution is
+                    derived by randomly sampling from the (marginal) component distributions and
+                    simulating the system response a sufficient number of times to define the output
+                    distribution over the range of interest. The method can readily deal with
+                    several component distributions and correlations between them. This is the
+                    practical joint probability approach dealt with separately in <xref
+                        linkend="b4_ch4_s_r2h4p"/>. </para>
+                <para>Typical examples of practical problems are discussed in <xref
+                        linkend="b4_ch4_s_a66br"/>, and this includes references to solutions that
+                    do not require practitioners to develop their own solution framework.</para>
+            </section>
+            <section xml:id="b4_ch4_s_6tb4w">
+                <title>Combination of Conditional Occurrences</title>
+                <para>There are flood estimation applications where it is most practical or
+                    efficient to partition the total range of a key variable into a number of
+                    segments or intervals. </para>
+                <para>A typical example is to divide the range of rainfall input magnitudes into a
+                    number of intervals and then calculating the probability of a particular flood
+                    outcome conditional on this range of rainfall inputs. Key variables for other
+                    flood estimation applications may also be partitioned in a similar way.</para>
+                <para>The marginal exceedance probability of the flood outcome of interest <emphasis
+                        role="italic">X</emphasis> can then be calculated by the application of the
+                    Total Probability Theorem <citation>b4_c4_r7</citation>: </para>
+                <equation xml:id="b4_ch4_e_jcd54">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                                <mi>X</mi>
+                                <mo>&gt;</mo>
+                                <mi>x</mi>
+                            </mrow>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>=</mo>
+                        <mstyle displaystyle="true">
+                            <munder>
+                                <mo>∑</mo>
+                                <mi>i</mi>
+                            </munder>
+                            <mrow>
+                                <mi>P</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <mi>X</mi>
+                                        <mo>&gt;</mo>
+                                        <mi>x</mi>
+                                        <mrow>
+                                            <mo>|</mo>
+                                            <mrow>
+                                                <msub>
+                                                  <mi>C</mi>
+                                                  <mi>i</mi>
+                                                </msub>
+                                            </mrow>
+                                        </mrow>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <msub>
+                                            <mi>C</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </mstyle>
+                    </math>
+                </equation>
+                <para>where the term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>P</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <mi>X</mi>
+                                        <mo>&#x003E;</mo>
+                                        <mi>x</mi>
+                                        <mrow>
+                                            <mo>|</mo>
+                                            <mrow>
+                                                <msub>
+                                                  <mi>C</mi>
+                                                  <mi>i</mi>
+                                                </msub>
+                                            </mrow>
+                                        </mrow>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation> denotes the conditional probability that the flood outcome
+                        <emphasis role="italic">X</emphasis> generated from this interval <emphasis
+                        role="italic">C<subscript>i</subscript></emphasis> exceeds <emphasis
+                        role="italic">x</emphasis> and the term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <msub>
+                                            <mi>C</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation> represents the probability that the conditioning variable
+                    falls within the interval <emphasis role="italic">i</emphasis>. For <xref
+                        linkend="b4_ch4_e_jcd54"/> to be applicable, the set of conditioning events
+                        C<subscript>i</subscript> needs to be mutually exclusive (meaning no
+                    overlap) and collectively exhaustive (meaning that the probabilities of the
+                    conditioning events have to add up to 1.0). </para>
+                <para>Typical applications of conditional probability concepts and the Total
+                    Probability Theorem are further discussed in <xref linkend="b4_ch4_s_a66br"
+                    />.</para>
+            </section>
+            <section xml:id="b4_ch4_s_1f5p8">
+                <title>Combination of Separate Independent Events</title>
+                <para>A specific flood outcome, such as flooding above the floor level of a building
+                    or flooding above a certain threshold level where access to a property is cut,
+                    may occur as a consequence of different events whose occurrences may be
+                    considered to be independent of each other. An example of such separate events
+                    is flooding as a result of high river levels (Event A) and flooding caused by
+                    overflows from a local drainage system (Event B). If the river flooding
+                    typically occurs from an extensive storm system over a large catchment and the
+                    drainage flooding from thunderstorms over a small local catchment, then these
+                    events can be considered to be essentially independent.</para>
+                <para>The combined exceedance probability of this specific flood outcome from either
+                    Event A <emphasis role="italic">OR</emphasis> Event B can then be calculated
+                    as:</para>
+                <equation xml:id="b4_ch4_e_i7czc">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                                <mi>A</mi>
+                                <mo>+</mo>
+                                <mi>B</mi>
+                            </mrow>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>=</mo>
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>A</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>B</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>−</mo>
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>A</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mi>P</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>B</mi>
+                            <mo>)</mo>
+                        </mrow>
+                    </math>
+                </equation>
+                <para> where P(A)P(B) represents the exceedance probability of Events A and B
+                    occurring together. For events of relatively small AEPs this product is quite
+                    small and can generally be neglected. The combined exceedance probability of
+                    several events can be evaluated in an analogous fashion. An example involving
+                    several events is when flood frequency curves for different seasons are combined
+                    to determine the annual frequency curve.</para>
+                <para>It is important to note that for <xref linkend="b4_ch4_e_i7czc"/> to be
+                    applicable, the different events being considered have to be defined in terms of
+                    the same magnitude (not exceedance probability).</para>
+                <para>In the example situations discussed above the interest is on the combined
+                    probability of occurrence of separate events. When the reliability of a linear
+                    structure such as a road or railway is being considered, the interest is not on
+                    the combined probability of exceedance of a given flood standard at different
+                    locations but on the combined<emphasis role="italic"> non-occurrence probability
+                        </emphasis>or<emphasis role="italic"> survival probability</emphasis>. Under
+                    the assumption of independent occurrences of damaging events at different
+                    locations, the overall reliability of the linear structure can be calculated as
+                    the product of the non-exceedance probabilities of a damaging event at different
+                    locations. The combined risk of failure of the structure can then be determined
+                    as the complement of the overall reliability.</para>
+                <para><xref linkend="b4_ch4_s_e3qh7"/> provides further discussion of this
+                    particular form of probability calculations. </para>
+            </section>
+        </section>
+        <section xml:id="b4_ch4_s_a66br">
+            <title>Typical Joint Probability Applications</title>
+            <para>Floods by their nature are the result of the joint occurrence of different flood
+                producing influences, and thus most practical problems require consideration of the
+                joint probabilities involved. This section describes some typical examples of such
+                problems, and provides references to some general and specific procedures for their
+                solution.</para>
+            <para>It is commonly required to estimate flood risk downstream of a storage, where the
+                outflow peak is dependent on the initial water level. If the variation in initial
+                water level is small, such as in a retarding basin or small on-line storage, then it
+                may appropriate to adopt a typical starting storage from the central range of
+                conditions. However, the relationship between inflow and outflow can be highly
+                non-linear, thus in general it cannot be expected that adoption of a mean initial
+                water level will provide an unbiased estimate of outflows. A maximum water level
+                could be used and justified on the basis that it provides a conservatively high
+                estimate of flood risk, but introducing conservatism in intermediate steps of the
+                analysis should generally be avoided as the compounding effects of such assumptions
+                can undermine the validity of any risk-based decisions. If the initial water level
+                does have an appreciable impact on the outflow flood, ie. when the available flood
+                storage is large compared to the flood volume, then it will be necessary to give
+                explicit consideration to the joint probabilities involved. Detailed guidance on
+                this type of problem is provided in <xref linkend="b8_ch7"/>, and worked examples
+                using both analytical and numerical schemes are provided in <xref
+                    linkend="b8_s_8ttus"/>. The general computational elements involved in the Monte
+                Carlo solution to this type of problem are discussed in <xref
+                    linkend="b4_ch4_s_r2h4p"/>; particular attention is drawn to the need for
+                conditional sampling ( <xref linkend="b4_ch4_s_4l2yr"/>) as it possible that the
+                storage level associated with a given exceedance probability tends toward a maximum
+                value as the event magnitude increases.</para>
+            <para>Flood levels in estuarine regions may be dependent on the combined influence of
+                storm surge and tide levels. The degree of influence depends on a number of factors,
+                but the lower limits of such flood estimates are determined by assuming that fluvial
+                flood levels are wholly independent of the ocean level; conversely, the upper limits
+                of such flood estimates are derived using the assumption of complete dependence,
+                that is, that fluvial floods will always coincide with ocean levels of the same
+                exceedance probability. <xref linkend="b6_ch5"/> provides a practical approach to
+                the solution of this class of problem. This guidance assists the practitioner
+                determine whether consideration needs to be given to the dependence of flood levels
+                on ocean conditions, and if so, then site-specific estimates for any location on the
+                Australian coastline can be determined using a software tool (www.p18.arr.org.au)
+                based on the bivariate extreme value distribution. A Monte Carlo solution could be
+                developed by generating correlated variates in combination with a stratified
+                sampling scheme using the procedures described in <xref linkend="b4_ch4_s_r2h4p"/>
+                and the dependence parameters described in <xref linkend="b6_ch5"/>. In concept, the
+                spreadsheet based worked example presented in <xref linkend="b4_ch4_s_0lxln"/> is
+                directly applicable to this type of problem, the only difference being that the
+                correlation term relating to tributary flows replaces the dependence term governing
+                coincident ocean levels. Regardless of the approach used, any solution of this type
+                of problem will require the undertaking of deterministic modelling to obtain flood
+                levels for different combinations of riverine flood and storm tides. </para>
+            <para>Another common problem arises when considering the influence of tributary flows at
+                a confluence relevant to the region of interest. There are a number of solutions to
+                this class of problem, and the degree of complexity required will dependent greatly
+                on the sensitivity of the outcome to selected simplifying assumptions. If the focus
+                is on mainstream flows, then it may be sufficient to estimate the tributary
+                contribution by estimating the average flood inflow coincident with mainstream flow
+                conditions; <xref linkend="b8_s_y71fe"/> presents a simple worked example for this
+                based on the use of a bivariate log-Normal distribution. Conversely, if the focus is
+                on tributary flows, then the assumption that there is an average flood in the
+                mainstream that is coincident with local flooding is likely to yield a biased
+                outcome. This is because any variation in mainstream floods may have a large
+                influence on local flood levels, at least for the region susceptible to backwater
+                influences. The worked example presented in <xref linkend="b4_ch4_s_0lxln"/> is
+                directly applicable to this type of problem, the only difference in application is
+                that levels computed using hydraulic modelling (final column of <xref
+                    linkend="b4_ch4_t_pib73"/>) relate to upstream levels in the tributary, rather
+                than downstream of the confluence. It should be noted that the inputs to this worked
+                example may be derived by either Flood Frequency Analysis or rainfall-based
+                modelling. It would be expected that the deterministic relationship between
+                mainstream flows and flood level is most easily obtained from some form of hydraulic
+                modelling, but if gauged information is available for a range of historic events,
+                then a suitable deterministic function may be obtained directly through analysis of
+                the data, thus obviating the need for hydraulic modelling. An example of such an
+                analysis is provided by <citation>b4_c4_r20+1</citation>.</para>
+            <para>The general form of solutions to the above problems all conform to the conceptual
+                framework described in <xref linkend="b4_ch4_s_xg9k9"/>. The sub-sections following
+                this framework provide for parametric and non-parametric approaches to
+                characterising the input distributions, and allow for the additional consideration
+                (if required) for dealing with conditional dependencies. The generic procedures
+                covered here are intended to cover situations not specifically catered for in the
+                methods presented elsewhere in ARR, as discussed above. </para>
+        </section>
+        <section xml:id="b4_ch4_s_e3qh7">
+            <title>Typical Conditional Probability Applications</title>
+            <para>It is sometimes appropriate to estimate the probability of occurrence of a flood
+                event subject to a restrictive range of conditions, such as the time of year or a
+                specific range of rainfalls. If so, then additional steps are required to estimate
+                the probability of exceedance for the complete range of conditions that might apply.
+                It is common in hydrology to consider both conditional and unconditional
+                probabilities, and care is required when interpreting and reporting such analyses to
+                avoid confusion.</para>
+            <para>For example, conditional probability estimates are often required for the
+                estimation of flood risk for construction activities. Flood risk varies seasonally
+                throughout the year, and construction works may be scheduled to occur in a season of
+                low flood risk. In this case it is appropriate to estimate conditional flood
+                probabilities relevant to the particular season of interest; such analyses might
+                involve undertaking Flood Frequency Analysis using flood maxima that have occurred
+                over the months scheduled for construction, or else a rainfall-based approach might
+                be used in which seasonal design rainfalls are used in combination with
+                season-specific losses. The flood risk estimates derived from such analyses are
+                    <emphasis role="italic">conditional</emphasis> upon the season considered, and
+                without additional analyses it is not possible to convert these estimates to annual
+                risks.</para>
+            <para>The nature of the additional analyses required to derive unconditional estimates
+                of annual risk depends on whether the conditioning events are <emphasis
+                    role="italic">mutually exclusive</emphasis> or not. Estimating annual flood
+                risks based on seasonal analyses represents a mutually exclusive set of estimates,
+                as clearly the annual maximum event cannot occur in two different seasons in the one
+                year. Being mutually exclusive, the annual risk that a flood exceeds a given value
+                is obtained by the simple addition of the individual seasonal exceedance
+                probabilities.</para>
+            <para>It is often the case, however, that the conditioning events are not mutually
+                exclusive. A common example of this is the estimation of flood immunity along a
+                length of linear infrastructure, such as a major road or railway line. Here, the
+                annual maximum event may well occur at multiple locations along its length, and thus
+                the annual risk that access between two locations might be disrupted cannot be
+                obtained by simply summing the estimates made at each individual crossing. Instead,
+                some account must be given to the dependence of the factors that give rise to the
+                individual floods. The probability of closure for an existing length of
+                infrastructure is not simply equal to the exceedance probability of the most
+                vulnerable crossing as this ignores the contribution of flood exceedance
+                probabilities from rainfalls that may occur from other independent weather systems.
+                Whether or not the degree of dependence needs to be considered depends on the
+                significance of the outcome when the initiating events are considered to be wholly
+                dependent or independent. The greater the difference between these two extremes, the
+                greater is the need to complicate the solution by the explicit consideration of the
+                dependencies involved. </para>
+            <para>Practitioners need to decide the appropriate level of complexity required to come
+                up with a practical solution in a manner that is proportionate to the nature of the
+                problem and the available resources. The simplest approach is to assume that the
+                factors of most importance are highly correlated and that alternative combinations
+                of conditions contribute little to the overall flood risk. With reference to <xref
+                    linkend="b4_ch4_f_2mb1n"/>, it is seen that in temperate climates it might be
+                expected that large long duration rainfall events occur at times when soil moisture
+                is high and consequently catchment losses are low; conversely short duration
+                (thunderstorm) events might occur when losses are high. As long as due care is given
+                to matching the design inputs to match the dominant mechanism of interest, then it
+                may be appropriate to derive estimates of rainfall-based flood estimates on an
+                annual basis. Conversely, if the design loading of interest is sensitive to a mix of
+                storm durations and catchment conditions, then it may be warranted to derive
+                rainfall-based estimates on a seasonal basis and compute annual risks by summation
+                of the seasonal exceedance probabilities.</para>
+            <figure xml:id="b4_ch4_f_2mb1n">
+                <title>Difference in the Seasonal Likelihood of Large Long d]Duration Rainfall
+                    Events and Large Short Dduration Rainfall Events and their Concurrence with
+                    Catchment Losses</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4012.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>The analytical approach required to accommodate conditional probabilities when the
+                events are not mutually exclusive is more complex. There are a number of different
+                approaches that can be used, and in any given design situation the best approach to
+                adopt depends on the nature and importance of the problem. Monte Carlo simulation in
+                combination with evaluation of the Total Probability Theorem provides a general
+                solution to problems involving conditional probabilities, and details on how to
+                undertake such an approach is provided in <xref linkend="b7_ch8"/>. However,
+                different approaches are often available and the choice of solution does somewhat
+                depend on the skills and experience of the practitioner. For example, while the
+                assessment of flood immunity along a length of linear infrastructure could be solved
+                by generating correlated rainfall inputs for use with event-based models, the use of
+                gridded rainfall fields in combination with continuous simulation obviates the need
+                to explicitly consider the joint probabilities involved
+                    <citation>b4_c4_r10</citation>. Other approximate approaches that explicitly
+                consider correlation in rainfall events have also been applied
+                    <citation>b4_c4_r5</citation>, and a simple analytical example demonstrating a
+                similar approach is provided in <xref linkend="b8_s_h9ewm"/> and <xref
+                    linkend="b8_s_01mf7"/>.</para>
+            <para>The techniques presented in this Book can also be applied to events which are
+                mutually exclusive, however again it may be appropriate to adopted simpler
+                approaches. For example, a discussion of the specific issues involved in computing
+                annual risks from analyses undertaken on a seasonal basis is provided in <xref
+                    linkend="b8_s_whun4"/>; this approach is applicable to any design in which the
+                conditional contributions are mutually exclusive, where the relative importance of
+                the different factors may vary with event severity.</para>
+        </section>
+        <section xml:id="b4_ch4_s_7wdcd">
+            <title>General Approach</title>
+            <para>Catchment Modelling Systems used to derive flood estimates can be considered to
+                have stochastic and deterministic components. As discussed above, the stochastic
+                components are related to factors (like rainfalls and losses) whose state at any
+                given point in time is uncertain. The deterministic component represents processes
+                that can be described mathematically and defines the manner in which inputs combine
+                to yield a given output. This transformation is deterministic in the sense that the
+                model will always yield the same outcome for a given set of inputs, antecedent
+                conditions, and parameter values. </para>
+            <para>The general form of this concept is shown in <xref linkend="b4_ch4_f_jptny"/> for
+                three different examples. In one example, the stochastic component represents the
+                flood frequency distributions of two tributaries, where the deterministic component
+                represents the manner in which the flows combine at their confluence. For a
+                reservoir, the stochastic inputs might represent the frequency distribution of
+                inflows and initial storage levels, where the deterministic component represents the
+                relationship between inflows, storage and outflows. In hydraulic modelling,
+                stochastic inputs may be used to represent inflows to a stream reach as well as the
+                tide levels for a downstream boundary condition, where the deterministic component
+                is governed by the hydraulic equations that predict flood level as a function of
+                streamflow, reach characteristics and boundary conditions. </para>
+            <para>A variety of approaches are available for solving this general type of problem.
+                    <citation>b4_c4_r20+1</citation> provides a general solution based on the matrix
+                multiplication of a probability distribution of a stochastic input with a transition
+                matrix derived from the deterministic operation of the system. The method is very
+                general and suited to numerical solution. Careful effort is required to develop the
+                elements of the transition matrix, and additional conditional probability terms need
+                to be evaluated to allow for correlations in the inputs. </para>
+            <para>The joint occurrence of correlated stochastic factors can be evaluated using
+                bivariate distributions, and there are numerous applications in the water resources
+                literature where these have been used. The methodology used to assess the
+                coincidence of catchment flooding and extreme storm surge for the coastline of
+                Australia was developed using such an approach <citation>b4_c4_r21</citation>, and
+                is covered in detail in <xref linkend="b6_ch5"/>. There are fewer examples where
+                multivariate extreme distributions are used, and possibly the use of copula
+                functions in combination with univariate distributions afford a more practical
+                approach <citation>b4_c4_r22,b4_c4_r6,b4_c4_r23</citation>.
+                    <citation>b4_c4_r11+1</citation> reviews a range of methods and develop a
+                general methodology for estimating joint probabilities of coincident flows at stream
+                confluences based on the use of copulas which is intended for use by
+                practitioners.</para>
+            <figure xml:id="b4_ch4_f_jptny">
+                <title>Generic Components that need to be cCnsidered in Solution of Joint
+                    Probability Problems</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4013.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>However, the development and application of such approaches does require
+                considerable statistical skill and they are not well suited for application by the
+                majority of practitioners. Also, regardless of the methods used to characterise the
+                extreme (possibly correlated) behaviour of the inputs, it is still necessary to
+                model the deterministic component to determine how the various inputs combine to
+                yield outputs of different magnitudes. Developing such response functions over the
+                range of inputs required is itself a demanding task, and there is advantage if this
+                can be done in such a way that leads directly to the exceedance probabilities of
+                interest.</para>
+            <para>Monte Carlo techniques provide a structured means to generating outputs for a wide
+                range of inputs, and if formulated correctly they represent a generic solution to
+                the problem illustrated in <xref linkend="b4_ch4_f_jptny"/>. With this approach,
+                inputs are randomly sampled many hundreds, or thousands of times, and used in
+                conjunction with a model of the deterministic component to obtain a distribution of
+                the required outputs. Statistical analysis is then used to estimate the exceedance
+                probability of the output variable of interest.</para>
+            <para>One of the main attractions of Monte Carlo methods is that the modelling tools and
+                hydrologic concepts involved are essentially identical to those used in traditional
+                approaches. Differences only arise in the manner in which the inputs are handled and
+                the results analysed. Once the necessary framework has been developed, the factors
+                of most importance can be modelled as stochastic inputs, and those of lesser
+                importance can be set at fixed values. Many practitioners are used to developing
+                automated means for running simulation models; such approaches can be adapted to
+                Monte Carlo simulation by using simple probability models to generate the inputs,
+                and straightforward statistics to analyse the outputs. The approach thus represents
+                a powerful means of capturing the influence of variability on hydrologic systems in
+                a manner that requires only a modest increase in the level of modelling
+                sophistication.</para>
+        </section>
+        <section xml:id="b4_ch4_s_n40vs">
+            <title>Selection and Treatment of Factors</title>
+            <para>Any explicit analysis of joint probability should only focus on those factors
+                which are characterised by a high degree of variability and which have a significant
+                influence on flood response. Factors which have a small range of variation or a
+                small influence on outcomes are best treated as fixed inputs to the model. The
+                degree of importance of any factor can be assessed by simply undertaking a
+                sensitivity analysis whereby the values of individual factors are varied
+                systematically over the range of their expected variation and the factors with the
+                largest stochastic influence are explicitly included in joint probability analysis.
+                Some factors may have a large influence on the outcome (eg. routing parameters) but
+                are principally sources of epistemic uncertainty and thus do not need to be treated
+                in a stochastic manner. </para>
+            <para>The common attribute of stochastic factors that influence flood response is that
+                at any given point in time their state is uncertain. With sufficient data it is
+                possible to estimate their average state and other characteristics related to their
+                range and variability, and possibly the nature of their dependence on the magnitude
+                of other factors. Often natural factors vary in a systematic fashion with the time
+                of day or season, and they may be correlated. For example, initial loss might range
+                between 0.1 and five times its median value but 70% of the time it might range
+                between 0.5 and 1.5 times the median; average summer losses might also be expected
+                to be twice the magnitude of winter losses, and because of the likelihood of
+                rainfall occurring before intense rainfalls bursts, it might be that initial loss
+                values vary inversely (ie. are negatively correlated) with rainfall depth.</para>
+            <section>
+                <title>Use of Regionalisation and Standardisation</title>
+                <para>Information on the variability and dependence of hydrological factors can be
+                    obtained from regional or catchment-specific (“at-site”) data. Physical
+                    reasoning should be used to determine what sources of data might be relevant to
+                    the catchment of interest. For example, information on the temporal variability
+                    of storm rainfalls is associated with storm types which may occur over a large
+                    region, and thus rainfall data collected over an extensive geographic area can
+                    be used to obtain information on the variability of temporal patterns that are
+                    relevant to a specific catchment (<xref linkend="b2_ch5"/>). Conversely, the
+                    spatial variability of rainfalls across a catchment is subject to natural
+                    variability arising from storm behaviour, but it might be expected that there is
+                    a systematic component to this that is dependent on local topography and the
+                    dominant storm direction; accordingly, local rainfall data should be used to
+                    characterise catchment-specific spatial variability.</para>
+                <para>When considering the use of regional information it is often useful to
+                    standardise the data in some form to allow transposition from one site to
+                    another. An example of this relevant to flood estimation is the distribution of
+                    losses, as illustrated in <xref linkend="b4_ch4_f_g4g2z"/>. While the typical
+                    magnitude of losses varies from one catchment to another, standardising these
+                    values (by simply dividing by the median value for the catchment) reveals that
+                    the likelihood that the catchment is wetter or drier relative to typical
+                    conditions is similar for a wide variety of catchment types
+                        <citation>b4_c4_r9</citation>. The representation of temporal pattern
+                    increments as a proportion of total burst depth rather than, say, as an absolute
+                    depth in mm, is another example of how regional information can be pooled to
+                    represent variability.</para>
+            </section>
+            <section>
+                <title>Dealing with Dependence</title>
+                <para>It is important to understand whether the variability in one factor might be
+                    correlated with another, or whether the nature of variation is dependent upon
+                    event magnitude. Again, judgment must be used to determine the appropriateness
+                    of data used to investigate such dependencies. If relationships are required on
+                    the nature of the dependence between selected hydrologic factors, then evidence
+                    can usually be found in meteorologically similar regions. Information on the
+                    variability of anthropogenic factors, such as reservoir levels or performance
+                    reliability, is also often available from the instrumented record, or from
+                    models used to simulate their operations.</para>
+                <figure xml:id="b4_ch4_f_g4g2z">
+                    <title>Use of Standardisation to Derive a Regional Distribution Based on
+                        Catchment-specific analyses</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4014.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para><emphasis role="italic">Variation with Event Severity</emphasis></para>
+                <para>Investigation into how flood producing factors may vary with flood severity
+                    may be of particular importance as often the information at the location of
+                    interest may be limited. For example, it may be suspected that reservoir levels
+                    will be higher at the start of extreme rainfall events as these may be more
+                    likely to occur during wetter (La Niña) periods. Evidence for this might be
+                    obtained by examining historical correlations between initial reservoir levels
+                    prior to large rainfalls, but if such information is limited then it may be more
+                    appropriate to “trade space for time” by examining correlations between seasonal
+                    rainfalls and extreme storms over a wide region (once the data has been
+                    standardised to allow for systematic variation in rainfall depths). An
+                    illustration of this by <citation>b4_c4_r17+1</citation> for south-eastern
+                    Australia is shown in <xref linkend="b4_ch4_f_wz6pf"/>(a). </para>
+                <para>Two other examples of similar investigations are provided in <xref
+                        linkend="b4_ch4_f_wz6pf"/>. The middle panel of <xref
+                        linkend="b4_ch4_f_wz6pf"/> shows the dependence of storm surge on rainfall
+                    maxima for an investigation into the interaction between coastal processes and
+                    severe weather events <citation>b4_c4_r19</citation>, and the right-hand panel
+                    illustrates the variation in temperature coincident with rainfall maxima for the
+                    consideration of the joint probabilities involved in rainfall-on-snow events
+                        <citation>b4_c4_r13</citation>.</para>
+                <para>
+                    <figure xml:id="b4_ch4_f_wz6pf">
+                        <title>Examples of Investigations into Dependence between Flood Producing
+                            Factors based on (a) Antecedent Seasonal Rainfall Data for Catchments
+                            over 1000 km<superscript>2</superscript>
+                            <citation>b4_c4_r17</citation>, (b) Rainfall and Storm Surge Data
+                                <citation>b4_c4_r19</citation>, (c) and Temperature Coincident with
+                            Rainfall Maxima <citation>b4_c4_r13</citation></title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="../../figures/4015.PNG"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+                    <figure xml:id="b4_ch4_f_4fzre">
+                        <title>Examples of Difference in Correlation between Flow Maxima in the
+                            Namoi and Peel Rivers, Based on (a) Annual Maxima at Both Sites, and (b)
+                            Peel River Flows that are Coincident with Namoi River Maxima</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="../../figures/4016.PNG"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+                </para>
+            </section>
+            <section>
+                <title>Relevance of Sample</title>
+                <para>Lastly, it is worth stressing the importance of ensuring that the nature of
+                    the dependence being investigated is relevant to the design problem. For
+                    example, if it is desired to estimate the magnitude of a coincident flood at a
+                    downstream confluence to serve as a boundary condition for hydraulic modelling,
+                    then the dependency of interest is the flow in the tributary that is coincident
+                    with the flow in the mainstream of interest. As shown in <xref
+                        linkend="b4_ch4_f_4fzre"/>, this might well be a different relationship to,
+                    say, the correlation between annual maxima at the two sites.</para>
+            </section>
+        </section>
+    </section>
+    <section xml:id="b4_ch4_s_r2h4p">
+        <title>Monte Carlo Simulation</title>
+        <section xml:id="b4_ch4_s_xg9k9">
+            <title>Introduction</title>
+            <para>The following sections provide details on some core concepts used in Monte Carlo
+                simulation. The focus of this material is to provide practitioners with sufficient
+                understanding to be able to formulate a scheme that is suited to solving practical
+                problems in flood estimation. A worked example is provided in <xref
+                    linkend="b4_ch4_s_0lxln"/> that demonstrates application of the techniques to a
+                practical problem. </para>
+            <para>A general and very accessible introduction to Monte Carlo methods can be found in
+                    <citation>b4_c4_r3+1</citation>, and more comprehensive and practical guidance
+                is provided in <citation>b4_c4_r18+1</citation> and
+                <citation>b4_c4_r15+1</citation>; the latter reference includes C++ source code for
+                a collection of various distributions of random numbers suitable for performing
+                Monte Carlo simulations. <citation>b4_c4_r8+1</citation> provide a more advanced
+                theoretical treatment of the subject, and useful discussion on the advantages of
+                using Monte Carlo methods to estimate design floods can be found in
+                    <citation>b4_c4_r24+1</citation>, <citation>b4_c4_r26+1</citation>, and
+                    <citation>b4_c4_r25+1</citation>. </para>
+            <para>It should be noted that while there are advantages to developing a simulation
+                framework using high level computing languages such as Python, C++ and Fortran, it
+                is quite feasible to initiate the required design runs and undertake the required
+                statistical analyses using standard spreadsheet software.
+                    <citation>b4_c4_r16+1</citation> applied such a framework to the solution of the
+                joint probabilities involved in the simulation of extreme floods and reservoir
+                drawdown. At its simplest, any practitioner familiar with the techniques required to
+                prepare batched command scripts and use spreadsheet formulae will be able to
+                implement the procedures described herein. </para>
+            <para>The following sections outline the main steps involved in developing a Monte Carlo
+                solution of joint probability problems. The sections follow the sequence of steps
+                shown in <xref linkend="b4_ch4_f_1uw4y"/>, which refers to the stochastic
+                deterministic components of the general  catchment modelling system as illustrated
+                in <xref linkend="b4_ch4_f_jptny"/>. It should also be noted that this scheme is a
+                generalisation of the Monte Carlo framework depicted in <xref
+                    linkend="b4ch3_f_4b7fw"/> of <xref linkend="b4_ch3"/>; specifically, the scheme
+                shown in <xref linkend="b4_ch4_f_1uw4y"/> represents the treatment of natural
+                variability in rainfall-based flood estimation, where no account is given to
+                epistemic uncertainty in the data, parameters, or modelling components.</para>
+            <figure xml:id="b4_ch4_f_1uw4y">
+                <title>General Framework for the Analysis of Stochastic Deterministic (Joint
+                    Probability) Problems using Monte Carlo Simulation</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/4017.PNG"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b4_ch4_s_m8jfc">
+            <title>Generation of Stochastic Inputs</title>
+            <section xml:id="b4_ch4_s_xd6np">
+                <title>Inverse Transformation Approach</title>
+                <para>The method used to stochastically sample from the input distributions is the
+                    core algorithm used in Monte Carlo simulation. Once a suitable framework has
+                    been established additional model inputs and/or parameter values can be added to
+                    the sampling procedure as required.</para>
+                <para>The generation scheme makes use of the <emphasis role="italic">inverse
+                        transformation</emphasis> approach. This can be applied to either formally
+                    defined probability models, or else to empirical “data-driven” distributions.
+                    The basis of the inverse transformation approach is to generate the required
+                    probability density function <emphasis role="italic">f(x)</emphasis> through
+                    uniform sampling of the inverse of the cumulative distribution function
+                        <emphasis role="italic">F(x)</emphasis> (ie. the function which gives the
+                    probability <emphasis role="italic">P</emphasis> of <emphasis role="italic"
+                        >x</emphasis> being less than a specified value). </para>
+                <para>The two-step process for doing this is illustrated in <xref
+                        linkend="b4_ch4_f_4fzre"/>, and the algorithm can be summarised as
+                    follows:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Generate a random number (U) uniformly distributed between 0 and
+                            1;</para>
+                    </listitem>
+                    <listitem>
+                        <para> Calculate the value (<emphasis role="italic">x</emphasis>) of the
+                            inverse of the cumulative density function
+                                F<superscript>-1</superscript>(U). </para>
+                    </listitem>
+                </orderedlist>
+                <para>This process is illustrated in <xref linkend="b4_ch4_f_r998y"/> for three
+                    random numbers. The first random number generates a value near the tail of the
+                    distribution, and the next two yield values that are more centrally tended. For
+                    illustration purposes the input random numbers (<emphasis role="italic"
+                        >U</emphasis>) in <xref linkend="b4_ch4_f_r998y"/> are shown as being
+                    equally spaced, but on exit the transformed numbers are unequally spaced, in
+                    conformance with the adopted distribution. Inverse functions of a number of
+                    useful distributions (Normal, log-Normal, Beta, Gamma) are provided in standard
+                    spreadsheet software (see example in <xref linkend="b4_ch4_s_0lxln"/>). If an
+                    empirical distribution is used then values can be simply interpolated from a
+                    look-up table comprised of values of the cumulative density function (also see
+                    example in <xref linkend="b4_ch4_s_0lxln"/>).</para>
+                <figure xml:id="b4_ch4_f_r998y">
+                    <title>Inverse Transform Method</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4018.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </section>
+            <section xml:id="b4_ch4_s_9nwl4">
+                <title>Parametric Sampling</title>
+                <para>There are a large number of statistical distributions that can be used to
+                    represent variability in different types of hydrological processes and input
+                    uncertainty. Information on a range of distributions of potential use can be
+                    found in <citation>b4_c4_r15+1</citation>, <citation>b4_c4_r18+1</citation>, and
+                        <citation>b4_c4_r12</citation>. Special mention is made here of the Normal
+                    distribution. This distribution is also of considerable practical utility as
+                    many stochastic processes in hydrology conform to the log-Normal distribution
+                    (that is they only take positive values and are skewed towards higher values),
+                    and transforming the data beforehand into the logarithmic domain is a simple
+                    means of taking direct advantage of the Normal distribution. In addition, many
+                    data sets can be transformed into the Normal domain by the Box-Cox
+                    transformation <citation>b4_c4_r2</citation>; with this approach, a variate
+                        <emphasis role="italic">X</emphasis> can be transformed into the Normal
+                    domain (<emphasis role="italic">Z</emphasis>) by the following equations:</para>
+                <equation xml:id="b4_ch4_e_u24cq">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>Z</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <msup>
+                                    <mi>X</mi>
+                                    <mi>λ</mi>
+                                </msup>
+                                <mo>−</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mi>λ</mi>
+                        </mfrac>
+                        <mo>,</mo>
+                        <mtext> when </mtext>
+                        <mi>λ</mi>
+                        <mo>≠</mo>
+                        <mn>0</mn>
+                        <mo>;</mo>
+                        <mtext> </mtext>
+                        <mi>z</mi>
+                        <mo>=</mo>
+                        <mi>ln</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>,</mo>
+                        <mtext> when </mtext>
+                        <mi>λ</mi>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </math>
+                </equation>
+                <para>where <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>&#x03BB;</mi>
+                        </math>
+                    </inlineequation> is a parameter determined by trial and error to ensure that
+                    the skewness of the transformed distribution is zero. A noteworthy special case
+                    of this transformation arises when <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>&#x03BB;</mi>
+                        </math>
+                    </inlineequation> is set to zero, then the transformation is equivalent to
+                    taking logarithms of the data. Fitting the parameter <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>&#x03BB;</mi>
+                        </math>
+                    </inlineequation> is most easily achieved by optimisation or the use of “solver”
+                    routines that are commonly available in spreadsheet programs. To illustrate the
+                    use of the inverse transformation method with a variable that has been
+                    transformed using a Box-Cox lambda of 1.2, where the resulting
+                    normally-distributed variates have a mean of 50 and a standard deviation of
+                    25:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Generate a uniform random number (say, U = 0.548);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Derive the value of the inverse cumulative Normal distribution
+                                (<emphasis role="italic">z</emphasis> = 0.121);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Obtain the Normal variate, Z = 50.0+0.121*25 (=53.015);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Apply the inverse of the Box-Cox transformation (<emphasis
+                                role="italic">x</emphasis> = 32.257).</para>
+                    </listitem>
+                </orderedlist>
+                <para>The above four steps can be repeated many hundreds (or thousands) of times as
+                    required for input to a model. The outcome of the above four steps repeated 1000
+                    times is provided as a histogram in <xref linkend="b4_ch4_f_b2sfc"/>.</para>
+                <figure xml:id="b4_ch4_f_b2sfc">
+                    <title>Histogram Obtained by Generating 1000 Random Numbers Conforming to a
+                        Normal Distribution with a Mean of 50 and Standard Deviation of 25, and the
+                        Resulting Distribution of variables Obtained by the Inverse Box Cox
+                        Transformation (with <inlineequation>
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mi>&#x03BB;</mi>
+                            </math>
+                        </inlineequation> set to 1.20)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4019.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>Details of the Normal distribution are provided in all statistics textbooks
+                    and thus further information will not be presented here. Source code for
+                    estimation of the cumulative Normal distribution is freely available
+                        <citation>b4_c4_r14</citation> and the function is available in spreadsheet
+                    software. </para>
+                <para>Lastly, it is worth noting that the uniform distribution is also of practical
+                    use in flood hydrology. A simple random number generator that varies uniformly
+                    between 0 and 1 can be directly applied to the sampling of temporal, or
+                    space-time, patterns of rainfall that are considered equally likely to
+                    occur.</para>
+            </section>
+            <section xml:id="b4_ch4_s_d12s5">
+                <title>Non-Parametric Sampling</title>
+                <para>One very practical way of undertaking a Monte Carlo simulation is to sample
+                    from a given set of data. This is a fast and simple technique that can be used
+                    to take advantage of empirical data sets (such as losses and reservoir drawdown)
+                    in a more defensible manner than simple adoption of a single best estimate or
+                    representative value. It is also useful for sampling from “pragmatic”
+                    distributions, such as rainfall frequency curves that extend beyond 1 in 2000
+                    AEP and which are not based on a theoretical distribution function (<xref
+                        linkend="b2_ch2"/>).</para>
+                <para>The algorithm to construct and sample from an empirical distribution is as
+                    follows:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Sort empirical data into either ascending or descending order as
+                            appropriate, and assign a cumulative probability value to each. If there
+                            are <emphasis role="italic">n</emphasis> data values, then the largest
+                            data value (<emphasis role="italic"
+                            >x<subscript>1</subscript></emphasis>) is assigned an exceedance
+                            probability <emphasis role="italic"
+                                >F(x<subscript>1</subscript>)</emphasis>, the second largest
+                                (<emphasis role="italic">x<subscript>2</subscript></emphasis>) is
+                            assigned an exceedance probability <emphasis role="italic"
+                                    >F(x<subscript>2</subscript>)</emphasis>, and so on till the
+                            last value, represented by <emphasis role="italic"
+                                    >x<subscript>n</subscript></emphasis> and <emphasis
+                                role="italic">F(x<subscript>n</subscript>)</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Generate a uniform random number, U = U(0,1);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Locate interval <emphasis role="italic">i</emphasis> such that <inlineequation>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi>F</mi>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mi>i</mi>
+                                            </msub>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <mo>≤</mo>
+                                    <mi>U</mi>
+                                    <mo>&lt;</mo>
+                                    <mi>F</mi>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mrow>
+                                                  <mi>i</mi>
+                                                  <mo>+</mo>
+                                                  <mn>1</mn>
+                                                </mrow>
+                                            </msub>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </math>
+                            </inlineequation>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Return <inlineequation>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mrow>
+                                        <mi>X</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                        <mo>+</mo>
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>U</mi>
+                                                <mo>−</mo>
+                                                <mi>F</mi>
+                                                <mrow>
+                                                  <mo>(</mo>
+                                                  <mrow>
+                                                  <msub>
+                                                  <mi>x</mi>
+                                                  <mi>i</mi>
+                                                  </msub>
+                                                  </mrow>
+                                                  <mo>)</mo>
+                                                </mrow>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>F</mi>
+                                                <mrow>
+                                                  <mo>(</mo>
+                                                  <mrow>
+                                                  <msub>
+                                                  <mi>x</mi>
+                                                  <mrow>
+                                                  <mi>i</mi>
+                                                  <mo>+</mo>
+                                                  <mn>1</mn>
+                                                  </mrow>
+                                                  </msub>
+                                                  </mrow>
+                                                  <mo>)</mo>
+                                                </mrow>
+                                                <mo>−</mo>
+                                                <mi>F</mi>
+                                                <mrow>
+                                                  <mo>(</mo>
+                                                  <mrow>
+                                                  <msub>
+                                                  <mi>x</mi>
+                                                  <mi>i</mi>
+                                                  </msub>
+                                                  </mrow>
+                                                  <mo>)</mo>
+                                                </mrow>
+                                            </mrow>
+                                        </mfrac>
+                                        <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                                <msub>
+                                                  <mi>x</mi>
+                                                  <mrow>
+                                                  <mi>i</mi>
+                                                  <mo>−</mo>
+                                                  <mn>1</mn>
+                                                  </mrow>
+                                                </msub>
+                                                <mo>−</mo>
+                                                <msub>
+                                                  <mi>x</mi>
+                                                  <mi>i</mi>
+                                                </msub>
+                                            </mrow>
+                                            <mo>)</mo>
+                                        </mrow>
+                                    </mrow>
+                                </math>
+                            </inlineequation>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Generate additional points by returning to Step 2.</para>
+                    </listitem>
+                </orderedlist>
+                <para>While simple to implement, the use of empirical distributions in Monte Carlo
+                    simulation does require care. Most importantly, it is necessary to ensure that
+                    the data sample being used is relevant to the whole range of conditions being
+                    simulated. For example, if the data set is comprised of initial reservoir levels
+                    recorded over a short historic period, then these may not be relevant to the
+                    assessment of extreme flood risks under a different set of operating rules. </para>
+                <para>It is seen in Step 4 of the above algorithm that values within each interval
+                    are obtained by linear interpolation. This is normally quite acceptable, though
+                    obviously the less linear the relationship between the data values and their
+                    corresponding exceedance probabilities the less defensible is such an approach.
+                    Accordingly, in some cases it is best to first transform the data and/or the
+                    exceedance probabilities assembled for Sstep 1 of the algorithm. Many
+                    hydrological variables are approximately log-Normally distributed, and thus it
+                    is often desirable to undertake the interpolation in the log-Normal domain. To
+                    this end, the ranked data values are transformed into logarithms (it does not
+                    matter what base is used) and the exceedance probabilities are converted to a
+                    standard normal variate (that is, the inverse of the standard normal cumulative
+                    distribution). Step 2 of the above algorithm would thus need to be replaced with
+                        <emphasis role="italic">U =
+                            U(z<subscript>min</subscript>,z<subscript>max</subscript>)</emphasis>
+                    where <emphasis role="italic">z<subscript>min</subscript></emphasis>and<emphasis
+                        role="italic"> z<subscript>max</subscript></emphasis> represent the standard
+                    normal deviates corresponding to <emphasis role="italic"
+                            >F(x<subscript>1</subscript>)</emphasis> and <emphasis role="italic"
+                            >F(x<subscript>n</subscript>)</emphasis>, ie. the adopted limits of
+                    exceedance probability range. </para>
+                <para>Care is also required when sampling from the tails of the distribution.
+                    Empirical data sets are of finite size and, if the generated data are to fall
+                    between the upper and lower limits of the observed data, the cumulative
+                    exceedance probability of the first ranked value <emphasis role="italic"
+                            >F(x<subscript>1</subscript>)</emphasis> should be zero, and that of the
+                    last ranked value <emphasis role="italic"
+                        >F(x<subscript>1</subscript>)</emphasis> should be 1.0. Thus use of
+                    empirical data sets is appropriate for those inputs whose extremes of behaviour
+                    are not of great relevance to the output. Losses, for example, are zero bounded,
+                    and thus the difference in flood peak between a loss exceeded 95% of the time
+                    and that exceeded 99.999% of the time may well be of no practical significance.
+                    However, if an empirical approach is being used for the generation of rainfalls
+                    that are defined for  between 1 in 2 and 1 in 100 AEP, then it is inevitable
+                    that more than half the random numbers generated in Step 2 of the above
+                    algorithm can be expected to lie outside the specified range of rainfalls. As
+                    long as the probability range of interest lies well within the limits specified,
+                    then rainfall values can be obtained by some form of appropriate extrapolation;
+                    however, if this approach is used then checks should be undertaken to ensure
+                    that the extrapolated values do not influence the results of interest.</para>
+            </section>
+            <section xml:id="b4_ch4_s_yq07h">
+                <title>Generating Correlated Variables</title>
+                <para>Many hydrologic variables are correlated and thus it is sometimes necessary to
+                    ensure that the adopted sampling scheme preserves the correlation structure of
+                    the inputs. A simple means of generating correlated variables is described by
+                        <citation>b4_c4_r15</citation>. The approach is based on rotational
+                    transformation and the steps involved in generation of uniformly distributed
+                    variates can be stated as follows:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Independently generate two uniform random variates, <emphasis
+                                role="italic">X</emphasis><emphasis role="italic">=
+                                U(-1,1)</emphasis> and <emphasis role="italic">Z</emphasis><emphasis
+                                role="italic">= U(-1,1)</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Set <inlineequation>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi>Y</mi>
+                                    <mo>=</mo>
+                                    <mi>ρ</mi>
+                                    <mi>X</mi>
+                                    <mo>+</mo>
+                                    <mi>Z</mi>
+                                    <msqrt>
+                                        <mrow>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <msup>
+                                                <mi>ρ</mi>
+                                                <mn>2</mn>
+                                            </msup>
+                                        </mrow>
+                                    </msqrt>
+                                </math>
+                            </inlineequation> where <emphasis role="italic">r</emphasis> is the
+                            required correlation between <emphasis role="italic">X</emphasis> and
+                                <emphasis role="italic">Z</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Return: </para>
+                        <para><inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>x</mi>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mrow>
+                                                  <mi>min</mi>
+                                                </mrow>
+                                            </msub>
+                                            <mo>+</mo>
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mrow>
+                                                  <mi>max</mi>
+                                                </mrow>
+                                            </msub>
+                                        </mrow>
+                                        <mn>2</mn>
+                                    </mfrac>
+                                    <mo>+</mo>
+                                    <mi>X</mi>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                  <msub>
+                                                  <mi>x</mi>
+                                                  <mrow>
+                                                  <mi>max</mi>
+                                                  </mrow>
+                                                  </msub>
+                                                  <mo>&#x2212;</mo>
+                                                  <msub>
+                                                  <mi>x</mi>
+                                                  <mrow>
+                                                  <mi>min</mi>
+                                                  </mrow>
+                                                  </msub>
+                                                </mrow>
+                                                <mn>2</mn>
+                                            </mfrac>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </math>
+                            </inlineequation></para>
+                        <para><inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>y</mi>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <msub>
+                                                <mi>y</mi>
+                                                <mrow>
+                                                  <mi>min</mi>
+                                                </mrow>
+                                            </msub>
+                                            <mo>+</mo>
+                                            <msub>
+                                                <mi>y</mi>
+                                                <mrow>
+                                                  <mi>max</mi>
+                                                </mrow>
+                                            </msub>
+                                        </mrow>
+                                        <mn>2</mn>
+                                    </mfrac>
+                                    <mo>+</mo>
+                                    <mi>Y</mi>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                  <msub>
+                                                  <mi>y</mi>
+                                                  <mrow>
+                                                  <mi>max</mi>
+                                                  </mrow>
+                                                  </msub>
+                                                  <mo>&#x2212;</mo>
+                                                  <msub>
+                                                  <mi>y</mi>
+                                                  <mrow>
+                                                  <mi>min</mi>
+                                                  </mrow>
+                                                  </msub>
+                                                </mrow>
+                                                <mn>2</mn>
+                                            </mfrac>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </math>
+                            </inlineequation>
+                        </para>
+                        <para>where <emphasis role="italic">x<subscript>min</subscript></emphasis>
+                            and <emphasis role="italic">x<subscript>max</subscript></emphasis> are
+                            the lower and upper bounds of the first variate and <emphasis
+                                role="italic">y<subscript>min</subscript></emphasis> and <emphasis
+                                role="italic">y<subscript>max</subscript></emphasis> are the
+                            corresponding bounds of the other.</para>
+                    </listitem>
+                </orderedlist>
+                <para>Application of the above algorithm is illustrated in <xref
+                        linkend="b4_ch4_f_kmgrt"/>(a). The bounds along the x-axis are 5 and 130,
+                    and those along the y-axis (for the mid-point of the x distribution) are 30 and
+                    75.  <xref linkend="b4_ch4_f_kmgrt"/> illustrates the results for the generation
+                    of 2000 correlated variates where the correlation coefficient (<inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>&#x03C1;</mi>
+                        </math>
+                    </inlineequation>) adopted is -0.7.</para>
+                <figure xml:id="b4_ch4_f_kmgrt">
+                    <title>Generation of Variables with a Correlation of -0.7 based on (a) Uniform
+                        and (b) Normal Distributions</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4020.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>The above algorithm can easily be adapted to the generation of correlated
+                    variates that conform to some specified distribution. For the Normal
+                    distribution, the required algorithm is:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Independently generate two normal random variates with a mean of zero
+                            and a standard deviation of 1: <emphasis role="italic"
+                                >X</emphasis><emphasis role="italic">= N(0,1) and
+                                </emphasis><emphasis role="italic">Z</emphasis><emphasis
+                                role="italic">= N(0,1)</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Set <inlineequation>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi>Y</mi>
+                                    <mo>=</mo>
+                                    <mi>ρ</mi>
+                                    <mi>X</mi>
+                                    <mo>+</mo>
+                                    <mi>Z</mi>
+                                    <msqrt>
+                                        <mrow>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <msup>
+                                                <mi>ρ</mi>
+                                                <mn>2</mn>
+                                            </msup>
+                                        </mrow>
+                                    </msqrt>
+                                </math>
+                            </inlineequation> where <emphasis role="italic">r</emphasis> is the
+                            required correlation between <emphasis role="italic">X</emphasis> and
+                                <emphasis role="italic">Z</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Return: </para>
+                        <para><inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>x</mi>
+                                    <mo>=</mo>
+                                    <msub>
+                                        <mi>&#x03BC;</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                    <mo>+</mo>
+                                    <mi>X</mi>
+                                    <msub>
+                                        <mi>&#x03C3;</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation></para>
+                        <para><inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>y</mi>
+                                    <mo>=</mo>
+                                    <msub>
+                                        <mi>&#x03BC;</mi>
+                                        <mi>y</mi>
+                                    </msub>
+                                    <mo>+</mo>
+                                    <mi>Y</mi>
+                                    <msub>
+                                        <mi>&#x03C3;</mi>
+                                        <mi>y</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation>
+                        </para>
+                        <para> where <inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                        <mi>&#x03BC;</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation> and <inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                        <mi>&#x03BC;</mi>
+                                        <mi>y</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation> are the means of the two distributions and <inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                        <mi>&#x03C3;</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation> and <inlineequation>
+                                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                        <mi>&#x03C3;</mi>
+                                        <mi>y</mi>
+                                    </msub>
+                                </math>
+                            </inlineequation> are the required standard deviations.</para>
+                    </listitem>
+                </orderedlist>
+                <para>Application of the above algorithm is illustrated in  <xref
+                        linkend="b4_ch4_f_kmgrt"/>(b). The input parameters to this example are <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>&#x03C1;</mi>
+                            <mo>=</mo>
+                            <mo>&#x2212;</mo>
+                            <mn>0.7</mn>
+                        </math>
+                    </inlineequation>, <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>&#x03BC;</mi>
+                                <mi>x</mi>
+                            </msub>
+                            <mo>=</mo>
+                            <mn>70</mn>
+                        </math>
+                    </inlineequation> and <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>&#x03C3;</mi>
+                                <mi>x</mi>
+                            </msub>
+                            <mo>=</mo>
+                            <mn>10</mn>
+                        </math>
+                    </inlineequation>, and <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>&#x03BC;</mi>
+                                <mi>y</mi>
+                            </msub>
+                            <mo>=</mo>
+                            <mn>50</mn>
+                        </math>
+                    </inlineequation> and <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>&#x03C3;</mi>
+                                <mi>y</mi>
+                            </msub>
+                            <mo>=</mo>
+                            <mn>10</mn>
+                        </math>
+                    </inlineequation> and as before a total of 2000 correlated variates are
+                    generated. Any distribution could be used in lieu of the Normal distribution, or
+                    else the variates of interest could be transformed into the normal
+                    domain.</para>
+            </section>
+            <section xml:id="b4_ch4_s_4l2yr">
+                <title>Conditional Sampling</title>
+                <para>The preceding two sections provide a means for generating “well-behaved”
+                    variables that can be fitted to a suitable function or distribution. However,
+                    many correlated hydrologic variables are awkwardly distributed and their
+                    variability is dependent on some (often non-linear) function of their magnitude.
+                    A typical example of this type of correlation is the manner in which the level
+                    in an upstream reservoir is weakly dependent on the level in a downstream
+                    reservoir. The nature of one such dependence is shown by the large solid symbols
+                    in <xref linkend="b4_ch4_f_x7d3k"/>, which is derived from the behaviour of two
+                    reservoirs located in south-eastern Australia. Such data is difficult to
+                    normalise or fit to probability distributions, and thus an empirical sampling
+                    approach can be used.</para>
+                <para>The approach that can be followed to stochastically sample from such a data
+                    set can be described as follows:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Identify the “primary” variable that is most important to the problem
+                            of interest, and prepare a scatter plot of the two variables with the
+                            primary variable plotted on the x-axis (as shown in <xref
+                                linkend="b4_ch4_f_x7d3k"/>);</para>
+                    </listitem>
+                    <listitem>
+                        <para>Divide the primary variable into a number of ranges such that
+                            variation of the dependent variable (plotted on the y-axis) within each
+                            range is reasonably similar; in the example shown in <xref
+                                linkend="b4_ch4_f_x7d3k"/> a total of seven intervals has been
+                            adopted as being adequate. This provides samples of the secondary
+                            variable that are conditional on the value of the primary
+                            variable;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Stochastically generate data for the primary variable using the
+                            empirical approach as described in <xref linkend="b4_ch4_s_d12s5"
+                            />;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Derive an empirical distribution of the dependent data for each of the
+                            conditional samples identified in Step 2 above (that is, undertake Step
+                            1 of the empirical approach as described in <xref
+                                linkend="b4_ch4_s_d12s5"/> for each of the intervals); thus, for the
+                            example shown in <xref linkend="b4_ch4_f_x7d3k"/> a total of seven
+                            separate empirical distributions of upstream storage levels are
+                            prepared;</para>
+                    </listitem>
+                    <listitem>
+                        <para>For each generated value of the primary variable, stochastically
+                            sample from the conditional distribution corresponding to the interval
+                            that it falls within; for example, if a downstream storage level of 1500
+                            ML was generated in Step 3 above, then the empirical approach described
+                            in <xref linkend="b4_ch4_s_d12s5"/> is applied to the conditional
+                            distribution obtained from data occurring within the third lowest
+                            interval shown in <xref linkend="b4_ch4_f_x7d3k"/>.</para>
+                    </listitem>
+                </orderedlist>
+                <para>The results from application of the above procedure are illustrated in <xref
+                        linkend="b4_ch4_f_x7d3k"/> for 2000 stochastic samples (shown by the blue
+                    “+” symbols). The 2000 correlated values are stochastically generated based on
+                    information contained in 500 observations. It is seen that the correlation
+                    structure in the observed data set is preserved reasonably well by this
+                    procedure.</para>
+                <figure xml:id="b4_ch4_f_x7d3k">
+                    <title>Conditional Empirical Sampling - Storage Volume in an Upstream Dam is
+                        Correlated with the Volume in a Downstream Dam </title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4021.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </section>
+        </section>
+        <section xml:id="b4_ch4_s_wou0d">
+            <title>Estimation of Exceedance Probabilities</title>
+            <section xml:id="b4_ch4_s_9r42t">
+                <title>Selection of Method</title>
+                <para>Estimation of exceedance probabilities from Monte Carlo simulation results can
+                    be obtained by either “direct sampling” or “stratified sampling” approaches.
+                    With direct sampling, the results are analysed using either traditional
+                    frequency analysis or non-parametric methods; with stratified sampling, the
+                    results are analysed by application of the Total Probability Theorem. The
+                    decision regarding which approach to use is largely a practical one, though
+                    there are theoretical differences in the nature of the derived quantiles:
+                    application of the Total Probability Theorem yields <emphasis role="italic"
+                        >expected probability estimates</emphasis> of a given flood magnitude,
+                    whereas traditional frequency analysis of the derived maxima based on Cunnane
+                    (and most other) plotting positions are formulated to yield <emphasis
+                        role="italic">unbiased estimates of the flood magnitude</emphasis> for a
+                    given exceedance probability, though adoption of the Weibull plotting position
+                        <emphasis role="italic">i/(n+1)</emphasis> should yield unbiased probability
+                    estimates (<xref linkend="b3_ch2_s_zbwi1"/> ). It is always necessary to
+                    experiment with many different model parameters, model configurations, and
+                    design scenarios, and simulation times of more than an hour or so soon become
+                    impractical.</para>
+                <para>The first approach, based on direct sampling, is the most straightforward to
+                    implement. It is well suited to the analysis of problems that can be computed
+                    quickly, or else to more complex problems in which the probability range of
+                    interest is limited to reasonably frequent events. As a rule of thumb, the
+                    number of simulations required is around 10 to 100 times the largest average
+                    recurrence interval of interest. That is, if the rarest event of interest has an
+                    annual exceedance probability of 0.001, then it will be necessary to generate
+                    between 10 000 to 100 000 stochastic samples in order to derive a stable result. </para>
+                <para>The second approach, based on stratified sampling, does require more effort to
+                    implement. It can still be formulated using a “batch” file approach, though
+                    additional care needs to be taken with how the inputs are formulated and the
+                    results analysed. The benefit of this effort is that the number of runs required
+                    to estimate the exceedance probability of rare events is considerably fewer;
+                    indeed the algorithm can be designed so that a similar number of runs is
+                    required regardless of the range of probabilities of interest.</para>
+                <para>Further information on these two approaches is provided in the next two
+                    sections. It is worth noting that other approaches could be used; for example
+                        <citation>b4_c4_r4+1</citation> derive estimates using importance sampling,
+                    which is similarly efficient to the stratified sampling discussed below.</para>
+            </section>
+            <section xml:id="b4_ch4_s_nnncl">
+                <title>Direct Sampling</title>
+                <para>The results output from the Monte Carlo simulation are most easily analysed by
+                    non-parametric frequency analysis. Using flood peaks as an illustration, the
+                    steps involved can be summarised as follows:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Sort the <emphasis role="italic">N</emphasis> simulated peaks in order
+                            of decreasing magnitude;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Assign a rank (i) to each peak value; 1 to the highest value, 2 to the
+                            next highest, and so on, down to rank <emphasis role="italic"
+                                >N</emphasis>;</para>
+                    </listitem>
+                    <listitem>
+                        <para>Calculate the plotting position (<emphasis role="italic">p</emphasis>)
+                            of each ranked value using either the Weibull (<xref
+                                linkend="b4_ch4_e_7t8we"/>) or the Cunnane (<xref
+                                linkend="b4_ch4_e_p7p8j"/>) formulae: </para>
+                    
+                    <equation xml:id="b4_ch4_e_7t8we">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>p</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mi>i</mi>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>+</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                        </math>
+                    </equation>
+                    <equation xml:id="b4_ch4_e_p7p8j">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mi>p</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>i</mi>
+                                    <mo>−</mo>
+                                    <mn>0.4</mn>
+                                </mrow>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>+</mo>
+                                    <mn>0.2</mn>
+                                </mrow>
+                            </mfrac>
+                        </math>
+                    </equation>
+                    <para>If the design focus is on estimating the <emphasis role="italic"
+                                >probability</emphasis> of a given flood magnitude then the Weibull
+                            formula (<xref linkend="b4_ch4_e_7t8we"/>) should be used as this
+                            provides an unbiased estimate of the exceedance probability of any
+                            distribution. Alternatively, if the focus is on the <emphasis
+                                role="italic">magnitude</emphasis> associated with a given
+                            exceedance probability then the Cunnane formula (<xref
+                                linkend="b4_ch4_e_p7p8j"/>) is preferred as this provides
+                            approximately unbiased quantiles for a range of distributions.</para></listitem>
+                    <listitem>
+                        <para>Construct a probability plot of the ranked peaks against their
+                            corresponding plotting positions. The plot scales should be chosen so
+                            that the frequency curve defined by the plotted values is as linear as
+                            possible. In many hydrological applications the ranked values may be
+                            plotted on arithmetic or log scales and the estimated exceedance
+                            probabilities (the plotting positions) are plotted on a suitable
+                            probability scale. Most popular spreadsheet programs do not include
+                            probability scales and thus, for probability plots conforming
+                            approximately to the Normal or log-Normal distribution, it is necessary
+                            to convert the probabilities to their corresponding standard normal
+                            cumulative distribution values. Alternatively, for probability plots
+                            conforming approximately to the exponential distribution, the reciprocal
+                            of the exceedance probabilities (the average recurrence interval) can be
+                            plotted on a logarithmic scale; and </para>
+                    </listitem>
+                    <listitem>
+                        <para>The magnitude associated with a given exceedance probability (if the
+                            Cunnane plotting position is used) or else the exceedance probability
+                            associated with a given magnitude (if the Weibull plotting position is
+                            used) can be interpolated directly from the probability plot. For
+                            convenience, a suitable smoothing function (ie. polynomial equation) can
+                            be fitted to the plotted values in the region of interest to simplify
+                            the estimation of design values. The function is used merely to
+                            interpolate within the body of the plotted points and thus, as long as
+                            there is no bias in the fit, it matters little what function is used
+                            (polynomial functions are quite suitable).</para>
+                    </listitem>
+                </orderedlist>
+                <para>If desired, the maxima can be fitted using a traditional probability model
+                        (<xref linkend="b3_ch2"/>), but given that sufficient simulations need to be
+                    undertaken to yield a stable estimate, there is little point in doing so.</para>
+            </section>
+            <section xml:id="b4_ch4_s_0kbrt">
+                <title>Stratified Sampling</title>
+                <para>While the above approach is straightforward, it is computationally inefficient
+                    as the vast majority of simulations undertaken provide little information on the
+                    extremes of interest. That is, the vast majority of computational effort is
+                    expended on deriving results for the range of exceedance probabilities that is
+                    of least interest. This inefficiency is of little concern when using simple
+                    models with sparing outputs and fast simulation speeds. However, as the data
+                    processing becomes more complicated and execution speeds increase, simulation
+                    times and data storage requirements quickly pose significant practical
+                    problems.</para>
+                <para>Adoption of a stratified sampling approach ensures that the computational
+                    effort is always focused on the region of interest and, if the simulation scheme
+                    is configured carefully, then it will usually be possible to apply Monte Carlo
+                    simulation to most practical problems.</para>
+                <para>The approach follows the same logic as represented in the flow chart of <xref
+                        linkend="b4_ch4_f_1uw4y"/>, the only difference is that samples of the
+                    stochastic variable that is of most importance to the output are generated over
+                    specific probability ranges. It matters little how the ranges are defined and
+                    the ranges can be varied to suit the different ranges of interest. It is
+                    simplest to divide the domain into <emphasis role="italic">M</emphasis>
+                    intervals uniformly spaced over the standardised normal probability domain
+                    (Detail A in <xref linkend="b4_ch4_f_cqy3c"/>). It should be noted that adopting
+                    this approach does not make any distributional assumption about the variable, it
+                    simply provides the means to distribute the simulations evenly across the
+                    probability domain. Typically 50 intervals should suffice, though care is
+                    required to ensure that there is adequate sampling over the region of most
+                    interest.</para>
+                <para>In the example illustrated in <xref linkend="b4_ch4_f_cqy3c"/>, rainfall is
+                    used as the primary stochastic variable. Within each interval <emphasis
+                        role="italic">N</emphasis> rainfall depths are stochastically sampled and
+                    for each rainfall depth a model simulation is undertaken using an appropriate
+                    set of stochastic inputs (Detail B in <xref linkend="b4_ch4_f_cqy3c"/>). The
+                    number of simulations specified in each interval (<emphasis role="italic"
+                        >N</emphasis>) is dependent on the number of inputs being stochastically
+                    generated and their degree of variability, but in general it would be expected
+                    that between 50 and 200 simulations should be sufficient to adequately sample
+                    from the range of associated inputs. </para>
+                <para>The model results are recorded for all simulations taken in each interval
+                    (Detail C in <xref linkend="b4_ch4_f_cqy3c"/>). These results are assessed using
+                    the Total Probability Theorem (<xref linkend="b4_ch4_s_6tb4w"/>) to yield
+                    expected probability estimates of the flood frequency curve. In all, if the
+                    rainfall frequency curve is divided into 50 intervals and 200 simulations are
+                    undertaken in each interval, a total of 10 000 runs is required. The same number
+                    of simulations could be used whether the upper limit of exceedance probability
+                    is 1 in 100 or 1 in 10<superscript>6</superscript>, and it is merely necessary
+                    to ensure that a representative number of combinations is sampled within each
+                    rainfall range of interest. If the distribution of different rainfall durations
+                    is known, the Total Probability Theorem can also be used to give appropriate
+                    weighting to separate flood simulations for different rainfall duration
+                    intervals.</para>
+                <para>For the scheme illustrated in <xref linkend="b4_ch4_f_cqy3c"/>, the expected
+                    probability that a flood peak (<emphasis role="italic">Q</emphasis>) exceeds a
+                    particular value <emphasis role="italic">q</emphasis> can be calculated from the
+                    Total Probability Theorem:</para>
+                <equation xml:id="b4_ch4_e_hanb3">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>p</mi>
+                        <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                                <mi>Q</mi>
+                                <mo>&gt;</mo>
+                                <mi>q</mi>
+                            </mrow>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>=</mo>
+                        <mstyle displaystyle="true">
+                            <munder>
+                                <mo>∑</mo>
+                                <mi>i</mi>
+                            </munder>
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <mi>Q</mi>
+                                        <mo>&gt;</mo>
+                                        <mi>q</mi>
+                                        <mrow>
+                                            <mo>|</mo>
+                                            <mrow>
+                                                <msub>
+                                                  <mi>R</mi>
+                                                  <mi>i</mi>
+                                                </msub>
+                                            </mrow>
+                                        </mrow>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <msub>
+                                            <mi>R</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </mstyle>
+                    </math>
+                </equation>
+                <para>where the term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <msub>
+                                            <mi>R</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation> represents the probability that rainfall occurs within the
+                    interval <emphasis role="italic">i</emphasis>, and the term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <msub>
+                                        <mi>R</mi>
+                                        <mi>i</mi>
+                                    </msub>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> denotes the conditional probability that the flood peak
+                        <emphasis role="italic">Q</emphasis> generated using a rainfall depth from
+                    within this interval <emphasis role="italic"
+                        >R<subscript>i</subscript></emphasis> exceeds <emphasis role="italic"
+                        >q</emphasis>. The term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>p</mi>
+                                <mrow>
+                                    <mo>[</mo>
+                                    <mrow>
+                                        <msub>
+                                            <mi>R</mi>
+                                            <mi>i</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mo>]</mo>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </inlineequation> is simply the width of the probability interval under
+                    consideration (this will be different for each of the <emphasis role="italic"
+                        >M</emphasis> intervals considered), and <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <msub>
+                                        <mi>R</mi>
+                                        <mi>i</mi>
+                                    </msub>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> can be calculated merely as the proportion of exceedances,
+                        <emphasis role="italic">n</emphasis>, in the sample of <emphasis
+                        role="italic">N</emphasis> simulations within interval <emphasis
+                        role="italic">i</emphasis> (ie. as <emphasis role="italic">n/N</emphasis>).
+                    A representative value of <emphasis role="italic">R</emphasis> can be used for
+                    all <emphasis role="italic">N</emphasis> simulations within the interval, though
+                    a smoother frequency curve can be obtained if <emphasis role="italic"
+                        >R</emphasis> is sampled with the interval using a uniform
+                    distribution.</para>
+                <para>In order to ensure that the total probability domain is sampled, it is
+                    necessary to treat the first and last intervals differently from the
+                    intermediate ones. The issue here is that the full extents of the end intervals
+                    have to be adequately sampled, and on the assumption that these boundary
+                    intervals are distant from the probability region of interest, we can estimate
+                    their contribution to the total probability in a pragmatic fashion. For the last
+                    interval <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <msub>
+                                        <mi>R</mi>
+                                        <mn>1</mn>
+                                    </msub>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> is evaluated as the exceedance probability of its lower bound,
+                    and for the first interval it is evaluated as the non-exceedance probability of
+                    its upper bound. Also, for the first interval <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>1</mn>
+                                            </msub>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> is replaced by the geometric mean of <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>1</mn>
+                                            </msub>
+                                            <mo>*</mo>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> and, say, 0.1 x<inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>1</mn>
+                                            </msub>
+                                            <mo>*</mo>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation>, where <emphasis role="italic"
+                        >R<subscript>1</subscript>*</emphasis> is the rainfall value at the upper
+                    bound of the interval. Similarly, for the last interval the term <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>N</mn>
+                                            </msub>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> is replaced by the geometric mean of <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>N</mn>
+                                            </msub>
+                                            <mo>*</mo>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> and 1.0, where <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub>
+                                    <mi>R</mi>
+                                    <mi>N</mi>
+                                </msub>
+                                <mo>*</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation> is the rainfall value at the lower bound of the interval.
+                    Thus, we are assuming for the lowest interval that as the frequency of the
+                    rainfall event becomes very high the likelihood that the flow threshold is
+                    exceeded trends towards a very low value, in this case taken as one tenth the
+                    probability of <inlineequation>
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                            <mrow>
+                                <mo>[</mo>
+                                <mrow>
+                                    <mi>Q</mi>
+                                    <mo>&#x003E;</mo>
+                                    <mi>q</mi>
+                                    <mrow>
+                                        <mo>|</mo>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn>1</mn>
+                                            </msub>
+                                            <mo>*</mo>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </inlineequation>; and for the uppermost interval we assume that the likelihood
+                    of the threshold being exceeded trends towards a value of 1.0 (ie. a certainty).
+                    The geometric mean is used in place of the arithmetic mean as here we are
+                    assuming a highly non-linear variation over the interval.</para>
+                <figure xml:id="b4_ch4_f_cqy3c">
+                    <title>Manner in which Stratified Sampling is Applied to the Rainfall Frequency
+                        Curve</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/4022.PNG"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </section>
+        </section>
+    </section>
+    <section xml:id="b4_ch4_s_0lxln">
+        <title>Example</title>
+        <para>The example below shows how the concepts described in this chapter may be used to
+            solve a commonly encountered practical problem. The example is based on real data, but
+            has been adapted somewhat to more easily illustrate the concepts involved.</para>
+        <para>The case study involves a township that is located below the confluence of two rivers
+            ( <xref linkend="b4_ch4_f_s502m"/>). Both rivers are gauged, and one (referred to here
+            as the “mainstream”) is larger than the other (the “tributary”). Flood frequency
+            information has been derived for the two gauging sites, and the main focus of the study
+            is to derive 1% AEP flood levels below the confluence, immediately upstream of the town.
+            A one dimensional (HEC-RAS) model has been developed for the valley to allow flood
+            levels to be determined throughout the town. The portion of the model of most relevance
+            to this problem is shown by blueshading in <xref linkend="b4_ch4_f_s502m"/>.</para>
+        <figure xml:id="b4_ch4_f_s502m">
+            <title>Schematic layout of example joint probability problem.</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4023.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para> </para>
+        <para>The analysis of this problem follows the components as outlined in <xref
+                linkend="b4_ch4_f_1uw4y"/>. Flood levels upstream of the town may be the result of a
+            large flood in the mainstream with a small tributary flood, or a large flood in the
+            tributary with average flow conditions in the mainstream; more commonly, it might be
+            expected that the downstream levels are a function of different extremes of flooding in
+            both contributing rivers. Flood Frequency Analysis was undertaken on the Annual Maxima
+            Series derived at both gauges, and it was found that a log-Normal distribution provided
+            an adequate fit to both ( <xref linkend="b4_ch4_f_l2rqq"/>a). An analysis of the
+            coincident flow maxima at both sites indicated that the correlation between flood peaks
+            was 0.6, and a scatter plot of the historic peaks used to make this inference is shown
+            in <xref linkend="b4_ch4_f_l2rqq"/> b).</para>
+        <figure xml:id="b4_ch4_f_l2rqq">
+            <title>(a) Flood Frequency Curves for the Mainstream and Tributary gauging sites, and
+                (b) Correlation between Historic Flood Peaks and Sample of Generated Maxima</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4024.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para> </para>
+        <para>The first step in the process is to generate the correlated stochastic inputs relevant
+            to the two branches of the stream. This is done using the procedure outlined in <xref
+                linkend="b4_ch4_s_yq07h"/> in conjunction with the inverse transform method (<xref
+                linkend="b4_ch4_s_xd6np"/>). The first ten rows of the simulation are shown in <xref
+                linkend="b4_ch4_t_h8581"/>. Uniform random numbers are provided in Columns 2 and 3,
+            and Columns 3 and 4 show the corresponding values of the inverse cumulative Normal
+            distribution (the standard normal variates). Column 6 shows the correlated value of the
+            standard normal variate, which is obtained from the procedure outlined in <xref
+                linkend="b4_ch4_s_yq07h"/>; however,  as here a orrelated standard normal variate is
+            generated rather than a correlated uniform variates, the two input variables are
+                <emphasis role="italic">X</emphasis><emphasis role="italic">= N(0,1)</emphasis> and
+                <emphasis role="italic">Z</emphasis><emphasis role="italic">= N(0,1)</emphasis>, ie.
+            Columns 4 and 5, not columns 1 and 2. The corresponding maxima in the mainstream and the
+            tributary are shown in Columns 7 and 8, and are obtained by scaling the N(0,1) variates
+            by the relevant means and standard deviation of the log-Normal distribution, eg. <inlineequation>
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi>x</mi>
+                    <mo>=</mo>
+                    <msub>
+                        <mi>&#x03BC;</mi>
+                        <mi>x</mi>
+                    </msub>
+                    <mo>+</mo>
+                    <mi>X</mi>
+                    <msub>
+                        <mi>&#x03C3;</mi>
+                        <mi>x</mi>
+                    </msub>
+                </math>
+            </inlineequation> The mean and standard deviation for both streams are shown at the top
+            of the table in Columns 4 and 5, and the results shown in Columns 7 and 8 have been
+            transformed back into the arithmetic domain by taking the anti-log of <emphasis
+                role="italic">x</emphasis>. The results of applying these steps 5000 times are shown
+            in <xref linkend="b4_ch4_f_l2rqq"/>(b).</para>
+        <table frame="void" xml:id="b4_ch4_t_h8581">
+            <caption>Stochastic Generation of Correlated log-Normal Maxima</caption>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <col width="11%"/>
+            <tbody>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td>Mainstream</td>
+                    <td>Tributary</td>
+                    <td/>
+                    <td/>
+                    <td>Intercept</td>
+                    <td>8.06727</td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td>Mean</td>
+                    <td>2.2146</td>
+                    <td>1.9975</td>
+                    <td/>
+                    <td/>
+                    <td>a</td>
+                    <td>0.00402</td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td>Std Deviation</td>
+                    <td>0.2194</td>
+                    <td>0.2228</td>
+                    <td/>
+                    <td/>
+                    <td>b</td>
+                    <td>0.00156</td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td>Correlation</td>
+                    <td>0.6</td>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td>N</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                    <td>Column 3</td>
+                    <td>Column 4</td>
+                    <td>Column 5</td>
+                    <td>Column 6</td>
+                    <td>Column 7</td>
+                    <td>Column 8</td>
+                    <td>Column 9</td>
+                </tr>
+                <tr>
+                    <td>Count</td>
+                    <td>U<subscript>x</subscript></td>
+                    <td>U<subscript>y</subscript></td>
+                    <td>X</td>
+                    <td>Z</td>
+                    <td>Y</td>
+                    <td>Mainstream (m<superscript>3</superscript>/s)</td>
+                    <td>Tributary (m<superscript>3</superscript>/s)</td>
+                    <td>Level (m)</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0.0608</td>
+                    <td>0.3890</td>
+                    <td>-1.5478</td>
+                    <td>-0.2820</td>
+                    <td>-1.1543</td>
+                    <td>75.0</td>
+                    <td>55.0</td>
+                    <td>8.455</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.3928</td>
+                    <td>0.3538</td>
+                    <td>-0.2719</td>
+                    <td>-0.3752</td>
+                    <td>-0.4633</td>
+                    <td>142.9</td>
+                    <td>78.4</td>
+                    <td>8.765</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>0.6415</td>
+                    <td>0.3207</td>
+                    <td>0.3625</td>
+                    <td>-0.4659</td>
+                    <td>-0.1552</td>
+                    <td>196.9</td>
+                    <td>91.4</td>
+                    <td>9.003</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>0.1871</td>
+                    <td>0.9256</td>
+                    <td>-0.8887</td>
+                    <td>1.4438</td>
+                    <td>0.6218</td>
+                    <td>104.6</td>
+                    <td>136.8</td>
+                    <td>8.702</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>0.5970</td>
+                    <td>0.4625</td>
+                    <td>0.2457</td>
+                    <td>-0.0941</td>
+                    <td>0.0722</td>
+                    <td>185.6</td>
+                    <td>103.2</td>
+                    <td>8.975</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>0.6556</td>
+                    <td>0.0662</td>
+                    <td>0.4005</td>
+                    <td>-1.5045</td>
+                    <td>-0.9633</td>
+                    <td>200.7</td>
+                    <td>60.7</td>
+                    <td>8.970</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>0.3334</td>
+                    <td>0.1897</td>
+                    <td>-0.4304</td>
+                    <td>-0.8789</td>
+                    <td>-0.9614</td>
+                    <td>131.9</td>
+                    <td>60.7</td>
+                    <td>8.693</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>0.9805</td>
+                    <td>0.6330</td>
+                    <td>2.0647</td>
+                    <td>0.3399</td>
+                    <td>1.5107</td>
+                    <td>465.2</td>
+                    <td>215.8</td>
+                    <td>10.277</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>0.1692</td>
+                    <td>0.3399</td>
+                    <td>-0.9572</td>
+                    <td>-0.4128</td>
+                    <td>-0.9045</td>
+                    <td>101.1</td>
+                    <td>62.5</td>
+                    <td>8.572</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>0.2268</td>
+                    <td>0.2388</td>
+                    <td>-0.7494</td>
+                    <td>-0.7100</td>
+                    <td>-1.0177</td>
+                    <td>112.3</td>
+                    <td>59.0</td>
+                    <td>8.611</td>
+                </tr>
+            </tbody>
+        </table>
+        <para>The next step in the process is to derive the deterministic component of the system.
+            To this end, representative flows were input into a HEC-RAS model of the stream and the
+            results levels were obtained. Seven pairs of simulations were undertaken as shown in
+                <xref linkend="b4_ch4_f_sbu5n"/> and <xref linkend="b4_ch4_t_pib73"/>. A multiple
+            regression model was fitted to this information, and the resulting relationship is
+            depicted in <xref linkend="b4_ch4_f_sbu5n"/>. This function is used in Column 9 of <xref
+                linkend="b4_ch4_t_h8581"/> to obtain the flood level resulting from the stochastic
+            maxima provided in Columns 7 and 8.</para>
+        <para>A probability plot of the ranked 5000 stochastic flood levels (using the Weibull
+            plotting position formula) is depicted in <xref linkend="b4_ch4_f_5dhyz"/>. The 1% AEP
+            flood level may be found by simple linear interpolation of these results, and is found
+            to be a level of 10.55 m. Also shown in <xref linkend="b4_ch4_f_5dhyz"/> is the
+            dependence of this estimate on the degree of correlation between the mainstream and
+            tributary peaks, where it is seen that if the peaks are assumed to be fully independent
+            or dependent the flood level estimate varies between 10.40 and 10.73 m, respectively. </para>
+        <para>It is worth noting that trials were undertaken to determine how many simulations were
+            required to yield stable estimates of the quantiles. In this example, there was no
+            difference in results if 1000 or 5000 simulations were used, though below this number
+            the estimates started to become unstable.</para>
+        <table frame="void" xml:id="b4_ch4_t_pib73">
+            <caption>Derivation of Deterministic Function Relating Upstream Flows to Downstream
+                Levels (a)</caption>
+            <col width="33%"/>
+            <col width="33%"/>
+            <col width="33%"/>
+            <thead>
+                <tr>
+                    <th>Peak in Mainstream (m<superscript>3</superscript>/s)</th>
+                    <th>Peak in Tributary (m<superscript>3</superscript>/s)</th>
+                    <th>Flood Level (m)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>248.1</td>
+                    <td>286.0</td>
+                    <td>9.54</td>
+                </tr>
+                <tr>
+                    <td>320.0</td>
+                    <td>283.2</td>
+                    <td>9.75</td>
+                </tr>
+                <tr>
+                    <td>393.6</td>
+                    <td>274.1</td>
+                    <td>10.05</td>
+                </tr>
+                <tr>
+                    <td>424.8</td>
+                    <td>260.8</td>
+                    <td>10.22</td>
+                </tr>
+                <tr>
+                    <td>444.6</td>
+                    <td>242.1</td>
+                    <td>10.33</td>
+                </tr>
+                <tr>
+                    <td>458.7</td>
+                    <td>196.0</td>
+                    <td>10.12</td>
+                </tr>
+                <tr>
+                    <td>464.4</td>
+                    <td>0.1</td>
+                    <td>9.95</td>
+                </tr>
+            </tbody>
+        </table>
+        <figure xml:id="b4_ch4_f_sbu5n">
+            <title>Derivation of Deterministic Function Relating Upstream Flows to Downstream
+                Levels</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4025b.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Lastly, an estimate of the exceedance probability can be obtained using stratified
+            sampling and use of the Total Probability Theorem. To this end, the probability domain
+            was divided into 10 divisions, and 20 simulations were undertaken in each (totalling 200
+            simulations). The boundaries of the ten divisions are shown in Columns 2 and 3 of <xref
+                linkend="b4_ch4_t_zoftn"/>, where the limits have been uniformly distributed between
+            standard normal variates of 1 and 4. The calculations are undertaken as described in
+                <xref linkend="b4_ch4_s_m8jfc"/> for the level threshold of 10.4 m, where the
+            conditional probability terms are based on the exceedance probability of flows in the
+            mainstream. The probability of an event occurring in each of the ten bins is shown in
+            Column 4, and this is determined from the exceedance probabilities associated with each
+            of the bins. For example, the probability that a flow in the mainstream lies within the
+            first bin is simply the difference between 0.90320 and 0.84134 (= 0.06185), which are
+            the probabilities of the normal distribution that correspond to the standard normal
+            variates of 1.00 and 1.30. The number of times that a level exceeds 10.4 m in each bin
+            is given in Column 5, and the corresponding conditional probability is shown in Column
+            6, which is computed by dividing by the number of samples in each bin (which in this
+            case is 20). The product of the conditional probability term (Column 6) and the interval
+            width (Column 4) is given in Column 7, and the summation is provided at the bottom of
+            the table. It is thus seen that the exceedance probability of exceeding 10.4 m is
+            estimated to be 0.0149 (or around 1 in 70). A comparison between three such estimates
+            and the results obtained from simple simulation is shown in <xref
+                linkend="b4_ch4_f_5dhyz"/>, from which is seen that the results obtained are
+            similar.</para>
+        <table frame="void" xml:id="b4_ch4_t_zoftn">
+            <caption>Calculation of Exceedance Probability of the Level Exceeding 10.4 m using the
+                Total Probability Theorem</caption>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+
+                <tbody>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                    <td>Column 3</td>
+                    <td>Column 4</td>
+                    <td>Column 5</td>
+                    <td>Column 6</td>
+                    <td>Column 7</td>
+                </tr>
+            
+
+                <tr>
+                    <th>Bin</th>
+                    <th>Z<subscript>min</subscript></th>
+                    <th>Z<subscript>max</subscript></th>
+                    <th>p[M<subscript>i</subscript>]</th>
+                    <th>Num [H&gt;h]</th>
+                    <th>p[H&gt;h|M<subscript>i</subscript>]</th>
+                    <th>p[H&gt;h|M<subscript>i</subscript>]*p[H&gt;h]</th>
+
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1.00</td>
+                    <td>1.30</td>
+                    <td>0.061855</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.000000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1.30</td>
+                    <td>1.60</td>
+                    <td>0.042001</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.000000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1.60</td>
+                    <td>1.90</td>
+                    <td>0.026083</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.000000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1.90</td>
+                    <td>2.20</td>
+                    <td>0.014813</td>
+                    <td>4</td>
+                    <td>0.20</td>
+                    <td>0.002963</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>2.20</td>
+                    <td>2.50</td>
+                    <td>0.007694</td>
+                    <td>15</td>
+                    <td>0.75</td>
+                    <td>0.005770</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>2.50</td>
+                    <td>2.80</td>
+                    <td>0.003655</td>
+                    <td>20</td>
+                    <td>1.00</td>
+                    <td>0.003655</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>2.80</td>
+                    <td>3.10</td>
+                    <td>0.001588</td>
+                    <td>20</td>
+                    <td>1.00</td>
+                    <td>0.001588</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>3.10</td>
+                    <td>3.40</td>
+                    <td>0.000631</td>
+                    <td>20</td>
+                    <td>1.00</td>
+                    <td>0.000631</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>3.40</td>
+                    <td>3.70</td>
+                    <td>0.000229</td>
+                    <td>20</td>
+                    <td>1.00</td>
+                    <td>0.000229</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>3.70</td>
+                    <td>4.00</td>
+                    <td>0.000076</td>
+                    <td>20</td>
+                    <td>1.00</td>
+                    <td>0.000076</td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td>0.014911</td>
+                </tr>
+                </tbody>   
+        </table>
+        <figure xml:id="b4_ch4_f_5dhyz">
+            <title>Derived Frequency Curve of Downstream Levels, with (b) Dependence of 1% Annual
+                Exceedance Probability Level on Degree of Correlation between Flood Peaks</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/4026.PNG"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include> 
 </chapter>

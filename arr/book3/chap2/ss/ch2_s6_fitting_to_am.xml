@@ -1,0 +1,2642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section status="In Preparation" xml:id="b3_ch2_s6"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Fitting Flood Probability Models to Annual Maxima Series</title>
+
+  <section xml:id="b3_ch2_s_cb3om">
+    <title>Overview of Methods</title>
+
+    <para>Fitting a flood probability model involves three steps:</para>
+
+    <para>1. Calibrating the model to the available data D to determine the parameter values
+      consistent with the data
+      D<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170510+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170510+1100" content="."?></para>
+
+    <para>2. Estimation of flood quantiles and their confidence
+      limits<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170514+1100"?>;
+      and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170514+1100" content="."?></para>
+
+    <para>3. Evaluation of goodness of fit and consistency of model with
+    data.</para>
+
+    <para>Two calibration approaches are described involving Bayesian and L moment techniques. For
+      each
+      approach<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170524+1100"?>,<?oxy_insert_end?>
+      the algorithms are documented and illustrated with worked examples. Implementation of the
+      algorithms in software requires specialist skill; therefore<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170543+1100"?>,<?oxy_insert_end?>
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170551+1100" content="the "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170551+1100"?>a
+      <?oxy_insert_end?><?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T170620+1100" comment="What is a typical user?"?>typical
+      <?oxy_comment_end?>user is advised to make use of the available software. The use of the
+      method of product-moments applied to log flows is not recommended. The choice of calibration
+      methods depends on the type of data available (gauged and censored), the extent of measurement
+      error associated with the rating curve and the availability of regional information about
+      parameters.</para>
+  </section>
+
+  <section xml:id="b3_ch2_s_zbwi1">
+    <title>Probability Plots</title>
+    <para>An essential part of a Flood Frequency Analysis is the construction of an empirical
+      distribution function, better known as a probability plot. In such a
+      plot<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170636+1100"?>,<?oxy_insert_end?>
+      an estimate of AEP is plotted against the observed discharge. This enables one to draw a
+      smooth curve as an empirical probability distribution or to visually check the adequacy of a
+      fitted distribution.</para>
+    <para>The following steps describe the production of a probability plot for gauged Annual
+      Maximum floods:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Rank the gauged discharges in descending order (that is, from largest to smallest)
+          yielding the series {q<subscript>(1)</subscript>,
+            q<subscript>(2)</subscript>,…,q<subscript>(n)</subscript>} where
+            q<subscript>(i)</subscript> is the rank i or the i<superscript>th</superscript> largest
+          flood<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170708+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170707+1100" content="."?></para>
+      </listitem>
+      <listitem>
+        <para>Estimate the AEP for each q<subscript>(i)</subscript> using a suitable plotting
+          position<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170714+1100"?>;
+          and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170713+1100" content="."?></para>
+      </listitem>
+      <listitem>
+        <para>Using suitable scales plot the estimated AEP against
+          q<subscript>(i)</subscript>.</para>
+      </listitem>
+    </itemizedlist>
+    <para>For analysis of the AM series, a general formula (Blom, 1958) for estimating the AEP of an
+      observed flood is:</para>
+    <equation xml:id="b3_ch2_e_m0z7y">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msub>
+            <mi>P</mi>
+            <mi>(i)</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mi>i</mi>
+              <mo>-</mo>
+              <mi>α</mi>
+            </mrow>
+            <mrow>
+              <mi>n</mi>
+              <mo>+</mo>
+              <mrow>
+                <mi>1</mi>
+                <mo>-</mo>
+                <mi>2α</mi>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+    </equation>
+    <para>where i is the rank of the gauged flood, n is the number of years of gauged floods and <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>α</mi>
+        </math>
+      </inlineequation> is a constant whose value is selected to preserve desirable statistical
+      properties.</para>
+    <para>There are several choices for <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>α</mi>
+        </math>
+      </inlineequation>:</para>
+    <itemizedlist>
+      <listitem>
+        <para><inlineequation>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>α =</mi>
+            </math>
+          </inlineequation> 0 yields the Weibull plotting position
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170750+1100" content="which "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170751+1100"?>that
+          <?oxy_insert_end?>produces unbiased estimates of the AEP of
+          q<subscript>(i)</subscript><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170754+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170754+1100" content="."?></para>
+      </listitem>
+      <listitem>
+        <para><inlineequation>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>α =</mi>
+            </math>
+          </inlineequation> 0.375 yields the Blom’s plotting position
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170801+1100" content="which"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170801+1100"?>that<?oxy_insert_end?>
+          produces unbiased quantile estimates for the normal
+          distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170806+1100"?>;
+          and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T170806+1100" content="."?></para>
+      </listitem>
+      <listitem>
+        <para><inlineequation>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>α =</mi>
+            </math>
+          </inlineequation> 0.4 yields the Cunnane’s (1978) plotting position
+          <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170812+1100" content="which"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170812+1100"?>that<?oxy_insert_end?>
+          produces nearly unbiased quantile estimates for a range of probability families.</para>
+      </listitem>
+    </itemizedlist>
+    <para>While there are arguments in favour of plotting positions that yield unbiased AEPs, usage
+      has favoured plotting positions that yield unbiased quantiles. To maintain
+      consistency<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170828+1100"?>,<?oxy_insert_end?>
+      it is recommended that the Cunnane plotting position
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170836+1100" content="be "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170836+1100"?>is
+      <?oxy_insert_end?>used, namely:</para>
+    <equation xml:id="b3_ch2_e_g1lj9">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msub>
+            <mi>P</mi>
+            <mi>(i)</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mi>i</mi>
+              <mo>-</mo>
+              <mi>0.4</mi>
+            </mrow>
+            <mrow>
+              <mi>n</mi>
+              <mo>+</mo>
+              <mi>0.2</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+    </equation>
+    <para>A more complete discussion on plotting positions can be found in Stedinger <emphasis>et
+        al</emphasis>. (1993).</para>
+    <para>It is stressed that plotting positions should not be used as an estimate of the actual AEP
+      or EY of an observed flood discharge. Such estimates should be obtained from the fitted
+      distribution.</para>
+    <para>Judicious choice of scale for the probability plot can assist the evaluation of goodness
+      of fit. The basic idea is to select a scale so that the data plot as a straight line if the
+      data
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170932+1100" content="are "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170932+1100"?>is
+      <?oxy_insert_end?>consistent with the assumed probability model.</para>
+    <para>This is best illustrated by an example. Suppose
+      <?oxy_delete author="RadhikaChhotai" timestamp="20151022T170957+1100" content="it is assumed that "?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T170959+1100"?>that
+      <?oxy_insert_end?>floods follow an exponential
+      distribution<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171004+1100"?>,
+      then
+      <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171006+1100" content=". F"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171008+1100"?>f<?oxy_insert_end?>rom
+        <xref linkend="b3_ch2_t_s5j9j"
+      /><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171015+1100"?>,<?oxy_insert_end?>
+      the distribution function is:</para>
+    <equation xml:id="b3_ch2_e_kw2th">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mi>P</mi>
+            <mo stretchy="false">(</mo>
+            <mi>Q</mi>
+            <mo>&#x2264;</mo>
+            <mi>q</mi>
+            <mo stretchy="false">)</mo>
+            <mtext>&#x2009;</mtext>
+            <mo>=</mo>
+            <mtext>&#x2009;</mtext>
+            <mn>1</mn>
+            <mtext>&#x2009;</mtext>
+            <mo>&#x2212;</mo>
+            <mtext>&#x2009;</mtext>
+            <mi mathvariant="normal">e</mi>
+            <msup>
+              <mtext>&#x2009;</mtext>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mo>&#x2212;</mo>
+                    <mfrac>
+                      <mrow>
+                        <mi>q</mi>
+                        <mo>&#x2212;</mo>
+                        <msub>
+                          <mi>q</mi>
+                          <mo>*</mo>
+                        </msub>
+                      </mrow>
+                      <mi>&#x03B2;</mi>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </msup>
+          </mrow>
+        </semantics>
+      </math>
+    </equation>
+    <para>Replacing q by q<subscript>(i)</subscript> and <inlineequation>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>1-P(Q≤q)</mi>
+        </math>
+      </inlineequation> by the plotting position of q<subscript>(i)</subscript> gives:</para>
+    <equation>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <semantics>
+          <mrow>
+            <mn>1</mn>
+            <mtext>&#x2009;</mtext>
+            <mo>&#x2212;</mo>
+            <mtext>&#x2009;</mtext>
+            <msub>
+              <mi>P</mi>
+              <mrow>
+                <mo stretchy="false">(</mo>
+                <mi>i</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </msub>
+            <mtext>&#x2009;</mtext>
+            <mo>=</mo>
+            <mtext>&#x2009;</mtext>
+            <mn>1</mn>
+            <mtext>&#x2009;</mtext>
+            <mo>&#x2212;</mo>
+            <mtext>&#x2009;</mtext>
+            <mi mathvariant="normal">e</mi>
+            <msup>
+              <mtext>&#x2009;</mtext>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mo>&#x2212;</mo>
+                    <mfrac>
+                      <mrow>
+                        <msub>
+                          <mi>q</mi>
+                          <mrow>
+                            <mo stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo stretchy="false">)</mo>
+                          </mrow>
+                        </msub>
+                        <mo>&#x2212;</mo>
+                        <msub>
+                          <mi>q</mi>
+                          <mo>*</mo>
+                        </msub>
+                      </mrow>
+                      <mi>&#x03B2;</mi>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </msup>
+          </mrow>
+        </semantics>
+      </math>
+    </equation>
+    <para>Making q(i) the subject of the equation yields</para>
+    <equation xml:id="b3_ch2_e_aujfw">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msub>
+            <mi>q</mi>
+            <mi>(i)</mi>
+          </msub>
+          <mo>=</mo>
+          <mrow>
+            <msub>
+              <mi>q</mi>
+              <mi>*</mi>
+            </msub>
+            <mo>-</mo>
+            <mrow>
+              <mi>βlog</mi>
+              <msub>
+                <mi>P</mi>
+                <mi>(i)</mi>
+              </msub>
+            </mrow>
+          </mrow>
+        </mrow>
+      </math>
+    </equation>
+    <para>If q<subscript>(i)</subscript> is plotted against
+      logP<subscript>(i)</subscript><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171032+1100"?>,<?oxy_insert_end?>
+      the data will plot approximately as a straight line if they are consistent with the
+      exponential distribution.</para>
+    <para>Examples for other distributions include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>For the Gumbel distribution plot q<subscript>(i)</subscript> against
+            -log[-log(1-P<subscript>(i)</subscript>)]. Data following a GEV distribution will plot
+          as a curved line.</para>
+      </listitem>
+      <listitem>
+        <para>For the log normal distribution plot log q<subscript>(i)</subscript> against the
+          standard normal deviate with exceedance probability P<subscript>(i)</subscript>. Data
+          following a LPIII distribution will plot as a curved line.</para>
+      </listitem>
+    </itemizedlist>
+    <para>When visually evaluating the goodness of fit care needs to be exercised in judging the
+      significance of departures from the assumed distribution. Plotting positions are correlated.
+      As a result, they do not scatter about the fitted distribution independently of each other.
+      The correlation can induce “waves” or regions of systematic departure from the fitted
+      distribution. To guard against this it is suggested that statistical tests be used to assist
+      goodness-of-fit assessment. Stedinger <emphasis>et al</emphasis>. (1993) discuss the use of
+      the Kolmogorov-Smirnov test, the Filiben probability plot correlation test and L moment
+      diagrams and ratio tests.</para>
+    <para>The estimation of plotting positions for censored and historic data is more involved and
+      in some cases can be inaccurate see Stedinger <emphasis>et al</emphasis>. (1993, p 18.41) for
+      more details.</para>
+  </section>
+
+  <section xml:id="b3_ch2_s_mkmnz">
+    <title>Bayesian Calibration</title>
+
+    <section xml:id="b3_ch2_s_ecz3l">
+      <title>Overview</title>
+
+      <para>The Bayesian approach is a very general approach for calibrating and identifying models.
+        The Handbook of Hydrology (Stedinger <emphasis>et al</emphasis>., 1993, p18.8) observes that
+        “the Bayesian
+        approach<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171130+1100" content=" .."?>
+        allows the explicit
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171136+1100" content="modeling"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171136+1100"?>modelling<?oxy_insert_end?>
+        of uncertainty in parameters and provides a theoretically consistent framework for
+        integrating systematic flow records with regional and other hydrologic information”.
+        However, it is only with the advent of new computational methods that Bayesian methods can
+        be routinely applied to flood frequency applications.</para>
+
+      <para>The core of the Bayesian approach is described below – see Lee (1989) and Gelman
+          <emphasis>et al</emphasis>. (1995) for general expositions. The data D is
+        hypothesi<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171214+1100" content="z"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171215+1100"?>s<?oxy_insert_end?>ed
+        to be a random realisation from a probability model with pdf <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(D∣θ)</mi>
+          </math>
+        </inlineequation> where <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> is a vector of unknown parameters. The pdf <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(D|θ)</mi>
+          </math>
+        </inlineequation> is given two labels depending on the context. When <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(D|θ)</mi>
+          </math>
+        </inlineequation> is used to describe the probability model generating the sample data D for
+        a given <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation>, it is called the sampling distribution. However, when inference about the
+        parameter <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> is sought, <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(D|θ)</mi>
+          </math>
+        </inlineequation> is called the likelihood function to
+        emphasi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171151+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171150+1100" content="z"?>e
+        that the data D is known and the parameter <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> is the object of attention. The same notation for the sampling
+        distribution and likelihood function is used to
+        emphasi<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171158+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171157+1100" content="z"?>e
+        its oneness.</para>
+
+      <para>In Bayesian
+        inference<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171236+1100"?>,<?oxy_insert_end?>
+        the parameter vector <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> is considered to be a random vector whose probability distribution
+        describes what is known about the true value of <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation>. Prior to
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171144+1100" content="analyzing"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171144+1100"?>analysing<?oxy_insert_end?>
+        the data D, knowledge about <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171257+1100"?>,<?oxy_insert_end?>
+        given the probability
+        model<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171301+1100"?>,<?oxy_insert_end?>
+        is
+        summari<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171202+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171202+1100" content="z"?>ed
+        by the pdf <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ)</mi>
+          </math>
+        </inlineequation>. This density, referred to as the prior density, can incorporate
+        subjective belief about <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation>.</para>
+
+      <para>Bayes theorem is then used to process the information contained in
+      the data D by updating what is known about the true value of
+      <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> as follows:</para>
+
+      <equation xml:id="b3_ch2_e_zdrn1">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>p(θ|D)</mi>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mfrac>
+                <mi>p(D|θ)p(θ)</mi>
+
+                <mi>p(D)</mi>
+              </mfrac>
+
+              <mo>∝</mo>
+
+              <mi>p(D|θ)p(θ)</mi>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>The posterior density <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ|D)</mi>
+          </math>
+        </inlineequation> describes what is known about the true value of
+      <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> given the data D, prior information and the
+      probability model. The denominator p(D) is the marginal likelihood
+      defined as:</para>
+
+      <equation xml:id="b3_ch2_e_jlq16">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>p(D)</mi>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mrow>
+                <mo>∫</mo>
+
+                <mi>p(D|</mi>
+              </mrow>
+
+              <mrow>
+                <mi>θ)p(θ)dθ</mi>
+              </mrow>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>Usually the marginal likelihood is not computed as it does not
+      depend on <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> and serves as a normalizing constant.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_p6zyk">
+      <title>Likelihood Function</title>
+
+      <para>The key to a Bayesian analysis is the formulation of the likelihood function. In the
+        context of flood
+        frequency<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171327+1100"?>,<?oxy_insert_end?>
+        analysis two formulations are considered. The first assumes there is no error in the flood
+        data. The focus is on the contribution to the likelihood function made by gauged and
+        censored data. The second case generalises the likelihood function to allow for
+        error-in-discharge estimates.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_fd9op">
+      <title>Likelihood function: No-error-discharge Case</title>
+
+      <para>Suppose the following data are available:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>A gauged record of n true flood peaks
+          {q<subscript>1</subscript>,...,q<subscript>n</subscript>};
+          and</para>
+        </listitem>
+
+        <listitem>
+          <para>M censored records in which a<subscript>i</subscript> annual
+          flood peaks in (a<subscript>i</subscript> +
+          b<subscript>i</subscript>) ungauged years exceeded a threshold with
+          true discharge s<subscript>i</subscript>, i=1,..,m.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>This data is denoted by D = {q<subscript>i</subscript>, i=1,..,n;
+      (a<subscript>i</subscript>, b<subscript>i</subscript>,
+      s<subscript>i</subscript>), i=1,..,m}. It is shown in <xref
+      linkend="b3_ch2_s_aa2de"/> that the likelihood function is:</para>
+
+      <equation xml:id="b3_ch2_e_zdewe">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>p(D|θ)α</mi>
+
+            <mrow>
+              <munderover>
+                <mo>∏</mo>
+
+                <mi>i=1</mi>
+
+                <mi>n</mi>
+              </munderover>
+
+              <mi>p(</mi>
+            </mrow>
+
+            <msub>
+              <mi>q</mi>
+
+              <mi>i</mi>
+            </msub>
+
+            <mi>|θ)</mi>
+
+            <mrow>
+              <munderover>
+                <mo>∏</mo>
+
+                <mi>i=1</mi>
+
+                <mi>m</mi>
+              </munderover>
+
+              <mi>[1-P(Q≤</mi>
+            </mrow>
+
+            <mrow>
+              <msub>
+                <mi>s</mi>
+
+                <mi>i</mi>
+              </msub>
+
+              <mi>|θ)</mi>
+
+              <msup>
+                <mi>]</mi>
+
+                <mi>ai</mi>
+              </msup>
+
+              <mi/>
+
+              <mo>P(Q≤</mo>
+
+              <mrow>
+                <msub>
+                  <mi>x</mi>
+
+                  <mi>i</mi>
+                </msub>
+
+                <mo>|</mo>
+
+                <mi>θ</mi>
+
+                <msup>
+                  <mi>)</mi>
+
+                  <mi>bi</mi>
+                </msup>
+
+                <mi/>
+              </mrow>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+    </section>
+
+    <section xml:id="b3_ch2_s_6h16e">
+      <title>The Likelihood Function: Error-in-discharge Case</title>
+
+      <para>The incorporation of rating errors into the likelihood function complicates matters.
+          <xref linkend="b3_ch2_s_vyzbz"/> outlines the derivation of the likelihood function using
+        the simple rating error model presented in <xref linkend="b3_ch2_s_zlx6z"/>. There has been
+        limited research into the use of this likelihood and on the
+        characteri<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171400+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171400+1100" content="z"?>ation
+        of rating errors. Kuczera (1996) shows that, as rating error grows for floods well in excess
+        of the largest gauged discharge, less weight is given to high floods in the calibration.
+        This loss of information about the right tail of the flood distribution is sensitive to the
+        magnitude of rating errors when extrapolating beyond gauged discharges.
+        Unfortunately<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171056+1100"?>,<?oxy_insert_end?>
+        little is known about these
+        errors<?oxy_delete author="RadhikaChhotai" timestamp="20151022T171102+1100" content="."?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171103+1100"?>
+        and hence<?oxy_insert_end?>
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T171106+1100" content="Therefore "?>caution
+        is recommended if using this advanced likelihood.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_xjch2">
+      <title>Prior Distributions</title>
+
+      <para>The prior pdf <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ)</mi>
+          </math>
+        </inlineequation> reflects the worth of prior information on
+      <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> obtained preferably from a regional analysis. A
+      convenient distribution is the multivariate normal with mean
+      μ<subscript>p</subscript> and covariance <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>Σ</mi>
+
+              <mi>p</mi>
+            </msub>
+          </math>
+        </inlineequation>; that is,</para>
+
+      <equation xml:id="b3_ch2_e_tqx84">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>θ</mi>
+
+            <mo>~</mo>
+
+            <mi>N(</mi>
+
+            <msub>
+              <mi>μ</mi>
+
+              <mi>p</mi>
+            </msub>
+
+            <mrow>
+              <msub>
+                <mi>,Σ</mi>
+
+                <mi>p</mi>
+              </msub>
+
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>In the absence of prior information, the covariance matrix can be
+      made non-informative as illustrated in the following equation for a
+      three-parameter model:</para>
+
+      <equation xml:id="b3_ch2_e_1zkxs">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>Σ</mi>
+
+              <mi>p</mi>
+            </msub>
+
+            <mo>v→</mo>
+
+            <mi>∞</mi>
+
+            <mrow>
+              <mo>(</mo>
+
+              <mtable>
+                <mtr>
+                  <mtd>
+                    <mi>v</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+                </mtr>
+
+                <mtr>
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>v</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+                </mtr>
+
+                <mtr>
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>0</mi>
+                  </mtd>
+
+                  <mtd>
+                    <mi>v</mi>
+                  </mtd>
+                </mtr>
+              </mtable>
+
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>Informative prior information can be obtained from a regional
+      analysis of flood data.</para>
+
+      <para>The use of an informative prior based on regional analysis is
+      strongly recommended in all Flood Frequency Analyses involving at-site
+      data. Even with long at-site records, the shape parameter in the LPIII
+      and GEV distribution is subject to considerable uncertainty. Regional
+      priors can substantially reduce the uncertainty in the shape (and even
+      scale) parameter.</para>
+
+      <para>The regional procedures in <xref linkend="b3_ch3"/> are designed to express the prior
+        information in the form of <xref linkend="b3_ch2_e_tqx84"/> for the Log Pearson III
+        probability model. They should be used in any Flood Frequency Analysis involving the Log
+        Pearson III distribution unless there is evidence that the regional prior is not applicable
+        to the catchment of interest.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_r5k35">
+      <title>Monte Carlo Sampling from the Posterior Distribution</title>
+
+      <para>The posterior pdf <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ|D)</mi>
+          </math>
+        </inlineequation> fully defines the parameter uncertainty. However,
+      interpreting this distribution is difficult using analytical methods.
+      Modern Monte Carlo methods for sampling from the posterior have overcome
+      this limitation – for example, see Gelman <emphasis>et al</emphasis>.
+      (1995). <xref linkend="b3_ch2_s_j8hj6"/> describes a particular sampling
+      procedure called importance sampling.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_wibtc">
+      <title>Quantile Confidence Limits and Expected Probability</title>
+
+      <para>The posterior distribution of any function dependent on
+      <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> can be readily approximated using Monte Carlo
+      samples. Confidence limits describe the uncertainty about quantiles
+      arising from uncertainty in the fitted parameters. They are used in
+      conjunction with the probability plot to evaluate goodness-of-fit.
+      100(1-<inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>α)%</mi>
+          </math>
+        </inlineequation> quantile confidence limits, or more correctly
+      probability limits. Confidence limits can be derived as follows:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>Draw N samples from the posterior distribution
+          {<inlineequation>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>θ</mi>
+              </math>
+            </inlineequation>,w,i=1,...,N) where w<subscript>i</subscript> is
+          the normalized weight assigned to the sample <inlineequation>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mi>θ</mi>
+              </math>
+            </inlineequation>.</para>
+        </listitem>
+
+        <listitem>
+          <para>Rank in ascending order the N quantiles
+          {q<subscript>Y</subscript><inlineequation>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub>
+                  <mi>(θ</mi>
+
+                  <mi>(i)</mi>
+                </msub>
+              </math>
+            </inlineequation>),i=1,..,N}. .</para>
+        </listitem>
+
+        <listitem>
+          <para>For each ranked quantile evaluate the non-exceedance
+          probability <inlineequation>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                <munderover>
+                  <mo>∑</mo>
+
+                  <mi>j=1</mi>
+
+                  <mi>i</mi>
+                </munderover>
+
+                <msub>
+                  <mi>W</mi>
+
+                  <mi>(j)</mi>
+                </msub>
+
+                <mi/>
+              </math>
+            </inlineequation>where W<subscript>(j)</subscript> is the weight
+          for the j<superscript>th</superscript> ranked quantile
+          q<subscript>Y</subscript><inlineequation>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub>
+                  <mi>( θ</mi>
+
+                  <mi>(j)</mi>
+                </msub>
+              </math>
+            </inlineequation>) .</para>
+        </listitem>
+
+        <listitem>
+          <para>The lower and upper confidence limits are approximated by the
+          quantiles whose non-exceedance probabilities are nearest:</para>
+        </listitem>
+      </orderedlist>
+
+      <equation xml:id="b3_ch2_e_2fxhs">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mfrac>
+              <mi>α</mi>
+
+              <mi>2</mi>
+            </mfrac>
+
+            <mo>and</mo>
+
+            <mi>1-</mi>
+
+            <mfrac>
+              <mi>α</mi>
+
+              <mi>2</mi>
+            </mfrac>
+
+            <mi>respectively.</mi>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>The expected posterior parameters can be estimated:</para>
+
+      <equation xml:id="b3_ch2_e_q80yb">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mi>E[θ|</mi>
+
+            <mo>D]=</mo>
+
+            <mrow>
+              <munderover>
+                <mo>∑</mo>
+
+                <mi>i=1</mi>
+
+                <mi>N</mi>
+              </munderover>
+
+              <msub>
+                <mi>W</mi>
+
+                <mi>i</mi>
+              </msub>
+            </mrow>
+
+            <msub>
+              <mi>q</mi>
+
+              <mi>Y</mi>
+            </msub>
+
+            <msub>
+              <mi>(θ)</mi>
+
+              <mi>i</mi>
+            </msub>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>These parameters can then be used to compute the expected
+      parameter X% AEP quantiles described in <xref
+      linkend="b3_ch2_s_sw7yg"/>.</para>
+
+      <para>Finally, the expected AEP probability for a flood of magnitude
+      q<subscript>Y</subscript> can be estimated:</para>
+
+      <equation xml:id="b3_ch2_e_eq259">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mrow>
+              <mi>E[P(q&gt;</mi>
+
+              <msub>
+                <mi>q</mi>
+
+                <mi>Y</mi>
+              </msub>
+
+              <mi>|</mi>
+
+              <mo>D)]</mo>
+            </mrow>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mrow>
+                <munderover>
+                  <mo>∑</mo>
+
+                  <mi>i=1</mi>
+
+                  <mi>N</mi>
+                </munderover>
+
+                <msub>
+                  <mi>w</mi>
+
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+
+              <mo>P(q&gt;</mo>
+
+              <msub>
+                <mi>q</mi>
+
+                <mi>Y</mi>
+              </msub>
+
+              <msub>
+                <mi>|θ</mi>
+
+                <mi>i</mi>
+              </msub>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+    </section>
+
+    <section xml:id="b3_ch2_s_287uy">
+      <title>Treatment of Poor Fits</title>
+
+      <para>The standard probability models described in <xref linkend="b3_ch2_s4"/> may sometimes
+        poorly fit flood data. Typically the goodness-of-fit is assessed by comparing observed data
+        against the fitted probability model and its confidence limits. A poor fit may be
+        characteri<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171432+1100"?>s<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171432+1100" content="z"?>ed
+        by:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Presence of outliers in the upper or lower tail of the distribution. Outliers in
+            Flood Frequency Analysis represent observations that are inconsistent with the trend of
+            the remaining data and typically would lie well outside confidence
+            limits<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171436+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171436+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>Systematic discrepancies between observed and fitted
+          distributions. Caution is required in interpreting systematic
+          departures because plotting positions are correlated. Confidence
+          limits can help guide the interpretation.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Poor fits to the standard probability models may arise for a
+      variety of reasons including the following:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>Small AM peaks may not be significant floods and thus may be unrepresentative of
+            significant flood
+            peaks<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171441+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171441+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>By chance, one or more observed floods may be unusually rare for the length of
+            gauged record. Recourse to the historical flood record may be useful in resolving this
+            issue<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171446+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171446+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>Rating curve extensions are biased resulting in a systematic under or over-estimate
+            of large floods (see discussion in <xref linkend="b3_ch2_s_zlx6z"
+            />)<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171451+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171451+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>A change in hydraulic control with discharge may affect the shape of the frequency
+            curve as illustrated in Example
+            1<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171458+1100"?>;
+            <?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171521+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>Storm events responsible for significant flooding may be caused by different
+            meteorological mechanisms which lead to a mixed population not amenable to
+            three-parameter distributions. This may arise when the majority of flood-producing
+            storms are generated by one meteorological mechanism and the minority by an atypical
+            mechanism such as a tropical
+            cyclone<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171529+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171527+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>Nonhomogeneity of the flood record.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>The potential causes of a poor fit need careful
+      investigation.</para>
+
+      <para>If it is decided the poor fit is due to inadequacy of the
+      probability model, three strategies are available to deal with the
+      problem:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>Observations can be
+            censored<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171648+1100"?>;<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171646+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>The data responsible for the unsatisfactory fit may be given less
+            weight<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171651+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171651+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>A more flexible probability model can used to fit the
+          data.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>Data in the upper part of the distribution is typically of more
+      interest and therefore a strong case needs to be made to justify
+      reduction in weight of such data.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_1f6ft">
+      <title>Censoring of Potentially Influential Low Discharges</title>
+
+      <para>AM series contain many Annual Maximum
+        discharges<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171706+1100"?>,<?oxy_insert_end?>
+        which are less than bank<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171711+1100"?>
+        <?oxy_insert_end?>full discharge. In arid zones these low peaks may be zero or very low
+        values<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171723+1100"?>,<?oxy_insert_end?>
+        not associated with any significant storm event. These low peaks may not be representative
+        of the physical processes driving large floods (Cohn <emphasis>et al</emphasis>., 2013;
+        Pedruco <emphasis>et al</emphasis>., 2013). The inclusion of such data in a Flood Frequency
+        Analysis runs the risk of low peaks unrepresentative of large floods influencing the fit to
+        the right-hand tail of the frequency distribution, which is of most interest to the
+        hydrologist. Therefore the identification and removal of Potentially Influential Low Flows
+        (PILFs) is considered an important step in a Flood Frequency Analysis.</para>
+
+      <para>Cohn <emphasis>et al</emphasis>. (2013) developed a generalisation
+      of the Grubbs-Beck test that was recommended in Bulletin 17B (IACWD,
+      1982) to identify PILFs. The multiple Grubbs-Beck test, checks if the
+      k<superscript>th</superscript> smallest discharge is unusually low and,
+      if it is, uses this discharge to define a threshold for censoring
+      discharges below the threshold. The test involves two steps:</para>
+
+      <orderedlist>
+        <listitem>
+          <para>The outward sweep starts at the median discharge and moves towards the smallest
+            discharge. Each flow is tested at the 0.5% significance level. If the
+              k<superscript>th</superscript> smallest discharge is identified as a low outlier, the
+            outward sweep
+            stops<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171736+1100"?>;
+            and<?oxy_insert_end?><?oxy_delete author="RadhikaChhotai" timestamp="20151022T171735+1100" content="."?></para>
+        </listitem>
+
+        <listitem>
+          <para>The inward sweep starts at the smallest discharge and moves
+          towards the median. Each discharge is tested at the 10% significance
+          level. If the m<superscript>th</superscript> discharge is identified
+          as a low outlier, the inward sweep stops.</para>
+        </listitem>
+      </orderedlist>
+
+      <para>The total number of low outliers is then the maximum of k and m -
+      1. The flows identified as low outliers are treated as censored
+      flows.</para>
+
+      <para>The multiple Grubbs-Beck test is recommended for general use but
+      must be conducted in unison with a visual assessment of the fitted
+      frequency curve.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_fnza1">
+      <title>Software</title>
+
+      <para>The Bayesian approach to calibrating flood probability models is
+      numerically complex and is best implemented in a high level programming
+      language. The web-based software called TUFLOW FLIKE supporting the
+      Bayesian methods described in this chapter is available at TBA. The
+      reader is advised that this does not preclude use of other software if
+      it is fit for purpose.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_xqazq">
+      <title>Worked Examples</title>
+
+      <para>Example 3 illustrates fitting a LPIII distribution to a 31-year
+      gauged record. Although the fit is judged satisfactory, considerable
+      uncertainty in the 1% AEP quantile is noted.</para>
+
+      <para>Example 4 is a continuation of Example 3 and illustrates the
+      benefit of incorporating censored historic flood information. In the 118
+      years prior to gauging only one flood exceed the largest gauged flood.
+      This information is shown to substantially reduce quantile
+      uncertainty.</para>
+
+      <para>Example 5 is a continuation of Example 3. It illustrates the value
+      of regional information in reducing uncertainty in parameters and
+      quantiles. It is recommended that regional information be always used
+      unless there is contrary evidence.</para>
+
+      <para>Examples 6 illustrates the identification of PILFs using the
+      multiple Grubbs-Beck test and fitting a LPIII distribution with PILFs
+      treated as censored discharges. It is recommended that multiple
+      Grubbs-Beck test be performed in all Flood Frequency Analyses.</para>
+
+      <para>Example 7 illustrates how three–parameter distributions such as
+      the GEV and LPIII can be made to fit data exhibiting sigmoidal
+      behaviour. Because interest is in fitting the higher discharges the low
+      discharges are de-emphasized by treating them as censored observations.
+      In this example the multiple Grubbs-Beck test improved the fit but a
+      more severe manual censoring produced an even better fit to the
+      right-hand tail.</para>
+
+      <para>Finally Example 8 illustrates application of a non-homogeneous
+      flood probability model conditioned on the IPO index. It shows how the
+      long-term flood risk may be estimated.</para>
+    </section>
+  </section>
+
+  <section xml:id="b3_ch2_s_olf1q">
+    <title>L Moments Approach</title>
+
+    <section xml:id="b3_ch2_s_c4z47">
+      <title>Overview</title>
+
+      <para>L moments were developed by Hosking (1990) to overcome the bias and sensitivity of the
+        method of product-moments approach to fitting distributions. L moment estimators are
+        unbiased and are less sensitive to outliers than product-moment estimators. They have been
+        used extensively by researchers to
+        <?oxy_delete author="RadhikaChhotai" timestamp="20151022T172036+1100" content="analyze"?><?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T172036+1100"?>analyse<?oxy_insert_end?>
+        extremes and are recommended for use in Flood Frequency Analysis in the Handbook of
+        Hydrology (Stedinger <emphasis>et al</emphasis>. 1993).</para>
+
+      <para>The L moment approach is simpler than the Bayesian approach but
+      limited in capability. It is restricted to applications involving gauged
+      discharge data where there is no useful regional information and rating
+      curve errors do not require special attention.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_95fxk">
+      <title>L-moments for summarising distributions</title>
+
+      <para>Hosking (1990) developed the L moment theory based on order
+      statistics. The first four L moments are defined as:</para>
+
+      <equation xml:id="b3_ch2_e_gf6r2">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>λ</mi>
+
+              <mi>1</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <msub>
+              <mi>E[X]</mi>
+
+              <mi>1:1</mi>
+            </msub>
+          </mrow>
+        </math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_fmvo7">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>λ</mi>
+
+              <mi>2</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mfrac>
+                <mi>1</mi>
+
+                <mi>2</mi>
+              </mfrac>
+
+              <mo>E</mo>
+
+              <mrow>
+                <mo>[</mo>
+
+                <mrow>
+                  <msub>
+                    <mi>X</mi>
+
+                    <mi>2:2</mi>
+                  </msub>
+
+                  <mo>-</mo>
+
+                  <msub>
+                    <mi>X</mi>
+
+                    <mi>1:2</mi>
+                  </msub>
+                </mrow>
+
+                <mo>]</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_5j4x9">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>λ</mi>
+
+              <mi>3</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mfrac>
+                <mi>1</mi>
+
+                <mi>3</mi>
+              </mfrac>
+
+              <mo>E</mo>
+
+              <mrow>
+                <mo>[</mo>
+
+                <mrow>
+                  <msub>
+                    <mi>X</mi>
+
+                    <mi>3:3</mi>
+                  </msub>
+
+                  <mo>-</mo>
+
+                  <mrow>
+                    <msub>
+                      <mi>2X</mi>
+
+                      <mi>2:3</mi>
+                    </msub>
+
+                    <mo>+</mo>
+
+                    <msub>
+                      <mi>X</mi>
+
+                      <mi>1:3</mi>
+                    </msub>
+                  </mrow>
+                </mrow>
+
+                <mo>]</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_jkio8">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>λ</mi>
+
+              <mi>4</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mrow>
+              <mfrac>
+                <mi>1</mi>
+
+                <mi>4</mi>
+              </mfrac>
+
+              <mo>E</mo>
+
+              <mrow>
+                <mo>[</mo>
+
+                <mrow>
+                  <msub>
+                    <mi>X</mi>
+
+                    <mi>4:4</mi>
+                  </msub>
+
+                  <mo>-</mo>
+
+                  <mrow>
+                    <msub>
+                      <mi>3X</mi>
+
+                      <mi>3:4</mi>
+                    </msub>
+
+                    <mo>+</mo>
+
+                    <mrow>
+                      <msub>
+                        <mi>3X</mi>
+
+                        <mi>2:4</mi>
+                      </msub>
+
+                      <mo>-</mo>
+
+                      <msub>
+                        <mi>X</mi>
+
+                        <mi>1:4</mi>
+                      </msub>
+                    </mrow>
+                  </mrow>
+                </mrow>
+
+                <mo>]</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>where X<subscript>j:m</subscript> is the
+      j<superscript>th</superscript> smallest variable in a sample of size m
+      and E stands for expectation.</para>
+
+      <para>Wang (1996) justifies L moments as follows: “When there is only one value in a sample,
+        it gives a feel of the magnitude of the random variable. When there are two values in a
+        sample, their difference gives a sense of how varied the random variable is. When there are
+        three values in a sample, they give some indication on how asymmetric the distribution is.
+        When there are four values in a sample, they give some clue on how peaky, roughly speaking,
+        the distribution is.
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T172107+1100" comment="Where is the closing quotes? "?>“<?oxy_comment_end?></para>
+
+      <para>When many such samples are considered, the expectations
+      <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>λ</mi>
+
+              <mi>1</mi>
+            </msub>
+          </math>
+        </inlineequation> and <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>λ</mi>
+
+              <mi>2</mi>
+            </msub>
+          </math>
+        </inlineequation> give measures of location and scale. Moreover, the L
+      moment ratios:</para>
+
+      <equation xml:id="b3_ch2_e_cxg32">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>τ</mi>
+
+              <mi>3</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mfrac>
+              <msub>
+                <mi>λ</mi>
+
+                <mi>3</mi>
+              </msub>
+
+              <msub>
+                <mi>λ</mi>
+
+                <mi>2</mi>
+              </msub>
+            </mfrac>
+          </mrow>
+        </math>
+      </equation>
+
+      <equation xml:id="b3_ch2_e_r8n3b">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>τ</mi>
+
+              <mi>4</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mfrac>
+              <msub>
+                <mi>λ</mi>
+
+                <mi>4</mi>
+              </msub>
+
+              <msub>
+                <mi>λ</mi>
+
+                <mi>2</mi>
+              </msub>
+            </mfrac>
+          </mrow>
+        </math>
+      </equation>
+
+      <para>give measures of skewness and kurtosis respectively. Hosking
+      termed τ<subscript>3</subscript> L-skewness and
+      τ<subscript>4</subscript> L-kurtosis. Hosking also defined the
+      L-coefficient of variation as:</para>
+
+      <equation xml:id="b3_ch2_e_tmetj">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>τ</mi>
+
+              <mi>2</mi>
+            </msub>
+
+            <mo>=</mo>
+
+            <mfrac>
+              <msub>
+                <mi>λ</mi>
+
+                <mi>2</mi>
+              </msub>
+
+              <msub>
+                <mi>λ</mi>
+
+                <mi>1</mi>
+              </msub>
+            </mfrac>
+          </mrow>
+        </math>
+      </equation>
+
+      <para><xref linkend="b3_ch2_t_achre"/> Summarizes L moments for a range
+      of distributions.</para>
+
+      <table xml:id="b3_ch2_t_achre">
+        <title>L moments for several distributions (from Stedinger et al.,
+        1993)</title>
+
+        <tgroup cols="2">
+          <colspec align="center"/>
+
+          <thead>
+            <row>
+              <entry align="center">Family</entry>
+
+              <entry align="center">L Moments</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>Generalized Extreme Value (GEV)</entry>
+
+              <entry><inlineequation>
+                  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mtable>
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>1</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mi>τ</mi>
+
+                              <mo>+</mo>
+
+                              <mrow>
+                                <mfrac>
+                                  <mi>α</mi>
+
+                                  <mi>κ</mi>
+                                </mfrac>
+
+                                <mo>⁢</mo>
+
+                                <mrow>
+                                  <mo>[</mo>
+
+                                  <mrow>
+                                    <mi>1</mi>
+
+                                    <mo>-</mo>
+
+                                    <mrow>
+                                      <mi>Γ</mi>
+
+                                      <mo>⁢</mo>
+
+                                      <mrow>
+                                        <mo>(</mo>
+
+                                        <mrow>
+                                          <mi>1</mi>
+
+                                          <mo>+</mo>
+
+                                          <mi>κ</mi>
+                                        </mrow>
+
+                                        <mo>)</mo>
+                                      </mrow>
+                                    </mrow>
+                                  </mrow>
+
+                                  <mo>]</mo>
+                                </mrow>
+                              </mrow>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>2</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mfrac>
+                                <mi>α</mi>
+
+                                <mi>κ</mi>
+                              </mfrac>
+
+                              <mi>Γ</mi>
+
+                              <mrow>
+                                <mo>(</mo>
+
+                                <mrow>
+                                  <mi>1</mi>
+
+                                  <mo>+</mo>
+
+                                  <mi>κ</mi>
+                                </mrow>
+
+                                <mo>)</mo>
+                              </mrow>
+
+                              <mrow>
+                                <mo>[</mo>
+
+                                <mrow>
+                                  <mi>1</mi>
+
+                                  <mo>-</mo>
+
+                                  <msup>
+                                    <mi>2</mi>
+
+                                    <mi>-κ</mi>
+                                  </msup>
+                                </mrow>
+
+                                <mo>]</mo>
+                              </mrow>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>3</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mfrac>
+                                <mrow>
+                                  <mi>2</mi>
+
+                                  <mo>⁢</mo>
+
+                                  <mrow>
+                                    <mo>(</mo>
+
+                                    <mrow>
+                                      <mi>1</mi>
+
+                                      <mo>-</mo>
+
+                                      <msup>
+                                        <mi>3</mi>
+
+                                        <mi>-κ</mi>
+                                      </msup>
+                                    </mrow>
+
+                                    <mo>)</mo>
+                                  </mrow>
+                                </mrow>
+
+                                <mrow>
+                                  <mi>1</mi>
+
+                                  <mo>-</mo>
+
+                                  <msup>
+                                    <mi>2</mi>
+
+                                    <mi>-κ</mi>
+                                  </msup>
+                                </mrow>
+                              </mfrac>
+
+                              <mo>-</mo>
+
+                              <mi>3</mi>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>4</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mfrac>
+                                <mrow>
+                                  <mrow>
+                                    <mi>1</mi>
+
+                                    <mo>-</mo>
+
+                                    <mrow>
+                                      <mo>5(</mo>
+
+                                      <msup>
+                                        <mi>4</mi>
+
+                                        <mi>-κ</mi>
+                                      </msup>
+
+                                      <mo>)</mo>
+                                    </mrow>
+                                  </mrow>
+
+                                  <mo>+</mo>
+
+                                  <mrow>
+                                    <mrow>
+                                      <mo>10(</mo>
+
+                                      <msup>
+                                        <mi>3</mi>
+
+                                        <mi>-κ</mi>
+                                      </msup>
+
+                                      <mo>)</mo>
+                                    </mrow>
+
+                                    <mo>-</mo>
+
+                                    <mrow>
+                                      <mo>6(</mo>
+
+                                      <msup>
+                                        <mi>2</mi>
+
+                                        <mi>-κ</mi>
+                                      </msup>
+
+                                      <mo>)</mo>
+                                    </mrow>
+                                  </mrow>
+                                </mrow>
+
+                                <mrow>
+                                  <mi>1</mi>
+
+                                  <mo>-</mo>
+
+                                  <msup>
+                                    <mi>2</mi>
+
+                                    <mi>-κ</mi>
+                                  </msup>
+                                </mrow>
+                              </mfrac>
+
+                              <mo>,</mo>
+
+                              <mrow>
+                                <mi>κ</mi>
+
+                                <mo>⁡</mo>
+
+                                <mo>≠0</mo>
+                              </mrow>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+                    </mtable>
+                  </math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Gumbel</entry>
+
+              <entry><inlineequation>
+                  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mtable>
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>1</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mi>τ</mi>
+
+                              <mo>+</mo>
+
+                              <mi>0.5772α</mi>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>2</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <mi>α</mi>
+
+                              <mo>⁡</mo>
+
+                              <mrow>
+                                <mi>ln</mi>
+
+                                <mo>⁡</mo>
+
+                                <mi>2</mi>
+                              </mrow>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>3</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mi>0.1699</mi>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>4</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mi>0.1504</mi>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+                    </mtable>
+                  </math>
+                </inlineequation></entry>
+            </row>
+
+            <row>
+              <entry>Generalized Pareto</entry>
+
+              <entry><inlineequation>
+                  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mtable>
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>1</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mrow>
+                              <msub>
+                                <mi>q</mi>
+
+                                <mi>*</mi>
+                              </msub>
+
+                              <mo>+</mo>
+
+                              <mfrac>
+                                <mi>β</mi>
+
+                                <mrow>
+                                  <mi>1</mi>
+
+                                  <mo>+</mo>
+
+                                  <mi>κ</mi>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>λ</mi>
+
+                              <mi>2</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mfrac>
+                              <mi>β</mi>
+
+                              <mrow>
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>1</mi>
+
+                                    <mo>+</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+
+                                <mo>⁢</mo>
+
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>2</mi>
+
+                                    <mo>+</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>3</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mfrac>
+                              <mrow>
+                                <mi>1</mi>
+
+                                <mo>-</mo>
+
+                                <mi>κ</mi>
+                              </mrow>
+
+                              <mrow>
+                                <mi>3</mi>
+
+                                <mo>+</mo>
+
+                                <mi>κ</mi>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+
+                      <mtr>
+                        <mtd>
+                          <mrow>
+                            <msub>
+                              <mi>τ</mi>
+
+                              <mi>4</mi>
+                            </msub>
+
+                            <mo>=</mo>
+
+                            <mfrac>
+                              <mrow>
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>1</mi>
+
+                                    <mo>-</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+
+                                <mo>⁢</mo>
+
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>2</mi>
+
+                                    <mo>-</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+                              </mrow>
+
+                              <mrow>
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>3</mi>
+
+                                    <mo>+</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+
+                                <mo>⁢</mo>
+
+                                <mrow>
+                                  <mo>(</mo>
+
+                                  <mrow>
+                                    <mi>4</mi>
+
+                                    <mo>+</mo>
+
+                                    <mi>κ</mi>
+                                  </mrow>
+
+                                  <mo>)</mo>
+                                </mrow>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                        </mtd>
+                      </mtr>
+                    </mtable>
+                  </math>
+                </inlineequation></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+    <section xml:id="b3_ch2_s_yltpu">
+      <title>L-moments estimates for gauged data sample data</title>
+
+      <para>The traditional L moment estimator is based on probability
+      weighted moments. However, Wang (1996) derived the following sample
+      estimators directly from the definition of the first four L
+      moments:</para>
+
+      <equation xml:id="b3_ch2_e_fqmt4">
+        <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+          <semantics>
+            <mrow>
+              <mover accent='true'>
+                <mrow>
+                  <msub>
+                    <mi>&#x03BB;</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+                <mo stretchy='true'>&#x005E;</mo>
+              </mover>
+              <mo>=</mo><mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mi>n</mi>
+                  </mmultiscripts>
+                  <msub>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+              <munderover>
+                <mstyle mathsize='140%' displaystyle='true'><mo>&#x2211;</mo></mstyle>
+                <mrow>
+                  <mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+                <mi>n</mi>
+              </munderover >
+              <msub>
+                <mi>q</mi>
+                <mrow>
+                  <mo stretchy='false'>(</mo><mi>i</mi><mo stretchy='false'>)</mo></mrow>
+              </msub>
+            </mrow>
+            
+          </semantics>
+        </math>
+        
+      </equation>
+
+      <equation xml:id="b3_ch2_e_jpd0z">
+        <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+          <semantics>
+            <mrow>
+              <mover accent='true'>
+                <mrow>
+                  <msub>
+                    <mi>&#x03BB;</mi>
+                    <mn>2</mn>
+                  </msub>
+                </mrow>
+                <mo stretchy='true'>&#x005E;</mo>
+              </mover>
+              <mo>=</mo><mfrac>
+                <mn>1</mn>
+                <mn>2</mn>
+              </mfrac>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mi>n</mi>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>2</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                </mrow>
+              </mfrac>
+              <munderover>
+                <mstyle mathsize='140%' displaystyle='true'><mo>&#x2211;</mo></mstyle>
+                <mrow>
+                  <mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+                <mi>n</mi>
+              </munderover >
+              <mrow><mo>(</mo>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>&#x2212;</mo><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                </mrow>
+                <mo>)</mo></mrow><msub>
+                  <mi>q</mi>
+                  <mrow>
+                    <mo stretchy='false'>(</mo><mi>i</mi><mo stretchy='false'>)</mo></mrow>
+                </msub>
+            </mrow>
+           
+          </semantics>
+        </math>
+        
+      </equation>
+
+      <equation xml:id="b3_ch2_e_blsyg">
+        <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+          <semantics>
+            <mrow>
+              <mover accent='true'>
+                <mrow>
+                  <msub>
+                    <mi>&#x03BB;</mi>
+                    <mn>3</mn>
+                  </msub>
+                </mrow>
+                <mo stretchy='true'>&#x005E;</mo>
+              </mover>
+              <mo>=</mo><mfrac>
+                <mn>1</mn>
+                <mn>3</mn>
+              </mfrac>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mi>n</mi>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>3</mn>
+                    <mi>n</mi>
+                  </msubsup>
+                </mrow>
+              </mfrac>
+              <munderover>
+                <mstyle mathsize='140%' displaystyle='true'><mo>&#x2211;</mo></mstyle>
+                <mrow>
+                  <mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+                <mi>n</mi>
+              </munderover >
+              <mrow><mo>(</mo>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>2</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>&#x2212;</mo><mn>2</mn><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>+</mo><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>2</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                </mrow>
+                <mo>)</mo></mrow><msub>
+                  <mi>q</mi>
+                  <mrow>
+                    <mo stretchy='false'>(</mo><mi>i</mi><mo stretchy='false'>)</mo></mrow>
+                </msub>
+            </mrow>
+            
+          </semantics>
+        </math>
+        
+      </equation>
+
+      <equation xml:id="b3_ch2_e_zk5ml">
+        <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+          <semantics>
+            <mrow>
+              <mover accent='true'>
+                <mrow>
+                  <msub>
+                    <mi>&#x03BB;</mi>
+                    <mn>4</mn>
+                  </msub>
+                </mrow>
+                <mo stretchy='true'>&#x005E;</mo>
+              </mover>
+              <mo>=</mo><mfrac>
+                <mn>1</mn>
+                <mn>4</mn>
+              </mfrac>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mi>n</mi>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>4</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                </mrow>
+              </mfrac>
+              <munderover>
+                <mstyle mathsize='140%' displaystyle='true'><mo>&#x2211;</mo></mstyle>
+                <mrow>
+                  <mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+                <mi>n</mi>
+              </munderover >
+              <mrow><mo>(</mo>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>3</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>&#x2212;</mo><mn>3</mn><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>2</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>+</mo><mn>3</mn><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>1</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>2</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                  <mo>&#x2212;</mo><mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts/>
+                    <none/>
+                    <mrow>
+                      <mi>n</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+                  </mmultiscripts>
+                  <msubsup>
+                    <mrow></mrow>
+                    <mn>3</mn>
+                    <mrow></mrow>
+                  </msubsup>
+                </mrow>
+                <mo>)</mo></mrow><msub>
+                  <mi>q</mi>
+                  <mrow>
+                    <mo stretchy='false'>(</mo><mi>i</mi><mo stretchy='false'>)</mo></mrow>
+                </msub>
+            </mrow>
+            
+          </semantics>
+        </math>
+        
+      </equation>
+
+      <para>where q<subscript>(i)</subscript>, i=1,2,..,n are gauged peak
+      discharges ranked in ascending order and:</para>
+
+      <equation xml:id="b3_ch2_e_glgly">
+        <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+          <semantics>
+            <mrow>
+              <mmultiscripts>
+                <mi>C</mi>
+                <mprescripts/>
+                <none/>
+                <mi>m</mi>
+              </mmultiscripts>
+              <msubsup>
+                <mrow></mrow>
+                <mi>k</mi>
+                <mrow></mrow>
+              </msubsup>
+              <mo>=</mo><mrow><mo>{</mo> <mrow>
+                <mtable>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mfrac>
+                          <mrow>
+                            <mi>m</mi><mo>!</mo></mrow>
+                          <mrow>
+                            <mi>k</mi><mo>!</mo><mo stretchy='false'>(</mo><mi>m</mi><mo>&#x2212;</mo><mi>k</mi><mo stretchy='false'>)</mo><mo>!</mo></mrow>
+                        </mfrac>
+                        <mi>i</mi><mi>f</mi><mtext>&#x00A0;</mtext><mi>k</mi><mo>&#x2264;</mo><mi>m</mi></mrow>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mn>0</mn><mtext>&#x00A0;</mtext><mi>i</mi><mi>f</mi><mtext>&#x00A0;</mtext><mi>k</mi><mo>&#x003E;</mo><mi>m</mi></mrow>
+                    </mtd>
+                  </mtr>
+                  
+                </mtable></mrow> <mo>}</mo></mrow></mrow>
+            
+          </semantics>
+        </math>
+        
+      </equation>
+
+      <para>is the number of combinations of any k items from m items.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_q4ce3">
+      <title>Parameter and quantile estimation</title>
+
+      <para>The method of L moments involves matching theoretical and sample L
+      moments to estimate parameters. The L moments in <xref
+      linkend="b3_ch2_t_achre"/> are replaced by their sample estimates given
+      by <xref linkend="b3_ch2_e_zk5ml"/>. The resulting equations are then
+      solved to obtain estimates of the parameters. These parameters are used
+      to calculate the X% AEP quantiles.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_xodr0">
+      <title>LH moments for fitting the GEV distribution</title>
+
+      <para>When the selected probability model does not adequately fit all the gauged
+        data<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171808+1100"?>,<?oxy_insert_end?>
+        the lower discharges may exert undue influence on the fit and give insufficient weight to
+        the higher discharges which are the principal object of interest. To deal with this
+        situation<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171822+1100"?>,<?oxy_insert_end?>
+        Wang (1997) introduced a generalisation of L moments called LH moments. A more detailed
+        exposition can be found in <xref linkend="b3_ch2_s_l6g7s"/>.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_3sslo">
+      <title>Parameter Uncertainty and Quantile Confidence Limits</title>
+
+      <para>The sampling distribution <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ|</mi>
+          </math>
+        </inlineequation>D) can be approximated using the Monte Carlo method known as the parametric
+        bootstrap described in <xref linkend="b3_ch2_s_wltta"/>. This procedure yields N
+        <?oxy_comment_start author="RadhikaChhotai" timestamp="20151022T172140+1100" comment="Is this a technical term?"?>equi-weighted<?oxy_comment_end?>
+        samples that approximate the sampling distribution <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>p(θ|D)</mi>
+          </math>
+        </inlineequation>. As a result, they can be used to quantify parameter uncertainty and
+        estimate quantile confidence limits. However, because the parametric bootstrap assumes <inlineequation>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>θ</mi>
+          </math>
+        </inlineequation> is the true parameter, it underestimates the uncertainty and therefore
+        should not be used to estimate expected probabilities.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_e947x">
+      <title>Software</title>
+
+      <para>Implementation of L and LH moments requires extensive computation.
+      The web-based software called TUFLOW FLIKE supports L and LH moment
+      estimation is available at TBA. An extensive library of FORTRAN L moment
+      procedures can be found at www.research.ibm.com/people/h/hosking.</para>
+    </section>
+
+    <section xml:id="b3_ch2_s_dpive">
+      <title>Worked Examples</title>
+
+      <para>Example 9 illustrates fitting the GEV distribution using L moments
+      to a 47-year gauged record. Example 10 revisits Example 7 demonstrating
+      the search procedure for finding the optimal shift in LH moments
+      fitting.</para>
+    </section>
+  </section>
+
+  <section xml:id="b3_ch2_s_nyxhe">
+    <title>Method of Moments Approach</title>
+
+    <para>The method of moments used in conjunction with the LPIII distribution was the recommended
+      method in Australian Rainfall and Runoff (Pilgrim, 1987). The method was simple to implement
+      but, unlike US practice, did not use regionalised skew. Its use is no longer recommended.
+      Both<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171934+1100"?>,<?oxy_insert_end?>
+      the Bayesian and L moment
+      procedures<?oxy_insert_start author="RadhikaChhotai" timestamp="20151022T171930+1100"?>,<?oxy_insert_end?>
+      make better use of the available information.</para>
+  </section>
+</section>
