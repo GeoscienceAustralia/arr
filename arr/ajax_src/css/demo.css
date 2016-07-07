@@ -1,0 +1,187 @@
+/* General Blueprint Style */
+
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/bpicons/bpicons.eot');
+	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}/* Made with http://icomoon.io/ */
+
+
+/* Resets */
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+
+/* Helper classes */
+
+.cf:before,
+.cf:after {
+	content: ' ';
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+
+/* Main styles */
+
+body {
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	margin: 0;
+	color: #222;
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+}
+
+a:hover {
+	color: #ddd;
+}
+
+.container {
+	overflow-y: auto;
+	height: 100vh;
+}
+
+
+.dummy-logo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: auto;
+
+	text-align: center;
+	color: #3b3d4a;
+	background-color: #0e67ac;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.dummy-icon {
+	width: 300px;
+	height: 170px;
+	background-image: url(../img/header.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	font-size: 4em;
+
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.dummy-heading {
+	font-size: 0.75em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.content {
+	position: relative;
+	min-height: 300px;
+	margin: 0 0 0 300px;
+	padding:0 40px;
+}
+
+.content a {
+	color: #0e67ac;
+	font-weight: bold;
+	border-bottom: 1px dotted #222;
+}
+
+.content--loading {
+	background: url(../img/loading.svg) no-repeat 50% 50%;
+}
+
+.products {
+	margin: 0;
+	padding: 2em;
+	text-align: left;
+}
+
+.product {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	border-radius: 5px;
+	background: #1c1d22;
+}
+
+.product .foodicon {
+	font-size: 4em;
+	line-height: 190px;
+	color: #3b3d4a;
+}
+
+.info {
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 20vh 1em 0;
+	text-align: center;
+	color: #47484c;
+}
+
+body #cdawrap {
+	top: auto;
+	bottom: 15px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+body #cdawrap .carbon-text {
+	color: #505158;
+}
+
+body #cdawrap a.carbon-poweredby {
+	color: #7883c4;
+}
+
+body #cdawrap a:hover.carbon-poweredby {
+	color: #fff;
+}
+
+@media screen and (max-width: 40em) {
+	.bp-header {
+		padding-top: 3em;
+	}
+	.bp-header__main,
+	.bp-nav {
+		width: 100%;
+		text-align: center;
+	}
+	.dummy-logo {
+		display: none;
+	}
+	.content {
+		margin: 0;
+	}
+	body,
+	.container {
+		height: auto;
+		overflow: auto;
+	}
+}
+
+/* Sidebars */
+div.sidebar p {
+   background-color: #c9c9c9;
+   border-style: solid;
+   border-width: 2px;
+   border-color: black;
+         }
