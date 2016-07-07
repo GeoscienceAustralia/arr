@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter status="External Review" version="5.0" xml:id="b9_ch8"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+      <title>Safety Design Criteria</title>
+    <xi:include href="../../common/authors/smith_grantley.xml"/>
+    <xi:include href="../../common/authors/cox_ron.xml"/>
+      
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+
+  <section xml:id="b9_ch6_s_ot4c5">
+    <title>Introduction</title>
+    <para>The safety of people in floods is of major concern in floodplain management for both rural
+      and urban areas. Consideration of the circumstances for individual flood fatalities, both in
+      Australia and internationally, indicates that flood fatalities occur most commonly when people
+      enter floodwaters either on foot or in a vehicle
+        <citation>b6_c7_r9,b6_c7_r5,b6_c7_r11</citation>. However, where floodwaters rise rapidly
+      and unexpectedly in flash flood areas, people may also perish trapped inside buildings as
+      occurred in the Lockyer Valley QLD in 2010 <citation>b6_c7_r21</citation> and in Dungog, NSW
+      in 2015. Further, recent analysis of the Queensland floods in 2011 by the Queensland
+      Commission for Children, Young People, and Child Guardian <citation>b6_c7_r14</citation> and
+      the Queensland Fire and Rescue Service, 2012 has reinforced the conclusion that floodwaters
+      are extremely dangerous to both people trapped inside building or wading or driving vehicles
+      of all types in floods. While floodplain management activities aim to reduce the risk arising
+      from flooding events, ongoing human interaction with floodwaters during flood events is
+      largely unavoidable, as significant areas of existing development and transport infrastructure
+      in Australia remain within flood prone regions.</para>
+    <para>Records for past floods show that exposure of the community to flooding can result in
+      significant death tolls and 1859 flood fatalities have occurred nationally between 1900 and
+      2015 <citation>b6_c7_r11</citation>. Flood fatalities are significantly higher in flash flood
+      events with rapidly rising violent flood flows than in comparably slower rising and moving
+      riverine flooding. Two hundred and six (206) flash flood fatalities occurred in Australia
+      between 1950 and March 2008 <citation>b6_c7_r5</citation>. The cause of death for the majority
+      of these cases was drowning. Other fatalities were a result of heart attacks or overexertion,
+      or indirect causes such as electrocution or fallen trees <citation>b6_c7_r5</citation>.
+      Similarities have been observed in the United States, where 93 % of flash flood deaths can be
+      attributed to drowning <citation>b6_c7_r9</citation>. Details about the activity of flash
+      flood victims immediately prior to death are available for just under 50 % of the victims. Of
+      these, almost 53 % perished attempting to cross a watercourse, either by wading/swimming, or
+      by using a bridge or ford <citation>b6_c7_r5</citation>. These values include those in
+      vehicles. The motivation behind the activity leading to the death was known for 47 % of the
+      study group. Of these, almost 22 % were undertaking business as usual, either attempting to
+      reach a destination, ignoring the flood warnings or unaware of the flood intensity
+        <citation>b6_c7_r5</citation>.</para>
+    <para>The majority (31 %) of the Australian flash flood fatalities, for which the mode of
+      transport is known, were inside a vehicle at the time of death. Similar results have been
+      observed around the world, 42 % of the 93 % US flash flood drowning fatalities were
+      vehicle-related <citation>b6_c7_r9</citation> and 63 % of US riverine and flash flood
+      fatalities were found to be vehicle-related <citation>b6_c7_r19</citation>.
+        <citation>b6_c7_r23+1</citation> noted that vehicle-related fatalities occurred most
+      frequently (33 %) in European and US floods.</para>
+    <para>The Lockyer Valley floods of January 2011 dramatically demonstrated that sheltering in a
+      residential building was also not a safe option where flood flows have high force and damage
+      potential. Of the nineteen people who perished in the Lockyer Valley floods, thirteen were
+      sheltering in buildings that were either completely inundated or collapsed under the force of
+      the flood flows <citation>b6_c7_r21</citation>.</para>
+    <para>Regardless, the high numbers of people that die in vehicles or on foot highlights the
+      considerable risk in fleeing flash flood events. In many cases, people become exposed to
+      greater risk when attempting to flee a flood affected area
+        <citation>b6_c7_r19,b6_c7_r20,b6_c7_r27,b6_c7_r23</citation>. The risks to those fleeing are
+      not just the floodwaters themselves, but also include poor driving conditions, the danger of
+      being hit by falling debris, electrocution from fallen power lines, lightning and mudslides
+        <citation>b6_c7_r11</citation>.</para>
+    <para>Whilst evacuation is generally considered the safest of emergency management options
+      during flood events, it is not always possible. Subsequently, it is an important aspect of
+      emergency planning to ensure that in flood prone locations where timely evacuation may not be
+      possible people will not be in greater danger remaining in their homes.</para>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+    <para><?oxy_custom_end?><citation>b6_c7_r23</citation> highlighted that in most floods, people
+      are more likely to be killed or injured if they are outside of their home or in their cars
+      during the flood. Subsequently, undertaking evacuation at inappropriate times, such as when
+      the floodwaters have risen in depth and velocity, is likely to increase chance of death
+      (<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Cave et al,
+      2009).<?oxy_custom_end?></para>
+    <para>Sound floodplain management and emergency planning requires identification of the
+      location, timing and duration of potentially hazardous floodplain areas for design flood
+      conditions and the careful assessment of the most suitable mitigation options taking into
+      consideration the specifics of each floodplain location. The intention of this chapter of
+      Australian Rainfall and Runoff is to provide background information and guidance on the
+      application of approaches for prediction of flood hazard in those locations; additional
+      background information can be obtained from Cox et al. (2010)<citation>b6_c7_r7</citation>,
+      Shand et al. (2011)<citation>b6_c7_r16+1</citation> and Smith et at.
+        (2014)<citation>b6_c7_r18+1</citation>. Note that while guidance is provided on predicting
+      the flood hazard and flood risk, it is the role of the relevant floodplain management
+      authority to define the acceptability or otherwise of the predicted risk.</para>
+    <para>A detailed discussion of risk with respect to floodplain management is presented in <xref
+        linkend="b1_ch5"/> of Australian Rainfall and Runoff.</para>
+  </section>
+
+  <section xml:id="b9_ch6_s_4h86s">
+    <title>Flood Hazard</title>
+
+    <section xml:id="b9_ch6_s_hjt53">
+      <title>General Introduction</title>
+      <para>In terms of floodplain management, hazard can be defined as a source of potential harm
+        or a situation with potential to result in loss. Hence, the primary hazard is the result of
+        a flood event that has the potential to cause damage or harm to the community. Associated
+        with the hazard is the probability of its occurrence. </para>
+      <para>There are a number of factors to be considered where assessing the hazard associated
+        with floods. The usual starting point is to predict the flood characteristics and
+        particularly the flow characteristics of the inundated areas of the floodplain. The main
+        characteristics of interest typically are the flow depth and the flow velocity. In addition,
+        the assessment of the flood hazard needs to consider a range of other social, economic and
+        environmental factors, though these are often more difficult to quantify.</para>
+      <para>The magnitude of flood hazard can be variously influenced by the following
+        factors:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Velocity of Floodwaters;</para>
+        </listitem>
+        <listitem>
+          <para>Depth of Floodwaters;</para>
+        </listitem>
+        <listitem>
+          <para>Combination of Velocity and Depth of Floodwaters;</para>
+        </listitem>
+        <listitem>
+          <para>Isolation During a Flood;</para>
+        </listitem>
+        <listitem>
+          <para>Effective Warning Time; and</para>
+        </listitem>
+        <listitem>
+          <para>Rate of Rise of Floodwater;</para>
+        </listitem>
+      </itemizedlist>
+      <para>When quantifying and classifying flood hazard, it is important to understand the
+        underlying causes of the hazard level. For example, if the hazard level is classified as
+        ‘high’ then it is important to understand the key reason that it is high e.g. high depth,
+        high velocity, high velocity and depth in combination, isolation issues, short warning time?
+        If the core reasons that the hazard is high are not well understood, then attempts to modify
+        and lower the hazard level may not be successful.</para>
+    </section>
+
+    <section xml:id="b9_ch6_s_o75fx">
+      <title>Flood Hazard Assessment</title>
+
+      <para>The base data that underpins assessment of floodplain risk typically comprises the flow
+        characteristics (the flow depth and velocity) in the flood-affected areas of the catchment.
+        A common approach to obtaining this information is the analysis of predictions obtained from
+        catchment numerical modelling systems although physical models of the flood affected area
+        may be used. More information on the application of catchment modelling systems is presented
+        in <xref linkend="book4"/> to <xref linkend="book7"/> of Australian Rainfall and
+        Runoff.</para>
+
+      <para>The data used for assessment of the floodplain hazard are
+      presented commonly as maps of flood depth (see <xref
+      linkend="figure_9.6.1"/>) and flood velocity (speed and direction).
+      Typically, these maps are shown as an envelope of maxima; a time series
+      of flow behaviour, however, is an alternative presentation
+      format.</para>
+
+      <figure xml:id="figure_9.6.1">
+        <title>Example of a Flood Study Depth Map (<citation>b6_c7_r17+1</citation>)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata contentwidth="384" fileref="../../figures/9001.bmp"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para><citation>b6_c7_r17+1</citation> investigated the effects of alternative grid
+        resolutions on prediction of the flood hazard. The predicted flood hazard (computed as D.V –
+        flood depth times flood velocity) for two model grid resolutions, namely 1m and 10m, for the
+        2007 flood event at Merewether, NSW are shown in <xref linkend="figure_9.6.2"/>. Comparing
+        the predicted flood hazard estimates, it can be seen that those derived using the 1m grid
+        are higher than those obtained with the 10m grid. Furthermore,
+          <citation>b6_c7_r17+1</citation> report that the predicted velocity and depth
+        characteristics for the 1m grid more closely replicated those obtained from a physical model
+        of the same area.</para>
+
+      <figure xml:id="figure_9.6.2">
+        <title>Comparison of Provisional Flood Hazard Estimates from Numerical
+        Models at Differing Grid Resolutions (after Smith and Wasko,
+        2012)</title>
+
+
+
+        <mediaobject>
+          <imageobject>
+            <imagedata contentdepth="100%" fileref="../../figures/9002.png"
+                       scalefit="1" width="100%"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+        <para>a) 1 m grid resolution b) 10 m grid resolution</para>
+      <para>An important conclusion of <citation>b6_c7_r17+1</citation> was that predictions from 2D
+        numerical hydrodynamic models require further interpretation in order to ensure that
+        suitable, representative flood behaviour information was obtained for application,
+        especially in emergency planning and management decisions.</para>
+      <para>As described in the introduction to this chapter, people tend to be at risk in one of
+        three main categories; on foot, in vehicles or in buildings. Subsequently, in order to
+        further assess the vulnerability of a flood under the predicted conditions, flood hazard
+        assessment can be divided into three categories; people stability, vehicle stability and
+        structural stability.</para>
+    </section>
+
+    <section xml:id="b9_ch6_s_44z8a">
+      <title>People Stability</title>
+
+      <para>The two recognised hydrodynamic mechanisms by which people may lose stability in flood
+        flows are <emphasis>moment instability </emphasis>and <emphasis>friction
+          instability</emphasis> (<xref linkend="figure_9.6.3"/>). A summary description of these
+        mechanisms is provided here based on the comprehensive discussion of the topic presented in
+          <citation>b6_c7_r7+1</citation>.</para>
+
+      <para>In brief, moment (toppling) instability occurs when a moment induced by the oncoming
+        flow exceeds the resisting moment generated by the weight of the body
+          <citation>b6_c7_r1</citation>. This stability parameter is sensitive to the buoyancy of a
+        person within the flow and to body positioning and weight distribution.</para>
+
+      <para>Frictional (sliding) instability occurs when the drag force
+      induced by the horizontal flow impacting on a person’s legs and torso is
+      larger than the frictional resistance between a person’s feet and the
+      ground surface. This stability parameter is sensitive to weight and
+      buoyancy, clothing type, footwear type and ground surface
+      conditions.</para>
+
+      <para>Additionally, loss of stability may also be triggered by adverse
+      conditions, which should be taken into account when assessing safety
+      such as:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Bottom conditions:</emphasis> uneven,
+          slippery, obstacles;</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Flow conditions:</emphasis> floating
+          debris, low temperature, poor visibility, unsteady flow and flow
+          aeration;</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Human subject:</emphasis> standing or
+          moving, experience and training, clothing and footwear, physical
+          attributes additional to height and mass including muscular
+          development and/or other disability, psychological factors;</para>
+        </listitem>
+
+        <listitem>
+          <para><emphasis role="bold">Other issues:</emphasis> strong wind,
+          poor lighting, etc.</para>
+        </listitem>
+      </itemizedlist>
+
+      <figure xml:id="figure_9.6.3">
+        <title>Typical Modes of Human Instability in Floods <citation>b6_c7_r7</citation></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata contentwidth="294" fileref="../../figures/9003.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>Determining safety criteria for people requires an understanding of the physical
+        characteristics of the subjects along with the nature of the flow. The best measure of
+        physical attributes for human stability is the parameter H.M (mkg), the product of subject
+        height (H; m) and mass (M; kg) <citation>b6_c7_r7</citation>. The measure of flow attributes
+        is the parameter D.V (m<superscript>2</superscript>s<superscript>-1</superscript>), the
+        product of flow depth (D, m) and flow velocity (V, ms<superscript>-1</superscript>)</para>
+
+      <para>While distinct relationships exist between a subject’s height and
+      mass and the tolerable flow value, definition of general flood flow
+      safety guidelines according to this relationship is not considered
+      practical given the wide range in such characteristics within the
+      population.</para>
+
+      <para>In order to define safety limits, which are applicable for all persons, hazard regimes
+        are defined based on H.M for representative population demographics. Each classification is
+        based on laboratory testing of subject stability within floodwaters. The following suggested
+        classifications, after <citation>b6_c7_r7+1</citation> are:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Adults, where H.M &gt; 50 mkg;</para>
+        </listitem>
+
+        <listitem>
+          <para>Children, where H.M is between 25 and 50 mkg; and</para>
+        </listitem>
+
+        <listitem>
+          <para>Infants and very young children, where H.M &lt; 25 mkg.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Several hazard regimes are recommended based on D.V flow values
+      for each H.M classification. The hazard regimes, as suggested from
+      laboratory testing of subject stability and response within variable
+      flow conditions, are:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Low hazard zones where D.V &lt; 0.4
+          m<superscript>2</superscript>s<superscript>-1</superscript> for
+          children and D.V &lt; 0.6
+          m<superscript>2</superscript>s<superscript>-1</superscript> for
+          adults;</para>
+        </listitem>
+
+        <listitem>
+          <para>A Significant hazard zone for children exists where flow
+          conditions are dangerous to most between D.V = 0.4 to 0.6
+          m<superscript>2</superscript>s<superscript>-1</superscript>;</para>
+        </listitem>
+
+        <listitem>
+          <para>Moderate hazard zone where conditions are dangerous for some
+          adults and all children is defined between D.V = 0.6 to 0.8
+          m<superscript>2</superscript>s<superscript>-1</superscript> for
+          adults. This is inferred to define the limiting working flow for
+          experienced personnel such as trained rescue workers;</para>
+        </listitem>
+
+        <listitem>
+          <para>Significant hazard zone where flow conditions are dangerous to
+          most adults and extremely dangerous for all children is suggested
+          between flow values of D.V = 0.8 to 1.2
+          m<superscript>2</superscript>s<superscript>-1</superscript>;
+          and</para>
+        </listitem>
+
+        <listitem>
+          <para>Extreme hazard where flow conditions are dangerous to all
+          people is suggested for D.V &gt; 1.2
+          m<superscript>2</superscript>s<superscript>-1</superscript>.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para><citation>b6_c7_r7+1</citation> concluded that self-evacuation of the most vulnerable
+        people in the community (typically small children, and the elderly) is limited to relatively
+        placid flow conditions. Furthermore, a D.V as low as 0.4
+          m<superscript>2</superscript>s<superscript>-1</superscript> would prove problematic for
+        people in this category, i.e. the more vulnerable in the community.</para>
+
+      <para>These hazard regimes for tolerable flow conditions (D.V) as
+      related to the individual’s physical characteristics (H.M) are presented
+      in <xref linkend="figure_9.6.4"/> and <xref
+      linkend="table_9.6.1"/>.</para>
+
+      <table frame="box" rules="all" xml:id="table_9.6.1">
+        <caption>Flow Hazard Regimes for People <citation>b6_c7_r7</citation></caption>
+
+        <thead>
+          <tr align="center">
+            <th>DV
+            (m<superscript>2</superscript>s<superscript>-1</superscript>)</th>
+
+            <th>Children (H.M = 25 to 50)<superscript>1</superscript></th>
+
+            <th>Adults (H.M &gt; 50)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th>0</th>
+
+            <td>Safe</td>
+
+            <td>Safe</td>
+          </tr>
+
+          <tr>
+            <th>0 - 0.4</th>
+
+            <td>Low Hazard if depth &lt; 0.5m and velocity &lt; 3m/s otherwise
+            Extreme Hazard</td>
+
+            <td rowspan="2">Low Hazard if depth &lt; 1.2m and velocity &lt;
+            3m/s otherwise Extreme Hazard</td>
+          </tr>
+
+          <tr>
+            <th>0.4 - 0.6</th>
+
+            <td>Significant Hazard; Dangerous to most if depth &lt; 0.5m and
+            velocity &lt; 3m/s otherwise Extreme Hazard</td>
+          </tr>
+
+          <tr>
+            <th>0.6 - 0.8</th>
+
+            <td rowspan="3">Extreme Hazard; Dangerous to all</td>
+
+            <td>Moderate Hazard; Dangerous to some<superscript>2</superscript>
+            if depth &lt; 1.2m and velocity &lt; 3m/s otherwise Extreme
+            Hazard</td>
+          </tr>
+
+          <tr>
+            <th>0.8 - 1.2</th>
+
+            <td>Significant Hazard; Dangerous to
+            most<superscript>3</superscript> if depth &lt; 1.2m and velocity
+            &lt; 3m/s otherwise Extreme Hazard</td>
+          </tr>
+
+          <tr>
+            <th>&gt; 1.2</th>
+
+            <td>Extreme Hazard; Dangerous to all</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <para><emphasis role="bold">Maximum depth stability limit of 0.5 m for
+      children and 1.2 m</emphasis> for adults under good condition. <emphasis
+      role="bold">Maximum velocity stability limit of 3.0
+      ms<superscript>-1</superscript> </emphasis>for both adults and
+      children.</para>
+
+      <para><superscript>1</superscript>More vulnerable community members such
+      as infants and the elderly should avoid exposure to floodwater. Flood
+      flows are considered extremely hazardous to these community members
+      under all conditions</para>
+
+      <para><superscript>2</superscript>Working limit for trained safety
+      workers or experienced and well equipped persons (D.V &lt; 0.8
+      m<superscript>2</superscript>s<superscript>-1</superscript>)</para>
+
+      <para><superscript>3</superscript>Upper limit of stability observed
+      during most investigations (D.V &gt; 1.2
+      m<superscript>2</superscript>s<superscript>-1</superscript>)</para>
+
+      <figure xml:id="figure_9.6.4">
+        <title>Safety Criteria for People in Variable Flow Conditions
+            <citation>b6_c7_r7+1</citation></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9004.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <section xml:id="b9_ch6_s_aky0g">
+        <title>Physical considerations</title>
+        <para>There is a lack of test data for infants and very young children as well as
+          frail/older persons <citation>b6_c7_r6</citation>. These populations are unlikely to be
+          safe in any flow regimes and as such, care is required in locating aged care and
+          retirement villages as well as childcare centres and kindergartens.</para>
+        <para>For physically and/or mentally disabled people, similar intolerance criteria to the
+          very young children and frail/older persons should be applied as subjects are considered
+          vulnerable to all flow values. This is because while the H.M values may be similar to
+          regular adults, they are clearly at a physical (e.g. muscular development, control of
+          limbs) and/or psychological disadvantage (e.g. cognisant of the real/perceived danger,
+          inability to cope with external stimulus).</para>
+        <para>Emergency personnel tasked with carrying evacuees should be aware that the additional
+          H.M gained by carrying a person is not necessarily a benefit to their stability. This was
+          demonstrated in a particular laboratory test of human stability criteria,
+            <citation>b6_c7_r12+1</citation>, who note that their test subject (a trained stuntman)
+          considered balancing in the flowing water more difficult when carrying extra weight such
+          as a child or elderly person.</para>
+        <para>It should also be noted that while these criteria are based on experimental data for
+          loss of stability for persons wading in floodwaters, it is also inherently dangerous to
+          swim through floodwaters. Swimming through floodwaters should not be attempted.</para>
+      </section>
+
+      <section xml:id="b9_ch6_s_7rcjc">
+        <title>Psychological/behavioural considerations</title>
+
+        <para>A person’s ability to withstand flood flows is affected by their
+        mental disposition, perception, specific training and
+        experience.</para>
+
+        <para>Where specific training has been undertaken or a subject has recent and relevant
+          experience, personnel are able to tolerate situations of high D.V
+            <citation>b6_c7_r12</citation>. A limiting working flow of D.V = 0.8
+            m<superscript>2</superscript>s<superscript>-1</superscript> is suggested for experienced
+          personnel such as trained rescue workers. These personnel should, where possible, be
+          equipped for dangerous flow conditions with safety restraints, floatation aids and other
+          safety apparatus, and be trained to cope with high D.V situations. It is trained emergency
+          personnel who are likely to be instructing, driving and guiding evacuation paths, and
+          consequently to whom the upper limit of safety design criteria is directed.</para>
+      </section>
+    </section>
+
+    <section xml:id="b9_ch6_s_mzrum">
+      <title>Vehicle stability</title>
+
+      <para>The two recognised hydrodynamic mechanisms by which stability of vehicles is lost
+        include <emphasis>buoyancy</emphasis> or <emphasis>floating</emphasis> and
+          <emphasis>friction instability or sliding instability</emphasis> (refer <xref
+          linkend="figure_9.6.5"/>). More comprehensive discussion is presented within
+          <citation>b6_c7_r16+1</citation> but briefly, vehicle floating instability occurs when the
+        upward buoyancy force exceeds the downward force exerted by the vehicle mass. This
+        instability is dominant in low velocity, high depth flows. Frictional or sliding instability
+        occurs when the horizontal force exerted on one or more car panels is greater than the
+        vertical restoring force, which is dependent on the vehicle mass, buoyancy and the friction
+        between the car tyres and road surface.</para>
+
+      <figure xml:id="figure_9.6.5">
+        <title>Typical Modes of Vehicle Instability <citation>b6_c7_r16</citation></title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata contentwidth="414" fileref="../../figures/9005.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>Note that in the context of this discussion <emphasis>friction
+      instability</emphasis> is associated with slow moving or stationary cars
+      as distinct to <emphasis>hydroplaning</emphasis>, which occurs when a
+      vehicle at high speed encounters very shallow, evenly distributed water
+      covering a road, typically a highway or freeway. Hydroplaning is not
+      considered further within this report.</para>
+
+      <para>Determining safety criteria for vehicles requires an understanding
+      of the physical characteristics of the vehicle along with the nature of
+      the flow.</para>
+
+      <para>The measure of physical attributes for vehicle stability analysis
+      is the vehicle classification as based on length (L, m), kerb weight (W,
+      kg) and ground clearance (GC, m). Three vehicle classifications are
+      suggested:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Small passenger: L &lt; 4.3 m, W &lt; 1250 kg, GC &lt; 0.12
+          m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large passenger: L &gt; 4.3 m, W &gt; 1250 kg, GC &gt; 0.12
+          m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large 4WD: L &gt; 4.5 m, W &gt; 2000 kg, GC &gt; 0.22 m</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The measure of flow attributes for vehicle stability analysis is
+      D.V m<superscript>2</superscript>s<superscript>-1</superscript>,
+      determined as the product of flow depth (D, m) and flow velocity (V,
+      ms<superscript>-1</superscript>)</para>
+
+      <para>Limiting conditions exist for each classification based on limited
+      laboratory testing of characteristic vehicles. The upper tolerable
+      velocity for moving water is defined based on the frictional limits, and
+      is a constant 3.0 ms<superscript>-1</superscript> for all vehicle
+      classifications.</para>
+
+      <para>The upper tolerable depths within still water are defined by the
+      floating limits:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Small passenger vehicles: 0.3 m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large passenger vehicles: 0.4 m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large 4WD vehicles: 0.5 m</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The upper tolerable depths within high velocity water (at 3.0
+      ms<superscript>-1</superscript>) are defined by the frictional
+      limits:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Small passenger vehicles: 0.1 m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large passenger vehicles: 0.15 m</para>
+        </listitem>
+
+        <listitem>
+          <para>Large 4WD vehicles: 0.2 m</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>While specifically equipped vehicles may remain stable in water of
+      greater depths, the intention of the presented criteria is to focus on
+      the more vulnerable of typical vehicle types in common use.</para>
+
+      <para>Note that for all flow conditions in all vehicle classes, <emphasis>the proposed vehicle
+          safety criteria remain below the moderate hazard criteria for adults</emphasis>
+        <citation>b6_c7_r7</citation>. This ensures that adults occupying vehicles are, in
+        principle, safe if exiting a vehicle in floodwaters with attributes within the specified
+        hazard ranges.</para>
+
+      <para>During flood events, the majority of flood deaths are vehicle related, more than half of
+        all deaths during floods in the United States are vehicular-related
+          <citation>b6_c7_r10</citation>. Regardless of how often people see the power of water in
+        flash floods or are notified through community advertising that driving through high water
+        is dangerous, there remain sections of the community who will continue with ‘business as
+        usual’ irrespective of the flooding conditions <citation>b6_c7_r10</citation>.</para>
+
+      <section xml:id="b9_ch6_s_vqhqr">
+        <title>Vehicle Modernisation and Scale</title>
+
+        <para>A limiting aspect of the advice provided in this report is that vehicle stability data
+          sets are limited to dated laboratory data <citation>b6_c7_r16</citation>. The properties
+          of contemporary vehicles have significantly changed vehicle stability criteria through
+          modified buoyancy properties (e.g. improve dust sealing), weight and ground clearance.
+          These changes apply to all scales of vehicles from small passenger to large commercial
+          vehicles.</para>
+
+        <para>As a result, the hazard criteria provided in this report are
+        identified as interim recommended limits based on interpretation of
+        existing information. The criteria presented here are subject to
+        change once acceptable data for modern vehicles becomes
+        available.</para>
+      </section>
+
+      <section xml:id="b9_ch6_s_dg43w">
+        <title>Stability Criteria for Vehicles</title>
+
+        <para>Stability criteria based on the best available information for
+        stationary small passenger cars, large passenger cars and large 4WD
+        vehicles in various flow situations are presented in <xref
+        linkend="figure_9.6.6"/> and <xref linkend="table_9.6.2"/>.</para>
+
+        <table xml:id="table_9.6.2">
+          <title>Interim Flow Hazard Regimes for Vehicles <citation>b6_c7_r16</citation></title>
+
+          <tgroup cols="8">
+            <tbody>
+              <row>
+                <entry>Class of vehicle</entry>
+
+                <entry>Length (m)</entry>
+
+                <entry>Kerb Weight (kg)</entry>
+
+                <entry>Ground clearance (m)</entry>
+
+                <entry>Limiting still water
+                depth<superscript>1</superscript></entry>
+
+                <entry>Limiting high velocity flow
+                depth<superscript>2</superscript></entry>
+
+                <entry>Limiting velocity<superscript>3</superscript></entry>
+
+                <entry>Equation of stability</entry>
+              </row>
+
+              <row>
+                <entry>Small passenger</entry>
+
+                <entry>&lt; 4.3</entry>
+
+                <entry>&lt; 1250</entry>
+
+                <entry>&lt; 0.12</entry>
+
+                <entry>0.3</entry>
+
+                <entry>0.1</entry>
+
+                <entry>3.0</entry>
+
+                <entry><emphasis>DV</emphasis> ≤ 0.3</entry>
+              </row>
+
+              <row>
+                <entry>Large passenger</entry>
+
+                <entry>&gt; 4.3</entry>
+
+                <entry>&gt; 1250</entry>
+
+                <entry>&gt; 0.12</entry>
+
+                <entry>0.4</entry>
+
+                <entry>0.15</entry>
+
+                <entry>3.0</entry>
+
+                <entry><emphasis>DV</emphasis> ≤ 0.45</entry>
+              </row>
+
+              <row>
+                <entry>Large 4WD</entry>
+
+                <entry>&gt; 4.5</entry>
+
+                <entry>&gt; 2000</entry>
+
+                <entry>&gt; 0.22</entry>
+
+                <entry>0.5</entry>
+
+                <entry>0.2</entry>
+
+                <entry>3.0</entry>
+
+                <entry><emphasis>DV</emphasis> ≤ 0.6</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+        <para><superscript>1</superscript>At velocity = 0
+        ms<superscript>-1</superscript>; <superscript>2</superscript>At
+        velocity = 3.0 ms<superscript>-1</superscript>;
+        <superscript>3</superscript>At low depth</para>
+
+        <figure xml:id="figure_9.6.6">
+          <title>Interim Safety Criteria for Vehicles in Variable Flow Conditions
+              <citation>b6_c7_r16</citation></title>
+
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/9006.jpg"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+
+        <para><citation>b6_c7_r16+1</citation> concludes that the available datasets do not
+          adequately account for the following factors and that more research is needed in these
+          areas:</para>
+
+        <itemizedlist>
+          <listitem>
+            <para>Friction coefficients for contemporary vehicle tyres in
+            flood flows;</para>
+          </listitem>
+
+          <listitem>
+            <para>Buoyancy changes in modern cars;</para>
+          </listitem>
+
+          <listitem>
+            <para>The effect of vehicle orientation to flow direction
+            (including vehicle movement);</para>
+          </listitem>
+
+          <listitem>
+            <para>Information for additional categories including small and
+            large commercial vehicles and emergency service vehicles</para>
+          </listitem>
+        </itemizedlist>
+      </section>
+    </section>
+    <section>
+      <title>Building Stability</title>
+      <para>A comprehensive summary of available literature describing the stability of buildings in
+        floodwaters is provided in <citation>b6_c7_r18+1</citation>. Numerous hazard threshold
+        curves for building were collated from international literature and are compared in <xref
+          linkend="figure_9.6.6"/>. The collated curves have a variety of origins. As discussed by
+          <citation>b6_c7_r28</citation>, it can be difficult to synthesise the different building
+        stability curves and associated data, as they are derived by various means of analysis.
+        Subsequently, comparison between theory based curves, (e.g.
+        <citation>b6_c7_r24+1</citation>; <citation>b6_c7_r31+1</citation>) field derived curves
+        (e.g. <citation>b6_c7_r25+1</citation>) and curves derived from modelling and analysis
+        (<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>e.g. Becker<emphasis
+          role="italic"> et al.</emphasis>, 2011<?oxy_custom_end?>) is difficult. Further, different
+        damage thresholds may apply for each of these curves e.g. some threshold curves presented
+        represent the initiation of structural damage, while others represent the flood conditions
+        for complete destruction of the building. The spread of curves in <xref
+          linkend="figure_9.6.6"/> highlights the overall uncertainty surrounding building stability
+        during flood events.</para>
+      <para>Investigation and review of the available information concerning the failure of building
+        structures under flood loads has also been conducted by <citation>b6_c7_r26+1</citation> and
+          <citation>b6_c7_r28</citation>. Amongst a range of relevant conclusions, these reviews
+        noted that while a series of studies had theoretically analysed incident flood forces
+        compared to the resisting strength of various building structures, most of these studies had
+        considered components of flood forces in isolation or in limited combinations e.g.
+        hydrostatic and simplified hydrodynamic (velocity head) or buoyancy and drag forces.</para>
+      
+        <figure xml:id="figure_9.6.61">         
+          <title>Comparison of Building Stability Curves</title>
+          <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6117.png"/>
+          </imageobject>
+        </mediaobject>
+        </figure>
+      
+      <para>While the considerable variability in building construction is acknowledged, the
+        analysis of building damage leading to collapse reported by
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Mason<emphasis
+          role="italic"> et al.</emphasis>, (2012) <?oxy_custom_end?>for the Lockyer Valley floods
+        in January 2010 is compelling. This analysis shows that buildings constructed for Australian
+        conditions are vulnerable to damage and collapse under flood hazard conditions at the lower
+        end of the scale presented in <xref linkend="figure_9.6.6"/>.</para>
+      <para>On this basis, the green curve in <xref linkend="figure_9.6.6"/> is proposed as a lower
+        threshold for residential homes, built without consideration of flood forces. This curve can
+        be used as a minimum criterion for building stability in existing flood affected
+        areas.</para>
+      <para>The hazard zone between the green curve and the upper limit red curve in <xref
+          linkend="figure_9.6.6"/> identifies flood hazard conditions where it is considered, if
+        required, possible to construct a purpose built structure that is an appropriately
+        engineered structure specifically designed to withstand the full range of anticipated flood
+        forces including:</para>
+      <para> </para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Hydrostatic forces </emphasis></para>
+          <para>resulting from standing water or slow moving flow around the structure;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Buoyant forces </emphasis></para>
+          <para>due to displaced volume of water;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Hydrodynamic forces</emphasis></para>
+          <para> arising from moderate-to-high-velocity water flow around the structure;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Impulsive Forces</emphasis></para>
+          <para>caused by the leading edge of the water impacting the structure;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Uplift forces</emphasis></para>
+          <para> on elevated floors of a structure that are submerged during a flood event;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Debris Impact Forces </emphasis></para>
+          <para>generated by floating debris colliding with the structure;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Damming of Waterborne Debris </emphasis></para>
+          <para>due to the accumulation of debris on the upstream side of the structure, which
+            results in an increase in the hydrodynamic force.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Wave actions </emphasis></para>
+          <para>from wind and wakes; and</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Erosion and Scour </emphasis></para>
+          <para>due to flood actions.</para>
+        </listitem>
+      </itemizedlist>
+      <para>In locations where timely evacuation is not possible, such purpose built structures may
+        be required for vertical evacuation, not dissimilar to the process used in Japan for
+        tsunamis. However, it would be important to ensure the structure was purpose built for the
+        conditions it would be likely to encounter, up to and including the PMF or a similar extreme
+        flood event. The bottom floor of such structures may need to be somewhat sacrificial during
+        a flood event, for example, the windows and doors may ‘blow out’ under high flow conditions,
+        however the building’s structural members will be required to remain intact.</para>
+      <para>The red curve in <xref linkend="figure_9.6.6"/> is a suggested upper limit for all
+        buildings. Buildings in areas classified with flood hazard above this threshold are
+        considered vulnerable to collapse under these extreme flood conditions.</para>
+    </section>
+    <section>
+      <title/>
+      <para>Previous hazard classification curves (e.g.
+          <citation>b6_c7_r30+1</citation>;<citation>b6_c7_r29+1</citation>) provided a single set
+        of hazard curves that divide flood hazard levels into generic classifications of low,
+        medium, high etc. While the thresholds between these classifications had some basis in data
+        collected for stability/vulnerability of people and risk to life, in practice, such
+        threshold curves have been widely interpreted (sometimes mis-interpreted) and applied in
+        myriad ways.</para>
+      <para>It is interesting to compare the curves summarised for people, vehicle and building
+        stability compiled for this report. <xref linkend="figure_9.6.61"/> provides a direct
+        comparison of these three sets of curves. The first observation to be made is that for slow
+        moving floodwaters at depths greater than 0.5 m, adults wading through floodwater are
+        generally considered more stable than vehicles i.e. in most cases, vehicles are equally
+        unstable or more unstable than adults wading through the same flow conditions. Secondly, the
+        stability limit for an untrained adult walking through floodwater (D x V = 0.8) is almost
+        the same level as the lower threshold limit for building stability (D x V = 1.0). Also, that
+        for shallow fast moving flows, building stability (through foundation erosion/scour) may be
+        less than the stability of a person walking through the same flow conditions. In some
+        situations, this means that you would be safer to walk out through the prevailing
+        floodwaters rather than sheltering in a poorly constructed building.</para>
+      <figure xml:id="figure_9.6.72">
+        <title>Comparison of Updated Hazard Curves (after Smith et al. 2014)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6118.png"/>
+          </imageobject>
+      </mediaobject>
+      </figure>
+      <para>The third observation is that the flood water level that is used as the basis of a hazard
+        depth varies between people and vehicle stability, where the flood depth is referenced to
+        the ground level and building stability where the flood depth is nominally referenced to the
+        floor level.</para>
+      <para>On a practical level, this would mean that once physical flood behaviour has been
+        quantified in terms of flood depth and velocity, flood hazard could be classified
+        individually for people, vehicles or building thresholds separately. In many instances, this
+        will suit the requirements of specific analyses. For example, if the required assessment is
+        to determine whether a road evacuation route is trafficable for a given flood event, then
+        the vehicle stability threshold curves should be applied. Likewise, if the assessment is to
+        determine which buildings would be suitable for shelter in place during a PMF event, then
+        the building stability thresholds for flood hazard should be used in the analysis.</para>
+    </section>
+    <section>
+      <title>General Flood Hazard Curves</title>
+      <para>When dealing with specific floodplain management or emergency management analysis there
+        may be a clear need to use specific thresholds as described above. However, particularly in
+        a preliminary assessment of risks or as part of a constraints analysis such as might be
+        applied as part of a strategic floodplain management assessment, there is also an
+        acknowledged need for a combined set of hazard vulnerability curves, which can be used as a
+        general classification of flood hazard on a floodplain. A suggested set of curves based on
+        the referenced thresholds presented above is provided in <xref linkend="figure_9.6.73"
+        />.</para>
+      <figure xml:id="figure_9.6.73">
+        <title>Combined Flood Hazard Curves <citation>b6_c7_r18</citation></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6119.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The combined flood hazard curves presented in <xref linkend="figure_9.6.73"/> set hazard
+        thresholds that relate to the vulnerability of the community when interacting with
+        floodwaters. The combined curves are divided into hazard classifications that relate to
+        specific vulnerability thresholds as described in <xref linkend="table_9.6.21"/>. <xref
+          linkend="table_9.6.4"/> provides the limits for the classifications in <xref
+          linkend="table_9.6.21"/></para>
+      <table xml:id="table_9.6.21" frame="all" >
+        <title>Combined Hazard Curves - Vulnerability Thresholds
+          <citation>b6_c7_r18</citation></title>
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Hazard Vulnerability Classification</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>H1</entry>
+              <entry>Generally safe for vehicles, people and buildings.</entry>
+            </row>
+            <row>
+              <entry>H2</entry>
+              <entry>Unsafe for small vehicles.</entry>
+            </row>
+            <row>
+              <entry>H3</entry>
+              <entry>Unsafe for vehicles. children and the elderly.</entry>
+            </row>
+            <row>
+              <entry>H4</entry>
+              <entry>Unsafe for vehicles and people.</entry>
+            </row>
+            <row>
+              <entry>H5</entry>
+              <entry>Unsafe for vehicles and people. All buildings vulnerable to structural damage.
+                Some less robust buildings subject to failure.</entry>
+            </row>
+            <row>
+              <entry>H6</entry>
+              <entry>Unsafe for vehicles and people. All building types considered vulnerable to
+                failure.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table xml:id="table_9.6.4" frame="all">
+        <title>Combined Hazard Curves - Vulnerability Thresholds Classification Limits
+            <citation>b6_c7_r18</citation></title>
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="newCol4" colnum="3" colwidth="1*"/>
+          <colspec colname="newCol3" colnum="4" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Hazard Vulnerability Classification</entry>
+              <entry>Classification Limit (D and V in combination)</entry>
+              <entry>Limiting Still Water Depth (D)</entry>
+              <entry>Limiting Velocity (V)</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>H1</entry>
+              <entry>D*V ≤ 0.3</entry>
+              <entry>0.3</entry>
+              <entry>2.0</entry>
+            </row>
+            <row>
+              <entry>H2</entry>
+              <entry>D*V ≤ 0.6</entry>
+              <entry>0.5</entry>
+              <entry>2.0</entry>
+            </row>
+            <row>
+              <entry>H3</entry>
+              <entry>D*V ≤ 0.6</entry>
+              <entry>1.2</entry>
+              <entry>2.0</entry>
+            </row>
+            <row>
+              <entry>H4</entry>
+              <entry>D*V ≤ 1.0</entry>
+              <entry>2.0</entry>
+              <entry>2.0</entry>
+            </row>
+            <row>
+              <entry>H5</entry>
+              <entry>D*V ≤ 4.0</entry>
+              <entry>4.0</entry>
+              <entry>4.0</entry>
+            </row>
+            <row>
+              <entry>H6</entry>
+              <entry>D*V > 4.0</entry>
+              <entry>-</entry>
+              <entry>-</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>Importantly, the vulnerability thresholds identified in the flood hazard curves
+        described above can be applied to the best description of flood behaviour available for a
+        subject site. In this regard, the hazard curves can be applied equally to flood behaviour
+        estimates from measured data, simpler 1D numerical modelling approaches, through to complex
+        2D model estimates with the level of accuracy and uncertainty of the flood hazard estimate
+        linked to the method used to derive the flood behaviour estimate.</para>
+    </section>
+    <section>
+      <title>Isolation, Effective Warning Time, Rate of Rise and Time of Day</title>
+      <para>The effective warning time available to respond to a flood event, the rate of rise of
+        floodwaters, the time of day a flood occurs, and isolation from safety by floodwaters and
+        impassable terrain are all factors that may increase the potential for people to be exposed
+        to hazardous flood situations. These factors are important considerations that influence the
+        vulnerability of communities to flooding and are important considerations in managing flood
+        risk.</para>
+      <section>
+        <title>Isolation</title>
+        <para>As outlined in AEM Handbook 7 <citation>b6_c7_r4</citation>, flooding can isolate
+          parts of the landscape and cut-off evacuation routes to flood-free land. This can result
+          in dangerous situations, because people may see the need to cross floodwaters to access
+          services, employment or family members. Many flood fatalities result from the interactions
+          of people, often in vehicles, with floodwaters. Any situation that increases people’s need
+          to cross floodwaters increases the likelihood of an injury or fatality. </para>
+        <para>AEM Handbook 7 recommends that the floodplain be classified by precinct or community
+          based on flood emergency response categories. This classification is separate to the
+          quantification of hazard outlined in this guideline and is addressed in the complementary
+            <emphasis role="italic">Technical Flood Risk Management Guideline on Flood Emergency
+            Response Classification of the Floodplain</emphasis>. </para>
+      </section>
+      <section>
+        <title>Effective Warning Time</title>
+        <para>As outlined in of AEM Handbook 7, effective warning time is the time available for
+          people to undertake appropriate actions, such as lifting or transporting belongings and
+          evacuating.</para>
+        <para>Lack of effective warning time can increase the potential for the exposure of people
+          to hazardous flood situations. In contrast, having plenty of effective warning time
+          provides the opportunity to reduce the exposure of people and their property to hazardous
+          flood situations.</para>
+      </section>
+      <section>
+        <title>Rate of Rise</title>
+        <para>Rate of rise of floodwaters is discussed in AEM Handbook 7. A rapid rate of rise can
+          lead to people evacuating being overtaken or cut off by rising floodwaters. It is often
+          associated with high velocities but it can be an issue if access routes are affected by
+          flooding.</para>
+      </section>
+      <section>
+        <title>Time of Day</title>
+        <para>The time of day influences where people are and what they are doing. This can
+          influence their ability to receive any flood warnings and respond to a flood threat.
+          Inability to receive and respond to a warning can increase the potential for people to be
+          exposed to hazardous flood situations. </para>
+      </section>
+    </section>
+  </section>
+
+  <section xml:id="b9_ch6_s_9o464">
+    <title>Examples of Hazard Assessment</title>
+    <para>This section presents practical examples of the interpretation of flood hazard criteria in
+      a floodplain management context. The examples are not intended to be a comprehensive analysis
+      of all possible circumstances, but rather provide representative case studies, which
+      illustrate practical interpretation of flood hazard criteria for floodplain planning and
+      management.</para>
+
+    <section xml:id="b9_ch6_s_ke4u8">
+      <title>Example - Warehouse Car Park</title>
+      <para>Flood behaviour quantification, including flood hazard analysis, is used to guide land
+        use planning in floodplains <citation>b6_c7_r4</citation>. Often, a general, first pass
+        assessment of flood hazard is required to provide floodplain planners the opportunity to
+        have a general overview of the magnitude of flood hazard and potential flood risks over a
+        floodplain. This type of preliminary assessment of risks might also be used as part of a
+        constraints analysis for a strategic floodplain management assessment.</para>
+      <para>Effective strategic land use planning is about responding to flood risks in a way that
+        minimises future flood consequences. Consideration of flood hazard is therefore important so
+        that development of land is encouraged in areas of low or no flood risk wherever possible. A
+        clear understanding of flood risks early in the strategic land use planning process can help
+        steer development away from areas that are not sustainable due to the likely impacts of the
+        development on flood behaviour and guide land use zonings and development controls that
+        support sustainable development on the floodplain in consideration of the flood risk</para>
+      <para>The following figures provide both a broad-scale example of the base data (variation in
+        velocity and depth across a floodplain) and hazard mapping that can be developed as a first
+        pass using standard two dimensional numerical model outputs from a flood study analysis. The
+        flood hazard mapping presented in <xref linkend="figure_9.6.1"/> was developed by
+        classifying the numerical flood model results shown in <xref linkend="figure_9.6.74"/> using
+        the flood hazard thresholds listed in <xref linkend="table_9.6.4"/>. </para>
+      <figure xml:id="figure_9.6.74">
+        <title>Flood Depth Map From Numerical Model Output (Courtesy WMAwater Pty Ltd)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6120.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <figure xml:id="figure_9.6.75">
+        <title>Flood Hazard Classification From Numerical Model Output (Courtesy WMAwater Pty
+          Ltd)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/6121.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+    <section>
+      <title>Flood Mitigation - Warehouse Car Park</title>
+      <para>A large multinational retailer has identified an existing industrial area in an inner
+        city suburb as a suitable site for re-development as a warehouse-style retail outlet. The
+        site is gently sloping from the northwest to the southeast and, having been previously
+        prepared for development, is clear of vegetation. An aging, concrete-lined channel runs
+        along the eastern side of the site.</para>
+      <para>The retailer has submitted a development application, illustrated in <xref
+          linkend="figure_9.6.7"/>, “Schematic of Proposed Warehouse Development”, which
+        conceptually has a warehouse building situated in the northwest corner of the site with the
+        area between the building and the concrete-lined channel earmarked as a car park.</para>
+ 
+      <figure xml:id="figure_9.6.7">
+        <title>Schematic of Proposed Warehouse Development</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9007.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The local council as the consent authority has identified a series of development
+        constraints including flooding criteria. Amongst other criteria, the development must
+        have:</para>
+      <itemizedlist>
+        <listitem>
+          <para>All retail floor space above the designated flood planning level defined as the 1%
+            Annual Exceedance Probability (AEP) flood surface plus 500 mm freeboard;</para>
+        </listitem>
+        <listitem>
+          <para>A flood free evacuation route for floods above the flood planning level; and</para>
+        </listitem>
+        <listitem>
+          <para>All car park areas compliant with ARR flood hazard criteria for vehicle
+            stability;</para>
+        </listitem>
+      </itemizedlist>
+      <para>As there was no existing flood study, following consultation with Council, the developer
+        engaged an experienced flood consultant to undertake flood modelling of the site to estimate
+        1% AEP flood behaviour. Flood modelling of the site for the 1% AEP event completed using
+        industry best practice guidance as provided by ARR reference “Two Dimensional Modelling in
+        Urban and Rural Floodplains” <citation>b6_c7_r8</citation> predicted that while the
+        warehouse building met the flood planning criteria, the car park was inundated by
+        floodwaters. <xref linkend="figure_9.6.8"/> illustrates the extent of flood inundation for
+        the existing site.</para>
+      <figure xml:id="figure_9.6.8">
+        <title>1% AEP Flood Depth Map – Existing Site</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9008.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Interrogation of the flood model results to determine provisional flood hazard as the
+        product of flood depth (D) multiplied by flood velocity (V) showed that the peak flood
+        hazard (D.V) corresponded with the maximum inundation of the site at the peak of the flood
+        hydrograph. Provisional flood hazard for the 1% AEP flood on the existing site as
+        illustrated by <xref linkend="figure_9.6.9"/> showed that flooding in most of the area
+        identified for car parking exceeds the ARR stability criteria for small cars defined in
+          <xref linkend="table_9.6.2"/> and illustrated in <xref linkend="figure_9.6.6"/>. In <xref
+          linkend="figure_9.6.9"/>, areas coloured blue (D.V &lt;0.3
+          m<superscript>2</superscript>s<superscript>-1</superscript>) indicate locations where
+        small cars are likely to resist being moved by flood flows, whereas areas coloured green
+        through red indicate areas where small cars are very likely to be pushed across the
+        floodplain by floodwaters, with the flow having the potential to move larger cars closer to
+        the creek channel. Based on this information, Council’s preliminary advice to the developer
+        was that the existing flood hazard conditions for the designated car parking area were
+        incompatible with the nominated use.</para>
+      <figure xml:id="figure_9.6.9">
+        <title>1% AEP Provisional Flood Hazard Map – Existing Car Park</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9009.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>As the concrete lined channel had low environmental value, Council was not opposed to
+        the developer’s proposed adjustment of the channel flow conveyance capacity to reduce the
+        proportion of overbank flow at the site. The developer, in consultation with the flood
+        consultant ran a range of cut and fill scenarios through the flood model aimed at expanding
+        the channel capacity while raising the relative ground level of the car park to the flood
+        peak. <xref linkend="figure_9.6.10"/> shows the adjustment of the channel and overbank area
+        through the car park on the longitudinal section identified as ‘A-A’ in <xref
+          linkend="figure_9.6.7"/>.</para>
+      <figure xml:id="figure_9.6.10">
+        <title>Comparison of Car Park Cross Sections (A-A)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata contentdepth="100%" fileref="../../figures/9010.jpg" scalefit="1"
+              width="100%"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>This section is representative of a balance between the minimum volume of earthworks to
+        meet the car parking capacity criteria for the development. The car park area adjacent to
+        section A-A was graded to meet the natural surface areas outside of the development
+        site.</para>
+      <para>Flood modelling for the revised site including the proposed earthworks is presented in
+          <xref linkend="figure_9.6.11"/>. The flood model results show that the site flood
+        inundation area is significantly reduced with the works in place.</para>
+      <figure xml:id="figure_9.6.11">
+        <title>1% AEP Flood Depth Map – Revised Car Park</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9011.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Importantly, analysis of the provisional flood hazard as presented in <xref
+          linkend="figure_9.6.12"/> shows that flood hazard for the area designated as car park in
+        the conceptual site design now meets the ARR flood stability criteria for small vehicles.
+        The nominated car park area has a D.V product of less than 0.3
+          m<superscript>2</superscript>s<superscript>-1</superscript> as indicated by the blue
+        shaded area of <xref linkend="figure_9.6.12"/>. This indicates that it is now unlikely that
+        cars inundated by floodwaters in the 1% AEP flood will be pushed across the floodplain and
+        potentially into the channel creating a possible downstream blockage hazard.</para>
+      <para>Council’s planners also suggested to the developer that the yellow zone of <xref
+          linkend="figure_9.6.12"/> could be landscaped as gardens providing clear separation of the
+        car park from the channel. From a floodplain management perspective, this suggested change
+        would provide a significant further reduction in exposure risk with little impact on
+        available car parking space.</para>
+      <figure xml:id="figure_9.6.12">
+        <title>1% AEP Provisional Flood Hazard Map – Revised Car Park</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9012.jpg"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section xml:id="b9_ch6_s_plnl6">
+      <title>Example - Detention Basin</title>
+
+      <para>Council’s conditions of consent for a proposed retirement village
+      development require that on-site detention be provided so that peak
+      flows from the site in floods up to the 1% AEP event remain similar to
+      existing local runoff conditions.</para>
+
+      <para>The developer considers that a centralised detention basin on the
+      site can be designed to have a dual use and integrated into the site
+      grounds as a bowling green when not operating as a detention basin.
+      <xref linkend="figure_9.6.13"/> illustrates the proposed design.</para>
+
+      <figure xml:id="figure_9.6.13">
+        <title>1% AEP Flood Depth - Proposed Flood Detention Basin</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9013.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>As the catchment contributing runoff to the site is steep,
+      Council’s flood expert considers that there is some risk in a dual
+      purpose design for the basin due to flash flooding in prevailing
+      thunderstorms. Council’s advice is that the developer engage a qualified
+      flood expert to determine whether the basin meets the ARR hazard
+      criteria for people safety.</para>
+
+      <para>The basin design philosophy is that the local catchment stormwater
+      will collect both overland flows and also surcharge from the pit and
+      pipe stormwater system. If the basin capacity is exceeded, flows spill
+      at a designated location and flow overland to the adjacent creek
+      channel. Flows that remain in the basin discharge through a grated pit
+      in the lowest location in the basin floor.</para>
+
+      <figure xml:id="figure_9.6.14">
+        <title>1% AEP Provisional Flood Hazard Map - Proposed Flood Detention
+        Basin</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9014.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>An assessment of the provisional flood hazard (flood depth
+      multiplied by the flood velocity) is presented in <xref
+      linkend="figure_9.6.14"/>. When compared to flood hazard criteria
+      presented in <xref linkend="table_9.6.1"/> and <xref
+      linkend="figure_9.6.4"/>, the provisional hazard meets the safety
+      criteria for the elderly in most areas of the basin. This is because at
+      full capacity, the basin is no greater than 0.5m deep. Analysis shows
+      that a dangerous flood hazard is likely to occur near to the basin’s
+      outlet pit when the basin begins to drain at full capacity.</para>
+
+      <figure xml:id="figure_9.6.15">
+        <title>Basin Overflow Spillway – Flood Depth</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9015.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>Further analysis of the full design presented in <xref
+      linkend="figure_9.6.15"/> shows that when the basin capacity is exceeded
+      overflows will cross a public footpath adjacent the creek reserve.
+      Provisional flood hazard analysis of the overflow path presented in
+      <xref linkend="figure_9.6.16"/> shows that the flood hazard in the flow
+      path will exceed the people stability criteria for adults and be a
+      dangerous hazard to passing pedestrians.</para>
+
+      <figure xml:id="figure_9.6.16">
+        <title>Provisional Flood Hazard Map – Basin Overflow Spillway</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/9016.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>As a result of the analysis, Council consent criteria require signage to be placed in
+        appropriate locations informing residents of the retirement village and the public passing
+        the site on the public footpath of the dual purpose use of the basin and the danger of
+        entering floodwaters when the basin is inundated. Further, Council’s consent criteria
+        require that the developer upgrade the footpath to include a bridge of suitable span over
+        the basin spillway flow path so that safe thoroughfare of the footpath can be maintained
+        during flood conditions.</para>
+    </section>
+  </section>
+
+  <section xml:id="b9_ch6_s_dcep5">
+    <title>Conclusions and Recommendations</title>
+    <para>Recent flood events on the east coast of Australia in 2010 and 2011 have highlighted that
+      people continue to be exposed to dangerous and life threatening flow conditions in urban and
+      rural floodplains. While floodplain management activities are continuing to mitigate problems
+      associated the community’s exposure to floodwaters, ongoing human activity in floods is
+      largely unavoidable while significant areas of existing development and transport
+      infrastructure in Australia remain flood prone.</para>
+    <para>This chapter of Australian Rainfall and Runoff presents a summary with an explanation of
+      the limitations of recent analysis of flood stability thresholds for pedestrians and vehicles
+      in floodwaters. Recommended flood hazard criteria for use within Australia based on the
+      stability of people and vehicles in flood flows has also been presented.</para>
+    <para>Finally, the presented examples illustrate practical applications of these flood hazard
+      criteria. While not exhaustive of all cases, the examples show how the criteria can be
+      pragmatically applied to reduce the community’s exposure to flood danger.</para>
+  </section>
+
+  
+       <xi:include href="chap_refs.xml">
+              <xi:fallback>
+                     <para>No included references yet...</para>
+              </xi:fallback>
+       </xi:include>
+
+
+</chapter>

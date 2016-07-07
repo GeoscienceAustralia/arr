@@ -7,39 +7,155 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:db="http://docbook.org/ns/docbook"
     status = "In Preparation">
+ <info>  
+    <title>Validation and Sensitivity Testing</title>
     
-    <title>Uncertainty Determination </title>
+     <xi:include href="../../common/authors/weeks_william.xml"/>
+     
+     <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+    
+   </info>  
+    
     <informaltable border="1">
         <tr>
             <td colspan="2">Chapter Status</td>
         </tr>
         <tr>
-            <td>Book</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>Chapter</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>27/11/2015</td>
+            <td>Date last updated</td>
+            <td>06/07/16 </td>
         </tr>
         <tr>
             <td>Content</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Graphs and Figures</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Examples</td>
-            <td>In preparation</td>
+            <td>Working draft</td>
         </tr>
         <tr>
             <td>General</td>
-            <td/>
+            <td>Subject to industry feedback </td>
         </tr>
     </informaltable>
+    <section>
+        <title>Validation</title>
+        <para>After the catchment modelling system calibration has been finalised, the final step in
+            acceptance of the model is the validation process. The calibration has resulted in model
+            parameters that are suitable for application to the design problem, but validation
+            provides a means of ensuring that the parameters are suitable and that the catchment
+            modelling system can be applied to the design problem required. The validation process
+            is therefore a confirmation that the calibrated catchment modelling system is fit for
+            the required purpose. </para>
+        <para>Validation can be associated with independent verification of the model parameters. In
+            this process, the calibrated catchment modelling system is tested with an independent
+            data set that was not used in the parameter estimation process. While this does provide
+            additional confirmation that the catchment modelling system is performing adequately,
+            calibrations are usually very limited in the availability of data, and there are usually
+            insufficient events to allow this independent assessment.</para>
+        <para>Validation therefore is a careful review of the catchment modelling system and its
+            application to the problem at hand, so must consider the suitability of both the
+            catchment modelling system and the parameters.</para>
+        <para>The first step is to review whether the catchment modelling system applied is
+            appropriate for the application required. The questions are as follows.</para>
+        <itemizedlist>
+            <listitem>
+                <para>Is the model suitable for the problem being investigated?</para>
+            </listitem>
+            <listitem>
+                <para>Does the model include sufficient detail in the spatial coverage of
+                    flooding?</para>
+            </listitem>
+            <listitem>
+                <para>Does the model represent the flooding questions with sufficient accuracy to
+                    answer the required questions?</para>
+            </listitem>
+            <listitem>
+                <para>Can the model be extrapolated accurately to rarer (or sometimes smaller)
+                    floods from the flood magnitudes used to establish it?</para>
+            </listitem>
+            <listitem>
+                <para>Can the model be used to represent the range of design conditions (such as
+                    developed conditions or flood mitigation options) that are required in the
+                    design applications?</para>
+            </listitem>
+        </itemizedlist>
+        <para>In addition to the review of the model and calibration, additional validation can be
+            considered by reconciling the model performance with an alternate independent estimate.
+            For example, for hydrology calculations, rainfall based methods can be reconciled with
+            streamflow based methods or two alternative models may be calibrated separately and the
+            results compared.</para>
+        <para>A special form of validation is for hydrologic models that are used to estimate
+            probability based design flood characteristics. In these cases the main performance
+            criterion for the model and the adopted parameter set is that the model is able to
+            transform the probability based design inputs (design rainfalls, design losses and
+            baseflows) into probability based flood outputs (flood hydrographs and flood levels)
+            without introducing any probability bias ie. Probability neutral. Here the validation
+            has to be against independent design flood estimates, eg. from the flood frequency
+            estimation procedures covered in <xref linkend="book5"/>. </para>
+        <para>In summary, the validation process is a critical independent review of the model
+            establishment and performance to ensure that it is appropriate for the intended
+            application.</para>
+        <para>If the model is determined to be appropriate, it can be applied to the required design
+            problem. If the model with the adopted parameter set does not perform satisfactorily,
+            the model establishment should be checked first to ensure that it adequately represents
+            the important characteristics influencing flood behaviour. Only if this is found to be
+            satisfactory should further effort be put into reviewing and adjusting model
+            parameters.</para>
+    </section>
+    <section xml:id="b7_c7_s_pst001">
+        <title>Sensitivity Testing</title>
+        <para>Sensitivity testing of model platform parameters, uncertainties in input data and the
+            model’s schematisation (resolution) should be a regular part of a practitioner’s
+            activities, especially for inexperienced practitioner’s, whilst calibrating a model. It
+            also plays a useful role for establishing the uncertainty of uncalibrated models.</para>
+        <para>For models that are well-calibrated to a range of flood events and later verified,
+            considerable confidence can be had in the model’s ability to reproduce accurate flood
+            levels. This in turn means that factors of safety such as the design freeboard applied
+            to flood planning levels can be kept to a minimum. </para>
+        <para>However, for uncalibrated or poorly calibrated models less confidence can be had in
+            the model’s accuracy, and greater factors of safety (eg. larger freeboards) should be
+            applied to reflect the greater uncertainty (further discussion on uncertainty can be
+            found in <xref linkend="b7_ch8"/>). To quantify these uncertainties, sensitivity testing
+            could be carried out where a model’s calibration is non-existent or poor.</para>
+        <para>Examples of sensitivity testing to help quantify a model’s uncertainty are:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Adjust hydraulic roughness parameters values up and down by 20%;</para>
+            </listitem>
+            <listitem>
+                <para>Adjust lag parameters;</para>
+            </listitem>
+            <listitem>
+                <para>Increase inflows by 20%;</para>
+            </listitem>
+            <listitem>
+                <para>For downstream boundaries, not at a receiving water body such as the ocean,
+                    vary the stage discharge or water level upwards to check that the water levels
+                    in the area of interest are not greatly affected;</para>
+            </listitem>
+            <listitem>
+                <para>Apply blockages and greater losses to hydraulic structures and inlets;
+                    and</para>
+            </listitem>
+            <listitem>
+                <para>Apply lower discharge coefficients across embankments such as roads.</para>
+            </listitem>
+        </itemizedlist>
+        <para>Other useful sensitivity tests include:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Making the model’s resolution finer to check that results do not demonstrably
+                    change; and</para>
+            </listitem>
+            <listitem>
+                <para>Varying the timestep and other computational parameters.</para>
+            </listitem>
+        </itemizedlist>
+        <para> Sensitivity testing is also a very important part of developing a modeller’s
+            knowledge base and should be encouraged wherever possible.</para>
+        <sidebar>
+            <para>After a few weeks of pulling their hair out trying to calibrate to a well-defined
+                flood mark in a house (the model was calibrating well elsewhere), the modellers
+                called the owner of the house. After chatting for a while the owner suddenly
+                remembered “my Dad had the house raised after that flood”. Once the flood mark was
+                adjusted by how much the house was raised, a good calibration was revealed! The
+                modellers regretted not making that call a few weeks earlier…</para>
+        </sidebar>
+    </section>
 </chapter>

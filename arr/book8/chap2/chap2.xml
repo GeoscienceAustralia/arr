@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch2" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <info>
+    <title>Procedures for Estimating Rare to Extreme Floods</title>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+  <section xml:id="b8_s_2vj4c">
+    <title>Overall Design Approach</title>
+    <para>The overall emphasis of this Book is on the estimation of a flood frequency curve for Very
+      Rare to Extreme floods rather than on the estimation of a design flood of specific magnitude.
+      The procedures employed are generally based on
+      <?oxy_insert_start author="retallick" timestamp="20160428T183507+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T183506+1000" content="f"?>lood
+      <?oxy_insert_start author="retallick" timestamp="20160428T183509+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T183509+1000" content="f"?>requency
+      <?oxy_insert_start author="retallick" timestamp="20160428T183512+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T183511+1000" content="a"?>nalysis
+      and rainfall-based simulation techniques. While general guidance on these techniques should be
+      sought elsewhere in
+      ARR<?oxy_insert_start author="retallick" timestamp="20160529T153711+1000"?>
+        (<?oxy_insert_end?><xref linkend="b3_ch2"
+      /><?oxy_insert_start author="retallick" timestamp="20160529T153711+1000"?>)<?oxy_insert_end?>,
+      this Book gives consideration to a number of issues specific to the estimation of Very Rare to
+      Extreme design floods.</para>
+    <para>The procedures are generally based on the assumption that final design estimates should
+      incorporate the best and most relevant information available. As emphasised in <xref
+        linkend="book1"/> the use of new procedures and design information is encouraged, especially
+      where these can be shown to be more appropriate than the guidance provided here.</para>
+    <section xml:id="b8_s_81v7f">
+      <title>Flood Frequency
+        Analys<?oxy_insert_start author="retallick" timestamp="20160428T183605+1000"?>i<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T183604+1000" content="e"?>s</title>
+      <para>The procedures recommended in <xref linkend="book3"/> are directly relevant to the
+        estimation of Rare floods, and with the incorporation of regional information at-site
+        <?oxy_delete author="retallick" timestamp="20160428T185412+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160428T185413+1000"?>F<?oxy_insert_end?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160428T185416+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T185416+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160428T185421+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160428T185419+1000" content="a"?>nalysis
+        can also be used to estimate Very Rare floods. Special consideration is provided here on the
+        benefits of incorporating paleo-hydrological information,(<xref linkend="b3_ch2_s_22h0g"/>)
+        as this type of information has the potential to considerably extend the credible limit of
+        extrapolation.</para>
+    </section>
+    <section xml:id="b8_s_fr02f">
+      <title>Rainfall-Based Procedures</title>
+      <para>The procedures provided in <xref linkend="book5"/> provide general guidance on the use
+        of rainfall-based simulation methods. For risk-based design it is necessary to transform
+        design rainfalls into floods in a fashion that minimises bias in the resulting exceedance
+        probabilities; that is, we wish to ensure that the 1 in Y AEP design rainfalls are converted
+        to the corresponding 1 in Y AEP
+        floods<?oxy_insert_start author="retallick" timestamp="20160529T154634+1000"?>
+        (i<?oxy_insert_end?>.<?oxy_insert_start author="retallick" timestamp="20160529T154634+1000"?>e.
+        Probability neutrality)<?oxy_insert_end?>. For those inputs and model parameters with a
+        small impact on flood discharge it is usually sufficient to adopt a single representative
+        value from the central range of observations; often either the mean or median is adopted.
+        However, the most appropriate value depends on the degree of non-linearity in the
+        transformation between rainfall and runoff and in the cumulative probability distribution.
+        If one or both of these forms of non-linearity is great, it is desirable to adopt a joint
+        probability approach in which the inputs and model parameters are characterised by their
+        probability distributions rather than by a single value. This is particularly so for those
+        inputs and model parameters with a large impact on flood magnitude.</para>
+      <para>The adoption of a simplified probability<?oxy_insert_start author="retallick" timestamp="20160529T154923+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T154923+1000" content="-"?>neutral
+        approach is accepted practice for Frequent to Rare floods, where it is usually possible to
+        derive independent estimates of the design floods to check that no bias has been introduced
+        into the transformation between rainfall and runoff. Where such independent information is
+        available, simple event based approaches,
+        i.e<?oxy_insert_start author="retallick" timestamp="20160529T154954+1000"?>.<?oxy_insert_end?>
+        those involving the deterministic application of models based on linear and non-linear
+        routing with representative values of inputs and model parameters, should be adequate for
+        many practical purposes. However, it becomes increasingly difficult to obtain independent
+        estimates of floods in the Very Rare to Extreme range, and thus there is an increased need
+        to explicitly consider the joint probabilities involved. This is particularly so when
+        considering the impacts of changing factors (such as revised operating conditions on
+        reservoir levels) whose variability may be characterised with reasonable confidence but
+        whose influences may not be reflected in the observed record. Ensemble event approaches have
+        the potential to mitigate this bias, but these are only likely to be defensible for those
+        problems (linearly) influenced by a single dominant factor in addition to rainfall. Monte
+        Carlo simulation methods provide a more flexible and rigorous means of resolving these
+        difficulties, but the defensibility of these estimates rests upon the representativeness of
+        the inputs and the correct treatment of correlations which may be present.</para>
+    </section>
+  </section>
+  <section xml:id="b8_s_dkdq3">
+    <title>Procedures for Different Categories of Design Floods</title>
+    <para>The procedures for deriving design estimates for flood classes of most relevance to
+      extreme floods can be summarised in the following three main categories depending on the
+      probability of the flood to be estimated:</para>
+    <para>
+      <orderedlist numeration="lowerroman">
+        <listitem>
+          <para>Floods with AEPs approaching 1 in 100 (Rare floods):</para>
+          <para>Estimates should be based on a combination of approaches that consider (where
+            possible) at-site flood frequency analyses (<xref linkend="b2_ch2"/>), regional flood
+            methods (<xref linkend="b2_ch3"/>), and rainfall-based event modelling (<xref
+              linkend="b3_ch3_s_ynzmg"/>). The comparison of results obtained using different
+            methods yields insights about errors or assumptions that might otherwise be missed, and
+            the process of reconciling the different assessments provides valuable information that
+            aids adoption of a final “best estimate”. As discussed in <xref linkend="b1_ch3"/>, the
+            adoption of a single best estimate is ideally achieved by weighting estimates obtained
+            from different methods by their uncertainty, or through the process of reconciliation in
+            which selected factors are varied within their expected range to achieve the desired
+            level of consistency.</para>
+          <para>While there is scope for considering the use of continuous simulation approaches,
+            their use for estimation of Vary Rare to Extreme events should only be considered for
+            systems which are strongly dependent on flood volume in a manner not easily handled by
+            event-based procedures; this might be the case for the design of tailings dams with
+            small catchment areas, or cascade systems of storages involving complex interaction of
+            joint probabilities. The advantages and limitations of continuous simulation approaches
+            are broadly discussed in <xref linkend="b1_ch3"/>, but in the context of the estimation
+            of extreme floods, it is worth noting that their use will require careful generation of
+            stochastic rainfall inputs that are consistent with design rainfall information provided
+            in <xref linkend="book2"/>. If the exceedance probabilities of interest lie in the Very
+            Rare to Extreme event range then there is little point using a different approach for
+            estimation of Rare floods.</para>
+        </listitem>
+        <listitem>
+          <para>(ii) Floods with AEPs beyond 1 in 100 AEP to the credible limit of extrapolation
+            (Very Rare floods):</para>
+          <para>Estimates should be primarily based on rainfall-based simulation methods, with
+            rainfalls derived using methods described in <xref linkend="b8_s_vgrwa"/>, or else on
+            flood frequency estimates derived using historical and paleo flood information (<xref
+              linkend="b8_s_e0h7b"/>). Such estimates necessarily involve significant extrapolation,
+            and their defensibility will partly depend on the ease with which different estimates of
+            Rare floods can be reconciled.</para>
+        </listitem>
+        <listitem>
+          <para>Floods with AEPs beyond the credible limit of extrapolation (Extreme floods,
+            including the Probable Maximum Precipitation Flood):</para>
+          <para>These flood estimates may be required for direct use in design situations of high
+            risk, either in terms of risk to human life or economic losses, or where social or
+            political considerations require a very high level of safety. Estimates should be based
+            on the use of a flood event model with design rainfalls obtained by interpolation
+            between the credible limit of extrapolated rainfalls and the Probable Maximum
+            Precipitation (PMP). To avoid confusion with the Probable Maximum Flood (refer to iv),
+            the flood derived from the PMP using probability neutral assumptions is here termed the
+            “PMP Flood”.</para>
+          <para>An additional category of procedures differs from the above in its design
+            objective:</para>
+        </listitem>
+        <listitem>
+          <para>Probable Maximum Flood (the limiting value of flood that could reasonably be
+            expected to occur):</para>
+          <para>This may be required for comparison with estimates derived from previous studies or
+            for some other design objective that usually requires a notional upper limiting value of
+            flood without an associated AEP. In practice, the magnitude of the PMF will generally be
+            greater than the magnitude of the flood derived from the PMP using probability neutral
+            assumptions (the PMP Flood).</para>
+        </listitem>
+      </orderedlist>
+    </para>
+    <para>A brief summary of the recommended procedures and references to the relevant sections are
+      presented in <xref linkend="b8_t_bkw7k"/> and <xref linkend="b8_t_vxhjn"/>. It should be
+      recognised that these tables represent a summary of procedures that are described in detail in
+      later sections; they are not intended to be self-explanatory.</para>
+    <para>
+      <table frame="void" xml:id="b8_t_bkw7k">
+        <caption>Summary of
+          <?oxy_insert_start author="retallick" timestamp="20160529T181805+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181804+1000" content="p"?>rocedures
+          to
+          <?oxy_insert_start author="retallick" timestamp="20160529T181809+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181808+1000" content="d"?>erive
+          Design Rainfalls</caption>
+        <col align="left" width="20%"/>
+        <col align="center" width="18%"/>
+        <col align="center" width="15%"/>
+        <col align="center" width="21%"/>
+        <col align="left" width="26%"/>
+        <thead>
+          <tr>
+            <th>Design</th>
+            <th colspan="3">Design Category</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Consideration</td>
+            <td>
+              <para>Rare</para>
+              <para>Towards 1 in 100 AEP</para>
+            </td>
+            <td>
+              <para>Very Rare</para>
+              <para>Beyond 1 in 100 AEP to the credible limit of extrapolation</para>
+            </td>
+            <td>
+              <para>Extreme</para>
+              <para>Beyond the credible limit of extrapolation</para>
+            </td>
+            <td>The credible limit of extrapolation generally ranges from 1 in 100 to 1 in 5000
+              AEP</td>
+          </tr>
+          <tr>
+            <td>Point
+              <?oxy_insert_start author="retallick" timestamp="20160529T181300+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181300+1000" content="d"?>esign
+              <?oxy_delete author="retallick" timestamp="20160529T181302+1000" content="r"?><?oxy_insert_start author="retallick" timestamp="20160529T181303+1000"?>R<?oxy_insert_end?>ainfall
+              <?oxy_insert_start author="retallick" timestamp="20160529T181305+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181305+1000" content="d"?>epths
+              up to the PMP</td>
+            <td colspan="2">Generalised information on design rainfall bursts, as described in <xref
+                linkend="b2_ch3"/>.</td>
+            <td>
+              <para>Not applicable</para>
+            </td>
+            <td>
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>For information on seasonal estimates see <xref linkend="b8_s_9piio"
+                      /></para>
+                  </listitem>
+                  <listitem>
+                    <para>Point design rainfall depths for non-standard durations from procedures in
+                        <xref linkend="b8_s_i77bn"/></para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>Areal
+              <?oxy_insert_start author="retallick" timestamp="20160529T181251+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181251+1000" content="d"?>esign
+              <?oxy_insert_start author="retallick" timestamp="20160529T181255+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181254+1000" content="r"?>ainfall
+              <?oxy_insert_start author="retallick" timestamp="20160529T181257+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181257+1000" content="d"?>epths
+              up to the PMP</td>
+            <td colspan="2">Derived from point design rainfalls by application of
+              <?oxy_delete author="retallick" timestamp="20160529T162728+1000" content="a"?><?oxy_insert_start author="retallick" timestamp="20160529T162729+1000"?>A<?oxy_insert_end?>real
+              <?oxy_insert_start author="retallick" timestamp="20160529T162735+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T162734+1000" content="r"?>eduction
+              <?oxy_insert_start author="retallick" timestamp="20160529T162741+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T162738+1000" content="f"?>actors
+              (ARFs), selected as a function of storm area, duration, and AEP (<xref
+                linkend="b2_ch4"/>).</td>
+            <td>Interpolation to areal PMP estimate based on two
+              param<?oxy_insert_start author="retallick" timestamp="20160529T162751+1000"?>eter<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T162750+1000" content="."?>
+              parabolic function (<xref linkend="b8_s_ysol4"/>)</td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b2_ch4"/> for discussion on
+                    <?oxy_insert_start author="retallick" timestamp="20160529T162800+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T162759+1000" content="a"?>real
+                    <?oxy_delete author="retallick" timestamp="20160529T162803+1000" content="r"?><?oxy_insert_start author="retallick" timestamp="20160529T162804+1000"?>R<?oxy_insert_end?>eduction
+                    <?oxy_delete author="retallick" timestamp="20160529T162807+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160529T162808+1000"?>F<?oxy_insert_end?>actors</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>Probable Maximum Precipitation (PMP)</para>
+            </td>
+            <td colspan="2">Not applicable</td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>GSDM for short durations and small areas</para>
+                </listitem>
+                <listitem>
+                  <para>GSAM for
+                    S<?oxy_insert_start author="retallick" timestamp="20160529T162830+1000"?>outh-<?oxy_insert_end?>E<?oxy_insert_start author="retallick" timestamp="20160529T162834+1000"?>ast<?oxy_insert_end?>
+                    Aust. region</para>
+                </listitem>
+                <listitem>
+                  <para>GTSM for tropical region</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+            <td>
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>See <xref linkend="b8_s_1a1fg"/> for areas covered by different
+                      generalised methods</para>
+                  </listitem>
+                  <listitem>
+                    <para>PMP estimates are areal depths</para>
+                  </listitem>
+                  <listitem>
+                    <para>AEP of PMP based solely on catchment area, <xref linkend="b8_s_bb68z"
+                      /></para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>Temporal
+                <?oxy_insert_start author="retallick" timestamp="20160529T181247+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181246+1000" content="p"?>atterns</para>
+            </td>
+            <td>Regional information on design rainfall temporal patterns (for bursts and complete
+              storms) as described in <xref linkend="b2_ch5"/>.</td>
+            <td colspan="2">
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>GSDM patterns for all short durations</para>
+                  </listitem>
+                  <listitem>
+                    <para>GTSMR patterns for all durations in tropical areas</para>
+                  </listitem>
+                  <listitem>
+                    <para>GSAM for long durations in
+                      S<?oxy_insert_start author="retallick" timestamp="20160529T165701+1000"?>outh-<?oxy_insert_end?>E<?oxy_insert_start author="retallick" timestamp="20160529T165703+1000"?>ast<?oxy_insert_end?>
+                      Aust.<?oxy_insert_start author="retallick" timestamp="20160529T165713+1000"?>
+                      region<?oxy_insert_end?></para>
+                  </listitem>
+                  <listitem>
+                    <para>Both GSDM and GSAM/GTSMR patterns for intermediate
+                      durations<?oxy_delete author="retallick" timestamp="20160529T181424+1000" content="."?></para>
+                  </listitem>
+                </itemizedlist> (Note: use of a mix of selected at-site and generalised PMP patterns
+                in an ensemble for Very Rare events may be required to provide a smooth
+                transition)</para>
+            </td>
+            <td>
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>See <xref linkend="b8_t_vskyx"/> for summary of temporal pattern
+                      selection</para>
+                  </listitem>
+                  <listitem>
+                    <para>Pre-burst temporal patterns may be used in conjunction with storm losses
+                        (<xref linkend="b8_s_isy73"/>)</para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>Spatial
+              <?oxy_insert_start author="retallick" timestamp="20160529T181314+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181314+1000" content="p"?>atterns</td>
+            <td>Regional information on design rainfall spatial patterns as described in <xref
+                linkend="b2_ch4"/></td>
+            <td colspan="2">Use either GSDM, GSAM, or GTSMR spatial patterns as appropriate for the
+              location and duration</td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b8_s_sborg"/> for discussion on need for incorporation of
+                    spatial trend</para>
+                </listitem>
+                <listitem>
+                  <para>See <xref linkend="b8_t_hk25s"/> for summary of spatial pattern
+                    selection</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </para>
+    <para>
+      <table frame="void" xml:id="b8_t_vxhjn">
+        <caption>Summary of
+          <?oxy_insert_start author="retallick" timestamp="20160529T181756+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181755+1000" content="p"?>rocedures
+          to
+          <?oxy_insert_start author="retallick" timestamp="20160529T181759+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T181758+1000" content="d"?>erive
+          Design Floods</caption>
+        <?oxy_attributes width="&lt;change type=&quot;modified&quot; oldValue=&quot;20%&quot; author=&quot;retallick&quot; timestamp=&quot;20160529T182656+1000&quot; /&gt;"?>
+        <col align="left" width="20%"/>
+        <?oxy_attributes width="&lt;change type=&quot;modified&quot; oldValue=&quot;18%&quot; author=&quot;retallick&quot; timestamp=&quot;20160529T182656+1000&quot; /&gt;"?>
+        <col align="center" width="18%"/>
+        <?oxy_attributes width="&lt;change type=&quot;modified&quot; oldValue=&quot;15%&quot; author=&quot;retallick&quot; timestamp=&quot;20160529T182657+1000&quot; /&gt;"?>
+        <col align="center" width="15%"/>
+        <?oxy_attributes width="&lt;change type=&quot;modified&quot; oldValue=&quot;21%&quot; author=&quot;retallick&quot; timestamp=&quot;20160529T182658+1000&quot; /&gt;"?>
+        <col align="center" width="21%"/>
+        <?oxy_attributes width="&lt;change type=&quot;modified&quot; oldValue=&quot;26%&quot; author=&quot;retallick&quot; timestamp=&quot;20160529T182659+1000&quot; /&gt;"?>
+        <col align="left" width="26%"/>
+        <thead>
+          <tr>
+            <th>Design</th>
+            <th colspan="3">Design Category</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Consideration</td>
+            <td>
+              <para>Rare</para>
+              <para>Towards 1 in 100 AEP</para>
+            </td>
+            <td>
+              <para>Very Rare</para>
+              <para>Beyond 1 in 100 AEP to the credible limit of extrapolation</para>
+            </td>
+            <td>
+              <para>Extreme</para>
+              <para>Beyond the credible limit of extrapolation</para>
+            </td>
+            <td>The credible limit of extrapolation generally ranges from 1 in 100 to 1 in 5000
+              AEP</td>
+          </tr>
+          <tr>
+            <td>
+              <para> Losses</para>
+              <itemizedlist>
+                <listitem>
+                  <para>For complete design storms</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+            <td colspan="3">Use “complete storm” initial and continuing losses for all durations and
+              all AEPs (a probability distributed model may be warranted for south-west Australia)
+              consistent with <xref linkend="b5_ch5"
+              /><?oxy_delete author="retallick" timestamp="20160529T181944+1000" content="."?></td>
+            <td>
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>See <xref linkend="b8_s_wzey8"/> for general recommendations</para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para> Hydrograph model</para>
+              <itemizedlist>
+                <listitem>
+                  <para>Selection and configuration</para>
+                </listitem>
+                <listitem>
+                  <para>Calibration</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+            <td colspan="3">
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>Non-linear storage-routing models (or equivalent)</para>
+                  </listitem>
+                  <listitem>
+                    <para>Calibration to range of flood magnitudes, including reconciliation with
+                      design flood estimates derived from at-site/regional flood frequency and
+                      paleohydrological procedures</para>
+                  </listitem>
+                  <listitem>
+                    <para>For Rare to Extreme events non-linearity
+                      in<?oxy_comment_start author="retallick" timestamp="20160529T183220+1000" comment="m should be to the power in this formula "?>
+                      S = kQ<superscript>m</superscript>
+                      <?oxy_comment_end?>relation generally assumed to be in range 0.8 to 0.9
+                      (depending on catchment characteristics)</para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+            <td>
+              <para>
+                <itemizedlist>
+                  <listitem>
+                    <para>See <xref linkend="b8_s_zvvef"/> and <xref linkend="b8_s_cd813"/></para>
+                  </listitem>
+                  <listitem>
+                    <para>See <xref linkend="b8_s_20a81"/> and <xref linkend="b8_s_pb3t4"/></para>
+                  </listitem>
+                  <listitem>
+                    <para>See <xref linkend="b8_s_wh2h5"/></para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>Baseflow</td>
+            <td>Adopt baseflow recommendations as discussed in <xref linkend="b5_ch4"/></td>
+            <td>Baseflow to be varied gradually between that adopted for the 1 in 100 AEP and the
+              PMP Flood</td>
+            <td>Adopt constant value 20% to 50% higher than maximum observed</td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b8_s_fzd4a"/></para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+          <tr>
+            <td>Design
+              <?oxy_insert_start author="retallick" timestamp="20160529T182509+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182508+1000" content="f"?>lood
+              <?oxy_delete author="retallick" timestamp="20160529T182511+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160529T182512+1000"?>F<?oxy_insert_end?>requency
+              <?oxy_insert_start author="retallick" timestamp="20160529T182514+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182514+1000" content="c"?>urve</td>
+            <td colspan="3">Derive rainfall-based estimates for range of design rainfall durations
+              and AEPs, and adopt highest peak discharge from the range of durations for each
+              AEP</td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b8_s_3o5gi"/> for general guidance and <xref
+                      linkend="b8_s_whun4"/> for guidance on seasonal
+                    floods<?oxy_delete author="retallick" timestamp="20160529T182618+1000" content="."?></para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+          <tr>
+            <td>Probable Maximum Flood (PMF)</td>
+            <td colspan="2">
+              <para>Not applicable</para>
+            </td>
+            <td>Defined as the limiting value of flood that could reasonably be expected to occur
+                (<xref linkend="b8_s_gbk9t"
+              />)<?oxy_delete author="retallick" timestamp="20160529T183346+1000" content="."?></td>
+            <td>There are no established procedures to assign an AEP to the
+              PMF<?oxy_delete author="retallick" timestamp="20160529T182612+1000" content="."?></td>
+          </tr>
+          <tr>
+            <td>
+              <para>Additional
+                <?oxy_insert_start author="retallick" timestamp="20160529T182541+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182540+1000" content="d"?>esign
+                <?oxy_insert_start author="retallick" timestamp="20160529T182544+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182543+1000" content="c"?>onsiderations</para>
+              <itemizedlist>
+                <listitem>
+                  <para>Reservoir outflows</para>
+                </listitem>
+                <listitem>
+                  <para>Concurrent flooding</para>
+                </listitem>
+                <listitem>
+                  <para>Seasonal floods</para>
+                </listitem>
+                <listitem>
+                  <para>Snowmelt floods</para>
+                </listitem>
+                <listitem>
+                  <para>Long duration events</para>
+                </listitem>
+              </itemizedlist>
+            </td>
+            <td colspan="3">
+              <para>Probability<?oxy_insert_start author="retallick" timestamp="20160529T182602+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182602+1000" content="-"?>neutral
+                procedures are recommended to ensure that any bias in the AEP of the transformation
+                between rainfall and runoff is minimised. A range of procedures from the simple to
+                the rigorous are provided</para>
+            </td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b8_ch7"/> for general
+                    guidance<?oxy_delete author="retallick" timestamp="20160529T182615+1000" content="."?></para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>Preliminary
+                <?oxy_insert_start author="retallick" timestamp="20160529T182629+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182628+1000" content="d"?>esign
+                <?oxy_insert_start author="retallick" timestamp="20160529T182631+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182631+1000" content="f"?>lood
+                <?oxy_insert_start author="retallick" timestamp="20160529T182634+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182633+1000" content="e"?>stimates</para>
+            </td>
+            <td>Regional procedures and
+              <?oxy_delete author="retallick" timestamp="20160529T182639+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160529T182639+1000"?>F<?oxy_insert_end?>lood
+              <?oxy_insert_start author="retallick" timestamp="20160529T182642+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T182642+1000" content="f"?>requency
+              <?oxy_delete author="retallick" timestamp="20160529T182645+1000" content="a"?><?oxy_insert_start author="retallick" timestamp="20160529T182645+1000"?>A<?oxy_insert_end?>nalysis
+                (<xref linkend="book4"/></td>
+            <?oxy_comment_start author="retallick" timestamp="20160529T182750+1000" comment="check wording"?>
+            <td>Simple log Normal interpolation may be used to determine Very Rare preliminary</td>
+            <?oxy_comment_end?>
+            <td>Regional information may be used to estimate the PMP Flood (conservatively assumed
+              to equal the
+              PMF)<?oxy_delete author="retallick" timestamp="20160529T182754+1000" content="."?></td>
+            <td>
+              <itemizedlist>
+                <listitem>
+                  <para>See <xref linkend="b8_s_laqj1"/></para>
+                </listitem>
+              </itemizedlist>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </para>
+  </section>
+  <section xml:id="b8_s_v4uey">
+    <title>Relevance of Procedures to Specific Applications</title>
+    <para>The procedures outlined in this Book are intended to cover the broad spectrum of
+      applications listed in <xref linkend="b8_s_h5bgs"/> and the flood classes described in <xref
+        linkend="b8_s_ji1cq"/>. However, when deriving flood estimates for a specific application,
+      the practitioner’s interest may be focused on a more limited range of procedures. This section
+      provides some guidance on the applicability of different parts of the guidelines to specific
+      investigation<?oxy_insert_start author="retallick" timestamp="20160529T183924+1000"?>s<?oxy_insert_end?>
+      or design tasks.</para>
+    <para><xref linkend="b8_f_77nq1"/> gives a qualitative indication of the range of flood
+      magnitudes and the relative degree of reliability required for different applications. An
+      extension of the flood range of interest is associated with a greater degree of extrapolation
+      and thus larger uncertainty (lower reliability). The level of expertise and effort required
+      for deriving design floods increases with increasing level of reliability required.</para>
+    <figure xml:id="b8_f_77nq1">
+      <title>Qualitative
+        <?oxy_insert_start author="retallick" timestamp="20160529T184320+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184320+1000" content="i"?>ndication
+        of the
+        <?oxy_insert_start author="retallick" timestamp="20160529T184324+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184323+1000" content="r"?>ange
+        of
+        <?oxy_insert_start author="retallick" timestamp="20160529T184326+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184326+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160529T184329+1000"?>M<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184328+1000" content="m"?>agnitudes
+        and the
+        <?oxy_insert_start author="retallick" timestamp="20160529T184545+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184545+1000" content="r"?>elative
+        <?oxy_insert_start author="retallick" timestamp="20160529T184553+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184553+1000" content="d"?>egree
+        of
+        <?oxy_insert_start author="retallick" timestamp="20160529T184556+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184556+1000" content="r"?>eliability
+        <?oxy_insert_start author="retallick" timestamp="20160529T184600+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184559+1000" content="r"?>equired
+        for
+        <?oxy_insert_start author="retallick" timestamp="20160529T184605+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184603+1000" content="d"?>ifferent
+        <?oxy_insert_start author="retallick" timestamp="20160529T184608+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T184608+1000" content="a"?>pplications<?oxy_delete author="retallick" timestamp="20160529T184550+1000" content="."?></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/8002.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>As shown in <xref linkend="b8_f_77nq1"/>, the qualitative indication of the range of flood
+      magnitudes and associated relative degree of reliability can be divided into four groups of
+      applications. For the first three groups of applications, approximate or simplified flood
+      estimation procedures may be applicable; however, the practitioner has to apply <?oxy_delete author="retallick" timestamp="20160529T201101+1000" content="his/her"?>
+      <?oxy_delete author="retallick" timestamp="20160529T201110+1000" content="own"?><?oxy_insert_start author="retallick" timestamp="20160529T201110+1000"?>engineering<?oxy_insert_end?>
+      judgement in deciding on the degree of detail and accuracy required for a specific
+      application. The fourth group of applications demands the most accurate estimates and hence
+      the greatest level of effort.</para>
+    <para>(i) <emphasis role="italic">Planning and feasibility studies, initial screening of
+        options, preliminary designs:</emphasis></para>
+    <para>For these types of applications, where decisions based on the flood estimates are only
+      moderately sensitive to estimation uncertainties, approximate design flood estimates can be
+      derived by preliminary methods (see <xref linkend="b8_s_laqj1"/>).</para>
+    <para>(ii) <emphasis role="italic">Performance checks or preliminary designs of
+        structures:</emphasis></para>
+    <para>Many design codes require safety checks for conditions exceeding the design objective.
+      Approximate estimates of floods
+      <?oxy_delete author="retallick" timestamp="20160529T201318+1000" content="with AEPs"?> from 1
+      in 100<?oxy_insert_start author="retallick" timestamp="20160529T201320+1000"?>
+      AEP<?oxy_insert_end?> to an absolute limit of 1 in 2000
+      <?oxy_insert_start author="retallick" timestamp="20160529T201325+1000"?>AEP
+      <?oxy_insert_end?>can be obtained by use of design rainfalls (<xref linkend="b2_ch3"/>) in
+      combination with a flood event model configured using regional estimates of losses and routing
+      parameters. The rainfall frequency curve may be extended to the AEP of the PMP by deriving
+      site-specific estimates of the PMP. Flood estimates based on use of regional parameters
+      without calibration or additional confirmatory estimates are subject to considerable
+      uncertainty, and correspondingly greater responsibility then rests with the
+      <?oxy_delete author="retallick" timestamp="20160615T185733+1000" content="designer "?><?oxy_insert_start author="retallick" timestamp="20160615T185733+1000"?>practitioner
+      <?oxy_insert_end?>to ensure that the estimates are consistent with any relevant flood
+      estimates for the region.</para>
+    <para>(iii) <emphasis role="italic">Design of floodplain management or flood protection schemes
+        based on risk management principles:</emphasis></para>
+    <para>While risk-based design requires the assessment of the contribution of Rare to Extreme
+      floods to the total expected flood damage figure, the low probability of floods in this range
+      means that the contribution from this range of floods to the total expected flood damage is
+      relatively low in most situations. A lower degree of reliability of flood estimates in the
+      Rare to Extreme range is therefore acceptable for these applications.</para>
+    <para>(iv)<emphasis role="italic"> Final design of major works and assessment of the adequacy of
+        existing infrastructure, where failure would result in serious consequences or possible of
+        life:</emphasis></para>
+    <para>For this
+      <?oxy_comment_start author="retallick" timestamp="20160529T202902+1000" comment="consistent language with earlier in section
+"?><?oxy_delete author="retallick" timestamp="20160529T202830+1000" content="category"?><?oxy_insert_start author="retallick" timestamp="20160529T202830+1000"?>group<?oxy_comment_end?><?oxy_insert_end?>
+      of applications, efforts should be made to reduce uncertainties in design flood estimates to
+      the minimum possible. The further the AEP range of interest extends beyond the Rare floods,
+      the more important it is for the practitioner to consider in detail the guidelines in <xref
+        linkend="b8_ch4"/> and <xref linkend="b8_ch5"/> on extrapolation of hydrograph model
+      characteristics. For all applications where the range of interest extends to extreme floods,
+      and where large uncertainty in flood estimates would impact significantly on design decisions,
+      detailed flood studies are justified.</para>
+  </section>
+  
+  
+</chapter>

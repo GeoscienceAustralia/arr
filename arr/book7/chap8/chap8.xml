@@ -1,45 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="b7_ch8"  version="5.0" xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:m="http://www.w3.org/1998/Math/MathML"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:db="http://docbook.org/ns/docbook"
-    status = "In Preparation">
-    
-    <title>Application for Future Climates </title>
-    <informaltable border="1">
-        <tr>
-            <td colspan="2">Chapter Status</td>
-        </tr>
-        <tr>
-            <td>Book</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>Chapter</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>27/11/2015</td>
-        </tr>
-        <tr>
-            <td>Content</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Graphs and Figures</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>Examples</td>
-            <td>In preparation</td>
-        </tr>
-        <tr>
-            <td>General</td>
-            <td/>
-        </tr>
-    </informaltable>
+<!DOCTYPE chapter>
+<chapter status="In Preparation" version="5.0" xml:id="b7_ch9"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+ 
+    <info> 
+       
+       <title>Application to Design</title>
+       
+           <xi:include href="../../common/authors/weeks_william.xml"/>
+           
+           <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+       
+       </info>  
+       
+       <informaltable border="1">
+              <tr>
+                     <td colspan="2">Chapter Status</td>
+              </tr>
+              <tr>
+                     <td>Date last updated</td>
+                     <td>06/07/16 </td>
+              </tr>
+              <tr>
+                     <td>Content</td>
+                     <td>Working drafts</td>
+              </tr>
+              <tr>
+                     <td>General</td>
+                     <td>Subject to industry feedback </td>
+              </tr>
+       </informaltable>
+       <section>
+              <title>Overview</title>
+              <para>Once the practitioner is satisfied with the calibration and validation, the next
+                     step in the application of a catchment modelling system is to apply it to the
+                     design problem. Australian Rainfall and Runoff is principally concerned with
+                     design flood estimation problems where floods of defined probabilities are
+                     required, but other applications are required for flood forecasting and warning
+                     or for assessment of impacts. A concern is that the calibration and validation
+                     processes concentrate on recorded historic flood events, whereas the design
+                     applications are more theoretical probabilistic events.</para>
+              <para>In the analysis of these probabilistic events, an important objective is to
+                     transfer probabilistic rainfalls into probabilistic flood levels, through the
+                     calculation of flood discharges. These design events are quite different from
+                     the historic floods and care must be taken in transferring the catchment
+                     modelling system application from the variable historic events into the design
+                     results. </para>
+              <para>As discussed in <xref linkend="b7_ch7"/>, the parameters selected for
+                     application to the design conditions must be appropriate for the required
+                     application as well as consistent with the calibration to the available
+                     historic data.</para>
+              <para>There are therefore three conditions where model parameters may be
+                     required:</para>
+              <itemizedlist>
+                     <listitem>
+                            <para><emphasis role="italic">Historic Floods </emphasis>
+                            - These are the floods where the data has been used to estimate
+                                   parameters and to validate the models. Where there is more than
+                                   one flood event, there may be a variety of conditions
+                                   represented, with different spatial and temporal rainfall
+                                   distributions possible. The flood events will sample a limited
+                                   range of conditions that have applied during the period when data
+                                   could be collected and these may not necessarily be
+                                   representative of the conditions where the model must be applied.
+                                   In addition, catchment conditions may have changed since the
+                                   historic flood event occurred. Historic floods may also be
+                                   analysed in the “design” application of models where flood
+                                   impacts may be required to assess how development would have
+                                   affected a historic flood for example.</para>
+                     </listitem>
+                     <listitem>
+                            <para><emphasis role="italic">Design Applications</emphasis>
+                             - This is the main application where models discussed in
+                                   Australian Rainfall and Runoff will be required and require
+                                   results for floods of defined probability to be calculated. This
+                                   is a more theoretical application than the analysis of historic
+                                   floods and the parameters need to be established to ensure that
+                                   the probability is calculated correctly. It is likely that the
+                                   probabilistic floods calculated will be larger than the historic
+                                   floods used to estimate the model parameters. The probabilistic
+                                   design flood estimates must consider the relevant requirements.
+                                   In some cases, flood peaks may be the only requirement, while
+                                   flood hydrographs or flood volumes may be relevant at other
+                                   times. There are different issues for each requirement.</para>
+                     </listitem>
+                     <listitem>
+                            <para><emphasis role="italic">Real Time Flood Estimation</emphasis>
+                             - This is the requirement to use the model for a flood
+                                   forecasting and warning application. This is different from the
+                                   design application since timing is critical and the parameters
+                                   must be available to carry out the analysis as the event is
+                                   occurring. This is a far more complex application than the design
+                                   situation, and while similar conditions apply in model
+                                   application, this chapter concentrates on the design
+                                   conditions.</para>
+                     </listitem>
+              </itemizedlist>
+              <para> This chapter concentrates on the probabilistic applications, though there are
+                     some similarities with the others.</para>
+              
+       </section>
+       <section>
+              <title>Issues with Historical Calibration Floods</title>
+              <section>
+                     <title>Introduction</title>
+                     <para>Where parameters estimated from historical events must be transferred to
+                            design applications, a common concern is how representative the historic
+                            events are of the design flood events that must be estimated with the
+                            catchment modelling system.</para>
+              </section>
+              <section>
+                     <title>Magnitude of the Calibration Events</title>
+                     <para>A common issue is that the historic calibration events are relatively
+                            frequent, while the design applications may be needed for floods up to
+                            1% Annual Exceedance Probability or rarer. It is therefore important
+                            that the model parameters selected for design application should still
+                            be appropriate for analysis of the rarer flood events.</para>
+                     <para> A common assumption is that the model parameters calibrated on
+                            relatively frequent events remain constant for all rarer events. This
+                            may or may not be correct, so this assumption should be checked with
+                            regard to the representativeness of the calibration floods and with the
+                            model processes and whether there is a change in response for rarer
+                            flood events.</para>
+                     <sidebar>
+                            <para>In general constant parameters are recommended for the range of
+                                   design events unless there is some evidence otherwise.</para>
+                     </sidebar>
+              </section>
+              <section>
+                     <title>Calibration Event Conditions</title>
+                     <para>The calibration events used to determine catchment modelling system
+                            parameters are generally all that is available, and the practitioner
+                            must apply the data from these events without the luxury of making a
+                            selection of the most appropriate events.</para>
+                     <para>During calibration the practitioner must carefully review the properties
+                            of the historic floods used for calibration and determine how
+                            appropriate these are to be applied to the design problem. For example,
+                            the available calibration floods may be localised on a part of the
+                            catchment while the design flood event should be a more widely
+                            distributed event. On larger catchments, floods may be usually produced
+                            from a part of the catchment and the actual contributing section may
+                            vary from one event to another. The design case must therefore allow for
+                            the different catchment properties while estimating the probabilistic
+                            floods correctly. Some of these issues are discussed in <xref
+                                   linkend="book4"/> but there may be an impact on the transfer of
+                            the model parameters from the historic calibration events to the design
+                            flood events.</para>
+                     <para>The calibrated parameters are for the situation/time when the calibration
+                            event occurred. However, there may be significant changes from one event
+                            to another. For example, in agricultural regions, the pattern of
+                            cropping may be different from one event to another. These varying
+                            catchment conditions may be considered in the individual calibration
+                            events, but they then need to be generalised for the design application.
+                            There are questions concerning how this is implemented. For example,
+                            sugar cane agriculture has areas of very high floodplain roughness in
+                            some locations and areas of fallow ground in other parts. These patterns
+                            vary from year to year and are difficult to determine for historic
+                            events. There is a question of the “average” conditions that should
+                            apply for the design application. A common approach is to adopt an
+                            average value of two very different conditions and then carry out some
+                            sensitivity tests to assess the impact of changes in the pattern of
+                            agriculture.</para>
+                     <para> Similarly in arid areas, the antecedent conditions may have a major
+                            impact on catchment conditions for individual flood events, but these
+                            conditions then need to be represented in the design situation.</para>
+              </section>
+              <section>
+                     <title>Applied Parameters</title>
+                     <para>Calibration usually works with historic flood events while the design
+                            requirements are for probabilistic events. The parameters calculated for
+                            the historic recorded flood events may not be applicable to the design
+                            flood events and the results may not be consistent.</para>
+                     <para>It is therefore important to confirm the model performance with
+                            probabilistic results. For situations where sufficient streamflow
+                            gauging is available, the model parameters can be confirmed using the
+                            Flood Frequency Analysis results to confirm that the model is
+                            representing the probabilistic flood discharges. Where there is
+                            insufficient streamflow records for a Flood Frequency Analysis, the
+                            model can be cross checked with a regional flood frequency results
+                                   (<xref linkend="b3_ch3"/>). Similarly, the model output can be
+                            confirmed with other anecdotal data, to confirm that the parameters are
+                            appropriate for the design application.</para>
+                     <para> When applying hydrologic and hydraulic models to design situations,
+                            there are additional details that add complexity to the process. Often
+                            the historic floods are calibrated to the conditions that apply when the
+                            flood event occurred, so there are set values for antecedent conditions,
+                            losses, baseflow and the particular conditions that applied in the
+                            event, such as spatial or temporal patterns of rainfall. These
+                            additional factors are often not a part of the calibration process but
+                            must be incorporated into the design conditions.</para>
+              </section>
+       </section>
+       <section>
+              <title>The ARR Data Hub</title>
+              <para>The ARR Data Hub holds the design input data required for the application of ARR
+                     for design flood estimation. By inputting catchment centroid or a shape file
+                     you can download: the River basin, long duration ARF, Short duration ARF, storm
+                     loss value, pre-burst and temporal patterns. Entering catchment outlet allows
+                     the practitioner to download baseflow factors. As the data underlying ARR will
+                     progressively change as new data and techniques are available practitioners are
+                     recommended to visit the data hub at the start of each project <link
+                            xlink:href="Http://data.arr.org.au">http://data.arr.org.au</link>. The
+                     data can be downloaded as a text file and included as an appendix to a project
+                     report. </para>
+       </section>
 </chapter>

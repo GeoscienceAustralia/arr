@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" version="5.0" xml:id="b7_ch3"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <title>Implementation</title>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" version="5.0" xml:id="b7_ch3">
+  
+  <info>
+  <title>Conceptualisation and Selection of a Catchment Modelling System</title>
+
+    <xi:include href="../../common/authors/retallick_monique.xml"/>
+
+    <xi:include href="../../common/authors/testoni_isabelle.xml"/>
+    
+    <xi:include href="../../common/authors/babister_mark.xml"/>
+    
+
+  
+  </info>
 
   <para>
     <informaltable border="1">
@@ -15,33 +20,357 @@
         <td colspan="2">Chapter Status</td>
       </tr>
       <tr>
-        <td>Book</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td>Chapter</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Date</td>
-        <td>27/11/2015</td>
+        <td>Date last updated</td>
+        <td>06/07/16 </td>
       </tr>
       <tr>
         <td>Content</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Graphs and Figures</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Examples</td>
-        <td>In preparation</td>
+        <td>Working draft</td>
       </tr>
       <tr>
         <td>General</td>
-        <td/>
+        <td>Subject to industry feedback </td>
       </tr>
     </informaltable>
   </para>
+  <section xml:id="b7_ch3_s_12bx2">
+    <title>Introduction</title>
+    <para>A well thought out model conceptualisation and selection stage can result in significant
+      project savings and the avoidance a lot of costly rework. While it is not possible to identify
+      all potential issues, as learning experiences during a modelling project can identify issues
+      and these can be addressed during this initial stage. This allows the limitations to be better
+      understood and factored into decision making.</para>
+    <para>The conceptualisation stage in the catchment modelling process can be broken down into a
+      series of steps that lead to informed decision making: </para>
+    <itemizedlist>
+      <listitem>
+        <para>Defining the problem under consideration and output needs;</para>
+      </listitem>
+      <listitem>
+        <para>Identifying the key process/es that must be modelled to understand and model the
+          problem;</para>
+      </listitem>
+      <listitem>
+        <para>Identifying the available data;</para>
+      </listitem>
+      <listitem>
+        <para>Selecting a level of modelling complexity that can be justified by the data available
+          to calibrate or parameterise the modelling processes; and </para>
+      </listitem>
+      <listitem>
+        <para>Selecting a modelling approach that matches these considerations with project
+          constraints including, time, cost, model choices and modeller experience. </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section xml:id="b7_ch3_s_w52rm">
+    <title>Factors for Consideration</title>
+    <para>The most important step in developing a catchment modelling system is to properly identify
+      the problem under consideration, the purpose of the modelling and required outputs. Modelling
+      is used to predict the behaviour of complex systems under different scenarios and conditions.
+      Modelling will generally have a specific purpose. The purpose of modelling may include:</para>
+    <itemizedlist>
+      <listitem>
+        <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Floodplain studies
+          – inclusive of flood studies all the way through to mitigation impact
+          assessment.<?oxy_custom_end?> This may include defining flood behaviour for land use
+          planning. </para>
+      </listitem>
+      <listitem>
+        <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Flood Emergency
+          Response – Model results can be used to enable emergency services to better prepare and
+          respond to flood events by identifying potential flood hazard and planning evacuation
+          routes. Model outputs can also enhance mapping outputs and improve flood intelligence for
+          both responsible agencies and the community, leading to a reduction in flood impacts.
+          Whilst not commonly used at present, it is possible that 2D models may be utilised more
+          commonly for real-time flood warning in the future.</para>
+      </listitem>
+      <listitem>
+        <para>Urban drainage studies – in such applications the hydraulic model may also perform the
+          routing functionality typically carried out by a hydrologic model. The 2D model provides
+          the “major” drainage layer and interfaces also with the “minor” drainage system (i.e. pits
+          and pipes) dynamically;</para>
+      </listitem>
+      <listitem>
+        <para>Dam Break assessments - Often a hyraulic model is used to route dam break hydrographs.
+          2D models are well-suited to this application as the flowpaths resulting from a dam break
+          are often unexpected or different to typical flowpaths;<?oxy_custom_end?></para>
+      </listitem>
+      <listitem>
+        <para>Sizing of a spillway;</para>
+      </listitem>
+      <listitem>
+        <para>Land filling for development;</para>
+      </listitem>
+      <listitem>
+        <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>In any environment
+          in order to assess the flood impact due to development;</para>
+      </listitem>
+      <listitem>
+        <para>In-bank river flow modelling in 1D or 2D. This may be carried out in 2D in order to
+          provide flow velocity that varies over the cross-section or in 1D in which velocity will
+          be averaged over the cross-section. This approach is often used in ecosystem/habitat
+          assessment;</para>
+      </listitem>
+      <listitem>
+        <para>Wetland modelling - where routing paths are ill-defined and filling and draining
+          processes are complex.</para>
+      </listitem>
+      <listitem>
+        <para>Lake or estuary studies – often at the lower end of river systems the floodplain
+          interacts with a lake or estuary and subsequently ocean or lake dynamics become important
+          (tide, storm surge, or seiching).</para>
+      </listitem>
+      <listitem>
+        <para>Water quality and sediment transport studies – these applications build on the
+          two-dimensional hydrodynamics to provide information on water-dependent processes such and
+          pollutant transport and river morphology.<?oxy_custom_end?></para>
+      </listitem>
+    </itemizedlist>
+    <para>Along with a specific purpose problems it is necessary to define the spatial extent and
+      either the probability range of interest or parameter range. For example the spatial extents
+      could be limited to just a dam, or a distance up and downstream. The following items should be
+      defined at the start of the project: </para>
+    <itemizedlist>
+      <listitem>
+        <para>Spatial extent (note this might not be the same as the model extent);</para>
+      </listitem>
+      <listitem>
+        <para>Probability extent (eg. 5% AEP to 1% AEP);</para>
+      </listitem>
+      <listitem>
+        <para>Parameter range;</para>
+      </listitem>
+      <listitem>
+        <para>Types of outputs (flow, volume, level, rate of rise, warning time). These may be
+          presented as either:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Peak; </para>
+          </listitem>
+          <listitem>
+            <para>Hydrograph; </para>
+          </listitem>
+          <listitem>
+            <para>Spatial Map; and/or</para>
+          </listitem>
+          <listitem>
+            <para>Animations. </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+    <para>The required outputs may be specified by the client, in the study brief. </para>
+    <para>While as part of the study a model of the entire catchment may be established typically a
+      smaller specific location is the main focus of the study. If there are self-cancelling errors
+      or bias in areas of the model not influencing the specific location of interest then the
+      practitioner might not be concerned. </para>
+    <para>An important step in the conceptualisation of the problem is determining the likely
+      scenarios that will need to be run (<xref linkend="b7_ch3_s_6ckuu"/>). For example if a future
+      development scenario is to be run with urbanisation then a hydrologic model will be required
+      which allows a change in pervious to
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>impervious
+      area.<?oxy_custom_end?></para>
+    <section xml:id="b7_ch3_s_6ckuu">
+      <title>Initial Scenario Identification</title>
+      <para>Along with defining the problem under investigation identifying, the types of scenarios
+        that are likely to be assessed will significantly improve modelling decisions. For some
+        problems the practitioner will only need to identify existing conditions. However for many
+        problems the practitioner will be required to build a catchment modelling system that is
+        capable of assessing different scenarios. Scenarios are broadly divided into these
+        categories: modelling of historic and future conditions, mitigation options and management
+        options. Most scenarios will fall into these broad categories. Some typical scenarios
+        include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Existing conditions;</para>
+        </listitem>
+        <listitem>
+          <para>Historic conditions;</para>
+        </listitem>
+        <listitem>
+          <para>Change in landuse (impacts or restoration to pre-development conditions to manage
+            the impact of urbanisation);</para>
+        </listitem>
+        <listitem>
+          <para>Infrastructure (assessing and mitigation of the impact of a road and railway
+            line);</para>
+        </listitem>
+        <listitem>
+          <para>Structural flood mitigation measures (such as dam and levees);</para>
+        </listitem>
+        <listitem>
+          <para>Future development scenarios; </para>
+        </listitem>
+        <listitem>
+          <para>Change in dam operations;</para>
+        </listitem>
+        <listitem>
+          <para>Changed catchment conditions assessment;</para>
+        </listitem>
+        <listitem>
+          <para>Climate change; </para>
+        </listitem>
+        <listitem>
+          <para>Parameter sensitivity tests; and</para>
+        </listitem>
+        <listitem>
+          <para>Ocean interaction.</para>
+        </listitem>
+      </itemizedlist>
+      <para> If the project requires only the definition of flood behaviour under existing
+        conditions then this step can be ignored and focus is on the identification of key processes
+          (<xref linkend="b7_ch3_s_klmb9"/>). While in many situations, it will not be possible to
+        identify all the scenarios at the conceptualisation stage that will need to be assessed, it
+        is possible to identify the types of solutions, measures or works that are typically used to
+        identify, mitigate or manage the problem. The ability to model scenarios is one of the
+        powerful features of a catchment modelling system.</para>
+      <sidebar>
+        <title>What Has Been Defined So Far</title>
+        <itemizedlist>
+          <listitem>
+            <para>The Problem;</para>
+          </listitem>
+          <listitem>
+            <para>Likely Scenario (first pass); </para>
+          </listitem>
+          <listitem>
+            <para>Spatial Extent (area of interest); </para>
+          </listitem>
+          <listitem>
+            <para>Probability range or parameter range of interest</para>
+          </listitem>
+        </itemizedlist>
+      </sidebar>
+    </section>
+  </section>
+  <section xml:id="b7_ch3_s_klmb9">
+    <title>Identify Key Processes, Inputs and Mechanisms</title>
+    <para>The key processes and mechanisms in design flood estimation can include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Rainfall Models;</para>
+      </listitem>
+      <listitem>
+        <para>Runoff generation;</para>
+      </listitem>
+      <listitem>
+        <para>Overland flow;</para>
+      </listitem>
+      <listitem>
+        <para>Hydrologic routing; and</para>
+      </listitem>
+      <listitem>
+        <para>Hydraulic routing. </para>
+      </listitem>
+    </itemizedlist>
+    <para>The key processes in flood estimation have been defined in <xref linkend="book4"/>, <xref
+        linkend="book5"/> and <xref linkend="book6"/>. The key design inputs have been defined in
+        <xref linkend="book2"/>. </para>
+    <para>It is important to decide which key processes have the most influence on the scenarios of
+      interest. For example, if the scenario of interest is land use changes then the key processes
+      are runoff generation from different landuse types, catchment response from different land use
+      types, resistance to flow for different landuse types. Therefore the chosen modelling
+      platforms and catchment modelling system must be able to model these processes and allow for
+      changes to parameters representing these processes.</para>
+  </section>
+  <section xml:id="b7_ch3_s_r7wp8">
+    <title>Data Availability and Model Complexity</title>
+    <para>During the conceptualisation stage all data does not need to be collected. However an
+      awareness of what data is or might be available will assist in the determination of which
+      catchment modelling system should be used. Selecting the level of complexity of the model is a
+      trade-off between data availability and predictive performance (<xref linkend="b7_ch3_f_n83q9"
+      />). Typically there is there is not enough observed data. Time and budget constraints are
+      usually best addressed by reducing model complexity and the extent which data is used. </para>
+    <figure xml:id="b7_ch3_f_n83q9">
+      <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+      <title><?oxy_custom_end?>Conceptual Relationship between Data Availability, Model Complexity
+        and Predictive Performance <citation>b4_c2_r13</citation></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/4005.PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Consideration must also be given to the resolution of modelling required. For example for
+      a large catchment coarse representation may be sufficient. Therefore large subareas in the
+      hydrologic model and a relatively large grid in the two dimensional hydraulic model may be
+      used. For complex studies fine scale detail may be important and small grid and subareas may
+      be needed in order to represent the hydraulic controls and key features.</para>
+    <sidebar>
+      <title>What Has Been Defined So Far</title>
+      <para>An assessment of the available data and what can be achieve with it must be made.
+        Following this some compromising on how key processes are represented must be made. It is a
+        non-linear process.</para>
+    </sidebar>
+  </section>
+  <section xml:id="b7_ch3_s_cc8kf">
+    <title>Selecting Modelling Platform(s)</title>
+    <para>With a firm understanding of the problem, the key processes and data availability it is
+      now possible to select a preferred modelling platform/s. A single modelling platform may
+      contain all the key processes, inputs and mechanisms required to solve the design problem.
+      However, in many cases is it more desirable to combine a number of modelling platforms.
+      Reasons that influence the choice of modelling platform include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Reliable regional/default parameters for ungauged catchments (refer to <xref
+            linkend="b7_ch5"/>);</para>
+      </listitem>
+      <listitem>
+        <para>Different modelling platforms are able to model specific features;</para>
+      </listitem>
+      <listitem>
+        <para>Client preference;</para>
+      </listitem>
+      <listitem>
+        <para>Standardisation; </para>
+      </listitem>
+      <listitem>
+        <para>Likely run time;</para>
+      </listitem>
+      <listitem>
+        <para>Anticipated resolution of the model and model outputs; and </para>
+      </listitem>
+      <listitem>
+        <para>Ability to leverage existing modelling.</para>
+      </listitem>
+    </itemizedlist>
+    <para>In many cases more than one modelling platform is often used. This is often the case where
+      limited data is available as some modelling platforms are more suitable for ungauged
+      catchments.</para>
+    <para>The other key inputs that must be considered at this stage are the project timeline,
+      budget, experience with, and availability of modelling platforms. There is a certain art to
+      modelling and there is no substitute for experience with a particular modelling platform. On
+      many projects it is not practical to develop a job specific model and it is necessary to
+      select one or a set of existing modelling platforms. This has major impacts on cost and
+      timing. Likewise, selecting a modelling platform that the practitioner is familiar with can
+      have significant impacts on cost timing and the reliability of results. Typically leading to a
+      better outcome. </para>
+    <para>The advantages of selecting a platform that the practitioner is experienced with includes
+      knowledge of appropriate parameter ranges, faster set up time, and knowledge of key
+      features.</para>
+    <sidebar>
+      <title>Selection of the Hydraulic Model</title>
+      <para>The selection of the appropriate type of hydraulic model is a critical decision in the
+        application of catchment modelling systems process. In this step the physical system flow
+        behaviour, which can commonly involve complex highly turbulent flows, must be reduced to an
+        equation, or set of equations, describing the main characteristics of the flow. Here
+        assumptions have to be made as to whether the flow can be considered as being
+        one-dimensional (1D), two-dimensional (2D), or a combination of both, and whether the flow
+        can be described as being steady (ie. constant with time), or unsteady (time-varying). In
+        virtually all rural or urban floodplain modelling, vertical accelerations in the flow field
+        are considered to be negligible and a hydrostatic pressure distribution is assumed, with
+        computations and results based around a depth-averaged velocity. Further details are
+        provided in <xref linkend="book6"/>, which outlines the governing equations utilised in
+        hydraulic models. More detail on the application and selection of a hydraulic model is
+        provided in Australian Rainfall and Runoff Supporting document – Two dimensional Modelling
+        of Rural and Urban Floodplains <citation>b7_c2_r1</citation>.</para>
+    </sidebar>
+    <sidebar><title>What Has Been Defined So Far</title><para>A catchment modelling system has been chosen for the defined problem which makes the best use of available data. Consideration is given to model complexity and model representation of key processes. </para></sidebar>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
 </chapter>

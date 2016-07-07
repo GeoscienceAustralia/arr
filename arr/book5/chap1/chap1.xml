@@ -1,144 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter status="External Review" version="5.0" xml:id="b5_ch1"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+  xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:db="http://docbook.org/ns/docbook">
   <info>
-    <title>Introduction</title>
-
+      <title>Introduction</title>
+          <xi:include href="../../common/authors/ball_james.xml"/>
     <xi:include href="../../common/authors/weinmann_erwin.xml"/>
 
-    <xi:include href="../../common/authors/ball_james.xml"/>
   </info>
-
+  <para><?oxy_delete author="testoni" timestamp="20160704T103109+1000" content="ErwinWeinmann, JamesBall"?></para>
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
-
     <tr>
-      <td>Book</td>
-
-      <td>5</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
-
-    <tr>
-      <td>Chapter</td>
-
-      <td>1</td>
-    </tr>
-
-    <tr>
-      <td>Date</td>
-
-      <td>27/11/2015</td>
-    </tr>
-
     <tr>
       <td>Content</td>
-
-      <td>In preparation</td>
+      <td>Advanced draft</td>
     </tr>
-
-    <tr>
-      <td>Graphs and Figures</td>
-
-      <td>In preparation</td>
-    </tr>
-
-    <tr>
-      <td>Examples</td>
-
-      <td>In preparation</td>
-    </tr>
-
     <tr>
       <td>General</td>
-
-      <td>Chapters 4 and 5 are included in the book</td>
+      <td>Subject to industry feedback </td>
     </tr>
   </informaltable>
-
-  <section xml:id="b5_ch1_s_brgjq">
-    <title>Flood Hydrograph Modelling</title>
-
-    <para>From the alternative flood estimation approaches introduced in <xref
-    linkend="b1_ch3"/>, the methods and models covered in this book of
-    Australian Rainfall and Runoff focus on the <emphasis
-    role="italic">event-based simulation </emphasis>approach. On the
-    background of the more general aspects of catchment simulation for design
-    flood estimation covered in <xref linkend="book4"/>, the chapters in this
-    book deal specifically with the models and design inputs required to
-    transform the design rainfall inputs from <xref linkend="book2"/> into
-    design flood hydrographs at catchment locations of interest.</para>
-
-    <para>The models typically applied in the event-based simulation approach
-    are semi-distributed in nature; they represent the catchment being
-    modelled by a number of sub-catchments or subareas, where the degree of
-    spatial resolution used typically varies between around 10 to 100
-    subareas. The flood producing processes are divided into a <emphasis
-    role="italic">runoff generation phase</emphasis>, modelled at the
-    sub-catchment or subarea scale, and a <emphasis role="italic">hydrograph
-    formation phase</emphasis>, in which the hydrograph contributions from the
-    subareas are routed along the different stream reaches and storages in the
-    catchment to the point of interest. Node-link type runoff routing models
-    are the most common form of these models, where the nodes represent the
-    subareas and the links the routing reaches.</para>
-
-    <para>The hydrologic processes involved in the runoff generation phase,
-    described in more detail in <xref linkend="b4_ch2"/>, are represented in a
-    highly conceptualised form as <emphasis role="italic">loss
-    models</emphasis>, which divide the rainfall inputs into rainfall excess
-    and loss (without modelling what happens with the loss component). As the
-    name implies, the rainfall excess reflects only the surface runoff
-    component that is directly attributable to the event rainfall. The
-    additional component of streamflow originating from recession flows of
-    previous rainfall events or groundwater inflows is referred to as
-    baseflow. This baseflow component is represented in conceptual <emphasis
-    role="italic">baseflow models</emphasis> and added to the rainfall excess
-    component either at the sub-catchment scale or, more commonly, as a total
-    baseflow hydrograph at the catchment outlet.</para>
-
-    <para>In the hydrograph formation phase, the routing of flood
-    contributions from subareas through the various stream reaches,
-    floodplains and natural or artificial storages is modelled by hydrologic
-    or hydraulic routing models of different complexity.</para>
+  <section>
+    <title>Flood Hydrograph Modelling </title>
+    <para>From the alternative flood estimation approaches introduced in <xref linkend="b1_ch3"/>,
+      the methods and models covered in this book of Australian Rainfall and Runoff focus on the
+      event-based simulation approach. This approach simulates only the time period covering a
+      single storm event, given the initial conditions for the event, but the storm may consist of
+      several separate rainfall bursts, resulting in a multi-peaked flood hydrograph. </para>
+    <para>The more general aspects of catchment simulation for design flood estimation are covered
+      in <xref linkend="book4"/>, and the chapters in this book deal specifically with the models
+      and design inputs required to transform the event-based design rainfall inputs from <xref
+        linkend="book2"/> into design flood hydrographs at catchment locations of interest.</para>
+    <para>This book is an extension of the material covered in <xref linkend="book3"/>, which deals
+      with the calculation of design flood peak discharges. While peak discharges (without flood
+      hydrographs) are adequate for many applications, such as calculating bridge or culvert
+      capacity, flood hydrographs are essential for many other applications. These applications
+      include those where floodplain storage or artificial storage is an important issue or where
+      the movement and modification of flood events through a catchment is of interest. With the
+      increasing implementation of more advanced hydrological modelling systems and more complex
+      analysis requirements, guidance on flood hydrograph modelling is becoming increasingly
+      important.</para>
+    <para>The flood hydrograph methods described here provide an alternative method to the flood
+      peak discharge methods covered in <xref linkend="book3"/> and allow cross checking between the
+      two methods. There is a place therefore for both peak flow and flood hydrograph estimation for
+      different applications.</para>
+    <section>
+      <title>Overall Flood Hydrograph Estimation Process</title>
+      <para><?oxy_comment_start author="retallick" timestamp="20160702T230307+1000" comment="check consistency with book 7"?>The
+        process of developing and applying an event-based flood hydrograph estimation model involves
+        the following steps:</para>
+      <orderedlist>
+        <listitem>
+          <para>Definition of the flood estimation problem and the model requirements;</para>
+        </listitem>
+        <listitem>
+          <para>Assessment of data requirements and data availability, data collation and checking;
+          </para>
+        </listitem>
+        <listitem>
+          <para>Study of catchment data and flood information to develop an understanding of the
+            catchment behaviour during floods and to identify important features that need to be
+            represented in the model - <xref linkend="b5_ch2"/>;</para>
+        </listitem>
+        <listitem>
+          <para>Conceptualised representation of the runoff generation phase of flood formation
+            (loss model and baseflow model) - <xref linkend="b5_ch5"/> and <xref linkend="b5_ch4"
+            />;</para>
+        </listitem>
+        <listitem>
+          <para>Conceptualised representation of the flood hydrograph formation phase (the routing
+            elements of the catchment) - <xref linkend="b5_ch2"/>, <xref linkend="b5_ch3"/> and
+              <xref linkend="b5_ch6"/>;</para>
+        </listitem>
+        <listitem>
+          <para>Determination of model parameters by calibration to observed events, from experience
+            values in regions with similar flood producing characteristics or from links with
+            measured catchment characteristics - <xref linkend="b7_ch5"/>;</para>
+        </listitem>
+        <listitem>
+          <para>Validation of the calibrated model to ensure that it is fit for the intended purpose
+            – <xref linkend="b7_ch6"/>;</para>
+        </listitem>
+        <listitem>
+          <para>Application of the model with design rainfalls (<xref linkend="book2"/>), design
+            losses (<xref linkend="b5_ch5"/>) and design baseflows (<xref linkend="b5_ch4"/>) to
+            estimate design flood hydrographs - <xref linkend="b7_ch7"/>;</para>
+        </listitem>
+        <listitem>
+          <para>Interpretation and presentation of model results, including determination of
+            uncertainty – <xref linkend="b7_ch8"/> and <xref linkend="b7_ch9"/>; and</para>
+        </listitem>
+        <listitem>
+          <para>The modelled design flood hydrographs will generally form the inputs to a hydraulic
+            model of the study area.</para>
+        </listitem>
+      </orderedlist>
+      <para>The following chapters of <xref linkend="book5"/> introduce the important hydrologic
+        modelling principles that are applied in Steps 3 to 5 of the overall process. <xref
+          linkend="b5_ch5"/> (Losses) and <xref linkend="b5_ch4"/> (Baseflow Models) also provide
+        guidance on the design values required in Step 7. Detailed application guidance
+        relating<?oxy_comment_end?> to the other steps is provided in <xref linkend="book7"
+        />.</para>
+    </section>
+    <section>
+      <title>Conceptual Representation of Flood Formation</title>
+      <para>The complex hydrologic processes involved in the formation and modification of flood
+        hydrographs are represented in flood
+        <?oxy_delete author="retallick" timestamp="20160703T142509+1000" content="hydrograph"?><?oxy_insert_start author="retallick" timestamp="20160703T142513+1000"?>hydrograph<?oxy_insert_end?>
+        estimation models in a highly conceptualised form. The processes involved in the <emphasis
+          role="italic">runoff generation phase</emphasis>, described in more detail in <xref
+          linkend="b4_ch2"/>, are represented in <emphasis role="italic"
+          >conceptual</emphasis><emphasis role="italic">loss models</emphasis> (<xref
+          linkend="b5_ch5_s_ncyi2"/>) in a simplified fashion. These conceptual loss models divide
+        the rainfall inputs into rainfall excess and loss (without modelling what happens with the
+        loss component). As the name implies, the rainfall excess reflects only the surface runoff
+        component that is directly attributable to the event rainfall. The additional component of
+        streamflow originating from recession flows from previous rainfall events or groundwater
+        inflows is referred to as baseflow. This baseflow component is represented in <emphasis
+          role="italic">conceptual</emphasis><emphasis role="italic">baseflow models</emphasis>
+          (<xref linkend="b5_ch4"/>). Baseflow contributions to runoff are added to the rainfall
+        excess component either at the sub-catchment scale or, more commonly, as a total baseflow
+        hydrograph at the catchment outlet.</para>
+      <para>In the <emphasis role="italic">hydrograph formation phase</emphasis>, the routing of
+        flood contributions from subareas through the various stream reaches, floodplains and
+        natural or artificial storages is modelled by hydrologic or hydraulic routing models of
+        different complexity (<xref linkend="b5_ch3"/>).</para>
+      <para>Some flood hydrograph modelling approaches represent the catchment only as a single unit
+        (lumped models). However, the models now typically applied in the event-based simulation
+        approach are semi-distributed in nature; they represent the catchment being modelled by a
+        number of sub-catchments or subareas, where the degree of spatial resolution used typically
+        varies between around 10 to 100 subareas. The processes involved in the <emphasis
+          role="italic">runoff generation phase</emphasis> are modelled at the sub-catchment or
+        subarea scale, and the resulting runoff hydrographs are then routed along the different
+        stream reaches and storages in the catchment to the point of interest. Node-link type
+        runoff-routing models are the most common form of these models, where the nodes represent
+        the subareas and stream junctions, and the links the routing reaches (<xref linkend="b5_ch6"
+        />). In addition to providing a more detailed and physically based approach to hydrological
+        modelling, distributed models allow the assessment of flood hydrographs for points within
+        the main catchment as well as at the outlet, whereas lumped models allow calculation of
+        hydrographs only at the catchment outlet.</para>
+      <para><xref linkend="b5_ch1_fhdrks"
+        /><?oxy_delete author="retallick" timestamp="20160703T142555+1000" content=" shows"?><?oxy_insert_start author="retallick" timestamp="20160703T142555+1000"?>
+        depicts<?oxy_insert_end?> a schematic representation of how the flood formation processes
+        are conceptualised in event-based flood hydrograph estimation models.</para>
+      <figure xml:id="b5_ch1_fhdrks">
+        <title>Conceptual
+          <?oxy_insert_start author="retallick" timestamp="20160703T142612+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142611+1000" content="r"?>epresentation
+          of
+          <?oxy_insert_start author="retallick" timestamp="20160703T142616+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142615+1000" content="f"?>lood
+          <?oxy_insert_start author="retallick" timestamp="20160703T142619+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142618+1000" content="f"?>ormation
+          <?oxy_insert_start author="retallick" timestamp="20160703T142621+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142621+1000" content="p"?>rocesses
+          in the
+          <?oxy_insert_start author="retallick" timestamp="20160703T142629+1000"?>M<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142628+1000" content="m"?>ost
+          <?oxy_insert_start author="retallick" timestamp="20160703T142633+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142632+1000" content="c"?>ommonly
+          used
+          <?oxy_delete author="retallick" timestamp="20160703T142636+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160703T142636+1000"?>E<?oxy_insert_end?>vent-based
+          <?oxy_insert_start author="retallick" timestamp="20160703T142644+1000"?>Fl<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142642+1000" content="fl"?>ood
+          <?oxy_insert_start author="retallick" timestamp="20160703T142651+1000"?>H<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142651+1000" content="h"?>ydrograph
+          <?oxy_insert_start author="retallick" timestamp="20160703T142654+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T142653+1000" content="e"?>stimation
+          <?oxy_delete author="retallick" timestamp="20160703T142657+1000" content="m"?><?oxy_insert_start author="retallick" timestamp="20160703T142657+1000"?>M<?oxy_insert_end?>odels
+          (courtesy R<?oxy_delete author="retallick" timestamp="20160703T142701+1000" content="J"?>
+          Nathan) </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/5074.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
   </section>
-
-  <section xml:id="b5_ch1_s_mwjqz">
+  <section>
     <title>Scope</title>
-
-    <para>This book of Australian Rainfall and Runoff provides background
-    information on the most common models currently used for flood hydrograph
-    estimation, and the derivation of design inputs used with these models. It
-    also provides guidance on how these models and design inputs can be
-    applied for flood hydrograph estimation in rural and urban catchments
-    located in different parts of Australia.</para>
-
-    <para>As in other books, the guidance provided here should not be
-    interpreted as being prescriptive, as unusual catchment conditions may
-    require special considerations. Importantly, the application of the models
-    and design data for flood hydrograph estimation should be guided by a good
-    understanding of relevant catchment hydrology concepts.</para>
+    <para>This book of Australian Rainfall and Runoff provides background information on the basic
+      elements that make up event-based flood hydrograph estimation models, and an overview of the
+      modelling systems most commonly used in Australia. This introductory information is intended
+      to equip
+      <?oxy_delete author="retallick" timestamp="20160703T142753+1000" content="model users"?><?oxy_insert_start author="retallick" timestamp="20160703T142753+1000"?>practitioners<?oxy_insert_end?>
+      with a clearer understanding of the simplifications and assumptions involved in different
+      model components. <xref linkend="b5_ch5"/> and <xref linkend="b5_ch4"/> also give guidance on
+      the design loss and baseflow inputs for use with event-based flood hydrograph
+      <?oxy_insert_start author="retallick" timestamp="20160703T142837+1000"?>estimation
+      <?oxy_insert_end?>models. Detailed guidance on other aspects of applying these models to
+      practical flood hydrograph estimation problems is provided in <xref linkend="book7"/>.</para>
+    <para>As in other books, the guidance provided here should not be interpreted as being
+      prescriptive, as unusual catchment conditions may require special considerations. Importantly,
+      the application of the models and design data for flood hydrograph estimation should be
+      informed by a good understanding of general hydrologic principles and concepts relevant to
+      flood estimation as well as specific interpretation of local flood data. </para>
   </section>
-
-  <section xml:id="b5_ch1_s_0wjaz">
-    <title>Book Contents</title>
-
-    <para>This introductory chapter is followed by a chapter that introduces
-    basic modelling concepts applied in event-based simulation of flood
-    hydrographs and the components of a range of currently used modelling
-    systems. The next two chapters then give details of the baseflow models
-    and loss models applied in flood hydrograph estimation. Both chapters are
-    based on research undertaken as part of the AR&amp;R Revision Projects
-    funded by the Federal Department of Climate Change and Energy Efficiency.
-    They first give the background to the selection of the adopted models,
-    then describe the sources of information for the derivation of design
-    values of baseflow and losses, and finally provide guidance for the
-    practical application of baseflow models and loss models.</para>
+  <section>
+    <title><?oxy_insert_start author="retallick" timestamp="20160703T173636+1000"?>Book
+      Contents<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T173636+1000" content="&lt;emphasis role=&quot;bold&quot;&gt;Book Contents&lt;/emphasis&gt;"?></title>
+    <para>After this introductory chapter, <xref linkend="b5_ch2"/> introduces the basic concepts
+      and approaches used in representing catchments for event-based modelling of floods. <xref
+        linkend="b5_ch5"
+      /><?oxy_delete author="retallick" timestamp="20160703T142926+1000" content=" then"?> gives
+      details of the loss models applied in generating surface runoff, and the models used to
+      represent the contribution of baseflow are dealt with in <xref linkend="b5_ch4"/>. Both
+      chapters are based on research undertaken as part of the ARR Revision Projects funded by the
+      <?oxy_delete author="retallick" timestamp="20160703T142953+1000" content="Federal Department of Climate Change and Energy Efficiency"?><?oxy_insert_start author="retallick" timestamp="20160703T142953+1000"?>Commonwealth
+      of Australia<?oxy_insert_end?>.
+      The<?oxy_insert_start author="retallick" timestamp="20160703T143024+1000"?> chapters
+      <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T143022+1000" content="y first "?>give
+      the background to the selection of the adopted models, then describe the sources of
+      information for the derivation of design values of losses and baseflow, and finally provide
+      guidance for the practical application of loss models and baseflow models. <xref
+        linkend="b5_ch3"/> introduces important flood routing principles applied in modelling the
+      movement of flood hydrographs through the stream and floodplain system, linking them with the
+      hydraulic principles covered in <xref linkend="book6"/>. Finally, <xref linkend="b5_ch6"/>
+      describes the most important conceptualisations and approaches used in
+      runoff<?oxy_insert_start author="retallick" timestamp="20160703T143047+1000"?>-<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160703T143046+1000" content=" "?>routing
+      modelling systems to derive complete flood hydrographs at points of interest.</para>
   </section>
 </chapter>
+

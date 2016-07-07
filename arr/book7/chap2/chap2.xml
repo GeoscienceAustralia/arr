@@ -1,48 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="Internal Review" xml:id="b7_ch2"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" version="5.0" status="Internal Review" xml:id="b7_ch2">
   <info>
-    <title>Application of Catchment Modelling</title>
-
+    <title>Use of a Catchment Model</title>
+    
+    <xi:include href="../../common/authors/testoni_isabelle.xml"/>
+    
+    <xi:include href="../../common/authors/babister_mark.xml"/>
+    
+    <xi:include href="../../common/authors/retallick_monique.xml"/>
+    
     
   </info>
+  
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
     <tr>
-      <td>Book</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>Chapter</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Date</td>
-      <td>27/11/2015</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
     <tr>
       <td>Content</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Graphs and Figures</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Examples</td>
-      <td>In preparation</td>
+      <td>Working draft</td>
     </tr>
     <tr>
       <td>General</td>
-      <td/>
+      <td>Subject to industry feedback </td>
     </tr>
   </informaltable>
+  <section xml:id="b7_ch2_s_uuv2s">
+    <title>Introduction</title>
+    <para>A catchment model system is a very useful way of estimating how a system will perform
+      under a number of different conditions. Catchment modelling systems are usually built from the
+      series of modelling elements that are described in <xref linkend="book4"/>, <xref
+        linkend="book5"/> and <xref linkend="book6"/>. These are combined to replicate the key
+      processes for a particular flood estimation problem. </para>
+    <para>The catchment modelling system can be used probabilistically (for estimating design flood
+      behaviour) or can be used to estimate observed or historic flood behaviour. The catchment
+      modelling system can be used to represent existing, historical or altered catchment
+      conditions. </para>
+    <para>It is important when developing a catchment modelling system that the possible future uses
+      of the model are properly identified so that the key processes are properly considered. The
+      challenges in modelling are the need to represent various processes which introduces
+      complexity, against the data available for calibrating these process and parameter and
+      component interaction (<xref linkend="b7_ch3"/>). </para>
+    <para>There are often subtle differences in how some of the key processes perform in frequent
+      events than in rarer events. These differences mean that only rarer events can be used for the
+      calibration which limits the data available for the calibration of complex models. Two simple
+      examples are:</para>
+    <itemizedlist>
+      <listitem>
+        <para>during very frequent rainfall events the storage capacity of the soils is very
+          important but during rarer intense events the rate of infiltration becomes more important
+          ; and</para>
+      </listitem>
+      <listitem>
+        <para>the hydraulics of a stream change significantly when flow moves from in-bank to the
+          floodplain.</para>
+      </listitem>
+    </itemizedlist>
+    <para>In both cases calibrating to just frequent events can give a very poor estimate of larger
+      events.</para>
+    <para>In many modelling situations calibration exposes significant parameter interaction where
+      very similar calibrations can be achieved with a range of parameters, while this often does
+      not significantly change the behaviour of similar magnitude events it can make a significant
+      difference to how larger events behave. When modelling comments are combined into a catchment
+      modelling system it is possible for this interaction to occur across modelling components.
+      This problem is very common when only level data is available to calibrate a catchment
+      modelling system that includes hydraulic and hydrologic components. A satisfactory fit can
+      often be obtained for a range of flows and corresponding roughness values. </para>
+    <sidebar>
+      <para>Catchment modelling system results can be sensitive to the chosen parameter values.
+        Different combinations of parameters can give the same answer at a single point. However as
+        is often the case, when extrapolating to larger events they give different answers and very
+        different representations of the flow behaviour.</para>
+    </sidebar>
+    <para>In many situations it is never completely clear what the correct combination of overbank
+      and channel Manning’s n is. The following example shows the results from a simple hydraulic
+      model where the overbank and channel Manning’s n were selected to match the 1% AEP flow and
+      level. While different combinations give identical results at the adopted 1% AEP level and
+      flow they give very different velocity distributions. The cases also give very different level
+      vs flow relationships for different sized events. This is one of the key reasons why its
+      important not to adopt models for problems outside the range they were designed for. <xref
+        linkend="b7_ch2_f_rsfsx"/> depicts the difference in conveyance, K (<xref
+        linkend="b6_ch2_s_yug0o"/>) for a range of levels. At extreme flows the conveyance ranges
+      from 11 500 to 16 000 m<superscript>3</superscript>/s. At lower levels the flow can
+      double.</para>
+    <figure xml:id="b7_ch2_f_rsfsx">
+      <title>Conveyance Comparison – Different Manning’s n Combinations</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/7014.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </section>
+  <section xml:id="b7_ch2_s_w3pq3">
+    <title>Overview of Modelling Applications</title>
+    <para>The application of a catchment modelling system should follow the process outlined within
+      this chapter and book. While it is possible to create a catchment modelling system without
+      following a rigorous process, it will lend itself to errors and wasted time in redoing work. A
+      practitioner should first analyse the problem presented before deciding how to solve it. The
+      data available must also be investigated, as it is likely that insufficient data exists for
+      the ideal solution that the practitioner has already come up with.</para>
+    <para>A simplified overview of the steps involved in the application of a catchment modelling
+      system (<xref linkend="b7_ch2_f_exlkj"/>):</para>
+    <itemizedlist>
+      <listitem>
+        <para>Conceptualisation of Modelling Approach (<xref linkend="b7_ch3"/>); </para>
+      </listitem>
+      <listitem>
+        <para>Developing a Catchment Modelling System (<xref linkend="b7_ch4"/>);</para>
+      </listitem>
+      <listitem>
+        <para>Testing Parameterisation, Calibration, and Validation of a Catchment Modelling System
+            (<xref linkend="b7_ch5"/> and <xref linkend="b7_ch6"/>);</para>
+      </listitem>
+      <listitem>
+        <para>Application of Catchment Modelling System to a Specific Design Problem (<xref
+            linkend="b7_ch7"/>); and</para>
+      </listitem>
+      <listitem>
+        <para>Interpretation of the Results and Understanding the Reliability and Uncertainty (<xref
+            linkend="b7_ch8"/> and <xref linkend="b7_ch9"/>).</para>
+      </listitem>
+    </itemizedlist>
+    <para> These steps can be applied to an individual process, but it is important to apply them to
+      the overall catchment modelling system. You need to confirm performance the overall CMS rather
+      than just the individual components. Optimising individual components might not provide an
+      overall robust CMS. The development of the CMS is constrained by the data that is available,
+      the time/cost and experience of the practitioner.</para>
+    <figure xml:id="b7_ch2_f_exlkj">
+      <title>Steps in the Application of a Catchment Modelling System</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/7012.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Review of the conceptualisation of the catchment modelling system should be undertaken at
+      each step in the process of creating and applying the catchment modelling system. This review
+      does not have to be exhaustive. The reality is that most practitioners are undertaking this
+      review as a sanity check already. It is highlighted here that this is a key step in the
+      overall creation of a catchment modelling system or a component of it.</para>
+    <section xml:id="b7_ch2_s_7c6kv">
+      <title>Conceptualisation of Modelling Approach</title>
+      <para>It is important at the start of a project to accurately define the problem and identify
+        the key process/es that must be modelled in order to understand and accurately model the
+        problem (<xref linkend="b7_ch3"/>). In this stage limitations of the modelling approach must
+        be explored. Available data, time, cost and model availability need to be defined for the
+        problem in question. Preliminary selection of a catchment modelling system is carried out in
+        this stage, though the selection may change as the practitioner develops the catchment
+        modelling system.</para>
+    </section>
+    <section xml:id="b7_ch2_s_5i9zd">
+      <title>Developing a Catchment Modelling System</title>
+      <para>The schematisation of a catchment in a modelling platform (<xref linkend="b7_ch4"/>)
+        depends heavily on the chosen modelling platform. Different modelling platforms have varied
+        ways of representing the same catchment characteristics and features. In practice, the ease
+        of representing key catchment features and key processes (discussed in <xref
+          linkend="b7_ch3"/>) plays a major role in developing a catchment modelling system.
+        Decisions on conceptualisation and the representation of key features may be need to be
+        revisited at this stage. Revising modelling platform choice is recommended if the initial
+        selection is no longer appropriate in schematising the catchment.</para>
+    </section>
+    <section xml:id="b7_ch2_s_gwgl7">
+      <title>Testing Parameterisation, Calibration, and Validation of a Catchment Modelling
+        System</title>
+      <para>Ideally, all catchment models should be well calibrated and validated. However, data
+        constraints mean this is not always possible or only limited calibration is possible. <xref
+          linkend="b7_ch5"/> provides discussion on the best way to make use of the data that is
+        available and discussion on data in general is in <xref linkend="b1_ch4"/>.
+        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>The calibration process
+        of a model is not limited to matching historic records, but can include the overall
+        estimation of parameters. The estimation of parameters aims to preserve the representation
+        of the catchment characteristics as described by the conceptualisation of the
+        catchment.<?oxy_custom_end?> Guidance on parameter values for ungauged catchments is
+        provided in <xref linkend="b7_ch5"/>. Validation techniques are used to independently test
+        that the chosen parameters represent observed behaviour (<xref linkend="b7_ch6"/>). </para>
+    </section>
+    <section xml:id="b7_ch2_s_90tj7">
+      <title>Application of Catchment Modelling System to a Specific Design Problem </title>
+      <para>Typically, at the start of setting up a catchment modelling system a specific design
+        problem required a solution is already defined. Design applications of catchment modelling
+        systems will vary depending on the specific problem under consideration. <xref
+          linkend="b7_ch7"/> discusses different design applications after a catchment modelling
+        system is established.</para>
+    </section>
+    <section xml:id="b7_ch2_s_6f9q4">
+      <title>Interpretation of the Results and Understanding the Reliability and Uncertainty </title>
+      <para>The final step in the application of a catchment modelling systems is to provide
+        information to decision makers, the community and designers regarding design flood
+        behaviour. This information needs to be scrutinised and final checks should always be
+        undertaken to ensure the modelled flow behaviour makes sense (<xref linkend="b7_ch9"/>).
+        Catchment modelling systems are only representations of the real world based on data and
+        mathematical models. Results can be inaccurate if any key processes or features are
+        misrepresented in the catchment modelling system, which is not always easy to determine.
+        This misrepresentation can be due to practitioner error, model error or incomplete and
+        inaccurate data. The uncertainty surrounding design flood estimates should not be overlooked
+        (discussed in <xref linkend="b7_ch8"/>).</para>
+    </section>
+  </section>
 </chapter>

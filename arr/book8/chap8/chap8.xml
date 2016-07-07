@@ -1,0 +1,2727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch8" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:m="http://www.w3.org/1998/Math/MathML">
+    <info>
+        <title>Worked Examples</title>
+        <xi:include href="../../common/authors/nathan_rory.xml"/>
+        <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+    </info>
+    <informaltable border="1">
+        <tr>
+            <td colspan="2">Chapter Status</td>
+        </tr>
+        <tr>
+            <td>Date last updated</td>
+            <td>06/07/16 </td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Advanced draft</td>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Subject to industry feedback </td>
+        </tr>
+    </informaltable>
+    <section xml:id="b8_s_t2d8h">
+        <title>The Design Problem</title>
+        <section xml:id="b8_s_54292">
+            <title>General</title>
+            <para>In order to illustrate the application of some of the procedures described in the
+                previous sections, flood frequency curves are derived for a hypothetical 439
+                    km<?oxy_insert_start author="retallick" timestamp="20160615T190829+1000"?><superscript>2</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T190833+1000" content="2"?>
+                catchment located in south-eastern Australia. It is assumed that a reservoir is
+                located at the outlet of the catchment, and a streamflow recording gauge is located
+                just upstream of the reservoir.</para>
+            <para>Flood frequency curves are derived for both inflows to the reservoir, as well as
+                for reservoir outflows. As the volume of the reservoir is large compared to the
+                volume of runoff, and it is likely that the reservoir is drawn down below full
+                supply level, the derivation of the outflow frequency curve requires consideration
+                of the joint probabilities of both inflows and storage volume. A tributary enters
+                the mainstream just below the reservoir, and estimates of concurrent tributary flows
+                are required for a range of AEPs in order to help determine the component of
+                incremental damages that could be attributed to dam failure.</para>
+        </section>
+        <section xml:id="b8_s_aqoy5">
+            <title>Approach Adopted and Intent</title>
+            <para>The following worked examples illustrate application of the various procedures to
+                different design situations. The one hypothetical problem is used for convenience
+                throughout. While somewhat didactic, the examples are not meant to provide detailed
+                tutorials on the implementation of best practice, and thus some relevant experience
+                will be required to fully understand the context and nature of the procedures. The
+                examples illustrate application of the procedures using (largely) “real-world”
+                data.</para>
+        </section>
+        <section xml:id="b8_s_u8n34">
+            <title>Nature of Available Data</title>
+            <para>The examples are in part based on data derived for an actual catchment, though
+                some changes were introduced to better illustrate application of the range of
+                procedures considered.</para>
+            <para>A summary of the data available for the catchment is as follows:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>a set of calibration results obtained by fitting a flood event model to
+                        several large observed floods;</para>
+                </listitem>
+                <listitem>
+                    <para>a series of annual instantaneous maximum flood peaks at the
+                        stream<?oxy_insert_start author="retallick" timestamp="20160615T191201+1000"?>flow<?oxy_insert_end?>
+                        gauge;</para>
+                </listitem>
+                <listitem>
+                    <para>a synthetic monthly time series of reservoir volume obtained from a system
+                        simulation model;</para>
+                </listitem>
+                <listitem>
+                    <para>design rainfalls between 1 in 50 and 1 in 2000 AEP from <xref
+                            linkend="book2"/> procedures; and,</para>
+                </listitem>
+                <listitem>
+                    <para>GSAM estimates of the PMP for a range of standard durations obtained from
+                        the Bureau of Meteorology.</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section xml:id="b8_s_epmkh">
+            <title>Note on Accuracy of Final Results</title>
+            <para>It should be noted that the number of significant figures used to present the
+                results of the worked examples are generally higher than can be justified. In most
+                cases the accuracy of the final results is probably limited to only two significant
+                figures, but greater accuracy is adopted merely to facilitate checking of the
+                calculations.</para>
+        </section>
+    </section>
+    <section xml:id="b8_s_gpl9k">
+        <title>Derivation of Rainfall Frequency Curves</title>
+        <para>Rainfall frequency curves are derived for three durations (12, 24 and 48 hours) for
+            rainfall event classes between Rare and Extreme.</para>
+        <section xml:id="b8_s_ojpjw">
+            <title>Estimates of Rare to Very Rare Rainfalls</title>
+            <para>Estimates of point rainfall depths for Rare rainfalls are obtained from the
+                procedures provided in <xref linkend="book2"/>, as made available online at <link
+                    xlink:href="http://www.bom.gov.au">www.bom.gov.au</link>. The design rainfalls
+                for the selected durations are shown in bold typeface in the first two rows of <xref
+                    linkend="b8_t_k53mt"/>.</para>
+            <para>For Very Rare rainfalls, point estimates for 24 and 48 hour durations are also
+                obtained from <xref linkend="book2"/> procedures, as made available online at <link
+                    xlink:href="http://www.bom.gov.au">www.bom.gov.au</link>. Estimates of Very Rare
+                rainfalls for the 12 hour event are obtained from the growth factors provided in
+                    <xref linkend="b8_t_hk25s"/>, multiplied by the 1 in 100 AEP point rainfall
+                depth. For example, the 1 in 2000 AEP 12 hour depth is simply estimated as <inlineequation>
+                    <?oxy_comment_start author="testoni" timestamp="20160616T144844+1000" comment="rory- where does 1.698 come from? "?>
+                    <m:math display="block">
+                        <m:mrow>
+                            <m:mn>111.4</m:mn>
+                            <m:mo>&#x00D7;</m:mo>
+                            <m:mn>1.698</m:mn>
+                            <m:mo>=</m:mo>
+                            <m:mn>189.2</m:mn>
+                            <m:mi>m</m:mi>
+                            <m:mi>m</m:mi>
+                        </m:mrow>
+                    </m:math>
+                    <?oxy_comment_end?>
+                </inlineequation>.</para>
+            <para>To obtain areal design rainfalls, the point rainfall estimates are multiplied by
+                the
+                <?oxy_insert_start author="retallick" timestamp="20160615T192253+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192252+1000" content="a"?>real
+                <?oxy_insert_start author="retallick" timestamp="20160615T192255+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192254+1000" content="r"?>eduction
+                <?oxy_delete author="retallick" timestamp="20160615T192257+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160615T192257+1000"?>F<?oxy_insert_end?>actors
+                (ARFs) provided in <xref linkend="b2_ch4"/> For the long-duration rainfalls the ARF
+                for this location is estimated as a function of rainfall duration (D, hrs),
+                catchment area (A,
+                    km<?oxy_insert_start author="retallick" timestamp="20160615T192311+1000"?><superscript>2</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192314+1000" content="2"?>),
+                and 1 in Y AEP as follows:</para>
+            <equation>
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mi>A</m:mi>
+                        <m:mi>R</m:mi>
+                        <m:mi>F</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mi>min</m:mi>
+                        <m:mrow>
+                            <m:mo>{</m:mo>
+                            <m:mrow>
+                                <m:mn>1.00</m:mn>
+                                <m:mo>,</m:mo>
+                                <m:mrow>
+                                    <m:mo>[</m:mo>
+                                    <m:mrow>
+                                        <m:mn>1.00</m:mn>
+                                        <m:mo>&#x2212;</m:mo>
+                                        <m:mn>0.4</m:mn>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:msup>
+                                                  <m:mi>A</m:mi>
+                                                  <m:mrow>
+                                                  <m:mn>0.14</m:mn>
+                                                  </m:mrow>
+                                                </m:msup>
+                                                <m:mo>&#x2212;</m:mo>
+                                                <m:mn>0.7</m:mn>
+                                                <m:msub>
+                                                  <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  </m:mrow>
+                                                  <m:mrow>
+                                                  <m:mn>10</m:mn>
+                                                  </m:mrow>
+                                                </m:msub>
+                                                <m:mi>D</m:mi>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                        <m:msup>
+                                            <m:mi>D</m:mi>
+                                            <m:mrow>
+                                                <m:mo>&#x2212;</m:mo>
+                                                <m:mn>0.48</m:mn>
+                                            </m:mrow>
+                                        </m:msup>
+                                        <m:mo>+</m:mo>
+                                        <m:mn>0.0002</m:mn>
+                                        <m:msup>
+                                            <m:mrow>
+                                                <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>A</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                </m:mrow>
+                                            </m:mrow>
+                                            <m:mrow>
+                                                <m:mn>0.4</m:mn>
+                                            </m:mrow>
+                                        </m:msup>
+                                        <m:msup>
+                                            <m:mi>D</m:mi>
+                                            <m:mrow>
+                                                <m:mn>0.41</m:mn>
+                                            </m:mrow>
+                                        </m:msup>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:mn>0.3</m:mn>
+                                                <m:mo>+</m:mo>
+                                                <m:msub>
+                                                  <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  </m:mrow>
+                                                  <m:mrow>
+                                                  <m:mn>10</m:mn>
+                                                  </m:mrow>
+                                                </m:msub>
+                                                <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>Y</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                </m:mrow>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                    </m:mrow>
+                                    <m:mo>]</m:mo>
+                                </m:mrow>
+                            </m:mrow>
+                            <m:mo>}</m:mo>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>where the area of the catchment is 439
+                    km<?oxy_insert_start author="retallick" timestamp="20160615T192322+1000"?><superscript>2</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192325+1000" content="2"?>.
+                For the short duration rainfalls, the appropriate
+                <?oxy_insert_start author="retallick" timestamp="20160615T192329+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192328+1000" content="a"?>real
+                <?oxy_insert_start author="retallick" timestamp="20160615T192331+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192331+1000" content="r"?>eduction
+                <?oxy_insert_start author="retallick" timestamp="20160615T192335+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192334+1000" content="f"?>actors
+                is independent of AEP and can be estimated from:</para>
+            <equation>
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mi>A</m:mi>
+                        <m:mi>R</m:mi>
+                        <m:mi>F</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mi>min</m:mi>
+                        <m:mrow>
+                            <m:mo>{</m:mo>
+                            <m:mrow>
+                                <m:mn>1.00</m:mn>
+                                <m:mo>,</m:mo>
+                                <m:mrow>
+                                    <m:mo>[</m:mo>
+                                    <m:mrow>
+                                        <m:mn>1.00</m:mn>
+                                        <m:mo>&#x2212;</m:mo>
+                                        <m:mn>0.1</m:mn>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:msup>
+                                                  <m:mi>A</m:mi>
+                                                  <m:mrow>
+                                                  <m:mn>0.14</m:mn>
+                                                  </m:mrow>
+                                                </m:msup>
+                                                <m:mo>&#x2212;</m:mo>
+                                                <m:mn>0.879</m:mn>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                        <m:mo>&#x2212;</m:mo>
+                                        <m:mn>0.029</m:mn>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:msup>
+                                                  <m:mi>A</m:mi>
+                                                  <m:mrow>
+                                                  <m:mn>0.233</m:mn>
+                                                  </m:mrow>
+                                                </m:msup>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:mn>1.255</m:mn>
+                                                <m:mo>&#x2212;</m:mo>
+                                                <m:msub>
+                                                  <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  </m:mrow>
+                                                  <m:mrow>
+                                                  <m:mn>10</m:mn>
+                                                  </m:mrow>
+                                                </m:msub>
+                                                <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>D</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                </m:mrow>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                    </m:mrow>
+                                    <m:mo>]</m:mo>
+                                </m:mrow>
+                            </m:mrow>
+                            <m:mo>}</m:mo>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>The areal rainfalls obtained by applying the above equations are show in the last
+                three columns of <xref linkend="b8_t_k53mt"/>.</para>
+            <table frame="void" xml:id="b8_t_k53mt">
+                <caption>Calculation of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T191347+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T191347+1000" content="a"?>real
+                    <?oxy_insert_start author="retallick" timestamp="20160615T191350+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T191349+1000" content="d"?>esign
+                    <?oxy_insert_start author="retallick" timestamp="20160615T191352+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T191352+1000" content="r"?>ainfalls
+                    for Rare to Very Rare
+                    <?oxy_insert_start author="retallick" timestamp="20160615T191357+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T191356+1000" content="e"?>vents</caption>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="10%"/>
+                <thead>
+                    <tr>
+                        <th rowspan="2">AEP (1 in Y)</th>
+                        <th colspan="3">Point Rainfall (mm)</th>
+                        <th colspan="3">Areal Reduction factors</th>
+                        <th colspan="3">Areal Rainfall (mm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>12 hour</th>
+                        <th>24 hour</th>
+                        <th>48 hour</th>
+                        <th>12 hour</th>
+                        <th>24 hour</th>
+                        <th>48 hour</th>
+                        <th>12 hour</th>
+                        <th>24 hour</th>
+                        <th>48 hour</th>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>99.4</td>
+                        <td>135.8</td>
+                        <td>181.9</td>
+                        <td>0.832</td>
+                        <td>0.868</td>
+                        <td>0.912</td>
+                        <td>82.7</td>
+                        <td>118.0</td>
+                        <td>165.8</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>111.4</td>
+                        <td>153.5</td>
+                        <td>205.8</td>
+                        <td>0.832</td>
+                        <td>0.866</td>
+                        <td>0.908</td>
+                        <td>92.7</td>
+                        <td>132.9</td>
+                        <td>186.9</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>127.0</td>
+                        <td>172.4</td>
+                        <td>231.2</td>
+                        <td>0.832</td>
+                        <td>0.863</td>
+                        <td>0.905</td>
+                        <td>105.7</td>
+                        <td>148.8</td>
+                        <td>209.2</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>149.7</td>
+                        <td>199.7</td>
+                        <td>268.2</td>
+                        <td>0.832</td>
+                        <td>0.860</td>
+                        <td>0.900</td>
+                        <td>124.6</td>
+                        <td>171.7</td>
+                        <td>241.5</td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>168.6</td>
+                        <td>222.1</td>
+                        <td>298.7</td>
+                        <td>0.832</td>
+                        <td>0.857</td>
+                        <td>0.897</td>
+                        <td>140.3</td>
+                        <td>190.4</td>
+                        <td>268.0</td>
+                    </tr>
+                    <tr>
+                        <td>2000</td>
+                        <td>189.2</td>
+                        <td>246.4</td>
+                        <td>332.0</td>
+                        <td>0.832</td>
+                        <td>0.855</td>
+                        <td>0.894</td>
+                        <td>157.5</td>
+                        <td>210.7</td>
+                        <td>296.7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section xml:id="b8_s_u0fm8">
+            <title>Estimates of Extreme Rainfalls</title>
+            <para>Estimates of Extreme rainfalls (i.e. rainfalls between an AEP of 1 in 2000 and the
+                AEP of the PMP) are derived using the procedure presented in <xref
+                    linkend="b8_s_2p9cv"/>. The areal rainfall estimates listed in <xref
+                    linkend="b8_t_k53mt"/> are extrapolated between 1 in 2000 AEP and the AEP of the
+                PMP using the procedure developed by Siriwardena and Weinmann (<xref
+                    linkend="b8_s_2p9cv"/>). <xref linkend="b8_t_rq6co"/> lists the input design
+                rainfalls (in the 2nd and 3rd rows), where, with reference to <xref
+                    linkend="b8_e_vzgi4"/> to <xref linkend="b8_e_010fu"/>, the values used in the
+                procedure are as follows:</para>
+            <para>
+                <variablelist>
+                    <varlistentry>
+                        <term>Lower end point of linear segment:</term>
+                        <listitem>
+                            <para>P<subscript>Y1</subscript>- 1 in 1000 AEP areal rainfall
+                                depth</para>
+                            <para>Y<subscript>1</subscript>- 1000</para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </para>
+            <variablelist>
+                <varlistentry>
+                    <term>Starting point of interpolation:</term>
+                    <listitem>
+                        <para>P<subscript>Y2</subscript>- 1 in 2000 AEP areal rainfall depth</para>
+                        <para>Y<subscript>2</subscript>- 2000</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para>
+                <variablelist>
+                    <varlistentry>
+                        <term>Upper end point of interpolation:</term>
+                        <listitem>
+                            <para>P<subscript>PMP</subscript>- PMP depth</para>
+                            <para>Y<subscript>PMP</subscript>-
+                                2.28x10<superscript>6</superscript></para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </para>
+            <para><emphasis role="italic">Z<subscript>d</subscript></emphasis> , <emphasis
+                    role="italic">S<subscript>gc</subscript></emphasis> and <emphasis role="italic"
+                        >S<subscript>gap</subscript></emphasis> are calculated from <xref
+                    linkend="b8_e_8rmw6"/>, <xref linkend="b8_e_8n0f1"/> and <xref
+                    linkend="b8_e_010fu"/>, respectively, and their values are shown in the upper
+                panel of <xref linkend="b8_t_rq6co"/>. Parameter <emphasis role="italic"
+                        >g<subscript>Y</subscript></emphasis> varies with AEP and
+                    R<subscript>Y</subscript> varies with both AEP and duration, and their values
+                (using <xref linkend="b8_e_9t97w"/> and <xref linkend="b8_e_ek9ei"/>) are shown in
+                the lower panel of <xref linkend="b8_t_cfdhv"/>. Design rainfalls for intermediate
+                AEPs are calculated using <xref linkend="b8_e_vzgi4"/>, and these are shown in the
+                last three columns of the lower panel of <xref linkend="b8_t_rq6co"/>.</para>
+            <para>
+                <table frame="void" xml:id="b8_t_rq6co">
+                    <caption>Parameters Calculated of
+                        <?oxy_insert_start author="retallick" timestamp="20160615T192847+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192847+1000" content="a"?>real
+                        <?oxy_insert_start author="retallick" timestamp="20160615T192850+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192849+1000" content="d"?>esign
+                        <?oxy_insert_start author="retallick" timestamp="20160615T192852+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192852+1000" content="r"?>ainfalls
+                        for Very Rare to Extreme
+                        <?oxy_insert_start author="retallick" timestamp="20160615T192856+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192855+1000" content="e"?>vents</caption>
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <col width="25%"/>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>12 hour</th>
+                            <th>24 hour</th>
+                            <th>48 hour</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>z<subscript>d</subscript></td>
+                            <td>3.057</td>
+                            <td>3.057</td>
+                            <td>3.057</td>
+                        </tr>
+                        <tr>
+                            <td>S<subscript>gap</subscript></td>
+                            <td>0.076</td>
+                            <td>0.071</td>
+                            <td>0.058</td>
+                        </tr>
+                        <tr>
+                            <td>S<subscript>gc</subscript></td>
+                            <td>0.076</td>
+                            <td>0.063</td>
+                            <td>0.059</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+            <table frame="void" xml:id="b8_t_9fvte">
+                <caption>Calculation of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T192953+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192952+1000" content="a"?>real
+                    <?oxy_insert_start author="retallick" timestamp="20160615T192956+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192955+1000" content="d"?>esign
+                    <?oxy_insert_start author="retallick" timestamp="20160615T192958+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T192957+1000" content="r"?>ainfalls
+                    for Very Rare to Extreme
+                    <?oxy_insert_start author="retallick" timestamp="20160615T193001+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193000+1000" content="e"?>vents</caption>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <col width="11%"/>
+                <thead>
+                    <tr>
+                        <th rowspan="2">AEP (1 in Y)</th>
+                        <th rowspan="2">Z<subscript>std</subscript></th>
+                        <th rowspan="2">g<subscript>y</subscript></th>
+                        <th colspan="3">R<subscript>Y</subscript></th>
+                        <th colspan="3">Areal
+                            R<?oxy_insert_start author="retallick" timestamp="20160615T193052+1000"?>a<?oxy_insert_end?>infal<?oxy_insert_start author="retallick" timestamp="20160615T193055+1000"?>l<?oxy_insert_end?>
+                            (mm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>12 hour</th>
+                        <th>24 hour</th>
+                        <th>48 hour</th>
+                        <th>12 hour</th>
+                        <th>24 hour</th>
+                        <th>48 hour</th>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>3.090</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td>140.3</td>
+                        <td>190.4</td>
+                        <td>269.0</td>
+                    </tr>
+                    <tr>
+                        <td>2000</td>
+                        <td>3.291</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td>157.5</td>
+                        <td>210.7</td>
+                        <td>296.7</td>
+                    </tr>
+                    <tr>
+                        <td>10000</td>
+                        <td>3.719</td>
+                        <td>0.229</td>
+                        <td>1.053</td>
+                        <td>1.045</td>
+                        <td>1.041</td>
+                        <td>205.9</td>
+                        <td>168.2</td>
+                        <td>375.3</td>
+                    </tr>
+                    <tr>
+                        <td>50000</td>
+                        <td>4.108</td>
+                        <td>0.457</td>
+                        <td>1.106</td>
+                        <td>1.093</td>
+                        <td>1.082</td>
+                        <td>269.3</td>
+                        <td>346.1</td>
+                        <td>476.3</td>
+                    </tr>
+                    <tr>
+                        <td>100000</td>
+                        <td>4.265</td>
+                        <td>0.556</td>
+                        <td>1.129</td>
+                        <td>1.114</td>
+                        <td>1.099</td>
+                        <td>302.3</td>
+                        <td>287.9</td>
+                        <td>522.4</td>
+                    </tr>
+                    <tr>
+                        <td>500000</td>
+                        <td>4.611</td>
+                        <td>0.784</td>
+                        <td>1.182</td>
+                        <td>1.165</td>
+                        <td>1.139</td>
+                        <td>395.6</td>
+                        <td>510.6</td>
+                        <td>655.7</td>
+                    </tr>
+                    <tr>
+                        <td>2280000</td>
+                        <td>4.917</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td>510.0</td>
+                        <td>670.0</td>
+                        <td>810.0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>To check that the derived rainfall frequency curves are well behaved, it is worth
+                plotting the results on
+                <?oxy_insert_start author="retallick" timestamp="20160615T193112+1000"?>N<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193112+1000" content="n"?>ormal
+                probability paper. Rainfall may be displayed on either arithmetic or logarithmic
+                scales, and if a suitable probability scale is not available then probabilities can
+                be expressed as standard normal variate (i.e. the “<emphasis role="italic">z
+                    score</emphasis>”, the inverse of the standard normal cumulative distribution)
+                and then plotted on an arithmetic axis. The <emphasis role="italic">z
+                    scores</emphasis> for the rarer AEPs are shown in the 2nd column of <xref
+                    linkend="b8_t_rq6co"/>. The frequency plot of the derived rainfall frequency
+                curves are shown in <xref linkend="b8_f_mvymz"/>. Alternatively, the results could
+                be plotted on log-log scales: while this would not as clearly illustrate the
+                behaviour of extremes, it would be sufficient to check for inconsistencies.</para>
+            <figure xml:id="b8_f_mvymz">
+                <title>Example
+                    <?oxy_insert_start author="retallick" timestamp="20160615T193142+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193141+1000" content="r"?>ainfall
+                    <?oxy_insert_start author="retallick" timestamp="20160615T193146+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193145+1000" content="f"?>requency
+                    <?oxy_insert_start author="retallick" timestamp="20160615T193148+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193148+1000" content="c"?>urves<?oxy_delete author="retallick" timestamp="20160615T193150+1000" content="."?></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8014.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b8_s_0ysgx">
+            <title>Interpolation of
+                <?oxy_insert_start author="retallick" timestamp="20160615T193201+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193200+1000" content="r"?>ainfall
+                <?oxy_insert_start author="retallick" timestamp="20160615T193204+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193203+1000" content="d"?>epths
+                for
+                <?oxy_insert_start author="retallick" timestamp="20160615T193208+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193207+1000" content="i"?>ntermediate
+                <?oxy_insert_start author="retallick" timestamp="20160615T193210+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T193210+1000" content="d"?>urations</title>
+            <para>The results presented in <xref linkend="b8_t_rq6co"/> only relate to the standard
+                durations for which rainfall estimates are directly available. It is sometimes
+                desirable to derive frequency curves for non-standard durations, and this can be
+                done for Very Rare to Extreme events by interpolating in the logarithmic domain
+                between rainfall depth and duration for each required AEP.</para>
+            <para>To illustrate the derivation of a 36 hour rainfall frequency curve, the rainfall
+                depth for an event
+                <?oxy_delete author="retallick" timestamp="20160615T193432+1000" content="with an AEP "?>of
+                1 in 1000
+                <?oxy_insert_start author="retallick" timestamp="20160615T193435+1000"?>AEP
+                <?oxy_insert_end?>is calculated from logarithmic interpolation as:</para>
+            <equation xml:id="b8_e_azez2">
+                <m:math display="block">
+                    <m:mtable>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mi>log</m:mi>
+                                        <m:mo>⁡</m:mo>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mi>36 hr 1 in 100 AEP depth</m:mi>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                    </m:mrow>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mfrac>
+                                            <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>36</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                                <m:mo>-</m:mo>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>24</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                            </m:mrow>
+                                            <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>48</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                                <m:mo>-</m:mo>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>36</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                            </m:mrow>
+                                        </m:mfrac>
+                                        <m:mo>×</m:mo>
+                                        <m:mrow>
+                                            <m:mrow>
+                                                <m:mo>(</m:mo>
+                                                <m:mrow>
+                                                  <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>268.0</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                  </m:mrow>
+                                                  <m:mo>-</m:mo>
+                                                  <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>190.4</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                                <m:mo>)</m:mo>
+                                            </m:mrow>
+                                            <m:mo>+</m:mo>
+                                            <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>190.4</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>=</m:mo>
+                                    <m:mi>2.366</m:mi>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                    </m:mtable>
+                </m:math>
+            </equation>
+            <para>where the values for the 24 and 48 hour rainfall depths are obtained from <xref
+                    linkend="b8_t_rq6co"/>. The resulting rainfall depth is computed as
+                    10<superscript>2.366</superscript> = 232.5 mm. The above steps are repeated for
+                the 1 in 2000 AEP and PMP depths, and the intermediate AEPs are then obtained from
+                the interpolation procedure as described in
+                    <?oxy_delete author="retallick" timestamp="20160615T193850+1000" content="the preceding section"?><xref
+                    linkend="b8_s_u0fm8"/>. The resulting 36 hour rainfall frequency curve is shown
+                as a dashed line in <xref linkend="b8_f_mvymz"/>.</para>
+        </section>
+    </section>
+    <section xml:id="b8_s_9kcec">
+        <title>Derivation of Flood Frequency Curve</title>
+        <para>The rainfall frequency curves obtained in
+                <?oxy_delete author="retallick" timestamp="20160615T194033+1000" content="the preceding section"?><xref
+                linkend="b8_s_gpl9k"/> can be used to derive a set of flood frequency curves. It is
+            assumed that the routing parameters of the flood event model have been calibrated to
+            historic flood events, and that the design losses have been adopted after reconciliation
+            with flood frequency curves, as illustrated in <xref linkend="b8_s_3o5gi"/>. To
+            illustrate the points below, the event model is run within a variable Monte Carlo
+            framework, as shown in <xref linkend="b8_f_el271"/>(a). Temporal patterns are selected
+            randomly from a fixed set of ensemble patterns (or from a conditional set based on
+            season, if relevant), and seasonality and losses are sampled from non-parametric
+            distributions, as described in <xref linkend="book4"/>. Seasonality is most easily
+            accommodated by sampling from a distribution of the relative likelihood that the annual
+            maximum event occurs in the different seasons, and this is expected to vary with AEP
+            (e.g. in southern Australia it is more likely that the annual maximum occurs in winter
+            for frequent events and in summer for more extreme events). Once the season has been
+            selected, then stochastic values of losses (and reservoir drawdown, if relevant) are
+            then sampled from their corresponding seasonal distributions. Inputs not stochastically
+            sampled are fixed using representative values from the central tendency of their
+            distribution. To minimise the number of simulations, a stratified sampling scheme is
+            used in which the rainfall probability domain is divided into 20 intervals, and the
+            expected probabilities of selected flood magnitudes are derived using the Total
+            Probability Theorem (as described in <xref linkend="book4"/>).</para>
+        <para><xref linkend="b8_f_el271"/> (b) illustrates the impact of successively introducing
+            variability into the flood estimates. The black curve represents the frequency curve
+            obtained using a simple design event approach in which all inputs (except for rainfall)
+            are held at fixed values. The curve represents the envelope of all durations trialled.
+            When losses are allowed to vary stochastically with season, it is seen from
+            the<?oxy_delete author="retallick" timestamp="20160615T194300+1000" content=" green"?><?oxy_insert_start author="retallick" timestamp="20160615T194300+1000"?>
+            light blue<?oxy_insert_end?> curve in <xref linkend="b8_f_el271"/>(b) that the flood
+            peaks beyond
+            <?oxy_delete author="retallick" timestamp="20160615T194456+1000" content="an annual exceedance probability of "?>1
+            in 50 <?oxy_insert_start author="retallick" timestamp="20160615T194320+1000"?>AEP
+            <?oxy_insert_end?>are lower; this result arises as the seasonal distribution of losses
+            is slightly out of phase with that of rainfalls. Next, when an ensemble of temporal
+            patterns is stochastically sampled, it is seen
+            (<?oxy_insert_start author="retallick" timestamp="20160615T194509+1000"?>darker
+            <?oxy_insert_end?>blue curve) that the flood peaks are higher than if a fixed temporal
+            distribution of rainfall is adopted. This reflects the highly non-linear runoff response
+            to variability in temporal patterns. When all the inputs are allowed to vary
+            stochastically it is seen (red curve) that the final result is slightly higher than if
+            deterministic assumptions were adopted.</para>
+        <para>It should be stressed that the results shown in <xref linkend="b8_f_el271"/>(b) simply
+            illustrate the manner in which the probability<?oxy_insert_start author="retallick" timestamp="20160615T194524+1000"?>
+            <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194525+1000" content="-"?>neutral
+            assumptions of flood producing factors can be examined and combined. The magnitudes of
+            differences between deterministic and joint<?oxy_insert_start author="retallick" timestamp="20160606T182007+1000"?>
+            <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T182007+1000" content="-"?>probability
+            approaches are very site-specific, and depend largely on the sensitivity of the system
+            to the dominant hydrometeorological inputs.</para>
+        <figure xml:id="b8_f_el271">
+            <title>(a) Simulation
+                <?oxy_insert_start author="retallick" timestamp="20160615T194540+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194539+1000" content="f"?>ramework
+                used to
+                <?oxy_insert_start author="retallick" timestamp="20160615T194542+1000"?>G<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194542+1000" content="g"?>enerate
+                <?oxy_insert_start author="retallick" timestamp="20160615T194545+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194544+1000" content="f"?>loods
+                for
+                <?oxy_insert_start author="retallick" timestamp="20160615T194547+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194547+1000" content="s"?>elected
+                <?oxy_insert_start author="retallick" timestamp="20160615T194549+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194549+1000" content="s"?>tochastic
+                <?oxy_insert_start author="retallick" timestamp="20160615T194552+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194551+1000" content="i"?>nputs
+                and (b)
+                <?oxy_insert_start author="retallick" timestamp="20160615T194555+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194555+1000" content="r"?>esulting
+                <?oxy_insert_start author="retallick" timestamp="20160615T194605+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194605+1000" content="f"?>lood
+                <?oxy_insert_start author="retallick" timestamp="20160615T194608+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194607+1000" content="f"?>requency
+                <?oxy_insert_start author="retallick" timestamp="20160615T194610+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194609+1000" content="c"?>urves<?oxy_delete author="retallick" timestamp="20160615T194611+1000" content="."?></title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/8015.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section xml:id="b8_s_8ttus">
+        <title>Joint Probability Analysis of Initial Reservoir Level</title>
+        <para>The examples provided here illustrate analytic and numeric schemes to derive a
+            frequency curve of outflows from a reservoir under conditions of variable drawdown. It
+            is assumed that the following information has been derived for the reservoir:</para>
+        <para>(i) inflow frequency curve;</para>
+        <para>(ii) the relationship between inflows and outflows, for different initial reservoir
+            levels; and,</para>
+        <para>(iii) the frequency distribution of storage volume.</para>
+        <para>The analytical approach is based on the method developed by
+                <citation>b8_c_r33+1</citation>, and the numerical approach is based on Monte Carlo
+            simulation.</para>
+        <section xml:id="b8_s_1fcv2">
+            <title>System
+                <?oxy_insert_start author="retallick" timestamp="20160615T194645+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194644+1000" content="c"?>haracteristics</title>
+            <para>The inflow curve of interest is that which yields the maximum outflow peak from
+                the reservoir. In many cases the critical duration of interest varies with reservoir
+                drawdown and AEP, and thus it may be necessary to undertake the analysis for several
+                different durations and to construct an outflow frequency curve that envelopes the
+                results. In most design situations, however, it is sufficient to select the duration
+                that is most relevant to the design objective (say, the determination of the AEP of
+                the overtopping flood) at a typical drawdown. If a single duration is adopted it is
+                recommended that a sensitivity analysis be undertaken to determine the impact of
+                rainfall duration on the results.</para>
+            <para>For this example, the inflow frequency curve is that derived in
+                    <?oxy_delete author="retallick" timestamp="20160615T194756+1000" content="the preceding "?><xref
+                    linkend="b8_s_9kcec"/> based on the stochastic sampling of seasonal losses and
+                temporal patterns (red curve, <xref linkend="b8_f_el271"/>). The relationship
+                between inflows, outflows, and initial reservoir level (I-O-S relationship) is shown
+                in <xref linkend="b8_f_p0wvf"/>. The frequency distribution of storage volume is
+                assumed to have been derived from the simulation results of long-term reservoir
+                behaviour, and is shown in <xref linkend="b8_f_5gmii"/>.</para>
+            <figure xml:id="b8_f_p0wvf">
+                <title>Inflow-<?oxy_insert_start author="retallick" timestamp="20160615T194656+1000"?>O<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194654+1000" content="o"?>utflow-<?oxy_insert_start author="retallick" timestamp="20160615T194659+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194658+1000" content="s"?>torage
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194702+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194701+1000" content="v"?>olume
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194706+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194705+1000" content="r"?>elationship</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8016.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <figure xml:id="b8_f_5gmii">
+                <title>Probability
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194834+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194834+1000" content="d"?>istribution
+                    of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194837+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194837+1000" content="i"?>nitial
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194841+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194840+1000" content="s"?>torage
+                    <?oxy_insert_start author="retallick" timestamp="20160615T194843+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T194842+1000" content="v"?>olume<?oxy_delete author="retallick" timestamp="20160615T194844+1000" content="."?></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8017.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b8_s_cvabe">
+            <title>Laurenson’s Analytical Solution</title>
+            <para>To apply the technique, the frequency distribution of inflows is divided into 8
+                class intervals, as indicated in the top row of <xref linkend="b8_t_cfdhv"/>. In
+                practice a larger number of intervals would be preferred, but a small number has
+                been adopted in this example for clarity. The probabilities of occurrence within
+                each class interval are provided in the second row of <xref linkend="b8_t_cfdhv"/>;
+                these are calculated simply as the difference between the exceedance probabilities
+                corresponding to the class intervals.</para>
+            <para>The whole range of peak outflows is divided into 20 class intervals, as indicated
+                in the first column of <xref linkend="b8_t_cfdhv"/>. The elements of the table are
+                then evaluated for each inflow class interval. The numerical values represent the
+                conditional probability (in percentage points) for which an inflow peak in the given
+                class interval produces an outflow peak falling in the selected outflow class
+                interval. The sum of the values in each inflow class interval (i.e. the sum of each
+                column) is 100. It is worth noting that the values provided in <xref
+                    linkend="b8_t_cfdhv"/> have been computed using specialist software; the
+                numerical accuracy used in the calculations are greater than that which could be
+                achieved using graphical techniques, but<?oxy_comment_start author="retallick" timestamp="20160615T195952+1000" comment="typo in original document "?>
+                <?oxy_insert_start author="retallick" timestamp="20160615T200029+1000"?>t<?oxy_insert_end?>he<?oxy_comment_end?>
+                procedural steps are identical.</para>
+            <para>The derivation of a particular element is described as follows. Consider the
+                inflow class interval of 2200 m<superscript>3</superscript>/s to 3000
+                    m<superscript>3</superscript>/s and represent it by its mid-point of 2600
+                    m<superscript>3</superscript>/s. Consider the outflow class interval 1500
+                    m<superscript>3</superscript>/s to 1690 m<superscript>3</superscript>/s. From
+                    <xref linkend="b8_f_p0wvf"/>, the initial storage volume which produce peak
+                outflows of 1500 m<superscript>3</superscript>/s to 1690
+                    m<superscript>3</superscript>/s from a peak inflow of 2600
+                    m<superscript>3</superscript>/s are respectively 89.5% and 92.5% of full
+                storage. From <xref linkend="b8_f_5gmii"/> the probabilities that the actual storage
+                volume will be greater than the above are respectively 29.5% and 37.4%, so the
+                probability that the initial volume will be between 89.5% and 92.5% of full storage
+                volume is (37.4-29.5=) 7.9%. Thus the probability that a peak inflow between 2200
+                    m<superscript>3</superscript>/s to 3000 m<superscript>3</superscript>/s would
+                lead to an outflow between 1500 m<superscript>3</superscript>/s to 1690
+                    m<superscript>3</superscript>/s is 7.9%. This value is inserted in the
+                appropriate position in the table and other values are computed in a similar
+                manner.</para>
+            <para>The distribution of peak outflows is evaluated by multiplying each element of the
+                table by the corresponding probability of occurrence of the inflow interval, and the
+                resulting products are summed horizontally (and divided by 100) to give the values
+                in the second last column of <xref linkend="b8_t_cfdhv"/>. For example, the outflow
+                element corresponding to the outflow range of 1500 m<superscript>3</superscript>/s
+                to 1690 m<superscript>3</superscript>/s is obtained from the following
+                calculation:</para>
+            <equation xml:id="b8_e_l7e8y">
+                <?oxy_comment_start author="retallick" timestamp="20160615T194932+1000" comment="isabelle - there are &quot;x&quot; in amongst these numbers. check original"?>
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mfrac>
+                            <m:mrow>
+                                <m:mo>(</m:mo>
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mi>18.897</m:mi>
+                                        <m:mo>⁢</m:mo>
+                                        <m:mi>0.00234</m:mi>
+                                    </m:mrow>
+                                    <m:mo>+</m:mo>
+                                    <m:mrow>
+                                        <m:mi>7.8759</m:mi>
+                                        <m:mo>⁢</m:mo>
+                                        <m:mi>0.00068</m:mi>
+                                    </m:mrow>
+                                    <m:mo>+</m:mo>
+                                    <m:mrow>
+                                        <m:mi>4.1623</m:mi>
+                                        <m:mo>⁢</m:mo>
+                                        <m:mi>0.00013</m:mi>
+                                    </m:mrow>
+                                </m:mrow>
+                                <m:mo>)</m:mo>
+                            </m:mrow>
+                            <m:mi>100</m:mi>
+                        </m:mfrac>
+                        <m:mo>=</m:mo>
+                        <m:mi>0.000501%</m:mi>
+                    </m:mrow>
+                </m:math>
+                <?oxy_comment_end?>
+            </equation>
+            <para>Finally, the values are added for all outflow intervals which exceed the outflow
+                magnitude of interest to give the probabilities of exceedance, as listed in the last
+                column. For this example, the AEP of Q=1500 m<superscript>3</superscript>/s is found
+                to be 0.000757% or about 1 in 130 000.</para>
+            <para>The calculated outflow points from <xref linkend="b8_t_cfdhv"/> are plotted and a
+                curve fitted to define the frequency distribution of peak outflows, as shown in
+                    <xref linkend="b8_f_lz3cw"/>. Note that if a sufficient number of intervals are
+                used to discretise the inflow and outflow frequency curves then it is probably not
+                necessary to fit a curve as the points generally follow a smooth curve in the
+                log-Normal probability domain.</para>
+            <para>For comparison purposes, outflows are also derived for an initial storage volume
+                fixed at the median level of drawdown, which is 81.3% of the full supply storage
+                    (<xref linkend="b8_f_lz3cw"/>). The corresponding outflow curve is plotted in
+                    <xref linkend="b8_f_p0wvf"/>, and it is seen that this simplistic approach
+                yields an outflow frequency curve that is significantly lower than that obtained
+                using the more accurate joint probability approach.</para>
+            <para>
+                <table frame="void" xml:id="b8_t_cfdhv">
+                    <caption>Transition
+                        <?oxy_insert_start author="retallick" timestamp="20160615T200230+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200229+1000" content="p"?>robabilities
+                        between
+                        <?oxy_insert_start author="retallick" timestamp="20160615T200236+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200234+1000" content="r"?>eservoir
+                        <?oxy_insert_start author="retallick" timestamp="20160615T200240+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200239+1000" content="i"?>nflow
+                        and
+                        <?oxy_insert_start author="retallick" timestamp="20160615T200243+1000"?>O<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200243+1000" content="o"?>utflow
+                        <?oxy_insert_start author="retallick" timestamp="20160615T200245+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200245+1000" content="c"?>lasses</caption>
+                    <col width="5%"/>
+                    <col/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col/>
+                    <col/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <col width="5%"/>
+                    <thead>
+                        <tr>
+                            <th/>
+                            <th>Inflow
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200631+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200628+1000" content="c"?>lass
+                                <?oxy_delete author="retallick" timestamp="20160615T200459+1000" content="invertal"?><?oxy_insert_start author="retallick" timestamp="20160615T200459+1000"?>interval<?oxy_insert_end?>
+                                    (m<superscript>3</superscript>/s)</th>
+                            <th/>
+                            <th>&lt;500</th>
+                            <th/>
+                            <th>700</th>
+                            <th/>
+                            <th>1000</th>
+                            <th/>
+                            <th>1300</th>
+                            <th/>
+                            <th>1700</th>
+                            <th/>
+                            <th>2200</th>
+                            <th/>
+                            <th>3000</th>
+                            <th/>
+                            <th>4000</th>
+                            <th>Outflow
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200637+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200636+1000" content="c"?>lass
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200640+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200640+1000" content="p"?>rob<?oxy_insert_start author="retallick" timestamp="20160615T200658+1000"?>abilty<?oxy_insert_end?>
+                                (%)</th>
+                            <th>Outflow
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200645+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200644+1000" content="c"?>umulative
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200648+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200648+1000" content="p"?>rob<?oxy_insert_start author="retallick" timestamp="20160615T200650+1000"?>ability<?oxy_insert_end?>
+                                (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td/>
+                            <td>Inflow
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200706+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200706+1000" content="c"?>lass
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200704+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200703+1000" content="p"?>rob<?oxy_insert_start author="retallick" timestamp="20160615T200708+1000"?>ability<?oxy_insert_end?>
+                                (%)</td>
+                            <td><?oxy_insert_start author="retallick" timestamp="20160615T200536+1000"?>9<?oxy_insert_end?>9.51341</td>
+                            <td/>
+                            <td>0.28355</td>
+                            <td/>
+                            <td>0.15983</td>
+                            <td/>
+                            <td>0.03106</td>
+                            <td/>
+                            <td>0.00896</td>
+                            <td/>
+                            <td>0.00234</td>
+                            <td/>
+                            <td>0.00068</td>
+                            <td/>
+                            <td>0.00013</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td rowspan="16">Outflow
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200714+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200713+1000" content="c"?>lass
+                                <?oxy_insert_start author="retallick" timestamp="20160615T200717+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200717+1000" content="i"?>nterval
+                                    (m<superscript>3</superscript>/s)</td>
+                            <td>0</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>99.999969</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>100</td>
+                            <td/>
+                            <td>78.4716</td>
+                            <td/>
+                            <td>69.3027</td>
+                            <td/>
+                            <td>54.243</td>
+                            <td/>
+                            <td>47.9156</td>
+                            <td/>
+                            <td>41.6945</td>
+                            <td/>
+                            <td>34.404</td>
+                            <td/>
+                            <td>27.1748</td>
+                            <td/>
+                            <td>99.869080</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>350</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.130893</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>21.5284</td>
+                            <td/>
+                            <td>2.3793</td>
+                            <td/>
+                            <td>2.2986</td>
+                            <td/>
+                            <td>1.0037</td>
+                            <td/>
+                            <td>0.8095</td>
+                            <td/>
+                            <td>0.9611</td>
+                            <td/>
+                            <td>0.5138</td>
+                            <td/>
+                            <td>0.065678</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>380</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.065216</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>2.9773</td>
+                            <td/>
+                            <td>3.4824</td>
+                            <td/>
+                            <td>1.6977</td>
+                            <td/>
+                            <td>1.3187</td>
+                            <td/>
+                            <td>1.0253</td>
+                            <td/>
+                            <td>0.7559</td>
+                            <td/>
+                            <td>0.006031</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>420</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.059185</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>2.621</td>
+                            <td/>
+                            <td>4.5351</td>
+                            <td/>
+                            <td>1.8148</td>
+                            <td/>
+                            <td>1.4459</td>
+                            <td/>
+                            <td>0.7783</td>
+                            <td/>
+                            <td>1.0328</td>
+                            <td/>
+                            <td>0.005801</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>480</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.053384</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>3.1509</td>
+                            <td/>
+                            <td>4.369</td>
+                            <td/>
+                            <td>2.0795</td>
+                            <td/>
+                            <td>1.5345</td>
+                            <td/>
+                            <td>1.3152</td>
+                            <td/>
+                            <td>1.4447</td>
+                            <td/>
+                            <td>0.006626</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>530</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.046758</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>19.5688</td>
+                            <td/>
+                            <td>4.1312</td>
+                            <td/>
+                            <td>4.5458</td>
+                            <td/>
+                            <td>2.0523</td>
+                            <td/>
+                            <td>1.4027</td>
+                            <td/>
+                            <td>1.982</td>
+                            <td/>
+                            <td>0.033027</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>600</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.013730</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>2.4953</td>
+                            <td/>
+                            <td>4.0726</td>
+                            <td/>
+                            <td>2.200</td>
+                            <td/>
+                            <td>0.7413</td>
+                            <td/>
+                            <td>1.764</td>
+                            <td/>
+                            <td>0.001199</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td>670</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.012531</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>2.9152</td>
+                            <td/>
+                            <td>5.4847</td>
+                            <td/>
+                            <td>1.8765</td>
+                            <td/>
+                            <td>1.0761</td>
+                            <td/>
+                            <td>1.5613</td>
+                            <td/>
+                            <td>0.001450</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>750</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.011081</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>21.5302</td>
+                            <td/>
+                            <td>46796</td>
+                            <td/>
+                            <td>4.3988</td>
+                            <td/>
+                            <td>2.0627</td>
+                            <td/>
+                            <td>1.2286</td>
+                            <td/>
+                            <td>0.007226</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>850</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.003855</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>2.8491</td>
+                            <td/>
+                            <td>4.9704</td>
+                            <td/>
+                            <td>1.8965</td>
+                            <td/>
+                            <td>2.0188</td>
+                            <td/>
+                            <td>0.000387</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>950</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.003468</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>3.269</td>
+                            <td/>
+                            <td>5.670</td>
+                            <td/>
+                            <td>3.050</td>
+                            <td/>
+                            <td>0.9686</td>
+                            <td/>
+                            <td>0.000448</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1060</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.003021</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>20.5878</td>
+                            <td/>
+                            <td>5.0081</td>
+                            <td/>
+                            <td>3.2303</td>
+                            <td/>
+                            <td>1.4521</td>
+                            <td/>
+                            <td>0.001986</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1190</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.001035</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>3.5337</td>
+                            <td/>
+                            <td>4.9378</td>
+                            <td/>
+                            <td>2.3873</td>
+                            <td/>
+                            <td>0.000119</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1340</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000916</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>4.5897</td>
+                            <td/>
+                            <td>6.8184</td>
+                            <td/>
+                            <td>3.5258</td>
+                            <td/>
+                            <td>0.000158</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1500</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000757</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>18.8973</td>
+                            <td/>
+                            <td>7.8759</td>
+                            <td/>
+                            <td>4.1623</td>
+                            <td/>
+                            <td>0.000501</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1690</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000256</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>4.5785</td>
+                            <td/>
+                            <td>6.3883</td>
+                            <td/>
+                            <td>0.000039</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>1890</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000217</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>23.8459</td>
+                            <td/>
+                            <td>9.1470</td>
+                            <td/>
+                            <td>0.000174</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>2120</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000043</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>7.3367</td>
+                            <td/>
+                            <td>0.000010</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>2380</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000033</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>5.5530</td>
+                            <td/>
+                            <td>0.000007</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>2670</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000026</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>19.6024</td>
+                            <td/>
+                            <td>0.000026</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td>3000</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>0.000000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+            <figure xml:id="b8_f_lz3cw">
+                <title>Outflow
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200846+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200845+1000" content="f"?>requency
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200842+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200841+1000" content="c"?>urves
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200839+1000"?>O<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200838+1000" content="o"?>btained
+                    using
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200835+1000"?>J<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200835+1000" content="j"?>oint
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200833+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200832+1000" content="p"?>robability
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200830+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200830+1000" content="a"?>nalysis
+                    and a
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200827+1000"?>M<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200827+1000" content="m"?>edian
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200825+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200824+1000" content="l"?>evel
+                    of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T200823+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T200822+1000" content="d"?>rawdown<?oxy_delete author="retallick" timestamp="20160615T200817+1000" content="."?></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8018.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b8_s_hkkbw">
+            <title>Monte Carlo Solution</title>
+            <para>A Monte Carlo scheme can be easily extended to include the consideration of joint
+                probabilities in reservoir drawdown. A framework suited to this is shown in <xref
+                    linkend="b8_f_ji9uy"/>. This framework is in essence identical to the approach
+                used to derive the frequency curves shown in <xref linkend="b8_f_el271"/>, the only
+                additional step is the (stochastic) sampling of initial reservoir level and
+                subsequent (deterministic) routing of the inflow hydrograph through the storage. The
+                initial reservoir level is best sampled in a non-parametric fashion from the
+                cumulative distribution of drawdown (e.g. the distribution as shown in <xref
+                    linkend="b8_f_5gmii"/>) using the approach as described in <xref linkend="book4"
+                />.</para>
+            <para>If the distribution of initial reservoir levels is found to vary with event
+                severity (as illustrated by the insert in <xref linkend="b8_f_u0vng"/>) then the
+                same framework as shown in <xref linkend="b8_f_ji9uy"/> can still be used, the only
+                difference being that a different drawdown distribution is selected depending on the
+                magnitude of the inflow flood (or causative rainfall). The drawdown distribution
+                selected can also vary with season to account for marked differences in seasonal
+                water levels, and again the framework as shown in <xref linkend="b8_f_ji9uy"/> is
+                directly applicable if distributions are selected according to season.</para>
+            <figure xml:id="b8_f_ji9uy">
+                <title>Simulation
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201228+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201228+1000" content="f"?>ramework
+                    to
+                    <?oxy_delete author="retallick" timestamp="20160615T201230+1000" content="d"?><?oxy_insert_start author="retallick" timestamp="20160615T201231+1000"?>D<?oxy_insert_end?>erive
+                    <?oxy_delete author="retallick" timestamp="20160615T201233+1000" content="o"?><?oxy_insert_start author="retallick" timestamp="20160615T201234+1000"?>O<?oxy_insert_end?>utflow
+                    <?oxy_delete author="retallick" timestamp="20160615T201237+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160615T201237+1000"?>F<?oxy_insert_end?>requency
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201240+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201239+1000" content="c"?>urve
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201250+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201249+1000" content="b"?>ased
+                    on
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201246+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201246+1000" content="v"?>ariable
+                    <?oxy_delete author="retallick" timestamp="20160615T201252+1000" content="i"?><?oxy_insert_start author="retallick" timestamp="20160615T201253+1000"?>I<?oxy_insert_end?>nitial
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201256+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201256+1000" content="s"?>tarting
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201259+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201258+1000" content="l"?>evel
+                    in
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201303+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201302+1000" content="r"?>eservoir<?oxy_delete author="retallick" timestamp="20160615T201305+1000" content="."?></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8019.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+    </section>
+    <section xml:id="b8_s_01mf7">
+        <title>Estimation of Concurrent Flows</title>
+        <para>For this example it is assumed that it is required to derive the concurrent tributary
+            inflows originating from a 60
+                km<?oxy_insert_start author="retallick" timestamp="20160615T201321+1000"?><superscript>2</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201323+1000" content="2"?>
+            catchment located just downstream of the reservoir. A township is located below the
+            confluence and the concurrent tributary inflows are required to help determine the
+            component of incremental damages that could be attributed to dam failure.</para>
+        <section xml:id="b8_s_5jqb7">
+            <title>Basic Flood Data</title>
+            <para>The design floods for the point on the mainstream are shown for a range of AEPs in
+                    <xref linkend="b8_t_7h2r9"/> (columns 1 and 4), where flood estimates for the
+                mainstream were derived as described in <xref linkend="b8_s_9kcec"/>. Floods flows
+                in the tributary are assumed to be minor compared to that in the mainstream, and it
+                may be assumed that preliminary design flood estimates were derived using regional
+                procedures, as discussed in <xref linkend="b8_s_laqj1"/>. Tributary flood estimates
+                were only obtained for AEPs of 1 in 50, 1 in 100 and 1 in
+                    10<?oxy_insert_start author="retallick" timestamp="20160615T201345+1000"?><superscript>7</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201349+1000" content="7"?>,
+                and these are shown in column 6, <xref linkend="b8_t_7h2r9"/>.</para>
+            <para>
+                <table frame="void" xml:id="b8_t_7h2r9">
+                    <caption>Calculation of
+                        <?oxy_insert_start author="retallick" timestamp="20160615T201354+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201354+1000" content="c"?>oncurrent
+                        <?oxy_insert_start author="retallick" timestamp="20160615T201357+1000"?>T<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201356+1000" content="t"?>ributary
+                        <?oxy_insert_start author="retallick" timestamp="20160615T201400+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201359+1000" content="f"?>lows</caption>
+                    <col align="right" width="7%"/>
+                    <col width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <col align="center" width="7%"/>
+                    <thead>
+                        <tr>
+                            <th colspan="3">Annual Exceedance Probability</th>
+                            <th colspan="4">Design Quantiles</th>
+                            <th colspan="4">Bivariate log-Normal Estimates</th>
+                            <th colspan="3">Concurrent
+                                <?oxy_delete author="retallick" timestamp="20160615T201409+1000" content="tributarty"?><?oxy_insert_start author="retallick" timestamp="20160615T201409+1000"?>Tributary<?oxy_insert_end?>
+                                flood</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 in Y</td>
+                            <td>%</td>
+                            <td>Standardised Norm.
+                                <?oxy_delete author="retallick" timestamp="20160615T201438+1000" content="Vartiate"?><?oxy_insert_start author="retallick" timestamp="20160615T201438+1000"?>Variate<?oxy_insert_end?></td>
+                            <td colspan="2">Mainstream Flood</td>
+                            <td colspan="2">Tributary</td>
+                            <td colspan="2">Mainstream Flood</td>
+                            <td colspan="2">Tributary</td>
+                            <td colspan="2">Flood</td>
+                            <td>AEP</td>
+                        </tr>
+                        <tr>
+                            <td>(1)</td>
+                            <td>(2)</td>
+                            <td>(3)</td>
+                            <td>(m<superscript>3</superscript>/s) (4)</td>
+                            <td>log(m<superscript>3</superscript>/s) (5)</td>
+                            <td>(m<superscript>3</superscript>/s) (6)</td>
+                            <td>log(m<superscript>3</superscript>/s) (7)</td>
+                            <td>log(m<superscript>3</superscript>/s) (8)</td>
+                            <td>(m<superscript>3</superscript>/s) (9)</td>
+                            <td>log(m<superscript>3</superscript>/s) (10)</td>
+                            <td>(m<superscript>3</superscript>/s) (11)</td>
+                            <td>log(m<superscript>3</superscript>/s) (12)</td>
+                            <td>(m<superscript>3</superscript>/s) (13)</td>
+                            <td>(1 in Y) (14)</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>2</td>
+                            <td>2.054</td>
+                            <td>344</td>
+                            <td>2.537</td>
+                            <td>105</td>
+                            <td>2.020</td>
+                            <td>2.540</td>
+                            <td>347</td>
+                            <td>2.024</td>
+                            <td>106</td>
+                            <td>1.638</td>
+                            <td>43</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>1</td>
+                            <td>2.326</td>
+                            <td>443</td>
+                            <td>2.646</td>
+                            <td>135</td>
+                            <td>2.130</td>
+                            <td>2.639</td>
+                            <td>436</td>
+                            <td>2.127</td>
+                            <td>134</td>
+                            <td>1.689</td>
+                            <td>49</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>0.2</td>
+                            <td>2.878</td>
+                            <td>703</td>
+                            <td>2.847</td>
+                            <td/>
+                            <td/>
+                            <td>2.839</td>
+                            <td>690</td>
+                            <td>2.334</td>
+                            <td>216</td>
+                            <td>1.793</td>
+                            <td>62</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>0.1</td>
+                            <td>3.090</td>
+                            <td>826</td>
+                            <td>2.917</td>
+                            <td/>
+                            <td/>
+                            <td>2.915</td>
+                            <td>823</td>
+                            <td>2.414</td>
+                            <td>259</td>
+                            <td>1.833</td>
+                            <td>68</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>2000</td>
+                            <td>0.05</td>
+                            <td>3.290</td>
+                            <td>969</td>
+                            <td>2.986</td>
+                            <td/>
+                            <td/>
+                            <td>2.988</td>
+                            <td>973</td>
+                            <td>2.489</td>
+                            <td>308</td>
+                            <td>1.870</td>
+                            <td>74</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>10000</td>
+                            <td>0.01</td>
+                            <td>3.719</td>
+                            <td>1351</td>
+                            <td>3.131</td>
+                            <td/>
+                            <td/>
+                            <td>3.143</td>
+                            <td>1390</td>
+                            <td>2.651</td>
+                            <td>447</td>
+                            <td>1.951</td>
+                            <td>89</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>50000</td>
+                            <td>0.002</td>
+                            <td>4.101</td>
+                            <td>1860</td>
+                            <td>3.270</td>
+                            <td/>
+                            <td/>
+                            <td>3.291</td>
+                            <td>1910</td>
+                            <td>2.794</td>
+                            <td>622</td>
+                            <td>2.023</td>
+                            <td>105</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>500000</td>
+                            <td>0.0002</td>
+                            <td>4.611</td>
+                            <td>2910</td>
+                            <td>3.464</td>
+                            <td/>
+                            <td/>
+                            <td>3.466</td>
+                            <td>2923</td>
+                            <td>2.986</td>
+                            <td>968</td>
+                            <td>2.119</td>
+                            <td>131</td>
+                            <td>95</td>
+                        </tr>
+                        <tr>
+                            <td>2280000</td>
+                            <td>0.00004</td>
+                            <td>4.917</td>
+                            <td>3898</td>
+                            <td>3.591</td>
+                            <td/>
+                            <td/>
+                            <td>3.577</td>
+                            <td>3772</td>
+                            <td>3.101</td>
+                            <td>1262</td>
+                            <td>2.176</td>
+                            <td>150</td>
+                            <td>143</td>
+                        </tr>
+                        <tr>
+                            <td>10000000</td>
+                            <td>0.00001</td>
+                            <td>5.199</td>
+                            <td/>
+                            <td/>
+                            <td>1610</td>
+                            <td>3.207</td>
+                            <td>3.679</td>
+                            <td>4771</td>
+                            <td>3.207</td>
+                            <td>1611</td>
+                            <td>2.229</td>
+                            <td>170</td>
+                            <td>214</td>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <td colspan="2">Average (Intercept) =</td>
+                            <td>1.797</td>
+                            <td/>
+                            <td>1.251</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td>ρ =</td>
+                            <td>0.5</td>
+                            <td/>
+                        </tr>
+                        <tr>
+                            <td/>
+                            <td/>
+                            <?oxy_comment_start author="retallick" timestamp="20160615T201636+1000" comment="isabelle- these dont look as rory intended with the table formating. Maybe pull out of table or look at specific table format"?>
+                            <td colspan="2">Std Dev (slope) =</td>
+                            <td>0.362</td>
+                            <td/>
+                            <td>0.376</td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <?oxy_comment_end?>
+                            <td/>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+        </section>
+        <section xml:id="b8_s_vnpdd">
+            <title>Fitting of log-Normal Distribution</title>
+            <para>In order to calculate the parameters of the marginal log-Normal distributions, the
+                flow data are first converted into the logarithmic domain (columns 5 and 7), and the
+                AEPs are linearised by calculating the corresponding standard normal variates
+                (column 3). The latter can be obtained from normal probability tables, or else using
+                the in-built functions available in spreadsheet software (note that the standardised
+                normal variate obtained using some spreadsheet software may be incorrect at very low
+                probabilities and correct values should be checked against published information
+                (e.g. <citation>b8_c_r94</citation>).</para>
+            <para>The parameters of the log-Normal distribution can then most easily be calculated
+                by simply fitting a linear regression line through the transformed data (i.e.
+                columns 3 and 5, and columns 3 and 7). The intercept of the fitted line is
+                equivalent to the mean of the distribution (as the standardised variate of the mean
+                of a log-Normal distribution is zero), and the slope is equivalent to the standard
+                deviation. The fitted parameters are listed below columns 5 and 7, and may be
+                obtained either graphically, or by using standard spreadsheet functions. The design
+                flood estimates and the fitted log-Normal distributions are shown in <xref
+                    linkend="b8_f_9yndi"/>. The log-Normal estimate (<emphasis role="italic"
+                    >x</emphasis>) may be calculated from the relevant sample mean (<emphasis
+                    role="italic">m</emphasis>), standard deviation (<emphasis role="italic"
+                    >s</emphasis>), and standardised variate (<emphasis role="italic">z</emphasis>)
+                as follows:</para>
+            <equation xml:id="b8_e_jhpp1">
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mi>x</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mrow>
+                            <m:mi>m</m:mi>
+                            <m:mo>+</m:mo>
+                            <m:mrow>
+                                <m:mi>s</m:mi>
+                                <m:mo>⁢</m:mo>
+                                <m:mi>z</m:mi>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>For example, to calculate the 1 in 100 AEP design flood in the mainstream:</para>
+            <equation xml:id="b8_e_pt8fz">
+                <m:math display="block">
+                    <m:mtable>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi>x</m:mi>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>1.797</m:mi>
+                                        <m:mo>+</m:mo>
+                                        <m:mrow>
+                                            <m:mi>0.362</m:mi>
+                                            <m:mo>×</m:mo>
+                                            <m:mi>2.326</m:mi>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>2.639</m:mi>
+                                        <m:mrow>
+                                            <m:mi>log</m:mi>
+                                            <m:mo>⁡</m:mo>
+                                            <m:mrow>
+                                                <m:mo>(</m:mo>
+                                                <m:mrow>
+                                                  <m:msup>
+                                                  <m:mi>m</m:mi>
+                                                  <m:mi>3</m:mi>
+                                                  </m:msup>
+                                                  <m:mo>/</m:mo>
+                                                  <m:mi>s</m:mi>
+                                                </m:mrow>
+                                                <m:mo>)</m:mo>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>≈</m:mo>
+                                    <m:mrow>
+                                        <m:mi>440</m:mi>
+                                        <m:mrow>
+                                            <m:msup>
+                                                <m:mi>m</m:mi>
+                                                <m:mi>3</m:mi>
+                                            </m:msup>
+                                            <m:mo>/</m:mo>
+                                            <m:mi>s</m:mi>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                    </m:mtable>
+                </m:math>
+            </equation>
+            <para>The computed design flood estimates from the fitted distribution are shown in
+                columns 8 and 10; these are then back-transformed into the arithmetic domain, as
+                shown in columns 9 and 11 of <xref linkend="b8_t_7h2r9"/>.</para>
+            <figure xml:id="b8_f_9yndi">
+                <title>Fitted log-Normal
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201903+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201903+1000" content="f"?>lood
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201906+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201905+1000" content="f"?>requency
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201908+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201907+1000" content="c"?>urves
+                    for<?oxy_insert_start author="retallick" timestamp="20160615T201910+1000"?>
+                    M<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201910+1000" content=" m"?>ainstream
+                    and
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201922+1000"?>T<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201920+1000" content="t"?>ributary
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201925+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201925+1000" content="d"?>esign
+                    <?oxy_insert_start author="retallick" timestamp="20160615T201929+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T201929+1000" content="f"?>lows</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8020.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b8_s_y71fe">
+            <title>Estimation of Concurrent Tributary Flows</title>
+            <para>Computation of the average concurrent flow in the tributary (<inlineequation>
+                    <m:math display="block">
+                        <m:mrow>
+                            <m:msub>
+                                <m:mi>m</m:mi>
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mo>(</m:mo>
+                                        <m:mrow>
+                                            <m:mi>y</m:mi>
+                                            <m:mrow>
+                                                <m:mo>|</m:mo>
+                                                <m:mi>x</m:mi>
+                                            </m:mrow>
+                                        </m:mrow>
+                                        <m:mo>)</m:mo>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:msub>
+                        </m:mrow>
+                    </m:math>
+                </inlineequation>) for varying design floods in the mainstream (<emphasis
+                    role="italic">x</emphasis>) are determined from <xref linkend="b8_e_tjhqf"/>
+                    (<xref linkend="b8_s_5kz1l"/>), as follows:</para>
+            <equation xml:id="b8_e_sduxm">
+                <m:math display="block">
+                    <m:mrow>
+                        <m:msub>
+                            <m:mi>m</m:mi>
+                            <m:mfenced close=")" open="(" separators="|">
+                                <m:mi>y</m:mi>
+                                <m:mi>x</m:mi>
+                            </m:mfenced>
+                        </m:msub>
+                        <m:mo>=</m:mo>
+                        <m:mrow>
+                            <m:mi>1.251</m:mi>
+                            <m:mo>+</m:mo>
+                            <m:mrow>
+                                <m:mi>0.5</m:mi>
+                                <m:mfrac>
+                                    <m:mi>0.376</m:mi>
+                                    <m:mi>0.362</m:mi>
+                                </m:mfrac>
+                                <m:mrow>
+                                    <m:mo>(</m:mo>
+                                    <m:mrow>
+                                        <m:mi>x</m:mi>
+                                        <m:mo>-</m:mo>
+                                        <m:mi>1.797</m:mi>
+                                    </m:mrow>
+                                    <m:mo>)</m:mo>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>where 0.5 represents the correlation between the log-transformed flows calculated
+                for the largest floods on record. The average concurrent flow in the tributary
+                corresponding to a 1 in 50000 AEP event in the mainstream is thus calculated
+                by:</para>
+            <equation xml:id="b8_e_orfzp">
+                <?oxy_comment_start author="retallick" timestamp="20160615T202101+1000" comment="m^3/s shouldnt be italics"?>
+                <m:math display="block">
+                    <m:mtable>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:msub>
+                                        <m:mi>m</m:mi>
+                                        <m:mfenced close=")" open="(" separators="|">
+                                            <m:mi>y</m:mi>
+                                            <m:mi>x</m:mi>
+                                        </m:mfenced>
+                                    </m:msub>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>1.251</m:mi>
+                                        <m:mo>+</m:mo>
+                                        <m:mrow>
+                                            <m:mi>0.5</m:mi>
+                                            <m:mfrac>
+                                                <m:mi>0.376</m:mi>
+                                                <m:mi>0.362</m:mi>
+                                            </m:mfrac>
+                                            <m:mrow>
+                                                <m:mo>(</m:mo>
+                                                <m:mrow>
+                                                  <m:mi>3.465</m:mi>
+                                                  <m:mo>-</m:mo>
+                                                  <m:mi>1.797</m:mi>
+                                                </m:mrow>
+                                                <m:mo>)</m:mo>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>2.117</m:mi>
+                                        <m:mrow>
+                                            <m:mi>log</m:mi>
+                                            <m:mo>⁡</m:mo>
+                                            <m:mrow>
+                                                <m:msup>
+                                                  <m:mi>m</m:mi>
+                                                  <m:mi>3</m:mi>
+                                                </m:msup>
+                                                <m:mo>/</m:mo>
+                                                <m:mi>s</m:mi>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>131</m:mi>
+                                        <m:mrow>
+                                            <m:msup>
+                                                <m:mi>m</m:mi>
+                                                <m:mi>3</m:mi>
+                                            </m:msup>
+                                            <m:mo>/</m:mo>
+                                            <m:mi>s</m:mi>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                    </m:mtable>
+                </m:math>
+                <?oxy_comment_end?>
+            </equation>
+            <para>The computed figures for all AEPs are shown in columns 12, and the
+                back-transformed values are shown in columns 13. It is of interest to calculate the
+                AEPs of the concurrent tributary flows, and these may be calculated by first
+                calculating the standard normal variate using:</para>
+            <equation xml:id="b8_e_9fp4t">
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mi>z</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mfrac>
+                            <m:mrow>
+                                <m:mo>(</m:mo>
+                                <m:mrow>
+                                    <m:mi>x</m:mi>
+                                    <m:mo>-</m:mo>
+                                    <m:mi>m</m:mi>
+                                </m:mrow>
+                                <m:mo>)</m:mo>
+                            </m:mrow>
+                            <m:mi>s</m:mi>
+                        </m:mfrac>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>For example, to calculate the AEP of the 74
+                    m<?oxy_insert_start author="retallick" timestamp="20160615T202114+1000"?><superscript>3</superscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T202118+1000" content="3"?>/s
+                design flood estimate in the tributary:</para>
+            <equation xml:id="b8_e_n3c0w">
+                <m:math display="block">
+                    <m:mtable>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi>z</m:mi>
+                                    <m:mo>=</m:mo>
+                                    <m:mfrac>
+                                        <m:mrow>
+                                            <m:mo>(</m:mo>
+                                            <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>log</m:mi>
+                                                  <m:mo>⁡</m:mo>
+                                                  <m:mrow>
+                                                  <m:mo>(</m:mo>
+                                                  <m:mi>74</m:mi>
+                                                  <m:mo>)</m:mo>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                                <m:mo>-</m:mo>
+                                                <m:mi>1.251</m:mi>
+                                            </m:mrow>
+                                            <m:mo>)</m:mo>
+                                        </m:mrow>
+                                        <m:mi>0.376</m:mi>
+                                    </m:mfrac>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                            <m:mtd>
+                                <m:mrow>
+                                    <m:mi/>
+                                    <m:mo>=</m:mo>
+                                    <m:mi>1.644</m:mi>
+                                </m:mrow>
+                            </m:mtd>
+                        </m:mtr>
+                    </m:mtable>
+                </m:math>
+            </equation>
+            <para>The corresponding standard normal cumulative distribution for this value of
+                    <emphasis role="italic">z</emphasis> is 0.95, which corresponds
+                to<?oxy_delete author="retallick" timestamp="20160615T202132+1000" content=" an "?><?oxy_delete author="retallick" timestamp="20160615T202135+1000" content="AEP of "?>1
+                in 20<?oxy_insert_start author="retallick" timestamp="20160615T202140+1000"?>
+                AEP<?oxy_insert_end?>. Values for the other estimates are shown in column 14.</para>
+        </section>
+    </section>
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include>
+    
+    
+</chapter>

@@ -424,650 +424,314 @@
       <title>Joint, marginal and conditional distributions</title>
 
       <para>Consider two random variables, <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation><footnote>
-          <para>In this chapter, the variable X can be thought of as denoting
-          daily or sub-daily rainfall, and Y denotes either storm surge or
-          storm tide. However, the theory can be applied more generally to any
-          pair of variables.</para>
-        </footnote>. The joint probability distribution (or, equivalently, the
-      bivariate probability distribution) of these variables describes the
-      probability that (<inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <para>In this chapter, the variable X can be thought of as denoting daily or sub-daily
+            rainfall, and Y denotes either storm surge or storm tide. However, the theory can be
+            applied more generally to any pair of variables.</para>
+        </footnote>. The joint probability distribution (or, equivalently, the bivariate probability
+        distribution) of these variables describes the probability that (<inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>, <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>) equals a particular set of values (<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation>, <inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
-        </inlineequation>) or falls in any particular range of values for that
-      variable. This enables the relationship between two variables to be
-      considered. The joint probability distribution can be generalised to any
-      number of random variables, in which case it is referred to as a
-      multivariate probability distribution. The following text presents basic
-      statistical properties of the joint, marginal and conditional
-      distributions, using bivariate distributions by way of illustration. For
-      more information on the theory of joint, marginal and conditional
-      distributions, the reader is referred to statistics references such as
-      <emphasis>Ang</emphasis> and <emphasis>Tang</emphasis> [2006].</para>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
+        </inlineequation>) or falls in any particular range of values for that variable. This
+        enables the relationship between two variables to be considered. The joint probability
+        distribution can be generalised to any number of random variables, in which case it is
+        referred to as a multivariate probability distribution. The following text presents basic
+        statistical properties of the joint, marginal and conditional distributions, using bivariate
+        distributions by way of illustration. For more information on the theory of joint, marginal
+        and conditional distributions, the reader is referred to statistics references such as
+          <emphasis>Ang</emphasis> and <emphasis>Tang</emphasis> [2006].</para>
 
-      <para>The joint probability density function is written as
-      <inlineequation>
-          <m:math display="inline">
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-
-                <m:mo>⁣</m:mo>
-
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:msub>
-          </m:math>
-        </inlineequation><inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-
-                <m:mo>⁣</m:mo>
-
-                <m:mi>y</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-          </m:math>
-        </inlineequation>, and has the property:</para>
+      <para>The joint probability density function is written as <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>f</mi>
+              <mrow>
+                <mi>x</mi>
+                <mo>,</mo>
+                <mi>y</mi>
+              </mrow>
+            </msub>
+            <mtext>&#x00A0;</mtext>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+        </inlineequation> and has the property:</para>
 
       <equation xml:id="b6_c5_e_uej8z">
-        <m:math display="block">
-          <m:mrow>
-            <m:mstyle displaystyle="true">
-              <m:mrow>
-                <m:munder>
-                  <m:mo>∫</m:mo>
-
-                  <m:mi>x</m:mi>
-                </m:munder>
-
-                <m:mrow>
-                  <m:mstyle displaystyle="true">
-                    <m:mrow>
-                      <m:munder>
-                        <m:mo>∫</m:mo>
-
-                        <m:mi>y</m:mi>
-                      </m:munder>
-
-                      <m:mrow>
-                        <m:msub>
-                          <m:mi>f</m:mi>
-
-                          <m:mrow>
-                            <m:mi>X</m:mi>
-
-                            <m:mo>,</m:mo>
-
-                            <m:mi>Y</m:mi>
-                          </m:mrow>
-                        </m:msub>
-                      </m:mrow>
-                    </m:mrow>
-                  </m:mstyle>
-                </m:mrow>
-              </m:mrow>
-            </m:mstyle>
-
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-
-                <m:mo>,</m:mo>
-
-                <m:mi>y</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-
-            <m:mi>d</m:mi>
-
-            <m:mi>y</m:mi>
-
-            <m:mi>d</m:mi>
-
-            <m:mi>x</m:mi>
-
-            <m:mo>=</m:mo>
-
-            <m:mn>1</m:mn>
-          </m:mrow>
-        </m:math>
+        <math display='block'>
+          <mstyle displaystyle='true'>
+            <mrow>
+              <msub>
+                <mo>&#x222B;</mo>
+                <mi>x</mi>
+              </msub>
+              <mrow>
+                <mstyle displaystyle='true'>
+                  <mrow>
+                    <msub>
+                      <mo>&#x222B;</mo>
+                      <mi>y</mi>
+                    </msub>
+                    <mrow>
+                      <msub>
+                        <mi>f</mi>
+                        <mrow>
+                          <mi>X</mi><mo>,</mo><mi>Y</mi></mrow>
+                      </msub>
+                      <mo stretchy='false'>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy='false'>)</mo><mi>d</mi><mi>y</mi><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn></mrow>
+                  </mrow>
+                  
+                </mstyle></mrow>
+            </mrow>
+            
+          </mstyle>
+        </math>
+        
       </equation>
 
       <para>For independent variables, the joint distribution can be expressed
       as:</para>
 
       <equation xml:id="b6_c5_e_u8154">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:msub>
-                <m:mi>f</m:mi>
-
-                <m:mrow>
-                  <m:mi>X</m:mi>
-
-                  <m:mo>,</m:mo>
-
-                  <m:mi>Y</m:mi>
-                </m:mrow>
-              </m:msub>
-
-              <m:mrow>
-                <m:mo>(</m:mo>
-
-                <m:mrow>
-                  <m:mi>x</m:mi>
-
-                  <m:mo>,</m:mo>
-
-                  <m:mi>y</m:mi>
-                </m:mrow>
-
-                <m:mo>)</m:mo>
-              </m:mrow>
-
-              <m:mo>=</m:mo>
-
-              <m:msub>
-                <m:mi>f</m:mi>
-
-                <m:mi>X</m:mi>
-              </m:msub>
-
-              <m:mo stretchy="false">(</m:mo>
-
-              <m:mi>x</m:mi>
-
-              <m:mo stretchy="false">)</m:mo>
-
-              <m:msub>
-                <m:mi>f</m:mi>
-
-                <m:mi>Y</m:mi>
-              </m:msub>
-
-              <m:mo stretchy="false">(</m:mo>
-
-              <m:mi>y</m:mi>
-
-              <m:mo stretchy="false">)</m:mo>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+        <math display='block'>
+          <msub>
+            <mi>f</mi>
+            <mrow>
+              <mi>X</mi><mo>,</mo><mi>Y</mi></mrow>
+          </msub>
+          <mtext>&#x00A0;</mtext><mo stretchy='false'>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy='false'>)</mo><mo>=</mo><msub>
+            <mi>f</mi>
+            <mi>X</mi>
+          </msub>
+          <mo stretchy='false'>(</mo><mi>x</mi><mo stretchy='false'>)</mo><msub>
+            <mi>f</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy='false'>(</mo><mi>y</mi><mo stretchy='false'>)</mo>
+        </math>
+        
       </equation>
 
-      <para>The conditional probability density function given the occurrence
-      <inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mi>X</m:mi>
-
-              <m:mo>=</m:mo>
-
-              <m:mi>x</m:mi>
-            </m:mrow>
-          </m:math>
+      <para>The conditional probability density function given the occurrence <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+            <mo>=</mo>
+            <mi>x</mi>
+          </math>
         </inlineequation> is given as:</para>
 
       <equation xml:id="b6_c5_e_h2o8e">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>Y</m:mi>
-
-                <m:mo>|</m:mo>
-
-                <m:mi>X</m:mi>
-              </m:mrow>
-            </m:msub>
-
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>y</m:mi>
-
-                <m:mo>|</m:mo>
-
-                <m:mi>X</m:mi>
-
-                <m:mo>=</m:mo>
-
-                <m:mi>x</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>f</m:mi>
-
-                  <m:mrow>
-                    <m:mi>X</m:mi>
-
-                    <m:mo>|</m:mo>
-
-                    <m:mi>Y</m:mi>
-                  </m:mrow>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mrow>
-                    <m:mi>x</m:mi>
-
-                    <m:mo>,</m:mo>
-
-                    <m:mi>y</m:mi>
-                  </m:mrow>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-              </m:mrow>
-
-              <m:mrow>
-                <m:msub>
-                  <m:mi>f</m:mi>
-
-                  <m:mi>X</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mi>x</m:mi>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-              </m:mrow>
-            </m:mfrac>
-          </m:mrow>
-        </m:math>
+        <math display='block'>
+          <msub>
+            <mi>f</mi>
+            <mrow>
+              <mi>Y</mi><mo>&#x007C;</mo><mi>X</mi></mrow>
+          </msub>
+          <mrow><mo>(</mo>
+            <mrow>
+              <mi>y</mi><mo>&#x007C;</mo><mi>X</mi><mo>=</mo><mi>x</mi></mrow>
+            <mo>)</mo></mrow><mo>=</mo><mfrac>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mrow>
+                    <mi>X</mi><mo>&#x007C;</mo><mi>Y</mi></mrow>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mi>X</mi>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>x</mi><mo stretchy='false'>)</mo></mrow>
+            </mfrac>
+          
+        </math>
+        
+        
       </equation>
 
       <para>A corollary of the definition of independence in Equation 2 is
       that substitution into Equation 3 leads to:</para>
 
       <equation xml:id="b6_c5_e_kh06o">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>y</m:mi>
-
-                <m:mo>|</m:mo>
-
-                <m:mi>X</m:mi>
-
-                <m:mo>=</m:mo>
-
-                <m:mi>x</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mfrac>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>f</m:mi>
-
-                  <m:mi>X</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mi>x</m:mi>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-
-                <m:msub>
-                  <m:mi>f</m:mi>
-
-                  <m:mi>Y</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mi>y</m:mi>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-              </m:mrow>
-
-              <m:mrow>
-                <m:msub>
-                  <m:mi>f</m:mi>
-
-                  <m:mi>X</m:mi>
-                </m:msub>
-
-                <m:mrow>
-                  <m:mo>(</m:mo>
-
-                  <m:mi>x</m:mi>
-
-                  <m:mo>)</m:mo>
-                </m:mrow>
-              </m:mrow>
-            </m:mfrac>
-
-            <m:mo>=</m:mo>
-
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mi>Y</m:mi>
-            </m:msub>
-
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mi>y</m:mi>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-          </m:mrow>
-        </m:math>
+        <math display='block'>
+          <msub>
+            <mi>f</mi>
+            <mi>Y</mi>
+          </msub>
+          <mrow><mo>(</mo>
+            <mrow>
+              <mi>y</mi><mo>&#x007C;</mo><mi>X</mi><mo>=</mo><mi>x</mi></mrow>
+            <mo>)</mo></mrow><mo>=</mo><mfrac>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mi>X</mi>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>x</mi><mo stretchy='false'>)</mo><msub>
+                  <mi>f</mi>
+                  <mi>Y</mi>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>y</mi><mo stretchy='false'>)</mo></mrow>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mi>X</mi>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>x</mi><mo stretchy='false'>)</mo></mrow>
+            </mfrac>
+          <mo>=</mo><msub>
+            <mi>f</mi>
+            <mi>Y</mi>
+          </msub>
+          <mo stretchy='false'>(</mo><mi>y</mi><mo stretchy='false'>)</mo>
+        </math>
+        
+        
       </equation>
 
       <para>In other words, the conditional distribution becomes equivalent to
       the marginal distribution of <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> when the two variables are independent.</para>
 
       <para>Finally, a marginal distribution can be written as:</para>
 
       <equation xml:id="b6_c5_e_om827">
-        <m:math display="block">
-          <m:mrow>
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mi>X</m:mi>
-            </m:msub>
-
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mi>x</m:mi>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-
-            <m:mo>=</m:mo>
-
-            <m:mstyle displaystyle="true">
-              <m:mrow>
-                <m:munder>
-                  <m:mo>∫</m:mo>
-
-                  <m:mi>y</m:mi>
-                </m:munder>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>f</m:mi>
-
-                    <m:mrow>
-                      <m:mi>X</m:mi>
-
-                      <m:mo>,</m:mo>
-
-                      <m:mi>Y</m:mi>
-                    </m:mrow>
-                  </m:msub>
-
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-
-                    <m:mrow>
-                      <m:mi>x</m:mi>
-
-                      <m:mo>,</m:mo>
-
-                      <m:mi>y</m:mi>
-                    </m:mrow>
-
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-
-                  <m:mi>d</m:mi>
-
-                  <m:mi>y</m:mi>
-                </m:mrow>
-              </m:mrow>
-            </m:mstyle>
-
-            <m:mo>=</m:mo>
-
-            <m:mstyle displaystyle="true">
-              <m:mrow>
-                <m:munder>
-                  <m:mo>∫</m:mo>
-
-                  <m:mi>y</m:mi>
-                </m:munder>
-
-                <m:mrow>
-                  <m:msub>
-                    <m:mi>f</m:mi>
-
-                    <m:mrow>
-                      <m:mi>X</m:mi>
-
-                      <m:mo>|</m:mo>
-
-                      <m:mi>Y</m:mi>
-                    </m:mrow>
-                  </m:msub>
-
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-
-                    <m:mrow>
-                      <m:mi>x</m:mi>
-
-                      <m:mo>|</m:mo>
-
-                      <m:mi>y</m:mi>
-                    </m:mrow>
-
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-
-                  <m:msub>
-                    <m:mi>f</m:mi>
-
-                    <m:mi>Y</m:mi>
-                  </m:msub>
-
-                  <m:mrow>
-                    <m:mo>(</m:mo>
-
-                    <m:mi>y</m:mi>
-
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-
-                  <m:mi>d</m:mi>
-
-                  <m:mi>y</m:mi>
-                </m:mrow>
-              </m:mrow>
-            </m:mstyle>
-          </m:mrow>
-        </m:math>
+        <math display='block'>
+          <msub>
+            <mi>f</mi>
+            <mi>X</mi>
+          </msub>
+          <mo stretchy='false'>(</mo><mi>x</mi><mo stretchy='false'>)</mo><mo>=</mo><mstyle displaystyle='true'>
+            <mrow>
+              <msub>
+                <mo>&#x222B;</mo>
+                <mi>y</mi>
+              </msub>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mrow>
+                    <mi>X</mi><mo>,</mo><mi>Y</mi></mrow>
+                </msub>
+                <mo stretchy='false'>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy='false'>)</mo><mi>d</mi><mi>y</mi><mo>=</mo></mrow>
+            </mrow>
+            
+          </mstyle><mstyle displaystyle='true'>
+            <mrow>
+              <msub>
+                <mo>&#x222B;</mo>
+                <mi>y</mi>
+              </msub>
+              <mrow>
+                <msub>
+                  <mi>f</mi>
+                  <mrow>
+                    <mi>X</mi><mo>&#x007C;</mo><mi>Y</mi></mrow>
+                </msub>
+                <mrow><mo>(</mo>
+                  <mrow>
+                    <mi>x</mi><mo>&#x007C;</mo><mi>y</mi></mrow>
+                  <mo>)</mo></mrow><msub>
+                    <mi>f</mi>
+                    <mi>Y</mi>
+                  </msub>
+                <mo stretchy='false'>(</mo><mi>y</mi><mo stretchy='false'>)</mo><mi>d</mi><mi>y</mi></mrow>
+            </mrow>
+            
+          </mstyle>
+        </math>
+        
       </equation>
 
-      <para>These concepts are illustrated in <xref linkend="b6_c5_f_vnked"/>.
-      The main panel shows a joint Gaussian probability density function
-      <inlineequation>
-          <m:math display="inline">
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-
-                <m:mo>⁣</m:mo>
-
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:msub>
-          </m:math>
-        </inlineequation><inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-
-                <m:mo>⁣</m:mo>
-
-                <m:mi>y</m:mi>
-              </m:mrow>
-
-              <m:mo>),</m:mo>
-            </m:mrow>
-          </m:math>
-        </inlineequation>with simulated data that has been drawn from this
-      distribution function given as light blue dots. The marginal
-      distributions <inlineequation>
-          <m:math display="inline">
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:msub>
-          </m:math>
-        </inlineequation><inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>y</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-          </m:math>
+      <para>These concepts are illustrated in <xref linkend="b6_c5_f_vnked"/>. The main panel shows
+        a joint Gaussian probability density function <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>f</mi>
+              <mrow>
+                <mi>x</mi>
+                <mo>,</mo>
+                <mi>y</mi>
+              </mrow>
+            </msub>
+            <mtext>&#x00A0;</mtext>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+        </inlineequation> with simulated data that has been drawn from this distribution function
+        given as light blue dots. The marginal distributions <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>f</mi>
+              <mi>y</mi>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>y</mi>
+            <mo stretchy="false">)</mo>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-              </m:mrow>
-            </m:msub>
-          </m:math>
-        </inlineequation><inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mo>(</m:mo>
-
-              <m:mrow>
-                <m:mi>x</m:mi>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-          </m:math>
-        </inlineequation> are shown as solid lines in the left and bottom
-      panels, respectively. A conditional distribution <inlineequation>
-          <m:math display="inline">
-            <m:msub>
-              <m:mi>f</m:mi>
-
-              <m:mrow>
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:msub>
-          </m:math>
-        </inlineequation><inlineequation>
-          <m:math display="inline">
-            <m:mrow>
-              <m:mrow>
-                <m:mrow>
-                  <m:mfenced close=")" open="(" separators="|">
-                    <m:mi>y</m:mi>
-
-                    <m:mi>Χ</m:mi>
-                  </m:mfenced>
-
-                  <m:mo>=</m:mo>
-
-                  <m:mi>x</m:mi>
-                </m:mrow>
-              </m:mrow>
-
-              <m:mo>)</m:mo>
-            </m:mrow>
-          </m:math>
-        </inlineequation> is represented as a slice through the joint density
-      at X=2, and the conditional probability density function is shown as the
-      dashed line in the left panel.</para>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>f</mi>
+              <mi>x</mi>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+        </inlineequation> are shown as solid lines in the left and bottom panels, respectively. A
+        conditional distribution <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>f</mi>
+              <mi>y</mi>
+            </msub>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>y</mi>
+                <mo>&#x007C;</mo>
+                <mi>X</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>=</mo>
+            <mi>x</mi>
+          </math>
+        </inlineequation> is represented as a slice through the joint density at X=2, and the
+        conditional probability density function is shown as the dashed line in the left
+        panel.</para>
 
       <figure xml:id="b6_c5_f_vnked">
         <title>Illustration of joint, marginal and conditional probability
@@ -1104,287 +768,169 @@
       distribution function given as:</para>
 
       <equation xml:id="b6_c5_e_e85l9">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mi>F</m:mi>
-
-              <m:mo stretchy="false">(</m:mo>
-
-              <m:mi>x</m:mi>
-
-              <m:mo>;</m:mo>
-
-              <m:mi>μ</m:mi>
-
-              <m:mo>,</m:mo>
-
-              <m:mi>σ</m:mi>
-
-              <m:mo>,</m:mo>
-
-              <m:mi>ξ</m:mi>
-
-              <m:mo stretchy="false">)</m:mo>
-
-              <m:mo>=</m:mo>
-
-              <m:mi>exp</m:mi>
-
-              <m:mrow>
-                <m:mo>{</m:mo>
-
-                <m:mrow>
-                  <m:mo>−</m:mo>
-
-                  <m:msup>
-                    <m:mrow>
-                      <m:mrow>
-                        <m:mo>[</m:mo>
-
-                        <m:mrow>
-                          <m:mn>1</m:mn>
-
-                          <m:mo>+</m:mo>
-
-                          <m:mi>ξ</m:mi>
-
-                          <m:mfrac>
-                            <m:mrow>
-                              <m:mi>x</m:mi>
-
-                              <m:mo>−</m:mo>
-
-                              <m:mi>μ</m:mi>
-                            </m:mrow>
-
-                            <m:mi>σ</m:mi>
-                          </m:mfrac>
-                        </m:mrow>
-
-                        <m:mo>]</m:mo>
-                      </m:mrow>
-                    </m:mrow>
-
-                    <m:mrow>
-                      <m:mo>−</m:mo>
-
-                      <m:mrow>
-                        <m:mn>1</m:mn>
-
-                        <m:mo>/</m:mo>
-
-                        <m:mi>ξ</m:mi>
-                      </m:mrow>
-                    </m:mrow>
-                  </m:msup>
-                </m:mrow>
-
-                <m:mo>}</m:mo>
-              </m:mrow>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+        <math display='block'>
+          <mi>F</mi><mo stretchy='false'>(</mo><mi>x</mi><mo>,</mo><mi>&#x03BC;</mi><mo>,</mo><mi>&#x03C3;</mi><mo>,</mo><mi>&#x03B6;</mi><mo stretchy='false'>)</mo><mo>=</mo><mi>exp</mi><mrow><mo>{</mo> <mrow>
+            <mo>&#x2212;</mo><msup>
+              <mrow>
+                <mrow><mo>[</mo> <mrow>
+                  <mn>1</mn><mo>+</mo><mi>&#x03B6;</mi><mfrac>
+                    <mrow>
+                      <mi>x</mi><mo>&#x2212;</mo><mi>&#x03BC;</mi></mrow>
+                    <mi>&#x03C3;</mi>
+                  </mfrac>
+                </mrow> <mo>]</mo></mrow></mrow>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mo>&#x2212;</mo><mn>1</mn></mrow>
+                  <mi>&#x03B6;</mi>
+                </mfrac>
+              </mrow>
+            </msup>
+          </mrow> <mo>}</mo></mrow>
+        </math>
+        
       </equation>
 
       <para>for <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mn>1</m:mn>
-
-                <m:mo>+</m:mo>
-
-                <m:mi>ξ</m:mi>
-
-                <m:mo stretchy="false">(</m:mo>
-
-                <m:mi>x</m:mi>
-
-                <m:mo>−</m:mo>
-
-                <m:mi>μ</m:mi>
-
-                <m:mo stretchy="false">)</m:mo>
-
-                <m:mo>/</m:mo>
-
-                <m:mi>σ</m:mi>
-
-                <m:mo>&gt;</m:mo>
-
-                <m:mn>0</m:mn>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mn>1</mn>
+            <mo>+</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>&#x2212;</mo>
+            <mi>&#x03BC;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>/</mo>
+            <mi>&#x03C3;</mi>
+            <mo>&#x003E;</mo>
+            <mn>0</mn>
+          </math>
         </inlineequation>, where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>μ</m:mi>
-
-                <m:mo>∈</m:mo>
-
-                <m:mi>ℝ</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03BC;</mi>
+            <mo>&#x2208;</mo>
+            <mi>&#x211D;</mi>
+          </math>
         </inlineequation> is the location parameter, <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>σ</m:mi>
-
-                <m:mo>&gt;</m:mo>
-
-                <m:mn>0</m:mn>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03C3;</mi>
+            <mo>&#x003E;</mo>
+            <mn>0</mn>
+          </math>
         </inlineequation> is the scale parameter and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>ξ</m:mi>
-
-                <m:mo>∈</m:mo>
-
-                <m:mi>ℝ</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>&#x03B6;</mi>
+            <mo>&#x2208;</mo>
+            <mi>&#x211D;</mi>
+          </math>
         </inlineequation> is the shape parameter and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>F</m:mi>
-
-                <m:mo stretchy="false">(</m:mo>
-
-                <m:mi>x</m:mi>
-
-                <m:mo stretchy="false">)</m:mo>
-
-                <m:mo>=</m:mo>
-
-                <m:mi>P</m:mi>
-
-                <m:mo stretchy="false">(</m:mo>
-
-                <m:mi>X</m:mi>
-
-                <m:mo>&lt;</m:mo>
-
-                <m:mi>x</m:mi>
-
-                <m:mi/>
-
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>F</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>P</mi>
+            <mo stretchy="false">(</mo>
+            <mi>X</mi>
+            <mo>&#x003C;</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+          </math>
         </inlineequation> is the cumulative distribution function.</para>
 
-      <para>An alternative representation that is widely used is the
-      “threshold-excess” representation, which is defined as exceedances
-      <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
-
-                <m:mi>x</m:mi>
-
-                <m:mo>−</m:mo>
-
-                <m:mi>u</m:mi>
-
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+      <para>An alternative representation that is widely used is the “threshold-excess”
+        representation, which is defined as exceedances <inlineequation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>&#x2212;</mo>
+            <mi>u</mi>
+            <mo stretchy="false">)</mo>
+          </math>
         </inlineequation> over some suitably high threshold <inlineequation>
-          <m:math display="inline">
-            <m:mi>u</m:mi>
-          </m:math>
-        </inlineequation> . These maxima are commonly modelled using the
-      generalised Pareto distribution, with the cumulative distribution
-      function given as:</para>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>u</mi>
+          </math>
+        </inlineequation> . These maxima are commonly modelled using the generalised Pareto
+        distribution, with the cumulative distribution function given as:</para>
 
       <equation xml:id="b6_c5_e_7b125">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mi>F</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>F</mi>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>y</m:mi>
+              <mi>y</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mn>1</m:mn>
+              <mn>1</mn>
 
-              <m:mo>−</m:mo>
+              <mo>−</mo>
 
-              <m:msup>
-                <m:mrow>
-                  <m:mrow>
-                    <m:mo>(</m:mo>
+              <msup>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
 
-                    <m:mrow>
-                      <m:mn>1</m:mn>
+                    <mrow>
+                      <mn>1</mn>
 
-                      <m:mo>+</m:mo>
+                      <mo>+</mo>
 
-                      <m:mfrac>
-                        <m:mrow>
-                          <m:mi>ξ</m:mi>
+                      <mfrac>
+                        <mrow>
+                          <mi>ξ</mi>
 
-                          <m:mi>y</m:mi>
-                        </m:mrow>
+                          <mi>y</mi>
+                        </mrow>
 
-                        <m:mi>σ</m:mi>
-                      </m:mfrac>
-                    </m:mrow>
+                        <mi>σ</mi>
+                      </mfrac>
+                    </mrow>
 
-                    <m:mo>)</m:mo>
-                  </m:mrow>
-                </m:mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
 
-                <m:mrow>
-                  <m:mrow>
-                    <m:mrow>
-                      <m:mo>−</m:mo>
+                <mrow>
+                  <mrow>
+                    <mrow>
+                      <mo>−</mo>
 
-                      <m:mn>1</m:mn>
-                    </m:mrow>
+                      <mn>1</mn>
+                    </mrow>
 
-                    <m:mo>/</m:mo>
+                    <mo>/</mo>
 
-                    <m:mi>ξ</m:mi>
-                  </m:mrow>
-                </m:mrow>
-              </m:msup>
+                    <mi>ξ</mi>
+                  </mrow>
+                </mrow>
+              </msup>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mtext> </m:mtext>
+              <mtext> </mtext>
 
-              <m:mi>y</m:mi>
+              <mi>y</mi>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mi>x</m:mi>
+              <mi>x</mi>
 
-              <m:mo>−</m:mo>
+              <mo>−</mo>
 
-              <m:mi>μ</m:mi>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+              <mi>μ</mi>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>For both univariate representations, the definition of an
@@ -1409,73 +955,73 @@
 
       <para><emphasis role="bold">Threshold-excess extremes </emphasis>(<xref
       linkend="b6_c5_f_ome2f"/>, left panel): A high threshold <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
+                  <mi>x</mi>
+                </msub>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:mi>a</m:mi>
+                <mi>a</mi>
 
-                <m:mi>n</m:mi>
+                <mi>n</mi>
 
-                <m:mi>d</m:mi>
+                <mi>d</mi>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
+                  <mi>y</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is set for both variables X and Y, and the
       multivariate threshold-excess model simulates the dependence between
       extremes that exceed both thresholds (illustrated by blue “plus” symbols
       in <xref linkend="b6_c5_f_ome2f"/>). Identifying appropriate thresholds
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
+                  <mi>x</mi>
+                </msub>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:mi>a</m:mi>
+                <mi>a</mi>
 
-                <m:mi>n</m:mi>
+                <mi>n</mi>
 
-                <m:mi>d</m:mi>
+                <mi>d</mi>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
+                  <mi>y</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> represent a compromise between maximising the amount
       of data exceeding both thresholds, and ensuring that the asymptotic
       assumptions that support the GPD are approximately valid; diagnostics
@@ -1488,105 +1034,105 @@
       <para><emphasis role="bold">Point process representation
       </emphasis>(<xref linkend="b6_c5_f_ome2f"/>, middle panel): In this
       representation, the data are first transformed to radial <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>r</m:mi>
+                <mi>r</mi>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>+</m:mo>
+                <mo>+</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and angular <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>w</m:mi>
+                <mi>w</mi>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>/</m:mo>
+                <mo>/</mo>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>+</m:mo>
+                <mo>+</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> components, which is a transformation from Cartesian
       to pseudo-polar coordinates. Here, <inlineequation>
-          <m:math display="inline">
-            <m:mi>r</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>r</mi>
+          </math>
         </inlineequation> represents the distance of each data point from the
       origin (and therefore describes the ‘extremeness’ of the observation),
       and <inlineequation>
-          <m:math display="inline">
-            <m:mi>w</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>w</mi>
+          </math>
         </inlineequation> measures the angle on a [0,1] scale (and thus
       describes whether the variable is mostly influenced by <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>y</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, or a combination of both variables)
       [<emphasis>Coles</emphasis>, 2001]. Extreme events are those above the
       radial threshold <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>r</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>r</mi>
 
-                  <m:mn>0</m:mn>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> (red “plus” symbols in <xref
       linkend="b6_c5_f_ome2f"/>), and the identification of an appropriately
       high threshold <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>r</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>r</mi>
 
-                  <m:mn>0</m:mn>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is based on asymptotic arguments, with diagnostic
       measures given in <emphasis>Coles</emphasis> [2001]. As can be seen from
       the figure, this representation characterises the situation where both
@@ -1598,145 +1144,145 @@
       representation is based on conditional distributions in both the X and Y
       dimensions, with the distribution of Y conditioned on the threshold
       exceedances in X (i.e., <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Y</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Y</mi>
 
-                <m:mo>|</m:mo>
+                <mo>|</mo>
 
-                <m:mi>X</m:mi>
+                <mi>X</mi>
 
-                <m:mo>&gt;</m:mo>
+                <mo>&gt;</mo>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mrow>
-                    <m:mi>Y</m:mi>
+                  <mrow>
+                    <mi>Y</mi>
 
-                    <m:mo>|</m:mo>
+                    <mo>|</mo>
 
-                    <m:mi>X</m:mi>
-                  </m:mrow>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                    <mi>X</mi>
+                  </mrow>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>) and vice versa. The threshold <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>u</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mrow>
-                    <m:mi>Y</m:mi>
+                  <mrow>
+                    <mi>Y</mi>
 
-                    <m:mo>|</m:mo>
+                    <mo>|</mo>
 
-                    <m:mi>X</m:mi>
-                  </m:mrow>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                    <mi>X</mi>
+                  </mrow>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> (vertical green line in <xref
       linkend="b6_c5_f_ome2f"/>) needs to be specified, and then all points
       with <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>X</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>X</mi>
 
-                <m:mo>&gt;</m:mo>
+                <mo>&gt;</mo>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mrow>
-                    <m:mi>Y</m:mi>
+                  <mrow>
+                    <mi>Y</mi>
 
-                    <m:mo>|</m:mo>
+                    <mo>|</mo>
 
-                    <m:mi>X</m:mi>
-                  </m:mrow>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                    <mi>X</mi>
+                  </mrow>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> (green open circles) are defined as extremes when
       modelling the distribution of <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Y</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Y</mi>
 
-                <m:mo>|</m:mo>
+                <mo>|</mo>
 
-                <m:mi>X</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>X</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> . The extremes when modelling the distribution of
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>X</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>X</mi>
 
-                <m:mo>|</m:mo>
+                <mo>|</mo>
 
-                <m:mi>Y</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>Y</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> are defined analogously, with the horizontal green
       line representing <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>u</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mrow>
-                    <m:mi>X</m:mi>
+                  <mrow>
+                    <mi>X</mi>
 
-                    <m:mo>|</m:mo>
+                    <mo>|</mo>
 
-                    <m:mi>Y</m:mi>
-                  </m:mrow>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                    <mi>Y</mi>
+                  </mrow>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and the green “plus” symbols representing extremes
       above this threshold. The extreme events in the upper right quadrants
       (the combination of green circles and plus symbols) are based on
       combining <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Y</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Y</mi>
 
-                <m:mo>|</m:mo>
+                <mo>|</mo>
 
-                <m:mi>X</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>X</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>X</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>X</mi>
 
-                <m:mo>|</m:mo>
+                <mo>|</mo>
 
-                <m:mi>Y</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>Y</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, with further details in
       <emphasis>Heffernan</emphasis> and <emphasis>Tawn</emphasis> [2004].
       Similar to the point process representation, this characterisation
@@ -1877,149 +1423,149 @@
       model is given as [<emphasis>Tawn</emphasis>, 1988]:</para>
 
       <equation xml:id="b6_c5_e_yms55">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mi>F</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>F</mi>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>x</m:mi>
+              <mi>x</mi>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mi>y</m:mi>
+              <mi>y</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mi>exp</m:mi>
+              <mi>exp</mi>
 
-              <m:mrow>
-                <m:mo>{</m:mo>
+              <mrow>
+                <mo>{</mo>
 
-                <m:mrow>
-                  <m:mo>−</m:mo>
+                <mrow>
+                  <mo>−</mo>
 
-                  <m:msup>
-                    <m:mrow>
-                      <m:mrow>
-                        <m:mo>(</m:mo>
+                  <msup>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
 
-                        <m:mrow>
-                          <m:msup>
-                            <m:mover accent="true">
-                              <m:mi>x</m:mi>
+                        <mrow>
+                          <msup>
+                            <mover accent="true">
+                              <mi>x</mi>
 
-                              <m:mo>˜</m:mo>
-                            </m:mover>
+                              <mo>˜</mo>
+                            </mover>
 
-                            <m:mrow>
-                              <m:mo>−</m:mo>
+                            <mrow>
+                              <mo>−</mo>
 
-                              <m:mn>1</m:mn>
+                              <mn>1</mn>
 
-                              <m:mo>/</m:mo>
+                              <mo>/</mo>
 
-                              <m:mi>a</m:mi>
-                            </m:mrow>
-                          </m:msup>
+                              <mi>a</mi>
+                            </mrow>
+                          </msup>
 
-                          <m:mo>+</m:mo>
+                          <mo>+</mo>
 
-                          <m:msup>
-                            <m:mover accent="true">
-                              <m:mi>y</m:mi>
+                          <msup>
+                            <mover accent="true">
+                              <mi>y</mi>
 
-                              <m:mo>˜</m:mo>
-                            </m:mover>
+                              <mo>˜</mo>
+                            </mover>
 
-                            <m:mrow>
-                              <m:mo>−</m:mo>
+                            <mrow>
+                              <mo>−</mo>
 
-                              <m:mn>1</m:mn>
+                              <mn>1</mn>
 
-                              <m:mo>/</m:mo>
+                              <mo>/</mo>
 
-                              <m:mi>a</m:mi>
-                            </m:mrow>
-                          </m:msup>
-                        </m:mrow>
+                              <mi>a</mi>
+                            </mrow>
+                          </msup>
+                        </mrow>
 
-                        <m:mo>)</m:mo>
-                      </m:mrow>
-                    </m:mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
 
-                    <m:mi>a</m:mi>
-                  </m:msup>
-                </m:mrow>
+                    <mi>a</mi>
+                  </msup>
+                </mrow>
 
-                <m:mo>}</m:mo>
-              </m:mrow>
+                <mo>}</mo>
+              </mrow>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mtext> </m:mtext>
+              <mtext> </mtext>
 
-              <m:mover accent="true">
-                <m:mi>x</m:mi>
+              <mover accent="true">
+                <mi>x</mi>
 
-                <m:mo>˜</m:mo>
-              </m:mover>
+                <mo>˜</mo>
+              </mover>
 
-              <m:mo>&gt;</m:mo>
+              <mo>&gt;</mo>
 
-              <m:mn>0</m:mn>
+              <mn>0</mn>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mover accent="true">
-                <m:mi>y</m:mi>
+              <mover accent="true">
+                <mi>y</mi>
 
-                <m:mo>˜</m:mo>
-              </m:mover>
+                <mo>˜</mo>
+              </mover>
 
-              <m:mo>&gt;</m:mo>
+              <mo>&gt;</mo>
 
-              <m:mn>0</m:mn>
+              <mn>0</mn>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mn>0</m:mn>
+              <mn>0</mn>
 
-              <m:mo>&lt;</m:mo>
+              <mo>&lt;</mo>
 
-              <m:mi>a</m:mi>
+              <mi>a</mi>
 
-              <m:mo>≤</m:mo>
+              <mo>≤</mo>
 
-              <m:mn>1</m:mn>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+              <mn>1</mn>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>x</mi>
 
-                <m:mo>˜</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>˜</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>y</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>y</mi>
 
-                <m:mo>˜</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>˜</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation> are standard Fréchet-transformed values of original
       observations x and y, and α represents the dependence strength with α→0
       and α=1 representing complete dependence and independence,
@@ -2028,528 +1574,528 @@
       <para>The Fréchet transformation is given as:</para>
 
       <equation xml:id="b6_c5_e_pk662">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mover accent="true">
-                <m:mi>z</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mover accent="true">
+                <mi>z</mi>
 
-                <m:mo>˜</m:mo>
-              </m:mover>
+                <mo>˜</mo>
+              </mover>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mrow>
-                <m:mo>{</m:mo>
+              <mrow>
+                <mo>{</mo>
 
-                <m:mrow>
-                  <m:mtable>
-                    <m:mtr>
-                      <m:mtd>
-                        <m:mrow>
-                          <m:mo>−</m:mo>
+                <mrow>
+                  <mtable>
+                    <mtr>
+                      <mtd>
+                        <mrow>
+                          <mo>−</mo>
 
-                          <m:msup>
-                            <m:mrow>
-                              <m:mrow>
-                                <m:mo>(</m:mo>
+                          <msup>
+                            <mrow>
+                              <mrow>
+                                <mo>(</mo>
 
-                                <m:mrow>
-                                  <m:mi>log</m:mi>
+                                <mrow>
+                                  <mi>log</mi>
 
-                                  <m:mo>{</m:mo>
+                                  <mo>{</mo>
 
-                                  <m:mn>1</m:mn>
+                                  <mn>1</mn>
 
-                                  <m:mo>−</m:mo>
+                                  <mo>−</mo>
 
-                                  <m:msub>
-                                    <m:mover accent="true">
-                                      <m:mi>ς</m:mi>
+                                  <msub>
+                                    <mover accent="true">
+                                      <mi>ς</mi>
 
-                                      <m:mo>^</m:mo>
-                                    </m:mover>
+                                      <mo>^</mo>
+                                    </mover>
 
-                                    <m:mrow>
-                                      <m:msub>
-                                        <m:mi>u</m:mi>
+                                    <mrow>
+                                      <msub>
+                                        <mi>u</mi>
 
-                                        <m:mi>z</m:mi>
-                                      </m:msub>
-                                    </m:mrow>
-                                  </m:msub>
+                                        <mi>z</mi>
+                                      </msub>
+                                    </mrow>
+                                  </msub>
 
-                                  <m:msup>
-                                    <m:mrow>
-                                      <m:mo stretchy="false">[</m:mo>
+                                  <msup>
+                                    <mrow>
+                                      <mo stretchy="false">[</mo>
 
-                                      <m:mn>1</m:mn>
+                                      <mn>1</mn>
 
-                                      <m:mo>+</m:mo>
+                                      <mo>+</mo>
 
-                                      <m:mfrac>
-                                        <m:mrow>
-                                          <m:mover accent="true">
-                                            <m:mi>ξ</m:mi>
+                                      <mfrac>
+                                        <mrow>
+                                          <mover accent="true">
+                                            <mi>ξ</mi>
 
-                                            <m:mo>^</m:mo>
-                                          </m:mover>
+                                            <mo>^</mo>
+                                          </mover>
 
-                                          <m:mo stretchy="false">(</m:mo>
+                                          <mo stretchy="false">(</mo>
 
-                                          <m:mi>z</m:mi>
+                                          <mi>z</mi>
 
-                                          <m:mo>−</m:mo>
+                                          <mo>−</mo>
 
-                                          <m:msub>
-                                            <m:mi>u</m:mi>
+                                          <msub>
+                                            <mi>u</mi>
 
-                                            <m:mi>z</m:mi>
-                                          </m:msub>
+                                            <mi>z</mi>
+                                          </msub>
 
-                                          <m:mo stretchy="false">)</m:mo>
-                                        </m:mrow>
+                                          <mo stretchy="false">)</mo>
+                                        </mrow>
 
-                                        <m:mrow>
-                                          <m:msub>
-                                            <m:mover accent="true">
-                                              <m:mi>σ</m:mi>
+                                        <mrow>
+                                          <msub>
+                                            <mover accent="true">
+                                              <mi>σ</mi>
 
-                                              <m:mo>^</m:mo>
-                                            </m:mover>
+                                              <mo>^</mo>
+                                            </mover>
 
-                                            <m:mi>z</m:mi>
-                                          </m:msub>
-                                        </m:mrow>
-                                      </m:mfrac>
+                                            <mi>z</mi>
+                                          </msub>
+                                        </mrow>
+                                      </mfrac>
 
-                                      <m:mo stretchy="false">]</m:mo>
-                                    </m:mrow>
+                                      <mo stretchy="false">]</mo>
+                                    </mrow>
 
-                                    <m:mrow>
-                                      <m:mo>−</m:mo>
+                                    <mrow>
+                                      <mo>−</mo>
 
-                                      <m:mn>1</m:mn>
+                                      <mn>1</mn>
 
-                                      <m:mo>/</m:mo>
+                                      <mo>/</mo>
 
-                                      <m:msub>
-                                        <m:mover accent="true">
-                                          <m:mi>ξ</m:mi>
+                                      <msub>
+                                        <mover accent="true">
+                                          <mi>ξ</mi>
 
-                                          <m:mo>^</m:mo>
-                                        </m:mover>
+                                          <mo>^</mo>
+                                        </mover>
 
-                                        <m:mi>z</m:mi>
-                                      </m:msub>
-                                    </m:mrow>
-                                  </m:msup>
+                                        <mi>z</mi>
+                                      </msub>
+                                    </mrow>
+                                  </msup>
 
-                                  <m:mo>}</m:mo>
-                                </m:mrow>
+                                  <mo>}</mo>
+                                </mrow>
 
-                                <m:mo>)</m:mo>
-                              </m:mrow>
-                            </m:mrow>
+                                <mo>)</mo>
+                              </mrow>
+                            </mrow>
 
-                            <m:mrow>
-                              <m:mo>−</m:mo>
+                            <mrow>
+                              <mo>−</mo>
 
-                              <m:mn>1</m:mn>
-                            </m:mrow>
-                          </m:msup>
+                              <mn>1</mn>
+                            </mrow>
+                          </msup>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mi>z</m:mi>
+                          <mi>z</mi>
 
-                          <m:mo>&gt;</m:mo>
+                          <mo>&gt;</mo>
 
-                          <m:msub>
-                            <m:mi>u</m:mi>
+                          <msub>
+                            <mi>u</mi>
 
-                            <m:mi>z</m:mi>
-                          </m:msub>
+                            <mi>z</mi>
+                          </msub>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:msub>
-                            <m:mi>ξ</m:mi>
+                          <msub>
+                            <mi>ξ</mi>
 
-                            <m:mi>z</m:mi>
-                          </m:msub>
+                            <mi>z</mi>
+                          </msub>
 
-                          <m:mo>≠</m:mo>
+                          <mo>≠</mo>
 
-                          <m:mn>0</m:mn>
-                        </m:mrow>
-                      </m:mtd>
-                    </m:mtr>
+                          <mn>0</mn>
+                        </mrow>
+                      </mtd>
+                    </mtr>
 
-                    <m:mtr>
-                      <m:mtd>
-                        <m:mrow>
-                          <m:mo>−</m:mo>
+                    <mtr>
+                      <mtd>
+                        <mrow>
+                          <mo>−</mo>
 
-                          <m:msup>
-                            <m:mrow>
-                              <m:mrow>
-                                <m:mo>(</m:mo>
+                          <msup>
+                            <mrow>
+                              <mrow>
+                                <mo>(</mo>
 
-                                <m:mrow>
-                                  <m:mi>log</m:mi>
+                                <mrow>
+                                  <mi>log</mi>
 
-                                  <m:msup>
-                                    <m:mrow>
-                                      <m:mo>{</m:mo>
+                                  <msup>
+                                    <mrow>
+                                      <mo>{</mo>
 
-                                      <m:mn>1</m:mn>
+                                      <mn>1</mn>
 
-                                      <m:mo>−</m:mo>
+                                      <mo>−</mo>
 
-                                      <m:msub>
-                                        <m:mover accent="true">
-                                          <m:mi>ς</m:mi>
+                                      <msub>
+                                        <mover accent="true">
+                                          <mi>ς</mi>
 
-                                          <m:mo>^</m:mo>
-                                        </m:mover>
+                                          <mo>^</mo>
+                                        </mover>
 
-                                        <m:mrow>
-                                          <m:msub>
-                                            <m:mi>u</m:mi>
+                                        <mrow>
+                                          <msub>
+                                            <mi>u</mi>
 
-                                            <m:mi>z</m:mi>
-                                          </m:msub>
-                                        </m:mrow>
-                                      </m:msub>
+                                            <mi>z</mi>
+                                          </msub>
+                                        </mrow>
+                                      </msub>
 
-                                      <m:mi>exp</m:mi>
+                                      <mi>exp</mi>
 
-                                      <m:mo stretchy="false">(</m:mo>
+                                      <mo stretchy="false">(</mo>
 
-                                      <m:mo>−</m:mo>
+                                      <mo>−</mo>
 
-                                      <m:mfrac>
-                                        <m:mrow>
-                                          <m:mi>z</m:mi>
+                                      <mfrac>
+                                        <mrow>
+                                          <mi>z</mi>
 
-                                          <m:mo>−</m:mo>
+                                          <mo>−</mo>
 
-                                          <m:msub>
-                                            <m:mi>u</m:mi>
+                                          <msub>
+                                            <mi>u</mi>
 
-                                            <m:mi>z</m:mi>
-                                          </m:msub>
-                                        </m:mrow>
+                                            <mi>z</mi>
+                                          </msub>
+                                        </mrow>
 
-                                        <m:mrow>
-                                          <m:msub>
-                                            <m:mover accent="true">
-                                              <m:mi>σ</m:mi>
+                                        <mrow>
+                                          <msub>
+                                            <mover accent="true">
+                                              <mi>σ</mi>
 
-                                              <m:mo>^</m:mo>
-                                            </m:mover>
+                                              <mo>^</mo>
+                                            </mover>
 
-                                            <m:mi>z</m:mi>
-                                          </m:msub>
-                                        </m:mrow>
-                                      </m:mfrac>
+                                            <mi>z</mi>
+                                          </msub>
+                                        </mrow>
+                                      </mfrac>
 
-                                      <m:mo stretchy="false">)</m:mo>
+                                      <mo stretchy="false">)</mo>
 
-                                      <m:mo>}</m:mo>
-                                    </m:mrow>
+                                      <mo>}</mo>
+                                    </mrow>
 
-                                    <m:mrow>
-                                      <m:mo>−</m:mo>
+                                    <mrow>
+                                      <mo>−</mo>
 
-                                      <m:mn>1</m:mn>
+                                      <mn>1</mn>
 
-                                      <m:mo>/</m:mo>
+                                      <mo>/</mo>
 
-                                      <m:msub>
-                                        <m:mover accent="true">
-                                          <m:mi>ξ</m:mi>
+                                      <msub>
+                                        <mover accent="true">
+                                          <mi>ξ</mi>
 
-                                          <m:mo>^</m:mo>
-                                        </m:mover>
+                                          <mo>^</mo>
+                                        </mover>
 
-                                        <m:mi>z</m:mi>
-                                      </m:msub>
-                                    </m:mrow>
-                                  </m:msup>
-                                </m:mrow>
+                                        <mi>z</mi>
+                                      </msub>
+                                    </mrow>
+                                  </msup>
+                                </mrow>
 
-                                <m:mo>)</m:mo>
-                              </m:mrow>
-                            </m:mrow>
+                                <mo>)</mo>
+                              </mrow>
+                            </mrow>
 
-                            <m:mrow>
-                              <m:mo>−</m:mo>
+                            <mrow>
+                              <mo>−</mo>
 
-                              <m:mn>1</m:mn>
-                            </m:mrow>
-                          </m:msup>
+                              <mn>1</mn>
+                            </mrow>
+                          </msup>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mi>z</m:mi>
+                          <mi>z</mi>
 
-                          <m:mo>&gt;</m:mo>
+                          <mo>&gt;</mo>
 
-                          <m:msub>
-                            <m:mi>u</m:mi>
+                          <msub>
+                            <mi>u</mi>
 
-                            <m:mi>z</m:mi>
-                          </m:msub>
+                            <mi>z</mi>
+                          </msub>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:msub>
-                            <m:mi>ξ</m:mi>
+                          <msub>
+                            <mi>ξ</mi>
 
-                            <m:mi>z</m:mi>
-                          </m:msub>
+                            <mi>z</mi>
+                          </msub>
 
-                          <m:mo>=</m:mo>
+                          <mo>=</mo>
 
-                          <m:mn>0</m:mn>
-                        </m:mrow>
-                      </m:mtd>
-                    </m:mtr>
+                          <mn>0</mn>
+                        </mrow>
+                      </mtd>
+                    </mtr>
 
-                    <m:mtr>
-                      <m:mtd>
-                        <m:mrow>
-                          <m:mo>−</m:mo>
+                    <mtr>
+                      <mtd>
+                        <mrow>
+                          <mo>−</mo>
 
-                          <m:msup>
-                            <m:mrow>
-                              <m:mrow>
-                                <m:mo>{</m:mo>
+                          <msup>
+                            <mrow>
+                              <mrow>
+                                <mo>{</mo>
 
-                                <m:mrow>
-                                  <m:mi>log</m:mi>
+                                <mrow>
+                                  <mi>log</mi>
 
-                                  <m:mover accent="true">
-                                    <m:mi>F</m:mi>
+                                  <mover accent="true">
+                                    <mi>F</mi>
 
-                                    <m:mo>^</m:mo>
-                                  </m:mover>
+                                    <mo>^</mo>
+                                  </mover>
 
-                                  <m:mo stretchy="false">(</m:mo>
+                                  <mo stretchy="false">(</mo>
 
-                                  <m:msub>
-                                    <m:mi>z</m:mi>
+                                  <msub>
+                                    <mi>z</mi>
 
-                                    <m:mi>i</m:mi>
-                                  </m:msub>
+                                    <mi>i</mi>
+                                  </msub>
 
-                                  <m:mo stretchy="false">)</m:mo>
-                                </m:mrow>
+                                  <mo stretchy="false">)</mo>
+                                </mrow>
 
-                                <m:mo>}</m:mo>
-                              </m:mrow>
-                            </m:mrow>
+                                <mo>}</mo>
+                              </mrow>
+                            </mrow>
 
-                            <m:mrow>
-                              <m:mo>−</m:mo>
+                            <mrow>
+                              <mo>−</mo>
 
-                              <m:mn>1</m:mn>
-                            </m:mrow>
-                          </m:msup>
+                              <mn>1</mn>
+                            </mrow>
+                          </msup>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mtext> </m:mtext>
+                          <mtext> </mtext>
 
-                          <m:mi>z</m:mi>
+                          <mi>z</mi>
 
-                          <m:mo>≤</m:mo>
+                          <mo>≤</mo>
 
-                          <m:msub>
-                            <m:mi>u</m:mi>
+                          <msub>
+                            <mi>u</mi>
 
-                            <m:mi>z</m:mi>
-                          </m:msub>
-                        </m:mrow>
-                      </m:mtd>
-                    </m:mtr>
-                  </m:mtable>
-                </m:mrow>
-              </m:mrow>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+                            <mi>z</mi>
+                          </msub>
+                        </mrow>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                </mrow>
+              </mrow>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>where z represents one of the original margins (either x or y),
       <inlineequation>
-          <m:math display="inline">
-            <m:mover>
-              <m:mi>z</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mover>
+              <mi>z</mi>
 
-              <m:mo>~</m:mo>
-            </m:mover>
-          </m:math>
+              <mo>~</mo>
+            </mover>
+          </math>
         </inlineequation> is the standard Fréchet value corresponding to the z
       in the original scale. <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mover accent="true">
-                    <m:mi>ς</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mover accent="true">
+                    <mi>ς</mi>
 
-                    <m:mo>^</m:mo>
-                  </m:mover>
+                    <mo>^</mo>
+                  </mover>
 
-                  <m:mrow>
-                    <m:msub>
-                      <m:mi>u</m:mi>
+                  <mrow>
+                    <msub>
+                      <mi>u</mi>
 
-                      <m:mi>z</m:mi>
-                    </m:msub>
-                  </m:mrow>
-                </m:msub>
+                      <mi>z</mi>
+                    </msub>
+                  </mrow>
+                </msub>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>Pr</m:mi>
+                <mi>Pr</mi>
 
-                <m:mo>{</m:mo>
+                <mo>{</mo>
 
-                <m:mi>Z</m:mi>
+                <mi>Z</mi>
 
-                <m:mo>&gt;</m:mo>
+                <mo>&gt;</mo>
 
-                <m:msub>
-                  <m:mi>u</m:mi>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
+                  <mi>z</mi>
+                </msub>
 
-                <m:mo>}</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo>}</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>u</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is an appropriately high threshold for the margin z,
       and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mover accent="true">
-                    <m:mi>σ</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mover accent="true">
+                    <mi>σ</mi>
 
-                    <m:mo>^</m:mo>
-                  </m:mover>
+                    <mo>^</mo>
+                  </mover>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mover accent="true">
-                    <m:mi>ξ</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mover accent="true">
+                    <mi>ξ</mi>
 
-                    <m:mo>^</m:mo>
-                  </m:mover>
+                    <mo>^</mo>
+                  </mover>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> are the maximum-likelihood estimated parameters of
       the GPD. Finally, <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>F</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>F</mi>
 
-                <m:mo>^</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>^</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation> is the empirical distribution function of z,
       estimated by <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mover accent="true">
-                  <m:mi>F</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mover accent="true">
+                  <mi>F</mi>
 
-                  <m:mo>^</m:mo>
-                </m:mover>
+                  <mo>^</mo>
+                </mover>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>z</m:mi>
+                <msub>
+                  <mi>z</mi>
 
-                  <m:mi>i</m:mi>
-                </m:msub>
+                  <mi>i</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>i</m:mi>
+                <mi>i</mi>
 
-                <m:mo>/</m:mo>
+                <mo>/</mo>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>n</m:mi>
+                <mi>n</mi>
 
-                <m:mo>+</m:mo>
+                <mo>+</mo>
 
-                <m:mn>1</m:mn>
+                <mn>1</mn>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, where i is the rank of <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>z</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>z</mi>
 
-                  <m:mi>i</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and n is the total number of data points.</para>
 
       <para>The application of the bivariate logistic model (Equation 8) and
@@ -2559,29 +2105,29 @@
       maximum storm tide is presented (<xref linkend="b6_c5_f_1m8l1"/>a).
       Prior to applying the Fréchet transformation , it is necessary to
       identify marginal thresholds <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>u</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>u</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>u</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>. The choice of threshold values represents a
       trade-off between bias and variance: if the threshold is too low, then
       the parameters will likely be biased as the asymptotic justification of
@@ -2601,55 +2147,55 @@
       linkend="b6_c5_f_1m8l1"/>c. As discussed in <xref
       linkend="b6_c5_s_hgcbi"/>, the point process representation focuses only
       on data above a radial threshold <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>r</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>r</mi>
 
-                  <m:mi>0</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>0</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> ; values below this threshold are represented in the
       figure as solid blue shading. The bivariate logistic model can then be
       fitted to this transformed data, with dependence represented using a
       single dependence parameter, <inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>α</mi>
+          </math>
         </inlineequation>. For this case, a weak dependence parameter
       (<inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>α</mi>
+          </math>
         </inlineequation>=0.95) was used. The bivariate probability density
       function, <inlineequation>
-          <m:math display="inline">
-            <m:mi>f</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>f</mi>
+          </math>
         </inlineequation>(<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation>,<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>), and the bivariate cumulative distribution
       function, <inlineequation>
-          <m:math display="inline">
-            <m:mi>F</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>F</mi>
+          </math>
         </inlineequation>(<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation>,<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>), are presented as dashed blue contours and solid
       black contours, respectively, in <xref
       linkend="b6_c5_f_1m8l1"/>d.</para>
@@ -2672,13 +2218,13 @@
 
       <para>To assist in the interpretation of the dependence parameter
       (<inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>α</mi>
+          </math>
         </inlineequation>), the relationship between <inlineequation>
-          <m:math display="inline">
-            <m:mi>α</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>α</mi>
+          </math>
         </inlineequation> and the number of events that exceed a bivariate
       threshold are shown in <xref linkend="b6_c5_f_ajard"/> [see also
       <emphasis>Zheng et al</emphasis>., 2013]. The analysis was based on a
@@ -2690,40 +2236,40 @@
       event every 100 x 100 = 10,000 days to exceed the joint threshold by
       random chance. The actual number of exceedances was then plotted against
       the fitted dependence parameter <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>a</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>a</mi>
 
-                <m:mo>^</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>^</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation>, to see the relationship between this parameter and
       the number of events exceeding the joint threshold.</para>
 
       <para>There is a close relationship between <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>a</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>a</mi>
 
-                <m:mo>^</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>^</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation> and the number of joint exceedances of both
       thresholds. As will be discussed in <xref linkend="b6_c5_s_expsz"/>, the
       value of <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mover accent="true">
-                <m:mi>a</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mover accent="true">
+                <mi>a</mi>
 
-                <m:mo>^</m:mo>
-              </m:mover>
-            </m:semantics>
-          </m:math>
+                <mo>^</mo>
+              </mover>
+            </semantics>
+          </math>
         </inlineequation> typically varies from about 0.8 to 0.95 throughout
       most of the Australian coastline, so that one can expect between eight
       and 27 more exceedances above the joint 99% threshold compared to what
@@ -2762,264 +2308,264 @@
       rainfall or storm tide) is assumed to be equivalent to the frequency of
       the corresponding flood level. The exceedance probability
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> for a given flood level h can be defined as:</para>
 
       <equation xml:id="b6_c5_e_o532t">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mi>Pr</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>Pr</mi>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>H</m:mi>
+              <mi>H</mi>
 
-              <m:mo>≥</m:mo>
+              <mo>≥</mo>
 
-              <m:mi>h</m:mi>
+              <mi>h</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mstyle displaystyle="true">
-                <m:mrow>
-                  <m:msubsup>
-                    <m:mo>∫</m:mo>
+              <mstyle displaystyle="true">
+                <mrow>
+                  <msubsup>
+                    <mo>∫</mo>
 
-                    <m:mrow>
-                      <m:mi>x</m:mi>
+                    <mrow>
+                      <mi>x</mi>
 
-                      <m:mo>=</m:mo>
+                      <mo>=</mo>
 
-                      <m:msub>
-                        <m:mi>x</m:mi>
+                      <msub>
+                        <mi>x</mi>
 
-                        <m:mn>0</m:mn>
-                      </m:msub>
-                    </m:mrow>
+                        <mn>0</mn>
+                      </msub>
+                    </mrow>
 
-                    <m:mi>∞</m:mi>
-                  </m:msubsup>
+                    <mi>∞</mi>
+                  </msubsup>
 
-                  <m:mrow>
-                    <m:mi>f</m:mi>
+                  <mrow>
+                    <mi>f</mi>
 
-                    <m:mo stretchy="false">(</m:mo>
+                    <mo stretchy="false">(</mo>
 
-                    <m:mi>x</m:mi>
+                    <mi>x</mi>
 
-                    <m:mo stretchy="false">)</m:mo>
+                    <mo stretchy="false">)</mo>
 
-                    <m:mi>d</m:mi>
+                    <mi>d</mi>
 
-                    <m:mi>x</m:mi>
+                    <mi>x</mi>
 
-                    <m:mo>,</m:mo>
+                    <mo>,</mo>
 
-                    <m:mtext> </m:mtext>
+                    <mtext> </mtext>
 
-                    <m:mtext> </m:mtext>
+                    <mtext> </mtext>
 
-                    <m:mtext> </m:mtext>
+                    <mtext> </mtext>
 
-                    <m:mi>h</m:mi>
+                    <mi>h</mi>
 
-                    <m:mo>=</m:mo>
+                    <mo>=</mo>
 
-                    <m:mi>B</m:mi>
+                    <mi>B</mi>
 
-                    <m:mo stretchy="false">(</m:mo>
+                    <mo stretchy="false">(</mo>
 
-                    <m:msub>
-                      <m:mi>x</m:mi>
+                    <msub>
+                      <mi>x</mi>
 
-                      <m:mn>0</m:mn>
-                    </m:msub>
+                      <mn>0</mn>
+                    </msub>
 
-                    <m:mo stretchy="false">)</m:mo>
-                  </m:mrow>
-                </m:mrow>
-              </m:mstyle>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </mrow>
+              </mstyle>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>B</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is a function relating the flood level to a single
       forcing variable <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> (eg rainfall or storm tide); <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>0</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>0</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is the value of the forcing variable that causes the
       flood level <inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation>, and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>f</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>f</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is a density function of X at extreme levels. To
       obtain <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, one needs to first estimate the corresponding
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>0</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>0</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> that causes the flood level <inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation>, then estimate the exceedance probability that a
       value of the forcing variable will be greater than <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>0</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>0</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, and assign this to <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, ie<inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>Pr</m:mi>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>X</m:mi>
+                <mi>X</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mn>0</m:mn>
-                </m:msub>
+                  <mn>0</mn>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>. Typically, an annual maximum, <inlineequation>
-          <m:math display="inline">
-            <m:mi>r</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>r</mi>
+          </math>
         </inlineequation>-largest or a peak-over-threshold method is used to
       obtain the tail distribution of X [<emphasis>Coles</emphasis>
       2001].</para>
@@ -3028,332 +2574,332 @@
       setting since the exceedance probability of any given forcing process is
       no longer equivalent to the exceedance probability of the flood level,
       ie <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>X</m:mi>
+                <mi>X</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mn>0</m:mn>
-                </m:msub>
+                  <mn>0</mn>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>≠</m:mo>
+                <mo>≠</mo>
 
-                <m:mi>Pr</m:mi>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>. Considering the design variable <inlineequation>
-          <m:math display="inline">
-            <m:mi>H</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>H</mi>
+          </math>
         </inlineequation> forced by two variables <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>, <emphasis>Coles</emphasis> and
       <emphasis>Tawn</emphasis> [1994] defined a ‘failure region’
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>A</mi>
 
-                  <m:mi>h</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>h</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> as:</para>
 
       <equation xml:id="b6_c5_e_nb55j">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:msub>
-                <m:mi>A</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>A</mi>
 
-                <m:mi>h</m:mi>
-              </m:msub>
+                <mi>h</mi>
+              </msub>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mo>{</m:mo>
+              <mo>{</mo>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>x</m:mi>
+              <mi>x</mi>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mi>y</m:mi>
+              <mi>y</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>∈</m:mo>
+              <mo>∈</mo>
 
-              <m:msup>
-                <m:mi>ℝ</m:mi>
+              <msup>
+                <mi>ℝ</mi>
 
-                <m:mn>2</m:mn>
-              </m:msup>
+                <mn>2</mn>
+              </msup>
 
-              <m:mo>:</m:mo>
+              <mo>:</mo>
 
-              <m:mi>B</m:mi>
+              <mi>B</mi>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>x</m:mi>
+              <mi>x</mi>
 
-              <m:mo>,</m:mo>
+              <mo>,</mo>
 
-              <m:mi>y</m:mi>
+              <mi>y</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>&gt;</m:mo>
+              <mo>&gt;</mo>
 
-              <m:mi>h</m:mi>
+              <mi>h</mi>
 
-              <m:mo>}</m:mo>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+              <mo>}</mo>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>B</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is a ‘boundary function’ that maps the
       two-dimensional space of the forcing variables to the one-dimensional
       response variable. In flood estimation, a combination of hydrologic and
       hydraulic models are typically used to obtain a flood level
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>h</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>h</mi>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>B</m:mi>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> as a function of boundary conditions such as
       rainfall and storm tide (x, y). The failure region <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>A</mi>
 
-                  <m:mi>h</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>h</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> can be interpreted as the set of values of the
       constituent processes (x, y) that cause flood levels greater than a
       specified design flood level <inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation>. The corresponding exceedance probability
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is given as:</para>
 
       <equation xml:id="b6_c5_e_o3ojy">
-        <m:math display="block">
-          <m:semantics>
-            <m:mrow>
-              <m:mi>Pr</m:mi>
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <mi>Pr</mi>
 
-              <m:mo stretchy="false">(</m:mo>
+              <mo stretchy="false">(</mo>
 
-              <m:mi>H</m:mi>
+              <mi>H</mi>
 
-              <m:mo>≥</m:mo>
+              <mo>≥</mo>
 
-              <m:mi>h</m:mi>
+              <mi>h</mi>
 
-              <m:mo stretchy="false">)</m:mo>
+              <mo stretchy="false">)</mo>
 
-              <m:mo>=</m:mo>
+              <mo>=</mo>
 
-              <m:mstyle displaystyle="true">
-                <m:mrow>
-                  <m:mo>∫</m:mo>
+              <mstyle displaystyle="true">
+                <mrow>
+                  <mo>∫</mo>
 
-                  <m:mrow>
-                    <m:mstyle displaystyle="true">
-                      <m:mrow>
-                        <m:msub>
-                          <m:mo>∫</m:mo>
+                  <mrow>
+                    <mstyle displaystyle="true">
+                      <mrow>
+                        <msub>
+                          <mo>∫</mo>
 
-                          <m:mrow>
-                            <m:msub>
-                              <m:mi>A</m:mi>
+                          <mrow>
+                            <msub>
+                              <mi>A</mi>
 
-                              <m:mi>h</m:mi>
-                            </m:msub>
-                          </m:mrow>
-                        </m:msub>
+                              <mi>h</mi>
+                            </msub>
+                          </mrow>
+                        </msub>
 
-                        <m:mrow>
-                          <m:mi>f</m:mi>
+                        <mrow>
+                          <mi>f</mi>
 
-                          <m:mo stretchy="false">(</m:mo>
+                          <mo stretchy="false">(</mo>
 
-                          <m:mi>x</m:mi>
+                          <mi>x</mi>
 
-                          <m:mo>,</m:mo>
+                          <mo>,</mo>
 
-                          <m:mi>y</m:mi>
+                          <mi>y</mi>
 
-                          <m:mo stretchy="false">)</m:mo>
-                        </m:mrow>
-                      </m:mrow>
-                    </m:mstyle>
-                  </m:mrow>
-                </m:mrow>
-              </m:mstyle>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+                          <mo stretchy="false">)</mo>
+                        </mrow>
+                      </mrow>
+                    </mstyle>
+                  </mrow>
+                </mrow>
+              </mstyle>
+            </mrow>
+          </semantics>
+        </math>
       </equation>
 
       <para>where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>f</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>f</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mo>∂</m:mo>
+                <mo>∂</mo>
 
-                <m:mi>F</m:mi>
+                <mi>F</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>/</m:mo>
+                <mo>/</mo>
 
-                <m:mo>∂</m:mo>
+                <mo>∂</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>∂</m:mo>
+                <mo>∂</mo>
 
-                <m:mi>y</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>y</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is the joint density function of the two variables X
       and Y at extreme levels, and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>F</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>F</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> is their corresponding joint cumulative distribution
       function.</para>
 
@@ -3362,106 +2908,106 @@
       example of a joint probability method (bottom panel) for a hypothetical
       scenario in which floods are caused by two forcing variables
       <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>. In the top panel, the grey shaded region represents
       the exceedance probability <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, where <inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation> (the red dashed line) is determined by a single
       forcing variable (eg rainfall or storm tides). The grey shaded region in
       the bottom panel illustrates the exceedance probability for the region
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>A</mi>
 
-                  <m:mi>h</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>h</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> where <inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation> (the solid red line) depends on both forcing
       variables. In the bivariate case, the probability <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> can then be evaluated as the integral of the joint
       density <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>f</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>f</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> (thin blue contours) across the whole failure region
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>A</mi>
 
-                  <m:mi>h</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>h</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> (Equation 12).</para>
 
       <figure xml:id="b6_c5_f_ll1bv">
@@ -3482,143 +3028,143 @@
       more computationally efficient to exploit the properties of the joint
       cumulative distribution function to reduce the bivariate integral to a
       univariate line-integral along the boundary function <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>B</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x, y</m:mi>
+                <mi>x, y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>h</m:mi>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mi>h</mi>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>. This is implemented numerically as:<inlineequation>
-          <m:math display="block">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Pr</m:mi>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mn>1</m:mn>
+                <mn>1</mn>
 
-                <m:mo>−</m:mo>
+                <mo>−</mo>
 
-                <m:mi>Pr</m:mi>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>&lt;</m:mo>
+                <mo>&lt;</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mn>1</m:mn>
+                <mn>1</mn>
 
-                <m:mo>−</m:mo>
+                <mo>−</mo>
 
-                <m:mstyle displaystyle="true">
-                  <m:munderover>
-                    <m:mo>∑</m:mo>
+                <mstyle displaystyle="true">
+                  <munderover>
+                    <mo>∑</mo>
 
-                    <m:mrow>
-                      <m:mi>j</m:mi>
+                    <mrow>
+                      <mi>j</mi>
 
-                      <m:mo>=</m:mo>
+                      <mo>=</mo>
 
-                      <m:mn>1</m:mn>
-                    </m:mrow>
+                      <mn>1</mn>
+                    </mrow>
 
-                    <m:mrow>
-                      <m:mi>m</m:mi>
+                    <mrow>
+                      <mi>m</mi>
 
-                      <m:mo>−</m:mo>
+                      <mo>−</mo>
 
-                      <m:mn>1</m:mn>
-                    </m:mrow>
-                  </m:munderover>
+                      <mn>1</mn>
+                    </mrow>
+                  </munderover>
 
-                  <m:mrow>
-                    <m:mo>{</m:mo>
+                  <mrow>
+                    <mo>{</mo>
 
-                    <m:mi>F</m:mi>
+                    <mi>F</mi>
 
-                    <m:mo stretchy="false">(</m:mo>
+                    <mo stretchy="false">(</mo>
 
-                    <m:msub>
-                      <m:mi>x</m:mi>
+                    <msub>
+                      <mi>x</mi>
 
-                      <m:mi>j</m:mi>
-                    </m:msub>
+                      <mi>j</mi>
+                    </msub>
 
-                    <m:mo>,</m:mo>
+                    <mo>,</mo>
 
-                    <m:msub>
-                      <m:mi>y</m:mi>
+                    <msub>
+                      <mi>y</mi>
 
-                      <m:mi>j</m:mi>
-                    </m:msub>
+                      <mi>j</mi>
+                    </msub>
 
-                    <m:mo stretchy="false">)</m:mo>
+                    <mo stretchy="false">)</mo>
 
-                    <m:mo>−</m:mo>
+                    <mo>−</mo>
 
-                    <m:mi>F</m:mi>
+                    <mi>F</mi>
 
-                    <m:mo stretchy="false">(</m:mo>
+                    <mo stretchy="false">(</mo>
 
-                    <m:msub>
-                      <m:mi>x</m:mi>
+                    <msub>
+                      <mi>x</mi>
 
-                      <m:mi>j</m:mi>
-                    </m:msub>
+                      <mi>j</mi>
+                    </msub>
 
-                    <m:mo>,</m:mo>
+                    <mo>,</mo>
 
-                    <m:mi>y</m:mi>
+                    <mi>y</mi>
 
-                    <m:msub>
-                      <m:malignmark/>
+                    <msub>
+                      <malignmark/>
 
-                      <m:mrow>
-                        <m:mi>j</m:mi>
+                      <mrow>
+                        <mi>j</mi>
 
-                        <m:mo>+</m:mo>
+                        <mo>+</mo>
 
-                        <m:mn>1</m:mn>
-                      </m:mrow>
-                    </m:msub>
+                        <mn>1</mn>
+                      </mrow>
+                    </msub>
 
-                    <m:mo stretchy="false">)</m:mo>
+                    <mo stretchy="false">)</mo>
 
-                    <m:mo>}</m:mo>
-                  </m:mrow>
-                </m:mstyle>
-              </m:mrow>
+                    <mo>}</mo>
+                  </mrow>
+                </mstyle>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
@@ -3631,99 +3177,99 @@
               WGQbaabeaakiaacMcacqGHsislcaWGgbGaaiikaiaadIhadaWgaaWc
               baGaamOAaaqabaGccaGGSaGaamyEaiaaxcW7daWgaaWcbaGaamOAai
               abgUcaRiaaigdaaeqaaOGaaiykaiaac2haaSqaaiaadQgacqGH9aqp
-              caaIXaaabaGaamyBaiabgkHiTiaaigdaa0GaeyyeIuoaaaa@63AA@</m:annotation>
-            </m:semantics>
-          </m:math>
+              caaIXaaabaGaamyBaiabgkHiTiaaigdaa0GaeyyeIuoaaaa@63AA@</annotation>
+            </semantics>
+          </math>
         </inlineequation> defined as <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo>{</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo>{</mo>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:msub>
-                  <m:mi>y</m:mi>
+                <msub>
+                  <mi>y</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>:</m:mo>
+                <mo>:</mo>
 
-                <m:mi>B</m:mi>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:msub>
-                  <m:mi>y</m:mi>
+                <msub>
+                  <mi>y</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
+                <mo stretchy="false">)</mo>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mtext>​</m:mtext>
+                <mtext>​</mtext>
 
-                <m:mtext>​</m:mtext>
+                <mtext>​</mtext>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:mtext> </m:mtext>
+                <mtext> </mtext>
 
-                <m:msub>
-                  <m:mi>y</m:mi>
+                <msub>
+                  <mi>y</mi>
 
-                  <m:mrow>
-                    <m:mi>j</m:mi>
+                  <mrow>
+                    <mi>j</mi>
 
-                    <m:mo>+</m:mo>
+                    <mo>+</mo>
 
-                    <m:mn>1</m:mn>
-                  </m:mrow>
-                </m:msub>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:malignmark/>
+                <malignmark/>
 
-                <m:mi>j</m:mi>
+                <mi>j</mi>
 
-                <m:mo>−</m:mo>
+                <mo>−</mo>
 
-                <m:mi>Δ</m:mi>
+                <mi>Δ</mi>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo>}</m:mo>
-              </m:mrow>
+                <mo>}</mo>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
@@ -3735,199 +3281,199 @@
               aOGaaiykaiabg2da9iaadIgacaGGSaGaaGzaVlaaygW7caaMc8UaaG
               PaVlaadMhadaWgaaWcbaGaamOAaiabgUcaRiaaigdaaeqaaOGaeyyp
               a0JaamyEaiaaxcW7caWGQbGaeyOeI0IaeuiLdqKaamyEaiaac2haaa
-              a@5A70@</m:annotation>
-            </m:semantics>
-          </m:math>
+              a@5A70@</annotation>
+            </semantics>
+          </math>
         </inlineequation> where <emphasis>m</emphasis> is the number of points
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:msub>
-                  <m:mi>y</m:mi>
+                <msub>
+                  <mi>y</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
+                <mo stretchy="false">)</mo>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaiikaiaadI
               hadaWgaaWcbaGaamOAaaqabaGccaGGSaGaamyEamaaBaaaleaacaWG
-              QbaabeaakiaacMcaaaa@3C44@</m:annotation>
-            </m:semantics>
-          </m:math>
+              QbaabeaakiaacMcaaaa@3C44@</annotation>
+            </semantics>
+          </math>
         </inlineequation> used to discretize the boundary line
       <emphasis>h</emphasis> (the red solid line in Figure 7) and
       <inlineequation>
-          <m:math display="block">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Δ</m:mi>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Δ</mi>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo>&gt;</m:mo>
+                <mo>&gt;</mo>
 
-                <m:mn>0</m:mn>
-              </m:mrow>
+                <mn>0</mn>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeuiLdqKaam
-              yEaiabg6da+iaaicdaaaa@3A1C@</m:annotation>
-            </m:semantics>
-          </m:math>
+              yEaiabg6da+iaaicdaaaa@3A1C@</annotation>
+            </semantics>
+          </math>
         </inlineequation>. By taking the finite difference of <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>F</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>F</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
+                <mo stretchy="false">)</mo>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamOraiaacI
-              cacaWG4bGaaiilaiaadMhacaGGPaaaaa@3AC5@</m:annotation>
-            </m:semantics>
-          </m:math>
+              cacaWG4bGaaiilaiaadMhacaGGPaaaaa@3AC5@</annotation>
+            </semantics>
+          </math>
         </inlineequation> in only one dimension, the probability of being less
       than <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:msub>
-                  <m:mi>x</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>i</m:mi>
-                </m:msub>
-              </m:mrow>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiEamaaBa
-              aaleaacaWGPbaabeaaaaa@380D@</m:annotation>
-            </m:semantics>
-          </m:math>
+              aaleaacaWGPbaabeaaaaa@380D@</annotation>
+            </semantics>
+          </math>
         </inlineequation> is obtained for an increment of width
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>Δ</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>Δ</mi>
 
-                <m:mi>y</m:mi>
-              </m:mrow>
+                <mi>y</mi>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeuiLdqKaam
-              yEaaaa@385A@</m:annotation>
-            </m:semantics>
-          </m:math>
+              yEaaaa@385A@</annotation>
+            </semantics>
+          </math>
         </inlineequation>. Moving along the boundary function line, the
       probability increments are obtained for all corresponding pairs
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mo stretchy="false">(</m:mo>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mo stretchy="false">(</mo>
 
-                <m:msub>
-                  <m:mi>x</m:mi>
+                <msub>
+                  <mi>x</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:msub>
-                  <m:mi>y</m:mi>
+                <msub>
+                  <mi>y</mi>
 
-                  <m:mi>j</m:mi>
-                </m:msub>
+                  <mi>j</mi>
+                </msub>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
+                <mo stretchy="false">)</mo>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaiikaiaadI
               hadaWgaaWcbaGaamOAaaqabaGccaGGSaGaamyEamaaBaaaleaacaWG
-              QbaabeaakiaacMcaaaa@3C44@</m:annotation>
-            </m:semantics>
-          </m:math>
+              QbaabeaakiaacMcaaaa@3C44@</annotation>
+            </semantics>
+          </math>
         </inlineequation>, and the non-exceedance probability <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mn>1</m:mn>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mn>1</mn>
 
-                <m:mo>−</m:mo>
+                <mo>−</mo>
 
-                <m:mi>Pr</m:mi>
+                <mi>Pr</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>H</m:mi>
+                <mi>H</mi>
 
-                <m:mo>≥</m:mo>
+                <mo>≥</mo>
 
-                <m:mi>h</m:mi>
+                <mi>h</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
+                <mo stretchy="false">)</mo>
+              </mrow>
 
-              <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
               feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
               hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
               4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
               vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
               fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGymaiabgk
               HiTiGaccfacaGGYbGaaiikaiaadIeacqGHLjYScaWGObGaaiykaaaa
-              @3E43@</m:annotation>
-            </m:semantics>
-          </m:math>
+              @3E43@</annotation>
+            </semantics>
+          </math>
         </inlineequation> is the sum over all increments.</para>
 
       <para>Finally, the exceedance probability of flood event <emphasis
@@ -3984,163 +3530,163 @@
 
       <para>The exceedance probabilities corresponding to those thresholds is
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = Pr{X&gt;x} and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = Pr{Y&gt;y}. The annual exceedance probability of
       the failure event Z is then given as <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = Pr{X&gt;x or Y&gt;y}. With reference to the
       illustration in <xref linkend="b6_c5_f_w3uye"/>, it is straightforward
       to see that <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>+ <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> – (<inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>*<inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>); the reason for the subtraction term is because the
       cross-hatched region in <xref linkend="b6_c5_f_w3uye"/> would otherwise
       have been counted twice. Example calculations of <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> assuming a number of different combinations of
       <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> are presented in <xref
       linkend="b6_c5_t_ug4pb"/>.</para>
 
@@ -4246,69 +3792,69 @@
 
       <para>This situation is illustrated as the hatched region in <xref
       linkend="b6_c5_f_8so8w"/>. Defining <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> as Pr{X&gt;x and Y&gt;y}, <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> * <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, can be estimated, with a number of specific
       examples shown in <xref linkend="b6_c5_t_bqv0i"/>.</para>
 
@@ -4410,156 +3956,156 @@
 
       <para><emphasis role="bold">The probability of two completely dependent
       events Z = <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>: </emphasis>In situations of perfect dependence
       between <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>, the probability of <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> would be equal to the probability of Y&gt;y for all
       x and y. Because of this, Pr{<inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation>} = Pr{<inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>} = Pr{<inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>}. For example, if <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> are both 10%, then <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> = 10%.</para>
 
       <para><emphasis role="bold">The probability that two events X&gt;x and
       X&gt;y with specified annual exceedance probabilities Pr{<inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation>} and Pr{<inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>} occur on the same day:</emphasis> In the previous
       examples, the interest was the probabilities that two random variables
       <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> exceeded thresholds <inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation> in a given year. However, when estimating the
       exceedance probability of floods, our interest is in the probability of
       these two variables coinciding. Therefore, one must consider the
@@ -4572,14 +4118,14 @@
       hydrograph will not always occur at exactly the same time as the peak of
       the storm surge within a given day), but less conservative than the
       assumption that the annual maximum of variable <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> will always occur at the same time as the annual
       maximum of variable <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>.</para>
 
       <para>The conversation between an AEP and a daily exceedance probability
@@ -4590,21 +4136,21 @@
 
       <para>The earlier example is now revisited (the probability of two
       independent events Z = <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation>), but now first converting to daily values. <xref
       linkend="b6_c5_t_x2dni"/> shows the results using the example of two
       coinciding 10% AEP events. It is clear from this example that the joint
@@ -4613,30 +4159,30 @@
       likely case is that the two extreme events would occur on different
       days). In contrast, had complete dependence been assumed, then
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>z</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>z</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation> would remain at 10%, as by the definition of
       complete dependence, high values of <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> will always occur at the same time.</para>
 
       <table xml:id="b6_c5_t_x2dni">
@@ -4698,75 +4244,75 @@
       </table>
 
       <para><emphasis role="bold">Why the probability that <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>x</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>x</mi>
+          </math>
         </inlineequation> or <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>y</mi>
+          </math>
         </inlineequation> is non-commensurate with the probability that
       <inlineequation>
-          <m:math display="inline">
-            <m:mi>H</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>H</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation> where <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>h</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>h</mi>
 
-                <m:mo>=</m:mo>
+                <mo>=</mo>
 
-                <m:mi>B</m:mi>
+                <mi>B</mi>
 
-                <m:mo stretchy="false">(</m:mo>
+                <mo stretchy="false">(</mo>
 
-                <m:mi>x</m:mi>
+                <mi>x</mi>
 
-                <m:mo>,</m:mo>
+                <mo>,</mo>
 
-                <m:mi>y</m:mi>
+                <mi>y</mi>
 
-                <m:mo stretchy="false">)</m:mo>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>, even when random variables <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> are independent. </emphasis>This illustrates a basic
       problem in joint probability analysis of floods of the coastal zone,
       where interest is in a quantity such as a flood level (h) that is some
       complex function of forcing variables such as rainfall (<inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation>) and storm tide (<inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>). A ‘boundary function’ <inlineequation>
-          <m:math display="inline">
-            <m:mi>B</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>B</mi>
+          </math>
         </inlineequation>() is used to represent the complex mapping from
       rainfall/storm tide to the flood level. In most practical applications
       this mapping would be achieved using hydrologic and hydraulic models
@@ -4775,48 +4321,48 @@
 
       <para>Consider the situation concerning the exceedance probability of a
       flood of height <inlineequation>
-          <m:math display="inline">
-            <m:mi>H</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>H</mi>
+          </math>
         </inlineequation>&gt;<inlineequation>
-          <m:math display="inline">
-            <m:mi>h</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>h</mi>
+          </math>
         </inlineequation>, and after a hydrological/hydraulic analysis it is
       concluded that this height can be caused by a rainfall event with
       <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>x</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>x</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>=5% but with no significant storm tide, or a storm
       tide event with <inlineequation>
-          <m:math display="inline">
-            <m:semantics>
-              <m:mrow>
-                <m:mi>A</m:mi>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+              <mrow>
+                <mi>A</mi>
 
-                <m:mi>E</m:mi>
+                <mi>E</mi>
 
-                <m:msub>
-                  <m:mi>P</m:mi>
+                <msub>
+                  <mi>P</mi>
 
-                  <m:mi>y</m:mi>
-                </m:msub>
-              </m:mrow>
-            </m:semantics>
-          </m:math>
+                  <mi>y</mi>
+                </msub>
+              </mrow>
+            </semantics>
+          </math>
         </inlineequation>=20% but with no significant rainfall. Furthermore,
       assume that the processes X and Y are independent. In this case, it is
       tempting to refer to <xref linkend="b6_c5_t_ug4pb"/> and suggest that
@@ -4846,38 +4392,38 @@
 
       <para><emphasis role="bold">Accounting for intermediate levels of
       dependence between <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation>: </emphasis>The previous examples illustrated the
       extreme situations whereby the processes <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> were either completely independent, or perfectly
       dependent. The design variable method has been designed to ctaer for
       cases with intermediate level of dependence, it is necessary apply the
       design variable method, which superimposes the joint probability
       distribution of the forcing variables <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> and <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> onto the boundary function <inlineequation>
-          <m:math display="inline">
-            <m:mi>B</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>B</mi>
+          </math>
         </inlineequation>() describing the relationship between forcing
       variables and flood level. The practical implementation of this method
       is now discussed.</para>
@@ -4931,17 +4477,17 @@
     hydrodynamic model. The boundary conditions are specified in terms of
     their AEP rather than in their corresponding dimensional value (eg
     <inlineequation>
-        <m:math display="inline">
-          <m:semantics>
-            <m:mrow>
-              <m:msup>
-                <m:mi>m</m:mi>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <semantics>
+            <mrow>
+              <msup>
+                <mi>m</mi>
 
-                <m:mn>3</m:mn>
-              </m:msup>
-            </m:mrow>
-          </m:semantics>
-        </m:math>
+                <mn>3</mn>
+              </msup>
+            </mrow>
+          </semantics>
+        </math>
       </inlineequation>/s, m, etc), so that it will be necessary to consider
     the probability distribution of the extremes of each boundary to enable
     translation between an AEP and the dimensional value.<table frame="void"
@@ -5044,9 +4590,9 @@
     green cells are similar to those in the red cells for each rainfall AEP
     (ie the difference is less than some tolerance threshold value of
     <inlineequation>
-        <m:math display="inline">
-          <m:mi>Z</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>Z</mi>
+        </math>
       </inlineequation> mm), the flood levels for the catchment of interest
     are completely dominated by the rainfall (the “fluvial zone” in <xref
     linkend="b6_c5_f_a915o"/>). Normally such catchments are in upstream
@@ -5060,9 +4606,9 @@
     blue cells are very close to those in the red cells for each storm tide
     AEP (ie the difference is less than the tolerance threshold of
     <inlineequation>
-        <m:math display="inline">
-          <m:mi>Z</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>Z</mi>
+        </math>
       </inlineequation> mm), the flood levels are completely dominated by the
     storm tide (the “coastal zone” in <xref linkend="b6_c5_f_a915o"/>).
     Normally this location is on lower reach of the river. As with Case 1,
@@ -5073,9 +4619,9 @@
     red cells are significantly higher than those in the green and blue cells
     (ie, the difference is greater than the tolerance threshold of
     <inlineequation>
-        <m:math display="inline">
-          <m:mi>Z</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>Z</mi>
+        </math>
       </inlineequation> mm) with the same rainfall and storm tide AEPs, this
     indicates that the joint dependence has a significant influence on the
     flood level (the “joint probability zone” in <xref
@@ -5098,9 +4644,9 @@
     </figure>
 
     <para>The threshold value of <inlineequation>
-        <m:math display="inline">
-          <m:mi>Z</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>Z</mi>
+        </math>
       </inlineequation> represents a tolerance defined by the user. This
     tolerance is a trade-off between the benefit of a more accurate assessment
     of flood exceedance probabilities (obtained through the joint probability
@@ -5411,32 +4957,32 @@
         linkend="b6_c5_t_6222v"/>), estimate the set of all possible
         combinations of extreme rainfall and storm tide that would produce
         flood level <inlineequation>
-            <m:math display="block">
-              <m:semantics>
-                <m:mi>h</m:mi>
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+              <semantics>
+                <mi>h</mi>
 
-                <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
                 feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
                 hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
                 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
                 vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E3@</m:annotation>
-              </m:semantics>
-            </m:math>
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E3@</annotation>
+              </semantics>
+            </math>
           </inlineequation>. This involves interpolating over the values in
         <xref linkend="b6_c5_t_6222v"/>. The contour of fixed <inlineequation>
-            <m:math display="block">
-              <m:semantics>
-                <m:mi>h</m:mi>
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+              <semantics>
+                <mi>h</mi>
 
-                <m:annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
                 feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
                 hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
                 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
                 vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
-                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E3@</m:annotation>
-              </m:semantics>
-            </m:math>
+                fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E3@</annotation>
+              </semantics>
+            </math>
           </inlineequation> was illustrated as a solid red line in the
         hypothetical example presented in <xref
         linkend="b6_c5_f_ll1bv"/>.</para>
@@ -6234,14 +5780,14 @@
     for Olga Bay and Spencer. These plots provide a consistency check of the
     water levels in the tables. Vertical lines imply that the storm tide (in
     this case the <inlineequation>
-        <m:math display="inline">
-          <m:mi>X</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>X</mi>
+        </math>
       </inlineequation> variable) is the dominant process affecting the water
     level, whereas horizontal lines imply that the flow (the <inlineequation>
-        <m:math display="inline">
-          <m:mi>Y</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>Y</mi>
+        </math>
       </inlineequation> variable) dominates the water level. Any other slope
     between these two indicates variation with respect to both inputs.</para>
 
@@ -6269,20 +5815,20 @@
     these two cases). For Spencer, the best estimate lies approximately midway
     between the complete dependence and independence cases. This demonstrates
     that the relationship of <inlineequation>
-        <m:math display="inline">
-          <m:mi>α</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>α</mi>
+        </math>
       </inlineequation> is non-linear with respect to the resulting water
     levels and that it varies with location. Specifically, although
     <inlineequation>
-        <m:math display="inline">
-          <m:mi>α</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>α</mi>
+        </math>
       </inlineequation> varies from zero (complete dependence) to one
     (independence), <inlineequation>
-        <m:math display="inline">
-          <m:mi>α</m:mi>
-        </m:math>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>α</mi>
+        </math>
       </inlineequation>=0.90 does not necessarily mean the water level is
     ‘near independence’.</para>
 
@@ -7530,13 +7076,13 @@
       independent and an asymptotically dependent distribution are given the
       figure below: the dependence between variables for the Gaussian
       distribution decreases with extremity of <inlineequation>
-          <m:math display="inline">
-            <m:mi>X</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>X</mi>
+          </math>
         </inlineequation> or <inlineequation>
-          <m:math display="inline">
-            <m:mi>Y</m:mi>
-          </m:math>
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mi>Y</mi>
+          </math>
         </inlineequation> (evidenced by the increased scatter of points away
       from the leading diagonal), where dependence remains high for the
       asymptotically dependent bivariate logistic distribution.</para>

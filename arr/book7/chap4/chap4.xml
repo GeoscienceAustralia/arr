@@ -4,40 +4,667 @@
   xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
   xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook"
   status="In Preparation">
-  <title>Establishment</title>
+ 
+ <info>
+  <title>Catchment Representation in Model</title>
+   
+   <xi:include href="../../common/authors/babister_mark.xml"/>
+   
+   <xi:include href="../../common/authors/retallick_monique.xml"/>
+   
+   <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+   
+   <xi:include href="../../common/authors/testoni_isabelle.xml"/>
+  
+ </info> 
+  
   <para>
     <informaltable border="1">
       <tr>
         <td colspan="2">Chapter Status</td>
       </tr>
       <tr>
-        <td>Book</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td>Chapter</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>Date</td>
-        <td>27/11/2015</td>
+        <td>Date last updated</td>
+        <td>06/07/16 </td>
       </tr>
       <tr>
         <td>Content</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Graphs and Figures</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Examples</td>
-        <td>In preparation</td>
+        <td>Working draft</td>
       </tr>
       <tr>
         <td>General</td>
-        <td/>
+        <td>Subject to industry feedback </td>
       </tr>
     </informaltable>
   </para>
+  <section>
+    <title>Introduction</title>
+    <para>Once a catchment modelling system has been conceptualised and modelling platforms have
+      been selected it is necessary to represent the catchment and floodplain in the modelling
+      platforms. This requires a series of important decisions where all the key features and
+      previously identified processes need to be represented. Model selection may need to be revised
+      once data collection and analysis is undertaken. This chapter outlines all the key steps in
+      establishing a catchment modelling system. </para>
+    <para>Schematisation of a catchment modelling system includes representing any physical
+      properties of the catchment that affect the catchment’s flood response. The selection of a
+      catchment modelling system (<xref linkend="b7_ch3"/>) will influence how the practitioner will
+      schematise the catchment and its floodplain. Some catchment modelling systems are inherently
+      easier to schematise certain key processes and features and therefore the ease of
+      schematisation between different modelling platforms should be taken into account when
+      selecting a modelling system. </para>
+    <para> The guidance within this chapter is divided into generic catchment modelling systems and
+      that specific to hydrologic model and hydraulic models for ease of use.</para>
+  </section>
+  <section>
+    <title>Adapting an Existing Model</title>
+    <para>This is the most common mistake that practitioners and clients make. While it may be an
+      easy choice from a time and budget perspective to choose to modify an existing model this
+      often leads to a poorer representation of flood behaviour. Before making the choice to adopt
+      an existing model consideration must be given to the original purpose of the model and how key
+      processes relevant to the current design problem have been represented in the model.</para>
+    <para>Typical problems include:</para>
+    <itemizedlist>
+      <listitem>
+        <para>The original model was calibrated for a range of frequent floods and is not suitable
+          for very frequent floods (or vice versa);</para>
+      </listitem>
+      <listitem>
+        <para>the model might represent the processes for the existing case but cannot be adapted
+          easily for new scenarios (changed catchment and floodplain conditions) that need to be
+          run; and </para>
+      </listitem>
+    </itemizedlist>
+    <para> The model is calibrated for rarer events and a different mechanism is dominant for
+      smaller flows.</para>
+  </section>
+  <section>
+    <title>Data</title>
+    <para>The amount of historic data and terrain information available for the development of a
+      catchment modelling system has a large impact on the model establishment. <xref
+        linkend="b1_ch4"/> provides a detailed discussion of the types of data available and issues
+      that the practitioner should look out for when using the data. <xref linkend="b4_ch2"/>
+      discusses the balance between data availability and model complexity.</para>
+  </section>
+  <section xml:id="b7_ch4_s_43001">
+    <title>Key Features of a Catchment</title>
+    <para>In the conceptualisation and model selection stage the key features of a catchment should
+      have been identified along with key processes. When developing a catchment modelling system
+      the practitioner needs to ensure that they key features are properly represented in the model.
+      A list of possible key features are:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Landforms, vegetation and land use catchment areas influencing runoff response;
+        </para>
+      </listitem>
+      <listitem>
+        <para>Streams, stream network, floodplains and overflow paths;</para>
+      </listitem>
+      <listitem>
+        <para>Natural and man-made flow constraints;</para>
+      </listitem>
+      <listitem>
+        <para>Natural and man-made storages;</para>
+      </listitem>
+      <listitem>
+        <para>Roads and railway lines;</para>
+      </listitem>
+      <listitem>
+        <para>Weirs;</para>
+      </listitem>
+      <listitem>
+        <para>Flow structures including levees, bridges and culverts;</para>
+      </listitem>
+      <listitem>
+        <para>Levees;</para>
+      </listitem>
+      <listitem>
+        <para>Flow diversions;</para>
+      </listitem>
+      <listitem>
+        <para>Pits and Pipe network;</para>
+      </listitem>
+    </itemizedlist>
+    <para> There are different ways of representing these key features within a modelling platform.
+      Sometimes there are multiple options and it is important to select the method of
+      representation that best suits the problem. Key features are identified so that most of the
+      model effort is focused on them instead of other features that don’t have a material effect on
+      flow behaviour.</para>
+    <sidebar>
+      <para>There is a temptation to spend modelling effort on those features that can be readily
+        measured. Yet it is often that the features that are hard to measure and quantify have a
+        significant effect on flood behaviour. For example in a large river model small culverts
+        will have little effect on flood behaviour.</para>
+    </sidebar>
+  </section>
+  <section>
+    <title>Time step</title>
+    <para>Time step is typically more of an issue with hydraulic modelling, however, it is also an
+      issue for some hydrologic processes. For example the time step at which a loss model is
+      applied can change the amount of rainfall excess. Too coarse a time step will mean that the
+      runoff hydrograph will be too coarsely represented. Continuous simulation models often need to
+      be run at a finer time step to capture important details for simulating floods. Most
+      hydrological processes (unless spatially distributed) the time step it is not a problem and
+      computationally is no longer a challenge. For two and three dimensional hydraulic models this
+      can still be a computation time issue.</para>
+  </section>
+  <section>
+    <title>Boundaries between Models Elements and Platforms</title>
+    <para>A key decision that has to be made is where the boundary is between modelling elements and
+      platforms. The common example is between a hydrologic and hydraulic model. A model boundary
+      usually means that there is no feedback between the modelling platforms. It is also important
+      to understand at this point you could be using a very different modelling approach to
+      represent the same process. </para>
+    <sidebar>
+      <para>A common problem is at the boundary between a hydrologic and hydraulic model. At the
+        boundary care should be taken to ensure that there is no double routing of a flow
+        hydrograph.</para>
+    </sidebar>
+  </section>
+  <section>
+    <title>Hydrologic Modelling</title>
+    <para>As discussed in earlier chapters, the actual processes involved in converting rainfall
+      inputs to a catchment into runoff and eventually a flood hydrograph are very complex, and they
+      are represented in modelling platforms in a highly conceptualised form. The first decision to
+      be made in representing a catchment is the level of spatial resolution to be adopted. At each
+      level of resolution, from lumped models to fully distributed models further decisions then
+      need to be made on how the key processes are to be represented in the model. In practice these
+      decisions generally come down to selecting first an appropriate model platform and then
+      possibly a particular model version.</para>
+    <section>
+      <title>Spatial Resolution </title>
+      <para>The appropriate degree of spatial resolution to be adopted in a hydrologic catchment
+        model depends on the following factors:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Catchment size</para>
+        </listitem>
+        <listitem>
+          <para>Degree of spatial variation in catchment rainfall</para>
+        </listitem>
+        <listitem>
+          <para>Variation in land use characteristics</para>
+        </listitem>
+        <listitem>
+          <para>Presence of natural features or man-made structures that have a major influence on
+            flood formation and need to be represented in the model</para>
+        </listitem>
+        <listitem>
+          <para>Range of flood magnitudes to be simulated </para>
+        </listitem>
+        <listitem>
+          <para>Requirement to estimate flood characteristics at internal points in the
+            catchment</para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis role="italic">Lumped Models</emphasis></para>
+      <para>In relatively small catchments there is often only limited spatial variation in rainfall
+        and loss characteristics, and it is thus acceptable to treat the catchment as a homogeneous
+        unit. In such situations, and when there is only interest on the flood hydrograph at the
+        catchment outlet, a lumped model can give acceptable results. </para>
+      <para>While lumped flood hydrograph estimation models have the advantage of simplicity, they
+        are limited in their application to the following situations:</para>
+      <itemizedlist>
+        <listitem>
+          <para>catchments with relatively uniform spatial rainfall, loss and baseflow
+            characteristics or where the variation of these characteristics between events is
+            relatively minor, so that the derived unit hydrograph or other model parameters are
+            applicable to a range of design events</para>
+        </listitem>
+        <listitem>
+          <para>catchments with no significant artificial storages (reservoirs or flood detention
+            basins)</para>
+        </listitem>
+        <listitem>
+          <para>applications that do not require extrapolation to the range of Very Frequent or Very
+            Rare to Extreme floods.</para>
+        </listitem>
+        <listitem>
+          <para>applications where a flood hydrograph is only required at the catchment outlet, as
+            for the design of drainage structures on roads and railways</para>
+        </listitem>
+      </itemizedlist>
+      <para>As lumped models do not represent the internal structure of the catchment explicitly and
+        do not have direct links to physical catchment characteristics, they depend on the
+        availability of observed flood hydrographs for their calibration. The scope for application
+        to ungauged catchments is thus more limited.</para>
+      <para><emphasis role="italic">Semi-distributed Models</emphasis></para>
+      <para>Semi-distributed models allow the spatial variation of inputs and key processes to be
+        modelled explicitly. This is particularly important in large catchments and in catchments
+        where the natural flooding characteristics have been significantly modified by various forms
+        of development, including the construction of reservoirs, flood mitigation works and
+        transport and drainage infrastructure.</para>
+      <para>Most of the modelling platforms in common use in Australia belong to the group of
+        semi-distributed models, owing to their flexibility and efficiency in representing the key
+        factors that determine the flood formation under a broad range of catchment conditions. As
+        explained in more detail in <xref linkend="b5_ch2"/> and <xref linkend="b5_ch6"/>, the
+        catchment is represented in the model through a network of nodes and links. </para>
+      <para>It is important that the development of the network structure used in the model is
+        guided by a good understanding of the key catchment features described in <xref
+          linkend="b7_ch4_s_43001"/>. The catchment subdivision into model subareas should follow
+        topographic features and match the degree of variation of the key influencing factors
+        (spatial rainfall variability, soil and land use characteristics). The conceptualisation and
+        level of detail in the representation of the flood producing and flood modifying processes
+          (<xref linkend="b7_c4_s_462002"/>) should reflect their relative importance and their
+        influence on the flood hydrograph outputs. </para>
+      <para>In large catchments the distributed runoff inputs experience a large degree of smoothing
+        as they are combined and routed progressively through the stream or channel network to the
+        hydrograph output location. This means that recorded flow hydrographs at the catchment
+        outlet will provide only limited information on the flow contributions from different parts
+        of the catchment and the influence of individual catchment features. However, the role
+        played by different catchment features in the formation of flood hydrographs can be expected
+        change for different flood magnitudes, and this needs to be reflected in the catchment
+        representation. </para>
+      <para>Difficulties in calibrating a model to observed flood events of different magnitude
+        should be taken as an indication of the changing role of processes, and the model
+        representation thus needs to be adapted accordingly. In many cases a significant change
+        occurs between floods that are mostly contained within the stream channel and floods in
+        which floodplain storage plays an important role in the routing process. Large floodplain
+        storage areas may need to be represented by special storage elements whose characteristics
+        and parameters are determined from hydraulic calculations.</para>
+      <para>For more detailed guidance on the representation of catchments in node-link type models
+        users should consult the user manuals of specific modelling platforms. </para>
+      <para><emphasis role="italic">Distributed models</emphasis></para>
+      <para>In the fully distributed or grid-based flood hydrograph estimation models the catchment
+        is represented by a large number of grid cells, based on topographic data from a digital
+        elevation model (DEM), supplemented by more detailed survey information on the drainage
+        network and the flow controlling features of the catchment. The two-dimensional hydraulic
+        modelling approach adopted in these models allows their application in quite complex flow
+        situations, e.g. floodplain areas with ill-defined drainage networks or urban areas with
+        many flow obstructions. </para>
+      <para>In principle, distributed modelling allows the influence of spatial variability in
+        rainfall inputs, runoff production and routing characteristics to be captured in more detail
+        than in node-link type models. However, for this potential to be fully realised, the
+        conceptualisation of the runoff producing processes has to be well matched to the scale of
+        the basic model elements (grid cells) and has to reflect the change in processes as the
+        cells are wetted up and the flow efficiency increases with flood magnitude. </para>
+      <para> The capabilities and limitations of distributed (rainfall on grid) models are further
+        discussed in <xref linkend="b5_ch6_s_lgabf"/>. </para>
+    </section>
+    <section xml:id="b7_c4_s_462002">
+      <title>Process Representation</title>
+      <para>As explained in <xref linkend="b4_ch3"/>, all models applied in flood hydrograph
+        simulation employ a highly conceptualised representation of the actual hydrologic processes
+        involved in runoff production and routing of the runoff inputs from the different parts of
+        the catchment to form hydrographs at points of interest. It has to be kept in mind that the
+        adopted conceptualisations are intended for the the simulation of probability-based design
+        flood events rather than actual flood events. The model should reflect the typical flood
+        response of the catchment to be expected in future events but may not reproduce the full
+        range of variability between actual flood events.</para>
+      <para>In the event-based flood estimation methods, the influence of all the pre-event rainfall
+        is only reflected in the initial catchment conditions (that determine initial loss), and in
+        the delayed runoff contribution from baseflow which is modelled separately. The event
+        rainfall is then divided into rainfall loss and rainfall excess which produces the surface
+        runoff component that is modelled in detail. </para>
+      <para> The detailed guidelines for modelling losses and baseflow are provided in <xref
+          linkend="b5_ch5"/> and <xref linkend="b5_ch4"/>, respectively. The different approaches
+        for modelling the production of runoff hydrographs from model subareas and for routing these
+        through the drainage network to points of interest are discussed in <xref linkend="b5_ch6"
+        />.</para>
+    </section>
+  </section>
+  <section>
+    <title>Hydraulic Model Establishment</title>
+    <para>The text below is largely reproduced from <citation>b7_c2_r1+1</citation> which is focused
+      on two dimensional modelling. Two dimensional models are used for the majority of problems
+      because they provide spatial output showing the extent of flooding and flood characteristics.
+      There is however a place for one dimensional models where a fast reliable computational model
+      is required for flood forecasting or Monte Carlo modelling. More detail can be found in
+        <citation>b7_c2_r1+1</citation>. </para>
+    <section>
+      <title>Model Extents</title>
+      <para>The primary goal in selecting a model extent is to represent key processes within the
+        area of interest without significant influences driving runoff-routing or hydraulic
+        behaviour from areas outside the model extent. Key considerations include, but not limited
+        to:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Ensuring that the model extent is sufficient to cover the likely inundation extent
+            of the largest event to be modelled. The key here is that for the largest event to be
+            modelled (typically the Probable Maximum Flood), the model extent does not artificially
+            restrain water movement at its boundaries, and that the topographic data within the
+            model extent also extends beyond the inundation areas. For a hydrologic model the model
+            must cover the contributing area. </para>
+        </listitem>
+        <listitem>
+          <para>Ensure that boundary conditions are located sufficiently far away so as to not
+            unduly influence results within the area of interest.</para>
+        </listitem>
+        <listitem>
+          <para>Minimise the inclusion of unnecessary (flood-free) areas, as this produces excessive
+            results, impacts on computer memory requirements, increases model output file sizes and
+            reduces efficiency.</para>
+        </listitem>
+      </itemizedlist>
+      <para>If the likely maximum extent of the inundated area is difficult to define (eg. very flat
+        terrain or dam break studies) defining the extent can be an iterative procedure. A
+        recommendation is to always start with a large model area and then narrow the model domain
+        based on feedback of model results, as this is far less problematic than the reverse
+        process. Using a coarser grid/ mesh resolution to reduce run times during these earlier
+        stages of the modelling process can be an effective and efficient approach, especially for
+        large model areas. Run time is typically not an issue for hydrologic models other than
+        distributed runoff-routing models. </para>
+      
+      
+        <sidebar><title>Model Study area vs Model Applicability Area </title><para>In most cases there is a difference between the model extent and the area that the
+          model can be used to produce reliable results. Just because a model extends over a certain
+          area does not mean reliable results can be extracted in all areas of the model. Often
+          these fringe areas are modelled just so that the model boundary conditions are
+          sufficientlyfar away from the study area.</para></sidebar>
+      
+    </section>
+  </section>
+  <section>
+    <title>Boundary conditions</title>
+    <para>Boundary conditions should be located a sufficient distance away from the location of
+      interest so as not to influence the results. The practitioner must decide which type of
+      boundary condition to apply.</para>
+    <sidebar><title>Beware of direct rainfall boundary conditions and pre-wetting of catchment.</title>
+      <para>When using direct rainfall water is applied to every grid cell so all calculation points
+        are located on a boundary. A common problem is that the depression storage within the model
+        which can be a combination of numerical and actual can be overlooked when applying
+        losses.</para>
+    </sidebar>
+    <section>
+      <title>Location of Boundary Conditions</title>
+      <para>The location of the boundary conditions is of critical importance. In general,
+        boundaries should be located as far away from the study area as is practicably achievable.
+        Any boundary condition on a hydraulic model requires a description of the water level, flow
+        rate and velocity, flow direction and water surface slope across the boundary. In most
+        situations, these flow conditions are rarely available as input data time series.
+        Consequently, a range of assumptions are made in the definition of these conditions. While
+        some models provide the ability to specify these explicitly, most models have generic
+        assumptions incorporated into the model system to facilitate the automatic calculations of
+        the range of parameters required. </para>
+      <para>As an example, the water level at a boundary condition is typically defined as a time
+        series of recorded level. The other flow conditions are assumed or calculated based on the
+        general assumptions or pre-defined conditions, such as an assumed flow direction across the
+        boundary and assumed water surface slope. In this example, these assumptions, when combined
+        with the water level time series, allow a discharge to be estimated across the
+        boundary.</para>
+      <para>The specification of these conditions on the boundary introduces errors into the model
+        predictions. Over time, these errors propagate through the model domain and may eventually
+        pass through the model domain and out through another boundary. In a well developed and
+        tested model, these errors become dampened as they propagate through the model domain. If
+        the boundary conditions are located remotely then the errors become insignificant at the
+        area of interest.</para>
+      <para> As an example, if a high flow rate is introduced through a topographic boundary
+        condition that has small conveyance (restricted flow capacity) then high velocities and a
+        significant velocity head results. This may cause large errors in the momentum flux into the
+        system leading to errors in the flow patterns, water level and velocities downstream from
+        the model boundary into the model domain. In this case, provided the boundary is located
+        well away from the area of interest so that these effects have fully dissipated, the
+        presence of these unrealistic flow patterns can be considered acceptable for the purposes of
+        the investigation.</para>
+    </section>
+    <section>
+      <title>Type of Boundaries</title>
+      <para>The types of boundary conditions that are applied are important in determining the
+        results produced by the model. The boundary conditions can be defined into two broad
+        categories of;</para>
+      <itemizedlist>
+        <listitem>
+          <para>External boundary conditions; and</para>
+        </listitem>
+        <listitem>
+          <para>Internal boundary conditions.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The most common boundary conditions applied in hydraulic models are external boundary
+        conditions with a flow or discharge boundary defined along the upstream boundary of the
+        model and a water level defined at the downstream external boundary. </para>
+      <para>The boundary condition type can be described using one of the following for
+        specifications:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Flow time series specified which is distributed across the model boundary grid/mesh
+            points;</para>
+        </listitem>
+        <listitem>
+          <para>Water level time series which is assumed to be constant across the model
+            boundary;</para>
+        </listitem>
+        <listitem>
+          <para>Flow and water level specified in combination as an input time series and
+            distributed along the boundary;</para>
+        </listitem>
+        <listitem>
+          <para>Flow or water level specified as a one dimensional line of values along the boundary
+            for each time step; </para>
+        </listitem>
+        <listitem>
+          <para>Transfer boundary where the water level, flow, velocity and water surface slope are
+            provided from another model; and</para>
+        </listitem>
+        <listitem>
+          <para>Rating curve along a model boundary (combination of water level and flow).</para>
+        </listitem>
+      </itemizedlist>
+      <para>The combination of boundary types is important and must be considered in combination
+        with the specification of initial conditions. In general, the boundary conditions for
+        hydraulic models should be designed with upstream inflow or discharge boundaries and
+        downstream water level boundaries. This ensures that any errors or uncertainties associated
+        with initial conditions are “washed out” of the model. If other combinations of boundary
+        conditions are used then the initial conditions will not necessarily be “washed out” of the
+        model. The initial conditions will then significantly affect model simulation results and
+        the results may not be reliable.</para>
+      <section>
+        <title>External Boundary Conditions</title>
+        <para>The schematisation of the external boundary conditions can vary across the range of
+          model types and even within specific modelling platforms. The schematisation of external
+          boundary conditions is therefore highly dependent on the specific case and modelling
+          platform being used and it would be inefficient to describe all types of boundary
+          conditions in detail. However we can define some general principles for schematising
+          boundary conditions that are important to consider.</para>
+        <para>If general the practitioner should approach the schematisation of external model
+          boundary conditions in a similar manner to how a boundary condition would be conceived for
+          a physical model. The practitioner should consider the physical flow characteristics at
+          the boundary in the real world and should attempt to schematise so as to minimise any
+          artificial flow behaviour that is induced by the boundary condition. Issue that should be
+          considered include:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Align the model grid to be normal to the boundary flow streamlines if
+              possible;</para>
+          </listitem>
+          <listitem>
+            <para>Avoid rapid transitions in flow regime at the boundary;</para>
+          </listitem>
+          <listitem>
+            <para>Avoid placing the boundary where turbulent flow are likely to be crossing the
+              boundary;</para>
+          </listitem>
+          <listitem>
+            <para>Minimise the wetting and drying on the boundary if the flooded boundary changes in
+              width substantially during the simulation;</para>
+          </listitem>
+          <listitem>
+            <para>Ensure that the boundary condition does not restrict or expand the flow
+              substantially at the boundary; and</para>
+          </listitem>
+          <listitem>
+            <para>Preference for specifying an upstream inflow discharge boundary and a downstream
+              water level (or rating curve) boundary in combination.</para>
+          </listitem>
+        </itemizedlist>
+        <para> As discussed, the boundary conditions should be located as far from the area of
+          interest as possible. This will minimise the possibility of boundary effects and errors
+          influencing the model results within the study area. The specification of the boundary
+          conditions will therefore have a significant influence on the grid/mesh resolution. In
+          general, the boundary condition should be identified as the first task that is carried out
+          when conceptualising and schematising a model.</para>
+      </section>
+      <section>
+        <title>Internal Boundary Conditions</title>
+        <para>Internal boundary conditions are specified to control either the flow or the water
+          level at grid/mesh element(s) within the model and not along the edge of the model grid.
+          There are generally two types of internal boundary conditions:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Internal inflow points (sometimes called sources or sinks); and</para>
+          </listitem>
+          <listitem>
+            <para>Internal flow or level controls.</para>
+          </listitem>
+        </itemizedlist>
+        <para>The primary issue in defining internal inflow boundary points is to ensure that the
+          flow rate is compatible with the grid or mesh resolution. There should be sufficient
+          conveyance into or out of the element(s) where the boundary condition is specified to
+          allow the model to accept the flow without introducing significant disturbance to the
+          natural flow streamlines. If a large flow is forced as a boundary through a relatively
+          small cell element with limited flow area; the model will produce an excessively large
+          velocity and water level gradient to achieve continuity with the flow volume. If this
+          occurs then significant momentum can be artificially introduced to the model at this
+          location which will then influence water levels and flow patterns for a relatively large
+          distance away from the boundary cell.</para>
+        <para> Internal control boundary conditions are a special form of boundary condition and are
+          generally not recommended unless there is a strong compelling case for their use. An
+          internal boundary condition will force the model to reproduce a predefined hydraulic
+          behaviour within the model domain. The most common internal boundary condition is a forced
+          rating curve at an internal cross-section of a one dimensional model. These boundary
+          conditions are highly “reflective” and will introduce distortion and disturbance of the
+          flow behaviour far from the actual boundary point. It is not recommended the use of this
+          type of boundary for most catchment modelling applications.</para>
+      </section>
+    </section>
+  </section>
+  <section>
+    <title>Run Times and Computational Resources</title>
+    <para>The availability and type of computational resources will impact directly upon the
+      efficiency and timeliness of any project. The efficiency of a gridded model study will be
+      greatest where model run times are less than 24 hours. The shorter the run time the greater
+      the efficiency. However, depending upon the extent and resolution of the model and the length
+      of the modelled events there may be situations in which run times may be in the order of
+      several days. </para>
+    <para>Excessively long run-times can introduce a significant bottle-neck in the study timeline
+      and the decision to accept an excessively long model run time should be made carefully.
+      Timeliness may be particularly affected during the calibration phase, where a large number of
+      iterative simulations are necessary, mostly in series rather than parallel. With excessive run
+      times the calibration essentially relies on the skill of the practitioner and their knowledge
+      of likely calibration parameters.</para>
+    <para> In addition, the total number of runs required can be an important consideration if there
+      are many scenarios to be considered, such as different event durations and Annual Exceedance
+      Probailities, development scenarios, blockage scenarios or scenarios to parameter sensitivity
+      tests (refer to <xref linkend="b7_c7_s_pst001"/>). During the planning stage, the practitioner
+      will need to consider the following factors to estimate the efficiency and timeliness of the
+      study. </para>
+    <itemizedlist>
+      <listitem>
+        <para>The estimated length of time required to complete each run;</para>
+      </listitem>
+      <listitem>
+        <para>The number of calibration and design events to be simulated;</para>
+      </listitem>
+      <listitem>
+        <para>The number of computers/processors available;</para>
+      </listitem>
+      <listitem>
+        <para>The ability of the computers to undertake multiple runs in parallel or not; and
+        </para>
+      </listitem>
+      <listitem>
+        <para>The number of licenses available if proprietary software is to be used.</para>
+      </listitem>
+    </itemizedlist>
+    <para>The type and availability of computational resources can provide a real practical
+      constraint. It may limit the number of design runs that can be achieved, the length of event
+      that can be simulated, or the achievable resolution of the model. Such limitations and the
+      resulting implications need to be identified as soon as possible in the process.</para>
+    <para>Consideration of run times can be particularly important for rural flood studies, or for
+      studies involving continuous simulation of long flow periods. Such studies may require
+      simulation of floods or flow sequences lasting several months. In these situations it may be
+      appropriate to consider the use of a modelling package that can implement an adaptive
+      timestep, using a longer timestep during periods of relatively steady flow conditions, which
+      may significantly reduce computational run times. Adaptive timesteps are discussed further in
+        <xref linkend="b7_ch4_s_ts003"/>.</para>
+    <para>The fast run times of hydrologic models lend themselves to Monte Carlo modelling. However,
+      run times of two dimensional hydraulic models are somewhat prohibitive at this point in time.
+      Fast run times are possible one dimensional hydraulic models. One alternative is to Monte
+      Carlo or Ensemble hydrologic models then apply a selection of events to the two dimensional
+      hydraulic model. <xref linkend="b2_ch5"/> recommends running an ensemble of ten temporal
+      patterns in a hydrologic model and the selecting the pattern closest to the average (flow or
+      volume depending on the problem of interest) through a hydraulic model. </para>
+  </section>
+  <section>
+    <title>Model Resolution </title>
+    <para>All models represent different processes at different resolutions:</para>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis role="italic">One Dimensional Hydraulic Models </emphasis>
+        - the resolution is based on the space between cross-sections; and </para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Two Dimensional Hydraulic Models -</emphasis>
+         it is a simple representation of the topography. </para>
+      </listitem>
+    </itemizedlist>
+    <para>Given other considerations such as run time it may not be possible to have the model
+      resolution fine enough to represent the key features in the perfect detail. It is sometimes
+      necessary to compromise on model resolution. For example, A levee is 30 m wide but chosen cell
+      size is either 20 m or 40 m. Engineering judgement should be applied to decide which cell size
+      should be used. An adjustment to the resolution of the model may be required in order to
+      properly represent the flow behaviour.</para>
+  </section>
+  <section xml:id="b7_ch4_s_ts003">
+    <title>Time Step</title>
+    <para>The model simulation time step is dependent on the model grid/mesh resolution and the
+      schematisation of features in the model. As a consequence, the impact of poor model
+      schematisation can lead to inefficiently small time steps which in turn will produce excessive
+      run times. The impact of excessive run times should not be underestimated and in practice it
+      becomes impractical to calibrate and apply the model effectively.</para>
+    <para>There are generally two choices for selecting a model time step which are:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A fixed regular time step; or</para>
+      </listitem>
+      <listitem>
+        <para>An adaptive time step.</para>
+      </listitem>
+    </itemizedlist>
+    <para>The fixed regular time step allows the practitioner to pre-determine the model run time
+      and to set the saving step (in which model results are saved) as a regular multiple of the
+      simulation time step. However, the time step will need to be set at the shortest time interval
+      necessary for stability of the model during the most energetic or deepest flows during the
+      simulation. This typically occurs for only a very short period of time during the peak of the
+      flood hydrograph. Consequently the model simulation time is longer than is necessary as it is
+      fixed for the entire simulation. However, the practitioner can be sure that the simulation
+      will complete within predetermined run time.</para>
+    <para>The adaptive time step allows the model to determine the appropriate time step necessary
+      to maintain stability as defined by the Courant condition. The practitioner will typically set
+      a maximum and minimum time step allowable. This allows the model to time step at relatively
+      longer time steps when the flow is shallow or less energetic and shortens the time step during
+      the peak of the flow event. In theory, this should allow the shortest run time for the
+      simulation to be achieved whilst maintaining model stability. However, in practice the
+      adaptive time step method can often lead to excessively long run times. This is due to the
+      impact of a few minor locations in the model where short lived energetic fluctuations in the
+      flow can lead to the minimum time step being selected for excessively long periods of
+      time.</para>
+    <para>Run times can also become excessive if the period that it takes for the flood wave to
+      propagate through the model is very long. For example, simulations of large river systems or
+      of flat terrain where the critical rainfall duration is long, will have propagation times in
+      the order of days, if not weeks. However, small catchments with short critical durations may
+      only have propagation times in the order of hours. Therefore, some idea of the likely
+      propagation period is needed before finalising the model resolution and extent.</para>
+    <section>
+      <title>Save Step</title>
+      <para>The model save step is an important issue to consider during the model schematisation
+        process. As models (particularly hydraulic models and distributed models) will typically
+        produce very large results files if all the results are saved, there is a requirement to
+        select an appropriate saving step for the results. </para>
+      <para>The model saving step needs to be sufficient short to be able to define the shape of the
+        hydrograph in time. The model save step also needs to be sufficiently short to enable the
+        observation of stability issues that may occur during the simulation. If a model is being
+        saved at a longer time interval than a higher frequency oscillation in the model then it
+        would not be easily identified and could be missed. It is important that the model is
+        checked thoroughly by saving all time steps at specific points or at small regions in the
+        model domain. This allows for the observation and checking of stability issues without the
+        need to save the entire model at all time steps. It is generally impractical to save all
+        results at all time steps in a 2D model and it will typically exceed the limitations of most
+        computer storage and hardware to do so.</para>
+    </section>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
 </chapter>

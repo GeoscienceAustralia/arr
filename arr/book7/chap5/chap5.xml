@@ -3,38 +3,876 @@
   xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
   xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
-  <title>Calibration and Validation</title>
+  
+  <info>
+  
+    <title>Determination of Model Parameters</title>
+    
+    <xi:include href="../../common/authors/weeks_william.xml"/>
+       
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+    
+    <xi:include href="../../common/authors/babister_mark.xml"/>
+  
+  </info>
+  
   <informaltable border="1">
     <tr>
       <td colspan="2">Chapter Status</td>
     </tr>
     <tr>
-      <td>Book</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>Chapter</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Date</td>
-      <td>27/11/2015</td>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
     </tr>
     <tr>
       <td>Content</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Graphs and Figures</td>
-      <td>In preparation</td>
-    </tr>
-    <tr>
-      <td>Examples</td>
-      <td>In preparation</td>
+      <td>Working draft</td>
     </tr>
     <tr>
       <td>General</td>
-      <td/>
+      <td>Subject to industry feedback </td>
     </tr>
   </informaltable>
+  <section>
+    <title>Introduction </title>
+    <para>Following the selection of the catchment modelling system and the catchment and floodplain
+      representation required, the next step is the estimation of appropriate model parameters to
+      apply to the model platforms in the required application. </para>
+    <para>A flood model is a representation of the physical catchment processes affecting floods and
+      the implementation is defined by a parameter set to apply the model to the specific problem
+      being considered. The estimation of these parameters is often referred to as the calibration
+      process.</para>
+    <para>While the term calibration strictly applies only where there is observed data to calibrate
+      against, in this chapter calibration is defined here in general terms as the process for
+      determining appropriate model parameters for the hydrologic and hydraulic models to ensure
+      that they can be applied to the design flood estimation problem being considered. It involves
+      varying model parameters to ensure that model results match observed data, to confirm that the
+      model is performing adequately and is consistent with the records. Calibration can be carried
+      out in a variety of ways and this chapter discusses appropriate methods of calibrating
+      hydrologic and hydraulic models.</para>
+    <para>While the models used for these applications will generally have some representation of
+      the physical characteristics of the catchment, meaning that the model parameters should be
+      based on these physical features, there will always be uncertainty and the parameters will
+      need to be estimated using available data to ensure that the model is at least consistent with
+      the observed catchment performance. If the model represents physical processes closely,
+      parameter values could be measured from catchment characteristics, but this is an uncommon
+      situation.</para>
+    <para>The parameter estimation process may be based on recorded data (if there are suitable
+      records in the project area) or may be based on regional estimates if the local catchment is
+      ungauged or data is limited. There is a gradation between these two extremes however, it is
+      rare that there is absolutely no available information to assist in setting parameters. It is
+      also rare to find that there is sufficient data to allow a precise parameter determination, so
+      the objective in determining parameters is to ensure that as much data as possible is used in
+      this exercise. </para>
+    <para>Flood investigations usually require both hydrologic (calculation of design flood
+      discharges) and hydraulic (calculation of flood levels, velocities and flow distributions as
+      well as design of drainage systems) modelling applications, so this chapter covers both of
+      these.</para>
+    <para> This chapter describes the different approaches to determining model parameters for the
+      range of flood investigations and for the different amounts of available data.</para>
+  </section>
+  <section>
+    <title>Overview</title>
+    <para>The approach to parameter determination will depend on a number of factors which will
+      determine the approach to the calibration and the level of detail sought in the process. This
+      includes the model platform and the design problem.</para>
+    <section>
+      <title>Physical basis of model</title>
+      <para>Some models platforms may be purely ‘black-box’ or heavily conceptualised mathematical
+        representations of the physical processes while others are more directly based on actual
+        physical processes. Parameter estimation will be based on measurable catchment
+        characteristics for model platforms where there is a direct physical basis for the
+        parameters, and in these cases it is easier to establish model parameters. Most model
+        platforms are likely to have at least some physical basis; it is thus possible to establish
+        an acceptable range for model parameters, and model parameters calibrated to observed data
+        should only be allowed to vary within this range.</para>
+      <para>During calibration, the parameters that are physically based should be defined using the
+        catchment characteristics, while the other parameters can be varied so that the model
+        results match the observed data, ensuring that the values remain within reasonable and
+        acceptable limits.</para>
+      <para> The sensitivity of model parameters is also variable and some parameters have a greater
+        influence on the model output than others. In some cases, there may be inadequate data to
+        allow an accurate determination of actual parameter values. Therefore, these parameter
+        values must be set using knowledge of model and catchment processes. There is a concern
+        though that some parameters (eg. Non-linearity parameters in runoff-routing models) may be
+        important in design situations where rare floods are to be modelled but the observed data
+        does not include any floods of the required magnitude. Therefore these parameters may appear
+        insensitive during calibration but they have a major influence in the design
+        situation.</para>
+    </section>
+  </section>
+  <section>
+    <title>Guiding Principles</title>
+    <para>Establishment of and applying models will vary depending on particular circumstances.
+      However, for flood estimation applications, the following guiding principles will
+      apply:</para>
+    <itemizedlist>
+      <listitem>
+        <para>All Available Data both formal and anecdotal should be considered in the calibration
+          and the best use should be made of this data, in-line with its assessed accuracy and
+          reliability. This data is the only way to ensure that the model application can be
+          consistent with available local information. It is also important to carefully review the
+          data to ensure that it is consistent and there are no obvious errors that will affect
+          model performance.</para>
+      </listitem>
+      <listitem>
+        <para>When calibrating the model parameters, it is important that the practitioner has an
+          understanding of the role and relative importance of the different parameters and how they
+          influence model operation. During calibration it is then important to concentrate on the
+          most influential parameters, especially those that affect the model performance in the
+          areas of particular concern for the specific model application.</para>
+      </listitem>
+      <listitem>
+        <para>Model parameters when fitted to the data should be reasonable and within the range
+          expected for the model platform and should be consistent with the physical features of the
+          catchment being considered. If parameters are not within this typical range , the model
+          conceptualisation could be incorrect and while the model may appear reasonable during
+          calibration, there will be serious concerns for design events modelled where the event
+          magnitude is run outside the range of that used for calibration. It is also possible that
+          parameters outside the typical range may indicate errors in the observed data, and the
+          calibration may be attempting to fit the model to these errors. The data quality and
+          consistency then needs to be reconsidered and the calibration reanalysed
+          accordingly.</para>
+      </listitem>
+    </itemizedlist>
+    <para>Even if the data is of poor quality and incomplete, it is important that the model
+      calibration be at least consistent with the available information, especially local or
+      anecdotal information where formal data collection is lacking. Even very poor quality
+      observations may be sufficient to apply a ‘common sense test’ and to ensure that even an
+      essentially uncalibrated model can be a reasonable representation of local conditions. </para>
+  </section>
+  <section>
+    <title>Parameter Determination for Catchment Modelling Systems</title>
+    <section>
+      <title>General Approach</title>
+      <para>This section provides guidance on the parameter estimation for model platforms (both
+        hydrologic and hydraulic models). Many principles are the same for these two calibration
+        processes, but there are some differences in the data and approaches.</para>
+      <para>There are four basic approaches that will normally be dictated by the available
+        calibration data and sometimes by the project budget and timeframe, and this classification
+        is not as simple as the division into gauged or ungauged catchments.</para>
+      <para>The four primary categories are:</para>
+      <orderedlist numeration="loweralpha">
+        <listitem>
+          <para><emphasis role="italic">No Data</emphasis>
+           - This is the lower limit to data availability, and having no data at all is
+            probably not a common situation. In this situation, regional methods of some type are
+            required. In addition to formal regional methods, parameters can be determined from
+            experience with applications on similar systems or where the physical characteristics
+            are similar.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Very Limited Data</emphasis> - The limited data may be some
+            anecdotal records (<xref linkend="b1_ch4"/>). An example for the design of drainage
+            structures on a road or railway would be reports on the frequency of closure by
+            flooding. In this case, it is possible to develop parameters that mean that the model is
+            at least consistent with local observations. It may also be the case that the limited
+            data is apparently inaccurate or inconsistent, though the exact source of this
+            inaccuracy may be difficult to detect. In any case, efforts should be made to
+            incorporate any information available in accordance with its assessed accuracy and
+            reliability, no matter how limited this may be.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Some Data </emphasis>- In this case there may be a streamflow gauge with a
+            very short period of record, records of flood levels for a single flood event or there
+            may be records for a very frequent flood event. Some rainfall gauge information may be
+            available. In this case, there will be a greater degree of confidence in the
+            calibration, but the limited data means that there will still be uncertainty in the
+            model performance, especially when the model is used for extrapolation to larger design
+            events outside the range of the limited data or applied to alternative development
+            scenarios.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Extensive Data</emphasis> - In this case, there is extensive data
+            throughout the floodplain and catchment of interest. Data is available for a range of
+            flood magnitudes and conditions and the flood data is accurate, reliable and consistent.
+            In this case, the model calibration will be reliable and the model can be confidently
+            used for design flood investigations.</para>
+        </listitem>
+      </orderedlist>
+      <para>These four categories blend together and there will be a gradation from one to the
+        other. Projects where data is totally lacking are not common and projects with extensive
+        data are also unusual. The objective is to consider all available data and to make the best
+        use of all available information. </para>
+      <para> In the following sections the term <emphasis role="italic">‘calibration’</emphasis> is
+        applied to parameter estimation approaches c) and d), where the availability of flood data
+        is sufficient to allow a calibration process that compares model results to observed flood
+        data.</para>
+    </section>
+    <section>
+      <title>Types of Calibration Data</title>
+      <para>Types of calibration data are detailed in <xref linkend="b1_ch4"/> and include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Historical changes to topography, land-use, structures and drainage
+            infrastructure;</para>
+        </listitem>
+        <listitem>
+          <para>Records (photographs) of bed, bank and floodplain vegetation levels to assist with
+            interpretation of roughness and provide record of prevailing conditions;</para>
+        </listitem>
+        <listitem>
+          <para>Rainfall records (daily and pluviograph records), including in adjacent
+            catchments;</para>
+        </listitem>
+        <listitem>
+          <para>Gauged water level hydrographs, rating curves and derived flow hydrographs at
+            streamflow gauge sites;</para>
+        </listitem>
+        <listitem>
+          <para>Streamflow gauging at gauge sites and over the side of bridge structures (rare, but
+            useful);</para>
+        </listitem>
+        <listitem>
+          <para>Tidal level records if in a tidal area;</para>
+        </listitem>
+        <listitem>
+          <para>Flood mark levels, location and measure of reliability. For example, debris marks,
+            watermarks on/in buildings;</para>
+        </listitem>
+        <listitem>
+          <para>Descriptive anecdotal information and past reports of flood behaviour in
+            general;</para>
+        </listitem>
+        <listitem>
+          <para>Observations of the rate of rise of flood waters and the time of peak;</para>
+        </listitem>
+        <listitem>
+          <para>Photographs or videos of historical floods;</para>
+        </listitem>
+        <listitem>
+          <para>Records or observations on water speeds and/or flow patterns;</para>
+        </listitem>
+        <listitem>
+          <para>Records of blockage at hydraulic structures such as culverts and gully traps;</para>
+        </listitem>
+        <listitem>
+          <para>Records and photography of the extent of inundation, noting the time of the photos;
+            and</para>
+        </listitem>
+      </itemizedlist>
+      <para>Information on road/railway closures.</para>
+      <sidebar>
+        <para>A flood occurred whilst calibrating a model. One of the local landowners phoned and
+          asked if there was anything he could do? Make as many flood marks as you can, and if
+          possible try to record when the marks were made. The local diligently went round hammering
+          nails into trees until the flood peaked. After several weeks trying to calibrate to this
+          fantastic data set, the practitioners were desperate, and visited the landowner. The model
+          is always showing much higher levels than you’ve recorded. After a while the landowner
+          took them over to the creek bank and showed them a levee hidden amongst the trees. Don’t
+          tell anyone he says, as I’m not sure if it’s legal. In the end he agreed to have it
+          surveyed, and lo and behold the model calibrated beautifully!</para>
+      </sidebar>
+    </section>
+    <section>
+      <title>Anecdotal Information</title>
+      <para>While sourcing the observed flood data, it is important to also source descriptive or
+        anecdotal information. This information can be just as valuable in the calibration process,
+        especially where the observed data are scarce. Anecdotal information is best sourced
+        through:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="italic">Discussions with Local Residents on their Recollections and
+            Observations </emphasis>
+          - For example, they may have experienced a flood event and have noted features such
+            as flow directions, water speeds and the timing of the flood’s rise and fall. This
+            information can be valuable to help check that the model’s representation of flow
+            behaviour is realistic; and</para>
+        </listitem>
+        <listitem><para><emphasis role="italic">Information From Stakeholders</emphasis> - For example, a road
+          or railway authority may be able to advise how frequently a crossing is inundated and/or for
+          how long. While this may not provide event specific observed data, it could be useful as to
+          whether the model is in the right general area of performance.</para></listitem>
+      </itemizedlist>
+      <sidebar>
+        <para>An old timer recalled how his grandfather remembered a large flood in the 1860s that
+          broke across a ridge in two locations. Today, this would isolate the hospital and be a
+          significant flood risk to homes. The 1% AEP flood did not show this flood behaviour,
+          however, when the 0.2% AEP event was run, these floodways developed. This helped convince
+          the old timer that the modelling was good, and the local council incorporated these
+          floodways into their flood risk management planning.</para>
+      </sidebar>
+      <sidebar>
+        <para>During a resident survey a local shop owner took the practitioner to look at a tree.
+          “See that fork up there; well that was where a pig got stuck.” Fortunately, the modelling
+          for that event showed flooding to that height, and was proof to the local that the model
+          was “doing the right thing”.</para>
+      </sidebar>
+      
+     
+    </section>
+    <section>
+      <title>Range of Flood Data</title>
+      <para>Calibration of flood models requires observed flood data (<xref linkend="b1_ch4"/>) and
+        generally data for several different flood events is needed. Application with data only from
+        a single flood event means that there is less confidence in the calibration when
+        extrapolating to design flood applications, especially considering that there may be errors
+        in the data from the single event and this cannot be checked for consistency with
+        others.</para>
+      <para>It is therefore desirable to have data for more than one flood event available for
+        calibration, and hopefully several floods where a range of conditions is covered. Having
+        floods of different magnitudes so that the flooding covers in-bank and floodplain flows and
+        where flooding occurs in different seasons and with different rainfall distributions and
+        catchment conditions will build confidence in the model performance. Successful calibration
+        on a wide range of calibration events means that the model can be extrapolated to a wider
+        range of design flood situations confidently.</para>
+    </section>
+    <section>
+      <title>Hydrologic and Hydraulic Models</title>
+      <para>The use of catchment modelling systems for design flood estimation generally involves
+        two applications, namely the hydrologic and hydraulic components.</para>
+      <para>The hydrologic component, which is the model used to calculate flood peak discharges or
+        flood hydrographs, is the more critical of the two, as any errors from hydrologic modelling
+        will also transfer to the hydraulic modelling component. Calibration of the hydrologic model
+        requires recorded flood flows, and these generally require a streamflow gauge. Availability
+        of a streamflow gauge measuring discharges is less common than having flood level
+        observations which may be provided by local residents and other non-experts. In some cases
+        observed flood levels can be converted to flood flows by application of a stage-discharge
+        relationship derived by a theoretical method (<xref linkend="b1_ch4"/>), but this introduces
+        another level of uncertainty into the calculation of discharge. The hydrologic model should
+        be calibrated to ensure that the model can calculate flood flows to match the recordings.
+        Calibration of hydrologic models must consider the accuracy of the recorded data and the
+        consistency between different observations. These issues are discussed further below.</para>
+      <para>The hydraulic modelling process involves setting relevant parameters so that the
+        modelled flood levels or flood hydrographs match the observed data. Observed flood levels
+        are more commonly measured than flood discharges so there is often more extensive data.
+        However, flood levels may be matched with a hydraulic model where the calculated discharges
+        and hydraulic model parameters (primarily hydraulic roughness) are both incorrect and the
+        errors compensate. While this is not necessarily a problem for the actual historical flood
+        used for calibration, this can lead to significant errors when using the model for design
+        applications over a larger range of flood events.</para>
+      <para>In many cases though, the hydrologic and hydraulic models may be calibrated together,
+        ie. Joint calibration. In this situation, there may be observed flood levels but no recorded
+        discharges, and the parameters for both the hydrologic and hydraulic models are adjusted
+        together and the discharge determined such that the final flood levels are matched. As with
+        the calibration of hydraulic models, this situation may lead to compensating errors in the
+        two models, and the calibration may appear reasonable but the compensating errors mean that
+        flood estimation for floods of different magnitude may be significantly in error. The
+        compensating errors mean that the flood discharge is too low and the roughness is too high
+        and the flood levels match, or the opposite.</para>
+    </section>
+    <section>
+      <title>Selection of Calibration Events</title>
+      <para>Prior to collecting and analysing all data for a calibration exercise, suitable historic
+        events need to be identified and selected. The practitioner should primarily consider
+        the:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Amount, type and quality of suitable data available for each event; and </para>
+        </listitem>
+        <listitem>
+          <para>Magnitudes of the events as to whether they are of a similar size to that of the
+            primary design events. </para>
+        </listitem>
+      </itemizedlist>
+      <para>Each calibration event must have sufficient historic flood observation and reliable
+        topographic information and boundary data at the time of the flood. Often this means that
+        events used for calibration are relatively recent, as the data sets are likely to be more
+        complete. Larger floods that may have occurred longer ago may not be suitable for
+        calibrating to due to the lack or scarcity of key data sets.</para>
+      <para>Calibration events should ideally also span the magnitude range of the intended design
+        events with a preference for the more important design floods (eg. 1% Annual Exceedance
+        Probability event). This instils confidence in the ability of the model to replicate flow
+        behaviour over the full range of event magnitudes. For example, a frequent flow event that
+        is confined to the channel and drainage infrastructure will have a substantially different
+        behaviour to a rare flood event that has broken the banks and is flowing overland. If the
+        model has only been calibrated to the in-bank flow magnitude, confidence in its ability to
+        replicate overland flow will be lower.</para>
+      <para>For tidal sections of a flood model, a tidal calibration is a useful additional
+        calibration step, and is particularly recommended where storm tide inundation and
+        interaction with catchment flooding is important. Tidal calibration data often exists, or
+        can be readily measured, and is usually an accurate data set. It also provides a check that
+        the model can reproduce any tidal amplification.</para>
+      <sidebar>
+        <para>The 1998 flood in Katherine was larger than a 1% AEP event. There were extensive water
+          level measurements taken throughout the town, many photographs and videos and the flood
+          discharge was gauged at the gauging station. Therefore, the data available for calibration
+          at Katherine for this event could be regarded as ideal: a large recent event with a
+          reliable and extensive dataset.</para>
+      </sidebar>
+    </section>
+    <section>
+      <title>Calibration Processes</title>
+      <para>The calibration process for flood models involves the adjustment of model parameters so
+        that the model results match the recorded data. This process can proceed in one of several
+        ways, though often a combination of different approaches is most effective.</para>
+      <para>When there is good quality data, there are automatic calibration algorithms that follow
+        a defined search procedure to result in an “optimum” parameter set. While in theory, this
+        procedure can result in a good quality parameter set with a minimum of effort, this approach
+        is not as straightforward as first impressions indicate. The first step is to define an
+        objective function that must be minimised for the optimisation. This may be minimising the
+        root mean square error for the differences between observed and modelled flows. While this
+        function may lead to a generally overall reasonable result, it may be more important to
+        concentrate on high flows for example (a common requirement for flood studies), the rising
+        limb of flood hydrographs (required for flood forecasting) or hydrograph volumes and shape
+        (commonly needed for floodplains with extensive floodplain storage). These secondary details
+        are often equally important and it is generally found that a purely automatic optimisation
+        procedure does not converge to the optimum parameter set for a particular application,
+        unless the objective function of the optimisation procedure has been carefully
+        chosen.</para>
+      <para>Automatic parameter optimisation routines do not necessarily include an understanding of
+        model processes and, if the objective function is not well selected, the optimisation may
+        not represent the particular model application and produce realistic parameters. Manual
+        parameter optimisation is the situation where the practitioner can vary model parameters
+        based on the results of earlier model runs to progressively adjust model performance, and to
+        incorporate an understanding of the model and catchment processes and the required model
+        application.</para>
+      <para>Automatic optimisation procedures provide an approach for parameter estimation that in
+        some situations can result in a good fit to the calibration data. However, in large and
+        complex models there are usually many parameters, some of which only influence the model
+        performance in particular circumstances. These automatic procedures may result in
+        unrealistic parameter values and the performance outside the calibration range depends to a
+        large extent on the objective function chosen for optimisation. Many objective functions
+        will focus on the rarer floods while baseflow and frequent floods are poorly represented.
+        These other details of the streamflow pattern are often important and it is difficult to
+        find an objective function that can operate for all of the different conditions that may be
+        needed.</para>
+      <para>Because of this, the most appropriate means of model parameter estimation should involve
+        both automatic and manual parameter estimation where the modeller uses experience and
+        understanding to estimate parameters appropriate for the particular application and the
+        automatic procedures can refine and polish the optimisation.</para>
+      <para>Calibration, especially for large and complex models, may require a long process and
+        tests on a large number of parameter combinations and variations. In this situation (which
+        is common, except for the most simple situations) it is important that the practitioner
+        maintains a log of calibration tests so that the impact of parameter changes can be
+        understood and the calibration can proceed without retracing previous calibration
+        tests.</para>
+    </section>
+    <section>
+      <title>Objective Function for Calibration</title>
+      <para>When a hydrologic or hydraulic model is being calibrated, the objective is to match the
+        model results to observed data, but there are different ways of measuring the quality of the
+        model fit.</para>
+      <para>A common application is to fit the model results to observed flood levels or flood
+        hydrographs. Obviously, the objective is to fit the observations as closely as possible.
+        However, the model will often show that it is over-estimating for some points and
+        under-estimating for others or one flood may be consistently over-estimated while another is
+        consistently under-estimated.</para>
+      <para>The aim therefore should be to provide the best “overall” match, though this is hard to
+        define. Points to consider are that there should not be any consistent error, there should
+        be some recorded points above the model results and some below and points of lower accuracy
+        should not be weighted as heavily as those regarded of high accuracy. Estimates of rare
+        design floods are most often required for flood studies, so the optimisation should normally
+        be weighted towards the larger calibration events.</para>
+      <para>In most situations, flood peak levels are the most important objective, but in some
+        cases, the hydrograph shape or flood volume may be of as much significance as the flood peak
+        levels, so the model application must be considered when deciding on the objective
+        function.</para>
+      <para>The objective function may be a mathematical parameter, such as minimising the sum of
+        squares of the errors, or the function may be based more simply on fitting “by eye”, where
+        judgement can be used to determine the quality of fit for different features of the observed
+        flood record. There is a place for both of these approaches, even in a single
+        application.</para>
+      <para>The calibration is assisted when the practitioner has a good understanding of the model
+        processes and the influence of all parameters in the model. Knowledge of which parameters
+        are most influential, and the influence of each parameter on different aspects of the flood
+        process, is important in ensuring that the model parameters are maintained with realistic
+        values and that efforts are not wasted working on insensitive parameters. Models with
+        multiple parameters will usually exhibit interaction between the parameters so that it is
+        possible that a similar calibration performance is achieved with different parameter sets.
+        With incorrect parameter combinations, while the calibration performance may be similar,
+        there are likely to be major differences in the design application results when the model is
+        applied to conditions outside the range used for calibration. It is important therefore to
+        have an understanding of the model operation and the relationship between parameters and
+        physical characteristics to help keep parameters within reasonable bounds, especially when
+        considering interactions between parameters.</para>
+      <para>Therefore a single objective function cannot be recommended for all model calibrations,
+        a variety of methods will be applicable for particular applications.</para>
+    </section>
+  </section>
+  <section>
+    <title>Data Issues</title>
+    <section>
+      <title>Overview</title>
+      <para>When calibrating models for flood analysis, the first point is the assessment of the
+        available data. Clearly maximising the quantity of data used for calibration will be a
+        priority. However the data should be accurate and consistent or the calibration process may
+        be impossible or it may lead to an incorrect model application and the catchment modelling
+        system will be impossible to apply in practice. It is important to be aware that the flood
+        estimation models need to be applied to practical problems, and the focus of model
+        calibration is not just the preparation of a model that is well calibrated to the available
+        flood data. Application of the model to the design requirements must be the primary focus,
+        and the calibration must be prepared to the extent needed to have confidence in the design
+        application.</para>
+      <para>While it is important to critically review the quality of the data available for
+        calibration, it is also important to carefully review all available data and maximise the
+        information available in this data to ensure the best possible calibration process. Formal
+        data collection programmes are an immediately obvious source, but all available information
+        should be examined. For example, old historic records from newspapers may be available to
+        give an indication of major historic floods from before official records are available.
+        These old records though do need careful study, since the survey datum may be hard to
+        identify but some “detective” work can yield valuable information.</para>
+      <para>Careful review of the quality and properties of the data being applied for calibration
+        is essential to ensure that it is appropriate and that the practitioner has a good
+        understanding of the availability and applicability of the data. This is especially
+        important for older historic data. Issues can include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The datum used for level survey where older data may use a different datum or two
+            sets of survey data may be to two different datums;</para>
+        </listitem>
+        <listitem>
+          <para>Streamflow gauge records of water levels are often measured to a local datum, which
+            may be difficult to relate to topographic data;</para>
+        </listitem>
+        <listitem>
+          <para>Stream channels may scour or silt up over time so current conditions may be
+            different from those when the flood records were collected; and </para>
+        </listitem>
+        <listitem>
+          <para>Floodplain roughness may vary with time, for example, sugar cane fields may be bare
+            ground or very dense sugar cane depending on the time of year when the flood
+            occurs.</para>
+        </listitem>
+      </itemizedlist>
+      <para>Many types of informal data collection can assist in ensuring that model calibration is
+        as accurate as possible, and these are discussed in <xref linkend="b1_ch4"/>, where the
+        value of data in all types of flood estimation is identified.</para>
+    </section>
+    <section>
+      <title>Changes to Catchment Conditions</title>
+      <para>The catchment condition data used in a model platform is typically that of the current
+        day. This is due to the fact that an airborne and infrastructure survey is usually
+        undertaken close to study commencement. In using this current day dataset, there are a
+        number of potential calibration issues that the practitioner needs to consider.</para>
+      <para>As described in <xref linkend="b1_ch4"/>, catchment conditions at each of the relevant
+        historic calibration/verification periods must be established and used in the model. Changes
+        to conditions that may affect flood behaviour include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>dam construction;</para>
+        </listitem>
+        <listitem>
+          <para>changes to initial dam storage levels and/or operations;</para>
+        </listitem>
+        <listitem>
+          <para>dredging or siltation of river entrances;</para>
+        </listitem>
+        <listitem>
+          <para>levee construction or raising;</para>
+        </listitem>
+        <listitem>
+          <para>road/railway raising or duplication;</para>
+        </listitem>
+        <listitem>
+          <para>new road/railway embankments;</para>
+        </listitem>
+        <listitem>
+          <para>new culverts or bridges;</para>
+        </listitem>
+        <listitem>
+          <para>upgraded drainage networks;</para>
+        </listitem>
+        <listitem>
+          <para>development on the floodplain;</para>
+        </listitem>
+        <listitem>
+          <para>different crop types or growth stage;</para>
+        </listitem>
+        <listitem>
+          <para>changes in stream bed and bank profiles; and</para>
+        </listitem>
+      </itemizedlist>
+      <para> changes to vegetation including seasonal variations.</para>
+      <sidebar>
+        <para>The last major river flood in one coastal area occurred in 1974 and resulted in
+          extensive inundation of the floodplains. At this time, the floodplain was mostly utilised
+          as grazing land. That land is now developed with extensive canal and flood mitigation
+          works. While model calibrations for these rivers must rely on data from the 1974 flood,
+          the drastically changed conditions mean that calibration results must be treated with
+          appropriate caution.</para>
+      </sidebar>
+      <sidebar>
+        <para>A 2D model was constantly producing flood levels that were too low in the upper tidal
+          reaches of one branch of a coastal river. However, modelled flood levels matched recorded
+          well in all other locations. Not even extremely high Manning's n values would lift
+          modelled levels to those recorded. It was initially suspected that the recorded levels
+          were erroneous, but this was proved incorrect when the recorded flood levels were
+          independently resurveyed and found to be accurate. It was later revealed by a long term
+          resident that a weir that had been installed to prevent saline water penetrating upstream,
+          had never been completely removed and was still controlling flows. Once this partial weir
+          was included in the model, a good fit was obtained with the same parameters used elsewhere
+          in the model.</para>
+      </sidebar>
+    </section>
+  </section>
+  <section>
+    <title>Acceptance of Calibration</title>
+    <para>When calibrating model parameters an important decision is to determine when the
+      calibration is acceptable and when further refinement cannot be justified. There is often a
+      temptation to continue to refine model parameters beyond what can be justified by the
+      available data, which may be a lengthy process that does not lead to any improved performance
+      in model application.</para>
+    <sidebar>
+      <para>It is far more important to understand why a model may not be calibrating well at a
+        particular location than to use unrealistic parameter values to ‘force’ the model to
+        calibrate.</para>
+    </sidebar>
+    <para>Considerations in the decision on when calibration can be accepted are:</para>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis role="italic">Accuracy of Calibration Data </emphasis>
+        - The quality of calibration will depend on the assessed accuracy of the calibration
+          data (refer to section on Data Issues above). For example, if the calibration of a
+          hydraulic model is based on flood levels from observed debris marks, these levels may not
+          be more accurate than ± 300 mm, so working towards matching a number of levels to a higher
+          level of accuracy cannot be justified. Even where there is a streamflow gauge located on
+          the catchment, the quality of the measured discharge will depend on the quality of the
+          rating curve, which could cause quite significant inaccuracy in this measured data.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Representativeness of Calibration Data</emphasis>
+         - Calibration data may not be representative of the floods required for application
+          of the model. For example, it is often the case that calibration floods are relatively
+          frequent while design applications require much rare floods. In this case, the value of
+          refining the model calibration extensively to the frequent floods cannot be justified,
+          since the significant extrapolation of the model means that the parameters may not be
+          justified.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Number of Calibration Events</emphasis>
+         - The quality of calibration depends on the representativeness of the data and an
+          important factor in this area is the number and range of events with suitable calibration
+          data. In some cases, there may be only a single frequent flood event available for
+          calibration and in this case, the quality of calibration will be poor especially where the
+          model must be extrapolated to rare design events. When a model can be calibrated to
+          several different flood events of a range of sizes and covering a range of different
+          conditions (such as rainfall distribution or season), the resulting model can be applied
+          with much more confidence than is possible where the data is limited.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Model Response and Catchment Consistency</emphasis>
+         - The calibration of models relies on the available data and the estimated parameters
+          are based on the data used to estimate the parameters. However, the catchment conditions
+          that applied during model calibration, especially if rare historic floods have occurred,
+          may not be completely representative of conditions required for design applications.
+          Because of this the model parameters required for design should be “generic” parameters
+          based on the calibration but applicable for the design application. The exact catchment
+          conditions for design applications may not be consistent with the particular conditions
+          that applied for the calibration process. For example, vegetation coverage on a floodplain
+          or the channel conditions in water courses will vary from time to time, so the conditions
+          that applied for a single calibration flood event may not be representative of long term
+          average conditions. Parameter values therefore must be modified to account for the
+          expected future design conditions, rather than an unrepresentative calibration
+          event.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Consistency of Data</emphasis>
+         - Review of data may indicate that the recorded data is inconsistent. For example,
+          recorded flood levels for two different floods may be impossible to model with the same
+          parameter set. There are several possible reasons for this possibility. For example, the
+          recordings may be inaccurate, the catchment or floodplain may have changed between flood
+          events or the model may be inappropriate for the analysis required. The effort should then
+          be concentrated on resolving the source of the inconsistency rather than pursuing further
+          calibration.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Requirements for Model</emphasis>
+         - The calibration acceptance may vary depending on the application required. For
+          example, if the model is required for a bridge design, the calibration is only really
+          critical for the bridge site, but model performance over a wider extent of the catchment
+          is needed for floodplain planning. Also if the model is required for assessment of
+          frequent floods, the performance for major overbank flooding is not as relevant so poor
+          performance for these events is not a serious concern.
+      </para></listitem>
+      <listitem>
+        <para>
+        <emphasis role="italic">"Overfitting"</emphasis>
+         - This is the process where the model calibration process is taken to an extreme,
+          and the model parameters are extended to possibly unrealistic values and can vary
+          unrealistically throughout a catchment or floodplain to ensure that the model fit is close
+          for all data points and all events. This situation may result when there are unrealistic
+          calibration acceptance criteria adopted for the project and the only way of meeting the
+          criteria is by an extreme and unrealistic parameter set. While the resulting model
+          calibration may appear to be high quality and does meet calibration performance criteria,
+          the resulting model parameters will not improve the performance of the model for
+          extrapolation to the design situation.</para>
+      </listitem>
+    </itemizedlist>
+    <sidebar>
+      <para>It is extremely rare that a flood model will fit all data well. This usually means one
+        of the following: </para>
+      <para>1. The model has been overfitted to the data with unrealistic parameter values;
+        and</para>
+      <para>2. Some of the data that does not fit well, has been ignored and not presented.</para>
+      <para> It is extremely unlikely that your simple model is perfectly representing the complex
+        real world well, all your data has been collected without error, or is unaffected by local
+        factors.</para>
+    </sidebar>
+    <para>For these reasons, it is difficult to define an acceptance criterion for model calibration
+      and the quality of calibration may vary depending on particular conditions. It is important
+      though to consider all the issues covered here when deciding on calibration performance.
+      Unrealistic calibration criteria do not lead to an improvement in model design applications so
+      the criteria need to be tailored for the particular application and local situation.</para>
+    <para>The quality of calibration depends on the quality of the data applied so the model
+      application and results should consider this in interpretations of model results.</para>
+    <para>It is recommended that specifications for flood studies should not be prescriptive in
+      defining calibration criteria, but should aim for realistic and applicable criteria.</para>
+    <para>It is important to note that a calibration process may not always result in a parameter
+      set that is suitable for application to design conditions, and it is always necessary to
+      approach calibration data critically. In these cases, the calibration process must be
+      supplemented with other information such as regional parameter estimates as discussed in <xref
+        linkend="b7_ch6"/>.</para>
+    <para>Sensitivity testing of inputs and parameter values is a good way of understanding and
+      resolving the importance of the input/parameter on the model’s calibration results. This is
+      discussed further in <xref linkend="b7_ch7"/>.</para>
+    <sidebar>
+      <para>Following a large flood event that occurred in 1984, Council organised the survey of
+        over 400 peak flood marks across the floodplains of the affected catchment. These were
+        primarily flood debris marks. Prior to model calibration, Council specified that the
+        calibration criteria was for modelled peak water levels to be within 300mm of recorded.
+        However, calibration was accepted with 50% of points meeting this criterion in recognition
+        of significant proven uncertainties in debris mark levels and some of the model
+        inputs.</para>
+    </sidebar>
+    <sidebar>
+      <para>When calibrating a model to peak flood levels for one historic event, a good match
+        between modelled and observed was obtained for all levels with the exception of the one
+        recorded by the most upstream automatic gauge. The datum of the offending gauge was checked
+        and no problem was found. In order to match this gauge, Manning's n values needed to be set
+        at values that were outside the normal range and very different to elsewhere in the model.
+        In addition, the peak level at this gauge looked out of place on a longitudinal plot of the
+        river profile. Despite a strong desire to have the model calibrate well to this one gauge
+        level, the client accepted the practitioner’s advice that confidence in the accuracy of the
+        observed level was low and it would be compromising the model to fit the data. Not long
+        after the study was complete, a larger flood occurred and the model fitted all gauge data
+        very well, including the troublesome gauge. It was concluded that something had gone wrong
+        with the automatic gauge in the earlier event.</para>
+    </sidebar>
+    <section>
+      <title>Matching Timing and Magnitude</title>
+      <para>Ideally, a model is calibrated to observed water level marks and hydrographs. Observed
+        marks are usually at the flood peak and often spread throughout the model domain.
+        Calibrating to these marks shows that the model is capable of reproducing the peak water
+        level distribution. However, especially if the model only covers a small extent of the
+        overall river/creek system, this does not necessarily mean that the model is well
+        calibrated. </para>
+      <para>Also, fundamental to a good calibration is the demonstration that the model reproduces
+        the timing of flood events. This may be achieved through calibrating to recorded water level
+        hydrographs (if available), and to observations by locals (eg. “the flood peaked around
+        midday”). Water level hydrographs give the added benefit of showing whether a model is
+        reproducing the shape (rise and fall) of the flood. </para>
+      <para>Calibrating to information on the timing of the flood shows that the flood dynamics are
+        being reproduced, and this only occurs if the model’s input data and schematisation are
+        satisfactory, parameter values are within typical ranges, the software is suited to the
+        application, and most importantly, the hydrologic method is also reproducing the correct
+        timing. The latter is particularly important when it comes to calibrating a hydraulic model.
+        If the hydrologic method is inaccurate with respect to timing and/or magnitude, satisfactory
+        calibration of the hydraulic model will be difficult, if not impossible. For this reason,
+        jointly calibrating the hydrologic and hydraulic modelling is always recommended.</para>
+      <para>If parameters such as hydraulic roughness are outside standard values, the calibration
+        may be “acceptable” for that particular event, but will very likely be compensating for
+        inaccuracies in the hydrologic modelling, input data and model schematisation. In this case,
+        the “calibrated” model is not suited to representing floods of smaller or larger size than
+        the calibration event, and will be of limited use.</para>
+      <para>It is important to note that should flow/discharge hydrographs exist for a study area,
+        the flows are not “recorded” but “derived”. A rating curve is used to convert the water
+        levels recorded by the stream gauge into flows. Details on this process and its limitations
+        are provided in <xref linkend="b1_ch4"/>. However, it is worth reiterating that the
+        reliability of discharge data is limited by the number and quality of manual gaugings
+        undertaken at the site, the extent of extrapolation beyond the highest gauging of the rating
+        curve and the means by which the rating curve is developed by the hydrographer. In
+        undertaking a calibration using flow discharge hydrographs, it is essential to consider the
+        quality and reliability of the rating curve used to derive the flows. Inaccurate rating
+        curves produce inaccurate flows that will potentially mislead the practitioner into using
+        inappropriate parameter values.</para>
+    </section>
+  </section>
+  <section>
+    <title>Ungauged Catchments</title>
+    <para>The model calibration processes discussed in this chapter apply when there is data (of
+      varying levels of completeness and accuracy) to assist in the calibration. However in many
+      cases, if not most, calibration data is either totally lacking or limited to sparse anecdotal
+      information on flooding. The term ‘ungauged catchment’ here is meant to include also flooding
+      areas with no or only very limited flood level observations. In these situations, the model
+      parameters must be estimated to the best degree possible using what information is available.
+      In these cases, while a complete calibration procedure is not possible, the model parameters
+      can be estimated to some extent by other means, though there will obviously be additional
+      uncertainty compared to the situation when there is adequate calibration data.</para>
+    <para>While many applications are required on totally ungauged catchments, it is common to have
+      at least some minimal records of flooding available. The minimal descriptive data availability
+      is discussed further in <xref linkend="b1_ch4"/>, but where there is some anecdotal data, the
+      parameter determination process must use this data to at least ensure that the model
+      performance is consistent with this minimal data even if the data is insufficient to provide a
+      calibration.</para>
+    <para>An important issue with the estimation of parameters for ungauged catchments is that the
+      methods rely on transfer of parameter values from neighbouring catchments. The methods
+      therefore rely on the assumption that the catchments used to estimate parameters are
+      sufficiently similar to the catchment being analysed. It is important to carry out as many
+      checks as possible to confirm that this is the case, but there will always be some
+      uncertainty.</para>
+    <para>There are several different methods of estimating model parameters for ungauged
+      catchments.</para>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis role="italic">General Guidance</emphasis>
+         - Published documentation, including user guides for particular modelling platforms
+          as well as textbooks and research publications, provide guidance for estimating parameters
+          for ungauged catchments. These include advice on Manning’s n values for example which is
+          widely available in textbooks and manuals. However many modelling platforms provide
+          general guidance and in some cases, user forums can be of assistance.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Regional Relationships</emphasis>
+         - These are developed for particular model parameters and for particular regions. For
+          example, there are published relationships for runoff-routing parameters which are related
+          to catchment area, for several regions of Australia. In some cases, specific regional
+          relationships are developed for particular project areas from limited data and then
+          adopted for the whole project area.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="italic">Transfer from Neighbouring Catchments</emphasis>
+         - This is a special case of the regional relationship type approach. If the catchment
+          being analysed is not gauged but there is a neighbouring gauged catchment that has similar
+          characteristics, it is possible to calibrate a model on the neighbouring catchment and
+          then transfer the parameters across perhaps with adjustments for the known differences,
+          such as catchment area. There is a risk in this case that the neighbouring catchment may
+          appear superficially similar, but may have a quite different catchment response.</para>
+      </listitem>
+    </itemizedlist>
+    <para>The principal issue with parameter estimation for ungauged catchments is to use whatever
+      data may be available, no matter how poor quality this may be, understand the physical
+      processes represented by the models to ensure that the parameters are realistic, and to use
+      regional relationships and information from neighbouring catchments to the maximum extent
+      possible. The uncertainty in the resulting model operation must be considered in any model
+      application for ungauged catchments, since this will be greater than would be the case for a
+      well gauged catchment.</para>
+  </section>
+  <section>
+    <title>Adopted Parameter Set</title>
+    <para>The ultimate requirement for model parameter determination is to apply the calibrated
+      model to certain design situations, as discussed further in <xref linkend="book8"/> of this
+      book. However some comments are provided here to give advice on the final step of the
+      calibration process where the parameters resulting from the calibration process and from other
+      sources of parameter estimates are accepted and reviewed further in a validation process
+        (<xref linkend="b7_ch7"/> of this book) and then applied to design.</para>
+    <para>Often the calibration process will result in different parameter sets applying for
+      different calibration events.</para>
+    <para>In general, this is not allowable, since a single parameter set will be required for
+      application so after completing calibration on a number of different flood events, the
+      calibration process must continue to calculate a single parameter set to best fit all of the
+      available data. Therefore a procedure is needed to select a representative parameter set for
+      application to the design situation.</para>
+    <para>The simplest approach would be to “average” the parameters, which will result in
+      parameters that are representative, but may not result in a model that “averages” performance.
+      An alternative approach to simple averaging would be to average them with a weighting towards
+      the rarer floods. It is also possible to adopt the parameter set that has been estimated from
+      the historic flood that is most similar to the design flood requirements, which may be the
+      largest flood event.</para>
+    <para>Whichever technique is adopted to interpret the calibration results and adopt parameters
+      for a design application, these adopted parameters should then be used with the model on all
+      of the design flood events to confirm the performance for all the data. The results from this
+      should show at least a reasonable performance for all of the calibration flood events and no
+      bias in the results, that is the calibration on all historic floods should not be all under-
+      or over-estimations.</para>
+    <para>It is desirable to compare the adopted parameter set from the calibration events with
+      parameter estimates from catchments and flooding areas with similar characteristics and with
+      parameter values obtained from regional parameter estimation procedures. If there are any
+      significant discrepancies between the parameter estimates from different sources, the possible
+      reasons should be investigated and the final parameter selection decision made in the light of
+      the findings from these considerations.</para>
+    <para> Once the calibration has been accepted, the model should then be transferred to the
+      validation phase, where the parameters are confirmed and determined to be available for
+      application.</para>
+  </section>
 </chapter>

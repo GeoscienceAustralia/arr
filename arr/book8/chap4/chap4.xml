@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch4" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <info>
+    <title>Estimation of Rainfall Excess for Very Rare to Extreme Events</title>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+  <section xml:id="b8_s_gqxjb">
+    <title>General Considerations</title>
+    <para>A loss model is needed to partition the design rainfall input into rainfall excess
+      (runoff) and loss. General guidance on loss modelling for the types of loss models used in
+      common practice is provided in <xref xmlns:xlink="http://www.w3.org/1999/xlink"
+        linkend="b5_ch5"/>.<?oxy_comment_start author="retallick" timestamp="20160602T184453+1000" comment="needs to refer to book 5 chapter 3 now
+"?>
+      <?oxy_comment_end?>The following considerations and guidelines focus specifically on aspects
+      of loss estimation related to the estimation of Very Rare to Extreme floods. The guidance is
+      applicable to simulations undertaken using both deterministic and stochastic
+      frameworks.</para>
+    <para>The specific recommendations in <xref linkend="b8_s_kprjg"/> apply to loss parameters for
+      the Initial Loss – Continuing Loss (IL-CL) model<emphasis role="italic">,</emphasis> as a
+      large body of relevant experience has been accumulated over many years. However, other loss
+      models may be used if they can be shown to be more appropriate in the specific
+      situation.</para>
+    <section xml:id="b8_s_5cenz">
+      <title>Importance of Design Losses – Very Rare to Extreme Events</title>
+      <para>Like temporal patterns of storm
+        <?oxy_comment_start author="retallick" timestamp="20160602T184706+1000" comment="do you need the word storm here
+"?>rainfall<?oxy_comment_end?>,
+        design losses are highly variable and can have an appreciable impact on both the
+        peak<?oxy_insert_start author="retallick" timestamp="20160602T184719+1000"?>
+        flow<?oxy_insert_end?> and volume of the resulting flood. A given rainfall occurring on a
+        dry
+        <?oxy_delete author="retallick" timestamp="20160602T184742+1000" content="watershed "?><?oxy_insert_start author="retallick" timestamp="20160602T184742+1000"?>catchment
+        <?oxy_insert_end?>produces a significantly smaller flood than the same rainfall occurring on
+        a wet
+        <?oxy_comment_start author="retallick" timestamp="20160602T184804+1000" comment="i dont think watershed has been used elsewhere"?><?oxy_delete author="retallick" timestamp="20160602T184748+1000" content="watershed"?><?oxy_insert_start author="retallick" timestamp="20160602T184748+1000"?>catchment<?oxy_comment_end?><?oxy_insert_end?>.
+        For more frequent events, loss may be the most important factor. Joint probability
+        approaches (e.g. <citation>b8_c_r80</citation>)
+        are<?oxy_delete author="retallick" timestamp="20160602T184846+1000" content=" better"?> able
+        to deal with the high variability of design
+        losses<?oxy_insert_start author="retallick" timestamp="20160602T184851+1000"?> better
+        than<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T184910+1000" content=" as, in contrast to"?>
+        the design event approach,
+        <?oxy_insert_start author="retallick" timestamp="20160602T184923+1000"?>as
+        <?oxy_insert_end?>they use a probability distribution of loss values, rather than a single
+        ‘representative value’. (‘Representative’ means that the selected design loss values should
+        ensure a ‘probability neutral’ transformation of the design rainfall input of a given AEP
+        into a design flood output of the same
+        AEP<?oxy_delete author="retallick" timestamp="20160602T185004+1000" content="."?>)<?oxy_insert_start author="retallick" timestamp="20160602T185006+1000"?>.<?oxy_insert_end?>
+        However, the impact of the inter-event variability of losses and the relative importance of
+        losses diminishes with decreasing AEP, and for Extreme events it is likely that losses are
+        of lesser importance than temporal patterns. For the estimation of Very Rare to Extreme
+        floods, the use of
+        single-value<?oxy_delete author="retallick" timestamp="20160602T185051+1000" content="d"?>
+        representative design losses may be adequate, though when simulating long duration events
+        for volume-dependent problems it may be appropriate to adopt stochastic approaches as
+        discussed in <xref linkend="b8_s_gncno"/>.</para>
+      <para>For extreme rains and floods, a much greater proportion of a catchment may become
+        saturated during the event than is the case for most floods in the observed range. Also,
+        during extreme rainfalls, vegetation may be stripped from the catchment, thus resulting in
+        an increase in the volume and speed of the overland flow component of runoff
+          <citation>b8_c_r28</citation>. Any evidence relevant to the changed behaviour of the
+        catchment under extreme rainfall conditions should be considered when estimating design
+        losses and the resulting design floods.</para>
+    </section>
+    <section xml:id="b8_s_puo0t">
+      <title>Losses Associated With Design Storms and Design Bursts</title>
+      <para>When considering the adoption of design losses it is necessary to understand the
+        distinction between <emphasis role="italic">design bursts</emphasis> of rainfall, and
+          <emphasis role="italic">design storms</emphasis>. The difference between the two concepts
+        and the implications of the two concepts for the estimation of design losses are explained
+        in <xref linkend="b5_ch5_s_oj30q"/>.<?oxy_comment_start author="retallick" timestamp="20160602T185226+1000" comment="needs to refer to book 5 chapt 3"?>
+        <?oxy_comment_end?>The selection of design loss values must take into consideration the
+        manner in which the design information was derived, and whether the losses are to be applied
+        to design storms or design bursts. More specifically, there is a significant difference
+        between the initial loss values applicable to design storms and <?oxy_comment_start author="retallick" timestamp="20160602T185331+1000" comment="removed to word rainfall to be consistent with earlier in the paraagraph where you just use design burst"?>design<?oxy_comment_end?>
+        <?oxy_delete author="retallick" timestamp="20160602T185255+1000" content="rainfall "?>bursts,
+        and how these loss values can be expected to vary with event magnitude (see <xref
+          linkend="b8_s_wzey8"/>).</para>
+    </section>
+    <section xml:id="b8_s_wzey8">
+      <title>Variation of Loss Values with Event Magnitude</title>
+      <para>Different loss models will behave differently when extrapolated to Extreme events, as
+        they introduce differing degrees of non-linearity into the transfer between design rainfalls
+        and the resulting hydrograph. Thus, even if different loss models are able to reproduce
+        calibration events equally well, adoption of the same loss parameters for derivation of
+        Extreme design floods may produce significantly different design flood hydrographs. For
+        example, a specific set of loss parameters for the
+        <?oxy_delete author="retallick" timestamp="20160602T185419+1000" content="i"?><?oxy_insert_start author="retallick" timestamp="20160602T185420+1000"?>I<?oxy_insert_end?>nitial
+        <?oxy_delete author="retallick" timestamp="20160602T185428+1000" content="l"?><?oxy_insert_start author="retallick" timestamp="20160602T185429+1000"?>L<?oxy_insert_end?>oss
+        –
+        <?oxy_insert_start author="retallick" timestamp="20160602T185432+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185431+1000" content="c"?>ontinuing
+        <?oxy_insert_start author="retallick" timestamp="20160602T185434+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185434+1000" content="l"?>oss
+        (IL-CL) and
+        <?oxy_insert_start author="retallick" timestamp="20160602T185439+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185438+1000" content="i"?>nitial
+        <?oxy_insert_start author="retallick" timestamp="20160602T185441+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185441+1000" content="l"?>oss
+        –
+        <?oxy_insert_start author="retallick" timestamp="20160602T185445+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185445+1000" content="p"?>roportional
+        <?oxy_insert_start author="retallick" timestamp="20160602T185448+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185448+1000" content="l"?>oss
+        (IL-PL) models may yield similar flood peaks for the 1 in 100 AEP design event, but if the
+        same parameters were retained to derive the 1 in 10<superscript>6</superscript> AEP flood,
+        the different loss models would produce markedly different design flood hydrographs. The
+        impact of model structure on the extrapolation of loss parameters for application to Very
+        Rare to Extreme events must thus be carefully considered.</para>
+      <para>The discussion in <xref linkend="b5_ch5_s_oj30q"/> makes it clear that
+        <?oxy_insert_start author="retallick" timestamp="20160602T185606+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185606+1000" content="s"?>torm
+        <?oxy_insert_start author="retallick" timestamp="20160602T185609+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185608+1000" content="i"?>nitial
+        <?oxy_insert_start author="retallick" timestamp="20160602T185612+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185611+1000" content="l"?>oss
+          (IL<subscript>s</subscript>) and
+        <?oxy_insert_start author="retallick" timestamp="20160602T185615+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185615+1000" content="b"?>urst
+        <?oxy_insert_start author="retallick" timestamp="20160602T185618+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185617+1000" content="i"?>nitial
+        <?oxy_insert_start author="retallick" timestamp="20160602T185620+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185619+1000" content="l"?>oss
+          (IL<subscript>b</subscript>) are expected to show a different degree of variation with
+        event magnitude. The two types of initial loss for rural catchments are therefore treated
+        separately in <xref linkend="b8_s_dmjaz"/> and <xref linkend="b8_s_v7t6m"
+        /><?oxy_delete author="retallick" timestamp="20160602T185717+1000" content=" below"?>.</para>
+      <para>The interpretation of <emphasis role="italic"
+          ><?oxy_insert_start author="retallick" timestamp="20160602T185910+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185910+1000" content="p"?>roportional
+          <?oxy_insert_start author="retallick" timestamp="20160602T185913+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185912+1000" content="l"?>oss</emphasis>
+        (PL) as the unsaturated proportion of the
+        <?oxy_comment_start author="retallick" timestamp="20160602T185853+1000" comment="this section explains what PL is after it has been used in an example above without explanation. you would only know what it is if you had read book 5. can we rearrange this section slightly."?>catchment<?oxy_comment_end?>
+        implies that with larger storm events the unsaturated proportion of the catchment is
+        reducing and thus the proportional loss also reduces. As it is difficult to extrapolate the
+        rate of this reduction to Extreme events, the proportional loss model is generally
+        considered less appropriate for estimating Very Rare to Extreme floods. On the other hand,
+        the <emphasis role="italic"
+          ><?oxy_insert_start author="retallick" timestamp="20160602T185917+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185916+1000" content="c"?>ontinuing
+          <?oxy_insert_start author="retallick" timestamp="20160602T185919+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T185919+1000" content="l"?>oss
+          <?oxy_delete author="retallick" timestamp="20160602T185905+1000" content="rate"?></emphasis>
+        (CL) is expected to approach a limiting value for saturated catchment conditions, and this
+        limiting value is the appropriate design loss rate for all events for which the saturation
+        threshold has been exceeded. More detailed discussion of the variation of CL with event
+        magnitude for rural catchments is given in <xref linkend="b8_s_mq2w3"/>.</para>
+      <section xml:id="b8_s_qjbsg">
+        <title>Rural Catchments</title>
+        <section xml:id="b8_s_dmjaz">
+          <title>Storm
+            <?oxy_insert_start author="retallick" timestamp="20160602T190012+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T190012+1000" content="i"?>nitial
+            <?oxy_insert_start author="retallick" timestamp="20160602T190015+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T190014+1000" content="l"?>oss
+              (IL<subscript>s</subscript>)</title>
+          <para>The available evidence to support the conceptual interpretation of loss variation
+            includes the results obtained by <citation>b8_c_r19+1</citation>; these indicated little
+            or no variation of design losses with rainfall severity for events more frequent than 1
+            in 100 AEP. For IL<subscript>s</subscript>, this finding implies little or no
+            correlation between the magnitudes of pre-storm rainfall (producing the storm antecedent
+            conditions) and storm event rainfall for events more frequent than 1 in 100 AEP.</para>
+          <?oxy_comment_start author="retallick" timestamp="20160602T190224+1000" comment="think this information is presented earlier in the book"?>
+          <para>An analysis of the rainfall conditions prior to the largest storms on record in the
+            GSAM region of south-eastern Australia <citation>b8_c_r42</citation> indicated
+            qualitatively no propensity for “greater than normal” rainfall in the 15 days
+            immediately preceding these large storms. The analysis by <citation>b8_c_r42</citation>
+            shows that about 75% of the largest storms on record in south-eastern Australia were
+            preceded by rainfall totals of less than 10% of the depth of the storm. Further, the
+            analysis revealed that the average length of the dry period between pre-storm rainfall
+            and the storms was about 8 days.<?oxy_comment_end?></para>
+          <para>The available evidence thus suggests that there is no need to vary
+              IL<subscript>s</subscript> with event magnitudes up to the largest event on record.
+            Further research is desirable to confirm the applicability of these findings of little
+            or no variation of IL<subscript>s</subscript> with event magnitude to regions outside
+            south-eastern Australia.</para>
+        </section>
+        <section xml:id="b8_s_v7t6m">
+          <title>Burst
+            <?oxy_insert_start author="retallick" timestamp="20160602T190323+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T190322+1000" content="i"?>nitial
+            <?oxy_insert_start author="retallick" timestamp="20160602T190328+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T190325+1000" content="l"?>oss
+              (IL<subscript>b</subscript>)</title>
+          <para>The pre-burst rainfall (the rainfall from the beginning of the complete storm to the
+            start of the design rainfall burst), rather than the pre-storm rainfall, is the key
+            determinant of
+            <?oxy_insert_start author="retallick" timestamp="20160602T190401+1000"?>Burst Initial
+            Loss, <?oxy_insert_end?>IL<subscript>b</subscript>, as it results in different degrees
+            of catchment saturation. IL<subscript>b</subscript> is thus systematically smaller than
+              IL<subscript>s</subscript>; the difference decreasing with increasing burst duration,
+            reflecting a tendency for long duration bursts to represent complete storms. As an
+            increasing storm magnitude is generally also associated with larger pre-burst rainfall,
+              IL<subscript>b</subscript> tends to further decrease with increasing event
+            magnitude.</para>
+        </section>
+        <section xml:id="b8_s_mq2w3">
+          <title>Continuing
+            <?oxy_insert_start author="retallick" timestamp="20160602T190451+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160602T190451+1000" content="l"?>oss
+            (CL)</title>
+          <para>For events of increasing duration and intensity of rainfall, an increasing
+            proportion of the catchment is expected to become saturated, resulting in a reduced
+            catchment average value
+            of<?oxy_insert_start author="retallick" timestamp="20160602T190504+1000"?> Continuing
+            Loss,<?oxy_insert_end?> CL. However, the available evidence from
+              <citation>b8_c_r19</citation><?oxy_insert_start author="retallick" timestamp="20160602T190531+1000"?>,<?oxy_insert_end?>
+            based on catchments located in Victoria and the
+            ACT<?oxy_insert_start author="retallick" timestamp="20160602T190536+1000"?>,<?oxy_insert_end?>
+            indicates no systematic differences in CL for observed events <?oxy_delete author="retallick" timestamp="20160602T190545+1000" content="in the AEP"?><?oxy_insert_start author="retallick" timestamp="20160602T190545+1000"?>between<?oxy_insert_end?>
+            <?oxy_delete author="retallick" timestamp="20160602T190550+1000" content="range from "?>1
+            in 2 to 1 in 100<?oxy_insert_start author="retallick" timestamp="20160602T190552+1000"?>
+            AEP<?oxy_insert_end?>. This can be interpreted to mean that, except in catchments with
+            highly pervious soils, catchment saturation is approached already
+            durin<?oxy_comment_start author="retallick" timestamp="20160602T190640+1000" comment="rare?"?>g
+            moderate to large<?oxy_comment_end?> storm events. Nevertheless, it should be
+            conservatively assumed that only the CL values associated with the largest observed
+            events are representative of design loss rates for Very Rare to Extreme floods.</para>
+        </section>
+      </section>
+      <section xml:id="b8_s_ownd8">
+        <title>Losses for Urban Catchments</title>
+        <para>There is little empirical evidence available on loss values in urban areas that is
+          relevant to the estimation of Very Rare to Extreme floods. As discussed in <xref
+            linkend="b5_ch5"/>
+          <?oxy_comment_start author="retallick" timestamp="20160602T190846+1000" comment="book 5 chap 3"?>it<?oxy_comment_end?>
+          is appropriate to conceptualise urban
+          catchment<?oxy_insert_start author="retallick" timestamp="20160602T190904+1000"?>s<?oxy_insert_end?>
+          as consisting of Effective Impervious Areas (EIA), ‘other areas’ and Pervious Areas.
+          Recognising the dearth of information available, it is considered prudent to recommend
+          loss rates at the lower range of that described in <xref linkend="b5_ch5"
+          /><?oxy_insert_start author="retallick" timestamp="20160602T190939+1000"?> for Very Rare
+          to Extreme
+          floods<?oxy_insert_end?>.<?oxy_comment_start author="retallick" timestamp="20160602T190933+1000" comment="book5 chapt 3"?></para>
+        <?oxy_comment_end?>
+      </section>
+    </section>
+    <section xml:id="b8_s_hhyv3">
+      <title>Variation of Design Losses with Season</title>
+      <para>There is clear evidence that initial loss values vary seasonally in some regions of
+        Australia (e.g. <citation>b8_c_r36,b8_c_r21</citation>), and this can be readily explained
+        by differences in the likelihood of pre-storm rainfall for different seasons. However, the
+        interpretation of the observed seasonal differences in continuing losses is more difficult.
+        Little published information is available on seasonal loss values suitable for design, and
+        efforts should be made to seek out relevant regional information where available. Where
+        there is clear evidence of seasonal differences in losses, and where the seasonal variation
+        of other design factors is being allowed for, the loss values from the appropriate season
+        should be applied.</para>
+    </section>
+    <section xml:id="b8_s_gncno">
+      <title>Consideration of Joint Probabilities</title>
+      <para>Where losses are considered to have an important influence on the design floods of
+        interest, it is recommended that they be simulated using joint<?oxy_insert_start author="retallick" timestamp="20160606T182105+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T182103+1000" content="-"?>probability
+        approaches to minimise bias in the transformation of rainfalls to floods. In the extreme
+        range of floods it would be expected that losses are generally less important than temporal
+        patterns, and hence where volume is not important it may well be sufficient to model losses
+        in a deterministic fashion.</para>
+      <para>The recommendations presented below may be applied in either deterministic or stochastic
+        simulation frameworks. If the former, then the recommendations as outlined in <xref
+          linkend="b8_s_kprjg"/> are adopted as single values for all required simulations. If a
+        stochastic approach is adopted, then the recommendations provided in <xref
+          linkend="b8_s_kprjg"/> represent the central tendency (either the median or the mean, as
+        appropriate to the method adopted); this “location” parameter is then used to scale the
+        adopted distribution for stochastic simulation, as described in <xref
+          linkend="b5_ch5_s_d0jl5"
+        />.<?oxy_comment_start author="retallick" timestamp="20160605T162558+1000" comment="book 5 chap 3
+"?></para>
+      <?oxy_comment_end?>
+    </section>
+  </section>
+  <section xml:id="b8_s_c1dv3">
+    <title>Methods for Derivation of Design Loss Values</title>
+    <para>The estimation of design loss values for use with Very Rare to Extreme design events has
+      to be based on observed rainfall and flood hydrograph data for the site or region of interest.
+      Where available, flood frequency data can be used to validate the derived design loss values.
+      The different approaches for estimating design loss values are described in <xref
+        linkend="b5_ch5_s_pfpia"/>.<?oxy_comment_start author="retallick" timestamp="20160605T162708+1000" comment="book 5 chap3
+"?>
+      <?oxy_comment_end?>In applying these methods to the estimation of Very Rare to Extreme design
+      floods, most weight should be given to largest observed events and corresponding flood
+      frequency estimates.</para>
+  </section>
+  <section xml:id="b8_s_kprjg">
+    <title>Guidelines for Selection of Design Loss Values</title>
+    <section xml:id="b8_s_mn9sr">
+      <title>General</title>
+      <para>The recommendations in this section relate specifically to the IL-CL model. However,
+        there is no intention to restrict the application of other loss models, provided appropriate
+        loss parameters are selected in line with the general considerations outlined in <xref
+          linkend="b5_ch5"
+        />.<?oxy_comment_start author="retallick" timestamp="20160605T162903+1000" comment="b5 c3"?></para>
+      <?oxy_comment_end?>
+      <para>The recommendations provided in <xref linkend="b8_s_m5ehl"/> to <xref
+          linkend="b8_s_1blzu"/> relate to rural catchments, and guidance for urban catchments is
+        discussed in <xref linkend="b8_s_8e7b1"/>.</para>
+      <para>The selection of loss parameters for Very Rare to Extreme design events should allow for
+        the following factors:</para>
+      <itemizedlist>
+        <listitem>
+          <para>type of design rainfall data,
+            i.e<?oxy_insert_start author="retallick" timestamp="20160605T163034+1000"?>.<?oxy_insert_end?>
+            design storm or design burst (<xref linkend="b8_s_puo0t"/>);</para>
+        </listitem>
+        <listitem>
+          <para>design event magnitude and duration (<xref linkend="b8_s_wzey8"/>);</para>
+        </listitem>
+        <listitem>
+          <para>season(s) of interest in design (<xref linkend="b8_s_hhyv3"/>);</para>
+        </listitem>
+        <listitem>
+          <para>catchment characteristics for design situation (<xref linkend="b8_s_hhyv3"/>)</para>
+        </listitem>
+      </itemizedlist>
+      <para><?oxy_delete author="retallick" timestamp="20160605T163055+1000" content="In the following sections,"?>
+        <?oxy_delete author="retallick" timestamp="20160605T163058+1000" content="s"?><?oxy_insert_start author="retallick" timestamp="20160605T163059+1000"?>S<?oxy_insert_end?>pecific
+        recommendations are given for the selection of design initial loss
+        <?oxy_insert_start author="retallick" timestamp="20160605T163103+1000"?> in
+          <?oxy_insert_end?>(<xref linkend="b8_s_m5ehl"/> for design bursts and <xref
+          linkend="b8_s_vvca3"/> for design storms) and design continuing loss (<xref
+          linkend="b8_s_1blzu"/>). Except for storm initial loss, different design situations are
+        distinguished depending on the event magnitude. Where appropriate, different recommendations
+        are given for specific geographic regions, consistent with the availability of design
+        information for different parts of Australia.</para>
+      <para>Beyond the credible limit of flood extrapolation, it is not possible to check the
+        appropriateness of the adopted loss values against independent flood estimates, and thus it
+        is necessary to adopt a more prescriptive, conservative approach. The recommendations in <?oxy_delete author="retallick" timestamp="20160605T163302+1000" content="sub-sections"?>
+        <xref linkend="b8_s_yu47j"/> and <xref linkend="b8_s_zl6ib"/> reflect this
+        philosophy.</para>
+    </section>
+    <section xml:id="b8_s_m5ehl">
+      <title>Rural Initial Loss Values for Use with Design Bursts
+        <?oxy_delete author="retallick" timestamp="20160605T163318+1000" content="(IL&lt;subscript&gt;b&lt;/subscript&gt;)"?></title>
+      <para>The selection of initial loss for use with design bursts of rainfall is problematic as
+        the depth of rainfall antecedent to the burst varies with both storm duration and event
+        magnitude. Traditionally, it has been assumed that the net bias resulting when storm losses
+        obtained from calibration are applied with design bursts is negligible. However, the
+        available evidence for flood events more frequent than the 1 in 100 AEP event suggests that
+        the losses obtained from calibration to large historic floods are too low (e.g.
+          <citation>b8_c_r76,b8_c_r20</citation>).</para>
+      <para>The expected reduction of IL<subscript>b</subscript> with reducing burst duration and
+        increasing event magnitude means that the following recommendations have to differentiate
+        between event magnitudes.</para>
+      <section xml:id="b8_s_4gvbk">
+        <title>Rare to Very Rare
+          <?oxy_insert_start author="retallick" timestamp="20160605T163629+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T163628+1000" content="e"?>vents</title>
+        <para>IL<subscript>b</subscript> values suitable for derivation of floods more frequent than
+          1 in 100 AEP should be based on recommendations contained
+          i<?oxy_comment_start author="retallick" timestamp="20160605T163623+1000" comment="book 5 c3"?>n
+            <xref linkend="b5_ch5"/>, or other relevant design data for the region, as deemed
+          appropriate.</para>
+        <para>Where possible, reconciliation with independently derived design flood estimates
+          should also be attempted, as described in <xref linkend="b5_ch5_s_ppgv2"
+          />.<?oxy_comment_end?></para>
+      </section>
+      <section xml:id="b8_s_f8a7y">
+        <title>Extreme
+          <?oxy_delete author="retallick" timestamp="20160605T163625+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160605T163626+1000"?>E<?oxy_insert_end?>vents</title>
+        <para>IL<subscript>b</subscript> values should be varied gradually between the values
+          adopted for Very Rare and PMP events. In the absence of any scientific justification, it
+          is suggested that losses between the two limits are determined from a simple interpolation
+          procedure. For example, if the initial loss value for the 1 in 100 AEP event is 10 mm and
+          that for the most Extreme design event (with an AEP of 1 in
+          10<superscript>6</superscript>) is 0 mm, then Extreme loss values can be interpolated from
+          a line drawn on log-Normal probability paper between 10 mm at 1 in 100 AEP and, say, 0.1
+          mm at 1 in 10<superscript>6</superscript> AEP (the initial loss of 0.1 mm is an
+          approximation of 0 mm in the logarithmic domain).</para>
+        <para>Alternatively, it may be assumed that the losses vary linearly on a log-log plot of
+          losses versus AEP; this assumption is more consistent with the interpolation procedure
+          used for design rainfalls (<xref linkend="b8_s_2p9cv"/>), and is also more amenable to
+          calculation. For example, if initial loss values L<subscript>1</subscript> and
+            L<subscript>2</subscript> were assigned, respectively, to events
+          <?oxy_delete author="retallick" timestamp="20160605T163800+1000" content="with AEPs "?>of
+          1 in Y<subscript>1</subscript> and 1 in
+          Y<subscript>2</subscript><?oxy_insert_start author="retallick" timestamp="20160605T163803+1000"?>
+          AEP<?oxy_insert_end?>, then the loss value to be used in conjunction with a design burst
+          of intermediate
+          <?oxy_delete author="retallick" timestamp="20160605T163808+1000" content="AEP"?> 1 in Y
+          <?oxy_insert_start author="retallick" timestamp="20160605T163810+1000"?>AEP
+          <?oxy_insert_end?>could be interpolated using the following equation:</para>
+        <equation xml:id="b8_e_4dyk0">
+          <m:math display="block">
+            <m:mrow>
+              <m:mrow>
+                <m:mi>log</m:mi>
+                <m:mo>⁡</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>L</m:mi>
+                    <m:mi>Y</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>log</m:mi>
+                  <m:mo>⁡</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>L</m:mi>
+                      <m:mi>1</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>{</m:mo>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>Y</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>Y</m:mi>
+                            <m:mi>1</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mo>}</m:mo>
+                  </m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>L</m:mi>
+                            <m:mi>2</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>L</m:mi>
+                            <m:mi>1</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>Y</m:mi>
+                            <m:mi>2</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mrow>
+                        <m:mi>log</m:mi>
+                        <m:mo>⁡</m:mo>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:msub>
+                            <m:mi>Y</m:mi>
+                            <m:mi>1</m:mi>
+                          </m:msub>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <para>A zero loss value is again to be approximated by a small value, say 0.1 mm. The
+          practical difference between the use of <xref linkend="b8_e_4dyk0"/> and the assumption of
+          log-Normal variation is negligible given the uncertainty of loss rate variation. </para>
+      </section>
+      <section xml:id="b8_s_yu47j">
+        <title>P<?oxy_insert_start author="retallick" timestamp="20160605T163850+1000"?>robable
+          <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160605T163854+1000"?>aximum
+          <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160605T163857+1000"?>recipitation<?oxy_insert_end?>
+          Flood</title>
+        <para>Very low values of IL<subscript>b</subscript> are recommended as it is assumed that
+          the pre-burst rainfalls associated with the PMP design burst will either partly (longer
+          duration bursts) or fully (short duration bursts) satisfy soil moisture deficits. In
+          conformity with the adopted policy of aiming for reasonable conservatism in the absence of
+          more relevant information, conservatively low estimates are generally recommended. For PMP
+          design burst durations approaching the duration of the observed storms, the
+            IL<subscript>b</subscript> value for use with the PMP should be equal to or possibly a
+          little less than the minimum IL<subscript>b</subscript> value in large floods observed on
+          the catchment. For significantly shorter burst durations, a zero value for
+            IL<subscript>b</subscript> is recommended.</para>
+        <para>In this context of selecting a design loss, some care and interpretation may be
+          required in assessing the minimum value in observed floods. Sometimes an apparently
+          anomalous value occurs that is appreciably lower than all other derived values. As this
+          could have resulted from the effects of data errors, it may be desirable to neglect the
+          anomalously low value in selecting the minimum value.</para>
+        <para>Recommendations for specific regions are provided below:</para>
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="italic">Humid and sub-humid regions of south-eastern
+                Australia</emphasis><?oxy_delete author="retallick" timestamp="20160605T165608+1000" content=" "?>:
+              For
+              l<?oxy_comment_start author="retallick" timestamp="20160605T165756+1000" comment="check  at end we are providing this"?>ong
+              duration rainfalls in this region, temporal patterns of pre-burst rainfall are
+              available, an<?oxy_comment_end?>d thus the procedures provided in <xref
+                linkend="b8_s_vvca3"/> for design storms should be used. If PMP design bursts are
+              used directly, and for shorter duration design bursts, an IL<subscript>b</subscript>
+              value of zero should be selected.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic"
+              >Tasmania</emphasis><?oxy_delete author="retallick" timestamp="20160605T165807+1000" content=" "?>:
+              For western Tasmania, catchments are likely to be saturated, and 100% runoff (i.e.
+                IL<subscript>b</subscript>=0) is appropriate for design. Loss values for
+              south-eastern Australia<?oxy_insert_start author="retallick" timestamp="20160605T165849+1000"?>
+              <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T165844+1000" content=" above "?>should
+              apply to eastern Tasmania.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Arid and
+                <?oxy_insert_start author="retallick" timestamp="20160605T165858+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T165857+1000" content="s"?>emi-<?oxy_insert_start author="retallick" timestamp="20160605T165900+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T165900+1000" content="a"?>rid
+                regions</emphasis><?oxy_delete author="retallick" timestamp="20160605T165810+1000" content=" "?>:
+              The few data available indicate that no initial loss should be deducted from the
+              PMP.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Western
+              Australia</emphasis><?oxy_delete author="retallick" timestamp="20160605T165813+1000" content=" "?>:
+              For the forested south-west region, the following values of IL<subscript>b</subscript>
+              are recommended:<itemizedlist>
+                <listitem>
+                  <para>Winter: IL<subscript>b</subscript> = 0</para>
+                </listitem>
+                <listitem>
+                  <para>Summer: IL<subscript>b</subscript> = 200 mm from the high absorbing gravels
+                    and sands of the lateritic uplands and zero from the remainder of the
+                    catchment.</para>
+                  <para>For the remainder of the State, IL<subscript>b</subscript> = 0.</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </section>
+    </section>
+    <section xml:id="b8_s_vvca3">
+      <title>Rural Initial Loss Values for Use with Design Storms
+        (IL<subscript>s</subscript>)</title>
+      <para>Pre-burst temporal patterns are available for the whole of Australia, and their use to
+        construct complete design storm events provides a more logical basis for the derivation of
+        hyetographs of rainfall excess.</para>
+      <para>Unless specific evidence of significant variation of initial loss with event magnitude
+        or duration has been found in the region of interest, the storm initial loss values derived
+        by the procedures in<?oxy_comment_start author="retallick" timestamp="20160605T170325+1000" comment="b5c3"?>
+        <xref xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b5_ch5"/>,<?oxy_comment_end?> as
+        representative (median) values from large events, are applicable to flood estimation over
+        the whole range, from Infrequent floods to the PMP Flood, and for all durations.</para>
+    </section>
+    <section xml:id="b8_s_1blzu">
+      <title>Rural Continuing Loss Values (CL) for use with Design Bursts and Design Storms</title>
+      <section xml:id="b8_s_2jiwy">
+        <title>Rare to Very Rare
+          <?oxy_insert_start author="retallick" timestamp="20160605T170120+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T170118+1000" content="e"?>vents</title>
+        <para>The CL values derived by the procedures in <xref linkend="b8_s_c1dv3"/> are based on
+          the analysis of moderate to large events and are thus directly applicable to events in
+          that range. For CL values determined by reconciliation with independently estimated flood
+          estimates (<xref linkend="b5_ch5_s_ppgv2"/>), the range of application depends on the
+          credible limit of extrapolation of floods for the particular design situation.</para>
+      </section>
+      <section xml:id="b8_s_vqpl7">
+        <title>Extreme
+          <?oxy_insert_start author="retallick" timestamp="20160605T170127+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T170122+1000" content="e"?>vents</title>
+        <para>CL values in the range from Very Rare events to the PMP Flood should vary gradually in
+          the same manner as for initial loss. <xref linkend="b8_e_4dyk0"/> can be applied to
+          estimate the loss rate for
+          <?oxy_insert_start author="retallick" timestamp="20160605T170418+1000"?>the
+          <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T170417+1000" content="an AEP of "?>1
+          in Y <?oxy_insert_start author="retallick" timestamp="20160605T170408+1000"?>AEP
+          <?oxy_insert_end?>within this range.</para>
+      </section>
+      <section xml:id="b8_s_zl6ib">
+        <title>P<?oxy_insert_start author="retallick" timestamp="20160605T170431+1000"?>robable
+          <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160605T170434+1000"?>aximum
+          <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160605T170437+1000"?>recipitation<?oxy_insert_end?>
+          Flood</title>
+        <para>General guidelines regarding the CL values to be used with PMP design bursts are given
+          <?oxy_delete author="retallick" timestamp="20160605T170551+1000" content="below"?> for
+          various regions of Australia, based on published data or local experience. With the
+          general nature of the recommendations, it is not appropriate to delineate precise
+          boundaries of the regions. Where possible, greatest reliance should be placed on values
+          derived from several large observed floods on the catchment of interest, as discussed
+          <?oxy_comment_start author="retallick" timestamp="20160605T170744+1000" comment="rory- do you have a reference for where this is discussed"?>previously<?oxy_comment_end?>.
+          Given the tendency of events of greater rainfall intensity to saturate greater proportions
+          of the catchment, the largest events are expected to be associated with the smallest loss
+          rates. Similarly, long duration events can be expected to be associated with lower CL
+          values than short duration events. However,
+          <?oxy_delete author="retallick" timestamp="20160605T170857+1000" content="as noted above,"?>
+          any anomalously low values, thought to result from the effects of data errors in the
+          volume balance computations, should be neglected.</para>
+        <para>For short duration events, losses are very small compared with depths of
+          precipitation, and variations in the value adopted will have little effect on the
+          magnitude of the resulting flood. For longer storms, the rate of loss and the form of loss
+          adopted can have a considerable effect on estimated floods, particularly on flood volumes,
+          and greater care is needed in their selection. An example of the variation of maximum pond
+          level with loss values is given by <citation>b8_c_r6+1</citation>.</para>
+        <para>Recommendations for specific regions are provided below:</para>
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="italic">Humid and sub-humid regions of south-eastern Australia:
+              </emphasis> For catchments considered similar to the humid and sub-humid regions of
+              south-eastern Australia, CL values would be unlikely to be greater than 1 or 2 mm/h
+              for use with PMP design bursts. A design value of 1 mm/h seems reasonable where no
+              other data are available. A value of zero is generally too conservative.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Humid and sub-humid regions of north-eastern and northern
+                Australia: </emphasis>
+              <?oxy_comment_start author="retallick" timestamp="20160605T171157+1000" comment="somewhat  sounds casual"?><?oxy_delete author="retallick" timestamp="20160605T171146+1000" content="Somewhat"?><?oxy_comment_end?>
+              higher CL values than for south-eastern Australia may be appropriate, but values
+              greater than 3 mm/h would be unusual.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Tasmania: </emphasis> For western Tasmania, catchments are
+              likely to be saturated, and zero continuing loss is considered appropriate for design.
+              Loss rates for south-eastern
+              Australia<?oxy_delete author="retallick" timestamp="20160605T171218+1000" content=" above "?>should
+              apply to eastern Tasmania.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Arid and semi-arid regions: </emphasis> The few data
+              available indicate that a slightly higher value of loss rate may be appropriate than
+              for more humid regions in the south-east of the continent. It is unlikely that this
+              value would be greater than 3 mm/h.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="italic">Western Australia: </emphasis> For the forested south west
+              region, losses should be estimated using a variable proportional loss model based on
+              catchment storage, as described in <xref linkend="b5_ch5"/> and
+                <citation>b8_c_r55+1</citation>. For the remainder of the State, it is considered
+              unlikely that CL would be greater than 3 mm/h.</para>
+          </listitem>
+        </itemizedlist>
+      </section>
+    </section>
+    <section xml:id="b8_s_8e7b1">
+      <title>Loss Recommendations for Urban Catchments</title>
+      <para>Following the advice provided in
+          <?oxy_comment_start author="retallick" timestamp="20160605T171415+1000" comment="b5c3"?><xref
+          linkend="b5_ch5_s_h83ay"/><?oxy_comment_end?>, it is considered reasonable to apply the
+        loss values recommended for rural catchments to pervious areas. For effective impervious
+        areas it is recommended that the lower bound identified by <citation>b8_c_r58+1</citation>
+        be used, which equates to a storm and burst initial losses of 1 mm and 0 mm, respectively,
+        and a continuing loss of 0<?oxy_insert_start author="retallick" timestamp="20160605T171445+1000"?>
+        <?oxy_insert_end?>mm. For the “other area” which represents the remaining impervious area
+        and pervious area connected with the impervious area, it is recommended that loss values be
+        selected from the lower range of values adopted for rural catchments. This guidance is
+        summarised in <xref linkend="b8_t_x54x0"
+          /><?oxy_delete author="retallick" timestamp="20160605T171505+1000" content=", below"?>.<table
+          frame="void" xml:id="b8_t_x54x0">
+          <caption>Recommended
+            <?oxy_insert_start author="retallick" timestamp="20160605T171511+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T171510+1000" content="l"?>oss
+            <?oxy_delete author="retallick" timestamp="20160605T171514+1000" content="r"?><?oxy_insert_start author="retallick" timestamp="20160605T171521+1000"?>R<?oxy_insert_end?>ates
+            <?oxy_insert_start author="retallick" timestamp="20160605T171528+1000"?>f<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T171516+1000" content="f"?>or
+            <?oxy_insert_start author="retallick" timestamp="20160605T171525+1000"?>U<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T171524+1000" content="u"?>rban
+            <?oxy_insert_start author="retallick" timestamp="20160605T171532+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T171531+1000" content="c"?>atchments</caption>
+          <col width="25%"/>
+          <col width="25%"/>
+          <col width="25%"/>
+          <col width="25%"/>
+          <thead>
+            <tr>
+              <th>Area
+                <?oxy_insert_start author="retallick" timestamp="20160605T170526+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160605T170525+1000" content="c"?>lass</th>
+              <th>Storm Initial Loss (mm)</th>
+              <th>Burst Initial Loss (mm)</th>
+              <th>Continuing Loss (mm/hr)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Effective Impervious</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Other</td>
+              <td colspan="3">At the lower range of values adopted for rural catchments</td>
+            </tr>
+            <tr>
+              <td>Pervious</td>
+              <td colspan="3">As for rural catchments</td>
+            </tr>
+          </tbody>
+        </table></para>
+    </section>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
+  
+</chapter>

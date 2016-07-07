@@ -1,43 +1,1276 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter>
-<chapter status="In Preparation" xml:id="b7_ch6" version="5.0" xmlns="http://docbook.org/ns/docbook"
-  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
-  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
-  <title>Parameter Estimation Techniques</title>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" xml:id="b7_ch6" version="5.0">
+ 
+  
+  <info>
+  <title>Regional Relationship for Runoff-routing Models</title>
+    
+    <xi:include href="../../common/authors/boyd_michael.xml"/>
+    
+  </info>
+  
+  
   <para>
     <informaltable border="1">
       <tr>
         <td colspan="2">Chapter Status</td>
       </tr>
       <tr>
-        <td>Book</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td>Chapter</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>Date</td>
-        <td>27/11/2015</td>
+        <td>Date last updated</td>
+        <td>06/07/16 </td>
       </tr>
       <tr>
         <td>Content</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Graphs and Figures</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Examples</td>
-        <td>In preparation</td>
+        <td>Working draft</td>
       </tr>
       <tr>
         <td>General</td>
-        <td/>
+        <td>Subject to industry feedback </td>
       </tr>
     </informaltable>
   </para>
+  <section xml:id="b7_ch6_s_m2742">
+    <title>Introduction</title>
+    <para>Regional relationships can be used to estimate parameter values on ungauged catchments but
+      they can also be used to test the plausibility of parameters derived from limited data. Where
+      no data is available some insight can also be gained from comparing how adjoining catchments
+      with data compare to the regional relationship. Relationships between model parameters and
+      catchment characteristics have been derived for several regions. The most recent relationships
+      available for Australia are given in the following section. </para>
+    <para>In all cases the reliability of regional relationships is likely to be less than parameter
+      estimates derived from calibration from several recorded flood events on the catchment of
+      interest. Regional relationships should be used with due caution, as most derived relations
+      incorporate considerable scatter of the data from individual catchments. Also, different forms
+      of relationships have been found to give equally good fits to the one set of data, but would
+      give widely different estimates in some other cases <citation>b7_c6_r30</citation>.</para>
+  </section>
+  <section xml:id="b7_ch6_s_27myt">
+    <title>Regional Relationships </title>
+    <para>The following relationships for RORB and WBNM apply to catchments in natural condition.
+      Regional data for RAFTS and URBS are not as extensive as for the other two models, and
+      suggested parameter values for these models are included in <xref linkend="b7_ch5"/>.</para>
+    <para>Regional relationships will contain some scatter about the fitted equation, partly due
+      errors in rainfall and streamflow data, including insufficient spatial rainfall gauge
+      coverage, but also due to limitations in the models themselves.
+        <citation>b7_c6_r19+1</citation> quote typical errors of 10-20% for rainfall and 25% for
+      streamflow data, with larger errors being quite possible, and note that as a consequence high
+      correlation is unlikely to be obtained in the resulting regional relationships.</para>
+    <para>Scatter in the relationships can also be caused by different methods of treating the data
+      when parameters were originally calibrated. These include different assumptions when
+      separating baseflow, and different rainfall loss models, for example proportional loss as
+      opposed to continuing loss rate. These different assumptions can lead to different calibrated
+      parameter values, and hence contribute to scatter in the regional relationship. This problem
+      will be reduced if the regional relationship is developed using consistent methods of treating
+      the data. However, when parameters are combined from several different studies to develop a
+      regional relationship, care should be taken to ensure that consistent parameter values are
+      used.</para>
+    <para>Another cause of scatter can result from different parameters being derived from
+      calibrations using floods of different magnitudes. <citation>b7_c6_r35+1</citation> found that
+      calibrated values of the RORB parameter k<subscript>c</subscript> were larger for larger
+      floods, when overbank flow became established, compared to smaller in-bank flows. Similar
+      effects are likely in all runoff-routing models. The use of a single catchment parameter value
+      in regional relationships, without regard to the magnitude of the flood, may therefore call
+      into question the validity of the relationship <citation>b7_c6_r35</citation>.</para>
+    <para>It is important to note that that the value of the lag parameter <emphasis role="italic"
+        >k</emphasis> (<xref linkend="b5_c5_s_014"/>) (or the corresponding
+        k<subscript>c</subscript>, C, B and <inlineequation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mi>β</mi>
+        </math>
+      </inlineequation> parameters in RORB, WBNM, RAFTS and URBS respectively) depends on the values
+      of other parameters adopted during calibration of the model. The values of these lag
+      parameters used in regional relationships will be dependent on the values of, for example, the
+      nonlinearity parameter <emphasis role="italic">m</emphasis>, as well as the stream channel
+      routing method used and the stream channel parameter values adopted. Another cause of
+      variation in the lag parameter can occur if the basic model is modified, for example by
+      allocating proportionally greater lag time to subareas and less to stream reaches
+        <citation>b7_c6_r18</citation> in which case the calibrated <emphasis role="italic"
+        >k</emphasis> values will not be consistent with those calibrated for the same events using
+      the basic model.</para>
+    <para>It is possible to obtain an approximate adjustment for <emphasis role="italic"
+        >k</emphasis> (or K<subscript>c</subscript>, C, B or <inlineequation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mi>β</mi>
+        </math>
+      </inlineequation>) values which have been derived using other values of <emphasis
+        role="italic">m</emphasis> so that they correspond to a base value, for example, <emphasis
+        role="italic">m</emphasis> = 0.8 <citation>b7_c6_r24</citation>. This is done by adjusting
+        <emphasis role="italic">k</emphasis> so that the same overall lag time K is maintained for
+      the different <emphasis role="italic">m</emphasis> values, using <xref
+        linkend="b7_ch6_e_95nxr"/>. This requires an average or representative discharge for the
+      particular flood, which will be half or less than half of the peak discharge
+        Q<subscript>p</subscript>. <citation>arr_1987+1</citation> used an average discharge equal
+      to Q<subscript>p</subscript>/2, giving the following adjustment: </para>
+    <equation xml:id="b7_ch6_e_95nxr">
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <msub>
+          <mi>k</mi>
+          <mrow>
+            <mn>0.8</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>k</mi>
+          <mi>m</mi>
+        </msub>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <msub>
+                    <mi>Q</mi>
+                    <mi>p</mi>
+                  </msub>
+                </mrow>
+                <mn>2</mn>
+              </mfrac>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mrow>
+            <mi>m</mi>
+            <mo>−</mo>
+            <mn>0.8</mn>
+          </mrow>
+        </msup>
+      </math>
+    </equation>
+    <para>where <emphasis role="italic">k<subscript>m</subscript></emphasis> is the lag parameter
+        (K<subscript>c</subscript>, C, B or <inlineequation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mi>β</mi>
+        </math>
+      </inlineequation>) corresponding to a specified value of <emphasis role="italic">m</emphasis>.</para>
+    <para>Most regional relationships relate the lag parameter to one or more physical
+      characteristics of the catchment. These are most commonly the area A, stream length L and
+      stream slope S<subscript>c</subscript>, although other measures, such as elevation, average
+      rainfall and drainage density are sometimes used. Different studies sometimes use different
+      definitions of stream slope S<subscript>c</subscript> so that caution is needed to ensure that
+      the correct definition is used when applying the relationships. Measurements of stream length
+      L are dependent on the map scale used <citation>b5_c2_r2</citation> and this should also be
+      considered when applying the relationships. Stream length is strongly correlated with
+      catchment area <?oxy_delete author="ward" timestamp="20160707T154217+1000" content=" "?>and
+      stream slope is moderately correlated with area, so that relationships involving area A alone,
+      or stream length L alone are often sufficient to describe the regional relationship.</para>
+    <section xml:id="b7_ch6_s_mielm">
+      <title>Regional relationships for RORB</title>
+      <para>The greatest number of derived parameter values and regional relationships are available
+        for the RORB Model. The relationships recommended below are derived from all readily
+        available data. Values of the parameters and the catchments used in deriving the
+        relationships are generally listed in the cited publications. Although the nonlinearity
+        parameter <emphasis role="italic">m</emphasis> can be varied to improve the hydrograph fit
+        when calibrating the model, most studies have found <emphasis role="italic">m</emphasis> to
+        lie in the range 0.6 to 1.0, and many studies adopt a constant value of <emphasis
+          role="italic">m</emphasis> = 0.8
+          <citation>b7_c6_r14,b8_c_r12,b7_c6_r10,b7_c6_r26</citation>. All relationships for
+          k<subscript>c</subscript> given in this section are for a value of <emphasis role="italic"
+          >m</emphasis> = 0.8 except where specifically noted.</para>
+      <para>Most of the relationships are of similar form and involve only the single catchment
+        variable, area A in km<superscript>2</superscript>, since this has been found to be the
+        dominant variable. To allow comparisons, relationships developed by various researchers are
+        presented, together with the number and size range of the catchments used (where available).
+        The recommended regional relationships for each region are then given in boxes.</para>
+      <section xml:id="b7_ch6_s_o0osh">
+        <title>Queensland</title>
+        <para>Relationships have been developed by <citation>b7_c6_r34+1</citation>,
+            <citation>b7_c6_r24+1</citation>, <citation>b7_c6_r13+1</citation>,
+            <citation>b7_c6_r33+1</citation> and <citation>b5_c6_r35+1</citation>. For 14 catchments
+          (158 to 3430 km<superscript>2</superscript>) generally covering the coast, plus one
+          catchment near Mt. Isa, <citation>b7_c6_r34+1</citation> obtained:</para>
+        <equation xml:id="b7_ch6_e_iou7u">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>k</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.69</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.63</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <equation>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mtext>m&#x00A0;=&#x00A0;0</mtext>
+            <mtext>.73</mtext>
+          </math>
+        </equation>
+        <para>For 25 catchments (56 to 5170 km<superscript>2</superscript>), with parameters
+          adjusted to <emphasis role="italic">m</emphasis> = 0.75, <citation>b7_c6_r24+1</citation>
+          obtained:</para>
+        <equation xml:id="b7_ch6_e_49xtl">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.35</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.71</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>For four catchments in the Darling Downs (2.5 to 50 km<superscript>2</superscript>)
+          with m = 0.8, <citation>b7_c6_r13+1</citation> obtained:</para>
+        <equation xml:id="b7_ch6_e_aux7r">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.80</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.62</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>For nine small catchments in south-east Queensland (0.002 to 50
+            km<superscript>2</superscript>) with <emphasis role="italic">m</emphasis> = 0.8,
+            <citation>b5_c6_r35+1</citation> obtained:</para>
+        <equation xml:id="b7_ch6_e_nkgk2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.83</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.35</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>For 88 catchments (2.5 to 16,400 km<superscript>2</superscript>), covering both
+          coastal and inland areas of Queensland, with parameters adjusted to <emphasis
+            role="italic">m</emphasis> = 0.80, <citation>b7_c6_r33+1</citation> obtained:</para>
+        <equation xml:id="b7_ch6_e_m3ewb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.88</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.53</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>Although <xref linkend="b7_ch6_e_iou7u"/> to <xref linkend="b7_ch6_e_ohwtn"/> appear
+          to be quite different, when plotted together, with each relationship covering its range of
+          catchment
+          sizes<?oxy_delete author="ward" timestamp="20160707T154349+1000" content=" (Figure 5.3.4.14)"?>,
+          they conform to a general trend and can be viewed as different samples from the population
+          of Queensland catchments. The relationship of <citation>b7_c6_r33+1</citation>, equation
+            <xref linkend="b7_ch6_e_ohwtn"/>, is a good average to all relationships and is
+          recommended. <citation>b7_c6_r33+1</citation> also investigated possible variations of
+            K<subscript>c</subscript> within the various regions of the study, and also any effects
+          of catchment slope, but no relationships were found.</para>
+        <sidebar>
+          <para><emphasis role="bold">The relationship of <citation>b7_c6_r33+1</citation>, <xref
+                linkend="b7_ch6_e_ohwtn"/>, is a good average to all relationships and is
+              recommended</emphasis>.</para>
+          <equation xml:id="b7_ch6_e_ohwtn">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0.88</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.53</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+        </sidebar>
+      </section>
+      <section xml:id="b7_ch6_s_65ru3">
+        <title>New South Wales</title>
+        <para>Relationships have been developed by <citation>b7_c6_r16+1</citation>,
+            <citation>b7_c6_r30+1</citation> and <citation>b7_c6_r32+1</citation>. For 26 catchments
+          (0.1 to 4560 km<superscript>2</superscript>) in the Newcastle-Sydney-Wollongong region,
+          with <emphasis role="italic">m</emphasis> = 0.8, <citation>b7_c6_r30+1</citation>
+          obtained:</para>
+        <equation xml:id="b7_ch6_e_fcm20">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.09</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.45</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>No regional trends were apparent, except for some lower values of
+            K<subscript>c</subscript> in the Upper Hunter valley. Addition of slope to the
+          regressions did not improve the fitted relationships appreciably.
+            <citation>b7_c6_r32+1</citation> added to the data of <citation>b7_c6_r16+1</citation>
+          and derived relationships for 46 catchments (0.1 to 13,000
+          km<superscript>2</superscript>). Relationships were derived using area A, stream length L
+          and stream length divided by slope (L/S<superscript>0.5</superscript>). The fit of these
+          various relationships to the data were similar, and a relationship involving area A was
+          considered to be the most logical one to adopt. The relationships were:</para>
+        <para>West of Great Dividing Range, upper western slopes and tablelands (12 catchments, 100
+          to 4770 km<superscript>2</superscript>)</para>
+        <equation xml:id="b7_ch6_e_5cq1l">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.80</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.51</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>East of Great Dividing Range (34 catchments, 0.1 to 6465
+            km<superscript>2</superscript>)</para>
+        <equation xml:id="b7_ch6_e_xkr64">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.18</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.47</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>Since the relationships are very similar, a combined relationship was derived for all
+          46 catchments:</para>
+        <para>NSW catchments</para>
+        <equation xml:id="b7_ch6_e_9xix6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.18</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.46</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para><citation>b7_c6_r32+1</citation> found that most catchments had values of <emphasis
+            role="italic">m</emphasis> in the range 0.75 to 1.0 and adopted a fixed value of
+            <emphasis role="italic">m</emphasis> = 0.8 for all catchments. No trends for
+            K<subscript>c</subscript> to vary with event size were evident, indicating that the
+          nonlinearity was adequately described by adopting <emphasis role="italic">m</emphasis> =
+          0.8. Weighted average and direct average K<subscript>c</subscript> values were calculated
+          from all events on each catchment, with little difference being apparent.</para>
+        <para>When <xref linkend="b7_ch6_e_fcm20"/> to <xref linkend="b7_ch6_e_9xix6"/> are plotted
+          to cover their range of catchment sizes, all equations are very similar, and equation<xref
+            linkend="b7_ch6_e_9xix6"/> is recommended for catchments both east and west of the Great
+          Dividing Range.</para>
+        <sidebar>
+          <para><emphasis role="bold"><xref linkend="b7_ch6_e_q97v8"/> is recommended for catchments
+              both east and west of the Great Dividing Range.</emphasis></para>
+          <para>NSW catchments</para>
+          <equation xml:id="b7_ch6_e_q97v8">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>1.18</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.46</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+        </sidebar>
+      </section>
+      <section xml:id="b7_ch6_s_d0wdn">
+        <title>Victoria</title>
+        <para>Regional relationships have been developed by <citation>b7_c6_r24+1</citation> and
+            <citation>b7_c6_r14+1</citation>.</para>
+        <para><citation>b7_c6_r24+1</citation> developed relationships for 16 catchments (20 to 1924
+            km<superscript>2</superscript>) with <emphasis role="italic">m</emphasis> = 0.75:</para>
+        <equation xml:id="b7_ch6_e_are96">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.37</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.59</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <sidebar>
+          <para><emphasis role="bold">Region with mean annual rainfall greater than 800 mm (19
+              catchments, 38 to 3910 km<superscript>2</superscript>, mainly the eastern part of
+              Victoria):</emphasis></para>
+          <equation xml:id="b7_ch6_e_lxxl8">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>2.57</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.45</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+          <para><emphasis role="bold">Region with mean annual rainfall less than 800 mm (21
+              catchments, 20 to 1924 km<superscript>2</superscript>, mainly the western part of
+              Victoria):</emphasis></para>
+          <equation xml:id="b7_ch6_e_pgvri">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0.49</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.65</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+        </sidebar>
+        <para>The relationships of <citation>b7_c6_r24+1</citation> and
+            <citation>b7_c6_r14+1</citation> for RF &gt; 800 mm are reasonably consistent, while the
+            K<subscript>c</subscript> values for the drier part of the state are somewhat lower,
+          particularly for the smaller
+          catchments<?oxy_delete author="ward" timestamp="20160707T154430+1000" content=" (Figure 5.3.4.15)"?>.
+          Comparing the <citation>b7_c6_r14+1</citation> relationships for the eastern and western
+          parts of Victoria, predicted K<subscript>c</subscript> values are similar for catchments
+          greater than about 2,000 km<superscript>2</superscript>, but the eastern region values are
+          approximately double for catchment areas near to 100
+          km<superscript>2</superscript>.</para>
+      </section>
+      <section xml:id="b7_ch6_s_q2pff">
+        <title>South Australia</title>
+        <para>Regional relationships have been developed by Lipp <citation>arr_1987</citation>,
+            <citation>b7_c6_r20+1</citation> and <citation>b7_c6_r15+1</citation>. For the
+          south-east region, corresponding to zone 6 of the ARR design storm temporal patterns,
+          Australian Rainfall and Runoff <citation>arr_1987</citation> recommended:</para>
+        <para>For catchments smaller than 100 km<superscript>2</superscript>:</para>
+        <equation xml:id="b7_ch6_e_de56m">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>0.60</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.67</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>For catchments larger than 100 km<superscript>2</superscript>, based on limited
+          data:</para>
+        <equation xml:id="b7_ch6_e_p0uk5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.09</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.51</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>For the northern and western regions, corresponding to zone 5 of the ARR design storm
+          temporal patterns, Australian Rainfall and Runoff <citation>arr_1987</citation>
+          recommended for flat to undulating country:</para>
+        <equation xml:id="b7_ch6_e_yahea">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>Coeff.</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.57</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>where the Coefficient ranges from 1.2 to 1.7 for equal area stream slopes ranging from
+          1.0 to 0.2%.</para>
+        <para> For the northern and western regions, undulating to steep country, with slopes
+          greater than 1%, (<xref linkend="b7_ch6_e_rns62"/>) for the wheatbelt, north-west and
+          Kimberley regions of Western Australia was recommended by ARR 1987
+            <citation>arr_1987</citation>. However, the more recent relations developed by
+            <citation>b7_c6_r15+1</citation> are now recommended for these arid regions.</para>
+        <sidebar>
+          <para><emphasis role="bold"><citation>b7_c6_r15+1</citation> derived relationships for low
+              and high rainfall areas, using <emphasis role="italic">m</emphasis> = 0.8. For average
+              annual rainfall RF less than 320 mm (7 catchments, 170 to 6020
+                km<superscript>2</superscript>):</emphasis></para>
+          <para>
+            <equation xml:id="b7_ch6_e_e6bgfp3">
+              <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                  <msub>
+                    <mi>K</mi>
+                    <mi>c</mi>
+                  </msub>
+                  <mo>=</mo>
+                  <mn>7.06</mn>
+                  <msup>
+                    <mi>A</mi>
+                    <mrow>
+                      <mn>0.71</mn>
+                    </mrow>
+                  </msup>
+                  <msup>
+                    <mrow>
+                      <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(RF/1000)</mtext>
+                    </mrow>
+                    <mrow>
+                      <mn>2.79</mn>
+                    </mrow>
+                  </msup>
+                </mrow>
+              </math>
+            </equation>
+          </para>
+          <para><emphasis role="bold">For average annual rainfall greater than 500 mm (17
+              catchments, 5 to 690 km<superscript>2</superscript>):</emphasis></para>
+          <para>
+            <equation xml:id="b7_ch6_e_e6bp3">
+              <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <msub>
+                  <mi>K</mi>
+                  <mi>c</mi>
+                </msub>
+                <mo>=</mo>
+                <mn>0.89</mn>
+                <msup>
+                  <mi>A</mi>
+                  <mrow>
+                    <mn>0.55</mn>
+                  </mrow>
+                </msup>
+              </math>
+            </equation>
+          </para>
+        </sidebar>
+        <para>For the higher rainfall south-east region, near Adelaide,
+          <?oxy_delete author="ward" timestamp="20160707T154602+1000" content="Figure 5.3.4.16 shows"?><?oxy_insert_start author="ward" timestamp="20160707T154602+1000"?>There
+          is a<?oxy_insert_end?> good agreement between <xref linkend="b7_ch6_e_de56m"/>, <xref
+            linkend="b7_ch6_e_p0uk5"/> and <xref linkend="b7_ch6_e_e6bp3"/>. <xref
+            linkend="b7_ch6_e_e6bgfp3"/> for areas with annual rainfall less than 320 mm also agrees
+          with these equations for RF near to 320, the top of the applicable range. For the drier
+          interior of the state, <xref linkend="b7_ch6_e_yahea"/> predicts higher
+            K<subscript>c</subscript> values, while <xref linkend="b7_ch6_e_e6bgfp3"/> predicts
+          lower K<subscript>c</subscript> values. Since the <citation>b7_c6_r15+1</citation> study
+          is the most extensive, <xref linkend="b7_ch6_e_e6bgfp3"/> and <xref
+            linkend="b7_ch6_e_e6bp3"/> are recommended for South Australia, but with the note that
+            <xref linkend="b7_ch6_e_e6bgfp3"/> predicts quite low K<subscript>c</subscript> values
+          for the drier interior of the state.</para>
+      </section>
+      <section xml:id="b7_ch6_s_76o3a">
+        <title>Western Australia</title>
+        <para>Regional relationships have been developed by <citation>b7_c6_r34+1</citation>,
+            <citation>b7_c6_r24+1</citation>, <citation>b7_c6_r12+1</citation>.
+            <citation>b7_c6_r25+1</citation> present some data for the Pilbara region. For 6
+          catchments in the southwest (67 to 805 km<superscript>2</superscript>),
+            <citation>b7_c6_r34+1</citation> derived:</para>
+        <equation xml:id="b7_ch6_e_wgnrt">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>1.23</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.91</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para>The nonlinearity parameter <emphasis role="italic">m</emphasis> was also calibrated on
+          each catchment, overall being near to <emphasis role="italic">m</emphasis> = 0.75.
+            K<subscript>c</subscript> values for western Australia were found to be considerably
+          higher than for the eastern states, which they attributed to the observed more sluggish
+          response to rainfall of these catchments. <citation>b7_c6_r24+1</citation> for 24
+          catchments (28 to 5950 km<superscript>2</superscript>), using <emphasis role="italic"
+            >m</emphasis> = 0.80 derived:</para>
+        <equation xml:id="b7_ch6_e_trzt7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>2.48</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.47</mn>
+              </mrow>
+            </msup>
+          </math>
+        </equation>
+        <para><citation>b7_c6_r12+1</citation> derived relationships for 52 catchments (5 to 6526
+            km<superscript>2</superscript>) in 4 regions of the state. A non-linearity parameter of
+            <emphasis role="italic">m</emphasis> = 0.8 was found to give best results for the
+          south-west, and was adopted for the entire state. Variables used in the regressions were
+          catchment area A, main stream length L, main stream equal area slope
+            S<subscript>e</subscript> (m/km), and percentage of land cleared. Generally, regressions
+          involving stream length L were better than those using area A. For the south west (26
+          catchments, 29 to 3870 km<superscript>2</superscript>) relations for sub regions with
+          different soil types were similar.</para>
+        <sidebar>
+          <para>The following equation is recommended for all jarrah forest catchments in the south
+            west:</para>
+          <equation xml:id="b7_ch6_e_ar8id">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>1.49</mn>
+              <msup>
+                <mi>L</mi>
+                <mrow>
+                  <mn>0.91</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+          <para>Relationships for the wheatbelt, north-west, and Kimberley regions were similar and
+            the following is recommended, based on 26 catchments (5 to 6526
+              km<superscript>2</superscript>) :</para>
+          <equation xml:id="b7_ch6_e_rns62">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>1.06</mn>
+              <msup>
+                <mi>L</mi>
+                <mrow>
+                  <mn>0.87</mn>
+                </mrow>
+              </msup>
+              <msub>
+                <mtext>       S</mtext>
+                <mi>e</mi>
+              </msub>
+              <msup>
+                <mrow/>
+                <mrow>
+                  <mo>−</mo>
+                  <mn>0.46</mn>
+                </mrow>
+              </msup>
+            </math>
+            <?oxy_custom_end?>
+          </equation>
+          <para>For the arid interior of Western Australia, <xref linkend="b7_ch6_e_rns62"/> is
+            recommended.</para>
+        </sidebar>
+        <para><?oxy_delete author="ward" timestamp="20160707T154726+1000" content="Figure 5.3.4.17 compares these relationships. Equation 5.3.4.8b was used to convert "?>L
+          <?oxy_insert_start author="ward" timestamp="20160707T163725+1000"?>was converted
+          <?oxy_insert_end?>to A
+          <?oxy_insert_start author="ward" timestamp="20160707T163916+1000"?>through the
+          relationship established by <citation>b7_c6_r4+1</citation>
+          <?oxy_insert_end?>to allow <xref linkend="b7_ch6_e_ar8id"/> and <xref
+            linkend="b7_ch6_e_rns62"/>to be plotted against catchment area A.
+          <?oxy_delete author="ward" timestamp="20160707T154740+1000" content="Figure 5.3.4.17 shows that t"?><?oxy_insert_start author="ward" timestamp="20160707T154740+1000"?>T<?oxy_insert_end?>he
+          relationships of <citation>b7_c6_r24+1</citation> and <citation>b7_c6_r12+1</citation> for
+          the south west region are very similar and <xref linkend="b7_ch6_e_ar8id"/> is
+          recommended. <xref linkend="b7_ch6_e_rns62"/> for the wheatbelt, north-west and arid
+          regions predicts K<subscript>c</subscript> values which are considerably lower than for
+          the south-west region. The earlier relation of <citation>b7_c6_r34+1</citation> was based
+          on only sixcatchments and predicts K<subscript>c</subscript> values which are considerably
+          higher than those of <citation>b7_c6_r12+1</citation>, and is not recommended.</para>
+      </section>
+      <section xml:id="b7_ch6_s_xc7r2">
+        <title>Northern Territory</title>
+        <para>Relationships for K<subscript>c</subscript> have been derived for the northern half of
+          the Northern Territory by the Department of Mines and Energy
+          <citation>arr_1987</citation>. The Northern Territory was divided into the three
+          zones.</para>
+        
+          <sidebar><para>For the humid zone, north of latitude <inlineequation>
+              <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mn>15</mn>
+                <mo>&#x00B0;</mo>
+              </math>
+            </inlineequation> S, with equal area slope S<subscript>e</subscript> in m/km) the
+            following equation is recommended:</para>
+          <equation xml:id="b7_ch6_e_hdt9l">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <mrow>
+                <msub>
+                  <mi>K</mi>
+                  <mi>c</mi>
+                </msub>
+                <mo>=</mo>
+                <mn>1.8</mn>
+                <msup>
+                  <mrow>
+                    <mo stretchy="false">(</mo>
+                    <mi>A</mi>
+                    <mo>/</mo>
+                    <msub>
+                      <mi>S</mi>
+                      <mi>e</mi>
+                    </msub>
+                    <msup>
+                      <mrow/>
+                      <mrow>
+                        <mn>0.5</mn>
+                      </mrow>
+                    </msup>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mrow>
+                    <mn>0.55</mn>
+                  </mrow>
+                </msup>
+              </mrow>
+            </math>
+          </equation>
+          <para>For the transition zone, between latitudes <inlineequation>
+              <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mn>15</mn>
+                <mo>&#x00B0;</mo>
+              </math>
+            </inlineequation> S and <inlineequation>
+              <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                <mn>17.5</mn>
+                <mo>&#x00B0;</mo>
+              </math>
+            </inlineequation> S:</para>
+          <equation xml:id="b7_ch6_e_5sp5h">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0.35</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.64</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation></sidebar>
+        <para><?oxy_delete author="ward" timestamp="20160707T155052+1000" content="Figure 5.3.4.18 shows that "?><xref
+            linkend="b7_ch6_e_hdt9l"/> and <xref linkend="b7_ch6_e_5sp5h"/> are similar for
+          catchments greater than 2500 km<superscript>2</superscript>, but with smaller
+            K<subscript>c</subscript> values predicted for smaller catchments in the transition zone
+          compared to the humid zone. </para>
+        <para>For the arid zone, below latitude <inlineequation>
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mn>17.5</mn>
+              <mo>&#x00B0;</mo>
+            </math>
+          </inlineequation> S ARR 1987<citation>arr_1987</citation> recommended the relationship for
+          the northern and western regions of South Australia (<xref linkend="b7_ch6_e_yahea"/>) be
+          used. <xref linkend="b7_ch6_e_yahea"/> predicts higher K<subscript>c</subscript> values
+          than both the humid and transition zones, and as discussed below, is not recommended.
+            <?oxy_delete author="ward" timestamp="20160707T155110+1000" content="Figure 5.3.4.18 shows that "?><xref
+            linkend="b7_ch6_e_rns62"/>, for the wheatbelt, north-west, Kimberley and arid interior
+          of Western Australia, lies within the range of values for the drier interior of south
+          Australia (<xref linkend="b7_ch6_e_e6bgfp3"/>) and is close to K<subscript>c</subscript>
+          values derived by <citation>b5_c3_r5+1</citation> for two catchments in the arid zone near
+          to Alice Springs.</para>
+        <sidebar>
+          <para><emphasis role="bold">Therefore <xref linkend="b7_ch6_e_rns62"/> is recommended for
+              the arid interior of the Northern territory.</emphasis></para>
+        </sidebar>
+        
+      </section>
+      <section xml:id="b7_ch6_s_qos1x">
+        <title>Arid Region of Central Australia</title>
+        <para>For the arid region of Central Australia, approximately corresponding to zone 5 of the
+          ARR storm temporal patterns in ARR 1987 <citation>arr_1987</citation>, and covering the
+          interior of South Australia, Western Australia and the Northern Territory, the data of
+            <citation>b7_c6_r12+1</citation>, <citation>b7_c6_r15+1</citation>,
+            <citation>b5_c3_r5+1</citation> may be used to guide selection of
+            K<subscript>c</subscript>
+          values.<?oxy_delete author="ward" timestamp="20160707T155124+1000" content=" These are shown on figure 5.3.4.18."?></para>
+        <para>Predicted K<subscript>c</subscript> values for the arid regions of South Australia
+            (<xref linkend="b7_ch6_e_e6bgfp3"/>), Western Australia (<xref linkend="b7_ch6_e_rns62"
+          />) and Victoria (<xref linkend="b7_ch6_e_pgvri"/>) are lower than
+            K<subscript>c</subscript> values for the higher rainfall areas of these states. Similar
+          trends for lower K<subscript>c</subscript> values in lower rainfall regions have been
+          found by <citation>b7_c6_r36+1</citation> and <citation>b7_c6_r15+1</citation>. <xref
+            linkend="b7_ch6_e_yahea"/> appears to be an anomaly since it predicts higher
+            K<subscript>c</subscript> values for the arid zone of the Northern Territory compared to
+          the humid and transition zones.</para>
+        <para><xref linkend="b7_ch6_e_rns62"/> for the wheatbelt, north-west and Kimberley region of
+          Western Australia lies within the range of K<subscript>c</subscript> values predicted by
+            <xref linkend="b7_ch6_e_e6bgfp3"/> for the arid zone of south Australia. The data of
+            <citation>b5_c3_r5+1</citation> also agrees with equation <xref linkend="b7_ch6_e_rns62"
+          />. </para>
+        <sidebar>
+          <para><emphasis role="bold">Therefore equation <xref linkend="b7_ch6_e_rns62"/> is
+              recommended for the arid interior of Western Australia and the Northern territory, and
+              equation <xref linkend="b7_ch6_e_e6bgfp3"/> for the arid region of South
+              Australia.</emphasis></para>
+        </sidebar>
+      </section>
+      <section xml:id="b7_ch6_s_am5rq">
+        <title>Tasmania</title>
+        <para><citation>b7_c6_r24+1</citation> developed the following relation for 17 catchments
+          (63 to 1780 km<superscript>2</superscript>) using <emphasis role="italic">m</emphasis> =
+          0.75:</para>
+        <para>
+          <equation  xml:id="b7_ch6_e_5sq5h">
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>4.86</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.32</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+        </para>
+        <para>Australian Rainfall and Runoff <citation>arr_1987</citation> presents a relation
+          developed by the Tasmanian Hydro Electric Commission for western Tasmania, with <emphasis
+            role="italic">m</emphasis> = 0.75:</para>
+        <para>
+          <equation  xml:id="b7_ch6_e_5spdh">
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+              <msub>
+                <mi>K</mi>
+                <mi>c</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0.86</mn>
+              <msup>
+                <mi>A</mi>
+                <mrow>
+                  <mn>0.57</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+        </para>
+        <para><xref linkend="b7_ch6_e_5sq5h"/> and <xref linkend="b7_ch6_e_5spdh"/> are in good
+          agreement for catchments near to 1000 km<superscript>2</superscript> but <xref
+            linkend="b7_ch6_e_5sq5h"/> predicts larger K<subscript>c</subscript> values for smaller
+          catchments. </para>
+        <para>
+          <sidebar>
+            <para>In the absence of further data, equation <xref linkend="b7_ch6_e_5spdh"/> is
+              recommended for Tasmania.</para>
+          </sidebar>
+        </para>
+      </section>
+    </section>
+    <section xml:id="b7_ch6_s_4vwbd">
+      <title>Regional relationships for RORB using Area-Standardised Lag Parameter</title>
+      <para><xref linkend="b7_ch6_e_iou7u"/> to <xref linkend="b7_ch6_e_5spdh"/> all show that the
+        lag parameter K<subscript>c</subscript> of RORB is strongly correlated with catchment area A
+        raised to a power slightly greater than 0.5. Since stream lengths are also strongly related
+        to catchment area
+        <?oxy_delete author="ward" timestamp="20160707T163436+1000" content="(equation 5.3.4.8) "?>raised
+        to a very similar power, it follows that K<subscript>c</subscript> will be related to stream
+        length or a measure of stream length. One measure of stream length which has been adopted in
+        RORB is the average flow distance
+        d<subscript>av</subscript><?oxy_delete author="ward" timestamp="20160707T163440+1000" content=" (equation 5.3.4.15)"?>.
+        McMahon and Muller <citation>b7_c6_r21,b7_c6_r22</citation> and
+          <citation>b7_c6_r36+1</citation> have used these relations to form an area-standardised
+        lag parameter K<subscript>c</subscript>/d<subscript>av</subscript>.
+          <citation>b7_c6_r15+1</citation> formed a similar area-standardised lag parameter
+          K<subscript>c</subscript>/A<superscript>0.57</superscript>. Because of the strong relation
+        between K<subscript>c</subscript> and measures of area and stream length, the
+        area-standardised lag parameter should be essentially independent of the catchment size. The
+        area-standardised lag parameter can then be seen as analogous to lag parameters C
+        <?oxy_delete author="ward" timestamp="20160707T163550+1000" content="(equation 5.3.4.16)"?>,
+        B<?oxy_delete author="ward" timestamp="20160707T163554+1000" content=" (equation 5.3.4.18)"?>
+        and
+        β<?oxy_delete author="ward" timestamp="20160707T163601+1000" content=" (equation 5.3.4.20)"?>
+        in the WBNM, RAFTS and URBS models respectively.</para>
+      <para><citation>b7_c6_r36+1</citation> found that
+          K<subscript>c</subscript>/d<subscript>av</subscript> increased as mean annual rainfall
+        increased in Victoria (30 catchments) and western Australia (51 catchments), but not in New
+        South Wales, Queensland or the Timor sea region of the Northern Territory (41 catchments in
+        total). For all 122 catchments, the average value of
+          K<subscript>c</subscript>/d<subscript>av</subscript> was found to be 1.09.
+          <citation>b7_c6_r15+1</citation> found a similar increase of
+          K<subscript>c</subscript>/A<superscript>0.57</superscript> as mean annual rainfall
+        increased for South Australia, Victoria, Western Australia and the Alice Springs region of
+        the Northern territory. The effect appears to be more pronounced in the drier winter
+        rainfall regimes.</para>
+      <para><citation>b7_c6_r26+1</citation> combined the data of <citation>b7_c6_r14+1</citation>,
+          <citation>b7_c6_r10+1</citation> and <citation>b7_c6_r36+1</citation>, for more than 220
+        catchments in Queensland, New South Wales, Victoria, Tasmania and Western Australia. The
+        non-linearity parameter was set at <emphasis role="italic">m</emphasis> = 0.8. The mean
+        value of K<subscript>c</subscript>/d<subscript>av</subscript> was found to range between
+        0.96 and 1.25, depending on the particular region. The results of
+          <citation>b7_c6_r36+1</citation> and <citation>b7_c6_r26+1</citation> allow
+          K<subscript>c</subscript> to be estimated for any catchment by first calculating the
+        average flow distance dav, then multiplying it by the appropriate area-standardised lag
+        parameter value.</para>
+      <para>These results also indicate that many of the regional relations across Australia <xref
+          linkend="b7_ch6_e_iou7u"/> to <xref linkend="b7_ch6_e_5spdh"/>) could be fitted by either
+        a single relation or a small number of similar relations. For example, the data of
+          <citation>b7_c6_r14+1</citation> for 30 catchments (20 to 3910
+          km<superscript>2</superscript>) produces the following relation between dav (km) and A
+          (km<superscript>2</superscript>):</para>
+      <equation xml:id="b7_ch6_e_5szzh">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>d</mi>
+              <mrow>
+                <mi>a</mi>
+                <mi>v</mi>
+              </mrow>
+            </msub>
+            <mo>=</mo>
+            <mn>0.98</mn>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.54</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </math>
+      </equation>
+      <para>Combining equation <xref linkend="b7_ch6_e_5szzh"/> with the range of
+          K<subscript>c</subscript>/d<subscript>av</subscript> values from 0.96 to 1.25 produces a
+        general relation:</para>
+      <equation xml:id="b7_ch6_e_5szzzp5h">
+        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msub>
+              <mi>K</mi>
+              <mi>c</mi>
+            </msub>
+            <mo>=</mo>
+            <mtext>Coeff</mtext>
+            <mtext>.</mtext>
+            <msup>
+              <mi>A</mi>
+              <mrow>
+                <mn>0.54</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </math>
+      </equation>
+      <para>where the coefficient ranges from 0.94 to 1.22.</para>
+      <para><xref linkend="b7_ch6_e_5szzzp5h"/>
+        <?oxy_delete author="ward" timestamp="20160707T163500+1000" content="is"?><?oxy_insert_start author="ward" timestamp="20160707T163500+1000"?>can
+        be<?oxy_insert_end?> plotted for the mid-range coefficient value
+        1.08<?oxy_delete author="ward" timestamp="20160707T163524+1000" content=" in figure 5.3.4.19"?>,
+        together with the recommended relationships for the various regions of Australia, and is
+        seen to lie in the middle of these relationships. </para>
+      <para>While the area-standardised lag parameter can be expected to be essentially independent
+        of catchment size, it may be related to other variables. <citation>b7_c6_r10+1</citation>
+        developed regression relationships between
+          K<subscript>c</subscript>/d<subscript>av</subscript> and a range of catchment, climatic
+        and RORB model properties for seven groups. The method is also presented in
+          <citation>b8_c_r15+1</citation>. Catchments were placed into groups based on hydrological
+        similarity, utilising Andrews curves, rather than on geographical region. All values of
+          K<subscript>c</subscript>/d<subscript>av</subscript> are for <emphasis role="italic"
+          >m</emphasis> = 0.8 and using a proportional loss rather than a continuing loss rate
+        model. Data from 72 catchments from the east coast of Australia, Tasmania, the Adelaide
+        Hills, and the south-west of Western Australia were used. The various regression equations,
+        and the variables in them, were not consistent across the seven groups. Slope appeared in
+        the equation for only one group. While reasonably strong regressions could be developed for
+        the catchments in the data set, difficulties in assigning ungauged catchments to a
+        particular group have been found to cause problems in application of the method
+          <citation>b7_c6_r27,b7_c6_r26</citation>.</para>
+    </section>
+    <section xml:id="b7_ch6_s_eovge">
+      <title>Regional Relationships for WBNM</title>
+      <para>In WBNM the non-linearity parameter is recommended to be set at <emphasis role="italic"
+          >m</emphasis> = 0.77, unless there is strong evidence to use another value. This is very
+        close to the widely adopted value of <emphasis role="italic">m</emphasis> = 0.80 in RORB.
+        With parameter <emphasis role="italic">m</emphasis> set, only the lag parameter
+        C<?oxy_delete author="ward" timestamp="20160707T163617+1000" content=" in equation 5.3.4.16"?>
+        needs to be evaluated. As noted previously, parameter C is effectively an area-standardised
+        value analogous to K<subscript>c</subscript>/d<subscript>av</subscript> in RORB. Therefore
+        parameter C should be independent of catchment size. Additionally, if the value of the
+        non-linearity parameter <emphasis role="italic">m</emphasis> is correct, parameter C should
+        be independent of the flood size.</para>
+      <para>Parameter values have been derived for WBNM by <citation>b7_c6_r5+1</citation>,
+          <citation>b5_c3_r95+1</citation>, <citation>b7_c6_r30+1</citation>,
+          <citation>b7_c6_r3+1</citation> and <citation>b7_c6_r4+1</citation>. Plots of parameter C
+        against catchment area A have shown no trend for C to vary with catchment size,
+        indicat<?oxy_insert_start author="ward" timestamp="20160707T163640+1000"?>e<?oxy_insert_end?><?oxy_delete author="ward" timestamp="20160707T163642+1000" content="ing"?>
+        that the power of area A<?oxy_delete author="ward" timestamp="20160707T163625+1000" content=" in equation 5.3.4.16 "?><?oxy_insert_start author="ward" timestamp="20160707T163649+1000"?>
+        <?oxy_insert_end?>is satisfactory. The lack of dependence between the area-standardised form
+        of the lag parameter in RORB and catchment area has also been noted by
+          <citation>b7_c6_r26+1</citation>. Additionally, plots of C against the peak discharge of
+        the recorded flood have shown no trend for C to vary with flood size, indicating that the
+        non-linearity parameter <emphasis role="italic">m</emphasis> = 0.77 is
+        satisfactory.<?oxy_delete author="ward" timestamp="20160707T163655+1000" content=" Figures 5.3.4.20 and 5.3.4.21 show typical plots of parameter C."?></para>
+      <para><citation>b7_c6_r3+1</citation> investigated possible trends in parameter C against a
+        range of storm and catchment characteristics. Storm variables which were considered included
+        the peak discharge, rainfall depth, rainfall excess depth, rainfall intensity, location of
+        peak burst within storm, and spatial distribution of rainfall. Catchment variables included
+        area A, stream slope S<subscript>e</subscript>, stream length L, length to centroid
+          L<subscript>c</subscript>, spatial distribution of area L<subscript>c</subscript>/L,
+        catchment shape
+        A/L<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>2<?oxy_custom_end?>,
+        catchment elevation, number of rain days, and mean annual rainfall. The study used 251
+        storms on 17 catchments in eastern Queensland. While slight trends were apparent in some
+        cases and for some subsets of catchments, there were no strong trends for C to vary with any
+        of these variables. The independence of parameter C from these storm and catchment
+        characteristics indicates that one value applies generally over a wide range of regions. A
+        similar result has been obtained for the area-standardised lag parameter in RORB by
+          <citation>b7_c6_r26+1</citation>.</para>
+      <para>Values of the lag parameter C calibrated for south and eastern Australia are:</para>
+      <para>For 207 storms on 17 coastal catchments in Queensland (164 to 7300
+          km<superscript>2</superscript>), ranging from the North Johnstone to the Mary River,
+          <citation>b7_c6_r3+1</citation> obtained a mean value of parameter C of 1.47.</para>
+      <para>For ten catchments in the coastal region of NSW (0.4 to 250
+          km<superscript>2</superscript>), <citation>b7_c6_r5+1</citation> obtained a mean lag
+        parameter C of 1.68. For 17 catchments (0.1 to 800 km<superscript>2</superscript>) in the
+        Newcastle, Sydney-Wollongong region <citation>b7_c6_r30+1</citation> obtained a mean C of
+        1.16. Recent calibration of WBNM for 205 storms on 19 coastal catchments of NSW (0.2 to 6910
+          km<superscript>2</superscript>) by <citation>b7_c6_r4+1</citation> obtained a mean C of
+        1.74.</para>
+      <para>For 59 storms on six catchments in Victoria on the coastal side of the Great Dividing
+        Range, ranging from Bairnsdale to Ballarat (0.1 to 153 km<superscript>2</superscript>) plus
+        45 storms on four catchments inland of the Great Dividing Range near Healseville and Stawell
+        (63 to 259 km<superscript>2</superscript>), <citation>b7_c6_r4+1</citation> obtained a mean
+        value of C = 1.74.</para>
+      <para>For 90 storms on eight catchments in the Adelaide Hills near to Adelaide (4 to 176
+          km<superscript>2</superscript>), <citation>b7_c6_r4+1</citation> obtained a mean value of
+        C = 1.64.</para>
+      <para>The small range of these mean parameter values corresponds to the similar small range of
+        the area-standardised parameter K<subscript>c</subscript>/d<subscript>av</subscript> in RORB
+        found by <citation>b7_c6_r26+1</citation>. <citation>b7_c6_r4+1</citation> calculated a mean
+        value of parameter C for all 54 catchments in Queensland, New South Wales, Victoria and
+        South Australia of 1.64, and 1.59 when the parameter values were weighted by the number of
+        storms on each catchment. </para>
+      <sidebar>
+        <para>With no strong regional trends being apparent, and no strong relationships between
+          parameter C and catchment or storm characteristics, an overall mean value of parameter C =
+          1.60 is recommended for these states of Australia.</para>
+      </sidebar>
+    </section>
+    <section xml:id="b7_ch6_s_2e441">
+      <title>Relationships between RORB, WBNM, RAFTS and URBS Lag Parameters</title>
+      <para>As noted previously, all four runoff-routing models contain area-standardised lag
+        parameters. These are K<subscript>c</subscript>/d<subscript>av</subscript>, C, B and <inlineequation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>β</mi>
+          </math>
+        </inlineequation> of the RORB, WBNM, RAFTS and URBS models respectively. It could therefore
+        be expected that these parameters will be related to one another. For example, comparing
+        equation<?oxy_insert_start author="ward" timestamp="20160707T163118+1000"?>s<?oxy_insert_end?><?oxy_delete author="ward" timestamp="20160707T163116+1000" content=" 5.3.4.16"?>
+        for WBNM with equations
+        <?oxy_delete author="ward" timestamp="20160707T163126+1000" content="5.3.4.5, 5.3.4.13 and 5.3.4.14 "?>for
+        RORB reveal<?oxy_delete author="ward" timestamp="20160707T163112+1000" content="s"?> that
+          CA<subscript>i</subscript><superscript>0.57</superscript> in WBNM corresponds to
+          (K<subscript>c</subscript> / d<subscript>av</subscript>).L<subscript>i</subscript> in
+        RORB. Note that the area term A<subscript>i</subscript> and stream length term
+          L<subscript>i</subscript> in these equations refer to subcatchments and stream segments
+        rather than to complete catchments.</para>
+      <para>Measures of stream length, such as L
+        <?oxy_delete author="ward" timestamp="20160707T163137+1000" content="(equation 5.3.4.8) "?>and
+          d<subscript>av</subscript> (<xref linkend="b7_ch6_e_5szzh"/>) are strongly related with
+        catchment area, and it is reasonable to assume that stream segment lengths are also strongly
+        correlated with subcatchment areas. Replacing the L<subscript>i</subscript> term by
+          A<superscript>0.55</superscript><?oxy_delete author="ward" timestamp="20160707T163215+1000" content=" from equations 5.3.4.8"?>,
+        it is seen that parameter C of WBNM should be directly proportional to
+          K<subscript>c</subscript>/d<subscript>av</subscript> of RORB. From the previous sections
+        the average value of C is close to 1.60 and the average value of
+          K<subscript>c</subscript>/d<subscript>av</subscript> is 1.1 (range 0.96 to 1.25).
+        Therefore a relationship between these two parameters is:</para>
+      <equation xml:id="b7_ch6_e_lsxpp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mi>C</mi>
+          <mtext> </mtext>
+          <mo>=</mo>
+          <mtext> </mtext>
+          <mn>1.45</mn>
+          <mtext> </mtext>
+          <msub>
+            <mi>K</mi>
+            <mi>c</mi>
+          </msub>
+          <mo>/</mo>
+          <msub>
+            <mi>d</mi>
+            <mrow>
+              <mi>a</mi>
+              <mi>v</mi>
+            </mrow>
+          </msub>
+        </math>
+      </equation>
+      <para>Similar analysis indicates that parameter <inlineequation>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>β</mi>
+          </math>
+        </inlineequation> of URBS should be directly proportional to
+          K<subscript>c</subscript>/d<subscript>av</subscript>. For RAFTS the proportionality coefficient<?oxy_insert_start author="ward" timestamp="20160707T163205+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="ward" timestamp="20160707T162925+1000" content=" of equation 5.3.4.19 "?>should
+        be related to K<subscript>c</subscript>/d<subscript>av</subscript> but with an adjustment
+        required for the slope term S.</para>
+      <para>It should be noted that the correspondence between the area-standardised lag parameters
+        of the various models depends slightly on the power to which area A is raised, as well as
+        the non-linearity parameter <emphasis role="italic">m</emphasis>, however these are not too
+        dissimilar in the four models. The particular ratio between the parameters will depend on
+        the way in which the lag parameter is incorporated into flood routing in the particular
+        modelling platforms, as well as the method adopted for stream channel routing. The ratio
+        1.45 between RORB and WBNM will not apply to RAFTS and URBS.</para>
+    </section>
+  </section>
+  <section xml:id="b7_ch6_s_w0rrz">
+    <title>Modelling Urban Catchments</title>
+    <para>Increased flood discharges in urban or partially urbanised catchments can be attributed to
+      two factors. The increased proportion of paved or impervious surfaces produce greater runoff
+      volumes, and the decreased lag times for the runoff produces higher peak discharges. These
+      increases are not the same for all floods, being more pronounced for the smaller more common
+      events. Data given by <citation>b7_c6_r7+1</citation>, <citation>b9_c2_r18+1</citation> and
+        <citation>b4_c2_r21+1</citation> indicate that for 10% Annual Exceedance Probability events,
+      urban flood peak discharges increase by 2 to 5 times, while for 1% Annual Exceedance
+      Probability events urban peaks increase by less than two times.</para>
+    <para>Increased runoff volumes from paved surfaces result from decreased rainfall losses. </para>
+    <para>The decrease in lag time can be attributed to replacement of vegetated overland flow
+      surfaces and natural stream channels by more hydraulically efficient paved surfaces, gutters,
+      pipes and channels. Ratios of lag times in urban compared to otherwise equivalent natural
+      catchments typically range from 0.1 to 0.5
+        <citation>b9_c2_r25,b9_c2_r18,b4_c2_r21,b7_c6_r6,b5_c3_r95</citation>. Decreases in lag time
+      have been related to the fraction of the catchment which is urbanised by
+        <citation>b7_c6_r1+1</citation> and <citation>b8_c_r53+1</citation>. Other studies by
+        <citation>b7_c6_r28+1</citation>, <citation>b7_c6_r8+1</citation>,
+        <citation>b7_c6_r9+1</citation>, <citation>b7_c6_r29+1</citation> and
+        <citation>b7_c6_r11+1</citation> relate lag time to the impervious fraction. A survey of
+      these relations is given by <citation>b7_c6_r6+1</citation> and
+        <citation>b5_c3_r95+1</citation>.</para>
+    <para>All of these studies show a decrease in lag time as the catchment becomes more urbanised.
+      Typically, the lag reduction is expressed in terms of the urban fraction U in the form (1+U)z
+      where <emphasis role="italic">z</emphasis> ranges between –1.7 and –2.7, with an average near
+      to –2.0. Equation 5.3.4.19 adopts <emphasis role="italic">z</emphasis> = -1.97 for RAFTS,
+      while equation 5.3.4.20 adopts <emphasis role="italic">z</emphasis> = -2.0 for URBS. A value
+      of <emphasis role="italic">z</emphasis> = -2.0 in this relation produces a lag ratio of 0.25
+      for a fully urbanised catchment.</para>
+    <para>The urban fraction urban often does not fully describe the state of urbanisation, since a
+      100% urban catchment can be residential with typically 30% impervious surfaces, or it can be a
+      high density commercial centre with close to 100% impervious. Typical relationships between
+      the impervious and the urban fraction are given by <citation>b4_c2_r5+1</citation> and
+        <citation>b5_c3_r95+1</citation>. The RAFTS model accounts for this by allocating an
+      equivalent urban fraction U to each level of impervious fraction. For a fully impervious
+      surface, this produces a lag ratio of 0.11.</para>
+    <para>When a subcatchment is partly urbanised, it can be modelled in a lumped form whereby a
+      single hydrograph is calculated for the combined pervious and impervious surfaces, using a
+      reduced lag
+      time<?oxy_delete author="ward" timestamp="20160707T163238+1000" content=" according to equations such as 5.3.4.19 and 5.3.4.20"?>.
+      This is often done in the RORB, RAFTS and URBS models. Alternatively, the subcatchment can be
+      split into separate pervious and impervious surfaces with separate lag times and separate
+      hydrographs calculated for each surface. This is the recommended method for WBNM, where the
+      lag ratio for fully impervious surfaces is set at 0.10, similar to the value recommended in
+      RAFTS. However, all models can be configured to operate in either lumped or split form, and
+      RAFTS has been found to produce good results in the split form for catchments in the ACT
+        <citation>b7_c6_r17</citation>. Split pervious and impervious modelling is similar to the
+      procedures used in detailed urban drainage modelling platform such as DRAINS.</para>
+    <para>Urban catchments have other features which need to be considered when setting up a model.
+      During large storms flows may be diverted out of the catchment’s stream network to form new
+      overland flow routes. This can happen particularly when culvert or bridge openings become
+      blocked by debris. The model should be set up to reflect these alternative flow paths. Another
+      feature requiring consideration is that runoff from small development sites, and particularly
+      when onsite detention storage is used to reduce flood peaks, will require routing calculations
+      at small time steps and with small discharges. The stream network runoff-routing models
+      currently used in Australia all have these capabilities.</para>
+  </section>
+
+ <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
+
 </chapter>
+

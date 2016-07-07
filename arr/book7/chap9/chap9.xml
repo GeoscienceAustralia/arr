@@ -1,45 +1,1501 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter>
-<chapter status="In Preparation" version="5.0" xml:id="b7_ch9"
-         xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <title>Application to Rural Catchments</title>
-       <informaltable border="1">
-              <tr>
-                     <td colspan="2">Chapter Status</td>
-              </tr>
-              <tr>
-                     <td>Book</td>
-                     <td>7</td>
-              </tr>
-              <tr>
-                     <td>Chapter</td>
-                     <td>9</td>
-              </tr>
-              <tr>
-                     <td>Date</td>
-                     <td>27/11/2015</td>
-              </tr>
-              <tr>
-                     <td>Content</td>
-                     <td>In preparation</td>
-              </tr>
-              <tr>
-                     <td>Graphs and Figures</td>
-                     <td>In preparation</td>
-              </tr>
-              <tr>
-                     <td>Examples</td>
-                     <td>In preparation</td>
-              </tr>
-              <tr>
-                     <td>General</td>
-                     <td/>
-              </tr>
-       </informaltable>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="b7_ch8" version="5.0" status="In Preparation">
+    
+    
+    <info>
+    <title>Uncertainty Determination</title>
+    
+        <xi:include href="../../common/authors/nathan_rory.xml"/>
+        
+        <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+    
+    </info>
+    
+    <informaltable border="1">
+        <tr>
+            <td colspan="2">Chapter Status</td>
+        </tr>
+        <tr>
+            <td>Date last updated</td>
+            <td>06/07/16 </td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Working draft</td>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Subject to industry feedback </td>
+        </tr>
+    </informaltable>
+    <section xml:id="b7_ch8_s_d31e3">
+        <title>Introduction</title>
+        <para>An overview of the various sources of uncertainty relevant to flood estimation and
+            their treatment is provided in <xref linkend="b1_ch2"/>. This guidance distinguishes
+            between two broad types of uncertainty, namely: </para>
+        <itemizedlist>
+            <listitem>
+                <para>Aleatory (or inherent) uncertainty, which refers to uncertainty attributed to
+                    natural randomness or natural variability observed in nature; and,</para>
+            </listitem>
+            <listitem>
+                <para>Epistemic (or knowledge-based) uncertainty, which refers to uncertainty
+                    attributed to incomplete/imperfect knowledge of a physical system (and hence its
+                    model), and to the inability to measure it precisely if at all. </para>
+            </listitem>
+        </itemizedlist>
+        <para>Practical procedures for dealing with <emphasis role="italic">aleatory
+                uncertainty</emphasis> are provided in <xref linkend="b4_ch4"/>, whereas the focus
+            of this chapter is on the assessment of <emphasis role="italic">epistemic
+                uncertainty</emphasis>. Procedures for dealing with epistemic uncertainty for some
+            specific methods are described elsewhere in ARR, and in particular it is worth noting
+            the rigorous procedures provided for estimates of peak discharges using flood frequency
+            and regional flood prediction methods, as described in <xref linkend="book3"/>.</para>
+        <para>It is perhaps a common view amongst practitioners that uncertainty analysis is too
+            difficult to undertake. It is certainly true that assessing uncertainty takes additional
+            time and effort, but there are uncertainty assessment frameworks with generic
+            applicability to a range of practical problems (e.g. Pappenberger and Beven,
+                2006<citation>b7_c8_r7+1</citation>; Pappenberger et al,
+                2006<citation>b7_c8_r8+1</citation>; Doherty, 2016<citation>b7_c8_r1+1</citation>;
+            Kuczera et al, 2006<citation>b7_c8_r4+1</citation>; Palisade Corporation,
+                2015<citation>b7_c8_r6+1</citation>; Vrugt and Ter Braak,
+                2011<citation>b7_c8_r9+1</citation>). For those with the necessary skills and
+            interests, it is reasonable to assume that the effort required to become proficient with
+            such tools will return benefits across a range of projects. That said, it would appear
+            that specialists who are comfortable with uncertainty analysis tend to underestimate the
+            depth of tacit knowledge required to implement and interpret such schemes, and the entry
+            hurdle for many practitioners is a material one. Regardless, at this point in time it is
+            acknowledged that the available hydrological and hydraulic models commonly used in
+            Australia do not include the capability to assess uncertainty. It is expected that this
+            situation will improve with time.</para>
+        <para>The intended audience for this Chapter are interested practitioners who do not have
+            specialist training in the application of uncertainty techniques. The procedures
+            described in this Chapter are not intended to cover the steps required to estimate the
+            true uncertainty associated with input data, model parameters, and model structure.
+            Rather, a small number of practical procedures are presented in the hope that these will
+            allow practitioners to better understand (and communicate) the nature of uncertainty
+            associated with selected key aspects of the flood estimates provided. </para>
+        <para><xref linkend="b7_ch8_s_8goev"/> discusses the role of sensitivity analysis in the
+            assessment of uncertainty, and this is followed by a discussion (<xref
+                linkend="b7_ch8_s_wkr07"/>) of some simple analytical approaches relevant to error
+            propagation. <xref linkend="b7_ch8_s_20r4h"/> discusses the application of Monte Carlo
+            methods that can be used to assess uncertainty. Each method is supported by illustrative
+            examples of their usage.</para>
+    </section>
+    <section xml:id="b7_ch8_s_8goev">
+        <title>Sensitivity Analysis</title>
+        <para>Sensitivity analysis is a standard engineering technique that provides information on
+            how model outputs are affected by changes in model inputs. Such analyses do not provide
+            estimates of uncertainty, but they do provide a useful means of identifying which
+            factors have greatest influence on the outcome. This insight, combined with some
+            judgement regarding the relative accuracy of the different factors, can highlight which
+            areas of analysis warrant further investigative effort. Importantly, such analysis can
+            also reduce the dimensionality of subsequent uncertainty analysis so that effort is
+            expended only on the factors of most importance.</para>
+        <para>There are a variety of ways that the sensitivity of an outcome to uncertainties can be
+            represented, and two simple examples are shown in <xref linkend="b7_ch8_f_df3hi"/>. The
+            tornado diagram provides a simple summary of the sensitivity of an outcome to reasonable
+            estimates of upper and lower ranges, and the spider plot illustrates the dependence of
+            the outcome on the percentage deviation of the key parameters from their adopted
+            values.</para>
+        <figure xml:id="b7_ch8_f_df3hi">
+            <title>Representation of Relative Uncertainty of Outcome to Uncertainties Using a (a)
+                Tornado Diagram and (b) Spider Plot</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../../figures/7007.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Changes in model input values can affect model outputs in different ways, and any
+            dependency between inputs can mask the manner in which factors combine to influence the
+            outputs. In addition, the nature of the factors which most influence the outcome may
+            well vary with event magnitude. For example, the sensitivity to non-linearity in
+            storage-routing models is dependent on the degree to which estimates are extrapolated
+            beyond the magnitude of floods used for calibration; the reasonable range of estimates
+            of roughness parameters in a hydraulic model may vary with the depths of flow
+            considered. Accordingly, judgement needs to be used when selecting which factors to vary
+            over a particular set of conditions, and care is needed to ensure that the range of
+            values considered takes account of the possible dependencies.</para>
+        <para>Care also needs to be taken when considering the parameter ranges over which the
+            sensitivity is assessed. The upper and lower limits of parameter values considered
+            should reflect a similar range of notional uncertainty in each, otherwise misleading
+            inferences may be drawn about the sensitivity of their impact on the outcome. More
+            details on the uses and application of sensitivity analyses can be found in Loucks et
+            al, (2005)<citation>b7_c8_r5+1</citation>.</para>
+    </section>
+    <section xml:id="b7_ch8_s_wkr07">
+        <title>First Order Approximation Method</title>
+        <para>The purpose of introducing this simplified method of uncertainty analysis is to
+            illustrate the general nature of how errors in model inputs and parameters can propagate
+            through a model to produce errors in the model outputs. The first order error
+            propagation method can be used in a similar fashion to sensitivity analysis to firstly
+            identify the relative importance of different error sources and secondly to assess how
+            the influence of different error sources changes with event magnitude and frequency. </para>
+        <section xml:id="b7_ch8_s_t7y68">
+            <title>General Approach</title>
+            <para>The equation for error propagation for a function <emphasis role="italic"
+                    >f</emphasis> of independent variables <emphasis role="italic">x, y,
+                    z</emphasis> is (Haan, 2002)<citation>b7_c8_r3</citation>: </para>
+            <equation xml:id="b7_ch8_e_7s9pi">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <msub>
+                            <mi>s</mi>
+                            <mi>f</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <msqrt>
+                            <mrow>
+                                <msup>
+                                    <mrow>
+                                        <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                                <mfrac>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>f</mi>
+                                                  </mrow>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>x</mi>
+                                                  </mrow>
+                                                </mfrac>
+                                            </mrow>
+                                            <mo>)</mo>
+                                        </mrow>
+                                    </mrow>
+                                    <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                    <mi>s</mi>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                </msubsup>
+                                <mo>+</mo>
+                                <msup>
+                                    <mrow>
+                                        <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                                <mfrac>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>f</mi>
+                                                  </mrow>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>y</mi>
+                                                  </mrow>
+                                                </mfrac>
+                                            </mrow>
+                                            <mo>)</mo>
+                                        </mrow>
+                                    </mrow>
+                                    <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                    <mi>s</mi>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                </msubsup>
+                                <mo>+</mo>
+                                <msup>
+                                    <mrow>
+                                        <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                                <mfrac>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>f</mi>
+                                                  </mrow>
+                                                  <mrow>
+                                                  <mo>∂</mo>
+                                                  <mi>z</mi>
+                                                  </mrow>
+                                                </mfrac>
+                                            </mrow>
+                                            <mo>)</mo>
+                                        </mrow>
+                                    </mrow>
+                                    <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                    <mi>s</mi>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                </msubsup>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                            </mrow>
+                        </msqrt>
+                    </mrow>
+                </math>
+            </equation>
+            <para>where <emphasis role="italic">s<subscript>f</subscript></emphasis> and <emphasis
+                    role="italic">s<subscript>x</subscript>, s<subscript>y</subscript>,
+                        s<subscript>z</subscript></emphasis> are respectively the standard
+                deviations of the function and the independent variables. This approximation assumes
+                that the errors are normally distributed and independent.</para>
+            <para>This error propagation equation can be used to gain an approximate indication of
+                how errors in the independent variables translate into errors in the estimation
+                results. The following example illustrates this and compares the errors in the
+                estimates from three different methods. </para>
+        </section>
+        <section xml:id="b7_ch8_s_39c03">
+            <title>Example: Flood Volume of an n-Day Flood Event with AEP 1 in T</title>
+            <para>A number of approximate methods can be used to estimate the flood volume <emphasis
+                    role="italic">V<subscript>x</subscript></emphasis> for a design flood event of
+                given AEP and duration. Here the errors in volume estimates for three different
+                methods are derived and compared. The assumed percentage errors in the inputs to the
+                different methods have been selected somewhat arbitrarily but should be indicative
+                of the expected error magnitude.</para>
+            <orderedlist numeration="upperalpha">
+                <listitem>
+                    <para><emphasis>Estimate derived using a transposition model</emphasis></para>
+                    <para>If an estimate of the flood volume at gauged site <emphasis role="italic">Y</emphasis> is available from a frequency analysis of flood volumes,
+                        the flood volume (<emphasis role="italic">V</emphasis>) at ungauged site
+                            <emphasis role="italic">X</emphasis> can be estimated from a scaling
+                        relationship:</para>
+                    <equation xml:id="b7_ch8_e_duhry">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <msub>
+                                <mi>V</mi>
+                                <mi>x</mi>
+                            </msub>
+                            <mo>=</mo>
+                            <msub>
+                                <mi>V</mi>
+                                <mi>y</mi>
+                            </msub>
+                            <msup>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mrow>
+                                        <mfrac>
+                                            <mrow>
+                                                <msub>
+                                                    <mi>A</mi>
+                                                    <mi>x</mi>
+                                                </msub>
+                                            </mrow>
+                                            <mrow>
+                                                <msub>
+                                                    <mi>A</mi>
+                                                    <mi>y</mi>
+                                                </msub>
+                                            </mrow>
+                                        </mfrac>
+                                    </mrow>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mi>m</mi>
+                            </msup>
+                            <mo>=</mo>
+                            <msub>
+                                <mi>V</mi>
+                                <mi>y</mi>
+                            </msub>
+                            <msup>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mi>R</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mi>m</mi>
+                            </msup>
+                        </math>
+                    </equation>
+                    <para>where <emphasis role="italic">A</emphasis> denotes the area of each
+                        catchment, <emphasis role="italic">m</emphasis> is a scaling parameter, and
+                        the subscripts refer to the individual catchments. Assuming that the
+                        estimate of the ratio of the areas of the two catchments (<emphasis
+                            role="italic">R</emphasis>) is error free but that the volume estimate
+                        at site <emphasis role="italic">Y </emphasis>(<emphasis role="italic"
+                                >V<subscript>y</subscript></emphasis>) and the exponent of the
+                        scaling relationship (<emphasis role="italic">m</emphasis>) have errors
+                            <emphasis role="italic">s<subscript>V</subscript></emphasis> and
+                            <emphasis role="italic">sm</emphasis>, respectively, then the relative
+                        error in <emphasis role="italic">V<subscript>x</subscript></emphasis> can be
+                        calculated as:</para>
+                    <equation xml:id="b7_ch8_e_jta45">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mfrac>
+                                <mrow>
+                                    <msub>
+                                        <mi>s</mi>
+                                        <mrow>
+                                            <mi>V</mi>
+                                            <mi>x</mi>
+                                        </mrow>
+                                    </msub>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mi>V</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mo> </mo>
+                            <msqrt>
+                                <mrow>
+                                    <msup>
+                                        <mrow>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mfrac>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mi>s</mi>
+                                                                <mrow>
+                                                                    <mi>V</mi>
+                                                                    <mi>y</mi>
+                                                                </mrow>
+                                                            </msub>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mi>V</mi>
+                                                                <mi>y</mi>
+                                                            </msub>
+                                                        </mrow>
+                                                    </mfrac>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                        </mrow>
+                                        <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <msup>
+                                        <mrow>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mi>l</mi>
+                                                    <mi>n</mi>
+                                                    <mrow>
+                                                        <mo>(</mo>
+                                                        <mi>R</mi>
+                                                        <mo>)</mo>
+                                                    </mrow>
+                                                    <mo> </mo>
+                                                    <msub>
+                                                        <mi>s</mi>
+                                                        <mi>m</mi>
+                                                    </msub>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                        </mrow>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mrow>
+                            </msqrt>
+                        </math>
+                    </equation>
+                    <para>Estimates of errors in the transposed flood volumes based on <xref
+                            linkend="b7_ch8_e_jta45"/> are provided in <xref
+                            linkend="b7_ch8_t_uxl7v"/> for a range of representative input errors
+                        and parameter values. The results indicate that errors in the flood estimate
+                        at the gauged site are directly transferred to the estimate at the ungauged
+                        site, so errors increase as AEP decreases. Scaling to different catchment
+                        areas introduces little extra error as long as the catchment areas differ by
+                        no more than about 20 to 30% and the exponent in the scaling equation can be
+                        estimated to within about 10% accuracy. Scaling up and scaling down
+                        introduces similar errors.<table frame="void" xml:id="b7_ch8_t_uxl7v">
+                            <caption>Errors Flood Volumes Estimated Using a Transposition Model for
+                                a Range of Assumptions.</caption>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <col width="14%"/>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">AEP</th>
+                                    <th colspan="2">Variables</th>
+                                    <th>Output/Input</th>
+                                    <th colspan="2">Input Errors</th>
+                                    <th>Output Error</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>R</td>
+                                    <td>m</td>
+                                    <td>V<subscript>x</subscript>/V<subscript>y</subscript></td>
+                                    <td>s<subscript>V<subscript>y</subscript></subscript>/V<subscript>y</subscript></td>
+                                    <td>s<subscript>m</subscript>/V<subscript>y</subscript></td>
+                                    <td>s<subscript>V<subscript>x</subscript></subscript>/V<subscript>x</subscript></td>
+                                </tr>
+                                <tr>
+                                    <td>0.5 to 0.1</td>
+                                    <td>0.8</td>
+                                    <td>0.7</td>
+                                    <td>0.86</td>
+                                    <td>0.10</td>
+                                    <td>0.10</td>
+                                    <td>0.101</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.8</td>
+                                    <td>0.9</td>
+                                    <td>0.82</td>
+                                    <td>0.10</td>
+                                    <td>0.10</td>
+                                    <td>0.102</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.8</td>
+                                    <td>0.7</td>
+                                    <td>0.86</td>
+                                    <td>0.10</td>
+                                    <td>0.20</td>
+                                    <td>0.105</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.10</td>
+                                    <td>0.10</td>
+                                    <td>0.111</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.10</td>
+                                    <td>0.20</td>
+                                    <td>0.139</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>1.25</td>
+                                    <td>0.7</td>
+                                    <td>1.17</td>
+                                    <td>0.10</td>
+                                    <td>0.10</td>
+                                    <td>0.101</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>1.25</td>
+                                    <td>0.7</td>
+                                    <td>1.17</td>
+                                    <td>0.10</td>
+                                    <td>0.20</td>
+                                    <td>0.105</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>2.0</td>
+                                    <td>0.7</td>
+                                    <td>1.62</td>
+                                    <td>0.10</td>
+                                    <td>0.10</td>
+                                    <td>0.111</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>2.0</td>
+                                    <td>0.7</td>
+                                    <td>1.62</td>
+                                    <td>0.10</td>
+                                    <td>0.20</td>
+                                    <td>0.139</td>
+                                </tr>
+                                <tr>
+                                    <td>0.01</td>
+                                    <td>0.8</td>
+                                    <td>0.7</td>
+                                    <td>0.86</td>
+                                    <td>0.20</td>
+                                    <td>0.10</td>
+                                    <td>0.201</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.20</td>
+                                    <td>0.10</td>
+                                    <td>0.206</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.20</td>
+                                    <td>0.20</td>
+                                    <td>0.222</td>
+                                </tr>
+                                <tr>
+                                    <td>0.001</td>
+                                    <td>0.8</td>
+                                    <td>0.7</td>
+                                    <td>0.86</td>
+                                    <td>0.40</td>
+                                    <td>0.10</td>
+                                    <td>0.400</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.40</td>
+                                    <td>0.10</td>
+                                    <td>0.403</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>0.5</td>
+                                    <td>0.7</td>
+                                    <td>0.62</td>
+                                    <td>0.40</td>
+                                    <td>0.20</td>
+                                    <td>0.412</td>
+                                </tr>
+                            </tbody>
+                        </table></para>
+                </listitem>
+                <listitem>
+                    <para><emphasis>Estimate derived using a runoff coefficient
+                        model</emphasis></para>
+                    <para>This method assumes that a certain percentage of the average design
+                        rainfall depth <emphasis role="italic">P</emphasis> over the catchment for
+                        the given duration and AEP 1 in T is converted to a corresponding flood
+                        volume at the catchment outlet. The flood volume can thus be computed as
+                    </para>
+
+            <equation xml:id="b7_ch8_e_ey0o5">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <msub>
+                        <mi>V</mi>
+                        <mi>x</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mi>C</mi>
+                    <mi>A</mi>
+                    <mi>P</mi>
+                </math>
+            </equation>
+            <para>where <emphasis role="italic">C</emphasis> is a volumetric runoff coefficient and
+                    <emphasis role="italic">A</emphasis> is the catchment area. </para>
+            <para>Assuming that all the three variables have estimation errors associated with them,
+                the relative error in the estimated flood volume can be approximated as:</para>
+            <equation xml:id="b7_ch8_e_g5ugt">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mfrac>
+                        <mrow>
+                            <msub>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>V</mi>
+                                    <mi>x</mi>
+                                </mrow>
+                            </msub>
+                        </mrow>
+                        <mrow>
+                            <msub>
+                                <mi>v</mi>
+                                <mi>x</mi>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo> </mo>
+                    <msqrt>
+                        <mrow>
+                            <msup>
+                                <mrow>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                  <msub>
+                                                  <mi>s</mi>
+                                                  <mi>C</mi>
+                                                  </msub>
+                                                </mrow>
+                                                <mi>C</mi>
+                                            </mfrac>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </mrow>
+                                <mn>2</mn>
+                            </msup>
+                            <mo>+</mo>
+                            <msup>
+                                <mrow>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                  <msub>
+                                                  <mi>s</mi>
+                                                  <mi>A</mi>
+                                                  </msub>
+                                                </mrow>
+                                                <mi>A</mi>
+                                            </mfrac>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </mrow>
+                                <mn>2</mn>
+                            </msup>
+                            <mo>+</mo>
+                            <msup>
+                                <mrow>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                  <msub>
+                                                  <mi>s</mi>
+                                                  <mi>P</mi>
+                                                  </msub>
+                                                </mrow>
+                                                <mi>P</mi>
+                                            </mfrac>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </mrow>
+                                <mn>2</mn>
+                            </msup>
+                        </mrow>
+                    </msqrt>
+                </math>
+            </equation>
+            <para>where s<subscript>V<subscript>x</subscript></subscript> and <emphasis
+                            role="italic">s<subscript>C</subscript>, s<subscript>A</subscript>,
+                                s<subscript>P</subscript></emphasis> are respectively the standard
+                        deviations of the estimated volume and the three independent variables used
+                        in the estimate. Estimates of errors in the flood volumes based on <xref
+                            linkend="b7_ch8_e_g5ugt"/> are provided in <xref
+                            linkend="b7_ch8_t_xx04r"/> for a range of representative input errors
+                        and parameter values. The results show that the relatively large error in
+                        the volumetric runoff coefficient <emphasis role="italic">C</emphasis>
+                        dominates the error in the estimated flood volume.</para>
+            <table frame="void" xml:id="b7_ch8_t_xx04r">
+                <caption>Errors Flood Volumes Estimated Using a Runoff Coefficient Model for a Range
+                            of Assumptions</caption>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <thead>
+                    <tr>
+                        <th rowspan="2">AEP</th>
+                        <th colspan="3">Input Errors</th>
+                        <th>Output Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><emphasis role="italic">s<subscript>C</subscript></emphasis>/C</td>
+                        <td>s<subscript>A</subscript>/A</td>
+                        <td>s<subscript>P</subscript>/P</td>
+                        <td>s<subscript>V<subscript>x</subscript></subscript></td>
+                    </tr>
+                    <tr>
+                        <td>0.5 to 0.1</td>
+                        <td>0.5</td>
+                        <td>0.00</td>
+                        <td>0.1</td>
+                        <td>0.51</td>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>0.5</td>
+                        <td>0.05</td>
+                        <td>0.1</td>
+                        <td>0.51</td>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>0.5</td>
+                        <td>0.05</td>
+                        <td>0.2</td>
+                        <td>0.54</td>
+                    </tr>
+                    <tr>
+                        <td>0.01</td>
+                        <td>0.4</td>
+                        <td>0.00</td>
+                        <td>0.2</td>
+                        <td>0.45</td>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>0.4</td>
+                        <td>0.05</td>
+                        <td>0.2</td>
+                        <td>0.45</td>
+                    </tr>
+                    <tr>
+                        <td>0.001</td>
+                        <td>0.3</td>
+                        <td>0.00</td>
+                        <td>0.3</td>
+                        <td>0.42</td>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>0.3</td>
+                        <td>0.05</td>
+                        <td>0.3</td>
+                        <td>0.43</td>
+                    </tr>
+                </tbody>
+            </table>
+                </listitem>
+                <listitem>
+                    <para><emphasis>Estimate derived using a water balance model</emphasis></para>
+
+            <para>The flood volume can also be estimated from a water balance equation for the
+                catchment over the duration of interest, in this case expressed in terms of design
+                values for the different terms in the equation, (average depths over the catchment
+                area <emphasis role="italic">A</emphasis>, in mm):</para>
+            <equation xml:id="b7_ch8_e_xoto7">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mfrac>
+                            <mrow>
+                                <msub>
+                                    <mi>v</mi>
+                                    <mi>x</mi>
+                                </msub>
+                            </mrow>
+                            <mi>A</mi>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mi>I</mi>
+                        <mo>−</mo>
+                        <mi>L</mi>
+                        <mo>+</mo>
+                        <mi>B</mi>
+                        <mi>F</mi>
+                    </mrow>
+                </math>
+            </equation>
+            <para>where <emphasis role="italic">I</emphasis> is the design event rainfall, <emphasis role="italic">L</emphasis> is the total loss and <emphasis role="italic">BF</emphasis> the total baseflow contribution over the duration of the flood
+                event. The loss and baseflow values are assumed to be invariant with AEP.</para>
+            <para>The relative error in the estimated flood volume can then be calculated as:</para>
+            <equation xml:id="b7_ch8_e_txld3">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mfrac>
+                        <mrow>
+                            <msub>
+                                <mi>s</mi>
+                                <mrow>
+                                    <msub>
+                                        <mi>v</mi>
+                                        <mi>x</mi>
+                                    </msub>
+                                </mrow>
+                            </msub>
+                        </mrow>
+                        <mrow>
+                            <msub>
+                                <mi>v</mi>
+                                <mi>x</mi>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                            <msub>
+                                <mi>v</mi>
+                                <mi>x</mi>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <msqrt>
+                        <mrow>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mi>I</mi>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>+</mo>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mi>L</mi>
+                                <mn>2</mn>
+                            </msubsup>
+                            <mo>+</mo>
+                            <msubsup>
+                                <mi>s</mi>
+                                <mrow>
+                                    <mi>B</mi>
+                                    <mi>F</mi>
+                                </mrow>
+                                <mn>2</mn>
+                            </msubsup>
+                        </mrow>
+                    </msqrt>
+                </math>
+            </equation>
+            <para>Estimates of errors in the transposed flood volumes based on <xref
+                            linkend="b7_ch8_e_txld3"/> are provided in <xref
+                            linkend="b7_ch8_t_ktlns"/> for a range of representative input errors
+                        and parameter values. The results show that for frequent flood events the
+                        errors in the loss and baseflow values play an important role in the flood
+                        volume estimates, which can have large errors, while for very rare events
+                        the errors in estimated flood volumes are dominated by errors in the design
+                        rainfalls.</para>
+            <table frame="void" xml:id="b7_ch8_t_ktlns">
+                <caption>Errors Flood Volumes Estimated Using a Water Balance Model for a Range of
+                            Assumptions</caption>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <col width="20%"/>
+                <thead>
+                    <tr>
+                        <th rowspan="2">AEP</th>
+                        <th colspan="3">Input Variables</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>I</td>
+                        <td>L</td>
+                        <td>BF</td>
+                        <td>V<subscript>x</subscript></td>
+                    </tr>
+                    <tr>
+                        <td>0.5</td>
+                        <td>65</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>0.1</td>
+                        <td>100</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>0.01</td>
+                        <td>150</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>0.0001</td>
+                        <td>500</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>480</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table frame="void" xml:id="b7_ch8_t_hv1te"><caption/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <col width="11%"/>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">AEP</th>
+                            <th colspan="3">Input Errors (Relative)</th>
+                            <th colspan="3">Input Errors (Absolute)</th>
+                            <th colspan="2"/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>s<subscript>I</subscript>/I</td>
+                            <td>s<subscript>I</subscript>/L</td>
+                            <td>s<subscript>BF</subscript>/BF</td>
+                            <td>s<subscript>I</subscript></td>
+                            <td>s<subscript>I</subscript></td>
+                            <td>s<subscript>BF</subscript></td>
+                            <td>s<subscript>v<subscript>x</subscript></subscript></td>
+                            <td>s<subscript>v<subscript>x</subscript></subscript>/V<subscript>x</subscript></td>
+                        </tr>
+                        <tr>
+                            <td>0.5</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>0.4</td>
+                            <td>13.0</td>
+                            <td>12.0</td>
+                            <td>8.0</td>
+                            <td>19</td>
+                            <td>0.43</td>
+                        </tr>
+                        <tr>
+                            <td>0.5</td>
+                            <td>0.1</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>6.5</td>
+                            <td>8.0</td>
+                            <td>6.0</td>
+                            <td>12</td>
+                            <td>0.27</td>
+                        </tr>
+                        <tr>
+                            <td>0.1</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>0.4</td>
+                            <td>20.0</td>
+                            <td>12.0</td>
+                            <td>8.0</td>
+                            <td>25</td>
+                            <td>0.31</td>
+                        </tr>
+                        <tr>
+                            <td>0.1</td>
+                            <td>0.1</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>10.0</td>
+                            <td>8.0</td>
+                            <td>6.0</td>
+                            <td>14</td>
+                            <td>0.18</td>
+                        </tr>
+                        <tr>
+                            <td>0.01</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>0.4</td>
+                            <td>30.0</td>
+                            <td>12.0</td>
+                            <td>8.0</td>
+                            <td>33</td>
+                            <td>0.26</td>
+                        </tr>
+                        <tr>
+                            <td>0.01</td>
+                            <td>0.1</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>15.0</td>
+                            <td>8.0</td>
+                            <td>6.0</td>
+                            <td>18</td>
+                            <td>0.14</td>
+                        </tr>
+                        <tr>
+                            <td>0.0001</td>
+                            <td>0.3</td>
+                            <td>0.3</td>
+                            <td>0.4</td>
+                            <td>150.0</td>
+                            <td>12.0</td>
+                            <td>8.0</td>
+                            <td>151</td>
+                            <td>0.31</td>
+                        </tr>
+                        <tr>
+                            <td>0.0001</td>
+                            <td>0.2</td>
+                            <td>0.2</td>
+                            <td>0.3</td>
+                            <td>100.0</td>
+                            <td>8.0</td>
+                            <td>6.0</td>
+                            <td>100</td>
+                            <td>0.21</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                </listitem>
+            </orderedlist>            
+            <para>
+                <emphasis role="italic">Evaluation of the three models</emphasis></para>
+            <para>The comparison of the error estimates from the three methods indicates that for
+                relatively frequent events the transposition model (A) using an estimate based on
+                flood frequency analysis performs best. Method (B) is dominated by relatively large
+                errors in the runoff coefficient for all flood event magnitudes and frequencies.
+                Method (C) performs best for rare to very rare events, where errors in the loss and
+                baseflow play only a minor role.</para>
+        </section>
+    </section>
+    <section xml:id="b7_ch8_s_20r4h">
+        <title>Monte Carlo Simulation</title>
+        <section xml:id="b7_ch8_s_idfn2">
+            <title>General Approach</title>
+            <para>Monte Carlo simulation provides an alternative practical means for assessing how
+                uncertainties in input parameters propagate through to the results of interest.
+                    <xref linkend="b4_ch4"/> describes the formulation and implementation of Monte
+                Carlo procedures for the analysis of joint probabilities, and these same procedures
+                may be applied to the assessment of uncertainty; however, rather than sampling from
+                distributions representing natural variability, the stochastic samples are generated
+                from distributions that characterise uncertainty in the inputs. </para>
+            <para>A general framework for how Monte Carlo simulation may be used to assess
+                uncertainty is illustrated in <xref linkend="b7_ch8_f_4x5im"/>. The area of
+                light-blue shading in this figure represents the main elements used to consider the
+                joint interaction of the factors that are subject to natural variability (aleatory
+                uncertainty), as discussed in detail in <xref linkend="b4_ch4"/> (<xref
+                    linkend="b4_ch4_f_1uw4y"/>). The outer loop (in green) represents the additional
+                simulations undertaken in which the parameters are stochastically sampled from
+                distributions representing uncertainty in the inputs. That is, undertaking the inner
+                loop of simulations yields an estimate of exceedance probability that a particular
+                outcome might be exceeded (step D in <xref linkend="b7_ch8_f_4x5im"/>), and the
+                outer loop provides an estimate of uncertainty of the derived quantile (step E). Of
+                course, this framework could be simplified to provide an assessment of the
+                uncertainty in the magnitude only of the outputs, in which case only the
+                deterministic modelling within the blue shaded area is required (step C). The
+                additional simulations required to consider epistemic uncertainty increases the
+                number of simulations by up to two orders of magnitude. For example, if a stratified
+                sampling scheme used 5000 simulations to derive a frequency curve of outputs, then
+                around 500 000 simulations would be required to derive the corresponding 90%
+                confidence limits.</para>
+            <para>Details of the simulation procedures required to undertake Monte Carlo simulation
+                are provided in <xref linkend="b4_ch4"/>. Two examples are provided below which
+                illustrate application of these procedures. One example is used to assess the errors
+                in the transposition of flood volumes (model A, as outlined in the preceding
+                section), and the other extends the worked example presented in <xref
+                    linkend="b4_ch4_s_0lxln"/> for the analysis of concurrent tributary flows. The
+                first example just considers the uncertainty in the magnitude of the outcome, the
+                second considers the uncertainty in both its magnitude and frequency.</para>
+            <figure xml:id="b7_ch8_f_4x5im">
+                <title>General Framework for the Analysis of Uncertainty using Monte Carlo
+                    Simulation.</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/7008.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b7_ch8_s_6fn20">
+            <title>Example: Flood Volume of an n-Day Flood Event with AEP 1 in T</title>
+            <para>A simple Monte Carlo scheme may be implemented in standard spreadsheet software to
+                assess the propagation of uncertainty in the transposition example (<xref
+                    linkend="b7_ch8_e_duhry"/>), as shown in <xref linkend="b7_ch8_f_e6jbk"/>. The
+                approach is simply to generate a large number of normally distributed values about
+                the mean estimates of <emphasis role="italic">m</emphasis> and <emphasis
+                    role="italic">V<subscript>y</subscript></emphasis>,<emphasis role="italic">,
+                </emphasis>where the standard deviation of the sample reflects the magnitude of the
+                errors. This is achieved by generating a sample of normally distributed values with
+                a mean of zero and a standard deviation equal to <emphasis role="italic"
+                        >s<subscript>m</subscript></emphasis> and <emphasis role="italic"
+                        >s<subscript>v</subscript></emphasis>.</para>
+            <para>The steps required to do this are described in <xref linkend="b4_ch4_s_9nwl4"/>.
+                For this example 2000 random numbers uniformly varying between 0 and 1 are generated
+                for each of the variables <emphasis role="italic"
+                    >V<subscript>y</subscript></emphasis> and <emphasis role="italic">m</emphasis>,
+                as shown in columns 2 and 5 of <xref linkend="b7_ch8_f_e6jbk"/>. The relative errors
+                associated with <emphasis role="italic">V<subscript>y</subscript></emphasis> and
+                    <emphasis role="italic">m</emphasis> are assumed to be 10% and 20%, the ratio of
+                catchment areas (<emphasis role="italic">R</emphasis>) is assumed to be 1.25 and the
+                value of the exponent (<emphasis role="italic">m</emphasis>) is 0.7. The standard
+                normal variates corresponding to the uniform random numbers are computed (columns 3
+                and 6), and these are multiplied by the selected variable values and their
+                respective error terms (<emphasis role="italic">s<subscript>m</subscript>,
+                        s<subscript>v</subscript></emphasis>) to yield 2000 stochastic values of
+                    <emphasis role="italic">V<subscript>y</subscript></emphasis> and <emphasis
+                    role="italic">m</emphasis> (columns 4 and 7). These steps yield a sample of
+                values with a mean of zero and a standard deviation equal to their respective errors
+                    (<emphasis role="italic">s<subscript>m</subscript>,
+                    s<subscript>v</subscript></emphasis>). Values of <emphasis role="italic"
+                        >V<subscript>x</subscript></emphasis> are computed using <xref
+                    linkend="b7_ch8_e_duhry"/> for each pair of stochastically generated values of
+                    <emphasis role="italic">m</emphasis> and <emphasis role="italic"
+                        >V<subscript>y</subscript></emphasis> (column 8). The standard deviation of
+                these values represents the error about the mean estimate of <emphasis role="italic"
+                        >V<subscript>x</subscript></emphasis>, and for the sample shown in <xref
+                    linkend="b7_ch8_f_e6jbk"/> this is found to be 3.11; when expressed as a
+                proportion of the mean (0.108), this is similar to the result found by First Order
+                Approximation, as shown in the 6th row of entries in <xref linkend="b7_ch8_t_uxl7v"
+                />. </para>
+            <para>The sample size is selected by trial and error such that successive estimates of
+                the uncertainty change little with repeated stochastic samples. A sample size of 100
+                yields estimates of uncertainty that vary by around 10% of the mean value, and that
+                obtained using a sample of 2000 vary by around only 1%.</para>
+            <figure xml:id="b7_ch8_f_e6jbk">
+                <title>Monte Carlo simulation of transposed flood volumes</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/7013.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b7_ch8_s_kjhq0">
+            <title>Example: Flood level downstream of the confluence between two rivers</title>
+            <para>This example is based on the case study presented in <xref
+                    linkend="b4_ch4_s_0lxln"/>. The example involves deriving a level frequency
+                curve for a point below the confluence of two streams, where hydraulic modelling is
+                used to estimate flood levels as a function of the coincident flood maxima.</para>
+            <para>The analysis presented in <xref linkend="book4"/> demonstrates the use of the
+                Total Probability Theorem in combination with a stratified sampling scheme to derive
+                quantiles of flood levels below the confluence. The analysis presented here extends
+                that original analysis, and shows how Monte Carlo simulation can be implemented in
+                spreadsheet software to derive confidence limits for the derived flood levels. In
+                essence, this example follows the framework illustrated in <xref
+                    linkend="b7_ch8_f_4x5im"/>, where the steps analysing aleatory uncertainty (blue
+                shading) are described in <xref linkend="b4_ch4_s_0lxln"/>, and those associated
+                with the analysis of epistemic uncertainty are presented below.</para>
+            <para>The analysis is subject to three sources of uncertainty, namely the errors
+                associated with:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>the parameters of the log-Normal distribution fitted to the flood
+                        maxima;</para>
+                </listitem>
+                <listitem>
+                    <para>the estimate of correlation between flood maxima in the two streams;
+                        and</para>
+                </listitem>
+                <listitem>
+                    <para>the estimates of the corresponding downstream flood levels from the
+                        hydraulic modelling.</para>
+                </listitem>
+            </itemizedlist>
+            <para>The separate treatment of these uncertainties is discussed below.</para>
+            <para><emphasis role="italic">Uncertainty in parameters of the flood frequency
+                    model</emphasis></para>
+            <para>The assessment of uncertainty in the log-Normal distributions is undertaken by a
+                parametric bootstrapping method. With this approach, stochastic samples are
+                generated from the log-Normal distribution fitted to historical maxima, and new
+                log-Normal distributions are fitted to each synthetic data set; the quantiles
+                obtained from these synthetic parameters are then used to provide an estimate of
+                uncertainty in the flood quantiles. The steps involved in this approach are:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Use the log-Normal distribution obtained from fitting to the <emphasis
+                            role="italic">N</emphasis> maxima in the historic record to generate a
+                        sample of <emphasis role="italic">N</emphasis> synthetic flood maxima (using
+                        the parametric sampling approach described in <xref linkend="b4_ch4_s_9nwl4"
+                        />)</para>
+                </listitem>
+                <listitem>
+                    <para>Fit a log-Normal distribution to this synthetic sample (ie calculate the
+                        mean and standard deviations of the logs of this sample)</para>
+                </listitem>
+                <listitem>
+                    <para>Repeat steps i) and ii) 100 times to obtain 100 sets of log-Normal
+                        parameters, where the 90% confidence limits of the parameters are determined
+                        simply by calculating the 5% and 95% exceedance percentiles of each
+                        sample.</para>
+                </listitem>
+            </orderedlist>
+            <para>The above steps are applied separately to the flood data available for the
+                mainstream and tributary. The resulting distributions of the parameters are shown in
+                    <xref linkend="b7_ch8_f_6yaqr"/>. It is seen that the uncertainties in the
+                tributary parameters are slightly wider than those of the mainstream, which reflects
+                the shorter record length (30 years versus 50).</para>
+            <figure xml:id="b7_ch8_f_6yaqr">
+                <title> Uncertainty in parameters of the log-Normal distribution (high and low bars
+                    represent 5% and 95% limits, the high and low boxes represent 25% and 75%
+                    limits, and the central bar shows the median).</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/7009.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para><emphasis role="italic">Uncertainty in correlation between flood
+                maxima</emphasis></para>
+            <para>The approach used to characterise uncertainty in the degree of correlation
+                    (<emphasis role="italic">r</emphasis>) between flood maxima in the two streams
+                is similar to that used when errors are assumed to be Normally distributed (as
+                described in <xref linkend="b7_ch8_s_6fn20"/>). However, an additional
+                transformation step is introduced to better conform to the assumed distribution of
+                errors in estimates of the correlation coefficient (Fisher,
+                    1915)<citation>b7_c8_r2</citation>. Fisher’s transformation of the correlation
+                coefficient is approximately normally distributed with a mean (<emphasis
+                    role="italic">r’</emphasis>) and standard error
+                        (<emphasis>se'<subscript>r</subscript></emphasis>):</para>
+            <equation xml:id="b7_ch8_e_6to43">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <msup>
+                        <mi>r</mi>
+                        <mo>′</mo>
+                    </msup>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                    </mfrac>
+                    <mi>ln</mi>
+                    <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>r</mi>
+                                </mrow>
+                                <mrow>
+                                    <mn>1</mn>
+                                    <mo>−</mo>
+                                    <mi>r</mi>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                        <mo>)</mo>
+                    </mrow>
+                </math>
+            </equation>
+            <equation xml:id="b7_ch8_e_mzvfn">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mi>s</mi>
+                    <msub>
+                        <msup>
+                            <mi>e</mi>
+                            <mo>′</mo>
+                        </msup>
+                        <mi>r</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                            <msqrt>
+                                <mrow>
+                                    <mi>N</mi>
+                                    <mo>−</mo>
+                                    <mn>3</mn>
+                                </mrow>
+                            </msqrt>
+                        </mrow>
+                    </mfrac>
+                </math>
+            </equation>
+            <para>The correlation between the log-transformed flood maxima in the two streams
+                    (<emphasis role="italic">r</emphasis>) is calculated to be 0.6, based on 30
+                years of concurrent data. The Fisher transformed estimates of <emphasis role="italic">r’</emphasis> and <inlineequation>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>s</mi>
+                        <msub>
+                            <msup>
+                                <mi>e</mi>
+                                <mo>′</mo>
+                            </msup>
+                            <mi>r</mi>
+                        </msub>
+                    </math>
+                </inlineequation> are thus calculated to be 0.693 and 0.192. With these calculated,
+                the steps to generate a stochastic sample of correlations are as follows:</para>
+            <orderedlist numeration="lowerroman">
+                <listitem>
+                    <para>Generate a uniform random variate (<emphasis role="italic">p</emphasis>)
+                        between 0 and 1 </para>
+                </listitem>
+                <listitem>
+                    <para>Compute the standard normal variate (<emphasis role="italic">zi</emphasis>) corresponding to <emphasis role="italic">p</emphasis></para>
+                </listitem>
+                <listitem>
+                    <para>Obtain the quantile (g<subscript>i</subscript>) corresponding to p from
+                        the inverse of the transformed normal distribution: <inlineequation>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                <msub>
+                                    <mi>g</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo>=</mo>
+                                <mn>0.693</mn>
+                                <mo>+</mo>
+                                <msub>
+                                    <mi>z</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mn>0.192</mn>
+                            </math>
+                        </inlineequation></para>
+                </listitem>
+                <listitem>
+                    <para>Apply the inverse of Fisher’s transformation to g<subscript>i</subscript>
+                        to obtain a stochastic estimate of the correlation coefficient (<emphasis
+                            role="italic">ri</emphasis>), where the inverse transform is calculated
+                        from the inverse of <xref linkend="b7_ch8_e_6to43"/>:</para>
+
+
+            <equation xml:id="b7_ch8_e_d5z4d">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <msub>
+                        <mi>r</mi>
+                        <mi>i</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <msup>
+                                <mi>e</mi>
+                                <mrow>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <msub>
+                                                <mi>g</mi>
+                                                <mi>i</mi>
+                                            </msub>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <mo>−</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </msup>
+                        </mrow>
+                        <mrow>
+                            <msup>
+                                <mi>e</mi>
+                                <mrow>
+                                    <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <msub>
+                                                <mi>g</mi>
+                                                <mi>i</mi>
+                                            </msub>
+                                        </mrow>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <mo>+</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </msup>
+                        </mrow>
+                    </mfrac>
+                </math>
+            </equation>
+                </listitem>           
+                <listitem>
+                    <para>Repeat steps i) to iv) 100 times to obtain a stochastic sample of
+                        correlation coefficients.</para>
+                </listitem>
+            </orderedlist>
+            <para>In this example, the mean of 100 correlation coefficients generated in this manner
+                is found to be 0.603, where 90% of the sample is found to lie between 0.407 and
+                0.762.</para>
+            <para><emphasis role="italic">Uncertainty in flood level estimates</emphasis></para>
+            <para>A pragmatic approach is used to account for errors in the relationship between
+                flows in the two streams and downstream flood levels. The approach is based on the
+                simple assumption that the errors are normally distributed and invariant with
+                magnitude, where the adopted standard deviation of the errors is 0.1m. The magnitude
+                of the error term is based on the standard error of the regression relationship
+                developed using hydraulic modelling, but this was increased slightly to reflect the
+                additional uncertainty associated with the hydraulic modelling. The adopted approach
+                could be modified to allow for errors in the slope of the fitted regression line and
+                include dependency on flow magnitude, but this simpler approach provides a useful
+                basis for exploring the sensitivity of the outcome to this source of
+                uncertainty.</para>
+            <para>The steps involved in this are identical to that used in the preceding example in
+                    <xref linkend="b7_ch8_s_6fn20"/>, as shown in <xref linkend="b7_ch8_f_e6jbk"/>.
+                An illustration of level estimates derived with the error term included is provided
+                in <xref linkend="b7_ch8_f_78uib"/>. The values on the x-axis correspond to the
+                levels derived using the regression equation between upstream flows and levels
+                simulated by the hydraulic model (<xref linkend="b4_ch4_f_sbu5n"/>), and those on
+                the y-axis include the normally distributed errors generated with a standard
+                deviation of 0.1. </para>
+            <figure xml:id="b7_ch8_f_78uib">
+                <title>Uncertainty in levels estimated from the regression equation.</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/7010.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para><emphasis role="italic">Uncertainty in derived level frequency
+                curve</emphasis></para>
+            <para>The final step required to assess the uncertainty in the derived frequency curve
+                is to derive a frequency curve for each set of input parameters derived from the
+                preceding three steps. That is, a flood level frequency curve is derived for the set
+                of stochastic parameters generated in the preceding three steps, and the uncertainty
+                in the design flood levels is obtained from the distribution of results.</para>
+            <para>The steps implemented to solve this using spreadsheet software are:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Generate 100 sets of stochastic parameters for the two log-Normal
+                        distributions and the correlation coefficient (this corresponds to step A in
+                            <xref linkend="b7_ch8_f_4x5im"/>)</para>
+                </listitem>
+                <listitem>
+                    <para>For each set of parameters, generate 1000 stochastic samples of flood
+                        maxima in the mainstream and the tributary, using the procedure described in
+                            <xref linkend="b4_ch4_t_h8581"/>, then calculate the corresponding
+                        downstream flood levels from the regression relationship with a normally
+                        distributed error term added to the level estimates, as described above;
+                        these calculations correspond to steps B and C, shown in <xref
+                            linkend="b7_ch8_f_4x5im"/>.</para>
+                </listitem>
+                <listitem>
+                    <para>Derive a flood level frequency curve by fitting a simple probability model
+                        to the 1000 stochastic maxima, as described in <xref
+                            linkend="b4_ch4_t_h8581"/> (step D, <xref linkend="b7_ch8_f_4x5im"/>);
+                        this is used to estimate design levels for a range of exceedance
+                        probabilities.</para>
+                </listitem>
+                <listitem>
+                    <para>Steps ii) and iii) are repeated for each of the 100 sets of stochastic
+                        parameters, which yields 100 estimates of design levels for each of the
+                        exceedance probabilities; these levels are ranked, and 90% of the range is
+                        used to represent uncertainty (step E, <xref linkend="b7_ch8_f_4x5im"
+                        />).</para>
+                </listitem>
+            </orderedlist>
+            <para>The final level frequency curve and confidence limits derived using the above
+                steps are shown in <xref linkend="b7_ch8_f_87ltn"/>.</para>
+            <para>
+                <figure xml:id="b7_ch8_f_87ltn">
+                    <title>Confidence limits on the flood level frequency curve determined using the
+                        general framework for the analysis of uncertainty using Monte Carlo
+                        simulation.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/7011.png"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </para>
+        </section>
+    </section>
+   
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include>
+    
+   
+   
 </chapter>

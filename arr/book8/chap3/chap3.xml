@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch3" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <info>
+    <title>Estimation of Very Rare to Extreme Rainfalls</title>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+  <section xml:id="b8_s_vgrwa">
+    <title>General</title>
+    <section xml:id="b8_s_vdby3">
+      <title>Overview of Requirements and Sources of Design Rainfall Information</title>
+      <para>In general, estimates of Very Rare to Extreme floods are derived using <emphasis
+          role="italic">rainfall-based flood estimation methods</emphasis> (possible exceptions to
+        this are discussed in <xref linkend="b8_s_dkdq3"/>). Information is required on the average
+        depth of rainfall over the catchment for a range of rainfall event durations, its
+        distribution in space (spatial pattern) and its distribution in time during the event
+        (temporal pattern). Design floods are generally calculated separately for each duration,
+        including routing through any reservoirs or other storages, to determine the critical
+        rainfall durations that produce the maxima for the flood characteristics of interest (peak
+        inflow/outflow, flood volume or possibly duration of flooding). Short duration design
+        rainfalls may be required even on large catchments to check that their occurrence on only
+        part of the catchment area does not produce a critical flood, and to check that the
+        magnitudes of the calculated floods vary in a regular manner as the duration of the rainfall
+        increases.</para>
+      <para><xref linkend="b2_ch3"/> provides details of <emphasis role="italic">design rainfall
+          depths at a grid of points</emphasis> over the whole of Australia for the range of AEPs
+        and
+        <?oxy_delete author="retallick" timestamp="20160529T203622+1000" content="rainfall event "?>durations
+        of interest for the estimation of Very Rare to Extreme floods. Except for the PMP, these
+        design rainfall depths are point rainfalls at the grid point location; they need to be
+        converted to <emphasis role="italic">average catchment rainfalls</emphasis> by application
+        of the <emphasis role="italic">areal reduction factors (ARFs)</emphasis> provided in <xref
+          linkend="b2_ch4"/>.</para>
+      <para>General guidance on <emphasis role="italic">design spatial rainfall patterns</emphasis>
+        is provided in <xref linkend="b2_ch4"/>. This guidance
+        <?oxy_delete author="retallick" timestamp="20160529T203810+1000" content="generally"?>
+        applies to design spatial patterns for the estimation of Very Rare to Extreme floods, with
+        some more specific guidance provided in
+          <?oxy_comment_start author="retallick" timestamp="20160529T203858+1000" comment="check what this reference looks like
+"?><xref
+          linkend="b8_s_sborg"/><?oxy_comment_end?>
+        <?oxy_delete author="retallick" timestamp="20160529T203832+1000" content="of this book"?>.
+        The limited information available on spatial patterns of extreme storm events generally
+        precludes the application of an ensemble of spatial patterns; spatial patterns can be
+        sampled in an ensemble fashion in stochastic simulation frameworks, but generally a single
+        representative pattern derived from design rainfall fields (or observed storms) in a larger
+        region is sufficient for most design purposes.</para>
+      <para>The guidance provided in <xref linkend="b2_ch5"/> for the selection of <emphasis
+          role="italic">design temporal rainfall patterns</emphasis> also generally applies to the
+        range of Very Rare to Extreme floods,
+        with<?oxy_delete author="retallick" timestamp="20160529T204407+1000" content=" some"?> more
+        specific guidance provided in <xref linkend="b8_s_4n0lw"
+        /><?oxy_delete author="retallick" timestamp="20160529T204355+1000" content=" of this book"?>.
+        Given the sensitivity of flood estimates to the high degree of natural variability in the
+        temporal patterns of actual storms, it is recommended that an ensemble of temporal patterns
+        rather than a single ‘representative’ temporal pattern is applied.</para>
+    </section>
+    <section xml:id="b8_s_xczgh">
+      <title>Uncertainty in Design Rainfall Estimates</title>
+      <para>There
+        is<?oxy_delete author="retallick" timestamp="20160529T204457+1000" content=" only"?> limited
+        detailed information on the uncertainty associated with the rainfall estimates provided in
+          <xref linkend="b2_ch3"/>. It should be recognised that the magnitude of the uncertainty in
+        design rainfall estimates increases with decreasing AEP
+        (<?oxy_delete author="retallick" timestamp="20160529T204525+1000" content="see"?><?oxy_insert_start author="retallick" timestamp="20160529T204525+1000"?>refer to<?oxy_insert_end?>
+        <xref linkend="b1_ch2"/>), as model uncertainty plays an increasingly important part in the
+        estimation of extreme events, including the PMP. Some information is available on the more
+        recent estimates of Very Rare to Extreme rainfalls (e.g.
+          <citation>b8_c_r38,b8_c_r45</citation>), and this may be used to provide some indication
+        of the uncertainties involved in other design rainfall estimates. The uncertainty of design
+        rainfall estimates reflects the level of information available, with significantly increased
+        uncertainty in areas of sparse rain gauge coverage, such as mountainous areas.</para>
+    </section>
+  </section>
+  <section xml:id="b8_s_8tx6d">
+    <title>Estimation of Very Rare Design Rainfalls</title>
+    <para>Design rainfall depths for Very Rare events are derived by regional estimation methods,
+      such as the regional
+      L-<?oxy_insert_start author="retallick" timestamp="20160529T204739+1000"?>m<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160529T204738+1000" content="M"?>oment
+      method described in
+        <?oxy_comment_start author="retallick" timestamp="20160529T204838+1000" comment="check this is covered
+"?><xref
+        linkend="b2_ch3_s7_0"/>.<?oxy_comment_end?> These methods pool data from large rainfall
+      events in a region that satisfies basic homogeneity criteria. By using a ‘space for time
+      trade-off’, these methods allow estimation of rarer events than
+      <?oxy_comment_start author="retallick" timestamp="20160529T204936+1000" comment="should this be &quot;would not&quot;"?>would
+      be<?oxy_comment_end?> possible by using data from an individual site only.</para>
+    <para>The AEP range covered by regional estimates, referred to as the ‘credible range of
+      extrapolation’, depends on the number of stations in a region and the length and quality of
+      their records. For the relatively well gauged parts of Australia this range has been taken as
+      extending to
+      <?oxy_delete author="retallick" timestamp="20160529T205146+1000" content="an AEP of"?><?oxy_insert_start author="retallick" timestamp="20160529T205146+1000"?>the<?oxy_insert_end?>
+      1 in 2000<?oxy_insert_start author="retallick" timestamp="20160529T205141+1000"?>
+      AEP<?oxy_insert_end?>.</para>
+    <para>Practitioners should recognise that making available design rainfall estimates for a dense
+      grid covering the whole of Australia has been achieved at the cost of potentially reduced
+      accuracy at locations for which long and reliable rainfall records are available. However, the
+      results of frequency analysis of local records should only be used to fine-tune regional
+      design rainfall estimates if there is strong evidence confirmed by peer review. In such a
+      situation the shape of the rainfall frequency curve in the range of Very Rare events should
+      closely follow the shape indicated by the regional estimate.</para>
+  </section>
+  <section xml:id="b8_s_1a1fg">
+    <title>Estimation of the
+      P<?oxy_insert_start author="retallick" timestamp="20160529T205306+1000"?>robable
+      <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160529T205311+1000"?>aximum
+      <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160529T205315+1000"?>recipitation<?oxy_insert_end?>
+      Depth</title>
+    <para>The theoretical definition of the Probable Maximum Precipitation (PMP) is “the greatest
+      depth of precipitation for a given duration that is physically possible over a given size
+      storm area at a particular geographical location at a certain time of year”
+        <citation>b8_c_r83</citation>. Estimates are derived using generalised methods that are
+      based on the analysis of data over a wide region, as described in <xref linkend="b2_ch3_s7_0"
+      />.</para>
+    <para>Estimates of PMP rainfall data have been developed by the Bureau of Meteorology. There are
+      three generalised methods appropriate for different locations and durations: <orderedlist
+        numeration="lowerroman">
+        <listitem>
+          <para>the Generalised Short Duration Method (GSDM) is applicable for durations up to six
+            hours and areas up to 1000 km<superscript>2</superscript>
+            <citation>b8_c_r7</citation>, </para>
+        </listitem>
+        <listitem>
+          <para>the Generalised Tropical Storm Method (GTSMR) is used to estimate PMPs for durations
+            up to 120 hours and areas up to 150 000 km<superscript>2</superscript> in the region of
+            Australia where tropical storms are the source of the greatest depths of rainfall
+              <citation>b8_c_r8</citation>, and </para>
+        </listitem>
+        <listitem>
+          <para>the Generalised Southeast Australia Method (GSAM) is used for durations up to 96
+            hours and areas up to 100 000 km<superscript>2</superscript> for the region of Australia
+            where tropical storms are not the source of the greatest depths of rainfall
+              <citation>b8_c_r9</citation>.</para>
+        </listitem>
+      </orderedlist>The zones of application for the GTSM and GSAM methods are shown in <xref
+        linkend="b8_f_uat9x"/>. For the west coast of Tasmania, data constraints and the size of
+      region have prevented the development of a generalised method, and thus site-specific advice
+      should be sought from the Bureau of Meteorology. It should be noted that the PMP estimates
+      provided by the Bureau of Meteorology are for design rainfall bursts rather than complete
+      storm events, though these can be adjusted to include likely pre-burst rainfalls using
+      information provided by <citation>b8_c_r42+1</citation> and <xref linkend="b2_ch5"/>.</para>
+    <para>All PMP estimates are based on a set of simplifying assumptions applied when extrapolating
+      from the hydrometeorological conditions of observed large events to “maximised conditions”.
+      They thus represent operational estimates of the PMP and should not be interpreted as being
+      equivalent to a theoretical upper limit on rainfall for that location i.e., there is a very
+      small, but finite, probability that the estimates may be exceeded (<xref linkend="b8_s_bb68z"
+      />).</para>
+    <figure xml:id="b8_f_uat9x">
+      <title>Generalised Long-Duration Probable Maximum Precipitation Method Zones
+          <citation>b8_c_r9</citation></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/8012.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </section>
+  <section xml:id="b8_s_bb68z">
+    <title>Assigning an
+      A<?oxy_insert_start author="retallick" timestamp="20160529T205932+1000"?>nnual
+      <?oxy_insert_end?>E<?oxy_insert_start author="retallick" timestamp="20160529T205937+1000"?>xceedance
+      <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160529T205941+1000"?>robability<?oxy_insert_end?>
+      to the P<?oxy_insert_start author="retallick" timestamp="20160529T205948+1000"?>robable
+      <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160529T205952+1000"?>aximum
+      <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160529T205956+1000"?>recipitation<?oxy_insert_end?></title>
+    <section xml:id="b8_s_n9mfu">
+      <title>Background</title>
+      <para>Assigning an AEP to the PMP is consistent with the concept of operational PMP estimates
+        (as described <xref linkend="b8_s_1a1fg"/> and in <xref linkend="b2_ch3_s7_0"/>), which
+        should not be regarded as theoretical upper limits of rainfall, as they may conceivably be
+        exceeded.</para>
+      <para>The method proposed to assign an AEP to the PMP is based on the review by
+          <citation>b8_c_r35+1</citation> of the procedures recommended in the 1987 edition of ARR
+        and subsequent work
+        <?oxy_delete author="retallick" timestamp="20160529T210145+1000" content="done"?><?oxy_insert_start author="retallick" timestamp="20160529T210145+1000"?>conducted
+        in<?oxy_insert_end?> both
+        <?oxy_delete author="retallick" timestamp="20160529T210151+1000" content="in "?>Australia
+        and overseas. More recent research into regional estimates for the inland zone of south-east
+        Australia <citation>b8_c_r52</citation> provides some evidence to suggest that the
+        Laurenson-Kuczera recommendations might be slightly conservative, though
+        <?oxy_delete author="retallick" timestamp="20160529T210231+1000" content="they"?><?oxy_insert_start author="retallick" timestamp="20160529T210231+1000"?>the
+        authors<?oxy_insert_end?> concluded that there is insufficient justification to consider
+        changing either the best estimate or the inferred width of the confidence intervals.</para>
+      <para>Overall it is considered that recommendations provided below represent a reasonable
+        basis for design, and that the associated confidence intervals do reflect the true
+        uncertainty involved. It should be recognised that this is an area of ongoing research and
+        <?oxy_delete author="retallick" timestamp="20160529T210250+1000" content="users "?><?oxy_insert_start author="retallick" timestamp="20160529T210250+1000"?>practitioners
+        <?oxy_insert_end?>should take advantage of revised guidance where shown to be more
+        appropriate by independent peer review.</para>
+    </section>
+    <section xml:id="b8_s_0ndc5">
+      <title>Regional Recommendations</title>
+      <para>The AEP of PMP estimates are considered to vary solely as a function of catchment area,
+        and are similar to the recommendations of <citation>b8_c_r29+1</citation>. These
+        recommendations had been adopted as the basis of the guidance provided in<?oxy_insert_start author="retallick" timestamp="20160530T180406+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T180400+1000" content=" the 1987 edition of "?>ARR<?oxy_insert_start author="retallick" timestamp="20160530T180408+1000"?>
+        1987<?oxy_insert_end?>, and are consistent with the more recent estimates of
+          <citation>b8_c_r57+1</citation> and <citation>b8_c_r49+1,b8_c_r52+1</citation>. The
+        relationship recommended by <citation>b8_c_r35+1</citation> is shown graphically
+        <?oxy_comment_start author="retallick" timestamp="20160530T180448+1000" comment="this is a reference to the wrong figure. is wrong in the original doc"?>in
+          <xref linkend="b8_f_uat9x"/>. I<?oxy_comment_end?>t should be noted that these AEP
+        estimates indicate the probability of a PMP event in any part of the year (annual PMP). The
+        question of the AEP of a PMP event occurring in a specific season (seasonal PMP) is
+        addressed in <xref linkend="b8_s_9piio"/>.</para>
+      <para>It should be recognised that there is considerable uncertainty surrounding these
+        recommendations as they are for events beyond the realm of experience and are based on a
+        limited body of information. The estimates should be interpreted as follows:</para>
+      <itemizedlist>
+        <listitem>
+          <para>the recommended AEP values plus or minus two orders of magnitude of AEP should be
+            regarded as the notional upper and lower limits for the true
+            AEP<?oxy_insert_start author="retallick" timestamp="20160530T181237+1000"?>;<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181236+1000" content=":"?></para>
+        </listitem>
+        <listitem>
+          <para>the recommended AEP values plus or minus one order of magnitude of AEP should be
+            regarded as the confidence limits with about 75% subjective probability that the true
+            AEP lies within these limits; and,</para>
+        </listitem>
+        <listitem>
+          <para>the recommended AEP values should be regarded as the best estimates of the
+            AEPs.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The notional 75% confidence and upper and lower limits are shown on <xref
+          linkend="b8_f_2386f"/>. While the recommended error bands are undoubtedly wider than is
+        desirable, they are regarded as a realistic assessment of the true uncertainty.</para>
+      <figure xml:id="b8_f_2386f">
+        <title>Recommended
+          <?oxy_insert_start author="retallick" timestamp="20160530T181552+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181551+1000" content="r"?>egional
+          <?oxy_insert_start author="retallick" timestamp="20160530T181554+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181553+1000" content="e"?>stimates
+          for the AEP of PMP</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/8003.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para><table frame="void" xml:id="b8_t_vskyx">
+          <caption>Subjective
+            <?oxy_insert_start author="retallick" timestamp="20160530T181602+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181601+1000" content="p"?>robability
+            <?oxy_delete author="retallick" timestamp="20160530T181630+1000" content="m"?><?oxy_insert_start author="retallick" timestamp="20160530T181631+1000"?>M<?oxy_insert_end?>ass
+            <?oxy_insert_start author="retallick" timestamp="20160530T181633+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181633+1000" content="f"?>unction
+            for
+            <?oxy_insert_start author="retallick" timestamp="20160530T181636+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181636+1000" content="d"?>escribing
+            <?oxy_insert_start author="retallick" timestamp="20160530T181639+1000"?>U<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181638+1000" content="u"?>ncertainty
+            in
+            <?oxy_insert_start author="retallick" timestamp="20160530T181642+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181641+1000" content="r"?>egional
+            <?oxy_insert_start author="retallick" timestamp="20160530T181645+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181645+1000" content="e"?>stimate
+            of the AEP of PMP
+            (<?oxy_insert_start author="retallick" timestamp="20160530T181650+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T181649+1000" content="a"?>dapted
+            from
+            <citation>b8_c_r35</citation>)<?oxy_delete author="retallick" timestamp="20160530T181652+1000" content="."?></caption>
+          <col width="29%"/>
+          <col width="34%"/>
+          <col width="39%"/>
+          <thead>
+            <tr>
+              <th colspan="2">Class Interval (log<subscript>10</subscript>(AEP) -
+                  log<subscript>10</subscript>(Recommended AEP))</th>
+              <th rowspan="2">Subjective probability mass in class interval</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Class bounds</td>
+              <td>Mid-point</td>
+            </tr>
+            <tr>
+              <td>-2.00</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-1.875</td>
+              <td>0.010</td>
+            </tr>
+            <tr>
+              <td>-1.75</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-1.625</td>
+              <td>0.022</td>
+            </tr>
+            <tr>
+              <td>-1.50</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-1.375</td>
+              <td>0.038</td>
+            </tr>
+            <tr>
+              <td>-1.25</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-1.125</td>
+              <td>0.055</td>
+            </tr>
+            <tr>
+              <td>-1.00</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-0.875</td>
+              <td>0.073</td>
+            </tr>
+            <tr>
+              <td>-0.75</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-0.625</td>
+              <td>0.090</td>
+            </tr>
+            <tr>
+              <td>-0.50</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-0.375</td>
+              <td>0.102</td>
+            </tr>
+            <tr>
+              <td>-0.25</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>-0.125</td>
+              <td>0.110</td>
+            </tr>
+            <tr>
+              <td>0.00</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>0.125</td>
+              <td>0.110</td>
+            </tr>
+            <tr>
+              <td>0.25</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>0.375</td>
+              <td>0.102</td>
+            </tr>
+            <tr>
+              <td>0.50</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>0.625</td>
+              <td>0.090</td>
+            </tr>
+            <tr>
+              <td>0.75</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>0.875</td>
+              <td>0.073</td>
+            </tr>
+            <tr>
+              <td>1.00</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>1.125</td>
+              <td>0.055</td>
+            </tr>
+            <tr>
+              <td>1.25</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>1.375</td>
+              <td>0.038</td>
+            </tr>
+            <tr>
+              <td>1.50</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>1.625</td>
+              <td>0.022</td>
+            </tr>
+            <tr>
+              <td>1.75</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td/>
+              <td>1.875</td>
+              <td>0.010</td>
+            </tr>
+            <tr>
+              <td>2.00</td>
+              <td/>
+              <td/>
+            </tr>
+          </tbody>
+        </table>In order to incorporate this uncertainty into a risk analysis,
+          <citation>b8_c_r35+1</citation> recommend the construction of a probability mass function
+        that provides a 75% chance that the true AEP lies within one-order-of-magnitude of the
+        recommended AEP, and a 100% chance that the true AEP lies within two-orders-of-magnitude of
+        the recommended AEP. <xref linkend="b8_t_vskyx"/> presents an example of a probability mass
+        function which meets these requirements.
+        <?oxy_comment_start author="retallick" timestamp="20160530T182236+1000" comment="would beneft from being clearer for average practitioner. detail a few more steps"?>For
+        example<?oxy_insert_start author="retallick" timestamp="20160530T181730+1000"?>,<?oxy_insert_end?>
+        if the recommended AEP were 1 in 10<superscript>6</superscript>, then there is an 11.0%
+        chance that the true AEP lies between 1 in 10<superscript>6</superscript> and 1 in
+          10<superscript>5.75</superscript>, and there is a 42.4% chance that it lies between 1 in
+          10<superscript>5.5</superscript> and 1 in 10<superscript>6.5</superscript>; the first
+        example corresponds simply to a single probability interval adjacent to the mid-point of
+        0.00 in <xref linkend="b8_t_vskyx"/>, and the second example corresponds to the central four
+        probability intervals. Although the probabilities are subjective, they do reflect the
+        considerable uncertainty in the AEP estimates.<?oxy_comment_end?> The uncertainty can be
+        directly incorporated into a risk analysis by performing an assessment for each of the AEPs
+        in <xref linkend="b8_t_vskyx"/> and weighting the results using the associated subjective
+        probability.</para>
+    </section>
+    <section xml:id="b8_s_0tp5u">
+      <title>Site-Specific Estimation</title>
+      <para><citation>b8_c_r35+1</citation>
+        <?oxy_delete author="retallick" timestamp="20160530T183934+1000" content="recommendations "?>included
+        a review of appropriate approaches, and they concluded that the most promising avenues of
+        research were based on total probability approaches developed and applied by
+        <?oxy_insert_start author="retallick" timestamp="20160530T183958+1000"?>the
+          <?oxy_insert_end?><citation>b8_c_r54+1</citation>, <citation>b8_c_r13+1</citation> and
+          <citation>b8_c_r81+1</citation>. Another promising method was demonstrated by Klemes
+          (1993)<citation>b8_c_r31+1</citation>who developed a
+        <?oxy_comment_start author="retallick" timestamp="20160530T184039+1000" comment="do you need this word?"?>combinatorial<?oxy_comment_end?>
+        approach that considered the joint distributions of the independent components that combined
+        to produce PMP, and this was applied to the coastal GSAM methodology by
+          <citation>b8_c_r57+1</citation>.</para>
+      <para>More recently <citation>b8_c_r52</citation> described the development and application of
+        two largely independent methods for deriving site-specific estimates of the AEP of PMP. One
+        method uses the total probability theorem to combine the probabilities of extreme storms
+        occurring in the
+        <?oxy_comment_start author="retallick" timestamp="20160530T184314+1000" comment="what is the transposition region"?>transposition
+        region<?oxy_comment_end?> with the likelihood that they were positioned in a manner that
+        would equal or exceed the estimated target depth on the catchment for the specified
+        duration. The other method involved the development of a stochastic regression model to
+        estimate catchment rainfalls from point rainfalls at the key sites, and is based on an
+        approach developed and applied by Schaefer over a number of years (eg
+          <citation>b8_c_r41</citation>).</para>
+      <para>These studies are mentioned to make the point that methods are available to derive
+        site-specific estimates that are potentially more defensible than the regional
+        recommendations described in the preceding section. While there remain a number of research
+        questions which, if resolved, may increase confidence in such estimates, the undertaking of
+        site-specific studies does merit practical consideration. Until the required methodology is
+        more mature such studies would need to be undertaken by specialists with peer review. It is
+        expected that this option is of most relevance to a minority of cases which involve the
+        design of infrastructure on large catchments (&gt; 1000 km<superscript>2</superscript>) with
+        high potential consequences of failure.</para>
+    </section>
+  </section>
+  <section xml:id="b8_s_qmkca">
+    <title>Estimation of Extreme Rainfalls</title>
+    <section xml:id="b8_s_80u1c">
+      <title>General</title>
+      <para>The
+        <?oxy_delete author="retallick" timestamp="20160530T184951+1000" content="foregoing "?><?oxy_insert_start author="retallick" timestamp="20160530T184951+1000"?>previous
+        <?oxy_insert_end?>sections provide recommendations on deriving catchment rainfall estimates
+        for Very Rare events to the credible limit of extrapolation and for the PMP. In order to
+        derive a complete areal rainfall frequency curve it is necessary to interpolate between
+        these two limits. The interpolation is necessarily pragmatic as it attempts to link
+        estimates based on conceptually different methods and different data sets. As there are no
+        independently estimated design rainfalls for this range of AEPs, any specific interpolation
+        procedure cannot be supported by direct evidence but it must be able to produce plausible
+        and consistent estimates. The practical implication of this is that design rainfall
+        estimates for Extreme events have a greater level of uncertainty than the events within the
+        credible limit of extrapolation.</para>
+      <para>Estimates of rainfalls for Extreme events beyond the credible limit of extrapolation are
+        predicated on the following two design rainfall characteristics, namely:</para>
+      <para>(i) the magnitude and AEP of the PMP; and,</para>
+      <para>(ii) the rainfall depth and slope of the rainfall frequency curve at the credible limit
+        of extrapolation.</para>
+      <para>As discussed above, estimates of the AEP of the PMP are subject to a high degree of
+        uncertainty and are based on the interpretation of the PMP values as operational estimates
+        that can be exceeded, rather than upper limiting values of rainfall. This interpretation of
+        the PMP implies that the frequency curve should not be asymptotic to the horizontal at the
+        estimated PMP, but rather extend through the PMP at a slope consistent with the shape of the
+        lower sections of the frequency curve.</para>
+    </section>
+    <section xml:id="b8_s_2p9cv">
+      <title>Interpolation Procedure</title>
+      <section xml:id="b8_s_yx63s">
+        <title>Basis of
+          <?oxy_insert_start author="retallick" timestamp="20160530T185357+1000"?>Interpolation
+          P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T185357+1000" content="p"?>rocedure</title>
+        <para>b8_c_r67+1 developed a procedure suited to the interpolation between regional
+          estimates of Very Rare rainfalls and the PMP. The procedure was developed and tested on
+          Victorian data using design information from the
+          <?oxy_comment_start author="retallick" timestamp="20160530T185430+1000" comment="need to expand term. first time used"?>CRC-FORGE
+          <?oxy_comment_end?>procedure. While it is possible that other procedures may be developed
+          for other regions, the procedure developed by Siriwardena and Weinmann is described here
+          as it is considered to have generic applicability.</para>
+        <para>The procedure is applicable to ‘gaps’ of different ranges corresponding to differences
+          in both the AEP of the credible limit of extrapolation and to the assigned AEP of the PMP.
+          The procedure involves the fitting of a 2-parameter parabolic function in log-log space to
+          ensure a smooth, well-behaved function when design rainfalls are plotted against AEP on
+          logarithmic scales. The following boundary conditions are adopted:</para>
+        <itemizedlist>
+          <listitem>
+            <para>at the starting point of interpolation, the slope of the interpolated curve
+              matches the slope defined by design estimates from the upper segment of the frequency
+              curve bounded at the upper end by the credible limit of extrapolation; and,</para>
+          </listitem>
+          <listitem>
+            <para>the slope of the interpolated curve through the PMP estimate is not constrained to
+              the horizontal but is determined by the shape of the frequency curve at AEPs more
+              frequent than that assigned to the PMP.</para>
+          </listitem>
+        </itemizedlist>
+        <para>It needs to be emphasised that the interpolation is entirely determined by estimates
+          of the conditions at the two end points; no additional information is introduced in
+          fitting the curve. Details on the derivation of the procedure can be found in
+            <citation>b8_c_r67+1</citation>.</para>
+      </section>
+      <section xml:id="b8_s_g9miz">
+        <title>Detailed
+          <?oxy_insert_start author="retallick" timestamp="20160530T185951+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T185950+1000" content="s"?>teps
+          in <?oxy_insert_start author="retallick" timestamp="20160530T185954+1000"?>Interpolation
+          P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T185953+1000" content="p"?>rocedure</title>
+        <para>Application of the procedure is quite straightforward, and design estimates over the
+          interpolated range can be easily computed, as described below.</para>
+        <para>With reference to <xref linkend="b8_f_59irn"/>, the AEP of 1 in
+            Y<subscript>2</subscript> represents the starting point of the interpolation (the
+          credible limit of extrapolation), and the AEP of 1 in Y<subscript>1</subscript> represents
+          a lower value such that between 1 in Y<subscript>1</subscript> and 1 in
+            Y<subscript>2</subscript> the frequency curve can be assumed to be linear in the log-log
+          domain. X<subscript>Y1</subscript> and X<subscript>Y2</subscript> represent the design
+          rainfalls with AEPs of 1 in Y<subscript>1</subscript> and 1 in
+          Y<subscript>2</subscript><?oxy_delete author="retallick" timestamp="20160530T190411+1000" content=" "?>.
+          The slope of the frequency curve at the commencement of the transition, Sgc, is determined
+          by the slope between the two design values at AEPs of 1 in Y<subscript>1</subscript> and 1
+          in
+          Y<subscript>2</subscript><?oxy_delete author="retallick" timestamp="20160530T190407+1000" content=" "?>.</para>
+        <figure xml:id="b8_f_59irn">
+          <title>Schematic
+            <?oxy_insert_start author="retallick" timestamp="20160530T190142+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T190141+1000" content="i"?>llustration
+            of
+            <?oxy_insert_start author="retallick" timestamp="20160530T190146+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T190145+1000" content="i"?>nterpolation
+            <?oxy_delete author="retallick" timestamp="20160530T190149+1000" content="p"?><?oxy_insert_start author="retallick" timestamp="20160530T190149+1000"?>P<?oxy_insert_end?>rocedure<?oxy_delete author="retallick" timestamp="20160530T190158+1000" content="."?></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/8004.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para>The end point of the interpolation is the AEP of the PMP, which is denoted 1 in
+            Y<subscript>PMP</subscript><?oxy_delete author="retallick" timestamp="20160530T190443+1000" content=" "?>.
+          For consistency of nomenclature, the magnitude of the PMP is here denoted as
+            X<subscript>PMP</subscript><?oxy_delete author="retallick" timestamp="20160530T190448+1000" content=" "?>.</para>
+        <para>A design rainfall estimate
+          <?oxy_delete author="retallick" timestamp="20160530T190508+1000" content="with an AEP"?>
+          of 1 in Y <?oxy_insert_start author="retallick" timestamp="20160530T190514+1000"?>AEP
+          <?oxy_insert_end?>(denoted
+          X<subscript>Y</subscript><?oxy_delete author="retallick" timestamp="20160530T190518+1000" content=" "?>)
+          can be estimated using:<equation xml:id="b8_e_vzgi4">
+            <m:math display="block">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>X</m:mi>
+                  <m:mi>Y</m:mi>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:msup>
+                  <m:mi>10</m:mi>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>R</m:mi>
+                      <m:mi>Y</m:mi>
+                    </m:msub>
+                    <m:mo>⁣</m:mo>
+                    <m:mrow>
+                      <m:mi>log</m:mi>
+                      <m:mo>⁡</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>X</m:mi>
+                          <m:mi>Y2</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mrow>
+                </m:msup>
+              </m:mrow>
+            </m:math>
+          </equation></para>
+        <para>where R<subscript>Y</subscript> is defined by the parabola fitted to the coordinates
+          of the two end points (ie between X<subscript>Y2</subscript> , Y<subscript>2</subscript>
+          and X<subscript>PMP</subscript>, Y<subscript>PMP</subscript>) and the slope of the lower
+          end of the frequency curve (ie the straight line between X<subscript>Y1</subscript>,
+            Y<subscript>1</subscript> and X<subscript>Y2</subscript>,
+          Y<subscript>2</subscript><?oxy_delete author="retallick" timestamp="20160530T190602+1000" content=" "?>).</para>
+        <equation xml:id="b8_e_ek9ei">
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mi>R</m:mi>
+                <m:mi>Y</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mrow>
+                <m:mi>1</m:mi>
+                <m:mo>+</m:mo>
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>gc</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mi>z</m:mi>
+                    <m:mi>d</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mi>g</m:mi>
+                    <m:mi>Y</m:mi>
+                  </m:msub>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>S</m:mi>
+                        <m:mi>gap</m:mi>
+                      </m:msub>
+                      <m:mo>-</m:mo>
+                      <m:msub>
+                        <m:mi>S</m:mi>
+                        <m:mi>gc</m:mi>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>z</m:mi>
+                    <m:mi>d</m:mi>
+                  </m:msub>
+                  <m:msubsup>
+                    <m:mi>g</m:mi>
+                    <m:mi>Y</m:mi>
+                    <m:mi>2</m:mi>
+                  </m:msubsup>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <equation xml:id="b8_e_8rmw6">
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mi>z</m:mi>
+                <m:mi>d</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mrow>
+                <m:mi>log</m:mi>
+                <m:mo>⁡</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mfrac>
+                    <m:msub>
+                      <m:mi>Y</m:mi>
+                      <m:mi>PMP</m:mi>
+                    </m:msub>
+                    <m:msub>
+                      <m:mi>Y</m:mi>
+                      <m:mi>2</m:mi>
+                    </m:msub>
+                  </m:mfrac>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <equation xml:id="b8_e_9t97w">
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mi>g</m:mi>
+                <m:mi>y</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>log</m:mi>
+                  <m:mo>⁡</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mfrac>
+                      <m:mi>Y</m:mi>
+                      <m:msub>
+                        <m:mi>Y</m:mi>
+                        <m:mi>2</m:mi>
+                      </m:msub>
+                    </m:mfrac>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>z</m:mi>
+                  <m:mi>d</m:mi>
+                </m:msub>
+              </m:mfrac>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <equation xml:id="b8_e_8n0f1">
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mi>S</m:mi>
+                <m:mi>gc</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>log</m:mi>
+                  <m:mo>⁡</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mfrac>
+                      <m:msub>
+                        <m:mi>X</m:mi>
+                        <m:mi>Y1</m:mi>
+                      </m:msub>
+                      <m:msub>
+                        <m:mi>X</m:mi>
+                        <m:mi>Y2</m:mi>
+                      </m:msub>
+                    </m:mfrac>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mi>log</m:mi>
+                    <m:mo>⁡</m:mo>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>X</m:mi>
+                        <m:mi>Y2</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                  <m:mo>⁣</m:mo>
+                  <m:mrow>
+                    <m:mi>log</m:mi>
+                    <m:mo>⁡</m:mo>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mfrac>
+                        <m:msub>
+                          <m:mi>Y</m:mi>
+                          <m:mi>1</m:mi>
+                        </m:msub>
+                        <m:msub>
+                          <m:mi>Y</m:mi>
+                          <m:mi>2</m:mi>
+                        </m:msub>
+                      </m:mfrac>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <equation xml:id="b8_e_010fu">
+          <m:math display="block">
+            <m:mrow>
+              <m:msub>
+                <m:mi>S</m:mi>
+                <m:mi>gap</m:mi>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mi>log</m:mi>
+                      <m:mo>⁡</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>X</m:mi>
+                          <m:mi>PMP</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mi>log</m:mi>
+                      <m:mo>⁡</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>X</m:mi>
+                          <m:mi>Y2</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mo>-</m:mo>
+                  <m:mi>1</m:mi>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>z</m:mi>
+                  <m:mi>d</m:mi>
+                </m:msub>
+              </m:mfrac>
+            </m:mrow>
+          </m:math>
+        </equation>
+        <?oxy_comment_start author="retallick" timestamp="20160530T190658+1000" comment="can this be used for other states?
+
+does this bit belong in the following section"?>
+        <para>For Victoria, Siriwardena and Weinmann recommend that the slope of the frequency curve
+          at the commencement of the interpolation should be defined by the 1 in 1000 AEP and 1 in
+          2000 AEP events, i.e. Y<subscript>1</subscript> = 1000 and Y<subscript>2</subscript> =
+          2000. Thus the start point of interpolation is the credible limit of extrapolation
+          obtained using the CRC-FORGE method
+          <citation>b8_c_r79</citation>.<?oxy_comment_end?></para>
+        <para>An example describing the application of the above interpolation procedure is provided
+          in <xref linkend="b8_s_gpl9k"/>.</para>
+      </section>
+      <section xml:id="b8_s_m11gl">
+        <title>Range of
+          <?oxy_insert_start author="retallick" timestamp="20160530T190725+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160530T190725+1000" content="a"?>pplication</title>
+        <para><citation>b8_c_r67+1</citation> have shown that the procedure performs satisfactorily
+          over a range of design situations that specifically include:</para>
+        <itemizedlist>
+          <listitem>
+            <para>different starting points for interpolation (i.e. the AEP of the credible limit of
+              extrapolation can vary);</para>
+          </listitem>
+          <listitem>
+            <para>different AEPs assigned to the PMP (ranging from 10<superscript>-4</superscript>
+              to 10<superscript>-7</superscript>, as discussed in <xref linkend="b8_s_bb68z"/>);
+              and,</para>
+          </listitem>
+          <listitem>
+            <para>different ‘shape parameters’ defined by the ratio of the slope of the upper end of
+              the directly determined frequency growth curve, S<subscript>gc</subscript>, and the
+              slope between the two end points of the ‘gap’, S<subscript>gap</subscript> (the ‘shape
+              parameter’ S<subscript>gc</subscript>/S<subscript>gap</subscript> ranges between 0.25
+              to 2.0).</para>
+          </listitem>
+        </itemizedlist>
+        <para>The above concepts are schematically illustrated in <xref linkend="b8_f_59irn"/>.
+            <citation>b8_c_r67+1</citation> have tested the above interpolation procedure on 25
+          catchments ranging in size from 25 to 15000 km<superscript>2</superscript> with diverse
+          characteristics. The resultant frequency curves were shown to be plausible and well
+          behaved for all test catchments. However, it is worth noting that
+            <citation>b8_c_r22+1</citation> reported that the above interpolation approach did not
+          yield plausible results for GSAM-derived storms for 13 small catchments in South
+          Australia. They observed that
+          <?oxy_delete author="retallick" timestamp="20160530T190932+1000" content="inconsistences"?><?oxy_insert_start author="retallick" timestamp="20160530T190932+1000"?>inconsistencies<?oxy_insert_end?>
+          in the relationship between rainfall depth and catchment size for short- and long-duration
+          events resulted in physically infeasible frequency curves
+          (i.e<?oxy_insert_start author="retallick" timestamp="20160530T190941+1000"?>.<?oxy_insert_end?>
+          values of S<subscript>gc</subscript>/S<subscript>gap</subscript> exceeded 2.0). This
+          problem was largely obviated by undertaking the above interpolation procedure in the
+          log-Normal domain
+          (i.e<?oxy_insert_start author="retallick" timestamp="20160530T190952+1000"?>.<?oxy_insert_end?>
+          using the standard normal variate of the exceedance probabilities rather than the log of
+          the inverse of AEP); in a few cases it was also necessary to slightly increase the
+          estimate of the AEP of the PMP, but the degree of change was well less than the notional
+          uncertainty involved. Thus, while the recommended interpolation procedure has been found
+          to generally yield plausible results, it may be necessary to make pragmatic adjustments to
+          the method where dictated by circumstances.</para>
+      </section>
+    </section>
+  </section>
+  <section xml:id="b8_s_i77bn">
+    <title>Estimation of Rainfall Depths for Non-Standard Durations</title>
+    <section xml:id="b8_s_d4ziw">
+      <title>General</title>
+      <para>The application of generalised methods yields design rainfall depths for a range of
+        standard durations. The design rainfalls presented in <xref linkend="book2"/> ensure that
+        rainfall depths can be derived for a consistent set of durations for standard AEPs, though
+        there are a minority of circumstances where approximate procedures may be required to derive
+        estimates for non-standard combinations.</para>
+      <para>There are three broad design categories for which non-standard durations may be
+        required:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Very Rare event rainfalls for durations intermediate to multiples of 24<?oxy_delete author="retallick" timestamp="20160531T180217+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160531T180217+1000"?>
+            <?oxy_insert_end?>hour periods;</para>
+        </listitem>
+        <listitem>
+          <para>Very Rare event design rainfalls for durations less than 24 hours; and,</para>
+        </listitem>
+        <listitem>
+          <para>Design rainfalls for very long durations (ie durations longer than those obtainable
+            from any design rainfall database).</para>
+        </listitem>
+      </itemizedlist>
+      <para>Guidance on the above three categories is provided
+        <?oxy_delete author="retallick" timestamp="20160531T180715+1000" content="below"?><?oxy_insert_start author="retallick" timestamp="20160531T180715+1000"?>within
+        this section<?oxy_insert_end?>.</para>
+    </section>
+    <section xml:id="b8_s_c2k7l">
+      <title>Very Rare Rainfalls for Intermediate Durations</title>
+      <para>Over a limited range of storm burst durations, the variation of point rainfall depth
+        with duration can be closely approximated by a power function relationship.
+          <citation>b8_c_r80+1</citation> thus propose that design rainfalls for intermediate
+        durations may be estimated by linear interpolation between log-transformed rainfall depths
+        and the log-transformed interval between adjacent standard durations (e.g. 24 and 48
+        hours).</para>
+    </section>
+    <section xml:id="b8_s_ysol4">
+      <title>Very Rare Event Rainfalls for Short Durations</title>
+      <para>Sites with daily rainfall records provide a considerably denser spatial coverage and
+        longer period of record than is available from the pluviograph network. The majority of
+        <?oxy_insert_start author="retallick" timestamp="20160531T180932+1000"?>research
+        <?oxy_insert_end?>effort to date has been focussed on the derivation of Very Rare design
+        rainfalls for burst durations of 24 hours and longer (as provided in <xref linkend="book2"
+        />), and by comparison the availability of design information for shorter duration rainfalls
+        is rather limited.</para>
+      <para>At present, the most defensible estimates of Very Rare sub-daily
+        <?oxy_insert_start author="retallick" timestamp="20160531T181004+1000"?>(less than 24 hour)
+        <?oxy_insert_end?>rainfalls are provided by
+        <citation>b8_c_r25+1</citation><?oxy_comment_start author="retallick" timestamp="20160531T181142+1000" comment="do the bom provide depths?
+is jordan growth curve and temp pattern??"?>.<?oxy_comment_end?>
+        These estimates are based on the analysis of data from ten pluviograph sites around
+        Australia. Melbourne had the longest period of record
+        <?oxy_insert_start author="retallick" timestamp="20160531T181227+1000"?>at
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T181226+1000" content="("?>130
+        years<?oxy_delete author="retallick" timestamp="20160531T181230+1000" content=")"?><?oxy_insert_start author="retallick" timestamp="20160531T181230+1000"?>.
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T181235+1000" content=", but another f"?><?oxy_insert_start author="retallick" timestamp="20160531T181239+1000"?>F<?oxy_insert_end?>ive<?oxy_insert_start author="retallick" timestamp="20160531T181241+1000"?>
+        of the<?oxy_insert_end?> stations
+        <?oxy_insert_start author="retallick" timestamp="20160531T181247+1000"?>used
+        <?oxy_insert_end?>(Darwin, Sydney, Hobart, Adelaide, and Perth) had over 80 years of record
+        each. The frequency analysis was undertaken using the simple “station year” method as the
+        data satisfied the required assumptions of independence and homogeneity (the storms were
+        largely derived from thunderstorm or deeply convective events). For the ten stations
+        analysed, this pooled data set represents a sequence of around 800 station years.
+        Non-dimensional frequency curves were derived for eight durations varying between 0.5 and 12
+        hours. The mean growth curve obtained from these distributions fell well within the 90%
+        confidence limits<?oxy_insert_start author="retallick" timestamp="20160531T181357+1000"?>
+        (<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T181356+1000" content=", and the tabulated values are shown in"?><?oxy_insert_start author="retallick" timestamp="20160531T181403+1000"?>refer to<?oxy_insert_end?>
+        <xref linkend="b8_t_hk25s"
+        /><?oxy_insert_start author="retallick" timestamp="20160531T181408+1000"?>)<?oxy_insert_end?>.</para>
+      <para>Pending the outcome of more comprehensive analyses, it is recommended that the growth
+        curve factors
+        <?oxy_delete author="retallick" timestamp="20160531T181520+1000" content="as listed "?>in
+          <xref linkend="b8_t_hk25s"/> be used for design purposes. Rainfall depths for durations
+        between 0.5 and 12 hours can be obtained by simply multiplying the relevant 1 in 100 AEP
+        design rainfall by the frequency factors shown in <xref linkend="b8_t_hk25s"/>. It should be
+        noted that these factors represent the characteristics of events that are associated with
+        thunderstorm<?oxy_insert_start author="retallick" timestamp="20160531T181709+1000"?>s<?oxy_insert_end?>,
+        or deeply convective, storm activity and are derived from analyses that are largely
+        independent of the data and procedures described in <xref linkend="b2_ch3"/>. Accordingly,
+        in some locations there may be the potential for significant discontinuity in growth factors
+        between the
+        values<?oxy_delete author="retallick" timestamp="20160531T182149+1000" content=" shown"?> in
+          <xref linkend="b8_t_hk25s"/> and those for longer duration events (24 hours and longer).
+        If this is the case then it may be necessary to smooth the growth factors to ensure that the
+        tails of the frequency curves do not cross, and that the rainfall depths vary in a
+        consistent manner across storm duration and exceedance probability.</para>
+      <para>The Bureau of Meteorology is scheduled to produce very rare rainfalls for durations less
+        than 24 hours which should be used to estimate rainfall up to the creditable limit. Until
+        this information is released the growth factors in Jordan et al 2005 is should be used. </para>
+      <para>
+        <table frame="void" xml:id="b8_t_hk25s">
+          <caption>Growth
+            <?oxy_insert_start author="retallick" timestamp="20160531T182229+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182228+1000" content="c"?>urve
+            <?oxy_insert_start author="retallick" timestamp="20160531T182232+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182231+1000" content="f"?>actors
+            for
+            <?oxy_insert_start author="retallick" timestamp="20160531T182234+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182234+1000" content="d"?>erivation
+            of
+            <?oxy_insert_start author="retallick" timestamp="20160531T182238+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182237+1000" content="s"?>ub-<?oxy_insert_start author="retallick" timestamp="20160531T182240+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182240+1000" content="d"?>aily
+            <?oxy_insert_start author="retallick" timestamp="20160531T182243+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182242+1000" content="d"?>esign
+            <?oxy_insert_start author="retallick" timestamp="20160531T182245+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182245+1000" content="r"?>ainfalls
+            (<?oxy_insert_start author="retallick" timestamp="20160531T182258+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182257+1000" content="s"?>tandardised
+            by the 1 in 100 AEP
+            <?oxy_insert_start author="retallick" timestamp="20160531T182301+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182301+1000" content="r"?>ainfall
+            <?oxy_insert_start author="retallick" timestamp="20160531T182305+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182304+1000" content="d"?>epth)<?oxy_delete author="retallick" timestamp="20160531T182224+1000" content="."?><?oxy_comment_start author="retallick" timestamp="20160531T183759+1000" comment="theres some weird cell thing happening at the end of this table. can see it in pdf"?></caption>
+          <?oxy_comment_end?>
+          <col width="16%"/>
+          <col width="16%"/>
+          <col width="16%"/>
+          <col width="16%"/>
+          <col width="16%"/>
+          <col width="16%"/>
+          <thead>
+            <tr>
+              <th>AEP (1 in Y)</th>
+              <th>100</th>
+              <th>200</th>
+              <th>500</th>
+              <th>1000</th>
+              <th>2000</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Growth Factor</td>
+              <td>1.00</td>
+              <td>1.140</td>
+              <td>1.344</td>
+              <td>1.513</td>
+              <td>1.698</td>
+            </tr>
+          </tbody>
+        </table>
+      </para>
+    </section>
+    <section xml:id="b8_s_ob5bq">
+      <title>Rainfalls for Very Rare to Extreme Events of Very Long Durations</title>
+      <para>For dams with very large storage volumes relative to the volumes of inflow floods (or
+        dams with little or no spillway
+        provision)<?oxy_comment_start author="retallick" timestamp="20160531T182527+1000" comment="are the brackets need here?"?>,<?oxy_comment_end?>
+        or for some very large catchments, it is possible that the critical duration of interest may
+        be longer than available from the generalised design rainfall information. The longest
+        available storm duration using <xref linkend="book2"/> procedures is 168
+        hours<?oxy_insert_start author="retallick" timestamp="20160531T182557+1000"?> (7
+        days)<?oxy_insert_end?><?oxy_comment_start author="retallick" timestamp="20160531T182626+1000" comment="which one would you say 168hrs or 7 days ? or both"?>.<?oxy_comment_end?>
+        This duration generally relates to the meteorological limits associated with single storm
+        events, and thus longer duration design events involve the consideration of storm
+        sequences.</para>
+      <para>The approach to solving design problems involving long critical durations is in essence
+        a joint probability problem. In special circumstances the problem may involve the assessment
+        of joint probabilities of extreme storm sequences, but when considering issues associated
+        with reservoir outflow floods, the issue of storm sequences over extended periods may be
+        implicitly solved by undertaking a joint probability analysis of inflow floods
+        <?oxy_comment_start author="retallick" timestamp="20160531T184118+1000" comment="rory- in this section you talk about inflow floods but the section this sections links to (7.2.3) is just called inflows. "?>and<?oxy_comment_end?>
+        initial reservoir
+        <?oxy_comment_start author="retallick" timestamp="20160531T182726+1000" comment="suggest word change volume or level? given link is to a figure of storage volume suggest change to volume 
+"?>contents<?oxy_comment_end?>
+          (<xref linkend="b8_s_no8ga"/>).</para>
+      <section xml:id="b8_s_gq7fn">
+        <title>Storm
+          <?oxy_insert_start author="retallick" timestamp="20160531T182820+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182820+1000" content="s"?>equences
+          in
+          <?oxy_insert_start author="retallick" timestamp="20160531T182823+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182822+1000" content="s"?>outh-<?oxy_insert_start author="retallick" timestamp="20160531T182827+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T182826+1000" content="e"?>astern
+          Australia</title>
+        <para>Analysis of storm data in
+          south<?oxy_insert_start author="retallick" timestamp="20160531T182923+1000"?>-<?oxy_insert_end?>eastern
+          Australia (Minty and Meighen, 1999)<citation>b8_c_r42</citation> indicates that about 40%
+          of large storms are preceded by a rainfall event in the 15 days prior to the storm. Based
+          on their magnitude, these antecedent rainfall events appear to comprise two different
+          populations: most (32% of all large storms) had accumulated rainfall totals of less than
+          30% of the subsequent large storm, but a small proportion (8% of all large storms) had
+          accumulated rainfall totals of between 30% and 80% of the subsequent large storm.</para>
+        <para>In addition, <citation>b8_c_r65+1</citation> undertook an analysis of areal antecedent
+          rainfalls in the inland GSAM region for periods ranging between 7 days and 24 months using
+          113 years of gridded data. The analysis was undertaken for storm areas of 750
+            km<superscript>2</superscript> and 1860 km<superscript>2</superscript>. They concluded
+          that there is no correlation between pre-storm rainfalls and storm severity for the
+          extremes considered, and thus the two processes could be treated independently in joint
+          probability analyses.</para>
+      </section>
+      <section xml:id="b8_s_2zu4i">
+        <title>Storm
+          <?oxy_insert_start author="retallick" timestamp="20160531T183103+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T183103+1000" content="s"?>equences
+          in
+          <?oxy_insert_start author="retallick" timestamp="20160531T183107+1000"?>T<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T183106+1000" content="t"?>ropical
+          <?oxy_insert_start author="retallick" timestamp="20160531T183110+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T183109+1000" content="r"?>egions</title>
+        <para>The nature of rainfall sequences for Rare to
+          Extreme<?oxy_delete author="retallick" timestamp="20160531T183229+1000" content="ly Rare"?>
+          events in the tropical region is not as well understood. Limited evidence on the
+          dependence of antecedent rainfalls is provided by <citation>b8_c_r65+1</citation> based on
+          an analysis of areal rainfalls in the coastal GSTMR region.
+            <?oxy_delete author="retallick" timestamp="20160531T183511+1000" content="The analysis"?><citation>b8_c_r65+1</citation><?oxy_insert_start author="retallick" timestamp="20160531T183511+1000"?>
+          undertook the analysis
+          <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T183534+1000" content=" was undertaken"?>
+          for a storm area of 750 km<superscript>2</superscript> and
+          <?oxy_delete author="retallick" timestamp="20160531T183315+1000" content="they"?> found
+          that total rainfalls in the three months prior to the most extreme maxima on record were
+          larger than the 20% percentile values. However, little correlation was found between the
+          severity of the event and 7<?oxy_delete author="retallick" timestamp="20160531T183552+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160531T183553+1000"?>
+          <?oxy_insert_end?>day maxima within the preceding three months.
+          Overall<?oxy_insert_start author="retallick" timestamp="20160531T183602+1000"?>,<?oxy_insert_end?>
+          it might be expected that the conditions prior to
+          <?oxy_delete author="retallick" timestamp="20160531T183615+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160531T183615+1000"?>E<?oxy_insert_end?>xtreme
+          events are typically wetter than more frequent events, but further analysis would be
+          required for specification of dependencies on initial reservoir level.</para>
+      </section>
+    </section>
+  </section>
+  <section xml:id="b8_s_9piio">
+    <title>Seasonal Estimates of
+      <?oxy_delete author="retallick" timestamp="20160531T184133+1000" content="Large "?><?oxy_insert_start author="retallick" timestamp="20160531T184134+1000"?>Rare
+      <?oxy_insert_end?>to Extreme Rainfalls</title>
+    <section xml:id="b8_s_8725x">
+      <title>Theoretical and Practical Issues</title>
+      <para>The derivation of the design rainfall data
+        <?oxy_insert_start author="retallick" timestamp="20160531T185736+1000"?>as discussed in<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T185741+1000" content="presented in"?>
+        <xref linkend="b8_s_8tx6d"/> to <xref linkend="b8_s_i77bn"/> is based on the assumption that
+        rainfall is independent of the season in which it occurs, or at least that its seasonal
+        variation does not have a significant influence on the design outcome. However, there are
+        situations where the seasonal variation of rainfall characteristics is significant and may
+        need to be taken into account in design flood estimation. As an example, severe
+        thunderstorms may occur predominantly during the summer season. Where other design factors
+        (such as initial loss or initial reservoir level) are also characterised by significant
+        seasonal variation, it may be necessary to combine seasonal design rainfalls with the
+        corresponding seasonal values of these other design factors, rather than with their average
+        annual values. For this purpose, a season is defined as a period of one to several months
+        during which the rainfall conditions (and other design factors) can be assumed to be the
+        same.</para>
+      <para><xref linkend="b8_s_9piio"/> describes typical design situations where seasonal
+        estimates of design rainfalls for
+        <?oxy_delete author="retallick" timestamp="20160531T190032+1000" content="Very"?> Rare to
+        Extreme events may be required. While it would appear sensible in these design situations to
+        deal explicitly with seasonal effects, there are a number of practical and theoretical
+        issues that are not easily resolved. Some of the issues related to the derivation of
+        seasonal design rainfalls are
+        discussed<?oxy_delete author="retallick" timestamp="20160531T190101+1000" content=" below"?>.</para>
+      <section xml:id="b8_s_oub4v">
+        <title>Seasonal
+          <?oxy_insert_start author="retallick" timestamp="20160531T190114+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T190114+1000" content="r"?>ainfall
+          <?oxy_delete author="retallick" timestamp="20160531T190116+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160531T190117+1000"?>E<?oxy_insert_end?>stimates
+          for Rare
+          <?oxy_insert_start author="retallick" timestamp="20160531T190119+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T190119+1000" content="e"?>vents</title>
+        <para>Seasonal design rainfalls for AEPs equal to or more frequent than 1 in
+          100<?oxy_insert_start author="retallick" timestamp="20160531T190205+1000"?>
+          AEP<?oxy_insert_end?> cannot be obtained directly from information provided in <xref
+            linkend="book2"/>. One approach is to extract seasonal maxima from rainfall records at a
+          particular site, and then undertake a frequency analysis to derive seasonal rainfalls (the
+          Bureau of Meteorology can provide these estimates if required). However, this approach can
+          provide inconsistent seasonal estimates for the
+          <?oxy_insert_start author="retallick" timestamp="20160531T190226+1000"?>rarer<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T190225+1000" content="larger"?>
+          events because of the inherent uncertainties in fitting the tails of the distribution to
+          observed data, though theoretically this could be overcome by developing a fitting
+          procedure that jointly fits all the seasonal distributions. In addition, the seasonal
+          design rainfalls derived from the at-site data will need to be adjusted to ensure that the
+          annual design rainfalls are consistent with the <xref linkend="book2"/> estimates.</para>
+      </section>
+      <section xml:id="b8_s_dnv6d">
+        <title>Seasonal
+          <?oxy_insert_start author="retallick" timestamp="20160531T190247+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T190246+1000" content="r"?>ainfall
+          <?oxy_insert_start author="retallick" timestamp="20160531T190249+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T190249+1000" content="e"?>stimates
+          for Very Rare events</title>
+        <para>At present regional frequency estimates of seasonal rainfalls for AEPs rarer than 1 in
+          100<?oxy_insert_start author="retallick" timestamp="20160531T190255+1000"?>
+          AEP<?oxy_insert_end?> are only available for regions in Western Australia
+            <citation>b8_c_r10,b8_c_r11</citation>. While a procedure such as CRC-FORGE could be
+          applied to seasonally censored data from other hydrometeorologically homogeneous regions,
+          undertaking such analyses would require considerable resources.</para>
+      </section>
+      <section xml:id="b8_s_a6ftc">
+        <title>Seasonal
+          P<?oxy_insert_start author="retallick" timestamp="20160531T190318+1000"?>robable
+          <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160531T190321+1000"?>aximum <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160531T190324+1000"?>recipitation<?oxy_insert_end?>
+          <?oxy_delete author="retallick" timestamp="20160531T190331+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160531T190332+1000"?>E<?oxy_insert_end?>stimates</title>
+        <para>The PMP definition quoted in <xref linkend="b8_s_1a1fg"/> allows different PMP
+          estimates to be derived for different parts of the year, i.e. seasonal PMPs. A procedure
+          for estimating seasonal PMPs for short duration storms on areas up to 1000
+            km<superscript>2</superscript> in southern Australia is given in the GSDM method
+            <citation>b8_c_r11</citation>. Approximate seasonal estimates for four seasons are
+          available for longer duration events in
+          south<?oxy_insert_start author="retallick" timestamp="20160531T190400+1000"?>-<?oxy_insert_end?>east
+          Australia using the GSAM procedure, but it should be recognised that these estimates are
+          based on a biased seasonal sample as the storms were selected on the basis of magnitude
+          rather than season. Seasonal PMP estimates for longer duration storms in tropical areas
+          (i.e. GTSMR estimates) are available for summer and winter seasons.</para>
+      </section>
+      <section xml:id="b8_s_opmsl">
+        <title>A<?oxy_insert_start author="retallick" timestamp="20160531T190415+1000"?>nnual
+          <?oxy_insert_end?>E<?oxy_insert_start author="retallick" timestamp="20160531T190420+1000"?>xceedance
+          <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160531T190423+1000"?>robability<?oxy_insert_end?>
+          of the Seasonal
+          P<?oxy_insert_start author="retallick" timestamp="20160531T190431+1000"?>robable
+          <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160531T190434+1000"?>aximum
+          <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160531T190437+1000"?>recipitation<?oxy_insert_end?></title>
+        <para>At present there is no generally accepted procedure for assigning an AEP to a seasonal
+          PMP. <citation>b8_c_r34+1</citation> give two alternative approaches to derive the AEP of
+          seasonal PMP estimates.</para>
+        <para>The first approach is based on the assumption that factors other than dew point (and
+          factors deriving from that) affecting the value of PMP do not significantly vary with
+          season. This is consistent with the Bureau of Meteorology’s assumption that each season
+          has its own PMP; in other words, the magnitude<?oxy_insert_start author="retallick" timestamp="20160531T190508+1000"?>
+          <?oxy_insert_end?>of the seasonal PMP is different for different months of the year. It
+          also follows that the probability of experiencing a PMP event of different magnitude in
+          any month of the year is equal.</para>
+        <para>This interpretation means that the exceedance probability of a PMP event occurring
+            <emphasis role="italic">in a specific season</emphasis> of the year is proportional to
+          the fraction of the year occupied by that season, but it does not yield directly an
+          estimate of the exceedance probability of a seasonal PMP. The additional constraint to be
+          considered follows from an argument based on extreme value theory, namely that the sum of
+          the exceedance probabilities of events of <emphasis role="italic">the same magnitude
+          </emphasis>for the different seasons should add to the AEP of the annual rainfall event of
+          that magnitude.</para>
+        <para>In practice, an iterative approach needs to be adopted, using the product of the AEP
+          of the annual PMP and the fraction of the year occupied by the season as an initial (lower
+          bound) estimate of the exceedance probability of the seasonal PMP estimates. These initial
+          estimates are shown as hollow circles in <xref linkend="b8_f_06jbo"/>. A segment of the
+          complete design rainfall frequency curve for each season then needs to be drawn between
+          the rainfall depths of the largest and smallest seasonal PMP estimates (indicated by
+          broken lines in <xref linkend="b8_f_06jbo"/>). Over the upper range of the seasonal
+          rainfall magnitudes, the curve segments can be assumed to be parallel to the annual
+          frequency curve. The addition of the AEPs corresponding to the annual PMP estimated from
+          each seasonal rainfall curve will generally yield an AEP less than the AEP assigned to the
+          annual PMP. The ratio of these two AEP estimates defines the correction factor (&gt; 1.0)
+          that needs to be applied to each of the initially estimated AEPs of the seasonal PMP. This
+          correction is indicated by arrows in <xref linkend="b8_f_06jbo"/>, and the final AEP
+          estimates of seasonal PMPs are shown as filled in circles.</para>
+        <figure xml:id="b8_f_06jbo">
+          <title>Hypothetical
+            <?oxy_insert_start author="retallick" timestamp="20160531T191043+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191043+1000" content="f"?>requency
+            <?oxy_insert_start author="retallick" timestamp="20160531T191046+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191045+1000" content="c"?>urves
+            for
+            <?oxy_insert_start author="retallick" timestamp="20160531T191048+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191048+1000" content="s"?>easonal
+            and
+            <?oxy_insert_start author="retallick" timestamp="20160531T191050+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191050+1000" content="a"?>nnual
+            <?oxy_insert_start author="retallick" timestamp="20160531T191053+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191052+1000" content="d"?>esign
+            <?oxy_insert_start author="retallick" timestamp="20160531T191056+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191055+1000" content="r"?>ainfalls
+            <?oxy_insert_start author="retallick" timestamp="20160531T191059+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191058+1000" content="b"?>ased
+            on the AEP
+            <?oxy_insert_start author="retallick" timestamp="20160531T191102+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191102+1000" content="a"?>ssigned
+            to the
+            <?oxy_insert_start author="retallick" timestamp="20160531T191105+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191104+1000" content="a"?>nnual
+            PMP (adapted from Laurenson and Kuczera, 1998, using
+            <?oxy_delete author="retallick" timestamp="20160531T191113+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160531T191113+1000"?>F<?oxy_insert_end?>our
+            <?oxy_insert_start author="retallick" timestamp="20160531T191115+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191115+1000" content="s"?>easons
+            of
+            <?oxy_insert_start author="retallick" timestamp="20160531T191118+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191117+1000" content="r"?>elative
+            <?oxy_insert_start author="retallick" timestamp="20160531T191121+1000"?>L<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191121+1000" content="l"?>engths
+            0.33, 017. 0.33, 0.17 and
+            <?oxy_insert_start author="retallick" timestamp="20160531T191125+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191124+1000" content="r"?>elative
+            <?oxy_delete author="retallick" timestamp="20160531T191128+1000" content="s"?><?oxy_insert_start author="retallick" timestamp="20160531T191128+1000"?>S<?oxy_insert_end?>easonal
+            PMP
+            <?oxy_insert_start author="retallick" timestamp="20160531T191132+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191131+1000" content="d"?>epths
+            of 1.0, 0.85, 0.6, 0.85, for Summer, Autumn, Winter, and Spring,
+            respectively)<?oxy_delete author="retallick" timestamp="20160531T191136+1000" content="."?><?oxy_comment_start author="retallick" timestamp="20160603T111349+1000" comment="fix "?></title>
+          <?oxy_comment_end?>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/8005.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para>The second approach proposed by <citation>b8_c_r34+1</citation>, which is not fully
+          developed at this stage, does not use the upper limit concept, but recommends the
+          derivation of separate extreme rainfall frequency curves for each season, using the joint
+          probability method <citation>b8_c_r57</citation>.</para>
+      </section>
+    </section>
+    <section xml:id="b8_s_6163d">
+      <title>Derivation of Seasonal Design Rainfalls</title>
+      <para><?oxy_delete author="retallick" timestamp="20160531T191200+1000" content="It is seen that t"?><?oxy_insert_start author="retallick" timestamp="20160531T191203+1000"?>T<?oxy_insert_end?>he
+        procedure required to derive a complete seasonal frequency curve of design rainfalls is not
+        straightforward, and is subject to differences in interpretation, particularly in respect to
+        assigning an AEP to the seasonal PMP. The basic criterion to be satisfied by any procedure
+        for estimating seasonal rainfall frequencies is that, for any given rainfall magnitude, the
+        seasonal frequencies over all seasons should add up to the AEP of the rainfall magnitude
+        determined from the analysis of annual rainfalls.</para>
+      <para>In the absence of better design information, and noting the foregoing discussion, the
+        following recommendations should prove adequate for most design problems where seasonal
+        effects are important.</para>
+      <section xml:id="b8_s_xkt95">
+        <title>Rare
+          <?oxy_insert_start author="retallick" timestamp="20160531T191240+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191239+1000" content="e"?>vents</title>
+        <para>Both seasonal and annual frequency analyses should be undertaken using rainfall data
+          obtained from sites relevant to the study area. When applied in conjunction with seasonal
+          PMP estimates, the adopted seasons should correspond to the seasons used in the derivation
+          of the seasonal PMP depths, and the seasonal rainfall estimates should be expressed as
+          fractions of the annual estimates. The seasonal fractions can then be converted to design
+          rainfall depths by multiplying by the (annual) design rainfall values obtained from the
+          standard information provided in <xref linkend="book2"/>. Note that the inherent
+          uncertainties in fitting the tails of the distributions to observed seasonal data may mean
+          that for a given rainfall magnitude the sum of the seasonal exceedance probabilities do
+          not equal the annual exceedance probability. If this problem occurs one or more of the
+          seasonal frequency curves will need to be adjusted to ensure that the seasonal and annual
+          exceedance probabilities are consistent.</para>
+      </section>
+      <section xml:id="b8_s_vol5j">
+        <title>Very Rare
+          <?oxy_insert_start author="retallick" timestamp="20160531T191242+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T191242+1000" content="e"?>vents</title>
+        <para>Unless specific regional estimates are available, the seasonal fractions corresponding
+          to design rainfalls at the credible limit of extrapolation may be obtained by an
+          interpolation procedure similar to that used for losses (e.g. linear interpolation on a
+          log-log frequency plot – <xref linkend="b8_e_4dyk0"/>). The lower and upper end points
+          used in the interpolation are defined, respectively, by the seasonal fractions derived for
+          the 1 in 100 AEP and PMP design rainfalls. Once the seasonal fractions have been obtained
+          by interpolation, seasonal design rainfalls for Very Rare events are derived by
+          multiplying the fractions by the (annual) design rainfall values at the credible limit of
+          extrapolation.</para>
+      </section>
+      <section xml:id="b8_s_cn47n">
+        <title>P<?oxy_insert_start author="retallick" timestamp="20160531T202233+1000"?>robable
+          <?oxy_insert_end?>M<?oxy_insert_start author="retallick" timestamp="20160531T202236+1000"?>aximum <?oxy_insert_end?>P<?oxy_insert_start author="retallick" timestamp="20160531T202239+1000"?>recipitation<?oxy_insert_end?>
+          <?oxy_insert_start author="retallick" timestamp="20160531T202248+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T202247+1000" content="e"?>vents</title>
+        <para>Seasonal estimates of the PMP should be obtained from the Bureau of Meteorology. When
+          plotted with Very Rare event seasonal design rainfalls for the corresponding season, the
+          seasonal PMP estimates should be assigned an AEP equal to the product of the AEP of the
+          annual PMP (from
+            <?oxy_comment_start author="retallick" timestamp="20160615T190734+1000" comment="is this figure ref wrong in original author document"?><xref
+            linkend="b8_f_2386f"><?oxy_comment_end?></xref>) and the fraction of the year occupied
+          by the season. These AEPs need to be adjusted to ensure that the sum of the exceedance
+          probabilities of events of <emphasis role="italic">the same magnitude </emphasis>for the
+          different seasons add to the AEP of the annual rainfall event of that magnitude (as
+          discussed in <xref linkend="b8_s_6163d"/>, and illustrated in <xref linkend="b8_f_sw31s"
+          />). It is important to recognise that the uncertainty associated with the currently
+          available seasonal PMP estimates is higher than that for the annual estimates.</para>
+      </section>
+    </section>
+  </section>
+  <section xml:id="b8_s_4n0lw">
+    <title>Temporal Patterns</title>
+    <section xml:id="b8_s_kz4c8">
+      <title>General</title>
+      <para>The temporal
+        <?oxy_delete author="retallick" timestamp="20160531T204652+1000" content="rainfall "?>patterns
+        provided in <xref linkend="book2"/> relate to the time distribution of design rainfall
+        depths within rainfall bursts. Additional rainfall occurring immediately before the start of
+        the burst, as part of a complete storm event, can be accounted for by ‘pre-burst’ temporal
+        patterns.</para>
+      <para><?oxy_comment_start author="retallick" timestamp="20160531T205005+1000" comment="check - tp chapter recommends 10 patterns. "?>The
+        concept of a single ‘representative’ temporal pattern that allows an probability<?oxy_insert_start author="retallick" timestamp="20160531T204906+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T204905+1000" content="-"?>neutral
+        transformation of design rainfall inputs to flood outputs of the same AEP is basically
+        flawed, as this transformation is quite sensitive to the routing characteristics of the
+        catchment.<?oxy_comment_end?> This sensitivity can best be allowed for by applying an
+        ensemble of typical temporal patterns rather than a single design temporal pattern, as can
+        be done in the Ensemble Event and Monte Carlo Event approaches.</para>
+    </section>
+    <section xml:id="b8_s_isy73">
+      <title>Specific Recommendations</title>
+      <section xml:id="b8_s_qty0r">
+        <title>Selection of
+          <?oxy_insert_start author="retallick" timestamp="20160531T205511+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205510+1000" content="p"?>atterns
+          for
+          <?oxy_insert_start author="retallick" timestamp="20160531T205514+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205513+1000" content="d"?>esign
+          <?oxy_insert_start author="retallick" timestamp="20160531T205517+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205516+1000" content="b"?>ursts</title>
+        <para><xref linkend="b8_t_kjsmh"/> summarises the recommended application of different
+          temporal patterns for design rainfall bursts in the range of Very Rare to Extreme events.
+          There are three main sources of design information:<itemizedlist>
+            <listitem>
+              <para>short duration patterns from GSDM <citation>b8_c_r7,b8_c_r25</citation>;</para>
+            </listitem>
+            <listitem>
+              <para>long duration patterns for use in south-eastern Australia (<xref linkend="book2"
+                /><?oxy_delete author="retallick" timestamp="20160531T205427+1000" content=" "?>);
+                and</para>
+            </listitem>
+            <listitem>
+              <para>tropical storm patterns (<xref linkend="book2"/>).</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>It should be noted that ensemble sets of temporal patterns are available for the GSAM
+          and
+          <?oxy_comment_start author="retallick" timestamp="20160531T205211+1000" comment="should there be a dash here?  dont think there is elsewhere
+"?>GTSM<?oxy_delete author="retallick" timestamp="20160531T205805+1000" content="-"?>R
+          <?oxy_comment_end?>methods, and these should be used as required for the Ensemble Event
+          and Monte Carlo Event approaches. For Very Rare events it may be appropriate to use of a
+          mix of selected at-site and generalised PMP patterns in an ensemble to provide a smooth
+          transition over the full probability domain of interest. At present, the best source of
+          ensemble temporal patterns for use with short duration
+          <?oxy_insert_start author="retallick" timestamp="20160531T205618+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205617+1000" content="v"?>ery
+          Rare to Extreme events are those derived by <citation>b8_c_r25+1</citation>; these
+          patterns were derived specifically from storms associated with thunderstorm or deeply
+          convective events.</para>
+        <para>An issue requiring specific mention is the absence of temporal patterns in
+          south<?oxy_insert_start author="retallick" timestamp="20160531T205631+1000"?>-<?oxy_insert_end?>eastern
+          Australia for use with storm durations between the upper limit of GSDM (3 or 6 hours) and
+          the lower limit of the GSAM method (generally 24 hours). A pragmatic solution to this
+          problem is to apply both sets of temporal patterns and to adopt a weighted average peak
+          flow, where the weighting is based on storm duration. The weighted average peak flow is
+          then used to scale the hydrograph obtained using the most relevant generalised method;
+          weighting all the ordinates of the hydrograph is not recommended as the resulting
+          hydrograph may exhibit a lower peak than either of the individual hydrographs.</para>
+        <para>In the transition zone between the
+          GTSM<?oxy_delete author="retallick" timestamp="20160531T205814+1000" content="-"?>R and
+          GSAM regions, temporal patterns from both the GSAM and
+          GTSM<?oxy_delete author="retallick" timestamp="20160531T205818+1000" content="-"?>R
+          methods should be applied separately (in conjunction with the corresponding spatial
+          patterns), and the largest flood adopted.</para>
+      </section>
+      <section xml:id="b8_s_s3oeh">
+        <title>Patterns for
+          <?oxy_insert_start author="retallick" timestamp="20160531T205832+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205828+1000" content="c"?>omplete
+          <?oxy_insert_start author="retallick" timestamp="20160531T205836+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T205835+1000" content="s"?>torms</title>
+        <para>The design information required to define the design rainfall depths and temporal
+          patterns for complete Very Rare and Extreme storms is available nationally (<xref
+            linkend="b2_ch5"/>). These pre-burst patterns might be suitable for scaling to more
+          extreme events, but it should be noted that the patterns provided are for point not areal
+          storms, and will need censoring to ensure that the patterns selected are from
+          appropriately rare events. <xref linkend="b2_ch5"/> outlines the principles for
+          constructing complete storms from design bursts using dimensionless pre-burst temporal
+          patterns. Guidance on the determination of rainfall excess for complete storms is provided
+          in <xref linkend="b8_s_kprjg"/>.</para>
+      </section>
+      <section xml:id="b8_s_k55yh">
+        <title>Dealing with
+          <?oxy_insert_start author="retallick" timestamp="20160531T210815+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T210814+1000" content="i"?>nconsistencies
+          and
+          <?oxy_delete author="retallick" timestamp="20160531T210818+1000" content="s"?><?oxy_insert_start author="retallick" timestamp="20160531T210818+1000"?>S<?oxy_insert_end?>moothing
+          of
+          <?oxy_insert_start author="retallick" timestamp="20160531T210822+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T210821+1000" content="r"?>esults</title>
+        <para>In practice, the simplistic use of single design temporal patterns for different
+          durations and AEPs can yield flood estimates that do not vary in a consistent manner. In
+          extreme cases, this can result in design flood magnitudes that decrease with decreasing
+          AEP. More typically, the patterns may result in critical storm durations that vary
+          inconsistently with AEP; such a variation will impact upon the volume of design
+          hydrographs which, when routed through a reservoir, may produce inconsistent results. The
+          judicious use of simulation results using ensembles of temporal patters will largely avoid
+          such inconsistencies. Problems are more likely to occur with the transition between
+          temporal patterns for more frequent events and those derived for PMP events. If problems
+          arise consideration should be given to filtering out (or excluding) embedded bursts of
+          lower AEP by re-distributing rainfalls of high intensity to other time increments
+          proportionally to their magnitude (e.g<?oxy_insert_start author="retallick" timestamp="20160531T210924+1000"?>.<?oxy_insert_end?>
+          <citation>b8_c_r18</citation>). Where significant inconsistencies remain, practitioners
+          will need to apply judicious smoothing of results for different durations and AEPs.<table
+            frame="void" xml:id="b8_t_kjsmh">
+            <caption>Selection of Design Burst Temporal Patterns for Different Regions, Durations
+              and AEPs</caption>
+            <col width="16%"/>
+            <col width="16%"/>
+            <col width="16%"/>
+            <col span="2" width="16%"/>
+            <col width="16%"/>
+            <col width="16%"/>
+            <thead>
+              <tr>
+                <th>Descriptive Event Class</th>
+                <th>Range of AEP</th>
+                <th colspan="5">Storm Duration and Source of Design Information</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td/>
+                <td/>
+                <td>Short Durations for Whole of Australia</td>
+                <td colspan="2">Long Durations in South-East Australia</td>
+                <td colspan="2">Long Durations in Tropical Regions</td>
+              </tr>
+              <tr>
+                <td/>
+                <td/>
+                <td>Up to 3 or 6 hours duration</td>
+                <td>Intermediate durations</td>
+                <td>24 hours and longer</td>
+                <td>Intermediate durations</td>
+                <td>24 hours and longer</td>
+              </tr>
+              <tr>
+                <td>Very Rare</td>
+                <td>Beyond 1 in 100 to the credible limit of extrapolation</td>
+                <td rowspan="2">
+                  <para>Deterministic patterns from GSDM method, ensemble patterns from Jordan et
+                    al. (2005)</para>
+                </td>
+                <td>Both unsmoothed 24 hour GSAM and longest duration GSDM patterns</td>
+                <td>Unsmoothed GSAM patterns (single and ensemble)</td>
+                <td rowspan="2">Both 24 hour GTSMR and longest duration GSDM patterns</td>
+                <td rowspan="2">GTSMR patterns (single and ensemble)</td>
+              </tr>
+              <tr>
+                <td>Extreme</td>
+                <td>Beyond the credible limit of extrapolation</td>
+                <td>
+                  <para>Both smoothed</para>
+                  <para>24 hour GSAM and longest duration GSDM patterns</para>
+                </td>
+                <td>Smoothed GSAM patterns (single and ensemble)</td>
+              </tr>
+            </tbody>
+          </table></para>
+      </section>
+    </section>
+  </section>
+  <section xml:id="b8_s_sborg">
+    <title>Spatial Patterns</title>
+    <section xml:id="b8_s_oghg9">
+      <title>Basis of Adopted Patterns</title>
+      <para>Design spatial rainfall patterns are also required to fully define design rainfall
+        events, and general guidance on this is provided in <xref linkend="book2"/>. The source of
+        spatial patterns as a function of burst duration and AEP is broadly similar to that adopted
+        for temporal patterns (except for the Very Rare rainfall category), and is summarised in
+          <xref linkend="b8_t_r78ov"/>.
+        <?oxy_delete author="retallick" timestamp="20160531T211931+1000" content="It is seen that "?><?oxy_insert_start author="retallick" timestamp="20160531T211931+1000"?>As
+        discussed in <?oxy_insert_end?><xref linkend="b8_s_5ahbu"/><?oxy_insert_start author="retallick" timestamp="20160531T211931+1000"?>
+        <?oxy_insert_end?>there are four main sources of design information: patterns based on the
+        spatial distribution of design rainfalls for Very Rare events, spatial patterns for use in
+        south<?oxy_insert_start author="retallick" timestamp="20160531T212058+1000"?>-<?oxy_insert_end?>eastern
+        Australia <citation>b8_c_r43</citation>, GSDM thunderstorm patterns
+          <citation>b8_c_r7</citation>, and tropical storm patterns <citation>b8_c_r8</citation>. As
+        with temporal patterns, the last three sets of patterns were originally derived for
+        application to PMP events, but in the absence of any more relevant information they are
+        applied to the range of Very Rare to Extreme events.</para>
+      <para>Except for catchments with marked rainfall gradients, the spatial distribution of
+        rainfall generally has less influence on the shape and size of the resulting hydrograph than
+        temporal patterns. Thunderstorm and tropical patterns can have an appreciable effect on
+        flood magnitude, particularly if the catchment contains extensive drowned reaches resulting
+        from reservoir inundation. For such catchments, small variations in the spatial distribution
+        of design rainfall may have a marked impact on the magnitude of the flood peak. It is worth
+        assessing the sensitivity of the catchment floods to variations in spatial patterns, and if
+        this is not easily resolved then it would be necessary to include spatial patterns as an
+        ensemble in Monte Carlo analyses.</para>
+    </section>
+    <section xml:id="b8_s_5ahbu">
+      <title>Specific Recommendations</title>
+      <orderedlist numeration="lowerroman">
+        <listitem>
+          <para><emphasis role="italic">Very Rare
+            events.</emphasis><?oxy_delete author="retallick" timestamp="20160531T212217+1000" content=" "?><?oxy_insert_start author="retallick" timestamp="20160531T212202+1000"?>-
+            <?oxy_insert_end?>Spatial rainfall trends may be characterised by dividing the catchment
+            into two or more sub-catchments, and deriving design rainfalls separately for
+            each.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Extreme short duration
+            events.</emphasis><?oxy_insert_start author="retallick" timestamp="20160531T212205+1000"?>-
+            <?oxy_insert_end?>The GSDM thunderstorm patterns <citation>b8_c_r7</citation> should be
+            used. The spatial pattern should generally be centred over the catchment and orientated
+            in such a way as to overlap the catchment boundary with the smallest possible
+            ellipse.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Extreme long duration events in
+              south<?oxy_insert_start author="retallick" timestamp="20160531T212233+1000"?>-<?oxy_insert_end?>eastern
+              Australia.</emphasis><?oxy_insert_start author="retallick" timestamp="20160531T212210+1000"?>-
+            <?oxy_insert_end?> The spatial patterns provided with GSAM estimates
+              <citation>b8_c_r43</citation> should be applied to all Very Rare to Extreme events.
+            The spatial patterns are based on modified 72 hour 50 year ARI intensity fields of
+            design rainfalls from <xref linkend="book2"/>, and they incorporate the combined effect
+            of variations in elevation, slope, aspect and geographical location. These patterns
+            should not be rotated or translated.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Extreme long duration events in tropical
+            regions.</emphasis><?oxy_delete author="retallick" timestamp="20160531T212223+1000" content=" "?><?oxy_insert_start author="retallick" timestamp="20160531T212220+1000"?>-<?oxy_insert_end?>The
+            spatial patterns provided with GTSMR estimates <citation>b8_c_r8</citation> should be
+            applied to all Very Rare to Extreme events. The spatial pattern should be positioned to
+            maximise the rainfall depth within the catchment.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Extreme long duration events in the transition
+              zone.</emphasis> In the transition zone between the GSAM and GTSMR regions, both sets
+            of spatial patterns should be used (in conjunction with the corresponding temporal
+            patterns) and the highest resulting flood should be adopted.</para>
+        </listitem>
+      </orderedlist>
+      <table frame="void" xml:id="b8_t_r78ov">
+        <caption>Selection of
+          <?oxy_insert_start author="retallick" timestamp="20160531T212340+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212339+1000" content="d"?>esign
+          <?oxy_insert_start author="retallick" timestamp="20160531T212343+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212342+1000" content="s"?>patial
+          <?oxy_insert_start author="retallick" timestamp="20160531T212345+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212345+1000" content="p"?>atterns
+          for
+          <?oxy_insert_start author="retallick" timestamp="20160531T212348+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212347+1000" content="d"?>ifferent
+          <?oxy_insert_start author="retallick" timestamp="20160531T212350+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212350+1000" content="r"?>egions,
+          <?oxy_insert_start author="retallick" timestamp="20160531T212352+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212352+1000" content="d"?>urations
+          and
+          AEPs<?oxy_delete author="retallick" timestamp="20160531T212334+1000" content="."?></caption>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <col width="16%"/>
+        <thead>
+          <tr>
+            <th>Descriptive event class</th>
+            <th>Range of AEP</th>
+            <th colspan="4">Storm duration and source of design information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td/>
+            <td/>
+            <td>
+              <para>Short durations for
+                <?oxy_insert_start author="retallick" timestamp="20160531T212406+1000"?>W<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160531T212405+1000" content="w"?>hole
+                of Australia</para>
+              <para> (GSDM)</para>
+            </td>
+            <td colspan="2">Long durations in
+              south<?oxy_insert_start author="retallick" timestamp="20160531T212410+1000"?>-<?oxy_insert_end?>east
+              Australia (GSAM method)</td>
+            <td>Long durations in tropical regions (GTSMR method)</td>
+          </tr>
+          <tr>
+            <td/>
+            <td/>
+            <td>Up to 3 or 6 hours duration</td>
+            <td>Intermediate durations between GSDM and GSAM</td>
+            <td>24 hours and longer</td>
+            <td>Longer than 6 hours</td>
+          </tr>
+          <tr>
+            <td>Very Rare</td>
+            <td>Beyond 1 in 100 to the credible limit of extrapolation</td>
+            <td colspan="4">Based on design rainfalls for Very Rare events derived separately for
+              each sub-catchment</td>
+          </tr>
+          <tr>
+            <td>Extreme</td>
+            <td>Beyond the credible limit of extrapolation</td>
+            <td>GSDM spatial patterns</td>
+            <td>Both GSAM and GSDM spatial patterns</td>
+            <td>GSAM spatial patterns</td>
+            <td>GTSMR spatial patterns</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
+  
+</chapter>

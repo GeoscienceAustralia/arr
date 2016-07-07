@@ -23,6 +23,16 @@ a.glossterm {
 em.glossterm {
    font-style: normal;
 }
+
+/*********************************************/
+/* Table Overrides for the preface           */
+table.blank_table tbody tr td {
+   background-color: initial;
+   color: initial;
+}
+
+
+
 /*********************************************/
 /* Table formatting */
 /* Centre align small tables */
@@ -66,12 +76,12 @@ tbody tr th {
    font-weight: bold;
 }
 
-tbody tr:nth-of-type(1) th, tbody tr:nth-of-type(1) td {
+tbody tr:nth-of-type(0) th, tbody tr:nth-of-type(0) td {
    background-color: rgba(0,80,146,0.7);
    color: #FFFFFF;
    text-align: center;
 }
-.table-striped > tbody > tr:nth-of-type(2n+1) {
+.table-striped > tbody > tr:nth-of-type(2n) {
    background-color: rgba(255,255,255,0.4);
  }
 
@@ -192,4 +202,10 @@ h2.title {font-size: 1.4em; line-height: 1.4em; margin-top: 80px; -webkit-hyphen
    color: rgba(128, 128, 128, 1);
 }
 
-
+/* Sidebars */
+div.sidebar p {
+   background-color: #c9c9c9;
+   border-style: solid;
+   border-width: 2px;
+   border-color: black;
+}

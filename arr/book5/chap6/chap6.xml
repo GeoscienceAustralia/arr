@@ -1,0 +1,2451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" status="In Preparation" version="5.0" xml:id="b5_ch6">
+  <info>
+    <title>Flood Hydrograph Modelling Approaches</title>
+          <xi:include href="../../common/authors/ball_james.xml"/>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+
+    
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+  <section xml:id="b5_ch6_s_p48cu">
+    <title>Introduction</title>
+    <para>This chapter deals with a range of approaches available to calculate design flood
+      hydrographs at the catchment outlet and other points of interest. It therefore integrates the
+      previous chapters in <xref linkend="book5"/> and also links to <xref linkend="book7"/>, where
+      practical applications are discussed.</para>
+    <para>The time-area approaches (<xref linkend="b5_ch6_s_ypsrh"/>) and unit hydrograph approaches
+        (<xref linkend="b5_ch6_s_7b1zz"/>) allow a relatively simple transformation of rainfall
+      excess inputs to flood hydrograph outputs and are directly applicable to a lumped
+      representation of the flood formation process in a catchment, where the inputs and processes
+      can be assumed to be spatially uniform (or at least spatially consistent between different
+      events). These “traditional” approaches have generally been replaced by more flexible
+      approaches. However, they also find application to represent the overland flow phase of
+      hydrograph formation in some of the node-link type models discussed in subsequent sections. </para>
+    <para>The most widely used flood hydrograph estimation models are based on the runoff routing
+      approach, in which both the runoff production and hydrograph formation phases can be
+      represented in a distributed fashion, reflecting the spatial variation of rainfall inputs and
+      flood processes in a catchment. The two principal groups of models are the network (node-link
+      type) models described in <xref linkend="b5_ch6_s_do8jr"/> and the rainfall-on-grid (or direct
+      rainfall) models described in <xref linkend="b5_ch6_s_lgabf"/>. </para>
+    <para>The routing methods incorporated in these models have their foundations in the open
+      channel hydraulics introduced in <xref linkend="book6"/> and apply the flood routing
+      principles outlined in <xref linkend="b5_ch3"/> of this book. The descriptions in <xref
+        linkend="b5_ch6_s_do8jr"/> and <xref linkend="b5_ch6_s_lgabf"/> focus on the specific way
+      these principles are applied to represent different parts of the flood hydrograph formation
+      process.</para>
+    <para>The discussion of flood hydrograph modelling in this chapter is intended to introduce
+      readers to the different approaches used and the assumptions made in different modelling
+      approaches and different runoff routing modelling systems. Guidance on the practical
+      application of flood hydrograph models to different flood estimation problems, including
+      estimation of model parameters, is provided in <xref linkend="book7"/>. </para>
+    <para>As with other chapters of <xref linkend="book5"/>, this chapter deals primarily with rural
+      catchments, and while the principles apply also for urban catchments, urban catchment
+      hydrology is covered in detail in <xref linkend="book9"/>.</para>
+  </section>
+  <section xml:id="b5_ch6_s_ypsrh">
+    <title>Time-Area approaches</title>
+    <section xml:id="b5_ch6_s_2ft7m">
+      <title>Time-Area Theory</title>
+      <para>Time-area approaches can be seen as an extension of the <emphasis role="italic">travel
+          time</emphasis> concept used in the Rational Method. However, instead of using a single
+        travel time or <emphasis role="italic">time of concentration</emphasis> for flow from the
+        most remote point on the catchment to its outlet to calculate a peak discharge, time-area
+        approaches use travel times from all parts of the catchment and calculate a complete flood
+        hydrograph. Early development of the approach was carried out by
+          <citation>b5_c6_r17+1</citation> and <citation>b5_c6_r33+1</citation>, while examples of
+        time-area approaches are given in <citation>b5_c6_r2+1</citation>. </para>
+      <para>The basic principle of time-area approaches, as illustrated in <xref
+          linkend="b5_ch6_f_jm87i"/>, is that rainfall excess at any time <emphasis role="italic"
+          >t-tt</emphasis> after the start of the storm that occurs at a point on the catchment with
+        a travel time of <emphasis role="italic">tt</emphasis> to the catchment outlet will
+        influence flow at the catchment outlet at time <emphasis role="italic">t</emphasis>. A
+        fundamental assumption involved in this is that flow at the catchment outlet is influenced
+        only when the runoff reaches the catchment outlet, i.e. when the individual water particles
+        reach the catchment outlet. </para>
+      <figure xml:id="b5_ch6_f_jm87i">
+        <title>Isochrones and Time-Area Curve</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/5020.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Points on the catchment which have equal travel times to the outlet can be joined to
+        form isochrones. Application of the time-area method requires isochrones to be drawn for the
+        catchment being considered; note that many computerised applications assume that the area
+        increases in a linear manner on small subcatchments to avoid the need for delineation of
+        isochrones. </para>
+      <para>When construction of isochrones is required, a common assumption is that the travel time
+        is related to the travel length (<emphasis role="italic">L</emphasis>) and slope (<emphasis role="italic">S</emphasis>) of the catchment by the following relationship: </para>
+      <equation xml:id="b5_ch6_e_e7e3u">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <semantics>
+            <mrow>
+              <msub>
+                <mi>t</mi>
+                <mi>t</mi>
+              </msub>
+              <mo>=</mo>
+              <mfrac>
+                <mi>L</mi>
+                <mrow>
+                  <msup>
+                    <mi>S</mi>
+                    <mrow>
+                      <mn>0.5</mn>
+                    </mrow>
+                  </msup>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+              feaagGart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiDamaaBa
+              aaleaacaWG0baabeaakiabg2da9maalaaabaGaamitaaqaaiaadofa
+              daahaaWcbeqaaiaaicdacaGGUaGaaGynaaaaaaaaaa@3D34@ </annotation>
+          </semantics>
+        </math>
+      </equation>
+      <para><xref linkend="b5_ch6_e_e7e3u"/> follows directly from Manning’s equation, in which flow
+        velocity is related to the square root of stream slope which is assumed to be the same as
+        the energy gradient. However, as the flow moves downstream to the catchment outlet, the
+        flatter stream slopes are accompanied by greater water depths, which may compensate for the
+        decreasing stream slope in the Manning equation. Studies by <citation>b5_c6_r27+1</citation>
+        and <citation>b5_c6_r32+1</citation> indicate that stream velocities essentially remain
+        constant along the length of the stream and may even increase in a downstream direction. If
+        velocities remain constant along the stream, the travel time would be directly related to
+        travel distance by: </para>
+      <equation xml:id="b5_ch6_e_phc2b">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mrow>
+            <msub>
+              <mi>t</mi>
+              <mi>t</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>L</mi>
+          </mrow>
+        </math>
+      </equation>
+      <para>A plot of the area between adjacent isochrones against the travel time produces a
+        time-area curve. An example of a time-area curve is presented in <xref
+          linkend="b5_ch6_f_jm87i"/>. </para>
+      <para>Since there are many points on the catchment with travel times <emphasis role="italic">tt</emphasis> and corresponding times <emphasis role="italic">t-tt</emphasis> after the
+        start of the storm, the flowrate at the outlet at time <emphasis role="italic">t</emphasis>
+        is the sum of all possible combinations. As a simple example, if the catchment is divided
+        into five segments using isochrones (<emphasis role="italic">Ai</emphasis>), and a storm has
+        three periods of rainfall excess (<emphasis role="italic">Pj</emphasis> in mm/h) with both
+        the isochrones and rainfall having the same time step, then the total time of the hydrograph
+        is eight time steps. Also, the discharges from the catchment at successive time steps (equal
+        to the isochrone interval) for this example are given by: </para>
+      <equation xml:id="b5_ch6_e_tzfwl">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable columnalign="left">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <msub>
+                  <mi>A</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>1</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>1</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>4</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>4</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>5</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>4</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>5</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>6</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>4</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>3</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mi>A</mi>
+                      <mn>5</mn>
+                    </msub>
+                    <msub>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>7</mn>
+                </msub>
+                <mo>=</mo>
+                <mi>k</mi>
+                <msub>
+                  <mi>A</mi>
+                  <mn>5</mn>
+                </msub>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>8</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+      </equation>
+      <para>where <emphasis role="italic">k</emphasis> is an appropriate unit conversion factor
+          (<emphasis role="italic">k</emphasis> varies with the units of <emphasis role="italic">Q</emphasis> and <emphasis role="italic">A</emphasis>).</para>
+      <para>In general, <xref linkend="b5_ch6_e_tzfwl"/> can be expressed as</para>
+      <equation xml:id="b5_ch6_e_1bjqi">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mrow>
+            <msub>
+              <mi>Q</mi>
+              <mi>t</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>k</mi>
+            <mstyle displaystyle="true">
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>t</mi>
+              </munderover>
+              <mrow>
+                <msub>
+                  <mi>A</mi>
+                  <mi>i</mi>
+                </msub>
+                <msub>
+                  <mi>P</mi>
+                  <mrow>
+                    <mi>t</mi>
+                    <mo>−</mo>
+                    <mi>i</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </math>
+      </equation>
+      <para>where <emphasis role="italic">Ai</emphasis> is the area between the <emphasis
+          role="italic">i-1</emphasis> and <emphasis role="italic">i</emphasis> isochrones,
+          <emphasis role="italic">Pj</emphasis> is the rainfall excess depth in the <emphasis
+          role="italic">jth</emphasis> period of the storm event, and <emphasis role="italic"
+          >k</emphasis> is a conversion factor. As the conversion factor (<emphasis role="italic"
+          >k</emphasis>) will vary with the isochrone interval, it is recommended that the intensity
+        of rainfall excess (mm/h) be used; details of the conversion factors for different
+        combinations of discharge, area units and rainfall excess intensity in mm/h are given in
+          <xref linkend="b5_ch6_t_1aa00"/>.</para>
+      <table frame="void" xml:id="b5_ch6_t_1aa00">
+        <caption>Conversion Factors</caption>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+        <thead>
+          <tr>
+            <th>Discharge</th>
+            <th>Area</th>
+            <th>Rainfall Excess Intensity</th>
+            <th>Conversion Factor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>m<superscript>3</superscript>/s</td>
+            <td>ha</td>
+            <td>mm/h</td>
+            <td>1/360</td>
+          </tr>
+          <tr>
+            <td>m<superscript>3</superscript>/s</td>
+            <td>km<superscript>2</superscript></td>
+            <td>mm/h</td>
+            <td>1/3.6</td>
+          </tr>
+          <tr>
+            <td>L/s</td>
+            <td>ha</td>
+            <td>mm/h</td>
+            <td>1/0.36</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section xml:id="b5_ch6_s_amgyu">
+      <title>Limitations of Time-Area Approaches</title>
+      <para>Despite the use of the time-area approach in various models, the time-area concept has
+        several limitations, including:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Isochrones of travel time usually are not known, except in a few experimental
+            studies and must be estimated. These experimental catchments include those monitored by
+              <citation>b5_c6_r30,b5_c6_r31</citation> using tracers to ascertain travel times. To
+            overcome this disadvantage, many applications adopt a simplified time-area relationship.
+            A common simplified relationship is based on a linear growth in area with time (in
+            essence, an assumption of a rectangular shape with a length given by the response time
+            and a width defined by the catchment area), and thus there is a need only to estimate a
+            representative travel time for the conceptualised catchment. </para>
+        </listitem>
+        <listitem>
+          <para>The time-area curve cannot be easily derived from recorded rainfall and streamflow
+            data.</para>
+        </listitem>
+        <listitem>
+          <para>Construction of the direct runoff hydrograph assumes that flow is translated to the
+            outlet with a lag but without attenuation. In other words, a kinematic response is
+            assumed. As a result of this, time area methods are more likely to be applicable to
+            estimation of flows from small catchments and particularly to estimation of surface
+            flows in urban catchments.</para>
+        </listitem>
+        <listitem>
+          <para>The method is linear, ie a doubling of rainfall excess results is a doubling of
+            predicted discharges, whereas data from many catchments, particularly the larger rural
+            catchments, demonstrates a nonlinear response to changes in rainfall excess.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section xml:id="b5_ch6_s_m70ls">
+      <title>Worked Example</title>
+      <para>The example below illustrates the application of the time-area method to a small rural
+        catchment. The steps in the method remain similar when applied to an urban catchment but the
+        time-area diagram then needs to reflect differences in travel time over different types of
+        catchment surfaces and different types of drainage systems.</para>
+      <sidebar>
+        <title>Example  - Hydrograph Calculation for Triangular Time-Area Curve</title>
+        <para>A 5 hectare catchment has a time of concentration of 15 minutes. The time-area curve
+          is assumed to be triangular in shape. (This is similar to the time-area curve used with
+          the Cordery-Webb approach for development of synthetic unit hydrographs). The surface
+          runoff hydrograph is to be estimated for a 21 minute storm event with the details of this
+          event shown in <xref linkend="b5_ch6_t_21d9u"/>. </para>
+        <para>Since the storm event has 7 periods, each of 3 minutes duration, the catchment will be
+          divided into 5 subareas by isochrones spaced at 3 minute intervals. The hydrograph base
+          length is given by the catchment time of concentration plus the storm duration, ie 15
+          minutes + 21 minutes = 36 minutes. The total depth of rainfall excess is 8.1 mm (see
+          Column 3 in <xref linkend="b5_ch6_f_mn6qf"/>). Using this depth of rainfall excess and the
+          catchment area, the volume of direct runoff from the catchment is 405
+            m<superscript>3</superscript>.</para>
+        <para>The subarea sizes between each adjacent pair of 3 minute isochrones, proceeding from
+          the outlet of the catchment to the top of the catchment, are 0.33, 0.67, 1.00, 1.33 and
+          1.67 ha. The resultant time-area relationship is shown in <xref linkend="b5_ch6_f_mn6qf"
+          />.</para>
+        <figure xml:id="b5_ch6_f_mn6qf">
+          <title>Time-Area Relationship for Example 2</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5086.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+          <table frame="void" xml:id="b5_ch6_t_21d9u">
+            <caption>Calculation of Surface Runoff Hydrograph using Triangular Time-Area
+              Curve</caption>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <thead>
+              <tr>
+                <th>Time (minutes)</th>
+                <th>Subarea (ha)</th>
+                <th>Rainfall Excess (mm)</th>
+                <th>Rainfall Excess Intensity (mm/h)</th>
+                <th>Surface Runoff (m<superscript>3</superscript>/s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>0.33</td>
+                <td>0.3</td>
+                <td>6</td>
+                <td>0.006</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>0.67</td>
+                <td>0.6</td>
+                <td>12</td>
+                <td>0.022</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>1</td>
+                <td>1.8</td>
+                <td>36</td>
+                <td>0.072</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>1.33</td>
+                <td>3.6</td>
+                <td>72</td>
+                <td>0.189</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>1.67</td>
+                <td>0.9</td>
+                <td>18</td>
+                <td>0.322</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td/>
+                <td>0.3</td>
+                <td>6</td>
+                <td>0.428</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td/>
+                <td>0.6</td>
+                <td>12</td>
+                <td>0.506</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td/>
+                <td/>
+                <td/>
+                <td>0.439</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td/>
+                <td/>
+                <td/>
+                <td>0.139</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td/>
+                <td/>
+                <td/>
+                <td>0.072</td>
+              </tr>
+              <tr>
+                <td>33</td>
+                <td/>
+                <td/>
+                <td/>
+                <td>0.056</td>
+              </tr>
+              <tr>
+                <td>36</td>
+                <td/>
+                <td/>
+                <td/>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><inlineequation>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                      <semantics>
+                        <mo>∑</mo>
+                        <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+                          feaagGart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeyyeIuoaaa@3799@ </annotation>
+                      </semantics>
+                    </math>
+                  </inlineequation></td>
+                <td/>
+                <td><emphasis role="bold">8.1</emphasis></td>
+                <td/>
+                <td><emphasis role="bold">2.25</emphasis></td>
+              </tr>
+            </tbody>
+          </table>
+        <para>Application of <xref linkend="b5_ch6_e_1bjqi"/> allows the direct runoff hydrograph
+          ordinates to be calculated (see Column 5 in <xref linkend="b5_ch6_t_21d9u"/>). <xref
+            linkend="b5_ch6_f_mgm9p"/> summarises the time-area calculations and shows the resulting
+          surface runoff hydrograph.</para>
+        <para>As a check, from Column 5 in <xref linkend="b5_ch6_t_21d9u"/>, the volume of the
+          direct runoff hydrograph 1 is given by</para>
+        <equation xml:id="b5_ch6_e_kjxfs">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mtext>Volume</mtext>
+              <mo>=</mo>
+              <mstyle displaystyle="true">
+                <mo>∑</mo>
+                <mrow>
+                  <mi>Q</mi>
+                  <mi>Δ</mi>
+                  <mi>t</mi>
+                  <mo>=</mo>
+                  <mn>2.25</mn>
+                  <mrow>
+                    <mrow>
+                      <msup>
+                        <mi>m</mi>
+                        <mn>3</mn>
+                      </msup>
+                    </mrow>
+                    <mo>/</mo>
+                    <mi>s</mi>
+                  </mrow>
+                  <mtext> x </mtext>
+                  <mn>180</mn>
+                  <mi>s</mi>
+                  <mo>=</mo>
+                  <mn>405</mn>
+                  <msup>
+                    <mi>m</mi>
+                    <mn>3</mn>
+                  </msup>
+                </mrow>
+              </mstyle>
+            </mrow>
+          </math>
+        </equation>
+        
+        
+        <figure xml:id="b5_ch6_f_mgm9p">
+          <title>Calculation of Surface Runoff Hydrographs using Time-Area Approach</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5087.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </sidebar>
+    </section>
+  </section>
+  <section xml:id="b5_ch6_s_7b1zz">
+    <title>Unit Hydrograph Approaches</title>
+    <section xml:id="b5_ch6_s_448f4">
+      <title>Introduction</title>
+      <para>This section of Australian Rainfall and Runoff is based on the chapter on unit
+        hydrographs prepared by <citation>b5_c6_r11+1</citation> for the previous edition of
+        Australian Rainfall and Runoff. However, as the unit hydrograph approaches are no longer
+        widely applied in Australia, only a brief introduction is given here. For a more detailed
+        description of the unit hydrograph method and worked examples the reader is referred to
+          <citation>b5_c6_r11+1</citation>.</para>
+    </section>
+    <section xml:id="b5_ch6_s_xypbq">
+      <title>Unit Hydrograph Theory</title>
+      <section xml:id="b5_ch6_s_m912m">
+        <title>Basic Concepts</title>
+        <para>Development of the unit hydrograph approach is generally attributed to
+            <citation>b5_c6_r34+1</citation>. Unit hydrographs represent an advance over time-area
+          procedures because, rather than constructing a time-area curve from isochrones of travel
+          time, which requires assumptions regarding the travel times from all points on the
+          catchment, the unit hydrograph represents the actual flood response of the catchment to
+          rainfall, and can be directly determined or estimated from recorded rainfall and
+          streamflow data. As a consequence, the resulting unit hydrograph incorporates the effects
+          of both translation and attenuation, and so reduces the assumptions needed in the
+          time-area approaches.</para>
+      </section>
+      <section xml:id="b5_ch6_s_87p63">
+        <title>Definition of a Unit Hydrograph</title>
+        <para>A unit hydrograph is defined as the direct runoff hydrograph resulting from 1mm depth
+          of rainfall excess, where the rainfall excess occurs over a particular time period and is
+          uniformly distributed across the catchment. The time period of the rainfall excess sets
+          the period of the unit hydrograph. Thus a rainfall burst which lasts 2 hours and has an
+          average rainfall excess intensity of 0.5mm/h will produce a 2 hour unit hydrograph. It is
+          important to note that the rainfall excess intensity should be uniform over the period of
+          the burst, and that it also should be spatially uniform across the catchment. </para>
+        <para>Direct runoff hydrographs result from the interaction between two important
+          factors:</para>
+        <itemizedlist>
+          <listitem>
+            <para>the time varying storm rainfall hyetograph; and </para>
+          </listitem>
+          <listitem>
+            <para>the translation and attenuation properties of the catchment storage</para>
+          </listitem>
+        </itemizedlist>
+        <para>In the special case of the unit hydrograph, a standardised rainfall excess (1 mm) is
+          used, and the unit hydrograph, therefore, represents the effects of the catchment in
+          delaying and attenuating rainfall excess as it flows from all points on the catchment to
+          the catchment outlet. Use of this standardised rainfall excess provides the opportunity to
+          relate the size and shape of the unit hydrograph to the catchment’s geophysical properties
+          such as area, stream length and slope, and thus enables synthetic unit hydrographs to be
+          estimated for catchments where no recorded streamflow data exists. </para>
+        <para>Each unit hydrograph reflects the unique geophysical properties of the catchment and,
+          hence, each catchment should have its own unique unit hydrograph.
+            <citation>b5_c6_r3+1</citation> pioneered this concept by developing a dimensionless
+          unit hydrograph which reflected the geophysical properties of the catchment. </para>
+        <para>The basic principle of unit hydrograph theory is that the catchment responds in a
+          linear manner to rainfall excess and, hence, superposition is feasible. As unit
+          hydrographs form a linear system, the ordinates of the direct runoff hydrograph are
+          linearly proportional to the depth of rainfall excess. For example, if the rainfall excess
+          is doubled, each ordinate of the direct runoff hydrograph will be doubled. As another
+          example, if a sequence of several periods of rainfall excess occurs, one after another,
+          the resulting direct runoff hydrograph is equal to the sum of the runoff from each
+          individual period of rain (see <xref linkend="b5_ch6_f_zr9or"/>).</para>
+      </section>
+      <section xml:id="b5_ch6_s_haf5u">
+        <title>The Specified Period of the Unit Hydrograph</title>
+        <para>The specified period of the unit hydrograph must be short enough to provide good
+          definition of both the rainfall excess hyetograph and the resulting direct runoff
+          hydrograph. This means the specified period should be short enough to provide a reasonable
+          representation of all major changes of the rainfall excess intensity and should be less
+          than a quarter of the time of rise of the unit hydrograph. Large rural catchments could
+          have unit hydrographs with specified periods of 3 or more hours, whereas small urban
+          catchments may require specified periods of 5 minutes or less. </para>
+        <para>For a given catchment the unit hydrograph for a particular specified period will be
+          different from those with different time specified periods. For example, a 1 hour unit
+          hydrograph results from 1mm of rainfall excess falling over 1 hour at a rate of 1mm/h,
+          whereas a 2 hour unit hydrograph results from 1mm of rainfall excess falling over 2 hours
+          at a rate of 0.5 mm/h. In general, the peak discharges of unit hydrographs with longer
+          specified periods will be lower and will occur later in time. This decrease in peak
+          discharge arises as a result of the lower intensity of rainfall excess as the specified
+          period of the unit hydrograph increases. </para>
+        <para> The 1 hour unit hydrograph will be applied to a rainfall hyetograph with 1 hour rain
+          periods, and will produce a direct runoff hydrograph with the ordinate values predicted
+          every hour. The 2 hour unit hydrograph will be applied to a rainfall hyetograph with 2
+          hour rain periods.</para>
+      </section>
+      <section xml:id="b5_ch6_s_dcqm7">
+        <title>Changing the Specified Period of a Unit Hydrograph</title>
+        <para>To change the specified time period of the unit hydrograph two approaches are
+          available, depending on whether a longer or a shorter specified period is needed. </para>
+        <para>Calculation of a unit hydrograph of longer time period from one of a shorter period is
+          accomplished by the addition of several short period unit hydrographs with each sequential
+          unit hydrograph delayed by the specified period. Thus, the sum of four 15 minute unit
+          hydrographs, each of which is delayed in time by 15 minutes, will produce a direct runoff
+          hydrograph resulting from 4 mm of rainfall excess during a 1 hour period. Since a unit
+          hydrograph is the result of 1 mm of rainfall excess during the specified time period, the
+          1 hour unit hydrograph is derived from this runoff hydrograph by dividing all ordinates in
+          the runoff hydrograph by four. </para>
+        <para>Another situation in which the specified time period needs to be changed is where an
+          instantaneous unit hydrograph has been obtained, as occurs in some synthetic unit
+          hydrograph methods. The instantaneous unit hydrograph (IUH) represents the direct runoff
+          hydrograph produced by 1 mm of rainfall excess which occurs at an instant in time. The
+          ordinates of a specified period unit hydrograph at each time <emphasis role="italic"
+            >t</emphasis> are obtained by integrating the ordinates of the IUH over an interval from
+            <emphasis role="italic">t-T</emphasis> to <emphasis role="italic">T</emphasis>, where
+            <emphasis role="italic">T</emphasis> is the specified time period, then dividing this
+          result by <emphasis role="italic">T</emphasis>. Practically, this is achieved by averaging
+          the IUH ordinates at times <emphasis role="italic">t</emphasis> and <emphasis
+            role="italic">t-T</emphasis>. For example, each ordinate of a 1 hour unit hydrograph is
+          the average of the IUH ordinates at this time and 1 hour before this time
+            <citation>b5_c6_r7</citation>. </para>
+        <para> The derivation of a unit hydrograph of shorter specified time period from one of a
+          longer period is less direct, but can be attempted using an S-curve. Data errors will
+          often produce oscillations in the S curve and it is often difficult to obtain good results
+          when this method is applied to real data. (Details of the S-curve method are given in many
+          textbooks, e.g. <citation>b5_c6_r2+1</citation>)</para>
+      </section>
+    </section>
+    <section xml:id="b5_ch6_s_nc5jr">
+      <title>Calculating Direct Runoff Hydrographs Using Unit Hydrographs</title>
+      <para>Since superposition is assumed to be feasible with unit hydrographs, a storm with
+          <emphasis role="italic">j</emphasis> periods of rainfall excess will produce <emphasis role="italic">j</emphasis> direct runoff hydrographs, with the ordinates of each direct
+        runoff hydrograph factored in proportion to the depth of rainfall excess. The direct runoff
+        for the storm is then the sum of all <emphasis role="italic">j</emphasis> hydrographs. For
+        the summation, the period of the unit hydrograph must be the same as incremental time period
+        of the rainfall hyetograph. </para>
+      <para>If the unit hydrograph has <emphasis role="italic">k</emphasis> ordinates and there are
+          <emphasis role="italic">j</emphasis> periods of rainfall excess, the number of direct
+        runoff ordinates will be given by <emphasis role="italic">n = j + k - 1</emphasis>. Shown in
+          <xref linkend="b5_ch6_e_xb6e7"/> is the determination of the direct runoff hydrograph for
+        the case where there 3 periods of rainfall excess and 5 unit hydrograph ordinates. </para>
+      <equation xml:id="b5_ch6_e_xb6e7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable columnalign="left">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>4</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>4</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>5</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>5</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>4</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>6</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>4</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>4</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>7</mn>
+                </msub>
+                <mo>=</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mn>5</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>Q</mi>
+                  <mn>8</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+      </equation>
+      <para>The first column on the right hand side represents the direct runoff hydrograph from
+          <emphasis role="italic">P<subscript>1</subscript></emphasis> mm of rainfall excess in the
+        first period of the storm, while the second and third columns represent the direct runoff
+        from the subsequent periods in the storm. Note that each direct runoff hydrograph is delayed
+        by one time period, because the rainfall excesses <emphasis role="italic">P<subscript>1</subscript></emphasis>, <emphasis role="italic">P<subscript>2</subscript></emphasis> and <emphasis role="italic">P<subscript>3</subscript></emphasis> occur in successive periods of the storm. Note
+        also that the rainfall excess period, the period of the unit hydrograph, and the time step
+        at which the unit hydrograph ordinates are listed, are all equal. </para>
+      <figure xml:id="b5_ch6_f_zr9or">
+        <title>Unit Hydrograph Calculation – example with 3 periods of rainfall excess and unit
+          hydrograph with 5 ordinates (after <citation>b5_c6_r25+1</citation>).</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/5088.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>This figure needs to be redrawn but still referenced to Laurenson.</para>
+      <para><xref linkend="b5_ch6_e_xb6e7"/> can be written in a general form as</para>
+      <equation xml:id="b5_ch6_e_pbqfg">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mrow>
+            <msub>
+              <mi>Q</mi>
+              <mi>m</mi>
+            </msub>
+            <mo>=</mo>
+            <mstyle displaystyle="true">
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>j</mi>
+              </munderover>
+              <mrow>
+                <msub>
+                  <mi>P</mi>
+                  <mi>i</mi>
+                </msub>
+                <msub>
+                  <mi>U</mi>
+                  <mrow>
+                    <mi>m</mi>
+                    <mo>−</mo>
+                    <mi>i</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </math>
+      </equation>
+      <para> where <emphasis role="italic">Q<subscript>m</subscript></emphasis> is any ordinate of
+        the direct runoff hydrograph.</para>
+    </section>
+    <section xml:id="b5_ch6_s_h2bbi">
+      <title>Derivation of Unit Hydrographs from Rainfall and Streamflow Data</title>
+      <section xml:id="b5_ch6_s_zd03w">
+        <title>General Concepts</title>
+        <para>Recorded rainfall and streamflow data can be used to derive unit hydrographs. Steps in
+          the process are:</para>
+        <orderedlist>
+          <listitem>
+            <para>Select a range of significant flood events for which the direct runoff hydrograph
+              and suitable rain gauge data are available. Only floods with a 50% AEP or less should
+              be used in order to ensure that the data properly reflects the processes which occur
+              during significant flood events. Furthermore, the rainfall during the selected events
+              should be spatially and temporally uniform over the catchment. If an insufficient
+              number of large events is available then it may be necessary to use smaller floods. In
+              this case it must be borne in mind that small floods will tend to produce unit
+              hydrographs which have lower peaks and longer times of rise than are appropriate for
+              use in the estimation of large floods. </para>
+          </listitem>
+          <listitem>
+            <para>Separate baseflow as described in <xref linkend="b5_ch4"/> to obtain the direct
+              runoff hydrograph.</para>
+          </listitem>
+          <listitem>
+            <para>Calculate the volume of direct runoff.</para>
+          </listitem>
+          <listitem>
+            <para>Calculate a spatial average rainfall hyetograph for the storm, using hyetographs
+              from all available rainfall stations on or near to the catchment.</para>
+          </listitem>
+          <listitem>
+            <para>Calculate the rainfall excess hyetograph, by subtracting losses so that the depth
+              of rainfall excess equals the depth of direct runoff. Rainfall losses can be assumed
+              either as an initial loss-continuing loss model, or an initial loss-proportional loss
+              model (see <xref linkend="b5_ch5"/>).</para>
+          </listitem>
+        </orderedlist>
+        <para>Once the recorded streamflow and rainfall data have been analysed to extract the
+          direct runoff hydrograph and rainfall excess hyetograph, derivation of the unit hydrograph
+          can proceed. Unit hydrographs can be derived from single period storms, or from
+          multi-period storms.</para>
+      </section>
+      <section xml:id="b5_ch6_s_634z0">
+        <title>Selection of an Average Unit Hydrograph for the Catchment</title>
+        <para>In principle, every unit hydrograph derived from various recorded storms on a
+          catchment should be the same (since each catchment is considered to have a unique unit
+          hydrograph). In practice, however, various factors such as spatial variation in rainfall,
+          errors in data, or limited data (for example insufficient rain gauge coverage of the
+          catchment) means that the unit hydrographs derived from different storms will be somewhat
+          different from one another. <citation>b5_c6_r35+1</citation> found that the peak discharge
+          of unit hydrographs derived from a range of storms on a catchment varied by a factor of 4,
+          while <citation>b5_c6_r5+1</citation> found that the mean absolute deviation of the peak
+          discharge was on average 31%. </para>
+        <para>It is important, therefore, to derive several unit hydrographs for a catchment,
+          selecting the larger storms. All derived unit hydrographs should be compared for
+          consistency, and inconsistent ones rechecked or deleted. </para>
+        <para>A plot of unit hydrograph peak discharge against the peak discharge of the recorded
+          direct runoff hydrograph from which it was derived may reveal a trend for unit hydrograph
+          peaks to increase for the larger floods. Any such trend is an indication that the
+          catchment is not behaving in a linear manner. In these circumstances, it may be more
+          appropriate to use an alternative technique for estimation of the direct runoff
+          hydrograph. Catchments displaying a nonlinear response to storm events can still use the
+          unit hydrograph approach, but it may be desirable to derive several unit hydrographs for
+          the catchment, each one derived from, and being applicable to a particular range of flood
+          sizes, as discussed by <citation>b5_c6_r4+1</citation>. </para>
+        <para>The unit hydrographs which are considered to be acceptable can be averaged to produce
+          a more representative unit hydrograph for the catchment. Averaging unit hydrographs in
+          this way also has the benefit of reducing any oscillations on the recessions of unit
+          hydrographs derived from multi-period storms. </para>
+        <para>The recommended approach to calculate the average unit hydrograph is to align the
+          peaks of all unit hydrographs, then average their ordinates at each successive time step
+            <citation>b5_c6_r35</citation>. This method produces a unit hydrograph whose time to
+          peak is the average of all times to peak, and peak discharge which is the average of all
+          peak discharges. A simple average of all unit hydrographs, without regard for the
+          occurrence of the peak is not recommended, as this can produce an average unit hydrograph
+          which is quite different from the individual unit hydrographs (see <xref
+            linkend="b5_ch6_f_muouq"/>). </para>
+        <figure xml:id="b5_ch6_f_muouq">
+          <title>Poor Averaging of Unit Hydrographs</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5089.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </section>
+    </section>
+    <section xml:id="b5_ch6_s_rsmli">
+      <title>Synthetic Unit Hydrographs</title>
+      <para>The synthetic unit hydrograph approach provides a means of estimating unit hydrographs
+        for ungauged catchments. In essence the approach involves estimating the parameters of the
+        unit hydrograph from relationships between these parameters and the physical characteristics
+        of the catchment. These relationships may be derived by considering a number of catchments
+        in a reasonably homogeneous area (with similar climatic and geomorphologic characteristics)
+        for which unit hydrographs have been derived from recorded rainfall and streamflow data.
+        These relationships are empirical and as such cannot be expected to be universally
+        applicable. In general their application should be restricted to the region in which the
+        relationships were derived. </para>
+      <para>Of the various synthetic unit hydrograph approaches available, the only ones to have
+        found widespread use in Australia are those based on the model of
+          <citation>b5_c6_r10+1</citation>, commonly referred to as the Clark- Johnstone model. The
+        Clark-Johnstone method has been simplified by <citation>b5_c6_r12+1</citation> to produce a
+        model which is suitable for some limited applications. </para>
+      <para>The Clark-Johnstone model involves the translation of rainfall excess to the outlet and
+        routing this translated flow through a lumped concentrated storage at that location. It has
+        been used quite widely for synthetic unit hydrograph derivation and has been shown to be
+        applicable to most of the east coast of Australia <citation>b5_c6_r13</citation>. The basic
+        assumption is that the shape of the unit hydrograph may be determined from two parameters,
+        namely the base length of the time-area curve (C) and the catchment storage factor (K). </para>
+      <para>For more detailed description of these synthetic unit hydrograph approaches and examples
+        of their application the reader is referred to <citation>b5_c6_r11+1</citation>.</para>
+    </section>
+    <section xml:id="b5_ch6_s_0tvib">
+      <title>Limitations of the Unit Hydrograph Approach</title>
+      <para>The unit hydrograph is arguably the most direct way of characterising the response of a
+        catchment to storm rainfall, as it takes account of all factors which influence the flood
+        response to a particular rainfall excess input. The basic concept underlying the approach is
+        simple to understand and easy to apply, being suited to both hand and spreadsheet
+        calculations. The unit hydrograph approach can be applied with some confidence where its
+        main assumptions are at least approximately satisfied: spatial uniformity of rainfall excess
+        and linearity of catchment response.</para>
+      <para>However, the simplifying assumptions made in the unit hydrograph approach impose the
+        following limitations for its application in many practical situations:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Catchments generally respond in a non-linear fashion to rainfall excess inputs. This
+            means that the travel time (or lag) varies with discharge or flood magnitude rather than
+            being constant as implied by the linearity assumption. This limitation is particularly
+            important when a significant degree of extrapolation is required from the magnitude of
+            the observed events used in the derivation of the unit hydrograph to the magnitude of
+            floods to be estimated.</para>
+        </listitem>
+        <listitem>
+          <para>Particularly in larger catchments the spatial distribution of rainfall and rainfall
+            excess is generally non-uniform, and in very large catchments heavy rainfall may only
+            occur over part of the catchment. In such catchments the unit hydrograph approach would
+            be likely to produce flood hydrographs that are biased both in terms of their peak flow
+            and in their time to peak.</para>
+        </listitem>
+        <listitem>
+          <para>In common with other lumped modelling approaches, the unit hydrograph approach
+            produces only hydrographs at the catchment outlet and not at internal points of
+            interest. </para>
+        </listitem>
+        <listitem>
+          <para>The unit hydrograph approach and other lumped hydrograph estimation approaches are
+            unsuitable for application in catchments where significant differences in flood response
+            of different parts of the catchment require a more distributed modelling approach (e.g.
+            urban catchments).</para>
+        </listitem>
+        <listitem>
+          <para>Being based on a range of observed hydrographs for a particular catchment condition,
+            the unit hydrograph approach is not suited to determine flood behaviour for changed
+            catchment conditions (e.g. storage development, significant urbanisation or other major
+            land use changes).</para>
+        </listitem>
+      </itemizedlist>
+      <para>On the basis of these recognised limitations and the ready availability of more flexible
+        runoff routing approaches (<xref linkend="b5_ch6_s_do8jr"/>), the unit hydrograph approaches
+        are not recommended for practical applications.</para>
+    </section>
+  </section>
+  <section xml:id="b5_ch6_s_do8jr">
+    <title>Runoff Routing Approaches</title>
+    <section xml:id="b5_ch6_s_bvooy">
+      <title>Introduction</title>
+      <para>The general term ‘runoff routing’ refers to flood hydrograph modelling approaches where
+        a simplified conceptual representation is used to model the actual processes involved in the
+        conversion of rainfall inputs to direct runoff (using a loss model – <xref linkend="b5_ch5"
+        />), the contributions of baseflow (<xref linkend="b5_ch4"/>) and the translation of runoff
+        from different points in the catchment to a flood hydrograph at the catchment outlet (using
+        a routing model – <xref linkend="b5_ch3"/>). </para>
+      <para>The actual flood formation processes in a catchment are complex and highly distributed
+        in nature. Direct runoff generated from storm rainfall in the upper parts of the catchment
+        initially moves downhill as shallow overland flow and is modified by the effects of various
+        forms of detention storage as it moves over the catchment surface. It is then gradually
+        concentrated into minor drainage pathways and successively combined with baseflows and flows
+        from other pathways. These flows eventually reach well defined water courses, creeks or
+        rivers and move downstream, being combined with other tributary flows on their way to the
+        catchment outlet.</para>
+      <para>A significant degree of simplification in the representation of the actual processes in
+        models is made possible by the fact that catchments act on rainfall inputs as systems with a
+        high degree of damping. This means that the streamflow hydrograph output at the catchment
+        outlet does not reflect the ‘high frequency’ variations of the input in either the time or
+        space dimensions. Similarly, small errors in modelling the various catchment processes may
+        have little effect on the outflow hydrograph. This enables surprisingly accurate and useful
+        results to be obtained from relatively simple models <citation>b5_c6_r24</citation>. </para>
+      <para>The different groups of models developed in Australia and in other countries have
+        adopted different conceptualisations of the actual flood formation processes, with different
+        levels of simplifications and assumptions in terms of: </para>
+      <itemizedlist>
+        <listitem>
+          <para>areal variability of runoff inputs over the catchment – lumped, semi-distributed and
+            fully distributed models (see <xref linkend="b5_ch2"/>)</para>
+        </listitem>
+        <listitem>
+          <para>variation of routing processes from hillslopes to channel and floodplain reaches
+              (<xref linkend="b5_ch2_s_006"/>)</para>
+        </listitem>
+        <listitem>
+          <para>flood routing techniques (<xref linkend="b5_ch2_s_007"/> and <xref
+              linkend="b5_ch6_s_lgabf"/>)</para>
+        </listitem>
+        <listitem>
+          <para>model parameters and links with physical catchment characteristics. </para>
+        </listitem>
+      </itemizedlist>
+      <para>However, all models are only approximations of reality and require care and expertise in
+        their application and interpretation.</para>
+      <para>The major types of runoff routing models are described firstly in terms of how they deal
+        with the distributed nature of the flood formation and the variation of routing processes
+        along the flow path from the top to the bottom of the catchment (<xref
+          linkend="b5_ch6_s_37k00"/>). The different model representations of the hillslope or
+        overland flow phase of the hydrograph formation are introduced in <xref
+          linkend="b5_ch6_s_e27lz"/>, while <xref linkend="b5_ch6_s_bj1rv"/> deals with flood
+        routing in the various forms of channel, natural stream and floodplain segments of the
+        catchment. Finally, <xref linkend="b5_ch6_s_6plz4"/> describes how areas of significant
+        extra flood storage, such as natural lakes or swamps, extensive floodplain areas, reservoirs
+        or flood retention/detention basins are modelled.</para>
+    </section>
+    <section xml:id="b5_ch6_s_37k00">
+      <title>Representing the Distributed Nature of Flood Formation</title>
+      <section xml:id="b5_ch6_s_mme2x">
+        <title>Relative Importance of Overland Flow and Channel Routing Phases </title>
+        <para>As described in <xref linkend="b5_ch2"/>, the detail of catchment representation in
+          flood hydrograph estimation models ranges from lumped models to fully distributed models.
+          This section focuses on semi-distributed or node-link type models introduced in <xref
+            linkend="b5_ch2_s_003"/>.</para>
+        <para>A number of investigators (e.g. <citation>b5_c6_r37+1</citation>) have examined the
+          relative roles of ‘hillslope’ (overland flow) processes and channel routing in the
+          modelling of hydrologic response. Their conclusions indicate that in <emphasis
+            role="italic">relatively small catchments</emphasis> the emphasis should be on
+          appropriate modelling of the <emphasis role="italic">hillslope response</emphasis> to
+          rainfall inputs, while the spatial variation of rainfall inputs and hillslope responses is
+          less important. Lumped models (<xref linkend="b5_ch6_s_dcpm4"/>) or semi-distributed
+          models with relatively simplistic representation of spatial variations (<xref
+            linkend="b5_ch6_s_tonrm"/>) can thus produce acceptable flood hydrograph
+          estimates.</para>
+        <para>In contrast, in <emphasis role="italic">large (&gt;1000
+            km<superscript>2</superscript>) to very large (&gt;10,000
+            km<superscript>2</superscript>) catchments</emphasis> the flood response is governed
+          primarily by the <emphasis role="italic">network geomorphology</emphasis> and the
+            <emphasis role="italic">spatial distribution of runoff inputs</emphasis>. In these
+          larger catchments, and in catchments with significant storage development, it is thus
+          important to model the distributed nature of runoff inputs and to give a realistic
+          representation of the actual drainage network in node-link type models (<xref
+            linkend="b5_ch6_s_ccwdx"/>).</para>
+        <para>In catchments of intermediate size, the overland flow and channel routing phases may
+          be of similar importance in the overall catchment response to rainfall inputs, and it is
+          thus desirable to model the flow routing in the overland flow segments separately from the
+          flow routing in the drainage network segments. Similar considerations apply in catchments
+          with significantly different land uses (e.g. urban or partly urbanised catchments), where
+          runoff from subareas of different type is routed separately before routing in the pipe or
+          channel network.</para>
+      </section>
+      <section xml:id="b5_ch6_s_dcpm4">
+        <title>Lumped Runoff Routing Models </title>
+        <para>By definition, lumped models do not allow for the distributed nature of flood
+          hydrograph formation in catchments. At the time of their development the application of
+          hydrograph estimation models was restricted to hand calculations, requiring relatively
+          simple models. However, lumped models can still play a useful role as a component of
+          node-link type models, to represent the formation of runoff hydrographs from hillslope or
+          overland flow segments as an input to the streamflow network. </para>
+        <para>Apart from the Time-Area Method (<xref linkend="b5_ch6_s_ypsrh"/>) and the Unit
+          Hydrograph Method (<xref linkend="b5_ch6_s_7b1zz"/>), the best known lumped runoff routing
+          models are the Clark model <citation>b5_c6_r10</citation> and the Nash model
+            <citation>b5_c6_r28</citation> illustrated in <xref linkend="b5_ch6_f_squoq"/>. The
+          Clark model represents the translation and attenuation through a linear storage placed at
+          the catchment outlet. By placing a number of linear storages in series and routing the
+          rainfall excess input successively through this cascade of storages, the Nash model
+          provides more flexibility in matching the routing response of the model to both the
+          hydrograph translation and attenuation characteristics of the catchment.</para>
+        <figure xml:id="b5_ch6_f_squoq">
+          <title>(a) Clark and (b) Nash models of runoff routing</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5090.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para>The example below illustrates the application of a simple runoff routing model to
+          estimate design flood hydrographs for an ungauged catchment of medium size. In most
+          practical applications the simple Clark model would be replaced by a node-link type runoff
+          routing model, implemented through one of the readily available runoff routing modelling
+          systems referred to in <xref linkend="b5_ch6_t_guimn"/> and <xref linkend="b5_ch6_t_h6tm7"
+          />. However, the steps of estimating model parameters and model inputs for the design
+          application remain similar. The example also illustrates the application of the critical
+          rainfall duration concept.</para>
+        <sidebar>
+          <title>Example: Clark Runoff Routing Model</title>
+          <para>An ungauged catchment west of Melbourne has an area of 56
+              km<superscript>2</superscript> and a main stream length of 20 km. A flood hydrograph
+            for a 1% AEP design event is required as the basis of defining flood prone land for a
+            planned subdivision.</para>
+          <para>The Clark runoff routing model is being used to obtain an initial flood estimate for
+            planning purposes. For the concentrated linear storage representing the catchment’s
+            routing characteristics in this model, the Muskingum routing equation (<xref
+              linkend="b5_c5_e_020"/>) can be written as </para>
+          <equation xml:id="b5_ch6_e_wg95z">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <mrow>
+                <msub>
+                  <mi>O</mi>
+                  <mrow>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>C</mi>
+                  <mn>1</mn>
+                </msub>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <msub>
+                          <mi>I</mi>
+                          <mi>n</mi>
+                        </msub>
+                        <mo>+</mo>
+                        <msub>
+                          <mi>I</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                        </msub>
+                      </mrow>
+                      <mn>2</mn>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>+</mo>
+                <msub>
+                  <mi>C</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>O</mi>
+                  <mi>n</mi>
+                </msub>
+              </mrow>
+            </math>
+          </equation>
+          <para>
+            <emphasis role="italic">C<subscript>1</subscript></emphasis> and <emphasis role="italic"
+                >C<subscript>3</subscript></emphasis> are calculated from <xref
+              linkend="b5_c5_e_021"/> which for <emphasis role="italic">X</emphasis> = 0 simplifies
+            to</para>
+          <para>
+            <inlineequation>
+              <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <msub>
+                  <mi>C</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mn>0.5</mn>
+                    <mi>Δ</mi>
+                    <mi>t</mi>
+                  </mrow>
+                  <mrow>
+                    <mi>K</mi>
+                    <mo>+</mo>
+                    <mn>0.5</mn>
+                    <mi>Δ</mi>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+              </math>
+            </inlineequation> and <inlineequation>
+              <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <msub>
+                  <mi>C</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>K</mi>
+                    <mo>−</mo>
+                    <mn>0.5</mn>
+                    <mi>Δ</mi>
+                    <mi>t</mi>
+                  </mrow>
+                  <mrow>
+                    <mi>K</mi>
+                    <mo>+</mo>
+                    <mn>0.5</mn>
+                    <mi>Δ</mi>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+              </math>
+            </inlineequation></para>
+          <para>The coefficient <emphasis role="italic">K</emphasis> of the can be calculated as a
+            function of the main stream length to the catchment boundary (<emphasis role="italic"
+              >L</emphasis>) using the equation proposed by Cordery et al
+              (1981)<citation>b5_c6_r13+1</citation>:</para>
+          <equation xml:id="b5_ch6_e_k67cq">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <mi>K</mi>
+              <mo>=</mo>
+              <mn>0.70</mn>
+              <msup>
+                <mi>L</mi>
+                <mrow>
+                  <mn>0.57</mn>
+                </mrow>
+              </msup>
+            </math>
+          </equation>
+          <para>For a main stream length of 20 km this gives a value of <emphasis role="italic">K</emphasis> = 3.86 hours.</para>
+          <para>The critical rainfall duration for this catchment is not known <emphasis
+              role="italic">a priori</emphasis>, so a range of rainfall durations from 3 to 24 hours
+            are trialled to find the duration than produces the highest peak flow. The design
+            rainfall depths and temporal patterns have been selected in accordance with <xref
+              linkend="book2"/>.</para>
+          <para>Based on experience with neighbouring catchments, the following design loss values
+            have been adopted: IL = 15 mm, CL = 2.5 mm/h. </para>
+          <para>The resulting hydrographs for the five different durations are shown in the Figure
+            below. This indicates that the critical rainfall duration for this catchment is about 9
+            hours. The estimated peak flow for the 1% AEP design flood event is 155
+              m<superscript>3</superscript>/s.</para>
+          <figure xml:id="b5_ch6_f_vz5hr">
+            <title/>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="../../figures/5091.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </sidebar>
+      </section>
+      <section xml:id="b5_ch6_s_tonrm">
+        <title>Simple Semi-distributed Models</title>
+        <para>The original Laurenson Runoff Routing Model – LRRM
+            <citation>b5_c6_r22,b5_c6_r23</citation> illustrated in <xref linkend="b5_ch6_f_62ynx"/>
+          is an example of simple semi-distributed flood hydrograph estimation models. Similar to
+          the time-area method, the LRRM divides the catchment into a number of sub-areas (typically
+          10) on the basis of equal travel time to the catchment outlet (isochrones). However, it
+          assigns a separate storage to each of the subareas, and runoff from a sub-area is then
+          routed through the series of downstream storages to the catchment outlet. The division
+          into sub-areas and the detailed representation of travel time in the catchment allows the
+          effects of spatial variation of catchment rainfall to be modelled explicitly. </para>
+        <para>The model uses nonlinear storages, with the relationship between discharge and storage
+          represented by a power function, as discussed in <xref linkend="b5_c5_s_022"/> and
+          expressed by <xref linkend="b5_c5_e_032"/>.</para>
+        <para>The catchment representation in the LRRM can be regarded as a linear network of ten
+          rainfall input nodes, ten routing links (each with a nonlinear concentrated storage) and
+          one output node. While the LRRM was originally conceptualised as a runoff routing model
+          for the whole catchment, it is now more typically used as model to represent the routing
+          of overland flow in a hillslope segment to a channel network node, e.g. in the XPRAFTS
+          model <citation>b5_c6_r36</citation>.</para>
+        <figure xml:id="b5_ch6_f_62ynx">
+          <title>Original Laurenson Runoff Routing Model (South Creek catchment) (a) Isochrones of
+            storage delay time (b) Time-area diagram</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5092.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </section>
+      <section xml:id="b5_ch6_s_ccwdx">
+        <title>Node-link Type Models</title>
+        <para>The representation of the runoff routing process in a typical node-link type model is
+          shown in <xref linkend="b5_ch6_s_e27lz"/>. As shown on the left, the catchment is divided
+          into a number of subareas within which the spatial rainfall distribution can be assumed to
+          be uniform, and the actual drainage network is represented by a simplified network of the
+          main tributary streams. The conceptual representation of this catchment in a runoff
+          routing model is then by a set of nodes and links, as shown for the examples of RORB
+          (centre) and WBNM (right). </para>
+        <figure xml:id="b5_ch6_f_n40zx">
+          <title>Node-link type representation of a catchment in runoff routing models:  map view
+            and schematic representation of node-link network in RORB and WBNM</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5093.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para>As explained in <xref linkend="b5_ch6_s_e27lz"/>, there are two distinctly different
+          ways to convert the distributed rainfall excess inputs over a subarea into a runoff
+          hydrograph at the subarea node (placed near the centroid of the subarea). These subarea
+          runoff hydrographs are then routed progressively from one node through a routing link to
+          the next node in the drainage network and eventually to the catchment outlet (<xref
+            linkend="b5_ch6_s_bj1rv"/>). The concentrated or distributed storages used in these
+          routing links are shown in <xref linkend="b5_ch6_s_e27lz"/> as small black
+          triangles.</para>
+        <para>Some of the routing links receive the outflow hydrograph from an upstream link as well
+          as a subarea runoff hydrograph. In these links the two hydrographs are combined before
+          they are routed through to the next node in the network. At stream junction nodes the two
+          (or more) tributary hydrographs are combined by simple addition.</para>
+        <para>The drainage network may also have a branched structure, where flows are diverted by
+          natural or artificial features into a system of distributary or diversion channels, and
+          these flows may or may not join up again with flows in the main channel. Most runoff
+          routing modelling systems have the capability to represent the features controlling
+          diversion and return flows. </para>
+        <para>If the catchment includes areas with significant extra flood storage, such as natural
+          lakes or swamps, extensive floodplain areas, reservoirs or flood retention/detention
+          basins, these can also be included in the drainage network as ‘special storage’ nodes or
+          links, with separately defined storage and discharge characteristics (<xref
+            linkend="b5_ch6_s_6plz4"/>). </para>
+        <para>The baseflow contributions to the total flood runoff hydrograph (<xref
+            linkend="b5_ch4"/>) are typically modelled in a lumped fashion and added to the routed
+          hydrograph at the catchment outlet. However, in more complex catchment situations with
+          significant baseflow contributions it is desirable to model the distributed nature of
+          baseflow contributions, by adding them at each runoff input node and routing the combined
+          runoff hydrograph through the drainage network.</para>
+        <para><xref linkend="b5_ch6_f_wcxfy"/> shows schematically how the different modelling
+          components can be combined to convert the distributed rainfall inputs to a hydrograph at
+          the catchment outlet. The <xref linkend="book5"/> chapters and sections providing more
+          detail of the individual components are also indicated in the figure.</para>
+        <figure xml:id="b5_ch6_f_wcxfy">
+          <title>Components of a runoff routing model</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5094.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para><xref linkend="book7"/> provides practical guidance on how these different model
+          elements can best be used to represent the important features of a specific
+          catchment.</para>
+      </section>
+    </section>
+    <section xml:id="b5_ch6_s_e27lz">
+      <title>Modelling of Hillslope (Overland Flow) Phase</title>
+      <para>The individual subareas of semi-distributed runoff routing models represent the runoff
+        contributions from a relatively large part of a catchment (see <xref
+          linkend="b5_ch6_f_n40zx"/>). Runoff from these subareas is the result of a complex and
+        spatially varying set of processes which divide the rainfall inputs into a number of runoff
+        components. These components may then follow different pathways to the model node used to
+        represent their combined input to the modelled stream or channel network
+          <citation>b5_c6_r20</citation>. The mix and relative importance of different processes
+        depends on the runoff production characteristics of a particular catchment. The scale of the
+        modelled catchment also plays an important role, as with increasing size of the subareas a
+        greater degree of averaging of the effects of different processes and modification of the
+        runoff hydrograph though routing processes will occur, </para>
+      <para>As discussed in more detail in <xref linkend="b4_ch2"/>, the runoff routing models
+        routinely used in Australia employ very simplified representations of the processes involved
+        in runoff production, generally dividing the rainfall inputs into a loss and rainfall excess
+        component, and dealing only indirectly with baseflow contributions. The main distinction in
+        the modelling of runoff from contributing areas is in how the routing of runoff within the
+        subareas is treated.</para>
+      <section xml:id="b5_ch6_s_zd6cp">
+        <title>Combined Subarea and Stream/Channel Network Routing</title>
+        <para>In this form of model conceptualisation the hillslope or overland flow phase of the
+          hydrograph formation is modelled by simply converting the rainfall excess hyetograph into
+          a direct runoff hydrograph:</para>
+        <equation xml:id="b5_ch6_e_z18cq">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mrow>
+                <mn>1</mn>
+                <mo>/</mo>
+                <mrow>
+                  <mn>3.6</mn>
+                </mrow>
+              </mrow>
+              <mtext> * Rainfall Excess (mm/h) * Catchment Area</mtext>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>k</mi>
+                  <msup>
+                    <mi>m</mi>
+                    <mn>2</mn>
+                  </msup>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mtext>Runoff</mtext>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mrow>
+                      <msup>
+                        <mi>m</mi>
+                        <mn>3</mn>
+                      </msup>
+                    </mrow>
+                    <mo>/</mo>
+                    <mi>s</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </math>
+        </equation>
+        <para> (6.4.1)</para>
+        <para>This subarea runoff hydrograph is input at a stream network node near the centroid of
+          the subarea and then routed successively along the stream network to the catchment outlet.
+          The modification of the hydrograph as it travels through the stream or channel network is
+          generally modelled by a linear or nonlinear storage for each routing link (<xref
+            linkend="b5_c5_s_004"/> and <xref linkend="b5_c5_s_022"/>). </para>
+        <para>Examples of the application of the combined subarea and stream network routing
+          approach include the RORB Runoff Routing Model <citation>b5_c6_r26</citation> and the
+          Basic Model version of URBS <citation>b5_c6_r9</citation>.</para>
+        <para>The key feature of this runoff routing conceptualisation is that all the translation
+          and attenuation effects experienced by the runoff inputs on their way to the catchment
+          outlet have to be represented in the routing through the channel links. </para>
+        <para>The justification for the combined treatment of overland flow and stream/channel
+          network routing is firstly that the separation of these two phases is somewhat arbitrary,
+          in that the change from shallow distributed flow over hillslope surfaces to concentrated
+          flow in water courses and streams is very gradual. Secondly, if the interest is only on
+          hydrographs at the catchment outlet, the internal separation into different processes is
+          of secondary importance, as long as the overall routing and delay characteristics of the
+          catchment and their variation with flood magnitude can be adequately represented. As
+          discussed in <xref linkend="b5_ch6_s_mme2x"/>, this condition is likely to be satisfied in
+          large catchments with relatively uniform land use.</para>
+        <para>The main limitation of this modelling approach is that it is designed to produce only
+          an integrated catchment response hydrograph at or near the catchment outlet. As
+          demonstrated by <citation>b5_c6_r38+1</citation>, this modelling approach does not satisfy
+          the principles of ‘self-consistency’, as the storage parameter of an individual routing
+          element depends on the size of the total catchment being modelled. While the model can
+          output hydrographs at any internal node, hydrographs produced for the upper parts of the
+          catchment are likely to show positive bias, as they tend to underestimate the degree of
+          attenuation in the routing process.</para>
+      </section>
+      <section xml:id="b5_ch6_s_8qwmr">
+        <title>Separate Overland Flow and Stream/Channel Network Routing</title>
+        <para>The node-link conceptualisation of the catchment in these runoff routing approaches is
+          similar to the one shown in <xref linkend="b5_ch6_f_n40zx"/> but the subarea rainfall
+          excess inputs are now first routed through a storage element (or a kinematic wave routing
+          element) to produce the runoff hydrograph inputs to the stream network. Different models
+          use different methods to derive the runoff hydrographs from the hillslope segments, as
+          summarised in <xref linkend="b5_ch6_t_guimn"/>.</para>
+        <table frame="void" xml:id="b5_ch6_t_guimn">
+          <caption>Methods used in different runoff routing modelling systems to derive the overland
+            flow hydrograph</caption>
+          <col width="25%"/>
+          <col width="25%"/>
+          <col width="25%"/>
+          <col width="25%"/>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Example</th>
+              <th>Reference</th>
+              <th>ARR Section</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Time-area method</td>
+              <td>ILSAX, DRAINS</td>
+              <td><citation>b5_c6_r29+1</citation></td>
+              <td><xref linkend="b5_ch6_s_ypsrh"/></td>
+            </tr>
+            <tr>
+              <td>Unit hydrograph convolution</td>
+              <td>HEC-HMS</td>
+              <td><citation>b5_c6_r19+1</citation></td>
+              <td><xref linkend="b5_ch6_s_7b1zz"/></td>
+            </tr>
+            <tr>
+              <td>Cascade of non-linear storages</td>
+              <td>XPRAFTS</td>
+              <td><citation>b5_c6_r36+1</citation></td>
+              <td><para><xref linkend="b5_c5_s_022"/></para><para><xref linkend="b5_ch6_s_tonrm"/></para></td>
+            </tr>
+            <tr>
+              <td>Nonlinear storage routing</td>
+              <td>
+                <para>SWMM</para>
+                <para>URBS</para>
+                <para>WBNM2000</para>
+              </td>
+              <td>
+                <para><citation>b5_c6_r15+1</citation></para>
+                <para><citation>b5_c6_r9+1</citation></para>
+                <para><citation>b5_c6_r8+1</citation></para>
+              </td>
+              <td>
+                <para><xref linkend="b5_c5_s_022"/></para>
+                <para><xref linkend="b5_ch6_s_2nzyu"/></para>
+              </td>
+            </tr>
+            <tr>
+              <td>Kinematic wave routing</td>
+              <td>HEC-HMS (Option)</td>
+              <td><citation>b5_c6_r19+1</citation></td>
+              <td>
+                <para><xref linkend="b5_c5_s_028"/></para>
+                <para><xref linkend="b5_ch6_s_0d855"/></para>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <para>The hydrograph formation methods used by the first three groups of modelling systems
+          have been described in previous chapters, as indicated in the last column of <xref
+            linkend="b5_ch6_t_guimn"/>, and the methods used to estimate their parameters are
+          described in the relevant user manuals. The catchment conceptualisation used in nonlinear
+          storage routing models and kinematic wave routing models warrants some additional
+          discussion (<xref linkend="b5_ch6_s_2nzyu"/> and <xref linkend="b5_ch6_s_0d855"/>
+          respectively).</para>
+        <para>The main advantage of modelling the overland flow phase separately is that this
+          modelling approach can deal with different land uses in different parts of the catchment
+          and changes to these land uses, such as substantial urbanisation. If the variation of the
+          routing response with flood magnitude is quite different for the overland flow and channel
+          routing phases, then a separate modelling approach lends itself better to extrapolation to
+          Very Rare to Extreme flood events.</para>
+        <para>The disadvantage of the separate overland and channel flow routing approach is that it
+          requires additional parameters to model the contributing area or overland flow component
+          of the overall catchment routing process. If appropriate information is not available to
+          allow separate calibration of the parameters to the overland and channel routing
+          processes, then it may be more appropriate to use a combined routing approach, as
+          described above. </para>
+        <para>More detailed approaches for modelling runoff from the overland flow segment have also
+          been proposed and applied. The RRR model <citation>b5_c6_r21</citation> allows for the
+          generation of the runoff hydrograph by two or more different processes, with different
+          losses and subarea routing delays being applied to each runoff component.
+            <citation>b5_c6_r20+1</citation> postulated three different conceptual processes that
+          can contribute to runoff at the subarea scale: baseflow, ‘slow flow’ and ‘fast flow’. </para>
+        <para> For urban catchments, further sub-division of the overland component on a spatial
+          basis to allotment-size units and subsequent scaling up to the subareas has been proposed
+          by <citation>b5_c6_r16+1</citation>.</para>
+      </section>
+      <section xml:id="b5_ch6_s_2nzyu">
+        <title>Nonlinear Storage Routing of Overland Flow</title>
+        <para>In the nonlinear storage routing models the attenuation and delay experienced by
+          runoff from a subarea (i.e. a hillslope or overland flow segment) are modelled by routing
+          through a nonlinear storage of the form</para>
+        <equation xml:id="b5_ch6_e_seaf8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mi>S</mi>
+              <mo>=</mo>
+              <mi>k</mi>
+              <msup>
+                <mi>Q</mi>
+                <mi>m</mi>
+              </msup>
+            </mrow>
+          </math>
+        </equation>
+        <para>where the coefficient <emphasis role="italic">k</emphasis> is a delay or lag time
+          parameter related to the lag parameter <emphasis role="italic">K</emphasis> in linear
+          storage routing models (<xref linkend="b5_c5_s_004"/>) by the following equation</para>
+        <equation xml:id="b5_ch6_e_nipcu">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mi>k</mi>
+              <mo>=</mo>
+              <mi>K</mi>
+              <msup>
+                <mi>Q</mi>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>−</mo>
+                  <mi>m</mi>
+                </mrow>
+              </msup>
+            </mrow>
+          </math>
+        </equation>
+        <para>and the exponent <emphasis role="italic">m</emphasis> expresses the degree of
+          nonlinearity of the routing response. Exponent values in the range of 0.6 to 0.8 are
+          typically used.</para>
+        <para>The coefficient k has been shown to be a function of catchment area A </para>
+        <equation xml:id="b5_ch6_e_0koq0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mi>k</mi>
+              <mo>=</mo>
+              <mi>C</mi>
+              <msup>
+                <mi>A</mi>
+                <mi>b</mi>
+              </msup>
+            </mrow>
+          </math>
+        </equation>
+        <para>where <emphasis role="italic">C</emphasis> is a lag parameter for the subarea of the
+          catchment. <xref linkend="b5_ch6_e_0koq0"/> with an exponent value <emphasis role="italic"
+            >b</emphasis> = 0.57 is the basis of the subarea routing elements used in the WBNM2000
+          model <citation>b5_c6_r8</citation>. </para>
+        <para>A similar expression for <emphasis role="italic">k</emphasis> is used in the URBS
+          model, with an exponent value <emphasis role="italic">b</emphasis> = 0.5
+            <citation>b5_c6_r9</citation>. URBS also allows adjustments of <emphasis role="italic"
+            >k</emphasis> for the degree of forestation of the subarea (increasing the value of
+            <emphasis role="italic">k</emphasis>) and for the fraction of the subarea being
+          urbanised (reducing the value of <emphasis role="italic">k</emphasis>).</para>
+        <para>The detailed form of the equations used and the adopted numerical solution method are
+          described in the manuals of the respective runoff routing modelling systems.</para>
+      </section>
+      <section xml:id="b5_ch6_s_0d855">
+        <title>Kinematic Wave Routing of Overland Flow</title>
+        <para>In the kinematic wave routing approaches the ‘hillslopes’ are generally conceptualised
+          as two symmetrical rectangular planes of width <emphasis role="italic">W</emphasis>,
+          inclined at slope <emphasis role="italic">S</emphasis>, discharging into the stream
+          channel, as shown in <xref linkend="b5_ch6_s_6plz4"/>. This simplified representation of
+          the complex hillslope topography focuses on the average properties of the hillslope
+          relevant to runoff generation rather than reflecting the actual physical processes at a
+          smaller scale.</para>
+        <para>The overland flow discharging from the hillslope segment into the channel (at a node)
+          is computed as flow in a wide rectangular channel, giving the simplified expression </para>
+        <equation xml:id="b5_ch6_e_6ju40">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mi>q</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <msup>
+                    <mi>s</mi>
+                    <mrow>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                      </mfrac>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mi>n</mi>
+              </mfrac>
+              <msup>
+                <mi>y</mi>
+                <mrow>
+                  <mfrac>
+                    <mn>5</mn>
+                    <mn>3</mn>
+                  </mfrac>
+                </mrow>
+              </msup>
+            </mrow>
+          </math>
+        </equation>
+        <para>where <emphasis role="italic">q</emphasis> is the discharge per unit width of the
+          hillslope, <emphasis role="italic">S</emphasis> is the slope of the hillslope plane,
+            <emphasis role="italic">n</emphasis> a roughness coefficient and <emphasis role="italic"
+            >y</emphasis> the average flow depth over the plane. It should be noted that the
+          roughness coefficient <emphasis role="italic">n</emphasis> for overland flow over a
+          particular type of surface and ground cover is typically higher than for channels
+            <citation>b5_c6_r2</citation>.</para>
+        <figure xml:id="b5_ch6_f_guvf8">
+          <title>Hillslope representation in kinematic wave routing models (a) actual catchment (b)
+            model representation (from HEC-HMS Manual)</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="../../figures/5095.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para><xref linkend="b5_ch6_e_yh30k"/> is substituted in the appropriate form of the
+          kinematic wave equation </para>
+        <equation xml:id="b5_ch6_e_yh30k">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>y</mi>
+                </mrow>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mfrac>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>q</mi>
+                </mrow>
+                <mrow>
+                  <mo>∂</mo>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mi>i</mi>
+            </mrow>
+          </math>
+        </equation>
+        <para>where is <emphasis role="italic">x</emphasis> is the distance in the direction of the
+          overland flow and <emphasis role="italic">i</emphasis> the rate of rainfall excess (mm/h)
+          on the hillslope plane.</para>
+        <para>While analytical solutions are available to solve the overland flow equations, runoff
+          routing modelling systems such as HEC-HMS <citation>b5_c6_r19</citation> use a numerical
+          solution scheme to solve the kinematic wave equation for <emphasis role="italic"
+            >y</emphasis> at each time step. This value is then substituted into <xref
+            linkend="b5_ch6_e_6ju40"/> and the flow rate <emphasis role="italic">q</emphasis> per
+          unit width (from one of the planes) is multiplied by twice the width of the hillslope
+          (measured parallel to the channel) to determine the total overland flow hydrograph from
+          the subarea. </para>
+        <para> A more detailed description of kinematic wave routing techniques and their
+          application in a flood hydrograph estimation model (HEC-1 or HEC-HMS) is given in
+            <citation>b5_c6_r18+1</citation>.</para>
+      </section>
+    </section>
+    <section xml:id="b5_ch6_s_bj1rv">
+      <title>Routing Through Channel, Stream and Floodplain Reaches</title>
+      <para>As shown in <xref linkend="b5_ch6_f_n40zx"/>, the inflow hydrographs from the various
+        catchment subareas have to be routed through the drainage network formed by the channel,
+        stream and floodplain reaches. <xref linkend="b5_ch6_t_h6tm7"/> gives an overview of the
+        routing methods of varying complexity available in different runoff routing modelling
+        systems, with corresponding references and links to the relevant sections of <xref
+          linkend="b5_ch3"/> that describe these routing methods in more detail. </para>
+      <table frame="void" xml:id="b5_ch6_t_h6tm7">
+        <caption>Routing models used in different runoff routing modelling systems to route flows
+          through channel, stream and floodplain reaches</caption>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+        <thead>
+          <tr>
+            <th>Routing Model</th>
+            <th>Example</th>
+            <th>Reference</th>
+            <th>ARR Section</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Simple lag, Lag and route</td>
+            <td>
+              <para>RORB (Option)</para>
+              <para>SWMM (Option)</para>
+              <para>XPRAFTS Option)</para>
+            </td>
+            <td>
+              <para><citation>b5_c6_r26+1</citation></para>
+              <para><citation>b5_c6_r14+1</citation></para>
+              <para><citation>b5_c6_r36+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_003"/></td>
+          </tr>
+          <tr>
+            <td>Muskingum-Cunge Method (linear)</td>
+            <td>XPRAFTS</td>
+            <td>
+              <para><citation>b5_c6_r36+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_016"/></td>
+          </tr>
+          <tr>
+            <td>Concentrated non-linear storages</td>
+            <td>
+              <para>ILSAX, DRAINS</para>
+              <para>RORB</para>
+              <para>WBNM2000</para>
+            </td>
+            <td>
+              <para><citation>b5_c6_r29+1</citation></para>
+              <para><citation>b5_c6_r26+1</citation></para>
+              <para><citation>b5_c6_r8+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_022"/></td>
+          </tr>
+          <tr>
+            <td>Nonlinear Muskingum </td>
+            <td>
+              <para>SWMM</para>
+              <para>URBS</para>
+            </td>
+            <td>
+              <para><citation>b5_c6_r14+1</citation></para>
+              <para><citation>b5_c6_r9+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_025"/></td>
+          </tr>
+          <tr>
+            <td>Kinematic wave routing</td>
+            <td>
+              <para>HEC-HMS (Option)</para>
+              <para>ILSAX, DRAINS</para>
+              <para>XPRAFTS (Option)</para>
+            </td>
+            <td>
+              <para><citation>b5_c6_r19+1</citation></para>
+              <para><citation>b5_c6_r29+1</citation></para>
+              <para><citation>b5_c6_r36+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_028"/></td>
+          </tr>
+          <tr>
+            <td>Dynamic wave routing</td>
+            <td>
+              <para>SWMM</para>
+              <para>XPRAFTS (Option)</para>
+            </td>
+            <td>
+              <para><citation>b5_c6_r14+1</citation></para>
+              <para><citation>b5_c6_r36+1</citation></para>
+            </td>
+            <td><xref linkend="b5_c5_s_027"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <para>The parameters of the simple lag and storage routing models are generally estimated by
+        analysis of or calibration to observed hydrographs in the catchment being modelled, or by
+        transfer of information from gauged catchments in regions with similar streamflow
+        characteristics. In these methods it is generally assumed that the same parameter set
+        applies to the different routing links, except for an adjustment to reflect the different
+        time lag associated with routing reaches of different lengths.</para>
+      <para>In the Muskingum-Cunge Method, the kinematic wave and the dynamic routing methods the
+        routing parameters can be determined from direct links with stream survey data and hydraulic
+        flow characteristics, e.g. channel slope and hydraulic roughness (<xref
+          linkend="b5_ch5_e_vfbd"/> and <xref linkend="b5_ch5_e_vfvdfbd"/>). These parameters will
+        thus vary naturally with the topographic and hydraulic characteristics of the routing
+        reaches.</para>
+      <para>In the modelling systems using the nonlinear storage routing methods described in <xref
+          linkend="b5_c5_s_022"/>, the value of the exponent <emphasis role="italic">m</emphasis> in
+        the nonlinear storage-discharge relationship found from calibration to observed hydrographs
+        typically varies in the range from 0.6 to 0.8. These values imply that with increasing flood
+        magnitude discharge increases more rapidly than storage. A value of <emphasis role="italic"
+          >m</emphasis> = 1.0 (linear storage) would imply that discharge and storage increase at
+        the same rate). </para>
+      <para>The expected variation of the exponent with flood magnitude is particularly important
+        when appropriate routing parameter values for the estimation of Very Rare to Extreme floods
+        need to be selected. This question is discussed in more detail in <xref linkend="b8_s_tbwiz"
+        />.</para>
+      <para>As indicated in <xref linkend="b5_c5_s_020"/> and <xref linkend="b5_c5_s_025"/>, the
+        translation and attenuation effects of distributed storage, as modelled by the
+        Muskingum-Cunge method, can also be represented by routing through a series of concentrated
+        storages. <xref linkend="b5_ch6_f_z84vx"/> illustrates the effect of successive routing of a
+        rainfall excess hydrograph from subarea A through three concentrated nonlinear storages. The
+        peak of the input hydrograph is progressively translated and attenuated on its movement
+        along the channel network. </para>
+      <figure xml:id="b5_ch6_f_z84vx">
+        <title>Routing of rainfall excess hydrograph through a series of nonlinear storages (after
+            <citation>b5_c6_r26+1</citation>)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/5096.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The characteristic reach length criterion expressed by <xref linkend="b5_c5_e_028"/>
+        means that the degree of subdivision of the drainage network into sub-reaches represented by
+        concentrated storages cannot be chosen arbitrarily. Too few or too many sub-reaches will
+        make it difficult to accurately reflect both the translation and attenuation effects
+        experienced by flood waves as they move through the drainage network of the actual
+        catchment. <citation>b5_c6_r6+1</citation> has shown empirically that the optimum degree of
+        subdivision of a catchment into subareas and routing reaches increases approximately with
+        the square root of catchment area. </para>
+      <para> The different methods available to estimate the routing parameters for different runoff
+        routing modelling systems are discussed in <xref linkend="b7_ch5"/>.</para>
+    </section>
+    <section xml:id="b5_ch6_s_6plz4">
+      <title>Routing Through Special Storages</title>
+      <para>The methods used to route hydrographs through channel, stream and floodplain reaches
+        assume similar routing characteristics in different routing links. If the catchment includes
+        areas with significant extra flood storage (e.g. natural lakes or swamps, extensive
+        floodplain areas, reservoirs or flood retention/detention basins), this assumption is no
+        longer satisfied, and these special features will require separate representation in the
+        model. They can be included in the node-link network as ‘special storage’ nodes or links,
+        with separately defined storage-discharge relationships.</para>
+      <para>The approaches used to represent the routing effects through a special storage range
+        from linear reservoir routing methods (<xref linkend="b5_c5_s_006"/>) to non-linear storage
+        routing methods (<xref linkend="b5_c5_s_022"/>), with different methods being applied to
+        define the S-Q relationship for the storage: </para>
+      <itemizedlist>
+        <listitem>
+          <para>a linear or nonlinear S-Q relationship derived by calibration to observed
+            hydrographs (after the routing parameters of the normal channel routing links have been
+            determined)</para>
+        </listitem>
+        <listitem>
+          <para>a nonlinear S-Q relationship for a special channel or floodplain routing link
+            determined from calculations of storage volumes in the link and corresponding flow
+            through the link for different flood magnitudes, or from the analysis of hydraulic
+            modelling results</para>
+        </listitem>
+        <listitem>
+          <para>a nonlinear S-Q relationship for reservoir or pond determined by combining a
+            stage-storage relationship (e.g. a reservoir storage capacity curve) with a
+            stage-discharge relationship (e.g. a spillway rating curve)</para>
+        </listitem>
+        <listitem>
+          <para>a set of S-Q relationships for regulated storages with information on the triggers
+            for the application of the individual S-Q relationships </para>
+        </listitem>
+        <listitem>
+          <para>separate specification of a stage-storage relationship together with details of the
+            levels and hydraulic characteristics that determine the different forms of outflows from
+            the storage (e.g. for flood detention basins)</para>
+        </listitem>
+      </itemizedlist>
+      <para> Details of these different options are provided in the user manuals of the different
+        runoff routing modelling systems.</para>
+    </section>
+  </section>
+  <section xml:id="b5_ch6_s_lgabf">
+    <title>Rainfall on Grid Modelling Approaches</title>
+    <section xml:id="b5_ch6_s_dflga">
+      <title>Introduction</title>
+      <para>The following description of the ‘rainfall-on-grid’ or ‘direct rainfall’ modelling
+        approaches to runoff routing is based mainly on the Stage1/2 report from ARR Revision
+        Project 15 ‘Two-dimensional (2D) modelling <citation>b5_c6_r1</citation>
+      </para>
+      <para>In contrast to the traditional rainfall runoff modelling approaches, the
+        rainfall-on-grid approaches do not require the specification of a node-link type
+        representation of the catchment and its drainage network. Instead they use information from
+        a digital elevation model and hydraulic modelling to define the drainage paths used by
+        floodwaters on their way towards the catchment outlet. In the flatter parts of a catchment
+        the drainage paths may thus change adaptively during a flood event. </para>
+      <para>The catchment is represented by a large number of grid cells, each with its individual
+        rainfall input and runoff output – in other words, the cells act as the equivalent to
+        subareas in node-link type models. However, the different scales of these basic catchment
+        elements have important implications for the modelling of flood runoff, as they require
+        different representations of the typical properties of the catchment elements. The
+        non-linear nature of runoff generation means that the average response from many different
+        small scale catchment elements cannot be expected to correspond to the lumped response of a
+        subarea with average properties (e.g. a hillslope in a kinematic wave model).</para>
+      <para>The rainfall-on-grid approaches can be applied in two ways:</para>
+      <itemizedlist>
+        <listitem>
+          <para>the whole catchment is represented by a 2D grid, or </para>
+        </listitem>
+        <listitem>
+          <para>a ‘hybrid approach’, where only the flatter parts of the catchment with more complex
+            floodplain topography are represented by a 2D grid; they receive inflow hydrographs from
+            the rest of the catchment produced by a traditional runoff routing approach.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The computational basis of the rainfall-on-grid approaches are the two-dimensional
+        unsteady flow equations introduced in <xref linkend="b6_ch4_s_qwes6"/>, or simplified forms
+        of these equations. </para>
+      <para><xref linkend="b5_ch6_f_vwzhy"/> shows how the generation of runoff from a grid cell is
+        conceptualised. Different direct rainfall models vary in the degree of detail adopted in
+        modelling the runoff generated on a grid element, as discussed in <xref
+          linkend="b5_ch6_s_0v708"/>.</para>
+      <figure xml:id="b5_ch6_f_vwzhy">
+        <title>Conceptualisation of generation of runoff hydrograph from a grid cell</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/5097.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>The successive routing of the runoff through other grid cells to the catchment outlet
+        then uses the hydraulic routing approaches incorporated into the modelling package. </para>
+    </section>
+    <section xml:id="b5_ch6_s_0v708">
+      <title>Modelling of Runoff from Individual Cells</title>
+      <para>Similar to traditional runoff routing models, runoff from a grid cell depends on the
+        following factors:</para>
+      <itemizedlist>
+        <listitem>
+          <para>the area of the grid cell</para>
+        </listitem>
+        <listitem>
+          <para>the rainfall depth</para>
+        </listitem>
+        <listitem>
+          <para>the losses and</para>
+        </listitem>
+        <listitem>
+          <para>the storage volume in the cell </para>
+        </listitem>
+      </itemizedlist>
+      <para>However the amount and direction of outflow from the cell here also depends on
+        additional factors:</para>
+      <itemizedlist>
+        <listitem>
+          <para>the hydraulic roughness of the cell</para>
+        </listitem>
+        <listitem>
+          <para>the slope between neighbouring grid cells and </para>
+        </listitem>
+        <listitem>
+          <para>the water level in neighbouring cells</para>
+        </listitem>
+        <listitem>
+          <para>inflows from other cells</para>
+        </listitem>
+      </itemizedlist>
+      <para>In principle the model can accept a detailed space-time distribution of the rainfall
+        inputs but in practice limited data availability means that more discretised rainfall inputs
+        need to be used. </para>
+      <para>The traditional loss models described in <xref linkend="b5_ch5"/> can be used but the
+        way these losses are applied may vary in different models, and the traditional design loss
+        values may thus not be directly applicable. Loss models that have a more direct physical
+        basis could also be applied to reflect the varying infiltration, depression storage and
+        transmission losses that reduce the volume of rainfall inputs but the required data and
+        parameters estimates are not readily available. Finally, at least in theory, a groundwater
+        model could be integrated to allow a consistent estimation of losses and baseflow
+        contributions when modelling over an extending time period.</para>
+      <para>The topographic information included in the model means that the model can include
+        relatively large depression storage areas which interact with losses. A process of
+        ‘pre-wetting’ these storage areas (priming the model with an artificial rainfall burst to
+        fill depression storages) may have to be used to prevent low bias in modelled flood
+        hydrographs.</para>
+      <para>The model outputs are quite sensitive to the selection of the hydraulic roughness
+        parameters. Because of the differences in conceptualisation and scale, these grid cell
+        roughness parameters will generally be different from the values used in traditional channel
+        hydraulics. Use of depth varying roughness parameters rather than constant ones may be
+        necessary to reflect the changing hydraulic characteristics of catchment surfaces with flow
+        depth.</para>
+      <para>The modelling of urban areas requires consideration of the impacts of a mix of different
+        catchment surfaces, buildings, drainage systems and other infrastructure. The model
+        resolution will generally not allow these features to be represented in detail, thus
+        representative cell characteristics need to be adopted, using some form of averaging of the
+        detailed urban area characteristics.</para>
+    </section>
+    <section xml:id="b5_ch6_s_5p7jl">
+      <title>Advantages and Limitations of the Rainfall-on-Grid Approaches  </title>
+      <para>As summarised in <citation>b5_c6_r1+1</citation> the use of rainfall-on-grid approaches
+        has following advantages and limitations: </para>
+      <para>Advantages of rainfall-on-grid approaches:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Where a 2D model extends over the whole catchment, there is no need to develop and
+            calibrate a separate hydraulic model, allowing seamless simulation of flood level
+            outputs from rainfall inputs. </para>
+        </listitem>
+        <listitem>
+          <para>Assumptions on sub-catchment delineation are not required as these are automatically
+            defined by the topographic information for the cells.</para>
+        </listitem>
+        <listitem>
+          <para>Overland flow is modelled directly. </para>
+        </listitem>
+        <listitem>
+          <para>Drainage paths and flow direction do not need to be predefined, which makes the
+            approaches particularly useful for runoff routing in flat areas and where catchment
+            boundaries are not well defined.</para>
+        </listitem>
+      </itemizedlist>
+      <para>Challenges and limitations of rainfall-on-grid approaches:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Direct rainfall modelling is a new technique, with limited calibration or
+            verification to gauged data. Caution and detailed checking is needed in the application
+            of this approach.</para>
+        </listitem>
+        <listitem>
+          <para>Potential significant increases in model run times. Hydrological models on their own
+            generate peak flows significantly faster than direct rainfall, which facilitate their
+            use in simulation frameworks that aim to ensure probability neutrality in the
+            transformation of rainfall into floods (as discussed in <xref linkend="b4_ch3"/>). </para>
+        </listitem>
+        <listitem>
+          <para>Require digital terrain information. Depending on the accuracy of the results
+            required, there may be a need for extensive survey data, such as aerial survey
+            data.</para>
+        </listitem>
+        <listitem>
+          <para>Insufficient resolution of smaller flowpaths may impact upon timing of routed flows.
+            The smaller flowpaths higher up in the catchment may not be as well-represented by the
+            2D model as they may exist on a sub-grid scale. This may affect timing of runoff
+            routing. </para>
+        </listitem>
+        <listitem>
+          <para>The shallow flows generated in the direct rainfall approach may be outside the
+            typical range of application of Mannings ‘n’ roughness parameters and will thus require
+            special consideration.</para>
+        </listitem>
+      </itemizedlist>
+      <para><citation>b5_c6_r1+1</citation> discusses these challenges/limitations and possible ways
+        to deal with them in more detail.</para>
+      <para><emphasis role="italic">It is important for both users of rainfall-on-grid models and
+          their clients to realise that greater detail in the representation of catchment
+          physiography can only be expected to translate to greater accuracy of flood estimation
+          results if this is accompanied by appropriate representation of hydrologic flood formation
+          processes at the adopted special scale. Given the present simple representation of such
+          processes and the difficulties of realistically representing shallow overland flows, it is
+          considered that at present the main value of rain-on-grid models is their ability to
+          accommodate the influences of hydraulic controls on flow conditions.</emphasis></para>
+      <para><emphasis role="italic">At the current stage of development of these models and with the
+          limited level of experience gained with their practical application, it is considered
+          premature to recommend the general use of rainfall-on-grid models in these
+          guidelines.</emphasis></para>
+      <para><emphasis role="italic">However, it is expected that further development and testing
+          will allow rainfall-on-grid models to be more widely applied.</emphasis></para>
+    </section>
+  </section>
+  
+<xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+
+
+</chapter>

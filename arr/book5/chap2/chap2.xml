@@ -8,7 +8,9 @@
          xmlns:db="http://docbook.org/ns/docbook"
          status = "In Preparation">
          
-  <info><title>Types of Hydrologic Models</title>
+         <info><title>Catchment Representation</title>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+
    </info>
   <para>
     <informaltable border="1">
@@ -16,33 +18,437 @@
         <td colspan="2">Chapter Status</td>
       </tr>
       <tr>
-        <td>Book</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Chapter</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>Date</td>
-        <td>27/11/2015</td>
+        <td>Date last updated</td>
+        <td>06/07/16 </td>
       </tr>
       <tr>
         <td>Content</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Graphs and Figures</td>
-        <td>In preparation</td>
-      </tr>
-      <tr>
-        <td>Examples</td>
-        <td>In preparation</td>
+        <td>Advanced draft</td>
       </tr>
       <tr>
         <td>General</td>
-        <td/>
+        <td>Subject to industry feedback </td>
       </tr>
     </informaltable>
   </para>
+  <section xml:id="b5_ch2_s_001">
+    <title>Introduction</title>
+    <para>The representation of a catchment in a flood hydrograph estimation model is, by necessity,
+      highly conceptualised and aims to represent those features and characteristics that are most
+      influential in determining the overall flood response of the catchment. The distribution of
+      storm rainfall over different parts of the catchment and the flood response to it may vary
+      considerably, depending on the details of topography, vegetation cover, land use and drainage
+      network characteristics. However, as the hydrograph inputs from different parts of the
+      catchment are progressively combined on their way to the catchment outlet, only some of these
+      differences in response characteristics are directly reflected in the combined hydrographs at
+      downstream points of interest. Different catchment modelling approaches have therefore evolved
+      to find an appropriate compromise between required model complexity and spatial resolution on
+      the one hand, and desirable modelling efficiency on the other. These different modelling
+      approaches can be applied with different degrees of complexity, and often more simple methods
+      may be quite appropriate.</para>
+    <para>As is explained in more detail in <xref linkend="b5_ch3"/> and <xref linkend="b5_ch6"/>,
+      the various forms of <emphasis role="italic">temporary flood storage</emphasis> available in
+      different parts of the catchment play a key role in determining how the runoff inputs from
+      different parts of the catchment are transformed into the flood hydrograph at the catchment
+      outlet. The effect of catchment storage on the routing of hydrographs is twofold and involves:
+        <orderedlist numeration="lowerroman">
+        <listitem>
+          <para><emphasis role="italic">translation</emphasis> of the hydrograph peak and other
+            ordinates forward in time and</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">attenuation</emphasis> of the peak as the hydrograph moves
+            along the stream network.</para>
+        </listitem>
+      </orderedlist>The different catchment representations in flood hydrograph estimation models
+      can therefore be classified on the basis of how the different forms of temporary flood storage
+      are conceptualised and in how much detail they are represented in the model. Other factors
+      such as losses, which determine the flood volume (covered in <xref linkend="b5_ch5"/>) and
+      baseflow, which may modify the flood hydrograph shape and volume (covered in <xref
+        linkend="b5_ch4"/>), must also be a part of the modelling of flood hydrographs.</para>
+    <para>In situations where the interest is only on the combined hydrograph at the catchment
+      outlet and where good flood records for current conditions are available at that point,
+      modelling of the catchment as a single ‘lumped’ response unit may be sufficient. This is the
+      approach adopted by a number of traditional flood hydrograph estimation methods such as the
+      unit hydrograph approach, the time-area approach and the Clark and Nash models of
+      runoff-routing. In these modelling approaches, discussed further in <xref
+        linkend="b5_ch2_s_002"/>, the rainfall excess input is ‘lumped’ for the whole catchment and
+      then transformed by some routing method to a hydrograph at the catchment outlet.</para>
+    <para>For catchments with more complex runoff production and flood hydrograph formation
+      characteristics it is more usual to adopt a semi-distributed rather than a lumped modelling
+      approach. Adoption of a semi-distributed approach allows the key factors that influence flood
+      response to be represented in a spatially explicit fashion. Common factors represented in a
+      semi-distributed manner include rainfall, losses and routing parameters, though such models
+      also facilitate the representation of influential catchment features that control variation in
+      the timing and/or magnitude of flood runoff from different parts of the catchment. The
+      category of semi-distributed models (or node-link type models), dealt with in <xref
+        linkend="b5_ch2_s_003"/>, allows for an appropriate matching of spatial model resolution
+      with the degree of spatial variation of catchment characteristics and inputs.</para>
+    <para>Finally, developments in computing power and the availability of digital terrain
+      information now allow a fully distributed representation of catchments in grid-based models.
+      The emerging rainfall-on-grid modelling approach is discussed in <xref linkend="b5_ch2_s_009"
+      />.</para>
+    <para>Many of the following considerations on how to represent catchments in hydrologic flood
+      estimation models apply to both rural and urban catchments. However, modelling of urban
+      catchments is treated in more detail in <xref linkend="book9"/>. </para>
+  </section>
+  <section xml:id="b5_ch2_s_002">
+    <title>Lumped Models</title>
+    <para>In relatively small catchments (or within each sub-catchment of a larger catchment) there
+      is often only limited spatial variation in rainfall and loss characteristics, and it is thus
+      acceptable to treat the catchment (or sub-catchment) as a homogeneous unit. Models that do not
+      allow for spatial variation in runoff or routing characteristics within a catchment are
+      referred to as ‘lumped’ models. It is possible to link the outputs of several lumped models to
+      form a quasi-distributed catchment model.</para>
+    <para>The peak flow estimation methods described in <xref linkend="book3"/> can be regarded as
+      “lumped” type models, since the flood peaks are calculated at a single point only, without the
+      internal characteristics of the catchment being considered.</para>
+    <para>In the runoff generation phase of lumped models, the conceptual loss and baseflow models
+      described in <xref linkend="b5_ch5"/> and <xref linkend="b5_ch4"/> can be applied using the
+      assumption that the rainfall inputs, losses and baseflow contributions are the same over the
+      whole catchment. Such a simplifying assumption may be appropriate when rainfall and streamflow
+      data are only available from a single gauge and it is thus difficult to infer any internal
+      variation of the rainfall and runoff generation characteristics. </para>
+    <para>In the hydrograph formation or routing phase of lumped models, a range of
+      conceptualisations may be used to represent the hydrograph translation and attenuation effects
+      of the catchment on the runoff hydrograph input. These conceptualisations may aim to represent
+      physical catchment processes, but they are essentially ‘black box’ mathematical
+      representations. The different lumped flood modelling approaches include:</para>
+    <orderedlist>
+      <listitem>
+        <para><emphasis>The Time-Area Approach</emphasis> (<xref linkend="b5_ch6_s_ypsrh"/>) - in
+          which the different degree of translation (time lag) experienced by runoff from different
+          parts of the catchment is modelled by dividing the catchment into a number of areas with
+          the same delay time to the catchment outlet (‘isochronal areas’). The runoff inputs to the
+          different sub-areas are then lagged accordingly to represent the translation effects of
+          the total catchment, but this routing method does not provide for any attenuation of peak
+          flows on their way to the catchment outlet. </para>
+      </listitem>
+      <listitem>
+        <para><emphasis>The Unit Hydrograph Approach</emphasis> (<xref linkend="b5_ch6_s_7b1zz"/>) -
+          which converts rainfall excess inputs to a flood hydrograph by applying a transfer
+          function (the unit hydrograph). The transfer function is generally inferred from the
+          analysis of observed rainfall inputs and streamflow outputs, and there is limited
+          potential to relate its parameterisation to measurable catchment characteristics, though
+          the parameters for the method may be developed from recorded data.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Other lumped flood hydrograph estimation methods</emphasis> - that involve
+          use of a single (concentrated) linear storage (eg. Clarke) or a distributed form of
+          storage represented by a cascade of several linear storages (eg. Nash). Variations of
+          these methods with non-linear storages are also used. The fundamental flood routing
+          concepts applied in these methods are further explained in <xref linkend="b5_c5_s_002"/>
+          to <xref linkend="b5_c5_s_004"/>. </para>
+      </listitem>
+    </orderedlist>
+    <para>While lumped flood hydrograph estimation models have the advantage of simplicity, they are
+      limited in their application to the following situations:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Catchments with relatively uniform spatial rainfall, loss and baseflow characteristics
+          or where the variation of these characteristics between events is relatively minor, so
+          that the derived unit hydrograph or other model parameters are applicable to a range of
+          design events;</para>
+      </listitem>
+      <listitem>
+        <para>Catchments with no significant artificial storages (reservoirs or flood detention
+          basins);</para>
+      </listitem>
+      <listitem>
+        <para>Applications where a flood hydrograph is only required at the catchment outlet, as for
+          the design of drainage structures on roads and railway lines; and</para>
+      </listitem>
+      <listitem>
+        <para>Applications that do not require extrapolation to the range of Very Rare to Extreme
+          floods.</para>
+      </listitem>
+    </itemizedlist>
+    <para>To the extent that they adopt a ‘black box’ approach (ie. the functions used to transform
+      rainfalls to streamflows do not have direct links to physical catchment characteristics),
+      lumped models depend on the availability of observed flood hydrographs for their calibration.
+      The scope for application to ungauged catchments is thus more limited but the Clark-Johnstone
+      synthetic unit hydrograph method (<xref linkend="b5_ch6_s_rsmli"/>) has in the past been
+      widely used for catchments on the east coast of Australia
+      <citation>b5_c2_r2</citation>.</para>
+    <para>The semi-distributed (node-link type) models described in the next section offer a broader
+      range of application but are also more demanding in terms of model development, data
+      requirements and understanding/skill of the practitioner. The lumped flood hydrograph
+      estimation approach can be seen as a simplified version of the semi-distributed  flood
+      hydrograph estimation approach, and it is worth noting that the most widely used
+      runoff-routing models (described in <xref linkend="b5_ch6_s_do8jr"/>) can be configured to
+      represent catchment response in a lumped fashion.</para>
+  </section>
+  <section xml:id="b5_ch2_s_003">
+    <title>Semi-Distributed (Node-Link Type) Models</title>
+    <para>Semi-distributed models allow the spatial variation of inputs and key processes to be
+      modelled explicitly. This is particularly important in large catchments and in catchments
+      where the natural flooding characteristics have been significantly modified by various forms
+      of development, including the construction of reservoirs, flood mitigation works and transport
+      and drainage infrastructure. </para>
+    <para>Because of their flexibility and ability to calculate flood hydrographs throughout the
+      catchment and to model land use and catchment changes, as well as being relatively
+      straightforward to establish and run, node-link type models are currently the most widely used
+      modelling approach for flood hydrograph estimation in Australia. A range of ready-to-use
+      modelling systems (<xref linkend="b5_ch6_s_do8jr"/>) are available to set up models for
+      catchments of different size and complexity. These modelling systems allow the influential
+      features and characteristics of a catchment to be represented in the model but in a highly
+      conceptualised form. All conceptualisations involve some degree of lumping in terms of the
+      processes modelled and spatial averaging of inputs, but the different modelling systems differ
+      in the way they divide the catchment into various conceptual elements and in the methods they
+      use to model the processes represented by these elements. </para>
+    <para><xref linkend="b5_ch2_f_007"/> shows a simple conceptual representation of the
+      runoff-routing process in a node-link type model. Each subarea receives a rainfall excess
+      input which is converted to a runoff hydrograph at the node representing this subarea. The
+      hydrographs are then routed successively through the links representing the drainage network
+      to form the hydrograph at the catchment outlet.</para>
+    <figure xml:id="b5_ch2_f_007">
+      <title>Conceptual Representation of the Runoff Routing Process in a Node-Link Type Model </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../../figures/5075.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <section xml:id="b5_ch2_s_004">
+      <title>Conceptual Model Elements</title>
+      <para>To build a semi-distributed model, the real catchment has to be conceptually represented
+        as a system of nodes and links, each representing a different element of the actual
+        catchment system. The following set of basic nodes and links can be used in different
+        catchment models, but different models vary in how these basic elements are applied.</para>
+      <para><emphasis>Nodes</emphasis>: </para>
+      <itemizedlist>
+        <listitem>
+          <para>Input nodes for hyetographs of rainfall excess or hydrographs of direct runoff (and
+            possibly baseflow) from model sub-areas;</para>
+        </listitem>
+        <listitem>
+          <para>Input nodes for inflow hydrographs from separately modelled catchments;</para>
+        </listitem>
+        <listitem>
+          <para>Junction nodes – where different branches of the drainage network join (or where
+            diversion flows re-enter);</para>
+        </listitem>
+        <listitem>
+          <para>Diversion nodes – points where some of the flow is diverted or abstracted from the
+            network;</para>
+        </listitem>
+        <listitem>
+          <para>Reservoir routing nodes;</para>
+        </listitem>
+        <listitem>
+          <para>Flood detention routing nodes; and</para>
+        </listitem>
+        <listitem>
+          <para>Nodes for hydrograph outputs (including at gauging locations for comparison of
+            modelled and observed hydrographs). </para>
+        </listitem>
+      </itemizedlist>
+      <para><emphasis>Links</emphasis>:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Stream or channel routing links;</para>
+        </listitem>
+        <listitem>
+          <para>Bypass links; and</para>
+        </listitem>
+        <listitem>
+          <para>Floodplain storage links.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section xml:id="b5_ch2_s_005">
+      <title>Catchment Sub-Division</title>
+      <para>The basic principle applied in dividing the catchment into a number of sub-areas for
+        semi-distributed modelling is to provide a simplified but physically-based representation of
+        the spatial features of the catchment, using a relatively small number of sub-areas
+        (typically 10 to 100). The delineation of these sub-areas should generally follow
+        topographic features that control the movement and storage of flood waters. Relevant land
+        use features, such as the urban sections of the catchment, or areas inundated by large water
+        bodies, need to be specifically delineated. The features that control flowpaths in
+        relatively flat catchments may not be evident, and careful analysis of available topographic
+        and flood data is required to define the sub-area boundaries. Detailed survey as well as
+        aerial or satellite images may assist the catchment delineation in areas where the drainage
+        characteristics are unclear.</para>
+      <para>The catchment sub-division should also have regard to the prevailing land uses in
+        different parts of the catchment and should aim at sub-areas that are essentially
+        homogeneous in terms of their runoff characteristics. This is particularly relevant in urban
+        or urbanising catchments. Large areas with immediate runoff response, such as natural lakes
+        and reservoirs also require special consideration. <xref linkend="b7_ch4"/> provides more
+        detailed guidance. </para>
+    </section>
+    <section xml:id="b5_ch2_s_006">
+      <title>Modelling of Runoff from 'Hill Slopes' (Overland Flow)</title>
+      <para>The term “contributing areas” is used to describe those areas of catchments where
+        surface runoff occurs in the form of overland flow, sheet flow or flow in small channels
+        that are not significant enough to be modelled separately ( <xref linkend="b4ch2_s_bp6h9"
+        />). There are two distinctly different methods used to model this runoff component:</para>
+      <orderedlist numeration = "lowerroman">
+        <listitem>
+          <para>The input hyetograph (areal average rainfall excess) for the sub-area is directly
+            converted into a runoff hydrograph at a representative point within the sub-area
+            (usually at or close to the centroid). This assumes that all runoff from the sub-area
+            reaches this input node without any delay and there is no flow attenuation within the
+            sub-area. Any translation and attenuation effects occurring within the hill slope
+            elements thus need to be represented in the routing through the drainage network from
+            the subarea input node to downstream points of interest; and</para>
+        </listitem>
+        <listitem>
+          <para>The input hyetograph to the sub-area is transformed to an output hydrograph using
+            one of the lumped catchment models introduced in <xref linkend="b5_ch2_s_002"/>.
+            Different models use time-area, unit hydrograph or different forms of storage routing or
+            kinematic wave routing concepts for this transformation.</para>
+        </listitem>
+      </orderedlist>
+      <para>Method (i) has the advantage of simplicity in that it avoids having to determine
+        additional model parameters for runoff from contributing areas. In catchments with
+        relatively uniform land use, when the interest is mainly on flood hydrographs at the
+        catchment outlet for a limited range of flood magnitudes, this method can be expected to
+        provide satisfactory results. However, it may provide conservatively high estimates of
+        hydrograph peaks at internal points in the upper parts of the catchment due to the neglect
+        of routing effects in the contributing areas of the catchment. <xref
+          linkend="b5_ch6_s_zd6cp"/> provides more detailed discussion of this method. </para>
+      <para>Method (ii) allows for better representation of processes that contribute to hydrographs
+        in the upper parts of the catchment but it requires additional parameters. It is also better
+        able to deal with the effects of significant land use changes in parts of the catchment and
+        with changed runoff behaviour in Very Rare to Extreme flood events (<xref linkend="b8_ch5"
+        />). A more detailed discussion of this approach is provided in <xref
+          linkend="b5_ch6_s_8qwmr"/>.</para>
+    </section>
+    <section xml:id="b5_ch2_s_007">
+      <title>Routing Through Network of Stream/Channel/Floodplain Elements </title>
+      <para>Except in small rural catchments, most of the translation and attenuation effects in the
+        transformation of rainfall inputs to hydrograph outputs occur in the routing of hydrographs
+        through the network of streams/channels, floodplains and major storages. The capability of a
+        modelling system to adequately reflect the translation and attenuation involved in this
+        transformation is therefore an important prerequisite for accurate flood hydrograph
+        estimation.</para>
+      <para>Two distinctly different groups of flood routing approaches are used in node-link type
+        flood hydrograph estimation models:</para>
+      <orderedlist numeration = "lowerroman">
+        <listitem>
+          <para><emphasis>Hydrologic Routing Approaches</emphasis>- these flood routing methods are
+            based on the storage routing principles described in <xref linkend="b5_c5_s_004"/>
+            (linear storage routing) and <xref linkend="b5_c5_s_022"/> (non-linear storage routing).
+            An important characteristic of hydrologic flood routing models is that their parameters
+            are generally inferred from observed flood hydrographs, but it is possible to infer
+            their parameters through close links with hydraulic methods (eg. Muskingum-Cunge Method,
+              <xref linkend="b5_c5_s_004"/>) or from the results of hydraulic modelling; and</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Hydraulic Routing Approaches</emphasis> - these flood routing methods are
+            based directly on the full unsteady flow equations or various simplified forms of these
+            equations, as described in <xref linkend="b5_c5_s_022"/>. Their parameters are inferred
+            from the cross-sectional characteristics of streams, channels and floodplains, and the
+            hydraulic characteristics of controlling features. The kinematic wave and diffusion wave
+            approaches described in <xref linkend="b5_c5_s_024"/> are the most widely used hydraulic
+            routing approaches incorporated into flood hydrograph estimation models.</para>
+        </listitem>
+      </orderedlist>
+      <para>The hydrologic routing approaches have the advantage that, by deriving their parameters
+        from observed hydrographs, they represent an integrated routing response from the complex
+        stream and floodplain system that is often too complex to be represented in detail. However,
+        application of such calibrated parameters to conditions outside the ones reflected in the
+        observed hydrographs (ie. for changed catchment conditions or significantly different flood
+        magnitudes) involves assumptions that may not be justifiable. The hydraulic routing methods
+        have closer links to the physical characteristics of the routing reaches, but their
+        application still involves a significant degree of conceptualisation and some form of
+        calibration.</para>
+      <para>Modelling of the flood routing effects over a range of flow conditions requires a clear
+        understanding of the flood dynamics so that the simulated response can be appropriately
+        matched to the actual flooding behaviour. Specifically this means that the adopted network
+        should represent any breakout flows and bypass flows occurring during larger floods, as well
+        as the effects of significant floodplain storage areas activated during large events. The
+        additional storage availability in large flood events may be counter-balanced by increased
+        flow efficiency as the flow depth increases. Where backwater effects are likely to have a
+        significant impact not only on flood levels but also on the routing of flood flows through
+        the drainage network, hydraulic routing methods based on the full unsteady flow equations
+        may be required.</para>
+      <para>The model should also represent the varying impact of flow restrictions for different
+        flow magnitudes. In some cases the results of detailed hydraulic modelling may be required
+        to develop a clear understanding of the changes in flood flow behaviour with flood
+        magnitude, so that they can be adequately reflected in the hydrologic catchment model. </para>
+      <para>One important limitation of node-link type models is that the different routing elements
+        are conceptualised as one dimensional flow links. This means that a dominant flow direction
+        needs to be assumed when the routing elements are defined. In cases where the flow direction
+        changes for floods of different magnitudes, it may be necessary to introduce more complexity
+        into the channel network so that different flowpaths are activated at different flow
+        magnitudes. The two dimensional rainfall-on-grid approaches discussed in <xref
+          linkend="b5_ch2_s_009"/> are in principle better equipped to deal with changes in flow
+        direction during a flood event and between flood events of different magnitude, but this
+        advantage may be off-set by the difficulty of using such models to adequately represent loss
+        processes and roughness characteristics at the scale of individual grid cells. </para>
+      <para>Whatever routing method is used, it is important to ensure that any application of the
+        model outside its range of calibration is guided by consideration of changes in hydraulic
+        characteristics and then reflected in the adopted network conceptualisation and parameter
+        values. This is further discussed in <xref linkend="b7_ch4"/> and <xref linkend="b7_ch5"
+        />.</para>
+    </section>
+    <section xml:id="b5_ch2_s_008">
+      <title>Routing Trough Special Storages</title>
+      <para>When flood storage occurs in a concentrated form, such as in lakes, reservoirs,
+        detention basins and large natural or artificial flood storageage areas, it is appropriate
+        to model the flood modifying effects of such storages by a ’special storage’ routine. Where
+        the relevant survey and hydrographic data are available, the storage-discharge
+        characteristics of such special storages may be defined by storage rating curves and
+        discharge rating curves in terms of depth or elevation. In other situations, simplified
+        storage-discharge relationships need to be derived from observed inflow and outflow
+        hydrographs or by trial and error during model calibration. Methods for deriving
+        storage-discharge relationships for different conceptual storage elements are discussed in
+          <xref linkend="b5_ch6_s_6plz4"/>.</para>
+    </section>
+  </section>
+  <section xml:id="b5_ch2_s_009">
+    <title>Grid-based (Distributed) Models</title>
+    <para>In the fully distributed or grid-based flood hydrograph estimation models (also referred
+      to as ‘rainfall-on-grid’ models) the catchment is represented by a large number of grid cells,
+      based on topographic data from a Digital Elevation Model (DEM). More detailed survey
+      information on the drainage network and flow controlling features of the catchment may be
+      superimposed on the DEM data.</para>
+    <para>Different models vary in the degree of detail adopted in modelling the runoff generated
+      from rainfall falling on a grid element. In principle the method allows more physically-based
+      representations of runoff processes; however, this is only likely to be valid at larger depths
+      of overland flow. Such models currently represent saturation and ponding processes in a
+      simplistic fashion, and similar simplifications are adopted in modelling the baseflow
+      contribution at the scale of individual cells. </para>
+    <para>The routing of runoff from individual cells through the catchment and the stream network
+      is then based on the principles of two dimensional dynamic wave modelling introduced in <xref
+        linkend="b5_c5_s_023"/> and described in more detail in <xref linkend="b6_ch4_s_v3f40"/>.
+      Particular issues to be dealt with in these models are the significantly larger data
+      requirements than for node-link type models to give a realistic representation of the
+      catchment, characterisation of hydraulic roughness for different catchment elements, and how
+      to deal with computational stability problems that arise when runoff is generated from
+      initially dry cells. </para>
+    <para>As the direction of the flow between cells is determined as part of the solution process
+      at each time step, drainage paths do not need to be pre-defined as in traditional one
+      dimensional runoff-routing approaches. The application of hydraulic methods in the
+      runoff-routing process also means that there is no need for linking the hydrologic model with
+      a hydraulic model of the floodplain area. </para>
+    <para>In most catchments the catchment boundaries and the drainage network are quite well
+      defined in the upper part of the catchment, and traditional runoff-routing models can thus
+      adequately describe the flood hydrograph formation for these parts of the catchment. A
+      ‘hybrid’ approach, where a two dimensional model is only used for runoff-routing in the
+      flatter or urbanised parts of the catchment that are influenced by complex hydraulic controls,
+      may be the most efficient approach in these situations.</para>
+    <para>The theoretical advantage of grid-based models is that a lesser degree of
+      conceptualisation in the catchment representation is required, thus requiring less hydrologic
+      expertise of the practitioner. However, the modelling of the overland flow phase at the scale
+      of individual grid cells still poses challenges and requires further research. The principles
+      applied in rainfall-on-grid models and their advantages and limitations are discussed in more
+      detail in <xref linkend="b5_ch6_s_lgabf"/>. While grid-based methods are apparently more
+      directly based on physical catchment data than alternative methods, they still need to be
+      calibrated with recorded data, and there is still uncertainty in the results from their
+      application. This is discussed further in <xref linkend="book7"/>.</para>
+    <para>At the current stage of development of these models and with the limited level of
+      experience gained with their practical application, it is considered premature to recommend
+      their general use in these Guidelines. However, it is expected that further development and
+      testing will allow rainfall-on-grid models to be more widely applied.</para>
+  </section>
+  
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
+  
 </chapter>

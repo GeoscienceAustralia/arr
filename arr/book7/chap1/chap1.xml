@@ -4,38 +4,156 @@
        xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook"
        status="In Preparation">
-       <title>Introduction</title>
+       
+       <info>
+              <title>Introduction</title>
+                          
+              <xi:include href="../../common/authors/babister_mark.xml"/>
+              
+              <xi:include href="../../common/authors/retallick_monique.xml"/>
+              
+              <xi:include href="../../common/authors/testoni_isabelle.xml"/>
+       </info>
+       
+       
        <informaltable border="1">
               <tr>
                      <td colspan="2">Chapter Status</td>
               </tr>
               <tr>
-                     <td>Book</td>
-                     <td>7</td>
-              </tr>
-              <tr>
-                     <td>Chapter</td>
-                     <td>1</td>
-              </tr>
-              <tr>
-                     <td>Date</td>
-                     <td>27/11/2015</td>
+                     <td>Date last updated</td>
+                     <td>06/07/16 </td>
               </tr>
               <tr>
                      <td>Content</td>
-                     <td>In preparation</td>
-              </tr>
-              <tr>
-                     <td>Graphs and Figures</td>
-                     <td>In preparation</td>
-              </tr>
-              <tr>
-                     <td>Examples</td>
-                     <td>In preparation</td>
+                     <td>Working draft</td>
               </tr>
               <tr>
                      <td>General</td>
-                     <td/>
+                     <td>Subject to industry feedback </td>
               </tr>
        </informaltable>
+       <section>
+              <title>Scope and Intent</title>
+              <para>Catchment modelling has become the dominant flood estimation technique. This is
+                     because it: </para>
+              <itemizedlist>
+                     <listitem>
+                            <para>Allows different options to be simulated.</para>
+                     </listitem>
+                     <listitem>
+                            <para>Can be used with no data, limited data and in data rich
+                                   situations</para>
+                     </listitem>
+                     <listitem>
+                            <para>Can be used to transfer estimations from one location to
+                                   another</para>
+                     </listitem>
+                     <listitem>
+                            <para>Default parameters are available </para>
+                     </listitem>
+                     <listitem>
+                            <para>Well designed catchment modelling systems will reproduce flood
+                                   behaviour over a range of floods</para>
+                     </listitem>
+                     <listitem>
+                            <para>A full hydrograph produced and can be used to assess
+                                   storage</para>
+                     </listitem>
+                     <listitem>
+                            <para>Results can be easily visualised </para>
+                     </listitem>
+                     <listitem>
+                            <para>Is relatively easy to set up and reliable to do</para>
+                     </listitem>
+                     <listitem>
+                            <para>Can be reused by others for similar problems</para>
+                     </listitem>
+                     <listitem>
+                            <para>Helps to document the process of how the flood estimation was
+                                   carried out</para>
+                     </listitem>
+              </itemizedlist>
+              <para>Scope is to provide practical guidance on the application of these models. </para>
+              <para>Because of the wide variety of flood estimation problems no modelling framework
+                     is suitable for all problems. </para>
+       </section>
+       <section>
+              <title>Application of guidelines</title>
+     
+       
+              <para>List types of problems the book is applicable to. Urban drainage design,
+                     detention basins, overland flooding, trunk drainage design, floodplain
+                     management, bridges and other infrastructure.</para>
+       </section>
+       <section>
+              <title>Specific Terminology</title>
+              <para>Generally the same terminology is used in this book as used elsewhere other than
+                     highlighting that while traditionally there has been rigid divide between
+                     hydrologic and hydraulic models the separation is largely artificial. Many
+                     components of a catchment model can be represented by either type of model.
+                     This book aims to guide the user in the application of a catchment model
+                     without predisposing which model is used to represent each of the processes. </para>
+              <para>An example of this divide is that routing does not only occur in hydrologic
+                     models and in this book when routing is referred to it includes routing in a
+                     hydraulic model. </para>
+              <para>A catchment modelling system refers a set of modelling processes or components
+                     that are used together to produce estimates of flood characteristics. These
+                     modelling processes can be available within a single modelling platform (such
+                     as a runoff-routing model) or can be the combination of a number of modelling
+                     platforms (where a runoff-routing model is used to generate inflows to a
+                     hydraulic model). Table 1 defines some key terminology for Book 7. </para>
+              <table frame="void">
+                     <caption>Terminology of Book 7</caption>
+                     <col width="32%"/>
+                     <col width="30%"/>
+                     <col width="50%"/>
+                     <thead>
+                            <tr>
+                                   <th>Terminology</th>
+                                   <th>Description</th>
+                                   <th>Example</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <tr>
+                                   <td>Modelling Process</td>
+                                   <td>Representation of conceptualised physical process in
+                                          simulation models</td>
+                                   <td>Rainfall excess model, runoff-routing model</td>
+                            </tr>
+                            <tr>
+                                   <td>Modelling Platform</td>
+                                   <td>Software implementation of the modelling process (simulation
+                                          model)</td>
+                                   <td>
+                                          <para>Software packages such as: RORB, RAFTS  WBNM, MIKE
+                                                 SHE, TuFLOW, SOBEK, HEC-RAS, Spreadsheet
+                                                 software</para>
+                                   </td>
+                            </tr>
+                            <tr>
+                                   <td>Catchment Modelling System</td>
+                                   <td>Combines different modelling processes and may combine
+                                          platforms </td>
+                                   <td>RORB to TuFLOW, or just RORB</td>
+                            </tr>
+                            <tr>
+                                   <td>Modelling Framework</td>
+                                   <td>Any statistical framework that is used to derive exceedance
+                                          probability of flood characteristics from simulation model
+                                          results</td>
+                                   <td>Ensemble or Monte Carlo framework </td>
+                            </tr>
+                     </tbody>
+              </table>
+       </section>
+       <section>
+              <title>Relationship with other sections of Australian Rainfall and Runoff</title>
+              <para>This book draws together much of the advice and guidance in other books. Book 1
+                     provides philosophy, Book 2 provides rainfall information, Book 3 provides
+                     alternative estimation techniques for comparison to results, Book 4, 5 and 6
+                     provide theory and details on models discussed within this book. Book 8 deals
+                     with extreme flood and Book 9 deals with urban applications. </para>
+       </section>
 </chapter>

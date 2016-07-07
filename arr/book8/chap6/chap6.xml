@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch6" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <info>
+    <title>Derivation of Design Floods</title>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+  </info>
+  <informaltable border="1">
+    <tr>
+      <td colspan="2">Chapter Status</td>
+    </tr>
+    <tr>
+      <td>Date last updated</td>
+      <td>06/07/16 </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Advanced draft</td>
+    </tr>
+    <tr>
+      <td>General</td>
+      <td>Subject to industry feedback </td>
+    </tr>
+  </informaltable>
+  <section xml:id="b8_s_wai7d">
+    <title>Overview</title>
+    <section xml:id="b8_s_rxooc">
+      <title>Selection of Basic Procedure</title>
+      <para>The available procedures can be divided into two main groups: those based on fitting a
+        frequency curve to flood maxima, and those based on design rainfalls. Flood frequency
+        methods (<xref linkend="b3_ch2"/>) are used to provide estimates of peak discharge, but
+        perhaps their most valuable role in the context of this Book is to provide information that
+        can be used to validate, or even calibrate, rainfall-based procedures. The limit of credible
+        extrapolation for
+        <?oxy_insert_start author="retallick" timestamp="20160606T073146+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T073145+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160606T073149+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T073148+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160606T073152+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T073151+1000" content="a"?>nalysis
+        based on regional gauged data is perhaps 1 in 500 AEP (<xref linkend="b8_t_tbdlw"/>), though
+        paleoflood analysis (<xref linkend="b8_s_aaq3x"/>) can be used to considerably extend this
+        limit. The credible limit of flood frequency analysis that can be typically obtained using
+        at-site data is perhaps only 1 in
+        <?oxy_comment_start author="retallick" timestamp="20160614T170910+1000" comment="changed as per email discussion with gk and rn
+"?><?oxy_delete author="retallick" timestamp="20160614T170853+1000" content="5"?><?oxy_insert_start author="retallick" timestamp="20160614T170854+1000"?>10<?oxy_insert_end?>0<?oxy_comment_end?>
+        AEP (<xref linkend="b8_t_tbdlw"/>).</para>
+      <para>Rainfall-based procedures use loss models and hydrograph models to transform design
+        rainfall inputs into design flood estimates. Final design estimates of Very Rare to Extreme
+        floods, beyond the credible limit of extrapolation (of either rainfall or floods), should be
+        derived using rainfall-based procedures. The design details in the following sections relate
+        mainly to rainfall-based procedures. As discussed in <xref linkend="b1_ch3-1e"/>,
+        event-based approaches are generally more applicable to the estimation of Very Rare to
+        Extreme floods than are approaches based on continuous simulation; accordingly, the
+        procedures as outlined in <xref linkend="book4"/> are generally applicable to the estimation
+        of design floods for Very Rare and Extreme events.</para>
+      <para><xref linkend="b8_s_30ly4"/> briefly discusses issues related to the specification of
+        design flood characteristics. <xref linkend="b8_s_48x5y"/> introduces a number of special
+        design considerations that are covered in more detail in <xref linkend="b8_ch7"/>.
+        Subsequent sections (<xref linkend="b8_s_e0h7b"/> to <xref linkend="b8_s_gbk9t"/>) provide
+        guidance on final design procedures, while <xref linkend="b8_s_21g0w"/> discusses the
+        treatment of uncertainties associated with flood estimates derived by these
+        procedures.</para>
+    </section>
+    <section xml:id="b8_s_30ly4">
+      <title>Design Flood Characteristics</title>
+      <para>In many cases, the flood hydrograph is required as well as the peak discharge and in
+        some cases may be more important. For the design of a dam spillway or a detention basin,
+        floods calculated from a range of design rainfall durations should be routed through the
+        storage for a variety of combinations of spillway and gate configurations, operating
+        procedures and dam crest heights to determine the optimum design. Different durations of
+        design rainfalls may be critical for different configurations and combinations of
+        conditions, which should all conform with the recommendations of
+          <citation>b8_c_r1+1</citation>. The complete hydrograph of the design flood is also
+        required for flood studies where flow profiles in natural or constructed channels are to be
+        calculated by unsteady flow procedures.</para>
+    </section>
+    <section xml:id="b8_s_g9d58">
+      <title>Expected Probability Adjustment</title>
+      <para>The concept of ‘expected probability’ and its application in practical design problems
+        is explained in <xref linkend="b3_ch2_s5"/>. It denotes the expected value of the AEP of a
+        given flood magnitude. The expected probability is influenced by the uncertainty in
+        parameters used to estimate the flood magnitude. Where the expected probability has not been
+        implicitly determined in the
+        <?oxy_insert_start author="retallick" timestamp="20160606T183830+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T183830+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160606T183833+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T183833+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160606T183836+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T183836+1000" content="a"?>nalysis,
+        an ‘expected probability adjustment’ to estimates of AEP can be applied subsequently to
+        correct for any systematic bias in the estimated risk arising from parameter
+        uncertainty.</para>
+      <para>In principle, the issue of expected probability is of considerable importance to the
+        estimation of Very Rare to Extreme floods, as the magnitude of the adjustment is greatest
+        for design flood magnitudes that involve significant extrapolation beyond the flood sizes in
+        the sample being analysed. Furthermore, in many applications, the interest is directly on
+        the AEP of a given flood magnitude (e.g. the spillway capacity of an existing dam), rather
+        than on the flood magnitude for a given design AEP (relevant to design of new structures
+        with a standards-based approach).</para>
+      <para>However, as indicated in <xref linkend="b3_ch2"/>, the question of when it is
+        appropriate to apply an expected probability adjustment is a complex one, and the decision
+        depends on a number of theoretical and practical considerations. In general, the estimates
+        of risk for Rare to Extreme floods are not used in an absolute sense, but to allow
+        comparison with established levels of acceptable risk, or to establish risk-based economic
+        costs for comparative evaluation of options.</para>
+      <para>It should be noted that use of the Total Probability Theorem to derive flood quantiles
+        using Monte Carlo Event procedures as described in <xref linkend="book4"/> yields expected
+        probability quantiles. This approach ensures probability<?oxy_delete author="retallick" timestamp="20160606T184020+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160606T184021+1000"?>
+        <?oxy_insert_end?>neutrality, at least for the set of hydrologic inputs used in its
+        application. If estimates are derived from a blend of approaches, comments on the likely
+        magnitude and importance of expected probability adjustments for different flood ranges are
+        as follows:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="italic">Rare
+              <?oxy_insert_start author="retallick" timestamp="20160606T184621+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T184619+1000" content="f"?>loods</emphasis>
+            – significant extrapolation may be involved where these floods are estimated from
+            frequency analysis of at-site data. The recommendations on the adjustment of <xref
+              linkend="b3_ch2_s5"/> should thus be followed.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Very Rare
+              <?oxy_insert_start author="retallick" timestamp="20160606T184627+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T184625+1000" content="f"?>loods</emphasis>
+            – design rainfalls are estimated from regional analysis of large data sets. Generally
+            this does not involve extrapolation beyond the probability plotting positions of the
+            largest events, and any expected probability adjustment would thus be relatively minor
+            for the rainfall frequency distribution. However, there is usually significant
+            extrapolation of the rainfall-runoff model. In such cases, parameter uncertainty in
+            rainfall-runoff model parameters may lead to a significant expected probability
+            adjustment. At present, there are no accepted methods for making this adjustment.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">PMP Flood</emphasis> – adjustment for expected probability
+            may be appropriate in principle. However, current methods for estimation of the AEP of
+            the PMP involve large uncertainties and are not sufficiently well developed to
+            meaningfully apply expected probability.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Extreme
+              <?oxy_insert_start author="retallick" timestamp="20160606T184631+1000"?><?oxy_comment_start author="retallick" timestamp="20160606T184700+1000" comment="rory- should this dot point go above PMP"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T184630+1000" content="f"?>loods<?oxy_comment_end?></emphasis>
+            – these are derived by methods of interpolation from other estimates for which an
+            adjustment may have been made. Therefore separate adjustment is not required.</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section xml:id="b8_s_48x5y">
+      <title>Applications Requiring Special Considerations</title>
+      <para>The recommendations in this section apply only to the direct estimation of floods for
+        the most common design applications without the consideration of other complicating factors.
+        However, there may be some cases where some other set of circumstances may be critical for
+        design. One example is dams with very large storages where it is necessary to take explicit
+        account of initial storage level or rainfall sequences over very long durations. Another is
+        the need to assess the likely rate of lake level rise to assist planning for emergency
+        response purposes. The assessment of consequences on communities downstream of a dam may
+        require consideration of concurrent floods in adjacent catchments. Also, a series of dams
+        along a given stream requires special consideration, as failure of an upstream dam could
+        impose more severe conditions on a downstream dam than its normal design flood. It is the
+        responsibility of the
+        <?oxy_delete author="retallick" timestamp="20160606T185908+1000" content="designer "?><?oxy_insert_start author="retallick" timestamp="20160606T185908+1000"?>practitioner
+        <?oxy_insert_end?>to consider all circumstances that are critical for design. A number of
+        issues related to these and other special design considerations are discussed in <xref
+          linkend="b8_ch7"/>.</para>
+    </section>
+  </section>
+  <section xml:id="b8_s_e0h7b">
+    <title>Flood Data Based Estimates</title>
+    <section xml:id="b8_s_qy5nn">
+      <title>General</title>
+      <para>The recommended methods for frequency analysis of Australian flood data are outlined in
+          <xref linkend="b3_ch2"/>. When selecting suitable data and methods for flood frequency
+        analyses in the context of this Book, it should be kept in mind that the specific interest
+        is on the upper tail of flood frequency distributions. This requires careful scrutiny of the
+        accuracy of the largest flood observations in relation to possible data problems, in
+        particular the accuracy of rating curves in the extrapolated range. Analysis of annual flood
+        series would generally be more appropriate than partial series and, where available, data on
+        large historical floods should be incorporated in the analysis. Similarly, the value of
+        limited flood data at the site of interest may be enhanced by combining the results of
+        at-site<?oxy_insert_start author="retallick" timestamp="20160606T190351+1000"?> Flood<?oxy_insert_end?>
+        <?oxy_insert_start author="retallick" timestamp="20160606T190355+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190355+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160606T190359+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190358+1000" content="a"?>nalysis
+        and regional flood frequency
+        <?oxy_comment_start author="retallick" timestamp="20160606T190449+1000" comment="should this be estimation rather than analysis given p5 is regional flood frequency estimation"?>analysis<?oxy_comment_end?>,
+        using data from a number of sites within a homogeneous region. The special case of
+        incorporating paleoflood data in the analysis is discussed briefly in <xref
+          linkend="b8_s_aaq3x"/>.</para>
+      <para>In principle, it is also possible to derive design flood estimates for a site downstream
+        of a reservoir directly from
+        <?oxy_insert_start author="retallick" timestamp="20160606T190503+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190502+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160606T190506+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190505+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160606T190509+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190508+1000" content="a"?>nalysis
+        of flood data available at that site. However, for reservoirs with large storage capacity
+        compared to typical flood volumes, and with significant inter-event variability of reservoir
+        flood storage, a much longer data series is required to adequately sample the combined
+        effects of inflow and storage content variability. In these cases, the scope for
+        extrapolation of directly determined flood frequency curves to the range
+        of<?oxy_delete author="retallick" timestamp="20160606T190604+1000" content=" Large"?><?oxy_insert_start author="retallick" timestamp="20160606T190604+1000"?>
+        Rare<?oxy_insert_end?> to
+        <?oxy_insert_start author="retallick" timestamp="20160606T190612+1000"?>Very
+        <?oxy_insert_end?>Rare events is severely limited. <xref linkend="b8_s_q68kr"/> gives
+        further guidance on the derivation of reservoir outflow frequency curves.</para>
+    </section>
+    <section xml:id="b8_s_0zdby">
+      <title>Applications of Results of Flood Frequency Analysis</title>
+      <para>There are four different cases of how flood estimates based directly on
+        <?oxy_delete author="retallick" timestamp="20160606T190629+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160606T190630+1000"?>F<?oxy_insert_end?>lood
+        <?oxy_delete author="retallick" timestamp="20160606T190632+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160606T190633+1000"?>F<?oxy_insert_end?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160606T190635+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190635+1000" content="a"?>nalysis
+        can contribute to the estimation of Rare to Extreme design floods:</para>
+      <orderedlist numeration="lowerroman">
+        <listitem>
+          <para><emphasis role="italic">as direct basis for estimating Rare floods for final design
+              applications:</emphasis> where the range of AEPs is limited to 1 in 100 (perhaps 1 in
+            200 AEP for analysis of at-site and regional data);</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">as direct basis for estimating Rare to Very Rare floods for
+              preliminary design or performance checks:</emphasis> where the lowest AEP of interest
+            is around 1 in 200 (for analysis of at-site flood data only) or perhaps 1 in 500 (for
+            analysis of at-site and regional flood data);</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">as a basis for determining the lower end of a complete flood
+              frequency curve:</emphasis> where an estimate of the PMP Flood is available but no
+            rainfall-based estimates of Rare to Very Rare floods;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">as basis for independent checking of rainfall-based design
+              flood estimates and possible adjustment of model parameters:</emphasis> where
+            rainfall-based design floods are to be determined for the full range of design floods,
+            from Rare to Extreme.</para>
+        </listitem>
+      </orderedlist>
+      <para>Cases (i) and (ii) only involve extension of the flood frequency curve to the credible
+        limit of extrapolation, but case (iii) requires the estimation of the PMP Flood and the
+        application of an interpolation procedure for intermediate events (<xref
+          linkend="b8_s_3o5gi"/>). Case (iv) requires detailed consideration of how the flood
+        estimates from different sources can best be reconciled (<xref linkend="b8_s_20a81"
+        />).</para>
+    </section>
+    <section xml:id="b8_s_aaq3x">
+      <title>Incorporation of Paleohydrological Estimates</title>
+      <para>Paleohydrological estimates of floods are based on the study of the geomorphic and
+        stratigraphic record of past floods, as well as evidence of past floods and streamflow
+        derived from historical, archeological, dendrochronologic, or other sources. The advantage
+        of paleohydrologic data <citation>b8_c_r73</citation> is that it is often possible to
+        develop records that are 10 to 100 times longer than conventional or historical records from
+        other data sources. This information thus has the potential to provide estimates of Very
+        Rare flood peaks that are independent of rainfall-based procedures. Such information can
+        provide estimates of design floods directly, or else can be used to help select probability<?oxy_insert_start author="retallick" timestamp="20160606T190905+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T190904+1000" content="-"?>neutral
+        design inputs for rainfall-based procedures (<xref linkend="b8_s_ghmj4"/>).</para>
+      <para>Overall, it is recognised that paleohydrological techniques have received little
+        attention in Australia to date, but their potential for providing useful information on Very
+        Rare floods has been demonstrated in other countries (most notably the Western United
+        States). In view of the potential benefits, it is recommended that the use of paleoflood
+        data should be considered where expenditure of the additional resources can be justified.
+        Further information on the incorporation of paleoflood data in flood frequency analysis is
+        provided in <xref linkend="b3_ch2_s3"/>.</para>
+    </section>
+    <section xml:id="b8_s_laqj1">
+      <title>Preliminary Estimate of Rare to Extreme Events</title>
+      <para>There are some design situations where it is desirable to derive approximate design
+        flood estimates by applying a “quick” method. Examples of situations where preliminary
+        estimates are desirable include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>flood estimates for preliminary assessment of spillway adequacy of existing
+            dams;</para>
+        </listitem>
+        <listitem>
+          <para>determination of priorities for the undertaking of detailed studies;</para>
+        </listitem>
+        <listitem>
+          <para>estimation of concurrent floods of minor importance for the analysis of incremental
+            consequences arising from dam failure;</para>
+        </listitem>
+        <listitem>
+          <para>preliminary evaluation of different dam sites for planning studies; and,</para>
+        </listitem>
+        <listitem>
+          <para>determination of hydrologic loads in a portfolio risk analysis of a group of
+            storages.</para>
+        </listitem>
+      </itemizedlist>
+      <para>The overall requirement for these types of analyses is that estimates can be derived
+        quickly, and that given the large uncertainty the flood estimates should be biased towards
+        conservatively high values.</para>
+      <para>Preliminary estimates should not be used for final design purposes, nor should the
+        results be relied upon for making decisions about long term levels of acceptable risk.
+        Practitioners are encouraged to use any information and methods that they consider
+        appropriate, and the following recommendations are provided for general guidance
+        only.</para>
+      <para>Generally two types of preliminary design estimates are required:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="italic">Peak
+            discharge</emphasis><?oxy_delete author="retallick" timestamp="20160606T191112+1000" content=" "?>:
+            estimates of peak discharge are directly suitable for the preliminary design of bridge
+            waterways and spillways for those storages where it can be conservatively assumed that
+            only minor attenuation of the inflow hydrograph occurs;</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="italic">Flood
+            hydrograph</emphasis><?oxy_delete author="retallick" timestamp="20160606T191115+1000" content=" "?>:
+            estimates of the hydrograph are required where it is necessary to obtain an estimate of
+            flood volume as well as peak discharge, for example the sizing of detention basins or
+            the assessment of spillway adequacy for storages which appreciably attenuate the inflow
+            hydrograph.</para>
+        </listitem>
+      </itemizedlist>
+      <section xml:id="b8_s_9wuy4">
+        <title>Preliminary Estimates of Peak Discharge</title>
+        <para>One possible approach to deriving a frequency curve of peak discharges is to derive
+          preliminary estimates of Rare events from
+          <?oxy_delete author="retallick" timestamp="20160606T210053+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160606T210038+1000"?>Fl<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210049+1000" content="l"?>ood
+          <?oxy_insert_start author="retallick" timestamp="20160606T210041+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210040+1000" content="f"?>requency
+          <?oxy_insert_start author="retallick" timestamp="20160606T210043+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210043+1000" content="a"?>nalysis
+          and regional methods (<xref linkend="b3_ch2"/> and <xref linkend="b3_ch3"/>), and for the
+          PMP Flood. Preliminary estimates of the PMP Flood can be conservatively approximated by
+          estimates of the PMF. Regional prediction equations for the PMF are available for some
+          regions (e.g<?oxy_insert_start author="retallick" timestamp="20160606T210142+1000"?>.<?oxy_insert_end?>
+          <citation>b8_c_r48,b8_c_r56,b8_c_r37,b8_c_88</citation>), though envelope curves for world
+          floods may also provide useful information <citation>b8_c_r17</citation>. The preliminary
+          estimates of the PMP Flood are plotted at the relevant AEP of PMP for the catchment using
+          the recommendations provided in <xref linkend="b8_s_bb68z"/>. These flood estimates can
+          then be used to construct a frequency curve based on a log-Normal approximation,
+          i.e<?oxy_insert_start author="retallick" timestamp="20160606T210243+1000"?>.<?oxy_insert_end?>
+          by fitting a straight line through the flood peaks in the logarithmic domain and
+          probability as a standardised normal variate. Previous guidance
+            <citation>b8_c_r49</citation> recommended use of shape factors to define intermediate
+          quantiles, but use of a simple log-Normal relationship should be sufficient as long as due
+          regard is given to the large uncertainties involved.</para>
+      </section>
+      <section xml:id="b8_s_gi5wf">
+        <title>Preliminary Estimates of Design Hydrographs</title>
+        <para>Estimates of the complete design hydrograph can also be obtained in a variety of ways.
+          Such estimates generally require more time and effort in application than estimates of
+          peak discharge, particularly as the estimated inflow hydrographs often need to be routed
+          through a structure to assess the degree of attenuation.</para>
+        <para>Estimates of the volume of the hydrographs can easily be determined from estimates of
+          design rainfalls and losses. The volume of the hydrograph can simply be determined as the
+          average depth of rainfall excess over the catchment multiplied by the catchment area.
+          Appropriate hydrograph shapes can be derived by scaling hydrographs obtained from either
+          detailed studies on similar catchments or from suitable at-site records, though
+          hydrographs obtained from rainfall-based models (using regional parameters) can be scaled
+          to suit the preliminary peaks derived
+          <?oxy_delete author="retallick" timestamp="20160606T210357+1000" content="as described above"?><?oxy_insert_start author="retallick" timestamp="20160606T210357+1000"?>in
+            <?oxy_insert_end?><xref xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b8_s_9wuy4"
+          />.</para>
+      </section>
+    </section>
+  </section>
+  <section xml:id="b8_s_ghmj4">
+    <title>Rainfall Based Estimates</title>
+    <section xml:id="b8_s_ce00a">
+      <title>General</title>
+      <para>General guidance on the estimation of design flood hydrographs using rainfall-based
+        procedures is provided in <xref linkend="b4_ch2"/> and <xref linkend="b4_ch3"/>. The
+        following sub-sections provide guidance of specific relevance to the estimation of Very Rare
+        to Extreme design floods, and should be read in conjunction with the guidance provided in
+          <xref linkend="book4"/>.</para>
+    </section>
+    <section xml:id="b8_s_of1ah">
+      <title>Surface Runoff Hydrographs</title>
+      <para>The key input to the procedures is the appropriate design rainfall information from
+          <xref linkend="b8_ch3"/>. Rainfall excess must be estimated from the design rainfalls
+        after due allowance is given to catchment losses (<xref linkend="b8_ch4"/>). A
+        rainfall-runoff model must then be used to convert the rainfall excess into the design
+        hydrograph of direct runoff (<xref linkend="b8_ch5"/>).</para>
+      <para>Where suitable rainfall and runoff data are available, the model selected should be
+        calibrated using observed floods on the catchment of interest and, where appropriate, the
+        parameter values should be adjusted to help reconcile differences between design values
+        derived from
+        <?oxy_insert_start author="retallick" timestamp="20160606T210602+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210600+1000" content="f"?>lood
+        <?oxy_delete author="retallick" timestamp="20160606T210604+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160606T210605+1000"?>F<?oxy_insert_end?>requency
+        <?oxy_delete author="retallick" timestamp="20160606T210607+1000" content="a"?><?oxy_insert_start author="retallick" timestamp="20160606T210607+1000"?>A<?oxy_insert_end?>nalysis
+        and rainfall-based methods (<xref linkend="b8_s_20a81"/>). In other cases, design values for
+        the model parameters must be estimated from calibration on adjacent gauged catchments,
+        regional relationships, or other relevant information. Where a concentrated
+        storage<?oxy_insert_start author="retallick" timestamp="20160606T210650+1000"?>,<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210650+1000" content="&lt;emphasis role=&quot;italic&quot;&gt;,&lt;/emphasis&gt;"?>
+        such as a reservoir or lake, can have a significant impact on the catchment response to
+        rainfall, allowance must be made for its effect (<xref linkend="b8_s_e7p2b"/>). Design
+        hydrographs usually need to be estimated for a range of design rainfall durations and AEPs
+        in order to derive a complete flood frequency curve, and this is discussed in <xref
+          linkend="b8_s_3o5gi"/>.</para>
+      <para>The rainfall-based procedure described above provides estimates of design floods that
+        are comprised solely of direct runoff,
+        i.e<?oxy_insert_start author="retallick" timestamp="20160606T210723+1000"?>.<?oxy_insert_end?>
+        that portion of the hydrograph that is derived from event-based rainfall excess. To derive
+        design floods that reflect the total volume of the hydrographs, it is necessary to add
+        baseflow<?oxy_insert_start author="retallick" timestamp="20160606T210737+1000"?>
+          (<?oxy_insert_end?><xref linkend="b8_s_fzd4a"
+        /><?oxy_insert_start author="retallick" timestamp="20160606T210737+1000"?>)<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T210732+1000" content=", as discussed below"?>.</para>
+    </section>
+    <section xml:id="b8_s_fzd4a">
+      <title>Incorporation of Baseflow</title>
+      <para>The hydrograph models generally only give the direct storm runoff, and some baseflow
+        must be added to obtain the total hydrograph. While the proportion of baseflow is generally
+        small compared with direct runoff, especially for Very Rare to Extreme floods, it may be of
+        significance when simulating long duration events in volume-dependent problems
+        (e.g<?oxy_insert_start author="retallick" timestamp="20160614T171436+1000"?>.<?oxy_insert_end?>
+        dam outflows).</para>
+      <para>Baseflow estimates for Rare events should be based on procedures described in <xref
+          linkend="b5_ch4"/>. Where there is clear evidence that initial baseflow increases with
+        flood magnitude a constant baseflow 20% to 50% greater than the maximum value estimated in
+        observed floods may be appropriate for Extreme events. If the difference between these two
+        baseflow values is of minor importance then a representative, fixed value could be used for
+        all intermediate AEPs.
+        However<?oxy_insert_start author="retallick" timestamp="20160614T171516+1000"?>,<?oxy_insert_end?>
+        if deemed appropriate, the magnitude of the baseflow could be varied linearly on a plot of
+        baseflow versus log(AEP) between the value adopted for the 1 in 100 AEP event and that
+        adopted for the flood resulting from the PMP (alternatively <xref linkend="b8_e_4dyk0"/>
+        could be used).</para>
+    </section>
+    <section xml:id="b8_s_zdb5x">
+      <title>Simulation Framework</title>
+      <para>As discussed in <xref linkend="b1_ch3_s_ccenm"/>, event-based models can be applied in a
+        deterministic fashion (“simple event” simulation), where key inputs are fixed at
+        representative values that minimise the probability bias in the transformation of rainfall
+        into runoff. Alternatively, stochastic techniques can be used to explicitly resolve the
+        joint probabilities of key hydrologic interactions; ensemble techniques provide simple (and
+        approximate) means of minimising the bias associated with a single hydrologic variable,
+        whereas Monte Carlo techniques represent a more rigorous solution that can be expanded to
+        consider interactions from a range of natural and anthropogenic factors.</para>
+      <para>There seems little justification for use of <emphasis role="italic">simple
+          event</emphasis> approaches for the estimation of Very Rare to Extreme floods as the
+        dominant source of natural variability that influences flood magnitude for this class of
+        events (other than rainfall depth) is typically the temporal pattern of
+        <?oxy_comment_start author="retallick" timestamp="20160614T172028+1000" comment="rory- is this word correct?"?>incident
+        <?oxy_comment_end?>rainfall. The <emphasis role="italic">ensemble event</emphasis> method
+          (<xref linkend="b3_ch3_s_ynzmg"/>) represents a modest increase in computational
+        requirements, whereby a representative sample of temporal patterns is used to provide a
+        centrally tended estimate (either the arithmetic mean or the median) of the peak flow
+        associated with the AEP of the input rainfall. A representative hydrograph from the ensemble
+        can be scaled to match the derived peak for design purposes.</para>
+      <para><emphasis role="italic">Monte Carlo event</emphasis> approaches provide the additional
+        attraction that losses can be sampled (where designs are sensitive to long-duration events),
+        along with other factors which may have a significant influence on the design outcome (such
+        as reservoir drawdown, or spatial patterns of rainfall).</para>
+      <para>The general issues involved in the selection of the simulation framework are discussed
+        in <xref linkend="book4"/>, though it should be noted that the estimation of extreme events
+        can involve more significant degrees of non-linearity than present in the estimation of more
+        frequent floods. For example, use of an ensemble event method to assess the influence of
+        initial reservoir level on outflow floods is likely to provide highly biased estimates,
+        which is avoided if a Monte Carlo scheme based on the Total Probability Theorem is
+        <?oxy_comment_start author="retallick" timestamp="20160614T172604+1000" comment="or similar?"?>used<?oxy_comment_end?>
+          (<xref linkend="book4"/>).</para>
+    </section>
+    <section xml:id="b8_s_3o5gi">
+      <title>Derivation of Complete Design Flood Frequency Curve</title>
+      <para>The shape of the complete flood frequency curve in the Rare to Extreme event is largely
+        determined by the shape of the design rainfall frequency curve described in <xref
+          linkend="b8_ch3"/>. Design rainfall inputs for specified AEPs are then converted to flood
+        outputs in a probability<?oxy_insert_start author="retallick" timestamp="20160614T180630+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T180629+1000" content="-"?>neutral
+        fashion,
+        <?oxy_comment_start author="retallick" timestamp="20160614T181031+1000" comment="need a specific reference"?>as
+        discussed above<?oxy_comment_end?>. For each AEP, flood outputs for a range of different
+        durations have to be determined, and the one that gives the highest peak discharge
+        (corresponding to the critical duration) is generally adopted. Minor adjustment of design
+        inputs or smoothing of derived design floods for different critical durations may be
+        required to obtain a smooth flood frequency curve. It is expected that estimates of Rare to
+        Very Rare floods represent the “best estimate” obtained from multiple methods, as described
+        in
+        the<?oxy_comment_start author="retallick" timestamp="20160614T181137+1000" comment="need a specific section"?>
+        preceding section<?oxy_comment_end?>.</para>
+      <para>While the focus of the guidance in this Book is on Very Rare to Extreme flood events, it
+        is important to check that the models yield estimates that are consistent with available
+        evidence. Estimates of Rare floods provide the “anchor point” for derivation of more extreme
+        events, and it is advisable to select a best estimate by weighting the estimates obtained
+        from different methods by their uncertainty. In practice, however, the information required
+        to do this is limited and it is recommended that where possible rainfall-based estimates are
+        reconciled with independent estimates from
+        <?oxy_insert_start author="retallick" timestamp="20160614T181219+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181219+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160614T181222+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181221+1000" content="f"?>requency
+        <?oxy_delete author="retallick" timestamp="20160614T181224+1000" content="a"?><?oxy_insert_start author="retallick" timestamp="20160614T181224+1000"?>A<?oxy_insert_end?>nalysis
+        or regional flood
+        m<?oxy_delete author="retallick" timestamp="20160614T181416+1000" content="odels "?><?oxy_insert_start author="retallick" timestamp="20160614T181416+1000"?>ethod
+        <?oxy_insert_end?>estimates (<xref linkend="b3_ch2"/>
+        <?oxy_insert_start author="retallick" timestamp="20160614T181425+1000"?>and<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181424+1000" content="&amp;amp;"?>
+        <xref linkend="b3_ch3"/>).</para>
+      <para>An example of such reconciliation is illustrated in <xref linkend="b8_f_sw31s"/>. In
+        this example the independent estimates are obtained from
+        <?oxy_insert_start author="retallick" timestamp="20160614T181439+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181439+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160614T181442+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181441+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160614T181445+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181444+1000" content="a"?>nalysis
+        of observed annual maxima; the initial rainfall-based estimates were obtained from
+        calibration of model parameters to historical floods (dashed <?oxy_delete author="retallick" timestamp="20160614T181556+1000" content="red"?><?oxy_insert_start author="retallick" timestamp="20160614T181556+1000"?>blue<?oxy_insert_end?>
+        <?oxy_comment_start author="retallick" timestamp="20160614T181653+1000" comment="changed to reflect the colours on the redrawn figure"?>line<?oxy_comment_end?>,
+          <xref linkend="b8_f_sw31s"/>), and the loss parameters were then adjusted within their
+        expected range to better align with the results obtained from
+        <?oxy_insert_start author="retallick" timestamp="20160614T181458+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181457+1000" content="f"?>lood
+        <?oxy_insert_start author="retallick" timestamp="20160614T181501+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181500+1000" content="f"?>requency
+        <?oxy_insert_start author="retallick" timestamp="20160614T181504+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181503+1000" content="a"?>nalysis
+        (solid
+        <?oxy_delete author="retallick" timestamp="20160614T181604+1000" content="red"?><?oxy_insert_start author="retallick" timestamp="20160614T181604+1000"?>blue<?oxy_insert_end?>
+        line). As discussed in <xref linkend="b8_s_20a81"/>, reconciliation is best achieved by
+        adjustment of the loss parameters within reasonable limits where routing parameters are
+        obtained from fitting to historical floods. Ideally, the loss parameters should be
+        reconciled jointly with quantiles based on flood peaks as well as flood volumes, where the
+        duration over which flood volumes are calculated correspond to the critical duration of
+        interest
+        (e.g<?oxy_insert_start author="retallick" timestamp="20160606T182152+1000"?>.<?oxy_insert_end?>
+        the duration of a storm that yields maximum levels in a storage). The objective of such
+        reconciliation is to adjust loss parameters within reasonable bounds to achieve a result
+        that is reasonably consistent with both flood peak and flood volume quantiles, allowing for
+        uncertainty in these estimates and the final best estimates based on consideration of both
+        approaches should reflect the relative weight given to each approach for the range of AEPs
+        of interest.</para>
+      <para>In reconciling differences in flood estimates from rainfall–based and flood frequency
+        procedures, the assumptions behind each procedure should be carefully examined. For example
+        with rainfall-based procedures, there is very little known about the manner in which
+        non-linearity changes with flood magnitude, and the differences between design flood
+        estimates may easily be explained by different assumptions regarding non-linearity.
+        Similarly, certain assumptions will be inherent in the available period of flood record and
+        quality of the rating curve. Ideally, the uncertainties should be explicitly evaluated to
+        determine confidence limits, but in practice, sensitivity analysis of design
+        inputs/parameters within expected limits will need to suffice.</para>
+      <figure xml:id="b8_f_sw31s">
+        <title>Illustration of
+          <?oxy_insert_start author="retallick" timestamp="20160614T181836+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181836+1000" content="d"?>erived
+          <?oxy_insert_start author="retallick" timestamp="20160614T181839+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181838+1000" content="f"?>requency
+          <?oxy_insert_start author="retallick" timestamp="20160614T181841+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181841+1000" content="c"?>urve
+          <?oxy_insert_start author="retallick" timestamp="20160614T181843+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181843+1000" content="b"?>ased
+          on
+          <?oxy_insert_start author="retallick" timestamp="20160614T181846+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181845+1000" content="r"?>econciliation
+          with
+          <?oxy_delete author="retallick" timestamp="20160614T181848+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160614T181848+1000"?>F<?oxy_insert_end?>lood
+          <?oxy_insert_start author="retallick" timestamp="20160614T181850+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181850+1000" content="f"?>requency
+          <?oxy_insert_start author="retallick" timestamp="20160614T181853+1000"?>Q<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T181852+1000" content="q"?>uantiles<?oxy_delete author="retallick" timestamp="20160614T181857+1000" content="."?></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/8006.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+  </section>
+  <section xml:id="b8_s_gbk9t">
+    <title>Estimation of the Probable Maximum Flood</title>
+    <section xml:id="b8_s_6e5at">
+      <title>Design Context</title>
+      <para>The Probable Maximum Flood (PMF) is a hypothetical flood estimate relevant to a specific
+        catchment whose magnitude is such that there is negligible chance of
+        <?oxy_insert_start author="retallick" timestamp="20160614T181925+1000"?>it
+        <?oxy_insert_end?>being exceeded. It represents a notional upper limit of flood magnitude
+        and no attempt is made to assign a probability of exceedance to such an event. The concept
+        of the PMF has been an important element in design flood standards for dams in the United
+        States and Australia over the past 60 to 70 years
+          <citation>b8_c_r44,b8_c_r6,b8_c_r1</citation>. It is commonly used in many other countries
+          <citation>b8_c_r90</citation>, though there are some countries, such as Russia, with
+        little experience of the method and where preference is given to probabilistic methods
+          <citation>b8_c_r86</citation>.</para>
+      <para>The PMF is also used to define the extent of flood-prone land
+          <citation>b8_c_89</citation>. The extent, nature and potential consequences of flooding
+        associated with a range of events up to and including the PMF event is considered in some
+        floodplain management studies. The PMF causes the largest scale of flood emergency and is
+        also therefore often used for emergency management planning
+        <citation>b8_c_89</citation>.</para>
+      <para><citation>b8_c_r61+1</citation> defined the PMF as the limiting value of flood that
+        could <emphasis role="italic">reasonably</emphasis> be expected to occur. Superimposing
+        risks of very low probabilities was not considered reasonable, but it was considered prudent
+        to incorporate some degree of conservatism. While it is possible to estimate an upper
+        limiting value of flood magnitude, the estimation of its AEP is subject to even greater
+        uncertainty than that of the PMP. Conservatively estimated (reasonably possible) values of
+        the factors involved in the transformation of the PMP to the PMF introduce a shift in
+        probability but, because the phrase “reasonably possible” is a qualitative description of
+        probability, the AEP of the resulting flood varies depending on the degree of conservatism
+        adopted. In practice, the magnitude of the PMF will be greater than the magnitude of the
+        flood derived from the PMP using a transformation based on probability<?oxy_insert_start author="retallick" timestamp="20160614T182131+1000"?>
+        <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182130+1000" content="-"?>neutral
+        objectives, but its AEP will be smaller.</para>
+      <para>Concerns around the difficulties of estimating the PMF in a consistent manner have been
+        recognised for a long
+        <?oxy_delete author="retallick" timestamp="20160614T182209+1000" content="while "?><?oxy_insert_start author="retallick" timestamp="20160614T182209+1000"?>time
+        <?oxy_insert_end?>(eg, <citation>b8_c_r91,b8_c_r3,b8_c_r92</citation>). While the notion of
+        a “probable maximum” flood standard appears a simple enough concept, in practice its
+        estimation is confounded by a number of key problems <citation>b8_c_r51</citation>,
+        namely:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The lack of established criteria to determine the “reasonableness” with which to
+            combine the various flood producing factors;</para>
+        </listitem>
+        <listitem>
+          <para>The level of subjectivity inherent in assigning limiting maxima;</para>
+        </listitem>
+        <listitem>
+          <para>Limited understanding of physical factors that constrain extrapolation of flood<?oxy_insert_start author="retallick" timestamp="20160614T182242+1000"?>
+            <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182241+1000" content="-"?>producing
+            processes and their representation in models;</para>
+        </listitem>
+        <listitem>
+          <para>Differential availability of relevant design information across the country;
+            and,</para>
+        </listitem>
+        <listitem>
+          <para>Poor selection of model structure and calibration of model parameters.</para>
+        </listitem>
+      </itemizedlist>
+      <para>Accordingly, the intention of the recommendations
+        here<?oxy_insert_start author="retallick" timestamp="20160614T182301+1000"?>in<?oxy_insert_end?>
+        is to retain the concept that the PMF represents the limiting value of flood that could
+        reasonably be expected to occur, but to provide additional considerations that reduce the
+        scope for inconsistency.</para>
+    </section>
+    <section xml:id="b8_s_9ywyy">
+      <title>General Guidance</title>
+      <para>In the derivation of the PMF, the probability<?oxy_delete author="retallick" timestamp="20160614T182318+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160614T182318+1000"?>
+        <?oxy_insert_end?>neutral objective for selection of design inputs is explicitly rejected in
+        favour of adopting conservatively high estimates. With regard to losses, the general
+        recommendations provided in <xref linkend="b8_s_zl6ib"/> should be adopted, i.e. losses
+        should be equal to or possibly a little less than the minimum value in large floods observed
+        on the catchment. In all cases, losses are likely to be low; in many regions of Australia a
+        burst initial loss value of zero and a continuing loss rate of 1 mm/hr will be appropriate.
+        If pre-burst temporal patterns are used to represent complete storms, then it would be
+        expected that the storm initial losses would be greater than zero, but at the lower end of
+        the range of losses adopted for estimation of the PMP Flood.</para>
+      <para>The temporal patterns used to derive the PMF should be selected from an ensemble of
+        patterns appropriate for use with the Generalised PMP (<xref linkend="b8_s_4n0lw"/>).
+        Rearrangement of rainfall intensities within the patterns to give the highest possible flood
+        peak may yield rainfall patterns with implausible serial correlation structure and is at
+        variance with the objective of deriving a limiting value of flood that could reasonably
+        occur. An estimate of a reasonable upper limiting value of floods may be derived by using
+        the temporal (or spatially varying
+        temporal<?oxy_insert_start author="retallick" timestamp="20160614T182606+1000"?>
+        (space-time<?oxy_insert_end?>) pattern from the available ensemble that yields the maximum
+        flood characteristic of interest. It should be recognised that temporal and space-time
+        patterns of rainfall based on historical events (<xref linkend="b2_ch4"/>) are usually based
+        on a limited number of pluviometers; when scaled to PMP storms over large catchments such
+        patterns may yield embedded bursts of rainfall that are quite unrealistic. Accordingly, the
+        characteristics of the PMF derived using a single temporal (or space-time) pattern should be
+        checked against the results obtained from other patterns in the available ensemble. If the
+        difference between the maximum adopted pattern and other results is anomalously large, then
+        it may be appropriate to adopt a less severe pattern so as not to superimpose inputs of very
+        low probabilities.</para>
+      <para>The hydrograph models used to transform the PMP to the PMF should follow the general
+        recommendations provided in <xref linkend="b8_s_zvvef"/> and <xref linkend="b8_s_cd813"/>.
+        Parameter values should be selected in accordance with the recommendations provided in <xref
+          linkend="b8_s_tbwiz"/>. The selection of other design inputs, such as initial reservoir
+        level or snowpack depth, should be representative of the more extreme conditions that could
+        reasonably be expected to occur.</para>
+    </section>
+    <section xml:id="b8_s_r5m2j">
+      <title>Assessment of Reasonableness</title>
+      <para>The derivation of a PMF in floodplain management studies is
+        <?oxy_delete author="retallick" timestamp="20160614T182724+1000" content="quite"?><?oxy_insert_start author="retallick" timestamp="20160614T182724+1000"?>relatively<?oxy_insert_end?>
+        straightforward as generally the information is only used to assess the upper bound of
+        potential inundation. In Australia, the 1 in 100 AEP flood is often used to define levels of
+        tolerable risk, and floodplain management activities are thus largely insensitive to the
+        level of conservatism used to derive the PMF.</para>
+      <para>However, PMFs are most often used in the context of assessing dam safety. The cost
+        implications of upgrading dams may well be very sensitive to the degree of conservatism
+        adopted by practitioners when assessing the “reasonableness” of assumptions used to derive
+        the PMF. For example, as illustrated in <xref linkend="b8_f_xy0k6"/>a (dashed curve), the
+        costs of providing additional flood capacity may increase monotonically with flood
+        magnitude; under such a scenario there is no obvious point where the upgrade costs increase
+        disproportionally with the degree of conservatism adopted. However, if there is a step
+        function involved in the relationship between flood capacity and cost – for example if an
+        additional spillway is required because the practical limit of extending a wave wall has
+        been reached (solid curve in <xref linkend="b8_f_xy0k6"/>a) – then a small difference in
+        subjective judgement may have a significant impact on the costs and feasibility of an
+        upgrade.</para>
+      <figure xml:id="b8_f_xy0k6">
+        <title>(a) Differential
+          <?oxy_insert_start author="retallick" timestamp="20160614T182836+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182835+1000" content="i"?>mportance
+          of
+          “<?oxy_insert_start author="retallick" timestamp="20160614T182839+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182838+1000" content="r"?>easonableness”
+          in PMF
+          <?oxy_insert_start author="retallick" timestamp="20160614T182842+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182841+1000" content="a"?>ssumptions
+          on
+          <?oxy_delete author="retallick" timestamp="20160614T182844+1000" content="d"?><?oxy_insert_start author="retallick" timestamp="20160614T182845+1000"?>D<?oxy_insert_end?>am
+          <?oxy_insert_start author="retallick" timestamp="20160614T182847+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182847+1000" content="s"?>afety
+          <?oxy_insert_start author="retallick" timestamp="20160614T182850+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182849+1000" content="d"?>ecision-<?oxy_delete author="retallick" timestamp="20160614T182852+1000" content="m"?><?oxy_insert_start author="retallick" timestamp="20160614T182853+1000"?>M<?oxy_insert_end?>aking,
+          and (b)
+          <?oxy_delete author="retallick" timestamp="20160614T182855+1000" content="u"?><?oxy_insert_start author="retallick" timestamp="20160614T182858+1000"?>U<?oxy_insert_end?>se
+          of
+          <?oxy_insert_start author="retallick" timestamp="20160614T182901+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182900+1000" content="s"?>imple
+          <?oxy_insert_start author="retallick" timestamp="20160614T182903+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182903+1000" content="e"?>xtrapolation
+          to
+          <?oxy_insert_start author="retallick" timestamp="20160614T182906+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182905+1000" content="i"?>nfer
+          <?oxy_insert_start author="retallick" timestamp="20160614T182909+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182909+1000" content="d"?>egree
+          of
+          <?oxy_insert_start author="retallick" timestamp="20160614T182913+1000"?>R<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T182913+1000" content="r"?>easonableness<?oxy_delete author="retallick" timestamp="20160614T182915+1000" content="."?></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../../figures/8007.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>It is clearly undesirable that small differences in subjective assessments of
+        “reasonableness” might have a large impact on design costs. Accordingly, in some situations
+        it will be prudent to explicitly examine the impact of any subjective hydrological
+        judgement, and the final decision regarding the appropriate level of conservatism should be
+        made in consultation with the wider dam safety engineering team involved.</para>
+      <para>To this end, the following steps may be warranted when providing an estimate of the
+        PMF:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Derive the estimate of the PMP Flood under probability<?oxy_delete author="retallick" timestamp="20160614T182956+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160614T182956+1000"?>
+            <?oxy_insert_end?>neutral
+            assumptions<?oxy_delete author="retallick" timestamp="20160614T183003+1000" content="."?></para>
+        </listitem>
+        <listitem>
+          <para>Then, derive a deterministic estimate of the PMF using:<itemizedlist>
+              <listitem>
+                <para>0 mm burst initial and 1 mm/hr continuing loss rates (or higher as justified
+                  for such regions as the south west of
+                  <?oxy_delete author="retallick" timestamp="20160614T183030+1000" content="w"?><?oxy_insert_start author="retallick" timestamp="20160614T183030+1000"?>W<?oxy_insert_end?>estern
+                  Australia);</para>
+              </listitem>
+              <listitem>
+                <para>the temporal (or space-time) pattern from a sample of ten that yields the
+                  highest magnitude flow;</para>
+              </listitem>
+              <listitem>
+                <para>if the design is for a dam, then adopt an initial storage at Full Supply
+                  Level.</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+        <listitem>
+          <para>Estimate the shift in AEP associated with the difference in magnitude between the
+            PMP Flood and the PMF (by simple extrapolation as shown in <xref linkend="b8_f_xy0k6"
+            />b).</para>
+        </listitem>
+        <listitem>
+          <para>If a deterministic modelling framework is used to estimate the PMP Flood, then
+            undertake a number of simulations using inputs selected from a plausible range of values
+            to understand the catchment<?oxy_insert_start author="retallick" timestamp="20160614T183110+1000"?>
+            <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T183110+1000" content="-"?>specific
+            impacts of the PMF assumptions made.</para>
+        </listitem>
+        <listitem>
+          <para>If a Monte Carlo framework is used to estimate the PMP Flood, then also calculate
+            the proportion of samples in which the PMF is exceeded given the PMP as input. If the
+            shift in AEP (as shown in <xref linkend="b8_f_xy0k6"/>b) is greater than one order of
+            magnitude, or the conditional probability that the PMF is exceeded is less than 1%, then
+            revisit assumptions used to derive the PMF and relax as appropriate.</para>
+        </listitem>
+        <listitem>
+          <para>Finally, check the sensitivity of any decisions that are to be based on the PMF
+            estimate – if there is a marked difference in outcome within a range of estimates that
+            could be considered to be based on a “reasonable” set of assumptions, then reach
+            agreement with the wider engineering team on the appropriate degree of conservatism to
+            adopt.</para>
+        </listitem>
+      </itemizedlist>
+      <para>It is expected that the above steps will only be required in a small proportion of cases
+        in which design and or mitigation costs increase disproportionally with the degree of
+        conservatism adopted.</para>
+    </section>
+  </section>
+  <section xml:id="b8_s_21g0w">
+    <title>Treatment of Uncertainty</title>
+    <para>Uncertainties in the estimation of extreme floods have important economic and social
+      consequences, and thus recognition of the impacts of uncertainty should be incorporated into
+      advice given to management and political decision makers. If there are significant differences
+      in outcome within the range of uncertainty then the likely range of consequences should be
+      explicitly considered when developing mitigation strategies and advice. An under-estimate of
+      the flood magnitude will lead to the infrastructure being under-designed, thus potentially
+      resulting in increased flood damage costs and possible loss of life. Conversely, an
+      over-estimate of the flood magnitude will lead to extra costs from the over-design of the
+      infrastructure.</para>
+    <para>General guidance on techniques for characterising uncertainty is presented in <xref
+        linkend="book7"/>. In the context of this Book, it should be stressed that the uncertainty
+      or flood estimation error increases with increasing size of flood (or reducing AEP) and the
+      relative impacts of different sources of uncertainty also change with flood magnitude.
+      Uncertainty in the AEP of the PMP becomes increasingly important beyond the credible limit of
+      extrapolation, and so does the epistemic uncertainty associated with the increasing lack of
+      evidence to support the process descriptions of salient factors
+      (e.g<?oxy_insert_start author="retallick" timestamp="20160614T183330+1000"?>.<?oxy_insert_end?>
+      temporal and spatial characteristics of rainfall) and model structure
+      (e.g<?oxy_insert_start author="retallick" timestamp="20160614T183334+1000"?>.<?oxy_insert_end?>
+      degree of non-linearity in flood behaviour).</para>
+    <para>The estimation of Very Rare to Extreme floods is a region where “the computation of
+      hydrologic probabilities is based on arbitrary assumptions about the probabilistic behaviour
+      of hydrologic processes rather than on empirical evidence or theoretical knowledge and
+      understanding of these processes” <citation>b8_c_r31</citation>. Improving the consistency of
+      the manner in which such assumptions are applied in practice will thus minimise the potential
+      for differences in the results obtained by different hydrologists. The main strategy available
+      for reducing the impact of this form of uncertainty is to ensure that the practitioners
+      undertaking the work are appropriately qualified and supervised. In addition, prescriptive
+      procedures relating to the estimation of floods beyond the credible limit of extrapolation are
+      justifiable as without empirical evidence or scientific justification there can be little
+      rational basis for departing from a consensus approach.</para>
+  </section>
+  <xi:include href="chap_refs.xml">
+    <xi:fallback>
+      <para>No included references yet...</para>
+    </xi:fallback>
+  </xi:include>
+  
+  
+</chapter>

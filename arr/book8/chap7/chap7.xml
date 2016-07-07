@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="b8_ch7" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:m="http://www.w3.org/1998/Math/MathML">
+    <info>
+        <title>Special Design Considerations</title>
+        <xi:include href="../../common/authors/nathan_rory.xml"/>
+        <xi:include href="../../common/authors/weinmann_erwin.xml"/>
+    </info>
+    <informaltable border="1">
+        <tr>
+            <td colspan="2">Chapter Status</td>
+        </tr>
+        <tr>
+            <td>Date last updated</td>
+            <td>06/07/16 </td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Advanced draft</td>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Subject to industry feedback </td>
+        </tr>
+    </informaltable>
+    <section xml:id="b8_s_hlaxl">
+        <title>General</title>
+        <para>There are a number of special considerations that are relevant to some design
+            situations and the following sections detail some of the more common issues that may
+            need to be considered. The importance of these considerations, and hence the complexity
+            of the techniques required to adequately address the issues, is very much dependent on
+            the characteristics of the specific design problem. For example, where the storage
+            volume of a reservoir is large compared to the volume of catchment runoff, the choice of
+            initial starting levels in the reservoir is likely to have a more significant impact on
+            the outcome of the study than the selection of runoff-routing parameter values.</para>
+        <para>One design objective of general importance is the derivation of floods of specified
+            AEP. Satisfying this objective generally requires the adoption of probability<?oxy_delete author="retallick" timestamp="20160614T190407+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160614T190407+1000"?>
+            <?oxy_insert_end?>neutral inputs
+            i.e.<?oxy_delete author="retallick" timestamp="20160614T190411+1000" content=","?> the
+            selection and/or treatment of design inputs to ensure that any bias in the AEP of the
+            transformation between rainfall and runoff is minimised. The issues considered in this
+            section are generally aimed at the more rigorous treatment of the joint probabilities
+            involved in the selection of design inputs. However, as discussed in <xref
+                linkend="b8_s_2vj4c"/>, it should be recognised that the defensibility of these
+            estimates rests upon the representativeness of the selected inputs and the correct
+            treatment of correlations which may be present.</para>
+        <para>The appropriate level of complexity to be adopted is dependent upon the sensitivity of
+            the design outcome to the input. Accordingly it is not possible to provide
+            recommendations that are applicable to all design situations. The procedures recommended
+            here are relevant to many situations, but they should be regarded as providing only a
+            general guide to recommended practice. The practitioner is thus encouraged to adopt
+            different procedures if they have a sound theoretical basis.</para>
+    </section>
+    <section xml:id="b8_s_q68kr">
+        <title>Derivation of Reservoir Outflow Frequency Curves</title>
+        <section xml:id="b8_s_g6u8h">
+            <title>Importance of Reservoir Storage and Initial Drawdown</title>
+            <para>The attenuation of an inflow hydrograph as it passes through a reservoir or
+                another natural or artificial storage depends mainly on the available storage volume
+                relative to the flood volume, and to a lesser degree on the spillway capacity and
+                the degree of regulation of outflows by spillway gates or other outflow control
+                structures. More specifically, the total storage available to mitigate floods can be
+                divided into two parts: the storage above the normal full supply level (flood
+                storage) and the drawdown below full supply level at the onset of a flood (initial
+                drawdown, or air-space). The flood storage for a given inflow hydrograph is a fixed
+                system characteristic determined by the adopted spillway and freeboard
+                characteristics of the storage, but the initial drawdown or initial reservoir level
+                is a stochastic variable.</para>
+            <para>The selection of an appropriate initial reservoir level is of considerable
+                importance in determination of spillway adequacy. In particular, it is an important
+                consideration in the determination of criteria related to the flood capacity of the
+                dam, such as the Dam Crest Flood and the Imminent Failure Flood
+                    <citation>b8_c_r1</citation>. In many cases it may be appropriate to adopt a
+                full reservoir level, but if there is a reasonable chance that the reservoir may be
+                drawn down, and if the volume of drawdown is significant compared to the volume of
+                the inflow floods of interest, then it will be desirable to analyse in more detail
+                the effect on estimates of the frequencies of a particular peak outflow of the
+                variation in storage volume. Where there is a strongly seasonal variation of storage
+                volume, it may be necessary to undertake a seasonal analysis of storage impacts on
+                outflow floods.</para>
+        </section>
+        <section xml:id="b8_s_kguax">
+            <title>Approximate Methods - Representative Initial Storage Volume</title>
+            <para>For preliminary analyses it may be sufficient to adopt a mean or median storage
+                volume, or else compute the mean or median storage volume associated with, say, the
+                top 10% of inflow floods. In general, adoption of a mean or median value will not
+                provide a probability<?oxy_insert_start author="retallick" timestamp="20160614T190651+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T190650+1000" content="-"?>neutral
+                transformation as the relationship between inflow and outflow floods is highly
+                non-linear. Accordingly, for detailed design estimates, it is prudent to determine
+                the probability of the outflow hydrograph by the joint probabilities of the inflow
+                and initial storage volume, and by the deterministic relationship that governs the
+                conversion of an inflow hydrograph of given duration and magnitude into an outflow
+                hydrograph for different storage volumes.</para>
+        </section>
+        <section xml:id="b8_s_no8ga">
+            <title>Joint Probability Analysis of Inflow and Initial Storage Volume</title>
+            <section xml:id="b8_s_5zuow">
+                <title>Background</title>
+                <para><citation>b8_c_r33+1</citation> developed a method for the analysis of systems
+                    which incorporate both stochastic and deterministic components (in this context,
+                    the joint probabilities of the inflow and initial storage volume represent the
+                    stochastic component, and the relationship between the magnitudes of inflow and
+                    outflow floods represent the deterministic component). Laurenson’s method
+                    provides a rigorous means of solving the joint probabilities involved, though it
+                    is not easily automated and is not well suited to accommodating correlations
+                    that may exist between the stochastic components.</para>
+                <para>The analysis of the joint probabilities of storage
+                    <?oxy_comment_start author="retallick" timestamp="20160614T190806+1000" comment="volume?"?>contents<?oxy_comment_end?>
+                    and inflows is just one example of the more generic solution offered by Monte
+                    Carlo methods. Accordingly, if the rainfall-runoff modelling is undertaken in a
+                    Monte Carlo framework, then this is easily extended to consider reservoir
+                    outflows.</para>
+                <para>Application of either method is straightforward as long as the probabilities
+                    of all the inputs can be appropriately defined; some care is required to ensure
+                    that the distributions are representative of the design conditions of interest,
+                    though in most situations where it is worthwhile undertaking the analysis the
+                    required information can usually be derived. The guidance
+                    <?oxy_insert_start author="retallick" timestamp="20160614T190913+1000"?>in this
+                    section
+                    <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T190908+1000" content="below"?>
+                    first covers specification of the input distributions as this is common to both
+                    methods, and this is followed by a description of the different solution
+                    schemes.</para>
+            </section>
+            <section xml:id="b8_s_hlbyk">
+                <title>Representation of Input Distributions</title>
+                <para>The selection of class intervals for the approximate representation of
+                    continuous probability distributions by discrete ones represents a compromise
+                    between efficiency and accuracy of computations. A total of around 20 to 30
+                    class intervals is generally sufficient, but they need to be well distributed
+                    over the range of possible variate values to ensure accuracy in the most
+                    important part of the range. Each interval is then represented by the variate
+                    value at the mid-point of the interval and by the width of the interval on the
+                    probability scale. The total probability of all the intervals must add up to
+                    unity. It is worth considering the following issues when discretising the
+                    distributions:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para><emphasis role="italic">Discrete probability distribution of flood
+                                inflows:</emphasis> It is desirable to discretise the probability
+                            distribution of flood inflows (<xref linkend="b8_s_ghmj4"/>) so as to
+                            have most of the classes representing Rare to Extreme floods; classes do
+                            not need to cover equal probability or flow ranges. One pragmatic
+                            approach is to discretise using <emphasis role="italic">N</emphasis>
+                            intervals uniformly spaced over the standardised normal probability
+                            domain. For example for an <emphasis role="italic">N</emphasis> of 20,
+                            the probability domain for AEPs over the range 0.5 to
+                                1.0<superscript>-6</superscript> equate to standard normal variates
+                                (“<emphasis role="italic">z</emphasis> scores”) of 0.0 and 4.75,
+                            thus 20 inflows ranges can be computed for 19 intervals of width
+                                <emphasis role="italic">z</emphasis> = 0.25. Equal intervals in the
+                            standard domain equate to unequal intervals between AEPs, and are
+                            preferred as inflows are approximately log-Normally distributed, and
+                            intervals of equal probability would lead to the selection of most of
+                            the classes encompassing flows of little concern.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Probability distribution of initial storage
+                                volume.</emphasis> The analysis of a time series of storage level or
+                            storage volume is used to define the probability distribution of initial
+                            storage volume. The time series of reservoir storage volume could be
+                            derived directly from the historical record, but in most cases a
+                            synthetic time series of storage volume, derived from simulation
+                            (behaviour analysis) studies, would be more appropriate. In the latter
+                            approach the current operating rules can be applied to the historic
+                            climatic sequence, thus providing a long stationary series relevant to
+                            the system under consideration. The usual time interval for behaviour
+                            analyses is one month, which allows the within-season variation of
+                            storage volume to be taken into account in the frequency
+                            analysis.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">Dependence between flood inflows and storage
+                                <?oxy_comment_start author="retallick" timestamp="20160614T204211+1000" comment="?"?>contents<?oxy_comment_end?>.</emphasis>
+                            The historical (or synthetic) time series should be checked to see if
+                            there is a strong dependence between initial reservoir level and flood
+                            inflows. If such dependence exists, then it would be necessary to derive
+                            conditional probabilities of initial storage volume that correspond to
+                            different ranges of flood inflows. To this end, it would be necessary to
+                            divide the inflow magnitudes into a small number, say, three flow ranges
+                            (corresponding to low, average and high flows), and derive separate
+                            distributions of initial storage for each. Care needs to be taken when
+                            inferring correlations for extreme conditions based on a short period of
+                            historic (or simulated) record, and distributions based on empirical
+                            analyses may need pragmatic adjustment to ensure that they are
+                            representative of extreme conditions. Analysis of regional rainfall
+                            information for relevant critical durations within a meteorologically
+                            homogeneous region can provide information to help condition such
+                            relationships, and an example of this using standardisation to trade
+                            space for time is provided by <citation>b8_c_r65+1</citation>.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section xml:id="b8_s_ynbvb">
+                <title>Laurenson’s Analytical Solution</title>
+                <para>The analytical solution proposed by
+                    <?oxy_comment_start author="retallick" timestamp="20160614T204334+1000" comment="(1974) ?"?>Laurenson<?oxy_comment_end?>
+                    involves the convolution of the conditional probability distribution of outflows
+                    with the distribution of the conditioning event. In principle, the conditioning
+                    event may be either the reservoir inflow or the initial storage volume, but
+                    reservoir inflow is adopted in most applications. In practice the convolution is
+                    achieved by approximate numerical methods, based on discrete approximations to
+                    the continuous probability distributions of the inflows and the outflows. To
+                    this end, the total range of inflows and outflows has to be divided into a
+                    finite number of class intervals.</para>
+                <para>The conditional probability of a specified outflow event occurring, given that
+                    the conditioning event is in a specific class interval, can be determined using
+                    a deterministic relationship between inflows, outflows, and storage volume (the
+                    I-S-Q relationship). The I-S-Q relationship has to be determined for a range of
+                    peak inflows (corresponding to a range of design rainfalls for selected
+                    exceedance probabilities) and for a set of initial storage values. The process
+                    of computing the conditional probability of a specified outflow event is
+                    illustrated in <xref linkend="b8_f_17uij"/> for the case where the reservoir
+                    inflow was chosen as the conditioning event and the initial storage volume as
+                    the secondary variable. From
+                    t<?oxy_comment_start author="retallick" timestamp="20160614T204535+1000" comment="cross ref to figure"?>his
+                    figure<?oxy_comment_end?> it is seen that the conditional probability of a
+                    specified outflow event is evaluated as the width of the storage volume
+                    probability interval (P[Q<subscript>j</subscript>|I<subscript>i</subscript>])
+                    that translates an inflow in the interval
+                        I<?oxy_delete author="retallick" timestamp="20160614T204619+1000" content="i"?><?oxy_insert_start author="retallick" timestamp="20160614T204611+1000"?><subscript>i</subscript><?oxy_insert_end?>
+                    into an outflow in the interval Q<subscript>j</subscript>.</para>
+                <figure xml:id="b8_f_17uij">
+                    <title>Schematic
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204628+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204627+1000" content="i"?>llustration
+                        of the
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204630+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204630+1000" content="d"?>etermination
+                        of the
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204632+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204632+1000" content="p"?>robability
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204635+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204634+1000" content="i"?>nterval
+                        of
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204649+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204649+1000" content="s"?>torage
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204652+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204651+1000" content="v"?>olume
+                        as a
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204656+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204655+1000" content="f"?>unction
+                        of
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204659+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204658+1000" content="i"?>nflow
+                        and
+                        <?oxy_insert_start author="retallick" timestamp="20160614T204701+1000"?>O<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T204700+1000" content="o"?>utflow<?oxy_delete author="retallick" timestamp="20160614T204703+1000" content="."?></title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/8008.png"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>As different design rainfall durations result in different I-S-Q
+                    relationships, the computed value of the storage volume probability interval
+                    will also depend on the rainfall duration used. The critical rainfall duration
+                    to be used in the analysis is the one that translates into the highest outflow;
+                    this also produces the largest estimate of conditional outflow probability.
+                    Unfortunately<?oxy_insert_start author="retallick" timestamp="20160614T204811+1000"?>,<?oxy_insert_end?>
+                    the critical rainfall duration varies with reservoir drawdown, and in some cases
+                    it is necessary to compute separate I-S-Q relationships for different durations,
+                    and to derive an outflow frequency curve as the envelope of frequency curves
+                    derived for different durations.</para>
+                <para>Another complication is that the above formulation assumes that the two
+                    distributions of storage volume and inflows are independent. This may not be the
+                    case, and if such correlation is found to be significant then the calculations
+                    must be based on the appropriate conditional selection of input
+                    variables.</para>
+                <para>The evaluation of the I-S-Q relationship is the most time consuming element of
+                    the process. Many tens of individual runs are required to define the I-S-Q
+                    relationship in sufficient detail, though it is possible to automate the
+                    processing of different initial starting levels. The computation of the
+                    conditional probabilities is readily undertaken using spreadsheet software and
+                    is not resource intensive.</para>
+                <para>The derivation of the outflow frequency curve by
+                        <citation>b8_c_r33+1</citation> joint probability approach involves the
+                    calculation of a transition probability matrix. Each element in this matrix
+                    represents the conditional probability of an inflow within the given inflow
+                    interval resulting in an outflow in a specified interval. Depending on the
+                    degree of non-linearity of the spillway rating curve, outflows may be
+                    discretised into class intervals of equal magnitude, or else intervals can be
+                    selected to provide more accuracy in the region of interest (e.g. for flows just
+                    above and below the spillway capacity). The total probability of an outflow in
+                    that interval can then be obtained as the sum of the probabilities over all the
+                    inflow intervals, i.e. all the inflow and initial storage combinations that
+                    produce an outflow in the specified range. Outflow AEPs are then computed as the
+                    cumulative probability over all outflow ranges exceeding the flood magnitude of
+                    interest.</para>
+                <para>An example of the application of this approach is given in <xref
+                        linkend="b8_s_8ttus"/>.</para>
+            </section>
+            <section xml:id="b8_s_uwr7q">
+                <title>Monte Carlo Analysis</title>
+                <para>An outflow frequency curve can be derived using Monte Carlo techniques as a
+                    straightforward extension of the framework described in <xref linkend="book4"/>.
+                    The concept for this is shown in <xref linkend="b8_f_053wb"/>, where in this
+                    example the distribution of drawdown is based on a simple non-parametric
+                    relationship between drawdown and the proportion of time that it is not exceeded
+                    (solid line, lower left panel). It should be noted that it is not necessary to
+                    define the extreme tails of the drawdown distribution as the largest outflows
+                    are primarily driven by extreme rainfalls, where initial reservoir levels are
+                    most likely to be within the central range of exceedance. If the distribution of
+                    initial drawdown is assumed independent of extreme event rainfalls then it will
+                    only be necessary to sample from the one relationship; however, the dashed blue
+                    curve in the lower left panel of <xref linkend="b8_f_053wb"/> illustrates that a
+                    different drawdown distribution could be used for more extreme events, and thus
+                    different distributions can be selected conditional upon rainfall depth.</para>
+                <para>The outflow frequency curve can be derived either by direct frequency analysis
+                    of the outflow peaks, or by application of the Total Probability Theorem. The
+                    latter approach is suited to stratified sampling schemes, as would generally be
+                    required for estimation of Extreme events. A description of the different
+                    methods available to derive a frequency curve based on Monte Carlo sampling is
+                    provided in <xref linkend="book4"/>, and an example calculation for sampling
+                    from an empirical frequency curve is provided in <xref linkend="book4"/>.</para>
+                <figure xml:id="b8_f_053wb">
+                    <title>Illustration of Monte Carlo
+                        <?oxy_insert_start author="retallick" timestamp="20160614T205413+1000"?>F<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205412+1000" content="f"?>ramework
+                        to
+                        <?oxy_insert_start author="retallick" timestamp="20160614T205416+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205415+1000" content="d"?>erive
+                        <?oxy_insert_start author="retallick" timestamp="20160614T205418+1000"?>O<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205417+1000" content="o"?>utflow
+                        <?oxy_delete author="retallick" timestamp="20160614T205420+1000" content="f"?><?oxy_insert_start author="retallick" timestamp="20160614T205420+1000"?>F<?oxy_insert_end?>requency
+                        <?oxy_insert_start author="retallick" timestamp="20160614T205423+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205423+1000" content="c"?>urve<?oxy_delete author="retallick" timestamp="20160614T205425+1000" content="."?></title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="../../figures/8013.png"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </section>
+        </section>
+        <section xml:id="b8_s_enqn5">
+            <title>Consideration of Cascade of Storages</title>
+            <para>It is sometimes necessary to derive a flood frequency curve for a location
+                downstream of several dams. This situation most commonly occurs with hydropower
+                schemes, but also arises with storages used for water supply. The complexity of
+                analysis required depends on the size of the upstream storages and the degree of
+                inter-dependence in their operation. For the simplest cases it may be sufficient to
+                represent drawdowns in the smaller storages as fixed values and derive outflow
+                frequency curve in the storage most sensitive to initial conditions as described
+                <?oxy_insert_start author="retallick" timestamp="20160614T205554+1000"?>in
+                    <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205534+1000" content="above."?><xref
+                    linkend="b8_s_uwr7q"/> Where initial levels in one reservoir are correlated with
+                levels in another, then a conditional sampling approach can be adopted.</para>
+            <para>The nature of dependence in storage contents is shown by the large diamond symbols
+                in <xref linkend="b8_f_u0vng"/>, which is derived from the behaviour of two
+                reservoirs located in south-eastern Australia. Such data is difficult to normalise
+                or fit to (bivariate) probability distributions, and thus an empirical sampling
+                approach can be used. The approach to stochastically sample from such a data set can
+                be described as follows:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Identify the “primary” variable that is most important to the problem of
+                        interest, and prepare a scatter plot of the two variables with the primary
+                        variable plotted on the x-axis (as shown in <xref linkend="b8_f_u0vng"
+                        />).</para>
+                </listitem>
+                <listitem>
+                    <para>Divide the primary variable into a number of ranges such that variation of
+                        the dependent variable (plotted on the y-axis) within each range is
+                        reasonably similar; in the example shown in <xref linkend="b8_f_u0vng"/> a
+                        total of seven intervals has been adopted as being adequate. This provides
+                        samples of the secondary variable that are conditional on the value of the
+                        primary variable.</para>
+                </listitem>
+                <listitem>
+                    <para>Stochastically generate data for the primary variable using an empirical
+                        sampling approach as described in <xref linkend="b8_s_9kcec"/>.</para>
+                </listitem>
+                <listitem>
+                    <para>Derive an empirical distribution of the dependent data for each of the
+                        conditional samples identified in Step 2 above; thus, for the example shown
+                        in <xref linkend="b8_f_u0vng"/> a total of seven separate empirical
+                        distributions of upstream storage levels are prepared (these are shown as
+                        separate curves on the inset panel in <xref linkend="b8_f_u0vng"/>).</para>
+                </listitem>
+                <listitem>
+                    <para>For each generated value of the primary variable, stochastically sample
+                        from the conditional distribution corresponding to the interval that it
+                        falls within; for example, if a downstream storage level of 1500 ML was
+                        generated in Step 3 above, then the corresponding conditional distribution
+                        (E) is used.</para>
+                </listitem>
+            </orderedlist>
+            <para>The results from application of the above procedure are illustrated in <xref
+                    linkend="b8_f_u0vng"/> for 2000 stochastic samples (shown by the blue “+”
+                symbols). It is seen that the correlation structure in the observed data set is
+                preserved reasonably well by this procedure.</para>
+            <para>While the above approach can be extended to multiple storages, obviously this
+                becomes progressively more tedious to implement. At some point the dependencies are
+                better modelled using continuous simulation as the system will be largely dependent
+                on the sequences of flood volumes.</para>
+            <figure xml:id="b8_f_u0vng">
+                <title><emphasis role="bold">Illustration of
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210411+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210411+1000" content="c"?>onditional
+                        <?oxy_delete author="retallick" timestamp="20160614T210414+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160614T210415+1000"?>E<?oxy_insert_end?>mpirical
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210419+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210418+1000" content="s"?>ampling
+                        in
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210505+1000"?>W<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210504+1000" content="w"?>hich
+                        the
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210427+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210427+1000" content="s"?>torage
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210431+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210430+1000" content="v"?>olume
+                        in an
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210434+1000"?>U<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210433+1000" content="u"?>pstream
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210437+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210437+1000" content="d"?>am
+                        is
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210440+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210439+1000" content="c"?>orrelated
+                        with the
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210444+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210444+1000" content="v"?>olume
+                        in a
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210447+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210447+1000" content="d"?>ownstream
+                        <?oxy_insert_start author="retallick" timestamp="20160614T210451+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T210451+1000" content="d"?>am<?oxy_delete author="retallick" timestamp="20160614T210455+1000" content="."?></emphasis></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8009.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+    </section>
+    <section xml:id="b8_s_h9ewm">
+        <title>Concurrent Tributary Flows</title>
+        <section xml:id="b8_s_bfy73">
+            <title><?oxy_comment_start author="retallick" timestamp="20160615T175643+1000" comment="should there be a link to the joint probability chapter"?>Overview<?oxy_comment_end?></title>
+            <para>In some design situations it is desirable to determine the flow in an adjacent
+                catchment that is likely to coincide with design floods in the stream of interest.
+                The most common requirement for this is the assessment of the incremental impact of
+                dam failure, where it is desirable to identify separately the inundation due to the
+                direct consequences of dam failure and the floods generated from adjacent
+                catchments.</para>
+            <para>There are a number of methods available for the assessment of concurrent flows
+                (<?oxy_delete author="retallick" timestamp="20160615T175058+1000" content="see,"?><?oxy_insert_start author="retallick" timestamp="20160615T175058+1000"?>refer
+                to<?oxy_insert_end?> for example, <citation>b8_c_r16,b8_c_r70 </citation>). In the
+                context of risk analysis it is important to focus on those methods that yield probability<?oxy_delete author="retallick" timestamp="20160615T175110+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160615T175111+1000"?>
+                <?oxy_insert_end?>neutral estimates. In essence, the issue of concurrent flooding is
+                another joint<?oxy_insert_start author="retallick" timestamp="20160606T181946+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T181947+1000" content="-"?>probability
+                problem, and the method of <citation>b8_c_r33+1</citation> described in <xref
+                    linkend="b8_s_no8ga"/> can be applied directly to the joint occurrence of floods
+                in tributaries and adjacent catchments. With the analysis of concurrent flows, the
+                deterministic I-S-Q relationship referred to in <xref linkend="b8_s_no8ga"/> is
+                replaced by the relationship between total flows downstream of the confluence and
+                the joint occurrence of upstream flows of differing magnitudes, and the marginal
+                distribution of storage volume is replaced by the probability distribution of flows
+                in the adjacent tributary. Careful consideration needs to be given to the
+                specification of the marginal distribution of tributary inflows as the two flow
+                distributions will be correlated. Also, peak discharges are unlikely to coincide.
+                The worked example provided on this approach provided in <xref linkend="b8_s_9kcec"
+                /> is directly applicable to this situation and can be applied if desired.</para>
+            <para>Monte Carlo techniques also provide a rigorous solution to the problem. If
+                space-time patterns of rainfall are used in the modelling then an unbiased estimated
+                of the frequency distribution of tributary inflows can be obtained by application of
+                the Total Probability Theorem as described in <xref linkend="book4"/>. An example of
+                this approach is described by <citation>b8_c_r25+1</citation>. However, it may be
+                that the tributary inflows are located well downstream of the catchment being
+                modelled, and if this is the case then it may be easier to estimate concurrent flows
+                using a more explicit scheme, as described <xref linkend="b8_s_j2zbw"/> and <xref
+                    linkend="b8_s_5kz1l"/>.</para>
+        </section>
+        <section xml:id="b8_s_j2zbw">
+            <title>Stochastic Simulation</title>
+            <para>The generation of tributary flows can be simulated using a stochastic approach in
+                which the correlation structure of the inputs is explicitly preserved. A simple
+                means of generating correlated variables is described by
+                    <citation>b8_c_r64+1</citation>. The approach is based on rotational
+                transformation and the steps involved in generation of normally distributed variates
+                can be stated as follows:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Independently generate two normal random variates with a mean of zero and
+                        a standard deviation of 1: <emphasis role="italic">X</emphasis><emphasis
+                            role="italic">= N(0,1)</emphasis> and <emphasis role="italic"
+                            >Z</emphasis><emphasis role="italic">= N(0,1)</emphasis></para>
+                </listitem>
+                <listitem>
+                    <para>Set <inlineequation>
+                            <m:math display="inline">
+                                <m:mrow>
+                                    <m:mi>Y</m:mi>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:mi>ρX</m:mi>
+                                        <m:mo>+</m:mo>
+                                        <m:mrow>
+                                            <m:mi>Z</m:mi>
+                                            <m:msqrt>
+                                                <m:mrow>
+                                                  <m:mi>1</m:mi>
+                                                  <m:mo>-</m:mo>
+                                                  <m:msup>
+                                                  <m:mi>ρ</m:mi>
+                                                  <m:mi>2</m:mi>
+                                                  </m:msup>
+                                                </m:mrow>
+                                            </m:msqrt>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:math>
+                        </inlineequation></para>
+                    <para>where <emphasis role="italic">ρ </emphasis> is the required correlation
+                        between <emphasis role="italic">X</emphasis> and <emphasis role="italic"
+                            >Z</emphasis></para>
+                </listitem>
+                <listitem>
+                    <para>Return:</para>
+                    <para><emphasis role="italic"><inlineequation>
+                                <m:math display="inline">
+                                    <m:mrow>
+                                        <m:mi>x</m:mi>
+                                        <m:mo>=</m:mo>
+                                        <m:mrow>
+                                            <m:msub>
+                                                <m:mi>μ</m:mi>
+                                                <m:mi>x</m:mi>
+                                            </m:msub>
+                                            <m:mo>+</m:mo>
+                                            <m:mrow>
+                                                <m:mi>X</m:mi>
+                                                <m:msub>
+                                                  <m:mi>σ</m:mi>
+                                                  <m:mi>x</m:mi>
+                                                </m:msub>
+                                            </m:mrow>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:math>
+                            </inlineequation></emphasis></para>
+                    <para><inlineequation>
+                            <m:math display="inline">
+                                <m:mrow>
+                                    <m:mi>y</m:mi>
+                                    <m:mo>=</m:mo>
+                                    <m:mrow>
+                                        <m:msub>
+                                            <m:mi>μ</m:mi>
+                                            <m:mi>y</m:mi>
+                                        </m:msub>
+                                        <m:mo>+</m:mo>
+                                        <m:mrow>
+                                            <m:mi>X</m:mi>
+                                            <m:msub>
+                                                <m:mi>σ</m:mi>
+                                                <m:mi>y</m:mi>
+                                            </m:msub>
+                                        </m:mrow>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:math>
+                        </inlineequation></para>
+                    <para>where <inlineequation>
+                            <m:msub><m:mi>μ</m:mi><m:mi>x</m:mi></m:msub>
+                        </inlineequation> and <inlineequation>
+                            <m:msub><m:mi>μ</m:mi><m:mi>y</m:mi></m:msub>
+                        </inlineequation> are the means of the two distributions and <inlineequation>
+                            <m:msub><m:mi>σ</m:mi><m:mi>x</m:mi></m:msub>
+                        </inlineequation> and <emphasis role="italic"><inlineequation>
+                                <m:msub><m:mi>σ</m:mi><m:mi>y</m:mi></m:msub>
+                            </inlineequation></emphasis> are the required standard
+                        deviations.</para>
+                </listitem>
+            </orderedlist>
+            <para>For application to catchment rainfalls, <emphasis role="italic">X</emphasis> and
+                    <emphasis role="italic">Y</emphasis> could represent the log-transformed values
+                of rainfall maxima, in which case the above scheme would represent the generation of
+                a bivariate log-Normal distribution of rainfalls which has been found to provide a
+                satisfactory approximation over the range of AEPs of interest
+                    <citation>b8_c_r45</citation>. The stochastic rainfalls could be used in
+                conjunction with a rainfall-based method to provide concurrent flood hydrographs.
+                Estimates of suitable correlations can be obtained from the analysis of observed
+                rainfall data, or else using the generalised correlation-distance relationships
+                reported in <citation>b8_c_r49+1</citation>. Ideally, however, such correlations
+                would be determined using areal rainfall estimates based on site-specific analysis
+                of gridded data (eg <citation>b8_c_r24</citation>).</para>
+            <para>Application of the above algorithm is illustrated in <xref linkend="b8_f_y5nng"/>.
+                The input parameters to this example are <emphasis role="italic">ρ=-0.7,
+                        μ<subscript>x</subscript>=70 </emphasis>and<emphasis role="italic">
+                        σ<subscript>x</subscript>=10, </emphasis>and<emphasis role="italic">
+                        μ<subscript>y</subscript>=50 </emphasis>and<emphasis role="italic">
+                        σ<subscript>y</subscript>=10, </emphasis>and as before a total of 2000
+                correlated variates are generated. Any distribution could be used in lieu of the
+                Normal distribution, or else the variates of interest could be transformed into the
+                normal domain.</para>
+            <figure xml:id="b8_f_y5nng">
+                <title>Illustration of the
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175544+1000"?>G<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175544+1000" content="g"?>eneration
+                    of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175547+1000"?>V<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175546+1000" content="v"?>ariables
+                    with a
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175549+1000"?>C<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175549+1000" content="c"?>orrelation
+                    of 0.7
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175552+1000"?>B<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175551+1000" content="b"?>ased
+                    on
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175554+1000"?>N<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175554+1000" content="n"?>ormal
+                    <?oxy_insert_start author="retallick" timestamp="20160615T175557+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T175557+1000" content="d"?>istributions<?oxy_delete author="retallick" timestamp="20160615T175559+1000" content="."?></title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8010.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section xml:id="b8_s_5kz1l">
+            <title>An Approximate Approach</title>
+            <para>The following method provides one example of an approximate approach which may be
+                suited to those applications where the contribution of tributary flows is small
+                compared to the mainstream flows of most interest. The basis of the approach is to
+                assume that the joint distribution of the concurrent flows at two sites can be
+                characterised by a bivariate log-Normal distribution. The magnitude of the <emphasis
+                    role="italic">average</emphasis> concurrent flow in one tributary (<inlineequation>
+                    <m:math display="block">
+                        <m:mrow>
+                            <m:msub>
+                                <m:mi>&#x03BC;</m:mi>
+                                <m:mrow>
+                                    <m:mrow>
+                                        <m:mo>(</m:mo>
+                                        <m:mrow>
+                                            <m:mi>y</m:mi>
+                                            <m:mrow>
+                                                <m:mo>|</m:mo>
+                                                <m:mi>x</m:mi>
+                                            </m:mrow>
+                                        </m:mrow>
+                                        <m:mo>)</m:mo>
+                                    </m:mrow>
+                                </m:mrow>
+                            </m:msub>
+                        </m:mrow>
+                    </m:math>
+                </inlineequation>), given a flow of magnitude <emphasis role="italic">x</emphasis>
+                in the other, can be approximated by:</para>
+            <equation xml:id="b8_e_tjhqf">
+                <m:math display="block">
+                    <m:mrow>
+                        <m:msub>
+                            <m:mi>&#x03BC;</m:mi>
+                            <m:mrow>
+                                <m:mrow>
+                                    <m:mo>(</m:mo>
+                                    <m:mrow>
+                                        <m:mrow>
+                                            <m:mi>y</m:mi>
+                                            <m:mo>|</m:mo>
+                                        </m:mrow>
+                                        <m:mi>x</m:mi>
+                                    </m:mrow>
+                                    <m:mo>)</m:mo>
+                                </m:mrow>
+                            </m:mrow>
+                        </m:msub>
+                        <m:mo>=</m:mo>
+                        <m:msub>
+                            <m:mi>&#x03BC;</m:mi>
+                            <m:mi>x</m:mi>
+                        </m:msub>
+                        <m:mo>+</m:mo>
+                        <m:mi>&#x03C1;</m:mi>
+                        <m:mfrac>
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>&#x03C3;</m:mi>
+                                    <m:mi>y</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>&#x03C3;</m:mi>
+                                    <m:mi>x</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                        </m:mfrac>
+                        <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mrow>
+                                <m:mi>x</m:mi>
+                                <m:mo>&#x2212;</m:mo>
+                                <m:msub>
+                                    <m:mi>&#x03BC;</m:mi>
+                                    <m:mi>x</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                            <m:mo>)</m:mo>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>where <inlineequation>
+                    <m:math display="block">
+                        <m:mi>&#x03BC;</m:mi>
+                    </m:math>
+                </inlineequation> and <inlineequation>
+                    <m:math display="block">
+                        <m:mi>&#x03C3;</m:mi>
+                    </m:math>
+                </inlineequation> signify the mean and standard deviation of the marginal
+                distributions, <inlineequation>
+                    <m:math display="block">
+                        <m:mi>&#x03C1;</m:mi>
+                    </m:math>
+                </inlineequation> is the correlation between the two variates, and <emphasis
+                    role="italic">x</emphasis> and <emphasis role="italic">y</emphasis> represent
+                design flows at the two sites; note that all flows need to be transformed into the
+                logarithmic domain.</para>
+            <para>The correlation <inlineequation>
+                    <m:math display="block">
+                        <m:mi>&#x03C1;</m:mi>
+                    </m:math>
+                </inlineequation> can be obtained from an analysis of large historic events, and the
+                other parameter values can be found by fitting log-Normal distributions to both the
+                mainstream and tributary streamflow data. The mean and standard deviation can be
+                determined by fitting a line of best fit (either graphically or analytically)
+                through the available design flood estimates in the log-Normal domain. Usually a
+                number of design flood estimates will be available for the mainstream flows as a
+                complete frequency curve will have been derived (<xref linkend="b8_s_3o5gi"/>), but
+                design flood estimates for the tributary flow may be derived using the approximate
+                procedures provided in <xref linkend="b8_s_laqj1"/>.</para>
+            <para>Given the uncertainty of the correlation structure over the range of magnitudes of
+                interest, it is considered that the above approximations are appropriate for those
+                design situations in which the magnitude of the tributary flows are minor compared
+                to the mainstream flows, and the correlation between the two flows is small or
+                modest. It is worth noting that the magnitudes of the tributary floods are very
+                sensitive to the strength of the correlation, and thus careful attention should be
+                given to the nature and selection of the events used to derive the correlation
+                value. It is also perhaps worth noting that the tributary distribution of interest
+                is the flow value coinciding with the peak flows in the mainstream; the use of the
+                peak flow distribution for the tributaries is an additional approximation.</para>
+            <para>A worked example illustrating some of the above concepts is presented in <xref
+                    linkend="b8_s_01mf7"/>.</para>
+        </section>
+    </section>
+    <section xml:id="b8_s_whun4">
+        <title>Seasonal Design Floods</title>
+        <section xml:id="b8_s_qy9kq">
+            <title><?oxy_insert_start author="retallick" timestamp="20160615T175852+1000"?>The
+                <?oxy_insert_end?>Need for Seasonal Estimates</title>
+            <para>In some situations Rare to Extreme design floods may be required for specific
+                seasons within the year. Seasonal estimates may need to be investigated if it is
+                suspected that the design factors of interest do not have an equal chance of
+                occurring throughout the year, and that certain combinations of factors are unlikely
+                to occur in the same season. For example, seasonal estimates may be required to
+                assess the consequences of dam failure when the population at risk may be dependent
+                on the time of year (e.g. summer holidays). The likelihood of snowmelt is an obvious
+                example, though this will only need to be considered if a large proportion of the
+                catchment lies above the snowline. Perhaps the most commonly encountered example is
+                related to the evaluation of spillway adequacy, where the largest seasonal floods
+                may coincide with the largest expected drawdown in the reservoir
+                    <citation>b8_c_r47</citation>.</para>
+            <para>As discussed in <xref linkend="b8_s_9piio"/>, there are a number of conceptual and
+                theoretical problems associated with the derivation of seasonal design rainfalls.
+                Accordingly, seasonal design floods should only be derived if preliminary
+                investigations indicate that the seasonal factors of interest have an appreciable
+                impact on the required design outcome.</para>
+        </section>
+        <section xml:id="b8_s_pf7sg">
+            <title>Theoretical and Practical Issues</title>
+            <para>Seasonal frequency curves can be derived using similar procedures to those
+                required for annual frequency curves, though careful consideration needs to be given
+                to the determination of losses and the manner in which design flood estimates are
+                validated.</para>
+            <para>Given a set of seasonal frequency curves, care needs to be given to converting the
+                seasonal exceedance probabilities to annual estimates. The AEP of a specific event
+                (e.g. a dam overtopping event, Q<subscript>0</subscript>) which is not conditional
+                on the time of year can be approximated by summing the seasonal exceedance
+                probabilities of the selected event.</para>
+            <para>As an example, if the year was divided into two seasons, then two separate events
+                could be considered: a summer event
+                    Q<?oxy_insert_start author="retallick" timestamp="20160615T180024+1000"?><subscript>s</subscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180028+1000" content="s"?>
+                    (Q&gt;Q<subscript>0</subscript>) and a winter event
+                    Q<?oxy_insert_start author="retallick" timestamp="20160615T180036+1000"?><subscript>w</subscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180039+1000" content="w"?>
+                    (Q&gt;Q<subscript>0</subscript>). If these events are regarded as being
+                independent (and if their exceedance probabilities are less than, say, 1 in
+                10<?oxy_insert_start author="retallick" timestamp="20160615T180050+1000"?>
+                AEP<?oxy_insert_end?>), then the unconditional AEP of an event
+                    Q&gt;Q<subscript>0</subscript>, i.e. of Q<subscript>s</subscript> or
+                    Q<subscript>w</subscript>, can be computed as:</para>
+            <equation xml:id="b8_e_39uyl">
+                <m:math display="block">
+                    <m:mrow>
+                        <m:mi>A</m:mi>
+                        <m:mi>E</m:mi>
+                        <m:mi>P</m:mi>
+                        <m:mrow>
+                            <m:mo>[</m:mo>
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>Q</m:mi>
+                                    <m:mi>o</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                            <m:mo>]</m:mo>
+                        </m:mrow>
+                        <m:mo>=</m:mo>
+                        <m:mi>S</m:mi>
+                        <m:mi>E</m:mi>
+                        <m:msub>
+                            <m:mi>P</m:mi>
+                            <m:mi>s</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                            <m:mo>[</m:mo>
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>Q</m:mi>
+                                    <m:mi>o</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                            <m:mo>]</m:mo>
+                        </m:mrow>
+                        <m:mo>+</m:mo>
+                        <m:mi>S</m:mi>
+                        <m:mi>E</m:mi>
+                        <m:msub>
+                            <m:mi>P</m:mi>
+                            <m:mi>w</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                            <m:mo>[</m:mo>
+                            <m:mrow>
+                                <m:msub>
+                                    <m:mi>Q</m:mi>
+                                    <m:mi>o</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                            <m:mo>]</m:mo>
+                        </m:mrow>
+                    </m:mrow>
+                </m:math>
+            </equation>
+            <para>where SEP<subscript>s</subscript>[Q<subscript>0</subscript>] and
+                    SEP<subscript>w</subscript>[Q<subscript>0</subscript>] are respectively the
+                summer and winter
+                <?oxy_insert_start author="retallick" timestamp="20160615T180213+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180212+1000" content="s"?>easonal
+                <?oxy_insert_start author="retallick" timestamp="20160615T180216+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180215+1000" content="e"?>xceedance
+                <?oxy_delete author="retallick" timestamp="20160615T180218+1000" content="p"?><?oxy_insert_start author="retallick" timestamp="20160615T180219+1000"?>P<?oxy_insert_end?>robabilities<?oxy_insert_start author="retallick" timestamp="20160615T180221+1000"?>
+                (SEP)<?oxy_insert_end?> of the selected event, and AEP[Q<subscript>0</subscript>]
+                represents the probability of one or more events of magnitude Q <inlineequation>
+                    <m:math display="inline">
+                        <m:mo>≥</m:mo>
+                    </m:math>
+                </inlineequation>Q<subscript>0</subscript> occurring in a single year. The
+                computation of the AEPs from seasonal distributions for more than two seasons is
+                analogous, and is illustrated in <xref linkend="b8_f_lpfyw"/>. The SEPs can be
+                simply added to give AEPs, if the seasons are defined such as to form an exhaustive
+                set of mutually exclusive events (i.e. they are non-overlapping and cover the whole
+                year).</para>
+            <para>It is important to note here that the event whose AEP is being analysed needs to
+                be clearly defined in terms of a <emphasis role="italic">magnitude</emphasis> (e.g.
+                Q <inlineequation>
+                    <m:math display="inline">
+                        <m:mo>≥</m:mo>
+                    </m:math>
+                </inlineequation>100 m<superscript>3</superscript>/s) rather than in terms of a
+                concept (e.g. “PMP”) that does not directly relate to a magnitude. This means that
+                the <xref xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b8_e_39uyl"/> cannot
+                be directly applied to PMPs for different seasons but only to rainfalls or floods of
+                a specified magnitude occurring in different seasons.</para>
+            <figure xml:id="b8_f_lpfyw">
+                <title>Schematic
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180303+1000"?>D<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180302+1000" content="d"?>iagram
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180305+1000"?>I<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180305+1000" content="i"?>llustrating
+                    the
+                    <?oxy_delete author="retallick" timestamp="20160615T180307+1000" content="c"?><?oxy_insert_start author="retallick" timestamp="20160615T180308+1000"?>C<?oxy_insert_end?>onversion
+                    of
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180310+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180310+1000" content="s"?>easonal
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180313+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180312+1000" content="e"?>xceedance
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180315+1000"?>P<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180314+1000" content="p"?>robabilities
+                    into
+                    <?oxy_insert_start author="retallick" timestamp="20160615T180318+1000"?>A<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180317+1000" content="a"?>nnual
+                    <?oxy_delete author="retallick" timestamp="20160615T180319+1000" content="e"?><?oxy_insert_start author="retallick" timestamp="20160615T180320+1000"?>E<?oxy_insert_end?>stimates</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../../figures/8011.png"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+    </section>
+    <section xml:id="b8_s_yiabc">
+        <title>Consideration of Snowmelt</title>
+        <section xml:id="b8_s_njxh3">
+            <title>Overview</title>
+            <para>Snowmelt can have an appreciable impact on the timing and magnitude of floods,
+                though there are only a small number of areas in Australia where it needs to be
+                considered. A large number of different methods are available for estimating
+                snowmelt. The variety of available methods reflects the different purposes for which
+                they have been developed, and the different data resources available for their use.
+                While there is a considerable body of literature concerned with the simulation and
+                quantification of snowmelt processes, there is unfortunately little guidance on
+                estimating the snowmelt component of design floods.</para>
+            <para>The snowmelt algorithms used in the established flood event models can be broadly
+                divided into two groups. One group of models is based on a <emphasis role="italic"
+                    >temperature index approach</emphasis> in which temperature alone is used as a
+                surrogate for the energy available for snowmelt. Another group of snowmelt
+                algorithms is based on an <emphasis role="italic">energy balance approach</emphasis>
+                in which energy fluxes are calculated explicitly using physically-based process
+                equations. The results of an international comparison of snowmelt runoff models
+                (World Meteorological Organisation, 1986b)<citation>b8_c_r84</citation> indicate
+                that the temperature index approach has an accuracy comparable to more complex
+                energy budget formulations. Unfortunately, however, the method does not lend itself
+                to hourly computations (which are required for flood event estimation purposes)
+                because it is the radiation component which is mainly responsible for the
+                hour-to-hour variations <citation>b8_c_r63</citation>.</para>
+        </section>
+        <section xml:id="b8_s_d9b5r">
+            <title>Selection of Snowmelt Model</title>
+            <para>The selection of an appropriate method for snowmelt estimation is subject to the
+                following two conflicting requirements: (i) the need to model as accurately as
+                possible the snowmelt process; and, (ii) the need to adopt a
+                <?oxy_comment_start author="retallick" timestamp="20160615T180835+1000" comment="can we use a different word. needed to google for meaning"?>parsimonious<?oxy_comment_end?>
+                model for use in design. The resolution of these two conflicting requirements is a
+                common problem in engineering hydrology, and the accepted philosophy of approach is
+                to match model complexity with the nature of the available data. While the adoption
+                of a complex, physically-based model may appear theoretically appropriate, in
+                practice without the data to confirm component processes such models may perform no
+                better than over-parameterised conceptual models.
+                <?oxy_comment_start author="retallick" timestamp="20160615T180844+1000" comment="as above"?>Parsimony<?oxy_comment_end?>
+                in design snowmelt estimation is particularly important because, compared to
+                rain<?oxy_insert_start author="retallick" timestamp="20160615T180930+1000"?>fall<?oxy_insert_end?>-only
+                flood event models, there is a considerable increase in the number of factors that
+                influence the transfer from rainfall to runoff. The salient factors depend on the
+                nature of the transfer function used, but in general it is necessary to consider
+                carefully the inputs related to initial depth and density of the snowpack, the
+                nature and duration of antecedent conditions prior to the rainfall event, windspeed,
+                and the temperature sequence.</para>
+            <para>The most appropriate method to use for the derivation of snowmelt design floods
+                will depend largely on the nature of the available data. Practitioners are
+                encouraged to review carefully the type of data that can be obtained for the site of
+                interest, and to select a model that is commensurate with the complexity of the
+                available data. A number of suitable models are commercially available (e.g.
+                    <citation>b8_c_r75</citation>), though there is little documented experience
+                with their application to Australian conditions.</para>
+        </section>
+        <section xml:id="b8_s_6cx3y">
+            <title>Application to Extreme Events</title>
+            <para>It is general international practice to maximise all salient factors contributing
+                to rain-on-snow runoff (e.g. <citation>b8_c_r74,b8_c_r53,b8_c_r5</citation>).
+                Typically, the antecedent snowpack is set equal to the depth and areal extent
+                corresponding to an extreme
+                event<?oxy_delete author="retallick" timestamp="20160615T181047+1000" content=" with an AEP"?>
+                of around 1 in
+                100<?oxy_insert_start author="retallick" timestamp="20160615T181052+1000"?>
+                AEP<?oxy_insert_end?>, and the wind speed and temperature sequences are selected to
+                maximise runoff. However, such approaches are not consistent with the probability<?oxy_insert_start author="retallick" timestamp="20160615T181059+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181059+1000" content="-"?>neutral
+                approach, and thus careful consideration needs to be given to the selection of
+                inputs to ensure that no probability bias is introduced into the transformation
+                between rainfall and runoff. The magnitude of snowmelt floods is particularly
+                sensitive to initial snowpack conditions, and accordingly it is likely that a joint
+                probability approach would be required to satisfy probability<?oxy_insert_start author="retallick" timestamp="20160615T181111+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181111+1000" content="-"?>neutral
+                requirements.</para>
+            <para><citation>b8_c_r47+1</citation> provide one example of a study in which a joint
+                probability approach was adopted for the derivation of snowmelt design floods. They
+                incorporated the Snow Compaction Procedure <citation>b8_c_r72</citation> into a
+                modified version of the RORB model. This procedure uses a water budget approach
+                which is based on the concept of snow compaction and a threshold density, where the
+                maximum potential rate of snowmelt is derived using the sub-daily application of the
+                US Corps of Engineers degree-day snowmelt equations <citation>b8_c_r74</citation>. A
+                simplified approach was taken to sample antecedent snowpack conditions, but this
+                would be better implemented within a Monte<?oxy_insert_start author="retallick" timestamp="20160615T181136+1000"?>
+                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181135+1000" content="-"?>Carlo
+                framework.</para>
+        </section>
+    </section>
+    <section xml:id="b8_s_s4nj0">
+        <title>Consideration of Long Duration Events</title>
+        <para>As discussed in <xref linkend="b8_s_ob5bq"/>, there are some design situations in
+            which it appears that the critical duration of interest may be longer than the durations
+            for which generalised design rainfall information are available (168
+            hours<?oxy_insert_start author="retallick" timestamp="20160615T183923+1000"?> or 7
+            day<?oxy_insert_end?>). The longest available design storm durations generally relate to
+            the meteorological limits associated with single storm events, and thus longer duration
+            design events will involve the consideration of storm sequences.</para>
+        <para>While it may be necessary to consider the likelihood of storm sequences in tropical
+            regions, it is reasonably clear that long duration design events
+            (<?oxy_comment_start author="retallick" timestamp="20160615T202330+1000" comment="south east aust includes sydney. while this is true for sydney for 1 day not for 4 days. "?>one
+            to several days<?oxy_comment_end?>) in
+            south<?oxy_insert_start author="retallick" timestamp="20160615T184007+1000"?>-<?oxy_insert_end?>eastern
+            Australia are unlikely to be preceded by significant antecedent rainfalls (<xref
+                linkend="b8_s_ob5bq"/>). Accordingly, the issue of storm sequences over extended
+            periods may be implicitly solved by undertaking a joint probability analysis of inflow
+            floods and reservoir volume, as described in <xref linkend="b8_s_no8ga"/>.</para>
+        <para>There are other design situations (such as tailings dams) in which the design
+            objective is to ensure that the risk of spills from the storage is negligible. These
+            types of problems can generally be handled by undertaking mass balance calculations of
+            all operational inflows and outflows for very long hydroclimatic sequences. It is
+            usually not necessary to use a hydrograph model to route the rainfall excess as the
+            surface area of the storage may be large compared to the contributing catchment area; it
+            thus may be sufficient to allow for a freeboard in the storage that fully accommodates
+            the volume of runoff corresponding to the required AEP of rainfall. This type of problem
+            does not lend itself to event-based joint probability analyses but requires water
+            balance computations over extended periods.
+            Generally<?oxy_insert_start author="retallick" timestamp="20160615T184236+1000"?>,<?oxy_insert_end?>
+            it is desirable to generate the long hydroclimatic sequences by stochastic data
+            generation techniques
+            (<?oxy_delete author="retallick" timestamp="20160615T184242+1000" content="see"?><?oxy_insert_start author="retallick" timestamp="20160615T184242+1000"?>refer to<?oxy_insert_end?>
+            <citation>b8_c_r39</citation>, and an example of this approach used for spillway design
+            is provided by <citation>b8_c_r30+1</citation>. The required security against
+            overtopping can be achieved by using sequences of different lengths, as described for
+            example in <citation>b8_c_r15+1</citation>, <xref linkend="b8_s_zvvef"/>).</para>
+        <para>One of the major practical and theoretical problems with the application of stochastic
+            data generation techniques – particularly when used in the assessment of the Very Rare
+            to Extreme risks – is the characterisation of statistical extremes. This difficulty
+            relates both to the tail of the distribution, as well as to the definition of the
+            correlation between the stochastic inputs over a range of event magnitudes. These issues
+            require careful consideration and should only be undertaken by practitioners with
+            specialist experience.</para>
+    </section>
+    <section xml:id="b8_s_8n655">
+        <title>Impact of Climate Change</title>
+        <para>Estimates of Very Rare to Extreme rainfalls (and the resulting floods) are subject to
+            change as our understanding of the governing physical processes increases, and as more
+            data becomes available for analysis. The estimates are also subject to change due to
+            long-term climatic variations, such as would result from changes in atmospheric
+            concentration of greenhouse gases.</para>
+        <para>General guidance on assessing the impact of climate change is provided in <xref
+                linkend="b1_ch6"/>,
+            however<?oxy_insert_start author="retallick" timestamp="20160615T185213+1000"?>,<?oxy_insert_end?>
+            it is worth noting that at present no allowance is made for climate change in estimates
+            of the PMP. The Bureau of Meteorology completed an analysis of a storm database covering
+            the period 1893 to 2001 and concluded that there is little evidence to support the
+            notion that tropical cyclones (connected to major rainfall events) are penetrating
+            further south or have become more frequent <citation>b8_c_r23</citation>. At time of
+            writing the Bureau of Meteorology are not intending to revise PMP estimates or
+            methodology to account for effects of climate change. Similarly, in
+            <?oxy_delete author="retallick" timestamp="20160615T185240+1000" content="n"?><?oxy_insert_start author="retallick" timestamp="20160615T185240+1000"?>N<?oxy_insert_end?>orth
+            America standard procedures do not presently allow for climate change
+                adjustment,s,<citation>b8_c_90</citation>
+            however<?oxy_insert_start author="retallick" timestamp="20160615T185250+1000"?>,<?oxy_insert_end?>
+            climate model simulations and analysis of conceptual models of relevant meteorological
+            systems would suggest that PMP estimates will increase in the future
+                <citation>b8_c_r32,b8_c_r71</citation>. This is an area of active ongoing research
+            and it might be expected that guidance will evolve in the future as better information
+            becomes available.</para>
+        <para>There are other factors apart from rainfall intensities that can be considered when
+            assessing the impact of climate change. In the context of Very Rare to Extreme events,
+                <citation>b8_c_r14+1</citation> considered the impacts on two additional factors on
+            the assessment of spillway adequacy, namely catchment losses and the distribution of
+            water levels. The change in catchment losses was assessed by use of a continuous
+            simulation model to derive streamflow sequences corresponding to current-day and
+            changed-climate conditions; design losses were altered to achieve a match between
+            quantiles of 4-day flood volumes obtained from Monte Carlo analysis and the frequency
+            analysis of the derived maxima. Similarly, an altered distribution of drawdown
+            conditions was obtained from a model that simulated altered irrigation demands and
+            streamflow sequences. While that study found an overall reduction in flood risk due to
+            the downward shift in distribution of initial storage levels, it would be expected that
+            outcomes will vary depending on the characteristics of the system being modelled.</para>
+        <para>Until better information becomes available it is considered that assessments of the
+            impact of climate change on Very Rare to Extreme flood risks are likely to be
+            speculative and most suited to sensitivity analyses.</para>
+    </section>
+    <xi:include href="chap_refs.xml">
+        <xi:fallback>
+            <para>No included references yet...</para>
+        </xi:fallback>
+    </xi:include>
+    
+    
+</chapter>
