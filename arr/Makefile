@@ -22,7 +22,7 @@
 # the following are really only command options.
 # A localisation parameter of the revision number from SVN:
 L10N_REVISION = r
-XSLTPROC = xsltproc
+export XSLTPROC = xsltproc
 XMLLINT = xmllint
 FOP = AHFCmd
 FOP_OPTS = -pgbar -tpdf -pdfver PDF1.7
@@ -30,7 +30,7 @@ MKDIR = mkdir -p
 SVNVERSION = svnversion
 DIR_BASE = /Users/pbrady/ncwe/arr_docs/trunk
 XMLLINT_OPTS=--xinclude --relaxng
-XSLTPROC_OPTS=--xinclude --output 
+export XSLTPROC_OPTS=--xinclude --output 
 
 #####################################################
 #####################################################
@@ -38,7 +38,8 @@ XSLTPROC_OPTS=--xinclude --output
 # Set the top level phony targets
 .PHONY: valid html epub
 .PHONY: draft pdf_draft
-.PHONY: clean clean_draft clean_html clean_epub clean_master_refs
+.PHONY: clean clean_draft clean_html clean_html_ajax clean_epub
+.PHONY: clean_master_refs
 
 #####################################################
 # Default and utility targets
@@ -74,34 +75,31 @@ clean_all_arr.xml:
 #####################################################
 #####################################################
 #####################################################
+# Chapter References
+# Set up some utility variables first:
+SUBDIRS=book1 book2 book3 book4 book5 book6 book7 book8 book9
+.PHONY: chap_refs chap_refs_clean $(SUBDIRS)
+
+# Build target:
+chap_refs:
+	@for i in $(SUBDIRS); do \
+	(cd $$i; $(MAKE) $(MFLAGS) chap_refs); done
+
+# Clean target
+chap_refs_clean:
+	@for i in $(SUBDIRS); do \
+	(cd $$i; $(MAKE) $(MFLAGS) chap_refs_clean); done
+
+#####################################################
+#####################################################
+#####################################################
 # Validate the XML
-valid: valid_set
-
-# Need to do a two pass here due to profilling
-valid_set: arr_references.xml book_end_matter/set_refs.xml arr_set.xml
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_set.xml \
-		--stringparam profile.arch "set" \
-		../stylesheets-ns/profiling/profile.xsl \
-		ARR.xml
-	$(XMLLINT) $(XMLLINT_OPTS) ../docbook/rng/docbookxi.rng --noout arr_set.xml
-
-arr_set.xml:
-	$(XSLTPROC) $(XSLTPROC_OPTS) arr_set.xml \
-		--stringparam profile.arch "set" \
-		../stylesheets-ns/profiling/profile.xsl \
-		ARR.xml
-
-book_end_matter/set_refs.xml: arr_references.xml arr_set.xml
-	$(XSLTPROC) $(XSLTPROC_OPTS) book_end_matter/set_refs.xml \
-		--stringparam profile.arch "set" \
-		--xinclude \
-		generate_bibliomixed.xsl \
-		arr_set.xml
-	   rm -f book_end_matter/set_refs.xml
-
-clean_valid_set:
-	rm -f arr_set.xml book_end_matter/set_refs.xml
-
+valid: chap_refs
+	$(XSLTPROC) $(XSLTPROC_OPTS) ARR_cite_proc.xml \
+		stripcitations.xsl ARR.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) ARR_set.xml \
+		mathtypeBlock2Inline.xsl ARR_cite_proc.xml
+	$(XMLLINT) $(XMLLINT_OPTS) arrDocBookExtendedGrammar.rng --noout ARR_set.xml 
 
 #####################################################
 #####################################################
@@ -109,12 +107,14 @@ clean_valid_set:
 # Draft PDF of the Entire Set
 arr_draft.pdf: arr_draft.fo
 	$(FOP) $(FOP_OPTS) -d arr_draft.fo -o arr_draft.pdf
-arr_draft.fo: valid_set arr_title_fo.xsl
+arr_draft.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) $(XSLTPROC_OPTS) arr_set_img_scaled.xml \
+		scale_images.xsl ARR_set.xml
 	$(XSLTPROC) $(XSLTPROC_OPTS) arr_draft.fo \
-		arr_style_fo_draft.xsl arr_set.xml
+		arr_style_fo_draft.xsl arr_set_img_scaled.xml
 
 clean_draft:
-	rm -f arr_draft.fo arr_draft.pdf
+	rm -f arr_draft.fo arr_draft.pdf arr_set_img_scaled.xml
 
 
 #####################################################
@@ -167,20 +167,39 @@ arr_style_guide_final.fo: arr_style_fo.xsl
 # HTML Chunked
 # NB: the target html_chunked_images is specified inside one of the included
 # sub-Makefiles.
-html: valid_set html_chunked_images
+html: html_ajax html_chunked
+	
+html_chunked: valid html_chunked_images
 	test -d html_chunked || mkdir html_chunked
-	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.html \
+	$(XSLTPROC) $(XSLTPROC_OPTS) html_chunked/index.xhtml \
 		--param keep.relative.image.uris 0 \
-		arr_style_xhtml5_chunked.xsl arr_set.xml
+		arr_style_chunk_vanilla.xsl ARR_set.xml
 	cp figures/close.png html_chunked/figures
 	cp figures/loading.gif html_chunked/figures
 	cp figures/next.png html_chunked/figures
 	cp figures/prev.png html_chunked/figures
 	cp -a css html_chunked/
 	cp -a js html_chunked/
+	cp -a book_front_matter/figures/* html_chunked/figures/
 
 clean_html:
 	rm -rf html_chunked
+
+html_ajax: valid html_chunked
+	test -d html_chunked_ajax || mkdir html_chunked_ajax
+	cp -a ajax_src_bw/* html_chunked_ajax
+	cp -a html_chunked/*xhtml html_chunked_ajax/content/
+	cp -a html_chunked/figures/* html_chunked_ajax/figures/
+	cp figures/close.png html_chunked_ajax/figures
+	cp figures/loading.gif html_chunked_ajax/figures
+	cp figures/next.png html_chunked_ajax/figures
+	cp figures/prev.png html_chunked_ajax/figures
+	# cp -a css html_chunked_ajax/
+	# cp -a js html_chunked_ajax/
+	cp -a book_front_matter/figures/* html_chunked_ajax/figures/
+
+clean_html_ajax:
+	rm -rf html_chunked_ajax
 
 
 #####################################################
@@ -188,12 +207,14 @@ clean_html:
 #####################################################
 # EPUB3
 EPUB_OPTS=--param keep.relative.image.uris 0
-epub: valid_set epub3_images
+epub: valid epub3_images
 	$(XSLTPROC) --xinclude --stringparam base.dir epub3/OEBPS \
 		--param keep.relative.image.uris 0 \
-		arr_style_epub.xsl arr_set.xml
+		arr_style_epub.xsl ARR_set.xml
 	mkdir -p epub3/OEBPS/css
 	cp -a css/arr_epub.css epub3/OEBPS/css/
+	cp -af book_front_matter/frontmatter_epub.xhtml epub3/OEBPS/index.xhtml
+	cp -a book_front_matter/figures/* epub3/OEBPS/figures/
 	cd epub3 && zip -rX arr.epub mimetype META-INF OEBPS
 
 clean_epub:
@@ -203,11 +224,11 @@ clean_epub:
 #####################################################
 #####################################################
 # Build the Reference Library From EndNote
-arr_references.xml: refs_from_endnote.xml
-	$(XSLTPROC) --output arr_references.xml endnote2docbook.xsl \
-		refs_from_endnote.xml
-clean_master_refs:
-	rm -rf arr_references.xml
+# arr_references.xml: refs_from_endnote.xml
+# 	$(XSLTPROC) --output arr_references.xml endnote2docbook.xsl \
+# 		refs_from_endnote.xml
+#clean_master_refs:
+#	rm -rf arr_references.xml
 
 #####################################################
 #####################################################
@@ -216,7 +237,8 @@ clean_master_refs:
 # The individual clean targets are stored within their respective sections.
 # Therefore, anything listed here should also be a PHONY at the top of this
 # Makefile.
-clean: clean_draft clean_final clean_style clean_html clean_epub clean_all_arr.xml clean_master_refs clean_valid_set
+clean: clean_draft clean_final clean_style clean_html clean_html_ajax clean_epub clean_all_arr.xml clean_master_refs chap_refs_clean
+	rm -f ARR_set.xml ARR_cite_proc.xml
 
 clean_final: 
 	rm -f arr.pdf arr.fo
@@ -231,5 +253,6 @@ clean_final:
 # include Makefile.book
 # include Makefile.chapter
 # include Makefile.html_single
-include Makefile.html_chunked
+include Makefile.html_chunked_vanilla
+include Makefile.html_chunked_ajax
 include Makefile.epub3

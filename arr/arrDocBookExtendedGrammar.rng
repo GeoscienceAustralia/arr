@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://docbook.org/ns/docbook" xmlns="http://relaxng.org/ns/structure/1.0">
+  <include href="../docbook/rng/docbookxi.rng"/>
+  <!--
+    This is a short additional stylesheet to add some additional
+    elements to the <para> tag while we are hacking the per
+    chapter references.  XMLLINT relies on RNG schema's though so
+    use trang () to convert from RNC to RNG, e.g.:
+    
+    java -jar trang.jar arrDocBookExtendedGrammar.rnc arrDocBookExtendedGrammar.rng
+    
+    trang is a bit idiosyncratic with paths so the relative
+    include path above is converted to local and the referenenced
+    grammar file copied in.  If that is what you want, cool,
+    otherwise:
+     1) open the RNG
+     2) amend absolute path to relative
+     3) delete the reference that was copied to local
+    
+    Dr Peter Brady <peter.brady@wmawater.com.au>
+    2016-06-08
+  -->
+  <define name="db.para.attlist" combine="interleave">
+    <interleave>
+      <optional>
+        <attribute name="abbrev"/>
+      </optional>
+      <optional>
+        <attribute name="sortname"/>
+      </optional>
+      <optional>
+        <attribute name="sortyear"/>
+      </optional>
+      <optional>
+        <attribute name="basenameyear"/>
+      </optional>
+      <optional>
+        <attribute name="sortsubyear"/>
+      </optional>
+      <optional>
+        <attribute name="shortname"/>
+      </optional>
+    </interleave>
+  </define>
+</grammar>

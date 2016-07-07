@@ -1,6 +1,10 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    version="1.0"
+   exclude-result-prefixes="exsl d"
+   xmlns:exsl="http://exslt.org/common"
+   xmlns:epub="http://www.idpf.org/2007/ops"
    xmlns:d="http://docbook.org/ns/docbook">
    <!-- ARR ePUB stylesheet
         This stylesheet contains the customisation layers for the ePUB output
@@ -12,9 +16,6 @@
    <!-- First up: import the global, then set our overrides -->
    <xsl:import href="../stylesheets-ns/epub3/chunk.xsl" />
 
-   <!-- Now import the global styles: -->
-   <xsl:import href="arr_style_common.xsl" />
-   
    <!-- Now, as ePUB is essentially XHTML5, simply import the
       XHTML5 stylesheet -->
    <xsl:import href="arr_style_xhtml5_common.xsl"/> 

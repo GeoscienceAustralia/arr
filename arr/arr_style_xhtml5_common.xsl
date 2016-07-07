@@ -23,10 +23,6 @@
    <xsl:param name="section.label.includes.component.label">1</xsl:param>
    <xsl:param name="section.autolabel.max.depth">8</xsl:param>
 
-   <!-- Parameter Changes Specified by Bennet to move to AJAX delivery -->
-   <xsl:param name="suppress.navigation" select="1"></xsl:param>
-   <xsl:param name="chunker.output.omit-xml-declaration">yes</xsl:param>
-
    <!-- Common javascript/s to add to all builds: -->
    <!--    -) MathJax                             -->
    <!--    -) Bootstrap                           -->

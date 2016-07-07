@@ -25,15 +25,27 @@ set -o nounset
 # 	awk -F " " '{print $1, "html_single/" $1}' | \
 #	sed -e 's/^/	cp -f /' >> Makefile.html_single
 
-# Directories and images for the chunked page html builds
-echo "html_chunked_dir:" > Makefile.html_chunked
+# Directories and images for the chunked page html Vanilla builds
+echo "html_chunked_dir:" > Makefile.html_chunked_vanilla
 xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
-	rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p html_chunked\//' >> Makefile.html_chunked
-echo "" >> Makefile.html_chunked
-echo "html_chunked_images: html_chunked_dir" >> Makefile.html_chunked
+	rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p html_chunked\//' >> Makefile.html_chunked_vanilla
+echo "" >> Makefile.html_chunked_vanilla
+echo "html_chunked_images: html_chunked_dir" >> Makefile.html_chunked_vanilla
 xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
 	awk -F " " '{print $1, "html_chunked/" $1}' | \
-	sed -e 's/^/	cp -f /' >> Makefile.html_chunked
+	sed -e 's/^/	cp -f /' >> Makefile.html_chunked_vanilla
+
+# Directories and images for the chunked page html AJAX builds
+echo "html_chunked_ajax_dir:" > Makefile.html_chunked_ajax
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+    rev | cut -d "/" -f2- | rev | sed -e 's/^/	mkdir -p html_chunked_ajax\//' >> Makefile.html_chunked_ajax
+echo "" >> Makefile.html_chunked_ajax
+echo "html_chunked_ajax_images: html_chunked_ajax_dir" >> Makefile.html_chunked_ajax
+xsltproc ../tools/xmldepend.xsl ARR.xml | grep -vE '(xml$)|(\?)' | \
+    awk -F " " '{print $1, "html_chunked_ajax/" $1}' | \
+sed -e 's/^/	cp -f /' >> Makefile.html_chunked_ajax
+
+
 
 # Directories and images for the EPUB3 builds
 echo "epub3_dir:" > Makefile.epub3

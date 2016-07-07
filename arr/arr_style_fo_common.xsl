@@ -12,16 +12,13 @@
    <xsl:import href="../stylesheets-ns/fo/docbook.xsl" />
 
    <!-- Import the Custom Title Declarations -->
-   <xsl:import href="./arr_title_fo.xsl" />
+   <!--<xsl:import href="./arr_title_fo.xsl" /> -->
 
    <!-- Import the Common ARR Style Elements -->
    <xsl:import href="arr_style_common.xsl" />
 
    <!-- Import the local Set Cover Page Over Ride -->
    <xsl:import href="arr_style_fo_set_cover.xsl" />
-
-
-
 
    <!-- Define some parameters first -->
    <!-- Globally turn on FOP -->
@@ -43,7 +40,10 @@
    <xsl:param name="body.start.indent" select="'0pt'"/>
 
 
-
+   <!-- Force No Page Numbers in XREFs -->
+   <xsl:param name="insert.xref.page.number">no</xsl:param>
+   <xsl:param name="insert.link.page.number">no</xsl:param>
+   
 
    <!-- Font Details -->
    <!-- Force the base font to be 11pt Times -->
@@ -84,7 +84,11 @@
       <xsl:attribute name="font-size">11pt</xsl:attribute>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
    </xsl:attribute-set>
-
+   
+   <!-- XREF Font Properties -->
+   <xsl:attribute-set name="xref.properties">
+      <xsl:attribute name="text-decoration">underline</xsl:attribute>
+   </xsl:attribute-set>
 
 
 
@@ -254,6 +258,20 @@
       <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1"/>
       <xsl:text>, Chapter </xsl:text>
       <xsl:value-of select="count(preceding-sibling::d:chapter)+1"/>
+   </xsl:template>
+   <!-- Override the section template to be of the form Book N, Chapter M, Section L
+      instead of "Chapter M" But only down to the first section level -->
+   <xsl:template match="d:section" mode="xref-to">
+      <xsl:param name="referrer"/>
+      <xsl:param name="xrefstyle"/>
+      <xsl:param name="verbose" select="1"/>
+      
+      <xsl:text>Book </xsl:text>
+      <xsl:value-of select="count(ancestor::d:book/preceding-sibling::d:book)+1"/>
+      <xsl:text>, Chapter </xsl:text>
+      <xsl:value-of select="count(ancestor::d:chapter/preceding-sibling::d:chapter)+1"/>
+      <xsl:text>, Section </xsl:text>
+      <xsl:value-of select="count((ancestor-or-self::d:section)[1]/preceding-sibling::d:section)+1"/>
    </xsl:template>
 
 
@@ -540,7 +558,14 @@
          <!-- <xsl:text>, </xsl:text> -->
          <!-- <xsl:value-of select="$gentext-key"/> -->
          <!-- </fo:block> -->
-
+      <xsl:choose>
+         <xsl:when test="$gentext-key='set'">
+            <!-- insert nothing for the set -->
+         </xsl:when>
+         <xsl:otherwise>
+            <!-- elswhere insert headers: -->
+            
+      
       <fo:block>
 
          <!-- sequence can be odd, even, first, blank -->
@@ -595,6 +620,8 @@
             </xsl:when>
          </xsl:choose>
       </fo:block>
+         </xsl:otherwise>
+      </xsl:choose>
    </xsl:template>
    <xsl:template name="footer.content">
       <xsl:param name="pageclass" select="''"/>
@@ -612,6 +639,12 @@
          <!-- <xsl:value-of select="$gentext-key"/> -->
          <!-- </fo:block> -->
 
+      <xsl:choose>
+         <xsl:when test="$gentext-key='set'">
+            <!-- insert nothing for the set -->
+         </xsl:when>
+         <xsl:otherwise>
+            <!-- elswhere insert headers: -->
       <fo:block>
          <!-- pageclass can be front, body, back -->
          <!-- sequence can be odd, even, first, blank -->
@@ -673,6 +706,8 @@
             </xsl:otherwise>
          </xsl:choose>
       </fo:block>
+         </xsl:otherwise>
+      </xsl:choose>
    </xsl:template>
 
 
@@ -990,6 +1025,102 @@
             </xsl:if>
          </xsl:for-each>
       </fo:block>
+   </xsl:template>
+   
+   
+   <!-- Override the d:link template to drop page numbers
+      on targets to para objects as we are using these
+      for reference links.
+      -->
+   <xsl:template match="d:link" name="link">
+      <xsl:param name="linkend" select="@linkend"/>
+      <xsl:param name="targets" select="key('id',$linkend)"/>
+      <xsl:param name="target" select="$targets[1]"/>
+      
+      <xsl:variable name="xrefstyle">
+         <xsl:choose>
+            <xsl:when test="@role and not(@xrefstyle) 
+               and $use.role.as.xrefstyle != 0">
+               <xsl:value-of select="@role"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="@xrefstyle"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      
+      <xsl:variable name="content">
+         <fo:inline xsl:use-attribute-sets="xref.properties">
+            <xsl:choose>
+               <xsl:when test="count(child::node()) &gt; 0">
+                  <!-- If it has content, use it -->
+                  <xsl:apply-templates/>
+               </xsl:when>
+               <!-- look for an endterm -->
+               <xsl:when test="@endterm">
+                  <xsl:variable name="etargets" select="key('id',@endterm)"/>
+                  <xsl:variable name="etarget" select="$etargets[1]"/>
+                  <xsl:choose>
+                     <xsl:when test="count($etarget) = 0">
+                        <xsl:message>
+                           <xsl:value-of select="count($etargets)"/>
+                           <xsl:text>Endterm points to nonexistent ID: </xsl:text>
+                           <xsl:value-of select="@endterm"/>
+                        </xsl:message>
+                        <xsl:text>???</xsl:text>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="$etarget" mode="endterm"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:when>
+               <!-- Use the xlink:href if no other text -->
+               <xsl:when test="@xlink:href">
+                  <fo:inline hyphenate="false">
+                     <xsl:call-template name="hyphenate-url">
+                        <xsl:with-param name="url" select="@xlink:href"/>
+                     </xsl:call-template>
+                  </fo:inline>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:message>
+                     <xsl:text>Link element has no content and no Endterm. </xsl:text>
+                     <xsl:text>Nothing to show in the link to </xsl:text>
+                     <xsl:value-of select="$target"/>
+                  </xsl:message>
+                  <xsl:text>???</xsl:text>
+               </xsl:otherwise>
+            </xsl:choose>
+         </fo:inline>
+      </xsl:variable>
+      
+      <xsl:call-template name="simple.xlink">
+         <xsl:with-param name="node" select="."/>
+         <xsl:with-param name="linkend" select="$linkend"/>
+         <xsl:with-param name="content" select="$content"/>
+      </xsl:call-template>
+      
+      <!-- Add standard page reference? -->
+      <xsl:choose>
+         <!-- page numbering on link only enabled for @linkend -->
+         <!-- There is no link element in DB5 with xlink:href -->
+         <xsl:when test="not($linkend)">
+         </xsl:when>
+         <!-- negative xrefstyle in instance turns it off -->
+         <xsl:when test="starts-with(normalize-space($xrefstyle), 'select:') 
+            and contains($xrefstyle, 'nopage')">
+         </xsl:when>
+         <xsl:when test="(starts-with(normalize-space($xrefstyle), 'select:') 
+            and $insert.link.page.number = 'maybe'  
+            and (contains($xrefstyle, 'page')
+            or contains($xrefstyle, 'Page')))
+            or ( $insert.link.page.number = 'yes' 
+            or $insert.link.page.number = '1')">
+            <xsl:apply-templates select="$target" mode="page.citation">
+               <xsl:with-param name="id" select="$linkend"/>
+            </xsl:apply-templates>
+         </xsl:when>
+      </xsl:choose>
    </xsl:template>
    
    
