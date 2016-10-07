@@ -48,11 +48,15 @@ The Commonwealth of Australia and the ARR’s contributing authors (through Engi
 
 ### Further License Questions
 
-If you have any questions about the copyright of the ARR, please contact:
+For further information about the copyright in this document, please contact:
 
-arr_admin@arr.org.au
-c/o 11 National Circuit,
-Barton, ACT
+...Intellectual Property and Copyright Manager..
+...Corporate Branch..
+...Geoscience Australia..
+...GPO Box 378..
+...CANBERRA ACT 2601..
+...Phone: +61 2 6249 9367 or email: copyright@ga.gov.au..
+
 
 ISBN 978-1-925297-07-2
 
