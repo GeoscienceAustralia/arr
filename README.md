@@ -36,6 +36,14 @@ TODO: need to define the contribution process.
 
 Too many people have contributed directly to this project to list in this README.  Please see the individual books and chapters as well as the [ARR website](http://www.arr.org.au/) for direct authors and project teams.
 
+## Contacts
+
+For questions about the management of this repo, please contact:  
+
+**Elton Carneiro**  
+*Developer*  
+<elton.carneiro@ga.gov.au>  
+
 ## License
 
 The Australian Rainfall and Runoff: A guide to flood estimation (ARR) is licensed under the Creative Commons Attribution 4.0 Licence, unless otherwise indicated or marked.
