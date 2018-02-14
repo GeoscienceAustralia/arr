@@ -36,7 +36,7 @@ export XSLTPROC_OPTS=--xinclude --output
 #####################################################
 #####################################################
 # Set the top level phony targets
-.PHONY: valid html epub
+.PHONY: valid html epub pdf
 .PHONY: draft pdf_draft
 .PHONY: clean clean_draft clean_html clean_html_ajax clean_epub
 .PHONY: clean_master_refs
@@ -44,10 +44,10 @@ export XSLTPROC_OPTS=--xinclude --output
 #####################################################
 # Default and utility targets
 ####################
-# Default target: phony target to make draft PDFs
+# Default target: phony target to make drafts
 draft: valid arr_draft.pdf html epub
 
-final: valid arr.pdf html epub
+final: valid pdf html epub
 
 all: valid draft final node_count all_arr.xml
 
@@ -115,6 +115,21 @@ arr_draft.fo: valid arr_title_fo.xsl
 
 clean_draft:
 	rm -f arr_draft.fo arr_draft.pdf arr_set_img_scaled.xml
+
+#####################################################
+#####################################################
+#####################################################
+# PDF of the Entire Set
+pdf: arr.fo
+	$(FOP) $(FOP_OPTS) -d arr.fo -o arr.pdf
+arr.fo: valid arr_title_fo.xsl
+	$(XSLTPROC) $(XSLTPROC_OPTS) arr_set_img_scaled.xml \
+		scale_images.xsl ARR_set.xml
+	$(XSLTPROC) $(XSLTPROC_OPTS) arr.fo \
+		arr_style_fo.xsl arr_set_img_scaled.xml
+
+clean_pdf:
+	rm -f arr.fo arr.pdf arr_set_img_scaled.xml
 
 
 #####################################################
@@ -237,7 +252,7 @@ clean_epub:
 # The individual clean targets are stored within their respective sections.
 # Therefore, anything listed here should also be a PHONY at the top of this
 # Makefile.
-clean: clean_draft clean_final clean_style clean_html clean_html_ajax clean_epub clean_all_arr.xml clean_master_refs chap_refs_clean
+clean: clean_draft clean_final clean_style clean_html clean_html_ajax clean_epub clean_all_arr.xml clean_master_refs chap_refs_clean clean_pdf
 	rm -f ARR_set.xml ARR_cite_proc.xml
 
 clean_final: 
