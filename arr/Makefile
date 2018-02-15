@@ -252,7 +252,7 @@ clean_epub:
 # The individual clean targets are stored within their respective sections.
 # Therefore, anything listed here should also be a PHONY at the top of this
 # Makefile.
-clean: clean_draft clean_final clean_style clean_html clean_html_ajax clean_epub clean_all_arr.xml clean_master_refs chap_refs_clean clean_pdf
+clean: clean_draft clean_final clean_style clean_html clean_html_ajax clean_epub clean_all_arr.xml clean_master_refs chap_refs_clean clean_pdf clean_book_pdf_all
 	rm -f ARR_set.xml ARR_cite_proc.xml
 
 clean_final: 
@@ -265,7 +265,7 @@ clean_final:
 #####################################################
 # Include additional make files that are generated from the
 # script: build_make_includes
-# include Makefile.book
+include Makefile.book
 # include Makefile.chapter
 # include Makefile.html_single
 include Makefile.html_chunked_vanilla
