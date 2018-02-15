@@ -259,6 +259,18 @@ clean_final:
 	rm -f arr.pdf arr.fo
 
 
+#####################################################
+#####################################################
+#####################################################
+# Distribution clean
+# This will really clean the system out so that you will have to run the
+# base build script: build_make_includes
+dist_clean: clean
+	rm -f Makefile.book \
+		Makefile.book \
+		Makefile.html_chunked_ajax \
+		Makefile.html_chunked_vanilla \
+		Makefile.epub3
 
 #####################################################
 #####################################################
