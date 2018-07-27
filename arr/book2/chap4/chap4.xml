@@ -149,10 +149,8 @@
                     selected duration</para>
                 </listitem>
                 <listitem>
-                  <para>Interpolate ARF for catchment area and selected duration using
-                      <?oxy_comment_start author="retallick" timestamp="20160626T175111+1000" comment="check this refers to right equation
-"?><xref
-                      linkend="b2_ch4_e_k5jiv"/><?oxy_comment_end?></para>
+                  <para>Interpolate ARF for catchment area and selected duration using <xref
+                    linkend="b2_ch4_e_s6w9n"/></para>
                 </listitem>
               </orderedlist>
             </td>
@@ -170,11 +168,11 @@
                 </listitem>
                 <listitem>
                   <para>Interpolate ARF(10 km<superscript>2</superscript>) for selected duration
-                    using <xref linkend="b2_ch4_e_xtsqw"/></para>
+                    using <xref linkend="b2_ch4_e_s6w9n"/></para>
                 </listitem>
                 <listitem>
                   <para>Interpolate ARF for catchment area and selected duration using <xref
-                      linkend="b2_ch4_e_k5jiv"/></para>
+                    linkend="b2_ch4_e_xu7cs"/></para>
                 </listitem>
               </orderedlist>
             </td>
@@ -186,7 +184,7 @@
                 </listitem>
                 <listitem>
                   <para>Interpolate ARF for catchment area and selected duration using <xref
-                      linkend="b2_ch4_e_k5jiv"/></para>
+                    linkend="b2_ch4_e_s6w9n"/></para>
                 </listitem>
               </orderedlist>
             </td>
@@ -213,7 +211,7 @@
                     and duration = 720 min</para>
                 </listitem>
                 <listitem>
-                  <para>Interpolate ARF for selected duration using <xref linkend="b2_ch4_e_xtsqw"
+                  <para>Interpolate ARF for selected duration using <xref linkend="b2_ch4_e_xu7cs"
                     /></para>
                 </listitem>
               </orderedlist>
@@ -245,8 +243,8 @@
       <para>Notes on <xref linkend="b2_ch4_t_41edt"/>:</para>
       <itemizedlist>
         <listitem>
-          <para><xref linkend="b2_ch4_e_wedgj"/>, <xref linkend="b2_ch4_e_g71oo"/> and <xref
-              linkend="b2_ch4_e_xtsqw"/> require the selected duration to be provided in
+          <para><xref linkend="b2_ch4_e_g71oo"/>, <xref linkend="b2_ch4_e_wedgj"/> and <xref
+            linkend="b2_ch4_e_xu7cs"/> require the selected duration to be provided in
             minutes.</para>
         </listitem>
         <listitem>
@@ -254,7 +252,7 @@
             10 km<superscript>2</superscript>. The recommended procedure is to adopt an ARF of unity
             for catchments that are less than 1 km<superscript>2</superscript>, with an
             interpolation to the empirically derived equations for catchments that are between 1 and
-            10 km<superscript>2</superscript> in area (refer to <xref linkend="b2_ch4_e_k5jiv"
+            10 km<superscript>2</superscript> in area (refer to <xref linkend="b2_ch4_e_xu7cs"
             />).</para>
         </listitem>
         <listitem>
@@ -267,212 +265,383 @@
               linkend="b2_ch4_f_p0pf9"/>) may be revised.</para>
         </listitem>
       </itemizedlist>
+      <para><emphasis role="bold">Short Duration ARF Equation</emphasis></para>
       <equation xml:id="b2_ch4_e_g71oo">
         <title>Short duration ARF Equation</title>
-        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-          <semantics>
-            <mrow>
-              <mi>A</mi>
-              <mi>R</mi>
-              <mi>F</mi>
-              <mo>=</mo>
-              <mi>M</mi>
-              <mi>i</mi>
-              <mi>n</mi>
-              <mrow>
-                <mo>[</mo>
-                <mrow>
-                  <mn>1</mn>
-                  <mo>,</mo>
-                  <mn>1</mn>
-                  <mo>−</mo>
-                  <mn>0.287</mn>
-                  <mrow>
-                    <mo>(</mo>
-                    <mrow>
-                      <mi>A</mi>
-                      <mi>r</mi>
-                      <mi>e</mi>
-                      <msup>
-                        <mi>a</mi>
-                        <mrow>
-                          <mn>0.265</mn>
-                        </mrow>
-                      </msup>
-                      <mo>−</mo>
-                      <mn>0.439</mn>
-                      <msub>
-                        <mrow>
-                          <mi>log</mi>
-                        </mrow>
-                        <mrow>
-                          <mn>10</mn>
-                        </mrow>
-                      </msub>
-                      <mo stretchy="false">(</mo>
-                      <mi>D</mi>
-                      <mi>u</mi>
-                      <mi>r</mi>
-                      <mi>a</mi>
-                      <mi>t</mi>
-                      <mi>i</mi>
-                      <mi>o</mi>
-                      <mi>n</mi>
-                      <mo stretchy="false">)</mo>
-                    </mrow>
-                    <mo>)</mo>
-                  </mrow>
-                  <mo>.</mo>
-                  <mi>D</mi>
-                  <mi>u</mi>
-                  <mi>r</mi>
-                  <mi>a</mi>
-                  <mi>t</mi>
-                  <mi>i</mi>
-                  <mi>o</mi>
-                  <msup>
-                    <mi>n</mi>
-                    <mrow>
-                      <mo>−</mo>
-                      <mn>0.36</mn>
-                    </mrow>
-                  </msup>
-                  <mo>+</mo>
-                  <mn>2.26</mn>
-                  <msup>
-                    <mrow>
-                      <mtext> x 10</mtext>
-                    </mrow>
-                    <mrow>
-                      <mo>−</mo>
-                      <mn>3</mn>
-                    </mrow>
-                  </msup>
-                  <mtext> x </mtext>
-                  <mi>A</mi>
-                  <mi>r</mi>
-                  <mi>e</mi>
-                  <msup>
-                    <mi>a</mi>
-                    <mrow>
-                      <mn>0.226</mn>
-                    </mrow>
-                  </msup>
-                  <mo>.</mo>
-                  <mi>D</mi>
-                  <mi>u</mi>
-                  <mi>r</mi>
-                  <mi>a</mi>
-                  <mi>t</mi>
-                  <mi>i</mi>
-                  <mi>o</mi>
-                  <msup>
-                    <mi>n</mi>
-                    <mrow>
-                      <mn>0.125</mn>
-                    </mrow>
-                  </msup>
-                  <mrow>
-                    <mo>(</mo>
-                    <mrow>
-                      <mn>0.3</mn>
-                      <mo>+</mo>
-                      <msub>
-                        <mrow>
-                          <mi>log</mi>
-                        </mrow>
-                        <mrow>
-                          <mn>10</mn>
-                        </mrow>
-                      </msub>
-                      <mo stretchy="false">(</mo>
-                      <mi>A</mi>
-                      <mi>E</mi>
-                      <mi>P</mi>
-                      <mo stretchy="false">)</mo>
-                    </mrow>
-                    <mo>)</mo>
-                  </mrow>
-                  <mo>+</mo>
-                  <mn>0.0141</mn>
-                  <mtext> x </mtext>
-                  <mi>A</mi>
-                  <mi>r</mi>
-                  <mi>e</mi>
-                  <msup>
-                    <mi>a</mi>
-                    <mrow>
-                      <mn>0.213</mn>
-                    </mrow>
-                  </msup>
-                  <mtext> x </mtext>
-                  <msup>
-                    <mrow>
-                      <mn>10</mn>
-                    </mrow>
-                    <mrow>
-                      <mo>−</mo>
-                      <mn>0.021</mn>
-                      <mfrac>
-                        <mrow>
-                          <msup>
-                            <mrow>
-                              <mrow>
-                                <mo>(</mo>
-                                <mrow>
-                                  <mi>D</mi>
-                                  <mi>u</mi>
-                                  <mi>r</mi>
-                                  <mi>a</mi>
-                                  <mi>t</mi>
-                                  <mi>i</mi>
-                                  <mi>o</mi>
-                                  <mi>n</mi>
-                                  <mo>−</mo>
-                                  <mn>180</mn>
-                                </mrow>
-                                <mo>)</mo>
-                              </mrow>
-                            </mrow>
-                            <mn>2</mn>
-                          </msup>
-                        </mrow>
-                        <mrow>
-                          <mn>1440</mn>
-                        </mrow>
-                      </mfrac>
-                    </mrow>
-                  </msup>
-                  <mrow>
-                    <mo>(</mo>
-                    <mrow>
-                      <mn>0.3</mn>
-                      <mo>+</mo>
-                      <msub>
-                        <mrow>
-                          <mi>log</mi>
-                        </mrow>
-                        <mrow>
-                          <mn>10</mn>
-                        </mrow>
-                      </msub>
-                      <mo stretchy="false">(</mo>
-                      <mi>A</mi>
-                      <mi>E</mi>
-                      <mi>P</mi>
-                      <mo stretchy="false">)</mo>
-                    </mrow>
-                    <mo>)</mo>
-                  </mrow>
-                </mrow>
-                <mo>]</mo>
-              </mrow>
-            </mrow>
-          </semantics>
-        </math>
+        <m:math display="block">
+          <m:mi>A</m:mi>
+          <m:mi>R</m:mi>
+          <m:mi>F</m:mi>
+          <m:mo>=</m:mo>
+          <m:mi>M</m:mi>
+          <m:mi>i</m:mi>
+          <m:mi>n</m:mi>
+          <m:mrow>
+            <m:mo>{</m:mo>
+            <m:mrow>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>&#x2212;</m:mo>
+                          <m:mn>0.287</m:mn>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>A</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>e</m:mi>
+                          <m:msup>
+                            <m:mi>a</m:mi>
+                            <m:mrow>
+                              <m:mn>0.265</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo>&#x2212;</m:mo>
+                          <m:mn>0.439</m:mn>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:mi>n</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo>.</m:mo>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:msup>
+                            <m:mi>n</m:mi>
+                            <m:mrow>
+                              <m:mo>&#x2212;</m:mo>
+                              <m:mn>0.36</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mo>+</m:mo>
+                          <m:mn>2.26</m:mn>
+                          <m:msup>
+                            <m:mrow>
+                              <m:mtext>&#x00A0;x&#x00A0;10</m:mtext>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mo>&#x2212;</m:mo>
+                              <m:mn>3</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mtext>&#x00A0;x&#x00A0;</m:mtext>
+                          <m:mi>A</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>e</m:mi>
+                          <m:msup>
+                            <m:mi>a</m:mi>
+                            <m:mrow>
+                              <m:mn>0.226</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo>.</m:mo>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:msup>
+                            <m:mi>n</m:mi>
+                            <m:mrow>
+                              <m:mn>0.125</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mn>0.3</m:mn>
+                          <m:mo>+</m:mo>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>A</m:mi>
+                          <m:mi>E</m:mi>
+                          <m:mi>P</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo stretchy="false">)</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mo>+</m:mo>
+                          <m:mn>2.26</m:mn>
+                          <m:msup>
+                            <m:mrow>
+                              <m:mtext>&#x00A0;x&#x00A0;10</m:mtext>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mo>&#x2212;</m:mo>
+                              <m:mn>3</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mtext>&#x00A0;x&#x00A0;</m:mtext>
+                          <m:mi>A</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>e</m:mi>
+                          <m:msup>
+                            <m:mi>a</m:mi>
+                            <m:mrow>
+                              <m:mn>0.226</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo>.</m:mo>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:msup>
+                            <m:mi>n</m:mi>
+                            <m:mrow>
+                              <m:mn>0.125</m:mn>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mn>0.3</m:mn>
+                          <m:mo>+</m:mo>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>A</m:mi>
+                          <m:mi>E</m:mi>
+                          <m:mi>P</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo stretchy="false">)</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+            <m:mo>}</m:mo>
+          </m:mrow>
+        </m:math>
       </equation>
       <para>where Area is in km<superscript>2</superscript>, Duration is in minutes and AEP is a
         fraction (between 0.5 and 0.0005).</para>
+      <para><emphasis role="bold">Long Duration ARF Equation</emphasis></para>
+      <equation xml:id="b2_ch4_e_wedgj">
+        <m:math display="block">
+          <m:mi>A</m:mi>
+          <m:mi>R</m:mi>
+          <m:mi>F</m:mi>
+          <m:mo>=</m:mo>
+          <m:mi>M</m:mi>
+          <m:mi>i</m:mi>
+          <m:mi>n</m:mi>
+          <m:mrow>
+            <m:mo>{</m:mo>
+            <m:mrow>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>&#x2212;</m:mo>
+                          <m:mi>a</m:mi>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>A</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>e</m:mi>
+                          <m:msup>
+                            <m:mi>a</m:mi>
+                            <m:mi>b</m:mi>
+                          </m:msup>
+                          <m:mo>&#x2212;</m:mo>
+                          <m:mi>c</m:mi>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:mi>n</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:msup>
+                            <m:mi>n</m:mi>
+                            <m:mrow>
+                              <m:mo>&#x2212;</m:mo>
+                              <m:mi>d</m:mi>
+                            </m:mrow>
+                          </m:msup>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mo>+</m:mo>
+                          <m:mi>e</m:mi>
+                          <m:mi>A</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>e</m:mi>
+                          <m:msup>
+                            <m:mi>a</m:mi>
+                            <m:mi>f</m:mi>
+                          </m:msup>
+                          <m:mi>D</m:mi>
+                          <m:mi>u</m:mi>
+                          <m:mi>r</m:mi>
+                          <m:mi>a</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mi>i</m:mi>
+                          <m:mi>o</m:mi>
+                          <m:msup>
+                            <m:mi>n</m:mi>
+                            <m:mi>g</m:mi>
+                          </m:msup>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mn>0.3</m:mn>
+                          <m:mo>+</m:mo>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mi>A</m:mi>
+                          <m:mi>E</m:mi>
+                          <m:mi>P</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mo>+</m:mo>
+                          <m:mi>h</m:mi>
+                          <m:msup>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mi>i</m:mi>
+                              <m:mi>A</m:mi>
+                              <m:mi>r</m:mi>
+                              <m:mi>e</m:mi>
+                              <m:mi>a</m:mi>
+                              <m:mfrac>
+                                <m:mrow>
+                                  <m:mi>D</m:mi>
+                                  <m:mi>u</m:mi>
+                                  <m:mi>r</m:mi>
+                                  <m:mi>a</m:mi>
+                                  <m:mi>t</m:mi>
+                                  <m:mi>i</m:mi>
+                                  <m:mi>o</m:mi>
+                                  <m:mi>n</m:mi>
+                                </m:mrow>
+                                <m:mrow>
+                                  <m:mn>1440</m:mn>
+                                </m:mrow>
+                              </m:mfrac>
+                            </m:mrow>
+                          </m:msup>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mn>0.3</m:mn>
+                          <m:mo>+</m:mo>
+                          <m:msub>
+                            <m:mrow>
+                              <m:mi>log</m:mi>
+                            </m:mrow>
+                            <m:mrow>
+                              <m:mn>10</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                          <m:mi>A</m:mi>
+                          <m:mi>E</m:mi>
+                          <m:mi>P</m:mi>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo stretchy="false">]</m:mo>
+                          <m:mo>&#x007D;</m:mo>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+            </m:mrow>
+            <m:mo>}</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para>where Area is in km<superscript>2</superscript>, Duration is in minutes and AEP is a
+        fraction (between 0.5 and 0.0005).</para>
+      <para><emphasis role="bold">Interpolation Equation for Durations between 12 and 24
+          hours</emphasis></para>
       <equation xml:id="b2_ch4_e_xu7cs">
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
           <semantics>
@@ -553,6 +722,8 @@
         </math>
       </equation>
       <para>where Duration is in minutes.</para>
+      <para><emphasis role="bold">ARF Equation for Areas between 1 and 10
+            km<superscript>2</superscript></emphasis></para>
       <equation xml:id="b2_ch4_e_s6w9n">
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
           <semantics>
@@ -612,191 +783,6 @@
           </imageobject>
         </mediaobject>
       </figure>
-      <equation xml:id="b2_ch4_e_wedgj">
-        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-          <semantics>
-            <mrow>
-              <mi>A</mi>
-              <mi>e</mi>
-              <mi>r</mi>
-              <mi>a</mi>
-              <mi>l</mi>
-              <mtext> </mtext>
-              <mi>r</mi>
-              <mi>e</mi>
-              <mi>d</mi>
-              <mi>u</mi>
-              <mi>c</mi>
-              <mi>t</mi>
-              <mi>i</mi>
-              <mi>o</mi>
-              <mi>n</mi>
-              <mtext> </mtext>
-              <mi>f</mi>
-              <mi>a</mi>
-              <mi>c</mi>
-              <mi>t</mi>
-              <mi>o</mi>
-              <mi>r</mi>
-              <mo>=</mo>
-              <mi>M</mi>
-              <mi>i</mi>
-              <mi>n</mi>
-              <mrow>
-                <mo>{</mo>
-                <mrow>
-                  <mn>1</mn>
-                  <mo>,</mo>
-                  <mrow>
-                    <mo>[</mo>
-                    <mrow>
-                      <mn>1</mn>
-                      <mo>−</mo>
-                      <mi>a</mi>
-                      <mrow>
-                        <mo>(</mo>
-                        <mrow>
-                          <mi>A</mi>
-                          <mi>r</mi>
-                          <mi>e</mi>
-                          <msup>
-                            <mi>a</mi>
-                            <mi>b</mi>
-                          </msup>
-                          <mo>−</mo>
-                          <mi>c</mi>
-                          <msub>
-                            <mrow>
-                              <mi>log</mi>
-                            </mrow>
-                            <mrow>
-                              <mn>10</mn>
-                            </mrow>
-                          </msub>
-                          <mi>D</mi>
-                          <mi>u</mi>
-                          <mi>r</mi>
-                          <mi>a</mi>
-                          <mi>t</mi>
-                          <mi>i</mi>
-                          <mi>o</mi>
-                          <mi>n</mi>
-                        </mrow>
-                        <mo>)</mo>
-                      </mrow>
-                      <mi>D</mi>
-                      <mi>u</mi>
-                      <mi>r</mi>
-                      <mi>a</mi>
-                      <mi>t</mi>
-                      <mi>i</mi>
-                      <mi>o</mi>
-                      <msup>
-                        <mi>n</mi>
-                        <mrow>
-                          <mo>−</mo>
-                          <mi>d</mi>
-                        </mrow>
-                      </msup>
-                      <mo>+</mo>
-                      <mi>e</mi>
-                      <mi>A</mi>
-                      <mi>r</mi>
-                      <mi>e</mi>
-                      <msup>
-                        <mi>a</mi>
-                        <mi>f</mi>
-                      </msup>
-                      <mi>D</mi>
-                      <mi>u</mi>
-                      <mi>r</mi>
-                      <mi>a</mi>
-                      <mi>t</mi>
-                      <mi>i</mi>
-                      <mi>o</mi>
-                      <msup>
-                        <mi>n</mi>
-                        <mi>g</mi>
-                      </msup>
-                      <mrow>
-                        <mo>(</mo>
-                        <mrow>
-                          <mn>0.3</mn>
-                          <mo>+</mo>
-                          <msub>
-                            <mrow>
-                              <mi>log</mi>
-                            </mrow>
-                            <mrow>
-                              <mn>10</mn>
-                            </mrow>
-                          </msub>
-                          <mi>A</mi>
-                          <mi>E</mi>
-                          <mi>P</mi>
-                        </mrow>
-                        <mo>)</mo>
-                      </mrow>
-                      <mo>+</mo>
-                      <mi>h</mi>
-                      <msup>
-                        <mrow>
-                          <mn>10</mn>
-                        </mrow>
-                        <mrow>
-                          <mi>i</mi>
-                          <mi>A</mi>
-                          <mi>r</mi>
-                          <mi>e</mi>
-                          <mi>a</mi>
-                          <mfrac>
-                            <mrow>
-                              <mi>D</mi>
-                              <mi>u</mi>
-                              <mi>r</mi>
-                              <mi>a</mi>
-                              <mi>t</mi>
-                              <mi>i</mi>
-                              <mi>o</mi>
-                              <mi>n</mi>
-                            </mrow>
-                            <mrow>
-                              <mn>1440</mn>
-                            </mrow>
-                          </mfrac>
-                        </mrow>
-                      </msup>
-                      <mrow>
-                        <mo>(</mo>
-                        <mrow>
-                          <mn>0.3</mn>
-                          <mo>+</mo>
-                          <msub>
-                            <mrow>
-                              <mi>log</mi>
-                            </mrow>
-                            <mrow>
-                              <mn>10</mn>
-                            </mrow>
-                          </msub>
-                          <mi>A</mi>
-                          <mi>E</mi>
-                          <mi>P</mi>
-                        </mrow>
-                        <mo>)</mo>
-                      </mrow>
-                    </mrow>
-                    <mo>]</mo>
-                  </mrow>
-                </mrow>
-                <mo>}</mo>
-              </mrow>
-            </mrow>
-          </semantics>
-        </math>
-      </equation>
-      <para>where Area is in km<superscript>2</superscript>, Duration is in minutes and AEP is a
-        fraction (between 0.5 and 0.0005).</para>
       <table frame="void" xml:id="b2_ch4_t_tc83g">
         <caption>ARF  <xref linkend="b2_ch4_e_wedgj"/> Coefficients by Region for Durations 24 to
           168 hours Inclusive</caption>
@@ -1097,5 +1083,3 @@
     </xi:fallback>
   </xi:include>
 </chapter>
-
-
