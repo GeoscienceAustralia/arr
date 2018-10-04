@@ -23,25 +23,26 @@
   <section xml:id="b9_ch6_s_7rxla">
     <title>Introduction</title>
     <para>Urban stormwater management responds to an increasing number of performance objectives
-      including to mitigate property damage, avoid risks to human life, enhance the amenity of urban
-      settlements and protect surrounding environments (see <xref linkend="b9_ch3_s_84gfv"/> and
-        <xref linkend="b9_ch5_s_j339y"/>). This involves consideration of the full spectrum of rain
-      events from frequent to rare (see <xref linkend="b9_ch3"/>) from the perspective of flooding,
-      water quality, provision of infrastructure, protection of environments and enhancing amenity
-      of urban areas. The assessment of urban stormwater behaviour, performance against objectives
-      and associated design tasks, involves complex analytical problems that are better resolved
-      using a computer-based model system. A computer model typically involves use of software or a
-      complex spreadsheet. Compared with hand calculation, computer models permit rapid numerical
-      calculation across large spatial and temporal domains, while facilitating testing of multiple
-      suites of parameters and inputs (See <xref linkend="b9_ch3_s_34r7g"/>). This in turn allows
-      the model to be calibrated to best represent the real world conditions that are under
-      assessment. Models can be a useful tool to assist our thinking, and can be readily documented
-      and reviewed, ultimately leading to better assessments and design outcomes. </para>
-    <para>Reliable estimates are nevertheless conditional upon best practice application of the
-      computer model. It is important to remember that models are only tools to guide our thinking
-      about design and management. The purpose of this chapter is to provide guidance on the
-      selection and application of modelling approaches within urban catchments, having regard to
-      the techniques described in other books of ARR. The chapter is structured as follows:</para>
+      including mitigation of property damage, avoiding risks to human life, enhancing the amenity
+      of urban settlements and protecting surrounding environments (see <xref
+        linkend="b9_ch3_s_84gfv"/> and <xref linkend="b9_ch5_s_j339y"/>). This involves looking at
+      the full spectrum of rain events from frequent to rare (see <xref linkend="b9_ch3"/>) from the
+      perspective of flooding, water quality, provision of infrastructure, protection of
+      environments and enhancing amenity of urban areas. Assessment of urban stormwater behaviour,
+      performance against objectives and associated design tasks, involve complex analytical
+      problems that are better resolved using a computer-based model system. </para>
+    <para>A computer model involves use of software or a complex spreadsheet. Compared to hand
+      calculations, computer models permit rapid numerical calculations across large spatial and
+      temporal domains, while facilitating testing of multiple suites of parameters and inputs (see
+        <xref linkend="b9_ch3_s_34r7g"/>). This in turn allows the model to be calibrated to best
+      represent real world conditions that are under assessment. Models can be useful to assist our
+      thinking, can be readily documented and reviewed, leading to better assessments and design
+      outcomes. </para>
+    <para>Nevertheless, reliable estimates are conditional based on best practice application of
+      computer model. Remember, models are only tools to guide our thinking about design and
+      management. The purpose of this chapter is to provide guidance on selection and application of
+      modelling approaches within urban catchments, having regard to techniques described in other
+      books of ARR. The chapter is structured as follows:</para>
     <orderedlist>
       <listitem>
         <para><xref linkend="b9_ch6_s_2lxrp"/> describes tasks that are characteristic of urban
@@ -50,8 +51,8 @@
       <listitem>
         <para><xref linkend="b9_ch6_s_rfr2v"/> discusses current trends in urban modelling. This may
           assist with planning a long-term strategy for technology adoption, research and training.
-          A general description of the types of computer models commonly applied in urban stormwater
-          practice is provided as an aid for model selection.</para>
+          A general description of the types of computer models applied in urban stormwater practice
+          is provided as an aid for model selection.</para>
       </listitem>
       <listitem>
         <para><xref linkend="b9_ch6_s_cj3nx"/> provides a framework for application of computer
@@ -61,7 +62,7 @@
       </listitem>
     </orderedlist>
     <para>This chapter is not intended to duplicate content in other chapters. Where relevant detail
-      is available elsewhere, references to these other books and chapters are provided.</para>
+      is available elsewhere, references to other books and chapters are provided.</para>
     <para>In the context of this chapter, an ‘urban model’ can be defined as a conceptual or
       computer-based modelling system that performs hydrologic, hydraulic, water balance or water
       quality calculations, across a catchment significantly disturbed by urban development and
@@ -69,39 +70,40 @@
       of urban areas from allotment to neighbourhood to precinct to region. Urban infrastructure of
       most direct relevance includes increased impervious surfaces, modification to natural
       conveyance areas (e.g. pits, pipes and open channels) and volume management infrastructure
-      (e.g. rainwater tanks, bio-retention and basins). </para>
+      (e.g. rainwater tanks, bio-retention and basins).</para>
     <para>Emerging urban stormwater analysis and solutions are based on a systems approach that
       incorporates multiple linked scales (<xref linkend="b9_ch3"/>). The
         <citation>b9_c3_r49+1</citation> highlights that past practice of designing individual items
-      of stormwater infrastructure at a single centralised scale has been inadequate for managing
-      urban flooding and water quality in waterways. Stormwater management needs to be designed as a
+      of stormwater infrastructure at a single centralised scale is not enough for managing urban
+      flooding and water quality in waterways. Stormwater management needs to be designed as a
       system that integrates structural and non-structural attributes of design with site
-      characteristics and performance objectives. More recently, the USEPA established that green
-      infrastructure solutions distributed at multiple scales throughout urban catchments partially
-      disconnected impervious surfaces. They also contributed to improved stormwater quality and
-      avoided flood damages <citation>b9_c6_r2</citation>. These insights are consistent with
-      earlier Australian applied research finding that both the peak flows and volumes of stormwater
-      runoff are required for the design of stormwater infrastructure
-      <citation>b9_c3_r54</citation>, and the local scale was the basic building block of cumulative
-      urban rainfall runoff processes <citation>b5_c3_r31</citation>. Many methods for modelling
-      stormwater runoff are based on regional scale assumptions and processes. However, inclusion of
-      local scale processes in analysis improves knowledge of within catchment outcomes and whole of
-      catchment responses. </para>
+      characteristics and performance objectives.</para>
+    <para>More recently, the USEPA established that green infrastructure solutions distribute at
+      multiple scales throughout urban catchments partially disconnected impervious surfaces. They
+      also contribute to improved stormwater quality and avoid flood damages
+        <citation>b9_c6_r2</citation>. These insights are consistent with earlier Australian applied
+      research finding that both peak flows and volumes of stormwater runoff are required for the
+      design of stormwater infrastructure <citation>b9_c3_r54</citation>, and local scale is the
+      basic building block of cumulative urban rainfall runoff processes
+        <citation>b5_c3_r31</citation>.</para>
+    <para>Many methods for modelling stormwater runoff are based on regional scale assumptions and
+      processes. However, inclusion of local scale processes in analysis improves knowledge of
+      within catchment outcomes and whole of catchment responses.</para>
     <para>It is suggested that a catchment with less than 10 percent impervious surfaces, or with
       less than 10 percent of the natural conveyance areas modified, would not be considered an
-      ‘urban catchment’. In which case, the advice in this chapter may have less relevance. However
+      ‘urban catchment’. In which case, the advice in this chapter may have less relevance. However,
       each catchment is different, some natural or rural catchments contain sub-catchments that are
-      urbanised (for example in semi-urban areas). The relevance of this chapter to a specific
+      urbanised (for example, in semi-urban areas). The relevance of this chapter to a specific
       modelling investigation needs to be determined by the reader through application of judgement
       and experience. </para>
   </section>
   <section xml:id="b9_ch6_s_2lxrp">
     <title>Urban Modelling Tasks</title>
     <para>Typical urban modelling tasks are introduced in this section to establish context for
-      subsequent discussion. In particular this section focusses on those modelling tasks that are
+      subsequent discussion. This section particularly focusses on those modelling tasks that are
       not typically required when modelling rural and natural catchments. This section should be
       read in conjunction with <xref linkend="book5"/>, <xref linkend="book6"/> and <xref
-        linkend="book7"/> where the reader can find information about modelling tasks and
+        linkend="book7"/> and where the reader can find information about modelling tasks and
       assumptions that are common across all catchment types (i.e. urban, semi-rural, rural and
       natural).</para>
     <para>There are some important differences between modelling of urban catchments compared with
@@ -130,14 +132,14 @@
     <para>The density of land uses and associated infrastructure within an urban catchment also
       changes with time. The urban modelling process must therefore consider the information needs
       of the stakeholder and ensure the temporal scenarios being modelled are relevant.</para>
-    <para>There are also differences relating to the availability and use of model input data.
-      Modelling in urban areas has intensive requirements related to representation of urban form,
-      land uses and stormwater infrastructure. Collection and collation of input data can therefore
-      become a significant component of the overall urban modelling task (refer <xref
+    <para>There are also differences relating to availability and use of model input data. Modelling
+      in urban areas has intensive requirements related to representation of urban form, land uses
+      and stormwater infrastructure. Therefore, collection and collation of input data can become a
+      significant component of the overall urban modelling task (refer <xref
         linkend="b9_ch6_s_mxsz7"/>).</para>
     <section xml:id="b9_ch6_s_tojzw">
       <title>Impervious Surface Estimation</title>
-      <para>One of the defining characteristics of an urban catchment is the presence of impervious
+      <para>One of the defining characteristics of an urban catchment is presence of impervious
         surfaces such as roads, buildings, footpaths and driveways. These surfaces have an
         associated reduced infiltration loss and decreased lag in hydrologic response in comparison
         to pervious surfaces (i.e. landscaping, lawns, open space) or natural catchments. <xref
@@ -164,49 +166,49 @@
       <para>These two configurations of impervious surfaces provide different hydrologic responses,
         with Directly Connected Impervious Areas contributing to runoff more quickly than Indirectly
         Connected Impervious Areas (refer <xref linkend="b5_ch5_s_qqflw"/>). </para>
-      <para>For large urban catchments, isolating the separate hydrologic effects of these two types
-        of impervious surfaces is challenging. <xref linkend="b5_ch5_s_ppgv2"/> instead describes a
-        concept referred to as Effective Impervious Area (EIA) which encompasses the combined
+      <para>For large urban catchments, isolating separate hydrologic effects of these two types of
+        impervious surfaces is challenging. <xref linkend="b5_ch5_s_ppgv2"/> instead describes a
+        concept referred to as Effective Impervious Area (EIA) that encompasses the combined
         hydrologic effect of both directly and indirectly connected impervious areas. The estimated
         EIA value for a catchment is calculated and then applied to hydrologic calculations using
         the adopted modelling software. </para>
       <para>The approach described in <xref linkend="b5_ch5_s_ppgv2"/> involves estimation of EIA
         via linear regression of site stream flow gauge and rainfall data. In situations where there
-        is insufficient available data to allow this technique to be used, the ratio of EIA to Total
-        Impervious Area (TIA) has been established for a collection of gauged catchments that allows
-        EIA to be estimated based on an estimate of TIA. (Refer <xref linkend="b5_ch5_s_3gs2s"
-        />).</para>
-      <para>TIA is a measurable catchment feature which is typically estimated using GIS methods
-        (refer <xref linkend="b5_ch5_s_ih2vd"/>). The selection of a technique for estimation of TIA
-        will depend on catchment scale, data availability, accuracy requirements, and whetherthe
-        catchment scenario being investigated relates to an existing or future condition.</para>
-      <para>From <xref linkend="book5"/> the recommended ratio of EIA/TIA for the majority of urban
-        catchments sits within the range of 50% to 70%. For example, if the TIA for an urban
-        catchment was measured to be say 55% then the EIA for that same catchment would be somewhere
-        between 27.5% and 38.5% of the total catchment area.</para>
-      <para>However when the EIA approach is used, it is important that the characteristics of the
-        catchment under investigation are compared to those of the catchments that have been used to
-        establish the recommended EIA/TIA ratio. Different catchments have different stormwater
-        management standards and land use patterns that may alter the overall degree of connectivity
+        is insufficient available data for this technique, the ratio of EIA to Total Impervious Area
+        (TIA) is established for a collection of gauged catchments that allows EIA to be estimated
+        based on an estimated TIA. (Refer <xref linkend="b5_ch5_s_3gs2s"/>).</para>
+      <para>TIA is a measurable catchment feature that is typically estimated using GIS methods
+        (refer <xref linkend="b5_ch5_s_ih2vd"/>). The technique selection TIA estimation depends on
+        catchment scale, data availability, accuracy requirements, and whetherthe catchment scenario
+        being investigated relates to an existing or future condition.</para>
+      <para>From <xref linkend="book5"/> the recommended ratio of EIA to TIA for majority of urban
+        catchments sits within the range of 50% and 70%. For example, if the TIA for an urban
+        catchment was measured as 55% then the EIA for that same catchment would be between 27.5%
+        and 38.5% of the total catchment area.</para>
+      <para>However, when the EIA approach is used, it is important that the characteristics of the
+        catchment under investigation are compared to those of the catchments that were used to
+        establish the recommended EIA to TIA ratio. Different catchments have different stormwater
+        management standards and land use patterns that may alter the overall connectivity degree
         between impervious surfaces and the drainage network serving the catchment. Where there is
-        higher connectivity, then the EIA is also expected to be higher.</para>
+        higher connectivity, the EIA is also expected to be higher.</para>
       <para>For some catchment investigations where there is strong connectivity between the
-        impervious surfaces and the downstream drainage system then the measured TIA value may be
-        the more suitable impervious surface value to be used for hydrologic modelling purposes. For
-        example, the analysis of a sealed carpark surface, where the entire impervious area is
-        directly connected to surface inlets, is more appropriately undertaken using a TIA estimate. </para>
-      <para>Also where the scale of the catchment is small, for example an individual parcel of land
-        or a small development site, the use of TIA values in conjunction with a sub-catchment
-        definition that reflects actual stormwater connectivity may be more appropriate. To avoid
-        over estimation, practitioners should only use TIA for small scale catchments when they are
+        impervious surfaces and the downstream drainage system the measured TIA value may be the
+        more suitable impervious surface value to be used for hydrologic modelling purposes. For
+        example, analysis of a sealed carpark surface, where the entire impervious area is directly
+        connected to surface inlets, is more appropriately undertaken using a TIA estimate.</para>
+      <para>Also where the catchment scale is small, for example, an individual parcel of land or a
+        small development site, the use of TIA values in conjunction with a sub-catchment definition
+        that reflects actual stormwater connectivity may be more appropriate. To avoid over
+        estimation, practitioners should use TIA for small scale catchments only when they are
         satisfied that all the impervious flow is directly connected. The effect of any volume
-        management infrastructure should also be explicitly reflected in these model simulations. </para>
+        management infrastructure should also be explicitly reflected in these model
+        simulations.</para>
       <para>Consideration also needs to be given to the overall need for accuracy when deriving
-        estimates of impervious cover. The majority of techniques applied by practitioners typically
-        under or over-estimate actual impervious cover by between 10 and 20 percentage points
-          <citation>b9_c6_r16</citation>. </para>
+        estimates of impervious cover. Majority of techniques applied by practitioners typically
+        under or over-estimates actual impervious cover by 10 to 20 percent
+          <citation>b9_c6_r16</citation>.</para>
       <para>Predicted peak discharges and runoff volumes are sensitive to error in impervious cover
-        when modelling low rainfall events with both event-based and continuous simulation models.
+        when modelling low rainfall events with event-based and continuous simulation models.
           <citation>b9_c6_r16+1</citation> observed that a difference in impervious surfaces of +/-
         10 percentage points from actual conditions, can result in typical errors of 13% in peak
         discharge and 25% in runoff volume. These errors decrease in situations where rainfall
@@ -220,10 +222,10 @@
     </section>
     <section xml:id="b9_ch6_s_0k1v3">
       <title>Conveyance Infrastructure</title>
-      <para>Urban areas typically contain a significant amount of stormwater conveyance
+      <para>Urban areas typically contain significant amount of stormwater conveyance
         infrastructure, including numerous stormwater inlet structures feeding a network of other
         conveyance infrastructure such as street gutters, pipes, open channels, roadways and
-        overland flow paths through open spaces. These are linked together to form a continuous and
+        overland flow paths through open spaces. These are linked together to form continuous and
         distributed network from source to receiving waterway (refer <xref linkend="b9_ch5"
         />).</para>
       <para>While natural waterway conveyance is increasingly sought as a design objective for new
@@ -232,16 +234,16 @@
         within conduits that have artificial linings and unnatural slope leads to faster average
         flow velocity, greater volume and significantly altered flood hydrographs compared to those
         from comparably sized rural and natural catchments.</para>
-      <para>In order to accurately represent the hydrologic and hydraulic behaviour of an urban
-        area, the influence of conveyance infrastructure on routing and flow behaviour should be
-        included within the adopted urban flood model. For most applications the model should be
-        capable of describing the effect of conveyance infrastructure on flow characteristics such
-        as flow depth, velocity, direction, surface level and the hydraulic grade line showing
-        hydraulic losses including their position and size. Other important information includes the
-        split of flow between the minor and major flow path, maximum flow widths in gutters, maximum
-        allowable flow velocity in pipes, the location and direction of any diversions and
-        breakouts, and the extent of property inundation.</para>
-      <para>The effect of conveyance infrastructure on these flood characteristics varies across the
+      <para>To accurately represent the hydrologic and hydraulic behaviour of an urban area, the
+        influence of conveyance infrastructure on routing and flow behaviour should be included
+        within the adopted urban flood model. For most applications the model should be capable of
+        describing the effect of conveyance infrastructure on flow characteristics such as flow
+        depth, velocity, direction, surface level, and hydraulic grade line showing hydraulic losses
+        including their position and size. Other important information includes the split of flow
+        between minor and major flow path, maximum flow widths in gutters, maximum allowable flow
+        velocity in pipes, the location and direction of any diversions and breakouts, and the
+        extent of property inundation.</para>
+      <para>The effect of conveyance infrastructure on these flood characteristics varies across
         different types of urban flood models. </para>
       <para>Some models reflect the performance of conveyance infrastructure explicitly, which
         requires that the modeller input a detailed physical definition of conduits and their
@@ -266,18 +268,18 @@
           <para>Hydraulic parameters (e.g. mannings ‘n’, viscosity)</para>
         </listitem>
       </orderedlist>
-      <para>This information must be gathered for each and every relevant piece of conveyance
-        infrastructure that is part of the network being investigated. In some cases this data may
-        be readily accessible in an asset database. In other circumstances this data may require
-        collection via ground survey. When data cannot be obtained due to inaccessible structures,
-        assumptions regarding the network geometry may be required.</para>
+      <para>This information must be gathered for each relevant piece of conveyance infrastructure
+        that is part of the network being investigated. In some cases this data may be readily
+        accessible in an asset database. In other circumstances this data may require collection via
+        ground survey. When data cannot be obtained due to inaccessible structures, assumptions
+        regarding the network geometry may be required.</para>
       <para>A schematic representation of the overall conveyance network, including connectivity
         between inlets, conduits and junctions is then constructed within the model.</para>
       <para>These models can be data intensive, but they also have potential to provide detailed and
         accurate descriptions of flood behaviours. </para>
       <para>Depending on the type of user interface and pre-processor associated with the adopted
         model software, some of these data requirements may be automatically harvested from other
-        raw input data. For example a 3D surface model may be used to establish roadside gutter
+        raw input data. For example, a 3D surface model may be used to establish roadside gutter
         profile and slope automatically. Even so, some information will be required such as in this
         case the plan position of the roadside gutter.</para>
       <para>For large urban areas, particularly those that have become densely developed over a long
@@ -290,14 +292,14 @@
         structure is capturing a realistic amount of runoff.</para>
       <para>In some cases the burden of this infrastructure definition task can be reduced through
         use of simplified models and assumptions that do not explicitly model the performance of all
-        conveyance infrastructure items. For example the capacity of underground drainage may be an
+        conveyance infrastructure items. For example, the capacity of underground drainage may be an
         assumed proportion of the total runoff hydrograph or in some cases totally ignored. This
         approach can be acceptable if the capacity of the underground system is small relative to
         the size of floods being investigated. In this case the model construction may instead focus
         on a more accurate definition of surface-based conveyance infrastructure and overland flow
         paths.</para>
       <para>Other models can provide flood estimates using an even more implicit description of
-        conveyance infrastructure. For example rating curves and stage hydrographs may be used for
+        conveyance infrastructure. For example, rating curves and stage hydrographs may be used for
         selected locations in conjunction with run-off routing hydrologic estimates. In this case
         less physical data needs to be collected.</para>
       <para>Any decision to simplify the description of conveyance infrastructure within a model
@@ -309,16 +311,16 @@
     <section xml:id="b9_ch6_s_9pjt4">
       <title>Waterway Crossings</title>
       <para>Waterway crossings are urban infrastructure for the purpose of allowing access across a
-        natural or man-made waterway. The most commonly encountered waterway crossings comprise of
-        causeways, culverts and bridges that are constructed as part of a vehicular, rail or
+        natural or manufactured waterway. The most commonly encountered waterway crossings comprise
+        of causeways, culverts and bridges that are constructed as part of a vehicular, rail or
         pedestrian transport system. </para>
       <para>Waterway crossings can have considerable hydraulic impact for floods within the range
-        where the crossing structure causes the cross-sectional area of the waterway to be
-        substantially reduced. In these circumstances additional energy is required to pass flow
-        through and/or over the structure causing increased pressure head upstream of the crossing
-        (afflux). Afflux is flow dependant and will change across the range of potential flood
-        discharges. This afflux can cause a significant storage volume to be engaged upstream of
-        embankments which can therefore also heavily influence downstream flood behaviour.</para>
+        where the crossing structure causes the cross-sectional area of the waterway to be reduced.
+        In these circumstances additional energy is required to pass flow through and/or over the
+        structure causing increased pressure head upstream of the crossing (afflux). Afflux is flow
+        dependant and will change across the range of potential flood discharges. This afflux can
+        cause a significant storage volume to be engaged upstream of embankments which can therefore
+        also heavily influence downstream flood behaviour.</para>
       <para>A comprehensive description of hydraulic behaviour at waterway crossings and other
         hydraulic structures is found in <xref linkend="b6_ch3"/>.</para>
       <para>As well as causing afflux locally around the structure, the hydraulic behaviour
@@ -350,9 +352,8 @@
         assist with identifying locations where bed shear stress increases are likely and the design
         of scour protection measures (see <xref linkend="b6_ch3"/>).</para>
       <para>Consideration also needs to be given to blockage potential of the overall structure and
-        which blockage scenarios may be required in order to fully describe potential flood
-        behaviour. <xref linkend="b6_ch6"/> provides further detail regarding blockage
-        considerations.</para>
+        which blockage scenarios may be required to fully describe potential flood behaviour. <xref
+          linkend="b6_ch6"/> provides further detail regarding blockage considerations.</para>
       <para>As with conveyance infrastructure, some types of urban models may estimate the flood
         behaviour impacts of the waterway crossing in an implicit manner through use of rating
         curves and stage hydrographs. The impact of any such simplifications and assumptions on
@@ -361,11 +362,11 @@
     </section>
     <section xml:id="b9_ch6_s_y9jk6">
       <title>Volume Management Infrastructure</title>
-      <para> Volume management infrastructure comprises of discrete facilities, primarily for the
-        purpose of controlling peak discharge and volume. They can be located at almost any point
-        within a drainage network and are linked by conveyance infrastructure and/or natural
-        waterways. A comprehensive description of typical volume management infrastructure
-        facilities is found in <xref linkend="b6_ch4"/>.</para>
+      <para> Volume management infrastructure comprises of discrete facilities, primarily for
+        controlling peak discharge and volume. They can be located at almost any point within a
+        drainage network and are linked by conveyance infrastructure and/or natural waterways. A
+        comprehensive description of typical volume management infrastructure facilities is found in
+          <xref linkend="b6_ch4"/>.</para>
       <para>The hydrologic and hydraulic impact of these facilities can be significant and will vary
         according to the design of the facility and size of the flood. For the urban modeller, the
         task associated with this infrastructure is the physical description and schematisation of
@@ -419,15 +420,16 @@
         process. It not only ensures that the modelling is fit for purpose, but it documents the
         sources of data and how the data was interpreted and used in the model. Models often evolve
         as improvements are made or processes are changed to better represent different components.
-        This task is much simpler if a good data management process has been used. It is important
-        that the data management system properly documents the source of the data, the format and
-        the date of acquisition. <xref linkend="b1_ch4"/> provides comprehensive advice on the use
-        of data. A key challenge in urban catchments is that many urban drainage components cannot
-        be put directly into a model but need to be schematized. Examples include converting a basin
-        drawing into a stage storage table or representing a complex pit system. It is important
-        that the data management system properly documents this process so the interpretation and
-        schematization is properly documented and can be reviewed or refined at a later date. While
-        data can be classified in many different ways, there are three broad types of data:</para>
+        This task is much simpler if a good data management process has been used. </para>
+      <para>It is important that the data management system properly documents the source of the
+        data, the format and the date of acquisition. <xref linkend="b1_ch4"/> provides
+        comprehensive advice on the use of data. A key challenge in urban catchments is that many
+        urban drainage components cannot be put directly into a model but need to be schematised.
+        Examples include converting a basin drawing into a stage storage table or representing a
+        complex pit system. It is important that the data management system properly documents this
+        process so the interpretation and schematisation is properly documented and can be reviewed
+        or refined later date. While data can be classified in many ways, there are three broad
+        types of data:</para>
       <orderedlist>
         <listitem>
           <para>model inputs such as rainfall and temporal patterns that change between
@@ -453,14 +455,14 @@
     <title>Model Selection</title>
     <para>There is a wide range of conceptual modelling approaches, software platforms and systems
       available to the urban designer. Each platform has different capabilities and strengths. It is
-      not the role of Australian Rainfall and Runoff to recommend specific conceptual modelling
-      approaches, software packages or prescribed flood estimation methods. However the guidance
-      contained in this chapter does seek to classify the available options into categories and
-      highlight the current strengths and weaknesses of each to support a decision on the adoption
-      of an appropriate platform or estimation procedure for the task at hand. We are mindful that
-      the science and practice of urban stormwater management will continue to evolve and new models
-      and data will become available. The guidance in this chapter should not be seen as excluding
-      new and innovative approaches.</para>
+      not the role of ARR to recommend specific conceptual modelling approaches, software packages
+      or prescribed flood estimation methods. However, the guidance contained in this chapter does
+      seek to classify the available options into categories and highlight the current strengths and
+      weaknesses of each to support a decision on the adoption of an appropriate platform or
+      estimation procedure for the task at hand. We are mindful that the science and practice of
+      urban stormwater management will continue to evolve and new models and data will become
+      available. The guidance in this chapter should not be excluding new and innovative
+      approaches.</para>
     <section xml:id="b9_ch6_s_f49r1">
       <title>Overall Trends in Urban Modelling</title>
       <para>The last 30 years has seen fundamental changes in the way urban stormwater assessment
@@ -474,9 +476,9 @@
         <title>Computing Power </title>
         <para>In response to the overall computing requirements of society, urban modelling
           practitioners now have access to faster computers with enormous numerical computation
-          capability. This has arisen through improvements to computer processors (CPU’s) including
+          capability. This has arisen through improvements to computer processors (CPUs) including
           64-bit computing and multi-core processing. More recently the use of graphics processing
-          units (GPU’s) has led to further substantial processing improvements. New opportunities
+          units (GPU's) has led to further substantial processing improvements. New opportunities
           are also arising with the advent of high performance computing services, including on the
           cloud. The transition from hand calculations to widespread availability of computing power
           to assist in designs is a major change in stormwater management practice since ARR 1987
@@ -486,8 +488,8 @@
           the modelling practitioner to consider:</para>
         <orderedlist>
           <listitem>
-            <para>Increasing the physical size of the model domain. For example model a larger urban
-              catchment.</para>
+            <para>Increasing the physical size of the model domain. For example, model a larger
+              urban catchment.</para>
           </listitem>
           <listitem>
             <para>Increasing the spatial and temporal resolution of the model to allow for finer
@@ -514,7 +516,7 @@
         <para>It can be expected that computational capabilities will continue to increase into the
           future and that urban modelling software platforms will continue to be refined and
           improved to harness more of the available capacity. </para>
-        <para>At the present time computing power is such that it is reasonable to expect that most
+        <para>Currently, time computing power is such that it is reasonable to expect that most
           urban hydrologic model simulations, even relatively complex ones, can be undertaken within
           seconds or minutes. It can therefore be assumed that pure hydrologic investigations are
           already unconstrained by computing power regardless of the choice of model
@@ -522,20 +524,18 @@
         <para>Computing power is still somewhat of a constraint for hydraulic simulations. Some of
           the more complex finer resolution or larger domain hydraulic model simulations can take
           hours or days per simulation. This may constrain the design of an urban hydraulic
-          modelling investigation and also means that due care must be taken when selecting a
-          hydraulic model platform. A hydraulic platform and method should be chosen that has
-          computational efficiency to match the problem at hand. Models with very long run times
-          should be carefully managed as they usually preclude comprehensive testing, checking or
-          calibration. </para>
+          modelling investigation and means that due care must be taken when selecting a hydraulic
+          model platform. A hydraulic platform and method should be chosen that has computational
+          efficiency to match the problem at hand. Models with very long run times should be
+          carefully managed as they usually preclude comprehensive testing, checking or calibration. </para>
         <para>The future will permit very large multi-catchment spatial domains to be modelled at
-          the finest level of temporal and spatial resolution necessary, with sufficient speed to
-          allow simultaneous and exhaustive exploration of hydrologic and hydraulic
-          scenarios.</para>
+          the finest level of temporal and spatial resolution necessary, with enough speed to allow
+          simultaneous and exhaustive exploration of hydrologic and hydraulic scenarios.</para>
         <para>This trend may outpace our ability to improve the underlying science and gather
           sufficient quality input data, and to respond with more informed design and management
           solutions. Consideration will also need to be given to whether the ultimate outcomes of
-          investigations are actually improved by aggressively pursuing the full capabilities of
-          available computing power. </para>
+          investigations are improved by aggressively pursuing the full capabilities of available
+          computing power. </para>
         <para>In other words, at some point in the future, further improvements to computing power
           may cease to provide any material value to urban modelling practitioners. Substantial
           further research and data collection, for a range of urban catchment scales, is necessary
@@ -565,7 +565,7 @@
               useful way to ensure flow paths are not inadvertently omitted from an investigation.
               With further research and software development this approach may in time also
               eliminate the need for hydrologic models to undertake surface routing. At this stage
-              however there is inadequate evidence that a direct rainfall approach should be relied
+              however, there is inadequate evidence that a direct rainfall approach should be relied
               upon for this purpose with many parameters being scale and approach dependent (refer
                 <xref linkend="book5"/>).</para>
           </listitem>
@@ -611,9 +611,9 @@
       </section>
       <section xml:id="b9_ch6_s_pdsnv">
         <title>The Internet and Spatial Information Systems </title>
-        <para>Since the 1987 version of Australian Rainfall and Runoff, the Internet has emerged to
-          become a ubiquitous part of life. The internet provides urban modelling practitioners a
-          new potentially more effective method for:</para>
+        <para>Since the 1987 version of ARR, the Internet has emerged to become a ubiquitous part of
+          life. The internet provides urban modelling practitioners a new potentially more effective
+          method for:</para>
         <orderedlist>
           <listitem>
             <para>accessing and disseminating research, including international practice</para>
@@ -631,8 +631,7 @@
         <para>Furthermore, modelling software platforms that have traditionally been tied to a
           single computer, are now able to be offered as internet-based services. Into the future
           other new applications will be found for the internet that cannot be fully anticipated at
-          this time but will likely support further improvements in the application of urban
-          models.</para>
+          this time but will support further improvements in the application of urban models.</para>
         <para>In parallel to the Internet, an associated trend that has also emerged is a deeper
           interest and reliance on spatial information systems (or Geographical Information Systems
           [GIS]). These systems are used for the storage, handling and display of physical catchment
@@ -645,7 +644,7 @@
       <section xml:id="b9_ch6_s_p1qdr">
         <title>Information Needs of the End-User</title>
         <para>The information needs of the end user have become more complex. A greater number of
-          aspects are of interest. For example the extent, depth and level of floodwaters are now
+          aspects are of interest. For examplem, the extent, depth, and level of floodwaters are now
           typically supplemented by velocity, combinations of velocity and depth (hazard), volume
           and timing. Enhanced datasets are also now prepared such as risk and planning controls.
           These results are often required at many additional locations distributed across urban
@@ -658,10 +657,10 @@
       <title>Types of Urban Models</title>
       <para>Notwithstanding the potential future trends in urban modelling described above, today’s
         industry practitioners already have a greater array of model platforms and estimation
-        options than available in the past. However each option differs in the quality of spatial
-        representation they are capable of achieving, as well as the capability with which they can
-        represent different physical flood processes. Accordingly some models or methods may or may
-        not be suitable for a specific urban modelling task.</para>
+        options than available in the past. However, each option differs in the quality of spatial
+        representation they can achieve, as well as the capability with which they can represent
+        different physical flood processes. Accordingly, some models or methods may or may not be
+        suitable for a specific urban modelling task.</para>
       <para>Some of the more common types of models and methods are listed in <xref
           linkend="b9_ch6_t_okqdg"/> below. For each type, a generic classification of its
         capability is also provided. This is a snapshot in time of the capability of these models
@@ -707,7 +706,7 @@
             <td>Peak flow only – scalar quantity, single lumped catchment, requires ‘Time of
               Concentration’ assumption, only suitable for small catchments. It has best
               capabilities where there is no storage present.</td>
-            <td>RATHGL, PCdrain</td>
+            <td>RATHGL, PC drain</td>
           </tr>
           <tr>
             <td>Hydrology</td>
@@ -748,7 +747,7 @@
             <td>Moderate</td>
             <td>Strong</td>
             <td>Not always emulating full capability of the underlying hydrologic model</td>
-            <td>DRAINS, Pcdrain, XP-SWMM</td>
+            <td>DRAINS, PC drain, XP-SWMM</td>
           </tr>
           <tr>
             <td>Hydrology and Hydraulics</td>
@@ -801,7 +800,7 @@
             <td>Strong</td>
             <td>Specialist models for underground drainage networks, storage routing performance
               best where flow is contained within the minor system.</td>
-            <td>SWMM, XP-STORM, DRAINS, PCdrain, MIKE URBAN</td>
+            <td>SWMM, XP-STORM, DRAINS, PC drain, MIKE URBAN</td>
           </tr>
           <tr>
             <td>Water Quality</td>
@@ -905,15 +904,14 @@
           </tr>
         </tbody>
       </table>
-      <para>When selecting a particular model or technique, the practitioner should in the first
-        instance look to match the estimation capabilities of the model, whether they be ‘limited’,
-        ‘moderate’ or ‘strong’, with the nature of urban modelling problem that is being
-        investigated. </para>
-      <para>For example if channel routing and structure hydraulics are not aspects of the problem
+      <para>When selecting a model or technique, the practitioner should in the first instance look
+        to match the estimation capabilities of the model, whether they be ‘limited’, ‘moderate’ or
+        ‘strong’, with the nature of urban modelling problem that is being investigated. </para>
+      <para>For example, if channel routing and structure hydraulics are not aspects of the problem
         that need to be investigated, then the model selected need not have any capabilities in
-        these areas. Equally, if it is expected that a particular problem will require significant
-        capabilities in (for example) runoff generation, then a model with ‘strong’ capabilities in
-        this area should be considered.</para>
+        these areas. Equally, if it is expected that a problem will require significant capabilities
+        in (for example,) runoff generation, then a model with ‘strong’ capabilities in this area
+        should be considered.</para>
       <para>Where the estimation capabilities are identified in <xref linkend="b9_ch6_t_okqdg"/> as
         ‘limited’, significant caution must be adopted. As a minimum they should be applied by, or
         under the direct guidance of, a practitioner who fully understands the limitations of these
@@ -926,7 +924,7 @@
     </section>
     <section xml:id="b9_ch6_s_j6bj1">
       <title>Model Scale</title>
-      <para> Urban models are constructed at different spatial scales depending on the size of the
+      <para>Urban models are constructed at different spatial scales depending on the size of the
         overall catchment to be analysed and the nature of the performance objectives being sought.
         Typically the smallest catchment a practitioner will consider is that of a single small
         parcel of land with a single dwelling. The type of model assessments that are normally
@@ -936,12 +934,12 @@
       <para>At the other end of the spectrum of potential scale, an urban model may be constructed
         to represent all the stormwater catchments spanning an entire suburb or even a small city.
         These larger models are often used for the purpose of regional flood mapping, establishing
-        flood levels for development purposes or the design of large scale stormwater and road
+        flood levels for development purposes or the design of large-scale stormwater and road
         crossing infrastructure. </para>
-      <para>When evaluating which type of model to adopt for a particular urban modelling project,
-        the spatial scale of interest is an important factor to consider since some particular
-        models may not be capable of competently representing all the complexity that is encountered
-        at the scale of interest.</para>
+      <para>When evaluating which type of model to adopt for urban modelling project, the spatial
+        scale of interest is an important factor to consider since some models may not be capable of
+        competently representing all the complexity that is encountered at the scale of
+        interest.</para>
       <para>Consider four example spatial scales with each physical footprint increasing by an
         approximate order of magnitude as shown in <xref linkend="b9_ch6_t_umoju"/> below.</para>
       <table frame="void" xml:id="b9_ch6_t_umoju">
@@ -1013,8 +1011,8 @@
         provided in <xref linkend="b9_ch6_t_npwo3"/>). </para>
       <para>Some degree of simplification of these flood generation processes normally occurs when
         preparing an urban flood model. The flood generation processes listed in <xref
-          linkend="b9_ch6_t_npwo3"/> have differentlevels of importance and influence when trying to
-        decide whether any simplifications are possible. Each process has been indicated in <xref
+          linkend="b9_ch6_t_npwo3"/> have different levels of importance and influence when trying
+        to decide whether any simplifications are possible. Each process has been indicated in <xref
           linkend="b9_ch6_t_npwo3"/> by one of two different symbols as follows:</para>
       <informaltable frame="void">
         <col width="88%"/>
@@ -1332,22 +1330,22 @@
           </tr>
         </tbody>
       </table>
-      <para><emphasis role="italic">2 - Opportunity for model simplification (refer <xref
+      <para><emphasis role="italic">2 . Opportunity for model simplification (refer <xref
             linkend="b9_ch6_s_28ypi"/>)</emphasis></para>
-      <para>Most model platforms have some limitations on which processes they are capable of
-        representing. A decision will be required at the commencement of model preparation as to
-        whether the selected model and the available data are capable of achieving the required
-        level of accuracy and reliability.</para>
+      <para>Most model platforms have some limitations on which processes they can represent. A
+        decision will be required at the commencement of model preparation as to whether the
+        selected model and the available data are capable of achieving the required level of
+        accuracy and reliability.</para>
       <para>As a result of the expected increase in the number of flood generation processes with
         scale, if a catchment investigation requires investigation across a large spatial scale,
         then the modeller can expect that a model or method with ‘strong’ estimation capabilities
         across multiple flood process areas will be necessary (refer <xref linkend="b9_ch6_t_okqdg"
         /> and <xref linkend="b9_ch6_t_kby4c"/>). </para>
-      <para>For example the Rational Method, with ‘limited’ runoff generation and surface routing
+      <para>For example, the Rational Method, with ‘limited’ runoff generation and surface routing
         capabilities, is not likely to be suitable for a ‘precinct’ scale estimate of peak flow as
-        it cannot adequately simulate the array of flood processes that are encountered, even in the
-        most simple of catchments. However it may be suitable at a ‘lot’ scale in circumstances
-        where storage routing is not critical.</para>
+        it cannot simulate the array of flood processes that are encountered, even in the simplest
+        of catchments. However, it may be suitable at a ‘lot’ scale in circumstances where storage
+        routing is not critical.</para>
       <para>If volume management infrastructure forms part of a solution, or if an understanding of
         potential impacts on downstream flooding are required, then a ‘strong’ hydrologic estimation
         method such as a runoff-routing model should be used. For most urban modelling at this point
@@ -1417,7 +1415,7 @@
         of flow routing and how storage is represented in the catchment. Generally a hydraulic model
         will be required where there is a need to understand both flow and flood levels. One
         dimensional pipe and channel models only provide this information at key locations but are
-        well suited to ‘greenfields’ subdivision design, while a two dimensional model provides a
+        well suited to ‘greenfields’ subdivision design, while a two-dimensional model provides a
         detailed spatial representation of surface stormwater processes and may be more suited to
         brownfields investigations.</para>
     </section>
@@ -1430,17 +1428,17 @@
       <para>When modelling at small spatial scales it is simpler to closely represent each flood
         process and its associated physical features and drainage connections explicitly. As spatial
         scale increases it is sometimes possible to adopt some model simplifications to manage data
-        requirements and the general complexity of the modelling task. For example when building a
-        ‘precinct’ scale model it may be possible to omit or simplify ‘lot’ scale processes. However
-        models should not be simplified unless that consequences of spatial averaging, deterministic
-        assumptions and judgements is well understood. Where simplification is undertaken, efforts
-        should be made to fully understand the impacts of simplification and limits on validity of
-        the model outputs. For example by comparison of results against a more detailed sub-model or
-        results generated by an alternative model.</para>
+        requirements and the general complexity of the modelling task. For example, when building a
+        ‘precinct’ scale model it may be possible to omit or simplify ‘lot’ scale processes.
+        However, models should not be simplified unless that consequences of spatial averaging,
+        deterministic assumptions and judgements is well understood. Where simplification is
+        undertaken, efforts should be made to fully understand the impacts of simplification and
+        limits on validity of the model outputs. For example, by comparison of results against a
+        more detailed sub-model or results generated by an alternative model.</para>
       <para>Experience and careful judgement are required when choosing to omit or simplify those
         processes that are suggested as being less important. In general the omission or
         simplification of such a process should only occur when the investigation does not demand
-        highly reliable estimates, for example for preliminary sizing of structures or where flood
+        highly reliable estimates, for example, for preliminary sizing of structures or where flood
         risks are low. <xref linkend="b9_ch6_t_npwo3"/> indicates those flood generation processes
         that may be less important and therefore could be considered as an opportunity for
         simplification at each different spatial scale.</para>
@@ -1458,7 +1456,7 @@
         spatial resolution for each type of model and to what degree spatial simplification can be
         tolerated.</para>
       <para>Then there is the temporal resolution of the model and the ability to extract output
-        time series that are fit for purpose. For example the temporal resolution necessary for
+        time series that are fit for purpose. For example, the temporal resolution necessary for
         regional water supply planning may be lower than required for calculation of stormwater
         harvest yield from a small catchment. In this case a degree of temporal simplification to
         daily or monthly data may be acceptable for a regional water supply planning task.</para>
@@ -1498,9 +1496,9 @@
       <para>An increasing range of modelling frameworks and approaches are available to urban
         designers (see <xref linkend="b9_ch6_f_w760n"/>). The urban stormwater design process, as
         outlined in <xref linkend="b9_ch5_s_h00bb"/> (see <xref linkend="b9_ch5_f_2a26n"/>), should
-        be modified to respond to the characteristics of a particular project. Selection of a
-        modelling framework will depend on the purpose of the analysis, scale and complexity of the
-        project, availability of data and the consequences of failure, and includes: </para>
+        be modified to respond to the characteristics of a project. Selection of a modelling
+        framework will depend on the purpose of the analysis, scale and complexity of the project,
+        availability of data and the consequences of failure, and includes: </para>
       <itemizedlist>
         <listitem>
           <para>Hydrological models that translate rainfall into stormwater runoff and evaluate
@@ -1511,11 +1509,11 @@
             networks of infrastructure and across land surfaces; </para>
         </listitem>
         <listitem>
-          <para>Hydrology models that include simple pipe hydraulics or one dimensional hydraulic
+          <para>Hydrology models that include simple pipe hydraulics or one-dimensional hydraulic
             models;</para>
         </listitem>
         <listitem>
-          <para>Linked hydrology and hydraulic models that include detailed two dimensional surface
+          <para>Linked hydrology and hydraulic models that include detailed two-dimensional surface
             flows with hydrodynamic conveyance networks;</para>
         </listitem>
         <listitem>
@@ -1535,24 +1533,23 @@
         enhance our understanding about the likely stormwater behaviours for particular urban
         scenarios. The different hydrological and hydraulic models can be classified by their
         outputs of peak flowrates, hydrographs, flood depths or continuous sequences of stormwater
-        runoff. These models can also distinguished by the methods used to route rainfall runoff
-        towards inlet structures in urban conveyance networks or stormwater volume management
-        measures. Models can also be described by different spatial detail such as lumped,
-        semi-distributed or distributed inputs (<xref linkend="b4ch2_f_lsm3n"/>, <xref
-          linkend="b4ch2_s_pfupn"/>). Lumped catchment models approximate the behaviour of the
-        catchment using single average inputs and assumptions. Semi-distributed models employ a
-        range of sub-catchments with different attributes and assumptions. In contrast, spatially
-        explicit details are included in distributed models – this detail may include the range of
-        different land uses and properties in an urban model or a grid of equal size and shape used
-        throughout the model. An emerging type of distributed hydrology and hydraulic model is the
-        direct rainfall or rain on grid methods (see <xref linkend="b6_ch4_s_9f1m8"/>). </para>
+        runoff. These models can also distinguish the methods used to route rainfall runoff towards
+        inlet structures in urban conveyance networks or stormwater volume management measures.
+        Models can also be described by different spatial detail such as lumped, semi-distributed or
+        distributed inputs (<xref linkend="b4ch2_f_lsm3n"/>, <xref linkend="b4ch2_s_pfupn"/>).
+        Lumped catchment models approximate the behaviour of the catchment using single average
+        inputs and assumptions. Semi-distributed models employ a range of sub-catchments with
+        different attributes and assumptions. In contrast, spatially explicit details are included
+        in distributed models – this detail may include the range of different land uses and
+        properties in an urban model or a grid of equal size and shape used throughout the model. An
+        emerging type of distributed hydrology and hydraulic model is the direct rainfall or rain on
+        grid methods (see <xref linkend="b6_ch4_s_9f1m8"/>). </para>
       <para>Empirical relationships can be utilised to determine peak flows from small catchments
-        and are applied to the design of roof gutters, downpipes and infrastructure to manage
+        and are applied to the design of roof gutters, downpipes, and infrastructure to manage
         stormwater runoff from properties in accordance with standards such as AS/NZS 3500.3. These
         approximate methods include nominal “deemed to comply” infrastructure specifications or
-        generally require information about catchment area and slope, and utilise assumed runoff
-        coefficients, time of concentration and design rainfall intensity in a lumped catchment
-        design process. </para>
+        require information about catchment area and slope, and utilise assumed runoff coefficients,
+        time of concentration and design rainfall intensity in a lumped catchment design process. </para>
       <para>The probabilistic or the urban Rational Method is a more detailed approximate method
         that is utilised to generate peak flowrates for use in the design of pipe networks within
         small properties and for small sub-catchments. This framework of analysis differs from
@@ -1585,22 +1582,22 @@
         include internal processes that incorporate different land uses with separate pervious and
         impervious surfaces. The process includes depression storages and losses with lag times to
         generate separate hydrographs of runoff for each land surface. These runoff routing methods
-        typically employ event based rainfall inputs (<xref linkend="b4_ch3_s_y3noq"/>) of selected
+        typically employ event-based rainfall inputs (<xref linkend="b4_ch3_s_y3noq"/>) of selected
         Annual Exceedance Probability (AEP) and duration of peak burst rainfall (see <xref
           linkend="b9_ch6_s_9307w"/>). An objective of this process is to achieve probability
         neutrality between rainfall inputs and generated runoff for urban catchments. </para>
       <para>These runoff routing methods may utilise single or multiple design storms and associated
         temporal patterns to determine regimes of excess rainfall that is then routed through
-        hydraulic models that range from simple pipe hydraulics to full two dimensional hydrodynamic
-        processes. A key limitation of event based modelling approaches is the need for assumptions
+        hydraulic models that range from simple pipe hydraulics to full two-dimensional hydrodynamic
+        processes. A key limitation of event-based modelling approaches is the need for assumptions
         about joint probability of antecedent conditions (such as soil moisture and available
         storage in volume management solutions) and the characteristics of storm events
-          <citation>b9_c3_r16</citation>. In addition, event based methods have traditionally only
+          <citation>b9_c3_r16</citation>. In addition, event-based methods have traditionally only
         simulated runoff from burst rainfall and have not considered that runoff is also generated
         by pre-burst and post burst rainfall (see <xref linkend="b9_ch6_s_9307w"/>). The magnitude
-        of rainfall runoff in urban catchment may be under-estimated by event based processes unless
-        pre-burst rainfall is also counted in rainfall event based models. </para>
-      <para>The limitations of rainfall event based models, and dramatic increases in the capacity
+        of rainfall runoff in urban catchment may be under-estimated by event-based processes unless
+        pre-burst rainfall is also counted in rainfall event-based models. </para>
+      <para>The limitations of rainfall event-based models, and dramatic increases in the capacity
         and utilisation of computers has fostered the use of continuous simulation (<xref
           linkend="b4_ch3_s_5wtrv"/>; <xref linkend="b9_ch3"/>) models that can account for
         continuous physical, conceptual and statistical processes in urban catchments. These methods
@@ -1611,7 +1608,7 @@
         simulation can also be employed to account for the interactions between climate processes,
         human interventions or behaviours and stormwater runoff from urban catchments
           <citation>b9_c4_r173</citation>. Pluviograph rainfall records with intervals of less than
-        an hour (often 6 minute intervals) are used in continuous simulation of rainfall runoff from
+        an hour (often 6-minute intervals) are used in continuous simulation of rainfall runoff from
         urban catchments. </para>
       <para>The continuous simulation method involves simulation of a rainfall runoff model over a
         time period of sufficient length to account for all of the important interactions between
@@ -1620,19 +1617,19 @@
         rare runoff events and synthetic rainfall sequences are often required for continuous
         simulation models (<xref linkend="b4_ch3_s_6xe8d"/>; <xref linkend="b2_ch6"/>, ). Use of
         continuous simulation with synthetic rainfall inputs may require calibration of the rainfall
-        model and the continuous runoff routing model (<xref linkend="b4_ch3_s_77dp8"/>). However
+        model and the continuous runoff routing model (<xref linkend="b4_ch3_s_77dp8"/>). However,
         all models require calibration and verification. </para>
       <para>An alternative use of continuous simulation is to derive the probability distribution of
         initial conditions prior to storm events such soil moisture storage, and available storage
-        in rainwater tanks and bio-retention facilities <citation>b9_c3_r8,b9_c2_r31</citation>.
-        These probability distributions of initial conditions are then utilised in event based
+        in rainwater tanks and bioretention facilities <citation>b9_c3_r8,b9_c2_r31</citation>.
+        These probability distributions of initial conditions are then utilised in event-based
         runoff routing models to determine runoff from urban catchments. Note that these types of
         probabilistic inputs are associated with complete storm events and will need to be applied
-        in event based models using complete storm events or combinations of pre-burst and burst
+        in event-based models using complete storm events or combinations of pre-burst and burst
         rainfall. </para>
       <para>Direct rainfall or rain on grid models combine hydrological and hydraulic processes to
         generate rainfall runoff and hydraulic routing in a single model. Rainfall is applied to
-        each grid in a two dimensional hydraulic model to generate overland flows and discharges in
+        each grid in a two-dimensional hydraulic model to generate overland flows and discharges in
         conduits (<xref linkend="b6_ch4_s_9f1m8"/>). This method can provide more realistic
         representation of catchment storages and surface runoff processes including cross catchment
         flows. A fine grid of good quality topographic, losses and roughness data is required, and
@@ -1642,12 +1639,12 @@
         historical spatial flood levels or flow data. Use of regional rainfall runoff parameters is
         not suitable for direct rainfall methods that are driven by local processes. </para>
       <para>There may also be a need to vary roughness parameters (such as Mannings n) with flow
-        depth (for example: <citation>b9_c6_r20+1</citation>; <citation>b9_c6_r12+1</citation>;
+        depth (for example,: <citation>b9_c6_r20+1</citation>; <citation>b9_c6_r12+1</citation>;
           <citation>b9_c6_r13+1</citation>) and carefully assign loss parameters in each grid
           <citation>b4_c2_r2</citation>. The results at local and sub-catchment scales may be
         unexpected as all flow paths are identified. The method is subject to a range of potential
         challenges including mathematical instabilities, unrealistic flows and large errors created
-        by losses, variable roughness, long runtimes and shallow flow depths. These powerful direct
+        by losses, variable roughness, long runtime and shallow flow depths. These powerful direct
         rain methods are subject to ongoing research and model results should be interpreted with
         caution. It is imperative that practitioners check that catchment response with an
         alternative model and volume of runoff is consistent with loss model used (see <xref
@@ -1670,8 +1667,8 @@
         variability of rainfall. </para>
       <para>The design of stormwater infrastructure and understanding of runoff for urban areas
         involves decisions at multiple scales. This insight can be combined with ensembles of design
-        rainfall patterns to determine the appropriate rainfall inputs as shown (for example) by the
-        Box and Whisker plot of peak runoff (discharge) to the catchment outlet in <xref
+        rainfall patterns to determine the appropriate rainfall inputs as shown (for example,) by
+        the Box and Whisker plot of peak runoff (discharge) to the catchment outlet in <xref
           linkend="b9_ch6_f_qdfwc"/>.</para>
       <figure xml:id="b9_ch6_f_qdfwc">
         <title>Example of a Box and Whisker plot of peak stormwater runoff utilised to select the
@@ -1683,11 +1680,11 @@
         </mediaobject>
       </figure>
       <para><xref linkend="b9_ch6_f_qdfwc"/> indicates highest average and median peak discharge is
-        generated by the ensemble of 10 storm bursts of 25 minute duration at the catchment outlet.
-        A small number of higher values of peak runoff also occur in the 45 minute (maximum value)
-        and 120 minute (far outlier value) durations which could be used to test the potential
+        generated by the ensemble of 10 storm bursts of 25-minute duration at the catchment outlet.
+        A small number of higher values of peak runoff also occur in the 45-minute (maximum value)
+        and 120-minute (far outlier value) durations which could be used to test the potential
         maximum hazard of surface flows. Conveyance infrastructure within the catchment should be
-        designed using ensembles of storms with durations up to and including 25 minutes to account
+        designed using ensembles of storms with durations up to and including 25-minute to account
         for impacts of smaller duration storms upstream of the outlet. Different design ensembles
         may apply in situations that incorporate within catchment storage solutions and at different
         locations in the urban catchment.</para>
@@ -1712,7 +1709,7 @@
           <citation>b9_c5_r1</citation>. </para>
       <para>A range of updated rainfall products are available from the ARR 2016 Data Hub, including
         new spatially distributed Intensity Frequency Duration data (IFD), Areal Reduction factors
-        (ARF), design temporal patterns for burst rainfall, hydrological losses and pre-burst
+        (ARF), design temporal patterns for burst rainfall, hydrological losses, and pre-burst
         rainfall – as summarised in <xref linkend="b9_ch6_t_f182x"/>. </para>
       <para>
         <table frame="void" xml:id="b9_ch6_t_f182x">
@@ -1788,8 +1785,8 @@
               <td>Pre burst </td>
               <td>Allegedly incorporated into advice</td>
               <td>mixed</td>
-              <td>Estimates provided on Datahub. Use 60 minute pre-burst rainfall with burst
-                rainfall ensembles of durations less than 60 minutes</td>
+              <td>Estimates provided on Datahub. Use 60-minute pre-burst rainfall with burst
+                rainfall ensembles of durations less than 60-minute</td>
             </tr>
           </tbody>
         </table>
@@ -1859,10 +1856,10 @@
         synthetic continuous rainfall sequences are discussed in <xref linkend="b2_ch6"/>.
         Additional discussion of synthetic continuous rainfall records that incorporate regional
         layers (surfaces) of spatial observed climate observations is also provided by
-          <citation>b9_c4_r173+1</citation> and
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Coombes and Barry
-        (2018<?oxy_custom_end?>). ARR 2016 also provides software to generate multi-site continuous
-        synthetic rainfall (Multi-site Rainfall Simulator) at arr.ga.gov.org. </para>
+          <citation>b9_c4_r173+1</citation>
+        <?oxy_comment_start author="testoni" timestamp="20181004T150322+1000" comment="does not exist in reference list"?>and
+        Coombes and Barry (2018)<?oxy_comment_end?>. ARR 2016 also provides software to generate
+        multi-site continuous synthetic rainfall (Multi-site Rainfall Simulator) at arr.ga.gov.org. </para>
       <para>Radar rainfall (see <citation>b9_c6_r3+1</citation>) can be used to interpolate between
         point rainfall observations for use in hydrology and 2D hydraulic models. There have been
         many studies that have developed methods to correct errors in radar rainfall but some
@@ -1873,10 +1870,10 @@
       <title>Runoff from properties</title>
       <para>Stormwater runoff from roofs and properties, at the lot scale, is the basic building
         block of urban stormwater catchment behaviour
-          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(<citation>b5_c3_r30,b9_c6_r17</citation>;
-          <?oxy_custom_end?><xref linkend="b9_ch3"/>). Runoff from properties involves a complex
-        interaction of roofs, yards, paved areas, gardens, and adjoining roads and footpaths as
-        shown for a residential property in <xref linkend="b9_ch6_f_4txi2"/>. </para>
+          (<citation><?oxy_comment_start author="testoni" timestamp="20181004T150451+1000" comment="is highlighted??"?>b5_c3_r30,b9_c6_r17<?oxy_comment_end?></citation>;
+          <xref linkend="b9_ch3"/>). Runoff from properties involves a complex interaction of roofs,
+        yards, paved areas, gardens, and adjoining roads and footpaths as shown for a residential
+        property in <xref linkend="b9_ch6_f_4txi2"/>. </para>
       <figure xml:id="b9_ch6_f_4txi2">
         <title>Stormwater runoff from roofs and properties – lot scale effects</title>
         <mediaobject>
@@ -1944,8 +1941,9 @@
       <para>Design calculations are provided for more complex land uses and larger properties. These
         guidelines highlight the need to avoid ponding against buildings, flows into buildings and
         management of overland flows from adjoining properties. Large residential, commercial and
-        industrial properties and carparks include more complex and dendritic stormwater management
-        systems as shown in <xref linkend="b9_ch6_f_lb3w0"/> (for example). </para>
+        industrial properties and car parks include more complex and dendritic stormwater management
+        systems as shown in <xref linkend="b9_ch6_f_lb3w0"/> (for
+        example<?oxy_insert_start author="testoni" timestamp="20181003T115040+1000"?>,<?oxy_insert_end?>). </para>
       <figure xml:id="b9_ch6_f_lb3w0">
         <title>Stormwater management system for larger properties with complex land uses</title>
         <mediaobject>
@@ -1965,7 +1963,7 @@
         Method assumptions and utilise catchment areas (roofs, paved surfaces and gardens),
         proportions of imperviousness, slopes, assumed times of concentration with associated
         average rainfall intensities and runoff coefficients to generate maximum or peak flow rates.
-        A five minute time of concentration and associated rainfall intensity was commonly assumed
+        A five-minute time of concentration and associated rainfall intensity was commonly assumed
         in design processes for roof and property drainage. Performance standards for roofs have
         been defined by choice of rainfall intensity of a 5% AEP for roof gutters and of a 1% AEP
         for box gutters. Design of conveyance networks within properties aim to avoid surcharges and
@@ -1975,16 +1973,17 @@
         these approaches which may lead to under-performance of stormwater management measures
         included unexpected surface flows on properties. </para>
       <para>Field measurements suggest that travel time to street gutters from residential
-        properties is two minutes or less <citation>b9_c6_r17</citation>
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Coombes
-        2002)<?oxy_custom_end?>. The assumption of five minute time of concentration in ARR87 was
+        properties is two-minute or less <citation>b9_c6_r17</citation>
+        <?oxy_comment_start author="testoni" timestamp="20181004T150548+1000" comment="not in reference list
+"?>Coombes
+        2002)<?oxy_comment_end?>. The assumption of five-minute time of concentration in ARR87 was
         based on the lowest available time interval of IFD rainfall at the time. Revised IFDs are
         available from the ARR 2016 Datahub (data.arr-software.org) that provide values for rainfall
         intensity that commence at a one minute duration which permits use of finer detail in design
         and to account for shorter flow times to outlets. Observations by
           <citation>b9_c6_r17+1</citation>, <citation>b5_c3_r31+1</citation> and
-        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Coombes
-        (2002)<?oxy_custom_end?> indicate that initial losses from roof gutter systems range from 0
+        <?oxy_comment_start author="testoni" timestamp="20181004T150629+1000" comment="not in reference list"?>Coombes
+        (2002)<?oxy_comment_end?> indicate that initial losses from roof gutter systems range from 0
         mm to 1 mm and continuing losses range from 0% for metal roofs to 20% for dry tile roofs.
         Average depression storage losses of impervious surfaces can range from 1 mm to 10 mm and
         average losses from pervious surfaces range from 2 mm to 20 mm. </para>
@@ -2002,7 +2001,7 @@
         in the small scale design processes that are known as “regime in balance” and accounting for
         “emptying times” of storages.</para>
       <para>Stormwater management strategies for larger or more complex properties should be
-        designed or analysed using event based hydrograph routing methods that utilise storm burst
+        designed or analysed using event-based hydrograph routing methods that utilise storm burst
         patterns and pre-burst rainfall as inputs. The pre-burst rainfall, rainfall intensities and
         patterns of storm bursts for a given location can be downloaded from the ARR2016 Datahub
         (data.arr-software.org) and included in models of stormwater runoff. These rainfall inputs
@@ -2024,7 +2023,7 @@
         property. At some locations, the residual pre-burst rainfall may also contribute to
         additional runoff and overland flows within the property. These approaches can be combined
         in a range of computer modelling packages. </para>
-      <para>The ability of peak flow or event based models to describe runoff behaviours are limited
+      <para>The ability of peak flow or event-based models to describe runoff behaviours are limited
         in situations where the joint probability of antecedent conditions and storm events is not
         well defined (See <xref linkend="b4_ch3_s_5wtrv"/>) and there are continuous responses to
         complete storm events. These limitations apply to stormwater strategies that include volume
@@ -2036,26 +2035,27 @@
         reduction in water demand, stormwater runoff and nitrogen loads created by rainwater
         harvesting and raingardens. Alternatively, continuous simulation can provide distributions
         of available storage in volume management measures (such as rainwater tanks, infiltration
-        measures and bio-retention devices) or soil profiles prior to storm events versus frequency
-        of storm events that can be used in event based analysis
+        measures and bioretention devices) or soil profiles prior to storm events versus frequency
+        of storm events that can be used in event-based analysis
           <citation>b9_c4_r114,b9_c2_r31</citation> as shown, for example, in <xref
           linkend="b9_ch6_f_ct2xs"/>. </para>
       <figure xml:id="b9_ch6_f_ct2xs">
-        <title>Example distribution of available storage prior to storm events versus annual
-          exceedance probability (AEP) of storm events</title>
+        <title>Example distribution of available storage prior to storm events versus Annual
+          Exceedance Probability (AEP) of storm events</title>
         <mediaobject>
           <imageobject>
             <imagedata fileref="../../figures/9104.png"/>
           </imageobject>
         </mediaobject>
       </figure>
-      <para><xref linkend="b9_ch6_f_ct2xs"/> (for example) demonstrates the average retention
-        storage available in rainwater tank (capacity of 5 m<superscript>3</superscript> collecting
-        runoff from a 100 m<superscript>2</superscript> roof area and supplying household indoor and
-        outdoor uses) prior to storm events of a given AEP that was derived using continuous
-        simulation. This type of information can be used in event based models to determine
-        stormwater peak flows and runoff volumes. These results will vary significantly with
-        different land uses, building form and throughout Australia. </para>
+      <para><xref linkend="b9_ch6_f_ct2xs"/> (for
+        example<?oxy_insert_start author="testoni" timestamp="20181003T115044+1000"?>,<?oxy_insert_end?>)
+        demonstrates the average retention storage available in rainwater tank (capacity of 5
+          m<superscript>3</superscript> collecting runoff from a 100 m<superscript>2</superscript>
+        roof area and supplying household indoor and outdoor uses) prior to storm events of a given
+        AEP that was derived using continuous simulation. This type of information can be used in
+        event-based models to determine stormwater peak flows and runoff volumes. These results will
+        vary significantly with different land uses, building form and throughout Australia. </para>
     </section>
     <section xml:id="b9_ch6_s_4i8gc">
       <title>Sub-catchment runoff to inlet structures</title>
@@ -2076,10 +2076,11 @@
         </mediaobject>
       </figure>
       <para><xref linkend="b9_ch6_f_ypdw2"/> highlights that an urban sub-catchment may contain a
-        range of different land uses, including (for example) unit and detached residential
-        dwellings on properties, a park and part of a road. These land uses incorporate different
-        surfaces, including roofs, paved areas (impervious), garden and grassed areas (pervious)
-        that produce different regimes of stormwater runoff. </para>
+        range of different land uses, including (for
+        example<?oxy_insert_start author="testoni" timestamp="20181003T114929+1000"?>,<?oxy_insert_end?>)
+        unit and detached residential dwellings on properties, a park and part of a road. These land
+        uses incorporate different surfaces, including roofs, paved areas (impervious), garden and
+        grassed areas (pervious) that produce different regimes of stormwater runoff. </para>
       <para>The behaviour of the sub-catchment surfaces can be estimated using lumped catchment
         approximations which are based on sub-catchment area, the total proportion of imperviousness
         (TIA) and a travel time (or time of concentration) for a critical rainfall duration to the
@@ -2087,7 +2088,7 @@
         For example, a sub-catchment area of 4,250 m<superscript>2</superscript> with an impervious
         proportion of 56% and time of concentration which depends on rainfall intensity, slope and
         distance to inlet structure. In the absence of other data, these types of approximations
-        could be used in simple calculations or in computer models. However it is preferable to
+        could be used in simple calculations or in computer models. However, it is preferable to
         construct analysis of urban sub-catchments using local details which can be sourced from
         site inspection, survey plans and inquiry using Geographical Information Systems (GIS). </para>
       <para>Impervious or pervious surfaces can be directly connected or disconnected to inlet
@@ -2131,12 +2132,12 @@
       <para>Regional analysis of a small number of urban catchments provides estimated initial
         losses of 1 – 3 mm for EIA and 20 – 30 mm for indirectly connected areas in sub-catchments
           (<xref linkend="b5_ch5_s_dewgv"/>). Estimated median continuing losses were 2.5 mm/hour in
-        South East Australia and 1 – 4 mm/hour elsewhere. These event based regional values should
+        South East Australia and 1 – 4 mm/hour elsewhere. These event-based regional values should
         only be used in the absence of local data. It is essential that assumptions about losses in
         stormwater models are based on assessment of local conditions. The magnitude of losses is
         also impacted by antecedent moisture conditions (AMC) which is altered by garden watering in
         urban areas and by available storage in volume management measures throughout the
-        sub-catchment. It is unlikely that event based models can fully account for these effects.
+        sub-catchment. It is unlikely that event-based models can fully account for these effects.
         Sensitivity checks, Monte Carlo processes and continuous simulation can be utilised to
         include the variation in AMC and available storage within urban sub-catchments. </para>
       <para>Urban drainage was historically designed using peak flows derived using peak rainfall
@@ -2174,7 +2175,7 @@
           linkend="b9_ch5_s_iy2cb"/>and <xref linkend="b5_ch2"/>).</para>
       <para>The conveyance network is a framework of sub-catchment inputs. Urban stormwater design
         typically employed pipe network hydraulic models that utilise peak inflows or hydrographs as
-        inputs (see <xref linkend="b9_ch5_f_bfuec"/>). More advanced one dimensional models were
+        inputs (see <xref linkend="b9_ch5_f_bfuec"/>). More advanced one-dimensional models were
         also available that can be applied to simulation of conveyance networks (see <xref
           linkend="b6_ch4_s_utkoe"/>; <xref linkend="b5_ch6"/> and <xref linkend="b9_ch5"/>). </para>
       <para>Overland or surface flows are a key consideration in analysis and design of urban
@@ -2182,7 +2183,7 @@
         events (such as 1% AEP) is often overland flows on roads and across open space. Emerging
         methods of analysis and design of urban stormwater involve combined hydrology and hydraulic
         models to better understand surface flows throughout urban catchments. These methods include
-        coupled one and two dimensional models, and direct rainfall (rain on grid) models. <xref
+        coupled one and two-dimensional models, and direct rainfall (rain on grid) models. <xref
           linkend="b6_ch4_s_v3f40"/>, and <citation>b4_c2_r2+1</citation> provide detailed
         discussion about these approaches. </para>
       <para>The flowrates, depth and area of surface flows in urban catchments are highly sensitive
@@ -2412,7 +2413,7 @@
           </tr>
         </tbody>
       </table>
-      <para>In event based modelling approaches, it is important to subtract pre-burst rainfall from
+      <para>In event-based modelling approaches, it is important to subtract pre-burst rainfall from
         local losses associated with impervious and pervious surfaces as follows:</para>
       <para>Burst initial loss = storm initial losses – pre-burst rainfall (for Burst Loss ≥
         0)</para>
@@ -2456,7 +2457,8 @@
         critical to the success of this approach (see <xref linkend="b6_ch4"/>). Depth varying
         Manning’s “n” roughness parameters were selected for each land use to account for shallow
         overland flow depths across urban surfaces. Some hydraulic modelling packages provide this
-        capability in accordance with emerging research into depth varying roughness (for example:
+        capability in accordance with emerging research into depth varying roughness (for
+        example<?oxy_insert_start author="testoni" timestamp="20181003T115012+1000"?>,<?oxy_insert_end?>:
           <citation>b9_c6_r20,b9_c6_r12,b9_c6_r13</citation>). </para>
       <para>Analysis of the performance of urban conveyance networks is critically dependent on
         potential blockage of inlet structures (<xref linkend="b6_ch6"/>; <xref
@@ -2727,12 +2729,12 @@
       <para>The connectivity between design of urban conveyance and a volume management facility,
         setting the rural base case for design targets, application of climate change and assessment
         of downstream impacts on a sensitive waterways is combined in a greenfield example
-        (<?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Coombes et al.,
-        2018<?oxy_custom_end?>). This conceptual design example is located near Ballarat in Victoria
-        and includes an objective of no increase in peak flows in the downstream natural waterway to
-        mitigate impacts of the urban development on erosion of the stream. The pre-development
-        catchment is shown in <xref linkend="b9_ch6_f_f4kqg"/> and the proposed development is
-        presented in <xref linkend="b9_ch6_f_7k83y"/>. </para>
+        <citation>b9_c6_r5</citation>        <?oxy_delete author="testoni" timestamp="20181003T121626+1000" content="(Coombes et al., 2018)"?>.
+        This conceptual design example is located near Ballarat in Victoria and includes an
+        objective of no increase in peak flows in the downstream natural waterway to mitigate
+        impacts of the urban development on erosion of the stream. The pre-development catchment is
+        shown in <xref linkend="b9_ch6_f_f4kqg"/> and the proposed development is presented in <xref
+          linkend="b9_ch6_f_7k83y"/>. </para>
       <figure xml:id="b9_ch6_f_f4kqg">
         <title>Catchment prior to development</title>
         <mediaobject>
@@ -3024,3 +3026,5 @@
     </xi:include>
 
 </chapter>
+
+<?oxy_options track_changes="on"?>
