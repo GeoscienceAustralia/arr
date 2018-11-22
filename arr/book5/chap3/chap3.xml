@@ -1010,7 +1010,7 @@ At least these terms need to be defined."?>IL/CL<?oxy_comment_end?> model,
 
         <para>Loss values have been estimated for a large number of urban
             <citation>b5_c3_r71</citation> and rural catchments
-            <citation>b5_c3_r36,b5_c3_r100</citation>. These two studies represent the most
+            <citation>b5_c3_r36</citation>. These two studies represent the most
           comprehensive regional studies of losses covering Australia and hence the recommended loss
           values summarised in <xref linkend="b5_ch5_s_dewgv"/> are largely based upon these
           studies.</para>
@@ -1059,159 +1059,137 @@ At least these terms need to be defined."?>IL/CL<?oxy_comment_end?> model,
         <title>Summary of Approaches</title>
 
         <para>The advantages and disadvantages of these different approaches
-        are summarised in the table below. <table frame="all" xml:id="b5_ch5_t_vbguq">
-            <title>Summary of Different Approaches for Estimating Loss Values</title>
-
-            <tgroup cols="3">
-              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-
-              <colspec colname="c2" colnum="2" colwidth="1.0*"/>
-
-              <colspec colname="c3" colnum="3" colwidth="1.0*"/>
-
-              <thead>
-                <row>
-                  <entry><emphasis role="bold">Approach</emphasis></entry>
-
-                  <entry><emphasis role="bold">Advantages</emphasis></entry>
-
-                  <entry><emphasis role="bold">Disadvantages</emphasis></entry>
-                </row>
-              </thead>
-
-              <tbody>
-                <row>
-                  <entry>1. Empirical analysis of at-site rainfall and
-                  streamflow records</entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Data is directly relevant to the location of
-                        interest and explicitly accounts for the catchment
-                        characteristics.</para>
-                      </listitem>
-                    </itemizedlist></entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Only applicable where the catchment is free of
-                        significant regulation and diversions and the land use
-                        has been stationary</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Most catchments do not have a long period of
-                        concurrent pluviograph and streamflow data</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Difficulty in selecting an unbiased sample of
-                        events</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Does not guarantee that values result in
-                        unbiased estimates of floods</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Small sample of events makes it difficult to
-                        explore distribution of loss values</para>
-                      </listitem>
-                    </itemizedlist></entry>
-                </row>
-
-                <row>
-                  <entry>2. Regional information</entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Can be more selective in choice of data sets for
-                        analysis</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Larger sample of events allows distribution of
-                        values and relationships with characteristics to be
-                        explored</para>
-                      </listitem>
-                    </itemizedlist></entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Considerable effort required</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Difficulty in selecting an unbiased sample of
-                        events</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Does not guarantee that values result in
-                        unbiased estimates of floods</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Difficultly in linking loss values to rainfall
-                        and catchment characteristics</para>
-                      </listitem>
-                    </itemizedlist></entry>
-                </row>
-
-                <row>
-                  <entry>3. Reconciliation of design values with independent
-                  flood frequency estimates</entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Checks that, when combined with the other design
-                        inputs, the loss values produce unbiased
-                        estimates</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Loss values implicitly account for the nature of
-                        the design rainfall; whether rainfall bursts or
-                        complete storms</para>
-                      </listitem>
-                    </itemizedlist></entry>
-
-                  <entry><itemizedlist>
-                      <listitem>
-                        <para>Unlikely to have a long-term stationary
-                        streamflow record at the location of interest</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>If sufficient streamflow is not available,
-                        reliance on estimates of regional flood frequency
-                        analysis introduces additional uncertainty</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Different combination of loss values can result
-                        in same flood estimates but has different impact when
-                        applied outside of the magnitude used for
-                        reconciliation</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>All of the uncertainty in the design process is
-                        attributed to the loss which makes it difficult to
-                        infer link with rainfall and catchment
-                        characteristics</para>
-                      </listitem>
-
-                      <listitem>
-                        <para>Unlikely to have sufficient information to be
-                        able to define distribution of loss values</para>
-                      </listitem>
-                    </itemizedlist></entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table></para>
+        are summarised in the table below. 
+        </para>
+        <table frame="void" xml:id="b5_ch5_t_vbguq">
+          <caption>Summary of Different Approaches for Estimating Loss Values</caption>
+          <col width="33%"/>
+          <col width="33%"/>
+          <col width="33%"/>
+          <thead>
+            <tr>
+              <th>Approach</th>
+              <th>Advantages</th>
+              <th>Disadvantages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Empirical analysis of at-site rainfall and streamflow records</td>
+              <td>
+                <para>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Data is directly relevant to the location of interest and explicitly
+                        accounts for the catchment characteristics.</para>
+                    </listitem>
+                  </itemizedlist>
+                </para>
+              </td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Only applicable where the catchment is free of significant regulation and
+                      diversions and the land use has been stationary</para>
+                  </listitem>
+                  <listitem>
+                    <para>Most catchments do not have a long period of concurrent pluviograph and
+                      streamflow data</para>
+                  </listitem>
+                  <listitem>
+                    <para>Difficulty in selecting an unbiased sample of events</para>
+                  </listitem>
+                  <listitem>
+                    <para>Does not guarantee that values result in unbiased estimates of
+                      floods</para>
+                  </listitem>
+                  <listitem>
+                    <para>Small sample of events makes it difficult to explore distribution of loss
+                      values</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td>2. Regional information</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Can be more selective in choice of data sets for analysis</para>
+                  </listitem>
+                  <listitem>
+                    <para>Larger sample of events allows distribution of values and relationships
+                      with characteristics to be explored</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Considerable effort required</para>
+                  </listitem>
+                  <listitem>
+                    <para>Difficulty in selecting an unbiased sample of events</para>
+                  </listitem>
+                  <listitem>
+                    <para>Does not guarantee that values result in unbiased estimates of
+                      floods</para>
+                  </listitem>
+                  <listitem>
+                    <para>Difficultly in linking loss values to rainfall and catchment
+                      characteristics</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td>3. Reconciliation of design values with independent flood frequency estimates</td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Checks that, when combined with the other design inputs, the loss values
+                      produce unbiased estimates</para>
+                  </listitem>
+                  <listitem>
+                    <para>Loss values implicitly account for the nature of the design rainfall;
+                      whether rainfall bursts or complete storms</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+              <td>
+                <itemizedlist>
+                  <listitem>
+                    <para>Unlikely to have a long-term stationary streamflow record at the location
+                      of interest</para>
+                  </listitem>
+                  <listitem>
+                    <para>If sufficient streamflow is not available, reliance on estimates of
+                      regional flood frequency analysis introduces additional uncertainty</para>
+                  </listitem>
+                  <listitem>
+                    <para>Different combination of loss values can result in same flood estimates
+                      but has different impact when applied outside of the magnitude used for
+                      reconciliation</para>
+                  </listitem>
+                  <listitem>
+                    <para>All of the uncertainty in the design process is attributed to the loss
+                      which makes it difficult to infer link with rainfall and catchment
+                      characteristics</para>
+                  </listitem>
+                  <listitem>
+                    <para>Unlikely to have sufficient information to be able to define distribution
+                      of loss values</para>
+                  </listitem>
+                </itemizedlist>
+              </td>
+            </tr>
+            <tr>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+          </tbody>
+        </table>
 
         <para>If there is a long-term stationary streamflow record at the
         site, reconciliation of design values (Option 3) is preferable but if
@@ -3586,75 +3564,54 @@ At least these terms need to be defined."?>IL/CL<?oxy_comment_end?> model,
             values for the rural catchments is provided in <xref linkend="b5_ch5_t_ire3n"/>. It is
             difficult to draw any real conclusions based on the limited data set, other than to note
             that they are generally in the same range.</para>
+          <table frame="void" xml:id="b5_ch5_t_ire3n">
+            <caption>Urban Continuing Loss Values Compared with Rural Continuing Loss
+              Values</caption>
+            <col width="33%"/>
+            <col width="33%"/>
+            <col width="33%"/>
+            <thead>
+              <tr>
+                <th>Catchment</th>
+                <th colspan="2">Median CL(mm/h)</th>
+              </tr>
 
-          <para><table frame="void" xml:id="b5_ch5_t_ire3n">
-              <caption>Urban Continuing Loss Values Compared with Rural
-              Continuing Loss Values</caption>
-
-              <col width="20%"/>
-
-              <col width="20%"/>
-
-              <col width="20%"/>
-
-              <col width="20%"/>
-
-              <thead>
-                <tr>
-                  <th rowspan="2">Catchment</th>
-
-                  <th colspan="2">Median CL(mm/h)</th>
-                </tr>
+              <tr>
+                <td/>
+                <td>Phillips et al (2014)</td>
+                <td>Regional rural estimate from <xref linkend="b5_ch5_s_iu0fo"/></td>
+              </tr>
               </thead>
-
               <tbody>
-                <tr>
-                  <th>Phillips et al (2014)</th>
+              <tr>
+                <td>Giralang (ACT)</td>
+                <td>2.5</td>
+                <td>3.6</td>
+              </tr>
+              <tr>
+                <td>Powells Creek (NSW)</td>
+                <td>2.6</td>
+                <td>1.8</td>
+              </tr>
+              <tr>
+                <td>Albany Drain (WA)</td>
+                <td>3.8</td>
+                <td>3.3</td>
+              </tr>
+              <tr>
+                <td>McArthur Park (NT)</td>
+                <td>5.1</td>
+                <td>4.1</td>
+              </tr>
+              <tr>
+                <td>Argyle Street (TAS)</td>
+                <td>1.4</td>
+                <td>3.8</td>
+              </tr>
+            </tbody>
+          </table>
 
-                  <th>Regional rural estimate from <xref linkend="b5_ch5_s_iu0fo"/></th>
-                </tr>
-
-                <tr>
-                  <td>Giralang (ACT)</td>
-
-                  <td>2.5</td>
-
-                  <td>3.6</td>
-                </tr>
-
-                <tr>
-                  <td>Powells Creek (NSW)</td>
-
-                  <td>2.6</td>
-
-                  <td>1.8</td>
-                </tr>
-
-                <tr>
-                  <td>Albany Drain (WA)</td>
-
-                  <td>3.8</td>
-
-                  <td>3.3</td>
-                </tr>
-
-                <tr>
-                  <td>McArthur Park (NT)</td>
-
-                  <td>5.1</td>
-
-                  <td>4.1</td>
-                </tr>
-
-                <tr>
-                  <td>Argyle Street (TAS)</td>
-
-                  <td>1.4</td>
-
-                  <td>3.8</td>
-                </tr>
-              </tbody>
-            </table></para>
+       
 
           <figure xml:id="b5_ch5_f_dllpf">
             <title>Indirectly Connected Area Continuing Loss Estimates (from

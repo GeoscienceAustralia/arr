@@ -171,13 +171,13 @@
       situations.</para>
     <para>Further information on implementation of flood frequency approaches is provided
         in<emphasis role="bold"> </emphasis><xref linkend="b3_ch2"/>.</para>
-    <para><emphasis>Continuous simulation</emphasis><emphasis role="bold"/> - As discussed in <xref
-        linkend="b6_c5_s_soltc"/>, floods in the joint probability zone can be influenced by a large
-      number of processes operating at a range of timescales, including sub-daily variability in
-      tides, storm surges and the flood hydrograph from the upstream catchment, superimposed on
-      lower-frequency variability at daily, seasonal, annual and inter-annual timescales. In many
-      cases, dynamical features, such as the progression and attenuation of tides up the estuary,
-      can significantly influence flood behaviour.</para>
+    <para><emphasis>Continuous simulation</emphasis> - As discussed in <xref linkend="b6_c5_s_soltc"
+      />, floods in the joint probability zone can be influenced by a large number of processes
+      operating at a range of timescales, including sub-daily variability in tides, storm surges and
+      the flood hydrograph from the upstream catchment, superimposed on lower-frequency variability
+      at daily, seasonal, annual and inter-annual timescales. In many cases, dynamical features,
+      such as the progression and attenuation of tides up the estuary, can significantly influence
+      flood behaviour.</para>
     <para>Continuous simulation approaches aim to simulate these complex dynamics, by running
       continuous hydrological and hydraulic models to generate a long time series of a response
       variable (eg. flood level) that can then serve as the basis for Flood Frequency Analysis. To
@@ -200,11 +200,11 @@
       coastline.</para>
     <para>Further information on implementation of continuous simulation approaches is provided in
         <xref linkend="b2_ch6"/>.</para>
-    <para><emphasis>The design variable method</emphasis><emphasis role="bold"/> -This approach has
-      been developed as a simpler alternative to continuous simulation, without the limiting
-      assumptions of Flood Frequency Analysis. For further information on the theory and practical
-      limitation of the method, refer to <xref linkend="b6_c5_s_inliq"/> and <xref
-        linkend="b6_c5_s_expsz"/>, respectively. The primary assumptions of the approach are:</para>
+    <para><emphasis>The design variable method</emphasis> -This approach has been developed as a
+      simpler alternative to continuous simulation, without the limiting assumptions of Flood
+      Frequency Analysis. For further information on the theory and practical limitation of the
+      method, refer to <xref linkend="b6_c5_s_inliq"/> and <xref linkend="b6_c5_s_expsz"/>,
+      respectively. The primary assumptions of the approach are:</para>
     <itemizedlist>
       <listitem>
         <para>The statistical dependence between extreme rainfall and storm surge can be represented
@@ -239,23 +239,29 @@
       approaches.</para>
     <para>A comparison between each of the methods is provided in <xref linkend="b6_c5_t_fewui"
       />.</para>
-    <table xml:id="b6_c5_t_fewui">
-      <caption>Comparison  design flood estimation methods in the joint probability zone</caption>
+    <table frame="void" xml:id="b6_c5_t_fewui">
+      <caption>Comparison design flood estimation methods in the joint probability zone</caption>
+      <col width="25%"/>
+      <col width="25%"/>
+      <col width="25%"/>
+      <col width="25%"/>
+      <thead>
+        <tr>
+          <th>Aspect \ Model</th>
+          <th>Flood Frequency Analysis</th>
+          <th>Design Variable Method</th>
+          <th>Continuous Simulation</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
-          <th scope="col">Aspect \ Model</th>
-          <th scope="col">Flood Frequency Analysis</th>
-          <th scope="col">Design Variable Method</th>
-          <th scope="col">Continuous Simulation</th>
-        </tr>
-        <tr>
-          <th scope="row">Domain of Applicability</th>
+          <td>Domain of Applicability</td>
           <td>Analysis restricted to locations with gauged data.</td>
           <td>Can be applied throughout the joint probability zone.</td>
           <td>Can be applied throughout the joint probability zone.</td>
         </tr>
         <tr>
-          <th scope="row">Models Required</th>
+          <td>Models Required</td>
           <td>Univariate extreme value model or other statistical model of extremes (see <xref
               linkend="b6_ch4"/>).</td>
           <td>Event-based hydrological and hydraulic models, and a bivariate extreme value
@@ -264,25 +270,25 @@
             model.</td>
         </tr>
         <tr>
-          <th scope="row">Technical Complexity</th>
+          <td>Technical Complexity</td>
           <td>Low</td>
           <td>Intermediate</td>
           <td>Advanced</td>
         </tr>
         <tr>
-          <th scope="row">Computational Demand</th>
+          <td>Computational Demand</td>
           <td>Low</td>
           <td>Medium</td>
           <td>High</td>
         </tr>
         <tr>
-          <th scope="row">Capacity to Account for Dynamic Tidal Effects</th>
+          <td>Capacity to Account for Dynamic Tidal Effects</td>
           <td>N/A</td>
           <td>Static ocean levels only</td>
           <td>Dynamic Tides.</td>
         </tr>
         <tr>
-          <th scope="row">Parametric Uncertainty</th>
+          <td>Parametric Uncertainty</td>
           <td>Well understood likelihoods and methods for parameter uncertainty (refer to <xref
               linkend="b3_ch2"/> on FLIKE).</td>
           <td>It is feasible to estimate the uncertainty of each parameter in a bivariate extreme
@@ -290,7 +296,7 @@
           <td>Model-dependent.</td>
         </tr>
         <tr>
-          <th scope="row">Capacity to Account for Climate Change</th>
+          <td>Capacity to Account for Climate Change</td>
           <td>Cannot account for climate change.</td>
           <td>The method enables the distribution of both the extreme rainfall and ocean level to be
             modified by adjusting AEPs. The dependence between extreme rainfall and storm surge is
@@ -3574,62 +3580,60 @@
       hydrological and hydrodynamic model. The boundary conditions are specified in terms of their
       AEP rather than in their corresponding dimensional value (eg. m<superscript>3</superscript>/s,
       m, etc), so that it will be necessary to consider the probability distribution of the extremes
-      of each boundary to enable translation between an AEP and the dimensional value.<table
-        frame="void" xml:id="b6_c5_t_cdltr">
-        <caption>Flood Levels of Different Combinations of Rainfall and Storm Tide in Terms of
-          Annual Exceedance Probability, for a Particular Storm Burst Duration.
-          <?oxy_comment_start author="retallick" timestamp="20160629T161205+1000" comment="we need to do something with this. maybe just put a star in the highlighted ones"?>Only
-          the highlighted cells need to be evaluated.<?oxy_comment_end?></caption>
-        <col width="16%"/>
-        <col width="16%"/>
-        <col width="16%"/>
-        <col width="16%"/>
-        <col width="16%"/>
-        <col width="16%"/>
-        <thead>
-          <tr>
-            <th>Rainfall Events in AEPs</th>
-            <th colspan="4">Storm Tide Events in AEPs</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <td>Lower Bound</td>
-            <td>20%</td>
-            <td>2%</td>
-            <td>1%</td>
-          </tr>
-          <tr>
-            <td>No Rainfall</td>
-            <td/>
-            <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue </td>
-            <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue</td>
-            <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue</td>
-          </tr>
-          <tr>
-            <td>20%</td>
-            <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green </td>
-            <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red </td>
-            <td/>
-            <td/>
-          </tr>
-          <tr>
-            <td>2%</td>
-            <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green</td>
-            <td/>
-            <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>1%</td>
-            <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green</td>
-            <td/>
-            <td/>
-            <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red</td>
-          </tr>
-        </tbody>
-      </table></para>
+      of each boundary to enable translation between an AEP and the dimensional value.</para>
+    <table frame="void" xml:id="b6_c5_t_cdltr">
+      <caption>Flood Levels of Different Combinations of Rainfall and Storm Tide in Terms of Annual
+        Exceedance Probability, for a Particular Storm Burst Duration. Only the highlighted cells
+        need to be evaluated.</caption>
+      <col width="20%"/>
+      <col width="20%"/>
+      <col width="20%"/>
+      <col width="20%"/>
+      <col width="20%"/>
+      <thead>
+        <tr>
+          <th>Rainfall Events in AEPs</th>
+          <th colspan="4">Storm Tide Events in AEPs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td/>
+          <td>Lower Bound</td>
+          <td>20%</td>
+          <td>2%</td>
+          <td>1%</td>
+        </tr>
+        <tr>
+          <td>No Rainfall</td>
+          <td/>
+          <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue </td>
+          <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue </td>
+          <td><?dbhtml bgcolor="#61a9d3" ?><?dbfo bgcolor="#61a9d3"?>blue </td>
+        </tr>
+        <tr>
+          <td>20%</td>
+          <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green</td>
+          <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red</td>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td>2%</td>
+          <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green</td>
+          <td/>
+          <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>1%</td>
+          <td><?dbhtml bgcolor="#39b54a" ?><?dbfo bgcolor="#39b54a"?>green</td>
+          <td/>
+          <td/>
+          <td><?dbhtml bgcolor="#ed1b2f" ?><?dbfo bgcolor="#ed1b2f"?>red</td>
+        </tr>
+      </tbody>
+    </table>
     <para>The pre-screening analysis should be undertaken at each cross-section or grid cell in the
       floodplain where information is required, with a longitudinal profile of the independence and
       complete dependence cases illustrated for a single exceedance probability in <xref
@@ -5207,4 +5211,3 @@ The assumed entrance conditions being too efficient for these more frequent even
     </xi:fallback>
   </xi:include>
 </chapter>
-
