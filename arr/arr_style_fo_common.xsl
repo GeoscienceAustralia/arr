@@ -799,7 +799,7 @@
          top="0mm"
          left="0mm"
          width="250mm"
-         height="200m">
+         height="200mm">
          <xsl:apply-imports/>
       </fo:block-container>
       <fo:block break-after='page'/>
