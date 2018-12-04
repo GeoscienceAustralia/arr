@@ -186,6 +186,51 @@
       </fo:block>
    </xsl:template>
 
+   <!-- Overwrite List of Tables/Figures to add a line space -->
+   <xsl:template match="d:figure|d:table|d:example|d:equation|d:procedure" mode="toc">
+      <xsl:param name="toc-context" select="."/>
+      <xsl:call-template name="toc.line2">
+         <xsl:with-param name="toc-context" select="$toc-context"/>
+      </xsl:call-template>
+      <fo:block font-size="4pt"><xsl:text>&#xA0;</xsl:text></fo:block>
+   </xsl:template>
+
+   <xsl:template name="toc.line2">
+      <xsl:param name="toc-context" select="NOTANODE"/>
+
+      <xsl:variable name="id">
+         <xsl:call-template name="object.id"/>
+      </xsl:variable>
+
+      <xsl:variable name="label">
+         <xsl:apply-templates select="." mode="label.markup"/>
+      </xsl:variable>
+
+      <fo:block xsl:use-attribute-sets="toc.line.properties" white-space="pre">
+         <fo:inline keep-with-next.within-line="always">
+            <fo:basic-link internal-destination="{$id}">
+               <xsl:if test="$label != ''">
+                  <xsl:copy-of select="$label"/>
+                  <!-- <xsl:text>   </xsl:text> -->
+                  <xsl:value-of select="$autotoc.label.separator"/>
+               </xsl:if>
+               <xsl:apply-templates select="." mode="titleabbrev.markup"/>
+            </fo:basic-link>
+         </fo:inline>
+         <fo:inline keep-together.within-line="always">
+            <xsl:text> </xsl:text>
+               <fo:leader leader-pattern="dots"
+                           leader-pattern-width="3pt"
+                           leader-alignment="reference-area"
+                           keep-with-next.within-line="always"/>
+               <xsl:text> </xsl:text> 
+               <fo:basic-link internal-destination="{$id}">
+                  <fo:page-number-citation ref-id="{$id}"/>
+               </fo:basic-link>
+            </fo:inline>
+         </fo:block>
+      </xsl:template>
+
 
    <!-- Equations centred with number on the right
       See also below in the XREF numbering section for how the XREF
