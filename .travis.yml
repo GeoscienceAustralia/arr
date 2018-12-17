@@ -2,9 +2,9 @@ language: c
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y xsltproc xmllint
+  - sudo apt-get install -y xsltproc libxml2-utils
   - xsltproc --version
-  - xmllint --version
+  - libxml2-utils --version
   
 script:
   - cd arr
