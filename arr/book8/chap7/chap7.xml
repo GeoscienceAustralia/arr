@@ -106,7 +106,7 @@
                     is not easily automated and is not well suited to accommodating correlations
                     that may exist between the stochastic components.</para>
                 <para>The analysis of the joint probabilities of storage
-                    <?oxy_comment_start author="retallick" timestamp="20160614T190806+1000" comment="volume?"?>contents<?oxy_comment_end?>
+                    <?oxy_insert_start author="testoni" timestamp="20181203T143801+1100"?>volume<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181203T143800+1100" content="contents"?>
                     and inflows is just one example of the more generic solution offered by Monte
                     Carlo methods. Accordingly, if the rainfall-runoff modelling is undertaken in a
                     Monte Carlo framework, then this is easily extended to consider reservoir
@@ -172,7 +172,7 @@
                     </listitem>
                     <listitem>
                         <para><emphasis role="italic">Dependence between flood inflows and storage
-                                <?oxy_comment_start author="retallick" timestamp="20160614T204211+1000" comment="?"?>contents<?oxy_comment_end?>.</emphasis>
+                                <?oxy_delete author="testoni" timestamp="20181203T143819+1100" content="contents"?><?oxy_insert_start author="testoni" timestamp="20181203T143819+1100"?>volume<?oxy_insert_end?>.</emphasis>
                             The historical (or synthetic) time series should be checked to see if
                             there is a strong dependence between initial reservoir level and flood
                             inflows. If such dependence exists, then it would be necessary to derive
@@ -194,8 +194,7 @@
             </section>
             <section xml:id="b8_s_ynbvb">
                 <title>Laurenson’s Analytical Solution</title>
-                <para>The analytical solution proposed by
-                    <?oxy_comment_start author="retallick" timestamp="20160614T204334+1000" comment="(1974) ?"?>Laurenson<?oxy_comment_end?>
+                <para>The analytical solution proposed by <citation>b8_c_r33+1</citation>
                     involves the convolution of the conditional probability distribution of outflows
                     with the distribution of the conditioning event. In principle, the conditioning
                     event may be either the reservoir inflow or the initial storage volume, but
@@ -214,11 +213,13 @@
                     illustrated in <xref linkend="b8_f_17uij"/> for the case where the reservoir
                     inflow was chosen as the conditioning event and the initial storage volume as
                     the secondary variable. From
-                    t<?oxy_comment_start author="retallick" timestamp="20160614T204535+1000" comment="cross ref to figure"?>his
-                    figure<?oxy_comment_end?> it is seen that the conditional probability of a
-                    specified outflow event is evaluated as the width of the storage volume
-                    probability interval (P[Q<subscript>j</subscript>|I<subscript>i</subscript>])
-                    that translates an inflow in the interval
+                        <?oxy_insert_start author="testoni" timestamp="20181120T124413+1100"?><xref
+                        xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b8_f_17uij"
+                    /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181120T124354+1100" content="this figure"?>
+                    it is seen that the conditional probability of a specified outflow event is
+                    evaluated as the width of the storage volume probability interval
+                        (P[Q<subscript>j</subscript>|I<subscript>i</subscript>]) that translates an
+                    inflow in the interval
                         I<?oxy_delete author="retallick" timestamp="20160614T204619+1000" content="i"?><?oxy_insert_start author="retallick" timestamp="20160614T204611+1000"?><subscript>i</subscript><?oxy_insert_end?>
                     into an outflow in the interval Q<subscript>j</subscript>.</para>
                 <figure xml:id="b8_f_17uij">
@@ -422,8 +423,11 @@
                 catchments.</para>
             <para>There are a number of methods available for the assessment of concurrent flows
                 (<?oxy_delete author="retallick" timestamp="20160615T175058+1000" content="see,"?><?oxy_insert_start author="retallick" timestamp="20160615T175058+1000"?>refer
-                to<?oxy_insert_end?> for example, <citation>b8_c_r16,b8_c_r70 </citation>). In the
-                context of risk analysis it is important to focus on those methods that yield probability<?oxy_delete author="retallick" timestamp="20160615T175110+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160615T175111+1000"?>
+                to<?oxy_insert_end?> for example,
+                    <?oxy_insert_start author="testoni" timestamp="20181203T145522+1100"?><xref
+                    xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b4_ch4"
+                /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181203T145430+1100" content="&lt;citation&gt;b8_c_r16,b8_c_r70 &lt;/citation&gt;"?>).
+                In the context of risk analysis it is important to focus on those methods that yield probability<?oxy_delete author="retallick" timestamp="20160615T175110+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160615T175111+1000"?>
                 <?oxy_insert_end?>neutral estimates. In essence, the issue of concurrent flooding is
                 another joint<?oxy_insert_start author="retallick" timestamp="20160606T181946+1000"?>
                 <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T181947+1000" content="-"?>probability
@@ -887,12 +891,12 @@
                 algorithms is based on an <emphasis role="italic">energy balance approach</emphasis>
                 in which energy fluxes are calculated explicitly using physically-based process
                 equations. The results of an international comparison of snowmelt runoff models
-                (World Meteorological Organisation, 1986b)<citation>b8_c_r84</citation> indicate
-                that the temperature index approach has an accuracy comparable to more complex
-                energy budget formulations. Unfortunately, however, the method does not lend itself
-                to hourly computations (which are required for flood event estimation purposes)
-                because it is the radiation component which is mainly responsible for the
-                hour-to-hour variations <citation>b8_c_r63</citation>.</para>
+                    <citation>b8_c_r84</citation> indicate that the temperature index approach has
+                an accuracy comparable to more complex energy budget formulations. Unfortunately,
+                however, the method does not lend itself to hourly computations (which are required
+                for flood event estimation purposes) because it is the radiation component which is
+                mainly responsible for the hour-to-hour variations
+                <citation>b8_c_r63</citation>.</para>
         </section>
         <section xml:id="b8_s_d9b5r">
             <title>Selection of Snowmelt Model</title>
@@ -1017,8 +1021,8 @@
             writing the Bureau of Meteorology are not intending to revise PMP estimates or
             methodology to account for effects of climate change. Similarly, in
             <?oxy_delete author="retallick" timestamp="20160615T185240+1000" content="n"?><?oxy_insert_start author="retallick" timestamp="20160615T185240+1000"?>N<?oxy_insert_end?>orth
-            America standard procedures do not presently allow for climate change
-                adjustment,s,<citation>b8_c_90</citation>
+            America standard procedures do not presently allow for climate change adjustments,
+                <citation>b8_c_90</citation>
             however<?oxy_insert_start author="retallick" timestamp="20160615T185250+1000"?>,<?oxy_insert_end?>
             climate model simulations and analysis of conceptual models of relevant meteorological
             systems would suggest that PMP estimates will increase in the future
@@ -1050,3 +1054,5 @@
     
     
 </chapter>
+
+<?oxy_options track_changes="on"?>
