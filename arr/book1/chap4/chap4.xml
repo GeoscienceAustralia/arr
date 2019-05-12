@@ -947,7 +947,7 @@
 
           <mediaobject>
             <imageobject>
-              <imagedata fileref="../../figures/1009.jpg"/>
+              <imagedata contentdepth="200%" scalefit="1" width="100%"  fileref="../../figures/1009.jpg"/>
             </imageobject>
           </mediaobject>
         </figure>An alternative to the manual measurement is to use a
@@ -963,7 +963,7 @@
 
         <mediaobject>
           <imageobject>
-            <imagedata fileref="../../figures/1010.jpg"/>
+            <imagedata contentdepth="200%" scalefit="1" width="100%" fileref="../../figures/1010.jpg"/>
           </imageobject>
         </mediaobject>
       </figure>
@@ -1713,7 +1713,7 @@
           <listitem>
             <para>The relationship is usually a line of best fit through the data points defining
               the stage-discharge relationship. The approach recommended for estimation of this line
-              of best fit in many guidance documents (for example, <citation>b1_c4_r44</citation>)
+              of best fit in many guidance documents (for example, <citation>b1_c4_r44+1</citation>)
               is a visual fit. This approach provides minimal data on the uncertainty of the
               relationship and the reliability of any extrapolation of the relationship. This limits
               the estimation of the propagation of the uncertainty in the flood characteristic
@@ -1772,8 +1772,7 @@
 
           <mediaobject>
             <imageobject>
-              <imagedata fileref="../../figures/3005.png"
-                         />
+              <imagedata contentdepth="100%" scalefit="1" width="100%" fileref="../../figures/3005.png"/>
             </imageobject>
           </mediaobject>
         </figure>
@@ -2161,125 +2160,88 @@
 
         <section xml:id="b1_ch4_s_lyk4o">
           <title>Field Survey Techniques</title>
-
           <para>The techniques used for collection of field survey data (typically by surveyors) are
             discussed in this section. Details of three techniques are presented; namely Traditional
             Ground Survey, Real Time Kinematic (RTK) Global Positioning Systems (GPS)/ Differential
             GPS, and Photogrammetry. Typical accuracies for each of these techniques are provided in
               <xref linkend="b1_ch4_t_nmezo"/>. The techniques to measure topography and other
             survey features generally fall into two main categories:</para>
-
           <itemizedlist>
             <listitem>
-              <para>Direct measurement - where the survey technique involves a
-              ground based instrument measuring features by physical contact
-              and relating the measurement directly related to know ground
-              control such as a State Survey Mark (SSM); or</para>
+              <para>Direct measurement - where the survey technique involves a ground based
+                instrument measuring features by physical contact and relating the measurement
+                directly related to know ground control such as a State Survey Mark (SSM); or</para>
             </listitem>
-
             <listitem>
-              <para>Remote sensing - where features are measured without
-              physical contact with the object, and generally refers to
-              measurement by an airborne or satellite mounted
-              instrument.</para>
+              <para>Remote sensing - where features are measured without physical contact with the
+                object, and generally refers to measurement by an airborne or satellite mounted
+                instrument.</para>
             </listitem>
           </itemizedlist>
-
-          <table xml:id="b1_ch4_t_nmezo">
-            <title>Typical Accuracies of Field Survey</title>
-
-            <tgroup cols="3">
-              <colspec colname="_2" colnum="2"/>
-
-              <colspec colname="_3"/>
-
-              <thead>
-                <row>
-                  <entry align="center" morerows="1">Survey Technique</entry>
-
-                  <entry align="center" nameend="_3" namest="_2">Nominal
-                  Accuracy (+/- m)</entry>
-                </row>
-
-                <row>
-                  <entry align="center">Vertical</entry>
-
-                  <entry align="center">Horizontal</entry>
-                </row>
-              </thead>
-
-              <tbody>
-                <row>
-                  <entry>Traditional Ground Survey</entry>
-
-                  <entry>0.01</entry>
-
-                  <entry>0.01</entry>
-                </row>
-
-                <row>
-                  <entry>RTK GPS</entry>
-
-                  <entry>0.05</entry>
-
-                  <entry>0.05</entry>
-                </row>
-
-                <row>
-                  <entry>Photogrammetry</entry>
-
-                  <entry>0.1-0.3</entry>
-
-                  <entry>0.2-0.5</entry>
-                </row>
-
-                <row>
-                  <entry>ALS (LiDAR)</entry>
-
-                  <entry>0.15-0.4</entry>
-
-                  <entry>0.2-0.5</entry>
-                </row>
-              </tbody>
-            </tgroup>
+          <table frame="void" xml:id="b1_ch4_t_nmezo">
+            <caption>Typical Accuracies of Field Survey </caption>
+            <col width="33%"/>
+            <col width="33%"/>
+            <col width="33%"/>
+            <thead align="left">
+              <tr>
+                <th rowspan="2">Survey Technique</th>
+                <th colspan="2">Nominal Accuracy (+/- m)</th>
+              </tr>
+              <tr>
+                <th>Vertical</th>
+                <th>Horizontal</th>
+              </tr>
+            </thead>
+            <tbody align="left">
+              <tr>
+                <td>Traditional Ground Survey</td>
+                <td>0.01</td>
+                <td>0.01</td>
+              </tr>
+              <tr>
+                <td>RTK GPS</td>
+                <td>0.05</td>
+                <td>0.05</td>
+              </tr>
+              <tr>
+                <td>Photogrammetry</td>
+                <td>0.1-0.3</td>
+                <td>0.2-0.5</td>
+              </tr>
+              <tr>
+                <td>ALS (LiDAR)</td>
+                <td>0.15-0.4</td>
+                <td>0.2-0.5</td>
+              </tr>
+            </tbody>
           </table>
-
           <section xml:id="b1_ch4_s_xtum2">
             <title>Traditional Ground Survey</title>
-
-            <para>Traditional ground survey (that is, survey collected by
-            traditional or total station ground survey techniques) is the most
-            accurate survey technique with vertical and horizontal accuracies
-            as shown in <xref linkend="b1_ch4_t_nmezo"/>. However, this
-            technique is manual and labour intensive and is therefore best
-            suited to small and/or difficult areas for other techniques, to
-            supplement data obtained from other techniques, and to validate
-            data obtained from other techniques.</para>
-
-            <para>In the context of a design flood estimation, traditional
-            ground survey methods are often used for:</para>
-
+            <para>Traditional ground survey (that is, survey collected by traditional or total
+              station ground survey techniques) is the most accurate survey technique with vertical
+              and horizontal accuracies as shown in <xref linkend="b1_ch4_t_nmezo"/>. However, this
+              technique is manual and labour intensive and is therefore best suited to small and/or
+              difficult areas for other techniques, to supplement data obtained from other
+              techniques, and to validate data obtained from other techniques.</para>
+            <para>In the context of a design flood estimation, traditional ground survey methods are
+              often used for:</para>
             <itemizedlist>
               <listitem>
                 <para>Checking remote sensed data sets; and/or</para>
               </listitem>
-
               <listitem>
                 <para>Supplementing remote sensed data in:</para>
-
                 <itemizedlist>
                   <listitem>
-                    <para>Areas that are impenetrable from the air (for
-                    example, satellites and aeroplanes have difficulty in
-                    sensing the ground in areas like the bank of channels
-                    and/or heavily vegetated areas);</para>
+                    <para>Areas that are impenetrable from the air (for example, satellites and
+                      aeroplanes have difficulty in sensing the ground in areas like the bank of
+                      channels and/or heavily vegetated areas);</para>
                   </listitem>
-
                   <listitem>
-                    <para>Areas that are critical for the data being sought
-                    from the catchment modelling system (for example, critical
-                    hydraulic controls such as levees and weirs) where
-                    topographic accuracy is important.</para>
+                    <para>Areas that are critical for the data being sought from the catchment
+                      modelling system (for example, critical hydraulic controls such as levees and
+                      weirs) where topographic accuracy is important.</para>
                   </listitem>
                 </itemizedlist>
               </listitem>
@@ -2470,7 +2432,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata fileref="../../figures/1004.png"/>
+                <imagedata contentdepth="200%" scalefit="1" width="100%" fileref="../../figures/1004.png"/>
               </imageobject>
             </mediaobject>
           </figure>
@@ -2480,7 +2442,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata fileref="../../figures/1005.png"/>
+                <imagedata contentdepth="200%" scalefit="1" width="100%" fileref="../../figures/1005.png"/>
               </imageobject>
             </mediaobject>
           </figure>
@@ -2529,7 +2491,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata fileref="../../figures/1007.png"/>
+                <imagedata contentdepth="300%" scalefit="1" width="100%" fileref="../../figures/1007.png"/>
               </imageobject>
             </mediaobject>
           </figure>
@@ -2582,32 +2544,31 @@
           typical values are given in <xref linkend="b1_ch4_t_qmvc9"/>, users
           are advised to obtain the meta-data regarding their ALS to ensure
           suitability for purpose.</para>
-
-          <para><table xml:id="b1_ch4_t_qmvc9">
-              <title>Typical Swath Values</title>
-              <tgroup cols="2">
-                <thead>
-                  <row>
-                    <entry align="center">Typical Swath (m)</entry>
-                    <entry align="center">Altitude (m)</entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry>800</entry>
-                    <entry>1100</entry>
-                  </row>
-                  <row>
-                    <entry>1456</entry>
-                    <entry>2000</entry>
-                  </row>
-                  <row>
-                    <entry>2184</entry>
-                    <entry>3000</entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </table>A disadvantage of the ALS data capture method (compared to, for example,
+          <table frame="void"  xml:id="b1_ch4_t_qmvc9">
+            <caption>Typical Swath Values</caption>
+            <col width="50%"/>
+            <col width="50%"/>
+            <thead>
+              <tr>
+                <th>Typical Swath (m)</th>
+                <th>Altitude (m)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>800</td>
+                <td>1100</td>
+              </tr>
+              <tr>
+                <td>1456</td>
+                <td>2000</td>
+              </tr>
+              <tr>
+                <td>2184</td>
+                <td>3000</td>
+              </tr>
+            </tbody>
+          </table><para>A disadvantage of the ALS data capture method (compared to, for example,
             low-level photogrammetry) is the absence of breaklines in the data to define distinct,
             continuous topographic features and significant changes in grade. While the horizontal
             density of points usually is quite high ( average point spacing of 1 to 2 metres
@@ -2717,7 +2678,7 @@
 
             <mediaobject>
               <imageobject>
-                <imagedata fileref="../../figures/1008.png"/>
+                <imagedata contentdepth="200%" scalefit="1" width="100%" fileref="../../figures/1008.png"/>
               </imageobject>
             </mediaobject>
           </figure>
@@ -3178,12 +3139,11 @@
       tides as well as storm surge and long-term trends in sea levels. In some
       circumstances, wave data may also be relevant.</para>
 
-      <para>Historical tidal data for particular events can be useful model
-      calibration while long-term records can be used for statistical analysis
-      for design flood estimation purposes (see <xref linkend="b6_ch5"/>).
-      With increased sea levels induced by global warming, long-term records
-      of tides and sea levels need to be checked for stationarity; see <xref
-      linkend="b1_ch6"/> for a discussion of climate change data.</para>
+      <para>Historical tidal data for particular events can be useful model calibration while
+        long-term records can be used for statistical analysis for design flood estimation purposes
+        (refer to <xref linkend="b6_ch5"/>). With increased sea levels induced by global warming,
+        long-term records of tides and sea levels need to be checked for stationarity; refer to
+          <xref linkend="b1_ch6"/> for a discussion of climate change data.</para>
 
       <para>Tidal data is collected regularly by relevant government agencies,
       being concerned for the coastal environment or engineering. This data is
@@ -3322,21 +3282,20 @@
         losses.</para>
 
         <para>Detecting changes in the frequency or intensity of precipitation or flood events in
-          recorded data presents a number of difficulties (Jones et. al., 2012; Milly et al.,
-            2008)<citation>b1_c2_r14,b1_c4_r17</citation>. The ability to assess climate-driven
-          observed changes in the magnitude and frequency of floods at regional scales is limited by
-          the lack of observed records and their coverage in space and time, and by changes in
-          catchments due to land-use and development <citation>b1_c4_r13</citation>. Attributing
-          trends in discharge data to climate change is particularly difficult, as changes in
-          catchment conditions, or river operations can contribute to trends in the data
-            <citation>b1_c4_r2</citation>. Long-term records are needed to be able to detect trends
-          in data, and the availability of consistent, quality controlled data is a major limitation
-          in any study to detect trends in large to extreme rainfall or flood data
-            <citation>b1_c4_r2</citation>. There is evidence that climate change will result in a
-          larger increase in extreme sub-daily rainfalls than at a longer duration
-            <citation>b1_c4_r24</citation>. The availability of long records of sub-daily rainfall
-          data is limited, with an average length of Australian sub-daily rainfall stations of
-          approximately 19 years compared to an average length of 65 years for daily rainfall
+          recorded data presents a number of difficulties <citation>b1_c2_r14,b1_c4_r17</citation>.
+          The ability to assess climate-driven observed changes in the magnitude and frequency of
+          floods at regional scales is limited by the lack of observed records and their coverage in
+          space and time, and by changes in catchments due to land-use and development
+            <citation>b1_c4_r13</citation>. Attributing trends in discharge data to climate change
+          is particularly difficult, as changes in catchment conditions, or river operations can
+          contribute to trends in the data <citation>b1_c4_r2</citation>. Long-term records are
+          needed to be able to detect trends in data, and the availability of consistent, quality
+          controlled data is a major limitation in any study to detect trends in large to extreme
+          rainfall or flood data <citation>b1_c4_r2</citation>. There is evidence that climate
+          change will result in a larger increase in extreme sub-daily rainfalls than at a longer
+          duration <citation>b1_c4_r24</citation>. The availability of long records of sub-daily
+          rainfall data is limited, with an average length of Australian sub-daily rainfall stations
+          of approximately 19 years compared to an average length of 65 years for daily rainfall
           stations <citation>b1_c4_r14</citation>.</para>
 
         <para>One of the most fundamental issues in detecting trends in precipitation or discharge
@@ -3567,5 +3526,3 @@
   </xi:include>
   
 </chapter>
-
-<?oxy_options track_changes="on"?>
