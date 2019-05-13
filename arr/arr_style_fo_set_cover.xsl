@@ -233,7 +233,7 @@
             <fo:block-container absolute-position="absolute" width="{$page.width}" height="{$page.height}"
                top="-(1mm + {$page.margin.top} + {$body.margin.top})" left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/base_layout_for_pdf_Part2.pdf"/>
+                  <fo:external-graphic src="book_front_matter/base_layout_for_pdf.pdf#page=2"/>
                </fo:block>
             </fo:block-container>
             
@@ -242,7 +242,7 @@
             <fo:block-container absolute-position="absolute" width="{$page.width}" height="{$page.height}"
                top="-(1mm + {$page.margin.top} + {$body.margin.top})" left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/base_layout_for_pdf_Part3.pdf"/>
+                  <fo:external-graphic src="book_front_matter/base_layout_for_pdf.pdf#page=3"/>
                </fo:block>
             </fo:block-container>
             
@@ -251,7 +251,7 @@
             <fo:block-container absolute-position="absolute" width="{$page.width}" height="{$page.height}"
                top="-(1mm + {$page.margin.top} + {$body.margin.top})" left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/base_layout_for_pdf_Part4.pdf"/>
+                  <fo:external-graphic src="book_front_matter/base_layout_for_pdf.pdf#page=4"/>
                </fo:block>
             </fo:block-container>
             
@@ -260,7 +260,7 @@
             <fo:block-container absolute-position="absolute" width="{$page.width}" height="{$page.height}"
                top="-(1mm + {$page.margin.top} + {$body.margin.top})" left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/base_layout_for_pdf_Part5.pdf"/>
+                  <fo:external-graphic src="book_front_matter/base_layout_for_pdf.pdf#page=5"/>
                </fo:block>
             </fo:block-container>
             
@@ -269,7 +269,7 @@
             <fo:block-container absolute-position="absolute" width="{$page.width}" height="{$page.height}"
                top="-(1mm + {$page.margin.top} + {$body.margin.top})" left="-({$page.margin.inner})">
                <fo:block text-align="center">
-                  <fo:external-graphic src="figures/base_layout_for_pdf_Part6.pdf"/>
+                  <fo:external-graphic src="book_front_matter/base_layout_for_pdf.pdf#page=6"/>
                </fo:block>
             </fo:block-container>
          </fo:flow>
