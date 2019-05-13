@@ -643,8 +643,21 @@
         <col width="12%"/>
 
         <col width="12%"/>
-
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Flow (m³/s)</th>
+            <th>Year</th>
+            <th>Flow (m³/s)</th>
+            <th>Year</th>
+            <th>Flow (m³/s)</th>
+            <th>Year</th>
+            <th>Flow (m³/s)</th>
+          </tr>
+        </thead>
         <tbody>
+          
+
           <tr>
             <td>1938</td>
 
@@ -982,21 +995,23 @@
         <col width="16%"/>
 
         <col width="16%"/>
-
+<thead>
+  <tr>
+    <th>LP III Parameter</th>
+    
+    <th>Mean</th>
+    
+    <th>Std. Deviation</th>
+    
+    <th>Correlation</th>
+    
+    <th/>
+    
+    <th/>
+  </tr>
+</thead>
         <tbody>
-          <tr>
-            <td>LP III Parameter</td>
-
-            <td>Mean</td>
-
-            <td>Std. Deviation</td>
-
-            <td>Correlation</td>
-
-            <td/>
-
-            <td/>
-          </tr>
+          
 
           <tr>
             <td>m</td>
@@ -2578,12 +2593,10 @@
       </math>
     </equation>
 
-    <para>The exogenous variable x can take two values, 0 or 1, depending on
-    the IPO epoch. P(x=0), the probability of being in an IPO- epoch, is
-    assigned the value 33/76 based on the observation that 33 of the 76 years
-    of record were in the IPO- epoch. Likewise P(x=1), the probability of
-    being in an IPO+ epoch, is assigned the value 43/76. It follows that
-    p(z|<inlineequation>
+    <para>The exogenous variable x can take two values, 0 or 1, depending on the IPO epoch. P(x=0),
+      the probability of being in an IPO- epoch, is assigned the value 33/76 based on the
+      observation that 33 of the 76 years of record were in the IPO- epoch. Likewise P(x=1), the
+      probability of being in an IPO+ epoch, is assigned the value 43/76. It follows that p(z|<inlineequation>
         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
           <mi>θ</mi>
         </math>
@@ -2591,14 +2604,14 @@
         <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
           <mi>θ</mi>
         </math>
-      </inlineequation>,x=1) are the log normal pdfs fitted to IOP- and IPO+
-    data respectively</para>
+      </inlineequation>,x=1) are the log normal pdfs fitted to IOP- and IPO+ data
+      respectively.</para>
 
     <para>The derived marginal distribution is plotted in <xref linkend="b3_ch2_f_81xae"/>. It
       almost exactly matches the log normal distribution fitted to all the data.</para>
 
     <figure xml:id="b3_ch2_f_81xae">
-      <title>Marginal, IPO+ and IPO+ log-Normal distributions for the Clarence river at
+      <title>Marginal, IPO+ and IPO+ log-Normal distributions for the Clarence River at
         Lilydale</title>
 
       <mediaobject>
@@ -3397,7 +3410,7 @@
         </semantics>
       </math>
     </equation>
-    <para>The second step obtains the distribution of annual maximum peaks. Using<xref
+    <para>The second step obtains the distribution of annual maximum peaks. Using <xref
         linkend="b3_ch2_e_yf64d"/>, the expected number of peaks that exceed w in a year is</para>
 
     <equation xml:id="b3_ch2_e_wzulq">
