@@ -25,7 +25,7 @@
        book      toc,title,figure,table,example,equation
        chapter   toc,title
        part      toc,title
-       preface   toc,title
+       preface   toc,title,figure,table,example,equation
        qandadiv  toc
        qandaset  toc
        reference toc,title

@@ -25,15 +25,7 @@
       </tr>
       <tr>
         <td>Date last updated</td>
-        <td>06/07/16 </td>
-      </tr>
-      <tr>
-        <td>Content</td>
-        <td>Working draft</td>
-      </tr>
-      <tr>
-        <td>General</td>
-        <td>Subject to industry feedback </td>
+        <td>24/4/2018  </td>
       </tr>
     </informaltable>
   </para>
@@ -196,7 +188,8 @@
             catchment</para>
         </listitem>
       </itemizedlist>
-      <para><emphasis role="italic">Lumped Models</emphasis></para>
+      <section>
+        <title>Lumped Models</title>
       <para>In relatively small catchments there is often only limited spatial variation in rainfall
         and loss characteristics, and it is thus acceptable to treat the catchment as a homogeneous
         unit. In such situations, and when there is only interest on the flood hydrograph at the
@@ -227,7 +220,9 @@
         do not have direct links to physical catchment characteristics, they depend on the
         availability of observed flood hydrographs for their calibration. The scope for application
         to ungauged catchments is thus more limited.</para>
-      <para><emphasis role="italic">Semi-distributed Models</emphasis></para>
+      </section>
+      <section>
+        <title>Semi-distributed Models</title>
       <para>Semi-distributed models allow the spatial variation of inputs and key processes to be
         modelled explicitly. This is particularly important in large catchments and in catchments
         where the natural flooding characteristics have been significantly modified by various forms
@@ -263,7 +258,9 @@
         and parameters are determined from hydraulic calculations.</para>
       <para>For more detailed guidance on the representation of catchments in node-link type models
         users should consult the user manuals of specific modelling platforms. </para>
-      <para><emphasis role="italic">Distributed models</emphasis></para>
+      </section>
+      <section>
+        <title>Distributed Models</title>
       <para>In the fully distributed or grid-based flood hydrograph estimation models the catchment
         is represented by a large number of grid cells, based on topographic data from a digital
         elevation model (DEM), supplemented by more detailed survey information on the drainage
@@ -277,8 +274,9 @@
         conceptualisation of the runoff producing processes has to be well matched to the scale of
         the basic model elements (grid cells) and has to reflect the change in processes as the
         cells are wetted up and the flow efficiency increases with flood magnitude. </para>
-      <para> The capabilities and limitations of distributed (rainfall on grid) models are further
-        discussed in <xref linkend="b5_ch6_s_lgabf"/>. </para>
+      <para>The capabilities and limitations of distributed (rainfall-on-grid) models are further
+          discussed in <xref linkend="b5_ch6_s_lgabf"/>. </para>
+    </section>
     </section>
     <section xml:id="b7_c4_s_462002">
       <title>Process Representation</title>
@@ -295,7 +293,7 @@
         the delayed runoff contribution from baseflow which is modelled separately. The event
         rainfall is then divided into rainfall loss and rainfall excess which produces the surface
         runoff component that is modelled in detail. </para>
-      <para> The detailed guidelines for modelling losses and baseflow are provided in <xref
+      <para>The detailed guidelines for modelling losses and baseflow are provided in <xref
           linkend="b5_ch5"/> and <xref linkend="b5_ch4"/>, respectively. The different approaches
         for modelling the production of runoff hydrographs from model subareas and for routing these
         through the drainage network to points of interest are discussed in <xref linkend="b5_ch6"
@@ -335,8 +333,8 @@
             reduces efficiency.</para>
         </listitem>
       </itemizedlist>
-      <para>If the likely maximum extent of the inundated area is difficult to define (eg. very flat
-        terrain or dam break studies) defining the extent can be an iterative procedure. A
+      <para>If the likely maximum extent of the inundated area is difficult to define (e.g. very
+        flat terrain or dam break studies) defining the extent can be an iterative procedure. A
         recommendation is to always start with a large model area and then narrow the model domain
         based on feedback of model results, as this is far less problematic than the reverse
         process. Using a coarser grid/ mesh resolution to reduce run times during these earlier
@@ -345,7 +343,7 @@
         distributed runoff-routing models. </para>
       
       
-        <sidebar><title>Model Study area vs Model Applicability Area </title><para>In most cases there is a difference between the model extent and the area that the
+        <sidebar><title>Model Study Area vs Model Applicability Area </title><para>In most cases there is a difference between the model extent and the area that the
           model can be used to produce reliable results. Just because a model extends over a certain
           area does not mean reliable results can be extracted in all areas of the model. Often
           these fringe areas are modelled just so that the model boundary conditions are
@@ -459,7 +457,7 @@
           boundary conditions in a similar manner to how a boundary condition would be conceived for
           a physical model. The practitioner should consider the physical flow characteristics at
           the boundary in the real world and should attempt to schematise so as to minimise any
-          artificial flow behaviour that is induced by the boundary condition. Issue that should be
+          artificial flow behaviour that is induced by the boundary condition. Issues that should be
           considered include:</para>
         <itemizedlist>
           <listitem>
@@ -470,7 +468,7 @@
             <para>Avoid rapid transitions in flow regime at the boundary;</para>
           </listitem>
           <listitem>
-            <para>Avoid placing the boundary where turbulent flow are likely to be crossing the
+            <para>Avoid placing the boundary where turbulent flows are likely to be crossing the
               boundary;</para>
           </listitem>
           <listitem>
@@ -668,3 +666,4 @@
     </xi:fallback>
   </xi:include>
 </chapter>
+
