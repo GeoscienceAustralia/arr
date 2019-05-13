@@ -12,10 +12,8 @@
         </tr>
         <tr>
             <td>Date last updated</td>
-            <td><?oxy_delete author="testoni" timestamp="20190506T094234+1000" content="06/07/16"?><?oxy_insert_start author="testoni" timestamp="20190506T094234+1000"?>3/12/2018<?oxy_insert_end?>
-            </td>
+            <td>3/12/2018 </td>
         </tr>
-        <?oxy_delete author="testoni" timestamp="20190506T093851+1000" content="&lt;tr&gt;&lt;td&gt;Content&lt;/td&gt;&lt;td&gt;Advanced draft&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td&gt;Subject to industry feedback &lt;/td&gt;&lt;/tr&gt;"?>
     </informaltable>
     <section xml:id="b8_s_hlaxl">
         <title>General</title>
@@ -28,15 +26,13 @@
             initial starting levels in the reservoir is likely to have a more significant impact on
             the outcome of the study than the selection of runoff-routing parameter values.</para>
         <para>One design objective of general importance is the derivation of floods of specified
-            AEP. Satisfying this objective generally requires the adoption of probability<?oxy_delete author="retallick" timestamp="20160614T190407+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160614T190407+1000"?>
-            <?oxy_insert_end?>neutral inputs
-            i.e.<?oxy_delete author="retallick" timestamp="20160614T190411+1000" content=","?> the
-            selection and/or treatment of design inputs to ensure that any bias in the AEP of the
-            transformation between rainfall and runoff is minimised. The issues considered in this
-            section are generally aimed at the more rigorous treatment of the joint probabilities
-            involved in the selection of design inputs. However, as discussed in <xref
-                linkend="b8_s_2vj4c"/>, it should be recognised that the defensibility of these
-            estimates rests upon the representativeness of the selected inputs and the correct
+            AEP. Satisfying this objective generally requires the adoption of probability neutral
+            inputs i.e. the selection and/or treatment of design inputs to ensure that any bias in
+            the AEP of the transformation between rainfall and runoff is minimised. The issues
+            considered in this section are generally aimed at the more rigorous treatment of the
+            joint probabilities involved in the selection of design inputs. However, as discussed in
+                <xref linkend="b8_s_2vj4c"/>, it should be recognised that the defensibility of
+            these estimates rests upon the representativeness of the selected inputs and the correct
             treatment of correlations which may be present.</para>
         <para>The appropriate level of complexity to be adopted is dependent upon the sensitivity of
             the design outcome to the input. Accordingly it is not possible to provide
@@ -78,14 +74,12 @@
             <para>For preliminary analyses it may be sufficient to adopt a mean or median storage
                 volume, or else compute the mean or median storage volume associated with, say, the
                 top 10% of inflow floods. In general, adoption of a mean or median value will not
-                provide a probability<?oxy_insert_start author="retallick" timestamp="20160614T190651+1000"?>
-                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T190650+1000" content="-"?>neutral
-                transformation as the relationship between inflow and outflow floods is highly
-                non-linear. Accordingly, for detailed design estimates, it is prudent to determine
-                the probability of the outflow hydrograph by the joint probabilities of the inflow
-                and initial storage volume, and by the deterministic relationship that governs the
-                conversion of an inflow hydrograph of given duration and magnitude into an outflow
-                hydrograph for different storage volumes.</para>
+                provide a probability neutral transformation as the relationship between inflow and
+                outflow floods is highly non-linear. Accordingly, for detailed design estimates, it
+                is prudent to determine the probability of the outflow hydrograph by the joint
+                probabilities of the inflow and initial storage volume, and by the deterministic
+                relationship that governs the conversion of an inflow hydrograph of given duration
+                and magnitude into an outflow hydrograph for different storage volumes.</para>
         </section>
         <section xml:id="b8_s_no8ga">
             <title>Joint Probability Analysis of Inflow and Initial Storage Volume</title>
@@ -99,21 +93,16 @@
                     provides a rigorous means of solving the joint probabilities involved, though it
                     is not easily automated and is not well suited to accommodating correlations
                     that may exist between the stochastic components.</para>
-                <para>The analysis of the joint probabilities of storage
-                    <?oxy_insert_start author="testoni" timestamp="20181203T143801+1100"?>volume<?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181203T143800+1100" content="contents"?>
-                    and inflows is just one example of the more generic solution offered by Monte
-                    Carlo methods. Accordingly, if the rainfall-runoff modelling is undertaken in a
-                    Monte Carlo framework, then this is easily extended to consider reservoir
-                    outflows.</para>
+                <para>The analysis of the joint probabilities of storage volume and inflows is just
+                    one example of the more generic solution offered by Monte Carlo methods.
+                    Accordingly, if the rainfall-runoff modelling is undertaken in a Monte Carlo
+                    framework, then this is easily extended to consider reservoir outflows.</para>
                 <para>Application of either method is straightforward as long as the probabilities
                     of all the inputs can be appropriately defined; some care is required to ensure
                     that the distributions are representative of the design conditions of interest,
                     though in most situations where it is worthwhile undertaking the analysis the
-                    required information can usually be derived. The guidance
-                    <?oxy_insert_start author="retallick" timestamp="20160614T190913+1000"?>in this
-                    section
-                    <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T190908+1000" content="below"?>
-                    first covers specification of the input distributions as this is common to both
+                    required information can usually be derived. The guidance in this section  first
+                    covers specification of the input distributions as this is common to both
                     methods, and this is followed by a description of the different solution
                     schemes.</para>
             </section>
@@ -166,23 +155,23 @@
                     </listitem>
                     <listitem>
                         <para><emphasis role="italic">Dependence between flood inflows and storage
-                                <?oxy_delete author="testoni" timestamp="20181203T143819+1100" content="contents"?><?oxy_insert_start author="testoni" timestamp="20181203T143819+1100"?>volume<?oxy_insert_end?>.</emphasis>
-                            The historical (or synthetic) time series should be checked to see if
-                            there is a strong dependence between initial reservoir level and flood
-                            inflows. If such dependence exists, then it would be necessary to derive
-                            conditional probabilities of initial storage volume that correspond to
-                            different ranges of flood inflows. To this end, it would be necessary to
-                            divide the inflow magnitudes into a small number, say, three flow ranges
-                            (corresponding to low, average and high flows), and derive separate
-                            distributions of initial storage for each. Care needs to be taken when
-                            inferring correlations for extreme conditions based on a short period of
-                            historic (or simulated) record, and distributions based on empirical
-                            analyses may need pragmatic adjustment to ensure that they are
-                            representative of extreme conditions. Analysis of regional rainfall
-                            information for relevant critical durations within a meteorologically
-                            homogeneous region can provide information to help condition such
-                            relationships, and an example of this using standardisation to trade
-                            space for time is provided by <citation>b8_c_r65+1</citation>.</para>
+                                volume.</emphasis> The historical (or synthetic) time series should
+                            be checked to see if there is a strong dependence between initial
+                            reservoir level and flood inflows. If such dependence exists, then it
+                            would be necessary to derive conditional probabilities of initial
+                            storage volume that correspond to different ranges of flood inflows. To
+                            this end, it would be necessary to divide the inflow magnitudes into a
+                            small number, say, three flow ranges (corresponding to low, average and
+                            high flows), and derive separate distributions of initial storage for
+                            each. Care needs to be taken when inferring correlations for extreme
+                            conditions based on a short period of historic (or simulated) record,
+                            and distributions based on empirical analyses may need pragmatic
+                            adjustment to ensure that they are representative of extreme conditions.
+                            Analysis of regional rainfall information for relevant critical
+                            durations within a meteorologically homogeneous region can provide
+                            information to help condition such relationships, and an example of this
+                            using standardisation to trade space for time is provided by
+                                <citation>b8_c_r65+1</citation>.</para>
                     </listitem>
                 </itemizedlist>
             </section>
@@ -206,16 +195,12 @@
                     of computing the conditional probability of a specified outflow event is
                     illustrated in <xref linkend="b8_f_17uij"/> for the case where the reservoir
                     inflow was chosen as the conditioning event and the initial storage volume as
-                    the secondary variable. From
-                        <?oxy_insert_start author="testoni" timestamp="20181120T124413+1100"?><xref
-                        xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b8_f_17uij"
-                    /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181120T124354+1100" content="this figure"?>
-                    it is seen that the conditional probability of a specified outflow event is
-                    evaluated as the width of the storage volume probability interval
-                        (P[Q<subscript>j</subscript>|I<subscript>i</subscript>]) that translates an
-                    inflow in the interval
-                        I<?oxy_delete author="retallick" timestamp="20160614T204619+1000" content="i"?><?oxy_insert_start author="retallick" timestamp="20160614T204611+1000"?><subscript>i</subscript><?oxy_insert_end?>
-                    into an outflow in the interval Q<subscript>j</subscript>.</para>
+                    the secondary variable. From <xref xmlns:xlink="http://www.w3.org/1999/xlink"
+                        linkend="b8_f_17uij"/> it is seen that the conditional probability of a
+                    specified outflow event is evaluated as the width of the storage volume
+                    probability interval (P[Q<subscript>j</subscript>|I<subscript>i</subscript>])
+                    that translates an inflow in the interval I<subscript>i</subscript> into an
+                    outflow in the interval Q<subscript>j</subscript>.</para>
                 <figure xml:id="b8_f_17uij">
                     <title>Schematic Illustration of the Determination of the Probability Interval of Storage
                         Volume as a Function of Inflow and Outflow</title>
@@ -230,11 +215,10 @@
                     will also depend on the rainfall duration used. The critical rainfall duration
                     to be used in the analysis is the one that translates into the highest outflow;
                     this also produces the largest estimate of conditional outflow probability.
-                    Unfortunately<?oxy_insert_start author="retallick" timestamp="20160614T204811+1000"?>,<?oxy_insert_end?>
-                    the critical rainfall duration varies with reservoir drawdown, and in some cases
-                    it is necessary to compute separate I-S-Q relationships for different durations,
-                    and to derive an outflow frequency curve as the envelope of frequency curves
-                    derived for different durations.</para>
+                    Unfortunately, the critical rainfall duration varies with reservoir drawdown,
+                    and in some cases it is necessary to compute separate I-S-Q relationships for
+                    different durations, and to derive an outflow frequency curve as the envelope of
+                    frequency curves derived for different durations.</para>
                 <para>Another complication is that the above formulation assumes that the two
                     distributions of storage volume and inflows are independent. This may not be the
                     case, and if such correlation is found to be significant then the calculations
@@ -304,11 +288,10 @@
                 analysis required depends on the size of the upstream storages and the degree of
                 inter-dependence in their operation. For the simplest cases it may be sufficient to
                 represent drawdowns in the smaller storages as fixed values and derive outflow
-                frequency curve in the storage most sensitive to initial conditions as described
-                <?oxy_insert_start author="retallick" timestamp="20160614T205554+1000"?>in
-                    <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160614T205534+1000" content="above."?><xref
-                    linkend="b8_s_uwr7q"/> Where initial levels in one reservoir are correlated with
-                levels in another, then a conditional sampling approach can be adopted.</para>
+                frequency curve in the storage most sensitive to initial conditions as described in
+                    <xref linkend="b8_s_uwr7q"/> Where initial levels in one reservoir are
+                correlated with levels in another, then a conditional sampling approach can be
+                adopted.</para>
             <para>The nature of dependence in storage contents is shown by the large diamond symbols
                 in <xref linkend="b8_f_u0vng"/>, which is derived from the behaviour of two
                 reservoirs located in south-eastern Australia. Such data is difficult to normalise
@@ -379,27 +362,22 @@
                 direct consequences of dam failure and the floods generated from adjacent
                 catchments.</para>
             <para>There are a number of methods available for the assessment of concurrent flows
-                (<?oxy_delete author="retallick" timestamp="20160615T175058+1000" content="see,"?><?oxy_insert_start author="retallick" timestamp="20160615T175058+1000"?>refer
-                to<?oxy_insert_end?> for example,
-                    <?oxy_insert_start author="testoni" timestamp="20181203T145522+1100"?><xref
-                    xmlns:xlink="http://www.w3.org/1999/xlink" linkend="b4_ch4"
-                /><?oxy_insert_end?><?oxy_delete author="testoni" timestamp="20181203T145430+1100" content="&lt;citation&gt;b8_c_r16,b8_c_r70 &lt;/citation&gt;"?>).
-                In the context of risk analysis it is important to focus on those methods that yield probability<?oxy_delete author="retallick" timestamp="20160615T175110+1000" content="-"?><?oxy_insert_start author="retallick" timestamp="20160615T175111+1000"?>
-                <?oxy_insert_end?>neutral estimates. In essence, the issue of concurrent flooding is
-                another joint<?oxy_insert_start author="retallick" timestamp="20160606T181946+1000"?>
-                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160606T181947+1000" content="-"?>probability
-                problem, and the method of <citation>b8_c_r33+1</citation> described in <xref
-                    linkend="b8_s_no8ga"/> can be applied directly to the joint occurrence of floods
-                in tributaries and adjacent catchments. With the analysis of concurrent flows, the
-                deterministic I-S-Q relationship referred to in <xref linkend="b8_s_no8ga"/> is
-                replaced by the relationship between total flows downstream of the confluence and
-                the joint occurrence of upstream flows of differing magnitudes, and the marginal
-                distribution of storage volume is replaced by the probability distribution of flows
-                in the adjacent tributary. Careful consideration needs to be given to the
-                specification of the marginal distribution of tributary inflows as the two flow
-                distributions will be correlated. Also, peak discharges are unlikely to coincide.
-                The worked example provided on this approach provided in <xref linkend="b8_s_9kcec"
-                /> is directly applicable to this situation and can be applied if desired.</para>
+                (refer to for example, <xref xmlns:xlink="http://www.w3.org/1999/xlink"
+                    linkend="b4_ch4"/>). In the context of risk analysis it is important to focus on
+                those methods that yield probability neutral estimates. In essence, the issue of
+                concurrent flooding is another joint probability problem, and the method of
+                    <citation>b8_c_r33+1</citation> described in <xref linkend="b8_s_no8ga"/> can be
+                applied directly to the joint occurrence of floods in tributaries and adjacent
+                catchments. With the analysis of concurrent flows, the deterministic I-S-Q
+                relationship referred to in <xref linkend="b8_s_no8ga"/> is replaced by the
+                relationship between total flows downstream of the confluence and the joint
+                occurrence of upstream flows of differing magnitudes, and the marginal distribution
+                of storage volume is replaced by the probability distribution of flows in the
+                adjacent tributary. Careful consideration needs to be given to the specification of
+                the marginal distribution of tributary inflows as the two flow distributions will be
+                correlated. Also, peak discharges are unlikely to coincide. The worked example
+                provided on this approach provided in <xref linkend="b8_s_9kcec"/> is directly
+                applicable to this situation and can be applied if desired.</para>
             <para>Monte Carlo techniques also provide a rigorous solution to the problem. If
                 space-time patterns of rainfall are used in the modelling then an unbiased estimated
                 of the frequency distribution of tributary inflows can be obtained by application of
@@ -524,7 +502,7 @@
                 rainfall data, or else using the generalised correlation-distance relationships
                 reported in <citation>b8_c_r49+1</citation>. Ideally, however, such correlations
                 would be determined using areal rainfall estimates based on site-specific analysis
-                of gridded data (eg <citation>b8_c_r24</citation>).</para>
+                of gridded data (e.g. <citation>b8_c_r24+1</citation>).</para>
             <para>Application of the above algorithm is illustrated in <xref linkend="b8_f_y5nng"/>.
                 The input parameters to this example are <emphasis role="italic">ρ=-0.7,
                         μ<subscript>x</subscript>=70 </emphasis>and<emphasis role="italic">
@@ -676,8 +654,7 @@
     <section xml:id="b8_s_whun4">
         <title>Seasonal Design Floods</title>
         <section xml:id="b8_s_qy9kq">
-            <title><?oxy_insert_start author="retallick" timestamp="20160615T175852+1000"?>The
-                <?oxy_insert_end?>Need for Seasonal Estimates</title>
+            <title>The Need for Seasonal Estimates</title>
             <para>In some situations Rare to Extreme design floods may be required for specific
                 seasons within the year. Seasonal estimates may need to be investigated if it is
                 suspected that the design factors of interest do not have an equal chance of
@@ -708,16 +685,13 @@
                 on the time of year can be approximated by summing the seasonal exceedance
                 probabilities of the selected event.</para>
             <para>As an example, if the year was divided into two seasons, then two separate events
-                could be considered: a summer event
-                    Q<?oxy_insert_start author="retallick" timestamp="20160615T180024+1000"?><subscript>s</subscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180028+1000" content="s"?>
-                    (Q&gt;Q<subscript>0</subscript>) and a winter event
-                    Q<?oxy_insert_start author="retallick" timestamp="20160615T180036+1000"?><subscript>w</subscript><?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180039+1000" content="w"?>
+                could be considered: a summer event Q<subscript>s</subscript>
+                    (Q&gt;Q<subscript>0</subscript>) and a winter event Q<subscript>w</subscript>
                     (Q&gt;Q<subscript>0</subscript>). If these events are regarded as being
-                independent (and if their exceedance probabilities are less than, say, 1 in
-                10<?oxy_insert_start author="retallick" timestamp="20160615T180050+1000"?>
-                AEP<?oxy_insert_end?>), then the unconditional AEP of an event
-                    Q&gt;Q<subscript>0</subscript>, i.e. of Q<subscript>s</subscript> or
-                    Q<subscript>w</subscript>, can be computed as:</para>
+                independent (and if their exceedance probabilities are less than, say, 1 in 10 AEP),
+                then the unconditional AEP of an event Q&gt;Q<subscript>0</subscript>, i.e. of
+                    Q<subscript>s</subscript> or Q<subscript>w</subscript>, can be computed
+                as:</para>
             <equation xml:id="b8_e_39uyl">
                 <m:math display="block">
                     <m:mrow>
@@ -773,12 +747,9 @@
             </equation>
             <para>where SEP<subscript>s</subscript>[Q<subscript>0</subscript>] and
                     SEP<subscript>w</subscript>[Q<subscript>0</subscript>] are respectively the
-                summer and winter
-                <?oxy_insert_start author="retallick" timestamp="20160615T180213+1000"?>S<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180212+1000" content="s"?>easonal
-                <?oxy_insert_start author="retallick" timestamp="20160615T180216+1000"?>E<?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T180215+1000" content="e"?>xceedance
-                <?oxy_delete author="retallick" timestamp="20160615T180218+1000" content="p"?><?oxy_insert_start author="retallick" timestamp="20160615T180219+1000"?>P<?oxy_insert_end?>robabilities<?oxy_insert_start author="retallick" timestamp="20160615T180221+1000"?>
-                (SEP)<?oxy_insert_end?> of the selected event, and AEP[Q<subscript>0</subscript>]
-                represents the probability of one or more events of magnitude Q <inlineequation>
+                summer and winter Seasonal Exceedance Probabilities (SEP) of the selected event, and
+                    AEP[Q<subscript>0</subscript>] represents the probability of one or more events
+                of magnitude Q <inlineequation>
                     <m:math display="inline">
                         <m:mo>≥</m:mo>
                     </m:math>
@@ -850,19 +821,18 @@
                 better than over-parameterised conceptual models.
                 <?oxy_comment_start author="retallick" timestamp="20160615T180844+1000" comment="as above"?>Parsimony<?oxy_comment_end?>
                 in design snowmelt estimation is particularly important because, compared to
-                rain<?oxy_insert_start author="retallick" timestamp="20160615T180930+1000"?>fall<?oxy_insert_end?>-only
-                flood event models, there is a considerable increase in the number of factors that
-                influence the transfer from rainfall to runoff. The salient factors depend on the
-                nature of the transfer function used, but in general it is necessary to consider
-                carefully the inputs related to initial depth and density of the snowpack, the
-                nature and duration of antecedent conditions prior to the rainfall event, windspeed,
-                and the temperature sequence.</para>
+                rainfall-only flood event models, there is a considerable increase in the number of
+                factors that influence the transfer from rainfall to runoff. The salient factors
+                depend on the nature of the transfer function used, but in general it is necessary
+                to consider carefully the inputs related to initial depth and density of the
+                snowpack, the nature and duration of antecedent conditions prior to the rainfall
+                event, windspeed, and the temperature sequence.</para>
             <para>The most appropriate method to use for the derivation of snowmelt design floods
                 will depend largely on the nature of the available data. Practitioners are
                 encouraged to review carefully the type of data that can be obtained for the site of
                 interest, and to select a model that is commensurate with the complexity of the
                 available data. A number of suitable models are commercially available (e.g.
-                    <citation>b8_c_r75</citation>), though there is little documented experience
+                    <citation>b8_c_r75+1</citation>), though there is little documented experience
                 with their application to Australian conditions.</para>
         </section>
         <section xml:id="b8_s_6cx3y">
@@ -870,20 +840,14 @@
             <para>It is general international practice to maximise all salient factors contributing
                 to rain-on-snow runoff (e.g. <citation>b8_c_r74,b8_c_r53,b8_c_r5</citation>).
                 Typically, the antecedent snowpack is set equal to the depth and areal extent
-                corresponding to an extreme
-                event<?oxy_delete author="retallick" timestamp="20160615T181047+1000" content=" with an AEP"?>
-                of around 1 in
-                100<?oxy_insert_start author="retallick" timestamp="20160615T181052+1000"?>
-                AEP<?oxy_insert_end?>, and the wind speed and temperature sequences are selected to
-                maximise runoff. However, such approaches are not consistent with the probability<?oxy_insert_start author="retallick" timestamp="20160615T181059+1000"?>
-                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181059+1000" content="-"?>neutral
-                approach, and thus careful consideration needs to be given to the selection of
-                inputs to ensure that no probability bias is introduced into the transformation
-                between rainfall and runoff. The magnitude of snowmelt floods is particularly
-                sensitive to initial snowpack conditions, and accordingly it is likely that a joint
-                probability approach would be required to satisfy probability<?oxy_insert_start author="retallick" timestamp="20160615T181111+1000"?>
-                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181111+1000" content="-"?>neutral
-                requirements.</para>
+                corresponding to an extreme event of around 1 in 100 AEP, and the wind speed and
+                temperature sequences are selected to maximise runoff. However, such approaches are
+                not consistent with the probability neutral approach, and thus careful consideration
+                needs to be given to the selection of inputs to ensure that no probability bias is
+                introduced into the transformation between rainfall and runoff. The magnitude of
+                snowmelt floods is particularly sensitive to initial snowpack conditions, and
+                accordingly it is likely that a joint probability approach would be required to
+                satisfy probability neutral requirements.</para>
             <para><citation>b8_c_r47+1</citation> provide one example of a study in which a joint
                 probability approach was adopted for the derivation of snowmelt design floods. They
                 incorporated the Snow Compaction Procedure <citation>b8_c_r72</citation> into a
@@ -892,29 +856,25 @@
                 maximum potential rate of snowmelt is derived using the sub-daily application of the
                 US Corps of Engineers degree-day snowmelt equations <citation>b8_c_r74</citation>. A
                 simplified approach was taken to sample antecedent snowpack conditions, but this
-                would be better implemented within a Monte<?oxy_insert_start author="retallick" timestamp="20160615T181136+1000"?>
-                <?oxy_insert_end?><?oxy_delete author="retallick" timestamp="20160615T181135+1000" content="-"?>Carlo
-                framework.</para>
+                would be better implemented within a Monte Carlo framework.</para>
         </section>
     </section>
     <section xml:id="b8_s_s4nj0">
         <title>Consideration of Long Duration Events</title>
         <para>As discussed in <xref linkend="b8_s_ob5bq"/>, there are some design situations in
             which it appears that the critical duration of interest may be longer than the durations
-            for which generalised design rainfall information are available (168
-            hours<?oxy_insert_start author="retallick" timestamp="20160615T183923+1000"?> or 7
-            day<?oxy_insert_end?>). The longest available design storm durations generally relate to
-            the meteorological limits associated with single storm events, and thus longer duration
-            design events will involve the consideration of storm sequences.</para>
+            for which generalised design rainfall information are available (168 hours or 7 day).
+            The longest available design storm durations generally relate to the meteorological
+            limits associated with single storm events, and thus longer duration design events will
+            involve the consideration of storm sequences.</para>
         <para>While it may be necessary to consider the likelihood of storm sequences in tropical
             regions, it is reasonably clear that long duration design events
             (<?oxy_comment_start author="retallick" timestamp="20160615T202330+1000" comment="south east aust includes sydney. while this is true for sydney for 1 day not for 4 days. "?>one
-            to several days<?oxy_comment_end?>) in
-            south<?oxy_insert_start author="retallick" timestamp="20160615T184007+1000"?>-<?oxy_insert_end?>eastern
-            Australia are unlikely to be preceded by significant antecedent rainfalls (<xref
-                linkend="b8_s_ob5bq"/>). Accordingly, the issue of storm sequences over extended
-            periods may be implicitly solved by undertaking a joint probability analysis of inflow
-            floods and reservoir volume, as described in <xref linkend="b8_s_no8ga"/>.</para>
+            to several days<?oxy_comment_end?>) in south-eastern Australia are unlikely to be
+            preceded by significant antecedent rainfalls (<xref linkend="b8_s_ob5bq"/>).
+            Accordingly, the issue of storm sequences over extended periods may be implicitly solved
+            by undertaking a joint probability analysis of inflow floods and reservoir volume, as
+            described in <xref linkend="b8_s_no8ga"/>.</para>
         <para>There are other design situations (such as tailings dams) in which the design
             objective is to ensure that the risk of spills from the storage is negligible. These
             types of problems can generally be handled by undertaking mass balance calculations of
@@ -924,13 +884,10 @@
             thus may be sufficient to allow for a freeboard in the storage that fully accommodates
             the volume of runoff corresponding to the required AEP of rainfall. This type of problem
             does not lend itself to event-based joint probability analyses but requires water
-            balance computations over extended periods.
-            Generally<?oxy_insert_start author="retallick" timestamp="20160615T184236+1000"?>,<?oxy_insert_end?>
-            it is desirable to generate the long hydroclimatic sequences by stochastic data
-            generation techniques
-            (<?oxy_delete author="retallick" timestamp="20160615T184242+1000" content="see"?><?oxy_insert_start author="retallick" timestamp="20160615T184242+1000"?>refer to<?oxy_insert_end?>
-            <citation>b8_c_r39</citation>, and an example of this approach used for spillway design
-            is provided by <citation>b8_c_r30+1</citation>. The required security against
+            balance computations over extended periods. Generally, it is desirable to generate the
+            long hydroclimatic sequences by stochastic data generation techniques (refer to
+                <citation>b8_c_r39</citation>, and an example of this approach used for spillway
+            design is provided by <citation>b8_c_r30+1</citation>. The required security against
             overtopping can be achieved by using sequences of different lengths, as described for
             example in <citation>b8_c_r15+1</citation>, <xref linkend="b8_s_zvvef"/>).</para>
         <para>One of the major practical and theoretical problems with the application of stochastic
@@ -949,21 +906,17 @@
             long-term climatic variations, such as would result from changes in atmospheric
             concentration of greenhouse gases.</para>
         <para>General guidance on assessing the impact of climate change is provided in <xref
-                linkend="b1_ch6"/>,
-            however<?oxy_insert_start author="retallick" timestamp="20160615T185213+1000"?>,<?oxy_insert_end?>
-            it is worth noting that at present no allowance is made for climate change in estimates
-            of the PMP. The Bureau of Meteorology completed an analysis of a storm database covering
-            the period 1893 to 2001 and concluded that there is little evidence to support the
-            notion that tropical cyclones (connected to major rainfall events) are penetrating
-            further south or have become more frequent <citation>b8_c_r23</citation>. At time of
-            writing the Bureau of Meteorology are not intending to revise PMP estimates or
-            methodology to account for effects of climate change. Similarly, in
-            <?oxy_delete author="retallick" timestamp="20160615T185240+1000" content="n"?><?oxy_insert_start author="retallick" timestamp="20160615T185240+1000"?>N<?oxy_insert_end?>orth
-            America standard procedures do not presently allow for climate change adjustments,
-                <citation>b8_c_90</citation>
-            however<?oxy_insert_start author="retallick" timestamp="20160615T185250+1000"?>,<?oxy_insert_end?>
-            climate model simulations and analysis of conceptual models of relevant meteorological
-            systems would suggest that PMP estimates will increase in the future
+                linkend="b1_ch6"/>, however, it is worth noting that at present no allowance is made
+            for climate change in estimates of the PMP. The Bureau of Meteorology completed an
+            analysis of a storm database covering the period 1893 to 2001 and concluded that there
+            is little evidence to support the notion that tropical cyclones (connected to major
+            rainfall events) are penetrating further south or have become more frequent
+                <citation>b8_c_r23</citation>. At time of writing the Bureau of Meteorology are not
+            intending to revise PMP estimates or methodology to account for effects of climate
+            change. Similarly, in North America standard procedures do not presently allow for
+            climate change adjustments, <citation>b8_c_90</citation> however, climate model
+            simulations and analysis of conceptual models of relevant meteorological systems would
+            suggest that PMP estimates will increase in the future
                 <citation>b8_c_r32,b8_c_r71</citation>. This is an area of active ongoing research
             and it might be expected that guidance will evolve in the future as better information
             becomes available.</para>
@@ -994,4 +947,4 @@
 </chapter>
 
 
-<?oxy_options track_changes="on"?>
+
