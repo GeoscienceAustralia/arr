@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter status="In Preparation" version="5.0" xml:id="b1_ch6" xmlns="http://docbook.org/ns/docbook"
-  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
-  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
+<chapter status="In Preparation" version="5.0" xml:id="b1_ch6" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Climate Change Considerations</title>
-    <xi:include href="../../common/authors/bates_bryson.xml"/>
-    <xi:include href="../../common/authors/mcluckie_duncan.xml"/>
+    <xi:include href="../../common/authors/wasko_conrad.xml"/>
     <xi:include href="../../common/authors/westra_seth.xml"/>
-    <xi:include href="../../common/authors/johnson_fiona.xml"/>
-    <xi:include href="../../common/authors/green_janice.xml"/>
-    <xi:include href="../../common/authors/mummery_jo.xml"/>
-    <xi:include href="../../common/authors/abbs_deborah.xml"/>
+    <xi:include href="../../common/authors/nathan_rory.xml"/>
+    <xi:include href="../../common/authors/jakob_dorte.xml"/>
+    <xi:include href="../../common/authors/nielsen_chris.xml"/>
+    <xi:include href="../../common/authors/evans_jason.xml"/>
+    <xi:include href="../../common/authors/rodgers_simon.xml"/>
+    <xi:include href="../../common/authors/ho_michelle.xml"/>
+    <xi:include href="../../common/authors/babister_mark.xml"/>
+    <xi:include href="../../common/authors/dowdy_andrew.xml"/>
+    <xi:include href="../../common/authors/sharples_wendy.xml"/>
   </info>
   <informaltable border="1">
     <tr>
@@ -20,343 +21,318 @@
     </tr>
     <tr>
       <td>Date last updated</td>
-      <td>14/5/2019</td>
+      <td>27/08/2024</td>
     </tr>
   </informaltable>
-  <section xml:id="b1_ch6_s_k8rpx">
+  <section xml:id="b1_ch6_s_s1">
     <title>Introduction</title>
-    <para>There is now widespread acceptance that human activities are contributing to observed
-      climate change. Human induced climate change has the potential to alter the prevalence and
-      severity of rainfall extremes, storm surge and floods. Recognition of the risks associated
-      with climate change is required for better planning for new infrastructure and mitigating the
-      potential damage to existing infrastructure.</para>
-    <para>There are five aspects of design flood estimation that are likely to be impacted by
-      climate change: <itemizedlist>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para>Because our climate is changing, unadjusted historical observations are no longer a
+            suitable basis for design flood estimation: they must be adjusted to reflect the impacts
+            of rising global temperatures. This chapter provides guidance on how to do this. It is
+            based on a systematic review and meta-analysis of recent peer-reviewed science. </para>
+        </td>
+      </tr>
+    </informaltable>
+    <para>There is unequivocal evidence that greenhouse gas emissions have caused global warming.
+      The Intergovernmental Panel on Climate Change’s sixth assessment report concluded that global
+      surface temperatures have significantly increased above pre-industrial levels, with
+      significant further warming expected <citation>b1_c6_r16</citation>. This warming is causing
+      an increase in many drivers of flood risk, including an intensification of extreme rainfall
+      events and the elevation of average and extreme sea levels
+      <citation>b1_c6_r16</citation>.</para>
+    <para>Traditionally, design flood estimation has assumed that historical observations are
+      representative of current and future conditions. This is no longer the case. Records on
+      historical flooding or flood drivers (such as extreme rainfall or sea level) can no longer be
+      assumed to provide a direct analogue of current or future flood risk. To account for
+      significant observed and projected changes to the drivers of flooding, it is necessary to
+      account for the non-stationarity of flooding in the assessment of current and future flood
+      risks. </para>
+    <para>This chapter provides practitioners, designers, and decision makers with guidance on how
+      to assess the impact of climate change on design flood characteristics. As with the rest
+        of<emphasis> Australian Rainfall and Runoff </emphasis> (ARR) the content is advisory, so
+      additional guidance or requirements may need to be sought from relevant government regulation
+      in the jurisdiction of interest. </para>
+    <para>This chapter replaces the 2019 Climate Change Considerations chapter
+        <citation>b1_c6_r23</citation> in Book 1, Chapter 6 of ARR Version 4.1. This chapter
+      provides guidance that reflects the contemporary science, is applicable across the range of
+      design flood approaches, and facilitates consistent application of climate change in design
+      flood estimation. This guidance is based on an extensive and rigorous systematic review and
+      meta-analysis of over 300 distinct peer-reviewed scientific studies published largely from
+      2011 onwards. For further information on the scientific basis for this guidance, readers are
+      referred to <citation>b1_c6_r22+1</citation>. </para>
+    <para>Key differences from the 2019 Climate Change Considerations chapter (Version 4.1) include: <itemizedlist>
         <listitem>
-          <para>rainfall Intensity Frequency Duration (IFD) relationships;</para>
+          <para>recognition that global temperatures have increased over the historical period used
+            to derive design rainfall information </para>
         </listitem>
         <listitem>
-          <para>rainfall temporal patterns;</para>
+          <para>a recommendation to adjust 2016 Intensity-Frequency-Duration (IFD) curves to present
+            (i.e. current climate) conditions </para>
         </listitem>
         <listitem>
-          <para>continuous rainfall sequences;</para>
+          <para>provision of information to support a range of approaches to decision-making</para>
         </listitem>
         <listitem>
-          <para>antecedent conditions and baseflow regimes; and</para>
+          <para>provision of guidance across the range of Annual Exceedance Probability (AEP)
+            considered in ARR up to and including the Probable Maximum Precipitation (PMP) </para>
         </listitem>
         <listitem>
-          <para>and compound extremes (e.g. riverine flooding combined with storm surge
-            inundation).</para>
+          <para>provision of uncertainty estimates</para>
         </listitem>
-      </itemizedlist>The magnitudes of the impacts on any these areas have not been subjected to
-      comprehensive study either nationally or internationally.</para>
-    <para>The climate change projections released in 2015 show simulated increases in the magnitude
-      of the wettest annual daily total and the 5% AEP wettest daily total across Australia
-        <citation>b1_c6_r2</citation>. The projections do not include information about potential
-      changes in IFD relationships and rainfall temporal patterns. Quite restricted sets of climate
-      change projections for the Greater Sydney and southeast Queensland regions indicate that IFD
-      relationships are sensitive to climate change <citation>b1_c6_r1</citation>. For example, the
-      projections for Greater Sydney suggest that the 1% AEP for the 24 hour duration IFD will
-      increase by up to 20% by 2050. To the west, in some parts of the Blue Mountains and beyond,
-      decreases in the 1% AEP 24 hour duration IFD are possible. These projections are not
-      definitive, however, since only one high-end greenhouse gas emissions scenario and a small set
-      of climate model results were considered. For present climatic conditions, the analysis of
-        <citation>b1_c6_r5+1</citation> indicates that temporal patterns of rainfall within storm
-      bursts in Australia are impacted by temperature variations regardless of the climatic region
-      and season. For the Greater Sydney region, <citation>b1_c6_r6+1</citation> found differing
-      trends in annual maximum rainfall for different durations.</para>
-    <para>This chapter provides practitioners, designers and decision makers with an approach to
-      address the risks from climate change in projects and decisions that involve estimation of
-      design flood characteristics while further research is undertaken to reduce key uncertainties.
-      It draws on the most recent climate science, particularly the release of the IPCC Fifth
-      Assessment Report <citation>b1_c6_r4</citation> as well as the new climate change projections
-      for Australia <citation>b1_c6_r2</citation>. As such, the chapter is focused on potential
-      changes in rainfall intensity (or equivalent depth) given the paucity of climate change
-      projections for other factors that influence flood risk.</para>
-    <para>For consistency with design rainfall IFD estimates for the current climate (<xref
-        linkend="book2"/>), the chapter is intended to be applied to the key system design event
-      (ie. the design standard for the structure or infrastructure). It is applicable for
-      current-day rainfall intensities within the range of probability of one Exceedance per Year
-      and 50% to 1% AEP. The approach described with this chapter considers regional risks from
-      climate change, the effective service life (ie. the total period during which an asset remains
-      in use) or the planning horizon of the decision (ie. the length of time that a plan looks into
-      the future), the social acceptability and other consequences of failure, and the cost of
-      retrofits. If climate change is found to be a significant issue for the infrastructure of
-      interest through a screening analysis, a more detailed analysis is needed to draw on the best
-      available knowledge of the likely future climate and to allow for changes in the intensity of
-      heavy rainfall events over time.</para>
-    <para>As the science of climate change is continually changing, it is anticipated that the
-      chapter will be replaced gradually as new and detailed research findings are released. The
-      latest published sources should always be sought for use in future assessments and decision
-      making. The chapter does not replace the need for informed judgement of likely risks, or the
-      need for detailed local analysis (for example through the use of additional climate and
-      hydrological modelling) where the facilities under consideration are important and the risks
-      potentially large.</para>
+        <listitem>
+          <para>consideration of additional factors that influence design flood estimates; that is,
+            changes in rainfall losses, temporal patterns, and sea level rise.</para>
+        </listitem>
+      </itemizedlist>This chapter is structured as follows: <itemizedlist>
+        <listitem>
+          <para><xref linkend="b1_ch6_s_s2"/> discusses the 2 primary types of uncertainty
+            exacerbated by climate change that are relevant to flood design.</para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="b1_ch6_s_s3"/> covers how climate change affects design flood
+            estimation methods more broadly.</para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="b1_ch6_s_s4"/> describes how to account for climate change in the key
+            aspects of event-based design flood estimation, with the recommendations linked to the
+            worked examples in <xref linkend="b1_ch6_s_s6"/>. </para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="b1_ch6_s_s5"/> recommends an approach for future updates to the
+            climate change considerations chapter.</para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="b1_ch6_s_s6"/> provides worked examples of the guidance presented in
+              <xref linkend="b1_ch6_s_s4"/>.</para>
+        </listitem>
+      </itemizedlist></para>
   </section>
-  <section xml:id="b1_ch6_s_q4rol">
-    <title>Climate Futures Web Tool</title>
-    <para>The chapter uses output from the Climate Futures web tool developed by the CSIRO. Climate
-      change projections are focussed on Natural Resource Management (NRM) ‘clusters’ (<xref
-        linkend="b1_ch6_f_a82gy"/>). Projected changes from Global Climate Models (GCMs) can be
-      explored for 14 20-year periods and the four Representative Concentration Pathways (RCPs) for
-      greenhouse gas and aerosol concentrations that were used to drive the GCMs. The RCPs are
-      designated as 2.6, 4.5, 6.0 and 8.5, and are named according to radiative forcing values (W
-        m<superscript>-2</superscript>) in the year 2100 relative to pre-industrial values. Use of
-      RCPs 4.5 and 8.5 (low and high concentrations, respectively) is recommended for impact
-      assessment. Further details can be found at the Australian Climate Futures Website<footnote>
-        <para><link
-            xlink:href="http://www.climatechangeinaustralia.gov.au/en/climate-projections/climate-futures-tool/introduction-climate-futures/"
-            >http://www.climatechangeinaustralia.gov.au/en/climate-projections/climate-futures-tool/introduction-climate-futures/</link></para>
-      </footnote>.</para>
-    <para><figure xml:id="b1_ch6_f_a82gy">
-        <title>Locations of Natural Resource Management Clusters</title>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="../../figures/1045.png"/>
-          </imageobject>
-        </mediaobject>
-      </figure>Climate Futures subdivides the projected changes in two climate variables (e.g.
-      temperature and rainfall) from the full suite of GCMs into several classes, e.g.
-      warmer-wetter, hotter-drier, much hotter-much drier. The changes are relative to a 20-year
-      (1986-2005) baseline. The resultant classification provides a visual display of the spread and
-      clustering of the projected changes. This provides model consensus information for each class
-      and assists the selection of the classes that are of most importance for impact
-      assessment.</para>
-    <para>Generally, there is more confidence in GCM simulations of temperature than for rainfall.
-      Thus the chapter provides an adjustment factor for IFD curves informed by temperature
-      projections alone. These temperature projections are then combined with current understanding
-      of changes to extreme rainfall event intensities based on research in Australia and overseas.
-      This research includes observation-based assessments, physical arguments on the water holding
-      capacity of a warmer atmosphere and high resolution dynamical downscaling experiments. Using
-      these multiple lines of evidence the expected change in heavy rainfalls is between 2% and 15%
-      per °C of warming.</para>
-    <sidebar>
-      <para>Given the uncertainty in rainfall projections and their considerable regional
-        variability, an increase in rainfall (intensity or depth) of 5% per °C of local warming is
-        recommended.</para>
-    </sidebar>
-    <para>Given the uncertainty in rainfall projections and their considerable regional variability,
-      an increase in rainfall (intensity or depth) of 5% per °C of local warming is recommended. The
-      proposed rate of increase has been tempered because: there is no guarantee that the same
-      scaling will apply across all of the frequencies and durations typically considered in flood
-      design, and there are other factors that have the potential to affect future rainfall
-      intensities (or depths) over land. These include changes in regional atmospheric circulation,
-      synoptic systems and soil wetness.</para>
-  </section>
-  <section xml:id="b1_ch6_s_g9sbm">
-    <title>Interim Climate Change Guideline</title>
-    <para>Failure to account for potential climate hazards can lead to poor decisions, particularly
-      when the exposure risk to climate change is medium to high. In these circumstances, a
-      reasonable approach is to make a decision that is robust against a range of plausible futures.
-      These futures can be obtained from the Climate Futures web tool. Where exposure to climate
-      change and the consequences of failure of the asset of interest are high, more detailed local
-      studies including the use of downscaling methods are recommended. This approach ensures a
-      balance between standardising practice and allowing for the use of informed professional
-      judgement.</para>
-    <para>For consistency with the design rainfall IFD estimates in <xref linkend="book2"/>, the
-      chapter is intended to be applied to the design event (ie. the design standard for the
-      structure or infrastructure). It is applicable for rainfall intensities under the current
-      climatic regime within the range of probability of one exceedance per year and 50% to 1% AEP.
-      Other mechanisms that affect the magnitude of flooding, such as tailwater levels and oceanic
-      processes (e.g. wind, waves and tides) are not considered. Where there is an additional risk
-      of coastal flooding from sea level rise refer to <citation>b1_c6_r3+1</citation> for
-      guidance.</para>
-    <para>A six-step process is used to incorporate climate change risks into decisions involving
-      the estimation of design flood characteristics. The process uses a decision tree approach that
-      enables the practitioner to define the nature of the information needed for a particular
-      problem and to reach an appropriate course of action (see <xref linkend="b1_ch6_f_31m1s"/> to
-        <xref linkend="b1_ch6_f_7i1uk"/> or <xref linkend="b1_ch6_f_kfjeu"/>).</para>
-    <figure xml:id="b1_ch6_f_kfjeu">
-      <title>Decision Tree for Incorporating Climate Change in Flood Design</title>
+  <section xml:id="b1_ch6_s_s2">
+    <title>Decison Contexts for Flood Guidance</title>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para>Climate variability heavily influences the risks of flooding from one time period to
+            the next (‘aleatory uncertainty’) and these risks will shift under climate change. There
+            is considerable uncertainty associated with future global emissions and the physical
+            effects of these emissions on flood drivers increases the uncertainty of design flood
+            estimates (‘epistemic uncertainty’). A user needs to choose their approach to design
+            flood estimation in the context of these two sources of uncertainty. </para>
+        </td>
+      </tr>
+    </informaltable>
+    <para>ARR provides guidance to support the estimation of design floods that inform either
+      standards-based design criteria (such as designing to the 1% AEP standard) or risk-based
+      approaches that seek to understand flood behaviour across a range of flood magnitudes up to
+      and including the Probable Maximum Flood (PMF) (see <xref linkend="b1_ch5"/> for more detail).
+      Guidance in ARR is largely focused on dealing with the inherent randomness of factors (the
+      aleatory uncertainties) that influence the exceedance probability of a given event (<xref
+        linkend="b4_ch3"/>). In rainfall-based estimates this most often involves consideration of
+      Intensity-Frequency-Duration (IFD) rainfall bursts (<xref linkend="b2_ch3"/>), variability in
+      rainfall temporal patterns (<xref linkend="b2_ch5"/>), and the influence of antecedent and
+      event losses (<xref linkend="b5_ch5"/>). In techniques based on the direct analysis of flood
+      data (<xref linkend="book3"/>), the aleatory uncertainty of these factors is implicitly
+      accounted for in the sampling variability represented in the available flood observations.
+      Climate change is now impacting the frequency and behaviour of many of the factors that
+      influence flood behaviour resulting in non-stationarity in design flood estimates, shifting
+      estimates of the aleatory uncertainty (<xref linkend="b1_ch6_f_f1"/>). </para>
+    <para>While much of the emphasis of climate science is to understand the likely historical and
+      future changes to key flood risk drivers, another important consequence of climate change is
+      an increase in the epistemic uncertainty of design flood estimates (<xref linkend="b1_ch6_f_f1"/>). This additional uncertainty arises from limitations in data and
+      knowledge, where in the context of climate change this includes the uncertainty associated
+      with future global emissions and mitigation strategies, resultant uncertainty in future global
+      and regional temperature changes, and uncertainties on the implication of changing
+      temperatures and associated processes on flood risk drivers. Within risk-based decision-making
+      frameworks (where risk is commonly defined as ‘the effect of uncertainty on objectives’, ISO
+      31000), considerations of the projected changes in flood risk drivers as well as the
+      increasing level of uncertainty associated with those drivers are both relevant in assessment
+      of overall risk. </para>
+    <figure xml:id="b1_ch6_f_f1">
+      <title>Climate change is shifting our best estimate of the relationship between event
+        magnitude and frequency and increasing the inherent uncertainty in such estimates</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../../figures/1036.png"/>
+          <imagedata fileref="../../figures/b1_c6_f1.png"/>
         </imageobject>
       </mediaobject>
     </figure>
-    <section xml:id="b1_ch6_s_kwwla">
-      <title>Step 1 – Set the Effective Service Life or Planning Horizon</title>
-      <para>The first consideration is the effective service life of an asset or planning horizon of
-        an activity (<xref linkend="b1_ch6_f_31m1s"/>). This underpins the design philosophy and may
-        fundamentally control the selection of material, methods and expertise. In current practice,
-        a broad perspective on effective service life may be required incorporating engineering,
-        client and community perspectives. Potential climate change considerations may influence
-        these decisions, particularly as the risks from climate change are likely to increase over
-        time.</para>
-      <para>If the effective service life or planning horizon is relatively short (less than 20
-        years from 2015) climate change will have negligible impact on IFD characteristics over that
-        period of time. Thus the projected hazard will be similar to the present, and the design
-        process should be based on the IFD and temporal patterns described in <xref linkend="book2"
-        />. Otherwise, proceed to Step 2.<figure xml:id="b1_ch6_f_31m1s">
-          <title>Decision Tree for Incorporating Climate Change in Flood Design – Part 1 of
-            3</title>
+    <para>In addition to standards-based and risk-based decision-making approaches, there has
+      recently been interest in decision-making frameworks that are less reliant on annualised
+      probability-based estimates of flood magnitude. Examples include robust design approaches that
+      can adapt to changes in design flood estimates over time (adaptive management), sensitivity
+      and stress-testing approaches that explore the effect of alternative assumptions on
+      decision-making (‘bottom-up’ and ‘decision-scaling’ approaches), and ‘storyline’ methods that
+      often draw on historical flood events, but which are modified to account for potential impacts
+      of climate change. </para>
+    <para>This chapter provides guidance for future changes to design floods recognising the
+      requirements of current design procedures (and the need to capture the shifts in the
+      magnitude-frequency relationships relevant to both standards-based and risk-based
+      decision-making approaches), while also providing information to assist in estimating the
+      uncertainty associated with those best estimates. This allows for consistency in the guidance
+      here and the above decision-making frameworks. For example, a standards-based approach may
+      adopt the median values presented in <xref linkend="b1_ch6_s_s4"/> and incorporate the
+      uncertainty in a Monte Carlo framework. A bottom-up approach may use the uncertainty as a
+      guide for sensitivity testing to develop system response surfaces for the hazard of interest.
+      A risk-based approach may consider the probabilities and consequences of flooding across a
+      range of exceedance probabilities, accounting for both aleatory and epistemic uncertainties. </para>
+    <para>The reader is referred to <xref linkend="b1_ch5"/> for further information on risk-based
+      decision making, with <xref linkend="b1_ch5_s_6kvuz"/> detailing a possible process of
+      undertaking a non-stationary risk assessment. Further information on approaches for
+      representing epistemic uncertainty as part of the design flood estimation process are
+      presented in <xref linkend="b7_ch8"/>, with the different approaches to address aleatory
+      uncertainty described in <xref linkend="b1_ch3"/>. </para>
+  </section>
+  <section xml:id="b1_ch6_s_s3">
+    <title>Selection of a Design Flood Estimation Method Under Climate Change</title>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para>There are two broad classes of design flood estimation methods: direct flood-based
+            procedures and rainfall-based procedures. Rainfall-based procedures can be further
+            divided into continuous and event-based approaches. The impacts of climate change are
+            most readily incorporated into event-based methods, and hence this guidance focusses on
+            generic advice that is relevant to these methods. Direct flood-based procedures (e.g.
+            flood frequency) and continuous simulation approaches remain important tools for the
+            assessment of flood risk, though there is no clear consensus on how such methods should
+            be adjusted to account for climate change. </para>
+        </td>
+      </tr>
+    </informaltable>
+    <para>Although frequency analysis will continue to be used for design flood estimation and the
+      calibration of models to historic data, climate change influences a range of flood drivers
+      which impact on flood magnitude in a highly non-linear fashion. It is thus difficult to
+      directly adjust flood information without reference to the causal processes by which climate
+      change influences flood magnitude <citation>b1_c6_r22</citation>. This means that
+      extrapolating historical trends into the future or scaling historical flood magnitudes by a
+      fixed amount may not adequately capture how changes in the causal drivers propagate through a
+      catchment to influence changes in flood behaviour. Accordingly, it is recommended that any
+      adjustment of historical flood frequency estimates to account for climate change be undertaken
+      in a manner that it is consistent with the impact of changes in the flood drivers (e.g.
+      extreme rainfall, antecedent conditions, sea level, etc) as described in this chapter. </para>
+    <para>In contrast to flood-based procedures, rainfall-based procedures provide a mechanism to
+      relate information on climate projections to design flood estimates using either event-based
+      or continuous simulation approaches. For continuous simulation to be suitable for flood
+      estimation under a non-stationary climate, the timeseries need to reflect the complexities of
+      future changes that are relevant to the design flood estimation problem. As highlighted in
+        <citation>b1_c6_r22+1</citation>, extreme rainfall is likely to change at a different rate
+      to annual average rainfall. Similarly short-duration extremes (sub-daily rainfall) and
+      longer-duration extremes (multi-day accumulations) are likely to be experiencing differing
+      rates of change in both frequency and intensity, leading to complex changes in the temporal
+      patterns of rainfall. There may also be changes to the seasonality of heavy rainfall events,
+      and to the sequencing of wet and dry periods. </para>
+    <para>Although continuous simulation approaches can be adapted to use climate-adjusted input
+      timeseries (rainfall and potential evapotranspiration), further research is required to
+      develop robust and practical methods to generate these climate-adjusted inputs into continuous
+      simulation models, and applications will generally require the development of individualised
+      solutions. As a pragmatic minimum, it is recommended that extreme rainfalls in the timeseries
+      used for continuous simulation be scaled to reflect the recommendations for incorporating
+      climate change into Intensity-Frequency-Duration curves (<xref linkend="b1_ch6_s_ss1"/>), with
+      the remaining rainfalls adjusted to reflect projections of the mean seasonal or annual
+      rainfall for the location of interest. Suitable account will also need to be given to
+      adjusting evaporative demand inputs. </para>
+    <para>Due to the above considerations, and because event-based procedures are commonly applied
+      in design flood estimation, event-based procedures are recommended as the primary class of
+      procedures for incorporating climate change into design flood estimates. In the context of
+      climate change assessments, the advantages of this class of procedures are the ability to
+      clearly map climate projections (including those related to extreme rainfall and/or sea
+      levels) to the inputs of event-based rainfall-runoff and hydraulic models, together with their
+      general applicability across both gauged and ungauged catchments and for a wide range of
+      annual exceedance probabilities from the 1 exceedance per year (EY) event through to the
+      Probable Maximum Precipitation (PMP) (<xref linkend="b1_ch3_f_9qc3y"/> of Book 1, Chapter 3). </para>
+  </section>
+  <section xml:id="b1_ch6_s_s4">
+    <title>Incorporating Climate Change into Event-Based Design Flood Estimates</title>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para>Changes in extreme rainfall are likely to represent the primary mechanism for
+            increases in flood risk across most Australian catchments. This section provides
+            information on how to adjust design rainfall estimates as well as temporal patterns,
+            loss parameters, and sea level rise. Uncertainties are presented for each of the aspects
+            of the design flood estimate for which climate change guidance is provided. The reader
+            is referred to supporting guidance for sea level rise. Examples are presented in <xref
+              linkend="b1_ch6_s_s6"/>. </para>
+        </td>
+      </tr>
+    </informaltable>
+    <para>Event-based procedures are summarised in <xref linkend="b4_ch3"/>, and as highlighted in
+      that chapter, they generally take into consideration the following climate-related factors: <orderedlist>
+        <listitem>
+          <para>A design storm of a given AEP and duration, usually derived from published IFD data
+              (<xref linkend="b2_ch2"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Temporal patterns to distribute the design rainfall over the duration of the event
+              (<xref linkend="b2_ch5"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Spatial patterns to represent rainfall variation over a catchment (<xref
+              linkend="b2_ch4"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Loss parameters that represent soil moisture conditions in the catchment antecedent
+            to the event and the capacity of the soil to absorb rainfall during the event (<xref
+              linkend="b5_ch3"/>). </para>
+        </listitem>
+      </orderedlist>This list of climate-related factors is not necessarily exhaustive. For example,
+      in low-lying (such as estuarine) catchments, the above is combined with information on sea
+      levels that are influenced by both astronomical tides and storm surges (<xref linkend="b6_ch5"
+      />). In the following sections, guidance is provided on accounting for climate change
+      associated with each of the 4 aspects of event-based design flood modelling described above.
+      The section closes with a discussion of the approach to estimating the epistemic uncertainty.
+      <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></para>
+    <section xml:id="b1_ch6_s_ss1">
+      <title><?oxy_insert_end?>Intensity-Frequency-Duration
+        Curves<?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></title>
+      <para><?oxy_insert_end?>For most Australian catchments, changes in extreme rainfall are likely
+        to represent the primary mechanism for increases in flood risk with
+          <citation>b1_c6_r22+1</citation> identifying over 40 studies that quantify changes of
+        extreme rainfall over Australia. For consistency with the Intergovernmental Panel on Climate
+        Change (IPCC) projections, and to be representative of the climatic drivers of changes in
+        moisture sources, a scaling approach is recommended whereby design rainfalls are factored at
+        a rate proportional to global surface (land and sea) temperature increase. </para>
+      <para>The current IFD curves that are included in the 2016 IFD portal<footnote>
+          <para><link xlink:href="http://www.bom.gov.au/water/designRainfalls/ifd/"
+              >http://www.bom.gov.au/water/designRainfalls/ifd/</link></para>
+        </footnote> were derived using historical data (<xref linkend="b2_ch3"/>). The data from
+        individual gauges varies, but a good estimate for the midpoint of the data period used in
+        estimating the 2016 IFDs is 1961-1990. <xref linkend="b1_ch6_f_f2"/> presents the latest
+        Intergovernmental Panel on Climate Change (IPCC) temperature projections based on Shared
+        Socioeconomic Pathways (SSPs) that cover a broad range of potential future development
+        options often referred to as very low (SSP1-1.9), low (SSP1-2.6), medium (SSP2-4.5), high
+        (SSP3-7.0) and very high (SSP5-8.5) emissions pathways. The best estimate for the mid-point
+        of the data used for the generation of the 2016 IFDs is shaded. As global temperatures have
+        risen since this period, design rainfall estimates require factoring to account for this
+        temperature increase.
+          <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?><figure
+          xml:id="b1_ch6_f_f2">
+          <title><?oxy_insert_end?>Projected temperature increases associated with AR6 socioeconomic
+            pathways relative to 1961-1990 and their associated uncertainty<footnote>
+              <para>Figure based on Figure SPM.8 from the Summary for Policymakers (SPM) of the
+                Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change
+                (IPCC) Sixth Assessment Report (AR6) <citation>b1_c6_r15,b1_c6_r11</citation>. Data
+                can be obtained from the associated references.</para>
+            </footnote><?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></title>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="../../figures/1033.png"/>
+              <imagedata fileref="../../figures/b1_c6_f2.png"/>
             </imageobject>
           </mediaobject>
-        </figure></para>
-    </section>
-    <section xml:id="b1_ch6_s_vn7vk">
-      <title>Step 2 – Set the Flood Design Standard</title>
-      <para>Again consider <xref linkend="b1_ch6_f_31m1s"/>. If the design standard is the Probable
-        Maximum Flood (PMF), use an up-to-date estimate of the Probable Maximum Precipitation (PMP)
-        to determine the PMF. This approach has an appropriate degree of conservatism as PMP
-        estimates are updated by the Bureau of Meteorology from time to time. This will ensure that
-        any future climate change signal is captured and thus the PMP should not be further adjusted
-        to take into account potential climate change implications. Otherwise, proceed to Step
-        3.</para>
-    </section>
-    <section xml:id="b1_ch6_s_dg2gc">
-      <title>Step 3 – Consider the Purpose and Nature of the Asset or Activity and Consequences of
-        its Failure</title>
-      <para>Consider <xref linkend="b1_ch6_f_yzgm5"/>. Here ‘purpose of the asset’ can refer to flow
-        conveyance, improved safety, and reduced frequency of exposure and damage. Flood-related
-        design requirements (e.g. minimum fill levels and minimum floor levels) need to be
-        considered, as well as the consequences of failure (e.g. risks to life, property and the
-        environment) and the cost of retrofitting assets if IFD characteristics change with
-        time.</para>
-      <para>The impact of the possible failure of the facility (e.g. asset, process or management
-        strategy) will have direct and indirect consequences, and should be assessed in terms of
-        primary risk outcomes such as issues of cost, safety, social acceptability and environmental
-        impact. Some categorisation of facilities may be useful when determining the consequences of
-        failure. For example, there can be substantial consequences if assets related to the
-        delivery of essential services fail or are significantly impacted.</para>
-      <para>The consequences of failure can be rated as either low, medium or high:</para>
-      <itemizedlist>
-        <listitem>
-          <para><emphasis>Low consequence </emphasis>- some probability that asset performance will
-            be impacted but the delivery of services will be only partially or temporarily
-            compromised, or alternative sources of services (e.g. availability of different power
-            sources) are readily available.</para>
-        </listitem>
-        <listitem>
-          <para><emphasis>Medium consequence </emphasis>- moderate to large probability that
-            performance of important but non-critical assets and delivery of services will be
-            impacted or fail for a short period of time.</para>
-        </listitem>
-        <listitem>
-          <para><emphasis>High consequence</emphasis> - moderate to large probability that
-            performance will be impacted or fail, leading to disruption to delivery of essential
-            services (where alternative sources of services are not readily available). This
-            category generally relates to high value assets, or assets of significant economic or
-            welfare importance.</para>
-        </listitem>
-      </itemizedlist>
-      <para>Where the consequences of failure and the costs of retrofitting are considered to be
-        low, the project or decision should proceed in accordance with the original design
-        specifications. Otherwise, proceed to Step 4.<figure xml:id="b1_ch6_f_yzgm5">
-          <title>Decision Tree for Incorporating Climate Change in Flood Design – Part 2 of
-            3</title>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="../../figures/1034.png"/>
-            </imageobject>
-          </mediaobject>
-        </figure></para>
-    </section>
-    <section xml:id="b1_ch6_s_3rtmf">
-      <title>Step 4 – Carry out a Climate Change Risk Screening Analysis</title>
-      <para>Again consider <xref linkend="b1_ch6_f_yzgm5"/>. Step 4 responds to the question: Is
-        climate change a significant issue for the facility of interest? Here the risks of climate
-        change are assessed with regard to their capacity to impair the facility’s ability to
-        perform its intended function. The description of impact or failure involves the use of
-        heavy rainfall events with different AEPs. This task can be facilitated by use of the AEPs
-        listed in <xref linkend="b1_ch6_t_oppcr"/>. Recall that the scope of this chapter is limited
-        to events more frequent than the 1% AEP. If the design AEP corresponds to the <emphasis
-          role="italic">i</emphasis><superscript>th</superscript> row in <xref
-          linkend="b1_ch6_t_oppcr"/>, consider the impact of the AEP events corresponding to the
-          (<emphasis role="italic">i</emphasis>+1)<superscript>th</superscript> and (<emphasis
-          role="italic">i</emphasis>+2)<superscript>th</superscript> rows on the facility of
-        interest and the associated consequences. For example, for the 1% AEP the practitioner could
-        consider the impact of the 0.5% and 0.2% AEP events.</para>
-      <para>The outputs from this step include a good understanding of the extent to which the risks
-        of climate change may exceed the coping capacity of the facility to perform its intended
-        function. If the incremental impact and consequences are low (e.g. increases in flood levels
-        are slight) then the exposure risk to climate change is low, and design rainfall should be
-        determined using <xref linkend="book2"/>. Otherwise, proceed to Step 5.</para>
-      <para>
-        <table frame="void" xml:id="b1_ch6_t_oppcr">
-          <caption>Design Flood Annual Exceedance Probabilities</caption>
-          <col width="50%"/>
-          <col width="50%"/>
-          <thead>
-            <tr>
-              <th>AEP (%)</th>
-              <th>AEP (1 in x)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>5</td>
-              <td>20</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>100</td>
-            </tr>
-            <tr>
-              <td>0.5</td>
-              <td>200</td>
-            </tr>
-            <tr>
-              <td>0.2</td>
-              <td>500</td>
-            </tr>
-          </tbody>
-        </table>
-      </para>
-    </section>
-    <section xml:id="b1_ch6_s_4knpr">
-      <title>Step 5 – Consider Climate Change Projections and their Consequences</title>
-      <para>Consider <xref linkend="b1_ch6_f_7i1uk"/>. At this point the consequences of impact on
-        performance and exposure risk to climate change have been judged to be medium or high. Hence
-        consideration needs to be given to whether the original design specifications of the project
-        or the decision need to be reviewed and adjusted. This necessitates the use of climate
-        change projections. The selection of projections or scenarios is an important source of
-        uncertainty in the use of GCM outputs.</para>
-      <para>In reaching Step 5, the minimum basis for design should be the low greenhouse gas and
-        aerosol concentration pathway RCP4.5 and the maximum GCM consensus case indicated by the
-        Climate Futures web tool for the NRM cluster of interest (<xref linkend="b1_ch6_s_vn4ze"/>).
-        The choice of RCP4.5 is recommended because RCP2.6 requires ambitious global emissions
-        reductions. The maximum consensus case is a reasonable choice since it is not unduly
-        affected by outlying GCM results. Where the additional expense can be justified on
-        socioeconomic and environmental grounds, the maximum consensus case for the high
-        concentration pathway RCP8.5 should also be considered.</para>
-      <sidebar>
-        <para>In reaching Step 5, the minimum basis for design should be the low greenhouse gas and
-          aerosol concentration pathway RCP4.5 and the maximum GCM consensus case indicated by the
-          Climate Futures web tool for the NRM cluster of interest (<xref linkend="b1_ch6_s_vn4ze"
-          />). Where the additional expense can be justified on socioeconomic and environmental
-          grounds, the maximum consensus case for the high concentration pathway RCP8.5 should also
-          be considered.</para>
-      </sidebar>
-      <para><xref linkend="b1_ch6_s_95vhl"/> contains a summary of relevant information provided the
-        Climate Futures web tool. For each NRM cluster (<xref linkend="b1_ch6_f_a82gy"/>), the GCM
-        consensus cases are listed for four class intervals (ranges) of projected annual mean
-        surface temperature increases for RCPs 4.5 and 8.5 relative to the 1986 – 2005 baseline. The
-        class intervals are ‘slightly warmer’ (&lt; 0.5 °C), ‘warmer’ (0.5 to 1.5 °C), ‘hotter’ (1.5
-        to 3 °C) and ‘much hotter’ (&gt; 3 °C). As the upper class interval is open-ended, median
-        temperature increases (in parentheses) are given for cases containing one of more GCMs.
-        Generally, the median temperature increase for the ‘much hotter’ class interval increases
-        with increasing service life or planning horizon. This is not the case for the Monsoonal
-        North cluster where the median increase for RCP 8.5 and 2090 is 0.1 °C less than that for
-        the same RCP and 2080. Similarly for the Southern and South-Western Flatlands cluster, the
-        median for RCP 8.5 and 2080 is 0.1 °C less than that for the same RCP and 2070. These
-        features can be ascribed to the effects of increasing sample size and changes in sample
-        composition on estimates of the median. Consequently revised estimates of the median
-        temperature increase were determined using simple linear extrapolation and interpolation,
-        and are denoted by asterisks in <xref linkend="b1_ch6_t_cziry"/> and <xref
-          linkend="b1_ch6_t_0ygpo"/>.</para>
-      <para>For a given NRM cluster, service life or planning horizon, RCP and class interval of
-        projected increase in annual mean surface temperature, a projected rainfall intensity or
-        equivalent depth (<emphasis role="italic">I<subscript>p</subscript></emphasis>) can be
-        obtained from:</para>
-      <equation xml:id="b1_ch6_e_fismf">
+        </figure><?oxy_insert_end?><?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></para>
+      <?oxy_insert_end?>
+      <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?>
+      <para><?oxy_insert_end?>To account for changes since the period represented by the IFD curves
+        in the 2016 IFD portal, it is recommended that IFD information as well as estimates of the
+        PMP should be adjusted using <xref linkend="b1_ch6_e_e1"/> and the relevant rate of change
+        in <xref linkend="b1_ch6_t_t1"/>: </para>
+      <equation xml:id="b1_ch6_e_e1">
         <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
           <mrow>
             <msub>
@@ -365,1196 +341,1023 @@
             </msub>
             <mo>=</mo>
             <mrow>
-              <msub>
-                <mi>I</mi>
-                <mi>ARR</mi>
-              </msub>
+              <mi>I</mi>
               <mo>×</mo>
+              <mo>(</mo>
+              <mi>1</mi>
+              <mo>+</mo>
               <msup>
-                <mi>1.05</mi>
-                <msub>
-                  <mi>T</mi>
-                  <mi>m</mi>
-                </msub>
+                <mrow>
+                  <mfrac>
+                    <mi>&#x3B1;</mi>
+                    <mi>100</mi>
+                  </mfrac>
+                  <mo>)</mo>
+                </mrow>
+                <mi>&#x394;T</mi>
               </msup>
             </mrow>
           </mrow>
         </math>
       </equation>
-      <para>where <inlineequation>
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mi>I</mi>
-              <mi>ARR</mi>
-            </msub>
-          </math>
-        </inlineequation> is the design rainfall intensity (or depth) for current climate conditions
-          (<xref linkend="book2"/>), 1.05 is the assumed temperature scaling based on the
-        approximately exponential relationship between temperature and humidity and <emphasis
-          role="italic"><inlineequation>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-              <msub>
-                <mi>T</mi>
-                <mi>m</mi>
-              </msub>
-            </math>
-          </inlineequation>
-        </emphasis>is the temperature at the midpoint (or median) of the selected class
-        interval.</para>
-      <figure xml:id="b1_ch6_f_7i1uk">
-        <title>Decision Tree for Incorporating Climate Change in Flood Design – Part 3 of 3</title>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="../../figures/1035.png"/>
-          </imageobject>
-        </mediaobject>
-      </figure>
-      <para>Taking all of the above into account, if the cost of the modified design is low relative
-        to the associated benefits in reduction of residual risk (ie. the level of risk remaining
-        after climate change has been factored into the design or planning process), adopt the
-        changed design. Otherwise, proceed to Step 6.</para>
+      <para>where <itemizedlist>
+          <listitem>
+            <para>I<subscript>p</subscript> the projected (current or future) design rainfall depth
+              or intensity </para>
+          </listitem>
+          <listitem>
+            <para>α is the rate of change from <xref linkend="b1_ch6_t_t1"/></para>
+          </listitem>
+          <listitem>
+            <para>I is the historical design rainfall depth or intensity (e.g. from the 2016 IFD
+              portal or historical PMP estimates)</para>
+          </listitem>
+          <listitem>
+            <para>∆T is the most up-to-date estimate of global (land and ocean) temperature
+              projection for the design period of interest and selected climate scenario relative to
+              a baseline time period. When used in conjunction with the 2016 IFD curves the baseline
+              is recommended to be the 1961-1990 period (see <xref linkend="b1_ch6_t_t2"/> and text
+              below).</para>
+          </listitem>
+        </itemizedlist>The rates of change in <xref linkend="b1_ch6_t_t1"/> apply to exceedance
+        probabilities from the 1EY event through to the PMP and have been developed for application
+        across mainland Australia and Tasmania. There is some evidence for heterogeneity in the rate
+        of change across space as well as by event severity. However, there is insufficient
+        information to quantitatively describe these differences, and/or the magnitude of difference
+        was deemed to be small relative to the associated uncertainty. The information provided in
+          <xref linkend="b1_ch6_t_t1"/> relates to storm durations for which most published evidence
+        is available. Guidance on factors for use with burst durations between 1 and 24 hours is
+        given in Appendix A. As pre-burst rainfalls are defined as a fixed proportion of the burst
+        rainfall depth (<xref linkend="b2_ch5"/>), these rates of change also apply to pre-burst
+        rainfalls. </para>
+      <para>The differing rates of change with storm duration reflect the fact that the mechanisms
+        that cause extreme rainfall at these 2 durations are often distinct. Note that short
+        duration extremes are often embedded in longer duration extremes. It is possible that
+        application of the scaling factors provided in <xref linkend="b1_ch6_t_t1"/> and <xref
+          linkend="b1_ch6_t_tA1"/> may yield inconsistencies in the resulting design rainfall
+        frequency curves. Such inconsistencies are not unexpected given the uncertainties involved
+        in their derivation. Accordingly, the IFD curves should be adjusted as minimally as possible
+        to ensure the curve of one duration does not cross the curve of another. </para>
+      <para>
+        <table frame="void" xml:id="b1_ch6_t_t1">
+          <caption>Recommended rates of change (α) and associated uncertainty derived in
+              <citation>b1_c6_r22+1</citation>, presented per degree global temperature change
+            (%/°C). The factors in this table are applicable for exceedance probabilities from 1EY
+            up to and including the PMP and are designed for application across mainland Australia
+            and Tasmania.</caption>
+          <col width="35%"/>
+          <col width="15%"/>
+          <col width="30%"/>
+          <col width="15%"/>
+          <thead>
+            <tr>
+              <th/>
+              <th>≤ 1 hr</th>
+              <th>> 1 hr and &lt; 24 hr</th>
+              <th>≥ 24 hr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Central (median) estimate (%/°C)</td>
+              <td>15</td>
+              <td rowspan="2">Interpolation zone (see <xref linkend="b1_ch6_t_tA1"/>)</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>‘Likely’ range (corresponding to ~66%<footnote>
+                  <para>Consistent with terminology used by the IPCC the 66% range corresponds to an
+                    uncertainty range of +/- 33%.</para>
+                </footnote> range) (%/°C)</td>
+              <td>7-28</td>
+              <td>2-15</td>
+            </tr>
+          </tbody>
+        </table>
+      </para>
+      <para>To ensure consistency with IPCC projections and be representative of the climatic
+        drivers of change in extreme rainfall, the rates of change in <xref linkend="b1_ch6_t_t1"/>
+        are presented relative to global temperature changes. Hence, to adjust IFDs for climate
+        change, global temperature projections ∆T are required. The current global temperature
+        projections are provided in <xref linkend="b1_ch6_t_t2"/> are derived from the IPCC Sixth
+        Assessment Report (AR6). An example application of <xref linkend="b1_ch6_e_e1"/> is provided
+        in Example 1a in <xref linkend="b1_ch6_s_s6"/>. </para>
+      <para>A range of factors are likely to influence selection of SSP(s) that are specific to the
+        design problem of interest. For more information on how to include SSP uncertainty as part
+        of a holistic assessment of flood risk uncertainty, refer to <xref linkend="b1_ch6_s_s6"/>.
+        Users should seek the most up to date relevant guidance or information in relation to the
+        selection of timeframes and climate scenarios. </para>
+      <para>
+        <table frame="void" xml:id="b1_ch6_t_t2">
+          <caption>Global mean surface temperature projections (∆T) for four socio-economic pathways
+            relative to 1961-1990. The 90% uncertainty interval is provided in parentheses<footnote>
+              <para>Projections adapted from the Summary for Policymakers (SPM) of the Working Group
+                I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth
+                Assessment Report (AR6)<footnote>
+                  <para> Refer to Table SPM.1 from the Summary for Policymakers (SPM) of the Working
+                    Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change
+                    (IPCC) Sixth Assessment Report <citation>b1_c6_r15</citation></para>
+                </footnote>. The projected temperature increases in the table above use a different
+                baseline to the global warming levels referenced in relation to the Paris Agreement
+                which uses a pre-industrial period (represented by the 1850-1900 period). There are
+                approximately 0.3 degrees of global warming between the pre-industrial reference and
+                1961-1990, and this amount needs to be added to the temperatures in the above if
+                comparing to the 1850-1900 period. The IPCC offers a range of summary projections
+                information including in the assessment reports and the interactive atlas. We have
+                selected the global climate projections from AR6 as they represent a balanced
+                assessment of future global climate based on multiple lines of evidence, rather than
+                a simple average of the global climate model output. This data is only available at
+                the global level, not the regional level.</para>
+            </footnote></caption>
+          <col width="28%"/>
+          <col width="18%"/>
+          <col width="18%"/>
+          <col width="18%"/>
+          <col width="18%"/>
+          <thead>
+            <tr>
+              <th>Climate Scenario</th>
+              <th>SSP1-2.6</th>
+              <th>SSP2-4.5</th>
+              <th>SSP3-7.0</th>
+              <th>SSP5-8.5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Current and near-term (2021-2040) (°C)</td>
+              <td>1.2 (0.9-1.5) </td>
+              <td>1.2 (0.9-1.5) </td>
+              <td>1.2 (0.9-1.5) </td>
+              <td>1.3 (1.0-1.6) </td>
+            </tr>
+            <tr>
+              <td>Medium-term (2041-2060) (°C)</td>
+              <td>1.4 (1.0-1.9) </td>
+              <td>1.7 (1.3-2.2) </td>
+              <td>1.8 (1.4-2.3) </td>
+              <td>2.1 (1.6-2.7) </td>
+            </tr>
+            <tr>
+              <td>Long-term (2081-2100) (°C)</td>
+              <td>1.5 (1.0-2.1) </td>
+              <td>2.4 (1.8-3.2) </td>
+              <td>3.3 (2.5-4.3) </td>
+              <td>4.1 (3.0-5.4) </td>
+            </tr>
+          </tbody>
+        </table>
+      </para>
+      <para>The IPCC AR6 projections use climate model simulations from the Coupled Model
+        Intercomparison Project Phase 6 (CMIP6) based on a range of assumptions including physical
+        climate science, socio-economic factors and mitigation efforts. These projections are
+        neither predictions nor forecasts but instead describe plausible scenarios that represent
+        future climate uncertainty. It is noted that future Assessment Reports by the IPCC may
+        potentially move away from the current SSPs. If a user wishes to design based on Global
+        Warming Levels – the global temperature change relative to the pre-industrial period of
+        1850-1900 – then an adjustment for the additional warming of 0.3°C between 1850-1900 and
+        1961-1990 is required (see Example 1b). Further, it may be that IFD curves will be updated
+        in the future. If a user has reason to believe a different baseline (refer <xref
+          linkend="b1_ch6_f_f2"/>) is applicable to the adjustment of design rainfalls, then the
+        warming since the baseline needs to be calculated by the user (see Example 1c). Readers
+        should always refer to the latest global climate projections and Global Warming Levels. </para>
+      <para>The projections in <xref linkend="b1_ch6_t_t2"/> are provided up to 2081-2100. For
+        projections up to the year 2300, the reader is referred to Section 4.7.1.2 in Chapter 4 of
+        the IPCC AR6 Report<footnote>
+          <para><link xlink:href="https://www.ipcc.ch/report/ar6/wg1/"
+              >https://www.ipcc.ch/report/ar6/wg1/</link>
+            <citation>b1_c6_r18</citation></para>
+        </footnote>, noting that for SSP2-4.5, SSP3-7.0 and SSP5-8.5, temperatures are projected to
+        continue increasing beyond 2100. Although there may be interest in using projections beyond
+        2100 for flood designs with a long effective service and/or design life, the available
+        evidence to support such projections is more speculative than that used to develop
+        projections out to 2100. The defensibility of designing for specific climate change
+        projections beyond 2100 is therefore questionable, and a more flexible and adaptive approach
+        may be advisable. No formal guidance on adaptive approaches has yet been developed for flood
+        design in Australia, but adaptive design generally involves building in flexibility to adapt
+        to changing conditions. That is, rather than build a structure to withstand loading
+        conditions as they might exist beyond 2100, structures with long service lives might be
+        designed to cater for conditions over the time horizons described in <xref
+          linkend="b1_ch6_t_t2"/>, while also ensuring that the structure can be augmented in the
+        future to cater for more severe conditions as necessary. A simple illustration of this
+        concept is provided in Example 2 (<xref linkend="b1_ch6_s_s6"/>).
+        <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></para>
+      <?oxy_insert_end?>
+      <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?>
     </section>
-    <section xml:id="b1_ch6_s_zw1qt">
-      <title>Step 6 – Consider Statutory Requirements</title>
-      <para>Again consider <xref linkend="b1_ch6_f_7i1uk"/>. If statutory requirements relating to
-        climate change are in place, adopt the changed design. Otherwise, carry out an economic
-        analysis (e.g. cost-benefit or cost effectiveness analysis, or multi-attribute utility
-        theory) of potential changes in flood-related design requirements and make an informed
-        decision on how to proceed.</para>
+    <section xml:id="b1_ch6_s_ss2">
+      <title><?oxy_insert_end?>Temporal
+        Patterns<?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?></title>
+      <para><?oxy_insert_end?>Evidence presented in <citation>b1_c6_r22+1</citation> found that due
+        to climate change, temporal patterns may become slightly more front-loaded with a greater
+        proportion of the storm volume falling towards the start of the storm. While the shift
+        towards more front-loaded storms based on the analysis of historical data is statistically
+        significant, the magnitude of these changes is small and the impact of temporal pattern
+        changes on design flood estimates may be of little practical significance, particularly for
+        those systems where flood levels are largely dependent on flood volume. </para>
+      <para>Currently there is no published methodology for quantifying the effect of changing
+        temporal patterns on design flood estimates, nor published literature on the implications on
+        their impacts on design flood estimates. If a user believes their design flood estimate may
+        be sensitive to small changes in the temporal pattern, a sensitivity analysis can be
+        undertaken (<xref linkend="b7_ch8"/>). This can be performed using a non-uniform sampling
+        (or weighting) approach in either an Ensemble Event averaging (<xref
+          linkend="b4_ch3_s_0xgbz"/>) or Monte Carlo scheme (<xref linkend="b4_ch3_s_u6s3a"/>)
+        whereby temporal patterns are preferentially selected based on projected future changes. If
+        Ensemble Event averaging is used, then it may also be possible to directly alter the shape
+        of the temporal patterns. </para>
+      <para>The projected change can be assessed by applying a reduction in the percentage of the
+        event duration at which 50% of the cumulative event precipitation total is reached. This
+        reduction is to be applied relative to the global temperature change ∆T (<xref
+          linkend="b1_ch6_t_t2"/>) as per <xref linkend="b1_ch6_e_e1"/>. For storm durations less
+        than or equal to 6 hours, this change is no greater than a 2.5% per degree global
+        temperature change. For events between 6 and 24 hours in duration the reduction is no
+        greater than 1% per degree global temperature change. For longer durations, the shift may be
+        assumed to be zero. More detailed information on the variation and uncertainty in these
+        factors can be found in Figure 9 in <citation>b1_c6_r21+1</citation>. </para>
+    </section>
+    <section xml:id="b1_ch6_s_ss3">
+      <title><?oxy_insert_end?>Spatial Patterns </title>
+      <para>Although there is some evidence that climate change will influence spatial patterns of
+        extreme rainfall, there are considerable uncertainties around such changes for localised
+        regions. As such, there is insufficient justification for amending spatial patterns or areal
+        reduction factors. </para>
+    </section>
+    <section xml:id="b1_ch6_s_ss4">
+      <title><?oxy_insert_end?>Loss Parameters </title>
+      <para>There is evidence that historical changes in antecedent moisture conditions – the
+        expected conditions prior to an extreme rainfall event – have impacted on frequent flood
+        peaks, with smaller proportional impacts for rarer events. The review of
+          <citation>b1_c6_r22+1</citation> found multiple studies that presented evidence of drying
+        antecedent moisture conditions across Australia, particularly in regions that are
+        experiencing decreases in annual and/or seasonal rainfall. <citation>b1_c6_r14+1</citation>
+        linked projected changes in soil moisture to loss model parameters, allowing for the
+        projection of loss parameters in design flood estimation under climate change. Respecting
+        that regional differences will exist due to the differential wetting/drying of the continent
+        with climate change, particularly with greater drying projected in southern Australia, <xref
+          linkend="b1_ch6_t_t3"/> presents rates of change per degree Celsius for the National
+        Resource Management Regions clusters (<xref linkend="b2_ch5_f_001"/>)
+          <citation>b1_c6_r2</citation>. These clusters are the same as those used for temporal
+        patterns (<xref linkend="b2_ch5_s_09"/>) and can be obtained from the ARR datahub
+          <citation>b1_c6_r24</citation>. As there is limited data for the Rangelands, a pragmatic
+        solution is to apply the changes recommended for the East Flatlands and West Flatlands. </para>
+      <para>The rates of change for initial loss (IL) and continuing loss (CL) are generally
+        positive (losses will generally increase with higher temperatures), which reduces the impact
+        of increased rainfall intensities, particularly for frequent floods or for systems whose
+        performance is dependent on the volume of a flood as well as its peak. While it is perhaps
+        surprising that adjustment factors are applied to continuing loss, it needs to be recognised
+        that the IL/CL model is a gross simplification of the governing catchment processes. For
+        example, it ignores differences in the travel times of runoff response across the catchment,
+        differences in partially saturated areas due to antecedent conditions, and spatial
+        heterogeneity of soil properties. As such, it is to be expected that the tendency for soils
+        to be drier in warmer conditions will impact on estimates of both initial and continuing
+        loss.</para>
+      <para> To adjust the loss parameters for climate change, the rates of change can be applied as
+        per <xref linkend="b1_ch6_e_e1"/> relative to the 1961-1990 baseline, as this represents a
+        similar data baseline for the derivation of loss parameters in <xref linkend="b5_ch5"/> (see
+        Example 2). As these represent storm losses, if applied to bursts they can be applied with
+        reference to <xref linkend="b2_ch5_s_s9s9"/>. The uncertainty range represents pooling
+        across individual sites, climate change projections, different climate models and bias
+        corrections methods. Given this pooling, and the non-linear response of soil moisture to
+        changes in rainfall and temperature, the uncertainty presented here is likely to
+        underestimate the true uncertainty. A sensitivity analysis to these uncertainties can be
+        undertaken following the methodology in <xref linkend="b7_ch8"/>.</para>
+      <para>
+        <table frame="void" xml:id="b1_ch6_t_t3">
+          <caption>Rates of change for initial loss (IL) and continuous loss (CL) parameters per
+            degree global temperature change (%/°C) for Natural Resource Management Regions clusters
+              <citation>b1_c6_r2</citation>, adapted from <citation>b1_c6_r14+1</citation>. The
+            ‘likely’ range (corresponding to ~66% range) is presented in parenthesis. These rates of
+            change should be applied relative to a 1961-1990 baseline global temperature date unless
+            a reasonable alternative is justified</caption>
+          <col width="33%"/>
+          <col width="33%"/>
+          <col width="33%"/>
+          <thead>
+            <tr>
+              <th>Natural Resource Management Cluster</th>
+              <th>IL (%/°C)</th>
+              <th>CL (%/°C)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><emphasis role="bold">East Flatlands, and West Flatlands, Rangelands, and
+                  Rangelands West</emphasis></td>
+              <td>4.5 (2.0-7.1)</td>
+              <td>5.6 (2.5-8.7)</td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">Murray Basin</emphasis></td>
+              <td>3.1 (1.0-5.7)</td>
+              <td>6.7 (1.5-12.1)</td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">Southern Slopes Mainland, and Southern Slopes
+                  Tasmania</emphasis></td>
+              <td>3.9 (1.5-7.2)</td>
+              <td>8.5 (2.9-15.7)</td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">East Coast North, and East Coast South</emphasis></td>
+              <td>2.0 (0.6-4.3)</td>
+              <td>3.8 (1.1-8.0)</td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">Central Slopes</emphasis></td>
+              <td>1.1 (0.4-2.2)</td>
+              <td>2.0 (-0.5-7.5) </td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">Wet Tropics</emphasis></td>
+              <td>0.8 (-0.4-2.0)</td>
+              <td>1.4 (-0.1-4.8)</td>
+            </tr>
+            <tr>
+              <td><emphasis role="bold">Monsoonal North</emphasis></td>
+              <td>2.4 (1.0-5.4)</td>
+              <td>4.4&#xD;(3.1-9.5)</td>
+            </tr>
+          </tbody>
+        </table>
+      </para>
+    </section>
+    <section xml:id="b1_ch6_s_ss5">
+      <title><?oxy_insert_end?>Sea Levels and Sea Level Interaction </title>
+      <para>There is significant evidence that sea levels are increasing and will continue to
+        increase due to climate change. Acknowledging that sea level rise and changes in storm
+        surges vary regionally, the reader is referred to the 4th Edition of the Guidelines for
+        Responding to the Effects of Climate Change in Coastal and Ocean Engineering
+          <citation>b1_c6_r13</citation> (and future updates) as well as their own jurisdictional
+        guidance on changes in the sea level. The change in the sea level, jointly with a change in
+        the extreme rainfall, can then be considered using the steps outlined in <xref
+          linkend="b6_c5_s_expsz"/>. </para>
+      <para>Changes to the interaction (or ‘joint probability’) between high sea levels (due to the
+        combination of high astronomic tides and storm surges) and heavy rainfall events, remain
+        poorly understood. The approach to calculating the joint probability of extreme rainfall and
+        elevated sea levels described in <xref linkend="b6_ch5"/> does not account for possible
+        changes in the interaction between those drivers. One approach to evaluate the importance of
+        changes to the interaction between extreme rainfall and storm surge would be to conduct a
+        sensitivity analysis on the dependence parameter recommended in <xref linkend="b6_ch5"/>.
+      </para>
+    </section>
+    <section xml:id="b1_ch6_s_ss6">
+      <title><?oxy_insert_end?>Increased Uncertainty Due to Climate Change</title>
+      <para>As discussed in <xref linkend="b1_ch6_s_s1"/>, design flood estimates need to account
+        for climate change and the associated increase in uncertainty. Epistemic uncertainties (due
+        to lack of knowledge) affect: <itemizedlist>
+          <listitem>
+            <para>temperature projections, due to future emission pathways and feedbacks within the
+              earth system, as described in <xref linkend="b1_ch6_t_t2"/></para>
+          </listitem>
+          <listitem>
+            <para>future precipitation extremes for a given temperature change, as described in
+                <xref linkend="b1_ch6_t_t1"/></para>
+          </listitem>
+          <listitem>
+            <para>loss parameters, as described in <xref linkend="b1_ch6_t_t3"/>.</para>
+          </listitem>
+        </itemizedlist>Although not provided here, epistemic uncertainties also impact: <itemizedlist>
+          <listitem>
+            <para>sea level rise </para>
+          </listitem>
+          <listitem>
+            <para>other inputs to the rainfall-runoff model, including temporal and spatial
+              patterns</para>
+          </listitem>
+          <listitem>
+            <para>rainfall-runoff transformation, recognising that potential changes to catchment
+              properties (such as vegetation changes and/or bushfire) may mean that calibration of
+              rainfall-runoff models to historic information may not reflect future
+              conditions.</para>
+          </listitem>
+        </itemizedlist>Each of these epistemic uncertainties affect the overall confidence in the
+        design flood estimate. Epistemic uncertainties are not unique to the consideration of
+        climate change. For example, IFD curves have inherent uncertainties associated with finite
+        sample sizes. There are also other knowledge-based uncertainties associated with translating
+        rainfall to estimates of runoff, flood level and velocity. When applied in the context of
+        risk assessments, there are also uncertainties in estimating consequences (such as damages
+        and/or loss of life) that reflect current and future exposure and vulnerability of assets
+        and populations. It is recommended that approaches to characterising uncertainty associated
+        with design floods should recognise that both climate change factors and non-climate change
+        factors influence the design flood uncertainty. Various approaches for representing
+        uncertainty within design flood estimation methods are provided in <xref linkend="b7_ch8"/>.
+      </para>
     </section>
   </section>
-  <?oxy_insert_start author="testoni" timestamp="20190507T091251+1000"?>
-  <section xml:id="b1_ch6_s_vn4zgh">
-    <title>Application for Practioners</title>
-    <para>A slightly more detailed version of this calculation has been carried out for each NRM
-      cluster and is available on the ARR Data hub <citation>b1_c6_r010</citation> for use by
-      practitioners. It was found that just counting the number of GCM results in each temperature
-      class interval and assuming the bin midpoint can produce some very lumpy results when a large
-      number GCM results change temperature bins. To address this problem the analysis was carried
-      out with the actual predicted temperature increase for each GCM case. </para>
+  <section xml:id="b1_ch6_s_s5">
+    <title>Future Updates to the Climate Change Considerations</title>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para> While information in this update is the best available at the time of publication,
+            more and better information will become available over the coming years. Future updates
+            should consider the same approach of drawing on peer-reviewed science, considering
+            multiple lines of evidence, synthesising these lines of evidence and publishing the
+            results in a reputable peer-reviewed journal.</para>
+        </td>
+      </tr>
+    </informaltable>
+    <para>Climate change projections provided in this guidance are based on the review of the
+      science by <citation>b1_c6_r22+1</citation> and represent best-available information at the
+      time of publication. The science review adopted a rigorous systematic review process, together
+      with a meta-analysis to quantify the scaling relationships presented in <xref
+        linkend="b1_ch6_s_ss1"/>. Information from multiple lines of evidence was sought, including
+      the instrumental records (such as daily and sub-daily rainfall datasets and radar rainfall
+      records) and modelling studies (including general circulation models and several classes of
+      regional climate models together with statistical downscaling approaches). </para>
+    <para>It is recommended that future best practice updates of this chapter should consider: <itemizedlist>
+        <listitem>
+          <para>drawing on peer-reviewed studies in reputable scientific journals</para>
+        </listitem>
+        <listitem>
+          <para>adopting a multiple-lines-of-evidence approach that recognises potential limitations
+            with any single line of evidence</para>
+        </listitem>
+        <listitem>
+          <para>synthesising available evidence using protocols that ensure rigour and avoid
+            potential for biases</para>
+        </listitem>
+        <listitem>
+          <para>ensuring that any synthesis is peer-reviewed and published in a reputable scientific
+            journal.</para>
+        </listitem>
+      </itemizedlist></para>
   </section>
-  <?oxy_insert_end?>
-  <section xml:id="b1_ch6_s_vn4ze">
-    <title>Worked Example</title>
-    <?oxy_insert_start author="testoni" timestamp="20190507T091211+1000"?>
-    <para>Please note that this worked example uses the Midpoint aprroach and an alternate approach
-      is discussed in <xref linkend="b1_ch6_s_vn4zgh"/>.</para>
-    <?oxy_insert_end?>
-    <para><emphasis role="italic">Problem Setting: </emphasis></para>
-    <itemizedlist>
-      <listitem>
-        <para>Catchment of interest is located in the East Coast NRM cluster (Figure 1).</para>
-      </listitem>
-      <listitem>
-        <para>End of planning horizon is centred at 2060.</para>
-      </listitem>
-      <listitem>
-        <para>Consequence risk rating is medium.</para>
-      </listitem>
-      <listitem>
-        <para>Application of Step 4 in the six-step process outlined above indicates that
-          consideration of climate change projections is warranted.</para>
-      </listitem>
-    </itemizedlist>
-    <para><emphasis role="italic">Practitioner's Assumptions: </emphasis></para>
-    <itemizedlist>
-      <listitem>
-        <para>Maximum GCM consensus cases for RCPs 4.5 and 8.5 are appropriate choices for the
-          design setting.</para>
-      </listitem>
-    </itemizedlist>
-    <para><emphasis role="italic">Climate Futures: </emphasis></para>
-    <itemizedlist>
-      <listitem>
-        <para>Two or possibly three class intervals for projected temperature increases could be
-          considered for impact assessment: ‘warmer’, ‘hotter’ and ‘much hotter’ (refer to <xref
-            linkend="b1_ch6_t_vnlse"/>).</para>
-      </listitem>
-      <listitem>
-        <para>Only one maximum model consensus case for both RCPs 4.5 and 8.5 (22 of 40 GCMs and 39
-          of 42 GCMs, respectively). This is the ‘hotter’ class interval (1.5 to 3 °C).</para>
-      </listitem>
-    </itemizedlist>
-    <para><emphasis role="italic">Calculations: </emphasis></para>
-    <itemizedlist>
-      <listitem>
-        <para>Temperature midpoint <inlineequation>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-              <mrow>
-                <msub>
-                  <mi>T</mi>
-                  <mi>m</mi>
-                </msub>
-                <mo>=</mo>
-                <mrow>
-                  <mfrac>
-                    <mrow>
-                      <mo>(</mo>
-                      <mrow>
-                        <mi>1.5</mi>
-                        <mo>+</mo>
-                        <mi>3</mi>
-                      </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                    <mi>2</mi>
-                  </mfrac>
-                  <mo>=</mo>
-                  <mi>2.25°C</mi>
-                </mrow>
-              </mrow>
-            </math>
-          </inlineequation></para>
-      </listitem>
-      <listitem>
-        <para>Using <xref linkend="b1_ch6_e_fismf"/>, <inlineequation>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-              <mrow>
-                <msub>
-                  <mi>I</mi>
-                  <mi>p</mi>
-                </msub>
-                <mo>=</mo>
-                <mrow>
+  <section xml:id="b1_ch6_s_s6">
+    <title>Worked Examples</title>
+    <informaltable border="1">
+      <tr>
+        <td>
+          <para><emphasis role="bold">Key messages</emphasis></para>
+          <para> This section comprises 4 worked examples. Examples 1a, 1b and 1c present a simple
+            end-of-life design. They aim to familiarise the practitioner with the use of temperature
+            projections in the context of design rainfall adjustment. The choice of climate scenario
+            in these first examples is solely adopted for the purposes of demonstrating design
+            rainfall adjustment.</para>
+          <para>Example 2 focuses on design flood estimation using adaptive management, presenting a
+            use case that demonstrates how a practitioner could adopt climate scenarios in their
+            design. </para>
+          <para>The user should also consider the decisions their modelling is informing and seek
+            relevant jurisdictional guidance or information in relation to the consideration of
+            climate change, including the selection of timeframes and climate scenarios. </para>
+          <para>The examples are: </para>
+          <para>1a - Design rainfall adjustment for a given emissions scenario. </para>
+          <para>1b - Design rainfall adjustment for a given global warming level. </para>
+          <para>1c - Design rainfall adjustment using a non-standard baseline. </para>
+          <para>2 - Adaptive management under uncertainty in the future climate. </para>
+        </td>
+      </tr>
+    </informaltable>
+    
+    <para xml:id="b1_c6_p_ex1a"><emphasis role="bold">Example 1a - Design rainfall adjustment for a
+        given emissions scenario</emphasis>
+    </para>
+    <para>This example presents a common use case where a practitioner wishes to estimate the impact
+      of climate change on the existing 2016 IFDs for a time horizon corresponding to the end of the
+      century (2081 to 2100 time horizon, <xref linkend="b1_ch6_t_t2"/>). For this example, the
+      practitioner requires an estimate of the 1% AEP 24-hour rainfall depth. </para>
+    <para>Using the 2016 IFD portal (<xref linkend="b2_ch3"/>) the rainfall depth for the 24 hour,
+      1% AEP is 300 mm. </para>
+    <para><xref linkend="b1_ch6_t_t1"/> provides an 8%/°C rate of change for a duration of 24 hours.
+      The practitioner is testing the impact of the SSP2-4.5, which corresponds to a 2.4°C increase
+      by the end of the century (<xref linkend="b1_ch6_t_t2"/>) relative to the baseline adopted for
+      the 2016 IFDs. </para>
+    <para>Using <xref linkend="b1_ch6_e_e1"/> the factored design rainfall is: </para>
+ 
+    <para><inlineequation xml:id="b1_ch6_e_e2">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mi>300</mi>
+          <mo>×</mo>
+          <mo>(</mo>
+          <mi>1</mi>
+          <mo>+</mo>
+          <msup>
+            <mrow>
+              <mfrac>
+                <mi>8</mi>
+                <mi>100</mi>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi>2.4</mi>
+          </msup>
+          <mo>=</mo>
+          <mrow>
+            <mi>361mm</mi>
+          </mrow>
+        </mrow>
+      </math>
+    </inlineequation></para>
+    
+    <para xml:id="b1_c6_p_ex1b"><emphasis role="bold">Example 1b - Design rainfall adjustment for a
+        given global warming level</emphasis></para>
+    <para>The Shared Socioeconomic Pathways (SSPs) used in the sixth Assessment Report by the IPCC
+      are likely to be superseded. Global Warming Levels (GWLs), which are derived from climate
+      models run using SSPs, may be used more widely in the future to describe temperature
+      projections. GWLs are reported relative to the pre-industrial period which has a different
+      baseline to that used in the derivation of the 2016 IFDs. This example presents an approach to
+      estimating the impact of climate change on design rainfall using global warming levels. </para>
+    <para>For comparison, we follow Example 1a. A practitioner wishes to estimate the 1% AEP 24 hour
+      rainfall depth for the end of the century (2081 to 2100 time horizon, <xref
+        linkend="b1_ch6_t_t2"/>). Here, the practitioner is testing a scenario under which the world
+      will warm by 3.0°C<footnote>
+        <para>This value corresponds closely to the projected warming for SSP2-4.5 by the end of the
+          century.</para>
+      </footnote> by the end of the century relative to pre-industrial levels. </para>
+    <para>Using the 2016 IFD portal (<xref linkend="b2_ch3"/>) the rainfall depth for the 24 hour,
+      1% AEP is 300 mm. </para>
+    <para><xref linkend="b1_ch6_t_t1"/> provides an 8%/°C rate of change for a duration of 24 hours.
+      The data used to derive the IFD curves can be approximated to correspond to the baseline of
+      1961-1990, but Global Warming Levels are calculated from pre-industrial periods. Hence the
+      additional warming is 3.0°C-0.3°C = 2.7°C where 0.3°C is the difference between the
+      pre-industrial period and the period used for derivation of the 2016 IFD curves. </para>
+    <para>Using <xref linkend="b1_ch6_e_e1"/> the factored design rainfall is: </para>
+    
+    <para><inlineequation xml:id="b1_ch6_e_e3">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mi>300</mi>
+          <mo>×</mo>
+          <mo>(</mo>
+          <mi>1</mi>
+          <mo>+</mo>
+          <msup>
+            <mrow>
+              <mfrac>
+                <mi>8</mi>
+                <mi>100</mi>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi>2.7</mi>
+          </msup>
+          <mo>=</mo>
+          <mrow>
+            <mi>369mm</mi>
+          </mrow>
+        </mrow>
+      </math>
+    </inlineequation></para>
+    
+    <para xml:id="b1_c6_p_ex1c"><emphasis role="bold">Example 1c - Design rainfall adjustment using
+        a non-standard baseline</emphasis></para>
+    <para>It is likely that IFD curves may be updated from time to time and hence a different
+      baseline will be relevant. Furthermore, a practitioner may have reason to believe that a
+      different baseline applies to the data for a particular region or location. This example
+      presents how temperature projections can be adjusted to a non-standard baseline. </para>
+    <para>Following Example 1a, a practitioner wishes to estimate the 1% AEP 24-hour rainfall depth
+      for the end of the century (2081 to 2100 time horizon, <xref linkend="b1_ch6_t_t2"/>). Here
+      however, the practitioner has estimated the 24-hour 1% AEP design rainfall using a record
+      length from 1951 to 2020. </para>
+    <para><xref linkend="b1_ch6_t_t1"/> provides an 8%/°C rate of change for a duration of 24 hours.
+      The practitioner needs to choose an emissions scenario and chooses to test the impact of
+      SSP2-4.5 which corresponds to a 2.4°C increase by the end of the century (<xref
+        linkend="b1_ch6_t_t2"/>) relative to the baseline adopted for the 2016 IFDs. But the
+      temperature projections in <xref linkend="b1_ch6_t_t2"/> are estimated relative to 1961-1990.
+      Hence the practitioner needs to check if there was additional warming between these 2
+      baselines. </para>
+    <para>There are several reputable sources of global temperature anomalies<footnote>
+        <para>A summary is provided at <link
+            xlink:href="https://www.metoffice.gov.uk/weather/climate/science/global-temperature-records"
+            >https://www.metoffice.gov.uk/weather/climate/science/global-temperature-records</link>
+          ; with links provided at <link
+            xlink:href="https://climate.metoffice.cloud/temperature.html"
+            >https://climate.metoffice.cloud/temperature.html</link>.</para>
+      </footnote>. Examples include: <itemizedlist>
+        <listitem>
+          <para>Met Office, in collaboration with the Climatic Research Unit (CRU) at the University
+            of East Anglia (UK).<footnote>
+              <para>See also <link xlink:href="https://crudata.uea.ac.uk/cru/data/temperature/"
+                  >https://crudata.uea.ac.uk/cru/data/temperature/</link></para>
+            </footnote></para>
+        </listitem>
+        <listitem>
+          <para>Goddard Institute for Space Studies (GISS), which is part of the National
+            Aeronautics and Space Administration (NASA) (USA).<footnote>
+              <para>See also <link xlink:href="https://data.giss.nasa.gov/gistemp/"
+                  >https://data.giss.nasa.gov/gistemp/</link></para>
+            </footnote></para>
+        </listitem>
+        <listitem>
+          <para>National Climatic Data Center (NCDC), which is part of the National Oceanic and
+            Atmospheric Administration (NOAA) (USA).<footnote>
+              <para>See also <link
+                  xlink:href="https://www.ncei.noaa.gov/access/monitoring/global-temperature-anomalies"
+                  >https://www.ncei.noaa.gov/access/monitoring/global-temperature-anomalies</link>
+              </para>
+            </footnote></para>
+        </listitem>
+      </itemizedlist>Using the data from NOAA, the difference between the mean global temperature
+      for the 1951-2020 period is approximately 0.2°C warmer than the 1961-1990 baseline baseline
+      (i.e. 0.5°C above the pre-industrial baseline 1850-1900). The practitioner can proceed using
+      the temperatures provided in <xref linkend="b1_ch6_t_t2"/> by adjusting for this increase. The
+      long-term climate projected temperature increase is 2.4°C-0.2°C = 2.2°C above the new
+      1951-2020 baseline. </para>
+    <para>Using <xref linkend="b1_ch6_e_e1"/>, the factored design rainfall is: </para>
+    <para><inlineequation xml:id="b1_ch6_e_e4">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mi>300</mi>
+          <mo>×</mo>
+          <mo>(</mo>
+          <mi>1</mi>
+          <mo>+</mo>
+          <msup>
+            <mrow>
+              <mfrac>
+                <mi>8</mi>
+                <mi>100</mi>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi>2.2</mi>
+          </msup>
+          <mo>=</mo>
+          <mrow>
+            <mi>355mm</mi>
+          </mrow>
+        </mrow>
+      </math>
+    </inlineequation></para>  
+    
+    <para xml:id="b1_c6_p_ex2"><emphasis role="bold">Example 2 - Adaptive management under
+        uncertainty around future climate</emphasis></para>
+    <para>A local council is considering construction of a levee to protect an adjacent community
+      from flooding. A range of options were considered to find a solution that best balances the
+      trade-offs between construction costs and ongoing savings in avoided damages and flood
+      hazards. It was decided that the levee should provide protection from 1% AEP flooding impacts. </para>
+    <para>In this example, SSP2-4.5 and SSP3-7.0 are adopted as the moderate and high-warming
+      scenarios, respectively, and the SSP5-8.5 scenario is adopted to aid the stress testing of
+      decisions under a lower risk tolerance. Although SSP5-8.5 is not consistent with expected
+      emission trends <citation>b1_c6_r19</citation>, using this scenario in a suite is one method
+      of considering the uncertainty in each of the relationships between emissions, temperatures
+      and resulting climate impacts. That is, use of the SSP5-8.5 scenario is used here to
+      notionally represent a plausible upper bound on the projected climate impacts. </para>
+    <para>In practice, given the deep uncertainties involved, it was decided to take an adaptive
+      approach whereby the levee was initially designed to provide protection from 1% AEP flooding
+      out to the mid-term (2041-2060) under the mid-range emission scenario (SSP2-4.5). The design
+      incorporated additional capacity in the levee foundations, and an extended riverbank corridor
+      width to allow for a wider and taller embankment. This feature could be added at a time in the
+      future associated with a high-range emission scenario (SSP3-7.0) with consideration given to
+      the very-high (SSP5-8.5) emission scenario. </para>
+    <para>Accordingly, designs were prepared to provide for 2 combinations of emissions scenarios
+      and time horizons (SSP2-4.5 in the mid-term, 2041-2060, and SSP3-7.0 in the long-term,
+      2081-2100), with consideration given to SSP5-8.5). </para>
+    <para>A summary of the design inputs used to develop the adaptive approach is provided in <xref
+        linkend="b1_ch6_t_t4"/> for an event with a critical duration of 24 hours and historical
+      design rainfall from the 2016 IFD portal of 125 mm, with initial loss of 15.0 mm and
+      continuing loss of 2.5 mm/hr. </para>
+    
+    <para>
+      <table frame="void" xml:id="b1_ch6_t_t4">
+        <caption>Design inputs factor for climate change for Example 2. Design inputs assume an
+          event critical duration of 24 hours duration and historical design rainfall of 125 mm,
+          with initial loss of 15.0 mm and continuing loss of 2.5 mm/hr</caption>
+        <col width="16%"/>
+        <col width="28%"/>
+        <col width="28%"/>
+        <col width="28%"/>
+        <thead>
+          <tr>
+            <th>Design consideration</th>
+            <th>SSP2-4.5 (2041-2060)</th>
+            <th>SSP3-7.0 (2081-2100)</th>
+            <th>SSP5-8.5 (2081-2100)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Temperature increase (°C)</td>
+            <td>1.7</td>
+            <td>3.3</td>
+            <td>4.1</td>
+            </tr>
+          <tr>
+            <td>24 hr rainfall (mm)</td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e5">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
                   <mrow>
-                    <msub>
-                      <mi>I</mi>
-                      <mi>ARR</mi>
-                    </msub>
+                    <mi>125</mi>
                     <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
                     <msup>
-                      <mi>1.05</mi>
-                      <mi>2.25</mi>
+                      <mrow>
+                        <mfrac>
+                          <mi>8</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>1.7</mi>
                     </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>142</mi>
+                    </mrow>
                   </mrow>
-                  <mo>=</mo>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e6">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
                   <mrow>
-                    <msub>
-                      <mi>I</mi>
-                      <mi>ARR</mi>
-                    </msub>
+                    <mi>125</mi>
                     <mo>×</mo>
-                    <mi>1.12</mi>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>8</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>3.3</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>161</mi>
+                    </mrow>
                   </mrow>
-                </mrow>
-              </mrow>
-            </math>
-          </inlineequation></para>
-      </listitem>
-    </itemizedlist>
-    <para><emphasis>Notes:</emphasis></para>
-    <itemizedlist>
-      <listitem>
-        <para>The above calculation indicates a 12% projected increase in rainfall intensity (or
-          equivalent depth).</para>
-      </listitem>
-      <listitem>
-        <para>Had RCP 4.5 and the maximum consensus case been selected as the basis for design, the
-          model consensus for the ‘warmer’ class interval is not much smaller than that for the
-          ‘hotter’ interval (18 versus 22 of 40 GCMs).</para>
-      </listitem>
-      <listitem>
-        <para>If the model consensus for the ‘warmer’ class interval is deemed to be effectively
-          tied with that for the ‘hotter’ class interval, consideration could be given to the use of
-          the midpoint of the wider interval 0.5 to 3 ºC. Following the procedure outlined above
-          leads to a rainfall intensity scaling factor of 1.05<superscript>1.75</superscript> =
-          1.09. The design and economic implications of the lowering of the scaling factor, would
-          need to be considered.</para>
-      </listitem>
-    </itemizedlist>
-  </section>
-  <section xml:id="b1_ch6_s_95vhl">
-    <title>GCM Consensus for Natural Resource Management (NRM) Clusters</title>
-    <para>
-      <table frame="void" xml:id="b1_ch6_t_qphu7">
-        <caption>Central Slopes Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>34</td>
-            <td>6</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>21</td>
-            <td>19</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>15</td>
-            <td>25</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>11</td>
-            <td>29</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>10</td>
-            <td>29</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>7</td>
-            <td>32</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td>1</td>
-            <td>19</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>7</td>
-            <td>35</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>2</td>
-            <td>33</td>
-            <td>7 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>19</td>
-            <td>23 (3.5)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>14</td>
-            <td>28 (4.0)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>4</td>
-            <td>38 (4.4)</td>
-          </tr>
-        </tbody>
-      </table>
-    </para>
-    <para>
-      <table frame="void" xml:id="b1_ch6_t_vnlse">
-        <caption>East Coast Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>36</td>
-            <td>4</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>30</td>
-            <td>10</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>18</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>17</td>
-            <td>23</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>14</td>
-            <td>26</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>12</td>
-            <td>28</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>28</td>
-            <td>14</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>12</td>
-            <td>30</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>1</td>
-            <td>39</td>
-            <td>2 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>26</td>
-            <td>16 (3.3)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>16</td>
-            <td>26 (3.6)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>10</td>
-            <td>32 (4.1)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_cziry">
-        <caption>Monsoonal North Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>36</td>
-            <td>4</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>26</td>
-            <td>14</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>19</td>
-            <td>21</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>16</td>
-            <td>24</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>10</td>
-            <td>28</td>
-            <td>2 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>12</td>
-            <td>26</td>
-            <td>2 (3.3)</td>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>31</td>
-            <td>11</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>11</td>
-            <td>31</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td/>
-            <td>38</td>
-            <td>4 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>25</td>
-            <td>17 (3.5)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>17</td>
-            <td>25 (4.1)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>7</td>
-            <td>35 (4.2<footnote>
-                <para>Extrapolated Value</para>
-              </footnote>)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_5blln">
-        <caption>Murray Basin Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td>1</td>
-            <td>38</td>
-            <td>1</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>31</td>
-            <td>9</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>18</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td>1</td>
-            <td>13</td>
-            <td>26</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>12</td>
-            <td>28</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>11</td>
-            <td>29</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>32</td>
-            <td>10</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>10</td>
-            <td>32</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>1</td>
-            <td>40</td>
-            <td>1 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>30</td>
-            <td>12 (3.2)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>15</td>
-            <td>27 (3.5)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>10</td>
-            <td>32 (4.0)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_frnz6">
-        <caption>Rangelands Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>31</td>
-            <td>9</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>18</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>15</td>
-            <td>25</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>12</td>
-            <td>28</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>8</td>
-            <td>32</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>9</td>
-            <td>30</td>
-            <td>1 (3.2)</td>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>22</td>
-            <td>20</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>4</td>
-            <td>38</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>1</td>
-            <td>31</td>
-            <td>10 (3.2)</td>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>20</td>
-            <td>22 (3.6)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>10</td>
-            <td>32 (4.1)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>5</td>
-            <td>37 (4.5)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_wwb6j">
-        <caption>Southern Slopes Cluster</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td>1</td>
-            <td>39</td>
-            <td/>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>37</td>
-            <td>3</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>31</td>
-            <td>9</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>28</td>
-            <td>12</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>20</td>
-            <td>20</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>20</td>
-            <td>20</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td>1</td>
-            <td>38</td>
-            <td>3</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>24</td>
-            <td>18</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>9</td>
-            <td>33</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>39</td>
-            <td>3 (3.0)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>26</td>
-            <td>16 (3.3)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>18</td>
-            <td>24 (3.6)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_0ygpo">
-        <caption>Southern and South-Western Flatlands</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>40</td>
-            <td/>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>34</td>
-            <td>6</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>28</td>
-            <td>12</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>18</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>16</td>
-            <td>24</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>16</td>
-            <td>24</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>37</td>
-            <td>5</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>20</td>
-            <td>22</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>1</td>
-            <td>41</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>38</td>
-            <td>4 (3.4)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>24</td>
-            <td>18 (3.5<footnote>
-                <para>Extrapolated value</para>
-              </footnote>)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>16</td>
-            <td>26 (3.6)</td>
-          </tr>
-        </tbody>
-      </table>
-      <table frame="void" xml:id="b1_ch6_t_7akc1">
-        <caption>Wet Tropics</caption>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <col width="20%"/>
-        <thead>
-          <tr>
-            <th/>
-            <th colspan="4">Temperature Class Interval (°C)</th>
-          </tr>
-          <tr>
-            <td/>
-            <td>Slightly warmer</td>
-            <td>Warmer</td>
-            <td>Hotter</td>
-            <td>Much hotter</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>&lt; 0.5</td>
-            <td>0.5 to 1.5</td>
-            <td>1.5 to 3.0</td>
-            <td>&gt; 3.0, (median)</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td/>
-            <th colspan="4">RCP4.5 and 40 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td>1</td>
-            <td>38</td>
-            <td>1</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>37</td>
-            <td>3</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>29</td>
-            <td>11</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td>25</td>
-            <td>15</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td>24</td>
-            <td>16</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td>23</td>
-            <td>17</td>
-            <td/>
-          </tr>
-          <tr>
-            <td/>
-            <th colspan="4">RCP8.5 and 42 GCMs</th>
-          </tr>
-          <tr>
-            <td>2040</td>
-            <td/>
-            <td>39</td>
-            <td>3</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2050</td>
-            <td/>
-            <td>26</td>
-            <td>16</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2060</td>
-            <td/>
-            <td>8</td>
-            <td>34</td>
-            <td/>
-          </tr>
-          <tr>
-            <td>2070</td>
-            <td/>
-            <td/>
-            <td>37</td>
-            <td>5 (3.1)</td>
-          </tr>
-          <tr>
-            <td>2080</td>
-            <td/>
-            <td/>
-            <td>30</td>
-            <td>12 (3.4)</td>
-          </tr>
-          <tr>
-            <td>2090</td>
-            <td/>
-            <td/>
-            <td>23</td>
-            <td>19 (3.8)</td>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e7">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>125</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>8</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>4.1</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>171</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+          </tr>
+          <tr>
+            <td>Initial loss (mm)</td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e8">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>15.0</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>3.9</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>1.7</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>16.0</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e9">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>15.0</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>3.9</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>3.3</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>17.0</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e10">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>15.0</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>3.9</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>4.1</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>17.6</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+          </tr>
+          <tr>
+            <td>Continuing loss (mm/hr)</td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e11">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>2.5</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>8.5</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>1.7</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>2.9</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e12">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>2.5</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>8.5</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>3.3</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>3.3</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
+            <td>
+              <inlineequation xml:id="b1_ch6_e_e13">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mi>2.5</mi>
+                    <mo>×</mo>
+                    <mo>(</mo>
+                    <mi>1</mi>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mfrac>
+                          <mi>8.5</mi>
+                          <mi>100</mi>
+                        </mfrac>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>4.1</mi>
+                    </msup>
+                    <mo>=</mo>
+                    <mrow>
+                      <mi>3.5</mi>
+                    </mrow>
+                  </mrow>
+                </math>
+              </inlineequation>
+            </td>
           </tr>
         </tbody>
       </table>
     </para>
   </section>
+  
+  <section xml:id="b1_ch6_s_s7">
+    <title>Appendix</title>
+    <para>
+      <table frame="void" xml:id="b1_ch6_t_tA1">
+        <caption>Interpolated rate of change for rainfall depth with associated uncertainty range.
+          Values have been interpolated from the values provided in Table 1 which was derived in
+            <citation>b1_c6_r22+1</citation>. Rates of change are presented per degree global
+          temperature change (%/°C). The factors in this table are applicable for exceedance
+          probabilities from 1EY up to and including the PMP and are designed for application across
+          mainland Australia and Tasmania. If applied to the 2016 IFD curves these rates of change
+          should be applied relative to a 1961-1990 baseline global temperature date unless a
+          reasonable alternative is justified. Less information is available for rates of change for
+          storm bursts between 1 and 24 hours, and hence estimates for these durations are obtained
+          by a simple non-linear interpolation that represents the pragmatic interpretation of
+          results obtained from <citation>b1_c6_r20+1</citation></caption>
+        <col width="25%"/>
+        <col width="75%"/>
+        
+        <thead>
+          <tr>
+            <th>Duration</th>
+            <th>Rate of change (%/°C) and estimates of ‘likely’ range (corresponding to ~66% range)
+              in parentheses.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.5 hour </td>
+            <td>13.7 (6.1-25.6)</td>
+          </tr>
+          <tr>
+            <td>2 hour </td>
+            <td>12.8 (5.5-24.0)</td>
+          </tr>
+          <tr>
+            <td>3 hour </td>
+            <td>11.8 (4.7-22.0)</td>
+          </tr>
+          <tr>
+            <td>4.5 hour </td>
+            <td>10.8 (4.0-20.3)</td>
+          </tr>
+          <tr>
+            <td>6 hour </td>
+            <td>10.2 (3.6-19.2)</td>
+          </tr>
+          <tr>
+            <td>9 hour </td>
+            <td>9.5 (3.1-17.8)</td>
+            </tr>
+          <tr>
+            <td>12 hour </td>
+            <td>9.0 (2.7-16.9)</td>
+           </tr>
+          <tr>
+            <td>18 hour </td>
+            <td>8.4 (2.3-15.7)</td>
+          </tr>
+        </tbody>
+      </table>
+    </para>
+    <para> </para>
+  </section>
+  
   <xi:include href="chap_refs.xml">
     <xi:fallback>
       <para>No included references yet...</para>
     </xi:fallback>
   </xi:include>
 </chapter>
-
-
