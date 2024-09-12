@@ -28,3 +28,6 @@ jobs:
 
       - name: Sync epub
         run: aws s3 cp --acl public-read ./arr/epub3/arr.epub "s3://${{ vars.AWS_BUCKET_TEST }}/epub/arr.epub"
+
+      - name: Sync HTML
+        run: aws s3 cp --acl public-read --recursive ./arr/html_chunked_ajax/ "s3://${{ vars.AWS_BUCKET_TEST }}/"
