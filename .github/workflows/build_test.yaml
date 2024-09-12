@@ -27,4 +27,4 @@ jobs:
           aws-region: 'ap-southeast-2'
 
       - name: Sync epub
-        run: aws s3 cp ./arr/epub3/arr.epub "s3://${{ vars.AWS_BUCKET_TEST }}/epub/arr.epub"
+        run: aws s3 cp --acl public-read ./arr/epub3/arr.epub "s3://${{ vars.AWS_BUCKET_TEST }}/epub/arr.epub"
